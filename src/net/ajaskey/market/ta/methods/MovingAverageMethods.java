@@ -7,7 +7,7 @@ import net.ajaskey.market.ta.TickerData;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -31,14 +31,6 @@ import net.ajaskey.market.ta.TickerData;
  *
  */
 public class MovingAverageMethods {
-
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private MovingAverageMethods() {
-	}
 
 	/**
 	 *
@@ -142,6 +134,14 @@ public class MovingAverageMethods {
 			retVal = MovingAverageMethods.sma(td.getCloseData(), days, start);
 		}
 		return retVal;
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private MovingAverageMethods() {
 	}
 
 }

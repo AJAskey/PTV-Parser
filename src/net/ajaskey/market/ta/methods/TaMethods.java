@@ -13,7 +13,7 @@ import net.ajaskey.market.ta.TrendType;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -315,29 +315,24 @@ public class TaMethods implements TaMethodsIF {
 	@Override
 	public double calcSma(TickerData td, int days, FieldName fldName) {
 		double retVal = 0;
-		final int daysPlus = days + 1;
-
-		if (daysPlus < td.getDaysOfData()) {
-			switch (fldName) {
-				case CLOSE:
-					retVal = MovingAverageMethods.sma(td, daysPlus);
-					break;
-				case HIGH:
-					retVal = MovingAverageMethods.sma(td.getHighData(), daysPlus);
-					break;
-				case LOW:
-					retVal = MovingAverageMethods.sma(td.getLowData(), daysPlus);
-					break;
-				case OPEN:
-					retVal = MovingAverageMethods.sma(td.getOpenData(), daysPlus);
-					break;
-				case VOLUME:
-					retVal = MovingAverageMethods.sma(td.getVolumeData(), daysPlus);
-					break;
-				default:
-					break;
-			}
-
+		switch (fldName) {
+			case CLOSE:
+				retVal = MovingAverageMethods.sma(td, days);
+				break;
+			case HIGH:
+				retVal = MovingAverageMethods.sma(td.getHighData(), days);
+				break;
+			case LOW:
+				retVal = MovingAverageMethods.sma(td.getLowData(), days);
+				break;
+			case OPEN:
+				retVal = MovingAverageMethods.sma(td.getOpenData(), days);
+				break;
+			case VOLUME:
+				retVal = MovingAverageMethods.sma(td.getVolumeData(), days);
+				break;
+			default:
+				break;
 		}
 		return retVal;
 	}

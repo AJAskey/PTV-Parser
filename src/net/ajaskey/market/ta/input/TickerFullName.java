@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -36,10 +36,7 @@ import java.util.List;
  */
 public class TickerFullName {
 
-	static public List<TickerFullName>	tickerNames	= new ArrayList<TickerFullName>();
-
-	private String											ticker;
-	private String											name;
+	static public List<TickerFullName> tickerNames = new ArrayList<TickerFullName>();
 
 	/**
 	 *
@@ -110,5 +107,9 @@ public class TickerFullName {
 		}
 		return status;
 	}
+
+	private String	ticker;
+
+	private String	name;
 
 }

@@ -20,7 +20,7 @@ import net.ajaskey.market.ta.methods.TaMethods;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -48,62 +48,6 @@ public class ProcessMarketInternals {
 	final private static TaMethods	taMethods	= new TaMethods();
 	private static List<TickerData>	tdAll;
 	private static List<String>			filenames	= new ArrayList<String>();
-
-	/**
-	 *
-	 * This method serves as a constructor for the class.
-	 *
-	 * @throws ParseException
-	 * @throws FileNotFoundException
-	 */
-	public ProcessMarketInternals() throws ParseException, FileNotFoundException {
-
-		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
-		tdAll = ParseData.parseFiles(filenames);
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.main
-	 *
-	 * @param args
-	 * @throws ParseException
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
-
-		new ProcessMarketInternals();
-
-		ParseData.setValidTickers(ParseData.getTickerList("dj-index.txt"));
-
-		final List<String> fnames = new ArrayList<String>();
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\INDEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NASDAQ.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\AMEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
-		TickerFullName.build(fnames);
-
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
-
-		for (final TickerData t : tdAll) {
-			t.generateDerived();
-		}
-
-		try (PrintWriter pw = new PrintWriter("out\\industry-rs.txt")) {
-			Collections.sort(tdAll, new SortTickerRs());
-			for (final TickerData t : tdAll) {
-				pw.println(TickerFullName.getName(t.getTicker()) + "\t" + (int) t.getChg260() + "%");
-			}
-		}
-
-		ProcessMarketInternals.calcMfiNasdaq();
-		ProcessMarketInternals.calcMfiNyse();
-		ProcessMarketInternals.calcMfiOtc();
-		ProcessMarketInternals.calcAdvDecl();
-
-		System.out.println("Done.");
-	}
 
 	/**
 	 *
@@ -307,6 +251,62 @@ public class ProcessMarketInternals {
 			pw.println("260 days : " + mfi260);
 			pw.println("300 days : " + mfi300);
 		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+
+		new ProcessMarketInternals();
+
+		ParseData.setValidTickers(ParseData.getTickerList("dj-index.txt"));
+
+		final List<String> fnames = new ArrayList<String>();
+		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\INDEX.TXT");
+		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NASDAQ.TXT");
+		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\AMEX.TXT");
+		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
+		TickerFullName.build(fnames);
+
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
+
+		for (final TickerData t : tdAll) {
+			t.generateDerived();
+		}
+
+		try (PrintWriter pw = new PrintWriter("out\\industry-rs.txt")) {
+			Collections.sort(tdAll, new SortTickerRs());
+			for (final TickerData t : tdAll) {
+				pw.println(TickerFullName.getName(t.getTicker()) + "\t" + (int) t.getChg260() + "%");
+			}
+		}
+
+		ProcessMarketInternals.calcMfiNasdaq();
+		ProcessMarketInternals.calcMfiNyse();
+		ProcessMarketInternals.calcMfiOtc();
+		ProcessMarketInternals.calcAdvDecl();
+
+		System.out.println("Done.");
+	}
+
+	/**
+	 *
+	 * This method serves as a constructor for the class.
+	 *
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	public ProcessMarketInternals() throws ParseException, FileNotFoundException {
+
+		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
+		tdAll = ParseData.parseFiles(filenames);
 	}
 
 }

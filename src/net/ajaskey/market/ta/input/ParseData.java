@@ -20,7 +20,7 @@ import net.ajaskey.market.ta.TickerData;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -46,14 +46,6 @@ import net.ajaskey.market.ta.TickerData;
 public class ParseData {
 
 	private static List<String> validTickers = new ArrayList<String>();
-
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private ParseData() {
-	}
 
 	/**
 	 *
@@ -99,6 +91,29 @@ public class ParseData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.input.mergeLists
+	 *
+	 * @param mainList
+	 * @param newList
+	 */
+	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
+		for (final TickerData tdNew : newList) {
+			boolean found = false;
+			for (final TickerData tdMain : mainList) {
+				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
+					tdMain.getData().addAll(tdNew.getData());
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				mainList.add(tdNew);
+			}
+		}
+	}
+
+	/**
+	 *
 	 * @param file
 	 * @return
 	 * @throws ParseException
@@ -137,7 +152,6 @@ public class ParseData {
 								final DateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
 								final Calendar cal = Calendar.getInstance();
 								cal.setTime(df.parse(fld[1]));
-								// System.out.println(fld[0]);
 								TickerData td;
 								if (tdCheck != null) {
 									final DailyData dd = new DailyData(cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
@@ -289,29 +303,6 @@ public class ParseData {
 
 	/**
 	 *
-	 * net.ajaskey.market.ta.input.mergeLists
-	 *
-	 * @param mainList
-	 * @param newList
-	 */
-	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
-		for (final TickerData tdNew : newList) {
-			boolean found = false;
-			for (final TickerData tdMain : mainList) {
-				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-					tdMain.getData().addAll(tdNew.getData());
-					found = true;
-					break;
-				}
-			}
-			if (!found) {
-				mainList.add(tdNew);
-			}
-		}
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.ta.input.toDouble
 	 *
 	 * @param str
@@ -327,6 +318,14 @@ public class ParseData {
 		}
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private ParseData() {
 	}
 
 }

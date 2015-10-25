@@ -5,7 +5,7 @@ package net.ajaskey.market.ta.methods;
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -31,14 +31,6 @@ package net.ajaskey.market.ta.methods;
 public class RangeMethods {
 
 	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private RangeMethods() {
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.methods.atr
 	 *
@@ -55,6 +47,14 @@ public class RangeMethods {
 			retVal = retVal / days;
 		}
 		return retVal;
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private RangeMethods() {
 	}
 
 }

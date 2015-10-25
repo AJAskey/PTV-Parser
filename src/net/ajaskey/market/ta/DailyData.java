@@ -1,13 +1,14 @@
 
 package net.ajaskey.market.ta;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
  *
  * @author Andy Askey
  *
- *         PTV-Parser Copyright (c) 2015, Andy Askey All rights reserved.
+ *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
  *
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
@@ -190,6 +191,15 @@ public class DailyData {
 	 */
 	public void setTrueLow(double closeYesterday) {
 		this.trueLow = Math.min(closeYesterday, this.low);
+	}
+
+	@Override
+	public String toString() {
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		final String sDate = sdf.format(this.date.getTime());
+		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
+		    this.close, (int) (double) (this.volume));
+		return ret.trim();
 	}
 
 }
