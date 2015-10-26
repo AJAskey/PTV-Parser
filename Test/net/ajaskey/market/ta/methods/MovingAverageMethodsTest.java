@@ -60,6 +60,20 @@ public class MovingAverageMethodsTest {
 	}
 
 	@Test
+	public void testEma10a() {
+		final double ema10 = MovingAverageMethods.ema(this.td, 10);
+		//System.out.println(ema10);
+		Assert.assertEquals(ema10, 108.51, 0.1);
+	}
+
+	@Test
+	public void testEma25() {
+		final double ema25 = MovingAverageMethods.ema(this.td, 25);
+		System.out.println(ema25);
+		Assert.assertEquals(ema25, 106.76, 0.1);
+	}
+
+	@Test
 	public void testSma10() {
 		final double ma = MovingAverageMethods.sma(this.tdSC, 10);
 		Assert.assertEquals(ma, 23.13, 0.1);
