@@ -35,12 +35,7 @@ public class RangeMethodsTest {
 
 	// @Test
 	public void test() {
-<<<<<<< HEAD
 
-=======
-		
-		
->>>>>>> refs/remotes/origin/dev
 	}
 
 }
