@@ -148,7 +148,7 @@ public class TickerDataTest {
 	 * {@link net.ajaskey.market.ta.TickerData#getDailyField(net.ajaskey.market.ta.TickerData, net.ajaskey.market.ta.FieldName)}
 	 * .
 	 */
-	@Test
+	//@Test
 	public final void testGetDailyField() {
 		fail("Not yet implemented");
 	}
@@ -158,7 +158,7 @@ public class TickerDataTest {
 	 * {@link net.ajaskey.market.ta.TickerData#getFromList(java.lang.String, java.util.List)}
 	 * .
 	 */
-	@Test
+	//@Test
 	public final void testGetFromList() {
 		fail("Not yet implemented");
 	}
@@ -166,7 +166,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#TickerData()}.
 	 */
-	@Test
+	//@Test
 	public final void testTickerData() {
 		fail("Not yet implemented");
 	}
@@ -176,7 +176,7 @@ public class TickerDataTest {
 	 * {@link net.ajaskey.market.ta.TickerData#TickerData(java.lang.String, java.util.Calendar, double, double, double, double, double)}
 	 * .
 	 */
-	@Test
+	//@Test
 	public final void testTickerDataStringCalendarDoubleDoubleDoubleDoubleDouble() {
 		fail("Not yet implemented");
 	}
@@ -186,7 +186,7 @@ public class TickerDataTest {
 	 * {@link net.ajaskey.market.ta.TickerData#addData(net.ajaskey.market.ta.DailyData)}
 	 * .
 	 */
-	@Test
+	//@Test
 	public final void testAddData() {
 		fail("Not yet implemented");
 	}
@@ -198,7 +198,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getAdx()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetAdx() {
 		fail("Not yet implemented");
 	}
@@ -206,7 +206,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getAtr23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetAtr23() {
 		fail("Not yet implemented");
 	}
@@ -214,7 +214,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getAtrPercent23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetAtrPercent23() {
 		fail("Not yet implemented");
 	}
@@ -222,7 +222,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getAvgVol65()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetAvgVol65() {
 		fail("Not yet implemented");
 	}
@@ -230,7 +230,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getChg130()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetChg130() {
 		fail("Not yet implemented");
 	}
@@ -238,7 +238,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getChg23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetChg23() {
 		fail("Not yet implemented");
 	}
@@ -246,7 +246,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getChg260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetChg260() {
 		fail("Not yet implemented");
 	}
@@ -254,7 +254,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getChg65()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetChg65() {
 		fail("Not yet implemented");
 	}
@@ -262,7 +262,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getClose(int)}.
 	 */
-	@Test
+	//@Test
 	public final void testGetClose() {
 		fail("Not yet implemented");
 	}
@@ -270,7 +270,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getCloseData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetCloseData() {
 		fail("Not yet implemented");
 	}
@@ -278,7 +278,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getCurrentPrice()}.
 	 */
-	@Test
+//	@Test
 	public final void testGetCurrentPrice() {
 		fail("Not yet implemented");
 	}
@@ -286,7 +286,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetData() {
 		fail("Not yet implemented");
 	}
@@ -294,7 +294,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getDaysOfData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetDaysOfData() {
 		fail("Not yet implemented");
 	}
@@ -302,7 +302,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getDiMinus()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetDiMinus() {
 		fail("Not yet implemented");
 	}
@@ -310,7 +310,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getDiPlus()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetDiPlus() {
 		fail("Not yet implemented");
 	}
@@ -318,7 +318,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getHigh(int)}.
 	 */
-	@Test
+	//@Test
 	public final void testGetHigh() {
 		fail("Not yet implemented");
 	}
@@ -326,7 +326,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getHigh260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetHigh260() {
 		fail("Not yet implemented");
 	}
@@ -334,7 +334,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getHighData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetHighData() {
 		fail("Not yet implemented");
 	}
@@ -342,7 +342,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLow(int)}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLow() {
 		fail("Not yet implemented");
 	}
@@ -350,7 +350,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLow260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLow260() {
 		fail("Not yet implemented");
 	}
@@ -358,7 +358,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLowData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLowData() {
 		fail("Not yet implemented");
 	}
@@ -366,7 +366,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLr260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLr260() {
 		fail("Not yet implemented");
 	}
@@ -374,7 +374,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLrAngle260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLrAngle260() {
 		fail("Not yet implemented");
 	}
@@ -382,7 +382,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLrInt260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLrInt260() {
 		fail("Not yet implemented");
 	}
@@ -390,7 +390,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getLrSlope260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetLrSlope260() {
 		fail("Not yet implemented");
 	}
@@ -398,7 +398,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getMfi130()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetMfi130() {
 		fail("Not yet implemented");
 	}
@@ -406,7 +406,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getMfi14()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetMfi14() {
 		fail("Not yet implemented");
 	}
@@ -414,7 +414,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getMfi23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetMfi23() {
 		fail("Not yet implemented");
 	}
@@ -422,7 +422,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getMfi65()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetMfi65() {
 		fail("Not yet implemented");
 	}
@@ -430,7 +430,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getOpen(int)}.
 	 */
-	@Test
+	//@Test
 	public final void testGetOpen() {
 		fail("Not yet implemented");
 	}
@@ -438,7 +438,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getOpenData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetOpenData() {
 		fail("Not yet implemented");
 	}
@@ -447,7 +447,7 @@ public class TickerDataTest {
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getPriceInRng260()}
 	 * .
 	 */
-	@Test
+	//@Test
 	public final void testGetPriceInRng260() {
 		fail("Not yet implemented");
 	}
@@ -456,7 +456,7 @@ public class TickerDataTest {
 	 * Test method for
 	 * {@link net.ajaskey.market.ta.TickerData#getPriceOffHigh260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetPriceOffHigh260() {
 		fail("Not yet implemented");
 	}
@@ -465,7 +465,7 @@ public class TickerDataTest {
 	 * Test method for
 	 * {@link net.ajaskey.market.ta.TickerData#getPriceOffLow260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetPriceOffLow260() {
 		fail("Not yet implemented");
 	}
@@ -473,7 +473,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getRsi14()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetRsi14() {
 		fail("Not yet implemented");
 	}
@@ -481,7 +481,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getRsRaw()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetRsRaw() {
 		fail("Not yet implemented");
 	}
@@ -489,7 +489,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma130()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma130() {
 		fail("Not yet implemented");
 	}
@@ -497,7 +497,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma130Trend()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma130Trend() {
 		fail("Not yet implemented");
 	}
@@ -505,7 +505,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma23() {
 		fail("Not yet implemented");
 	}
@@ -513,7 +513,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma23Trend()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma23Trend() {
 		fail("Not yet implemented");
 	}
@@ -521,7 +521,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma260() {
 		fail("Not yet implemented");
 	}
@@ -529,7 +529,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma260Trend()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma260Trend() {
 		fail("Not yet implemented");
 	}
@@ -537,7 +537,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma65()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma65() {
 		fail("Not yet implemented");
 	}
@@ -545,7 +545,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSma65Trend()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSma65Trend() {
 		fail("Not yet implemented");
 	}
@@ -553,7 +553,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSmaPerc130()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSmaPerc130() {
 		fail("Not yet implemented");
 	}
@@ -561,7 +561,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSmaPerc23()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSmaPerc23() {
 		fail("Not yet implemented");
 	}
@@ -569,7 +569,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSmaPerc260()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSmaPerc260() {
 		fail("Not yet implemented");
 	}
@@ -577,7 +577,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getSmaPerc65()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetSmaPerc65() {
 		fail("Not yet implemented");
 	}
@@ -585,7 +585,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getTaMethods()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetTaMethods() {
 		fail("Not yet implemented");
 	}
@@ -593,7 +593,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getTicker()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetTicker() {
 		fail("Not yet implemented");
 	}
@@ -601,7 +601,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getTrueHighData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetTrueHighData() {
 		fail("Not yet implemented");
 	}
@@ -609,7 +609,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getTrueLowData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetTrueLowData() {
 		fail("Not yet implemented");
 	}
@@ -617,7 +617,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getVolume(int)}.
 	 */
-	@Test
+	//@Test
 	public final void testGetVolume() {
 		fail("Not yet implemented");
 	}
@@ -625,7 +625,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#getVolumeData()}.
 	 */
-	@Test
+	//@Test
 	public final void testGetVolumeData() {
 		fail("Not yet implemented");
 	}
@@ -634,7 +634,7 @@ public class TickerDataTest {
 	 * Test method for
 	 * {@link net.ajaskey.market.ta.TickerData#setTicker(java.lang.String)}.
 	 */
-	@Test
+	//@Test
 	public final void testSetTicker() {
 		fail("Not yet implemented");
 	}
@@ -642,7 +642,7 @@ public class TickerDataTest {
 	/**
 	 * Test method for {@link java.lang.Object#Object()}.
 	 */
-	@Test
+	//@Test
 	public final void testObject() {
 		fail("Not yet implemented");
 	}
