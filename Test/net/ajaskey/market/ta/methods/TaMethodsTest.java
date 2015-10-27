@@ -206,7 +206,7 @@ public class TaMethodsTest {
 	public final void testCalcRsi() {
 		double rsi = tdSC.getRsi14();
 		System.out.printf("RSI : %.2f%n",rsi);
-		Assert.assertEquals(rsi, 69.78, 0.01);
+		Assert.assertEquals(rsi, 37.77, 0.02);
 	}
 
 	/**
