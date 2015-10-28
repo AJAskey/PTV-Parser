@@ -48,6 +48,14 @@ public class ParseData {
 	private static List<String> validTickers = new ArrayList<String>();
 
 	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private ParseData() {
+	}
+
+	/**
 	 *
 	 *
 	 * Procedure clearValidTickers. ;
@@ -87,29 +95,6 @@ public class ParseData {
 	 */
 	static public boolean isTickerValid(String ticker) {
 		return TickerFullName.isValid(ticker);
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.input.mergeLists
-	 *
-	 * @param mainList
-	 * @param newList
-	 */
-	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
-		for (final TickerData tdNew : newList) {
-			boolean found = false;
-			for (final TickerData tdMain : mainList) {
-				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-					tdMain.getData().addAll(tdNew.getData());
-					found = true;
-					break;
-				}
-			}
-			if (!found) {
-				mainList.add(tdNew);
-			}
-		}
 	}
 
 	/**
@@ -303,6 +288,29 @@ public class ParseData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.input.mergeLists
+	 *
+	 * @param mainList
+	 * @param newList
+	 */
+	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
+		for (final TickerData tdNew : newList) {
+			boolean found = false;
+			for (final TickerData tdMain : mainList) {
+				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
+					tdMain.getData().addAll(tdNew.getData());
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				mainList.add(tdNew);
+			}
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.input.toDouble
 	 *
 	 * @param str
@@ -318,14 +326,6 @@ public class ParseData {
 		}
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
-	}
-
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private ParseData() {
 	}
 
 }

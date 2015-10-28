@@ -30,12 +30,12 @@ package net.ajaskey.market.ta.methods;
  */
 public class RangeMethods {
 
-	static public double trueRange(double high, double low, double pClose) {
-		double tr = 0.0;
-		double h = Math.max(high, pClose);
-		double l = Math.min(low, pClose);
-		tr = h - l;
-		return tr;
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private RangeMethods() {
 	}
 
 	/**
@@ -56,13 +56,13 @@ public class RangeMethods {
 				    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--low")) {
 
 					double trAvg = 0;
-					for (int i = days; i < days * 2; i++) {
-						trAvg += trueRange(high[i], low[i], close[i + 1]);
+					for (int i = days; i < (days * 2); i++) {
+						trAvg += RangeMethods.trueRange(high[i], low[i], close[i + 1]);
 					}
 					trAvg /= days;
 					atrVal = trAvg;
 					for (int i = days; i >= 0; i--) {
-						trAvg += trueRange(high[i], low[i], close[i + 1]);
+						trAvg += RangeMethods.trueRange(high[i], low[i], close[i + 1]);
 					}
 				}
 			}
@@ -70,12 +70,12 @@ public class RangeMethods {
 		return atrVal;
 	}
 
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private RangeMethods() {
+	static public double trueRange(double high, double low, double pClose) {
+		double tr = 0.0;
+		final double h = Math.max(high, pClose);
+		final double l = Math.min(low, pClose);
+		tr = h - l;
+		return tr;
 	}
 
 }

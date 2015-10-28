@@ -36,7 +36,11 @@ import java.util.List;
  */
 public class TickerFullName {
 
-	static public List<TickerFullName> tickerNames = new ArrayList<TickerFullName>();
+	static public List<TickerFullName>	tickerNames	= new ArrayList<TickerFullName>();
+
+	private String											ticker;
+
+	private String											name;
 
 	/**
 	 *
@@ -107,9 +111,5 @@ public class TickerFullName {
 		}
 		return status;
 	}
-
-	private String	ticker;
-
-	private String	name;
 
 }

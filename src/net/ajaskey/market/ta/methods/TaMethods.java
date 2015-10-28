@@ -292,6 +292,11 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
+	public double calcRawStRS(TickerData td) {
+		return ((0.25 * td.getChg65()) + (0.75 * td.getChg23()));
+	}
+
+	@Override
 	public double calcRsi(TickerData td, int days) {
 		return RsiMethods.calcRSI(td.getCloseData(), days);
 	}

@@ -122,4 +122,12 @@ public interface TaMethodsIF {
 	 */
 	public TrendType calcSmaTrend(TickerData td, int days, FieldName fldName);
 
+	/**
+	 * net.ajaskey.market.ta.methods.calcRawStRS
+	 *
+	 * @param td
+	 * @return
+	 */
+	double calcRawStRS(TickerData td);
+
 }
