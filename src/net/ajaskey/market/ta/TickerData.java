@@ -313,10 +313,12 @@ public class TickerData {
 			this.sma260Trend = this.taMethods.calcSmaTrend(this, 260, FieldName.CLOSE);
 		}
 
-		this.atr23 = this.taMethods.calcATR(this, 23);
-		if (this.sma23 > 0.0) {
-			this.atrPercent23 = RangeMethods.avgTrueRangePercent(getHighData(), getLowData(), getCloseData(), 23);
-			// (this.atr23 / this.sma23) * 100.0;
+		if (daysOfData > 46) {
+			this.atr23 = this.taMethods.calcATR(this, 23);
+			if (this.sma23 > 0.0) {
+				this.atrPercent23 = RangeMethods.avgTrueRangePercent(getHighData(), getLowData(), getCloseData(), 23);
+				// (this.atr23 / this.sma23) * 100.0;
+			}
 		}
 
 		this.adx = this.taMethods.calcAdx(this, 23);
