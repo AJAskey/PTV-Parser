@@ -292,18 +292,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcRsi(TickerData td, int days) {
-		double retVal = 0.0;
-		final int daysPlus = days * 2;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.rsi(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
-			if (rc == RetCode.Success) {
-				retVal = ret[0];
-			}
+	public double calcRawStRS(TickerData td) {
+		return ((0.25 * td.getChg65()) + (0.75 * td.getChg23()));
+	}
 
-		}
-		return retVal;
+	@Override
+	public double calcRsi(TickerData td, int days) {
+		return RsiMethods.calcRSI(td.getCloseData(), days);
 	}
 
 	/**

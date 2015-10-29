@@ -31,6 +31,14 @@ package net.ajaskey.market.ta.methods;
 public class UtilMethods {
 
 	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private UtilMethods() {
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.methods.avgRng
 	 *
@@ -144,14 +152,6 @@ public class UtilMethods {
 	 */
 	static public double sum(double[] val, int days, int start) {
 		return UtilMethods.sum(UtilMethods.getDataSlice(val, start, days), days);
-	}
-
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private UtilMethods() {
 	}
 
 }

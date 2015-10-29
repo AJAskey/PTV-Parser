@@ -42,7 +42,7 @@ public class RsiMethodsTest {
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 *
@@ -60,7 +60,7 @@ public class RsiMethodsTest {
 	@Test
 	public final void testCalcAvgGain() {
 		final double avgGain = RsiMethods.calcAvgGain(this.tdSC.getCloseData(), 14);
-		//System.out.println(avgGain);
+		// System.out.println(avgGain);
 		Assert.assertEquals(avgGain, 0.18, 0.01);
 	}
 
@@ -72,7 +72,7 @@ public class RsiMethodsTest {
 	@Test
 	public final void testCalcAvgLoss() {
 		final double avgLoss = RsiMethods.calcAvgLoss(this.tdSC.getCloseData(), 14);
-		//System.out.println(avgLoss);
+		// System.out.println(avgLoss);
 		Assert.assertEquals(avgLoss, 0.30, 0.01);
 	}
 
@@ -83,7 +83,7 @@ public class RsiMethodsTest {
 	@Test
 	public final void testCalcRS() {
 		final double rs = RsiMethods.calcRS(this.tdSC.getCloseData(), 14);
-		//System.out.println(rs);
+		// System.out.println(rs);
 		Assert.assertEquals(rs, 0.61, 0.01);
 	}
 
@@ -94,7 +94,7 @@ public class RsiMethodsTest {
 	@Test
 	public final void testCalcRSI() {
 		final double rsi = RsiMethods.calcRSI(this.tdSC.getCloseData(), 14);
-		//System.out.println(rsi);
+		// System.out.println(rsi);
 		Assert.assertEquals(rsi, 37.77, 0.02);
 	}
 }

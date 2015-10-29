@@ -51,7 +51,7 @@ public class SimpleTest {
 		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
 		TickerFullName.build(fnames);
 
-		ParseData.setValidTicker("spy");
+		ParseData.setValidTicker("qqq");
 
 		final List<String> filenames = new ArrayList<String>();
 		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");

@@ -33,6 +33,14 @@ import net.ajaskey.market.ta.TickerData;
 public class MovingAverageMethods {
 
 	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private MovingAverageMethods() {
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.methods.ema
 	 *
@@ -134,14 +142,6 @@ public class MovingAverageMethods {
 			retVal = MovingAverageMethods.sma(td.getCloseData(), days, start);
 		}
 		return retVal;
-	}
-
-	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private MovingAverageMethods() {
 	}
 
 }
