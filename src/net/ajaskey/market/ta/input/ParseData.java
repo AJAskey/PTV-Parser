@@ -273,7 +273,9 @@ public class ParseData {
 	 * @param ticker
 	 */
 	public static void setValidTicker(String ticker) {
-		validTickers.add(ticker.toUpperCase());
+		if (ticker != null) {
+			validTickers.add(ticker.trim().toUpperCase());
+		}
 	}
 
 	/**

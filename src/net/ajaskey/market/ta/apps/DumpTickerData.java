@@ -1,11 +1,15 @@
-package net.ajaskey.market.ta.methods;
+
+package net.ajaskey.market.ta.apps;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
-
+import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.input.ParseData;
 
@@ -35,65 +39,53 @@ import net.ajaskey.market.ta.input.ParseData;
  *         SOFTWARE.
  *
  */
-public class RsiMethodsTest {
+public class DumpTickerData {
 
-	private final TickerData tdSC;
+	private static List<TickerData>	tdAll;
+	private static List<String>			filenames	= new ArrayList<String>();
 
 	/**
+	 *
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @throws ParseException
 	 * @throws FileNotFoundException
+	 */
+	public DumpTickerData() throws ParseException, FileNotFoundException {
+		filenames.add("TestData\\NASDAQ");
+		tdAll = ParseData.parseFiles(filenames);
+	}
+
+	/**
 	 *
+	 * net.ajaskey.market.ta.apps.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 * @throws IOException
 	 */
-	public RsiMethodsTest() throws FileNotFoundException, ParseException {
-		this.tdSC = ParseData.parseOneFile("TestData\\cs-rsi.csv");
-		this.tdSC.generateDerived();
+	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+
+		ParseData.setValidTicker("QQQ");
+		ParseData.setValidTicker("MSFT");
+
+		new DumpTickerData();
+
+		for (final TickerData td : tdAll) {
+
+			td.generateDerived();
+
+			try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
+				pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
+				for (final DailyData dd : td.getData()) {
+					final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+					final String sDate = sdf.format(dd.getDate().getTime());
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, dd.getOpen(), dd.getHigh(), dd.getLow(), dd.getClose(),
+					    (int) (double) dd.getVolume());
+				}
+			}
+		}
 	}
 
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.methods.RsiMethods#calcAvgGain(double[], int)}
-	 * .
-	 */
-	@Test
-	public final void testCalcAvgGain() {
-		final double avgGain = RsiMethods.calcAvgGain(this.tdSC.getCloseData(), 14);
-		//System.out.println(avgGain);
-		Assert.assertEquals(avgGain, 0.18, 0.01);
-	}
-
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.methods.RsiMethods#calcAvgLoss(double[], int)}
-	 * .
-	 */
-	@Test
-	public final void testCalcAvgLoss() {
-		final double avgLoss = RsiMethods.calcAvgLoss(this.tdSC.getCloseData(), 14);
-		//System.out.println(avgLoss);
-		Assert.assertEquals(avgLoss, 0.30, 0.01);
-	}
-
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.methods.RsiMethods#calcRS(double[], int)} .
-	 */
-	@Test
-	public final void testCalcRS() {
-		final double rs = RsiMethods.calcRS(this.tdSC.getCloseData(), 14);
-		//System.out.println(rs);
-		Assert.assertEquals(rs, 0.61, 0.01);
-	}
-
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.methods.RsiMethods#calcRSI(double[], int)} .
-	 */
-	@Test
-	public final void testCalcRSI() {
-		final double rsi = RsiMethods.calcRSI(this.tdSC.getCloseData(), 14);
-		//System.out.println(rsi);
-		Assert.assertEquals(rsi, 37.77, 0.02);
-	}
 }

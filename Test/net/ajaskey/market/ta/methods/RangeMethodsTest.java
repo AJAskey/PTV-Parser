@@ -1,11 +1,16 @@
-/**
- *
- */
 
 package net.ajaskey.market.ta.methods;
 
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.input.ParseData;
+
 /**
- *
  * @author Andy Askey
  *
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
@@ -33,9 +38,79 @@ package net.ajaskey.market.ta.methods;
  */
 public class RangeMethodsTest {
 
-	// @Test
-	public void test() {
+	private final TickerData	tdSC;
+	private final TickerData	td;
 
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 *
+	 */
+	public RangeMethodsTest() throws FileNotFoundException, ParseException {
+		this.tdSC = ParseData.parseOneFile("TestData\\cs-atr.csv");
+		this.tdSC.generateDerived();
+
+		this.td = ParseData.parseOneFile("TestData\\QQQ-27oct2015.txt");
+		this.td.generateDerived();
+	}
+
+	/**
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.methods.RangeMethods#avgTrueRange(double[], double[], double[], int)}
+	 * .
+	 */
+	@Test
+	public void testAtr() {
+		double atr;
+
+		atr = RangeMethods.avgTrueRange(tdSC.getHighData(), tdSC.getLowData(), tdSC.getCloseData(), 14);
+		//System.out.println(atr);
+		Assert.assertEquals(atr, 1.31, 0.01);
+
+		atr = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), 14);
+		//System.out.println(atr);
+		Assert.assertEquals(atr, 1.79, 0.01);
+	}
+	
+	/**
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.methods.RangeMethods#avgTrueRangePercent(double[], double[], double[], int)}
+	 * .
+	 */
+	@Test
+	public void testAtrPercent() {
+		double atr;
+
+		atr = RangeMethods.avgTrueRangePercent(tdSC.getHighData(), tdSC.getLowData(), tdSC.getCloseData(), 14);
+		//System.out.println(atr);
+		Assert.assertEquals(atr, 2.70, 0.01);
+
+		atr = RangeMethods.avgTrueRangePercent(td.getHighData(), td.getLowData(), td.getCloseData(), 14);
+		//System.out.println(atr);
+		Assert.assertEquals(atr, 1.66, 0.01);
+	}
+
+	/**
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.methods.RangeMethods#trueRange(double, double, double)}
+	 * .
+	 */
+	@Test
+	public void testTrueRange() {
+
+		double tr = RangeMethods.trueRange(20.0, 11.0, 10.0);
+		// System.out.println(tr);
+		Assert.assertEquals(tr, 10.00, 0.01);
+
+		tr = RangeMethods.trueRange(this.tdSC.getHigh(10), this.tdSC.getLow(10), this.tdSC.getClose(11));
+		// System.out.println(tr);
+		Assert.assertEquals(tr, 0.96, 0.01);
+
+		tr = RangeMethods.trueRange(this.tdSC.getHigh(20), this.tdSC.getLow(20), this.tdSC.getClose(21));
+		// System.out.println(tr);
+		Assert.assertEquals(tr, 0.32, 0.01);
 	}
 
 }

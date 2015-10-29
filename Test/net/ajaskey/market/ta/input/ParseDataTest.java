@@ -32,6 +32,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -180,5 +181,16 @@ public class ParseDataTest {
 			e.printStackTrace();
 		}
 		Assert.assertTrue(pass);
+	}
+
+	@Test
+	public void testParseFile1() throws FileNotFoundException, ParseException {
+		ParseData.setValidTicker("QQQ");
+		ParseData.setValidTicker("MSFT");
+		ParseData.setValidTicker("NVAX");
+		ParseData.setValidTicker("xyz");
+		List<TickerData> tdAll = ParseData.parseFile(new File("TestData\\NASDAQ\\NASDAQ_20150921.csv"));
+		System.out.println(tdAll.size());
+		Assert.assertEquals(tdAll.size(), 3);
 	}
 }

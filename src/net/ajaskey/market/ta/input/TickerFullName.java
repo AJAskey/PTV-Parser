@@ -37,9 +37,7 @@ import java.util.List;
 public class TickerFullName {
 
 	static public List<TickerFullName>	tickerNames	= new ArrayList<TickerFullName>();
-
 	private String											ticker;
-
 	private String											name;
 
 	/**
@@ -71,7 +69,6 @@ public class TickerFullName {
 					}
 				}
 			} catch (final IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

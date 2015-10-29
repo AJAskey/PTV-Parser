@@ -38,7 +38,7 @@ public class DailyData {
 	private final Double		high;
 	private final Double		low;
 	private final Double		close;
-	private final Double		volume;
+	private Double					volume;
 
 	private double					trueHigh;
 	private double					trueLow;
@@ -64,7 +64,7 @@ public class DailyData {
 		this.high = h;
 		this.low = l;
 		this.close = c;
-		this.volume = v;
+		this.setVolume(v);
 		this.trueHigh = 0.0;
 		this.trueLow = 0.0;
 		this.dailyChg = 0.0;
@@ -200,6 +200,15 @@ public class DailyData {
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();
+	}
+
+	/**
+	 * net.ajaskey.market.ta.setVolume
+	 *
+	 * @param vol
+	 */
+	public void setVolume(double vol) {
+		volume = vol;
 	}
 
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
+import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
 
 /**
@@ -120,7 +121,7 @@ public class TickerData {
 	 */
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
-		this.ticker = t;
+		this.setTicker(t);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -158,7 +159,6 @@ public class TickerData {
 		this.lrSlope260 = 0.0;
 		this.rsi14 = 0.0;
 		this.closeData = null;
-		;
 	}
 
 	/**
@@ -263,6 +263,7 @@ public class TickerData {
 		 * Must sort prices by date before many of the following calculations
 		 */
 		Collections.sort(this.data, new SortData());
+		this.normalizeZeroVolume();
 
 		this.daysOfData = this.data.size();
 		this.openData = TickerData.getDailyField(this, FieldName.OPEN);
@@ -314,7 +315,8 @@ public class TickerData {
 
 		this.atr23 = this.taMethods.calcATR(this, 23);
 		if (this.sma23 > 0.0) {
-			this.atrPercent23 = (this.atr23 / this.sma23) * 100.0;
+			this.atrPercent23 = RangeMethods.avgTrueRangePercent(getHighData(), getLowData(), getCloseData(), 23);
+			// (this.atr23 / this.sma23) * 100.0;
 		}
 
 		this.adx = this.taMethods.calcAdx(this, 23);
@@ -717,8 +719,12 @@ public class TickerData {
 	 * @param ticker
 	 *          the ticker to set
 	 */
-	public void setTicker(String ticker) {
-		this.ticker = ticker;
+	public void setTicker(String tickerIn) {
+		if (tickerIn != null) {
+			this.ticker = tickerIn.trim().toUpperCase();
+		} else {
+			this.ticker = "UNKNOWN";
+		}
 	}
 
 	/**
@@ -741,6 +747,52 @@ public class TickerData {
 	}
 
 	/**
+	 * Data from www.eoddata.com occasionally has volumes of zero. Set these to
+	 * the average volume of 5 days before and 5 days after.
+	 *
+	 * net.ajaskey.market.ta.normalizeZeroVolume
+	 *
+	 */
+	private void normalizeZeroVolume() {
+		for (int i = 0; i < this.data.size(); i++) {
+
+			if ((int) (double) this.data.get(i).getVolume() < 1) {
+
+				int knt = 0;
+				double sum = 0.0;
+				for (int j = i - 1; j >= 0; j--) {
+					if ((int) (double) this.data.get(j).getVolume() > 0) {
+						knt++;
+						sum += this.data.get(j).getVolume();
+						if (knt == 5) {
+							break;
+						}
+					}
+				}
+				final double avg5m = sum / knt;
+
+				sum = 0.0;
+				knt = 0;
+				for (int j = i + 1; j < this.data.size(); j++) {
+					if ((int) (double) this.data.get(j).getVolume() > 0) {
+						knt++;
+						sum += this.data.get(j).getVolume();
+						if (knt == 5) {
+							break;
+						}
+					}
+				}
+				final double avg5p = sum / knt;
+				final double avg10 = (avg5p + avg5m) / 2.0;
+				this.data.get(i).setVolume(avg10);
+				// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
+				// avg5p);
+			}
+		}
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.setRsRaw
 	 *
@@ -755,7 +807,7 @@ public class TickerData {
 		this.chg130 = this.calcPriceChange(130);
 		this.chg260 = this.calcPriceChange(260);
 		this.rsRaw = this.taMethods.calcRawRS(this);
-		this.rsRaw = this.taMethods.calcRawStRS(this);
+		this.rsStRaw = this.taMethods.calcRawStRS(this);
 	}
 
 }
