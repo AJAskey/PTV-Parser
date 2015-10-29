@@ -84,7 +84,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcATR(TickerData td, int days) {
-		double retVal = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), days);
+		final double retVal = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), days);
 		return retVal;
 	}
 
@@ -241,17 +241,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcMFI(TickerData td, int days) {
-		double retVal = 0.0;
-		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.mfi(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(),
-			    td.getVolumeData(), days, outBegIdx, outNBElement, ret);
-			if (rc == RetCode.Success) {
-				retVal = ret[0];
-			}
-		}
-		return retVal;
+		return MoneyFlowMethods.mfiTrue(td.getHighData(), td.getLowData(), td.getCloseData(), td.getVolumeData(), days);
 	}
 
 	/**

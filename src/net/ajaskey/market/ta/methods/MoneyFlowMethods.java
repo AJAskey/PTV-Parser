@@ -16,7 +16,7 @@ package net.ajaskey.market.ta.methods;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- * 
+ *
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -42,23 +42,45 @@ public class MoneyFlowMethods {
 					double upVol = 0.0;
 					double downVol = 0.0;
 					for (int i = 0; i < days; i++) {
-						double typicalPrice = (high[i] + low[i] + close[i]) / 3.0;
-						double typicalPricePrev = (high[i + 1] + low[i + 1] + close[i + 1]) / 3.0;
-						double chg = (typicalPrice - typicalPricePrev);
+						final double typicalPrice = (high[i] + low[i] + close[i]) / 3.0;
+						final double typicalPricePrev = (high[i + 1] + low[i + 1] + close[i + 1]) / 3.0;
+						final double chg = (typicalPrice - typicalPricePrev);
 						if (chg > 0.0) {
 							upVol += volume[i] * typicalPrice;
 						} else if (chg < 0.0) {
 							downVol += volume[i] * typicalPrice;
 						}
 					}
-					double ratio = upVol / downVol;
-					mfiVal = 100.0 -(100.0/(1.0+ratio));
-					//System.out.printf("%.2f %.2f %n", ratio,mfiVal);
+					final double ratio = upVol / downVol;
+					mfiVal = 100.0 - (100.0 / (1.0 + ratio));
+					// System.out.printf("%.2f %.2f %n", ratio,mfiVal);
 				}
 			}
 		}
 
 		return mfiVal;
 	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.ta.methods.mfiTrue
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param volume
+	 * @param days
+	 * @return
+	 */
+	static public double mfiTrue(double[] high, double[] low, double[] close, double[] volume, int days) {
+		double [] tHigh = new double[high.length];
+		double [] tLow = new double[high.length];
+		for (int i=0; i<days; i++) {
+			tHigh[i] = Math.max(high[i], close[i+1]);
+			tLow[i] = Math.min(low[i], close[i+1]);
+		}
+		return mfi(tHigh, tLow, close, volume, days);
+	}
+
 
 }
