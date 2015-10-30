@@ -289,27 +289,33 @@ public class TaMethods implements TaMethodsIF {
 	 * @return
 	 */
 	@Override
-	public double calcSma(TickerData td, int days, FieldName fldName) {
+//	public double calcSma(TickerData td, int days, FieldName fldName) {
+//		double retVal = 0;
+//		switch (fldName) {
+//			case CLOSE:
+//				retVal = MovingAverageMethods.sma(td, days);
+//				break;
+//			case HIGH:
+//				retVal = MovingAverageMethods.sma(td.getHighData(), days);
+//				break;
+//			case LOW:
+//				retVal = MovingAverageMethods.sma(td.getLowData(), days);
+//				break;
+//			case OPEN:
+//				retVal = MovingAverageMethods.sma(td.getOpenData(), days);
+//				break;
+//			case VOLUME:
+//				retVal = MovingAverageMethods.sma(td.getVolumeData(), days);
+//				break;
+//			default:
+//				break;
+//		}
+//		return retVal;
+//	}
+
+	public double calcSma(double[] data, int days) {
 		double retVal = 0;
-		switch (fldName) {
-			case CLOSE:
-				retVal = MovingAverageMethods.sma(td, days);
-				break;
-			case HIGH:
-				retVal = MovingAverageMethods.sma(td.getHighData(), days);
-				break;
-			case LOW:
-				retVal = MovingAverageMethods.sma(td.getLowData(), days);
-				break;
-			case OPEN:
-				retVal = MovingAverageMethods.sma(td.getOpenData(), days);
-				break;
-			case VOLUME:
-				retVal = MovingAverageMethods.sma(td.getVolumeData(), days);
-				break;
-			default:
-				break;
-		}
+		retVal = MovingAverageMethods.sma(data, days);
 		return retVal;
 	}
 

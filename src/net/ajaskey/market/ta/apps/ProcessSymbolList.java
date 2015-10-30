@@ -1,7 +1,11 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -41,6 +45,24 @@ import org.xml.sax.SAXException;
  */
 public class ProcessSymbolList {
 
+	private static List<File> list = new ArrayList<>();
+
+	private static void findLists(File dir) {
+
+		File[] files = dir.listFiles();
+
+		for (File f : files) {
+			if (f.isDirectory()) {
+				findLists(f);
+			} else if (f.isFile()) {
+				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
+					list.add(f);
+				}
+			}
+		}
+
+	}
+
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
@@ -50,33 +72,47 @@ public class ProcessSymbolList {
 	 * @throws SAXException
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		// Get the DOM Builder Factory
+
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-		// Get the DOM Builder
 		final DocumentBuilder builder = factory.newDocumentBuilder();
-
-		// Load and Parse the XML document
-		// document contains the complete XML as a Tree.
-		final Document document = builder.parse("TestData\\SymbolList.xml");
-
-		// Iterating through the nodes and extracting the data.
-		final NodeList nodeList = document.getDocumentElement().getChildNodes();
-
-		for (int i = 0; i < nodeList.getLength(); i++) {
-
-			final Node node = nodeList.item(i);
-
-			if (node instanceof Element) {
-
-				final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
-				final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
-
-				System.out.println(code + "\t" + name);
-
-			}
+		
+		File outDir = new File("symbols");
+		if (!outDir.exists()) {
+			outDir.mkdir();
 		}
 
+		findLists(new File("\\ASCII"));
+
+		for (File f : list) {
+			String fpath = f.getAbsolutePath();
+			//System.out.println(fpath);
+			int idx = fpath.indexOf("ASCII");
+			idx += 6;
+			int idx2 = fpath.indexOf("SymbolList.xml");
+			if ((idx > 0) && (idx < idx2)) {
+				String oFile = "symbols\\" + fpath.substring(idx, idx2 - 1) + "_SymbolList.xml";
+
+				final Document document = builder.parse(f);
+
+				final NodeList nodeList = document.getDocumentElement().getChildNodes();
+
+				try (PrintWriter pw = new PrintWriter(oFile)) {
+					for (int i = 0; i < nodeList.getLength(); i++) {
+
+						final Node node = nodeList.item(i);
+
+						if (node instanceof Element) {
+
+							final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
+							final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
+
+							pw.println(code + "\t" + name);
+
+						}
+					}
+				}
+			}
+		}
 	}
 
 }

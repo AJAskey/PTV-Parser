@@ -146,14 +146,69 @@ public class TickerDataTest {
 		Assert.assertEquals(td.getPriceOffHigh260(), -1.17, 0.01);
 		Assert.assertEquals(td.getPriceOffLow260(), 33.42, 0.01);
 		Assert.assertEquals(td.getPriceInRng260(), 0.96, 0.01);
-		
+
 		Assert.assertEquals(td.getAtr23(), 1.84, 0.01);
 		Assert.assertEquals(td.getAtrPercent23(), 1.74, 0.01);
 
 		Assert.assertEquals(td.getRsRaw(), 13.10, 0.01);
 		Assert.assertEquals(td.getRsStRaw(), 6.44, 0.01);
-		
+
 		Assert.assertEquals((int) td.getDaysOfData(), 457);
+	}
+
+	/**
+	 * Test method for {@link net.ajaskey.market.ta.TickerData#GetIndexOfDate()}.
+	 *
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	@Test
+	public final void testGetIndexOfDate() throws FileNotFoundException, ParseException {
+		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
+
+		int idx = TickerData.getIndexOfDate(td, 2015, 3, 15);
+		System.out.println(idx + "\t" + td.getData().get(idx).toString());
+		Assert.assertEquals(idx, 155);
+
+		idx = TickerData.getIndexOfDate(td, 2015, 3, 20);
+		System.out.println(idx + "\t" + td.getData().get(idx).toString());
+		Assert.assertEquals(idx, 151);
+
+		idx = TickerData.getIndexOfDate(td, 2014, 11, 20);
+		System.out.println(idx + "\t" + td.getData().get(idx).toString());
+		Assert.assertEquals(idx, 232);
+
+		idx = TickerData.getIndexOfDate(td, 2010, 11, 20);
+		Assert.assertEquals(idx, -1);
+
+	}
+
+	/**
+	 * Test method for {@link net.ajaskey.market.ta.TickerData#GetDateOfDate()}.
+	 *
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	@Test
+	public final void testGetDataOfDate() throws FileNotFoundException, ParseException {
+		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
+
+		DailyData dd = TickerData.getDataOfDate(td, 2015, 4, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 2015, 15, 31);
+		Assert.assertNull(dd);
+		
+		dd = TickerData.getDataOfDate(td, 1999, 12, 31);
+		Assert.assertNull(dd);
+		
+		dd = TickerData.getDataOfDate(td, 2017, 12, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 2015, 3, 20);
+		//System.out.println(dd.toString());
+		Assert.assertEquals(dd.getClose(), 108.02, 0.01);
+
 	}
 
 }

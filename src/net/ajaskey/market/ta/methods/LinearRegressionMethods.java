@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import net.ajaskey.market.ta.Utils;
+
 /**
  * @author Andy Askey
  *
@@ -87,7 +89,7 @@ public class LinearRegressionMethods extends SimpleRegression {
 	 * @return
 	 */
 	public long getTimeSpan(Calendar cal) {
-		return this.getTimeSpan(cal, this.baseDate);
+		return Utils.getTimeSpan(cal, this.baseDate);
 	}
 
 	/**
@@ -99,7 +101,7 @@ public class LinearRegressionMethods extends SimpleRegression {
 	 * @return
 	 */
 	public long getTimeSpan(Calendar recent, Calendar lessRecent) {
-		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
+		return Utils.getTimeSpan(recent, lessRecent);
 	}
 
 	public double linreg() {
