@@ -38,31 +38,34 @@ public class MoneyFlowMethods {
 			    "MoneyFlowMethods.double mfi(double[] high, double[] low, double[] close, double[] volume, int days)--high")) {
 				if (Methods.checkParams(low, days + 1, 0,
 				    "MoneyFlowMethods.double mfi(double[] high, double[] low, double[] close, double[] volume, int days)--low")) {
+					if (Methods.checkParams(volume, days + 1, 0,
+					    "MoneyFlowMethods.double mfi(double[] high, double[] low, double[] close, double[] volume, int days)--volume")) {
 
-					double upVol = 0.0;
-					double downVol = 0.0;
-					for (int i = 0; i < days; i++) {
-						final double typicalPrice = (high[i] + low[i] + close[i]) / 3.0;
-						final double typicalPricePrev = (high[i + 1] + low[i + 1] + close[i + 1]) / 3.0;
-						final double chg = (typicalPrice - typicalPricePrev);
-						if (chg > 0.0) {
-							upVol += volume[i] * typicalPrice;
-						} else if (chg < 0.0) {
-							downVol += volume[i] * typicalPrice;
+						double upVol = 0.0;
+						double downVol = 0.0;
+						for (int i = 0; i < days; i++) {
+							final double typicalPrice = (high[i] + low[i] + close[i]) / 3.0;
+							final double typicalPricePrev = (high[i + 1] + low[i + 1] + close[i + 1]) / 3.0;
+							final double chg = (typicalPrice - typicalPricePrev);
+							if (chg > 0.0) {
+								upVol += volume[i] * typicalPrice;
+							} else if (chg < 0.0) {
+								downVol += volume[i] * typicalPrice;
+							}
 						}
+						final double ratio = upVol / downVol;
+						mfiVal = 100.0 - (100.0 / (1.0 + ratio));
+						// System.out.printf("%.2f %.2f %n", ratio,mfiVal);
 					}
-					final double ratio = upVol / downVol;
-					mfiVal = 100.0 - (100.0 / (1.0 + ratio));
-					// System.out.printf("%.2f %.2f %n", ratio,mfiVal);
 				}
 			}
 		}
 
 		return mfiVal;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.methods.mfiTrue
 	 *
 	 * @param high
@@ -73,14 +76,20 @@ public class MoneyFlowMethods {
 	 * @return
 	 */
 	static public double mfiTrue(double[] high, double[] low, double[] close, double[] volume, int days) {
-		double [] tHigh = new double[high.length];
-		double [] tLow = new double[high.length];
-		for (int i=0; i<days; i++) {
-			tHigh[i] = Math.max(high[i], close[i+1]);
-			tLow[i] = Math.min(low[i], close[i+1]);
+		double mfiVal = 0.0;
+		int len = Math.min(low.length, high.length);
+		len = Math.min(len, close.length);
+		len = Math.min(len, volume.length);
+		if ((days + 1) < len) {
+			final double[] tHigh = new double[high.length];
+			final double[] tLow = new double[low.length];
+			for (int i = 0; i < days; i++) {
+				tHigh[i] = Math.max(high[i], close[i + 1]);
+				tLow[i] = Math.min(low[i], close[i + 1]);
+			}
+			mfiVal = MoneyFlowMethods.mfi(tHigh, tLow, close, volume, days);
 		}
-		return mfi(tHigh, tLow, close, volume, days);
+		return mfiVal;
 	}
-
 
 }

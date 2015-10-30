@@ -241,7 +241,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcMFI(TickerData td, int days) {
-		return MoneyFlowMethods.mfiTrue(td.getHighData(), td.getLowData(), td.getCloseData(), td.getVolumeData(), days);
+		return MoneyFlowMethods.mfi(td.getHighData(), td.getLowData(), td.getCloseData(), td.getVolumeData(), days);
 	}
 
 	/**

@@ -70,6 +70,7 @@ public class TickerData {
 	private double[]							volumeData;
 	private double[]							trueHighData;
 	private double[]							trueLowData;
+	private Calendar[]						dateData;
 	private double								currentPrice;
 	private double								avgVol65;
 	private double								chg23;
@@ -271,22 +272,31 @@ public class TickerData {
 		this.lowData = TickerData.getDailyField(this, FieldName.LOW);
 		this.closeData = TickerData.getDailyField(this, FieldName.CLOSE);
 		this.volumeData = TickerData.getDailyField(this, FieldName.VOLUME);
+		
+		int knt=0;
+		dateData = new Calendar[data.size()];
+		for(DailyData dd : data) {
+			dateData[knt++] = dd.getDate();
+		}
+		
 
 		this.currentPrice = this.closeData[0];
 
-		for (int i = 0; i < (this.data.size() - 1); i++) {
+		for (int i = 0; i < (this.daysOfData - 1); i++) {
 			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
 			this.data.get(i).setTrueLow(this.data.get(i + 1).getClose());
 			this.data.get(i).setDailyChg(this.data.get(i + 1).getClose());
 		}
+
+		// TODO Check this
 		this.data.get(this.data.size() - 1).setTrueHigh(this.data.get(this.data.size() - 1).getHigh());
 		this.data.get(this.data.size() - 1).setTrueLow(this.data.get(this.data.size() - 1).getLow());
+
 		this.trueHighData = TickerData.getDailyField(this, FieldName.TRUEHIGH);
 		this.trueLowData = TickerData.getDailyField(this, FieldName.TRUELOW);
 
 		if (this.daysOfData > 260) {
 			this.setRsRaw();
-
 		}
 
 		if (this.daysOfData > 23) {
@@ -294,56 +304,70 @@ public class TickerData {
 			this.smaPerc23 = this.taMethods.calcPercentChange(this.currentPrice, this.sma23);
 			this.sma23Trend = this.taMethods.calcSmaTrend(this, 23, FieldName.CLOSE);
 		}
-		if (this.daysOfData > 70) {
+		if (this.daysOfData > 65) {
 			this.sma65 = this.taMethods.calcSma(this, 65, FieldName.CLOSE);
 			this.smaPerc65 = this.taMethods.calcPercentChange(this.currentPrice, this.sma65);
 			this.sma65Trend = this.taMethods.calcSmaTrend(this, 65, FieldName.CLOSE);
 
 			this.avgVol65 = this.taMethods.calcSma(this, 65, FieldName.VOLUME);
 		}
-		if (this.daysOfData > 135) {
+		if (this.daysOfData > 130) {
 			this.sma130 = this.taMethods.calcSma(this, 130, FieldName.CLOSE);
 			this.smaPerc130 = this.taMethods.calcPercentChange(this.currentPrice, this.sma130);
 			this.sma130Trend = this.taMethods.calcSmaTrend(this, 130, FieldName.CLOSE);
 
 		}
-		if (this.daysOfData > 265) {
+		if (this.daysOfData > 260) {
 			this.sma260 = this.taMethods.calcSma(this, 260, FieldName.CLOSE);
 			this.smaPerc260 = this.taMethods.calcPercentChange(this.currentPrice, this.sma260);
 			this.sma260Trend = this.taMethods.calcSmaTrend(this, 260, FieldName.CLOSE);
 		}
 
-		if (daysOfData > 46) {
+		if (this.daysOfData > 46) {
 			this.atr23 = this.taMethods.calcATR(this, 23);
 			if (this.sma23 > 0.0) {
-				this.atrPercent23 = RangeMethods.avgTrueRangePercent(getHighData(), getLowData(), getCloseData(), 23);
+				this.atrPercent23 = RangeMethods.avgTrueRangePercent(this.getHighData(), this.getLowData(), this.getCloseData(),
+				    23);
 				// (this.atr23 / this.sma23) * 100.0;
 			}
 		}
 
-		this.adx = this.taMethods.calcAdx(this, 23);
-		this.diPlus = this.taMethods.calcDiPlus(this, 23);
-		this.diMinus = this.taMethods.calcDiMinus(this, 23);
+		if (this.daysOfData > 46) {
+			this.adx = this.taMethods.calcAdx(this, 23);
+			this.diPlus = this.taMethods.calcDiPlus(this, 23);
+			this.diMinus = this.taMethods.calcDiMinus(this, 23);
+		}
 
-		this.mfi23 = this.taMethods.calcMFI(this, 23);
-		this.mfi65 = this.taMethods.calcMFI(this, 65);
-		this.mfi130 = this.taMethods.calcMFI(this, 130);
-		this.mfi14 = this.taMethods.calcMFI(this, 14);
+		if (this.daysOfData > 24) {
+			this.mfi23 = this.taMethods.calcMFI(this, 23);
+		}
+		if (this.daysOfData > 66) {
+			this.mfi65 = this.taMethods.calcMFI(this, 65);
+		}
+		if (this.daysOfData > 131) {
+			this.mfi130 = this.taMethods.calcMFI(this, 130);
+		}
+		if (this.daysOfData > 15) {
+			this.mfi14 = this.taMethods.calcMFI(this, 14);
+		}
 
-		this.high260 = this.taMethods.calcHigh(this, 260);
-		this.low260 = this.taMethods.calcLow(this, 260);
+		if (this.daysOfData > 260) {
+			this.high260 = this.taMethods.calcHigh(this, 260);
+			this.low260 = this.taMethods.calcLow(this, 260);
 
-		this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
-		this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
-		this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
+			this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
+			this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
+			this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
 
-		this.lr260 = this.taMethods.calcLinearRegression(this, 260);
-		this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this, 260);
-		this.lrInt260 = this.taMethods.calcLinearRegressionInt(this, 260);
-		this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this, 260);
+			this.lr260 = this.taMethods.calcLinearRegression(this, 260);
+			this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this, 260);
+			this.lrInt260 = this.taMethods.calcLinearRegressionInt(this, 260);
+			this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this, 260);
+		}
 
-		this.rsi14 = this.taMethods.calcRsi(this, 14);
-
+		if (this.daysOfData > 30) {
+			this.rsi14 = this.taMethods.calcRsi(this, 14);
+		}
 	}
 
 	/**
@@ -425,6 +449,17 @@ public class TickerData {
 	 */
 	public List<DailyData> getData() {
 		return this.data;
+	}
+
+	public Calendar getDate(int day) {
+		return dateData[day];
+	}
+
+	/**
+	 * @return the closeData
+	 */
+	public Calendar[] getDateData() {
+		return this.dateData;
 	}
 
 	/**

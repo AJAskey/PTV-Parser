@@ -60,6 +60,10 @@ public class DailyData {
 	 */
 	public DailyData(Calendar d, double o, double h, double l, double c, double v) {
 		this.date = d;
+		date.set(Calendar.HOUR_OF_DAY, 0);
+		date.set(Calendar.MINUTE, 0);
+		date.set(Calendar.SECOND, 1);
+		date.set(Calendar.MILLISECOND, 0);
 		this.open = o;
 		this.high = h;
 		this.low = l;
@@ -209,6 +213,16 @@ public class DailyData {
 	 */
 	public void setVolume(double vol) {
 		volume = vol;
+	}
+
+	/** 
+	 * net.ajaskey.market.ta.setDateData
+	 *
+	 * @param date2
+	 */
+	public void setDateData(Calendar cal) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
