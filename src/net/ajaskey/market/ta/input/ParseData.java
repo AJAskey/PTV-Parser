@@ -80,8 +80,12 @@ public class ParseData {
 			String line = br.readLine();
 			while (line != null) {
 				line = br.readLine();
-				if ((line != null) && (line.length() > 3)) {
-					list.add(line.trim());
+				if ((line != null) && (line.length() > 0)) {
+					String fld[] = line.trim().split("\\s+");
+					if (fld[0].length() > 0) {
+						list.add(fld[0]);
+						//System.out.println(fld[0]);
+					}
 				}
 			}
 		}

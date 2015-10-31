@@ -2,10 +2,18 @@
 package net.ajaskey.market.ta.input;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import net.ajaskey.market.ta.DailyData;
+import net.ajaskey.market.ta.SortTickerFullNames;
 
 /**
  *
@@ -40,6 +48,14 @@ public class TickerFullName {
 	private String											ticker;
 	private String											name;
 
+	public String getName() {
+		return name;
+	}
+
+	public String getTicker() {
+		return ticker;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.build
@@ -72,6 +88,8 @@ public class TickerFullName {
 				e.printStackTrace();
 			}
 		}
+
+		Collections.sort(tickerNames, new SortTickerFullNames());
 	}
 
 	/**
@@ -107,6 +125,21 @@ public class TickerFullName {
 			}
 		}
 		return status;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.input.debug
+	 *
+	 * @param fname
+	 * @throws FileNotFoundException
+	 */
+	static public void debug(String fname) throws FileNotFoundException {
+		try (PrintWriter pw = new PrintWriter(new File(fname))) {
+			for (TickerFullName tfn : tickerNames) {
+				pw.println(tfn.ticker + "\t" + tfn.name);
+			}
+		}
 	}
 
 }

@@ -47,22 +47,6 @@ public class ProcessSymbolList {
 
 	private static List<File> list = new ArrayList<>();
 
-	private static void findLists(File dir) {
-
-		File[] files = dir.listFiles();
-
-		for (File f : files) {
-			if (f.isDirectory()) {
-				findLists(f);
-			} else if (f.isFile()) {
-				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
-					list.add(f);
-				}
-			}
-		}
-
-	}
-
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
@@ -75,44 +59,114 @@ public class ProcessSymbolList {
 
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
-		
-		File outDir = new File("symbols");
+
+		final File outDir = new File("symbols");
 		if (!outDir.exists()) {
 			outDir.mkdir();
 		}
+		final File listsDir = new File("lists");
+		if (!listsDir.exists()) {
+			listsDir.mkdir();
+		}
 
-		findLists(new File("\\ASCII"));
+		ProcessSymbolList.findLists(new File("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII"));
 
-		for (File f : list) {
-			String fpath = f.getAbsolutePath();
-			//System.out.println(fpath);
+		final PrintWriter pwIshares = new PrintWriter("lists\\ishares-list.txt");
+		final PrintWriter pwPshares = new PrintWriter("lists\\powershares-list.txt");
+		final PrintWriter pwETF = new PrintWriter("lists\\etf-list.txt");
+		final PrintWriter pwCS = new PrintWriter("lists\\caseshiller-list.txt");
+		final PrintWriter pwGSCI = new PrintWriter("lists\\commodity-list.txt");
+		final PrintWriter pwSector = new PrintWriter("lists\\sector-list.txt");
+		final PrintWriter pwDJUS = new PrintWriter("lists\\djus-list.txt");
+
+		for (final File f : list) {
+			final String fpath = f.getAbsolutePath();
+			// System.out.println(fpath);
 			int idx = fpath.indexOf("ASCII");
 			idx += 6;
-			int idx2 = fpath.indexOf("SymbolList.xml");
+			final int idx2 = fpath.indexOf("SymbolList.xml");
 			if ((idx > 0) && (idx < idx2)) {
-				String oFile = "symbols\\" + fpath.substring(idx, idx2 - 1) + "_SymbolList.xml";
 
-				final Document document = builder.parse(f);
+				final String dirName = fpath.substring(idx, idx2 - 1);
 
-				final NodeList nodeList = document.getDocumentElement().getChildNodes();
+				// ignore options
+				if (dirName.compareToIgnoreCase("OPRA") != 0) {
 
-				try (PrintWriter pw = new PrintWriter(oFile)) {
-					for (int i = 0; i < nodeList.getLength(); i++) {
+					final String oFile = "symbols\\" + dirName + "_SymbolList.txt";
 
-						final Node node = nodeList.item(i);
+					final Document document = builder.parse(f);
 
-						if (node instanceof Element) {
+					final NodeList nodeList = document.getDocumentElement().getChildNodes();
 
-							final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
-							final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
+					try (PrintWriter pw = new PrintWriter(oFile)) {
+						for (int i = 0; i < nodeList.getLength(); i++) {
 
-							pw.println(code + "\t" + name);
+							final Node node = nodeList.item(i);
 
+							if (node instanceof Element) {
+
+								final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
+								final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
+								if (dirName.compareToIgnoreCase("INDEX") == 0) {
+									pw.println(code + ".IDX\t" + name);
+									// System.out.println(name);
+									if (name.contains("Home Price Index")) {
+										pwCS.println(code + ".IDX\t" + name);
+									} else if (name.contains(" GSCI ")) {
+										pwGSCI.println(code + ".IDX\t" + name);
+									} else if (name.contains("EQUAL WEIGHTED")) {
+										pwSector.println(code + ".IDX\t" + name);
+									} else if (name.contains("DJ US")) {
+										pwDJUS.println(code + ".IDX\t" + name);
+									}
+								} else {
+
+									pw.println(code + "\t" + name);
+									if (name.toUpperCase().contains("ISHARES")) {
+										pwIshares.println(code + "\t" + name);
+									} else if (name.toUpperCase().contains(" ETF ")) {
+										pwETF.println(code + "\t" + name);
+									} else if (name.toUpperCase().contains(" POWERSHARES")) {
+										pwPshares.println(code + "\t" + name);
+									}
+								}
+							}
 						}
 					}
 				}
 			}
 		}
+		pwIshares.close();
+		pwPshares.close();
+		pwETF.close();
+		pwCS.close();
+		pwGSCI.close();
+		pwSector.close();
+		pwDJUS.close();
+
+		System.out.println("Done.");
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.findLists
+	 *
+	 * @param dir
+	 */
+	private static void findLists(File dir) {
+
+		final File[] files = dir.listFiles();
+
+		for (final File f : files) {
+			if (f.isDirectory()) {
+				ProcessSymbolList.findLists(f);
+			} else if (f.isFile()) {
+				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
+					list.add(f);
+				}
+			}
+		}
+
 	}
 
 }

@@ -78,11 +78,12 @@ public class ProcessMarketInternals {
 		ParseData.setValidTickers(ParseData.getTickerList("dj-index.txt"));
 
 		final List<String> fnames = new ArrayList<String>();
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\INDEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NASDAQ.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\AMEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
+		fnames.add("symbols\\INDEX_SymbolList.txt");
+		fnames.add("symbols\\NASDAQ_SymbolList.txt");
+		fnames.add("symbols\\AMEX_SymbolList.txt");
+		fnames.add("symbols\\NYSE_SymbolList.txt");
 		TickerFullName.build(fnames);
+		TickerFullName.debug("out\\tfn.dbg");
 
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
 

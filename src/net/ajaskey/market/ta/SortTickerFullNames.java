@@ -1,9 +1,9 @@
 
 package net.ajaskey.market.ta;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
+import java.util.Comparator;
+
+import net.ajaskey.market.ta.input.TickerFullName;
 
 /**
  * @author Andy Askey
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- *
+ * 
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -31,37 +31,16 @@ import java.util.concurrent.TimeUnit;
  *         SOFTWARE.
  *
  */
-public class Utils {
+public class SortTickerFullNames implements Comparator<TickerFullName> {
 
-	public final static Calendar					baseDate	= Calendar.getInstance();
-	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
-	public Utils() {
-		Utils.baseDate.set(Calendar.YEAR, 2000);
-		Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
-		Utils.baseDate.set(Calendar.HOUR, 0);
-		Utils.baseDate.set(Calendar.MINUTE, 0);
-		Utils.baseDate.set(Calendar.SECOND, 1);
-		Utils.baseDate.set(Calendar.MILLISECOND, 0);
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.getString
-	 *
-	 * @param cal
-	 * @return
-	 */
-	static public String getString(Calendar cal) {
-		return sdf.format(cal.getTime());
-	}
-
-	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
-		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
+	@Override
+	public int compare(TickerFullName tfn1, TickerFullName tfn2) {
+		return tfn1.getTicker().compareTo(tfn2.getTicker());
 	}
 
 }
