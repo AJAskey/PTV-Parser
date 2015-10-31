@@ -67,6 +67,30 @@ import net.ajaskey.market.ta.TickerData;
  */
 public class ParseDataTest {
 
+	/**
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.input.ParseData#getTickerList(String filename)}
+	 * .
+	 */
+	@Test
+	public void testGetTickerList() throws FileNotFoundException, IOException {
+		final List<String> lstr = ParseData.getTickerList("TestData\\ishares.txt");
+		Assert.assertTrue(lstr.contains("EWUS"));
+		Assert.assertFalse(lstr.contains("hello"));
+
+	}
+
+	@Test
+	public void testParseFile1() throws FileNotFoundException, ParseException {
+		ParseData.setValidTicker("QQQ");
+		ParseData.setValidTicker("MSFT");
+		ParseData.setValidTicker("NVAX");
+		ParseData.setValidTicker("xyz");
+		final List<TickerData> tdAll = ParseData.parseFile(new File("TestData\\NASDAQ\\NASDAQ_20150921.csv"));
+		System.out.println(tdAll.size());
+		Assert.assertEquals(tdAll.size(), 3);
+	}
+
 	@Test
 	public void testParseFileErr1() {
 		boolean pass = false;
@@ -183,14 +207,4 @@ public class ParseDataTest {
 		Assert.assertTrue(pass);
 	}
 
-	@Test
-	public void testParseFile1() throws FileNotFoundException, ParseException {
-		ParseData.setValidTicker("QQQ");
-		ParseData.setValidTicker("MSFT");
-		ParseData.setValidTicker("NVAX");
-		ParseData.setValidTicker("xyz");
-		List<TickerData> tdAll = ParseData.parseFile(new File("TestData\\NASDAQ\\NASDAQ_20150921.csv"));
-		System.out.println(tdAll.size());
-		Assert.assertEquals(tdAll.size(), 3);
-	}
 }
