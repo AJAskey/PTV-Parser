@@ -10,6 +10,7 @@ import java.util.List;
 
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
+import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
 
 /**
@@ -69,6 +70,7 @@ public class TickerData {
 	private double[]							volumeData;
 	private double[]							trueHighData;
 	private double[]							trueLowData;
+	private Calendar[]						dateData;
 	private double								currentPrice;
 	private double								avgVol65;
 	private double								chg23;
@@ -120,7 +122,7 @@ public class TickerData {
 	 */
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
-		this.ticker = t;
+		this.setTicker(t);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -158,7 +160,6 @@ public class TickerData {
 		this.lrSlope260 = 0.0;
 		this.rsi14 = 0.0;
 		this.closeData = null;
-		;
 	}
 
 	/**
@@ -185,44 +186,21 @@ public class TickerData {
 
 	/**
 	 *
-	 * net.ajaskey.market.ta.getDailyField
+	 * net.ajaskey.market.ta.getDataOfDate
 	 *
-	 * @param tdata
-	 * @param ftype
+	 * @param td
+	 * @param year
+	 * @param month
+	 * @param day
 	 * @return
 	 */
-	static public double[] getDailyField(TickerData tdata, FieldName ftype) {
-		final double retData[] = new double[tdata.getData().size()];
-		int knt = 0;
-		for (final DailyData dd : tdata.getData()) {
-			switch (ftype) {
-				case OPEN:
-					retData[knt++] = dd.getOpen();
-					break;
-				case CLOSE:
-					retData[knt++] = dd.getClose();
-					break;
-				case HIGH:
-					retData[knt++] = dd.getHigh();
-					break;
-				case LOW:
-					retData[knt++] = dd.getLow();
-					break;
-				case VOLUME:
-					retData[knt++] = dd.getVolume();
-					break;
-				case TRUEHIGH:
-					retData[knt++] = dd.getTrueHigh();
-					break;
-				case TRUELOW:
-					retData[knt++] = dd.getTrueLow();
-					break;
-				default:
-					break;
-			}
+	static public DailyData getDataOfDate(TickerData td, int year, int month, int day) {
+		DailyData dd = null;
+		final int idx = TickerData.getIndexOfDate(td, year, month, day);
+		if ((idx >= 0) && (idx < td.getDaysOfData())) {
+			dd = td.data.get(idx);
 		}
-
-		return retData;
+		return dd;
 	}
 
 	/**
@@ -244,12 +222,100 @@ public class TickerData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.getIndexOfDate
+	 *
+	 * @param td
+	 * @param cal
+	 * @return
+	 */
+	static public int getIndexOfDate(TickerData td, Calendar cal) {
+		return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getIndexOfDate
+	 *
+	 * @param td
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @return
+	 */
+	static public int getIndexOfDate(TickerData td, int year, int month, int day) {
+
+		final Calendar calBase = Calendar.getInstance();
+
+		if ((year < 2000) || (year > calBase.get(Calendar.YEAR))) {
+			return -1;
+		} else if ((month < 1) || (month > 12)) {
+			return -1;
+		}
+		calBase.set(year, month - 1, 1, 0, 0, 1);
+		final int dim = calBase.getActualMaximum(Calendar.DAY_OF_MONTH);
+		if (day > dim) {
+			return -1;
+		}
+
+		calBase.set(Calendar.MILLISECOND, 0);
+		calBase.set(year, month - 1, day, 0, 0, 1);
+		final int idx = -1;
+		long shortSpan = td.getDaysOfData();
+		int knt = 0;
+		long lastSpan = 99999999999L;
+		for (final DailyData dd : td.data) {
+			final long span = Math.abs(Utils.getTimeSpan(dd.getDate(), calBase));
+			// System.out.printf("%s %s %d %d %d %n",
+			// Utils.getString(calBase), Utils.getString(dd.getDate()),
+			// (int) span, (int) shortSpan, idx);
+			if (span == 0) {
+				return knt;
+			} else if (span > lastSpan) {
+				return knt - 1;
+			} else if (span < shortSpan) {
+				shortSpan = span;
+			} else if (span > shortSpan) {
+				return -1;
+			}
+			lastSpan = span;
+			knt++;
+		}
+
+		return idx;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getSlice
+	 *
+	 * @param td
+	 * @param earliest
+	 * @param recent
+	 * @return
+	 */
+	static public List<DailyData> getSlice(TickerData td, Calendar start, int days) {
+		if ((td != null) && (start != null) && (days >= 0)) {
+			if (days > td.getDaysOfData()) {
+				days = td.getDaysOfData();
+			} else if (days == 0) {
+				days = td.getDaysOfData();
+			}
+			final int idx = TickerData.getIndexOfDate(td, start);
+			if (idx >= 0) {
+				return td.getData().subList(idx, idx + days);
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.addData
 	 *
-	 * @param ddata
+	 * @param dd
 	 */
-	public void addData(DailyData ddata) {
-		this.data.add(ddata);
+	public void addData(DailyData dd) {
+		this.data.add(dd);
 	}
 
 	/**
@@ -263,29 +329,45 @@ public class TickerData {
 		 * Must sort prices by date before many of the following calculations
 		 */
 		Collections.sort(this.data, new SortData());
+		this.normalizeZeroVolume();
 
 		this.daysOfData = this.data.size();
-		this.openData = TickerData.getDailyField(this, FieldName.OPEN);
-		this.highData = TickerData.getDailyField(this, FieldName.HIGH);
-		this.lowData = TickerData.getDailyField(this, FieldName.LOW);
-		this.closeData = TickerData.getDailyField(this, FieldName.CLOSE);
-		this.volumeData = TickerData.getDailyField(this, FieldName.VOLUME);
+
+		int knt = 0;
+		this.dateData = new Calendar[this.daysOfData];
+		this.openData = new double[this.daysOfData];
+		this.highData = new double[this.daysOfData];
+		this.lowData = new double[this.daysOfData];
+		this.closeData = new double[this.daysOfData];
+		this.volumeData = new double[this.daysOfData];
+		for (final DailyData dd : this.data) {
+			this.openData[knt] = dd.getOpen();
+			this.highData[knt] = dd.getHigh();
+			this.lowData[knt] = dd.getLow();
+			this.closeData[knt] = dd.getClose();
+			this.volumeData[knt] = dd.getVolume();
+			this.dateData[knt] = dd.getDate();
+			knt++;
+		}
+
+		this.trueHighData = new double[this.daysOfData];
+		this.trueLowData = new double[this.daysOfData];
+		for (int i = 0; i < (this.daysOfData - 1); i++) {
+			this.data.get(i).setTrueHigh(this.closeData[i + 1]);
+			this.data.get(i).setTrueLow(this.closeData[i + 1]);
+			this.data.get(i).setDailyChg(this.closeData[i + 1]);
+			this.trueHighData[i] = this.data.get(i).getTrueHigh();
+			this.trueLowData[i] = this.data.get(i).getTrueLow();
+		}
+		this.data.get(this.daysOfData - 1).setTrueHigh(this.closeData[this.daysOfData - 1]);
+		this.data.get(this.daysOfData - 1).setTrueLow(this.closeData[this.daysOfData - 1]);
+		this.trueHighData[this.daysOfData - 1] = this.data.get(this.daysOfData - 1).getTrueHigh();
+		this.trueLowData[this.daysOfData - 1] = this.data.get(this.daysOfData - 1).getTrueLow();
 
 		this.currentPrice = this.closeData[0];
 
-		for (int i = 0; i < (this.data.size() - 1); i++) {
-			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
-			this.data.get(i).setTrueLow(this.data.get(i + 1).getClose());
-			this.data.get(i).setDailyChg(this.data.get(i + 1).getClose());
-		}
-		this.data.get(this.data.size() - 1).setTrueHigh(this.data.get(this.data.size() - 1).getHigh());
-		this.data.get(this.data.size() - 1).setTrueLow(this.data.get(this.data.size() - 1).getLow());
-		this.trueHighData = TickerData.getDailyField(this, FieldName.TRUEHIGH);
-		this.trueLowData = TickerData.getDailyField(this, FieldName.TRUELOW);
-
 		if (this.daysOfData > 260) {
 			this.setRsRaw();
-
 		}
 
 		if (this.daysOfData > 23) {
@@ -293,53 +375,70 @@ public class TickerData {
 			this.smaPerc23 = this.taMethods.calcPercentChange(this.currentPrice, this.sma23);
 			this.sma23Trend = this.taMethods.calcSmaTrend(this, 23, FieldName.CLOSE);
 		}
-		if (this.daysOfData > 70) {
-			this.sma65 = this.taMethods.calcSma(this, 65, FieldName.CLOSE);
+		if (this.daysOfData > 65) {
+			this.sma65 = this.taMethods.calcSma(this.getCloseData(), 65);
 			this.smaPerc65 = this.taMethods.calcPercentChange(this.currentPrice, this.sma65);
 			this.sma65Trend = this.taMethods.calcSmaTrend(this, 65, FieldName.CLOSE);
 
-			this.avgVol65 = this.taMethods.calcSma(this, 65, FieldName.VOLUME);
+			this.avgVol65 = this.taMethods.calcSma(this.getVolumeData(), 65);
 		}
-		if (this.daysOfData > 135) {
-			this.sma130 = this.taMethods.calcSma(this, 130, FieldName.CLOSE);
+		if (this.daysOfData > 130) {
+			this.sma130 = this.taMethods.calcSma(this.getCloseData(), 130);
 			this.smaPerc130 = this.taMethods.calcPercentChange(this.currentPrice, this.sma130);
 			this.sma130Trend = this.taMethods.calcSmaTrend(this, 130, FieldName.CLOSE);
 
 		}
-		if (this.daysOfData > 265) {
-			this.sma260 = this.taMethods.calcSma(this, 260, FieldName.CLOSE);
+		if (this.daysOfData > 260) {
+			this.sma260 = this.taMethods.calcSma(this.getCloseData(), 260);
 			this.smaPerc260 = this.taMethods.calcPercentChange(this.currentPrice, this.sma260);
 			this.sma260Trend = this.taMethods.calcSmaTrend(this, 260, FieldName.CLOSE);
 		}
 
-		this.atr23 = this.taMethods.calcATR(this, 23);
-		if (this.sma23 > 0.0) {
-			this.atrPercent23 = (this.atr23 / this.sma23) * 100.0;
+		if (this.daysOfData > 46) {
+			this.atr23 = this.taMethods.calcATR(this, 23);
+			if (this.sma23 > 0.0) {
+				this.atrPercent23 = RangeMethods.avgTrueRangePercent(this.getHighData(), this.getLowData(), this.getCloseData(),
+				    23);
+				// (this.atr23 / this.sma23) * 100.0;
+			}
 		}
 
-		this.adx = this.taMethods.calcAdx(this, 23);
-		this.diPlus = this.taMethods.calcDiPlus(this, 23);
-		this.diMinus = this.taMethods.calcDiMinus(this, 23);
+		if (this.daysOfData > 46) {
+			this.adx = this.taMethods.calcAdx(this, 23);
+			this.diPlus = this.taMethods.calcDiPlus(this, 23);
+			this.diMinus = this.taMethods.calcDiMinus(this, 23);
+		}
 
-		this.mfi23 = this.taMethods.calcMFI(this, 23);
-		this.mfi65 = this.taMethods.calcMFI(this, 65);
-		this.mfi130 = this.taMethods.calcMFI(this, 130);
-		this.mfi14 = this.taMethods.calcMFI(this, 14);
+		if (this.daysOfData > 24) {
+			this.mfi23 = this.taMethods.calcMFI(this, 23);
+		}
+		if (this.daysOfData > 66) {
+			this.mfi65 = this.taMethods.calcMFI(this, 65);
+		}
+		if (this.daysOfData > 131) {
+			this.mfi130 = this.taMethods.calcMFI(this, 130);
+		}
+		if (this.daysOfData > 15) {
+			this.mfi14 = this.taMethods.calcMFI(this, 14);
+		}
 
-		this.high260 = this.taMethods.calcHigh(this, 260);
-		this.low260 = this.taMethods.calcLow(this, 260);
+		if (this.daysOfData > 260) {
+			this.high260 = this.taMethods.calcHigh(this, 260);
+			this.low260 = this.taMethods.calcLow(this, 260);
 
-		this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
-		this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
-		this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
+			this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
+			this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
+			this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
 
-		this.lr260 = this.taMethods.calcLinearRegression(this, 260);
-		this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this, 260);
-		this.lrInt260 = this.taMethods.calcLinearRegressionInt(this, 260);
-		this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this, 260);
+			this.lr260 = this.taMethods.calcLinearRegression(this, 260);
+			this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this, 260);
+			this.lrInt260 = this.taMethods.calcLinearRegressionInt(this, 260);
+			this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this, 260);
+		}
 
-		this.rsi14 = this.taMethods.calcRsi(this, 14);
-
+		if (this.daysOfData > 30) {
+			this.rsi14 = this.taMethods.calcRsi(this, 14);
+		}
 	}
 
 	/**
@@ -421,6 +520,17 @@ public class TickerData {
 	 */
 	public List<DailyData> getData() {
 		return this.data;
+	}
+
+	public Calendar getDate(int day) {
+		return this.dateData[day];
+	}
+
+	/**
+	 * @return the closeData
+	 */
+	public Calendar[] getDateData() {
+		return this.dateData;
 	}
 
 	/**
@@ -717,8 +827,12 @@ public class TickerData {
 	 * @param ticker
 	 *          the ticker to set
 	 */
-	public void setTicker(String ticker) {
-		this.ticker = ticker;
+	public void setTicker(String tickerIn) {
+		if (tickerIn != null) {
+			this.ticker = tickerIn.trim().toUpperCase();
+		} else {
+			this.ticker = "UNKNOWN";
+		}
 	}
 
 	/**
@@ -741,6 +855,52 @@ public class TickerData {
 	}
 
 	/**
+	 * Data from www.eoddata.com occasionally has volumes of zero. Set these to
+	 * the average volume of 5 days before and 5 days after.
+	 *
+	 * net.ajaskey.market.ta.normalizeZeroVolume
+	 *
+	 */
+	private void normalizeZeroVolume() {
+		for (int i = 0; i < this.data.size(); i++) {
+
+			if ((int) (double) this.data.get(i).getVolume() < 1) {
+
+				int knt = 0;
+				double sum = 0.0;
+				for (int j = i - 1; j >= 0; j--) {
+					if ((int) (double) this.data.get(j).getVolume() > 0) {
+						knt++;
+						sum += this.data.get(j).getVolume();
+						if (knt == 5) {
+							break;
+						}
+					}
+				}
+				final double avg5m = sum / knt;
+
+				sum = 0.0;
+				knt = 0;
+				for (int j = i + 1; j < this.data.size(); j++) {
+					if ((int) (double) this.data.get(j).getVolume() > 0) {
+						knt++;
+						sum += this.data.get(j).getVolume();
+						if (knt == 5) {
+							break;
+						}
+					}
+				}
+				final double avg5p = sum / knt;
+				final double avg10 = (avg5p + avg5m) / 2.0;
+				this.data.get(i).setVolume(avg10);
+				// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
+				// avg5p);
+			}
+		}
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.setRsRaw
 	 *
@@ -755,7 +915,7 @@ public class TickerData {
 		this.chg130 = this.calcPriceChange(130);
 		this.chg260 = this.calcPriceChange(260);
 		this.rsRaw = this.taMethods.calcRawRS(this);
-		this.rsRaw = this.taMethods.calcRawStRS(this);
+		this.rsStRaw = this.taMethods.calcRawStRS(this);
 	}
 
 }

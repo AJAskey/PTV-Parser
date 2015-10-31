@@ -2,6 +2,7 @@
 package net.ajaskey.market.ta.reports;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -185,6 +186,10 @@ public class StockHTML {
 			this.htmlStr = this.htmlStr.replace("#MFI65#", fmt.toString());
 		}
 
+		File htmlDir = new File("html");
+		if (!htmlDir.exists()) {
+			htmlDir.mkdir();
+		}
 		try (PrintWriter pw = new PrintWriter("html\\" + td.getTicker().trim() + ".htm")) {
 			pw.write(this.htmlStr);
 		}

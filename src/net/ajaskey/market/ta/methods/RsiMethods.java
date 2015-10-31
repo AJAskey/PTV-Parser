@@ -134,34 +134,15 @@ public class RsiMethods {
 	 */
 	static public double calcRSI(double[] val, int days) {
 		double rsi = 0.0;
-		final double rs = RsiMethods.calcRS(val, days);
-		if (rs < 0.01) {
-			rsi = 100.0;
-		} else {
-			rsi = 100.0 - (100.0 / (1.0 + rs));
+		if (Methods.checkParams(val, ((days * 2) + 2), 0, "RsiMethods.calcSI(double[] val, int days)")) {
+			final double rs = RsiMethods.calcRS(val, days);
+			if (rs < 0.01) {
+				rsi = 100.0;
+			} else {
+				rsi = 100.0 - (100.0 / (1.0 + rs));
+			}
 		}
 		return rsi;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.methods.rsi
-	 *
-	 * @param val
-	 * @param days
-	 * @return
-	 */
-	static public double rsi(double[] val, int days) {
-		double retVal = 0.0;
-		if (Methods.checkParams(val, days * 2, 0, "RsiMethods.rsi(double[] val, int days)")) {
-
-			for (int i = 0; i < days; i++) {
-
-			}
-
-			retVal = UtilMethods.sum(val, days) / days;
-		}
-		return retVal;
 	}
 
 }

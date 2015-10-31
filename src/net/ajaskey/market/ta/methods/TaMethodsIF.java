@@ -111,7 +111,7 @@ public interface TaMethodsIF {
 	 * @param days
 	 * @return
 	 */
-	public double calcSma(TickerData td, int days, FieldName fldName);
+	// public double calcSma(TickerData td, int days, FieldName fldName);
 
 	/**
 	 *
@@ -129,5 +129,14 @@ public interface TaMethodsIF {
 	 * @return
 	 */
 	double calcRawStRS(TickerData td);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcSma
+	 *
+	 * @param data
+	 * @param days
+	 * @return
+	 */
+	double calcSma(double[] data, int days);
 
 }

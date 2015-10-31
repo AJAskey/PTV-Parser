@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,6 +61,10 @@ public class ProcessMarketInternals {
 
 		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
 		tdAll = ParseData.parseFiles(filenames);
+		final File outDir = new File("out");
+		if (!outDir.exists()) {
+			outDir.mkdir();
+		}
 	}
 
 	/**
@@ -75,14 +80,15 @@ public class ProcessMarketInternals {
 
 		new ProcessMarketInternals();
 
-		ParseData.setValidTickers(ParseData.getTickerList("dj-index.txt"));
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\djus-list.txt"));
 
 		final List<String> fnames = new ArrayList<String>();
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\INDEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NASDAQ.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\AMEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
+		fnames.add("symbols\\INDEX_SymbolList.txt");
+		fnames.add("symbols\\NASDAQ_SymbolList.txt");
+		fnames.add("symbols\\AMEX_SymbolList.txt");
+		fnames.add("symbols\\NYSE_SymbolList.txt");
 		TickerFullName.build(fnames);
+		TickerFullName.debug("out\\tfn.dbg");
 
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
 

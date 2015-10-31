@@ -38,7 +38,7 @@ public class DailyData {
 	private final Double		high;
 	private final Double		low;
 	private final Double		close;
-	private final Double		volume;
+	private Double					volume;
 
 	private double					trueHigh;
 	private double					trueLow;
@@ -60,11 +60,15 @@ public class DailyData {
 	 */
 	public DailyData(Calendar d, double o, double h, double l, double c, double v) {
 		this.date = d;
+		this.date.set(Calendar.HOUR_OF_DAY, 0);
+		this.date.set(Calendar.MINUTE, 0);
+		this.date.set(Calendar.SECOND, 1);
+		this.date.set(Calendar.MILLISECOND, 0);
 		this.open = o;
 		this.high = h;
 		this.low = l;
 		this.close = c;
-		this.volume = v;
+		this.setVolume(v);
 		this.trueHigh = 0.0;
 		this.trueLow = 0.0;
 		this.dailyChg = 0.0;
@@ -174,6 +178,16 @@ public class DailyData {
 	}
 
 	/**
+	 * net.ajaskey.market.ta.setDateData
+	 *
+	 * @param date2
+	 */
+	public void setDateData(Calendar cal) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.setTrueHigh
 	 *
@@ -191,6 +205,15 @@ public class DailyData {
 	 */
 	public void setTrueLow(double closeYesterday) {
 		this.trueLow = Math.min(closeYesterday, this.low);
+	}
+
+	/**
+	 * net.ajaskey.market.ta.setVolume
+	 *
+	 * @param vol
+	 */
+	public void setVolume(double vol) {
+		this.volume = vol;
 	}
 
 	@Override

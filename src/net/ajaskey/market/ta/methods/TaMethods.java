@@ -46,7 +46,7 @@ public class TaMethods implements TaMethodsIF {
 	@Override
 	public int calcAdvDecl(TickerData td, int days) {
 		int retVal = 0;
-		System.out.println("\n\n\n" + td.getTicker());
+		// System.out.println("\n\n\n" + td.getTicker());
 		if ((days + 1) < td.getDaysOfData()) {
 			final double[] close = td.getCloseData();
 			for (int i = 0; i < days; i++) {
@@ -55,7 +55,7 @@ public class TaMethods implements TaMethodsIF {
 				} else if (close[i] < close[i + 1]) {
 					retVal--;
 				}
-				System.out.printf("%.2f %.2f   %d %n", close[i], close[i + 1], retVal);
+				// System.out.printf("%.2f %.2f %d %n", close[i], close[i + 1], retVal);
 			}
 		}
 		return retVal;
@@ -84,16 +84,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcATR(TickerData td, int days) {
-		double retVal = 0.0;
-		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.atr(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(), days,
-			    outBegIdx, outNBElement, ret);
-			if (rc == RetCode.Success) {
-				retVal = ret[0];
-			}
-		}
+		final double retVal = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), days);
 		return retVal;
 	}
 
@@ -250,17 +241,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcMFI(TickerData td, int days) {
-		double retVal = 0.0;
-		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.mfi(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(),
-			    td.getVolumeData(), days, outBegIdx, outNBElement, ret);
-			if (rc == RetCode.Success) {
-				retVal = ret[0];
-			}
-		}
-		return retVal;
+		return MoneyFlowMethods.mfi(td.getHighData(), td.getLowData(), td.getCloseData(), td.getVolumeData(), days);
 	}
 
 	/**
@@ -308,27 +289,33 @@ public class TaMethods implements TaMethodsIF {
 	 * @return
 	 */
 	@Override
-	public double calcSma(TickerData td, int days, FieldName fldName) {
+	// public double calcSma(TickerData td, int days, FieldName fldName) {
+	// double retVal = 0;
+	// switch (fldName) {
+	// case CLOSE:
+	// retVal = MovingAverageMethods.sma(td, days);
+	// break;
+	// case HIGH:
+	// retVal = MovingAverageMethods.sma(td.getHighData(), days);
+	// break;
+	// case LOW:
+	// retVal = MovingAverageMethods.sma(td.getLowData(), days);
+	// break;
+	// case OPEN:
+	// retVal = MovingAverageMethods.sma(td.getOpenData(), days);
+	// break;
+	// case VOLUME:
+	// retVal = MovingAverageMethods.sma(td.getVolumeData(), days);
+	// break;
+	// default:
+	// break;
+	// }
+	// return retVal;
+	// }
+
+	public double calcSma(double[] data, int days) {
 		double retVal = 0;
-		switch (fldName) {
-			case CLOSE:
-				retVal = MovingAverageMethods.sma(td, days);
-				break;
-			case HIGH:
-				retVal = MovingAverageMethods.sma(td.getHighData(), days);
-				break;
-			case LOW:
-				retVal = MovingAverageMethods.sma(td.getLowData(), days);
-				break;
-			case OPEN:
-				retVal = MovingAverageMethods.sma(td.getOpenData(), days);
-				break;
-			case VOLUME:
-				retVal = MovingAverageMethods.sma(td.getVolumeData(), days);
-				break;
-			default:
-				break;
-		}
+		retVal = MovingAverageMethods.sma(data, days);
 		return retVal;
 	}
 

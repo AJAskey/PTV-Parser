@@ -46,8 +46,9 @@ public class RangeMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double atr(double[] high, double[] low, double[] close, int days) {
+	static public double avgTrueRange(double[] high, double[] low, double[] close, int days) {
 		double atrVal = 0.0;
+
 		if (Methods.checkParams(close, days * 2, 0,
 		    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--close")) {
 			if (Methods.checkParams(high, days * 2, 0,
@@ -55,14 +56,21 @@ public class RangeMethods {
 				if (Methods.checkParams(low, days * 2, 0,
 				    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--low")) {
 
-					double trAvg = 0;
-					for (int i = days; i < (days * 2); i++) {
-						trAvg += RangeMethods.trueRange(high[i], low[i], close[i + 1]);
+					double trSum = 0.0;
+					final int len = Math.min(close.length, 250) - 1;
+					// for (int i = days; i < days*2; i++) {
+					for (int i = len - days; i < len; i++) {
+						final double tr = RangeMethods.trueRange(high[i], low[i], close[i + 1]);
+						trSum += tr;
+						// System.out.println(tr);
 					}
-					trAvg /= days;
-					atrVal = trAvg;
-					for (int i = days; i >= 0; i--) {
-						trAvg += RangeMethods.trueRange(high[i], low[i], close[i + 1]);
+					atrVal = trSum / days;
+					// System.out.println(atrVal);
+
+					for (int i = len - days - 1; i >= 0; i--) {
+						final double rng = RangeMethods.trueRange(high[i], low[i], close[i + 1]);
+						atrVal = ((atrVal * 13.0) + rng) / 14.0;
+						// System.out.printf("%d %.2f %.2f %n",i, close[i + 1], atrVal);
 					}
 				}
 			}
@@ -70,11 +78,43 @@ public class RangeMethods {
 		return atrVal;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.atrPercent
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	static public double avgTrueRangePercent(double[] high, double[] low, double[] close, int days) {
+		double atrVal = 0.0;
+		double atrPercent = 0.0;
+		atrVal = RangeMethods.avgTrueRange(high, low, close, days);
+		if (atrVal > 0.0) {
+			final double ma = MovingAverageMethods.sma(close, days);
+			atrPercent = (atrVal / ma) * 100.0;
+		}
+		return atrPercent;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.trueRange
+	 *
+	 * @param high
+	 * @param low
+	 * @param pClose
+	 * @return
+	 */
 	static public double trueRange(double high, double low, double pClose) {
 		double tr = 0.0;
 		final double h = Math.max(high, pClose);
 		final double l = Math.min(low, pClose);
 		tr = h - l;
+		// System.out.printf("%.2f %.2f %.2f %.2f %.2f %.2f%n", high, low, pClose,
+		// h, l, tr);
 		return tr;
 	}
 
