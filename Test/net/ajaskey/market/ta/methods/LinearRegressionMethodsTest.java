@@ -1,11 +1,8 @@
 
 package net.ajaskey.market.ta.methods;
 
-import static org.junit.Assert.*;
-
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.Calendar;
 
 import org.junit.Test;
 
@@ -27,7 +24,7 @@ import net.ajaskey.market.ta.input.ParseData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- * 
+ *
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,12 +37,12 @@ import net.ajaskey.market.ta.input.ParseData;
  */
 public class LinearRegressionMethodsTest {
 
-	private LinearRegressionMethods	lrm;
-	private TickerData							td;
+	private final LinearRegressionMethods	lrm;
+	private final TickerData							td;
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 *
@@ -53,7 +50,7 @@ public class LinearRegressionMethodsTest {
 	public LinearRegressionMethodsTest() throws FileNotFoundException, ParseException {
 		this.td = ParseData.parseOneFile("TestData\\QQQ.csv");
 		this.td.generateDerived();
-		lrm = new LinearRegressionMethods(td.getDateData(), td.getCloseData());
+		this.lrm = new LinearRegressionMethods(this.td.getDateData(), this.td.getCloseData());
 	}
 
 	/**
@@ -64,8 +61,8 @@ public class LinearRegressionMethodsTest {
 	@Test
 	public void testGetTimeSpan() {
 
-		for (int i = 0; i < td.getDaysOfData() - 1; i++) {
-			long span = lrm.getTimeSpan(td.getDate(i));
+		for (int i = 0; i < (this.td.getDaysOfData() - 1); i++) {
+			final long span = this.lrm.getTimeSpan(this.td.getDate(i));
 			System.out.println(span);
 		}
 	}
@@ -77,7 +74,7 @@ public class LinearRegressionMethodsTest {
 	 */
 	@Test
 	public void testLinreg() {
-		lrm.linreg();
+		this.lrm.linreg();
 	}
 
 }

@@ -78,7 +78,6 @@ public class TickerFullNameTest {
 		TickerFullName.build(this.fnames);
 	}
 
-
 	@Test
 	public void testGetName() {
 		String name = TickerFullName.getName("QQQ").trim();

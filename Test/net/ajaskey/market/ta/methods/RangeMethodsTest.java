@@ -65,15 +65,15 @@ public class RangeMethodsTest {
 	public void testAtr() {
 		double atr;
 
-		atr = RangeMethods.avgTrueRange(tdSC.getHighData(), tdSC.getLowData(), tdSC.getCloseData(), 14);
-		//System.out.println(atr);
+		atr = RangeMethods.avgTrueRange(this.tdSC.getHighData(), this.tdSC.getLowData(), this.tdSC.getCloseData(), 14);
+		// System.out.println(atr);
 		Assert.assertEquals(atr, 1.31, 0.01);
 
-		atr = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), 14);
-		//System.out.println(atr);
+		atr = RangeMethods.avgTrueRange(this.td.getHighData(), this.td.getLowData(), this.td.getCloseData(), 14);
+		// System.out.println(atr);
 		Assert.assertEquals(atr, 1.79, 0.01);
 	}
-	
+
 	/**
 	 * Test method for
 	 * {@link net.ajaskey.market.ta.methods.RangeMethods#avgTrueRangePercent(double[], double[], double[], int)}
@@ -83,12 +83,13 @@ public class RangeMethodsTest {
 	public void testAtrPercent() {
 		double atr;
 
-		atr = RangeMethods.avgTrueRangePercent(tdSC.getHighData(), tdSC.getLowData(), tdSC.getCloseData(), 14);
-		//System.out.println(atr);
+		atr = RangeMethods.avgTrueRangePercent(this.tdSC.getHighData(), this.tdSC.getLowData(), this.tdSC.getCloseData(),
+		    14);
+		// System.out.println(atr);
 		Assert.assertEquals(atr, 2.70, 0.01);
 
-		atr = RangeMethods.avgTrueRangePercent(td.getHighData(), td.getLowData(), td.getCloseData(), 14);
-		//System.out.println(atr);
+		atr = RangeMethods.avgTrueRangePercent(this.td.getHighData(), this.td.getLowData(), this.td.getCloseData(), 14);
+		// System.out.println(atr);
 		Assert.assertEquals(atr, 1.66, 0.01);
 	}
 

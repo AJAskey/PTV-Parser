@@ -157,6 +157,34 @@ public class TickerDataTest {
 	}
 
 	/**
+	 * Test method for {@link net.ajaskey.market.ta.TickerData#GetDateOfDate()}.
+	 *
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	@Test
+	public final void testGetDataOfDate() throws FileNotFoundException, ParseException {
+		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
+
+		DailyData dd = TickerData.getDataOfDate(td, 2015, 4, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 2015, 15, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 1999, 12, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 2017, 12, 31);
+		Assert.assertNull(dd);
+
+		dd = TickerData.getDataOfDate(td, 2015, 3, 20);
+		// System.out.println(dd.toString());
+		Assert.assertEquals(dd.getClose(), 108.02, 0.01);
+
+	}
+
+	/**
 	 * Test method for {@link net.ajaskey.market.ta.TickerData#GetIndexOfDate()}.
 	 *
 	 * @throws ParseException
@@ -180,34 +208,6 @@ public class TickerDataTest {
 
 		idx = TickerData.getIndexOfDate(td, 2010, 11, 20);
 		Assert.assertEquals(idx, -1);
-
-	}
-
-	/**
-	 * Test method for {@link net.ajaskey.market.ta.TickerData#GetDateOfDate()}.
-	 *
-	 * @throws ParseException
-	 * @throws FileNotFoundException
-	 */
-	@Test
-	public final void testGetDataOfDate() throws FileNotFoundException, ParseException {
-		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
-
-		DailyData dd = TickerData.getDataOfDate(td, 2015, 4, 31);
-		Assert.assertNull(dd);
-
-		dd = TickerData.getDataOfDate(td, 2015, 15, 31);
-		Assert.assertNull(dd);
-		
-		dd = TickerData.getDataOfDate(td, 1999, 12, 31);
-		Assert.assertNull(dd);
-		
-		dd = TickerData.getDataOfDate(td, 2017, 12, 31);
-		Assert.assertNull(dd);
-
-		dd = TickerData.getDataOfDate(td, 2015, 3, 20);
-		//System.out.println(dd.toString());
-		Assert.assertEquals(dd.getClose(), 108.02, 0.01);
 
 	}
 
