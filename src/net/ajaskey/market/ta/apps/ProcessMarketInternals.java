@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,6 +61,10 @@ public class ProcessMarketInternals {
 
 		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
 		tdAll = ParseData.parseFiles(filenames);
+		final File outDir = new File("out");
+		if (!outDir.exists()) {
+			outDir.mkdir();
+		}
 	}
 
 	/**
@@ -75,7 +80,7 @@ public class ProcessMarketInternals {
 
 		new ProcessMarketInternals();
 
-		ParseData.setValidTickers(ParseData.getTickerList("dj-index.txt"));
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\djus-list.txt"));
 
 		final List<String> fnames = new ArrayList<String>();
 		fnames.add("symbols\\INDEX_SymbolList.txt");

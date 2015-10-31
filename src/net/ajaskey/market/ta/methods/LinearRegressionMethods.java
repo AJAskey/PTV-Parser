@@ -2,7 +2,6 @@
 package net.ajaskey.market.ta.methods;
 
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
@@ -65,11 +64,12 @@ public class LinearRegressionMethods extends SimpleRegression {
 			final long days = this.getTimeSpan(cal);
 			System.out.println(days + "\t" + prices[knt]);
 			this.addData(days, prices[knt]);
-			if (knt < 66)
-				stats.addValue(prices[knt]);
+			if (knt < 66) {
+				this.stats.addValue(prices[knt]);
+			}
 			knt++;
 		}
-		currentPrice = prices[0];
+		this.currentPrice = prices[0];
 	}
 
 	/**
@@ -109,9 +109,9 @@ public class LinearRegressionMethods extends SimpleRegression {
 		System.out.println((this.getSlope() * 360.0) / 3.1415);
 		System.out.println((this.getSlopeStdErr() * 360.0) / 3.1415);
 		System.out.println(this.getR() + "\t" + this.getRSquare());
-		System.out.println(this.predict(5773) + "\t" + currentPrice);
+		System.out.println(this.predict(5773) + "\t" + this.currentPrice);
 		System.out.println();
-		System.out.println(stats.toString());
+		System.out.println(this.stats.toString());
 
 		return 0;
 	}

@@ -9,10 +9,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.SortTickerFullNames;
 
 /**
@@ -47,14 +45,6 @@ public class TickerFullName {
 	static public List<TickerFullName>	tickerNames	= new ArrayList<TickerFullName>();
 	private String											ticker;
 	private String											name;
-
-	public String getName() {
-		return name;
-	}
-
-	public String getTicker() {
-		return ticker;
-	}
 
 	/**
 	 *
@@ -94,6 +84,21 @@ public class TickerFullName {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.input.debug
+	 *
+	 * @param fname
+	 * @throws FileNotFoundException
+	 */
+	static public void debug(String fname) throws FileNotFoundException {
+		try (PrintWriter pw = new PrintWriter(new File(fname))) {
+			for (final TickerFullName tfn : tickerNames) {
+				pw.println(tfn.ticker + "\t" + tfn.name);
+			}
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.input.getName
 	 *
 	 * @param ticker
@@ -127,19 +132,12 @@ public class TickerFullName {
 		return status;
 	}
 
-	/**
-	 * 
-	 * net.ajaskey.market.ta.input.debug
-	 *
-	 * @param fname
-	 * @throws FileNotFoundException
-	 */
-	static public void debug(String fname) throws FileNotFoundException {
-		try (PrintWriter pw = new PrintWriter(new File(fname))) {
-			for (TickerFullName tfn : tickerNames) {
-				pw.println(tfn.ticker + "\t" + tfn.name);
-			}
-		}
+	public String getName() {
+		return this.name;
+	}
+
+	public String getTicker() {
+		return this.ticker;
 	}
 
 }

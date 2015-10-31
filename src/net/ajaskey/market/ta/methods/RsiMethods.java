@@ -134,7 +134,7 @@ public class RsiMethods {
 	 */
 	static public double calcRSI(double[] val, int days) {
 		double rsi = 0.0;
-		if (Methods.checkParams(val, (days * 2 + 2), 0, "RsiMethods.calcSI(double[] val, int days)")) {
+		if (Methods.checkParams(val, ((days * 2) + 2), 0, "RsiMethods.calcSI(double[] val, int days)")) {
 			final double rs = RsiMethods.calcRS(val, days);
 			if (rs < 0.01) {
 				rsi = 100.0;

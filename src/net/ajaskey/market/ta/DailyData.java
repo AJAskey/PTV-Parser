@@ -60,10 +60,10 @@ public class DailyData {
 	 */
 	public DailyData(Calendar d, double o, double h, double l, double c, double v) {
 		this.date = d;
-		date.set(Calendar.HOUR_OF_DAY, 0);
-		date.set(Calendar.MINUTE, 0);
-		date.set(Calendar.SECOND, 1);
-		date.set(Calendar.MILLISECOND, 0);
+		this.date.set(Calendar.HOUR_OF_DAY, 0);
+		this.date.set(Calendar.MINUTE, 0);
+		this.date.set(Calendar.SECOND, 1);
+		this.date.set(Calendar.MILLISECOND, 0);
 		this.open = o;
 		this.high = h;
 		this.low = l;
@@ -178,6 +178,16 @@ public class DailyData {
 	}
 
 	/**
+	 * net.ajaskey.market.ta.setDateData
+	 *
+	 * @param date2
+	 */
+	public void setDateData(Calendar cal) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.setTrueHigh
 	 *
@@ -197,6 +207,15 @@ public class DailyData {
 		this.trueLow = Math.min(closeYesterday, this.low);
 	}
 
+	/**
+	 * net.ajaskey.market.ta.setVolume
+	 *
+	 * @param vol
+	 */
+	public void setVolume(double vol) {
+		this.volume = vol;
+	}
+
 	@Override
 	public String toString() {
 		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -204,25 +223,6 @@ public class DailyData {
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();
-	}
-
-	/**
-	 * net.ajaskey.market.ta.setVolume
-	 *
-	 * @param vol
-	 */
-	public void setVolume(double vol) {
-		volume = vol;
-	}
-
-	/** 
-	 * net.ajaskey.market.ta.setDateData
-	 *
-	 * @param date2
-	 */
-	public void setDateData(Calendar cal) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

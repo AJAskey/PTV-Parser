@@ -148,7 +148,7 @@ public class ProcessSymbolList {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.apps.findLists
 	 *
 	 * @param dir
