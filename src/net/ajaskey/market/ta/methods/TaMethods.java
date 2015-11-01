@@ -5,8 +5,6 @@ import com.tictactec.ta.lib.Core;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 
-import net.ajaskey.market.ta.FieldName;
-import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.TrendType;
 
 /**
@@ -44,11 +42,10 @@ public class TaMethods implements TaMethodsIF {
 	static private Core			talib					= new Core();
 
 	@Override
-	public int calcAdvDecl(TickerData td, int days) {
+	public int calcAdvDecl(double[] close, int days) {
 		int retVal = 0;
 		// System.out.println("\n\n\n" + td.getTicker());
-		if ((days + 1) < td.getDaysOfData()) {
-			final double[] close = td.getCloseData();
+		if ((days + 1) < close.length) {
 			for (int i = 0; i < days; i++) {
 				if (close[i] > close[i + 1]) {
 					retVal++;
@@ -62,13 +59,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcAdx(TickerData td, int days) {
+	public double calcAdx(double[] high, double[] low, double[] close, int days) {
 		double retVal = 0.0;
+		final int len = close.length;
 		final int daysPlus = days * 3;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.adx(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(), days,
-			    outBegIdx, outNBElement, ret);
+		if (daysPlus < len) {
+			final double ret[] = new double[len];
+			final RetCode rc = talib.adx(0, daysPlus, high, low, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -76,26 +73,19 @@ public class TaMethods implements TaMethodsIF {
 		return retVal;
 	}
 
-	/**
-	 *
-	 * @param td
-	 * @param days
-	 * @return
-	 */
 	@Override
-	public double calcATR(TickerData td, int days) {
-		final double retVal = RangeMethods.avgTrueRange(td.getHighData(), td.getLowData(), td.getCloseData(), days);
+	public double calcATR(double[] high, double[] low, double[] close, int days) {
+		final double retVal = RangeMethods.avgTrueRange(high, low, close, days);
 		return retVal;
 	}
 
 	@Override
-	public double calcDiMinus(TickerData td, int days) {
+	public double calcDiMinus(double[] high, double[] low, double[] close, int days) {
 		double retVal = 0.0;
 		final int daysPlus = days * 2;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.minusDI(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(), days,
-			    outBegIdx, outNBElement, ret);
+		if (daysPlus < close.length) {
+			final double ret[] = new double[close.length];
+			final RetCode rc = talib.minusDI(0, daysPlus, high, low, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -105,13 +95,12 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcDiPlus(TickerData td, int days) {
+	public double calcDiPlus(double[] high, double[] low, double[] close, int days) {
 		double retVal = 0.0;
 		final int daysPlus = days * 2;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.plusDI(0, daysPlus, td.getTrueHighData(), td.getTrueLowData(), td.getCloseData(), days,
-			    outBegIdx, outNBElement, ret);
+		if (daysPlus < close.length) {
+			final double ret[] = new double[close.length];
+			final RetCode rc = talib.plusDI(0, daysPlus, high, low, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -120,12 +109,12 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcHigh(TickerData td, int days) {
+	public double calcHigh(double[] high, int days) {
 		double retVal = 0.0;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.max(0, daysPlus, td.getTrueHighData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < high.length) {
+			final double ret[] = new double[high.length];
+			final RetCode rc = talib.max(0, daysPlus, high, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -164,12 +153,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcLinearRegression(TickerData td, int days) {
+	public double calcLinearRegression(double[] close, int days) {
 		double retVal = 0.0;
+		final int len = close.length;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.linearReg(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < len) {
+			final double ret[] = new double[len];
+			final RetCode rc = talib.linearReg(0, daysPlus, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -178,12 +168,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcLinearRegressionAngle(TickerData td, int days) {
+	public double calcLinearRegressionAngle(double[] close, int days) {
 		double retVal = 0.0;
+		final int len = close.length;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.linearRegAngle(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < len) {
+			final double ret[] = new double[len];
+			final RetCode rc = talib.linearRegAngle(0, daysPlus, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -192,12 +183,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcLinearRegressionInt(TickerData td, int days) {
+	public double calcLinearRegressionInt(double[] close, int days) {
 		double retVal = 0.0;
+		final int len = close.length;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.linearRegIntercept(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < len) {
+			final double ret[] = new double[len];
+			final RetCode rc = talib.linearRegIntercept(0, daysPlus, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -206,12 +198,13 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcLinearRegressionSlope(TickerData td, int days) {
+	public double calcLinearRegressionSlope(double[] close, int days) {
 		double retVal = 0.0;
+		final int len = close.length;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.linearRegSlope(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < len) {
+			final double ret[] = new double[len];
+			final RetCode rc = talib.linearRegSlope(0, daysPlus, close, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -220,12 +213,12 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcLow(TickerData td, int days) {
+	public double calcLow(double[] low, int days) {
 		double retVal = 0.0;
 		final int daysPlus = days + 1;
-		if (daysPlus < td.getDaysOfData()) {
-			final double ret[] = new double[td.getDaysOfData()];
-			final RetCode rc = talib.min(0, daysPlus, td.getTrueLowData(), days, outBegIdx, outNBElement, ret);
+		if (daysPlus < low.length) {
+			final double ret[] = new double[low.length];
+			final RetCode rc = talib.min(0, daysPlus, low, days, outBegIdx, outNBElement, ret);
 			if (rc == RetCode.Success) {
 				retVal = ret[0];
 			}
@@ -233,15 +226,9 @@ public class TaMethods implements TaMethodsIF {
 		return retVal;
 	}
 
-	/**
-	 *
-	 * @param td
-	 * @param days
-	 * @return
-	 */
 	@Override
-	public double calcMFI(TickerData td, int days) {
-		return MoneyFlowMethods.mfi(td.getHighData(), td.getLowData(), td.getCloseData(), td.getVolumeData(), days);
+	public double calcMFI(double[] high, double[] low, double[] close, double[] volume, int days) {
+		return MoneyFlowMethods.mfi(high, low, close, volume, days);
 	}
 
 	/**
@@ -262,24 +249,9 @@ public class TaMethods implements TaMethodsIF {
 		return ret * 100.0;
 	}
 
-	/**
-	 *
-	 * @param td
-	 * @return
-	 */
 	@Override
-	public double calcRawRS(TickerData td) {
-		return (0.50 * td.getChg260()) + (0.25 * td.getChg130()) + (0.20 * td.getChg65()) + (0.05 * td.getChg23());
-	}
-
-	@Override
-	public double calcRawStRS(TickerData td) {
-		return ((0.25 * td.getChg65()) + (0.75 * td.getChg23()));
-	}
-
-	@Override
-	public double calcRsi(TickerData td, int days) {
-		return RsiMethods.calcRSI(td.getCloseData(), days);
+	public double calcRsi(double[] close, int days) {
+		return RsiMethods.calcRSI(close, days);
 	}
 
 	/**
@@ -327,40 +299,16 @@ public class TaMethods implements TaMethodsIF {
 	 * @return
 	 */
 	@Override
-	public TrendType calcSmaTrend(TickerData td, int days, FieldName fldName) {
-		TrendType retVal = TrendType.FLAT;
-		final double ret[] = new double[td.getDaysOfData()];
-		final int daysPlus = days + 6;
+	public TrendType calcSmaTrend(double[] data, int days, int span) {
+		TrendType trend = TrendType.FLAT;
+		final double val1 = MovingAverageMethods.sma(data, days);
+		final double val2 = MovingAverageMethods.sma(data, days, span);
 
-		RetCode rc = RetCode.BadParam;
-		if (daysPlus < td.getDaysOfData()) {
-			switch (fldName) {
-				case CLOSE:
-					rc = talib.sma(0, daysPlus, td.getCloseData(), days, outBegIdx, outNBElement, ret);
-					break;
-				case HIGH:
-					rc = talib.sma(0, daysPlus, td.getHighData(), days, outBegIdx, outNBElement, ret);
-					break;
-				case LOW:
-					rc = talib.sma(0, daysPlus, td.getLowData(), days, outBegIdx, outNBElement, ret);
-					break;
-				case OPEN:
-					rc = talib.sma(0, daysPlus, td.getOpenData(), days, outBegIdx, outNBElement, ret);
-					break;
-				case VOLUME:
-					rc = talib.sma(0, daysPlus, td.getVolumeData(), days, outBegIdx, outNBElement, ret);
-					break;
-				default:
-					break;
-			}
-			if (rc == RetCode.Success) {
-				if (ret[0] > ret[5]) {
-					retVal = TrendType.UP;
-				} else if (ret[0] < ret[5]) {
-					retVal = TrendType.DOWN;
-				}
-			}
+		if (val1 > val2) {
+			trend = TrendType.UP;
+		} else if (val1 < val2) {
+			trend = TrendType.DOWN;
 		}
-		return retVal;
+		return trend;
 	}
 }

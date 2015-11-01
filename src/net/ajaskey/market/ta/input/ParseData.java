@@ -82,8 +82,8 @@ public class ParseData {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
 					final String fld[] = line.trim().split("\\s+");
-					if (fld[0].length() > 0) {
-						list.add(fld[0]);
+					if (fld[0].trim().length() > 0) {
+						list.add(fld[0].trim());
 						// System.out.println(fld[0]);
 					}
 				}
@@ -98,7 +98,7 @@ public class ParseData {
 	 * @return
 	 */
 	static public boolean isTickerValid(String ticker) {
-		return TickerFullName.isValid(ticker);
+		return TickerFullName.isValid(ticker.trim());
 	}
 
 	/**
@@ -133,6 +133,8 @@ public class ParseData {
 						final String fld[] = line.split(",");
 
 						if (validTickers.contains(fld[0])) {
+
+							//System.out.println("\t" + line);
 
 							if (fld.length == 7) {
 
@@ -194,6 +196,8 @@ public class ParseData {
 			for (final File f : flist.listFiles()) {
 
 				if (f.getName().contains(".csv")) {
+
+					//System.out.println(f.getName());
 
 					final List<TickerData> td = ParseData.parseFile(f);
 
@@ -304,7 +308,8 @@ public class ParseData {
 			boolean found = false;
 			for (final TickerData tdMain : mainList) {
 				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-					tdMain.getData().addAll(tdNew.getData());
+				//	tdMain.getData().addAll(tdNew.getData());
+					TickerData.mergeData(tdMain, tdNew);
 					found = true;
 					break;
 				}

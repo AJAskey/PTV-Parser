@@ -4,8 +4,6 @@
 
 package net.ajaskey.market.ta.methods;
 
-import net.ajaskey.market.ta.FieldName;
-import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.TrendType;
 
 /**
@@ -37,24 +35,6 @@ import net.ajaskey.market.ta.TrendType;
  */
 public interface TaMethodsIF {
 
-	public int calcAdvDecl(TickerData td, int days);
-
-	public double calcAdx(TickerData td, int days);
-
-	/**
-	 *
-	 * @param td
-	 * @param days
-	 * @return
-	 */
-	public double calcATR(TickerData td, int days);
-
-	public double calcDiMinus(TickerData td, int days);
-
-	public double calcDiPlus(TickerData td, int days);
-
-	public double calcHigh(TickerData td, int days);
-
 	/**
 	 *
 	 * @param adv
@@ -66,24 +46,6 @@ public interface TaMethodsIF {
 	 */
 	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
 	    int days);
-
-	public double calcLinearRegression(TickerData td, int days);
-
-	public double calcLinearRegressionAngle(TickerData td, int days);
-
-	public double calcLinearRegressionInt(TickerData td, int days);
-
-	public double calcLinearRegressionSlope(TickerData td, int days);
-
-	public double calcLow(TickerData td, int days);
-
-	/**
-	 *
-	 * @param td
-	 * @param days
-	 * @return
-	 */
-	public double calcMFI(TickerData td, int days);
 
 	/**
 	 * Calculate the percentage change from p2 to p1
@@ -98,37 +60,132 @@ public interface TaMethodsIF {
 
 	/**
 	 *
-	 * @param td
-	 * @return
-	 */
-	public double calcRawRS(TickerData td);
-
-	public double calcRsi(TickerData td, int days);
-
-	/**
+	 * net.ajaskey.market.ta.methods.calcRsi
 	 *
-	 * @param td
+	 * @param close
 	 * @param days
 	 * @return
 	 */
-	// public double calcSma(TickerData td, int days, FieldName fldName);
+	public double calcRsi(double[] close, int days);
 
 	/**
+	 * net.ajaskey.market.ta.methods.calcAdvDecl
 	 *
-	 * @param td
+	 * @param close
 	 * @param days
-	 * @param fldName
 	 * @return
 	 */
-	public TrendType calcSmaTrend(TickerData td, int days, FieldName fldName);
+	int calcAdvDecl(double[] close, int days);
 
 	/**
-	 * net.ajaskey.market.ta.methods.calcRawStRS
+	 * net.ajaskey.market.ta.methods.calcAdx
 	 *
-	 * @param td
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param days
 	 * @return
 	 */
-	double calcRawStRS(TickerData td);
+	double calcAdx(double[] high, double[] low, double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcATR
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcATR(double[] high, double[] low, double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcDiMinus
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcDiMinus(double[] high, double[] low, double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcDiPlus
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcDiPlus(double[] high, double[] low, double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcHigh
+	 *
+	 * @param high
+	 * @param days
+	 * @return
+	 */
+	double calcHigh(double[] high, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcLinearRegression
+	 *
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcLinearRegression(double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcLinearRegressionAngle
+	 *
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcLinearRegressionAngle(double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcLinearRegressionInt
+	 *
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcLinearRegressionInt(double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcLinearRegressionSlope
+	 *
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	double calcLinearRegressionSlope(double[] close, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcLow
+	 *
+	 * @param low
+	 * @param days
+	 * @return
+	 */
+	double calcLow(double[] low, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcMFI
+	 *
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param volume
+	 * @param days
+	 * @return
+	 */
+	double calcMFI(double[] high, double[] low, double[] close, double[] volume, int days);
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcSma
@@ -138,5 +195,15 @@ public interface TaMethodsIF {
 	 * @return
 	 */
 	double calcSma(double[] data, int days);
+
+	/**
+	 * net.ajaskey.market.ta.methods.calcSmaTrend
+	 *
+	 * @param data
+	 * @param days
+	 * @param span
+	 * @return
+	 */
+	TrendType calcSmaTrend(double[] data, int days, int span);
 
 }

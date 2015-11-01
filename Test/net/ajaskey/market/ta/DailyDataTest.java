@@ -103,7 +103,7 @@ public class DailyDataTest {
 	@Test
 	public final void testToString() {
 		System.out.println(this.dd.toString());
-		final String tstStr = "2015-03-15  10.00  12.00  9.00  11.00 123456";
+		final String tstStr = "15-Mar-2015  10.00  12.00  9.00  11.00 123456";
 		final int cmp = tstStr.compareTo(this.dd.toString());
 		Assert.assertEquals(cmp, 0);
 	}
@@ -125,5 +125,4 @@ public class DailyDataTest {
 		this.dd.setTrueLow(10.0);
 		Assert.assertEquals(this.dd.getTrueLow(), 9.0, 0.1);
 	}
-
 }

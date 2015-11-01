@@ -33,19 +33,21 @@ import java.util.Calendar;
  */
 public class DailyData {
 
-	private final Calendar	date;
-	private final Double		open;
-	private final Double		high;
-	private final Double		low;
-	private final Double		close;
-	private Double					volume;
+	private final Calendar					date;
+	private final Double						open;
+	private final Double						high;
+	private final Double						low;
+	private final Double						close;
+	private Double									volume;
 
-	private double					trueHigh;
-	private double					trueLow;
-	private double					dailyChg;
-	private double					dailyPercentChg;
-	private double					dailyRng;
-	private double					dailyPercentRng;
+	private double									trueHigh;
+	private double									trueLow;
+	private double									dailyChg;
+	private double									dailyPercentChg;
+	private double									dailyRng;
+	private double									dailyPercentRng;
+
+	private final SimpleDateFormat	sdf	= new SimpleDateFormat("dd-MMM-yyyy");
 
 	/**
 	 *
@@ -218,8 +220,7 @@ public class DailyData {
 
 	@Override
 	public String toString() {
-		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		final String sDate = sdf.format(this.date.getTime());
+		final String sDate = this.sdf.format(this.date.getTime());
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();

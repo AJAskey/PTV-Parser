@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.ta.input.ParseData;
+import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
@@ -43,6 +44,7 @@ import net.ajaskey.market.ta.methods.TaMethods;
 public class TickerData {
 
 	private String								ticker;
+	private String								tickerName;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -123,6 +125,7 @@ public class TickerData {
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
 		this.setTicker(t);
+		this.tickerName = TickerFullName.getName(t);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -308,6 +311,10 @@ public class TickerData {
 		return null;
 	}
 
+	public static void mergeData(TickerData td, TickerData tdNew) {
+		td.getData().addAll(tdNew.getData());
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.addData
@@ -324,40 +331,62 @@ public class TickerData {
 	 *
 	 */
 	public void generateDerived() {
+		this.generateDerived(0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.generateDerived
+	 *
+	 * @param start
+	 */
+	public void generateDerived(int start) {
 
 		/**
 		 * Must sort prices by date before many of the following calculations
 		 */
-		Collections.sort(this.data, new SortData());
+		Collections.sort(this.data, new SortDailyData());
 		this.normalizeZeroVolume();
 
-		this.daysOfData = this.data.size();
+		this.daysOfData = this.data.size() - start;
 
-		int knt = 0;
 		this.dateData = new Calendar[this.daysOfData];
 		this.openData = new double[this.daysOfData];
 		this.highData = new double[this.daysOfData];
 		this.lowData = new double[this.daysOfData];
 		this.closeData = new double[this.daysOfData];
 		this.volumeData = new double[this.daysOfData];
+		int knt = 0;
+		int pos = 0;
 		for (final DailyData dd : this.data) {
-			this.openData[knt] = dd.getOpen();
-			this.highData[knt] = dd.getHigh();
-			this.lowData[knt] = dd.getLow();
-			this.closeData[knt] = dd.getClose();
-			this.volumeData[knt] = dd.getVolume();
-			this.dateData[knt] = dd.getDate();
+			if (knt >= start) {
+				this.openData[pos] = dd.getOpen();
+				this.highData[pos] = dd.getHigh();
+				this.lowData[pos] = dd.getLow();
+				this.closeData[pos] = dd.getClose();
+				this.volumeData[pos] = dd.getVolume();
+				this.dateData[pos] = dd.getDate();
+				pos++;
+			}
 			knt++;
 		}
 
+		/**
+		 * TrueHigh and TrueLow are set for entire data series without regard to
+		 * start
+		 */
 		this.trueHighData = new double[this.daysOfData];
 		this.trueLowData = new double[this.daysOfData];
-		for (int i = 0; i < (this.daysOfData - 1); i++) {
-			this.data.get(i).setTrueHigh(this.closeData[i + 1]);
-			this.data.get(i).setTrueLow(this.closeData[i + 1]);
-			this.data.get(i).setDailyChg(this.closeData[i + 1]);
-			this.trueHighData[i] = this.data.get(i).getTrueHigh();
-			this.trueLowData[i] = this.data.get(i).getTrueLow();
+		pos = 0;
+		for (int i = start; i < (this.data.size() - 1); i++) {
+			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
+			this.data.get(i).setTrueLow(this.data.get(i + 1).getClose());
+			this.data.get(i).setDailyChg(this.data.get(i + 1).getClose());
+
+			this.trueHighData[pos] = this.data.get(i).getTrueHigh();
+			this.trueLowData[pos] = this.data.get(i).getTrueLow();
+			pos++;
+
 		}
 		this.data.get(this.daysOfData - 1).setTrueHigh(this.closeData[this.daysOfData - 1]);
 		this.data.get(this.daysOfData - 1).setTrueLow(this.closeData[this.daysOfData - 1]);
@@ -370,74 +399,73 @@ public class TickerData {
 			this.setRsRaw();
 		}
 
-		if (this.daysOfData > 23) {
+		if (this.daysOfData > 28) {
 			this.sma23 = MovingAverageMethods.sma(this.getCloseData(), 23);
 			this.smaPerc23 = this.taMethods.calcPercentChange(this.currentPrice, this.sma23);
-			this.sma23Trend = this.taMethods.calcSmaTrend(this, 23, FieldName.CLOSE);
+			this.sma23Trend = this.taMethods.calcSmaTrend(this.closeData, 23, 5);
 		}
-		if (this.daysOfData > 65) {
+		if (this.daysOfData > 70) {
 			this.sma65 = this.taMethods.calcSma(this.getCloseData(), 65);
 			this.smaPerc65 = this.taMethods.calcPercentChange(this.currentPrice, this.sma65);
-			this.sma65Trend = this.taMethods.calcSmaTrend(this, 65, FieldName.CLOSE);
+			this.sma65Trend = this.taMethods.calcSmaTrend(this.closeData, 65, 5);
 
-			this.avgVol65 = this.taMethods.calcSma(this.getVolumeData(), 65);
+			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
 		}
-		if (this.daysOfData > 130) {
+		if (this.daysOfData > 135) {
 			this.sma130 = this.taMethods.calcSma(this.getCloseData(), 130);
 			this.smaPerc130 = this.taMethods.calcPercentChange(this.currentPrice, this.sma130);
-			this.sma130Trend = this.taMethods.calcSmaTrend(this, 130, FieldName.CLOSE);
+			this.sma130Trend = this.taMethods.calcSmaTrend(this.closeData, 130, 5);
 
 		}
-		if (this.daysOfData > 260) {
+		if (this.daysOfData > 265) {
 			this.sma260 = this.taMethods.calcSma(this.getCloseData(), 260);
 			this.smaPerc260 = this.taMethods.calcPercentChange(this.currentPrice, this.sma260);
-			this.sma260Trend = this.taMethods.calcSmaTrend(this, 260, FieldName.CLOSE);
+			this.sma260Trend = this.taMethods.calcSmaTrend(this.closeData, 260, 5);
 		}
 
 		if (this.daysOfData > 46) {
-			this.atr23 = this.taMethods.calcATR(this, 23);
+			this.atr23 = this.taMethods.calcATR(this.getHighData(), this.getLowData(), this.getCloseData(), 23);
 			if (this.sma23 > 0.0) {
 				this.atrPercent23 = RangeMethods.avgTrueRangePercent(this.getHighData(), this.getLowData(), this.getCloseData(),
 				    23);
-				// (this.atr23 / this.sma23) * 100.0;
 			}
 		}
 
 		if (this.daysOfData > 46) {
-			this.adx = this.taMethods.calcAdx(this, 23);
-			this.diPlus = this.taMethods.calcDiPlus(this, 23);
-			this.diMinus = this.taMethods.calcDiMinus(this, 23);
+			this.adx = this.taMethods.calcAdx(this.getHighData(), this.getLowData(), this.getCloseData(), 23);
+			this.diPlus = this.taMethods.calcDiPlus(this.highData, this.lowData, this.closeData, 23);
+			this.diMinus = this.taMethods.calcDiMinus(this.highData, this.lowData, this.closeData, 23);
 		}
 
 		if (this.daysOfData > 24) {
-			this.mfi23 = this.taMethods.calcMFI(this, 23);
+			this.mfi23 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 23);
 		}
 		if (this.daysOfData > 66) {
-			this.mfi65 = this.taMethods.calcMFI(this, 65);
+			this.mfi65 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 65);
 		}
 		if (this.daysOfData > 131) {
-			this.mfi130 = this.taMethods.calcMFI(this, 130);
+			this.mfi130 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 130);
 		}
 		if (this.daysOfData > 15) {
-			this.mfi14 = this.taMethods.calcMFI(this, 14);
+			this.mfi14 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 14);
 		}
 
 		if (this.daysOfData > 260) {
-			this.high260 = this.taMethods.calcHigh(this, 260);
-			this.low260 = this.taMethods.calcLow(this, 260);
+			this.high260 = this.taMethods.calcHigh(this.getHighData(), 260);
+			this.low260 = this.taMethods.calcLow(this.getLowData(), 260);
 
 			this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
 			this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
 			this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
 
-			this.lr260 = this.taMethods.calcLinearRegression(this, 260);
-			this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this, 260);
-			this.lrInt260 = this.taMethods.calcLinearRegressionInt(this, 260);
-			this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this, 260);
+			this.lr260 = this.taMethods.calcLinearRegression(this.closeData, 260);
+			this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this.closeData, 260);
+			this.lrInt260 = this.taMethods.calcLinearRegressionInt(this.closeData, 260);
+			this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this.closeData, 260);
 		}
 
 		if (this.daysOfData > 30) {
-			this.rsi14 = this.taMethods.calcRsi(this, 14);
+			this.rsi14 = this.taMethods.calcRsi(this.closeData, 14);
 		}
 	}
 
@@ -515,11 +543,10 @@ public class TickerData {
 		return this.currentPrice;
 	}
 
-	/**
-	 * @return the data
-	 */
-	public List<DailyData> getData() {
-		return this.data;
+	public String getDailyDataString(int day) {
+		final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
+		    this.closeData[day], this.volumeData[day]);
+		return dd.toString();
 	}
 
 	public Calendar getDate(int day) {
@@ -799,6 +826,13 @@ public class TickerData {
 	}
 
 	/**
+	 * @return the tickerName
+	 */
+	public String getTickerName() {
+		return this.tickerName;
+	}
+
+	/**
 	 * @return the trueHighData
 	 */
 	public double[] getTrueHighData() {
@@ -855,6 +889,13 @@ public class TickerData {
 	}
 
 	/**
+	 * @return the data
+	 */
+	private List<DailyData> getData() {
+		return this.data;
+	}
+
+	/**
 	 * Data from www.eoddata.com occasionally has volumes of zero. Set these to
 	 * the average volume of 5 days before and 5 days after.
 	 *
@@ -902,6 +943,27 @@ public class TickerData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.setRawRS
+	 *
+	 * @return
+	 */
+	private double setRawRS() {
+		return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
+		    + (0.0825 * this.getChg23());
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.setRawStRS
+	 *
+	 * @return
+	 */
+	private double setRawStRS() {
+		return ((0.25 * this.getChg65()) + (0.75 * this.getChg23()));
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.setRsRaw
 	 *
 	 * Sets the price change increments and calculates the raw RS for sorting
@@ -914,8 +976,8 @@ public class TickerData {
 		this.chg65 = this.calcPriceChange(65);
 		this.chg130 = this.calcPriceChange(130);
 		this.chg260 = this.calcPriceChange(260);
-		this.rsRaw = this.taMethods.calcRawRS(this);
-		this.rsStRaw = this.taMethods.calcRawStRS(this);
+		this.rsRaw = this.setRawRS();
+		this.rsStRaw = this.setRawStRS();
 	}
 
 }
