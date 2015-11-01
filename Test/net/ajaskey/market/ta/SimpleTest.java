@@ -43,21 +43,27 @@ public class SimpleTest {
 	static List<TickerData> tdAll = new ArrayList<TickerData>();
 
 	public static void main(String[] args) throws ParseException, IOException {
+		
+		String arg = "dataPath";
+		String dataPath = System.getProperty(arg, "");
+		String filePath = dataPath + "\\ASCII";
+		System.out.println(filePath);
 
 		final List<String> fnames = new ArrayList<String>();
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\INDEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NASDAQ.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\AMEX.TXT");
-		fnames.add("C:\\Users\\ajask_000\\Documents\\EODData\\TickerLists\\NYSE.TXT");
+		fnames.add("symbols\\INDEX_SymbolList.txt");
+		fnames.add("symbols\\NASDAQ_SymbolList.txt");
+		fnames.add("symbols\\AMEX_SymbolList.txt");
+		fnames.add("symbols\\NYSE_SymbolList.txt");
 		TickerFullName.build(fnames);
 
 		ParseData.setValidTicker("qqq");
+		ParseData.setValidTicker("ge");
 
 		final List<String> filenames = new ArrayList<String>();
-		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
-		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\AMEX");
-		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\NASDAQ");
-		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\NYSE");
+		filenames.add(filePath+"\\INDEX");
+		filenames.add(filePath+"\\AMEX");
+		filenames.add(filePath+"\\NASDAQ");
+		filenames.add(filePath+"\\NYSE");
 		tdAll = TickerData.build(filenames);
 
 		/*
@@ -69,37 +75,13 @@ public class SimpleTest {
 
 		for (final TickerData td : tdAll) {
 
-			System.out.println("\n\n" + td.getTicker());
-
 			for (int i = 0; i < 100; i++) {
 				final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				final String dat = sdf.format(td.getData().get(i).getDate().getTime());
 				// String dat = sdf.format(td.getData().get(i).getDate());
-				System.out.printf("%s %.2f %.2f %.2f %.2f\n", dat, td.getOpenData()[i], td.getHighData()[i], td.getLowData()[i],
-				    td.getCloseData()[i]);
+				//System.out.printf("%s %.2f %.2f %.2f %.2f\n", dat, td.getOpenData()[i], td.getHighData()[i], td.getLowData()[i],
+				//    td.getCloseData()[i]);
 			}
-
-			System.out.println(
-			    "SMA : " + td.getSma23() + "\t" + td.getSma23Trend() + "\t" + td.getSma65() + "\t" + td.getSma65Trend() + "\t"
-			        + td.getSma130() + "\t" + td.getSma130Trend() + "\t" + td.getSma260() + "\t" + td.getSma260Trend());
-			// System.out.println("Price : " + td.getCloseData()[0] + "\t" +
-			// td.getCloseData()[23] + "\t" + td.getCloseData()[65]
-			// + "\t" + td.getCloseData()[130] + "\t" + td.getCloseData()[260]);
-			System.out
-			    .println("Chg   : \t" + td.getChg23() + "\t" + td.getChg65() + "\t" + td.getChg130() + "\t" + td.getChg260());
-			System.out.println("RS       " + td.getRsRaw());
-			System.out.println("volume   : " + (int) td.getAvgVol65());
-			System.out.printf("ATR      : %.2f %.2f%%\n", td.getAtr23(), td.getAtrPercent23());
-			System.out.printf("MFI      : %.2f %.2f %.2f %.2f \n", td.getMfi14(), td.getMfi23(), td.getMfi65(),
-			    td.getMfi130());
-			System.out.printf("Off      : %.2f %.2f %.2f\n", td.getPriceInRng260(), td.getPriceOffLow260(),
-			    td.getPriceOffHigh260());
-			System.out.printf("High/Low : %.2f %.2f %.2f\n", td.getHigh260(), td.getCurrentPrice(), td.getLow260());
-			System.out.printf("LR       : %.2f %.2f %.2f %.5f\n", td.getLr260(), td.getLrAngle260(), td.getLrInt260(),
-			    td.getLrSlope260());
-			final double atr = td.getAtr23() * 2.5;
-			System.out.printf("LR band  : %.2f %.2f %.2f\n", td.getLr260() - atr, td.getCurrentPrice(), td.getLr260() + atr);
-			System.out.printf("ADX/DI   : %.2f %.2f %.2f\n", td.getAdx(), td.getDiPlus(), td.getDiMinus());
 
 			final StockHTML html = new StockHTML();
 			html.build(td);
