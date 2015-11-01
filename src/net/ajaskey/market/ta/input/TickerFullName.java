@@ -55,31 +55,40 @@ public class TickerFullName {
 	static public void build(List<String> fnames) {
 
 		for (final String f : fnames) {
-
-			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
-
-				String line = br.readLine();
-				while (line != null) {
-					line = br.readLine();
-
-					if ((line != null) && (line.length() > 7)) {
-
-						final String fld[] = line.split("\t");
-
-						final TickerFullName tfn = new TickerFullName();
-						tfn.ticker = fld[0].trim().toUpperCase();
-						tfn.name = fld[1].trim();
-						if (!tickerNames.contains(tfn)) {
-							tickerNames.add(tfn);
-						}
-					}
-				}
-			} catch (final IOException e) {
-				e.printStackTrace();
-			}
+			TickerFullName.build(f);
 		}
 
 		Collections.sort(tickerNames, new SortTickerFullNames());
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.input.build
+	 *
+	 * @param fname
+	 */
+	static public void build(String fname) {
+		try (BufferedReader br = new BufferedReader(new FileReader(fname))) {
+
+			String line = br.readLine();
+			while (line != null) {
+				line = br.readLine();
+
+				if ((line != null) && (line.length() > 7)) {
+
+					final String fld[] = line.split("\t");
+
+					final TickerFullName tfn = new TickerFullName();
+					tfn.ticker = fld[0].trim().toUpperCase();
+					tfn.name = fld[1].trim();
+					if (!tickerNames.contains(tfn)) {
+						tickerNames.add(tfn);
+					}
+				}
+			}
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -107,6 +116,7 @@ public class TickerFullName {
 	 */
 	static public String getName(String ticker) {
 		for (final TickerFullName t : tickerNames) {
+			//System.out.println(ticker + "\t" + t.ticker);
 			if (t.ticker.equalsIgnoreCase(ticker)) {
 				return t.name;
 			}

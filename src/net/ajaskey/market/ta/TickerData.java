@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.ta.input.ParseData;
+import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
@@ -43,6 +44,7 @@ import net.ajaskey.market.ta.methods.TaMethods;
 public class TickerData {
 
 	private String								ticker;
+	private String tickerName;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -123,6 +125,7 @@ public class TickerData {
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
 		this.setTicker(t);
+		this.tickerName = TickerFullName.getName(t);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -917,5 +920,13 @@ public class TickerData {
 		this.rsRaw = this.taMethods.calcRawRS(this);
 		this.rsStRaw = this.taMethods.calcRawStRS(this);
 	}
+
+	/**
+	 * @return the tickerName
+	 */
+	public String getTickerName() {
+		return tickerName;
+	}
+
 
 }

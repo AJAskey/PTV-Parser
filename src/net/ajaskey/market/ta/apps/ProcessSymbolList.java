@@ -69,7 +69,7 @@ public class ProcessSymbolList {
 			listsDir.mkdir();
 		}
 
-		ProcessSymbolList.findLists(new File("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII"));
+		ProcessSymbolList.findLists(new File("\\ASCII"));
 
 		final PrintWriter pwIshares = new PrintWriter("lists\\ishares-list.txt");
 		final PrintWriter pwPshares = new PrintWriter("lists\\powershares-list.txt");
@@ -78,6 +78,9 @@ public class ProcessSymbolList {
 		final PrintWriter pwGSCI = new PrintWriter("lists\\commodity-list.txt");
 		final PrintWriter pwSector = new PrintWriter("lists\\sector-list.txt");
 		final PrintWriter pwDJUS = new PrintWriter("lists\\djus-list.txt");
+		final PrintWriter pwUSMF = new PrintWriter("lists\\usmf-list.txt");
+
+		final PrintWriter pwAll = new PrintWriter("lists\\master-list.txt");
 
 		for (final File f : list) {
 			final String fpath = f.getAbsolutePath();
@@ -90,7 +93,8 @@ public class ProcessSymbolList {
 				final String dirName = fpath.substring(idx, idx2 - 1);
 
 				// ignore options
-				if (dirName.compareToIgnoreCase("OPRA") != 0) {
+				if ((dirName.compareToIgnoreCase("OPRA") != 0) && (dirName.compareToIgnoreCase("HKEX") != 0)
+				    && (dirName.compareToIgnoreCase("WCE") != 0)) {
 
 					final String oFile = "symbols\\" + dirName + "_SymbolList.txt";
 
@@ -108,26 +112,33 @@ public class ProcessSymbolList {
 								final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
 								final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
 								if (dirName.compareToIgnoreCase("INDEX") == 0) {
-									pw.println(code + ".IDX\t" + name);
-									// System.out.println(name);
+									String fmt = "%-10s\t%-50s%n";
+									String codePlus = code + ".IDX";
+									pw.printf(fmt, codePlus, name);
 									if (name.contains("Home Price Index")) {
-										pwCS.println(code + ".IDX\t" + name);
+										pwCS.printf(fmt, codePlus, name);
 									} else if (name.contains(" GSCI ")) {
-										pwGSCI.println(code + ".IDX\t" + name);
+										pwGSCI.printf(fmt, codePlus, name);
 									} else if (name.contains("EQUAL WEIGHTED")) {
-										pwSector.println(code + ".IDX\t" + name);
+										pwSector.printf(fmt, codePlus, name);
 									} else if (name.contains("DJ US")) {
-										pwDJUS.println(code + ".IDX\t" + name);
+										pwDJUS.printf(fmt, codePlus, name);
 									}
+									pwAll.printf("%-12s%-50s %-10s%n", codePlus, name, dirName);
 								} else {
-
-									pw.println(code + "\t" + name);
+									String fmt = "%-10s\t%-50s%n";
+									pw.printf(fmt, code, name);
 									if (name.toUpperCase().contains("ISHARES")) {
-										pwIshares.println(code + "\t" + name);
+										pwIshares.printf(fmt, code, name);
 									} else if (name.toUpperCase().contains(" ETF ")) {
-										pwETF.println(code + "\t" + name);
+										pwETF.printf(fmt, code, name);
 									} else if (name.toUpperCase().contains(" POWERSHARES")) {
-										pwPshares.println(code + "\t" + name);
+										pwPshares.printf(fmt, code, name);
+									} 
+									pwAll.printf("%-12s%-50s %-10s%n", code, name, dirName);
+									
+									if (dirName.toUpperCase().contains("USMF")) {
+										pwUSMF.printf(fmt, code, name);
 									}
 								}
 							}
@@ -143,6 +154,8 @@ public class ProcessSymbolList {
 		pwGSCI.close();
 		pwSector.close();
 		pwDJUS.close();
+		pwAll.close();
+		pwUSMF.close();
 
 		System.out.println("Done.");
 	}
