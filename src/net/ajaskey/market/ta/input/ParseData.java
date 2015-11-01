@@ -308,7 +308,8 @@ public class ParseData {
 			boolean found = false;
 			for (final TickerData tdMain : mainList) {
 				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-					tdMain.getData().addAll(tdNew.getData());
+				//	tdMain.getData().addAll(tdNew.getData());
+					TickerData.mergeData(tdMain, tdNew);
 					found = true;
 					break;
 				}

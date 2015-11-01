@@ -13,7 +13,6 @@ import net.ajaskey.market.ta.SortTickerRs;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
-import net.ajaskey.market.ta.methods.TaMethods;
 
 /**
  * @author Andy Askey
@@ -30,7 +29,7 @@ import net.ajaskey.market.ta.methods.TaMethods;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- * 
+ *
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -43,50 +42,78 @@ import net.ajaskey.market.ta.methods.TaMethods;
  */
 public class WhosHot {
 
-	final private static TaMethods	taMethods	= new TaMethods();
+	// final private static TaMethods taMethods = new TaMethods();
 	private static List<TickerData>	tdAll;
 	private static List<String>			filenames	= new ArrayList<>();
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @throws ParseException
 	 * @throws IOException
 	 *
 	 */
 	public WhosHot() throws ParseException, IOException {
 
-		TickerFullName.build("lists\\sector-list.txt");
-		
+		TickerFullName.build("lists\\master-list.txt");
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\sector-list.txt"));
 
-		String arg = "dataPath";
-		String dataPath = System.getProperty(arg, "");
-		String filePath = dataPath + "\\ASCII\\INDEX";
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		final String filePath = dataPath + "\\ASCII\\INDEX";
 		System.out.println(filePath);
 		filenames.add(filePath);
 		tdAll = ParseData.parseFiles(filenames);
-		if (tdAll != null) {
-			for (TickerData td : tdAll) {
-				td.generateDerived();
+
+		this.sectors(tdAll,0);
+		System.out.println("\n\n");
+		sectors(tdAll,23);
+		System.out.println("\n\n");
+		sectors(tdAll,65);
+
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+
+		new WhosHot();
+		System.out.println("Done.");
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.sectors
+	 *
+	 * @param tdList
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	private void sectors(List<TickerData> tdList, int start) throws FileNotFoundException, IOException, ParseException {
+
+		if (tdList != null) {
+			for (final TickerData td : tdList) {
+				td.generateDerived(start);
 			}
 			final File outDir = new File("out");
 			if (!outDir.exists()) {
 				outDir.mkdir();
 			}
+
+			Collections.sort(tdList, new SortTickerRs());
+
+			for (final TickerData td : tdList) {
+				System.out.printf("%-10s %-50s %10.2f%% %n", td.getTicker(), td.getTickerName(), td.getChg260());
+			}
 		}
-	}
-
-	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
-		WhosHot who = new WhosHot();
-
-		Collections.sort(tdAll, new SortTickerRs());
-
-		for (TickerData td : tdAll) {
-			System.out.printf("%-10s %-50s %10.2f%% %n",td.getTicker() , td.getTickerName() , td.getChg260() );
-		}
-
-		System.out.println("Done.");
 	}
 
 }

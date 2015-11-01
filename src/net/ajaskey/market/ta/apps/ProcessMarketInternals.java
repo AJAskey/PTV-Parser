@@ -144,7 +144,7 @@ public class ProcessMarketInternals {
 
 			for (final TickerData td : tdAll) {
 				td.generateDerived();
-				advDecl = taMethods.calcAdvDecl(td, 260);
+				advDecl = taMethods.calcAdvDecl(td.getCloseData(), 260);
 				pw.println(td.getTicker() + "  :  " + advDecl);
 			}
 		}

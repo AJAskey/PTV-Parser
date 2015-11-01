@@ -130,7 +130,7 @@ public class ProcessSymbolList {
 									} else if (name.contains("DJ US")) {
 										pwDJUS.printf(fmt, codePlus, name);
 									}
-									pwAll.printf("%-12s%-50s %-10s%n", codePlus, name, dirName);
+									pwAll.printf("%-12s\t%-50s\t%-10s%n", codePlus, name, dirName);
 								} else {
 									String fmt = "%-10s\t%-50s%n";
 									pw.printf(fmt, code, name);
@@ -141,7 +141,7 @@ public class ProcessSymbolList {
 									} else if (name.toUpperCase().contains(" POWERSHARES")) {
 										pwPshares.printf(fmt, code, name);
 									} 
-									pwAll.printf("%-12s%-50s %-10s%n", code, name, dirName);
+									pwAll.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
 									
 									if (dirName.toUpperCase().contains("USMF")) {
 										pwUSMF.printf(fmt, code, name);

@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.input.ParseData;
 
@@ -53,14 +52,14 @@ public class DumpTickerData {
 	 * @throws FileNotFoundException
 	 */
 	public DumpTickerData() throws ParseException, FileNotFoundException {
-		
-		String arg = "dataPath";
-		String dataPath = System.getProperty(arg, "");
-		String filePath = dataPath + "\\ASCII\\NASDAQ";
+
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		final String filePath = dataPath + "\\ASCII\\NASDAQ";
 		System.out.println(filePath);
 		filenames.add(filePath);
 		tdAll = ParseData.parseFiles(filenames);
-		
+
 		final File outDir = new File("out");
 		if (!outDir.exists()) {
 			outDir.mkdir();
@@ -85,15 +84,15 @@ public class DumpTickerData {
 
 		for (final TickerData td : tdAll) {
 
-			td.generateDerived();
+			td.generateDerived(10);
 
 			try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
 				pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
-				for (final DailyData dd : td.getData()) {
+				for (int i = 0; i < td.getDaysOfData(); i++) {
 					final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
-					final String sDate = sdf.format(dd.getDate().getTime());
-					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, dd.getOpen(), dd.getHigh(), dd.getLow(), dd.getClose(),
-					    (int) (double) dd.getVolume());
+					final String sDate = sdf.format(td.getDate(i).getTime());
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+					    (int) td.getVolume(i));
 				}
 			}
 		}
