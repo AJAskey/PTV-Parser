@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,8 +53,18 @@ public class DumpTickerData {
 	 * @throws FileNotFoundException
 	 */
 	public DumpTickerData() throws ParseException, FileNotFoundException {
-		filenames.add("TestData\\NASDAQ");
+		
+		String arg = "dataPath";
+		String dataPath = System.getProperty(arg, "");
+		String filePath = dataPath + "\\ASCII\\NASDAQ";
+		System.out.println(filePath);
+		filenames.add(filePath);
 		tdAll = ParseData.parseFiles(filenames);
+		
+		final File outDir = new File("out");
+		if (!outDir.exists()) {
+			outDir.mkdir();
+		}
 	}
 
 	/**
@@ -86,6 +97,7 @@ public class DumpTickerData {
 				}
 			}
 		}
+		System.out.println("Done.");
 	}
 
 }

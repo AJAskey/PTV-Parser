@@ -60,7 +60,11 @@ public class WhosHot {
 		
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\sector-list.txt"));
 
-		filenames.add("e:\\temp\\ASCII\\INDEX");
+		String arg = "dataPath";
+		String dataPath = System.getProperty(arg, "");
+		String filePath = dataPath + "\\ASCII\\INDEX";
+		System.out.println(filePath);
+		filenames.add(filePath);
 		tdAll = ParseData.parseFiles(filenames);
 		if (tdAll != null) {
 			for (TickerData td : tdAll) {

@@ -56,6 +56,8 @@ public class ProcessSymbolList {
 	 * @throws SAXException
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+		
+
 
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
@@ -69,7 +71,11 @@ public class ProcessSymbolList {
 			listsDir.mkdir();
 		}
 
-		ProcessSymbolList.findLists(new File("\\ASCII"));
+		String arg = "dataPath";
+		String dataPath = System.getProperty(arg, "");
+		String filePath = dataPath + "\\ASCII";
+		System.out.println(filePath);
+		ProcessSymbolList.findLists(new File(filePath));
 
 		final PrintWriter pwIshares = new PrintWriter("lists\\ishares-list.txt");
 		final PrintWriter pwPshares = new PrintWriter("lists\\powershares-list.txt");
