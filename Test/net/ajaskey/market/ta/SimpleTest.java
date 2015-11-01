@@ -3,7 +3,6 @@ package net.ajaskey.market.ta;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,10 +42,10 @@ public class SimpleTest {
 	static List<TickerData> tdAll = new ArrayList<TickerData>();
 
 	public static void main(String[] args) throws ParseException, IOException {
-		
-		String arg = "dataPath";
-		String dataPath = System.getProperty(arg, "");
-		String filePath = dataPath + "\\ASCII";
+
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		final String filePath = dataPath + "\\ASCII";
 		System.out.println(filePath);
 
 		final List<String> fnames = new ArrayList<String>();
@@ -60,10 +59,10 @@ public class SimpleTest {
 		ParseData.setValidTicker("ge");
 
 		final List<String> filenames = new ArrayList<String>();
-		filenames.add(filePath+"\\INDEX");
-		filenames.add(filePath+"\\AMEX");
-		filenames.add(filePath+"\\NASDAQ");
-		filenames.add(filePath+"\\NYSE");
+		filenames.add(filePath + "\\INDEX");
+		filenames.add(filePath + "\\AMEX");
+		filenames.add(filePath + "\\NASDAQ");
+		filenames.add(filePath + "\\NYSE");
 		tdAll = TickerData.build(filenames);
 
 		/*
@@ -74,14 +73,6 @@ public class SimpleTest {
 		 */
 
 		for (final TickerData td : tdAll) {
-
-			for (int i = 0; i < 100; i++) {
-				final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				final String dat = sdf.format(td.getData().get(i).getDate().getTime());
-				// String dat = sdf.format(td.getData().get(i).getDate());
-				//System.out.printf("%s %.2f %.2f %.2f %.2f\n", dat, td.getOpenData()[i], td.getHighData()[i], td.getLowData()[i],
-				//    td.getCloseData()[i]);
-			}
 
 			final StockHTML html = new StockHTML();
 			html.build(td);
