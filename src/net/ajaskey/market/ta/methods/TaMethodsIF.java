@@ -178,14 +178,12 @@ public interface TaMethodsIF {
 	/**
 	 * net.ajaskey.market.ta.methods.calcMFI
 	 *
-	 * @param high
-	 * @param low
-	 * @param close
+	 * @param typicalPrice
 	 * @param volume
 	 * @param days
 	 * @return
 	 */
-	double calcMFI(double[] high, double[] low, double[] close, double[] volume, int days);
+	double calcMFI(double[] typicalPrice, double[] volume, int days);
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcSma

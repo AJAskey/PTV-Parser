@@ -72,6 +72,7 @@ public class TickerData {
 	private double[]							volumeData;
 	private double[]							trueHighData;
 	private double[]							trueLowData;
+	private double[]							typicalPriceData;
 	private Calendar[]						dateData;
 	private double								currentPrice;
 	private double								avgVol65;
@@ -377,6 +378,7 @@ public class TickerData {
 		 */
 		this.trueHighData = new double[this.daysOfData];
 		this.trueLowData = new double[this.daysOfData];
+		this.typicalPriceData = new double[this.daysOfData];
 		pos = 0;
 		for (int i = start; i < (this.data.size() - 1); i++) {
 			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
@@ -385,6 +387,9 @@ public class TickerData {
 
 			this.trueHighData[pos] = this.data.get(i).getTrueHigh();
 			this.trueLowData[pos] = this.data.get(i).getTrueLow();
+
+			typicalPriceData[pos] = (trueLowData[pos] + closeData[pos] + trueHighData[pos]) / 3.0;
+
 			pos++;
 
 		}
@@ -395,9 +400,7 @@ public class TickerData {
 
 		this.currentPrice = this.closeData[0];
 
-		if (this.daysOfData > 260) {
-			this.setRsRaw();
-		}
+		this.setRsRaw();
 
 		if (this.daysOfData > 28) {
 			this.sma23 = MovingAverageMethods.sma(this.getCloseData(), 23);
@@ -438,16 +441,16 @@ public class TickerData {
 		}
 
 		if (this.daysOfData > 24) {
-			this.mfi23 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 23);
+			this.mfi23 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 23);
 		}
 		if (this.daysOfData > 66) {
-			this.mfi65 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 65);
+			this.mfi65 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 65);
 		}
 		if (this.daysOfData > 131) {
-			this.mfi130 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 130);
+			this.mfi130 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 130);
 		}
 		if (this.daysOfData > 15) {
-			this.mfi14 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 14);
+			this.mfi14 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 14);
 		}
 
 		if (this.daysOfData > 260) {
@@ -971,13 +974,21 @@ public class TickerData {
 	 *
 	 */
 	private void setRsRaw() {
-
 		this.chg23 = this.calcPriceChange(23);
 		this.chg65 = this.calcPriceChange(65);
 		this.chg130 = this.calcPriceChange(130);
 		this.chg260 = this.calcPriceChange(260);
-		this.rsRaw = this.setRawRS();
-		this.rsStRaw = this.setRawStRS();
+		if (daysOfData > 260)
+			this.rsRaw = this.setRawRS();
+		if (daysOfData > 65)
+			this.rsStRaw = this.setRawStRS();
+	}
+
+	/**
+	 * @return the typicalPriceData
+	 */
+	public double[] getTypicalPriceData() {
+		return typicalPriceData;
 	}
 
 }
