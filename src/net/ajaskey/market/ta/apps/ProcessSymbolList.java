@@ -56,8 +56,6 @@ public class ProcessSymbolList {
 	 * @throws SAXException
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		
-
 
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
@@ -79,6 +77,7 @@ public class ProcessSymbolList {
 
 		final PrintWriter pwIshares = new PrintWriter("lists\\ishares-list.txt");
 		final PrintWriter pwPshares = new PrintWriter("lists\\powershares-list.txt");
+		final PrintWriter pwProshares = new PrintWriter("lists\\proshares-list.txt");
 		final PrintWriter pwETF = new PrintWriter("lists\\etf-list.txt");
 		final PrintWriter pwCS = new PrintWriter("lists\\caseshiller-list.txt");
 		final PrintWriter pwGSCI = new PrintWriter("lists\\commodity-list.txt");
@@ -118,33 +117,35 @@ public class ProcessSymbolList {
 								final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
 								final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
 								if (dirName.compareToIgnoreCase("INDEX") == 0) {
-									String fmt = "%-10s\t%-50s%n";
+									String fmt = "%-10s\t%-50s\t%-10s%n";
 									String codePlus = code + ".IDX";
-									pw.printf(fmt, codePlus, name);
+									pw.printf(fmt, codePlus, name, dirName);
 									if (name.contains("Home Price Index")) {
-										pwCS.printf(fmt, codePlus, name);
+										pwCS.printf(fmt, codePlus, name, dirName);
 									} else if (name.contains(" GSCI ")) {
-										pwGSCI.printf(fmt, codePlus, name);
+										pwGSCI.printf(fmt, codePlus, name, dirName);
 									} else if (name.contains("EQUAL WEIGHTED")) {
-										pwSector.printf(fmt, codePlus, name);
+										pwSector.printf(fmt, codePlus, name, dirName);
 									} else if (name.contains("DJ US")) {
-										pwDJUS.printf(fmt, codePlus, name);
+										pwDJUS.printf(fmt, codePlus, name, dirName);
 									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", codePlus, name, dirName);
 								} else {
-									String fmt = "%-10s\t%-50s%n";
-									pw.printf(fmt, code, name);
+									String fmt = "%-10s\t%-50s\t%-10s%n";
+									pw.printf(fmt, code, name, dirName);
 									if (name.toUpperCase().contains("ISHARES")) {
-										pwIshares.printf(fmt, code, name);
+										pwIshares.printf(fmt, code, name, dirName);
 									} else if (name.toUpperCase().contains(" ETF ")) {
-										pwETF.printf(fmt, code, name);
+										pwETF.printf(fmt, code, name, dirName);
 									} else if (name.toUpperCase().contains(" POWERSHARES")) {
-										pwPshares.printf(fmt, code, name);
-									} 
+										pwPshares.printf(fmt, code, name, dirName);
+									} else if (name.toUpperCase().contains(" PROSHARES")) {
+										pwProshares.printf(fmt, code, name, dirName);
+									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
-									
+
 									if (dirName.toUpperCase().contains("USMF")) {
-										pwUSMF.printf(fmt, code, name);
+										pwUSMF.printf(fmt, code, name, dirName);
 									}
 								}
 							}
@@ -155,6 +156,7 @@ public class ProcessSymbolList {
 		}
 		pwIshares.close();
 		pwPshares.close();
+		pwProshares.close();
 		pwETF.close();
 		pwCS.close();
 		pwGSCI.close();

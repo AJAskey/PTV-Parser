@@ -77,7 +77,7 @@ public class ParseData {
 		final List<String> list = new ArrayList<String>();
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
-			String line = br.readLine();
+			String line = "";
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
@@ -134,7 +134,7 @@ public class ParseData {
 
 						if (validTickers.contains(fld[0])) {
 
-							//System.out.println("\t" + line);
+							// System.out.println("\t" + line);
 
 							if (fld.length == 7) {
 
@@ -197,7 +197,7 @@ public class ParseData {
 
 				if (f.getName().contains(".csv")) {
 
-					//System.out.println(f.getName());
+					// System.out.println(f.getName());
 
 					final List<TickerData> td = ParseData.parseFile(f);
 
@@ -308,7 +308,7 @@ public class ParseData {
 			boolean found = false;
 			for (final TickerData tdMain : mainList) {
 				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-				//	tdMain.getData().addAll(tdNew.getData());
+					// tdMain.getData().addAll(tdNew.getData());
 					TickerData.mergeData(tdMain, tdNew);
 					found = true;
 					break;

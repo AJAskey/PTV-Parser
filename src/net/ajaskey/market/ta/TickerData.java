@@ -351,6 +351,9 @@ public class TickerData {
 
 		this.daysOfData = this.data.size() - start;
 
+		if (daysOfData < 1)
+			return;
+
 		this.dateData = new Calendar[this.daysOfData];
 		this.openData = new double[this.daysOfData];
 		this.highData = new double[this.daysOfData];
@@ -934,11 +937,15 @@ public class TickerData {
 						}
 					}
 				}
-				final double avg5p = sum / knt;
-				final double avg10 = (avg5p + avg5m) / 2.0;
-				this.data.get(i).setVolume(avg10);
-				// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
-				// avg5p);
+				if (knt > 0) {
+					final double avg5p = sum / knt;
+					final double avg10 = (avg5p + avg5m) / 2.0;
+					this.data.get(i).setVolume(avg10);
+					// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
+					// avg5p);
+				} else {
+					this.data.get(i).setVolume(0);
+				}
 			}
 		}
 
@@ -951,6 +958,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawRS() {
+		//System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130() + "\t" + getChg65() + "\t" + getChg23());
 		return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
 		    + (0.0825 * this.getChg23());
 	}
@@ -962,7 +970,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawStRS() {
-		return ((0.25 * this.getChg65()) + (0.75 * this.getChg23()));
+		return ((0.33 * this.getChg65()) + (0.67 * this.getChg23()));
 	}
 
 	/**
