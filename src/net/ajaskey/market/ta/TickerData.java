@@ -3,6 +3,7 @@ package net.ajaskey.market.ta;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -335,19 +336,19 @@ public class TickerData {
 		this.generateDerived(0);
 	}
 
+	public String DailyDataString(int day) {
+		return this.data.get(day).toString();
+	}
+
 	/**
-	 *
-	 * net.ajaskey.market.ta.generateDerived
+	 * 
+	 * net.ajaskey.market.ta.fillDataArrays
 	 *
 	 * @param start
 	 */
-	public void generateDerived(int start) {
+	public void fillDataArrays(int start, boolean sortReversed) {
 
-		/**
-		 * Must sort prices by date before many of the following calculations
-		 */
-		Collections.sort(this.data, new SortDailyData());
-		this.normalizeZeroVolume();
+		sortDailyData(this, sortReversed);
 
 		this.daysOfData = this.data.size() - start;
 
@@ -374,6 +375,23 @@ public class TickerData {
 			}
 			knt++;
 		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.generateDerived
+	 *
+	 * @param start
+	 */
+	public void generateDerived(int start) {
+
+		/**
+		 * Must sort prices by date before many of the following calculations
+		 */
+		Collections.sort(this.data, new SortDailyData());
+		this.normalizeZeroVolume();
+
+		fillDataArrays(start, false);
 
 		/**
 		 * TrueHigh and TrueLow are set for entire data series without regard to
@@ -382,7 +400,7 @@ public class TickerData {
 		this.trueHighData = new double[this.daysOfData];
 		this.trueLowData = new double[this.daysOfData];
 		this.typicalPriceData = new double[this.daysOfData];
-		pos = 0;
+		int pos = 0;
 		for (int i = start; i < (this.data.size() - 1); i++) {
 			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
 			this.data.get(i).setTrueLow(this.data.get(i + 1).getClose());
@@ -958,7 +976,8 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawRS() {
-		//System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130() + "\t" + getChg65() + "\t" + getChg23());
+		// System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130()
+		// + "\t" + getChg65() + "\t" + getChg23());
 		return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
 		    + (0.0825 * this.getChg23());
 	}
@@ -997,6 +1016,22 @@ public class TickerData {
 	 */
 	public double[] getTypicalPriceData() {
 		return typicalPriceData;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.sortData
+	 *
+	 * @param td
+	 * @param sortReverse
+	 */
+	public static void sortDailyData(TickerData td, boolean sortReverse) {
+		if (sortReverse) {
+			Collections.sort(td.data, new SortDailyDataReverse());
+		} else {
+			Collections.sort(td.data, new SortDailyData());
+		}
+
 	}
 
 }
