@@ -391,6 +391,7 @@ EUN       	Ishares II Plc                                    	LSE
 EUXS      	Ishares Plc                                       	LSE       
 EXFN      	Ishares II Plc                                    	LSE       
 FSEU      	Ishares IV Plc                                    	LSE       
+FSUS      	Ishares IV Plc                                    	LSE       
 FSWD      	Ishares IV Plc                                    	LSE       
 FXC       	Ishares Plc                                       	LSE       
 GHYS      	Ishares Vi Plc (The Comp                          	LSE       
@@ -606,6 +607,7 @@ O061      	Ishares Plc                                       	LSE
 O073      	Ishares Plc                                       	LSE       
 O075      	Ishares Plc                                       	LSE       
 O080      	ISHARES IBOXX EURO LIQUID CORP(DT ZERT)           	LSE       
+O092      	Ishares Plc                                       	LSE       
 O102      	Ishares Plc                                       	LSE       
 O115      	ISHARES CT ISHARES MSCI TURKEY                    	LSE       
 O119      	Ishares Plc                                       	LSE       
@@ -689,7 +691,6 @@ SOXX      	PHLX Sox Semiconductor Sector Ishares             	NASDAQ
 UAE       	Ishares MSCI UAE Capped ETF                       	NASDAQ    
 WOOD      	S&P Global Timber & Forestry Idx Ishares          	NASDAQ    
 BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
-CLAYF     	Ishares 1-5 Year Cor                              	OTCBB     
 CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
 CMOXF     	Ishares Global Water Index ETF                    	OTCBB     
 CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
@@ -703,8 +704,10 @@ IHSXF     	Ishares Plc - Ishare                              	OTCBB
 IHSZF     	Ishares II Plc                                    	OTCBB     
 IIREF     	Ishares MSCI World                                	OTCBB     
 INITF     	Ishares Dex Short Term Bond Index Fund            	OTCBB     
+IOOXF     	Ishares Core Canadia                              	OTCBB     
 IRSHF     	Ishares S&P/Tsx Capp                              	OTCBB     
 ISARF     	Ishares CDN Universe                              	OTCBB     
+ISDJF     	Ishares DOW Jones CD                              	OTCBB     
 ISDXF     	Ishares Can Corp                                  	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
 ISHBF     	Ishares Broad                                     	OTCBB     
@@ -716,6 +719,7 @@ ISRWF     	Ishares II Plc                                    	OTCBB
 ISRZF     	Ishares II Plc                                    	OTCBB     
 ISXIF     	Ishares Bse Sensex                                	OTCBB     
 IUNSF     	Ishares S&P/Tsx Capp                              	OTCBB     
+IUNTF     	Ishares MSCI EAFE In                              	OTCBB     
 IZIZF     	Ishares III Plc                                   	OTCBB     
 I17       	Ishares S&p500 Ivv 10                             	SGX       
 I19       	Ishares Msci Singapore Ews 100                    	SGX       
