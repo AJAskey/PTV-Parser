@@ -15,6 +15,8 @@ import java.util.List;
 
 import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.ta.ValidateData;
 
 /**
  * @author Andy Askey
@@ -54,6 +56,8 @@ public class StockChartsToGannAnalyst {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		TickerData td = null;
+		
+		Utils.makeDir("gann");
 
 		try (BufferedReader br = new BufferedReader(new FileReader("data\\spx-sc.txt"))) {
 
@@ -86,20 +90,26 @@ public class StockChartsToGannAnalyst {
 				} else {
 					DailyData dd = new DailyData(cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]),
 					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]));
-				//	System.out.println(line);
+					// System.out.println(line);
 					td.addData(dd);
 				}
 			}
 		}
 
-		td.fillDataArrays(0, true);
+		if (ValidateData.validate(td)) {
 
-		final DateFormat gannFmt = new SimpleDateFormat("yyyyMMdd");
-		try (PrintWriter pw = new PrintWriter("gann\\spx-1990-SC.txt")) {
-			for (int i = 0; i < td.getDateData().length; i++) {
-				String dat = gannFmt.format(td.getDate(i).getTime());
-				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", dat,td.getOpen(i),td.getHigh(i),td.getLow(i),td.getClose(i),(long)td.getVolume(i));
+			td.fillDataArrays(0, true);
+
+			final DateFormat gannFmt = new SimpleDateFormat("yyyyMMdd");
+			try (PrintWriter pw = new PrintWriter("gann\\spx-1990-SC.txt")) {
+				for (int i = 0; i < td.getDateData().length; i++) {
+					String dat = gannFmt.format(td.getDate(i).getTime());
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", dat, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+					    (long) td.getVolume(i));
+				}
 			}
+		} else {
+			System.out.println("Data not valid.");
 		}
 
 		System.out.println("Done.");

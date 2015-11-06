@@ -17,6 +17,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import net.ajaskey.market.ta.Utils;
+
 /**
  * @author Andy Askey
  *
@@ -60,14 +62,8 @@ public class ProcessSymbolList {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
 
-		final File outDir = new File("symbols");
-		if (!outDir.exists()) {
-			outDir.mkdir();
-		}
-		final File listsDir = new File("lists");
-		if (!listsDir.exists()) {
-			listsDir.mkdir();
-		}
+		Utils.makeDir("symbols");
+		Utils.makeDir("lists");
 
 		String arg = "dataPath";
 		String dataPath = System.getProperty(arg, "");

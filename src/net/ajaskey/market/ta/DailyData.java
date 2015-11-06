@@ -49,7 +49,7 @@ public class DailyData {
 	
 	private long daysSinceBase;
 
-	private final SimpleDateFormat	sdf	= new SimpleDateFormat("dd-MMM-yyyy");
+	private final SimpleDateFormat	sdf	= new SimpleDateFormat("E dd-MMM-yyyy");
 
 	/**
 	 *

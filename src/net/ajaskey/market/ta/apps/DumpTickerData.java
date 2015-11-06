@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.ta.ValidateData;
 import net.ajaskey.market.ta.input.ParseData;
 
 /**
@@ -55,15 +57,11 @@ public class DumpTickerData {
 
 		final String arg = "dataPath";
 		final String dataPath = System.getProperty(arg, "");
-		final String filePath = dataPath + "\\ASCII\\NASDAQ";
-		System.out.println(filePath);
-		filenames.add(filePath);
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
 		tdAll = ParseData.parseFiles(filenames);
 
-		final File outDir = new File("out");
-		if (!outDir.exists()) {
-			outDir.mkdir();
-		}
+		Utils.makeDir("out");
 	}
 
 	/**
@@ -77,21 +75,26 @@ public class DumpTickerData {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 
-		ParseData.setValidTicker("BIS");
+		ParseData.setValidTicker("QQQ");
+		ParseData.setValidTicker("MSFT");
+		ParseData.setValidTicker("GE");
 
 		new DumpTickerData();
 
 		for (final TickerData td : tdAll) {
 
-			td.generateDerived(10);
+			if (ValidateData.validate(td)) {
 
-			try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
-				pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
-				for (int i = 0; i < td.getDaysOfData(); i++) {
-					final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
-					final String sDate = sdf.format(td.getDate(i).getTime());
-					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-					    (int) td.getVolume(i));
+				td.generateDerived(10);
+
+				try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
+					pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
+					for (int i = 0; i < td.getDaysOfData(); i++) {
+						final SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
+						final String sDate = sdf.format(td.getDate(i).getTime());
+						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+						    (int) td.getVolume(i));
+					}
 				}
 			}
 		}
