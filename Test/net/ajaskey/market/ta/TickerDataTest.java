@@ -151,7 +151,7 @@ public class TickerDataTest {
 		Assert.assertEquals(td.getAtrPercent23(), 1.74, 0.01);
 
 		Assert.assertEquals(td.getRsRaw(), 13.34, 0.01);
-		Assert.assertEquals(td.getRsStRaw(), 6.44, 0.01);
+		Assert.assertEquals(td.getRsStRaw(), 5.84, 0.01);
 
 		Assert.assertEquals((int) td.getDaysOfData(), 457);
 	}
