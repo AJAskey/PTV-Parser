@@ -1,40 +1,41 @@
-AJ.C      	AJC Continuation                                  
-AJF16     	AJC {Jan 16}                                      
-AJX15     	AJC {Nov 15}                                      
-DW        	Durum Wheat                                       
-IC        	NCI National Corn                                 
-IC.C      	NCI National Corn Continuation                    
-ICU15     	NCI National Corn {Sep 15}                        
-ICV15     	NCI National Corn {Oct 15}                        
-ICX15     	NCI National Corn {Nov 15}                        
-IH        	HRWI Hard Red                                     
-IH.C      	HRWI Hard Red Continuation                        
-IHU15     	HRWI Hard Red {Sep 15}                            
-IHV15     	HRWI Hard Red {Oct 15}                            
-IHX15     	HRWI Hard Red {Nov 15}                            
-IP        	HRSI Hard Red Spring                              
-IP.C      	HRSI Hard Red Spring Continuation                 
-IPU15     	HRSI Hard Red Spring {Sep 15}                     
-IPV15     	HRSI Hard Red Spring {Oct 15}                     
-IPX15     	HRSI Hard Red Spring {Nov 15}                     
-IS        	NSI National Soybean                              
-IS.C      	NSI National Soybean Continuation                 
-ISU15     	NSI National Soybean {Sep 15}                     
-ISV15     	NSI National Soybean {Oct 15}                     
-ISX15     	NSI National Soybean {Nov 15}                     
-IW        	SRWI Soft Red Wheat                               
-IW.C      	SRWI Soft Red Wheat Continuation                  
-IWU15     	SRWI Soft Red Wheat {Sep 15}                      
-IWV15     	SRWI Soft Red Wheat {Oct 15}                      
-IWX15     	SRWI Soft Red Wheat {Nov 15}                      
-MW        	Spring Wheat                                      
-MW.C      	Spring Wheat Continuation                         
-MWH16     	Spring Wheat {Mar 16}                             
-MWH17     	Spring Wheat {Mar 17}                             
-MWK16     	Spring Wheat {May 16}                             
-MWK17     	Spring Wheat {May 17}                             
-MWN16     	Spring Wheat {Jul 16}                             
-MWU16     	Spring Wheat {Sep 16}                             
-MWZ15     	Spring Wheat {Dec 15}                             
-MWZ16     	Spring Wheat {Dec 16}                             
-NW        	White Wheat                                       
+AJ.C      	AJC Continuation                                  	MGEX      
+AJF16     	AJC {Jan 16}                                      	MGEX      
+AJH16     	AJC {Mar 16}                                      	MGEX      
+AJX15     	AJC {Nov 15}                                      	MGEX      
+DW        	Durum Wheat                                       	MGEX      
+IC        	NCI National Corn                                 	MGEX      
+IC.C      	NCI National Corn Continuation                    	MGEX      
+ICV15     	NCI National Corn {Oct 15}                        	MGEX      
+ICX15     	NCI National Corn {Nov 15}                        	MGEX      
+ICZ15     	NCI National Corn {Dec 15}                        	MGEX      
+IH        	HRWI Hard Red                                     	MGEX      
+IH.C      	HRWI Hard Red Continuation                        	MGEX      
+IHV15     	HRWI Hard Red {Oct 15}                            	MGEX      
+IHX15     	HRWI Hard Red {Nov 15}                            	MGEX      
+IHZ15     	HRWI Hard Red {Dec 15}                            	MGEX      
+IP        	HRSI Hard Red Spring                              	MGEX      
+IP.C      	HRSI Hard Red Spring Continuation                 	MGEX      
+IPV15     	HRSI Hard Red Spring {Oct 15}                     	MGEX      
+IPX15     	HRSI Hard Red Spring {Nov 15}                     	MGEX      
+IPZ15     	HRSI Hard Red Spring {Dec 15}                     	MGEX      
+IS        	NSI National Soybean                              	MGEX      
+IS.C      	NSI National Soybean Continuation                 	MGEX      
+ISV15     	NSI National Soybean {Oct 15}                     	MGEX      
+ISX15     	NSI National Soybean {Nov 15}                     	MGEX      
+ISZ15     	NSI National Soybean {Dec 15}                     	MGEX      
+IW        	SRWI Soft Red Wheat                               	MGEX      
+IW.C      	SRWI Soft Red Wheat Continuation                  	MGEX      
+IWV15     	SRWI Soft Red Wheat {Oct 15}                      	MGEX      
+IWX15     	SRWI Soft Red Wheat {Nov 15}                      	MGEX      
+IWZ15     	SRWI Soft Red Wheat {Dec 15}                      	MGEX      
+MW        	Spring Wheat                                      	MGEX      
+MW.C      	Spring Wheat Continuation                         	MGEX      
+MWH16     	Spring Wheat {Mar 16}                             	MGEX      
+MWH17     	Spring Wheat {Mar 17}                             	MGEX      
+MWK16     	Spring Wheat {May 16}                             	MGEX      
+MWK17     	Spring Wheat {May 17}                             	MGEX      
+MWN16     	Spring Wheat {Jul 16}                             	MGEX      
+MWU16     	Spring Wheat {Sep 16}                             	MGEX      
+MWZ15     	Spring Wheat {Dec 15}                             	MGEX      
+MWZ16     	Spring Wheat {Dec 16}                             	MGEX      
+NW        	White Wheat                                       	MGEX      

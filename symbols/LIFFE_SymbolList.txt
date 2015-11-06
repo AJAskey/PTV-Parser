@@ -1,559 +1,558 @@
-A7.C      	MSCI EMI Continuation                             
-A7F16     	MSCI EMI {Jan 16}                                 
-A7G16     	MSCI EMI {Feb 16}                                 
-A7H16     	MSCI EMI {Mar 16}                                 
-A7H17     	MSCI EMI {Mar 17}                                 
-A7M16     	MSCI EMI {Jun 16}                                 
-A7M17     	MSCI EMI {Jun 17}                                 
-A7U16     	MSCI EMI {Sep 16}                                 
-A7V15     	MSCI EMI {Oct 15}                                 
-A7X15     	MSCI EMI {Nov 15}                                 
-A7Z15     	MSCI EMI {Dec 15}                                 
-A7Z16     	MSCI EMI {Dec 16}                                 
-A8.C      	MSCI Far East ex-Japan Continuation               
-A8F16     	MSCI Far East ex-Japan {Jan 16}                   
-A8G16     	MSCI Far East ex-Japan {Feb 16}                   
-A8H16     	MSCI Far East ex-Japan {Mar 16}                   
-A8H17     	MSCI Far East ex-Japan {Mar 17}                   
-A8M16     	MSCI Far East ex-Japan {Jun 16}                   
-A8M17     	MSCI Far East ex-Japan {Jun 17}                   
-A8U16     	MSCI Far East ex-Japan {Sep 16}                   
-A8V15     	MSCI Far East ex-Japan {Oct 15}                   
-A8X15     	MSCI Far East ex-Japan {Nov 15}                   
-A8Z15     	MSCI Far East ex-Japan {Dec 15}                   
-A8Z16     	MSCI Far East ex-Japan {Dec 16}                   
-AE        	Wheat {Mar 13}                                    
-CA.C      	No. 7 Cocoa Continuation                          
-CAH16     	No. 7 Cocoa {Mar 16}                              
-CAH17     	No. 7 Cocoa {Mar 17}                              
-CAK16     	No. 7 Cocoa {May 16}                              
-CAK17     	No. 7 Cocoa {May 17}                              
-CAN16     	No. 7 Cocoa {Jul 16}                              
-CAN17     	No. 7 Cocoa {Jul 17}                              
-CAU16     	No. 7 Cocoa {Sep 16}                              
-CAU17     	No. 7 Cocoa {Sep 17}                              
-CAZ15     	No. 7 Cocoa {Dec 15}                              
-CAZ16     	No. 7 Cocoa {Dec 16}                              
-EG.C      	EuroDollar Continuation                           
-EGF16     	EuroDollar {Jan 16}                               
-EGH16     	EuroDollar {Mar 16}                               
-EGH17     	EuroDollar {Mar 17}                               
-EGH18     	EuroDollar {Mar 18}                               
-EGH19     	EuroDollar {Mar 19}                               
-EGH20     	EuroDollar {Mar 20}                               
-EGM16     	EuroDollar {Jun 16}                               
-EGM17     	EuroDollar {Jun 17}                               
-EGM18     	EuroDollar {Jun 18}                               
-EGM19     	EuroDollar {Jun 19}                               
-EGM20     	EuroDollar {Jun 20}                               
-EGU16     	EuroDollar {Sep 16}                               
-EGU17     	EuroDollar {Sep 17}                               
-EGU18     	EuroDollar {Sep 18}                               
-EGU19     	EuroDollar {Sep 19}                               
-EGU20     	EuroDollar {Sep 20}                               
-EGV15     	EuroDollar {Oct 15}                               
-EGX15     	EuroDollar {Nov 15}                               
-EGZ15     	EuroDollar {Dec 15}                               
-EGZ16     	EuroDollar {Dec 16}                               
-EGZ17     	EuroDollar {Dec 17}                               
-EGZ18     	EuroDollar {Dec 18}                               
-EGZ19     	EuroDollar {Dec 19}                               
-EGZ20     	EuroDollar {Dec 20}                               
-ET        	EuroTop 100                                       
-F.C       	3-Month Euroswiss Continuation                    
-F6.C      	MSCI World NTR Index Continuation                 
-F6H16     	MSCI World NTR Index {Mar 16}                     
-F6M16     	MSCI World NTR Index {Jun 16}                     
-F6U16     	MSCI World NTR Index {Sep 16}                     
-F6Z15     	MSCI World NTR Index {Dec 15}                     
-F6Z16     	MSCI World NTR Index {Dec 16}                     
-FH16      	3-Month Euroswiss {Mar 16}                        
-FH17      	3-Month Euroswiss {Mar 17}                        
-FH18      	3-Month Euroswiss {Mar 18}                        
-FH19      	3-Month Euroswiss {Mar 19}                        
-FH20      	3-Month Euroswiss {Mar 20}                        
-FH21      	3-Month Euroswiss {Mar 21}                        
-FJ        	1-Month EONIA {Apr 11}                            
-FK        	1-Month EONIA {Apr 11}                            
-FM16      	3-Month Euroswiss {Jun 16}                        
-FM17      	3-Month Euroswiss {Jun 17}                        
-FM18      	3-Month Euroswiss {Jun 18}                        
-FM19      	3-Month Euroswiss {Jun 19}                        
-FM20      	3-Month Euroswiss {Jun 20}                        
-FM21      	3-Month Euroswiss {Jun 21}                        
-FU16      	3-Month Euroswiss {Sep 16}                        
-FU17      	3-Month Euroswiss {Sep 17}                        
-FU18      	3-Month Euroswiss {Sep 18}                        
-FU19      	3-Month Euroswiss {Sep 19}                        
-FU20      	3-Month Euroswiss {Sep 20}                        
-FU21      	3-Month Euroswiss {Sep 21}                        
-FZ15      	3-Month Euroswiss {Dec 15}                        
-FZ16      	3-Month Euroswiss {Dec 16}                        
-FZ17      	3-Month Euroswiss {Dec 17}                        
-FZ18      	3-Month Euroswiss {Dec 18}                        
-FZ19      	3-Month Euroswiss {Dec 19}                        
-FZ20      	3-Month Euroswiss {Dec 20}                        
-G.C       	10-Year Gilt Continuation                         
-GH16      	10-Year Gilt {Mar 16}                             
-GM16      	10-Year Gilt {Jun 16}                             
-GZ15      	10-Year Gilt {Dec 15}                             
-IB.C      	FTSE 100 Dividend Index Continuation              
-IBZ15     	FTSE 100 Dividend Index {Dec 15}                  
-IBZ16     	FTSE 100 Dividend Index {Dec 16}                  
-IBZ17     	FTSE 100 Dividend Index {Dec 17}                  
-IBZ18     	FTSE 100 Dividend Index {Dec 18}                  
-IBZ19     	FTSE 100 Dividend Index {Dec 19}                  
-IBZ20     	FTSE 100 Dividend Index {Dec 20}                  
-IBZ21     	FTSE 100 Dividend Index {Dec 21}                  
-IJ.C      	1-Month EONIA Continuation                        
-IJF16     	1-Month EONIA {Jan 16}                            
-IJG16     	1-Month EONIA {Feb 16}                            
-IJH16     	1-Month EONIA {Mar 16}                            
-IJJ16     	1-Month EONIA {Apr 16}                            
-IJK16     	1-Month EONIA {May 16}                            
-IJM16     	1-Month EONIA {Jun 16}                            
-IJN16     	1-Month EONIA {Jul 16}                            
-IJQ16     	1-Month EONIA {Aug 16}                            
-IJU15     	1-Month EONIA {Sep 15}                            
-IJU16     	1-Month EONIA {Sep 16}                            
-IJV15     	1-Month EONIA {Oct 15}                            
-IJX15     	1-Month EONIA {Nov 15}                            
-IJZ15     	1-Month EONIA {Dec 15}                            
-IM.C      	3-Month EuriBor Continuation                      
-IMF16     	3-Month EuriBor {Jan 16}                          
-IMG16     	3-Month EuriBor {Feb 16}                          
-IMH16     	3-Month EuriBor {Mar 16}                          
-IMH17     	3-Month EuriBor {Mar 17}                          
-IMH18     	3-Month EuriBor {Mar 18}                          
-IMH19     	3-Month EuriBor {Mar 19}                          
-IMH20     	3-Month EuriBor {Mar 20}                          
-IMH21     	3-Month EuriBor {Mar 21}                          
-IMM16     	3-Month EuriBor {Jun 16}                          
-IMM17     	3-Month EuriBor {Jun 17}                          
-IMM18     	3-Month EuriBor {Jun 18}                          
-IMM19     	3-Month EuriBor {Jun 19}                          
-IMM20     	3-Month EuriBor {Jun 20}                          
-IMM21     	3-Month EuriBor {Jun 21}                          
-IMU16     	3-Month EuriBor {Sep 16}                          
-IMU17     	3-Month EuriBor {Sep 17}                          
-IMU18     	3-Month EuriBor {Sep 18}                          
-IMU19     	3-Month EuriBor {Sep 19}                          
-IMU20     	3-Month EuriBor {Sep 20}                          
-IMU21     	3-Month EuriBor {Sep 21}                          
-IMV15     	3-Month EuriBor {Oct 15}                          
-IMX15     	3-Month EuriBor {Nov 15}                          
-IMZ15     	3-Month EuriBor {Dec 15}                          
-IMZ16     	3-Month EuriBor {Dec 16}                          
-IMZ17     	3-Month EuriBor {Dec 17}                          
-IMZ18     	3-Month EuriBor {Dec 18}                          
-IMZ19     	3-Month EuriBor {Dec 19}                          
-IMZ20     	3-Month EuriBor {Dec 20}                          
-JH.C      	U.S Treasury Repo Continuation                    
-JHF16     	U.S Treasury Repo {Jan 16}                        
-JHF17     	U.S Treasury Repo {Jan 17}                        
-JHG16     	U.S Treasury Repo {Feb 16}                        
-JHG17     	U.S Treasury Repo {Feb 17}                        
-JHH16     	U.S Treasury Repo {Mar 16}                        
-JHH17     	U.S Treasury Repo {Mar 17}                        
-JHJ16     	U.S Treasury Repo {Apr 16}                        
-JHJ17     	U.S Treasury Repo {Apr 17}                        
-JHK16     	U.S Treasury Repo {May 16}                        
-JHK17     	U.S Treasury Repo {May 17}                        
-JHM16     	U.S Treasury Repo {Jun 16}                        
-JHM17     	U.S Treasury Repo {Jun 17}                        
-JHN16     	U.S Treasury Repo {Jul 16}                        
-JHN17     	U.S Treasury Repo {Jul 17}                        
-JHQ16     	U.S Treasury Repo {Aug 16}                        
-JHQ17     	U.S Treasury Repo {Aug 17}                        
-JHU15     	U.S Treasury Repo {Sep 15}                        
-JHU16     	U.S Treasury Repo {Sep 16}                        
-JHU17     	U.S Treasury Repo {Sep 17}                        
-JHV15     	U.S Treasury Repo {Oct 15}                        
-JHV16     	U.S Treasury Repo {Oct 16}                        
-JHX15     	U.S Treasury Repo {Nov 15}                        
-JHX16     	U.S Treasury Repo {Nov 16}                        
-JHZ15     	U.S Treasury Repo {Dec 15}                        
-JHZ16     	U.S Treasury Repo {Dec 16}                        
-JR.C      	Mortgage-Backed Repo Continuation                 
-JRF16     	Mortgage-Backed Repo {Jan 16}                     
-JRF17     	Mortgage-Backed Repo {Jan 17}                     
-JRG16     	Mortgage-Backed Repo {Feb 16}                     
-JRG17     	Mortgage-Backed Repo {Feb 17}                     
-JRH16     	Mortgage-Backed Repo {Mar 16}                     
-JRH17     	Mortgage-Backed Repo {Mar 17}                     
-JRJ16     	Mortgage-Backed Repo {Apr 16}                     
-JRJ17     	Mortgage-Backed Repo {Apr 17}                     
-JRK16     	Mortgage-Backed Repo {May 16}                     
-JRK17     	Mortgage-Backed Repo {May 17}                     
-JRM16     	Mortgage-Backed Repo {Jun 16}                     
-JRM17     	Mortgage-Backed Repo {Jun 17}                     
-JRN16     	Mortgage-Backed Repo {Jul 16}                     
-JRN17     	Mortgage-Backed Repo {Jul 17}                     
-JRQ16     	Mortgage-Backed Repo {Aug 16}                     
-JRQ17     	Mortgage-Backed Repo {Aug 17}                     
-JRU15     	Mortgage-Backed Repo {Sep 15}                     
-JRU16     	Mortgage-Backed Repo {Sep 16}                     
-JRU17     	Mortgage-Backed Repo {Sep 17}                     
-JRV15     	Mortgage-Backed Repo {Oct 15}                     
-JRV16     	Mortgage-Backed Repo {Oct 16}                     
-JRX15     	Mortgage-Backed Repo {Nov 15}                     
-JRX16     	Mortgage-Backed Repo {Nov 16}                     
-JRZ15     	Mortgage-Backed Repo {Dec 15}                     
-JRZ16     	Mortgage-Backed Repo {Dec 16}                     
-JU.C      	Agency Repo Continuation                          
-JUF16     	Agency Repo {Jan 16}                              
-JUF17     	Agency Repo {Jan 17}                              
-JUG16     	Agency Repo {Feb 16}                              
-JUG17     	Agency Repo {Feb 17}                              
-JUH16     	Agency Repo {Mar 16}                              
-JUH17     	Agency Repo {Mar 17}                              
-JUJ16     	Agency Repo {Apr 16}                              
-JUJ17     	Agency Repo {Apr 17}                              
-JUK16     	Agency Repo {May 16}                              
-JUK17     	Agency Repo {May 17}                              
-JUM16     	Agency Repo {Jun 16}                              
-JUM17     	Agency Repo {Jun 17}                              
-JUN16     	Agency Repo {Jul 16}                              
-JUN17     	Agency Repo {Jul 17}                              
-JUQ16     	Agency Repo {Aug 16}                              
-JUQ17     	Agency Repo {Aug 17}                              
-JUU15     	Agency Repo {Sep 15}                              
-JUU16     	Agency Repo {Sep 16}                              
-JUU17     	Agency Repo {Sep 17}                              
-JUV15     	Agency Repo {Oct 15}                              
-JUV16     	Agency Repo {Oct 16}                              
-JUX15     	Agency Repo {Nov 15}                              
-JUX16     	Agency Repo {Nov 16}                              
-JUZ15     	Agency Repo {Dec 15}                              
-JUZ16     	Agency Repo {Dec 16}                              
-L.C       	3-Month Sterling Continuation                     
-L7.C      	MSCI Europe NTR Index Continuation                
-L7H16     	MSCI Europe NTR Index {Mar 16}                    
-L7M16     	MSCI Europe NTR Index {Jun 16}                    
-L7U16     	MSCI Europe NTR Index {Sep 16}                    
-L7Z15     	MSCI Europe NTR Index {Dec 15}                    
-L7Z16     	MSCI Europe NTR Index {Dec 16}                    
-LH16      	3-Month Sterling {Mar 16}                         
-LH17      	3-Month Sterling {Mar 17}                         
-LH18      	3-Month Sterling {Mar 18}                         
-LH19      	3-Month Sterling {Mar 19}                         
-LH20      	3-Month Sterling {Mar 20}                         
-LH21      	3-Month Sterling {Mar 21}                         
-LM16      	3-Month Sterling {Jun 16}                         
-LM17      	3-Month Sterling {Jun 17}                         
-LM18      	3-Month Sterling {Jun 18}                         
-LM19      	3-Month Sterling {Jun 19}                         
-LM20      	3-Month Sterling {Jun 20}                         
-LM21      	3-Month Sterling {Jun 21}                         
-LU16      	3-Month Sterling {Sep 16}                         
-LU17      	3-Month Sterling {Sep 17}                         
-LU18      	3-Month Sterling {Sep 18}                         
-LU19      	3-Month Sterling {Sep 19}                         
-LU20      	3-Month Sterling {Sep 20}                         
-LU21      	3-Month Sterling {Sep 21}                         
-LV15      	3-Month Sterling {Oct 15}                         
-LW.C      	Wheat Continuation                                
-LWF16     	Wheat {Jan 16}                                    
-LWF17     	Wheat {Jan 17}                                    
-LWH16     	Wheat {Mar 16}                                    
-LWH17     	Wheat {Mar 17}                                    
-LWK16     	Wheat {May 16}                                    
-LWK17     	Wheat {May 17}                                    
-LWN16     	Wheat {Jul 16}                                    
-LWX15     	Wheat {Nov 15}                                    
-LWX16     	Wheat {Nov 16}                                    
-LWX17     	Wheat {Nov 17}                                    
-LX15      	3-Month Sterling {Nov 15}                         
-LZ15      	3-Month Sterling {Dec 15}                         
-LZ16      	3-Month Sterling {Dec 16}                         
-LZ17      	3-Month Sterling {Dec 17}                         
-LZ18      	3-Month Sterling {Dec 18}                         
-LZ19      	3-Month Sterling {Dec 19}                         
-LZ20      	3-Month Sterling {Dec 20}                         
-N3.C      	UK Base Electricity Continuation                  
-N3F16     	UK Base Electricity {Jan 16}                      
-N3F17     	UK Base Electricity {Jan 17}                      
-N3F18     	UK Base Electricity {Jan 18}                      
-N3F19     	UK Base Electricity {Jan 19}                      
-N3G16     	UK Base Electricity {Feb 16}                      
-N3G17     	UK Base Electricity {Feb 17}                      
-N3G18     	UK Base Electricity {Feb 18}                      
-N3G19     	UK Base Electricity {Feb 19}                      
-N3H16     	UK Base Electricity {Mar 16}                      
-N3H17     	UK Base Electricity {Mar 17}                      
-N3H18     	UK Base Electricity {Mar 18}                      
-N3H19     	UK Base Electricity {Mar 19}                      
-N3J16     	UK Base Electricity {Apr 16}                      
-N3J17     	UK Base Electricity {Apr 17}                      
-N3J18     	UK Base Electricity {Apr 18}                      
-N3J19     	UK Base Electricity {Apr 19}                      
-N3K16     	UK Base Electricity {May 16}                      
-N3K17     	UK Base Electricity {May 17}                      
-N3K18     	UK Base Electricity {May 18}                      
-N3K19     	UK Base Electricity {May 19}                      
-N3M16     	UK Base Electricity {Jun 16}                      
-N3M17     	UK Base Electricity {Jun 17}                      
-N3M18     	UK Base Electricity {Jun 18}                      
-N3M19     	UK Base Electricity {Jun 19}                      
-N3N16     	UK Base Electricity {Jul 16}                      
-N3N17     	UK Base Electricity {Jul 17}                      
-N3N18     	UK Base Electricity {Jul 18}                      
-N3N19     	UK Base Electricity {Jul 19}                      
-N3Q16     	UK Base Electricity {Aug 16}                      
-N3Q17     	UK Base Electricity {Aug 17}                      
-N3Q18     	UK Base Electricity {Aug 18}                      
-N3Q19     	UK Base Electricity {Aug 19}                      
-N3U16     	UK Base Electricity {Sep 16}                      
-N3U17     	UK Base Electricity {Sep 17}                      
-N3U18     	UK Base Electricity {Sep 18}                      
-N3U19     	UK Base Electricity {Sep 19}                      
-N3V16     	UK Base Electricity {Oct 16}                      
-N3V17     	UK Base Electricity {Oct 17}                      
-N3V18     	UK Base Electricity {Oct 18}                      
-N3X15     	UK Base Electricity {Nov 15}                      
-N3X16     	UK Base Electricity {Nov 16}                      
-N3X17     	UK Base Electricity {Nov 17}                      
-N3X18     	UK Base Electricity {Nov 18}                      
-N3Z15     	UK Base Electricity {Dec 15}                      
-N3Z16     	UK Base Electricity {Dec 16}                      
-N3Z17     	UK Base Electricity {Dec 17}                      
-N3Z18     	UK Base Electricity {Dec 18}                      
-N4.C      	UK Base Electric Gregorian Continuation           
-N4F16     	UK Base Electric Gregorian {Jan 16}               
-N4F17     	UK Base Electric Gregorian {Jan 17}               
-N4F18     	UK Base Electric Gregorian {Jan 18}               
-N4F19     	UK Base Electric Gregorian {Jan 19}               
-N4F20     	UK Base Electric Gregorian {Jan 20}               
-N4F21     	UK Base Electric Gregorian {Jan 21}               
-N4G16     	UK Base Electric Gregorian {Feb 16}               
-N4G17     	UK Base Electric Gregorian {Feb 17}               
-N4G18     	UK Base Electric Gregorian {Feb 18}               
-N4G19     	UK Base Electric Gregorian {Feb 19}               
-N4G20     	UK Base Electric Gregorian {Feb 20}               
-N4G21     	UK Base Electric Gregorian {Feb 21}               
-N4H16     	UK Base Electric Gregorian {Mar 16}               
-N4H17     	UK Base Electric Gregorian {Mar 17}               
-N4H18     	UK Base Electric Gregorian {Mar 18}               
-N4H19     	UK Base Electric Gregorian {Mar 19}               
-N4H20     	UK Base Electric Gregorian {Mar 20}               
-N4H21     	UK Base Electric Gregorian {Mar 21}               
-N4J16     	UK Base Electric Gregorian {Apr 16}               
-N4J17     	UK Base Electric Gregorian {Apr 17}               
-N4J18     	UK Base Electric Gregorian {Apr 18}               
-N4J19     	UK Base Electric Gregorian {Apr 19}               
-N4J20     	UK Base Electric Gregorian {Apr 20}               
-N4K16     	UK Base Electric Gregorian {May 16}               
-N4K17     	UK Base Electric Gregorian {May 17}               
-N4K18     	UK Base Electric Gregorian {May 18}               
-N4K19     	UK Base Electric Gregorian {May 19}               
-N4K20     	UK Base Electric Gregorian {May 20}               
-N4M16     	UK Base Electric Gregorian {Jun 16}               
-N4M17     	UK Base Electric Gregorian {Jun 17}               
-N4M18     	UK Base Electric Gregorian {Jun 18}               
-N4M19     	UK Base Electric Gregorian {Jun 19}               
-N4M20     	UK Base Electric Gregorian {Jun 20}               
-N4N16     	UK Base Electric Gregorian {Jul 16}               
-N4N17     	UK Base Electric Gregorian {Jul 17}               
-N4N18     	UK Base Electric Gregorian {Jul 18}               
-N4N19     	UK Base Electric Gregorian {Jul 19}               
-N4N20     	UK Base Electric Gregorian {Jul 20}               
-N4Q16     	UK Base Electric Gregorian {Aug 16}               
-N4Q17     	UK Base Electric Gregorian {Aug 17}               
-N4Q18     	UK Base Electric Gregorian {Aug 18}               
-N4Q19     	UK Base Electric Gregorian {Aug 19}               
-N4Q20     	UK Base Electric Gregorian {Aug 20}               
-N4U16     	UK Base Electric Gregorian {Sep 16}               
-N4U17     	UK Base Electric Gregorian {Sep 17}               
-N4U18     	UK Base Electric Gregorian {Sep 18}               
-N4U19     	UK Base Electric Gregorian {Sep 19}               
-N4U20     	UK Base Electric Gregorian {Sep 20}               
-N4V16     	UK Base Electric Gregorian {Oct 16}               
-N4V17     	UK Base Electric Gregorian {Oct 17}               
-N4V18     	UK Base Electric Gregorian {Oct 18}               
-N4V19     	UK Base Electric Gregorian {Oct 19}               
-N4V20     	UK Base Electric Gregorian {Oct 20}               
-N4X15     	UK Base Electric Gregorian {Nov 15}               
-N4X16     	UK Base Electric Gregorian {Nov 16}               
-N4X17     	UK Base Electric Gregorian {Nov 17}               
-N4X18     	UK Base Electric Gregorian {Nov 18}               
-N4X19     	UK Base Electric Gregorian {Nov 19}               
-N4X20     	UK Base Electric Gregorian {Nov 20}               
-N4Z15     	UK Base Electric Gregorian {Dec 15}               
-N4Z16     	UK Base Electric Gregorian {Dec 16}               
-N4Z17     	UK Base Electric Gregorian {Dec 17}               
-N4Z18     	UK Base Electric Gregorian {Dec 18}               
-N4Z19     	UK Base Electric Gregorian {Dec 19}               
-N4Z20     	UK Base Electric Gregorian {Dec 20}               
-N7.C      	UK Peak Electricity Continuation                  
-N7F16     	UK Peak Electricity {Jan 16}                      
-N7F17     	UK Peak Electricity {Jan 17}                      
-N7F18     	UK Peak Electricity {Jan 18}                      
-N7F19     	UK Peak Electricity {Jan 19}                      
-N7G16     	UK Peak Electricity {Feb 16}                      
-N7G17     	UK Peak Electricity {Feb 17}                      
-N7G18     	UK Peak Electricity {Feb 18}                      
-N7G19     	UK Peak Electricity {Feb 19}                      
-N7H16     	UK Peak Electricity {Mar 16}                      
-N7H17     	UK Peak Electricity {Mar 17}                      
-N7H18     	UK Peak Electricity {Mar 18}                      
-N7H19     	UK Peak Electricity {Mar 19}                      
-N7J16     	UK Peak Electricity {Apr 16}                      
-N7J17     	UK Peak Electricity {Apr 17}                      
-N7J18     	UK Peak Electricity {Apr 18}                      
-N7J19     	UK Peak Electricity {Apr 19}                      
-N7K16     	UK Peak Electricity {May 16}                      
-N7K17     	UK Peak Electricity {May 17}                      
-N7K18     	UK Peak Electricity {May 18}                      
-N7K19     	UK Peak Electricity {May 19}                      
-N7M16     	UK Peak Electricity {Jun 16}                      
-N7M17     	UK Peak Electricity {Jun 17}                      
-N7M18     	UK Peak Electricity {Jun 18}                      
-N7M19     	UK Peak Electricity {Jun 19}                      
-N7N16     	UK Peak Electricity {Jul 16}                      
-N7N17     	UK Peak Electricity {Jul 17}                      
-N7N18     	UK Peak Electricity {Jul 18}                      
-N7N19     	UK Peak Electricity {Jul 19}                      
-N7Q16     	UK Peak Electricity {Aug 16}                      
-N7Q17     	UK Peak Electricity {Aug 17}                      
-N7Q18     	UK Peak Electricity {Aug 18}                      
-N7Q19     	UK Peak Electricity {Aug 19}                      
-N7U16     	UK Peak Electricity {Sep 16}                      
-N7U17     	UK Peak Electricity {Sep 17}                      
-N7U18     	UK Peak Electricity {Sep 18}                      
-N7U19     	UK Peak Electricity {Sep 19}                      
-N7V16     	UK Peak Electricity {Oct 16}                      
-N7V17     	UK Peak Electricity {Oct 17}                      
-N7V18     	UK Peak Electricity {Oct 18}                      
-N7X15     	UK Peak Electricity {Nov 15}                      
-N7X16     	UK Peak Electricity {Nov 16}                      
-N7X17     	UK Peak Electricity {Nov 17}                      
-N7X18     	UK Peak Electricity {Nov 18}                      
-N7Z15     	UK Peak Electricity {Dec 15}                      
-N7Z16     	UK Peak Electricity {Dec 16}                      
-N7Z17     	UK Peak Electricity {Dec 17}                      
-N7Z18     	UK Peak Electricity {Dec 18}                      
-N8.C      	UK Peak Electric Gregorian Continuation           
-N8F16     	UK Peak Electric Gregorian {Jan 16}               
-N8F17     	UK Peak Electric Gregorian {Jan 17}               
-N8F18     	UK Peak Electric Gregorian {Jan 18}               
-N8F19     	UK Peak Electric Gregorian {Jan 19}               
-N8F20     	UK Peak Electric Gregorian {Jan 20}               
-N8F21     	UK Peak Electric Gregorian {Jan 21}               
-N8G16     	UK Peak Electric Gregorian {Feb 16}               
-N8G17     	UK Peak Electric Gregorian {Feb 17}               
-N8G18     	UK Peak Electric Gregorian {Feb 18}               
-N8G19     	UK Peak Electric Gregorian {Feb 19}               
-N8G20     	UK Peak Electric Gregorian {Feb 20}               
-N8G21     	UK Peak Electric Gregorian {Feb 21}               
-N8H16     	UK Peak Electric Gregorian {Mar 16}               
-N8H17     	UK Peak Electric Gregorian {Mar 17}               
-N8H18     	UK Peak Electric Gregorian {Mar 18}               
-N8H19     	UK Peak Electric Gregorian {Mar 19}               
-N8H20     	UK Peak Electric Gregorian {Mar 20}               
-N8H21     	UK Peak Electric Gregorian {Mar 21}               
-N8J16     	UK Peak Electric Gregorian {Apr 16}               
-N8J17     	UK Peak Electric Gregorian {Apr 17}               
-N8J18     	UK Peak Electric Gregorian {Apr 18}               
-N8J19     	UK Peak Electric Gregorian {Apr 19}               
-N8J20     	UK Peak Electric Gregorian {Apr 20}               
-N8K16     	UK Peak Electric Gregorian {May 16}               
-N8K17     	UK Peak Electric Gregorian {May 17}               
-N8K18     	UK Peak Electric Gregorian {May 18}               
-N8K19     	UK Peak Electric Gregorian {May 19}               
-N8K20     	UK Peak Electric Gregorian {May 20}               
-N8M16     	UK Peak Electric Gregorian {Jun 16}               
-N8M17     	UK Peak Electric Gregorian {Jun 17}               
-N8M18     	UK Peak Electric Gregorian {Jun 18}               
-N8M19     	UK Peak Electric Gregorian {Jun 19}               
-N8M20     	UK Peak Electric Gregorian {Jun 20}               
-N8N16     	UK Peak Electric Gregorian {Jul 16}               
-N8N17     	UK Peak Electric Gregorian {Jul 17}               
-N8N18     	UK Peak Electric Gregorian {Jul 18}               
-N8N19     	UK Peak Electric Gregorian {Jul 19}               
-N8N20     	UK Peak Electric Gregorian {Jul 20}               
-N8Q16     	UK Peak Electric Gregorian {Aug 16}               
-N8Q17     	UK Peak Electric Gregorian {Aug 17}               
-N8Q18     	UK Peak Electric Gregorian {Aug 18}               
-N8Q19     	UK Peak Electric Gregorian {Aug 19}               
-N8Q20     	UK Peak Electric Gregorian {Aug 20}               
-N8U16     	UK Peak Electric Gregorian {Sep 16}               
-N8U17     	UK Peak Electric Gregorian {Sep 17}               
-N8U18     	UK Peak Electric Gregorian {Sep 18}               
-N8U19     	UK Peak Electric Gregorian {Sep 19}               
-N8U20     	UK Peak Electric Gregorian {Sep 20}               
-N8V16     	UK Peak Electric Gregorian {Oct 16}               
-N8V17     	UK Peak Electric Gregorian {Oct 17}               
-N8V18     	UK Peak Electric Gregorian {Oct 18}               
-N8V19     	UK Peak Electric Gregorian {Oct 19}               
-N8V20     	UK Peak Electric Gregorian {Oct 20}               
-N8X15     	UK Peak Electric Gregorian {Nov 15}               
-N8X16     	UK Peak Electric Gregorian {Nov 16}               
-N8X17     	UK Peak Electric Gregorian {Nov 17}               
-N8X18     	UK Peak Electric Gregorian {Nov 18}               
-N8X19     	UK Peak Electric Gregorian {Nov 19}               
-N8X20     	UK Peak Electric Gregorian {Nov 20}               
-N8Z15     	UK Peak Electric Gregorian {Dec 15}               
-N8Z16     	UK Peak Electric Gregorian {Dec 16}               
-N8Z17     	UK Peak Electric Gregorian {Dec 17}               
-N8Z18     	UK Peak Electric Gregorian {Dec 18}               
-N8Z19     	UK Peak Electric Gregorian {Dec 19}               
-N8Z20     	UK Peak Electric Gregorian {Dec 20}               
-QB.C      	Ultra Gilt Continuation                           
-QBH16     	Ultra Gilt {Mar 16}                               
-QBM16     	Ultra Gilt {Jun 16}                               
-QBZ15     	Ultra Gilt {Dec 15}                               
-QD.C      	5-Year Gilt Continuation                          
-QDH16     	5-Year Gilt {Mar 16}                              
-QDZ15     	5-Year Gilt {Dec 15}                              
-QE.C      	2-Year Gilt Continuation                          
-QEH16     	2-Year Gilt {Mar 16}                              
-QEZ15     	2-Year Gilt {Dec 15}                              
-RM.C      	Robusta Coffee 10-T Continuation                  
-RMF16     	Robusta Coffee 10-T {Jan 16}                      
-RMF17     	Robusta Coffee 10-T {Jan 17}                      
-RMH16     	Robusta Coffee 10-T {Mar 16}                      
-RMH17     	Robusta Coffee 10-T {Mar 17}                      
-RMK16     	Robusta Coffee 10-T {May 16}                      
-RMK17     	Robusta Coffee 10-T {May 17}                      
-RMN16     	Robusta Coffee 10-T {Jul 16}                      
-RMU15     	Robusta Coffee 10-T {Sep 15}                      
-RMU16     	Robusta Coffee 10-T {Sep 16}                      
-RMX15     	Robusta Coffee 10-T {Nov 15}                      
-RMX16     	Robusta Coffee 10-T {Nov 16}                      
-SW.C      	No. 5 White Sugar Continuation                    
-SWH16     	No. 5 White Sugar {Mar 16}                        
-SWH17     	No. 5 White Sugar {Mar 17}                        
-SWK16     	No. 5 White Sugar {May 16}                        
-SWK17     	No. 5 White Sugar {May 17}                        
-SWQ16     	No. 5 White Sugar {Aug 16}                        
-SWV16     	No. 5 White Sugar {Oct 16}                        
-SWZ15     	No. 5 White Sugar {Dec 15}                        
-SWZ16     	No. 5 White Sugar {Dec 16}                        
-VF.C      	5-Yr Euro Swapnote Continuation                   
-VFH16     	5-Yr Euro Swapnote {Mar 16}                       
-VFZ15     	5-Yr Euro Swapnote {Dec 15}                       
-VT.C      	10-Yr Euro Swapnote Continuation                  
-VTH16     	10-Yr Euro Swapnote {Mar 16}                      
-VTZ15     	10-Yr Euro Swapnote {Dec 15}                      
-VW.C      	2-Yr Euro Swapnote Continuation                   
-VWH16     	2-Yr Euro Swapnote {Mar 16}                       
-VWZ15     	2-Yr Euro Swapnote {Dec 15}                       
-VX.C      	2-Yr Dollar Swapnote Continuation                 
-VXH16     	2-Yr Dollar Swapnote {Mar 16}                     
-VXZ15     	2-Yr Dollar Swapnote {Dec 15}                     
-VY.C      	5-Yr Dollar Swapnote Continuation                 
-VYH16     	5-Yr Dollar Swapnote {Mar 16}                     
-VYZ15     	5-Yr Dollar Swapnote {Dec 15}                     
-VZ.C      	10Yr Dollar Swapnote Continuation                 
-VZH16     	10Yr Dollar Swapnote {Mar 16}                     
-VZZ15     	10Yr Dollar Swapnote {Dec 15}                     
-X         	FTSE 100                                          
-X.C       	FTSE 100 Continuation                             
-XH16      	FTSE 100 {Mar 16}                                 
-XM16      	FTSE 100 {Jun 16}                                 
-XU16      	FTSE 100 {Sep 16}                                 
-XZ15      	FTSE 100 {Dec 15}                                 
-Y         	FTSE 250                                          
-Y.C       	FTSE 250 Continuation                             
-YH16      	FTSE 250 {Mar 16}                                 
-YZ15      	FTSE 250 {Dec 15}                                 
+A7.C      	MSCI EMI Continuation                             	LIFFE     
+A7F16     	MSCI EMI {Jan 16}                                 	LIFFE     
+A7G16     	MSCI EMI {Feb 16}                                 	LIFFE     
+A7H16     	MSCI EMI {Mar 16}                                 	LIFFE     
+A7H17     	MSCI EMI {Mar 17}                                 	LIFFE     
+A7M16     	MSCI EMI {Jun 16}                                 	LIFFE     
+A7M17     	MSCI EMI {Jun 17}                                 	LIFFE     
+A7U16     	MSCI EMI {Sep 16}                                 	LIFFE     
+A7V15     	MSCI EMI {Oct 15}                                 	LIFFE     
+A7X15     	MSCI EMI {Nov 15}                                 	LIFFE     
+A7Z15     	MSCI EMI {Dec 15}                                 	LIFFE     
+A7Z16     	MSCI EMI {Dec 16}                                 	LIFFE     
+A8.C      	MSCI Far East ex-Japan Continuation               	LIFFE     
+A8F16     	MSCI Far East ex-Japan {Jan 16}                   	LIFFE     
+A8G16     	MSCI Far East ex-Japan {Feb 16}                   	LIFFE     
+A8H16     	MSCI Far East ex-Japan {Mar 16}                   	LIFFE     
+A8H17     	MSCI Far East ex-Japan {Mar 17}                   	LIFFE     
+A8M16     	MSCI Far East ex-Japan {Jun 16}                   	LIFFE     
+A8M17     	MSCI Far East ex-Japan {Jun 17}                   	LIFFE     
+A8U16     	MSCI Far East ex-Japan {Sep 16}                   	LIFFE     
+A8V15     	MSCI Far East ex-Japan {Oct 15}                   	LIFFE     
+A8X15     	MSCI Far East ex-Japan {Nov 15}                   	LIFFE     
+A8Z15     	MSCI Far East ex-Japan {Dec 15}                   	LIFFE     
+A8Z16     	MSCI Far East ex-Japan {Dec 16}                   	LIFFE     
+AE        	Wheat {Mar 13}                                    	LIFFE     
+CA.C      	No. 7 Cocoa Continuation                          	LIFFE     
+CAH16     	No. 7 Cocoa {Mar 16}                              	LIFFE     
+CAH17     	No. 7 Cocoa {Mar 17}                              	LIFFE     
+CAK16     	No. 7 Cocoa {May 16}                              	LIFFE     
+CAK17     	No. 7 Cocoa {May 17}                              	LIFFE     
+CAN16     	No. 7 Cocoa {Jul 16}                              	LIFFE     
+CAN17     	No. 7 Cocoa {Jul 17}                              	LIFFE     
+CAU16     	No. 7 Cocoa {Sep 16}                              	LIFFE     
+CAU17     	No. 7 Cocoa {Sep 17}                              	LIFFE     
+CAZ15     	No. 7 Cocoa {Dec 15}                              	LIFFE     
+CAZ16     	No. 7 Cocoa {Dec 16}                              	LIFFE     
+EG.C      	EuroDollar Continuation                           	LIFFE     
+EGF16     	EuroDollar {Jan 16}                               	LIFFE     
+EGH16     	EuroDollar {Mar 16}                               	LIFFE     
+EGH17     	EuroDollar {Mar 17}                               	LIFFE     
+EGH18     	EuroDollar {Mar 18}                               	LIFFE     
+EGH19     	EuroDollar {Mar 19}                               	LIFFE     
+EGH20     	EuroDollar {Mar 20}                               	LIFFE     
+EGM16     	EuroDollar {Jun 16}                               	LIFFE     
+EGM17     	EuroDollar {Jun 17}                               	LIFFE     
+EGM18     	EuroDollar {Jun 18}                               	LIFFE     
+EGM19     	EuroDollar {Jun 19}                               	LIFFE     
+EGM20     	EuroDollar {Jun 20}                               	LIFFE     
+EGU16     	EuroDollar {Sep 16}                               	LIFFE     
+EGU17     	EuroDollar {Sep 17}                               	LIFFE     
+EGU18     	EuroDollar {Sep 18}                               	LIFFE     
+EGU19     	EuroDollar {Sep 19}                               	LIFFE     
+EGU20     	EuroDollar {Sep 20}                               	LIFFE     
+EGV15     	EuroDollar {Oct 15}                               	LIFFE     
+EGX15     	EuroDollar {Nov 15}                               	LIFFE     
+EGZ15     	EuroDollar {Dec 15}                               	LIFFE     
+EGZ16     	EuroDollar {Dec 16}                               	LIFFE     
+EGZ17     	EuroDollar {Dec 17}                               	LIFFE     
+EGZ18     	EuroDollar {Dec 18}                               	LIFFE     
+EGZ19     	EuroDollar {Dec 19}                               	LIFFE     
+EGZ20     	EuroDollar {Dec 20}                               	LIFFE     
+ET        	EuroTop 100                                       	LIFFE     
+F.C       	3-Month Euroswiss Continuation                    	LIFFE     
+F6.C      	MSCI World NTR Index Continuation                 	LIFFE     
+F6H16     	MSCI World NTR Index {Mar 16}                     	LIFFE     
+F6M16     	MSCI World NTR Index {Jun 16}                     	LIFFE     
+F6U16     	MSCI World NTR Index {Sep 16}                     	LIFFE     
+F6Z15     	MSCI World NTR Index {Dec 15}                     	LIFFE     
+F6Z16     	MSCI World NTR Index {Dec 16}                     	LIFFE     
+FH16      	3-Month Euroswiss {Mar 16}                        	LIFFE     
+FH17      	3-Month Euroswiss {Mar 17}                        	LIFFE     
+FH18      	3-Month Euroswiss {Mar 18}                        	LIFFE     
+FH19      	3-Month Euroswiss {Mar 19}                        	LIFFE     
+FH20      	3-Month Euroswiss {Mar 20}                        	LIFFE     
+FH21      	3-Month Euroswiss {Mar 21}                        	LIFFE     
+FJ        	1-Month EONIA {Apr 11}                            	LIFFE     
+FK        	1-Month EONIA {Apr 11}                            	LIFFE     
+FM16      	3-Month Euroswiss {Jun 16}                        	LIFFE     
+FM17      	3-Month Euroswiss {Jun 17}                        	LIFFE     
+FM18      	3-Month Euroswiss {Jun 18}                        	LIFFE     
+FM19      	3-Month Euroswiss {Jun 19}                        	LIFFE     
+FM20      	3-Month Euroswiss {Jun 20}                        	LIFFE     
+FM21      	3-Month Euroswiss {Jun 21}                        	LIFFE     
+FU16      	3-Month Euroswiss {Sep 16}                        	LIFFE     
+FU17      	3-Month Euroswiss {Sep 17}                        	LIFFE     
+FU18      	3-Month Euroswiss {Sep 18}                        	LIFFE     
+FU19      	3-Month Euroswiss {Sep 19}                        	LIFFE     
+FU20      	3-Month Euroswiss {Sep 20}                        	LIFFE     
+FU21      	3-Month Euroswiss {Sep 21}                        	LIFFE     
+FZ15      	3-Month Euroswiss {Dec 15}                        	LIFFE     
+FZ16      	3-Month Euroswiss {Dec 16}                        	LIFFE     
+FZ17      	3-Month Euroswiss {Dec 17}                        	LIFFE     
+FZ18      	3-Month Euroswiss {Dec 18}                        	LIFFE     
+FZ19      	3-Month Euroswiss {Dec 19}                        	LIFFE     
+FZ20      	3-Month Euroswiss {Dec 20}                        	LIFFE     
+G.C       	10-Year Gilt Continuation                         	LIFFE     
+GH16      	10-Year Gilt {Mar 16}                             	LIFFE     
+GM16      	10-Year Gilt {Jun 16}                             	LIFFE     
+GZ15      	10-Year Gilt {Dec 15}                             	LIFFE     
+IB.C      	FTSE 100 Dividend Index Continuation              	LIFFE     
+IBZ15     	FTSE 100 Dividend Index {Dec 15}                  	LIFFE     
+IBZ16     	FTSE 100 Dividend Index {Dec 16}                  	LIFFE     
+IBZ17     	FTSE 100 Dividend Index {Dec 17}                  	LIFFE     
+IBZ18     	FTSE 100 Dividend Index {Dec 18}                  	LIFFE     
+IBZ19     	FTSE 100 Dividend Index {Dec 19}                  	LIFFE     
+IBZ20     	FTSE 100 Dividend Index {Dec 20}                  	LIFFE     
+IBZ21     	FTSE 100 Dividend Index {Dec 21}                  	LIFFE     
+IJ.C      	1-Month EONIA Continuation                        	LIFFE     
+IJF16     	1-Month EONIA {Jan 16}                            	LIFFE     
+IJG16     	1-Month EONIA {Feb 16}                            	LIFFE     
+IJH16     	1-Month EONIA {Mar 16}                            	LIFFE     
+IJJ16     	1-Month EONIA {Apr 16}                            	LIFFE     
+IJK16     	1-Month EONIA {May 16}                            	LIFFE     
+IJM16     	1-Month EONIA {Jun 16}                            	LIFFE     
+IJN16     	1-Month EONIA {Jul 16}                            	LIFFE     
+IJQ16     	1-Month EONIA {Aug 16}                            	LIFFE     
+IJU16     	1-Month EONIA {Sep 16}                            	LIFFE     
+IJV15     	1-Month EONIA {Oct 15}                            	LIFFE     
+IJV16     	1-Month EONIA {Oct 16}                            	LIFFE     
+IJX15     	1-Month EONIA {Nov 15}                            	LIFFE     
+IJZ15     	1-Month EONIA {Dec 15}                            	LIFFE     
+IM.C      	3-Month EuriBor Continuation                      	LIFFE     
+IMF16     	3-Month EuriBor {Jan 16}                          	LIFFE     
+IMG16     	3-Month EuriBor {Feb 16}                          	LIFFE     
+IMH16     	3-Month EuriBor {Mar 16}                          	LIFFE     
+IMH17     	3-Month EuriBor {Mar 17}                          	LIFFE     
+IMH18     	3-Month EuriBor {Mar 18}                          	LIFFE     
+IMH19     	3-Month EuriBor {Mar 19}                          	LIFFE     
+IMH20     	3-Month EuriBor {Mar 20}                          	LIFFE     
+IMH21     	3-Month EuriBor {Mar 21}                          	LIFFE     
+IMM16     	3-Month EuriBor {Jun 16}                          	LIFFE     
+IMM17     	3-Month EuriBor {Jun 17}                          	LIFFE     
+IMM18     	3-Month EuriBor {Jun 18}                          	LIFFE     
+IMM19     	3-Month EuriBor {Jun 19}                          	LIFFE     
+IMM20     	3-Month EuriBor {Jun 20}                          	LIFFE     
+IMM21     	3-Month EuriBor {Jun 21}                          	LIFFE     
+IMU16     	3-Month EuriBor {Sep 16}                          	LIFFE     
+IMU17     	3-Month EuriBor {Sep 17}                          	LIFFE     
+IMU18     	3-Month EuriBor {Sep 18}                          	LIFFE     
+IMU19     	3-Month EuriBor {Sep 19}                          	LIFFE     
+IMU20     	3-Month EuriBor {Sep 20}                          	LIFFE     
+IMU21     	3-Month EuriBor {Sep 21}                          	LIFFE     
+IMV15     	3-Month EuriBor {Oct 15}                          	LIFFE     
+IMX15     	3-Month EuriBor {Nov 15}                          	LIFFE     
+IMZ15     	3-Month EuriBor {Dec 15}                          	LIFFE     
+IMZ16     	3-Month EuriBor {Dec 16}                          	LIFFE     
+IMZ17     	3-Month EuriBor {Dec 17}                          	LIFFE     
+IMZ18     	3-Month EuriBor {Dec 18}                          	LIFFE     
+IMZ19     	3-Month EuriBor {Dec 19}                          	LIFFE     
+IMZ20     	3-Month EuriBor {Dec 20}                          	LIFFE     
+JH.C      	U.S Treasury Repo Continuation                    	LIFFE     
+JHF16     	U.S Treasury Repo {Jan 16}                        	LIFFE     
+JHF17     	U.S Treasury Repo {Jan 17}                        	LIFFE     
+JHG16     	U.S Treasury Repo {Feb 16}                        	LIFFE     
+JHG17     	U.S Treasury Repo {Feb 17}                        	LIFFE     
+JHH16     	U.S Treasury Repo {Mar 16}                        	LIFFE     
+JHH17     	U.S Treasury Repo {Mar 17}                        	LIFFE     
+JHJ16     	U.S Treasury Repo {Apr 16}                        	LIFFE     
+JHJ17     	U.S Treasury Repo {Apr 17}                        	LIFFE     
+JHK16     	U.S Treasury Repo {May 16}                        	LIFFE     
+JHK17     	U.S Treasury Repo {May 17}                        	LIFFE     
+JHM16     	U.S Treasury Repo {Jun 16}                        	LIFFE     
+JHM17     	U.S Treasury Repo {Jun 17}                        	LIFFE     
+JHN16     	U.S Treasury Repo {Jul 16}                        	LIFFE     
+JHN17     	U.S Treasury Repo {Jul 17}                        	LIFFE     
+JHQ16     	U.S Treasury Repo {Aug 16}                        	LIFFE     
+JHQ17     	U.S Treasury Repo {Aug 17}                        	LIFFE     
+JHU16     	U.S Treasury Repo {Sep 16}                        	LIFFE     
+JHU17     	U.S Treasury Repo {Sep 17}                        	LIFFE     
+JHV15     	U.S Treasury Repo {Oct 15}                        	LIFFE     
+JHV16     	U.S Treasury Repo {Oct 16}                        	LIFFE     
+JHV17     	U.S Treasury Repo {Oct 17}                        	LIFFE     
+JHX15     	U.S Treasury Repo {Nov 15}                        	LIFFE     
+JHX16     	U.S Treasury Repo {Nov 16}                        	LIFFE     
+JHZ15     	U.S Treasury Repo {Dec 15}                        	LIFFE     
+JHZ16     	U.S Treasury Repo {Dec 16}                        	LIFFE     
+JR.C      	Mortgage-Backed Repo Continuation                 	LIFFE     
+JRF16     	Mortgage-Backed Repo {Jan 16}                     	LIFFE     
+JRF17     	Mortgage-Backed Repo {Jan 17}                     	LIFFE     
+JRG16     	Mortgage-Backed Repo {Feb 16}                     	LIFFE     
+JRG17     	Mortgage-Backed Repo {Feb 17}                     	LIFFE     
+JRH16     	Mortgage-Backed Repo {Mar 16}                     	LIFFE     
+JRH17     	Mortgage-Backed Repo {Mar 17}                     	LIFFE     
+JRJ16     	Mortgage-Backed Repo {Apr 16}                     	LIFFE     
+JRJ17     	Mortgage-Backed Repo {Apr 17}                     	LIFFE     
+JRK16     	Mortgage-Backed Repo {May 16}                     	LIFFE     
+JRK17     	Mortgage-Backed Repo {May 17}                     	LIFFE     
+JRM16     	Mortgage-Backed Repo {Jun 16}                     	LIFFE     
+JRM17     	Mortgage-Backed Repo {Jun 17}                     	LIFFE     
+JRN16     	Mortgage-Backed Repo {Jul 16}                     	LIFFE     
+JRN17     	Mortgage-Backed Repo {Jul 17}                     	LIFFE     
+JRQ16     	Mortgage-Backed Repo {Aug 16}                     	LIFFE     
+JRQ17     	Mortgage-Backed Repo {Aug 17}                     	LIFFE     
+JRU16     	Mortgage-Backed Repo {Sep 16}                     	LIFFE     
+JRU17     	Mortgage-Backed Repo {Sep 17}                     	LIFFE     
+JRV15     	Mortgage-Backed Repo {Oct 15}                     	LIFFE     
+JRV16     	Mortgage-Backed Repo {Oct 16}                     	LIFFE     
+JRV17     	Mortgage-Backed Repo {Oct 17}                     	LIFFE     
+JRX15     	Mortgage-Backed Repo {Nov 15}                     	LIFFE     
+JRX16     	Mortgage-Backed Repo {Nov 16}                     	LIFFE     
+JRZ15     	Mortgage-Backed Repo {Dec 15}                     	LIFFE     
+JRZ16     	Mortgage-Backed Repo {Dec 16}                     	LIFFE     
+JU.C      	Agency Repo Continuation                          	LIFFE     
+JUF16     	Agency Repo {Jan 16}                              	LIFFE     
+JUF17     	Agency Repo {Jan 17}                              	LIFFE     
+JUG16     	Agency Repo {Feb 16}                              	LIFFE     
+JUG17     	Agency Repo {Feb 17}                              	LIFFE     
+JUH16     	Agency Repo {Mar 16}                              	LIFFE     
+JUH17     	Agency Repo {Mar 17}                              	LIFFE     
+JUJ16     	Agency Repo {Apr 16}                              	LIFFE     
+JUJ17     	Agency Repo {Apr 17}                              	LIFFE     
+JUK16     	Agency Repo {May 16}                              	LIFFE     
+JUK17     	Agency Repo {May 17}                              	LIFFE     
+JUM16     	Agency Repo {Jun 16}                              	LIFFE     
+JUM17     	Agency Repo {Jun 17}                              	LIFFE     
+JUN16     	Agency Repo {Jul 16}                              	LIFFE     
+JUN17     	Agency Repo {Jul 17}                              	LIFFE     
+JUQ16     	Agency Repo {Aug 16}                              	LIFFE     
+JUQ17     	Agency Repo {Aug 17}                              	LIFFE     
+JUU16     	Agency Repo {Sep 16}                              	LIFFE     
+JUU17     	Agency Repo {Sep 17}                              	LIFFE     
+JUV15     	Agency Repo {Oct 15}                              	LIFFE     
+JUV16     	Agency Repo {Oct 16}                              	LIFFE     
+JUV17     	Agency Repo {Oct 17}                              	LIFFE     
+JUX15     	Agency Repo {Nov 15}                              	LIFFE     
+JUX16     	Agency Repo {Nov 16}                              	LIFFE     
+JUZ15     	Agency Repo {Dec 15}                              	LIFFE     
+JUZ16     	Agency Repo {Dec 16}                              	LIFFE     
+L.C       	3-Month Sterling Continuation                     	LIFFE     
+L7.C      	MSCI Europe NTR Index Continuation                	LIFFE     
+L7H16     	MSCI Europe NTR Index {Mar 16}                    	LIFFE     
+L7M16     	MSCI Europe NTR Index {Jun 16}                    	LIFFE     
+L7U16     	MSCI Europe NTR Index {Sep 16}                    	LIFFE     
+L7Z15     	MSCI Europe NTR Index {Dec 15}                    	LIFFE     
+L7Z16     	MSCI Europe NTR Index {Dec 16}                    	LIFFE     
+LH16      	3-Month Sterling {Mar 16}                         	LIFFE     
+LH17      	3-Month Sterling {Mar 17}                         	LIFFE     
+LH18      	3-Month Sterling {Mar 18}                         	LIFFE     
+LH19      	3-Month Sterling {Mar 19}                         	LIFFE     
+LH20      	3-Month Sterling {Mar 20}                         	LIFFE     
+LH21      	3-Month Sterling {Mar 21}                         	LIFFE     
+LM16      	3-Month Sterling {Jun 16}                         	LIFFE     
+LM17      	3-Month Sterling {Jun 17}                         	LIFFE     
+LM18      	3-Month Sterling {Jun 18}                         	LIFFE     
+LM19      	3-Month Sterling {Jun 19}                         	LIFFE     
+LM20      	3-Month Sterling {Jun 20}                         	LIFFE     
+LM21      	3-Month Sterling {Jun 21}                         	LIFFE     
+LU16      	3-Month Sterling {Sep 16}                         	LIFFE     
+LU17      	3-Month Sterling {Sep 17}                         	LIFFE     
+LU18      	3-Month Sterling {Sep 18}                         	LIFFE     
+LU19      	3-Month Sterling {Sep 19}                         	LIFFE     
+LU20      	3-Month Sterling {Sep 20}                         	LIFFE     
+LU21      	3-Month Sterling {Sep 21}                         	LIFFE     
+LV15      	3-Month Sterling {Oct 15}                         	LIFFE     
+LW.C      	Wheat Continuation                                	LIFFE     
+LWF16     	Wheat {Jan 16}                                    	LIFFE     
+LWF17     	Wheat {Jan 17}                                    	LIFFE     
+LWH16     	Wheat {Mar 16}                                    	LIFFE     
+LWH17     	Wheat {Mar 17}                                    	LIFFE     
+LWK16     	Wheat {May 16}                                    	LIFFE     
+LWK17     	Wheat {May 17}                                    	LIFFE     
+LWN16     	Wheat {Jul 16}                                    	LIFFE     
+LWX15     	Wheat {Nov 15}                                    	LIFFE     
+LWX16     	Wheat {Nov 16}                                    	LIFFE     
+LWX17     	Wheat {Nov 17}                                    	LIFFE     
+LX15      	3-Month Sterling {Nov 15}                         	LIFFE     
+LZ15      	3-Month Sterling {Dec 15}                         	LIFFE     
+LZ16      	3-Month Sterling {Dec 16}                         	LIFFE     
+LZ17      	3-Month Sterling {Dec 17}                         	LIFFE     
+LZ18      	3-Month Sterling {Dec 18}                         	LIFFE     
+LZ19      	3-Month Sterling {Dec 19}                         	LIFFE     
+LZ20      	3-Month Sterling {Dec 20}                         	LIFFE     
+N3.C      	UK Base Electricity Continuation                  	LIFFE     
+N3F16     	UK Base Electricity {Jan 16}                      	LIFFE     
+N3F17     	UK Base Electricity {Jan 17}                      	LIFFE     
+N3F18     	UK Base Electricity {Jan 18}                      	LIFFE     
+N3F19     	UK Base Electricity {Jan 19}                      	LIFFE     
+N3G16     	UK Base Electricity {Feb 16}                      	LIFFE     
+N3G17     	UK Base Electricity {Feb 17}                      	LIFFE     
+N3G18     	UK Base Electricity {Feb 18}                      	LIFFE     
+N3G19     	UK Base Electricity {Feb 19}                      	LIFFE     
+N3H16     	UK Base Electricity {Mar 16}                      	LIFFE     
+N3H17     	UK Base Electricity {Mar 17}                      	LIFFE     
+N3H18     	UK Base Electricity {Mar 18}                      	LIFFE     
+N3H19     	UK Base Electricity {Mar 19}                      	LIFFE     
+N3J16     	UK Base Electricity {Apr 16}                      	LIFFE     
+N3J17     	UK Base Electricity {Apr 17}                      	LIFFE     
+N3J18     	UK Base Electricity {Apr 18}                      	LIFFE     
+N3J19     	UK Base Electricity {Apr 19}                      	LIFFE     
+N3K16     	UK Base Electricity {May 16}                      	LIFFE     
+N3K17     	UK Base Electricity {May 17}                      	LIFFE     
+N3K18     	UK Base Electricity {May 18}                      	LIFFE     
+N3K19     	UK Base Electricity {May 19}                      	LIFFE     
+N3M16     	UK Base Electricity {Jun 16}                      	LIFFE     
+N3M17     	UK Base Electricity {Jun 17}                      	LIFFE     
+N3M18     	UK Base Electricity {Jun 18}                      	LIFFE     
+N3M19     	UK Base Electricity {Jun 19}                      	LIFFE     
+N3N16     	UK Base Electricity {Jul 16}                      	LIFFE     
+N3N17     	UK Base Electricity {Jul 17}                      	LIFFE     
+N3N18     	UK Base Electricity {Jul 18}                      	LIFFE     
+N3N19     	UK Base Electricity {Jul 19}                      	LIFFE     
+N3Q16     	UK Base Electricity {Aug 16}                      	LIFFE     
+N3Q17     	UK Base Electricity {Aug 17}                      	LIFFE     
+N3Q18     	UK Base Electricity {Aug 18}                      	LIFFE     
+N3Q19     	UK Base Electricity {Aug 19}                      	LIFFE     
+N3U16     	UK Base Electricity {Sep 16}                      	LIFFE     
+N3U17     	UK Base Electricity {Sep 17}                      	LIFFE     
+N3U18     	UK Base Electricity {Sep 18}                      	LIFFE     
+N3U19     	UK Base Electricity {Sep 19}                      	LIFFE     
+N3V16     	UK Base Electricity {Oct 16}                      	LIFFE     
+N3V17     	UK Base Electricity {Oct 17}                      	LIFFE     
+N3V18     	UK Base Electricity {Oct 18}                      	LIFFE     
+N3X15     	UK Base Electricity {Nov 15}                      	LIFFE     
+N3X16     	UK Base Electricity {Nov 16}                      	LIFFE     
+N3X17     	UK Base Electricity {Nov 17}                      	LIFFE     
+N3X18     	UK Base Electricity {Nov 18}                      	LIFFE     
+N3Z15     	UK Base Electricity {Dec 15}                      	LIFFE     
+N3Z16     	UK Base Electricity {Dec 16}                      	LIFFE     
+N3Z17     	UK Base Electricity {Dec 17}                      	LIFFE     
+N3Z18     	UK Base Electricity {Dec 18}                      	LIFFE     
+N4.C      	UK Base Electric Gregorian Continuation           	LIFFE     
+N4F16     	UK Base Electric Gregorian {Jan 16}               	LIFFE     
+N4F17     	UK Base Electric Gregorian {Jan 17}               	LIFFE     
+N4F18     	UK Base Electric Gregorian {Jan 18}               	LIFFE     
+N4F19     	UK Base Electric Gregorian {Jan 19}               	LIFFE     
+N4F20     	UK Base Electric Gregorian {Jan 20}               	LIFFE     
+N4F21     	UK Base Electric Gregorian {Jan 21}               	LIFFE     
+N4G16     	UK Base Electric Gregorian {Feb 16}               	LIFFE     
+N4G17     	UK Base Electric Gregorian {Feb 17}               	LIFFE     
+N4G18     	UK Base Electric Gregorian {Feb 18}               	LIFFE     
+N4G19     	UK Base Electric Gregorian {Feb 19}               	LIFFE     
+N4G20     	UK Base Electric Gregorian {Feb 20}               	LIFFE     
+N4G21     	UK Base Electric Gregorian {Feb 21}               	LIFFE     
+N4H16     	UK Base Electric Gregorian {Mar 16}               	LIFFE     
+N4H17     	UK Base Electric Gregorian {Mar 17}               	LIFFE     
+N4H18     	UK Base Electric Gregorian {Mar 18}               	LIFFE     
+N4H19     	UK Base Electric Gregorian {Mar 19}               	LIFFE     
+N4H20     	UK Base Electric Gregorian {Mar 20}               	LIFFE     
+N4H21     	UK Base Electric Gregorian {Mar 21}               	LIFFE     
+N4J16     	UK Base Electric Gregorian {Apr 16}               	LIFFE     
+N4J17     	UK Base Electric Gregorian {Apr 17}               	LIFFE     
+N4J18     	UK Base Electric Gregorian {Apr 18}               	LIFFE     
+N4J19     	UK Base Electric Gregorian {Apr 19}               	LIFFE     
+N4J20     	UK Base Electric Gregorian {Apr 20}               	LIFFE     
+N4K16     	UK Base Electric Gregorian {May 16}               	LIFFE     
+N4K17     	UK Base Electric Gregorian {May 17}               	LIFFE     
+N4K18     	UK Base Electric Gregorian {May 18}               	LIFFE     
+N4K19     	UK Base Electric Gregorian {May 19}               	LIFFE     
+N4K20     	UK Base Electric Gregorian {May 20}               	LIFFE     
+N4M16     	UK Base Electric Gregorian {Jun 16}               	LIFFE     
+N4M17     	UK Base Electric Gregorian {Jun 17}               	LIFFE     
+N4M18     	UK Base Electric Gregorian {Jun 18}               	LIFFE     
+N4M19     	UK Base Electric Gregorian {Jun 19}               	LIFFE     
+N4M20     	UK Base Electric Gregorian {Jun 20}               	LIFFE     
+N4N16     	UK Base Electric Gregorian {Jul 16}               	LIFFE     
+N4N17     	UK Base Electric Gregorian {Jul 17}               	LIFFE     
+N4N18     	UK Base Electric Gregorian {Jul 18}               	LIFFE     
+N4N19     	UK Base Electric Gregorian {Jul 19}               	LIFFE     
+N4N20     	UK Base Electric Gregorian {Jul 20}               	LIFFE     
+N4Q16     	UK Base Electric Gregorian {Aug 16}               	LIFFE     
+N4Q17     	UK Base Electric Gregorian {Aug 17}               	LIFFE     
+N4Q18     	UK Base Electric Gregorian {Aug 18}               	LIFFE     
+N4Q19     	UK Base Electric Gregorian {Aug 19}               	LIFFE     
+N4Q20     	UK Base Electric Gregorian {Aug 20}               	LIFFE     
+N4U16     	UK Base Electric Gregorian {Sep 16}               	LIFFE     
+N4U17     	UK Base Electric Gregorian {Sep 17}               	LIFFE     
+N4U18     	UK Base Electric Gregorian {Sep 18}               	LIFFE     
+N4U19     	UK Base Electric Gregorian {Sep 19}               	LIFFE     
+N4U20     	UK Base Electric Gregorian {Sep 20}               	LIFFE     
+N4V16     	UK Base Electric Gregorian {Oct 16}               	LIFFE     
+N4V17     	UK Base Electric Gregorian {Oct 17}               	LIFFE     
+N4V18     	UK Base Electric Gregorian {Oct 18}               	LIFFE     
+N4V19     	UK Base Electric Gregorian {Oct 19}               	LIFFE     
+N4V20     	UK Base Electric Gregorian {Oct 20}               	LIFFE     
+N4X15     	UK Base Electric Gregorian {Nov 15}               	LIFFE     
+N4X16     	UK Base Electric Gregorian {Nov 16}               	LIFFE     
+N4X17     	UK Base Electric Gregorian {Nov 17}               	LIFFE     
+N4X18     	UK Base Electric Gregorian {Nov 18}               	LIFFE     
+N4X19     	UK Base Electric Gregorian {Nov 19}               	LIFFE     
+N4X20     	UK Base Electric Gregorian {Nov 20}               	LIFFE     
+N4Z15     	UK Base Electric Gregorian {Dec 15}               	LIFFE     
+N4Z16     	UK Base Electric Gregorian {Dec 16}               	LIFFE     
+N4Z17     	UK Base Electric Gregorian {Dec 17}               	LIFFE     
+N4Z18     	UK Base Electric Gregorian {Dec 18}               	LIFFE     
+N4Z19     	UK Base Electric Gregorian {Dec 19}               	LIFFE     
+N4Z20     	UK Base Electric Gregorian {Dec 20}               	LIFFE     
+N7.C      	UK Peak Electricity Continuation                  	LIFFE     
+N7F16     	UK Peak Electricity {Jan 16}                      	LIFFE     
+N7F17     	UK Peak Electricity {Jan 17}                      	LIFFE     
+N7F18     	UK Peak Electricity {Jan 18}                      	LIFFE     
+N7F19     	UK Peak Electricity {Jan 19}                      	LIFFE     
+N7G16     	UK Peak Electricity {Feb 16}                      	LIFFE     
+N7G17     	UK Peak Electricity {Feb 17}                      	LIFFE     
+N7G18     	UK Peak Electricity {Feb 18}                      	LIFFE     
+N7G19     	UK Peak Electricity {Feb 19}                      	LIFFE     
+N7H16     	UK Peak Electricity {Mar 16}                      	LIFFE     
+N7H17     	UK Peak Electricity {Mar 17}                      	LIFFE     
+N7H18     	UK Peak Electricity {Mar 18}                      	LIFFE     
+N7H19     	UK Peak Electricity {Mar 19}                      	LIFFE     
+N7J16     	UK Peak Electricity {Apr 16}                      	LIFFE     
+N7J17     	UK Peak Electricity {Apr 17}                      	LIFFE     
+N7J18     	UK Peak Electricity {Apr 18}                      	LIFFE     
+N7J19     	UK Peak Electricity {Apr 19}                      	LIFFE     
+N7K16     	UK Peak Electricity {May 16}                      	LIFFE     
+N7K17     	UK Peak Electricity {May 17}                      	LIFFE     
+N7K18     	UK Peak Electricity {May 18}                      	LIFFE     
+N7K19     	UK Peak Electricity {May 19}                      	LIFFE     
+N7M16     	UK Peak Electricity {Jun 16}                      	LIFFE     
+N7M17     	UK Peak Electricity {Jun 17}                      	LIFFE     
+N7M18     	UK Peak Electricity {Jun 18}                      	LIFFE     
+N7M19     	UK Peak Electricity {Jun 19}                      	LIFFE     
+N7N16     	UK Peak Electricity {Jul 16}                      	LIFFE     
+N7N17     	UK Peak Electricity {Jul 17}                      	LIFFE     
+N7N18     	UK Peak Electricity {Jul 18}                      	LIFFE     
+N7N19     	UK Peak Electricity {Jul 19}                      	LIFFE     
+N7Q16     	UK Peak Electricity {Aug 16}                      	LIFFE     
+N7Q17     	UK Peak Electricity {Aug 17}                      	LIFFE     
+N7Q18     	UK Peak Electricity {Aug 18}                      	LIFFE     
+N7Q19     	UK Peak Electricity {Aug 19}                      	LIFFE     
+N7U16     	UK Peak Electricity {Sep 16}                      	LIFFE     
+N7U17     	UK Peak Electricity {Sep 17}                      	LIFFE     
+N7U18     	UK Peak Electricity {Sep 18}                      	LIFFE     
+N7U19     	UK Peak Electricity {Sep 19}                      	LIFFE     
+N7V16     	UK Peak Electricity {Oct 16}                      	LIFFE     
+N7V17     	UK Peak Electricity {Oct 17}                      	LIFFE     
+N7V18     	UK Peak Electricity {Oct 18}                      	LIFFE     
+N7X15     	UK Peak Electricity {Nov 15}                      	LIFFE     
+N7X16     	UK Peak Electricity {Nov 16}                      	LIFFE     
+N7X17     	UK Peak Electricity {Nov 17}                      	LIFFE     
+N7X18     	UK Peak Electricity {Nov 18}                      	LIFFE     
+N7Z15     	UK Peak Electricity {Dec 15}                      	LIFFE     
+N7Z16     	UK Peak Electricity {Dec 16}                      	LIFFE     
+N7Z17     	UK Peak Electricity {Dec 17}                      	LIFFE     
+N7Z18     	UK Peak Electricity {Dec 18}                      	LIFFE     
+N8.C      	UK Peak Electric Gregorian Continuation           	LIFFE     
+N8F16     	UK Peak Electric Gregorian {Jan 16}               	LIFFE     
+N8F17     	UK Peak Electric Gregorian {Jan 17}               	LIFFE     
+N8F18     	UK Peak Electric Gregorian {Jan 18}               	LIFFE     
+N8F19     	UK Peak Electric Gregorian {Jan 19}               	LIFFE     
+N8F20     	UK Peak Electric Gregorian {Jan 20}               	LIFFE     
+N8F21     	UK Peak Electric Gregorian {Jan 21}               	LIFFE     
+N8G16     	UK Peak Electric Gregorian {Feb 16}               	LIFFE     
+N8G17     	UK Peak Electric Gregorian {Feb 17}               	LIFFE     
+N8G18     	UK Peak Electric Gregorian {Feb 18}               	LIFFE     
+N8G19     	UK Peak Electric Gregorian {Feb 19}               	LIFFE     
+N8G20     	UK Peak Electric Gregorian {Feb 20}               	LIFFE     
+N8G21     	UK Peak Electric Gregorian {Feb 21}               	LIFFE     
+N8H16     	UK Peak Electric Gregorian {Mar 16}               	LIFFE     
+N8H17     	UK Peak Electric Gregorian {Mar 17}               	LIFFE     
+N8H18     	UK Peak Electric Gregorian {Mar 18}               	LIFFE     
+N8H19     	UK Peak Electric Gregorian {Mar 19}               	LIFFE     
+N8H20     	UK Peak Electric Gregorian {Mar 20}               	LIFFE     
+N8H21     	UK Peak Electric Gregorian {Mar 21}               	LIFFE     
+N8J16     	UK Peak Electric Gregorian {Apr 16}               	LIFFE     
+N8J17     	UK Peak Electric Gregorian {Apr 17}               	LIFFE     
+N8J18     	UK Peak Electric Gregorian {Apr 18}               	LIFFE     
+N8J19     	UK Peak Electric Gregorian {Apr 19}               	LIFFE     
+N8J20     	UK Peak Electric Gregorian {Apr 20}               	LIFFE     
+N8K16     	UK Peak Electric Gregorian {May 16}               	LIFFE     
+N8K17     	UK Peak Electric Gregorian {May 17}               	LIFFE     
+N8K18     	UK Peak Electric Gregorian {May 18}               	LIFFE     
+N8K19     	UK Peak Electric Gregorian {May 19}               	LIFFE     
+N8K20     	UK Peak Electric Gregorian {May 20}               	LIFFE     
+N8M16     	UK Peak Electric Gregorian {Jun 16}               	LIFFE     
+N8M17     	UK Peak Electric Gregorian {Jun 17}               	LIFFE     
+N8M18     	UK Peak Electric Gregorian {Jun 18}               	LIFFE     
+N8M19     	UK Peak Electric Gregorian {Jun 19}               	LIFFE     
+N8M20     	UK Peak Electric Gregorian {Jun 20}               	LIFFE     
+N8N16     	UK Peak Electric Gregorian {Jul 16}               	LIFFE     
+N8N17     	UK Peak Electric Gregorian {Jul 17}               	LIFFE     
+N8N18     	UK Peak Electric Gregorian {Jul 18}               	LIFFE     
+N8N19     	UK Peak Electric Gregorian {Jul 19}               	LIFFE     
+N8N20     	UK Peak Electric Gregorian {Jul 20}               	LIFFE     
+N8Q16     	UK Peak Electric Gregorian {Aug 16}               	LIFFE     
+N8Q17     	UK Peak Electric Gregorian {Aug 17}               	LIFFE     
+N8Q18     	UK Peak Electric Gregorian {Aug 18}               	LIFFE     
+N8Q19     	UK Peak Electric Gregorian {Aug 19}               	LIFFE     
+N8Q20     	UK Peak Electric Gregorian {Aug 20}               	LIFFE     
+N8U16     	UK Peak Electric Gregorian {Sep 16}               	LIFFE     
+N8U17     	UK Peak Electric Gregorian {Sep 17}               	LIFFE     
+N8U18     	UK Peak Electric Gregorian {Sep 18}               	LIFFE     
+N8U19     	UK Peak Electric Gregorian {Sep 19}               	LIFFE     
+N8U20     	UK Peak Electric Gregorian {Sep 20}               	LIFFE     
+N8V16     	UK Peak Electric Gregorian {Oct 16}               	LIFFE     
+N8V17     	UK Peak Electric Gregorian {Oct 17}               	LIFFE     
+N8V18     	UK Peak Electric Gregorian {Oct 18}               	LIFFE     
+N8V19     	UK Peak Electric Gregorian {Oct 19}               	LIFFE     
+N8V20     	UK Peak Electric Gregorian {Oct 20}               	LIFFE     
+N8X15     	UK Peak Electric Gregorian {Nov 15}               	LIFFE     
+N8X16     	UK Peak Electric Gregorian {Nov 16}               	LIFFE     
+N8X17     	UK Peak Electric Gregorian {Nov 17}               	LIFFE     
+N8X18     	UK Peak Electric Gregorian {Nov 18}               	LIFFE     
+N8X19     	UK Peak Electric Gregorian {Nov 19}               	LIFFE     
+N8X20     	UK Peak Electric Gregorian {Nov 20}               	LIFFE     
+N8Z15     	UK Peak Electric Gregorian {Dec 15}               	LIFFE     
+N8Z16     	UK Peak Electric Gregorian {Dec 16}               	LIFFE     
+N8Z17     	UK Peak Electric Gregorian {Dec 17}               	LIFFE     
+N8Z18     	UK Peak Electric Gregorian {Dec 18}               	LIFFE     
+N8Z19     	UK Peak Electric Gregorian {Dec 19}               	LIFFE     
+N8Z20     	UK Peak Electric Gregorian {Dec 20}               	LIFFE     
+QB.C      	Ultra Gilt Continuation                           	LIFFE     
+QBH16     	Ultra Gilt {Mar 16}                               	LIFFE     
+QBM16     	Ultra Gilt {Jun 16}                               	LIFFE     
+QBZ15     	Ultra Gilt {Dec 15}                               	LIFFE     
+QD.C      	5-Year Gilt Continuation                          	LIFFE     
+QDH16     	5-Year Gilt {Mar 16}                              	LIFFE     
+QDZ15     	5-Year Gilt {Dec 15}                              	LIFFE     
+QE.C      	2-Year Gilt Continuation                          	LIFFE     
+QEH16     	2-Year Gilt {Mar 16}                              	LIFFE     
+QEZ15     	2-Year Gilt {Dec 15}                              	LIFFE     
+RM.C      	Robusta Coffee 10-T Continuation                  	LIFFE     
+RMF16     	Robusta Coffee 10-T {Jan 16}                      	LIFFE     
+RMF17     	Robusta Coffee 10-T {Jan 17}                      	LIFFE     
+RMH16     	Robusta Coffee 10-T {Mar 16}                      	LIFFE     
+RMH17     	Robusta Coffee 10-T {Mar 17}                      	LIFFE     
+RMK16     	Robusta Coffee 10-T {May 16}                      	LIFFE     
+RMK17     	Robusta Coffee 10-T {May 17}                      	LIFFE     
+RMN16     	Robusta Coffee 10-T {Jul 16}                      	LIFFE     
+RMU16     	Robusta Coffee 10-T {Sep 16}                      	LIFFE     
+RMX15     	Robusta Coffee 10-T {Nov 15}                      	LIFFE     
+RMX16     	Robusta Coffee 10-T {Nov 16}                      	LIFFE     
+SW.C      	No. 5 White Sugar Continuation                    	LIFFE     
+SWH16     	No. 5 White Sugar {Mar 16}                        	LIFFE     
+SWH17     	No. 5 White Sugar {Mar 17}                        	LIFFE     
+SWK16     	No. 5 White Sugar {May 16}                        	LIFFE     
+SWK17     	No. 5 White Sugar {May 17}                        	LIFFE     
+SWQ16     	No. 5 White Sugar {Aug 16}                        	LIFFE     
+SWV16     	No. 5 White Sugar {Oct 16}                        	LIFFE     
+SWZ15     	No. 5 White Sugar {Dec 15}                        	LIFFE     
+SWZ16     	No. 5 White Sugar {Dec 16}                        	LIFFE     
+VF.C      	5-Yr Euro Swapnote Continuation                   	LIFFE     
+VFH16     	5-Yr Euro Swapnote {Mar 16}                       	LIFFE     
+VFZ15     	5-Yr Euro Swapnote {Dec 15}                       	LIFFE     
+VT.C      	10-Yr Euro Swapnote Continuation                  	LIFFE     
+VTH16     	10-Yr Euro Swapnote {Mar 16}                      	LIFFE     
+VTZ15     	10-Yr Euro Swapnote {Dec 15}                      	LIFFE     
+VW.C      	2-Yr Euro Swapnote Continuation                   	LIFFE     
+VWH16     	2-Yr Euro Swapnote {Mar 16}                       	LIFFE     
+VWZ15     	2-Yr Euro Swapnote {Dec 15}                       	LIFFE     
+VX.C      	2-Yr Dollar Swapnote Continuation                 	LIFFE     
+VXH16     	2-Yr Dollar Swapnote {Mar 16}                     	LIFFE     
+VXZ15     	2-Yr Dollar Swapnote {Dec 15}                     	LIFFE     
+VY.C      	5-Yr Dollar Swapnote Continuation                 	LIFFE     
+VYH16     	5-Yr Dollar Swapnote {Mar 16}                     	LIFFE     
+VYZ15     	5-Yr Dollar Swapnote {Dec 15}                     	LIFFE     
+VZ.C      	10Yr Dollar Swapnote Continuation                 	LIFFE     
+VZH16     	10Yr Dollar Swapnote {Mar 16}                     	LIFFE     
+VZZ15     	10Yr Dollar Swapnote {Dec 15}                     	LIFFE     
+X         	FTSE 100                                          	LIFFE     
+X.C       	FTSE 100 Continuation                             	LIFFE     
+XH16      	FTSE 100 {Mar 16}                                 	LIFFE     
+XM16      	FTSE 100 {Jun 16}                                 	LIFFE     
+XU16      	FTSE 100 {Sep 16}                                 	LIFFE     
+XZ15      	FTSE 100 {Dec 15}                                 	LIFFE     
+Y         	FTSE 250                                          	LIFFE     
+Y.C       	FTSE 250 Continuation                             	LIFFE     
+YH16      	FTSE 250 {Mar 16}                                 	LIFFE     
+YZ15      	FTSE 250 {Dec 15}                                 	LIFFE     
