@@ -45,6 +45,7 @@ public class TickerData {
 
 	private String								ticker;
 	private String								tickerName;
+	private String								tickerExchange;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -76,6 +77,7 @@ public class TickerData {
 	private Calendar[]						dateData;
 	private double								currentPrice;
 	private double								avgVol65;
+	private double								avgVol20;
 	private double								chg23;
 	private double								chg65;
 	private double								chg130;
@@ -127,6 +129,7 @@ public class TickerData {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
+		this.tickerExchange = "Unknown";
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -439,6 +442,14 @@ public class TickerData {
 
 		this.setRsRaw();
 
+		if (daysOfData > 19) {
+			this.avgVol20 = this.taMethods.calcSma(this.volumeData, 20);
+		}
+
+		if (daysOfData > 64) {
+			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
+		}
+
 		if (this.daysOfData > 28) {
 			this.sma23 = MovingAverageMethods.sma(this.getCloseData(), 23);
 			this.smaPerc23 = this.taMethods.calcPercentChange(this.currentPrice, this.sma23);
@@ -448,8 +459,6 @@ public class TickerData {
 			this.sma65 = this.taMethods.calcSma(this.getCloseData(), 65);
 			this.smaPerc65 = this.taMethods.calcPercentChange(this.currentPrice, this.sma65);
 			this.sma65Trend = this.taMethods.calcSmaTrend(this.closeData, 65, 5);
-
-			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
 		}
 		if (this.daysOfData > 135) {
 			this.sma130 = this.taMethods.calcSma(this.getCloseData(), 130);
@@ -1034,6 +1043,41 @@ public class TickerData {
 		if (this.daysOfData > 65) {
 			this.rsStRaw = this.setRawStRS();
 		}
+	}
+
+	/**
+	 * @return the tickerExchange
+	 */
+	public String getTickerExchange() {
+		return tickerExchange;
+	}
+
+	/**
+	 * @param tickerExchange
+	 *          the tickerExchange to set
+	 */
+	public void setTickerExchange(String tickerExchange) {
+		this.tickerExchange = tickerExchange;
+	}
+
+	public static void clearTickerData(TickerData td) {
+		td.data.clear();
+		td.openData = null;
+		td.highData = null;
+		td.lowData = null;
+		td.closeData = null;
+		td.volumeData = null;
+		td.trueHighData = null;
+		td.trueLowData = null;
+		td.typicalPriceData = null;
+		td = null;
+	}
+
+	/**
+	 * @return the avgVol20
+	 */
+	public double getAvgVol20() {
+		return avgVol20;
 	}
 
 }

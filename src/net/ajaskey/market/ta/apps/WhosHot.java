@@ -64,9 +64,9 @@ public class WhosHot {
 
 		if (!init) {
 
-			//fullfilenames.add("symbols\\INDEX_SymbolList.txt");
-			//fullfilenames.add("symbols\\AMEX_SymbolList.txt");
-			//fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
+			fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+			fullfilenames.add("symbols\\AMEX_SymbolList.txt");
+			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 			fullfilenames.add("symbols\\USMF_SymbolList.txt");
 			TickerFullName.build(fullfilenames);
 
@@ -94,10 +94,10 @@ public class WhosHot {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 
-		//WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0);
-		//WhosHot.processList("lists\\djus-list.txt", "djus", 0);
-		//WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0);
-		WhosHot.processList("lists\\mf-list.txt", "mf", 0);
+		//WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
+		//WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
+		//WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
+		WhosHot.processList("lists\\fund-list.txt", "fund", 0, 0);
 
 		System.out.println("Done.");
 	}
@@ -113,16 +113,18 @@ public class WhosHot {
 	}
 
 	/**
-	 *
+	 * 
 	 * net.ajaskey.market.ta.apps.processList
 	 *
 	 * @param list
 	 * @param outName
 	 * @param offset
+	 * @param minVol
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	private static void processList(String list, String outName, int offset) throws ParseException, IOException {
+	private static void processList(String list, String outName, int offset, int minVol)
+	    throws ParseException, IOException {
 
 		new WhosHot(list);
 
@@ -132,6 +134,8 @@ public class WhosHot {
 			return;
 		}
 
+		System.out.println("Tickers found : " + tdAll.size());
+
 		for (final TickerData td : tdAll) {
 			td.generateDerived(offset);
 		}
@@ -139,8 +143,6 @@ public class WhosHot {
 		Utils.makeDir("out");
 
 		Collections.sort(tdAll, new SortTickerRs());
-		
-		System.out.println("Tickers found : " + tdAll.size());
 
 		final IndustryData[] ind = new IndustryData[tdAll.size()];
 		int maxNameLen = 0;
@@ -163,11 +165,11 @@ public class WhosHot {
 
 		try (PrintWriter pw = new PrintWriter("out\\whosHot-" + outName + ".txt")) {
 			for (final IndustryData id : ind) {
-		//		if ((id.getTicker().contains(".IDX")) || (id.getAvgVol() > 500000.0)) {
+				if (id.getAvgVol() >= minVol) {
 					final String vol = vFmt.format(id.getAvgVol() / 1000.0);
 					pw.printf(fmt, id.getTicker(), id.getName(), id.getRanks(), id.getChg260(), vol);
 					// System.out.printf("%-30s %s%n",id.getName(), id.getRanks());
-			//	}
+				}
 			}
 		}
 
@@ -184,11 +186,11 @@ public class WhosHot {
 		}
 		try (PrintWriter pw = new PrintWriter("out\\whosHot-" + outName + "-ShortTerm.txt")) {
 			for (final IndustryData id : ind) {
-			//	if ((id.getTicker().contains(".IDX")) || (id.getAvgVol() > 500000.0)) {
+				if (id.getAvgVol() >= minVol) {
 					final String vol = vFmt.format(id.getAvgVol() / 1000.0);
 					pw.printf(fmt, id.getTicker(), id.getName(), id.getRanks(), id.getRawRsSt(), vol);
 					// System.out.printf("%-30s %s%n",id.getName(), id.getRanks());
-			//	}
+				}
 			}
 		}
 	}

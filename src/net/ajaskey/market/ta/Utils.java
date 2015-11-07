@@ -93,4 +93,20 @@ public class Utils {
 		}
 	}
 
+	/** 
+	 * net.ajaskey.market.ta.printCalendar
+	 *
+	 * @param cal
+	 */
+	public static String calendarToString(Calendar cal) {
+		String ret = cal.toString() + "\n";
+		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
+		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
+		ret += "  Day of Month : " + cal.get(Calendar.DAY_OF_MONTH) + "\n";
+		ret += "  Day of Year  : " + cal.get(Calendar.DAY_OF_YEAR) + "\n";
+		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
+		return ret;
+		
+	}
+
 }
