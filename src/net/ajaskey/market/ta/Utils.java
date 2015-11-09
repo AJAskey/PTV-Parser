@@ -38,6 +38,9 @@ public class Utils {
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
 
 	public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+	
+	public static String NL = System.lineSeparator();
+	public static String TAB = "\t";
 
 	/**
 	 * This method serves as a constructor for the class.

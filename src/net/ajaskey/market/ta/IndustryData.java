@@ -34,10 +34,13 @@ public class IndustryData {
 
 	private String							name;
 	private String							ticker;
+	private String							exch;
 	private double							rawRs;
 	private double							rawRsSt;
 	private double							chg260;
 	private double							avgVol;
+	private long								outShares;
+	private long								fShares;
 	private final List<Integer>	rank	= new ArrayList<>();
 	private final List<Double>	slope	= new ArrayList<>();
 
@@ -46,7 +49,11 @@ public class IndustryData {
 	 *
 	 */
 	public IndustryData() {
-		// TODO Auto-generated constructor stub
+		this.rawRs = 0;
+		this.rawRsSt = 0;
+		this.chg260 = 0;
+		this.avgVol = 0;
+		this.outShares = 0;
 	}
 
 	/**
@@ -54,6 +61,27 @@ public class IndustryData {
 	 */
 	public double getAvgVol() {
 		return this.avgVol;
+	}
+
+	/**
+	 * @return the chg260
+	 */
+	public double getChg260() {
+		return this.chg260;
+	}
+
+	/**
+	 * @return the exch
+	 */
+	public String getExch() {
+		return this.exch;
+	}
+
+	/**
+	 * @return the fShares
+	 */
+	public long getfShares() {
+		return this.fShares;
 	}
 
 	/**
@@ -90,6 +118,20 @@ public class IndustryData {
 	}
 
 	/**
+	 * @return the rawRsSt
+	 */
+	public double getRawRsSt() {
+		return this.rawRsSt;
+	}
+
+	/**
+	 * @return the shares
+	 */
+	public long getShares() {
+		return this.outShares;
+	}
+
+	/**
 	 * @return the slope
 	 */
 	public double getSlope(int pos) {
@@ -109,6 +151,22 @@ public class IndustryData {
 	 */
 	public void setAvgVol(double avgVol) {
 		this.avgVol = avgVol;
+	}
+
+	/**
+	 * @param chg260
+	 *          the chg260 to set
+	 */
+	public void setChg260(double chg260) {
+		this.chg260 = chg260;
+	}
+
+	/**
+	 * @param exch
+	 *          the exch to set
+	 */
+	public void setExch(String exch) {
+		this.exch = exch;
 	}
 
 	/**
@@ -136,6 +194,22 @@ public class IndustryData {
 	}
 
 	/**
+	 * @param rawRsSt
+	 *          the rawRsSt to set
+	 */
+	public void setRawRsSt(double rawRsSt) {
+		this.rawRsSt = rawRsSt;
+	}
+
+	/**
+	 * @param shares
+	 *          the shares to set
+	 */
+	public void setShares(long shares) {
+		this.outShares = shares;
+	}
+
+	/**
 	 * @param slope
 	 *          the slope to set
 	 */
@@ -149,36 +223,6 @@ public class IndustryData {
 	 */
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
-	}
-
-	/**
-	 * @return the rawRsSt
-	 */
-	public double getRawRsSt() {
-		return rawRsSt;
-	}
-
-	/**
-	 * @param rawRsSt
-	 *          the rawRsSt to set
-	 */
-	public void setRawRsSt(double rawRsSt) {
-		this.rawRsSt = rawRsSt;
-	}
-
-	/**
-	 * @return the chg260
-	 */
-	public double getChg260() {
-		return chg260;
-	}
-
-	/**
-	 * @param chg260
-	 *          the chg260 to set
-	 */
-	public void setChg260(double chg260) {
-		this.chg260 = chg260;
 	}
 
 }

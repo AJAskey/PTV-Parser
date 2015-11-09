@@ -16,7 +16,6 @@ import java.util.List;
 
 import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.Utils;
 
 /**
  *
@@ -66,6 +65,20 @@ public class ParseData {
 	 */
 	public static void clearValidTickers() {
 		validTickers.clear();
+	}
+
+	/**
+	 * @return the mIN_PRICE
+	 */
+	public static double getMIN_PRICE() {
+		return MIN_PRICE;
+	}
+
+	/**
+	 * @return the mIN_VOLUME
+	 */
+	public static int getMIN_VOLUME() {
+		return MIN_VOLUME;
 	}
 
 	/**
@@ -123,8 +136,9 @@ public class ParseData {
 			}
 
 			boolean processAll = false;
-			if (validTickers.get(0).equals("PROCESS_ALL_TICKERS"))
+			if (validTickers.get(0).equals("PROCESS_ALL_TICKERS")) {
 				processAll = true;
+			}
 
 			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
@@ -160,12 +174,12 @@ public class ParseData {
 									td = new TickerData(fld[0], cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
 									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]));
 
-									String exch = file.getParent();
-									int idx = exch.lastIndexOf("\\");
+									final String exch = file.getParent();
+									final int idx = exch.lastIndexOf("\\");
 									td.setTickerExchange(exch.substring(idx + 1));
 
 									tdList.add(td);
-									// System.out.println(fld[0]);
+									//System.out.println("Added : " + fld[0]);
 								}
 							} else {
 								throw new ParseException("bad data", 1);
@@ -195,7 +209,7 @@ public class ParseData {
 	 */
 	static public List<TickerData> parseFiles(List<String> fileNames) throws ParseException, FileNotFoundException {
 
-		return parseFiles(fileNames, 36500);
+		return ParseData.parseFiles(fileNames, 36500);
 	}
 
 	/**
@@ -212,12 +226,12 @@ public class ParseData {
 
 		final List<TickerData> tdList = new ArrayList<TickerData>();
 
-		Calendar cal = Calendar.getInstance();
-		//System.out.println(Utils.calendarToString(cal));
-		int day = cal.get(Calendar.DAY_OF_YEAR);
-		int newDay = day - calendarDays;
+		final Calendar cal = Calendar.getInstance();
+		// System.out.println(Utils.calendarToString(cal));
+		final int day = cal.get(Calendar.DAY_OF_YEAR);
+		final int newDay = day - calendarDays;
 		cal.set(Calendar.DAY_OF_YEAR, newDay);
-		//System.out.println(Utils.calendarToString(cal));
+		// System.out.println(Utils.calendarToString(cal));
 
 		if (fileNames == null) {
 			System.out.println("List of files is null in parseFiles");
@@ -230,22 +244,22 @@ public class ParseData {
 
 			for (final File f : flist.listFiles()) {
 
-				String fn = f.getName();
+				final String fn = f.getName();
 
 				if (fn.contains(".csv")) {
 
-					int idx1 = fn.lastIndexOf("_") + 1;
-					int idx2 = fn.lastIndexOf(".");
+					final int idx1 = fn.lastIndexOf("_") + 1;
+					final int idx2 = fn.lastIndexOf(".");
 
-					String sDate = fn.substring(idx1, idx2);
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-					Date d = sdf.parse(sDate);
-					Calendar c = Calendar.getInstance();
+					final String sDate = fn.substring(idx1, idx2);
+					final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+					final Date d = sdf.parse(sDate);
+					final Calendar c = Calendar.getInstance();
 					c.setTime(d);
 
 					if (c.after(cal)) {
 
-						//System.out.println(f.getName());
+						// System.out.println(f.getName());
 
 						final List<TickerData> td = ParseData.parseFile(f);
 
@@ -326,6 +340,22 @@ public class ParseData {
 	}
 
 	/**
+	 * @param mIN_PRICE
+	 *          the mIN_PRICE to set
+	 */
+	public static void setMIN_PRICE(double mIN_PRICE) {
+		MIN_PRICE = mIN_PRICE;
+	}
+
+	/**
+	 * @param mIN_VOLUME
+	 *          the mIN_VOLUME to set
+	 */
+	public static void setMIN_VOLUME(int mIN_VOLUME) {
+		MIN_VOLUME = mIN_VOLUME;
+	}
+
+	/**
 	 *
 	 * @param ticker
 	 */
@@ -386,36 +416,6 @@ public class ParseData {
 		}
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
-	}
-
-	/**
-	 * @return the mIN_PRICE
-	 */
-	public static double getMIN_PRICE() {
-		return MIN_PRICE;
-	}
-
-	/**
-	 * @param mIN_PRICE
-	 *          the mIN_PRICE to set
-	 */
-	public static void setMIN_PRICE(double mIN_PRICE) {
-		MIN_PRICE = mIN_PRICE;
-	}
-
-	/**
-	 * @return the mIN_VOLUME
-	 */
-	public static int getMIN_VOLUME() {
-		return MIN_VOLUME;
-	}
-
-	/**
-	 * @param mIN_VOLUME
-	 *          the mIN_VOLUME to set
-	 */
-	public static void setMIN_VOLUME(int mIN_VOLUME) {
-		MIN_VOLUME = mIN_VOLUME;
 	}
 
 }

@@ -1,11 +1,9 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,7 +30,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- * 
+ *
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -55,9 +53,9 @@ public class Gannalyst {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		List<String> filenames = new ArrayList<>();
-		List<String> fullfilenames = new ArrayList<>();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		final List<String> filenames = new ArrayList<>();
+		final List<String> fullfilenames = new ArrayList<>();
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
@@ -76,17 +74,18 @@ public class Gannalyst {
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
 
 		Utils.makeDir("gann");
-		
-		for (TickerData td : tdAll) {
+
+		for (final TickerData td : tdAll) {
 			if (ValidateData.validate(td)) {
 				td.generateDerived();
 				try (PrintWriter pw = new PrintWriter("gann\\" + td.getTicker() + ".csv")) {
 					for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
-						String d = sdf.format(td.getDate(i).getTime());
+						final String d = sdf.format(td.getDate(i).getTime());
 						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
 						    (int) td.getVolume(i));
-						//System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i),
-						//    td.getClose(i), (int) td.getVolume(i));
+						// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
+						// td.getOpen(i), td.getHigh(i), td.getLow(i),
+						// td.getClose(i), (int) td.getVolume(i));
 					}
 				}
 			}

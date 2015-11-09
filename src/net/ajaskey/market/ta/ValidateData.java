@@ -35,7 +35,7 @@ public class ValidateData {
 
 	private static List<Calendar>	holidays	= new ArrayList<>();
 
-	private static Calendar				aCal			= Calendar.getInstance();
+	//private static Calendar				aCal			= Calendar.getInstance();
 
 	private static boolean				init			= false;
 

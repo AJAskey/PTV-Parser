@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.ta.input.Fundamentals;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
@@ -46,6 +47,8 @@ public class TickerData {
 	private String								ticker;
 	private String								tickerName;
 	private String								tickerExchange;
+	
+	private Fundamentals fundies;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -130,6 +133,7 @@ public class TickerData {
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
 		this.tickerExchange = "Unknown";
+		this.fundies = Fundamentals.getWithTicker(ticker);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -440,7 +444,7 @@ public class TickerData {
 
 		this.currentPrice = this.closeData[0];
 
-		this.setRsRaw();
+		this.setRs();
 
 		if (daysOfData > 19) {
 			this.avgVol20 = this.taMethods.calcSma(this.volumeData, 20);
@@ -1010,8 +1014,9 @@ public class TickerData {
 	private double setRawRS() {
 		// System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130()
 		// + "\t" + getChg65() + "\t" + getChg23());
-		return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
-		    + (0.0825 * this.getChg23());
+	//	return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
+		//    + (0.0825 * this.getChg23());
+		return (0.66 * this.getChg260()) + (0.25 * this.getChg130()) + (0.09 * this.getChg65());
 	}
 
 	/**
@@ -1032,7 +1037,7 @@ public class TickerData {
 	 * later.
 	 *
 	 */
-	private void setRsRaw() {
+	private void setRs() {
 		this.chg23 = this.calcPriceChange(23);
 		this.chg65 = this.calcPriceChange(65);
 		this.chg130 = this.calcPriceChange(130);
@@ -1078,6 +1083,13 @@ public class TickerData {
 	 */
 	public double getAvgVol20() {
 		return avgVol20;
+	}
+
+	/**
+	 * @return the fundies
+	 */
+	public Fundamentals getFundies() {
+		return fundies;
 	}
 
 }
