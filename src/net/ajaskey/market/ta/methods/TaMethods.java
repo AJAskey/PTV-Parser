@@ -227,8 +227,8 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcMFI(double[] high, double[] low, double[] close, double[] volume, int days) {
-		return MoneyFlowMethods.mfi(high, low, close, volume, days);
+	public double calcMFI(double[] typicalPrice, double[] volume, int days) {
+		return MoneyFlowMethods.mfi(typicalPrice, volume, days);
 	}
 
 	/**

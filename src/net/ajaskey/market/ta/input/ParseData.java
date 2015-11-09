@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import net.ajaskey.market.ta.DailyData;
@@ -45,7 +46,9 @@ import net.ajaskey.market.ta.TickerData;
  */
 public class ParseData {
 
-	private static List<String> validTickers = new ArrayList<String>();
+	private static List<String>	validTickers	= new ArrayList<String>();
+	private static double				MIN_PRICE			= 0.0;
+	private static int					MIN_VOLUME		= 0;
 
 	/**
 	 * This method serves as a constructor for the class. Because all methods are
@@ -65,6 +68,20 @@ public class ParseData {
 	}
 
 	/**
+	 * @return the mIN_PRICE
+	 */
+	public static double getMIN_PRICE() {
+		return MIN_PRICE;
+	}
+
+	/**
+	 * @return the mIN_VOLUME
+	 */
+	public static int getMIN_VOLUME() {
+		return MIN_VOLUME;
+	}
+
+	/**
 	 *
 	 * Procedure getTickerList
 	 *
@@ -77,7 +94,7 @@ public class ParseData {
 		final List<String> list = new ArrayList<String>();
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
-			String line = br.readLine();
+			String line = "";
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
@@ -118,6 +135,11 @@ public class ParseData {
 				throw new FileNotFoundException();
 			}
 
+			boolean processAll = false;
+			if (validTickers.get(0).equals("PROCESS_ALL_TICKERS")) {
+				processAll = true;
+			}
+
 			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
 				String line = br.readLine();
@@ -132,9 +154,9 @@ public class ParseData {
 					if ((line != null) && (line.length() > 10)) {
 						final String fld[] = line.split(",");
 
-						if (validTickers.contains(fld[0])) {
+						if ((processAll) || (validTickers.contains(fld[0]))) {
 
-							//System.out.println("\t" + line);
+							// System.out.println("\t" + line);
 
 							if (fld.length == 7) {
 
@@ -152,8 +174,12 @@ public class ParseData {
 									td = new TickerData(fld[0], cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
 									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]));
 
+									final String exch = file.getParent();
+									final int idx = exch.lastIndexOf("\\");
+									td.setTickerExchange(exch.substring(idx + 1));
+
 									tdList.add(td);
-									// System.out.println("\n");
+									//System.out.println("Added : " + fld[0]);
 								}
 							} else {
 								throw new ParseException("bad data", 1);
@@ -182,7 +208,30 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 */
 	static public List<TickerData> parseFiles(List<String> fileNames) throws ParseException, FileNotFoundException {
+
+		return ParseData.parseFiles(fileNames, 36500);
+	}
+
+	/**
+	 * net.ajaskey.market.ta.input.parseFiles
+	 *
+	 * @param filenames
+	 * @param calendarDays
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 */
+	public static List<TickerData> parseFiles(List<String> fileNames, int calendarDays)
+	    throws FileNotFoundException, ParseException {
+
 		final List<TickerData> tdList = new ArrayList<TickerData>();
+
+		final Calendar cal = Calendar.getInstance();
+		// System.out.println(Utils.calendarToString(cal));
+		final int day = cal.get(Calendar.DAY_OF_YEAR);
+		final int newDay = day - calendarDays;
+		cal.set(Calendar.DAY_OF_YEAR, newDay);
+		// System.out.println(Utils.calendarToString(cal));
 
 		if (fileNames == null) {
 			System.out.println("List of files is null in parseFiles");
@@ -195,13 +244,27 @@ public class ParseData {
 
 			for (final File f : flist.listFiles()) {
 
-				if (f.getName().contains(".csv")) {
+				final String fn = f.getName();
 
-					//System.out.println(f.getName());
+				if (fn.contains(".csv")) {
 
-					final List<TickerData> td = ParseData.parseFile(f);
+					final int idx1 = fn.lastIndexOf("_") + 1;
+					final int idx2 = fn.lastIndexOf(".");
 
-					ParseData.mergeLists(tdList, td);
+					final String sDate = fn.substring(idx1, idx2);
+					final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+					final Date d = sdf.parse(sDate);
+					final Calendar c = Calendar.getInstance();
+					c.setTime(d);
+
+					if (c.after(cal)) {
+
+						// System.out.println(f.getName());
+
+						final List<TickerData> td = ParseData.parseFile(f);
+
+						ParseData.mergeLists(tdList, td);
+					}
 				}
 			}
 		}
@@ -277,6 +340,22 @@ public class ParseData {
 	}
 
 	/**
+	 * @param mIN_PRICE
+	 *          the mIN_PRICE to set
+	 */
+	public static void setMIN_PRICE(double mIN_PRICE) {
+		MIN_PRICE = mIN_PRICE;
+	}
+
+	/**
+	 * @param mIN_VOLUME
+	 *          the mIN_VOLUME to set
+	 */
+	public static void setMIN_VOLUME(int mIN_VOLUME) {
+		MIN_VOLUME = mIN_VOLUME;
+	}
+
+	/**
 	 *
 	 * @param ticker
 	 */
@@ -308,7 +387,7 @@ public class ParseData {
 			boolean found = false;
 			for (final TickerData tdMain : mainList) {
 				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-				//	tdMain.getData().addAll(tdNew.getData());
+					// tdMain.getData().addAll(tdNew.getData());
 					TickerData.mergeData(tdMain, tdNew);
 					found = true;
 					break;

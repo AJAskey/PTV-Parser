@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.ta;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
@@ -33,20 +34,30 @@ import java.util.concurrent.TimeUnit;
  */
 public class Utils {
 
-	public final static Calendar					baseDate	= Calendar.getInstance();
-	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
+	public final static Calendar					baseDate		= Calendar.getInstance();
+	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
+
+	public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+	
+	public static String NL = System.lineSeparator();
+	public static String TAB = "\t";
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public Utils() {
-		Utils.baseDate.set(Calendar.YEAR, 2000);
+		Utils.baseDate.set(Calendar.YEAR, 1900);
 		Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
 		Utils.baseDate.set(Calendar.HOUR, 0);
 		Utils.baseDate.set(Calendar.MINUTE, 0);
 		Utils.baseDate.set(Calendar.SECOND, 1);
 		Utils.baseDate.set(Calendar.MILLISECOND, 0);
+	}
+
+	public static String getDayOfWeek(Calendar cal) {
+		int dow = cal.get(Calendar.DAY_OF_WEEK);
+		return daysOfWeek[dow];
 	}
 
 	/**
@@ -60,8 +71,45 @@ public class Utils {
 		return sdf.format(cal.getTime());
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.ta.getTimeSpan
+	 *
+	 * @param recent
+	 * @param lessRecent
+	 * @return
+	 */
 	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.makeDir
+	 *
+	 * @param dir
+	 */
+	static public void makeDir(String dir) {
+		final File theDir = new File(dir);
+		if (!theDir.exists()) {
+			theDir.mkdir();
+		}
+	}
+
+	/** 
+	 * net.ajaskey.market.ta.printCalendar
+	 *
+	 * @param cal
+	 */
+	public static String calendarToString(Calendar cal) {
+		String ret = cal.toString() + "\n";
+		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
+		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
+		ret += "  Day of Month : " + cal.get(Calendar.DAY_OF_MONTH) + "\n";
+		ret += "  Day of Year  : " + cal.get(Calendar.DAY_OF_YEAR) + "\n";
+		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
+		return ret;
+		
 	}
 
 }

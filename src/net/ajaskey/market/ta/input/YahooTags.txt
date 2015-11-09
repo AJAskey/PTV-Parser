@@ -1,0 +1,53 @@
+Company Details
+n 	Name
+x 	Stock Exchange
+j1 	Market Capitalisation
+f6 	Float Shares
+b4 	Book Value
+
+Trading Data - Applicable to the most recent trading day (including today).
+a 	Ask
+b 	Bid
+a5 	Ask Size
+b6 	Bid Size
+d1 	Last trade Date
+t1 	Last trade Time
+l1 	Last trade Price
+k3 	Last trade Size
+c1 	Change
+p2 	Change in Percent
+o 	Open
+h 	Day's High
+g 	Day's Low
+m 	Day's Range
+v 	Volume
+a2 	Average Daily Volume
+p 	Previous Close
+
+Historical Performance -52-week data only.
+w 	52-week Range
+k 	52-week High
+j 	52-week Low
+k4 	Change From 52-week High
+j5 	Change From 52-week Low
+k5 	% Change From 52-week High
+j6 	% Change From 52-week Low
+
+Fundamental Analysis - Dividend and Target Price data are not always available and often restricted to US listed companies.
+e 	Earnings/Share
+j4 	EBITDA
+r 	P/E Ratio
+r5 	PEG Ratio
+d 	Dividend/Share
+q 	Ex-Dividend Date
+r1 	Dividend Pay Date
+y 	Dividend Yield
+t8 	1 yr Target Price
+
+Technical Analysis - The 50 and 200 day moving averages are two of the most commonly used indicators in the finance industry.
+m3 	50-day Moving Average
+m4 	200-day Moving Average
+m5 	Change From 200-day Moving Average
+m6 	Percent Change From 200-day Moving Average
+m7 	Change From 50-day Moving Average
+m8 	Percent Change From 50-day Moving Average

@@ -46,8 +46,10 @@ public class DailyData {
 	private double									dailyPercentChg;
 	private double									dailyRng;
 	private double									dailyPercentRng;
+	
+	private long daysSinceBase;
 
-	private final SimpleDateFormat	sdf	= new SimpleDateFormat("dd-MMM-yyyy");
+	private final SimpleDateFormat	sdf	= new SimpleDateFormat("E dd-MMM-yyyy");
 
 	/**
 	 *
@@ -66,6 +68,7 @@ public class DailyData {
 		this.date.set(Calendar.MINUTE, 0);
 		this.date.set(Calendar.SECOND, 1);
 		this.date.set(Calendar.MILLISECOND, 0);
+		setDaysSinceBase();
 		this.open = o;
 		this.high = h;
 		this.low = l;
@@ -224,6 +227,20 @@ public class DailyData {
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();
+	}
+
+	/**
+	 * @return the daysSinceBase
+	 */
+	public long getDaysSinceBase() {
+		return daysSinceBase;
+	}
+
+	/**
+	 * @param daysSinceBase the daysSinceBase to set
+	 */
+	public void setDaysSinceBase() {
+		this.daysSinceBase = Utils.getTimeSpan(date, Utils.baseDate);
 	}
 
 }

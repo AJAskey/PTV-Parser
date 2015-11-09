@@ -64,32 +64,12 @@ public class MoneyFlowMethodsTest {
 	 */
 	@Test
 	public final void testMfi() {
-		double mfi = MoneyFlowMethods.mfi(this.tdSC.getHighData(), this.tdSC.getLowData(), this.tdSC.getCloseData(),
-		    this.tdSC.getVolumeData(), 14);
+		double mfi = MoneyFlowMethods.mfi(this.tdSC.getTypicalPriceData(), this.tdSC.getVolumeData(), 14);
 		Assert.assertEquals(mfi, 30.84, 0.01);
 
-		mfi = MoneyFlowMethods.mfi(this.td.getHighData(), this.td.getLowData(), this.td.getCloseData(),
-		    this.td.getVolumeData(), 14);
-		// System.out.println(mfi);
-		Assert.assertEquals(mfi, 73.88, 0.01);
-	}
-
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.methods.MoneyFlowMethods#mfiTrue(double[], double[], double[], double[], int)}
-	 * .
-	 */
-	@Test
-	public final void testMfiTrue() {
-		double mfi = MoneyFlowMethods.mfiTrue(this.tdSC.getHighData(), this.tdSC.getLowData(), this.tdSC.getCloseData(),
-		    this.tdSC.getVolumeData(), 14);
-		// System.out.println(mfi);
-		Assert.assertEquals(mfi, 36.56, 0.01);
-
-		mfi = MoneyFlowMethods.mfiTrue(this.td.getHighData(), this.td.getLowData(), this.td.getCloseData(),
-		    this.td.getVolumeData(), 14);
-		// System.out.println(mfi);
-		Assert.assertEquals(mfi, 80.89, 0.01);
+		mfi = MoneyFlowMethods.mfi(this.td.getTypicalPriceData(), this.td.getVolumeData(), 14);
+		//System.out.println(mfi);
+		Assert.assertEquals(mfi, 73.85, 0.01);
 	}
 
 }

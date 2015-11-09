@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +12,7 @@ import java.util.List;
 
 import net.ajaskey.market.ta.SortTickerRs;
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.TaMethods;
@@ -61,10 +61,8 @@ public class ProcessMarketInternals {
 
 		filenames.add("C:\\Users\\ajask_000\\Documents\\EODData\\DataClient\\ASCII\\INDEX");
 		tdAll = ParseData.parseFiles(filenames);
-		final File outDir = new File("out");
-		if (!outDir.exists()) {
-			outDir.mkdir();
-		}
+
+		Utils.makeDir("out");
 	}
 
 	/**
@@ -205,7 +203,6 @@ public class ProcessMarketInternals {
 			pw.println("260 days : " + mfi260);
 			pw.println("300 days : " + mfi300);
 		}
-
 	}
 
 	/**

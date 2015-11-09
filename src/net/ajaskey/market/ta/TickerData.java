@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.ta.input.Fundamentals;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
@@ -45,6 +46,9 @@ public class TickerData {
 
 	private String								ticker;
 	private String								tickerName;
+	private String								tickerExchange;
+	
+	private Fundamentals fundies;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -72,9 +76,11 @@ public class TickerData {
 	private double[]							volumeData;
 	private double[]							trueHighData;
 	private double[]							trueLowData;
+	private double[]							typicalPriceData;
 	private Calendar[]						dateData;
 	private double								currentPrice;
 	private double								avgVol65;
+	private double								avgVol20;
 	private double								chg23;
 	private double								chg65;
 	private double								chg130;
@@ -126,6 +132,8 @@ public class TickerData {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
+		this.tickerExchange = "Unknown";
+		this.fundies = Fundamentals.getWithTicker(ticker);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -317,12 +325,70 @@ public class TickerData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.sortData
+	 *
+	 * @param td
+	 * @param sortReverse
+	 */
+	public static void sortDailyData(TickerData td, boolean sortReverse) {
+		if (sortReverse) {
+			Collections.sort(td.data, new SortDailyDataReverse());
+		} else {
+			Collections.sort(td.data, new SortDailyData());
+		}
+
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.addData
 	 *
 	 * @param dd
 	 */
 	public void addData(DailyData dd) {
 		this.data.add(dd);
+	}
+
+	public String DailyDataString(int day) {
+		return this.data.get(day).toString();
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.fillDataArrays
+	 *
+	 * @param start
+	 */
+	public void fillDataArrays(int start, boolean sortReversed) {
+
+		TickerData.sortDailyData(this, sortReversed);
+
+		this.daysOfData = this.data.size() - start;
+
+		if (this.daysOfData < 1) {
+			return;
+		}
+
+		this.dateData = new Calendar[this.daysOfData];
+		this.openData = new double[this.daysOfData];
+		this.highData = new double[this.daysOfData];
+		this.lowData = new double[this.daysOfData];
+		this.closeData = new double[this.daysOfData];
+		this.volumeData = new double[this.daysOfData];
+		int knt = 0;
+		int pos = 0;
+		for (final DailyData dd : this.data) {
+			if (knt >= start) {
+				this.openData[pos] = dd.getOpen();
+				this.highData[pos] = dd.getHigh();
+				this.lowData[pos] = dd.getLow();
+				this.closeData[pos] = dd.getClose();
+				this.volumeData[pos] = dd.getVolume();
+				this.dateData[pos] = dd.getDate();
+				pos++;
+			}
+			knt++;
+		}
 	}
 
 	/**
@@ -348,28 +414,7 @@ public class TickerData {
 		Collections.sort(this.data, new SortDailyData());
 		this.normalizeZeroVolume();
 
-		this.daysOfData = this.data.size() - start;
-
-		this.dateData = new Calendar[this.daysOfData];
-		this.openData = new double[this.daysOfData];
-		this.highData = new double[this.daysOfData];
-		this.lowData = new double[this.daysOfData];
-		this.closeData = new double[this.daysOfData];
-		this.volumeData = new double[this.daysOfData];
-		int knt = 0;
-		int pos = 0;
-		for (final DailyData dd : this.data) {
-			if (knt >= start) {
-				this.openData[pos] = dd.getOpen();
-				this.highData[pos] = dd.getHigh();
-				this.lowData[pos] = dd.getLow();
-				this.closeData[pos] = dd.getClose();
-				this.volumeData[pos] = dd.getVolume();
-				this.dateData[pos] = dd.getDate();
-				pos++;
-			}
-			knt++;
-		}
+		this.fillDataArrays(start, false);
 
 		/**
 		 * TrueHigh and TrueLow are set for entire data series without regard to
@@ -377,7 +422,8 @@ public class TickerData {
 		 */
 		this.trueHighData = new double[this.daysOfData];
 		this.trueLowData = new double[this.daysOfData];
-		pos = 0;
+		this.typicalPriceData = new double[this.daysOfData];
+		int pos = 0;
 		for (int i = start; i < (this.data.size() - 1); i++) {
 			this.data.get(i).setTrueHigh(this.data.get(i + 1).getClose());
 			this.data.get(i).setTrueLow(this.data.get(i + 1).getClose());
@@ -385,6 +431,9 @@ public class TickerData {
 
 			this.trueHighData[pos] = this.data.get(i).getTrueHigh();
 			this.trueLowData[pos] = this.data.get(i).getTrueLow();
+
+			this.typicalPriceData[pos] = (this.trueLowData[pos] + this.closeData[pos] + this.trueHighData[pos]) / 3.0;
+
 			pos++;
 
 		}
@@ -395,8 +444,14 @@ public class TickerData {
 
 		this.currentPrice = this.closeData[0];
 
-		if (this.daysOfData > 260) {
-			this.setRsRaw();
+		this.setRs();
+
+		if (daysOfData > 19) {
+			this.avgVol20 = this.taMethods.calcSma(this.volumeData, 20);
+		}
+
+		if (daysOfData > 64) {
+			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
 		}
 
 		if (this.daysOfData > 28) {
@@ -408,8 +463,6 @@ public class TickerData {
 			this.sma65 = this.taMethods.calcSma(this.getCloseData(), 65);
 			this.smaPerc65 = this.taMethods.calcPercentChange(this.currentPrice, this.sma65);
 			this.sma65Trend = this.taMethods.calcSmaTrend(this.closeData, 65, 5);
-
-			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
 		}
 		if (this.daysOfData > 135) {
 			this.sma130 = this.taMethods.calcSma(this.getCloseData(), 130);
@@ -438,16 +491,16 @@ public class TickerData {
 		}
 
 		if (this.daysOfData > 24) {
-			this.mfi23 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 23);
+			this.mfi23 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 23);
 		}
 		if (this.daysOfData > 66) {
-			this.mfi65 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 65);
+			this.mfi65 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 65);
 		}
 		if (this.daysOfData > 131) {
-			this.mfi130 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 130);
+			this.mfi130 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 130);
 		}
 		if (this.daysOfData > 15) {
-			this.mfi14 = this.taMethods.calcMFI(this.highData, this.lowData, this.closeData, this.volumeData, 14);
+			this.mfi14 = this.taMethods.calcMFI(this.typicalPriceData, this.volumeData, 14);
 		}
 
 		if (this.daysOfData > 260) {
@@ -846,6 +899,13 @@ public class TickerData {
 		return this.trueLowData;
 	}
 
+	/**
+	 * @return the typicalPriceData
+	 */
+	public double[] getTypicalPriceData() {
+		return this.typicalPriceData;
+	}
+
 	public double getVolume(int day) {
 		return this.volumeData[day];
 	}
@@ -931,11 +991,15 @@ public class TickerData {
 						}
 					}
 				}
-				final double avg5p = sum / knt;
-				final double avg10 = (avg5p + avg5m) / 2.0;
-				this.data.get(i).setVolume(avg10);
-				// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
-				// avg5p);
+				if (knt > 0) {
+					final double avg5p = sum / knt;
+					final double avg10 = (avg5p + avg5m) / 2.0;
+					this.data.get(i).setVolume(avg10);
+					// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
+					// avg5p);
+				} else {
+					this.data.get(i).setVolume(0);
+				}
 			}
 		}
 
@@ -948,8 +1012,11 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawRS() {
-		return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
-		    + (0.0825 * this.getChg23());
+		// System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130()
+		// + "\t" + getChg65() + "\t" + getChg23());
+	//	return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
+		//    + (0.0825 * this.getChg23());
+		return (0.66 * this.getChg260()) + (0.25 * this.getChg130()) + (0.09 * this.getChg65());
 	}
 
 	/**
@@ -959,7 +1026,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawStRS() {
-		return ((0.25 * this.getChg65()) + (0.75 * this.getChg23()));
+		return ((0.33 * this.getChg65()) + (0.67 * this.getChg23()));
 	}
 
 	/**
@@ -970,14 +1037,59 @@ public class TickerData {
 	 * later.
 	 *
 	 */
-	private void setRsRaw() {
-
+	private void setRs() {
 		this.chg23 = this.calcPriceChange(23);
 		this.chg65 = this.calcPriceChange(65);
 		this.chg130 = this.calcPriceChange(130);
 		this.chg260 = this.calcPriceChange(260);
-		this.rsRaw = this.setRawRS();
-		this.rsStRaw = this.setRawStRS();
+		if (this.daysOfData > 260) {
+			this.rsRaw = this.setRawRS();
+		}
+		if (this.daysOfData > 65) {
+			this.rsStRaw = this.setRawStRS();
+		}
+	}
+
+	/**
+	 * @return the tickerExchange
+	 */
+	public String getTickerExchange() {
+		return tickerExchange;
+	}
+
+	/**
+	 * @param tickerExchange
+	 *          the tickerExchange to set
+	 */
+	public void setTickerExchange(String tickerExchange) {
+		this.tickerExchange = tickerExchange;
+	}
+
+	public static void clearTickerData(TickerData td) {
+		td.data.clear();
+		td.openData = null;
+		td.highData = null;
+		td.lowData = null;
+		td.closeData = null;
+		td.volumeData = null;
+		td.trueHighData = null;
+		td.trueLowData = null;
+		td.typicalPriceData = null;
+		td = null;
+	}
+
+	/**
+	 * @return the avgVol20
+	 */
+	public double getAvgVol20() {
+		return avgVol20;
+	}
+
+	/**
+	 * @return the fundies
+	 */
+	public Fundamentals getFundies() {
+		return fundies;
 	}
 
 }

@@ -103,8 +103,9 @@ public class DailyDataTest {
 	@Test
 	public final void testToString() {
 		System.out.println(this.dd.toString());
-		final String tstStr = "15-Mar-2015  10.00  12.00  9.00  11.00 123456";
-		final int cmp = tstStr.compareTo(this.dd.toString());
+		final String expStr = "Sun 15-Mar-2015  10.00  12.00  9.00  11.00 123456";
+		final String tstStr = this.dd.toString();
+		final int cmp = expStr.compareTo(tstStr);
 		Assert.assertEquals(cmp, 0);
 	}
 
