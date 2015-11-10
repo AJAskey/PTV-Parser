@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.ta.SortTickerName;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
@@ -90,7 +92,7 @@ public class GenStockList {
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
 
-		GenStockList.findStocks("stocks-list", 0, 500000, 10.0);
+		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
 
 		System.out.println("Done.");
 
@@ -155,19 +157,29 @@ public class GenStockList {
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 					maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
 				} else {
-				//	tdAll.remove(td);
+					// tdAll.remove(td);
 				}
 			}
 		}
+		
+		Collections.sort(tdStocks, new SortTickerName());
 
 		Utils.makeDir("lists");
 
-		final String fmt = String.format("%%-%ds %%-%ds %%-10s%n", maxTickerLen, maxNameLen);
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s%n", maxTickerLen, maxNameLen);
 		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt")) {
 			for (final TickerData td : tdStocks) {
 				pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange());
 			}
 		}
+
+		/**
+		 * try (PrintWriter pw = new PrintWriter("lists\\" + outName + "
+		 * _fundies.txt")) { for (final TickerData td : tdStocks) { String[] secind
+		 * = YahooData.getSectorIndustry(td.getTicker()); String shares =
+		 * YahooData.get(td.getTicker(), "f6"); pw.println(td.getTicker() + Utils.NL
+		 * + secind[0] + Utils.NL + secind[1] + Utils.NL + shares); } }
+		 */
 	}
 
 }

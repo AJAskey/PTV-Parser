@@ -103,7 +103,7 @@ public class WhosHot {
 		// WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
 		// WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
 		// WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
-		WhosHot.processList("lists\\stocks-list.txt", "stocks", 0, 500000);
+		WhosHot.processList("lists\\stock-list.txt", "stocks", 0, 500000);
 
 		System.out.println("Done.");
 	}
@@ -172,7 +172,7 @@ public class WhosHot {
 			knt++;
 		}
 
-		final String fmt = String.format("%%-%ds %%-%ds %%-10s %%s  %%9.1f  %%12sM %%8sM %%10.1f %%n", maxTickerLen,
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%s\t%%9.1f\t%%12sM\t%%8sM\t%%10.1f %%n", maxTickerLen,
 		    maxNameLen);
 
 		PrintWriter pwSD = new PrintWriter("out\\SupplyDemand-" + outName + ".txt");

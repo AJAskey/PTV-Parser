@@ -96,9 +96,11 @@ public class YahooData {
 		try {
 			final String response = YahooData.getFromUrl(url);
 			final int idx1 = response.indexOf("Business Summary");
-			final int idx2 = response.substring(idx1, response.length()).indexOf("<p>");
-			final int idx3 = response.substring(idx1, response.length()).indexOf("</p>");
-			retResp = response.substring(idx1 + idx2 + 3, idx1 + idx3);
+			if (idx1 > 100) {
+				final int idx2 = response.substring(idx1, response.length()).indexOf("<p>");
+				final int idx3 = response.substring(idx1, response.length()).indexOf("</p>");
+				retResp = response.substring(idx1 + idx2 + 3, idx1 + idx3);
+			}
 		} catch (final Exception e) {
 			retResp = "N/A";
 		}
@@ -118,18 +120,30 @@ public class YahooData {
 		try {
 			final String response = YahooData.getFromUrl(url);
 			int idx1 = response.indexOf("Sector:");
-			int idx2 = response.substring(idx1).indexOf(".html");
-			int idx3 = response.substring(idx1 + idx2 + 6).indexOf("<");
-			retResp[0] = response.substring(idx1 + idx2 + 7, idx1 + idx2 + 6 + idx3);
+			if (idx1 > 100) {
+				int idx2 = response.substring(idx1).indexOf(".html");
+				if (idx2 > 0) {
+					int idx3 = response.substring(idx1 + idx2 + 6).indexOf("<");
+					if (idx3 > 0) {
+						String sector = response.substring(idx1 + idx2 + 7, idx1 + idx2 + 6 + idx3);
+						if (sector.length() < 25) {
+							retResp[0] = sector;
 
-			final int idx0 = idx1 + idx2 + 6 + idx3 + 1;
-			// String s1 = response.substring(idx0);
-			idx1 = response.substring(idx0).indexOf("Industry:");
-			// String s2 = response.substring(idx0 + idx1);
-			idx2 = response.substring(idx0 + idx1).indexOf(".html");
-			// String s3 = response.substring(idx0 + idx1 + idx2 + 6);
-			idx3 = response.substring(idx0 + idx1 + idx2 + 6).indexOf("<");
-			retResp[1] = response.substring(idx0 + idx1 + idx2 + 7, idx0 + idx1 + idx2 + 6 + idx3);
+							final int idx0 = idx1 + idx2 + 6 + idx3 + 1;
+							// String s1 = response.substring(idx0);
+							idx1 = response.substring(idx0).indexOf("Industry:");
+							// String s2 = response.substring(idx0 + idx1);
+							idx2 = response.substring(idx0 + idx1).indexOf(".html");
+							// String s3 = response.substring(idx0 + idx1 + idx2 + 6);
+							idx3 = response.substring(idx0 + idx1 + idx2 + 6).indexOf("<");
+							String ind = response.substring(idx0 + idx1 + idx2 + 7, idx0 + idx1 + idx2 + 6 + idx3);
+							if (ind.length() < 65) {
+								retResp[1] = ind.replaceAll("&amp;", "&");
+							}
+						}
+					}
+				}
+			}
 		} catch (final Exception e) {
 			retResp[0] = "N/A";
 			retResp[1] = "N/A";
@@ -193,7 +207,7 @@ public class YahooData {
 	 *
 	 */
 	private static void testit() {
-		final String tkr = "CALM";
+		final String tkr = "rcii";
 		final String[] secind = YahooData.getSectorIndustry(tkr);
 		for (final String str : secind) {
 			System.out.println(str);
