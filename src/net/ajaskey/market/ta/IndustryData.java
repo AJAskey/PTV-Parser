@@ -39,6 +39,7 @@ public class IndustryData {
 	private double							rawRsSt;
 	private double							chg260;
 	private double							avgVol;
+	private double priceInRange260;
 	private long								outShares;
 	private long								fShares;
 	private final List<Integer>	rank	= new ArrayList<>();
@@ -223,6 +224,20 @@ public class IndustryData {
 	 */
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
+	}
+
+	/**
+	 * @return the priceInRange260
+	 */
+	public double getPriceInRange260() {
+		return priceInRange260;
+	}
+
+	/**
+	 * @param priceInRange260 the priceInRange260 to set
+	 */
+	public void setPriceInRange260(double priceInRange260) {
+		this.priceInRange260 = priceInRange260;
 	}
 
 }

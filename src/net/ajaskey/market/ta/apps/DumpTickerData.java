@@ -74,9 +74,15 @@ public class DumpTickerData {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 
-		ParseData.setValidTicker("QQQ");
-		ParseData.setValidTicker("MSFT");
-		ParseData.setValidTicker("GE");
+		if (args == null) {
+			ParseData.setValidTicker("QQQ");
+			ParseData.setValidTicker("MSFT");
+			ParseData.setValidTicker("GE");
+		} else {
+			for (String s : args) {
+				ParseData.setValidTicker(s);
+			}
+		}
 
 		new DumpTickerData();
 

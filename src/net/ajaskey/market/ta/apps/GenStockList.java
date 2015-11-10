@@ -149,7 +149,7 @@ public class GenStockList {
 
 		for (final TickerData td : tdAll) {
 			td.generateDerived(offset);
-			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() > minPrice)) {
+			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() >= minPrice)) {
 				if (GenStockList.checkName(td.getTickerName())) {
 					tdStocks.add(td);
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);

@@ -64,6 +64,14 @@ public class YahooData {
 		return null;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.get
+	 *
+	 * @param tickers
+	 * @param command
+	 * @return
+	 */
 	public static String get(String tickers, String command) {
 		String response = null;
 		final String url = "http://download.finance.yahoo.com/d/quotes.csv?s=" + tickers + "&f=" + command;
@@ -75,9 +83,69 @@ public class YahooData {
 		return response;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getBusinessSummary
+	 *
+	 * @param tkr
+	 * @return
+	 */
+	public static String getBusinessSummary(String tkr) {
+		final String url = "http://finance.yahoo.com/q/pr?s=" + tkr + "+Profile";
+		String retResp = "N/A";
+		try {
+			final String response = YahooData.getFromUrl(url);
+			final int idx1 = response.indexOf("Business Summary");
+			final int idx2 = response.substring(idx1, response.length()).indexOf("<p>");
+			final int idx3 = response.substring(idx1, response.length()).indexOf("</p>");
+			retResp = response.substring(idx1 + idx2 + 3, idx1 + idx3);
+		} catch (final Exception e) {
+			retResp = "N/A";
+		}
+		return retResp;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getSectorIndustry
+	 *
+	 * @param tkr
+	 * @return
+	 */
+	public static String[] getSectorIndustry(String tkr) {
+		final String url = "http://finance.yahoo.com/q/in?s=" + tkr + "+Industry";
+		final String retResp[] = { "N/A", "N/A" };
+		try {
+			final String response = YahooData.getFromUrl(url);
+			int idx1 = response.indexOf("Sector:");
+			int idx2 = response.substring(idx1).indexOf(".html");
+			int idx3 = response.substring(idx1 + idx2 + 6).indexOf("<");
+			retResp[0] = response.substring(idx1 + idx2 + 7, idx1 + idx2 + 6 + idx3);
+
+			final int idx0 = idx1 + idx2 + 6 + idx3 + 1;
+			// String s1 = response.substring(idx0);
+			idx1 = response.substring(idx0).indexOf("Industry:");
+			// String s2 = response.substring(idx0 + idx1);
+			idx2 = response.substring(idx0 + idx1).indexOf(".html");
+			// String s3 = response.substring(idx0 + idx1 + idx2 + 6);
+			idx3 = response.substring(idx0 + idx1 + idx2 + 6).indexOf("<");
+			retResp[1] = response.substring(idx0 + idx1 + idx2 + 7, idx0 + idx1 + idx2 + 6 + idx3);
+		} catch (final Exception e) {
+			retResp[0] = "N/A";
+			retResp[1] = "N/A";
+		}
+		return retResp;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.input.main
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
-		testit();
+		YahooData.testit();
 
 		final String str = "1234" + Utils.NL;
 		str.trim();
@@ -93,11 +161,16 @@ public class YahooData {
 		for (final String s : YahooData.get(tickers, "f6")) {
 			System.out.println(s);
 		}
-		// if (resp != null) {
-		// System.out.println(resp);
-		// }
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getFromUrl
+	 *
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
 	private static String getFromUrl(String url) throws IOException {
 		final StringBuilder sb = new StringBuilder();
 
@@ -112,25 +185,19 @@ public class YahooData {
 		}
 		return sb.toString();
 	}
-	
-	public static String getBusinessSummary(String tkr) {
-		String url = "http://finance.yahoo.com/q/pr?s=" + tkr + "+Profile";
-		String retResp = "N/A";
-		try {
-		String	response = YahooData.getFromUrl(url);
-			int idx1 = response.indexOf("Business Summary");
-			int idx2 = response.substring(idx1, response.length()).indexOf("<p>");
-			int idx3 = response.substring(idx1, response.length()).indexOf("</p>");
-			retResp = response.substring(idx1+idx2+3,idx1+idx3);
-		} catch (Exception e) {
-			retResp = "N/A";
-		}
-		return retResp;
-	}
 
+	/**
+	 * Test only
+	 * 
+	 * net.ajaskey.market.ta.input.testit
+	 *
+	 */
 	private static void testit() {
-		final String tkr = "NVAX";
-		System.out.println(getBusinessSummary(tkr));
+		final String tkr = "CALM";
+		final String[] secind = YahooData.getSectorIndustry(tkr);
+		for (final String str : secind) {
+			System.out.println(str);
+		}
 	}
 
 }

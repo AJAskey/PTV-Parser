@@ -165,6 +165,7 @@ public class WhosHot {
 			ind[knt].setRawRs(td.getRsRaw());
 			ind[knt].setChg260(td.getChg260());
 			ind[knt].setAvgVol(td.getAvgVol65());
+			ind[knt].setPriceInRange260(td.getPriceInRng260());
 			ind[knt].setRank(knt);
 			maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 			maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
@@ -193,8 +194,10 @@ public class WhosHot {
 					final String shr = vFmt.format(id.getShares() / 1000000.0);
 					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getChg260(), vol, shr, volRatio);
 
-					if ((shares > 0.0) && (shares < 100000000.0) && (id.getRawRs() > 0.0) && (volRatio < 35.0)) {
+					if ((volRatio > 0.0) && (shares > 0.0) && (shares < 100000000.0) && (id.getPriceInRange260() > 0.50)
+					    && (volRatio < 35.0)) {
 						String bSum = YahooData.getBusinessSummary(id.getTicker());
+						// String bSum = "";
 						pwSD.println(id.getTicker() + Utils.TAB + id.getName() + Utils.TAB + id.getExch() + Utils.TAB
 						    + id.getRanks() + Utils.TAB + vol + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB + bSum);
 					}
