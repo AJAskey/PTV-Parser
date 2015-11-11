@@ -79,8 +79,7 @@ public class WhosHot {
 			// filenames.add(dataPath + "\\ASCII\\INDEX");
 			// filenames.add(dataPath + "\\ASCII\\USMF");
 
-			Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
-			Fundamentals.build(dataPath + "\\ASCII\\NYSE_fundies.txt");
+			Fundamentals.build("lists\\stock-fundie-list.txt");
 
 			init = true;
 		}

@@ -57,9 +57,9 @@ public class Fundamentals {
 					final String[] fld = line.split("\t");
 					final Fundamentals f = new Fundamentals();
 					f.ticker = fld[0].trim().toUpperCase();
-					f.sector = fld[2].trim().toUpperCase();
-					f.industry = fld[3].trim().toUpperCase();
-					String sTmp = fld[7].trim().toUpperCase();
+					f.sector = fld[1].trim();
+					f.industry = fld[2].trim();
+					String sTmp = fld[3].trim();
 					sTmp = sTmp.replaceAll(",", "");
 					try {
 						f.shares = Long.parseLong(sTmp);
@@ -67,17 +67,17 @@ public class Fundamentals {
 						f.shares = 0;
 						// System.out.println(sTmp);
 					}
-					if (f.shares > 1000000) {
+					//if (f.shares > 1000000) {
 						maxSectorLen = Math.max(maxSectorLen, f.sector.length() + 2);
 						maxIndustryLen = Math.max(maxIndustryLen, f.industry.length() + 1);
 						fundieList.add(f);
-					}
+					//}
 				}
 			}
 		}
 		fmt = String.format("%%-10s %%-%ds %%-%ds %%15d", maxSectorLen, maxIndustryLen);
 
-		Fundamentals.setYahoo();
+		//Fundamentals.setYahoo();
 	}
 
 	/**
@@ -123,7 +123,8 @@ public class Fundamentals {
 		final String arg = "dataPath";
 		final String dataPath = System.getProperty(arg, "");
 
-		Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
+		Fundamentals.build("lists\\stock-fundie-list.txt");
+		//Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
 		// Fundamentals.build(dataPath + "\\ASCII\\NYSE_fundies.txt");
 
 		for (final Fundamentals f : fundieList) {
