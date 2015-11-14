@@ -47,8 +47,8 @@ public class TickerData {
 	private String								ticker;
 	private String								tickerName;
 	private String								tickerExchange;
-	
-	private Fundamentals fundies;
+
+	private Fundamentals					fundies;
 
 	private final List<DailyData>	data			= new ArrayList<DailyData>();
 
@@ -133,7 +133,7 @@ public class TickerData {
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
 		this.tickerExchange = "Unknown";
-		this.fundies = Fundamentals.getWithTicker(ticker);
+		this.fundies = Fundamentals.getWithTicker(this.ticker);
 		this.data.add(dd);
 		this.daysOfData = 0;
 		this.sma23 = 0.0;
@@ -195,6 +195,32 @@ public class TickerData {
 		return tdList;
 	}
 
+	public static void clearTickerData(TickerData td) {
+		td.data.clear();
+		td.openData = null;
+		td.highData = null;
+		td.lowData = null;
+		td.closeData = null;
+		td.volumeData = null;
+		td.trueHighData = null;
+		td.trueLowData = null;
+		td.typicalPriceData = null;
+		td = null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getDataOfDate
+	 *
+	 * @param td
+	 * @param cal
+	 * @return
+	 */
+	static public DailyData getDataOfDate(TickerData td, Calendar cal) {
+		return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
+		    cal.get(Calendar.DAY_OF_MONTH));
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.getDataOfDate
@@ -211,6 +237,9 @@ public class TickerData {
 		if ((idx >= 0) && (idx < td.getDaysOfData())) {
 			dd = td.data.get(idx);
 		}
+		// SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
+		// String s = sdf.format(dd.getDate().getTime());
+		// System.out.println(s);
 		return dd;
 	}
 
@@ -259,26 +288,25 @@ public class TickerData {
 
 		if ((year < 2000) || (year > calBase.get(Calendar.YEAR))) {
 			return -1;
-		} else if ((month < 1) || (month > 12)) {
+		} else if ((month < Calendar.JANUARY) || (month > Calendar.DECEMBER)) {
 			return -1;
 		}
-		calBase.set(year, month - 1, 1, 0, 0, 1);
+		calBase.set(year, month, 1, 0, 0, 1);
 		final int dim = calBase.getActualMaximum(Calendar.DAY_OF_MONTH);
 		if (day > dim) {
 			return -1;
 		}
 
 		calBase.set(Calendar.MILLISECOND, 0);
-		calBase.set(year, month - 1, day, 0, 0, 1);
+		calBase.set(year, month, day, 0, 0, 1);
 		final int idx = -1;
 		long shortSpan = td.getDaysOfData();
 		int knt = 0;
 		long lastSpan = 99999999999L;
 		for (final DailyData dd : td.data) {
 			final long span = Math.abs(Utils.getTimeSpan(dd.getDate(), calBase));
-			// System.out.printf("%s %s %d %d %d %n",
-			// Utils.getString(calBase), Utils.getString(dd.getDate()),
-			// (int) span, (int) shortSpan, idx);
+			//System.out.printf("%s %s %d %d %d %n", Utils.getString(calBase), Utils.getString(dd.getDate()), (int) span,
+			//    (int) shortSpan, idx);
 			if (span == 0) {
 				return knt;
 			} else if (span > lastSpan) {
@@ -446,11 +474,11 @@ public class TickerData {
 
 		this.setRs();
 
-		if (daysOfData > 19) {
+		if (this.daysOfData > 19) {
 			this.avgVol20 = this.taMethods.calcSma(this.volumeData, 20);
 		}
 
-		if (daysOfData > 64) {
+		if (this.daysOfData > 64) {
 			this.avgVol65 = this.taMethods.calcSma(this.volumeData, 65);
 		}
 
@@ -544,6 +572,13 @@ public class TickerData {
 	}
 
 	/**
+	 * @return the avgVol20
+	 */
+	public double getAvgVol20() {
+		return this.avgVol20;
+	}
+
+	/**
 	 * @return the avgVol65
 	 */
 	public double getAvgVol65() {
@@ -633,6 +668,13 @@ public class TickerData {
 	 */
 	public double getDiPlus() {
 		return this.diPlus;
+	}
+
+	/**
+	 * @return the fundies
+	 */
+	public Fundamentals getFundies() {
+		return this.fundies;
 	}
 
 	public double getHigh(int day) {
@@ -879,6 +921,13 @@ public class TickerData {
 	}
 
 	/**
+	 * @return the tickerExchange
+	 */
+	public String getTickerExchange() {
+		return this.tickerExchange;
+	}
+
+	/**
 	 * @return the tickerName
 	 */
 	public String getTickerName() {
@@ -927,6 +976,14 @@ public class TickerData {
 		} else {
 			this.ticker = "UNKNOWN";
 		}
+	}
+
+	/**
+	 * @param tickerExchange
+	 *          the tickerExchange to set
+	 */
+	public void setTickerExchange(String tickerExchange) {
+		this.tickerExchange = tickerExchange;
 	}
 
 	/**
@@ -1014,8 +1071,9 @@ public class TickerData {
 	private double setRawRS() {
 		// System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130()
 		// + "\t" + getChg65() + "\t" + getChg23());
-	//	return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 * this.getChg65())
-		//    + (0.0825 * this.getChg23());
+		// return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 *
+		// this.getChg65())
+		// + (0.0825 * this.getChg23());
 		return (0.66 * this.getChg260()) + (0.25 * this.getChg130()) + (0.09 * this.getChg65());
 	}
 
@@ -1051,45 +1109,27 @@ public class TickerData {
 	}
 
 	/**
-	 * @return the tickerExchange
+	 * 
+	 * net.ajaskey.market.ta.getTradingDays
+	 *
+	 * @param td
+	 * @param start
+	 * @param stop
+	 * @return
 	 */
-	public String getTickerExchange() {
-		return tickerExchange;
-	}
+	public static int getTradingDays(TickerData td, Calendar start, Calendar stop) {
 
-	/**
-	 * @param tickerExchange
-	 *          the tickerExchange to set
-	 */
-	public void setTickerExchange(String tickerExchange) {
-		this.tickerExchange = tickerExchange;
-	}
-
-	public static void clearTickerData(TickerData td) {
-		td.data.clear();
-		td.openData = null;
-		td.highData = null;
-		td.lowData = null;
-		td.closeData = null;
-		td.volumeData = null;
-		td.trueHighData = null;
-		td.trueLowData = null;
-		td.typicalPriceData = null;
-		td = null;
-	}
-
-	/**
-	 * @return the avgVol20
-	 */
-	public double getAvgVol20() {
-		return avgVol20;
-	}
-
-	/**
-	 * @return the fundies
-	 */
-	public Fundamentals getFundies() {
-		return fundies;
+		int ret = 0;
+		int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
+		    start.get(Calendar.DAY_OF_MONTH));
+		if (idx1 >= 0) {
+			int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
+			    stop.get(Calendar.DAY_OF_MONTH));
+			if (idx2 < idx1) {
+				ret = (idx1 - idx2 + 1);
+			}
+		}
+		return ret;
 	}
 
 }

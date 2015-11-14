@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.ta.input.YahooData;
+
 /**
  * @author Andy Askey
  *
@@ -40,10 +42,37 @@ public class GenerateFundies {
 
 	static List<GenerateFundies>	fundieList	= new ArrayList<>();
 	static List<String>						tickers			= new ArrayList<>();
+	private String								marketCap;
 	private String								ticker;
 	private String								sector;
 	private String								industry;
 	private long									shares;
+
+	
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public GenerateFundies() {
+		marketCap = "N/A";
+		shares = 0;
+	}
+	
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.getWithTicker
+	 *
+	 * @param tkr
+	 * @return
+	 */
+	public static GenerateFundies getWithTicker(String tkr) {
+		for (final GenerateFundies f : fundieList) {
+			if (f.ticker.equalsIgnoreCase(tkr)) {
+				return f;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 *
@@ -56,11 +85,13 @@ public class GenerateFundies {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
+		System.out.println("Processing...");
+		
 		GenerateFundies.build();
 
 		try (PrintWriter pw = new PrintWriter("lists\\stock-fundie-list.txt")) {
 			for (final GenerateFundies f : fundieList) {
-				pw.printf("%-10s\t%-25s\t%-60s\t%12d%n", f.ticker, f.sector, f.industry, f.shares);
+				pw.printf("%-10s\t%-25s\t%-60s\t%12d\t%12s%n", f.ticker, f.sector, f.industry, f.shares, f.marketCap);
 			}
 		}
 
@@ -82,6 +113,46 @@ public class GenerateFundies {
 				if ((line != null) && (line.trim().length() > 10)) {
 					final String[] flds = line.split("\t");
 					tickers.add(flds[0].trim().toUpperCase());
+				}
+			}
+		}
+		GenerateFundies.setYahoo();
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.setYahoo
+	 *
+	 */
+	private static void setYahoo() {
+
+		for (final String tkr : tickers) {
+			final String[] secind = YahooData.getSectorIndustry(tkr);
+			final GenerateFundies fundie = new GenerateFundies();
+			fundie.ticker = tkr;
+			fundie.sector = secind[0].trim();
+			fundie.industry = secind[1].trim();
+			fundieList.add(fundie);
+		}
+
+		final int inc = 250;
+		for (int i = 0; i < tickers.size(); i += inc) {
+			int last = (i + inc) - 1;
+			last = Math.min(tickers.size() - 1, last);
+			System.out.printf("Processing Yahoo data for tickers %d to %d%n", i, last);
+			final List<String> data = YahooData.get(tickers.subList(i, last), "f6j1");
+
+			for (final String d : data) {
+				final String[] fld = d.split(",");
+				final GenerateFundies fund = GenerateFundies.getWithTicker(fld[0].trim());
+				if (fund != null) {
+					try {
+						final long shr = Long.parseLong(fld[1].trim());
+						fund.shares = shr;
+						fund.marketCap = fld[2].trim();
+					} catch (final Exception e) {
+						fund.shares = 0;
+					}
 				}
 			}
 		}

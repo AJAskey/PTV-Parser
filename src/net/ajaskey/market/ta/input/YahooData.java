@@ -125,7 +125,7 @@ public class YahooData {
 				if (idx2 > 0) {
 					int idx3 = response.substring(idx1 + idx2 + 6).indexOf("<");
 					if (idx3 > 0) {
-						String sector = response.substring(idx1 + idx2 + 7, idx1 + idx2 + 6 + idx3);
+						final String sector = response.substring(idx1 + idx2 + 7, idx1 + idx2 + 6 + idx3);
 						if (sector.length() < 25) {
 							retResp[0] = sector;
 
@@ -136,7 +136,7 @@ public class YahooData {
 							idx2 = response.substring(idx0 + idx1).indexOf(".html");
 							// String s3 = response.substring(idx0 + idx1 + idx2 + 6);
 							idx3 = response.substring(idx0 + idx1 + idx2 + 6).indexOf("<");
-							String ind = response.substring(idx0 + idx1 + idx2 + 7, idx0 + idx1 + idx2 + 6 + idx3);
+							final String ind = response.substring(idx0 + idx1 + idx2 + 7, idx0 + idx1 + idx2 + 6 + idx3);
 							if (ind.length() < 65) {
 								retResp[1] = ind.replaceAll("&amp;", "&");
 							}
@@ -152,7 +152,7 @@ public class YahooData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.main
 	 *
 	 * @param args
@@ -202,7 +202,7 @@ public class YahooData {
 
 	/**
 	 * Test only
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.testit
 	 *
 	 */
@@ -212,6 +212,10 @@ public class YahooData {
 		for (final String str : secind) {
 			System.out.println(str);
 		}
+		final String mc = YahooData.get(tkr, "f6j1");
+		Double.parseDouble(mc.trim());
+
+		System.out.println(mc);
 	}
 
 }

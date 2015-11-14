@@ -44,8 +44,8 @@ public class Fundamentals {
 	private String										ticker;
 	private String										industry;
 	private String										sector;
-
 	private long											shares;
+	private String										marketCap;
 
 	public static void build(String dataFile) throws FileNotFoundException, IOException {
 
@@ -59,6 +59,7 @@ public class Fundamentals {
 					f.ticker = fld[0].trim().toUpperCase();
 					f.sector = fld[1].trim();
 					f.industry = fld[2].trim();
+					f.marketCap = fld[4].trim();
 					String sTmp = fld[3].trim();
 					sTmp = sTmp.replaceAll(",", "");
 					try {
@@ -67,17 +68,17 @@ public class Fundamentals {
 						f.shares = 0;
 						// System.out.println(sTmp);
 					}
-					//if (f.shares > 1000000) {
-						maxSectorLen = Math.max(maxSectorLen, f.sector.length() + 2);
-						maxIndustryLen = Math.max(maxIndustryLen, f.industry.length() + 1);
-						fundieList.add(f);
-					//}
+					// if (f.shares > 1000000) {
+					maxSectorLen = Math.max(maxSectorLen, f.sector.length() + 2);
+					maxIndustryLen = Math.max(maxIndustryLen, f.industry.length() + 1);
+					fundieList.add(f);
+					// }
 				}
 			}
 		}
 		fmt = String.format("%%-10s %%-%ds %%-%ds %%15d", maxSectorLen, maxIndustryLen);
 
-		//Fundamentals.setYahoo();
+		// Fundamentals.setYahoo();
 	}
 
 	/**
@@ -121,10 +122,10 @@ public class Fundamentals {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		System.getProperty(arg, "");
 
 		Fundamentals.build("lists\\stock-fundie-list.txt");
-		//Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
+		// Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
 		// Fundamentals.build(dataPath + "\\ASCII\\NYSE_fundies.txt");
 
 		for (final Fundamentals f : fundieList) {
@@ -147,19 +148,19 @@ public class Fundamentals {
 
 		final int inc = 250;
 		for (int i = 0; i < tickers.size(); i += inc) {
-			int last = i + inc - 1;
+			int last = (i + inc) - 1;
 			last = Math.min(tickers.size() - 1, last);
 			System.out.printf("Processing Yahoo data for tickers %d to %d%n", i, last);
 			final List<String> data = YahooData.get(tickers.subList(i, last), "f6");
 
 			for (final String d : data) {
-				String[] fld = d.split(",");
-				Fundamentals fund = getWithTicker(fld[0].trim());
+				final String[] fld = d.split(",");
+				final Fundamentals fund = Fundamentals.getWithTicker(fld[0].trim());
 				long shr = 0;
 				if (fund != null) {
 					try {
 						shr = Long.parseLong(fld[1].trim());
-					} catch (Exception e) {
+					} catch (final Exception e) {
 						shr = 0;
 					}
 					if (shr > 0) {
@@ -178,6 +179,13 @@ public class Fundamentals {
 	 */
 	public String getIndustry() {
 		return this.industry;
+	}
+
+	/**
+	 * @return the marketCap
+	 */
+	public String getMarketCap() {
+		return this.marketCap;
 	}
 
 	/**
@@ -206,4 +214,5 @@ public class Fundamentals {
 		final String s = String.format(fmt, this.ticker, this.sector, this.industry, this.shares);
 		return s;
 	}
+
 }

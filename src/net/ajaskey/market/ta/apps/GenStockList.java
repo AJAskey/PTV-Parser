@@ -91,6 +91,8 @@ public class GenStockList {
 	 * @throws ParseException
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
+		
+		System.out.println("Processing...");
 
 		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
 
