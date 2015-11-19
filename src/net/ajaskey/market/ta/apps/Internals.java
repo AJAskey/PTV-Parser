@@ -36,6 +36,8 @@ import net.ajaskey.market.ta.input.ParseData;
  *
  */
 public class Internals {
+	
+	final static double obosLevel = 350.0;
 
 	private static List<String>			filenames	= new ArrayList<String>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
@@ -45,9 +47,11 @@ public class Internals {
 	 *
 	 */
 	public Internals() {
+		ParseData.setValidTicker("ADDA.IDX");
+		ParseData.setValidTicker("ADDD.IDX");
+		ParseData.setValidTicker("ADDE.IDX");
 		ParseData.setValidTicker("ADDN.IDX");
 		ParseData.setValidTicker("ADDQ.IDX");
-		ParseData.setValidTicker("ADDE.IDX");
 		ParseData.setValidTicker("ADDT.IDX");
 		final String arg = "dataPath";
 		final String dataPath = System.getProperty(arg, "");
@@ -66,23 +70,26 @@ public class Internals {
 
 		new Internals();
 
-		tdList = ParseData.parseFiles(filenames, 200);
+		tdList = ParseData.parseFiles(filenames, 100);
 
 		for (final TickerData td : tdList) {
 			td.generateDerived();
 
-			for (int days = 10; days < 101; days += 5) {
-				final boolean ob = Internals.isOverBought(Internals.getSum(td.getCloseData(), days),
-				    Internals.getAverage(td.getCloseData(), days), days);
-				final boolean os = Internals.isOverSold(Internals.getSum(td.getCloseData(), days),
-				    Internals.getAverage(td.getCloseData(), days), days);
+			for (int days = 10; days < 21; days += 5) {
+				//final boolean ob = Internals.isOverBought(Internals.getSum(td.getCloseData(), days),
+				//    Internals.getAverage(td.getCloseData(), days), days);
+				//final boolean os = Internals.isOverSold(Internals.getSum(td.getCloseData(), days),
+				//    Internals.getAverage(td.getCloseData(), days), days);
 
+				double avg = Internals.getSum(td.getCloseData(), days)/(double)days;
+				boolean ob = Internals.isOverBought(avg);
+				boolean os = Internals.isOverSold(avg);
 				if (ob) {
-					System.out.println(td.getTicker() + " is Overbought over last " + days + " days.");
+					System.out.printf("%s%s %d%s%d%n",td.getTicker()," is over BOUGHT in the last ", days," days :  ",(int)avg);
 				}
 
 				if (os) {
-					System.out.println(td.getTicker() + " is Oversold over last " + days + " days.");
+					System.out.printf("%s%s %d%s%d%n",td.getTicker()," is over SOLD in the last ", days," days :  ",(int)avg);
 				}
 			}
 		}
@@ -110,13 +117,36 @@ public class Internals {
 	 * net.ajaskey.market.ta.apps.getSum
 	 *
 	 * @param val
+	 * @param signVal
+	 * @param days
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	private static double getSum(double[] val, double[] signVal, int days) {
+		double sum = 0.0;
+		for (int i = 0; i < days; i++) {
+			// System.out.println(val[i]);
+			if (signVal[i] > 0) {
+				sum += val[i];
+			} else if (signVal[i] < 0) {
+				sum -= val[i];
+			}
+		}
+		return sum;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.getSum
+	 *
+	 * @param val
 	 * @param days
 	 * @return
 	 */
 	private static double getSum(double[] val, int days) {
 		double sum = 0.0;
 		for (int i = 0; i < days; i++) {
-			// System.out.println(td.getClose(i));
+			//System.out.println(val[i]);
 			sum += val[i];
 		}
 		return sum;
@@ -135,6 +165,14 @@ public class Internals {
 		final double obLevel = avg * (0.25) * days;
 		// System.out.println(sum + " " + obLevel);
 		return (sum > obLevel);
+	}
+	
+	private static boolean isOverBought(double avg) {
+		//System.out.println(avg);
+		return (avg > obosLevel);
+	}
+	private static boolean isOverSold(double avg) {
+		return (avg < (-1.0)*obosLevel);
 	}
 
 	/**
