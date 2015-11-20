@@ -362,7 +362,7 @@ CUN17     	Crude Palm Oil {Jul 17}                           	CME
 CUU16     	Crude Palm Oil {Sep 16}                           	CME       
 CUU17     	Crude Palm Oil {Sep 17}                           	CME       
 CUX16     	Crude Palm Oil {Nov 16}                           	CME       
-CUZ15     	Crude Palm Oil {Dec 15}                           	CME       
+CUX17     	Crude Palm Oil {Nov 17}                           	CME       
 CZ        	CME$INDEX                                         	CME       
 CZ.C      	CME$INDEX Continuation                            	CME       
 CZH16     	CME$INDEX {Mar 16}                                	CME       
@@ -652,6 +652,7 @@ EMU16     	1-Month Libor (P) {Sep 16}                        	CME
 EMV15     	1-Month Libor (P) {Oct 15}                        	CME       
 EMV16     	1-Month Libor (P) {Oct 16}                        	CME       
 EMX15     	1-Month Libor (P) {Nov 15}                        	CME       
+EMX16     	1-Month Libor (P) {Nov 16}                        	CME       
 EMZ15     	1-Month Libor (P) {Dec 15}                        	CME       
 ES        	E-Mini S&P 500                                    	CME       
 ES.C      	E-Mini S&P 500 Continuation                       	CME       
@@ -812,13 +813,11 @@ G7        	S&P GS Excess Index                               	CME
 G7.C      	S&P GS Excess Index Continuation                  	CME       
 G7F16     	S&P GS Excess Index {Jan 16}                      	CME       
 G7G16     	S&P GS Excess Index {Feb 16}                      	CME       
-G7V15     	S&P GS Excess Index {Oct 15}                      	CME       
 G7X15     	S&P GS Excess Index {Nov 15}                      	CME       
 G7Z15     	S&P GS Excess Index {Dec 15}                      	CME       
 GD        	S&P GSCI                                          	CME       
 GD.C      	S&P GSCI Continuation                             	CME       
 GDF16     	S&P GSCI {Jan 16}                                 	CME       
-GDV15     	S&P GSCI {Oct 15}                                 	CME       
 GDX15     	S&P GSCI {Nov 15}                                 	CME       
 GDZ15     	S&P GSCI {Dec 15}                                 	CME       
 GE        	Eurodollar                                        	CME       
@@ -892,11 +891,11 @@ GHU16     	1-Month Libor {Sep 16}                            	CME
 GHV15     	1-Month Libor {Oct 15}                            	CME       
 GHV16     	1-Month Libor {Oct 16}                            	CME       
 GHX15     	1-Month Libor {Nov 15}                            	CME       
+GHX16     	1-Month Libor {Nov 16}                            	CME       
 GHZ15     	1-Month Libor {Dec 15}                            	CME       
 GI        	S&P GSCI (P)                                      	CME       
 GI.C      	S&P GSCI (P) Continuation                         	CME       
 GIF16     	S&P GSCI (P) {Jan 16}                             	CME       
-GIV15     	S&P GSCI (P) {Oct 15}                             	CME       
 GIX15     	S&P GSCI (P) {Nov 15}                             	CME       
 GIZ15     	S&P GSCI (P) {Dec 15}                             	CME       
 GJ.C      	EuroYen Tibor Continuation                        	CME       
@@ -936,6 +935,7 @@ H3U17     	Indian Rupee {Sep 17}                             	CME
 H3V15     	Indian Rupee {Oct 15}                             	CME       
 H3V16     	Indian Rupee {Oct 16}                             	CME       
 H3X15     	Indian Rupee {Nov 15}                             	CME       
+H3X16     	Indian Rupee {Nov 16}                             	CME       
 H3Z15     	Indian Rupee {Dec 15}                             	CME       
 H3Z16     	Indian Rupee {Dec 16}                             	CME       
 H4.C      	E-Micro INR/USD Continuation                      	CME       
@@ -998,7 +998,6 @@ HEK16     	Lean Hogs {May 16}                                	CME
 HEM16     	Lean Hogs {Jun 16}                                	CME       
 HEN16     	Lean Hogs {Jul 16}                                	CME       
 HEQ16     	Lean Hogs {Aug 16}                                	CME       
-HEV15     	Lean Hogs {Oct 15}                                	CME       
 HEV16     	Lean Hogs {Oct 16}                                	CME       
 HEZ15     	Lean Hogs {Dec 15}                                	CME       
 HEZ16     	Lean Hogs {Dec 16}                                	CME       
@@ -1136,7 +1135,6 @@ IF.C      	Ibovespa USD Continuation                         	CME
 IFG16     	Ibovespa USD {Feb 16}                             	CME       
 IFJ16     	Ibovespa USD {Apr 16}                             	CME       
 IFM16     	Ibovespa USD {Jun 16}                             	CME       
-IFV15     	Ibovespa USD {Oct 15}                             	CME       
 IFZ15     	Ibovespa USD {Dec 15}                             	CME       
 J0        	HPI Composite Index                               	CME       
 J0.C      	HPI Composite Index Continuation                  	CME       
@@ -1368,6 +1366,7 @@ L6Z24     	Brazilian Real {Dec 24}                           	CME
 LB        	Lumber (P)                                        	CME       
 LB.C      	Lumber (P) Continuation                           	CME       
 LBF16     	Lumber (P) {Jan 16}                               	CME       
+LBF17     	Lumber (P) {Jan 17}                               	CME       
 LBH16     	Lumber (P) {Mar 16}                               	CME       
 LBK16     	Lumber (P) {May 16}                               	CME       
 LBN16     	Lumber (P) {Jul 16}                               	CME       
@@ -1408,13 +1407,13 @@ LHK16     	Lean Hogs (P) {May 16}                            	CME
 LHM16     	Lean Hogs (P) {Jun 16}                            	CME       
 LHN16     	Lean Hogs (P) {Jul 16}                            	CME       
 LHQ16     	Lean Hogs (P) {Aug 16}                            	CME       
-LHV15     	Lean Hogs (P) {Oct 15}                            	CME       
 LHV16     	Lean Hogs (P) {Oct 16}                            	CME       
 LHZ15     	Lean Hogs (P) {Dec 15}                            	CME       
 LHZ16     	Lean Hogs (P) {Dec 16}                            	CME       
 LS        	Lumber                                            	CME       
 LS.C      	Lumber Continuation                               	CME       
 LSF16     	Lumber {Jan 16}                                   	CME       
+LSF17     	Lumber {Jan 17}                                   	CME       
 LSH16     	Lumber {Mar 16}                                   	CME       
 LSK16     	Lumber {May 16}                                   	CME       
 LSN16     	Lumber {Jul 16}                                   	CME       
@@ -1537,13 +1536,13 @@ NLG16     	Nikkei 225 Yen {Feb 16}                           	CME
 NLH16     	Nikkei 225 Yen {Mar 16}                           	CME       
 NLH17     	Nikkei 225 Yen {Mar 17}                           	CME       
 NLH18     	Nikkei 225 Yen {Mar 18}                           	CME       
+NLJ16     	Nikkei 225 Yen {Apr 16}                           	CME       
 NLM16     	Nikkei 225 Yen {Jun 16}                           	CME       
 NLM17     	Nikkei 225 Yen {Jun 17}                           	CME       
 NLM18     	Nikkei 225 Yen {Jun 18}                           	CME       
 NLU16     	Nikkei 225 Yen {Sep 16}                           	CME       
 NLU17     	Nikkei 225 Yen {Sep 17}                           	CME       
 NLU18     	Nikkei 225 Yen {Sep 18}                           	CME       
-NLV15     	Nikkei 225 Yen {Oct 15}                           	CME       
 NLX15     	Nikkei 225 Yen {Nov 15}                           	CME       
 NLZ15     	Nikkei 225 Yen {Dec 15}                           	CME       
 NLZ16     	Nikkei 225 Yen {Dec 16}                           	CME       
@@ -1661,7 +1660,6 @@ R6U17     	Russian Ruble {Sep 17}                            	CME
 R6U18     	Russian Ruble {Sep 18}                            	CME       
 R6U19     	Russian Ruble {Sep 19}                            	CME       
 R6U20     	Russian Ruble {Sep 20}                            	CME       
-R6V15     	Russian Ruble {Oct 15}                            	CME       
 R6V16     	Russian Ruble {Oct 16}                            	CME       
 R6X15     	Russian Ruble {Nov 15}                            	CME       
 R6Z15     	Russian Ruble {Dec 15}                            	CME       
@@ -1736,7 +1734,6 @@ RUU17     	Russian Ruble (P) {Sep 17}                        	CME
 RUU18     	Russian Ruble (P) {Sep 18}                        	CME       
 RUU19     	Russian Ruble (P) {Sep 19}                        	CME       
 RUU20     	Russian Ruble (P) {Sep 20}                        	CME       
-RUV15     	Russian Ruble (P) {Oct 15}                        	CME       
 RUV16     	Russian Ruble (P) {Oct 16}                        	CME       
 RUX15     	Russian Ruble (P) {Nov 15}                        	CME       
 RUX16     	Russian Ruble (P) {Nov 16}                        	CME       
