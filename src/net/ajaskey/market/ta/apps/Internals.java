@@ -4,6 +4,7 @@ package net.ajaskey.market.ta.apps;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,20 +57,20 @@ public class Internals {
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
 
-		// Internals.processIndex();
+		Internals.processIndex();
 
-		// Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
-		// Internals.processAnIndex("lists\\sp600-list.txt", "SML");
-		// Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
-		// Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-		// Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+		Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+		Internals.processAnIndex("lists\\sp600-list.txt", "SML");
+		Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
+		Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+		Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
 		double val = Internals.processListPercent("lists\\sp500-list.txt", 14);
 		System.out.printf("SPX days to recover %.2f%n", val);
 		val = Internals.processListPercent("lists\\nasdaq100-list.txt", 14);
 		System.out.printf("NDX days to recover %.2f%n", val);
 
-		printBreath("lists\\sp500-list.txt", "sp500", 5);
+		printBreath("lists\\sp500-list.txt", "sp500", 10);
 		printBreath("lists\\sp600-list.txt", "sp600", 5);
 		printBreath("lists\\nasdaq100-list.txt", "ndx", 5);
 	}
@@ -278,8 +279,8 @@ public class Internals {
 		final int[] up = new int[days];
 		final int[] down = new int[days];
 		final int[] daily = new int[days];
-		final double[] volUp = new double[days];
-		final double[] volDown = new double[days];
+		final double[] forceUp = new double[days];
+		final double[] forceDown = new double[days];
 
 		Calendar[] cal = null;
 		for (final TickerData td : tdList) {
@@ -292,11 +293,11 @@ public class Internals {
 					if (chg > 0.0) {
 						daily[i]++;
 						up[i]++;
-						volUp[i] += val;
+						forceUp[i] += val;
 					} else if (chg < 0.0) {
 						daily[i]--;
 						down[i]++;
-						volDown[i] += val;
+						forceDown[i] += val;
 					}
 
 				}
@@ -308,16 +309,42 @@ public class Internals {
 				}
 			}
 		}
+
+		Utils.makeDir("out");
+		double cumForce = 0;
+		double sumForce = 0;
 		try (PrintWriter pw = new PrintWriter("out\\" + outfile + "-breadth.txt")) {
-			pw.printf("%10s %10s %10s %10s %10s %10s%n", "Up", "Down", "Total", "Percent", "ForceUp", "ForceDown");
+			pw.printf("%10s %10s %10s  %10s %10s%n", "Up", "Down", "Total", "Percent", "Force");
 			for (int i = 0; i < days; i++) {
 				double percent = (double) up[i] / (double) ParseData.getValidTickerCount() * 100.0;
-				pw.printf("%10d %10d %10d %10.1f%% %10d %10d %16s%n", up[i], down[i], daily[i], percent, (int)volUp[i], (int)volDown[i], Utils.getString(cal[i]));
+				String sUp = NumberFormat.getIntegerInstance().format(up[i]);
+				String sDown = NumberFormat.getIntegerInstance().format(down[i]);
+				String sDaily = NumberFormat.getIntegerInstance().format(daily[i]);
+				String sForce = NumberFormat.getIntegerInstance().format((int) (forceUp[i] - forceDown[i]));
+
+				pw.printf("%10s %10s %10s %10.1f%% %14s %16s%n", sUp, sDown, sDaily, percent, sForce, Utils.getString(cal[i]));
+				cumForce += (forceUp[i] - forceDown[i]);
+				sumForce += (forceUp[i] + forceDown[i]);
 			}
+			double avgForce = sumForce / (double) days;
+			String sCumForce = NumberFormat.getIntegerInstance().format((int) cumForce);
+			String sAvgForce = NumberFormat.getIntegerInstance().format((int) avgForce);
+			pw.printf("%15s %15s %9.2f%n", sCumForce, sAvgForce, (cumForce / avgForce));
 		}
 
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.processListPercent
+	 *
+	 * @param list
+	 * @param days
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	private static double processListPercent(String list, int days)
 	    throws FileNotFoundException, IOException, ParseException {
 

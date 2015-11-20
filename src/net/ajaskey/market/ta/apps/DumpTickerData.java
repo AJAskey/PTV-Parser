@@ -47,24 +47,6 @@ public class DumpTickerData {
 
 	/**
 	 *
-	 * This method serves as a constructor for the class.
-	 *
-	 * @throws ParseException
-	 * @throws FileNotFoundException
-	 */
-	public DumpTickerData() throws ParseException, FileNotFoundException {
-
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
-		filenames.add(dataPath + "\\ASCII\\NASDAQ");
-		filenames.add(dataPath + "\\ASCII\\NYSE");
-		tdAll = ParseData.parseFiles(filenames);
-
-		Utils.makeDir("out");
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.ta.apps.main
 	 *
 	 * @param args
@@ -74,17 +56,27 @@ public class DumpTickerData {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 
+		System.out.println("Processing...");
+
 		if ((args == null) || (args.length < 1)) {
-			ParseData.setValidTicker("QQQ");
-			ParseData.setValidTicker("MSFT");
-			ParseData.setValidTicker("GE");
+			ParseData.setValidTickers(ParseData.getTickerList("lists\\stock-list.txt"));
+
 		} else {
 			for (String s : args) {
 				ParseData.setValidTicker(s);
 			}
 		}
 
-		new DumpTickerData();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+		tdAll = ParseData.parseFiles(filenames);
+
+		Utils.makeDir("data");
+		Utils.makeDir("lists");
+
+		PrintWriter pwStocks = new PrintWriter("lists\\valid-stock-list.txt");
 
 		for (final TickerData td : tdAll) {
 
@@ -92,10 +84,14 @@ public class DumpTickerData {
 
 				td.generateDerived();
 
-				try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
+				pwStocks.printf("%-10s\t%-60s\t%12s", td.getTicker(), td.getTickerName(), td.getTickerExchange());
+
+				try (PrintWriter pw = new PrintWriter("data\\" + td.getTicker() + ".txt")) {
 					pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
+					System.out.println("Processing " + td.getTicker());
 					for (int i = 0; i < td.getDaysOfData(); i++) {
-						//final SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
+						// final SimpleDateFormat sdf = new SimpleDateFormat("E
+						// dd-MMM-yyyy");
 						final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 						final String sDate = sdf.format(td.getDate(i).getTime());
 						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
@@ -104,6 +100,7 @@ public class DumpTickerData {
 				}
 			}
 		}
+		pwStocks.close();
 		System.out.println("Done.");
 	}
 
