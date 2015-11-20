@@ -108,6 +108,10 @@ public class ParseData {
 		}
 		return list;
 	}
+	
+	static public int getValidTickerCount() {
+		return validTickers.size();
+	}
 
 	/**
 	 *
