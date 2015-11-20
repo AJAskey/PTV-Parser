@@ -73,7 +73,7 @@ public class DumpTickerData {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		tdAll = ParseData.parseFiles(filenames);
 
-		Utils.makeDir("data");
+		Utils.makeDir("ptv-data");
 		Utils.makeDir("lists");
 
 		PrintWriter pwStocks = new PrintWriter("lists\\valid-stock-list.txt");
@@ -86,12 +86,10 @@ public class DumpTickerData {
 
 				pwStocks.printf("%-10s\t%-60s\t%12s", td.getTicker(), td.getTickerName(), td.getTickerExchange());
 
-				try (PrintWriter pw = new PrintWriter("data\\" + td.getTicker() + ".txt")) {
+				try (PrintWriter pw = new PrintWriter("ptv-data\\" + td.getTicker() + ".txt")) {
 					pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
 					System.out.println("Processing " + td.getTicker());
 					for (int i = 0; i < td.getDaysOfData(); i++) {
-						// final SimpleDateFormat sdf = new SimpleDateFormat("E
-						// dd-MMM-yyyy");
 						final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 						final String sDate = sdf.format(td.getDate(i).getTime());
 						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),

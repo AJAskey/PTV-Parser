@@ -1022,6 +1022,10 @@ public class TickerData {
 	private List<DailyData> getData() {
 		return this.data;
 	}
+	
+	public int getDataCount() {
+		return this.data.size();
+	}
 
 	/**
 	 * Data from www.eoddata.com occasionally has volumes of zero. Set these to

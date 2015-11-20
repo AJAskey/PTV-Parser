@@ -73,6 +73,8 @@ public class Internals {
 		printBreath("lists\\sp500-list.txt", "sp500", 10);
 		printBreath("lists\\sp600-list.txt", "sp600", 5);
 		printBreath("lists\\nasdaq100-list.txt", "ndx", 5);
+		
+		System.out.println("Done.");
 	}
 
 	/**
