@@ -56,6 +56,7 @@ public class Internals {
 		Internals.processIndex();
 
 		Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+		Internals.processAnIndex("lists\\sp600-list.txt", "SML");
 		Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
 		Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
 		Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
@@ -155,6 +156,7 @@ public class Internals {
 			}
 		} catch (final Exception e) {
 			System.out.println(listName + " : Processing Error Occurred!");
+			e.printStackTrace();
 		}
 
 	}
@@ -230,16 +232,17 @@ public class Internals {
 		final int[] daily = new int[days];
 		for (final TickerData td : tdList) {
 			td.generateDerived();
-			double chg = 0;
-			for (int i = 0; i < days; i++) {
-				chg = td.getClose(i) - td.getClose(i + 1);
-				if (chg > 0.0) {
-					daily[i]++;
-				} else if (chg < 0.0) {
-					daily[i]--;
+			if (td.getDaysOfData() > days) {
+				double chg = 0;
+				for (int i = 0; i < days; i++) {
+					chg = td.getClose(i) - td.getClose(i + 1);
+					if (chg > 0.0) {
+						daily[i]++;
+					} else if (chg < 0.0) {
+						daily[i]--;
+					}
 				}
 			}
-			// System.out.println(td.getTicker());
 		}
 		int sum = 0;
 		for (final int i : daily) {
@@ -269,15 +272,17 @@ public class Internals {
 		double sumChg = 0;
 		for (final TickerData td : tdList) {
 			td.generateDerived();
-			double chg = 0;
-			for (int i = 0; i < days; i++) {
-				chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
+			if (td.getDaysOfData() > days) {
+				double chg = 0;
+				for (int i = 0; i < days; i++) {
+					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 
-				final double val = chg * td.getAvgVol20();
-				daily[i] += val;
-				sumChg += Math.abs(val);
+					final double val = chg * td.getAvgVol20();
+					daily[i] += val;
+					sumChg += Math.abs(val);
+				}
+				// System.out.println(td.getTicker());
 			}
-			// System.out.println(td.getTicker());
 		}
 		final double avgChg = sumChg / days;
 		double sum = 0;

@@ -137,44 +137,6 @@ public class Fundamentals {
 	}
 
 	/**
-	 * net.ajaskey.market.ta.input.getYahoo
-	 *
-	 */
-	private static void setYahoo() {
-		final List<String> tickers = new ArrayList<>();
-		for (final Fundamentals f : fundieList) {
-			tickers.add(f.getTicker().trim());
-		}
-
-		final int inc = 250;
-		for (int i = 0; i < tickers.size(); i += inc) {
-			int last = (i + inc) - 1;
-			last = Math.min(tickers.size() - 1, last);
-			System.out.printf("Processing Yahoo data for tickers %d to %d%n", i, last);
-			final List<String> data = YahooData.get(tickers.subList(i, last), "f6");
-
-			for (final String d : data) {
-				final String[] fld = d.split(",");
-				final Fundamentals fund = Fundamentals.getWithTicker(fld[0].trim());
-				long shr = 0;
-				if (fund != null) {
-					try {
-						shr = Long.parseLong(fld[1].trim());
-					} catch (final Exception e) {
-						shr = 0;
-					}
-					if (shr > 0) {
-						fund.shares = shr;
-					}
-				}
-
-				// System.out.println(d);
-			}
-		}
-
-	}
-
-	/**
 	 * @return the industry
 	 */
 	public String getIndustry() {

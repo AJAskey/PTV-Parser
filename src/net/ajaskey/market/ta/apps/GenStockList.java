@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -47,6 +48,10 @@ public class GenStockList {
 	private static boolean			init					= false;
 	private static List<String>	ignoreNames;
 
+	private static List<String>	sp500List			= null;
+	private static List<String>	sp600List			= null;
+	private static List<String>	ndxList				= null;
+
 	private GenStockList() throws ParseException, IOException {
 
 		if (!init) {
@@ -91,13 +96,67 @@ public class GenStockList {
 	 * @throws ParseException
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
-		
+
 		System.out.println("Processing...");
 
 		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
 
 		System.out.println("Done.");
 
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.isSP500
+	 *
+	 * @param ticker
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
+		if (sp500List == null) {
+			sp500List = ParseData.getTickerList("lists\\sp500-list.txt");
+		}
+		for (String s : sp500List) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
+		if (ndxList == null) {
+			ndxList = ParseData.getTickerList("lists\\nasdaq100-list.txt");
+		}
+		for (String s : ndxList) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.isSP600
+	 *
+	 * @param ticker
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
+		if (sp600List == null) {
+			sp600List = ParseData.getTickerList("lists\\sp600-list.txt");
+		}
+		for (String s : sp600List) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -158,18 +217,27 @@ public class GenStockList {
 					tdStocks.add(td);
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 					maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
-				} 
+				}
 			}
 		}
-		
+
 		Collections.sort(tdStocks, new SortTickerName());
 
 		Utils.makeDir("lists");
-
-		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s%n", maxTickerLen, maxNameLen);
+		
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%-10s%n", maxTickerLen, maxNameLen);
 		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt")) {
+			pw.println("Ticker      Name                                        Exchange    List");
 			for (final TickerData td : tdStocks) {
-				pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange());
+				if (isSP500(td.getTicker())) {
+					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP500");
+				} else if (isNDX(td.getTicker())) {
+					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "NDX");
+				} else if (isSP600(td.getTicker())) {
+					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP600");
+				} else {
+					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "none");
+				}
 			}
 		}
 	}

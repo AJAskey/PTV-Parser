@@ -197,7 +197,6 @@ KRM18     	Eurex Gold {Jun 18}                               	EUREX
 KRU16     	Eurex Gold {Sep 16}                               	EUREX     
 KRU17     	Eurex Gold {Sep 17}                               	EUREX     
 KRU18     	Eurex Gold {Sep 18}                               	EUREX     
-KRV15     	Eurex Gold {Oct 15}                               	EUREX     
 KRX15     	Eurex Gold {Nov 15}                               	EUREX     
 KRZ15     	Eurex Gold {Dec 15}                               	EUREX     
 KRZ16     	Eurex Gold {Dec 16}                               	EUREX     
@@ -213,7 +212,6 @@ KVM18     	Eurex Silver {Jun 18}                             	EUREX
 KVU16     	Eurex Silver {Sep 16}                             	EUREX     
 KVU17     	Eurex Silver {Sep 17}                             	EUREX     
 KVU18     	Eurex Silver {Sep 18}                             	EUREX     
-KVV15     	Eurex Silver {Oct 15}                             	EUREX     
 KVX15     	Eurex Silver {Nov 15}                             	EUREX     
 KVZ15     	Eurex Silver {Dec 15}                             	EUREX     
 KVZ16     	Eurex Silver {Dec 16}                             	EUREX     
@@ -229,7 +227,6 @@ LIM16     	DJ-UBS Agriculture {Jun 16}                       	EUREX
 LIM17     	DJ-UBS Agriculture {Jun 17}                       	EUREX     
 LIM18     	DJ-UBS Agriculture {Jun 18}                       	EUREX     
 LIU16     	DJ-UBS Agriculture {Sep 16}                       	EUREX     
-LIV15     	DJ-UBS Agriculture {Oct 15}                       	EUREX     
 LIX15     	DJ-UBS Agriculture {Nov 15}                       	EUREX     
 LIZ15     	DJ-UBS Agriculture {Dec 15}                       	EUREX     
 LIZ16     	DJ-UBS Agriculture {Dec 16}                       	EUREX     
@@ -243,7 +240,6 @@ LJM16     	DJ-UBS Commodity {Jun 16}                         	EUREX
 LJM17     	DJ-UBS Commodity {Jun 17}                         	EUREX     
 LJM18     	DJ-UBS Commodity {Jun 18}                         	EUREX     
 LJU16     	DJ-UBS Commodity {Sep 16}                         	EUREX     
-LJV15     	DJ-UBS Commodity {Oct 15}                         	EUREX     
 LJX15     	DJ-UBS Commodity {Nov 15}                         	EUREX     
 LJZ15     	DJ-UBS Commodity {Dec 15}                         	EUREX     
 LJZ16     	DJ-UBS Commodity {Dec 16}                         	EUREX     
@@ -257,7 +253,6 @@ LKM16     	DJ-UBS Energy {Jun 16}                            	EUREX
 LKM17     	DJ-UBS Energy {Jun 17}                            	EUREX     
 LKM18     	DJ-UBS Energy {Jun 18}                            	EUREX     
 LKU16     	DJ-UBS Energy {Sep 16}                            	EUREX     
-LKV15     	DJ-UBS Energy {Oct 15}                            	EUREX     
 LKX15     	DJ-UBS Energy {Nov 15}                            	EUREX     
 LKZ15     	DJ-UBS Energy {Dec 15}                            	EUREX     
 LKZ16     	DJ-UBS Energy {Dec 16}                            	EUREX     
@@ -271,7 +266,6 @@ LZM16     	DJ-UBS Industrial {Jun 16}                        	EUREX
 LZM17     	DJ-UBS Industrial {Jun 17}                        	EUREX     
 LZM18     	DJ-UBS Industrial {Jun 18}                        	EUREX     
 LZU16     	DJ-UBS Industrial {Sep 16}                        	EUREX     
-LZV15     	DJ-UBS Industrial {Oct 15}                        	EUREX     
 LZX15     	DJ-UBS Industrial {Nov 15}                        	EUREX     
 LZZ15     	DJ-UBS Industrial {Dec 15}                        	EUREX     
 LZZ16     	DJ-UBS Industrial {Dec 16}                        	EUREX     
@@ -309,7 +303,6 @@ PMM16     	DJ-UBS Metals {Jun 16}                            	EUREX
 PMM17     	DJ-UBS Metals {Jun 17}                            	EUREX     
 PMM18     	DJ-UBS Metals {Jun 18}                            	EUREX     
 PMU16     	DJ-UBS Metals {Sep 16}                            	EUREX     
-PMV15     	DJ-UBS Metals {Oct 15}                            	EUREX     
 PMX15     	DJ-UBS Metals {Nov 15}                            	EUREX     
 PMZ15     	DJ-UBS Metals {Dec 15}                            	EUREX     
 PMZ16     	DJ-UBS Metals {Dec 16}                            	EUREX     
@@ -331,7 +324,6 @@ PUM16     	DJ-UBS Softs {Jun 16}                             	EUREX
 PUM17     	DJ-UBS Softs {Jun 17}                             	EUREX     
 PUM18     	DJ-UBS Softs {Jun 18}                             	EUREX     
 PUU16     	DJ-UBS Softs {Sep 16}                             	EUREX     
-PUV15     	DJ-UBS Softs {Oct 15}                             	EUREX     
 PUX15     	DJ-UBS Softs {Nov 15}                             	EUREX     
 PUZ15     	DJ-UBS Softs {Dec 15}                             	EUREX     
 PUZ16     	DJ-UBS Softs {Dec 16}                             	EUREX     
@@ -345,7 +337,6 @@ QJM16     	DJ-UBS Petroleum {Jun 16}                         	EUREX
 QJM17     	DJ-UBS Petroleum {Jun 17}                         	EUREX     
 QJM18     	DJ-UBS Petroleum {Jun 18}                         	EUREX     
 QJU16     	DJ-UBS Petroleum {Sep 16}                         	EUREX     
-QJV15     	DJ-UBS Petroleum {Oct 15}                         	EUREX     
 QJX15     	DJ-UBS Petroleum {Nov 15}                         	EUREX     
 QJZ15     	DJ-UBS Petroleum {Dec 15}                         	EUREX     
 QJZ16     	DJ-UBS Petroleum {Dec 16}                         	EUREX     
@@ -359,7 +350,6 @@ QKM16     	DJ-UBS Livestock {Jun 16}                         	EUREX
 QKM17     	DJ-UBS Livestock {Jun 17}                         	EUREX     
 QKM18     	DJ-UBS Livestock {Jun 18}                         	EUREX     
 QKU16     	DJ-UBS Livestock {Sep 16}                         	EUREX     
-QKV15     	DJ-UBS Livestock {Oct 15}                         	EUREX     
 QKX15     	DJ-UBS Livestock {Nov 15}                         	EUREX     
 QKZ15     	DJ-UBS Livestock {Dec 15}                         	EUREX     
 QKZ16     	DJ-UBS Livestock {Dec 16}                         	EUREX     
@@ -373,7 +363,6 @@ QNM16     	DJ-UBS Grains {Jun 16}                            	EUREX
 QNM17     	DJ-UBS Grains {Jun 17}                            	EUREX     
 QNM18     	DJ-UBS Grains {Jun 18}                            	EUREX     
 QNU16     	DJ-UBS Grains {Sep 16}                            	EUREX     
-QNV15     	DJ-UBS Grains {Oct 15}                            	EUREX     
 QNX15     	DJ-UBS Grains {Nov 15}                            	EUREX     
 QNZ15     	DJ-UBS Grains {Dec 15}                            	EUREX     
 QNZ16     	DJ-UBS Grains {Dec 16}                            	EUREX     
@@ -387,7 +376,6 @@ QPM16     	DJ-UBS Ex Energy {Jun 16}                         	EUREX
 QPM17     	DJ-UBS Ex Energy {Jun 17}                         	EUREX     
 QPM18     	DJ-UBS Ex Energy {Jun 18}                         	EUREX     
 QPU16     	DJ-UBS Ex Energy {Sep 16}                         	EUREX     
-QPV15     	DJ-UBS Ex Energy {Oct 15}                         	EUREX     
 QPX15     	DJ-UBS Ex Energy {Nov 15}                         	EUREX     
 QPZ15     	DJ-UBS Ex Energy {Dec 15}                         	EUREX     
 QPZ16     	DJ-UBS Ex Energy {Dec 16}                         	EUREX     

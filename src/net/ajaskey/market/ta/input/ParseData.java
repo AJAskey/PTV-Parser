@@ -98,17 +98,20 @@ public class ParseData {
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
-					final String fld[] = line.trim().split("\\s+");
-					if (fld[0].trim().length() > 0) {
-						list.add(fld[0].trim());
-						// System.out.println(fld[0]);
+					String sline =  line.trim().substring(0, Math.min(10, line.length())).toLowerCase();
+					if (!sline.contains("ticker") && !sline.contains("symbol")) {
+						final String fld[] = line.trim().split("\\s+");
+						if (fld[0].trim().length() > 0) {
+							list.add(fld[0].trim());
+							// System.out.println(fld[0]);
+						}
 					}
 				}
 			}
 		}
 		return list;
 	}
-	
+
 	static public int getValidTickerCount() {
 		return validTickers.size();
 	}
@@ -183,7 +186,7 @@ public class ParseData {
 									td.setTickerExchange(exch.substring(idx + 1));
 
 									tdList.add(td);
-									//System.out.println("Added : " + fld[0]);
+									// System.out.println("Added : " + fld[0]);
 								}
 							} else {
 								throw new ParseException("bad data", 1);

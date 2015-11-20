@@ -37,6 +37,7 @@
 42N       	Ips Securex Holdings Limited                      	SGX       
 42O       	Ems Energy Limited                                	SGX       
 42PR      	Asia-pacific Strategic Inv R                      	SGX       
+42R       	Jumbo Group Limited                               	SGX       
 500       	Tai Sin Electric Limited                          	SGX       
 502       	Hsr Global Limited                                	SGX       
 504       	Klw Holdings Ltd                                  	SGX       
@@ -297,8 +298,9 @@ ADJ       	Ols Enterprise Ltd.                               	SGX
 ADN       	First Sponsor Group Limited                       	SGX       
 ADP       	Swissco Holdings Limited                          	SGX       
 ADQU      	Accordia Golf Trust                               	SGX       
-AFC       	W Corporation Limited                             	SGX       
+AFC       	Yuuzoo Corporation                                	SGX       
 AFUS      	Nx15100z 250601                                   	SGX       
+AFVS      	N515100s 200701                                   	SGX       
 AFWS      	N215100f 171001                                   	SGX       
 AGAW      	Innopac Holdings W171110                          	SGX       
 AGIW      	Nol Mb Ecw151201                                  	SGX       
@@ -472,9 +474,9 @@ BCMW      	Cnooc Mb Epw151230                                	SGX
 BCNW      	Cnooc Mb Ecw151230                                	SGX       
 BCOW      	Pinganins Mb Epw151230                            	SGX       
 BCPW      	Pinganins Mb Ecw151230                            	SGX       
+BCQW      	Tencent Mb Epw151230                              	SGX       
 BCRW      	Tencent Mb Ecw151230                              	SGX       
 BCV       	Qian Hu Corporation Limited                       	SGX       
-BCW       	Qian Hu Corporation Limited 1                     	SGX       
 BCX       	China Flexible Pack Hldg Ltd                      	SGX       
 BCY       	Powermatic Data Systems Ltd                       	SGX       
 BCZ       	Travelite Holdings Ltd.                           	SGX       
@@ -545,6 +547,7 @@ BFYW      	Hsi 21800 Mb Ecw151029                            	SGX
 BFZW      	Ftsechinaa50 8000 Mbepw151127                     	SGX       
 BGAW      	Ftsechinaa50 10500 Mbecw151127                    	SGX       
 BGDW      	Capitaland Mb Ecw160902                           	SGX       
+BGEW      	Capitaland Mb Epw160902                           	SGX       
 BGGW      	Hsi 21600 Vt Epw151029                            	SGX       
 BGHW      	Hsi 20000 Vt Epw151127                            	SGX       
 BGIW      	Hsi 24000 Mb Ecw151230                            	SGX       
@@ -582,7 +585,9 @@ BHTW      	Dbs Mb Ecw160128                                  	SGX
 BHU       	Sutl Enterprise Limited                           	SGX       
 BHVR      	Blumont Group Ltd. R                              	SGX       
 BHZW      	Nikkei225 19000 Mb Ecw160311                      	SGX       
+BICW      	Nikkei225 17000 Mb Epw160311                      	SGX       
 BIDW      	Nikkei225 18500 Mb Epw160311                      	SGX       
+BIEW      	Nikkei225 20000 Mb Epw160311                      	SGX       
 BIGW      	Hsi 21000 Mb Epw151127                            	SGX       
 BIHW      	Hsi 22400 Mb Ecw151127                            	SGX       
 BIIW      	Singtel Mb Ecw160504                              	SGX       
@@ -593,15 +598,34 @@ BIMW      	Ocbc Bk Mb Epw160510                              	SGX
 BINW      	Hsi 22000 Mb Epw151127                            	SGX       
 BIOZ      	Perennial S$300m4.65%n181023                      	SGX       
 BIP       	Vibrant Group Limited                             	SGX       
+BIQW      	Hsi 23200 Vt Ecw160128                            	SGX       
 BIRW      	Hsi 24800 Vt Ecw160128                            	SGX       
+BISW      	Hsi 21200 Vt Epw160128                            	SGX       
 BIX       	Ellipsiz Ltd                                      	SGX       
 BIZW      	Ftsechinaa50 9500 Mbepw160128                     	SGX       
 BJAW      	Hsi 24600 Mb Ecw151230                            	SGX       
 BJBW      	Hsi  22400 Mb Epw151230                           	SGX       
 BJCW      	Hsi 23800 Mb Ecw151230                            	SGX       
 BJD       	Vibropower Corporation Limited                    	SGX       
+BJE       	Jaya Holdings Ltd                                 	SGX       
+BJFZ      	Oxley Mtn S$300m 5% B191105                       	SGX       
+BJL       	Longcheer Holdings Limited                        	SGX       
+BJMW      	Uob Mb Epw160404                                  	SGX       
+BJNW      	Uob Mb Ecw160404                                  	SGX       
+BJPW      	Dbs Mb Epw160404                                  	SGX       
 BJQW      	Dbs Mb Ecw160404                                  	SGX       
+BJRW      	Kepcorp Mb Epw160601                              	SGX       
 BJSW      	Kepcorp Mbecw160601                               	SGX       
+BJTW      	Sti 3100 Mb Ecw160229                             	SGX       
+BJUW      	Sti 2900 Mb Epw160229                             	SGX       
+BJW       	Shinvest Holding Ltd.                             	SGX       
+BJYW      	Hsi 23200 Mb Epw151230                            	SGX       
+BJZ       	Koda Ltd                                          	SGX       
+BKB       	Lh Group Limited                                  	SGX       
+BKDW      	Dbs Mb Ecw160701                                  	SGX       
+BKEW      	Kepcorp Mb Epw160901                              	SGX       
+BKHW      	Ocbc Bk Mb Ecw160701                              	SGX       
+BKJW      	Uob Mbecw160601                                   	SGX       
 BN2       	Valuetronics Holdings Limited                     	SGX       
 BN4       	Keppel Corporation Limited                        	SGX       
 BR9       	China Hongxing Sports Limited                     	SGX       
@@ -1042,7 +1066,6 @@ S19       	Singapore Shipping Corp Ltd                       	SGX
 S20       	Straits Trading Co. Ltd                           	SGX       
 S21       	Genting Hong Kong Limited                         	SGX       
 S23       	Singapura Finance Ltd                             	SGX       
-S24       	Stats Chippac Ltd                                 	SGX       
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 S29       	Stamford Tyres Corporationltd                     	SGX       
 S2D       	Tosei Corporation                                 	SGX       
