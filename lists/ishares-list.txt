@@ -88,18 +88,22 @@ GOVT      	Core US Treasury Bond ETF Ishares                 	AMEX
 GSG       	S&P GSCI Commodity-Indexed Trust Ishares          	AMEX      
 GTIP      	Global Inflation-Linked Bond Fund Ishares         	AMEX      
 GVI       	Interm Govt/Credit Bond Ishares                   	AMEX      
+HACV      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HACW      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HAUD      	Ishares Currency Hedged MSCI Au                   	AMEX      
 HAWX      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HDV       	Core High Dividend ETF Ishares                    	AMEX      
 HEEM      	Ishares Currency Hedged MSCI EM                   	AMEX      
 HEFA      	Currency Hedged MSCI EAFE Ishares                 	AMEX      
+HEFV      	Ishares Currency Hedged MSCI Ea                   	AMEX      
+HEMV      	Ishares Currency Hedged MSCI EM                   	AMEX      
+HEUS      	Ishares Currency Hedged MSCI EU                   	AMEX      
 HEWC      	Ishares Currency Hedged MSCI CA                   	AMEX      
 HEWG      	Currency Hedged MSCI Germ Ishares                 	AMEX      
 HEWI      	Ishares Currency Hedged MSCI IT                   	AMEX      
 HEWJ      	Currency Hedged MSCI Japan Ishares                	AMEX      
 HEWL      	Ishares Currency Hedged MSCI Sw                   	AMEX      
-HEWP      	Ishares Currency Hedged MSCI SP                   	AMEX      
+HEWP      	Ishares Currency Hedged MSCI Sp                   	AMEX      
 HEWU      	Ishares Currency Hedged MSCI Un                   	AMEX      
 HEWW      	Ishares Currency Hedged MSCI Me                   	AMEX      
 HEWY      	Ishares Currency Hedged MSCI So                   	AMEX      
@@ -588,6 +592,7 @@ MVEU      	Ishares Vi Plc (The Comp                          	LSE
 MVOL      	Ishares Vi Plc (The Comp                          	LSE       
 MVUS      	Ishares Vi Plc (The Comp                          	LSE       
 NK4E      	Ishares II Plc                                    	LSE       
+O003      	Ishares Plc                                       	LSE       
 O006      	Ishares Plc                                       	LSE       
 O007      	Ishares Plc                                       	LSE       
 O008      	Ishares Plc                                       	LSE       
@@ -598,9 +603,9 @@ O019      	Ishares Plc                                       	LSE
 O025      	Ishares Plc                                       	LSE       
 O026      	Ishares Plc                                       	LSE       
 O028      	Ishares Plc                                       	LSE       
+O033      	Ishares Plc                                       	LSE       
 O034      	Ishares Plc                                       	LSE       
 O041      	Ishares Plc                                       	LSE       
-O055      	Ishares Plc                                       	LSE       
 O056      	Ishares Plc                                       	LSE       
 O057      	Ishares Plc                                       	LSE       
 O061      	Ishares Plc                                       	LSE       
@@ -693,6 +698,7 @@ WOOD      	S&P Global Timber & Forestry Idx Ishares          	NASDAQ
 BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
 CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
 CMOXF     	Ishares Global Water Index ETF                    	OTCBB     
+CYMEF     	Ishares BRIC Index F                              	OTCBB     
 CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
 ICDZF     	Ishares Can Hyb Corp                              	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
@@ -710,14 +716,12 @@ ISARF     	Ishares CDN Universe                              	OTCBB
 ISDJF     	Ishares DOW Jones CD                              	OTCBB     
 ISDXF     	Ishares Can Corp                                  	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
-ISHBF     	Ishares Broad                                     	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
 ISHXF     	Ishares Dex All Government Bond Index Fund        	OTCBB     
 ISRPF     	Ishares Plc                                       	OTCBB     
 ISRVF     	Ishares V Plc Accum Ordinary Sh                   	OTCBB     
 ISRWF     	Ishares II Plc                                    	OTCBB     
 ISRZF     	Ishares II Plc                                    	OTCBB     
-ISXIF     	Ishares Bse Sensex                                	OTCBB     
 IUNSF     	Ishares S&P/Tsx Capp                              	OTCBB     
 IUNTF     	Ishares MSCI EAFE In                              	OTCBB     
 IZIZF     	Ishares III Plc                                   	OTCBB     
@@ -731,7 +735,6 @@ QL3       	Ishares Usd Asia Hy Bond Etfs$                    	SGX
 CBD       	Ishares Balanced Income                           	TSX       
 CBD.A     	Ishares Balanced Income                           	TSX       
 CBH       	Ishares 1-10 Yr Laddered                          	TSX       
-CBH.A     	Ishares 1-10Yr Laddered                           	TSX       
 CBN       	Ishares Balanced Growth                           	TSX       
 CBN.A     	Ishares Balanced Growth                           	TSX       
 CBO       	Ishares 1-5Yr Laddered C                          	TSX       
@@ -810,6 +813,7 @@ XEN       	Ishares Jantzi Social In                          	TSX
 XEU       	Ishares MSCI Europe IMI                           	TSX       
 XFA       	Ishares Factorselect MSCI USA Idx CAD             	TSX       
 XFC       	Ishares Factorselect MSCI C                       	TSX       
+XFF       	Ishares Factorselect MSCI EAFE                    	TSX       
 XFH       	Ishares Core MSCI EAFE I                          	TSX       
 XFI       	Ishares Factorselect MSCI EAFE Idx ETF            	TSX       
 XFN       	Ishares SP TSX Capped Fi                          	TSX       
