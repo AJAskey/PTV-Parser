@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.YahooData;
 
 /**
@@ -41,14 +42,13 @@ import net.ajaskey.market.ta.input.YahooData;
 public class GenerateFundies {
 
 	static List<GenerateFundies>	fundieList	= new ArrayList<>();
-	static List<String>						tickers			= new ArrayList<>();
+	static List<String>						tickers			= null;
 	private String								marketCap;
 	private String								ticker;
 	private String								sector;
 	private String								industry;
 	private long									shares;
 
-	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -57,7 +57,7 @@ public class GenerateFundies {
 		marketCap = "N/A";
 		shares = 0;
 	}
-	
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.apps.getWithTicker
@@ -86,7 +86,7 @@ public class GenerateFundies {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		System.out.println("Processing...");
-		
+
 		GenerateFundies.build();
 
 		try (PrintWriter pw = new PrintWriter("lists\\stock-fundie-list.txt")) {
@@ -106,16 +106,7 @@ public class GenerateFundies {
 	 * @throws IOException
 	 */
 	private static void build() throws FileNotFoundException, IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("lists\\stock-list.txt"))) {
-			String line = br.readLine();
-			while (line != null) {
-				line = br.readLine();
-				if ((line != null) && (line.trim().length() > 10)) {
-					final String[] flds = line.split("\t");
-					tickers.add(flds[0].trim().toUpperCase());
-				}
-			}
-		}
+		tickers = ParseData.getTickerList("lists\\stock-list.txt");
 		GenerateFundies.setYahoo();
 	}
 
