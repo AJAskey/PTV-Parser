@@ -3,11 +3,14 @@ package net.ajaskey.market.ta.apps;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 
 /**
@@ -53,18 +56,22 @@ public class Internals {
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
 
-		Internals.processIndex();
+		// Internals.processIndex();
 
-		Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
-		Internals.processAnIndex("lists\\sp600-list.txt", "SML");
-		Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
-		Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-		Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+		// Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+		// Internals.processAnIndex("lists\\sp600-list.txt", "SML");
+		// Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
+		// Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+		// Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
 		double val = Internals.processListPercent("lists\\sp500-list.txt", 14);
 		System.out.printf("SPX days to recover %.2f%n", val);
 		val = Internals.processListPercent("lists\\nasdaq100-list.txt", 14);
 		System.out.printf("NDX days to recover %.2f%n", val);
+
+		printBreath("lists\\sp500-list.txt", "sp500", 5);
+		printBreath("lists\\sp600-list.txt", "sp600", 5);
+		printBreath("lists\\nasdaq100-list.txt", "ndx", 5);
 	}
 
 	/**
@@ -251,6 +258,64 @@ public class Internals {
 		}
 		final double retVal = (double) sum / (double) days;
 		return retVal;
+	}
+
+	private static void printBreath(String list, String outfile, int days)
+	    throws FileNotFoundException, IOException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(list));
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, 50);
+
+		final int[] up = new int[days];
+		final int[] down = new int[days];
+		final int[] daily = new int[days];
+		final double[] volUp = new double[days];
+		final double[] volDown = new double[days];
+
+		Calendar[] cal = null;
+		for (final TickerData td : tdList) {
+			td.generateDerived();
+			if (td.getDaysOfData() > days) {
+				double chg = 0;
+				for (int i = 0; i < days; i++) {
+					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
+					double val = Math.abs(chg * td.getAvgVol20());
+					if (chg > 0.0) {
+						daily[i]++;
+						up[i]++;
+						volUp[i] += val;
+					} else if (chg < 0.0) {
+						daily[i]--;
+						down[i]++;
+						volDown[i] += val;
+					}
+
+				}
+				if (cal == null) {
+					cal = new Calendar[days];
+					for (int i = 0; i < days; i++) {
+						cal[i] = td.getDate(i);
+					}
+				}
+			}
+		}
+		try (PrintWriter pw = new PrintWriter("out\\" + outfile + "-breadth.txt")) {
+			pw.printf("%10s %10s %10s %10s %10s %10s%n", "Up", "Down", "Total", "Percent", "ForceUp", "ForceDown");
+			for (int i = 0; i < days; i++) {
+				double percent = (double) up[i] / (double) ParseData.getValidTickerCount() * 100.0;
+				pw.printf("%10d %10d %10d %10.1f%% %10d %10d %16s%n", up[i], down[i], daily[i], percent, (int)volUp[i], (int)volDown[i], Utils.getString(cal[i]));
+			}
+		}
+
 	}
 
 	private static double processListPercent(String list, int days)
