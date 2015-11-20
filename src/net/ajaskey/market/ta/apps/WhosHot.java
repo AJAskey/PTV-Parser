@@ -79,8 +79,7 @@ public class WhosHot {
 			// filenames.add(dataPath + "\\ASCII\\INDEX");
 			// filenames.add(dataPath + "\\ASCII\\USMF");
 
-			Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
-			Fundamentals.build(dataPath + "\\ASCII\\NYSE_fundies.txt");
+			Fundamentals.build("lists\\stock-fundie-list.txt");
 
 			init = true;
 		}
@@ -99,11 +98,13 @@ public class WhosHot {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+		
+		System.out.println("Processing...");
 
 		// WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
 		// WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
 		// WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
-		WhosHot.processList("lists\\stocks-list.txt", "stocks", 0, 500000);
+		WhosHot.processList("lists\\stock-list.txt", "stocks", 0, 750000);
 
 		System.out.println("Done.");
 	}
@@ -160,22 +161,24 @@ public class WhosHot {
 			ind[knt].setTicker(td.getTicker());
 			if (td.getFundies() != null) {
 				ind[knt].setShares(td.getFundies().getShares());
+				ind[knt].setMarketCap(td.getFundies().getMarketCap());
 			}
 			ind[knt].setExch(td.getTickerExchange());
 			ind[knt].setRawRs(td.getRsRaw());
 			ind[knt].setChg260(td.getChg260());
 			ind[knt].setAvgVol(td.getAvgVol65());
+			ind[knt].setPriceInRange260(td.getPriceInRng260());
 			ind[knt].setRank(knt);
 			maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 			maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
 			knt++;
 		}
 
-		final String fmt = String.format("%%-%ds %%-%ds %%-10s %%s  %%9.1f  %%12sM %%8sM %%10.1f %%n", maxTickerLen,
-		    maxNameLen);
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%s\t%%9.1f\t%%12sM\t%%8sM\t%%10.1f\t%%10s%%n",
+		    maxTickerLen, maxNameLen);
 
-		PrintWriter pwSD = new PrintWriter("out\\SupplyDemand-" + outName + ".txt");
-		pwSD.println("Symbol\tName\tExchange\tRank\tAvgVol (M)\tFloat (M)\tRatio\tCompany Description");
+		final PrintWriter pwSD = new PrintWriter("out\\SupplyDemand-" + outName + ".txt");
+		pwSD.println("Symbol\tName\tExchange\tRank\tAvgVol (M)\tFloat (M)\tRatio\tMktCap\tCompany Description");
 
 		try (PrintWriter pw = new PrintWriter("out\\whosHot-" + outName + ".txt")) {
 			double shares = 0.0;
@@ -191,12 +194,16 @@ public class WhosHot {
 					}
 					final String vol = vFmt.format(id.getAvgVol() / 1000000.0);
 					final String shr = vFmt.format(id.getShares() / 1000000.0);
-					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getChg260(), vol, shr, volRatio);
+					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getChg260(), vol, shr, volRatio,
+					    id.getMarketCap());
 
-					if ((shares > 0.0) && (shares < 100000000.0) && (id.getRawRs() > 0.0) && (volRatio < 35.0)) {
-						String bSum = YahooData.getBusinessSummary(id.getTicker());
+					if ((volRatio > 0.0) && (shares > 0.0) && (shares < 100000000.0) && (id.getPriceInRange260() > 0.50)
+					    && (volRatio < 35.0)) {
+						final String bSum = YahooData.getBusinessSummary(id.getTicker());
+						//final String bSum = "";
 						pwSD.println(id.getTicker() + Utils.TAB + id.getName() + Utils.TAB + id.getExch() + Utils.TAB
-						    + id.getRanks() + Utils.TAB + vol + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB + bSum);
+						    + id.getRanks() + Utils.TAB + vol + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB
+						    + id.getMarketCap() + Utils.TAB + bSum);
 					}
 				}
 			}
@@ -224,8 +231,8 @@ public class WhosHot {
 					}
 					final String vol = vFmt.format(id.getAvgVol() / 1000000.0);
 					final String shr = vFmt.format(id.getShares() / 1000000.0);
-					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getRawRsSt(), vol, shr,
-					    volRatio);
+					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getRawRsSt(), vol, shr, volRatio,
+					    id.getMarketCap());
 
 					// System.out.printf("%-30s %s%n",id.getName(), id.getRanks());
 				}

@@ -74,9 +74,15 @@ public class DumpTickerData {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
 
-		ParseData.setValidTicker("QQQ");
-		ParseData.setValidTicker("MSFT");
-		ParseData.setValidTicker("GE");
+		if ((args == null) || (args.length < 1)) {
+			ParseData.setValidTicker("QQQ");
+			ParseData.setValidTicker("MSFT");
+			ParseData.setValidTicker("GE");
+		} else {
+			for (String s : args) {
+				ParseData.setValidTicker(s);
+			}
+		}
 
 		new DumpTickerData();
 
@@ -84,12 +90,13 @@ public class DumpTickerData {
 
 			if (ValidateData.validate(td)) {
 
-				td.generateDerived(10);
+				td.generateDerived();
 
 				try (PrintWriter pw = new PrintWriter("out\\" + td.getTicker() + ".txt")) {
 					pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
 					for (int i = 0; i < td.getDaysOfData(); i++) {
-						final SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
+						//final SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
+						final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 						final String sDate = sdf.format(td.getDate(i).getTime());
 						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
 						    (int) td.getVolume(i));

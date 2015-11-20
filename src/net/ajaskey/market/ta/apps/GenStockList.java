@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.ta.SortTickerName;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
@@ -89,8 +91,10 @@ public class GenStockList {
 	 * @throws ParseException
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
+		
+		System.out.println("Processing...");
 
-		GenStockList.findStocks("stocks-list", 0, 500000, 10.0);
+		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
 
 		System.out.println("Done.");
 
@@ -134,7 +138,7 @@ public class GenStockList {
 
 		new GenStockList();
 
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 30);
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 60);
 
 		if (tdAll == null) {
 			return;
@@ -149,20 +153,20 @@ public class GenStockList {
 
 		for (final TickerData td : tdAll) {
 			td.generateDerived(offset);
-			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() > minPrice)) {
+			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() >= minPrice)) {
 				if (GenStockList.checkName(td.getTickerName())) {
 					tdStocks.add(td);
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 					maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
-				} else {
-				//	tdAll.remove(td);
-				}
+				} 
 			}
 		}
+		
+		Collections.sort(tdStocks, new SortTickerName());
 
 		Utils.makeDir("lists");
 
-		final String fmt = String.format("%%-%ds %%-%ds %%-10s%n", maxTickerLen, maxNameLen);
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s%n", maxTickerLen, maxNameLen);
 		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt")) {
 			for (final TickerData td : tdStocks) {
 				pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange());

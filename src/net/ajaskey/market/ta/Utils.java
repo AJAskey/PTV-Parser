@@ -36,11 +36,12 @@ public class Utils {
 
 	public final static Calendar					baseDate		= Calendar.getInstance();
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
+	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("E dd-MMM-yyyy");
 
 	public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
-	
-	public static String NL = System.lineSeparator();
-	public static String TAB = "\t";
+
+	public static String									NL					= System.lineSeparator();
+	public static String									TAB					= "\t";
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -55,8 +56,24 @@ public class Utils {
 		Utils.baseDate.set(Calendar.MILLISECOND, 0);
 	}
 
+	/**
+	 * net.ajaskey.market.ta.printCalendar
+	 *
+	 * @param cal
+	 */
+	public static String calendarToString(Calendar cal) {
+		String ret = cal.toString() + "\n";
+		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
+		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
+		ret += "  Day of Month : " + cal.get(Calendar.DAY_OF_MONTH) + "\n";
+		ret += "  Day of Year  : " + cal.get(Calendar.DAY_OF_YEAR) + "\n";
+		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
+		return ret;
+
+	}
+
 	public static String getDayOfWeek(Calendar cal) {
-		int dow = cal.get(Calendar.DAY_OF_WEEK);
+		final int dow = cal.get(Calendar.DAY_OF_WEEK);
 		return daysOfWeek[dow];
 	}
 
@@ -72,7 +89,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.getTimeSpan
 	 *
 	 * @param recent
@@ -84,7 +101,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.makeDir
 	 *
 	 * @param dir
@@ -96,20 +113,17 @@ public class Utils {
 		}
 	}
 
-	/** 
-	 * net.ajaskey.market.ta.printCalendar
-	 *
-	 * @param cal
-	 */
-	public static String calendarToString(Calendar cal) {
-		String ret = cal.toString() + "\n";
-		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
-		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
-		ret += "  Day of Month : " + cal.get(Calendar.DAY_OF_MONTH) + "\n";
-		ret += "  Day of Year  : " + cal.get(Calendar.DAY_OF_YEAR) + "\n";
-		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
-		return ret;
-		
+	public static void printCalendar(Calendar cal) {
+		if (cal != null) {
+			System.out.println(sdf2.format(cal.getTime()));
+		}
+	}
+
+	public static String stringCalendar(Calendar cal) {
+		if (cal != null) {
+			return sdf2.format(cal.getTime());
+		}
+		return "";
 	}
 
 }
