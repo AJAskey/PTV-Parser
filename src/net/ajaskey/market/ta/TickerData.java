@@ -81,6 +81,7 @@ public class TickerData {
 	private double								currentPrice;
 	private double								avgVol65;
 	private double								avgVol20;
+	private double								chg;
 	private double								chg23;
 	private double								chg65;
 	private double								chg130;
@@ -149,6 +150,7 @@ public class TickerData {
 		this.sma130Trend = TrendType.FLAT;
 		this.sma260Trend = TrendType.FLAT;
 		this.avgVol65 = 0.0;
+		this.chg = 0.0;
 		this.chg23 = 0.0;
 		this.chg65 = 0.0;
 		this.chg130 = 0.0;
@@ -305,8 +307,9 @@ public class TickerData {
 		long lastSpan = 99999999999L;
 		for (final DailyData dd : td.data) {
 			final long span = Math.abs(Utils.getTimeSpan(dd.getDate(), calBase));
-			//System.out.printf("%s %s %d %d %d %n", Utils.getString(calBase), Utils.getString(dd.getDate()), (int) span,
-			//    (int) shortSpan, idx);
+			// System.out.printf("%s %s %d %d %d %n", Utils.getString(calBase),
+			// Utils.getString(dd.getDate()), (int) span,
+			// (int) shortSpan, idx);
 			if (span == 0) {
 				return knt;
 			} else if (span > lastSpan) {
@@ -471,6 +474,7 @@ public class TickerData {
 		this.trueLowData[this.daysOfData - 1] = this.data.get(this.daysOfData - 1).getTrueLow();
 
 		this.currentPrice = this.closeData[0];
+		this.chg = this.calcPriceChange(1);
 
 		this.setRs();
 
@@ -613,6 +617,13 @@ public class TickerData {
 		return this.chg65;
 	}
 
+	/**
+	 * @return the chg
+	 */
+	public double getChg() {
+		return this.chg;
+	}
+	
 	public double getClose(int day) {
 		return this.closeData[day];
 	}

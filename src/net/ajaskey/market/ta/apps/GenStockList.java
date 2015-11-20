@@ -138,7 +138,7 @@ public class GenStockList {
 
 		new GenStockList();
 
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 30);
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 60);
 
 		if (tdAll == null) {
 			return;
@@ -158,9 +158,7 @@ public class GenStockList {
 					tdStocks.add(td);
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 					maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);
-				} else {
-					// tdAll.remove(td);
-				}
+				} 
 			}
 		}
 		
@@ -174,14 +172,6 @@ public class GenStockList {
 				pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange());
 			}
 		}
-
-		/**
-		 * try (PrintWriter pw = new PrintWriter("lists\\" + outName + "
-		 * _fundies.txt")) { for (final TickerData td : tdStocks) { String[] secind
-		 * = YahooData.getSectorIndustry(td.getTicker()); String shares =
-		 * YahooData.get(td.getTicker(), "f6"); pw.println(td.getTicker() + Utils.NL
-		 * + secind[0] + Utils.NL + secind[1] + Utils.NL + shares); } }
-		 */
 	}
 
 }

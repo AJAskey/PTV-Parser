@@ -2,6 +2,7 @@
 package net.ajaskey.market.ta.apps;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,80 +37,33 @@ import net.ajaskey.market.ta.input.ParseData;
  *
  */
 public class Internals {
-	
-	final static double obosLevel = 350.0;
+
+	final static double							obosLevel	= 400.0;
 
 	private static List<String>			filenames	= new ArrayList<String>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public Internals() {
-		ParseData.setValidTicker("ADDA.IDX");
-		ParseData.setValidTicker("ADDD.IDX");
-		ParseData.setValidTicker("ADDE.IDX");
-		ParseData.setValidTicker("ADDN.IDX");
-		ParseData.setValidTicker("ADDQ.IDX");
-		ParseData.setValidTicker("ADDT.IDX");
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
-		filenames.add(dataPath + "\\ASCII\\INDEX");
-	}
 
 	/**
 	 *
 	 * net.ajaskey.market.ta.apps.main
 	 *
 	 * @param args
-	 * @throws FileNotFoundException
 	 * @throws ParseException
+	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, ParseException {
+	public static void main(String[] args) throws ParseException, IOException {
 
-		new Internals();
+		Internals.processIndex();
 
-		tdList = ParseData.parseFiles(filenames, 100);
+		Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+		Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
+		Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+		Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
-		for (final TickerData td : tdList) {
-			td.generateDerived();
-
-			for (int days = 10; days < 21; days += 5) {
-				//final boolean ob = Internals.isOverBought(Internals.getSum(td.getCloseData(), days),
-				//    Internals.getAverage(td.getCloseData(), days), days);
-				//final boolean os = Internals.isOverSold(Internals.getSum(td.getCloseData(), days),
-				//    Internals.getAverage(td.getCloseData(), days), days);
-
-				double avg = Internals.getSum(td.getCloseData(), days)/(double)days;
-				boolean ob = Internals.isOverBought(avg);
-				boolean os = Internals.isOverSold(avg);
-				if (ob) {
-					System.out.printf("%s%s %d%s%d%n",td.getTicker()," is over BOUGHT in the last ", days," days :  ",(int)avg);
-				}
-
-				if (os) {
-					System.out.printf("%s%s %d%s%d%n",td.getTicker()," is over SOLD in the last ", days," days :  ",(int)avg);
-				}
-			}
-		}
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.getAverage
-	 *
-	 * @param val
-	 * @param days
-	 * @return
-	 */
-	private static double getAverage(double[] val, int days) {
-		double sum = 0.0;
-		for (int i = 0; i < days; i++) {
-			// System.out.println(td.getClose(i));
-			sum += Math.abs(val[i]);
-		}
-		return sum / days;
+		double val = Internals.processListPercent("lists\\sp500-list.txt", 14);
+		System.out.printf("SPX days to recover %.2f%n", val);
+		val = Internals.processListPercent("lists\\nasdaq100-list.txt", 14);
+		System.out.printf("NDX days to recover %.2f%n", val);
 	}
 
 	/**
@@ -146,7 +100,7 @@ public class Internals {
 	private static double getSum(double[] val, int days) {
 		double sum = 0.0;
 		for (int i = 0; i < days; i++) {
-			//System.out.println(val[i]);
+			// System.out.println(val[i]);
 			sum += val[i];
 		}
 		return sum;
@@ -156,38 +110,183 @@ public class Internals {
 	 *
 	 * net.ajaskey.market.ta.apps.isOverBought
 	 *
-	 * @param sum
 	 * @param avg
-	 * @param days
 	 * @return
 	 */
-	private static boolean isOverBought(double sum, double avg, int days) {
-		final double obLevel = avg * (0.25) * days;
-		// System.out.println(sum + " " + obLevel);
-		return (sum > obLevel);
-	}
-	
 	private static boolean isOverBought(double avg) {
-		//System.out.println(avg);
+		// System.out.println(avg);
 		return (avg > obosLevel);
-	}
-	private static boolean isOverSold(double avg) {
-		return (avg < (-1.0)*obosLevel);
 	}
 
 	/**
 	 *
 	 * net.ajaskey.market.ta.apps.isOverSold
 	 *
-	 * @param sum
 	 * @param avg
-	 * @param days
 	 * @return
 	 */
-	private static boolean isOverSold(double sum, double avg, int days) {
-		final double osLevel = avg * (-0.25) * days;
-		// System.out.println(sum + " " + osLevel);
-		return (sum < osLevel);
+	private static boolean isOverSold(double avg) {
+		return (avg < ((-1.0) * obosLevel));
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.processAnIndex
+	 *
+	 * @param list
+	 * @param listName
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	private static void processAnIndex(String list, String listName)
+	    throws FileNotFoundException, IOException, ParseException {
+		final int[] inc = { 10, 20 };
+
+		try {
+			for (final int days : inc) {
+				final double obos = Internals.processList(list, days);
+				final double dtp = Math.abs(obos / ParseData.getValidTickerCount());
+				System.out.printf("%-10s OBOS value for past %2d days : %10.1f for %4d tickers with days to clear %6.2f.%n",
+				    listName, days, obos, ParseData.getValidTickerCount(), dtp);
+				if (dtp > 2.0) {
+					System.out.println("\tWARNING");
+				}
+			}
+		} catch (final Exception e) {
+			System.out.println(listName + " : Processing Error Occurred!");
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.processIndex
+	 *
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 */
+	private static void processIndex() throws FileNotFoundException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTicker("ADDA.IDX");
+		ParseData.setValidTicker("ADDD.IDX");
+		ParseData.setValidTicker("ADDE.IDX");
+		ParseData.setValidTicker("ADDN.IDX");
+		ParseData.setValidTicker("ADDQ.IDX");
+		ParseData.setValidTicker("ADDT.IDX");
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\INDEX");
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, 100);
+
+		for (final TickerData td : tdList) {
+			td.generateDerived();
+
+			for (int days = 10; days < 31; days += 5) {
+
+				final double avg = Internals.getSum(td.getCloseData(), days) / days;
+				final boolean ob = Internals.isOverBought(avg);
+				final boolean os = Internals.isOverSold(avg);
+				if (ob) {
+					System.out.printf("%-10s%s %d%s%8d", td.getTicker(), " is over BOUGHT in the last ", days, " days :  ",
+					    (int) avg);
+					System.out.printf("   %10d %10d%n", (int) td.getClose(days - 1), (int) td.getClose(days - 2));
+				} else if (os) {
+					System.out.printf("%-10s%s %d%s%8d", td.getTicker(), " is over SOLD in the last ", days, " days :  ",
+					    (int) avg);
+					System.out.printf("   %10d %10d%n", (int) td.getClose(days - 1), (int) td.getClose(days - 2));
+				}
+			}
+		}
+	}
+
+	/**
+	 * net.ajaskey.market.ta.apps.processList
+	 *
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 *
+	 */
+	private static double processList(String list, int days) throws FileNotFoundException, IOException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(list));
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, Math.max(70, 50 + days));
+
+		final int[] daily = new int[days];
+		for (final TickerData td : tdList) {
+			td.generateDerived();
+			double chg = 0;
+			for (int i = 0; i < days; i++) {
+				chg = td.getClose(i) - td.getClose(i + 1);
+				if (chg > 0.0) {
+					daily[i]++;
+				} else if (chg < 0.0) {
+					daily[i]--;
+				}
+			}
+			// System.out.println(td.getTicker());
+		}
+		int sum = 0;
+		for (final int i : daily) {
+			// System.out.println(i);
+			sum += i;
+		}
+		final double retVal = (double) sum / (double) days;
+		return retVal;
+	}
+
+	private static double processListPercent(String list, int days)
+	    throws FileNotFoundException, IOException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(list));
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, Math.max(70, 50 + days));
+
+		final double[] daily = new double[days];
+		double sumChg = 0;
+		for (final TickerData td : tdList) {
+			td.generateDerived();
+			double chg = 0;
+			for (int i = 0; i < days; i++) {
+				chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
+
+				final double val = chg * td.getAvgVol20();
+				daily[i] += val;
+				sumChg += Math.abs(val);
+			}
+			// System.out.println(td.getTicker());
+		}
+		final double avgChg = sumChg / days;
+		double sum = 0;
+		for (final double d : daily) {
+			sum += d;
+		}
+		final double avg = sum / days;
+		final double retVal = avg / avgChg;
+		return retVal;
 	}
 
 }
