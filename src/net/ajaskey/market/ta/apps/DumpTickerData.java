@@ -1,12 +1,14 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import net.ajaskey.market.ta.TickerData;
@@ -86,14 +88,30 @@ public class DumpTickerData {
 
 				pwStocks.printf("%-10s\t%-60s\t%12s", td.getTicker(), td.getTickerName(), td.getTickerExchange());
 
-				try (PrintWriter pw = new PrintWriter("ptv-data\\" + td.getTicker() + ".txt")) {
-					pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
-					System.out.println("Processing " + td.getTicker());
-					for (int i = 0; i < td.getDaysOfData(); i++) {
-						final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
-						final String sDate = sdf.format(td.getDate(i).getTime());
-						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-						    (int) td.getVolume(i));
+				boolean writeFile = true;
+				File file = new File("ptv-data\\" + td.getTicker() + ".txt");
+				if (file.exists()) {
+					long modtime = file.lastModified();
+
+					Calendar cal = Calendar.getInstance();
+					int doy = cal.get(Calendar.DAY_OF_YEAR);
+
+					Calendar cal2 = Calendar.getInstance();
+					cal2.setTimeInMillis(modtime);
+					int fileDoy = cal2.get(Calendar.DAY_OF_YEAR);
+
+					writeFile = (fileDoy != doy);
+				}
+				if (writeFile) {
+					try (PrintWriter pw = new PrintWriter("ptv-data\\" + td.getTicker() + ".txt")) {
+						pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
+						System.out.println("Processing " + td.getTicker());
+						for (int i = 0; i < td.getDaysOfData(); i++) {
+							final SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+							final String sDate = sdf.format(td.getDate(i).getTime());
+							pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i),
+							    td.getClose(i), (int) td.getVolume(i));
+						}
 					}
 				}
 			}

@@ -293,18 +293,41 @@ public class ParseData {
 
 		for (File f : files) {
 			try {
+				if (!isCurrent(f)) {
 				TickerData td = parseOneFile(f.getAbsolutePath(), days);
 				if ((td != null) && (td.getDataCount() >= days)) {
 					if ((processAll) || (validTickers.contains(td.getTicker()))) {
 						tdList.add(td);
 					}
-				}
+				}}
 			} catch (Exception e) {
 				System.out.println("Invalid file found : " + f.getAbsolutePath());
 			}
 		}
 
 		return tdList;
+	}
+
+	/** 
+	 * net.ajaskey.market.ta.input.isCurrent
+	 *
+	 * @param f
+	 * @return
+	 */
+	private static boolean isCurrent(File f) {
+		boolean current = false;
+		if (f.exists()) {
+			long modtime = f.lastModified();
+			Calendar calFile = Calendar.getInstance();
+			calFile.setTimeInMillis(modtime);
+			int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
+
+			Calendar cal = Calendar.getInstance();
+			int doy = cal.get(Calendar.DAY_OF_YEAR);
+
+			current = (fileDoy != doy);
+		}
+		return current;
 	}
 
 	/**

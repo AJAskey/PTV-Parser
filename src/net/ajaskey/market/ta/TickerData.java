@@ -1017,12 +1017,21 @@ public class TickerData {
 	}
 
 	/**
-	 * @return the data
+	 * 
+	 * net.ajaskey.market.ta.getData
+	 *
+	 * @return
 	 */
 	private List<DailyData> getData() {
 		return this.data;
 	}
 	
+	/**
+	 * 
+	 * net.ajaskey.market.ta.getDataCount
+	 *
+	 * @return
+	 */
 	public int getDataCount() {
 		return this.data.size();
 	}
