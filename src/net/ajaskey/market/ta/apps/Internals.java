@@ -71,9 +71,9 @@ public class Internals {
 		val = Internals.processListPercent("lists\\nasdaq100-list.txt", 7);
 		System.out.printf("NDX days to recover %.2f%n", val);
 
-		printBreath("lists\\sp500-list.txt", "sp500", 5);
-		printBreath("lists\\sp600-list.txt", "sp600", 5);
-		printBreath("lists\\nasdaq100-list.txt", "ndx", 5);
+		printBreath("lists\\sp500-list.txt", "sp500", 10);
+		printBreath("lists\\sp600-list.txt", "sp600", 10);
+		printBreath("lists\\nasdaq100-list.txt", "ndx", 10);
 
 		System.out.println("Done.");
 	}
@@ -336,7 +336,7 @@ public class Internals {
 		double sumForce = 0;
 		int upDown = 0;
 		try (PrintWriter pw = new PrintWriter("out\\" + outfile + "-breadth.txt")) {
-			pw.printf("%10s %10s %10s  %10s %10s %14s%n", "Up", "Down", "Total", "Percent", "Force", "VolRatio");
+			pw.println(" Up Down  Total    Percent       Force        VolRatio");
 			for (int i = 0; i < days; i++) {
 				double percent = (double) up[i] / (double) ParseData.getValidTickerCount() * 100.0;
 				String sUp = NumberFormat.getIntegerInstance().format(up[i]);
@@ -347,7 +347,7 @@ public class Internals {
 				double avgVol = volume;
 				double volRatio = vol[i] / avgVol;
 
-				pw.printf("%10s %10s %10s %10.1f%% %14s %10.2f %16s%n", sUp, sDown, sDaily, percent, sForce, volRatio,
+				pw.printf("%3s %4s %5s %10.1f%% %14s %10.2f %16s%n", sUp, sDown, sDaily, percent, sForce, volRatio,
 				    Utils.getString(cal[i]));
 				cumForce += (forceUp[i] - forceDown[i]);
 				sumForce += (forceUp[i] + forceDown[i]);
