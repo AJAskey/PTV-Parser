@@ -9,3 +9,6 @@ also wrote some of my own metric calculations.
 
 If you are interested in working on this project or have questions then send
 an email to askeyaj@gmail.com.
+
+Examples of some of the outputs generated can be found here: 
+https://twitter.com/AndysCycles
