@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -98,7 +99,7 @@ public class ParseData {
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
-					String sline =  line.trim().substring(0, Math.min(10, line.length())).toLowerCase();
+					final String sline = line.trim().substring(0, Math.min(10, line.length())).toLowerCase();
 					if (!sline.contains("ticker") && !sline.contains("symbol")) {
 						final String fld[] = line.trim().split("\\s+");
 						if (fld[0].trim().length() > 0) {
@@ -279,6 +280,56 @@ public class ParseData {
 		return tdList;
 	}
 
+	public static List<TickerData> parsePTVData(String dirStr, int days) {
+
+		List<TickerData> tdList = new ArrayList<>();
+		File dir = new File(dirStr);
+		File[] files = dir.listFiles();
+
+		boolean processAll = false;
+		if (validTickers.get(0).equals("PROCESS_ALL_TICKERS")) {
+			processAll = true;
+		}
+
+		for (File f : files) {
+			try {
+				if (!isCurrent(f)) {
+				TickerData td = parseOneFile(f.getAbsolutePath(), days);
+				if ((td != null) && (td.getDataCount() >= days)) {
+					if ((processAll) || (validTickers.contains(td.getTicker()))) {
+						tdList.add(td);
+					}
+				}}
+			} catch (Exception e) {
+				System.out.println("Invalid file found : " + f.getAbsolutePath());
+			}
+		}
+
+		return tdList;
+	}
+
+	/** 
+	 * net.ajaskey.market.ta.input.isCurrent
+	 *
+	 * @param f
+	 * @return
+	 */
+	private static boolean isCurrent(File f) {
+		boolean current = false;
+		if (f.exists()) {
+			long modtime = f.lastModified();
+			Calendar calFile = Calendar.getInstance();
+			calFile.setTimeInMillis(modtime);
+			int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
+
+			Calendar cal = Calendar.getInstance();
+			int doy = cal.get(Calendar.DAY_OF_YEAR);
+
+			current = (fileDoy != doy);
+		}
+		return current;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.parseOneFile
@@ -290,6 +341,20 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 */
 	static public TickerData parseOneFile(String fname) throws ParseException, FileNotFoundException {
+		return ParseData.parseOneFile(fname, 999999);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.parseOneFile
+	 *
+	 * @param fname
+	 * @param days
+	 * @return
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	static public TickerData parseOneFile(String fname, int days) throws ParseException, FileNotFoundException {
 
 		final TickerData tickerData = new TickerData();
 		try {
@@ -330,6 +395,9 @@ public class ParseData {
 						final double v = ParseData.toDouble(fld[5].trim());
 						final DailyData d = new DailyData(cal, o, h, l, c, v);
 						tickerData.addData(d);
+						if (tickerData.getDataCount() >= days) {
+							line = null; // break from read loop
+						}
 					}
 				}
 			}
@@ -342,7 +410,7 @@ public class ParseData {
 		}
 
 		tickerData.generateDerived();
-		;
+
 		return tickerData;
 	}
 
