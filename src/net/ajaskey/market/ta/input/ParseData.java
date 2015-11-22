@@ -49,6 +49,7 @@ public class ParseData {
 	private static List<String>	validTickers	= new ArrayList<String>();
 	private static double				MIN_PRICE			= 0.0;
 	private static int					MIN_VOLUME		= 0;
+	private static int					GET_ALL_DATA		= 999999;
 
 	/**
 	 * This method serves as a constructor for the class. Because all methods are
@@ -290,7 +291,7 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 */
 	static public TickerData parseOneFile(String fname) throws ParseException, FileNotFoundException {
-		return ParseData.parseOneFile(fname, 999999);
+		return ParseData.parseOneFile(fname, GET_ALL_DATA);
 	}
 
 	/**
@@ -363,6 +364,25 @@ public class ParseData {
 		return tickerData;
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.ta.input.parsePTVData
+	 *
+	 * @param dirStr
+	 * @return
+	 */
+	public static List<TickerData> parsePTVData(String dirStr) {
+		return parsePTVData(dirStr, GET_ALL_DATA);
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.input.parsePTVData
+	 *
+	 * @param dirStr
+	 * @param days
+	 * @return
+	 */
 	public static List<TickerData> parsePTVData(String dirStr, int days) {
 
 		final List<TickerData> tdList = new ArrayList<>();
@@ -376,12 +396,10 @@ public class ParseData {
 
 		for (final File f : files) {
 			try {
-				if (!ParseData.isCurrent(f)) {
-					final TickerData td = ParseData.parseOneFile(f.getAbsolutePath(), days);
-					if ((td != null) && (td.getDataCount() >= days)) {
-						if ((processAll) || (validTickers.contains(td.getTicker()))) {
-							tdList.add(td);
-						}
+				final TickerData td = ParseData.parseOneFile(f.getAbsolutePath(), days);
+				if ((td != null) && ( (days == GET_ALL_DATA) || (td.getDataCount() >= days))) {
+					if ((processAll) || (validTickers.contains(td.getTicker()))) {
+						tdList.add(td);
 					}
 				}
 			} catch (final Exception e) {
