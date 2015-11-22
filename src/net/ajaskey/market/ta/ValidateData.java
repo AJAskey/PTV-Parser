@@ -35,7 +35,7 @@ public class ValidateData {
 
 	private static List<Calendar>	holidays	= new ArrayList<>();
 
-	//private static Calendar				aCal			= Calendar.getInstance();
+	// private static Calendar aCal = Calendar.getInstance();
 
 	private static boolean				init			= false;
 
@@ -179,13 +179,13 @@ public class ValidateData {
 			cal = td.getDate(i);
 			final int dow = cal.get(Calendar.DAY_OF_WEEK);
 			if ((dow < Calendar.MONDAY) || (dow > Calendar.FRIDAY)) {
-				System.out.println(td.getTicker()+" - Invalid Day of Week : " + td.getDailyDataString(i));
+				System.out.println(td.getTicker() + " - Invalid Day of Week : " + td.getDailyDataString(i));
 				return false;
 			}
 			final int yr = cal.get(Calendar.YEAR);
 			final int doy = cal.get(Calendar.DAY_OF_YEAR);
 			if (yr > 2011) {
-				boolean	hol = ValidateData.isHoliday(td.getDate(i));
+				final boolean hol = ValidateData.isHoliday(td.getDate(i));
 				if (hol) {
 					// System.out.println("Ignored holiday : " +
 					// td.getDailyDataString(i));
@@ -193,12 +193,12 @@ public class ValidateData {
 					if (dow == Calendar.FRIDAY) {
 						if ((doy + 3) != lastDoY) {
 							// hol = ValidateData.isHoliday(td.getDate(i));
-							System.out.println(td.getTicker()+" - Day of data skipped : " + td.getDailyDataString(i));
+							System.out.println(td.getTicker() + " - Day of data skipped : " + td.getDailyDataString(i));
 							// return false;
 						}
 					} else {
 						if ((doy < 365) && ((doy + 1) != lastDoY)) {
-							System.out.println(td.getTicker()+" - Day of data skipped : " + td.getDailyDataString(i));
+							System.out.println(td.getTicker() + " - Day of data skipped : " + td.getDailyDataString(i));
 							// return false;
 						}
 					}

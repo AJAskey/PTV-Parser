@@ -154,4 +154,28 @@ public class UtilMethods {
 		return UtilMethods.sum(UtilMethods.getDataSlice(val, start, days), days);
 	}
 
+	static public int sum(int[] val, int days) {
+		int retVal = 0;
+		if (val != null) {
+			if (days <= val.length) {
+				for (int i = 0; i < days; i++) {
+					retVal += val[i];
+				}
+			}
+		}
+		return retVal;
+	}
+
+	static public long sum(long[] val, int days) {
+		long retVal = 0;
+		if (val != null) {
+			if (days <= val.length) {
+				for (int i = 0; i < days; i++) {
+					retVal += val[i];
+				}
+			}
+		}
+		return retVal;
+	}
+
 }

@@ -65,9 +65,9 @@ public class ProcessSymbolList {
 		Utils.makeDir("symbols");
 		Utils.makeDir("lists");
 
-		String arg = "dataPath";
-		String dataPath = System.getProperty(arg, "");
-		String filePath = dataPath + "\\ASCII";
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		final String filePath = dataPath + "\\ASCII";
 		System.out.println(filePath);
 		ProcessSymbolList.findLists(new File(filePath));
 
@@ -113,8 +113,8 @@ public class ProcessSymbolList {
 								final String code = node.getAttributes().getNamedItem("Code").getNodeValue();
 								final String name = node.getAttributes().getNamedItem("Name").getNodeValue();
 								if (dirName.compareToIgnoreCase("INDEX") == 0) {
-									String fmt = "%-10s\t%-50s\t%-10s%n";
-									String codePlus = code + ".IDX";
+									final String fmt = "%-10s\t%-50s\t%-10s%n";
+									final String codePlus = code + ".IDX";
 									pw.printf(fmt, codePlus, name, dirName);
 									if (name.contains("Home Price Index")) {
 										pwCS.printf(fmt, codePlus, name, dirName);
@@ -127,7 +127,7 @@ public class ProcessSymbolList {
 									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", codePlus, name, dirName);
 								} else {
-									String fmt = "%-10s\t%-50s\t%-10s%n";
+									final String fmt = "%-10s\t%-50s\t%-10s%n";
 									pw.printf(fmt, code, name, dirName);
 									if (name.toUpperCase().contains("ISHARES")) {
 										pwIshares.printf(fmt, code, name, dirName);

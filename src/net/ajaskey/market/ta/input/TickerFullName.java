@@ -62,7 +62,7 @@ public class TickerFullName {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.build
 	 *
 	 * @param fname
@@ -116,7 +116,7 @@ public class TickerFullName {
 	 */
 	static public String getName(String ticker) {
 		for (final TickerFullName t : tickerNames) {
-			//System.out.println(ticker + "\t" + t.ticker);
+			// System.out.println(ticker + "\t" + t.ticker);
 			if (t.ticker.equalsIgnoreCase(ticker)) {
 				return t.name;
 			}

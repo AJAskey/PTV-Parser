@@ -99,64 +99,10 @@ public class GenStockList {
 
 		System.out.println("Processing...");
 
-		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
+		GenStockList.findStocks("stock-list", 500000, 10.0);
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.apps.isSP500
-	 *
-	 * @param ticker
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
-		if (sp500List == null) {
-			sp500List = ParseData.getTickerList("lists\\sp500-list.txt");
-		}
-		for (String s : sp500List) {
-			if (ticker.equalsIgnoreCase(s)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
-		if (ndxList == null) {
-			ndxList = ParseData.getTickerList("lists\\nasdaq100-list.txt");
-		}
-		for (String s : ndxList) {
-			if (ticker.equalsIgnoreCase(s)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.apps.isSP600
-	 *
-	 * @param ticker
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
-		if (sp600List == null) {
-			sp600List = ParseData.getTickerList("lists\\sp600-list.txt");
-		}
-		for (String s : sp600List) {
-			if (ticker.equalsIgnoreCase(s)) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**
@@ -192,8 +138,7 @@ public class GenStockList {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	private static void findStocks(String outName, int offset, int minVol, double minPrice)
-	    throws ParseException, IOException {
+	private static void findStocks(String outName, int minVol, double minPrice) throws ParseException, IOException {
 
 		new GenStockList();
 
@@ -211,7 +156,7 @@ public class GenStockList {
 		int maxTickerLen = 0;
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived(offset);
+			td.generateDerived();
 			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() >= minPrice)) {
 				if (GenStockList.checkName(td.getTickerName())) {
 					tdStocks.add(td);
@@ -224,22 +169,76 @@ public class GenStockList {
 		Collections.sort(tdStocks, new SortTickerName());
 
 		Utils.makeDir("lists");
-		
+
 		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%-10s%n", maxTickerLen, maxNameLen);
 		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt")) {
 			pw.println("Ticker      Name                                        Exchange    List");
 			for (final TickerData td : tdStocks) {
-				if (isSP500(td.getTicker())) {
+				if (GenStockList.isSP500(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP500");
-				} else if (isNDX(td.getTicker())) {
+				} else if (GenStockList.isNDX(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "NDX");
-				} else if (isSP600(td.getTicker())) {
+				} else if (GenStockList.isSP600(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP600");
 				} else {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "none");
 				}
 			}
 		}
+	}
+
+	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
+		if (ndxList == null) {
+			ndxList = ParseData.getTickerList("lists\\nasdaq100-list.txt");
+		}
+		for (final String s : ndxList) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.isSP500
+	 *
+	 * @param ticker
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
+		if (sp500List == null) {
+			sp500List = ParseData.getTickerList("lists\\sp500-list.txt");
+		}
+		for (final String s : sp500List) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.isSP600
+	 *
+	 * @param ticker
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
+		if (sp600List == null) {
+			sp600List = ParseData.getTickerList("lists\\sp600-list.txt");
+		}
+		for (final String s : sp600List) {
+			if (ticker.equalsIgnoreCase(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

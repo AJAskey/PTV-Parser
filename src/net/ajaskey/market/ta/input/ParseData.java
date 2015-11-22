@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -280,56 +279,6 @@ public class ParseData {
 		return tdList;
 	}
 
-	public static List<TickerData> parsePTVData(String dirStr, int days) {
-
-		List<TickerData> tdList = new ArrayList<>();
-		File dir = new File(dirStr);
-		File[] files = dir.listFiles();
-
-		boolean processAll = false;
-		if (validTickers.get(0).equals("PROCESS_ALL_TICKERS")) {
-			processAll = true;
-		}
-
-		for (File f : files) {
-			try {
-				if (!isCurrent(f)) {
-				TickerData td = parseOneFile(f.getAbsolutePath(), days);
-				if ((td != null) && (td.getDataCount() >= days)) {
-					if ((processAll) || (validTickers.contains(td.getTicker()))) {
-						tdList.add(td);
-					}
-				}}
-			} catch (Exception e) {
-				System.out.println("Invalid file found : " + f.getAbsolutePath());
-			}
-		}
-
-		return tdList;
-	}
-
-	/** 
-	 * net.ajaskey.market.ta.input.isCurrent
-	 *
-	 * @param f
-	 * @return
-	 */
-	private static boolean isCurrent(File f) {
-		boolean current = false;
-		if (f.exists()) {
-			long modtime = f.lastModified();
-			Calendar calFile = Calendar.getInstance();
-			calFile.setTimeInMillis(modtime);
-			int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
-
-			Calendar cal = Calendar.getInstance();
-			int doy = cal.get(Calendar.DAY_OF_YEAR);
-
-			current = (fileDoy != doy);
-		}
-		return current;
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.parseOneFile
@@ -414,6 +363,35 @@ public class ParseData {
 		return tickerData;
 	}
 
+	public static List<TickerData> parsePTVData(String dirStr, int days) {
+
+		final List<TickerData> tdList = new ArrayList<>();
+		final File dir = new File(dirStr);
+		final File[] files = dir.listFiles();
+
+		boolean processAll = false;
+		if (validTickers.get(0).equals("PROCESS_ALL_TICKERS")) {
+			processAll = true;
+		}
+
+		for (final File f : files) {
+			try {
+				if (!ParseData.isCurrent(f)) {
+					final TickerData td = ParseData.parseOneFile(f.getAbsolutePath(), days);
+					if ((td != null) && (td.getDataCount() >= days)) {
+						if ((processAll) || (validTickers.contains(td.getTicker()))) {
+							tdList.add(td);
+						}
+					}
+				}
+			} catch (final Exception e) {
+				System.out.println("Invalid file found : " + f.getAbsolutePath());
+			}
+		}
+
+		return tdList;
+	}
+
 	/**
 	 * @param mIN_PRICE
 	 *          the mIN_PRICE to set
@@ -448,6 +426,28 @@ public class ParseData {
 		for (final String t : tickers) {
 			ParseData.setValidTicker(t);
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.ta.input.isCurrent
+	 *
+	 * @param f
+	 * @return
+	 */
+	private static boolean isCurrent(File f) {
+		boolean current = false;
+		if (f.exists()) {
+			final long modtime = f.lastModified();
+			final Calendar calFile = Calendar.getInstance();
+			calFile.setTimeInMillis(modtime);
+			final int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
+
+			final Calendar cal = Calendar.getInstance();
+			final int doy = cal.get(Calendar.DAY_OF_YEAR);
+
+			current = (fileDoy != doy);
+		}
+		return current;
 	}
 
 	/**

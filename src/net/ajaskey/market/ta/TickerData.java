@@ -350,6 +350,47 @@ public class TickerData {
 		return null;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.getTickerData
+	 *
+	 * @param list
+	 * @param ticker
+	 * @return
+	 */
+	public static TickerData getTickerData(List<TickerData> list, String ticker) {
+		for (final TickerData td : list) {
+			if (td.getTicker().compareTo(ticker) == 0) {
+				return td;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getTradingDays
+	 *
+	 * @param td
+	 * @param start
+	 * @param stop
+	 * @return
+	 */
+	public static int getTradingDays(TickerData td, Calendar start, Calendar stop) {
+
+		int ret = 0;
+		final int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
+		    start.get(Calendar.DAY_OF_MONTH));
+		if (idx1 >= 0) {
+			final int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
+			    stop.get(Calendar.DAY_OF_MONTH));
+			if (idx2 < idx1) {
+				ret = ((idx1 - idx2) + 1);
+			}
+		}
+		return ret;
+	}
+
 	public static void mergeData(TickerData td, TickerData tdNew) {
 		td.getData().addAll(tdNew.getData());
 	}
@@ -590,6 +631,13 @@ public class TickerData {
 	}
 
 	/**
+	 * @return the chg
+	 */
+	public double getChg() {
+		return this.chg;
+	}
+
+	/**
 	 * @return the chg130
 	 */
 	public double getChg130() {
@@ -617,13 +665,6 @@ public class TickerData {
 		return this.chg65;
 	}
 
-	/**
-	 * @return the chg
-	 */
-	public double getChg() {
-		return this.chg;
-	}
-	
 	public double getClose(int day) {
 		return this.closeData[day];
 	}
@@ -646,6 +687,16 @@ public class TickerData {
 		final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
 		    this.closeData[day], this.volumeData[day]);
 		return dd.toString();
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getDataCount
+	 *
+	 * @return
+	 */
+	public int getDataCount() {
+		return this.data.size();
 	}
 
 	public Calendar getDate(int day) {
@@ -1017,23 +1068,13 @@ public class TickerData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.getData
 	 *
 	 * @return
 	 */
 	private List<DailyData> getData() {
 		return this.data;
-	}
-	
-	/**
-	 * 
-	 * net.ajaskey.market.ta.getDataCount
-	 *
-	 * @return
-	 */
-	public int getDataCount() {
-		return this.data.size();
 	}
 
 	/**
@@ -1131,29 +1172,4 @@ public class TickerData {
 			this.rsStRaw = this.setRawStRS();
 		}
 	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.getTradingDays
-	 *
-	 * @param td
-	 * @param start
-	 * @param stop
-	 * @return
-	 */
-	public static int getTradingDays(TickerData td, Calendar start, Calendar stop) {
-
-		int ret = 0;
-		int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
-		    start.get(Calendar.DAY_OF_MONTH));
-		if (idx1 >= 0) {
-			int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
-			    stop.get(Calendar.DAY_OF_MONTH));
-			if (idx2 < idx1) {
-				ret = (idx1 - idx2 + 1);
-			}
-		}
-		return ret;
-	}
-
 }

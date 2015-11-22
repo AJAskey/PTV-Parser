@@ -98,7 +98,7 @@ public class WhosHot {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
-		
+
 		System.out.println("Processing...");
 
 		// WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
@@ -200,7 +200,7 @@ public class WhosHot {
 					if ((volRatio > 0.0) && (shares > 0.0) && (shares < 100000000.0) && (id.getPriceInRange260() > 0.50)
 					    && (volRatio < 35.0)) {
 						final String bSum = YahooData.getBusinessSummary(id.getTicker());
-						//final String bSum = "";
+						// final String bSum = "";
 						pwSD.println(id.getTicker() + Utils.TAB + id.getName() + Utils.TAB + id.getExch() + Utils.TAB
 						    + id.getRanks() + Utils.TAB + vol + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB
 						    + id.getMarketCap() + Utils.TAB + bSum);
