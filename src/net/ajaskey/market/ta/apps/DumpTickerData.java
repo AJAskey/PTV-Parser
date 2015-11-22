@@ -64,7 +64,7 @@ public class DumpTickerData {
 			ParseData.setValidTickers(ParseData.getTickerList("lists\\stock-list.txt"));
 
 		} else {
-			for (String s : args) {
+			for (final String s : args) {
 				ParseData.setValidTicker(s);
 			}
 		}
@@ -78,7 +78,7 @@ public class DumpTickerData {
 		Utils.makeDir("ptv-data");
 		Utils.makeDir("lists");
 
-		PrintWriter pwStocks = new PrintWriter("lists\\valid-stock-list.txt");
+		final PrintWriter pwStocks = new PrintWriter("lists\\valid-stock-list.txt");
 
 		for (final TickerData td : tdAll) {
 
@@ -89,16 +89,16 @@ public class DumpTickerData {
 				pwStocks.printf("%-10s\t%-60s\t%12s", td.getTicker(), td.getTickerName(), td.getTickerExchange());
 
 				boolean writeFile = true;
-				File file = new File("ptv-data\\" + td.getTicker() + ".txt");
+				final File file = new File("ptv-data\\" + td.getTicker() + ".txt");
 				if (file.exists()) {
-					long modtime = file.lastModified();
+					final long modtime = file.lastModified();
 
-					Calendar cal = Calendar.getInstance();
-					int doy = cal.get(Calendar.DAY_OF_YEAR);
+					final Calendar cal = Calendar.getInstance();
+					final int doy = cal.get(Calendar.DAY_OF_YEAR);
 
-					Calendar cal2 = Calendar.getInstance();
+					final Calendar cal2 = Calendar.getInstance();
 					cal2.setTimeInMillis(modtime);
-					int fileDoy = cal2.get(Calendar.DAY_OF_YEAR);
+					final int fileDoy = cal2.get(Calendar.DAY_OF_YEAR);
 
 					writeFile = (fileDoy != doy);
 				}

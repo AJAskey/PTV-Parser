@@ -69,22 +69,22 @@ public class GannSwings {
 		System.out.println(rangeCal + "  " + rangeTd + "  " + priceRng);
 
 		final double incs = 4.0;
-		double dateInc = (double) rangeCal / incs;
+		double dateInc = rangeCal / incs;
 
-		Calendar[] dates = new Calendar[(int) (incs * 4)];
+		final Calendar[] dates = new Calendar[(int) (incs * 4)];
 
 		double rDate = dateInc;
 		System.out.println(dateInc);
-		for (int i = 0; i < incs * 4; i++) {
+		for (int i = 0; i < (incs * 4); i++) {
 			dates[i] = GannSwings.getCalendarDate(stop, (int) Math.round(rDate));
 			rDate += dateInc;
 			System.out.println(i + 1 + "  " + Utils.stringCalendar(dates[i]));
 		}
 
-		dateInc = (double)  rangeTd / incs;
+		dateInc = rangeTd / incs;
 		rDate = dateInc;
 		System.out.println(dateInc);
-		for (int i = 0; i < incs * 4; i++) {
+		for (int i = 0; i < (incs * 4); i++) {
 			dates[i] = GannSwings.getTradingDate(stop, (int) Math.round(rDate));
 			rDate += dateInc;
 			System.out.println(i + 1 + "  " + Utils.stringCalendar(dates[i]));
@@ -101,13 +101,13 @@ public class GannSwings {
 	 * @param i
 	 */
 	private static Calendar getCalendarDate(Calendar cal, int i) {
-		Calendar c = (Calendar) cal.clone();
+		final Calendar c = (Calendar) cal.clone();
 		c.add(Calendar.DAY_OF_YEAR, i);
 		return c;
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.apps.getTradingDays
 	 *
 	 * @param cal
@@ -115,8 +115,8 @@ public class GannSwings {
 	 * @return
 	 */
 	static private Calendar getTradingDate(Calendar cal, int knt) {
-		int tradingDays = (int) Math.round((double) knt * 7.0 / 5.0);
-		return getCalendarDate(cal, tradingDays);
+		final int tradingDays = (int) Math.round((knt * 7.0) / 5.0);
+		return GannSwings.getCalendarDate(cal, tradingDays);
 	}
 
 	static private void setBounds(TickerData td, Calendar start, Calendar stop) {

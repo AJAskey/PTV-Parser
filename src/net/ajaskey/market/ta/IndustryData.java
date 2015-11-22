@@ -87,10 +87,24 @@ public class IndustryData {
 	}
 
 	/**
+	 * @return the marketCap
+	 */
+	public String getMarketCap() {
+		return this.marketCap;
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return this.name;
+	}
+
+	/**
+	 * @return the priceInRange260
+	 */
+	public double getPriceInRange260() {
+		return this.priceInRange260;
 	}
 
 	public List<Integer> getRank() {
@@ -172,11 +186,27 @@ public class IndustryData {
 	}
 
 	/**
+	 * @param marketCap
+	 *          the marketCap to set
+	 */
+	public void setMarketCap(String marketCap) {
+		this.marketCap = marketCap;
+	}
+
+	/**
 	 * @param name
 	 *          the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @param priceInRange260
+	 *          the priceInRange260 to set
+	 */
+	public void setPriceInRange260(double priceInRange260) {
+		this.priceInRange260 = priceInRange260;
 	}
 
 	/**
@@ -225,36 +255,6 @@ public class IndustryData {
 	 */
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
-	}
-
-	/**
-	 * @return the priceInRange260
-	 */
-	public double getPriceInRange260() {
-		return priceInRange260;
-	}
-
-	/**
-	 * @param priceInRange260
-	 *          the priceInRange260 to set
-	 */
-	public void setPriceInRange260(double priceInRange260) {
-		this.priceInRange260 = priceInRange260;
-	}
-
-	/**
-	 * @return the marketCap
-	 */
-	public String getMarketCap() {
-		return marketCap;
-	}
-
-	/**
-	 * @param marketCap
-	 *          the marketCap to set
-	 */
-	public void setMarketCap(String marketCap) {
-		this.marketCap = marketCap;
 	}
 
 }

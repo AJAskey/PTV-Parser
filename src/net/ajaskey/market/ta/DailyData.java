@@ -6,10 +6,17 @@ import java.util.Calendar;
 
 /**
  *
- * @author Andy Askey
+ * This class serves as a container for daily price and volume data for a
+ * specific entity.
  *
+ * A java.utils.List of DailyData objects is used to hold available price and
+ * time data for a specific entity.
+ *
+ * @author
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -29,6 +36,7 @@ import java.util.Calendar;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class DailyData {
@@ -46,8 +54,8 @@ public class DailyData {
 	private double									dailyPercentChg;
 	private double									dailyRng;
 	private double									dailyPercentRng;
-	
-	private long daysSinceBase;
+
+	private long										daysSinceBase;
 
 	private final SimpleDateFormat	sdf	= new SimpleDateFormat("E dd-MMM-yyyy");
 
@@ -68,7 +76,7 @@ public class DailyData {
 		this.date.set(Calendar.MINUTE, 0);
 		this.date.set(Calendar.SECOND, 1);
 		this.date.set(Calendar.MILLISECOND, 0);
-		setDaysSinceBase();
+		this.setDaysSinceBase();
 		this.open = o;
 		this.high = h;
 		this.low = l;
@@ -83,6 +91,9 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the closing value for this specific object. This is usually a price
+	 * value but can be used for other entities such as Up/Down counts.
+	 *
 	 * @return the close
 	 */
 	public Double getClose() {
@@ -90,6 +101,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the change in the close of the current day minus the previous day.
+	 *
 	 * @return the dailyChg
 	 */
 	public double getDailyChg() {
@@ -97,6 +110,9 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the percent change in the close of the current day minus the
+	 * previous day.
+	 *
 	 * @return the dailyPercentChg
 	 */
 	public double getDailyPercentChg() {
@@ -104,6 +120,9 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the percent range (high to low) in the close of the current day
+	 * minus the previous day.
+	 *
 	 * @return the dailyPercentRng
 	 */
 	public double getDailyPercentRng() {
@@ -111,6 +130,9 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the range (high to low) in the close of the current day minus the
+	 * previous day.
+	 *
 	 * @return the dailyRng
 	 */
 	public double getDailyRng() {
@@ -118,6 +140,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Return the date of the data.
+	 *
 	 * @return the date
 	 */
 	public Calendar getDate() {
@@ -125,6 +149,15 @@ public class DailyData {
 	}
 
 	/**
+	 * @return the daysSinceBase
+	 */
+	public long getDaysSinceBase() {
+		return this.daysSinceBase;
+	}
+
+	/**
+	 * Returns the daily high.
+	 *
 	 * @return the high
 	 */
 	public Double getHigh() {
@@ -132,6 +165,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the daily low.
+	 *
 	 * @return the low
 	 */
 	public Double getLow() {
@@ -139,6 +174,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the daily open.
+	 *
 	 * @return the open
 	 */
 	public Double getOpen() {
@@ -146,6 +183,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the true high when considering the previous day's close.
+	 *
 	 * @return the trueHigh
 	 */
 	public double getTrueHigh() {
@@ -153,6 +192,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the true low when considering the previous day's close.
+	 *
 	 * @return the trueLow
 	 */
 	public double getTrueLow() {
@@ -160,6 +201,8 @@ public class DailyData {
 	}
 
 	/**
+	 * Returns the daily volume.
+	 *
 	 * @return the volume
 	 */
 	public Double getVolume() {
@@ -167,10 +210,12 @@ public class DailyData {
 	}
 
 	/**
+	 * Sets the daily change value.
 	 *
 	 * net.ajaskey.market.ta.setDailyChg
 	 *
 	 * @param closeYesterday
+	 *          the close from the previous day.
 	 */
 	public void setDailyChg(double closeYesterday) {
 		this.dailyChg = this.close - closeYesterday;
@@ -190,6 +235,14 @@ public class DailyData {
 	public void setDateData(Calendar cal) {
 		// TODO Auto-generated method stub
 
+	}
+
+	/**
+	 * @param daysSinceBase
+	 *          the daysSinceBase to set
+	 */
+	public void setDaysSinceBase() {
+		this.daysSinceBase = Utils.getTimeSpan(this.date, Utils.baseDate);
 	}
 
 	/**
@@ -221,26 +274,15 @@ public class DailyData {
 		this.volume = vol;
 	}
 
+	/**
+	 * Returns a readable string representing the contents of this object.
+	 */
 	@Override
 	public String toString() {
 		final String sDate = this.sdf.format(this.date.getTime());
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();
-	}
-
-	/**
-	 * @return the daysSinceBase
-	 */
-	public long getDaysSinceBase() {
-		return daysSinceBase;
-	}
-
-	/**
-	 * @param daysSinceBase the daysSinceBase to set
-	 */
-	public void setDaysSinceBase() {
-		this.daysSinceBase = Utils.getTimeSpan(date, Utils.baseDate);
 	}
 
 }

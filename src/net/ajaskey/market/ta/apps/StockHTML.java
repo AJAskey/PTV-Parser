@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.ta.reports;
+package net.ajaskey.market.ta.apps;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -186,7 +186,7 @@ public class StockHTML {
 			this.htmlStr = this.htmlStr.replace("#MFI65#", fmt.toString());
 		}
 
-		File htmlDir = new File("html");
+		final File htmlDir = new File("html");
 		if (!htmlDir.exists()) {
 			htmlDir.mkdir();
 		}

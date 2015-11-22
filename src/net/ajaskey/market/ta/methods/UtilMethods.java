@@ -153,7 +153,7 @@ public class UtilMethods {
 	static public double sum(double[] val, int days, int start) {
 		return UtilMethods.sum(UtilMethods.getDataSlice(val, start, days), days);
 	}
-	
+
 	static public int sum(int[] val, int days) {
 		int retVal = 0;
 		if (val != null) {
@@ -165,7 +165,7 @@ public class UtilMethods {
 		}
 		return retVal;
 	}
-	
+
 	static public long sum(long[] val, int days) {
 		long retVal = 0;
 		if (val != null) {

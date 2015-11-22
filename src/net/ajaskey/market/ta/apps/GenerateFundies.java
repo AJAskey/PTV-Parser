@@ -1,9 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -54,8 +52,8 @@ public class GenerateFundies {
 	 *
 	 */
 	public GenerateFundies() {
-		marketCap = "N/A";
-		shares = 0;
+		this.marketCap = "N/A";
+		this.shares = 0;
 	}
 
 	/**
