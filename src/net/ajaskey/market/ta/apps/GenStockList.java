@@ -99,7 +99,7 @@ public class GenStockList {
 
 		System.out.println("Processing...");
 
-		GenStockList.findStocks("stock-list", 0, 500000, 10.0);
+		GenStockList.findStocks("stock-list", 500000, 10.0);
 
 		System.out.println("Done.");
 
@@ -192,7 +192,7 @@ public class GenStockList {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	private static void findStocks(String outName, int offset, int minVol, double minPrice)
+	private static void findStocks(String outName, int minVol, double minPrice)
 	    throws ParseException, IOException {
 
 		new GenStockList();
@@ -211,7 +211,7 @@ public class GenStockList {
 		int maxTickerLen = 0;
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived(offset);
+			td.generateDerived();
 			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() >= minPrice)) {
 				if (GenStockList.checkName(td.getTickerName())) {
 					tdStocks.add(td);

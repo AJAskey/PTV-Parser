@@ -14,6 +14,7 @@ import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
+import net.ajaskey.market.ta.methods.UtilMethods;
 
 /**
  * @author Andy Askey
@@ -47,6 +48,15 @@ public class Internals {
 
 	private static List<String>			filenames	= new ArrayList<String>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
+	public static PrintWriter				pwAll			= null;
+	private static int							million		= 1000000;
+
+	private static double						ndxClose;
+	private static double						spxClose;
+	private static double						smlClose;
+	private static double						ndxClosePast;
+	private static double						spxClosePast;
+	private static double						smlClosePast;
 
 	/**
 	 *
@@ -56,26 +66,83 @@ public class Internals {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(String[] args) {
+		
+		System.out.println("Processing...");
 
-		Internals.processIndex();
+		try {
+			final int days = 10;
+			Internals.getClosingPrices(days);
 
-		Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
-		Internals.processAnIndex("lists\\sp600-list.txt", "SML");
-		Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
-		Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-		Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+			pwAll = new PrintWriter("out\\breadth.txt");
 
-		double val = Internals.processListPercent("lists\\sp500-list.txt", 7);
-		System.out.printf("SPX days to recover %.2f%n", val);
-		val = Internals.processListPercent("lists\\nasdaq100-list.txt", 7);
-		System.out.printf("NDX days to recover %.2f%n", val);
+			// Internals.processIndex();
 
-		printBreath("lists\\sp500-list.txt", "sp500", 10);
-		printBreath("lists\\sp600-list.txt", "sp600", 10);
-		printBreath("lists\\nasdaq100-list.txt", "ndx", 10);
+			// Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+			// Internals.processAnIndex("lists\\sp600-list.txt", "SML");
+			// Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
+			// Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+			// Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
+			// double val = Internals.processListPercent("lists\\sp500-list.txt",
+			// days);
+			// System.out.printf("SPX days to recover %.2f%n", val);
+			// val = Internals.processListPercent("lists\\nasdaq100-list.txt", days);
+			// System.out.printf("NDX days to recover %.2f%n", val);
+
+			Internals.printBreath("lists\\sp500-list.txt", "SPX", days);
+			Internals.printBreath("lists\\nasdaq100-list.txt", "NDX", days);
+			Internals.printBreath("lists\\sp600-list.txt", "SML", days);
+			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+
+		pwAll.close();
 		System.out.println("Done.");
+
+	}
+
+	private static void getClosingPrices(int days) throws FileNotFoundException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTicker("SPX.IDX");
+		ParseData.setValidTicker("NDX.IDX");
+		ParseData.setValidTicker("SML.IDX");
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\INDEX");
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, 50);
+
+		final TickerData spx = TickerData.getTickerData(tdList, "SPX.IDX");
+		if (spx != null) {
+			spx.generateDerived();
+			spxClose = spx.getCurrentPrice();
+			spxClosePast = spx.getClose(days);
+			//System.out.println(spxClose);
+		}
+
+		final TickerData ndx = TickerData.getTickerData(tdList, "NDX.IDX");
+		if (ndx != null) {
+			ndx.generateDerived();
+			ndxClose = ndx.getCurrentPrice();
+			ndxClosePast = ndx.getClose(days);
+			//System.out.println(ndxClose);
+		}
+
+		final TickerData sml = TickerData.getTickerData(tdList, "SML.IDX");
+		if (sml != null) {
+			sml.generateDerived();
+			smlClose = sml.getCurrentPrice();
+			smlClosePast = sml.getClose(days);
+			//System.out.println(smlClose);
+		}
+
 	}
 
 	/**
@@ -139,6 +206,151 @@ public class Internals {
 	 */
 	private static boolean isOverSold(double avg) {
 		return (avg < ((-1.0) * obosLevel));
+	}
+
+	private static void printBreath(String list, String listName, int days)
+	    throws FileNotFoundException, IOException, ParseException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(list));
+
+		filenames.clear();
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+
+		final int tdays = (days * 7 / 5) + 1;
+		final int dataDays = Math.max(30, (int)((float)tdays * 2.25));
+
+		tdList.clear();
+		tdList = ParseData.parseFiles(filenames, dataDays);
+
+		final int[] up = new int[days];
+		final int[] down = new int[days];
+		final int[] daily = new int[days];
+		final long[] volUp = new long[days];
+		final long[] volDown = new long[days];
+		final double[] forceUp = new double[days];
+		final double[] forceDown = new double[days];
+		final double[] price = new double[days];
+		final double[] vol = new double[days];
+		for (int i = 0; i < days; i++) {
+			up[i] = 0;
+			down[i] = 0;
+			daily[i] = 0;
+			forceUp[i] = 0;
+			forceDown[i] = 0;
+			vol[i] = 0;
+			price[i] = 0;
+			volUp[i] = 0;
+			volDown[i] = 0;
+		}
+		// double sumVol = 0;
+		double priceChg = 0;
+		double volume = 0;
+
+		Calendar[] cal = null;
+		for (final TickerData td : tdList) {
+			td.generateDerived();
+			//System.out.println(td.getTicker() + " " + td.getDaysOfData() + " " + days*2);
+			if (td.getDaysOfData() > days*2) {
+				double chg = 0;
+				volume += MovingAverageMethods.sma(td.getVolumeData(), days*2);
+				for (int i = 0; i < days; i++) {
+					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
+					priceChg = td.getClose(i) - td.getClose(i + 1);
+					final double val = Math.abs(chg * td.getAvgVol20());
+					if (chg > 0.0) {
+						daily[i]++;
+						up[i]++;
+						forceUp[i] += val;
+						volUp[i] += (long) td.getVolume(i);
+					} else if (chg < 0.0) {
+						daily[i]--;
+						down[i]++;
+						forceDown[i] += val;
+						volDown[i] += (long) td.getVolume(i);
+					}
+					vol[i] += td.getVolume(i);
+					price[i] += priceChg;
+				}
+				if (cal == null) {
+					cal = new Calendar[days];
+					for (int i = 0; i < days; i++) {
+						cal[i] = td.getDate(i);
+					}
+				}
+			}
+		}
+
+		if (cal == null) {
+			System.out.println("ERROR cal == null");
+			return;
+		}
+
+		Utils.makeDir("out");
+		double cumForce = 0;
+			pwAll.printf("%n\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
+			for (int i = 0; i < days; i++) {
+				final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
+				final String sUp = NumberFormat.getIntegerInstance().format(up[i]);
+				final String sDown = NumberFormat.getIntegerInstance().format(down[i]);
+				final String sDaily = NumberFormat.getIntegerInstance().format(daily[i]);
+				final String sForce = NumberFormat.getIntegerInstance().format((int) (forceUp[i] - forceDown[i]));
+				// double avgVol = sumVol / (double) days;
+				final double avgVol = volume;
+				final double volRatio = vol[i] / avgVol;
+
+				final long volDiff = (volUp[i] - volDown[i]) / million;
+				final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / million);
+				final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / million);
+				final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
+				pwAll.printf("\t%.2f\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f \t%s%n", price[i], sUp, sDown, sDaily, percent,
+				    sForce, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
+
+				cumForce += (forceUp[i] - forceDown[i]);
+			}
+			final String sCumForce = NumberFormat.getIntegerInstance().format((int) cumForce);
+			final int sumUp = UtilMethods.sum(up, days);
+			final int sumDown = UtilMethods.sum(down, days);
+			final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;
+
+			final long sumVolUp = UtilMethods.sum(volUp, days) / million;
+			final long sumVolDown = UtilMethods.sum(volDown, days) / million;
+			final long sumVolDiff = sumVolUp - sumVolDown;
+			final String sSumVolUp = NumberFormat.getIntegerInstance().format(sumVolUp);
+			final String sSumVolDown = NumberFormat.getIntegerInstance().format(sumVolDown);
+			final String sSumVolDiff = NumberFormat.getIntegerInstance().format(sumVolDiff);
+
+			final double sumPrice = UtilMethods.sum(price, days);
+			pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s %n", sumPrice, sumUp, sumDown,
+			    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff);
+
+			double currentPrice = 1.0;
+			double pastPrice = 1.0;
+			if (listName.contains("SPX")) {
+				currentPrice = spxClose;
+				pastPrice = spxClosePast;
+			} else if (listName.contains("NDX")) {
+				currentPrice = ndxClose;
+				pastPrice = ndxClosePast;
+			} else if (listName.contains("SML")) {
+				currentPrice = smlClose;
+				pastPrice = smlClosePast;
+			}
+
+			final double perChg = ((pastPrice - currentPrice) / pastPrice) * 100.0;
+			String cmt = "Up";
+			if (sumPrice < 0.0) {
+				cmt = "Down";
+			}
+			pwAll.printf(
+			    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago. %n",
+			    cmt, sumPrice / tdList.size(), perChg, currentPrice, days + 1);
+
+		
+
 	}
 
 	/**
@@ -264,105 +476,8 @@ public class Internals {
 		return retVal;
 	}
 
-	private static void printBreath(String list, String outfile, int days)
-	    throws FileNotFoundException, IOException, ParseException {
-
-		ParseData.clearValidTickers();
-		ParseData.setValidTickers(ParseData.getTickerList(list));
-
-		filenames.clear();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
-		filenames.add(dataPath + "\\ASCII\\NASDAQ");
-		filenames.add(dataPath + "\\ASCII\\NYSE");
-
-		tdList.clear();
-		tdList = ParseData.parseFiles(filenames, 50);
-
-		final int[] up = new int[days];
-		final int[] down = new int[days];
-		final int[] daily = new int[days];
-		final double[] forceUp = new double[days];
-		final double[] forceDown = new double[days];
-		double[] vol = new double[days];
-		for (int i = 0; i < days; i++) {
-			up[i] = 0;
-			down[i] = 0;
-			daily[i] = 0;
-			forceUp[i] = 0;
-			forceDown[i] = 0;
-			vol[i] = 0;
-		}
-		//double sumVol = 0;
-		double priceChg = 0;
-		double percentChg = 0;
-		double volume =0;
-
-		Calendar[] cal = null;
-		int volDays = Math.max(20, days*2);
-		for (final TickerData td : tdList) {
-			td.generateDerived();
-			if (td.getDaysOfData() > volDays) {
-				double chg = 0;
-				volume += MovingAverageMethods.sma(td.getVolumeData(), volDays);
-				for (int i = 0; i < days; i++) {
-					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
-					percentChg += chg;
-					priceChg = td.getClose(i) - td.getClose(i + 1);
-					double val = Math.abs(chg * td.getAvgVol20());
-					if (chg > 0.0) {
-						daily[i]++;
-						up[i]++;
-						forceUp[i] += val;
-					} else if (chg < 0.0) {
-						daily[i]--;
-						down[i]++;
-						forceDown[i] += val;
-					}
-					vol[i] += td.getVolume(i);
-					//sumVol += td.getVolume(i);
-				}
-				if (cal == null) {
-					cal = new Calendar[days];
-					for (int i = 0; i < days; i++) {
-						cal[i] = td.getDate(i);
-					}
-				}
-			}
-		}
-
-		Utils.makeDir("out");
-		double cumForce = 0;
-		double sumForce = 0;
-		int upDown = 0;
-		try (PrintWriter pw = new PrintWriter("out\\" + outfile + "-breadth.txt")) {
-			pw.println(" Up Down  Total    Percent       Force        VolRatio");
-			for (int i = 0; i < days; i++) {
-				double percent = (double) up[i] / (double) ParseData.getValidTickerCount() * 100.0;
-				String sUp = NumberFormat.getIntegerInstance().format(up[i]);
-				String sDown = NumberFormat.getIntegerInstance().format(down[i]);
-				String sDaily = NumberFormat.getIntegerInstance().format(daily[i]);
-				String sForce = NumberFormat.getIntegerInstance().format((int) (forceUp[i] - forceDown[i]));
-				//double avgVol = sumVol / (double) days;
-				double avgVol = volume;
-				double volRatio = vol[i] / avgVol;
-
-				pw.printf("%3s %4s %5s %10.1f%% %14s %10.2f %16s%n", sUp, sDown, sDaily, percent, sForce, volRatio,
-				    Utils.getString(cal[i]));
-				cumForce += (forceUp[i] - forceDown[i]);
-				sumForce += (forceUp[i] + forceDown[i]);
-				upDown += (up[i] - down[i]);
-			}
-			double avgForce = sumForce / (double) days;
-			String sCumForce = NumberFormat.getIntegerInstance().format((int) cumForce);
-			String sAvgForce = NumberFormat.getIntegerInstance().format((int) avgForce);
-			pw.printf("%n%10.2f %10.1f %10d %26s %15s %9.2f%n", priceChg, percentChg, upDown, sCumForce, sAvgForce, (cumForce / avgForce));
-		}
-
-	}
-
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.apps.processListPercent
 	 *
 	 * @param list
