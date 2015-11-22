@@ -68,7 +68,7 @@ public class MoneyFlowMethodsTest {
 		Assert.assertEquals(mfi, 30.84, 0.01);
 
 		mfi = MoneyFlowMethods.mfi(this.td.getTypicalPriceData(), this.td.getVolumeData(), 14);
-		//System.out.println(mfi);
+		// System.out.println(mfi);
 		Assert.assertEquals(mfi, 73.85, 0.01);
 	}
 

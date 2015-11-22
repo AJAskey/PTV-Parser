@@ -167,7 +167,7 @@ public class TickerDataTest {
 		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
 
 		DailyData dd = TickerData.getDataOfDate(td, 2015, 4, 31);
-		//Assert.assertNull(dd);
+		// Assert.assertNull(dd);
 
 		dd = TickerData.getDataOfDate(td, 2015, 15, 31);
 		Assert.assertNull(dd);
@@ -176,11 +176,11 @@ public class TickerDataTest {
 		Assert.assertNull(dd);
 
 		dd = TickerData.getDataOfDate(td, 2017, 12, 31);
-		//Assert.assertNull(dd);
+		// Assert.assertNull(dd);
 
 		dd = TickerData.getDataOfDate(td, 2015, 3, 20);
 		System.out.println(dd.toString());
-		//Assert.assertEquals(dd.getClose(), 108.02, 0.01);
+		// Assert.assertEquals(dd.getClose(), 108.02, 0.01);
 
 	}
 
@@ -194,19 +194,13 @@ public class TickerDataTest {
 	public final void testGetIndexOfDate() throws FileNotFoundException, ParseException {
 		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
 
-		int idx = TickerData.getIndexOfDate(td, 2015, 3, 15);
-		//Assert.assertEquals(idx, 155);
+		TickerData.getIndexOfDate(td, 2015, 3, 15);
 
-		idx = TickerData.getIndexOfDate(td, 2015, 3, 20);
-	//	System.out.println(idx + "\t" + td.getData().get(idx).toString());
-		//Assert.assertEquals(idx, 151);
+		TickerData.getIndexOfDate(td, 2015, 3, 20);
 
-		idx = TickerData.getIndexOfDate(td, 2014, 11, 20);
-	//	System.out.println(idx + "\t" + td.getData().get(idx).toString());
-	//	Assert.assertEquals(idx, 232);
+		TickerData.getIndexOfDate(td, 2014, 11, 20);
 
-		idx = TickerData.getIndexOfDate(td, 2010, 11, 20);
-	//	Assert.assertEquals(idx, -1);
+		TickerData.getIndexOfDate(td, 2010, 11, 20);
 
 	}
 

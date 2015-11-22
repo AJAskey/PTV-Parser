@@ -6,9 +6,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.ta.apps.StockHTML;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
-import net.ajaskey.market.ta.reports.StockHTML;
 
 /**
  *
