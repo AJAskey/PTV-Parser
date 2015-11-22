@@ -6,6 +6,9 @@ I used data from www.eoddata.com that is free.
 I have used TA-Lib (ta-lib.org) and am recreating many in my own form.
 I have also wrote some of my own metric calculations.
 
+The application AppTemplate in net.ajaskey.market.ta.apps is a good place 
+to learn how to use the data input within this project.
+
 If you are interested in working on this project or have questions then send
 an email to askeyaj@gmail.com.
 
