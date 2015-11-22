@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ import net.ajaskey.market.ta.input.ParseData;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -62,7 +61,7 @@ public class AppTemplate {
 		 *
 		 * Setup data file directories. Variable "dataPath" can be a property, set
 		 * using "args", or hard coded.
-		 * 
+		 *
 		 */
 		filenames.clear();
 		final String prop = "dataPath";
@@ -76,10 +75,10 @@ public class AppTemplate {
 
 		/**
 		 * Set valid tickers for processing. Other ticker data will be ignored.
-		 * 
+		 *
 		 * Setting the first ticker to "PROCESS_ALL_TICKERS" will retrieve data for
 		 * all tickers.
-		 * 
+		 *
 		 * You can use a ticker list file or individual ticker symbols.
 		 */
 		ParseData.clearValidTickers();
@@ -89,7 +88,7 @@ public class AppTemplate {
 
 		/**
 		 * Use tdList to store all ticker data for valid tickers.
-		 * 
+		 *
 		 * ParseData.parseFiles has two forms.
 		 */
 		tdList.clear();
@@ -98,7 +97,7 @@ public class AppTemplate {
 		 * or request calendar days of data. Probably will get only 100*5/7 trading
 		 * days. Example: 30 calendar days = 21 trading days. This is important for
 		 * calculations. Make sure you read enough data.
-		 * 
+		 *
 		 * Example: ParseData.parseFiles(filenames, 50) will not return enough data
 		 * the calculate a 50 day moving average.
 		 */
@@ -106,26 +105,26 @@ public class AppTemplate {
 
 		/**
 		 * Or read only one file in the format of
-		 * 
+		 *
 		 * <code>
-		 * FANG 
+		 * FANG
 		 * Date,Open,High,Low,Close,Volume
 		 * 19-Nov-2015,80.42,81.00,76.05,77.06,1124500
 		 * 18-Nov-2015,80.00,81.86,78.11,81.42,1429500
 		 * 17-Nov-2015,80.00,80.99,78.10,79.61,842500
 		 * </code>
-		 * 
+		 *
 		 * The "DumpTickerData" app will create files of this format from eoddata.
 		 * You can also get data from Yahoo or Stockcharts for individual tickers.
 		 * You can download the last 30 days of free data from www.eoddata.com and
 		 * use it to test this example app.
-		 * 
+		 *
 		 * The time order of the data does not matter as the SortDailyData class can
 		 * be used to sort to the order needed for algorithms in this project.
-		 * 
+		 *
 		 * A few files have been committed to use as examples.
 		 */
-		TickerData tdOne = ParseData.parseOneFile("ptv-data\\FANG.txt");
+		final TickerData tdOne = ParseData.parseOneFile("ptv-data\\FANG.txt");
 		System.out.println(tdOne.getTicker());
 
 		/**
@@ -139,7 +138,7 @@ public class AppTemplate {
 		/**
 		 * Ways to process the parsed data.
 		 */
-		for (TickerData td : tdList) {
+		for (final TickerData td : tdList) {
 			// process each set of ticker data in the list.
 			System.out.println(td.getTicker());
 		}
@@ -147,7 +146,7 @@ public class AppTemplate {
 		/**
 		 * Or retrieve individual ticker data.
 		 */
-		TickerData fang = TickerData.getTickerData(tdList, "FANG");
+		final TickerData fang = TickerData.getTickerData(tdList, "FANG");
 		if (fang != null) {
 			System.out.println(fang.getTicker());
 		}
