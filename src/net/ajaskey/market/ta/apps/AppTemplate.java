@@ -70,10 +70,6 @@ public class AppTemplate {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 
 		/**
-		 * For files containing data for one ticker.
-		 */
-
-		/**
 		 * Set valid tickers for processing. Other ticker data will be ignored.
 		 *
 		 * Setting the first ticker to "PROCESS_ALL_TICKERS" will retrieve data for
