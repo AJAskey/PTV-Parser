@@ -14,6 +14,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
+import net.ajaskey.market.ta.methods.UtilMethods;
 
 /**
  *
@@ -577,17 +578,20 @@ public class TickerData {
 		}
 
 		if (this.daysOfData > 260) {
-			this.high260 = this.taMethods.calcHigh(this.getHighData(), 260);
-			this.low260 = this.taMethods.calcLow(this.getLowData(), 260);
+			this.high260 = UtilMethods.max(this.getHighData(), 260);
+			this.low260 = UtilMethods.min(this.getLowData(), 260);
 
 			this.priceInRng260 = (this.currentPrice - this.low260) / (this.high260 - this.low260);
 			this.priceOffHigh260 = this.taMethods.calcPercentChange(this.currentPrice, this.high260);
 			this.priceOffLow260 = this.taMethods.calcPercentChange(this.currentPrice, this.low260);
 
-			this.lr260 = this.taMethods.calcLinearRegression(this.closeData, 260);
-			this.lrAngle260 = this.taMethods.calcLinearRegressionAngle(this.closeData, 260);
-			this.lrInt260 = this.taMethods.calcLinearRegressionInt(this.closeData, 260);
-			this.lrSlope260 = this.taMethods.calcLinearRegressionSlope(this.closeData, 260);
+			// this.lr260 = this.taMethods.calcLinearRegression(this.closeData, 260);
+			// this.lrAngle260 =
+			// this.taMethods.calcLinearRegressionAngle(this.closeData, 260);
+			// this.lrInt260 = this.taMethods.calcLinearRegressionInt(this.closeData,
+			// 260);
+			// this.lrSlope260 =
+			// this.taMethods.calcLinearRegressionSlope(this.closeData, 260);
 		}
 
 		if (this.daysOfData > 30) {
