@@ -144,7 +144,7 @@ public class TaMethods implements TaMethodsIF {
 
 	public double calcSma(double[] data, int days) {
 		double retVal = 0;
-		retVal = MovingAverageMethods.sma(data, days);
+		retVal = UtilMethods.sma(data, days);
 		return retVal;
 	}
 
@@ -158,8 +158,8 @@ public class TaMethods implements TaMethodsIF {
 	@Override
 	public TrendType calcSmaTrend(double[] data, int days, int span) {
 		TrendType trend = TrendType.FLAT;
-		final double val1 = MovingAverageMethods.sma(data, days);
-		final double val2 = MovingAverageMethods.sma(data, days, span);
+		final double val1 = UtilMethods.sma(data, days);
+		final double val2 = UtilMethods.sma(data, days, span);
 
 		if (val1 > val2) {
 			trend = TrendType.UP;

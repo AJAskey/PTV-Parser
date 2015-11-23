@@ -452,6 +452,7 @@ public class ParseData {
 	 * @param f
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private static boolean isCurrent(File f) {
 		boolean current = false;
 		if (f.exists()) {

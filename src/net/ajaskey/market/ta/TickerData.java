@@ -11,7 +11,6 @@ import java.util.List;
 import net.ajaskey.market.ta.input.Fundamentals;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
-import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.RangeMethods;
 import net.ajaskey.market.ta.methods.TaMethods;
 import net.ajaskey.market.ta.methods.UtilMethods;
@@ -529,7 +528,7 @@ public class TickerData {
 		}
 
 		if (this.daysOfData > 28) {
-			this.sma23 = MovingAverageMethods.sma(this.getCloseData(), 23);
+			this.sma23 = UtilMethods.sma(this.getCloseData(), 23);
 			this.smaPerc23 = this.taMethods.calcPercentChange(this.currentPrice, this.sma23);
 			this.sma23Trend = this.taMethods.calcSmaTrend(this.closeData, 23, 5);
 		}

@@ -13,7 +13,6 @@ import java.util.List;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
-import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.UtilMethods;
 
 /**
@@ -35,7 +34,7 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *         
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -263,7 +262,7 @@ public class Internals {
 			// days*2);
 			if (td.getDaysOfData() > (days * 2)) {
 				double chg = 0;
-				volume += MovingAverageMethods.sma(td.getVolumeData(), days * 2);
+				volume += UtilMethods.sma(td.getVolumeData(), days * 2);
 				for (int i = 0; i < days; i++) {
 					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 					priceChg = td.getClose(i) - td.getClose(i + 1);

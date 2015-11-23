@@ -93,7 +93,7 @@ public class RangeMethods {
 		double atrPercent = 0.0;
 		atrVal = RangeMethods.avgTrueRange(high, low, close, days);
 		if (atrVal > 0.0) {
-			final double ma = MovingAverageMethods.sma(close, days);
+			final double ma = UtilMethods.sma(close, days);
 			atrPercent = (atrVal / ma) * 100.0;
 		}
 		return atrPercent;
