@@ -2,6 +2,7 @@
 package net.ajaskey.market.ta.methods;
 
 /**
+ * This class provides static simple statistical methods.
  *
  * @author Andy Askey
  *
@@ -69,7 +70,7 @@ public class UtilMethods {
 	 * @return
 	 */
 	static public double avgRngPercent(double[] high, double[] low, int days) {
-		final double ma = UtilMethods.rngMA(high, low, days);
+		final double ma = UtilMethods.rngAvg(high, low, days);
 		double retVal = 0.0;
 		if (ma > 0.0) {
 			retVal = (UtilMethods.avgRng(high, low, days) / ma) * 100.0;
@@ -102,6 +103,248 @@ public class UtilMethods {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public double max(double[] val, int days) {
+		return UtilMethods.max(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double max(double[] val, int days, int start) {
+		double retVal = 0;
+		try {
+			retVal = org.apache.commons.math3.stat.StatUtils.max(val, start, days);
+		} catch (final Exception e) {
+			retVal = 0;
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public float max(float[] val, int days) {
+		return UtilMethods.max(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public float max(float[] val, int days, int start) {
+		float retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (float) UtilMethods.max(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public int max(int[] val, int days) {
+		return UtilMethods.max(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public int max(int[] val, int days, int start) {
+		int retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.max(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public long max(long[] val, int days) {
+		return UtilMethods.max(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.max
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public long max(long[] val, int days, int start) {
+		long retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.max(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public double min(double[] val, int days) {
+		return UtilMethods.min(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double min(double[] val, int days, int start) {
+		double retVal = 0;
+		try {
+			retVal = org.apache.commons.math3.stat.StatUtils.min(val, start, days);
+		} catch (final Exception e) {
+			retVal = 0;
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public float min(float[] val, int days) {
+		return UtilMethods.min(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public float min(float[] val, int days, int start) {
+		float retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (float) UtilMethods.min(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public int min(int[] val, int days) {
+		return UtilMethods.min(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public int min(int[] val, int days, int start) {
+		int retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.min(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public long min(long[] val, int days) {
+		return UtilMethods.min(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.min
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public long min(long[] val, int days, int start) {
+		long retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.min(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.methods.rngMA
 	 *
 	 * @param high
@@ -109,16 +352,139 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double rngMA(double[] high, double[] low, int days) {
+	static public double rngAvg(double[] high, double[] low, int days) {
 		double ma = 0.0;
+		final double[] da = new double[high.length];
 		if ((high != null) && (low != null)) {
 			if (days <= high.length) {
 				for (int i = 0; i < days; i++) {
-					ma += (high[i] + low[i]) / 2.0;
+					da[i] = (high[i] + low[i]) / 2.0;
 				}
+				ma = UtilMethods.sma(da, days);
 			}
 		}
 		return ma;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public double sma(double[] val, int days) {
+		return UtilMethods.sma(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double sma(double[] val, int days, int start) {
+		double retVal = 0;
+		try {
+			retVal = org.apache.commons.math3.stat.StatUtils.mean(val, start, days);
+		} catch (final Exception e) {
+			retVal = 0;
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public float sma(float[] val, int days) {
+		return UtilMethods.sma(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public float sma(float[] val, int days, int start) {
+		float retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (float) UtilMethods.sma(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public int sma(int[] val, int days) {
+		return UtilMethods.sma(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public int sma(int[] val, int days, int start) {
+		int retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.sma(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public long sma(long[] val, int days) {
+		return UtilMethods.sma(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sma
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public long sma(long[] val, int days, int start) {
+		long retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.sma(da, days, 0);
+		}
+		return retVal;
 	}
 
 	/**
@@ -130,15 +496,7 @@ public class UtilMethods {
 	 * @return
 	 */
 	static public double sum(double[] val, int days) {
-		double retVal = 0.0;
-		if (val != null) {
-			if (days <= val.length) {
-				for (int i = 0; i < days; i++) {
-					retVal += val[i];
-				}
-			}
-		}
-		return retVal;
+		return UtilMethods.sum(val, days, 0);
 	}
 
 	/**
@@ -151,31 +509,169 @@ public class UtilMethods {
 	 * @return
 	 */
 	static public double sum(double[] val, int days, int start) {
-		return UtilMethods.sum(UtilMethods.getDataSlice(val, start, days), days);
+		double retVal = 0;
+		try {
+			retVal = org.apache.commons.math3.stat.StatUtils.sum(val, start, days);
+		} catch (final Exception e) {
+			retVal = 0;
+		}
+		return retVal;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public float sum(float[] val, int days) {
+		return UtilMethods.sum(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public float sum(float[] val, int days, int start) {
+		float retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (float) UtilMethods.sum(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
 	static public int sum(int[] val, int days) {
+		return UtilMethods.sum(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public int sum(int[] val, int days, int start) {
 		int retVal = 0;
-		if (val != null) {
-			if (days <= val.length) {
-				for (int i = 0; i < days; i++) {
-					retVal += val[i];
-				}
-			}
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (int) UtilMethods.sum(da, days, 0);
 		}
 		return retVal;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
 	static public long sum(long[] val, int days) {
+		return UtilMethods.sum(val, days, 0);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.sum
+	 *
+	 * @param val
+	 * @param days
+	 * @return
+	 */
+	static public long sum(long[] val, int days, int start) {
 		long retVal = 0;
+		final double[] da = UtilMethods.toDouble(val, days, start);
+		if (da != null) {
+			retVal = (long) UtilMethods.sum(da, days, 0);
+		}
+		return retVal;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.toDouble
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double[] toDouble(float[] val, int days, int start) {
+		double[] da = null;
 		if (val != null) {
-			if (days <= val.length) {
-				for (int i = 0; i < days; i++) {
-					retVal += val[i];
+			if ((start + days) <= val.length) {
+				da = new double[days];
+				int knt = 0;
+				for (int i = start; i < (start + days); i++) {
+					da[knt++] = val[i];
 				}
 			}
 		}
-		return retVal;
+		return da;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.toDouble
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double[] toDouble(int[] val, int days, int start) {
+		double[] da = null;
+		if (val != null) {
+			if ((start + days) <= val.length) {
+				da = new double[days];
+				int knt = 0;
+				for (int i = start; i < (start + days); i++) {
+					da[knt++] = val[i];
+				}
+			}
+		}
+		return da;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.toDouble
+	 *
+	 * @param val
+	 * @param days
+	 * @param start
+	 * @return
+	 */
+	static public double[] toDouble(long[] val, int days, int start) {
+		double[] da = null;
+		if (val != null) {
+			if ((start + days) <= val.length) {
+				da = new double[days];
+				int knt = 0;
+				for (int i = start; i < (start + days); i++) {
+					da[knt++] = val[i];
+				}
+			}
+		}
+		return da;
 	}
 
 }

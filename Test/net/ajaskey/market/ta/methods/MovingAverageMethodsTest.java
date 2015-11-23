@@ -42,6 +42,7 @@ public class MovingAverageMethodsTest {
 
 	private final TickerData	tdSC;
 	private final TickerData	td;
+	private double [] dData10 = {1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0};
 
 	public MovingAverageMethodsTest() throws FileNotFoundException, IOException, ParseException {
 
@@ -75,8 +76,8 @@ public class MovingAverageMethodsTest {
 
 	@Test
 	public void testSma10() {
-		final double ma = MovingAverageMethods.sma(this.tdSC, 10);
-		Assert.assertEquals(ma, 23.13, 0.1);
+		final double ma = MovingAverageMethods.sma(dData10, 10);
+		Assert.assertEquals(ma, 5.5, 0.1);
 	}
 
 	@Test
