@@ -121,59 +121,6 @@ public interface TaMethodsIF {
 	 */
 	double calcDiPlus(double[] high, double[] low, double[] close, int days);
 
-	/**
-	 * net.ajaskey.market.ta.methods.calcHigh
-	 *
-	 * @param high
-	 * @param days
-	 * @return
-	 */
-	double calcHigh(double[] high, int days);
-
-	/**
-	 * net.ajaskey.market.ta.methods.calcLinearRegression
-	 *
-	 * @param close
-	 * @param days
-	 * @return
-	 */
-	double calcLinearRegression(double[] close, int days);
-
-	/**
-	 * net.ajaskey.market.ta.methods.calcLinearRegressionAngle
-	 *
-	 * @param close
-	 * @param days
-	 * @return
-	 */
-	double calcLinearRegressionAngle(double[] close, int days);
-
-	/**
-	 * net.ajaskey.market.ta.methods.calcLinearRegressionInt
-	 *
-	 * @param close
-	 * @param days
-	 * @return
-	 */
-	double calcLinearRegressionInt(double[] close, int days);
-
-	/**
-	 * net.ajaskey.market.ta.methods.calcLinearRegressionSlope
-	 *
-	 * @param close
-	 * @param days
-	 * @return
-	 */
-	double calcLinearRegressionSlope(double[] close, int days);
-
-	/**
-	 * net.ajaskey.market.ta.methods.calcLow
-	 *
-	 * @param low
-	 * @param days
-	 * @return
-	 */
-	double calcLow(double[] low, int days);
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcMFI
@@ -185,14 +132,7 @@ public interface TaMethodsIF {
 	 */
 	double calcMFI(double[] typicalPrice, double[] volume, int days);
 
-	/**
-	 * net.ajaskey.market.ta.methods.calcSma
-	 *
-	 * @param data
-	 * @param days
-	 * @return
-	 */
-	double calcSma(double[] data, int days);
+
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcSmaTrend
