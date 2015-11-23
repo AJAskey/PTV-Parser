@@ -88,7 +88,8 @@ public class MovingAverageMethods {
 	static public double sma(double[] val, int days) {
 		double retVal = 0.0;
 		if (Methods.checkParams(val, days, 0, "MovingAverageMethods.sma(double[] val, int days)")) {
-			retVal = UtilMethods.sum(val, days) / days;
+			double tmp = UtilMethods.sum(val, days);
+			retVal = tmp / days;
 		}
 		return retVal;
 	}
