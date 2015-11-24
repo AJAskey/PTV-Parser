@@ -7,10 +7,14 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 
+ * This class contains static utility methods used by this project.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -21,7 +25,9 @@ import java.util.concurrent.TimeUnit;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- *
+ *         </p>
+ *         
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -30,6 +36,7 @@ import java.util.concurrent.TimeUnit;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class Utils {
