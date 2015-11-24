@@ -12,10 +12,14 @@ import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.YahooData;
 
 /**
+ * This application reads the contents of stock-list.txt and uses Yahoo to find additional data.
+ * The data is written to stocks-fundie-list.txt.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -26,7 +30,9 @@ import net.ajaskey.market.ta.input.YahooData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- *
+ *         </p>
+ * 
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -35,6 +41,7 @@ import net.ajaskey.market.ta.input.YahooData;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class GenerateFundies {
@@ -83,7 +90,7 @@ public class GenerateFundies {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		System.out.println("Processing...");
+		System.out.println("GenerateFundies Processing...");
 
 		GenerateFundies.build();
 
@@ -93,7 +100,7 @@ public class GenerateFundies {
 			}
 		}
 
-		System.out.println("Done.");
+		System.out.println("GenerateFundies Done.");
 	}
 
 	/**

@@ -197,17 +197,38 @@ public class TickerData {
 		return tdList;
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.ta.clearTickerData
+	 *
+	 * @param td
+	 */
 	public static void clearTickerData(TickerData td) {
-		td.data.clear();
-		td.openData = null;
-		td.highData = null;
-		td.lowData = null;
-		td.closeData = null;
-		td.volumeData = null;
-		td.trueHighData = null;
-		td.trueLowData = null;
-		td.typicalPriceData = null;
-		td = null;
+		if (td != null) {
+			td.data.clear();
+			td.openData = null;
+			td.highData = null;
+			td.lowData = null;
+			td.closeData = null;
+			td.volumeData = null;
+			td.trueHighData = null;
+			td.trueLowData = null;
+			td.typicalPriceData = null;
+		}
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.clearTickerData
+	 *
+	 * @param tdList
+	 */
+	public static void clearTickerData(List<TickerData> tdList) {
+		if (tdList != null) {
+			for (TickerData td : tdList) {
+				clearTickerData(td);
+			}
+		}
 	}
 
 	/**

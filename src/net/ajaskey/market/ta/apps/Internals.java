@@ -105,7 +105,7 @@ public class Internals {
 		}
 
 		pwAll.close();
-		System.out.println("Done.");
+		System.out.println("Internals Done.");
 
 	}
 
@@ -224,6 +224,7 @@ public class Internals {
 		final String dataPath = System.getProperty(arg, "");
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
+		filenames.add(dataPath + "\\ASCII\\AMEX");
 
 		final int tdays = ((days * 7) / 5) + 1;
 		final int dataDays = Math.max(30, (int) (tdays * 2.25));
@@ -297,7 +298,7 @@ public class Internals {
 
 		Utils.makeDir("out");
 		double cumForce = 0;
-		pwAll.printf("%n\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
+		pwAll.printf("\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
 		for (int i = 0; i < days; i++) {
 			final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);
@@ -330,7 +331,7 @@ public class Internals {
 		final String sSumVolDiff = NumberFormat.getIntegerInstance().format(sumVolDiff);
 
 		final double sumPrice = UtilMethods.sum(price, days);
-		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s %n", sumPrice, sumUp, sumDown,
+		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s%n", sumPrice, sumUp, sumDown,
 		    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff);
 
 		double currentPrice = 1.0;
@@ -352,7 +353,7 @@ public class Internals {
 			cmt = "Down";
 		}
 		pwAll.printf(
-		    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago. %n",
+		    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago.%n%n",
 		    cmt, sumPrice / tdList.size(), perChg, currentPrice, days + 1);
 
 	}
