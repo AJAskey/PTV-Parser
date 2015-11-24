@@ -216,6 +216,7 @@ public class TickerData {
 			for (final TickerData td : tdList) {
 				TickerData.clearTickerData(td);
 			}
+			tdList.clear();
 		}
 	}
 
@@ -236,6 +237,7 @@ public class TickerData {
 			td.trueHighData = null;
 			td.trueLowData = null;
 			td.typicalPriceData = null;
+			td.dateData = null;
 		}
 	}
 

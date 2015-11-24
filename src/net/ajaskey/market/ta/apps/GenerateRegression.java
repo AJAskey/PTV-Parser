@@ -59,14 +59,14 @@ public class GenerateRegression {
 		System.out.println(spx.DailyDataString(0));
 
 		final RegressionMethods rm = new RegressionMethods();
-		rm.addData(spx.getCloseData(), spx.getDateData(), 261 * 35);
+		rm.addData(spx.getCloseData(), spx.getDateData(), 261 * 25);
 		rm.regress();
 
 		final double slope = rm.sreg.getSlope();
 		System.out.println((slope * 180.0) / Math.PI);
 
 		final Calendar cal = Calendar.getInstance();
-		cal.set(2018, Calendar.MARCH, 15);
+		//cal.set(2018, Calendar.MARCH, 15);
 		final double x = rm.findX(cal);
 		final double y = rm.sreg.predict(x);
 		System.out.println(y);
