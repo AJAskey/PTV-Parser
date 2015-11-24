@@ -34,6 +34,7 @@ CAZ15     	No. 7 Cocoa {Dec 15}                              	LIFFE
 CAZ16     	No. 7 Cocoa {Dec 16}                              	LIFFE     
 EG.C      	EuroDollar Continuation                           	LIFFE     
 EGF16     	EuroDollar {Jan 16}                               	LIFFE     
+EGG16     	EuroDollar {Feb 16}                               	LIFFE     
 EGH16     	EuroDollar {Mar 16}                               	LIFFE     
 EGH17     	EuroDollar {Mar 17}                               	LIFFE     
 EGH18     	EuroDollar {Mar 18}                               	LIFFE     
@@ -49,7 +50,6 @@ EGU17     	EuroDollar {Sep 17}                               	LIFFE
 EGU18     	EuroDollar {Sep 18}                               	LIFFE     
 EGU19     	EuroDollar {Sep 19}                               	LIFFE     
 EGU20     	EuroDollar {Sep 20}                               	LIFFE     
-EGV15     	EuroDollar {Oct 15}                               	LIFFE     
 EGX15     	EuroDollar {Nov 15}                               	LIFFE     
 EGZ15     	EuroDollar {Dec 15}                               	LIFFE     
 EGZ16     	EuroDollar {Dec 16}                               	LIFFE     
@@ -138,7 +138,6 @@ IMU18     	3-Month EuriBor {Sep 18}                          	LIFFE
 IMU19     	3-Month EuriBor {Sep 19}                          	LIFFE     
 IMU20     	3-Month EuriBor {Sep 20}                          	LIFFE     
 IMU21     	3-Month EuriBor {Sep 21}                          	LIFFE     
-IMV15     	3-Month EuriBor {Oct 15}                          	LIFFE     
 IMX15     	3-Month EuriBor {Nov 15}                          	LIFFE     
 IMZ15     	3-Month EuriBor {Dec 15}                          	LIFFE     
 IMZ16     	3-Month EuriBor {Dec 16}                          	LIFFE     
@@ -249,7 +248,6 @@ LU18      	3-Month Sterling {Sep 18}                         	LIFFE
 LU19      	3-Month Sterling {Sep 19}                         	LIFFE     
 LU20      	3-Month Sterling {Sep 20}                         	LIFFE     
 LU21      	3-Month Sterling {Sep 21}                         	LIFFE     
-LV15      	3-Month Sterling {Oct 15}                         	LIFFE     
 LW.C      	Wheat Continuation                                	LIFFE     
 LWF16     	Wheat {Jan 16}                                    	LIFFE     
 LWF17     	Wheat {Jan 17}                                    	LIFFE     
@@ -308,7 +306,6 @@ N3U19     	UK Base Electricity {Sep 19}                      	LIFFE
 N3V16     	UK Base Electricity {Oct 16}                      	LIFFE     
 N3V17     	UK Base Electricity {Oct 17}                      	LIFFE     
 N3V18     	UK Base Electricity {Oct 18}                      	LIFFE     
-N3X15     	UK Base Electricity {Nov 15}                      	LIFFE     
 N3X16     	UK Base Electricity {Nov 16}                      	LIFFE     
 N3X17     	UK Base Electricity {Nov 17}                      	LIFFE     
 N3X18     	UK Base Electricity {Nov 18}                      	LIFFE     
@@ -422,7 +419,6 @@ N7U19     	UK Peak Electricity {Sep 19}                      	LIFFE
 N7V16     	UK Peak Electricity {Oct 16}                      	LIFFE     
 N7V17     	UK Peak Electricity {Oct 17}                      	LIFFE     
 N7V18     	UK Peak Electricity {Oct 18}                      	LIFFE     
-N7X15     	UK Peak Electricity {Nov 15}                      	LIFFE     
 N7X16     	UK Peak Electricity {Nov 16}                      	LIFFE     
 N7X17     	UK Peak Electricity {Nov 17}                      	LIFFE     
 N7X18     	UK Peak Electricity {Nov 18}                      	LIFFE     
@@ -523,6 +519,7 @@ SWH17     	No. 5 White Sugar {Mar 17}                        	LIFFE
 SWK16     	No. 5 White Sugar {May 16}                        	LIFFE     
 SWK17     	No. 5 White Sugar {May 17}                        	LIFFE     
 SWQ16     	No. 5 White Sugar {Aug 16}                        	LIFFE     
+SWQ17     	No. 5 White Sugar {Aug 17}                        	LIFFE     
 SWV16     	No. 5 White Sugar {Oct 16}                        	LIFFE     
 SWZ15     	No. 5 White Sugar {Dec 15}                        	LIFFE     
 SWZ16     	No. 5 White Sugar {Dec 16}                        	LIFFE     

@@ -579,8 +579,6 @@ BHL       	Siic Environment Holdingsltd.1                    	SGX
 BHO       	Top Global Limited                                	SGX       
 BHP       	Top Global Limited 1                              	SGX       
 BHQ       	Sunningdale Tech Ltd                              	SGX       
-BHRR      	Croesus Retail Trust R                            	SGX       
-BHSR      	Croesus Retail Trust R1                           	SGX       
 BHTW      	Dbs Mb Ecw160128                                  	SGX       
 BHU       	Sutl Enterprise Limited                           	SGX       
 BHVR      	Blumont Group Ltd. R                              	SGX       
@@ -588,6 +586,7 @@ BHZW      	Nikkei225 19000 Mb Ecw160311                      	SGX
 BICW      	Nikkei225 17000 Mb Epw160311                      	SGX       
 BIDW      	Nikkei225 18500 Mb Epw160311                      	SGX       
 BIEW      	Nikkei225 20000 Mb Epw160311                      	SGX       
+BIFW      	Dbs Mb Ecw160215                                  	SGX       
 BIGW      	Hsi 21000 Mb Epw151127                            	SGX       
 BIHW      	Hsi 22400 Mb Ecw151127                            	SGX       
 BIIW      	Singtel Mb Ecw160504                              	SGX       
@@ -602,6 +601,7 @@ BIQW      	Hsi 23200 Vt Ecw160128                            	SGX
 BIRW      	Hsi 24800 Vt Ecw160128                            	SGX       
 BISW      	Hsi 21200 Vt Epw160128                            	SGX       
 BIX       	Ellipsiz Ltd                                      	SGX       
+BIYW      	Ftsechinaa50 11500 Mbecw160128                    	SGX       
 BIZW      	Ftsechinaa50 9500 Mbepw160128                     	SGX       
 BJAW      	Hsi 24600 Mb Ecw151230                            	SGX       
 BJBW      	Hsi  22400 Mb Epw151230                           	SGX       
@@ -618,6 +618,7 @@ BJRW      	Kepcorp Mb Epw160601                              	SGX
 BJSW      	Kepcorp Mbecw160601                               	SGX       
 BJTW      	Sti 3100 Mb Ecw160229                             	SGX       
 BJUW      	Sti 2900 Mb Epw160229                             	SGX       
+BJV       	Yamada Green Resources Limited                    	SGX       
 BJW       	Shinvest Holding Ltd.                             	SGX       
 BJYW      	Hsi 23200 Mb Epw151230                            	SGX       
 BJZ       	Koda Ltd                                          	SGX       
@@ -626,6 +627,12 @@ BKDW      	Dbs Mb Ecw160701                                  	SGX
 BKEW      	Kepcorp Mb Epw160901                              	SGX       
 BKHW      	Ocbc Bk Mb Ecw160701                              	SGX       
 BKJW      	Uob Mbecw160601                                   	SGX       
+BKK       	Luxking Group Holdings Limited                    	SGX       
+BKTW      	Hsi 22800 Mb Ecw151230                            	SGX       
+BKUW      	Hsi 21400 Mb Epw151230                            	SGX       
+BKV       	Dukang Distillers Hldgs Ltd                       	SGX       
+BKX       	Yongmao Holdings Limited                          	SGX       
+BKY       	Avi-tech Electronics Limited                      	SGX       
 BN2       	Valuetronics Holdings Limited                     	SGX       
 BN4       	Keppel Corporation Limited                        	SGX       
 BR9       	China Hongxing Sports Limited                     	SGX       
@@ -710,7 +717,6 @@ EG0       	Jes International Holdings Ltd                    	SGX
 EH5       	United Overseas Australia Ltd                     	SGX       
 ER0       	Ksh Holdings Limited                              	SGX       
 ES3       	Sti Etf                                           	SGX       
-F01       	Freight Links Express Holdings                    	SGX       
 F03       	Food Empire Holdings Limited                      	SGX       
 F10       	F J Benjamin Holdings Ltd                         	SGX       
 F11       	Fung Choi Media Group Limited                     	SGX       

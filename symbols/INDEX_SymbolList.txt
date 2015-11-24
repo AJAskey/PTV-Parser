@@ -66,9 +66,39 @@ AVVT.IDX  	Total Advancing Volume                            	INDEX
 AVVV.IDX  	Tsxv Advancing Volume                             	INDEX     
 AVVX.IDX  	CAD Total Advancing Volume                        	INDEX     
 BANK.IDX  	Nasdaq Bank                                       	INDEX     
+BCMA.IDX  	Barchart Market Momentum Index Advances           	INDEX     
 BCMC.IDX  	Barchart TSX Market Momentum Index                	INDEX     
+BCMD.IDX  	Barchart Market Momentum Index Declines           	INDEX     
+BCME.IDX  	Barchart TSX Market Momentum Index Advances       	INDEX     
+BCMF.IDX  	Barchart TSX Market Momentum Index Declines       	INDEX     
+BCMG.IDX  	Barchart TSX Market Momentum Index Unch           	INDEX     
 BCMM.IDX  	Barchart Market Momentum Index                    	INDEX     
+BCMU.IDX  	Barchart Market Momentum Index Unch               	INDEX     
+BDMA.IDX  	Barchart Market Momentum Advances Yesterday       	INDEX     
+BDMC.IDX  	Barchart TSX Market Momentum Yesterday            	INDEX     
+BDMD.IDX  	Barchart Market Momentum Declines Yesterday       	INDEX     
+BDME.IDX  	Barchart TSX Market Momentum Advances Yesterday   	INDEX     
+BDMF.IDX  	Barchart TSX Market Momentum Declines Yesterday   	INDEX     
+BDMG.IDX  	Barchart TSX Market Momentum Unch Yesterday       	INDEX     
+BDMM.IDX  	Barchart Market Momentum Yesterday                	INDEX     
+BDMU.IDX  	Barchart Market Momentum Unch Yesterday           	INDEX     
+BFMA.IDX  	Barchart Market Momentum Advances Last Week       	INDEX     
+BFMC.IDX  	Barchart TSX Market Momentum Last Week            	INDEX     
+BFMD.IDX  	Barchart Market Momentum Declines Last Week       	INDEX     
+BFME.IDX  	Barchart TSX Market Momentum Advances Last Week   	INDEX     
+BFMF.IDX  	Barchart TSX Market Momentum Declines Last Week   	INDEX     
+BFMG.IDX  	Barchart TSX Market Momentum Unch Last Week       	INDEX     
+BFMM.IDX  	Barchart Market Momentum Last Week                	INDEX     
+BFMU.IDX  	Barchart Market Momentum Unch Last Week           	INDEX     
 BFX.IDX   	BEL 20 - Belgium                                  	INDEX     
+BGMA.IDX  	Barchart Market Momentum Advances Last Month      	INDEX     
+BGMC.IDX  	Barchart TSX Market Momentum Last Month           	INDEX     
+BGMD.IDX  	Barchart Market Momentum Declines Last Month      	INDEX     
+BGME.IDX  	Barchart TSX Market Momentum Advances Last Month  	INDEX     
+BGMF.IDX  	Barchart TSX Market Momentum Declines Last Month  	INDEX     
+BGMG.IDX  	Barchart TSX Market Momentum Unch Last Month      	INDEX     
+BGMM.IDX  	Barchart Market Momentum Last Month               	INDEX     
+BGMU.IDX  	Barchart Market Momentum Unch Last Month          	INDEX     
 BJE.IDX   	NYSE Arca Mini-Biotechnology In-                  	INDEX     
 BKNIF.IDX 	Bank Nifty                                        	INDEX     
 BKX.IDX   	KBW Bank Index                                    	INDEX     
@@ -579,16 +609,46 @@ MMOF.IDX  	Percent of Stocks Above 150-Day Average           	INDEX
 MMOH.IDX  	Percent of Stocks Above 100-Day Average           	INDEX     
 MMTH.IDX  	Percent of Stocks Above 200-Day Average           	INDEX     
 MMTW.IDX  	Percent of Stocks Above 20-Day Average            	INDEX     
+MNFI.IDX  	Percent Above 50-Day Average Yesterday            	INDEX     
 MNG.IDX   	AMEX MINI-NATURAL GAS INDEX                       	INDEX     
+MNOF.IDX  	Percent Above 150-Day Average Yesterday           	INDEX     
+MNOH.IDX  	Percent Above 100-Day Average Yesterday           	INDEX     
+MNTH.IDX  	Percent Above 200-Day Average Yesterday           	INDEX     
+MNTW.IDX  	Percent Above 20-Day Average Yesterday            	INDEX     
 MNXR.IDX  	S&P C.S. Mn-Minneapolis Home Price Index          	INDEX     
+MOFI.IDX  	Percent Above 50-Day Average Last Week            	INDEX     
+MOOF.IDX  	Percent Above 150-Day Average Last Week           	INDEX     
+MOOH.IDX  	Percent Above 100-Day Average Last Week           	INDEX     
+MOTH.IDX  	Percent Above 200-Day Average Last Week           	INDEX     
+MOTW.IDX  	Percent Above 20-Day Average Last Week            	INDEX     
+MPFI.IDX  	Percent Above 50-Day Average Last Month           	INDEX     
+MPOF.IDX  	Percent Above 150-Day Average Last Month          	INDEX     
+MPOH.IDX  	Percent Above 100-Day Average Last Month          	INDEX     
+MPTH.IDX  	Percent Above 200-Day Average Last Month          	INDEX     
+MPTW.IDX  	Percent Above 20-Day Average Last Month           	INDEX     
 MSH.IDX   	AMEX Morgan Stanley Hi Tech 35                    	INDEX     
-MTFI.IDX  	CAD Percent of Stocks Above 50-Day Average        	INDEX     
-MTOF.IDX  	CAD Percent of Stocks Above 150-Day Average       	INDEX     
-MTOH.IDX  	CAD Percent of Stocks Above 100-Day Average       	INDEX     
-MTTH.IDX  	CAD Percent of Stocks Above 200-Day Average       	INDEX     
-MTTW.IDX  	CAD Percent of Stocks Above 20-Day Average        	INDEX     
+MTFI.IDX  	TSX Percent of Stocks Above 50-Day Average        	INDEX     
+MTOF.IDX  	TSX Percent of Stocks Above 150-Day Average       	INDEX     
+MTOH.IDX  	TSX Percent of Stocks Above 100-Day Average       	INDEX     
+MTTH.IDX  	TSX Percent of Stocks Above 200-Day Average       	INDEX     
+MTTW.IDX  	TSX Percent of Stocks Above 20-Day Average        	INDEX     
+MUFI.IDX  	TSX Percent Above 50-Day Average Yesterday        	INDEX     
+MUOF.IDX  	TSX Percent Above 150-Day Average Yesterday       	INDEX     
+MUOH.IDX  	TSX Percent Above 100-Day Average Yesterday       	INDEX     
+MUTH.IDX  	TSX Percent Above 200-Day Average Yesterday       	INDEX     
+MUTW.IDX  	TSX Percent Above 20-Day Average Yesterday        	INDEX     
 MUV.IDX   	Mdcp 400Bar Val                                   	INDEX     
+MVFI.IDX  	TSX Percent Above 50-Day Average Last Week        	INDEX     
 MVH.IDX   	Morgan Stanley High-Technology                    	INDEX     
+MVOF.IDX  	TSX Percent Above 150-Day Average Last Week       	INDEX     
+MVOH.IDX  	TSX Percent Above 100-Day Average Last Week       	INDEX     
+MVTH.IDX  	TSX Percent Above 200-Day Average Last Week       	INDEX     
+MVTW.IDX  	TSX Percent Above 20-Day Average Last Week        	INDEX     
+MWFI.IDX  	TSX Percent Above 50-Day Average Last Month       	INDEX     
+MWOF.IDX  	TSX Percent Above 150-Day Average Last Month      	INDEX     
+MWOH.IDX  	TSX Percent Above 100-Day Average Last Month      	INDEX     
+MWTH.IDX  	TSX Percent Above 200-Day Average Last Month      	INDEX     
+MWTW.IDX  	TSX Percent Above 20-Day Average Last Month       	INDEX     
 MXX.IDX   	Mexico IPC                                        	INDEX     
 MXY.IDX   	AMEX Mexico Index                                 	INDEX     
 MYHA.IDX  	YTD Highs AMEX                                    	INDEX     
