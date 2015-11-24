@@ -65,7 +65,7 @@ public class WhosHot {
 
 		if (!init) {
 
-			// fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+			fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 			// fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
@@ -76,7 +76,7 @@ public class WhosHot {
 			// filenames.add(dataPath + "\\ASCII\\AMEX");
 			filenames.add(dataPath + "\\ASCII\\NYSE");
 			filenames.add(dataPath + "\\ASCII\\NASDAQ");
-			// filenames.add(dataPath + "\\ASCII\\INDEX");
+			filenames.add(dataPath + "\\ASCII\\INDEX");
 			// filenames.add(dataPath + "\\ASCII\\USMF");
 
 			Fundamentals.build("lists\\stock-fundie-list.txt");
@@ -101,9 +101,9 @@ public class WhosHot {
 
 		System.out.println("Processing...");
 
-		// WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
-		// WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
-		// WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
+		WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
+		WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
+		WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
 		WhosHot.processList("lists\\stock-list.txt", "stocks", 0, 750000);
 
 		System.out.println("Done.");
@@ -238,6 +238,7 @@ public class WhosHot {
 				}
 			}
 		}
+		TickerData.clearTickerData(tdAll);
 	}
 
 }
