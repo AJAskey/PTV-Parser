@@ -5,10 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ *
+ * This class provides a method to store other information beyond price and
+ * volume data.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -19,7 +24,9 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
+ *         </p>
  *
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,22 +35,66 @@ import java.util.List;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class IndustryData {
 
-	private String							name;
+	/**
+	 * Industry name
+	 */
+	private String							industry;
+	/**
+	 * Sector name
+	 */
+	private String							sector;
+	/**
+	 * Ticker symbol name
+	 */
 	private String							ticker;
+	/**
+	 * Stock exchange
+	 */
 	private String							exch;
+	/**
+	 * Price performance data used to calculate a RS
+	 */
 	private double							rawRs;
+	/**
+	 * Short term price performance data used to calculate a RS
+	 */
 	private double							rawRsSt;
+	/**
+	 * Price change over the last 260 trading days
+	 */
 	private double							chg260;
+	/**
+	 * Average volume traded per day
+	 */
 	private double							avgVol;
+	/**
+	 * Relative level of price with the 260 day range
+	 */
 	private double							priceInRange260;
+	/**
+	 * Shares outstanding
+	 */
 	private long								outShares;
+	/**
+	 * Shares float
+	 */
 	private long								fShares;
+	/**
+	 * Market cap of company
+	 */
 	private String							marketCap;
+	/**
+	 * Rank based on raw RS data. The best performing stock is 1.
+	 */
 	private final List<Integer>	rank	= new ArrayList<>();
+	/**
+	 * The linear regression slope
+	 */
 	private final List<Double>	slope	= new ArrayList<>();
 
 	/**
@@ -94,10 +145,10 @@ public class IndustryData {
 	}
 
 	/**
-	 * @return the name
+	 * @return the industry
 	 */
 	public String getName() {
-		return this.name;
+		return this.industry;
 	}
 
 	/**
@@ -138,6 +189,13 @@ public class IndustryData {
 	 */
 	public double getRawRsSt() {
 		return this.rawRsSt;
+	}
+
+	/**
+	 * @return the sector
+	 */
+	public String getSector() {
+		return this.sector;
 	}
 
 	/**
@@ -194,11 +252,11 @@ public class IndustryData {
 	}
 
 	/**
-	 * @param name
-	 *          the name to set
+	 * @param industry
+	 *          the industry to set
 	 */
 	public void setName(String name) {
-		this.name = name;
+		this.industry = name;
 	}
 
 	/**
@@ -231,6 +289,14 @@ public class IndustryData {
 	 */
 	public void setRawRsSt(double rawRsSt) {
 		this.rawRsSt = rawRsSt;
+	}
+
+	/**
+	 * @param sector
+	 *          the sector to set
+	 */
+	public void setSector(String sector) {
+		this.sector = sector;
 	}
 
 	/**

@@ -28,7 +28,7 @@ import org.xml.sax.SAXException;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -66,24 +66,25 @@ public class WeekendReset {
 		 */
 		GenStockList.main(args);
 		System.gc();
-		
+
 		/**
 		 * Create stock-fundies-list.txt for stocks in the stock-list.com.
 		 */
 		GenerateFundies.main(args);
 		System.gc();
-		
+
 		/**
-		 * Write the price-time-volume data for all stocks into single file per ticker format.
+		 * Write the price-time-volume data for all stocks into single file per
+		 * ticker format.
 		 */
 		DumpTickerData.main(args);
 		System.gc();
-		
+
 		/**
 		 * Write breadth data as a checkout to determine if reset is valid.
 		 */
 		Internals.main(args);
-		
+
 		System.out.println("Weekend Reset Complete.");
 
 	}

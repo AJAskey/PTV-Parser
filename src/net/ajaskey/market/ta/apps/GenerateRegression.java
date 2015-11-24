@@ -28,7 +28,7 @@ import net.ajaskey.market.ta.methods.RegressionMethods;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -54,26 +54,26 @@ public class GenerateRegression {
 		ParseData.clearValidTickers();
 		ParseData.setValidTicker("SPX");
 
-		TickerData spx = ParseData.parseOneFile("spx-1950-yahoo.csv");
+		final TickerData spx = ParseData.parseOneFile("spx-1950-yahoo.csv");
 
 		System.out.println(spx.DailyDataString(0));
 
-		RegressionMethods rm = new RegressionMethods();
-		rm.addData(spx.getCloseData(), spx.getDateData(),261*35);
+		final RegressionMethods rm = new RegressionMethods();
+		rm.addData(spx.getCloseData(), spx.getDateData(), 261 * 35);
 		rm.regress();
 
-		double slope = rm.sreg.getSlope();
-		System.out.println(slope * 180.0 / Math.PI);
+		final double slope = rm.sreg.getSlope();
+		System.out.println((slope * 180.0) / Math.PI);
 
-		Calendar cal = Calendar.getInstance();
+		final Calendar cal = Calendar.getInstance();
 		cal.set(2018, Calendar.MARCH, 15);
-		double x = rm.findX(cal);
-		double y = rm.sreg.predict(x);
+		final double x = rm.findX(cal);
+		final double y = rm.sreg.predict(x);
 		System.out.println(y);
 
-		double err = Math.sqrt(rm.sreg.getMeanSquareError());
-		double err2 = err * 2.0;
-		double err3 = err * 3.0;
+		final double err = Math.sqrt(rm.sreg.getMeanSquareError());
+		final double err2 = err * 2.0;
+		final double err3 = err * 3.0;
 		System.out.printf("%.2f  %.2f  %.2f %.2f %.2f %.2f %.2f %.2f%n", err, (y - err3), (y - err2), (y - err), y,
 		    (y + err), (y + err2), (y + err3));
 

@@ -17,7 +17,7 @@ import net.ajaskey.market.ta.ValidateData;
 import net.ajaskey.market.ta.input.ParseData;
 
 /**
- * 
+ *
  * This application will read the tickers requested from eoddata and convert
  * them into individual price-time-volume files.
  *
@@ -37,7 +37,7 @@ import net.ajaskey.market.ta.input.ParseData;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -84,17 +84,17 @@ public class DumpTickerData {
 		Utils.makeDir("ptv-data");
 		Utils.makeDir("lists");
 
-		processList("\\ASCII\\NASDAQ");
-		
-		processList("\\ASCII\\NYSE");
-		
-		processList("\\ASCII\\AMEX");
+		DumpTickerData.processList("\\ASCII\\NASDAQ");
+
+		DumpTickerData.processList("\\ASCII\\NYSE");
+
+		DumpTickerData.processList("\\ASCII\\AMEX");
 
 		System.out.println("DumpTickerData Done.");
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.apps.processList
 	 *
 	 * @param list

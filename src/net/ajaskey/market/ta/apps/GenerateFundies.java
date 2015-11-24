@@ -12,8 +12,8 @@ import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.YahooData;
 
 /**
- * This application reads the contents of stock-list.txt and uses Yahoo to find additional data.
- * The data is written to stocks-fundie-list.txt.
+ * This application reads the contents of stock-list.txt and uses Yahoo to find
+ * additional data. The data is written to stocks-fundie-list.txt.
  *
  * @author Andy Askey
  *         <p>
@@ -31,7 +31,7 @@ import net.ajaskey.market.ta.input.YahooData;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF

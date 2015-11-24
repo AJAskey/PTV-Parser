@@ -17,10 +17,15 @@ import net.ajaskey.market.ta.methods.UtilMethods;
 
 /**
  *
+ * This class serves as the main class for gathering data associated with a
+ * specific ticker symbol. A collection of market data is stored in a list of
+ * TickerData objects.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -31,7 +36,9 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
+ *         </p>
  *
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,6 +47,7 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class TickerData {
@@ -198,7 +206,21 @@ public class TickerData {
 	}
 
 	/**
-	 * 
+	 *
+	 * net.ajaskey.market.ta.clearTickerData
+	 *
+	 * @param tdList
+	 */
+	public static void clearTickerData(List<TickerData> tdList) {
+		if (tdList != null) {
+			for (final TickerData td : tdList) {
+				TickerData.clearTickerData(td);
+			}
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.clearTickerData
 	 *
 	 * @param td
@@ -214,20 +236,6 @@ public class TickerData {
 			td.trueHighData = null;
 			td.trueLowData = null;
 			td.typicalPriceData = null;
-		}
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.clearTickerData
-	 *
-	 * @param tdList
-	 */
-	public static void clearTickerData(List<TickerData> tdList) {
-		if (tdList != null) {
-			for (TickerData td : tdList) {
-				clearTickerData(td);
-			}
 		}
 	}
 

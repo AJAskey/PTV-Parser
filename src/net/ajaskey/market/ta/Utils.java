@@ -100,7 +100,6 @@ public class Utils {
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
 	}
 
-
 	/**
 	 *
 	 * net.ajaskey.market.ta.makeDir

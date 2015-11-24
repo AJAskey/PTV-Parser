@@ -67,10 +67,10 @@ public class RegressionMethods {
 	 *
 	 * @param val
 	 * @param dates
-	 * @param days 
+	 * @param days
 	 */
 	public void addData(double[] val, Calendar[] dates, int days) {
-		
+
 		final int knt = Math.min(days, val.length);
 		for (int i = 0; i < knt; i++) {
 			final long dayNumber = Utils.getTimeSpan(dates[i], this.baseCal);

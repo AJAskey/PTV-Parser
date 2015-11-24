@@ -34,7 +34,7 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -331,8 +331,8 @@ public class Internals {
 		final String sSumVolDiff = NumberFormat.getIntegerInstance().format(sumVolDiff);
 
 		final double sumPrice = UtilMethods.sum(price, days);
-		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s%n", sumPrice, sumUp, sumDown,
-		    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff);
+		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s%n", sumPrice, sumUp, sumDown, UtilMethods.sum(daily, days),
+		    pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff);
 
 		double currentPrice = 1.0;
 		double pastPrice = 1.0;

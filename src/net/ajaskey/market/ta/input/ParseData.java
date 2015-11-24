@@ -49,7 +49,7 @@ public class ParseData {
 	private static List<String>	validTickers	= new ArrayList<String>();
 	private static double				MIN_PRICE			= 0.0;
 	private static int					MIN_VOLUME		= 0;
-	private static int					GET_ALL_DATA		= 999999;
+	private static int					GET_ALL_DATA	= 999999;
 
 	/**
 	 * This method serves as a constructor for the class. Because all methods are
@@ -365,18 +365,18 @@ public class ParseData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.parsePTVData
 	 *
 	 * @param dirStr
 	 * @return
 	 */
 	public static List<TickerData> parsePTVData(String dirStr) {
-		return parsePTVData(dirStr, GET_ALL_DATA);
+		return ParseData.parsePTVData(dirStr, GET_ALL_DATA);
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.parsePTVData
 	 *
 	 * @param dirStr
@@ -397,7 +397,7 @@ public class ParseData {
 		for (final File f : files) {
 			try {
 				final TickerData td = ParseData.parseOneFile(f.getAbsolutePath(), days);
-				if ((td != null) && ( (days == GET_ALL_DATA) || (td.getDataCount() >= days))) {
+				if ((td != null) && ((days == GET_ALL_DATA) || (td.getDataCount() >= days))) {
 					if ((processAll) || (validTickers.contains(td.getTicker()))) {
 						tdList.add(td);
 					}
