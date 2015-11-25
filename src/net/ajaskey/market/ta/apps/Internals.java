@@ -54,7 +54,7 @@ public class Internals {
 	private static List<String>			filenames	= new ArrayList<String>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
 	public static PrintWriter				pwAll			= null;
-	private static int							million		= 1000000;
+	private static final int				MILLION		= 1000000;
 
 	private static double						ndxClose;
 	private static double						spxClose;
@@ -98,6 +98,7 @@ public class Internals {
 			Internals.printBreath("lists\\nasdaq100-list.txt", "NDX", days);
 			Internals.printBreath("lists\\sp600-list.txt", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+			//Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
@@ -146,7 +147,7 @@ public class Internals {
 			smlClosePast = sml.getClose(days);
 			// System.out.println(smlClose);
 		}
-		
+
 		TickerData.clearTickerData(tdList);
 
 	}
@@ -310,9 +311,9 @@ public class Internals {
 			final double avgVol = volume;
 			final double volRatio = vol[i] / avgVol;
 
-			final long volDiff = (volUp[i] - volDown[i]) / million;
-			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / million);
-			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / million);
+			final long volDiff = (volUp[i] - volDown[i]) / MILLION;
+			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
+			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
 			pwAll.printf("\t%.2f\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f \t%s%n", price[i], sUp, sDown, sDaily, percent,
 			    sForce, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
@@ -324,15 +325,15 @@ public class Internals {
 		final int sumDown = UtilMethods.sum(down, days);
 		final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;
 
-		final long sumVolUp = UtilMethods.sum(volUp, days) / million;
-		final long sumVolDown = UtilMethods.sum(volDown, days) / million;
+		final long sumVolUp = UtilMethods.sum(volUp, days) / MILLION;
+		final long sumVolDown = UtilMethods.sum(volDown, days) / MILLION;
 		final long sumVolDiff = sumVolUp - sumVolDown;
 		final String sSumVolUp = NumberFormat.getIntegerInstance().format(sumVolUp);
 		final String sSumVolDown = NumberFormat.getIntegerInstance().format(sumVolDown);
 		final String sSumVolDiff = NumberFormat.getIntegerInstance().format(sumVolDiff);
 
-		double sumVol = UtilMethods.sma(vol, vol.length);
-		double volRatio = sumVol / volume;
+		final double sumVol = UtilMethods.sma(vol, vol.length);
+		final double volRatio = sumVol / volume;
 
 		final double sumPrice = UtilMethods.sum(price, days);
 		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f%n", sumPrice, sumUp, sumDown,
@@ -359,7 +360,7 @@ public class Internals {
 		pwAll.printf(
 		    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago.%n%n",
 		    cmt, sumPrice / tdList.size(), perChg, currentPrice, days + 1);
-		
+
 		TickerData.clearTickerData(tdList);
 
 	}
@@ -374,10 +375,9 @@ public class Internals {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static void processAnIndex(String list, String listName)
 	    throws FileNotFoundException, IOException, ParseException {
-		
+
 		final int[] inc = { 10, 20 };
 
 		try {
@@ -404,7 +404,6 @@ public class Internals {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static void processIndex() throws FileNotFoundException, ParseException {
 
 		ParseData.clearValidTickers();
@@ -481,9 +480,9 @@ public class Internals {
 				}
 			}
 		}
-		
+
 		TickerData.clearTickerData(tdList);
-		
+
 		int sum = 0;
 		for (final int i : daily) {
 			// System.out.println(i);
@@ -504,7 +503,6 @@ public class Internals {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static double processListPercent(String list, int days)
 	    throws FileNotFoundException, IOException, ParseException {
 
