@@ -1,0 +1,3286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSYMBOL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SYMBOL Code="A" Name="Agilent Technologies" />
+  <SYMBOL Code="AA" Name="Alcoa Inc" />
+  <SYMBOL Code="AA-B" Name="Alcoa Inc" />
+  <SYMBOL Code="AAC" Name="Aac Holdings Inc" />
+  <SYMBOL Code="AAN" Name="Aaron's Inc" />
+  <SYMBOL Code="AAP" Name="Advance Auto Parts Inc" />
+  <SYMBOL Code="AAT" Name="American Assets Trust" />
+  <SYMBOL Code="AAV" Name="Advantage Oil &amp; Gas Ltd" />
+  <SYMBOL Code="AB" Name="Alliance Capital Management L.P." />
+  <SYMBOL Code="ABB" Name="Abb Ltd" />
+  <SYMBOL Code="ABBV" Name="Abbvie Inc. Common Stock" />
+  <SYMBOL Code="ABC" Name="Amerisourcebergen Corp" />
+  <SYMBOL Code="ABEV" Name="Ambev S.A." />
+  <SYMBOL Code="ABG" Name="Asbury Automotive Group Inc" />
+  <SYMBOL Code="ABM" Name="ABM Industries Incorporated" />
+  <SYMBOL Code="ABR" Name="Arbor Realty Trust" />
+  <SYMBOL Code="ABR-A" Name="Arbor Realty Trust Inc" />
+  <SYMBOL Code="ABR-B" Name="Arbor Realty Trust Inc" />
+  <SYMBOL Code="ABR-C" Name="Arbor Realty Trust" />
+  <SYMBOL Code="ABRN" Name="Arbor Realty Trust 7.375% Senior" />
+  <SYMBOL Code="ABT" Name="Abbott Laboratories" />
+  <SYMBOL Code="ABX" Name="Barrick Gold Corp" />
+  <SYMBOL Code="AC.W" Name="Associated Capital Group Inc." />
+  <SYMBOL Code="ACC" Name="American Campus Communities Inc" />
+  <SYMBOL Code="ACCO" Name="Acco Brands Corp" />
+  <SYMBOL Code="ACE" Name="Ace Ltd" />
+  <SYMBOL Code="ACG" Name="Alliancebernstein Income Fund Inc" />
+  <SYMBOL Code="ACH" Name="Aluminum Corporation of China Ltd" />
+  <SYMBOL Code="ACI" Name="Arch Coal" />
+  <SYMBOL Code="ACM" Name="Aecom Technology Corp" />
+  <SYMBOL Code="ACN" Name="Accenture Plc" />
+  <SYMBOL Code="ACP" Name="Avenue Income Credit Strategies" />
+  <SYMBOL Code="ACRE" Name="Ares Commercial Real Estate Cor" />
+  <SYMBOL Code="ACV" Name="Allianzgi Diversified Income &amp;" />
+  <SYMBOL Code="ACW" Name="Accuride Corporation" />
+  <SYMBOL Code="ADC" Name="Agree Realty Corp" />
+  <SYMBOL Code="ADM" Name="Archer Daniels Midland Company" />
+  <SYMBOL Code="ADPT" Name="Adeptus Health Inc" />
+  <SYMBOL Code="ADS" Name="Alliance Data Systems Corp" />
+  <SYMBOL Code="ADT" Name="ADT Corp" />
+  <SYMBOL Code="ADX" Name="Adams Express Company" />
+  <SYMBOL Code="AEB" Name="Aegon N.V." />
+  <SYMBOL Code="AED" Name="Aegon N.V." />
+  <SYMBOL Code="AEE" Name="Ameren Corp" />
+  <SYMBOL Code="AEG" Name="Aegon N.V." />
+  <SYMBOL Code="AEH" Name="Aegon N.V." />
+  <SYMBOL Code="AEK" Name="Aegon N.V. 8.00%" />
+  <SYMBOL Code="AEL" Name="American Equity Investment Life" />
+  <SYMBOL Code="AEM" Name="Agnico-Eagle Mines Ltd" />
+  <SYMBOL Code="AEO" Name="American Eagle Outfitters" />
+  <SYMBOL Code="AEP" Name="American Electric Power Company" />
+  <SYMBOL Code="AER" Name="Aercap Holdings N.V." />
+  <SYMBOL Code="AES" Name="The Aes Corp" />
+  <SYMBOL Code="AES-C" Name="Aes TR III 6.75 Pfd" />
+  <SYMBOL Code="AET" Name="Aetna Inc" />
+  <SYMBOL Code="AEUA" Name="Anadarko Petroleum Corp" />
+  <SYMBOL Code="AF" Name="Astoria Financial Corp" />
+  <SYMBOL Code="AF-C" Name="Astoria Financial Corp" />
+  <SYMBOL Code="AFA" Name="American Financial Group Inc" />
+  <SYMBOL Code="AFB" Name="Alliance National Municipal" />
+  <SYMBOL Code="AFC" Name="Allied Capital Corp" />
+  <SYMBOL Code="AFG" Name="American Financial Group" />
+  <SYMBOL Code="AFGE" Name="American Financial Group Inc" />
+  <SYMBOL Code="AFGH" Name="American Financial Group Inc." />
+  <SYMBOL Code="AFL" Name="Aflac Incorporated" />
+  <SYMBOL Code="AFS-A" Name="Amtrust Financial Services Inc" />
+  <SYMBOL Code="AFS-B" Name="Amtrust Financial Services Dep Pfd" />
+  <SYMBOL Code="AFS-C" Name="Amtrust Financial Services Series C" />
+  <SYMBOL Code="AFS-D" Name="Amtrust Financial Services Dep Pfd" />
+  <SYMBOL Code="AFSD" Name="Aflac Incorporated" />
+  <SYMBOL Code="AFSS" Name="Amtrust Financial Services Inc" />
+  <SYMBOL Code="AFST" Name="Amtrust Financial Services Inc" />
+  <SYMBOL Code="AFT" Name="Apollo Senior Floating Rate Fund Inc" />
+  <SYMBOL Code="AFW" Name="American Financial Group Inc" />
+  <SYMBOL Code="AG" Name="First Majestic Silver" />
+  <SYMBOL Code="AGC" Name="Advent Claymore Convertible Securities" />
+  <SYMBOL Code="AGCO" Name="Agco Corp" />
+  <SYMBOL Code="AGD" Name="Alpine Global Dynamic Dividend Fund" />
+  <SYMBOL Code="AGI" Name="Alamos Gold Inc" />
+  <SYMBOL Code="AGM" Name="Federal Agricultural Mortgage Corp" />
+  <SYMBOL Code="AGM-A" Name="Federal Agricultural Mortgage" />
+  <SYMBOL Code="AGM-B" Name="Federal Ag" />
+  <SYMBOL Code="AGM-C" Name="Federal Agricultural Mortgage" />
+  <SYMBOL Code="AGM.A" Name="Federal Agricultural Mortgage Corp" />
+  <SYMBOL Code="AGN" Name="Allergan Plc" />
+  <SYMBOL Code="AGN-A" Name="Allergan Plc. 5.50% Mandatory C" />
+  <SYMBOL Code="AGO" Name="Assured Guaranty Ltd" />
+  <SYMBOL Code="AGO-B" Name="Assured Guaranty Ltd [B]" />
+  <SYMBOL Code="AGO-E" Name="Assured Guaranty Ltd [E]" />
+  <SYMBOL Code="AGO-F" Name="Assured Guaranty Ltd [F]" />
+  <SYMBOL Code="AGRO" Name="Adecoagro S.A." />
+  <SYMBOL Code="AGU" Name="Agrium Inc" />
+  <SYMBOL Code="AGX" Name="Argan Inc" />
+  <SYMBOL Code="AHC" Name="A.H. Belo Corp" />
+  <SYMBOL Code="AHH" Name="Armada Hoffler Properties Inc" />
+  <SYMBOL Code="AHL" Name="Aspen Insurance Holdings" />
+  <SYMBOL Code="AHL-A" Name="Aspen Insurance Pfd" />
+  <SYMBOL Code="AHL-B" Name="Aspen Insurance Holdings Limit" />
+  <SYMBOL Code="AHL-C" Name="Aspen Ins Pfd Inc" />
+  <SYMBOL Code="AHP" Name="Ashford Hospitality Prime Inc" />
+  <SYMBOL Code="AHS" Name="Amn Healthcare Services Inc" />
+  <SYMBOL Code="AHT" Name="Ashford Hospitality Trust Inc" />
+  <SYMBOL Code="AHT-A" Name="Ashford Hsop TR Pfd" />
+  <SYMBOL Code="AHT-D" Name="Ashford Hosp D Pfd" />
+  <SYMBOL Code="AHT-E" Name="Ashford Hospitality Trust Inc 9" />
+  <SYMBOL Code="AI" Name="Arlington Asset Investment Corp" />
+  <SYMBOL Code="AIB" Name="Apollo Investment Corp" />
+  <SYMBOL Code="AIC" Name="Arlington Asset Investment Cor" />
+  <SYMBOL Code="AIF" Name="Apollo Tactical Income Fund Inc" />
+  <SYMBOL Code="AIG" Name="American International Group" />
+  <SYMBOL Code="AIG.W" Name="American International Group" />
+  <SYMBOL Code="AIN" Name="Albany International Corp" />
+  <SYMBOL Code="AIR" Name="AAR Corp" />
+  <SYMBOL Code="AIT" Name="Applied Industrial Technologies" />
+  <SYMBOL Code="AIV" Name="Apartment Investment and Management" />
+  <SYMBOL Code="AIV-A" Name="Apartment Investment and Manag" />
+  <SYMBOL Code="AIV-Z" Name="Apartment Inv. &amp; Mgt. Co" />
+  <SYMBOL Code="AIW" Name="Arlington Asset Investment Cor" />
+  <SYMBOL Code="AIY" Name="Apollo Investment Corp" />
+  <SYMBOL Code="AIZ" Name="Assurant Inc" />
+  <SYMBOL Code="AJG" Name="Arthur J. Gallagher &amp; Co" />
+  <SYMBOL Code="AJRD" Name="Gencorp Inc" />
+  <SYMBOL Code="AJX" Name="Great Ajax Corp" />
+  <SYMBOL Code="AKO.A" Name="Embotell Andina Sa A" />
+  <SYMBOL Code="AKO.B" Name="Embotell Andna Sa B" />
+  <SYMBOL Code="AKP" Name="Alliance California Muni" />
+  <SYMBOL Code="AKR" Name="Acadia Realty Trust" />
+  <SYMBOL Code="AKS" Name="AK Steel Holding Corp" />
+  <SYMBOL Code="AL" Name="Air Lease Corporation Class A C" />
+  <SYMBOL Code="ALB" Name="Albemarle Corp" />
+  <SYMBOL Code="ALDW" Name="Alon USA Partners LP" />
+  <SYMBOL Code="ALE" Name="Allete Inc" />
+  <SYMBOL Code="ALEX" Name="Alexander and Baldwin Inc" />
+  <SYMBOL Code="ALG" Name="Alamo Group" />
+  <SYMBOL Code="ALJ" Name="Alon USA Energy" />
+  <SYMBOL Code="ALK" Name="Alaska Air Group" />
+  <SYMBOL Code="ALL" Name="Allstate Corp" />
+  <SYMBOL Code="ALL-A" Name="Allstate Corporation Pfd" />
+  <SYMBOL Code="ALL-B" Name="Ally Financial Inc Fixed Rate F" />
+  <SYMBOL Code="ALL-C" Name="The Allstate Corp" />
+  <SYMBOL Code="ALL-D" Name="Allstate Corp" />
+  <SYMBOL Code="ALL-E" Name="The Allstate Corporation" />
+  <SYMBOL Code="ALL-F" Name="The Allstate Corporation" />
+  <SYMBOL Code="ALLE" Name="Allegion Plc Ordinary Shares Wh" />
+  <SYMBOL Code="ALLY" Name="Ally Financial" />
+  <SYMBOL Code="ALP-O" Name="Alabama Pwr 5.83A Pf" />
+  <SYMBOL Code="ALR" Name="Alere Inc" />
+  <SYMBOL Code="ALR-B" Name="Alere Inc. Inverness Medical In" />
+  <SYMBOL Code="ALSN" Name="Allison Transmission Holdings" />
+  <SYMBOL Code="ALU" Name="Alcatel Lucent" />
+  <SYMBOL Code="ALV" Name="Autoliv Inc" />
+  <SYMBOL Code="ALX" Name="Alexander's Inc" />
+  <SYMBOL Code="AM" Name="Antero Resources Midstream Llc" />
+  <SYMBOL Code="AMBR" Name="Amber Road Inc" />
+  <SYMBOL Code="AMC" Name="Amc Entertainment Holdings Inc" />
+  <SYMBOL Code="AME" Name="Amtek Inc" />
+  <SYMBOL Code="AMFW" Name="Amec Foster Wheeler Plc" />
+  <SYMBOL Code="AMG" Name="Affiliated Managers Group" />
+  <SYMBOL Code="AMH" Name="American Homes 4 Rent" />
+  <SYMBOL Code="AMH-A" Name="American Homes" />
+  <SYMBOL Code="AMH-B" Name="American Homes 4 Rent 5% Series" />
+  <SYMBOL Code="AMH-C" Name="American Homes" />
+  <SYMBOL Code="AMID" Name="American Midstreampartners LP" />
+  <SYMBOL Code="AMP" Name="Ameriprise Financial Services" />
+  <SYMBOL Code="AMRC" Name="Ameresco Inc" />
+  <SYMBOL Code="AMT" Name="American Tower Corp" />
+  <SYMBOL Code="AMT-A" Name="Apollo Residential Preferred" />
+  <SYMBOL Code="AMT-B" Name="American Tower Corporation [Rei" />
+  <SYMBOL Code="AMTD" Name="TD Ameritrade Holding Corp" />
+  <SYMBOL Code="AMTG" Name="Apollo Residential Mortgage In" />
+  <SYMBOL Code="AMX" Name="America Movil S.A.B. De C.V" />
+  <SYMBOL Code="AN" Name="Autonation Inc" />
+  <SYMBOL Code="ANET" Name="Arista Networks Inc" />
+  <SYMBOL Code="ANF" Name="Abercrombie &amp; Fitch Company" />
+  <SYMBOL Code="ANFI" Name="Amira Nature Foods Ltd" />
+  <SYMBOL Code="ANH" Name="Anworth Mortgage Asset Corp" />
+  <SYMBOL Code="ANH-A" Name="Anworth Mtg Pfd A" />
+  <SYMBOL Code="ANH-B" Name="Anworth 6.25 Pr S B" />
+  <SYMBOL Code="ANH-C" Name="Anworth Mortgage Asset Corpora" />
+  <SYMBOL Code="ANTM" Name="Anthem Inc" />
+  <SYMBOL Code="ANTX" Name="Anthem Inc" />
+  <SYMBOL Code="ANW" Name="Aegean Marine Petroleum Network" />
+  <SYMBOL Code="AOD" Name="Alpine Total Dynamic Dividend" />
+  <SYMBOL Code="AOI" Name="Alliance One International" />
+  <SYMBOL Code="AON" Name="AON Plc" />
+  <SYMBOL Code="AOS" Name="Smith [A.O.] Corp" />
+  <SYMBOL Code="AP" Name="Ampco-Pittsburgh Corp" />
+  <SYMBOL Code="APA" Name="Apache Corp" />
+  <SYMBOL Code="APAM" Name="Artisan Partners Asset Manageme" />
+  <SYMBOL Code="APB" Name="Asia Pacific Fund Inc" />
+  <SYMBOL Code="APC" Name="Anadarko Petroleum Corp" />
+  <SYMBOL Code="APD" Name="Air Products and Chemicals" />
+  <SYMBOL Code="APF" Name="Morgan Stanley Asia Pacific Fund Inc" />
+  <SYMBOL Code="APH" Name="Amphenol Corp" />
+  <SYMBOL Code="APLE" Name="Apple Hospitality REIT Inc" />
+  <SYMBOL Code="APO" Name="Apollo Global Management Llc C" />
+  <SYMBOL Code="APTS" Name="Preferred Apartment Communities" />
+  <SYMBOL Code="APU" Name="Amerigas Partners L.P." />
+  <SYMBOL Code="AR" Name="Antero Resources Corp" />
+  <SYMBOL Code="ARC" Name="American Reprographics Company" />
+  <SYMBOL Code="ARCO" Name="Arcos Dorados Holdings Inc" />
+  <SYMBOL Code="ARCX" Name="Arc Logistics Partners LP" />
+  <SYMBOL Code="ARDC" Name="Ares Dynamic Credit Allocation" />
+  <SYMBOL Code="ARE" Name="Alexandria Real Estate Equities" />
+  <SYMBOL Code="ARE-E" Name="Alexandria Real Estate Equitie" />
+  <SYMBOL Code="ARES" Name="Ares Management LP" />
+  <SYMBOL Code="ARG" Name="Airgas Inc" />
+  <SYMBOL Code="ARH-C" Name="Arch Capital Group Ltd. 6.75% P" />
+  <SYMBOL Code="ARI" Name="Apollo Commercial Real Estate" />
+  <SYMBOL Code="ARI-A" Name="Apollo Commercial Real Estate" />
+  <SYMBOL Code="ARL" Name="American Realty Investors" />
+  <SYMBOL Code="ARMK" Name="Aramark Holdings Corp" />
+  <SYMBOL Code="ARO" Name="Aeropostale Inc" />
+  <SYMBOL Code="AROC" Name="Archrock Inc. Common Stock Ex-" />
+  <SYMBOL Code="ARP" Name="Atlas Resource Partners L.P. C" />
+  <SYMBOL Code="ARP-D" Name="Atlas Resource Partners L.P." />
+  <SYMBOL Code="ARP-E" Name="Atlas Resource Partners L.P. 1" />
+  <SYMBOL Code="ARPI" Name="American Residential Properties" />
+  <SYMBOL Code="ARR" Name="Armour Residential R" />
+  <SYMBOL Code="ARR-A" Name="Armour Residential REIT Inc" />
+  <SYMBOL Code="ARR-B" Name="Armour Residential REIT Inc" />
+  <SYMBOL Code="ARU" Name="Ares Capital Corp" />
+  <SYMBOL Code="ARW" Name="Arrow Electronics" />
+  <SYMBOL Code="ARY" Name="Ares Capital Corp" />
+  <SYMBOL Code="ASA" Name="ASA Gold and Precious Metals" />
+  <SYMBOL Code="ASB" Name="Associated Banc-Corp" />
+  <SYMBOL Code="ASB-B" Name="Associated Banc-Corp Depositary" />
+  <SYMBOL Code="ASB-C" Name="Associated Banc-Corp Depositary" />
+  <SYMBOL Code="ASC" Name="Ardmore Shipping Corp" />
+  <SYMBOL Code="ASG" Name="Liberty All-Star Growth Fund" />
+  <SYMBOL Code="ASGN" Name="On Assignment" />
+  <SYMBOL Code="ASH" Name="Ashland Inc" />
+  <SYMBOL Code="ASPN" Name="Aspen Aerogels Inc" />
+  <SYMBOL Code="ASR" Name="Grupo Aeroportuario Del Sureste" />
+  <SYMBOL Code="ASX" Name="Advanced Semiconductor Engineering" />
+  <SYMBOL Code="AT" Name="Atlantic Power Corp" />
+  <SYMBOL Code="ATE" Name="Advantest Corporation Ads" />
+  <SYMBOL Code="ATEN" Name="A10 Networks Inc" />
+  <SYMBOL Code="ATHM" Name="Autohome Inc" />
+  <SYMBOL Code="ATI" Name="Allegheny Technologies Inc" />
+  <SYMBOL Code="ATLS" Name="Atlas Energy Llc" />
+  <SYMBOL Code="ATO" Name="Atmos Energy Corp" />
+  <SYMBOL Code="ATR" Name="Aptargroup" />
+  <SYMBOL Code="ATTO" Name="Atento S.A." />
+  <SYMBOL Code="ATU" Name="Actuant Corp" />
+  <SYMBOL Code="ATV" Name="Acorn International" />
+  <SYMBOL Code="ATW" Name="Atwood Oceanics" />
+  <SYMBOL Code="AU" Name="Anglogold Ashanti Ltd" />
+  <SYMBOL Code="AUO" Name="Au Optronics Corp" />
+  <SYMBOL Code="AUY" Name="Yamana Gold" />
+  <SYMBOL Code="AV" Name="Aviva Plc" />
+  <SYMBOL Code="AVA" Name="Avista Corp" />
+  <SYMBOL Code="AVAL" Name="Grupo Aval Acciones Y Valores S" />
+  <SYMBOL Code="AVB" Name="Avalonbay Communities" />
+  <SYMBOL Code="AVD" Name="American Vanguard Corp" />
+  <SYMBOL Code="AVG" Name="Avg Technologies N.V." />
+  <SYMBOL Code="AVH" Name="Avianca Holdings S.A." />
+  <SYMBOL Code="AVK" Name="Advent Claymore Convertible Securities" />
+  <SYMBOL Code="AVOL" Name="Avolon Holdings Ltd" />
+  <SYMBOL Code="AVP" Name="Avon Products" />
+  <SYMBOL Code="AVT" Name="Avnet Inc" />
+  <SYMBOL Code="AVV" Name="Aviva Plc" />
+  <SYMBOL Code="AVX" Name="Avx Corp" />
+  <SYMBOL Code="AVY" Name="Avery Dennison Corp" />
+  <SYMBOL Code="AWF" Name="Alliancebernstein Global High Income Fund" />
+  <SYMBOL Code="AWH" Name="Allied World Assurance Company" />
+  <SYMBOL Code="AWI" Name="Armstrong World Industries Inc" />
+  <SYMBOL Code="AWK" Name="American Water Works" />
+  <SYMBOL Code="AWP" Name="Alpine Global Premier Propertie" />
+  <SYMBOL Code="AWR" Name="American States Water Company" />
+  <SYMBOL Code="AXE" Name="Anixter International Inc" />
+  <SYMBOL Code="AXL" Name="American Axle &amp; Manufacturing" />
+  <SYMBOL Code="AXLL" Name="Georgia Gulf Corp" />
+  <SYMBOL Code="AXON" Name="Axovant Sciences Ltd. Common Sh" />
+  <SYMBOL Code="AXP" Name="American Express Company" />
+  <SYMBOL Code="AXR" Name="Amrep Corp" />
+  <SYMBOL Code="AXS" Name="Axis Capital Holdings" />
+  <SYMBOL Code="AXS-C" Name="Axis Capital Holdings Limited P" />
+  <SYMBOL Code="AXS-D" Name="Axis Capital Holdings Ltd" />
+  <SYMBOL Code="AXTA" Name="Axalta Coating Systems Ltd" />
+  <SYMBOL Code="AYI" Name="Acuity Brands Inc" />
+  <SYMBOL Code="AYR" Name="Aircastle Ltd" />
+  <SYMBOL Code="AZN" Name="Astrazeneca Plc" />
+  <SYMBOL Code="AZO" Name="Autozone" />
+  <SYMBOL Code="AZUR" Name="Azure Midstream Partners LP" />
+  <SYMBOL Code="AZZ" Name="Azz Inc" />
+  <SYMBOL Code="B" Name="Barnes Group" />
+  <SYMBOL Code="BA" Name="Boeing Company" />
+  <SYMBOL Code="BABA" Name="Alibaba Group Holding Ltd" />
+  <SYMBOL Code="BAC" Name="Bank of America Corp" />
+  <SYMBOL Code="BAC-D" Name="Bac Dep Share D" />
+  <SYMBOL Code="BAC-E" Name="Bank Amer Corp Dep R" />
+  <SYMBOL Code="BAC-I" Name="Bank Amer Corp Pfd" />
+  <SYMBOL Code="BAC-L" Name="Bank Amer Pfd Ser L" />
+  <SYMBOL Code="BAC-W" Name="Bank of America Corp" />
+  <SYMBOL Code="BAC-Y" Name="Bank of America Corporation" />
+  <SYMBOL Code="BAC-Z" Name="Bac Cap TR ViII" />
+  <SYMBOL Code="BAC.A" Name="Bank of America Corporation Bac" />
+  <SYMBOL Code="BAC.B" Name="Bank of America Corporation Bac" />
+  <SYMBOL Code="BAF" Name="Blackrock Income Inv Quality Trust" />
+  <SYMBOL Code="BAH" Name="Booz Allen Hamilton Holding Corp" />
+  <SYMBOL Code="BAK" Name="Braskem S.A." />
+  <SYMBOL Code="BAM" Name="Brookfield Asset Management Inc" />
+  <SYMBOL Code="BAN-C" Name="Banc of California Inc. Deposi" />
+  <SYMBOL Code="BANC" Name="First Pactrust Bancorp" />
+  <SYMBOL Code="BAP" Name="Credicorp Ltd" />
+  <SYMBOL Code="BAS" Name="Basic Energy Services" />
+  <SYMBOL Code="BAX" Name="Baxter International Inc" />
+  <SYMBOL Code="BBD" Name="Banco Bradesco Sa" />
+  <SYMBOL Code="BBDO" Name="Banco Bradesco S.A." />
+  <SYMBOL Code="BBF" Name="Blackrock Muni Income Trust" />
+  <SYMBOL Code="BBG" Name="Bill Barrett Corp" />
+  <SYMBOL Code="BBK" Name="Blackrock Muni Trust" />
+  <SYMBOL Code="BBL" Name="Bhp Billiton Plc" />
+  <SYMBOL Code="BBN" Name="Balckrock Build America Trust" />
+  <SYMBOL Code="BBT" Name="BB&amp;T Corp" />
+  <SYMBOL Code="BBT-D" Name="BB&amp;T Corp" />
+  <SYMBOL Code="BBT-E" Name="BB&amp;T Corp" />
+  <SYMBOL Code="BBT-F" Name="BB&amp;T Corp" />
+  <SYMBOL Code="BBT-G" Name="BB&amp;T Corporation Ser G" />
+  <SYMBOL Code="BBVA" Name="Banco Bilbao Viscaya Argentaria S.A." />
+  <SYMBOL Code="BBW" Name="Build-A-Bear Workshop" />
+  <SYMBOL Code="BBX" Name="Bankatlantic Bancorp" />
+  <SYMBOL Code="BBY" Name="Best Buy Co" />
+  <SYMBOL Code="BC" Name="Brunswick Corp" />
+  <SYMBOL Code="BCA" Name="Corpbanca" />
+  <SYMBOL Code="BCC" Name="Boise Cascade L.L.C. Common ST" />
+  <SYMBOL Code="BCE" Name="BCE Inc" />
+  <SYMBOL Code="BCEI" Name="Bonanza Creek Energy Inc" />
+  <SYMBOL Code="BCH" Name="Banco De Chile" />
+  <SYMBOL Code="BCO" Name="Brink's Company" />
+  <SYMBOL Code="BCR" Name="C.R. Bard" />
+  <SYMBOL Code="BCRH" Name="Blue Capital Reinsurance Holdi" />
+  <SYMBOL Code="BCS" Name="Barclays Plc" />
+  <SYMBOL Code="BCS-A" Name="Barclays Ads" />
+  <SYMBOL Code="BCS-C" Name="Barclays Bank 4 Ads" />
+  <SYMBOL Code="BCS-D" Name="Barclays Bank Plc" />
+  <SYMBOL Code="BCS.P" Name="Barclays Bk ADR Sr 2" />
+  <SYMBOL Code="BCX" Name="Blackrock Resources Common Shar" />
+  <SYMBOL Code="BDC" Name="Belden Inc" />
+  <SYMBOL Code="BDJ" Name="Blackrock Enhanced Dividend Achievers" />
+  <SYMBOL Code="BDN" Name="Brandywine Realty Trust" />
+  <SYMBOL Code="BDN-E" Name="Brandywine Realty Trust" />
+  <SYMBOL Code="BDX" Name="Becton Dickinson and Company" />
+  <SYMBOL Code="BEE" Name="Strategic Hotels &amp; Resorts Inc" />
+  <SYMBOL Code="BEL" Name="Belmond Ltd" />
+  <SYMBOL Code="BEN" Name="Franklin Resources" />
+  <SYMBOL Code="BEP" Name="Brookfield Renewable" />
+  <SYMBOL Code="BERY" Name="Berry Plastics Group Inc" />
+  <SYMBOL Code="BETR" Name="Amplify Snack Brands Inc" />
+  <SYMBOL Code="BF.A" Name="Brown Forman Inc A" />
+  <SYMBOL Code="BF.B" Name="Brown Forman Inc B" />
+  <SYMBOL Code="BFAM" Name="Bright Horizons Family Solutions Inc" />
+  <SYMBOL Code="BFK" Name="Blackrock Muni Income Trust" />
+  <SYMBOL Code="BFO" Name="Blackrock Florida Muni 2020 Trust" />
+  <SYMBOL Code="BFR" Name="Bbva Banco Frances S.A." />
+  <SYMBOL Code="BFS" Name="Saul Centers" />
+  <SYMBOL Code="BFS-C" Name="Saul Centers Inc" />
+  <SYMBOL Code="BFZ" Name="Blackrock California Muni Trust" />
+  <SYMBOL Code="BG" Name="Bunge Ltd" />
+  <SYMBOL Code="BGB" Name="Blackstone / Gso Strategic Cre" />
+  <SYMBOL Code="BGC" Name="General Cable Corp" />
+  <SYMBOL Code="BGCA" Name="Bgc Partners Inc" />
+  <SYMBOL Code="BGE-B" Name="Bge Capital Trust II" />
+  <SYMBOL Code="BGG" Name="Briggs &amp; Stratton Corp" />
+  <SYMBOL Code="BGH" Name="Babson Capital Global Short Du" />
+  <SYMBOL Code="BGR" Name="Blackrock Energy and Resources Trust" />
+  <SYMBOL Code="BGS" Name="B&amp;G Foods Holdings" />
+  <SYMBOL Code="BGT" Name="Blackrock Global" />
+  <SYMBOL Code="BGX" Name="Blackstone Gso Long Short Credit Fund" />
+  <SYMBOL Code="BGY" Name="Blackrock International" />
+  <SYMBOL Code="BH" Name="Biglari Holdings Inc" />
+  <SYMBOL Code="BHE" Name="Benchmark Electronics" />
+  <SYMBOL Code="BHI" Name="Baker Hughes Inc" />
+  <SYMBOL Code="BHK" Name="Blackrock Core Trust" />
+  <SYMBOL Code="BHL" Name="Blackrock Defined Opportunity Trust" />
+  <SYMBOL Code="BHLB" Name="Berkshire Hills Bancorp" />
+  <SYMBOL Code="BHP" Name="Bhp Billiton Ltd" />
+  <SYMBOL Code="BID" Name="Sotheby's Holdings" />
+  <SYMBOL Code="BIE" Name="Blackrock Muni Bond Investment Trust" />
+  <SYMBOL Code="BIF" Name="Uslife Income Fund" />
+  <SYMBOL Code="BIG" Name="Big Lots" />
+  <SYMBOL Code="BIN" Name="Progressive Waste Solutions Ltd" />
+  <SYMBOL Code="BIO" Name="Bio-Rad Laboratories" />
+  <SYMBOL Code="BIO.B" Name="Bio Rad Labs Cl B" />
+  <SYMBOL Code="BIO.W" Name="Bio-Rad Laboratories Inc" />
+  <SYMBOL Code="BIOA" Name="Bioamber Inc" />
+  <SYMBOL Code="BIP" Name="Brookfield Infrastructure Partners LP" />
+  <SYMBOL Code="BIT" Name="Blackrock Multi-Sector Income T" />
+  <SYMBOL Code="BITA" Name="Bitauto Holdings Ltd" />
+  <SYMBOL Code="BJZ" Name="Blackrock California Muni 2018 Trust" />
+  <SYMBOL Code="BK" Name="Bank of New York Mellon Corp" />
+  <SYMBOL Code="BK-C" Name="The Bank of New York Mellon Co" />
+  <SYMBOL Code="BKD" Name="Brookdale Senior Living Inc" />
+  <SYMBOL Code="BKE" Name="Buckle Inc" />
+  <SYMBOL Code="BKFS" Name="Black Knight Financial Services" />
+  <SYMBOL Code="BKH" Name="Black Hills Corp" />
+  <SYMBOL Code="BKK" Name="Blackrock Muni 2020 Trust" />
+  <SYMBOL Code="BKN" Name="Blackrock Investment Quality Municipal" />
+  <SYMBOL Code="BKS" Name="Barnes &amp; Noble" />
+  <SYMBOL Code="BKT" Name="Blackrock Income Trust Inc" />
+  <SYMBOL Code="BKU" Name="BankUnited Inc" />
+  <SYMBOL Code="BLD" Name="Topbuild Corp" />
+  <SYMBOL Code="BLH" Name="Blackrock New York Muni 2018 Trust" />
+  <SYMBOL Code="BLK" Name="Blackrock" />
+  <SYMBOL Code="BLL" Name="Ball Corp" />
+  <SYMBOL Code="BLOX" Name="Infoblox Inc" />
+  <SYMBOL Code="BLT" Name="Blount International" />
+  <SYMBOL Code="BLW" Name="Blackrock Limited Duration Income Trust" />
+  <SYMBOL Code="BLX" Name="Banco Latinoamericano De Comercio" />
+  <SYMBOL Code="BMA" Name="Banco Macro S.A." />
+  <SYMBOL Code="BME" Name="Blackrock Health Sciences Trust" />
+  <SYMBOL Code="BMI" Name="Badger Meter" />
+  <SYMBOL Code="BML-G" Name="Bank America Dep G" />
+  <SYMBOL Code="BML-H" Name="Bank America Dep H" />
+  <SYMBOL Code="BML-I" Name="Bank America Dep I" />
+  <SYMBOL Code="BML-J" Name="Bank America Dep J" />
+  <SYMBOL Code="BML-L" Name="Bank America Dep L" />
+  <SYMBOL Code="BMO" Name="Bank of Montreal" />
+  <SYMBOL Code="BMR" Name="Biomed Realty Trust" />
+  <SYMBOL Code="BMS" Name="Bemis Company" />
+  <SYMBOL Code="BMY" Name="Bristol-Myers Squibb Company" />
+  <SYMBOL Code="BNED" Name="Barnes &amp; Noble Education Inc C" />
+  <SYMBOL Code="BNJ" Name="Blackrock New Jersey Muni Income Trust" />
+  <SYMBOL Code="BNK" Name="C1 Financial Inc" />
+  <SYMBOL Code="BNS" Name="Bank of Nova Scotia" />
+  <SYMBOL Code="BNY" Name="Blackrock New York Muni Trust Inc" />
+  <SYMBOL Code="BOCA" Name="Banc of California Inc" />
+  <SYMBOL Code="BOE" Name="Blackrock Global" />
+  <SYMBOL Code="BOH" Name="Bank of Hawaii Corp" />
+  <SYMBOL Code="BOI" Name="Brookfield Mortgage Opportunit" />
+  <SYMBOL Code="BOOT" Name="Boot Barn Holdings Inc" />
+  <SYMBOL Code="BORN" Name="China New Borun Corp" />
+  <SYMBOL Code="BOX" Name="Box Inc" />
+  <SYMBOL Code="BOXC" Name="Brookfield Office Properties C" />
+  <SYMBOL Code="BP" Name="BP P.L.C" />
+  <SYMBOL Code="BPI" Name="Bridgepoint Education" />
+  <SYMBOL Code="BPK" Name="Blackrock Muni 2018 Trust" />
+  <SYMBOL Code="BPL" Name="Buckeye Partners L.P." />
+  <SYMBOL Code="BPT" Name="BP Prudhoe Bay Royalty Trust" />
+  <SYMBOL Code="BPY" Name="Brookfield Property Partners L" />
+  <SYMBOL Code="BQH" Name="Blackrock New York Muni Trust" />
+  <SYMBOL Code="BR" Name="Broadridge Financial Solutions Llc" />
+  <SYMBOL Code="BRC" Name="Brady Corp" />
+  <SYMBOL Code="BRFS" Name="Brf-Brasil Foods S.A." />
+  <SYMBOL Code="BRK.A" Name="Berkshire Hath Hld A" />
+  <SYMBOL Code="BRK.B" Name="Berkshire Hath Hld B" />
+  <SYMBOL Code="BRO" Name="Brown &amp; Brown" />
+  <SYMBOL Code="BRS" Name="Bristow Group Inc" />
+  <SYMBOL Code="BRSS" Name="Global Brass and Copper Holdin" />
+  <SYMBOL Code="BRT" Name="BRT Realty Trust" />
+  <SYMBOL Code="BRX" Name="Brixmor Property Group Inc. Com" />
+  <SYMBOL Code="BSAC" Name="Banco Santander-Chile Ads" />
+  <SYMBOL Code="BSBR" Name="Banco Santander Brasil Sa" />
+  <SYMBOL Code="BSD" Name="Blackrock Strategic Muni Trust Inc" />
+  <SYMBOL Code="BSE" Name="Blackrock New York Muni Income Trust" />
+  <SYMBOL Code="BSI" Name="Alon Holdings - Blue Square Israel Ltd" />
+  <SYMBOL Code="BSL" Name="Blackstone Gso Senior Floating Rate" />
+  <SYMBOL Code="BSM" Name="Black Stone Minerals L.P." />
+  <SYMBOL Code="BSMX" Name="Grupo Financiero Santander Mxi" />
+  <SYMBOL Code="BST" Name="Blackrock Science and Technolo" />
+  <SYMBOL Code="BSX" Name="Boston Scientific Corp" />
+  <SYMBOL Code="BT" Name="Bt Group Plc" />
+  <SYMBOL Code="BTA" Name="Blackrock Long-Term Muni Advantage Trust" />
+  <SYMBOL Code="BTE" Name="Baytex Energy Corp" />
+  <SYMBOL Code="BTO" Name="John Hancock Bank and Thrift Fund" />
+  <SYMBOL Code="BTT" Name="Blackrock Municipal Target Term" />
+  <SYMBOL Code="BTU" Name="Peabody Energy Corp" />
+  <SYMBOL Code="BTZ" Name="Blackrock Preferred" />
+  <SYMBOL Code="BUD" Name="Anheuser-Busch Inbev Sa" />
+  <SYMBOL Code="BUI" Name="Blackrock Utility and Infrastr" />
+  <SYMBOL Code="BURL" Name="Burlington Stores Inc" />
+  <SYMBOL Code="BVN" Name="Compania Mina Buenaventura S.A." />
+  <SYMBOL Code="BW" Name="Babcock &amp; Wilcox Enterprises I" />
+  <SYMBOL Code="BWA" Name="Borgwarner Inc" />
+  <SYMBOL Code="BWG" Name="Legg Mason Bw Global Income Op" />
+  <SYMBOL Code="BWP" Name="Boardwalk Pipeline Partners L.P." />
+  <SYMBOL Code="BWXT" Name="Bwx Technologies Inc. Common S" />
+  <SYMBOL Code="BX" Name="The Blackstone Group L.P." />
+  <SYMBOL Code="BXC" Name="Bluelinx Holdings Inc" />
+  <SYMBOL Code="BXE" Name="Bellatrix Exploration Ltd" />
+  <SYMBOL Code="BXLT" Name="Baxalta Incorporated Common Sto" />
+  <SYMBOL Code="BXMT" Name="Blackstone Mortgage Trust Inc. Cl A" />
+  <SYMBOL Code="BXMX" Name="Nuveen Equity Premium" />
+  <SYMBOL Code="BXP" Name="Boston Properties" />
+  <SYMBOL Code="BXP-B" Name="Boston Properties Inc" />
+  <SYMBOL Code="BXS" Name="Bancorpsouth Inc" />
+  <SYMBOL Code="BYD" Name="Boyd Gaming Corp" />
+  <SYMBOL Code="BYM" Name="Blackrock Muni Income Quality Trust" />
+  <SYMBOL Code="BZH" Name="Beazer Homes USA" />
+  <SYMBOL Code="C" Name="Citigroup Inc" />
+  <SYMBOL Code="C-C" Name="Citigroup Inc" />
+  <SYMBOL Code="C-J" Name="Citigroup Inc" />
+  <SYMBOL Code="C-K" Name="Citigroup Inc" />
+  <SYMBOL Code="C-L" Name="Citigroup Inc" />
+  <SYMBOL Code="C-N" Name="Citigroup Capital XiII" />
+  <SYMBOL Code="C-P" Name="Citigroup Pfd Ser Aa" />
+  <SYMBOL Code="C.A" Name="Citigroup Inc Wrnt 'A'" />
+  <SYMBOL Code="C.B" Name="Citigroup Inc Wrnt 'B'" />
+  <SYMBOL Code="CAA" Name="Calatlantic Group Inc." />
+  <SYMBOL Code="CAB" Name="Cabela's Inc" />
+  <SYMBOL Code="CABO" Name="Cable One Inc. Common Stock Wh" />
+  <SYMBOL Code="CACI" Name="Caci International" />
+  <SYMBOL Code="CAE" Name="Cae Inc" />
+  <SYMBOL Code="CAF" Name="Morgan Stanley China A Share Fund Inc" />
+  <SYMBOL Code="CAG" Name="Conagra Foods" />
+  <SYMBOL Code="CAH" Name="Cardinal Health" />
+  <SYMBOL Code="CAI" Name="Cai International" />
+  <SYMBOL Code="CAJ" Name="Canon Inc" />
+  <SYMBOL Code="CAL" Name="Caleres Inc" />
+  <SYMBOL Code="CALX" Name="Calix Inc" />
+  <SYMBOL Code="CAM" Name="Cameron International Corp" />
+  <SYMBOL Code="CAPL" Name="Crossamerica Partners LP" />
+  <SYMBOL Code="CAS" Name="Castle [A.M.] &amp; Co" />
+  <SYMBOL Code="CAT" Name="Caterpillar Inc" />
+  <SYMBOL Code="CATO" Name="Cato Corp" />
+  <SYMBOL Code="CB" Name="Chubb Corp" />
+  <SYMBOL Code="CBA" Name="Clearbridge American Energy ML" />
+  <SYMBOL Code="CBB" Name="Cincinnati Bell Inc" />
+  <SYMBOL Code="CBB-B" Name="Cincinnati Bell Pr B" />
+  <SYMBOL Code="CBD" Name="Companhia Brasileira De Distribuicao" />
+  <SYMBOL Code="CBG" Name="CBRE Group Inc" />
+  <SYMBOL Code="CBI" Name="Chicago Bridge &amp; Iron Company N.V." />
+  <SYMBOL Code="CBK" Name="Christopher &amp; Banks Corp" />
+  <SYMBOL Code="CBL" Name="Cbl &amp; Associates Properties" />
+  <SYMBOL Code="CBL-D" Name="Cbl Pfd D" />
+  <SYMBOL Code="CBL-E" Name="Cbl &amp; Associates Properties I" />
+  <SYMBOL Code="CBM" Name="Cambrex Corp" />
+  <SYMBOL Code="CBO" Name="Cbo [Listing Market - NYSE - Ne" />
+  <SYMBOL Code="CBPX" Name="Continental Building Products" />
+  <SYMBOL Code="CBR" Name="Ciber Inc" />
+  <SYMBOL Code="CBS" Name="CBS Corp" />
+  <SYMBOL Code="CBS.A" Name="CBS Corp" />
+  <SYMBOL Code="CBT" Name="Cabot Corp" />
+  <SYMBOL Code="CBU" Name="Community Bank System" />
+  <SYMBOL Code="CBZ" Name="Cbiz Inc" />
+  <SYMBOL Code="CC" Name="Chemours Company [The] Common S" />
+  <SYMBOL Code="CCC" Name="Calgon Carbon Corp" />
+  <SYMBOL Code="CCE" Name="Coca-Cola Enterprises" />
+  <SYMBOL Code="CCG" Name="Campus Crest Communities" />
+  <SYMBOL Code="CCG-A" Name="Campus Crest Communities Inc" />
+  <SYMBOL Code="CCI" Name="Crown Castle International Corp" />
+  <SYMBOL Code="CCI-A" Name="Crown Castle International Cor" />
+  <SYMBOL Code="CCJ" Name="Cameco Corp" />
+  <SYMBOL Code="CCK" Name="Crown Cork &amp; Seal Company" />
+  <SYMBOL Code="CCL" Name="Carnival Corp" />
+  <SYMBOL Code="CCM" Name="Concord Medical Services" />
+  <SYMBOL Code="CCO" Name="Clear Channel Outdoor Holdings" />
+  <SYMBOL Code="CCP" Name="Care Capital Properties Inc. C" />
+  <SYMBOL Code="CCS" Name="Century Communities Inc" />
+  <SYMBOL Code="CCSC" Name="Country Style Cooking" />
+  <SYMBOL Code="CCU" Name="Compania Cervecerias Unidas S.A." />
+  <SYMBOL Code="CCV" Name="Comcast Corp" />
+  <SYMBOL Code="CCZ" Name="Comcast Corp" />
+  <SYMBOL Code="CDE" Name="Coeur Mining Inc" />
+  <SYMBOL Code="CDE.W" Name="Coeur D'Alene Mines Corporatio" />
+  <SYMBOL Code="CDI" Name="Cdi Corp" />
+  <SYMBOL Code="CDR" Name="Cedar Shopping Centers Inc" />
+  <SYMBOL Code="CDR-B" Name="Cedar Realty Trust Inc" />
+  <SYMBOL Code="CE" Name="Celanese Corp" />
+  <SYMBOL Code="CEA" Name="China Eastern Airlines Corp Ltd" />
+  <SYMBOL Code="CEB" Name="The Corporate Executive Board Company" />
+  <SYMBOL Code="CEE" Name="Central Europe and Russia Fund" />
+  <SYMBOL Code="CEL" Name="Cellcom Israel" />
+  <SYMBOL Code="CELP" Name="Cypress Energy Partners L.P." />
+  <SYMBOL Code="CEM" Name="Clearbridge Energy MLP Fund Inc" />
+  <SYMBOL Code="CEN" Name="Center Coast MLP &amp; Infrastructure" />
+  <SYMBOL Code="CEO" Name="Cnooc Ltd" />
+  <SYMBOL Code="CEQP" Name="Crestwood Equity Partners LP" />
+  <SYMBOL Code="CF" Name="Cf Industries Holdings" />
+  <SYMBOL Code="CFC-A" Name="Countrywide Cap IV" />
+  <SYMBOL Code="CFC-B" Name="Countrywide Cap V" />
+  <SYMBOL Code="CFG" Name="Citizens Financial Group Inc/Ri" />
+  <SYMBOL Code="CFI" Name="Culp Inc" />
+  <SYMBOL Code="CFR" Name="Cullen/Frost Bankers" />
+  <SYMBOL Code="CFR-A" Name="Cullen/Frost Bankers Inc" />
+  <SYMBOL Code="CFX" Name="Colfax Corp" />
+  <SYMBOL Code="CGA" Name="China Green Agriculture" />
+  <SYMBOL Code="CGG" Name="Compagnie Generale De Gephysqu" />
+  <SYMBOL Code="CGI" Name="Celadon Group" />
+  <SYMBOL Code="CHA" Name="China Telecom Corp Ltd" />
+  <SYMBOL Code="CHCT" Name="Community Healthcare Trust Inc" />
+  <SYMBOL Code="CHD" Name="Church &amp; Dwight Company" />
+  <SYMBOL Code="CHE" Name="Chemed Inc" />
+  <SYMBOL Code="CHGG" Name="Chegg Inc" />
+  <SYMBOL Code="CHH" Name="Choice Hotels International" />
+  <SYMBOL Code="CHK" Name="Chesapeake Energy Corp" />
+  <SYMBOL Code="CHK-D" Name="Chesapeake En Cv Pfd" />
+  <SYMBOL Code="CHKR" Name="Chesapeake Granite Wash Trust" />
+  <SYMBOL Code="CHL" Name="China Mobile [Hong Kong] Ltd" />
+  <SYMBOL Code="CHMI" Name="Cherry Hill Mortgage Investmen" />
+  <SYMBOL Code="CHMT" Name="Chemtura Corp" />
+  <SYMBOL Code="CHN" Name="China Fund" />
+  <SYMBOL Code="CHS" Name="Chico's Fas" />
+  <SYMBOL Code="CHS-A" Name="Chesapeake Lodging Trust 7.75%" />
+  <SYMBOL Code="CHSP" Name="Chesapeake Lodging Trust" />
+  <SYMBOL Code="CHT" Name="Chunghwa Telecom Co Ltd" />
+  <SYMBOL Code="CHU" Name="China Unicom [Hong Kong] Ltd" />
+  <SYMBOL Code="CI" Name="Cigna Corp" />
+  <SYMBOL Code="CIA" Name="Citizens Inc" />
+  <SYMBOL Code="CIB" Name="Bancolombia S.A." />
+  <SYMBOL Code="CIE" Name="Cobalt International Energy" />
+  <SYMBOL Code="CIEN" Name="Ciena Corp" />
+  <SYMBOL Code="CIF" Name="Colonial Intermediate High" />
+  <SYMBOL Code="CIG" Name="Comp En De Mn Cemig Ads" />
+  <SYMBOL Code="CIG.C" Name="Comp En De Mn Cemig Ads" />
+  <SYMBOL Code="CII" Name="Blackrock Capital and Income Strategies" />
+  <SYMBOL Code="CIM" Name="Chimera Investment Corp" />
+  <SYMBOL Code="CINR" Name="Ciner Resources LP" />
+  <SYMBOL Code="CIO" Name="City Office REIT Inc" />
+  <SYMBOL Code="CIR" Name="Circor International" />
+  <SYMBOL Code="CIT" Name="Cit Group Inc [Del]" />
+  <SYMBOL Code="CIVI" Name="Civitas Solutions Inc" />
+  <SYMBOL Code="CJES" Name="C&amp;J Energy Services Inc" />
+  <SYMBOL Code="CKH" Name="Seacor Smit Inc" />
+  <SYMBOL Code="CKP" Name="Checkpoint Systms" />
+  <SYMBOL Code="CL" Name="Colgate-Palmolive Company" />
+  <SYMBOL Code="CLA" Name="Capitala Finance Corp" />
+  <SYMBOL Code="CLB" Name="Core Laboratories N.V." />
+  <SYMBOL Code="CLC" Name="Clarcor Inc" />
+  <SYMBOL Code="CLD" Name="Cloud Peak Energy Inc" />
+  <SYMBOL Code="CLDT" Name="Chatham Lodging Trust [Reit]" />
+  <SYMBOL Code="CLF" Name="Cliffs Natural Resources Inc" />
+  <SYMBOL Code="CLGX" Name="Corelogic" />
+  <SYMBOL Code="CLH" Name="Clean Harbors" />
+  <SYMBOL Code="CLI" Name="Mack-Cali Realty Corp" />
+  <SYMBOL Code="CLN-A" Name="Colony Financial Inc" />
+  <SYMBOL Code="CLN-B" Name="Colony Financial Inc Perp Pfd" />
+  <SYMBOL Code="CLNY" Name="Colony Financial Inc" />
+  <SYMBOL Code="CLR" Name="Continental Resources" />
+  <SYMBOL Code="CLS" Name="Celestica Inc" />
+  <SYMBOL Code="CLV" Name="Cliffs Natural Resources Inc. Dep. Pfd" />
+  <SYMBOL Code="CLW" Name="Clearwater Paper Corp" />
+  <SYMBOL Code="CLX" Name="Clorox Company" />
+  <SYMBOL Code="CM" Name="Canadian Imperial Bank of Commerce" />
+  <SYMBOL Code="CMA" Name="Comerica Inc" />
+  <SYMBOL Code="CMA.W" Name="Comerica Inc" />
+  <SYMBOL Code="CMC" Name="Commercial Metals Company" />
+  <SYMBOL Code="CMCM" Name="Cheetah Mobile Inc" />
+  <SYMBOL Code="CMG" Name="Chipotle Mexican Grill" />
+  <SYMBOL Code="CMI" Name="Cummins Inc" />
+  <SYMBOL Code="CMN" Name="Cantel Medical" />
+  <SYMBOL Code="CMO" Name="Capstead Mortgage Corp" />
+  <SYMBOL Code="CMO-E" Name="Capstead Mortgage Corp" />
+  <SYMBOL Code="CMP" Name="Compass Minerals Intl Inc" />
+  <SYMBOL Code="CMR-B" Name="Costamare Inc. Perpetual Prefer" />
+  <SYMBOL Code="CMR-C" Name="Costamare Inc. Perpetual Prefer" />
+  <SYMBOL Code="CMRE" Name="Costamare Inc" />
+  <SYMBOL Code="CMS" Name="Cms Energy Corp" />
+  <SYMBOL Code="CMS-B" Name="Consumers Engry 4.50" />
+  <SYMBOL Code="CMU" Name="Colonial Muni Income Trust" />
+  <SYMBOL Code="CNA" Name="Cna Financial Corp" />
+  <SYMBOL Code="CNC" Name="Centene Corp" />
+  <SYMBOL Code="CNCO" Name="Cencosud S.A." />
+  <SYMBOL Code="CNHI" Name="Cnh Industrial N.V." />
+  <SYMBOL Code="CNI" Name="Canadian National Railway Company" />
+  <SYMBOL Code="CNK" Name="Cinemark Holdings Inc" />
+  <SYMBOL Code="CNL" Name="Cleco Power Llc" />
+  <SYMBOL Code="CNNX" Name="Cone Midstream Partners LP" />
+  <SYMBOL Code="CNO" Name="Cno Financial Group" />
+  <SYMBOL Code="CNP" Name="Centerpoint Energy Inc" />
+  <SYMBOL Code="CNQ" Name="Canadian Natural Resources" />
+  <SYMBOL Code="CNS" Name="Cohn &amp; Steers Inc" />
+  <SYMBOL Code="CNW" Name="Con-Way Inc" />
+  <SYMBOL Code="CNX" Name="Consol Energy Inc" />
+  <SYMBOL Code="CNXC" Name="CNX Coal Resources LP Common Un" />
+  <SYMBOL Code="CO" Name="China Cord Blood Corporation" />
+  <SYMBOL Code="CODI" Name="Compass Diversified Holdings" />
+  <SYMBOL Code="COF" Name="Capital One Financial Corp" />
+  <SYMBOL Code="COF-C" Name="Capital One Financial Corporat" />
+  <SYMBOL Code="COF-D" Name="Capital One Financial Corporat" />
+  <SYMBOL Code="COF-F" Name="Capital One Financial Corporat" />
+  <SYMBOL Code="COF-P" Name="Capital One Financial Corp Pfd" />
+  <SYMBOL Code="COF.W" Name="Capital One Financial Corp" />
+  <SYMBOL Code="COG" Name="Cabot Oil &amp; Gas Corp" />
+  <SYMBOL Code="COH" Name="Coach Inc" />
+  <SYMBOL Code="COL" Name="Rockwell Collins" />
+  <SYMBOL Code="COO" Name="Cooper Companies" />
+  <SYMBOL Code="COP" Name="Conocophillips" />
+  <SYMBOL Code="COR" Name="Coresite Realty Corp" />
+  <SYMBOL Code="COR-A" Name="Coresite Realty Corp" />
+  <SYMBOL Code="CORR" Name="Corenergy Infrastructure Trust Inc" />
+  <SYMBOL Code="COT" Name="Cott Corp" />
+  <SYMBOL Code="COTY" Name="Coty Inc" />
+  <SYMBOL Code="CP" Name="Canadian Pacific Railway" />
+  <SYMBOL Code="CPA" Name="Copa Holdings S.A." />
+  <SYMBOL Code="CPAC" Name="Cementos Pacasmayo S.A.A" />
+  <SYMBOL Code="CPB" Name="Campbell Soup Company" />
+  <SYMBOL Code="CPE" Name="Callon Petroleum Company" />
+  <SYMBOL Code="CPE-A" Name="Callon Petroleum Company Prefer" />
+  <SYMBOL Code="CPF" Name="Central Pacific Financial Co" />
+  <SYMBOL Code="CPG" Name="Crescent Pt Energy" />
+  <SYMBOL Code="CPGX" Name="Columbia Pipeline Group Inc. C" />
+  <SYMBOL Code="CPK" Name="Chesapeake Utilities Corp" />
+  <SYMBOL Code="CPL" Name="Cpfl Energia S.A." />
+  <SYMBOL Code="CPN" Name="Calpine Corp" />
+  <SYMBOL Code="CPPL" Name="Columbia Pipeline Partners LP" />
+  <SYMBOL Code="CPS" Name="Cooper Std Hldg Inc" />
+  <SYMBOL Code="CPT" Name="Camden Property Trust" />
+  <SYMBOL Code="CR" Name="Crane Company" />
+  <SYMBOL Code="CRC" Name="California Resources Corporatio" />
+  <SYMBOL Code="CRCM" Name="Care.Com Inc" />
+  <SYMBOL Code="CRD.A" Name="Crawford Co Cl A" />
+  <SYMBOL Code="CRD.B" Name="Crawford Co Cl B" />
+  <SYMBOL Code="CRH" Name="CRH Plc" />
+  <SYMBOL Code="CRI" Name="Carter's Inc" />
+  <SYMBOL Code="CRK" Name="Comstock Resources" />
+  <SYMBOL Code="CRL" Name="Charles River Laboratories Intl" />
+  <SYMBOL Code="CRM" Name="Salesforce.Com Inc" />
+  <SYMBOL Code="CRR" Name="Carbo Ceramics" />
+  <SYMBOL Code="CRS" Name="Carpenter Technology Corp" />
+  <SYMBOL Code="CRT" Name="Cross Timbers Royalty Trust" />
+  <SYMBOL Code="CRY" Name="Cryolife" />
+  <SYMBOL Code="CS" Name="Credit Suisse Group" />
+  <SYMBOL Code="CSC" Name="Computer Sciences Corp" />
+  <SYMBOL Code="CSG" Name="Chambers Street Properties" />
+  <SYMBOL Code="CSH" Name="Cash America International" />
+  <SYMBOL Code="CSI" Name="Cutwater Select Income Fund" />
+  <SYMBOL Code="CSL" Name="Carlisle Companies Inc" />
+  <SYMBOL Code="CSLT" Name="Castlight Health Inc" />
+  <SYMBOL Code="CSS" Name="Css Industries" />
+  <SYMBOL Code="CST" Name="Cst Brands Inc. Common Stock" />
+  <SYMBOL Code="CSTM" Name="Constellium N.V." />
+  <SYMBOL Code="CSU" Name="Capital Senior Living Corp" />
+  <SYMBOL Code="CSV" Name="Carriage Services" />
+  <SYMBOL Code="CSX" Name="CSX Corp" />
+  <SYMBOL Code="CTB" Name="Cooper Tire &amp; Rubber Company" />
+  <SYMBOL Code="CTL" Name="Centurylink" />
+  <SYMBOL Code="CTLT" Name="Catalent Inc" />
+  <SYMBOL Code="CTQ" Name="Qwest Corp" />
+  <SYMBOL Code="CTR" Name="Clearbridge Energy MLP Fund In" />
+  <SYMBOL Code="CTS" Name="Cts Corp" />
+  <SYMBOL Code="CTT" Name="Catchmark Timber Trust Inc" />
+  <SYMBOL Code="CTU" Name="Qwest Corp" />
+  <SYMBOL Code="CTV" Name="Qwest Corporation" />
+  <SYMBOL Code="CTW" Name="Qwest Corp" />
+  <SYMBOL Code="CTX" Name="Qwest Corp" />
+  <SYMBOL Code="CTY" Name="Qwest Corp" />
+  <SYMBOL Code="CTZ" Name="Qwest Corporation 6.625% Notes" />
+  <SYMBOL Code="CUB" Name="Cubic Corp" />
+  <SYMBOL Code="CUB-A" Name="Cubesmart 7.75% Series A Cumula" />
+  <SYMBOL Code="CUBE" Name="Cubesmart" />
+  <SYMBOL Code="CUBI" Name="Customers Bancorp" />
+  <SYMBOL Code="CUBS" Name="Customers Bancorp Inc" />
+  <SYMBOL Code="CUDA" Name="Barracuda Networks Inc" />
+  <SYMBOL Code="CUK" Name="Carnival Plc Ads" />
+  <SYMBOL Code="CUZ" Name="Cousins Properties Inc" />
+  <SYMBOL Code="CVA" Name="Covanta Holding Corp" />
+  <SYMBOL Code="CVB" Name="Lehman Abs Corp" />
+  <SYMBOL Code="CVC" Name="Cablevision Systems Corp" />
+  <SYMBOL Code="CVE" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVEO" Name="Civeo Corporation Common Stock" />
+  <SYMBOL Code="CVG" Name="Convergys Corp" />
+  <SYMBOL Code="CVI" Name="Cvr Energy Inc" />
+  <SYMBOL Code="CVO" Name="Cenveo Inc" />
+  <SYMBOL Code="CVRR" Name="Cvr Refining LP" />
+  <SYMBOL Code="CVS" Name="CVS Corp" />
+  <SYMBOL Code="CVT" Name="Cvent Inc" />
+  <SYMBOL Code="CVX" Name="Chevron Corp" />
+  <SYMBOL Code="CW" Name="Curtiss-Wright Corp" />
+  <SYMBOL Code="CWEI" Name="Clayton Williams Energy" />
+  <SYMBOL Code="CWT" Name="California Water Service Group Holding" />
+  <SYMBOL Code="CX" Name="Cemex S.A.B. De C.V. Sponsored" />
+  <SYMBOL Code="CXE" Name="Colonial High Income Muni Trust" />
+  <SYMBOL Code="CXH" Name="Colonial Investment Grade Muni Trust" />
+  <SYMBOL Code="CXO" Name="Concho Resources Inc" />
+  <SYMBOL Code="CXP" Name="Columbia Property Trust Inc" />
+  <SYMBOL Code="CXW" Name="Corrections Corporation of America" />
+  <SYMBOL Code="CYD" Name="China Yuchai International" />
+  <SYMBOL Code="CYH" Name="Community Health Systems" />
+  <SYMBOL Code="CYN" Name="City National Corp" />
+  <SYMBOL Code="CYN-C" Name="City National Corp" />
+  <SYMBOL Code="CYN-D" Name="City National Corporation Repr" />
+  <SYMBOL Code="CYS" Name="Cys Investments Inc" />
+  <SYMBOL Code="CYS-A" Name="Cys Investments Inc" />
+  <SYMBOL Code="CYS-B" Name="Cys Investments Inc" />
+  <SYMBOL Code="CYT" Name="Cytec Industries Inc" />
+  <SYMBOL Code="CZZ" Name="Cosan Ltd" />
+  <SYMBOL Code="D" Name="Dominion Resources" />
+  <SYMBOL Code="DAC" Name="Danaos Corp" />
+  <SYMBOL Code="DAL" Name="Delta Air Lines Inc" />
+  <SYMBOL Code="DAN" Name="Dana Holding Corp" />
+  <SYMBOL Code="DANG" Name="E-Commerce China Dangdang Inc" />
+  <SYMBOL Code="DAR" Name="Darling International Inc" />
+  <SYMBOL Code="DATA" Name="Tableau Software Inc. Class A" />
+  <SYMBOL Code="DB" Name="Deutsche Bank Ag" />
+  <SYMBOL Code="DBD" Name="Diebold Inc" />
+  <SYMBOL Code="DBL" Name="Doubleline Opportunistic Credi" />
+  <SYMBOL Code="DCA" Name="Dca Total Return Fund" />
+  <SYMBOL Code="DCI" Name="Donaldson Company" />
+  <SYMBOL Code="DCM" Name="Ntt Docomo Inc" />
+  <SYMBOL Code="DCO" Name="Ducommun Inc" />
+  <SYMBOL Code="DCT" Name="Dct Industrial Trust Inc" />
+  <SYMBOL Code="DCUA" Name="Dominion Resources" />
+  <SYMBOL Code="DCUB" Name="Dominion Resources Inc. Un Series B" />
+  <SYMBOL Code="DCUC" Name="Dominion Res Inc Va" />
+  <SYMBOL Code="DD" Name="E.I. Du Pont De Nemours and Company" />
+  <SYMBOL Code="DD-A" Name="Du Pont E I 3.50 Pfd" />
+  <SYMBOL Code="DD-B" Name="Du Pont E I 4.50 Pfd" />
+  <SYMBOL Code="DDC" Name="Dominion Diamond Corp" />
+  <SYMBOL Code="DDD" Name="3D Systems Corp" />
+  <SYMBOL Code="DDE" Name="Dover Downs Gaming &amp; Entertainment Inc" />
+  <SYMBOL Code="DDF" Name="Delaware Dividend &amp; Income" />
+  <SYMBOL Code="DDR" Name="Ddr Corp" />
+  <SYMBOL Code="DDR-J" Name="Ddr Corp" />
+  <SYMBOL Code="DDR-K" Name="Ddr Corp" />
+  <SYMBOL Code="DDS" Name="Dillard's" />
+  <SYMBOL Code="DDT" Name="Dillard's" />
+  <SYMBOL Code="DE" Name="Deere &amp; Company" />
+  <SYMBOL Code="DEA" Name="Easterly Government Properties" />
+  <SYMBOL Code="DECK" Name="Deckers Outdoor Corp" />
+  <SYMBOL Code="DEG" Name="Etablissements Delhaize Freres" />
+  <SYMBOL Code="DEI" Name="Douglas Emmett" />
+  <SYMBOL Code="DEL" Name="Deltic Timber Corp" />
+  <SYMBOL Code="DEO" Name="Diageo Plc" />
+  <SYMBOL Code="DEX" Name="Delaware Enhanced Global Dividend" />
+  <SYMBOL Code="DF" Name="Dean Foods Company" />
+  <SYMBOL Code="DFP" Name="Flaherty &amp; Crumrine Dynamic" />
+  <SYMBOL Code="DFS" Name="Discover Financial Services" />
+  <SYMBOL Code="DFS-B" Name="Discover Financial Services" />
+  <SYMBOL Code="DFT" Name="Dupont Fabros Technology" />
+  <SYMBOL Code="DFT-A" Name="Dupont Fabros Technology Inc" />
+  <SYMBOL Code="DFT-B" Name="Dupont Fabros Technology Inc" />
+  <SYMBOL Code="DG" Name="Dollar General Corp" />
+  <SYMBOL Code="DGI" Name="Digitalglobe Inc" />
+  <SYMBOL Code="DGX" Name="Quest Diagnostics Inc" />
+  <SYMBOL Code="DHF" Name="Dreyfus High Yield Strategies Fund" />
+  <SYMBOL Code="DHG" Name="Dws High Income Opportunities Fund" />
+  <SYMBOL Code="DHI" Name="D.R. Horton" />
+  <SYMBOL Code="DHR" Name="Danaher Corp" />
+  <SYMBOL Code="DHT" Name="Dht Holdings" />
+  <SYMBOL Code="DHX" Name="Dice Holdings" />
+  <SYMBOL Code="DIAX" Name="Nuveen DOW" />
+  <SYMBOL Code="DIN" Name="Dineequity Inc" />
+  <SYMBOL Code="DIS" Name="Walt Disney Company" />
+  <SYMBOL Code="DK" Name="Delek US Holdings" />
+  <SYMBOL Code="DKL" Name="Delek Logistics Partners LP" />
+  <SYMBOL Code="DKS" Name="Dick's Sporting Goods Inc" />
+  <SYMBOL Code="DKT" Name="Deutsch Bk Contingent Cap TR V" />
+  <SYMBOL Code="DL" Name="China Distance Education Holdings" />
+  <SYMBOL Code="DLB" Name="Dolby Laboratories" />
+  <SYMBOL Code="DLNG" Name="Dynagas Lng Partners LP" />
+  <SYMBOL Code="DLPH" Name="Delphi Automotive Plc" />
+  <SYMBOL Code="DLR" Name="Digital Realty Trust" />
+  <SYMBOL Code="DLR-E" Name="Digital Realtytrust Inc" />
+  <SYMBOL Code="DLR-F" Name="Digital Realty Trust Inc" />
+  <SYMBOL Code="DLR-G" Name="Digital Realty Trust Inc" />
+  <SYMBOL Code="DLR-H" Name="Digital Realty" />
+  <SYMBOL Code="DLR-I" Name="Digital Rlty TR Inc Pfd Sr I %" />
+  <SYMBOL Code="DLX" Name="Deluxe Corp" />
+  <SYMBOL Code="DM" Name="Dominion Midstream Partners LP" />
+  <SYMBOL Code="DMB" Name="Dreyfus Municipal Bond Infrastr" />
+  <SYMBOL Code="DMD" Name="Demand Media Inc" />
+  <SYMBOL Code="DMO" Name="Western Asset Mortgage Defined Opp" />
+  <SYMBOL Code="DNB" Name="Dun &amp; Bradstreet Corp" />
+  <SYMBOL Code="DNI" Name="Chartwell Dividend &amp; Income Fund" />
+  <SYMBOL Code="DNOW" Name="Now Inc. Common Stock When Issu" />
+  <SYMBOL Code="DNP" Name="Duff &amp; Phelps Utilities Income" />
+  <SYMBOL Code="DNR" Name="Denbury Resources" />
+  <SYMBOL Code="DO" Name="Diamond Offshore Drilling" />
+  <SYMBOL Code="DOC" Name="Physicians Realty Trust" />
+  <SYMBOL Code="DOM" Name="Dominion Resources Black Warrior" />
+  <SYMBOL Code="DOOR" Name="Masonite Wrldwde Hld" />
+  <SYMBOL Code="DOV" Name="Dover Corp" />
+  <SYMBOL Code="DOW" Name="Dow Chemical Company" />
+  <SYMBOL Code="DPG" Name="Duff &amp; Phelps Global Utility I" />
+  <SYMBOL Code="DPLO" Name="Dplo" />
+  <SYMBOL Code="DPM" Name="Dcp Midstream Partners LP" />
+  <SYMBOL Code="DPS" Name="Dr Pepper Snapple Group Inc" />
+  <SYMBOL Code="DPZ" Name="Domino's Pizza Inc" />
+  <SYMBOL Code="DQ" Name="Daqq New Energy" />
+  <SYMBOL Code="DRA" Name="Diversified Real Asset Income" />
+  <SYMBOL Code="DRD" Name="Drdgold Ltd" />
+  <SYMBOL Code="DRE" Name="Duke Realty Corp" />
+  <SYMBOL Code="DRH" Name="Diamondrock Hospitality Company" />
+  <SYMBOL Code="DRI" Name="Darden Restaurants" />
+  <SYMBOL Code="DRI.P" Name="Darden Restaurants Inc." />
+  <SYMBOL Code="DRII" Name="Diamond Resorts International" />
+  <SYMBOL Code="DRQ" Name="Dril-Quip" />
+  <SYMBOL Code="DSE" Name="Duff &amp; Phelps Select Energy ML" />
+  <SYMBOL Code="DSL" Name="Doubleline Income Solutions Fun" />
+  <SYMBOL Code="DSM" Name="Dreyfus Strategic Muni Bond Fund" />
+  <SYMBOL Code="DST" Name="Dst Systems" />
+  <SYMBOL Code="DSU" Name="Blackrock Debt Strategies Fund" />
+  <SYMBOL Code="DSW" Name="DSW Inc" />
+  <SYMBOL Code="DSX" Name="Diana Shipping Inc" />
+  <SYMBOL Code="DSX-B" Name="Diana Shipping" />
+  <SYMBOL Code="DSXN" Name="Diana Shipping Inc" />
+  <SYMBOL Code="DTE" Name="Dte Energy Company" />
+  <SYMBOL Code="DTF" Name="Duff &amp; Phelps Utilities Tax-Free Income" />
+  <SYMBOL Code="DTK" Name="Deutsche Bk Contingent Cap TR I" />
+  <SYMBOL Code="DTL.P" Name="Datalink Corporation" />
+  <SYMBOL Code="DTQ" Name="Dte Energy Co" />
+  <SYMBOL Code="DTZ" Name="Dte Energy Co" />
+  <SYMBOL Code="DUC" Name="Duff &amp; Phelps Utility &amp; Corporate Trust" />
+  <SYMBOL Code="DUK" Name="Duke Energy Corp" />
+  <SYMBOL Code="DUKH" Name="Duke Energy Corp" />
+  <SYMBOL Code="DV" Name="Devry Inc" />
+  <SYMBOL Code="DVA" Name="Davita Healthcare Partners Inc" />
+  <SYMBOL Code="DVD" Name="Dover Downs Entertainment" />
+  <SYMBOL Code="DVN" Name="Devon Energy Corp" />
+  <SYMBOL Code="DW" Name="Drew Industries Inc" />
+  <SYMBOL Code="DWRE" Name="Demandware Inc" />
+  <SYMBOL Code="DX" Name="Dynex Capital" />
+  <SYMBOL Code="DX-A" Name="Dynex Capital Inc" />
+  <SYMBOL Code="DX-B" Name="Dynex Capital Inc" />
+  <SYMBOL Code="DXB" Name="Deutsche Bk Contingent Cap TR I" />
+  <SYMBOL Code="DY" Name="Dycom Industries" />
+  <SYMBOL Code="DYN" Name="Dynegy Inc" />
+  <SYMBOL Code="DYN-A" Name="Dynegy Inc" />
+  <SYMBOL Code="DYN.W" Name="Dynegy Inc. Warrants" />
+  <SYMBOL Code="E" Name="Eni S.P.A" />
+  <SYMBOL Code="EAA" Name="Entergy Arkansas" />
+  <SYMBOL Code="EAB" Name="First Mortgage Bonds" />
+  <SYMBOL Code="EAE" Name="Entergy Arkansas Inc" />
+  <SYMBOL Code="EARN" Name="Ellington Residential Mortgage" />
+  <SYMBOL Code="EAT" Name="Brinker International" />
+  <SYMBOL Code="EBF" Name="Ennis Inc" />
+  <SYMBOL Code="EBR" Name="Centrais Elc Braz Pfb B Elbras" />
+  <SYMBOL Code="EBR.B" Name="Centrais Elc Braz Pfb B Elbras" />
+  <SYMBOL Code="EBS" Name="Emergent Biosolutions" />
+  <SYMBOL Code="EC" Name="Ecopetrol S.A." />
+  <SYMBOL Code="ECA" Name="Encana Corp" />
+  <SYMBOL Code="ECC" Name="Eagle Point Credit Co. Inc" />
+  <SYMBOL Code="ECCA" Name="Eagle Point Credit Company Inc" />
+  <SYMBOL Code="ECL" Name="Ecolab Inc" />
+  <SYMBOL Code="ECOM" Name="Channeladvisor Corp" />
+  <SYMBOL Code="ECR" Name="Eclipse Resources Corp" />
+  <SYMBOL Code="ECT" Name="Eca Marcellus Trust I" />
+  <SYMBOL Code="ED" Name="Consolidated Edison Company of New York" />
+  <SYMBOL Code="EDD" Name="Emerging Markets Domestic Debt Fund" />
+  <SYMBOL Code="EDE" Name="Empire District Electric Company" />
+  <SYMBOL Code="EDF" Name="Stone Harbor Emerging Markets" />
+  <SYMBOL Code="EDI" Name="Stone Harbor Emerging Markets" />
+  <SYMBOL Code="EDN" Name="Empresa Distribuidora Y Comercializadora" />
+  <SYMBOL Code="EDR" Name="Education Realty Trust Inc" />
+  <SYMBOL Code="EDU" Name="New Oriental Education &amp; Technology Group" />
+  <SYMBOL Code="EE" Name="El Paso Electric Company" />
+  <SYMBOL Code="EEA" Name="European Equity Fund" />
+  <SYMBOL Code="EEP" Name="Enbridge Energy L.P." />
+  <SYMBOL Code="EEQ" Name="Enbridge Energy Management Llc" />
+  <SYMBOL Code="EFC" Name="Ellington Financial Llc" />
+  <SYMBOL Code="EFF" Name="Eaton Vance Floating-Rate Inco" />
+  <SYMBOL Code="EFM" Name="Entergy Mississippi" />
+  <SYMBOL Code="EFR" Name="Eaton Vance Senior Floating-Rate Fund" />
+  <SYMBOL Code="EFT" Name="Eaton Vance Floating Rate Income Trust" />
+  <SYMBOL Code="EFX" Name="Equifax Inc" />
+  <SYMBOL Code="EGF" Name="Blackrock Enhanced Government Fund" />
+  <SYMBOL Code="EGIF" Name="Eagle Growth and Income Opportu" />
+  <SYMBOL Code="EGL" Name="Engility Holdings Inc. Common" />
+  <SYMBOL Code="EGN" Name="Energen Corp" />
+  <SYMBOL Code="EGO" Name="Eldorado Gold Corp" />
+  <SYMBOL Code="EGP" Name="Eastgroup Properties" />
+  <SYMBOL Code="EGY" Name="Vaalco Energy Inc" />
+  <SYMBOL Code="EHI" Name="Western Asset Global High" />
+  <SYMBOL Code="EHIC" Name="Ehi Car Services Ltd" />
+  <SYMBOL Code="EIG" Name="Employers Holdings Inc" />
+  <SYMBOL Code="EIX" Name="Edison International" />
+  <SYMBOL Code="EJ" Name="E-House [China] Holdings" />
+  <SYMBOL Code="EL" Name="Estee Lauder Companies" />
+  <SYMBOL Code="ELA" Name="Entergy Louisiana Llc" />
+  <SYMBOL Code="ELB" Name="Entergy Louisiana" />
+  <SYMBOL Code="ELJ" Name="Entergy Louisiana Llc" />
+  <SYMBOL Code="ELLI" Name="Ellie Mae Inc" />
+  <SYMBOL Code="ELP" Name="Companhia Paranaense De Energia" />
+  <SYMBOL Code="ELS" Name="Equity Lifestyle Properties" />
+  <SYMBOL Code="ELS-C" Name="Eqty Lifestyle Properties Inc" />
+  <SYMBOL Code="ELU" Name="Entergy Louisiana Llc First M" />
+  <SYMBOL Code="ELY" Name="Callaway Golf Company" />
+  <SYMBOL Code="EMC" Name="EMC Corp" />
+  <SYMBOL Code="EMD" Name="Western Asset Emerging Markets Fund" />
+  <SYMBOL Code="EME" Name="Emcor Group" />
+  <SYMBOL Code="EMES" Name="Emerge Energy Services LP Commo" />
+  <SYMBOL Code="EMF" Name="Templeton Emerging Markets Fund" />
+  <SYMBOL Code="EMG" Name="Emergent Capital Inc." />
+  <SYMBOL Code="EMN" Name="Eastman Chemical Company" />
+  <SYMBOL Code="EMO" Name="Clearbridge Energy MLP Opportu" />
+  <SYMBOL Code="EMQ" Name="Entergy Mississippi" />
+  <SYMBOL Code="EMR" Name="Emerson Electric Company" />
+  <SYMBOL Code="EMZ" Name="Entergy Mississippi Inc. First" />
+  <SYMBOL Code="ENB" Name="Enbridge Inc" />
+  <SYMBOL Code="ENBL" Name="Enable Midstream Partners LP" />
+  <SYMBOL Code="ENH" Name="Endurance Specialty Holdings Ltd" />
+  <SYMBOL Code="ENH-A" Name="Endurance Spec Pfd" />
+  <SYMBOL Code="ENH-B" Name="Endurance Specialty Holdings L" />
+  <SYMBOL Code="ENI" Name="Enersis S A" />
+  <SYMBOL Code="ENJ" Name="Entergy New Orleans Inc" />
+  <SYMBOL Code="ENLC" Name="Enlink Midstream Llc" />
+  <SYMBOL Code="ENLK" Name="Enlink Midstream Partners LP" />
+  <SYMBOL Code="ENR" Name="Energizer Holdings Inc" />
+  <SYMBOL Code="ENS" Name="Enersys Inc" />
+  <SYMBOL Code="ENV" Name="Envestnet Inc" />
+  <SYMBOL Code="ENVA" Name="Enova International Inc. Commo" />
+  <SYMBOL Code="ENZ" Name="Enzo Biochem" />
+  <SYMBOL Code="EOC" Name="Empresa Nacional De Electricidad S.A." />
+  <SYMBOL Code="EOD" Name="Wells Fargo Global Dividend Opportunity" />
+  <SYMBOL Code="EOG" Name="Eog Resources" />
+  <SYMBOL Code="EOI" Name="Eaton Vance Enhance Equity" />
+  <SYMBOL Code="EOS" Name="Eaton Vance Enhanced Equity II" />
+  <SYMBOL Code="EOT" Name="Eaton Vance Muni Income Trust" />
+  <SYMBOL Code="EP-C" Name="El Paso Egy Cap I Pr" />
+  <SYMBOL Code="EPAM" Name="Epam Systems Inc" />
+  <SYMBOL Code="EPC" Name="Edgewell Personal Care" />
+  <SYMBOL Code="EPD" Name="Enterprise Products Partners L.P." />
+  <SYMBOL Code="EPE" Name="Ep Energy Corp" />
+  <SYMBOL Code="EPR" Name="Entertainment Properties Trust" />
+  <SYMBOL Code="EPR-C" Name="Entertainment Prp Pf" />
+  <SYMBOL Code="EPR-E" Name="Entertainment Ppty P" />
+  <SYMBOL Code="EPR-F" Name="Entertainment Properties Trust" />
+  <SYMBOL Code="EQC" Name="Equity Commonwealth" />
+  <SYMBOL Code="EQC-D" Name="Eqty Commonwealth" />
+  <SYMBOL Code="EQC-E" Name="Eqty Commonwealth" />
+  <SYMBOL Code="EQCO" Name="Equity Commonwealth" />
+  <SYMBOL Code="EQGP" Name="Eqt Gp Holdings LP" />
+  <SYMBOL Code="EQM" Name="Equity Midstream Partners LP" />
+  <SYMBOL Code="EQR" Name="Equity Residential" />
+  <SYMBOL Code="EQS" Name="Equus Total Return" />
+  <SYMBOL Code="EQT" Name="Eqt Corp" />
+  <SYMBOL Code="EQY" Name="Equity One" />
+  <SYMBOL Code="ERA" Name="Era Group Inc. Common Stock W" />
+  <SYMBOL Code="ERF" Name="Enerplus Corp" />
+  <SYMBOL Code="ERJ" Name="Embraer-Empresa Brasileira De Aeronautica" />
+  <SYMBOL Code="EROS" Name="Eros International Plc" />
+  <SYMBOL Code="ES" Name="Eversource Energy" />
+  <SYMBOL Code="ESD" Name="Western Asset Emerging Markets Debt Fund Inc" />
+  <SYMBOL Code="ESE" Name="Esco Technologies Inc" />
+  <SYMBOL Code="ESI" Name="ITT Educational Services" />
+  <SYMBOL Code="ESL" Name="Esterline Technologies Corp" />
+  <SYMBOL Code="ESNT" Name="Essent Group Ltd" />
+  <SYMBOL Code="ESRT" Name="Empire State Realty Trust Inc" />
+  <SYMBOL Code="ESS" Name="Essex Property Trust" />
+  <SYMBOL Code="ESS-H" Name="Essex Property Trust Inc. 7.12" />
+  <SYMBOL Code="ESV" Name="Ensco Plc" />
+  <SYMBOL Code="ETB" Name="Eaton Vance Tax-Managed Buy-Write" />
+  <SYMBOL Code="ETE" Name="Energy Transfer Equity LP" />
+  <SYMBOL Code="ETG" Name="Eaton Vance Tax-Advantaged Global Dividend" />
+  <SYMBOL Code="ETH" Name="Ethan Allen Interiors Inc" />
+  <SYMBOL Code="ETJ" Name="Eaton Vance Risk-Managed Diversified Equity" />
+  <SYMBOL Code="ETM" Name="Entercom Communications Corp" />
+  <SYMBOL Code="ETN" Name="Eaton Corp" />
+  <SYMBOL Code="ETO" Name="Eaton Vance Tax-Advantage Global Dividend Opp" />
+  <SYMBOL Code="ETP" Name="Energy Transfer Partners" />
+  <SYMBOL Code="ETR" Name="Entergy Corp" />
+  <SYMBOL Code="ETV" Name="Eaton Vance Corp" />
+  <SYMBOL Code="ETW" Name="Eaton Vance Corp" />
+  <SYMBOL Code="ETX" Name="Eaton Vance Municipal Income T" />
+  <SYMBOL Code="ETY" Name="Eaton Vance Tax-Managed Diversified Equity" />
+  <SYMBOL Code="EURN" Name="Euronav Nv" />
+  <SYMBOL Code="EV" Name="Eaton Vance Corp" />
+  <SYMBOL Code="EVA" Name="Enviva Partners LP" />
+  <SYMBOL Code="EVC" Name="Entravision Communications Corp" />
+  <SYMBOL Code="EVDY" Name="Everyday Health Inc" />
+  <SYMBOL Code="EVE-A" Name="Everbank Financial Corp. Deposi" />
+  <SYMBOL Code="EVER" Name="Everbank Financial Corp" />
+  <SYMBOL Code="EVF" Name="Eaton Vance Senior Income Trust" />
+  <SYMBOL Code="EVG" Name="Eaton Vance Short Diversified" />
+  <SYMBOL Code="EVGN" Name="Evogene Ltd Ord" />
+  <SYMBOL Code="EVH" Name="Evolent Health Inc Class A Com" />
+  <SYMBOL Code="EVHC" Name="Envision Healthcare Holdings" />
+  <SYMBOL Code="EVN" Name="Eaton Vance Muni Income Trust" />
+  <SYMBOL Code="EVR" Name="Evercore Partners Inc" />
+  <SYMBOL Code="EVRI" Name="Everi Holdings Inc" />
+  <SYMBOL Code="EVT" Name="Eaton Vance Tax Advantaged Dividend" />
+  <SYMBOL Code="EVTC" Name="Evertec Inc. Common Stock" />
+  <SYMBOL Code="EW" Name="Edwards Lifesciences Corp" />
+  <SYMBOL Code="EXAM" Name="Examworks Group" />
+  <SYMBOL Code="EXAR" Name="Exar Corp" />
+  <SYMBOL Code="EXC" Name="Exelon Corp" />
+  <SYMBOL Code="EXCU" Name="Exelon Corp" />
+  <SYMBOL Code="EXD" Name="Eaton Vance Tax-Advantaged Bond" />
+  <SYMBOL Code="EXG" Name="Eaton Vance Tax-Managed Global Diversified Equit" />
+  <SYMBOL Code="EXH" Name="Exterran Holdings" />
+  <SYMBOL Code="EXK" Name="Endeavour Silver Corp" />
+  <SYMBOL Code="EXP" Name="Eagle Materials Inc" />
+  <SYMBOL Code="EXPR" Name="Express Inc" />
+  <SYMBOL Code="EXR" Name="Extra Space Storage Inc" />
+  <SYMBOL Code="EXTN" Name="Exterran Corporation Common Sto" />
+  <SYMBOL Code="EZT" Name="First Mortgage Bonds" />
+  <SYMBOL Code="F" Name="Ford Motor Company" />
+  <SYMBOL Code="FAC" Name="Liberte Investors Inc" />
+  <SYMBOL Code="FAF" Name="First American Corp" />
+  <SYMBOL Code="FAM" Name="First Trust/Aberdeen Global Opportunity" />
+  <SYMBOL Code="FAV" Name="Active Dividend" />
+  <SYMBOL Code="FBC" Name="Flagstar Bancorp" />
+  <SYMBOL Code="FBHS" Name="Fortune Brands Home &amp; Security" />
+  <SYMBOL Code="FBP" Name="First Bancorp" />
+  <SYMBOL Code="FBR" Name="Fibria Celulose S.A." />
+  <SYMBOL Code="FBS-A" Name="First Pfd Cp IV 8.15" />
+  <SYMBOL Code="FC" Name="Franklin Covey Company" />
+  <SYMBOL Code="FCAM" Name="Fiat Chrysler Automobiles N.V." />
+  <SYMBOL Code="FCAU" Name="Fiat Chrysler Automobiles N.V." />
+  <SYMBOL Code="FCB" Name="Fcb Financial Holdings Inc" />
+  <SYMBOL Code="FCE.A" Name="Forest City Ent Cl A" />
+  <SYMBOL Code="FCE.B" Name="Forest City Ent Cl B" />
+  <SYMBOL Code="FCF" Name="First Commonwealth Financial Corp" />
+  <SYMBOL Code="FCH" Name="Felcor Lodging Trust Inc" />
+  <SYMBOL Code="FCH-A" Name="Felcor Lodg Pr A" />
+  <SYMBOL Code="FCN" Name="Fti Consulting" />
+  <SYMBOL Code="FCPT" Name="Four Corners Property Trust In" />
+  <SYMBOL Code="FCT" Name="Senior Floating Rate II" />
+  <SYMBOL Code="FCX" Name="Freeport-Mcmoran Inc" />
+  <SYMBOL Code="FDC" Name="First Data Corp" />
+  <SYMBOL Code="FDEU" Name="First Trust Dynamic Europe Equi" />
+  <SYMBOL Code="FDI" Name="Fort Dearborn Income Securities" />
+  <SYMBOL Code="FDP" Name="Fresh Del Monte Produce" />
+  <SYMBOL Code="FDS" Name="Factset Research Systems Inc" />
+  <SYMBOL Code="FDX" Name="Fedex Corp" />
+  <SYMBOL Code="FE" Name="Firstenergy Corp" />
+  <SYMBOL Code="FEI" Name="First Trust MLP and Energy Inc" />
+  <SYMBOL Code="FELP" Name="Foresight Energy LP" />
+  <SYMBOL Code="FENG" Name="Phoenix New Media Ltd" />
+  <SYMBOL Code="FEO" Name="First Trust/Aberdeen Emerging Opportunity Fund" />
+  <SYMBOL Code="FET" Name="Forum Energy Technologies Inc" />
+  <SYMBOL Code="FF" Name="Futurefuel Corp" />
+  <SYMBOL Code="FFA" Name="First Trust Enhanced Equity Income Fund" />
+  <SYMBOL Code="FFC" Name="Flaherty Crumrine/Claymore Preferred Securities" />
+  <SYMBOL Code="FFG" Name="Fbl Financial Group" />
+  <SYMBOL Code="FGB" Name="Specialty Finance and Financial Fund" />
+  <SYMBOL Code="FGL" Name="Fidelity &amp; Guaranty" />
+  <SYMBOL Code="FGP" Name="Ferrellgas Partners L.P." />
+  <SYMBOL Code="FHN" Name="First Tennessee National Corp" />
+  <SYMBOL Code="FHN-A" Name="First Horizon National Corpora" />
+  <SYMBOL Code="FHY" Name="Strategic High II" />
+  <SYMBOL Code="FI" Name="Frank's International N.V." />
+  <SYMBOL Code="FICO" Name="Fair Isaac and Company Inc" />
+  <SYMBOL Code="FIF" Name="First Trust Energy Infrastruct" />
+  <SYMBOL Code="FIG" Name="Fortress Investment Group" />
+  <SYMBOL Code="FII" Name="Federated Investors" />
+  <SYMBOL Code="FIS" Name="Fidelity National Information Services" />
+  <SYMBOL Code="FIT" Name="Fitbit Inc" />
+  <SYMBOL Code="FIX" Name="Comfort Systems USA" />
+  <SYMBOL Code="FL" Name="Footlocker Inc" />
+  <SYMBOL Code="FLC" Name="Flaherty &amp; Crumrine/Claymore Total Return" />
+  <SYMBOL Code="FLO" Name="Flowers Foods" />
+  <SYMBOL Code="FLOW" Name="SPX Flow Inc. Common Stock" />
+  <SYMBOL Code="FLR" Name="Fluor Corp" />
+  <SYMBOL Code="FLS" Name="Flowserve Corp" />
+  <SYMBOL Code="FLT" Name="Fleetcor Technologies" />
+  <SYMBOL Code="FLTX" Name="Fleetmatics Group Plc" />
+  <SYMBOL Code="FLY" Name="Fly Leasing Ltd" />
+  <SYMBOL Code="FMC" Name="FMC Corp" />
+  <SYMBOL Code="FMD" Name="First Marblehead Corp" />
+  <SYMBOL Code="FME-A" Name="Firstmerit Corporation Deposita" />
+  <SYMBOL Code="FMN" Name="Federated Premier Muni" />
+  <SYMBOL Code="FMO" Name="Fiduciary/Claymore MLP Opportunity Fund" />
+  <SYMBOL Code="FMS" Name="Fresenius Medical Care Corp" />
+  <SYMBOL Code="FMSA" Name="Fmsa Holdings Inc" />
+  <SYMBOL Code="FMX" Name="Fomento Economico Mexicano S.A.B. De C.V" />
+  <SYMBOL Code="FMY" Name="First Trust/Fidac Mortgage Income Fund" />
+  <SYMBOL Code="FN" Name="Fabrinet" />
+  <SYMBOL Code="FNB" Name="F.N.B. Corp" />
+  <SYMBOL Code="FNB-E" Name="F.N.B. Corporation Representin" />
+  <SYMBOL Code="FNF" Name="Fidelity National Financial" />
+  <SYMBOL Code="FNF-B" Name="First Niagara Financial Group" />
+  <SYMBOL Code="FNFV" Name="Fnfv Group of Fidelity National" />
+  <SYMBOL Code="FNV" Name="Franco Nev Corp" />
+  <SYMBOL Code="FOE" Name="Ferro Corp" />
+  <SYMBOL Code="FOF" Name="Cohen &amp; Steers Closed-End Opportunity Fund" />
+  <SYMBOL Code="FOR" Name="Forestar Group Inc" />
+  <SYMBOL Code="FPF" Name="First Trust Intermediate Durat" />
+  <SYMBOL Code="FPI" Name="Farmland Partners Inc" />
+  <SYMBOL Code="FPL" Name="First Trust New Opportunities M" />
+  <SYMBOL Code="FPO" Name="First Potomac Realty Trust" />
+  <SYMBOL Code="FPO-A" Name="First Potomac Realty Trust Cumu" />
+  <SYMBOL Code="FPT" Name="Federated Premier Intermediate Muni" />
+  <SYMBOL Code="FR" Name="First Industrial Realty Trust" />
+  <SYMBOL Code="FRA" Name="Blackrock Floating Rate Income Fund" />
+  <SYMBOL Code="FRC" Name="First Republic Bank" />
+  <SYMBOL Code="FRC-A" Name="First Republic Bank 6.70%" />
+  <SYMBOL Code="FRC-B" Name="First Republic Bank" />
+  <SYMBOL Code="FRC-C" Name="First Republic Bank" />
+  <SYMBOL Code="FRC-D" Name="First Republic Bank San Francis" />
+  <SYMBOL Code="FRC-E" Name="First Republic Bank" />
+  <SYMBOL Code="FRC-F" Name="First Republic Bank" />
+  <SYMBOL Code="FRM" Name="Furmanite Corp" />
+  <SYMBOL Code="FRO" Name="Frontline Ltd" />
+  <SYMBOL Code="FRT" Name="Federal Realty Investment Trust" />
+  <SYMBOL Code="FSB" Name="Franklin Financial Network Inc" />
+  <SYMBOL Code="FSCE" Name="Fifth Street Finance Corp" />
+  <SYMBOL Code="FSD" Name="High Income Long Short Fund" />
+  <SYMBOL Code="FSIC" Name="FS Investment Corp" />
+  <SYMBOL Code="FSL" Name="Freescale Semiconductor Holdin" />
+  <SYMBOL Code="FSM" Name="Fortuna Silver Mines" />
+  <SYMBOL Code="FSS" Name="Federal Signal Corp" />
+  <SYMBOL Code="FT" Name="Franklin Universal Trust" />
+  <SYMBOL Code="FTAI" Name="Fortress Transportation &amp; Infra" />
+  <SYMBOL Code="FTI" Name="FMC Technologies" />
+  <SYMBOL Code="FTK" Name="Flotek Industries" />
+  <SYMBOL Code="FUL" Name="H. B. Fuller Company" />
+  <SYMBOL Code="FUN" Name="Cedar Fair L.P." />
+  <SYMBOL Code="FUR" Name="Winthrop Realty Trust" />
+  <SYMBOL Code="FVE" Name="Five Star Quality Care" />
+  <SYMBOL Code="FXCM" Name="FXCM Inc" />
+  <SYMBOL Code="G" Name="Genpact Ltd" />
+  <SYMBOL Code="GAB" Name="Gabelli Equity Trust" />
+  <SYMBOL Code="GAB-D" Name="Gabelli Eq TR Pfd D" />
+  <SYMBOL Code="GAB-G" Name="The Gabelli Equity Trust Inc" />
+  <SYMBOL Code="GAB-H" Name="The Gabelli Eqty Trust Inc" />
+  <SYMBOL Code="GAM" Name="General American Investors" />
+  <SYMBOL Code="GAM-B" Name="Genl Amer Invs Pfd" />
+  <SYMBOL Code="GAS" Name="Agl Resources" />
+  <SYMBOL Code="GB" Name="Greatbatch" />
+  <SYMBOL Code="GBAB" Name="Guggenheim Build America Bonds" />
+  <SYMBOL Code="GBL" Name="Gamco Investors" />
+  <SYMBOL Code="GBX" Name="Greenbrier Companies" />
+  <SYMBOL Code="GCAP" Name="Gain Capital Holdings" />
+  <SYMBOL Code="GCH" Name="Greater China Fund" />
+  <SYMBOL Code="GCI" Name="Gannett Co. Inc" />
+  <SYMBOL Code="GCO" Name="Genesco Inc" />
+  <SYMBOL Code="GCV" Name="Gabelli Convertible and Income Securities" />
+  <SYMBOL Code="GCV-B" Name="Gabelli 6.00% Pfd B" />
+  <SYMBOL Code="GD" Name="General Dynamics Corp" />
+  <SYMBOL Code="GDDY" Name="Godaddy Inc" />
+  <SYMBOL Code="GDF" Name="Western Asset Global Partners" />
+  <SYMBOL Code="GDL" Name="The Gdl Fund" />
+  <SYMBOL Code="GDL-B" Name="The Gdl Fund Series B Cumulativ" />
+  <SYMBOL Code="GDO" Name="Western Asset Global Corporate Defined" />
+  <SYMBOL Code="GDOT" Name="Green Dot Corp" />
+  <SYMBOL Code="GDP" Name="Goodrich Petroleum Corp" />
+  <SYMBOL Code="GDP-C" Name="Goodrich Petroleum Corp" />
+  <SYMBOL Code="GDP-D" Name="Goodrich Petroleum Coproration" />
+  <SYMBOL Code="GDV" Name="Gabelli Dividend" />
+  <SYMBOL Code="GDV-A" Name="Gabelli Dv" />
+  <SYMBOL Code="GDV-D" Name="Gabelli Pref D" />
+  <SYMBOL Code="GE" Name="General Electric Company" />
+  <SYMBOL Code="GEB" Name="General Electric Capital Corpo" />
+  <SYMBOL Code="GEF" Name="Greif Bros. Corp" />
+  <SYMBOL Code="GEF.B" Name="Greif Bros. Corp" />
+  <SYMBOL Code="GEH" Name="General Electric Capital Corpo" />
+  <SYMBOL Code="GEK" Name="General Electric Capital Corpo" />
+  <SYMBOL Code="GEL" Name="Genesis Energy L.P." />
+  <SYMBOL Code="GEN" Name="Genesis Healthcare Inc" />
+  <SYMBOL Code="GEO" Name="Geo Group Inc" />
+  <SYMBOL Code="GEQ" Name="Guggenheim Equal Weight Enhance" />
+  <SYMBOL Code="GER" Name="Goldman Sachs MLP Energy Renai" />
+  <SYMBOL Code="GES" Name="Guess Inc" />
+  <SYMBOL Code="GF" Name="New Germany Fund" />
+  <SYMBOL Code="GFA" Name="Gafisa Sa" />
+  <SYMBOL Code="GFF" Name="Griffon Corp" />
+  <SYMBOL Code="GFI" Name="Gold Fields Ltd" />
+  <SYMBOL Code="GFY" Name="Western Asset Variable Rate Strategic" />
+  <SYMBOL Code="GG" Name="Goldcorp Inc" />
+  <SYMBOL Code="GGB" Name="Gerdau S.A." />
+  <SYMBOL Code="GGE" Name="Claymore Dividend &amp; Income Fund" />
+  <SYMBOL Code="GGG" Name="Graco Inc" />
+  <SYMBOL Code="GGM" Name="Guggenheim Credit Allocation F" />
+  <SYMBOL Code="GGP" Name="General Growth Properties" />
+  <SYMBOL Code="GGP-A" Name="General Growth Properties Inc" />
+  <SYMBOL Code="GGT" Name="Gabelli Global Multi-Media Trust" />
+  <SYMBOL Code="GGT-B" Name="Gabelli Global Multi-Media Trus" />
+  <SYMBOL Code="GGZ" Name="Gabelli Global Small and Mid CA" />
+  <SYMBOL Code="GHC" Name="Graham Holdings Company" />
+  <SYMBOL Code="GHI" Name="Global High Income Dollar Fund" />
+  <SYMBOL Code="GHL" Name="Greenhill &amp; Co. Inc" />
+  <SYMBOL Code="GHM" Name="Graham Corp" />
+  <SYMBOL Code="GHY" Name="Prudential Global Short Durati" />
+  <SYMBOL Code="GI" Name="Endochoice Holdings Inc. Commo" />
+  <SYMBOL Code="GIB" Name="CGI Group" />
+  <SYMBOL Code="GIL" Name="Gildan Activewear" />
+  <SYMBOL Code="GIM" Name="Templeton Global" />
+  <SYMBOL Code="GIMO" Name="Gigamon Inc" />
+  <SYMBOL Code="GIS" Name="General Mills" />
+  <SYMBOL Code="GJH" Name="Strats Sm Trust For United States Cellular Corp" />
+  <SYMBOL Code="GJO" Name="Strats Sm Trust For Wal-Mart Stores Inc Securiti" />
+  <SYMBOL Code="GJP" Name="Strats Sm Trust For Dominion Resources Inc Secur" />
+  <SYMBOL Code="GJR" Name="Strats Sm Trust For The Procter &amp; Gamble Co Secu" />
+  <SYMBOL Code="GJS" Name="Strats Sm Trust For Goldman Sachs Group Securiti" />
+  <SYMBOL Code="GJT" Name="Strats Sm Trust For Allstate Corp Securities Ser" />
+  <SYMBOL Code="GJV" Name="Strats Sm Trust For News Corp Securities Series" />
+  <SYMBOL Code="GKOS" Name="Glaukos Corp" />
+  <SYMBOL Code="GLF" Name="Gulfmark Offshore" />
+  <SYMBOL Code="GLOB" Name="Globant S.A." />
+  <SYMBOL Code="GLOG" Name="Gaslog Ltd" />
+  <SYMBOL Code="GLOP" Name="Gaslog Partners LP" />
+  <SYMBOL Code="GLP" Name="Global Partners LP" />
+  <SYMBOL Code="GLPW" Name="Global Power Equipment Group Inc" />
+  <SYMBOL Code="GLT" Name="Glatfelter" />
+  <SYMBOL Code="GLW" Name="Corning Inc" />
+  <SYMBOL Code="GM" Name="General Motors Company" />
+  <SYMBOL Code="GM.A" Name="General Mtrs" />
+  <SYMBOL Code="GM.B" Name="General Mtrs" />
+  <SYMBOL Code="GM.C" Name="General Motors Company" />
+  <SYMBOL Code="GME" Name="Gamestop Corp" />
+  <SYMBOL Code="GMED" Name="Globus Medical Inc" />
+  <SYMBOL Code="GMT" Name="GATX Corp" />
+  <SYMBOL Code="GMZ" Name="Goldman Sachs MLP Income Oppor" />
+  <SYMBOL Code="GNC" Name="GNC Holdings Inc" />
+  <SYMBOL Code="GNE" Name="Genie Energy Ltd. Class B Commo" />
+  <SYMBOL Code="GNE-A" Name="Genie Energy Ltd. Series" />
+  <SYMBOL Code="GNK" Name="Genco Shipping &amp; Trading Ltd" />
+  <SYMBOL Code="GNL" Name="Global Net Lease Inc. Common S" />
+  <SYMBOL Code="GNRC" Name="Generac Holdings Inc" />
+  <SYMBOL Code="GNRT" Name="Gener8 Maritime Inc" />
+  <SYMBOL Code="GNT" Name="Gabelli Natural Resources Gold" />
+  <SYMBOL Code="GNW" Name="Genworth Financial Inc" />
+  <SYMBOL Code="GOF" Name="Claymore/Guggenheim Strategic Fund" />
+  <SYMBOL Code="GOL" Name="Gol Linhas Aereas Inteligentes S.A." />
+  <SYMBOL Code="GOV" Name="Government Properties Income Trust" />
+  <SYMBOL Code="GPC" Name="Genuine Parts Company" />
+  <SYMBOL Code="GPE-A" Name="Ga Pwr Co Cl A Pfd" />
+  <SYMBOL Code="GPI" Name="Group 1 Automotive" />
+  <SYMBOL Code="GPK" Name="Graphic Packaging Holding Company" />
+  <SYMBOL Code="GPM" Name="Guggenheim Enhanced Equity" />
+  <SYMBOL Code="GPN" Name="Global Payments Inc" />
+  <SYMBOL Code="GPRK" Name="Geopark Hldgs Lmtd" />
+  <SYMBOL Code="GPS" Name="Gap Inc" />
+  <SYMBOL Code="GPT" Name="Gramercy Capital Corp" />
+  <SYMBOL Code="GPT-B" Name="Gramercy Property Trust Inc" />
+  <SYMBOL Code="GPX" Name="Gp Strategies Corp" />
+  <SYMBOL Code="GRA" Name="W.R. Grace &amp; Company" />
+  <SYMBOL Code="GRAM" Name="Graa Y Montero S.A.A" />
+  <SYMBOL Code="GRO" Name="Agria Corp" />
+  <SYMBOL Code="GRP.U" Name="Granite Real Estate Investment" />
+  <SYMBOL Code="GRR" Name="Asia Tigers Fund" />
+  <SYMBOL Code="GRUB" Name="Grubhub Inc" />
+  <SYMBOL Code="GRX" Name="The Gabelli Healthcare &amp; Wellness Trust" />
+  <SYMBOL Code="GRX-A" Name="The Gabelli Healthcare &amp; Welln" />
+  <SYMBOL Code="GRX-B" Name="The Gabelli Healthcare &amp; Welln" />
+  <SYMBOL Code="GS" Name="Goldman Sachs Group" />
+  <SYMBOL Code="GS-A" Name="Goldman Sachs Pfd" />
+  <SYMBOL Code="GS-B" Name="Goldman Dep Sh" />
+  <SYMBOL Code="GS-C" Name="Goldman Dep Sh" />
+  <SYMBOL Code="GS-D" Name="Goldman Sachs Dep Sh" />
+  <SYMBOL Code="GS-I" Name="The Goldman Sachs Group Inc" />
+  <SYMBOL Code="GS-J" Name="Goldman Sachs Group Inc" />
+  <SYMBOL Code="GS-K" Name="Goldman Sachs Group Inc. The" />
+  <SYMBOL Code="GSBD" Name="Goldman Sachs Bdc Inc" />
+  <SYMBOL Code="GSF" Name="Goldman Sachs Group" />
+  <SYMBOL Code="GSH" Name="Guangshen Railway Company" />
+  <SYMBOL Code="GSI" Name="General Steel Holdings" />
+  <SYMBOL Code="GSJ" Name="Goldman Sachs Group Inc. [The]" />
+  <SYMBOL Code="GSK" Name="Glaxosmithkline Plc" />
+  <SYMBOL Code="GSL" Name="Global Ship Lease Inc" />
+  <SYMBOL Code="GSL-B" Name="Global Ship Lease Inc" />
+  <SYMBOL Code="GTN" Name="Gray Television" />
+  <SYMBOL Code="GTN.A" Name="Gray Television" />
+  <SYMBOL Code="GTS" Name="Triple-S Management Corp" />
+  <SYMBOL Code="GTT" Name="Global Telcom &amp; Technology Inc" />
+  <SYMBOL Code="GTY" Name="Getty Realty Corp" />
+  <SYMBOL Code="GUA" Name="Gulf Power Company Series 2011A" />
+  <SYMBOL Code="GUT" Name="Gabelli Utility Trust" />
+  <SYMBOL Code="GUT-A" Name="Gabelli Util Pfd A" />
+  <SYMBOL Code="GVA" Name="Granite Construction Inc" />
+  <SYMBOL Code="GWB" Name="Great Western Bancorp Inc" />
+  <SYMBOL Code="GWR" Name="Genesee &amp; Wyoming" />
+  <SYMBOL Code="GWRE" Name="Guidewire Software Inc. Common" />
+  <SYMBOL Code="GWW" Name="W.W. Grainger" />
+  <SYMBOL Code="GXP" Name="Great Plains Energy Inc" />
+  <SYMBOL Code="GXP-A" Name="Great Plains Energy 3.8%" />
+  <SYMBOL Code="GXP-D" Name="Great Plains Energy 4.35%" />
+  <SYMBOL Code="GXP-E" Name="Great Plains Energy 4.5%" />
+  <SYMBOL Code="GYB" Name="Cabco Series 2004-101 Trust" />
+  <SYMBOL Code="GYC" Name="Corporate Asset Backed Corp Cabco" />
+  <SYMBOL Code="GZT" Name="Gazit-Globe Ltd" />
+  <SYMBOL Code="H" Name="Hyatt Hotels Corp" />
+  <SYMBOL Code="HAE" Name="Haemonetics Corp" />
+  <SYMBOL Code="HAL" Name="Halliburton Company" />
+  <SYMBOL Code="HAR" Name="Harman International Industries Inc" />
+  <SYMBOL Code="HASI" Name="Hannon Armstrong Sustainable In" />
+  <SYMBOL Code="HBI" Name="Hanesbrands Inc" />
+  <SYMBOL Code="HBM" Name="Hudbay Minerals Inc" />
+  <SYMBOL Code="HBM.W" Name="Hudbay Minerals Inc" />
+  <SYMBOL Code="HCA" Name="Hca Holdings Inc. Common Stock" />
+  <SYMBOL Code="HCC" Name="Hcc Insurance Holdings" />
+  <SYMBOL Code="HCI" Name="Homeowners Choice" />
+  <SYMBOL Code="HCJ" Name="Homeowners Choice Inc" />
+  <SYMBOL Code="HCLP" Name="Hi-Crush Partners LP" />
+  <SYMBOL Code="HCN" Name="Welltower Inc." />
+  <SYMBOL Code="HCN-I" Name="Health Care REIT Inc" />
+  <SYMBOL Code="HCN-J" Name="Health Care REIT Inc" />
+  <SYMBOL Code="HCP" Name="HCP Inc" />
+  <SYMBOL Code="HD" Name="Home Depot" />
+  <SYMBOL Code="HDB" Name="Hdfc Bank Ltd" />
+  <SYMBOL Code="HE" Name="Hawaiian Electric Industries" />
+  <SYMBOL Code="HE-U" Name="Heco Cap III 6.50" />
+  <SYMBOL Code="HEI" Name="Heico Corp" />
+  <SYMBOL Code="HEI.A" Name="Heico Cp Cl A" />
+  <SYMBOL Code="HELI" Name="Chc Group Ltd" />
+  <SYMBOL Code="HEP" Name="Holly Energy Partners L.P." />
+  <SYMBOL Code="HEQ" Name="John Hancock Hedged Eqty &amp; Inc" />
+  <SYMBOL Code="HES" Name="Hess Corp" />
+  <SYMBOL Code="HF" Name="HFF Inc" />
+  <SYMBOL Code="HFC" Name="Hollyfrontier Corp" />
+  <SYMBOL Code="HGG" Name="Hhgregg Inc" />
+  <SYMBOL Code="HGH" Name="The Hartford Financial Srvcs G" />
+  <SYMBOL Code="HGR" Name="Hanger Orthopedic Group" />
+  <SYMBOL Code="HGT" Name="Hugoton Royalty Trust" />
+  <SYMBOL Code="HHC" Name="Howard Hughes Corp" />
+  <SYMBOL Code="HHS" Name="Harte-Hanks" />
+  <SYMBOL Code="HHY" Name="Helios High Yield Fund" />
+  <SYMBOL Code="HI" Name="Hillenbrand Inc" />
+  <SYMBOL Code="HIE" Name="Miller/Howard High Income Eqty" />
+  <SYMBOL Code="HIFR" Name="Infrareit Inc" />
+  <SYMBOL Code="HIG" Name="Hartford Financial Services Group" />
+  <SYMBOL Code="HIG.W" Name="Hartford Financial Services Group" />
+  <SYMBOL Code="HII" Name="Huntington Ingalls Industries" />
+  <SYMBOL Code="HIL" Name="Hill International" />
+  <SYMBOL Code="HIO" Name="Western Asset High" />
+  <SYMBOL Code="HIVE" Name="Aerohive Networks Inc" />
+  <SYMBOL Code="HIW" Name="Highwoods Properties" />
+  <SYMBOL Code="HIX" Name="Western Asset High Income Fund II Inc" />
+  <SYMBOL Code="HJV" Name="MS S.A.C. Saturns Ge Series 2002-14" />
+  <SYMBOL Code="HK" Name="Halcon Resources" />
+  <SYMBOL Code="HL" Name="Hecla Mining Company" />
+  <SYMBOL Code="HL-B" Name="Hecla Mining Pfd B" />
+  <SYMBOL Code="HLF" Name="Herbalife Ltd" />
+  <SYMBOL Code="HLI" Name="Houlihan Lokey" />
+  <SYMBOL Code="HLS" Name="Healthsouth Corp" />
+  <SYMBOL Code="HLT" Name="Hilton Worldwide Holdings Inc" />
+  <SYMBOL Code="HLX" Name="Helix Energy Solutions Group" />
+  <SYMBOL Code="HMC" Name="Honda Motor Company" />
+  <SYMBOL Code="HMLP" Name="Hoegh Lng Partners LP" />
+  <SYMBOL Code="HMN" Name="Horace Mann Educators Corp" />
+  <SYMBOL Code="HMY" Name="Harmony Gold Mining Co. Ltd" />
+  <SYMBOL Code="HNI" Name="Hon Industries Inc" />
+  <SYMBOL Code="HNP" Name="Huaneng Power Intl" />
+  <SYMBOL Code="HNR" Name="Harvest Natural Resources Inc" />
+  <SYMBOL Code="HNT" Name="Health Net Inc" />
+  <SYMBOL Code="HOG" Name="Harley-Davidson Inc" />
+  <SYMBOL Code="HON" Name="Honeywell International Inc" />
+  <SYMBOL Code="HOS" Name="Hornbeck Offshore Services" />
+  <SYMBOL Code="HOT" Name="Starwood Hotels &amp; Resorts Worldwide" />
+  <SYMBOL Code="HOV" Name="Hovnanian Enterprises Inc" />
+  <SYMBOL Code="HP" Name="Helmerich &amp; Payne" />
+  <SYMBOL Code="HPE" Name="Hewlett Packard Enterprise Comp" />
+  <SYMBOL Code="HPF" Name="John Hancock Pfd II" />
+  <SYMBOL Code="HPI" Name="John Hancock Preferred" />
+  <SYMBOL Code="HPP" Name="Hudson Pacific Properties" />
+  <SYMBOL Code="HPP-B" Name="Hudson Pacific Properties Inc" />
+  <SYMBOL Code="HPQ" Name="Hewlett-Packard Company" />
+  <SYMBOL Code="HPS" Name="John Hancock Preferred Income Fund III" />
+  <SYMBOL Code="HPT" Name="Hospitality Properites Trust" />
+  <SYMBOL Code="HPT-D" Name="Hospitality Properties Trust" />
+  <SYMBOL Code="HPY" Name="Heartland Payment Systems" />
+  <SYMBOL Code="HQH" Name="Tekla Healthcare Investors" />
+  <SYMBOL Code="HQL" Name="Tekla Life Sciences Investors" />
+  <SYMBOL Code="HR" Name="Healthcare Realty Trust Inc" />
+  <SYMBOL Code="HRB" Name="H&amp;R Block" />
+  <SYMBOL Code="HRC" Name="Hill-Rom Holdings Inc" />
+  <SYMBOL Code="HRG" Name="Harbinger Group Inc" />
+  <SYMBOL Code="HRL" Name="Hormel Foods Corp" />
+  <SYMBOL Code="HRS" Name="Harris Corp" />
+  <SYMBOL Code="HRTG" Name="Heritage Insurance Holdings" />
+  <SYMBOL Code="HSB-A" Name="HSBC Holdings Plc" />
+  <SYMBOL Code="HSBC" Name="HSBC Holdings Plc" />
+  <SYMBOL Code="HSC" Name="Harsco Corp" />
+  <SYMBOL Code="HSEA" Name="HSBC Holdings Plc. Perpetual S" />
+  <SYMBOL Code="HSEB" Name="HSBC Holdings Plc Perp Sub Cap" />
+  <SYMBOL Code="HSF-B" Name="HSBC Finance Corp Dep. Shares R" />
+  <SYMBOL Code="HST" Name="Host Marriott Financial Trust" />
+  <SYMBOL Code="HSY" Name="Hershey Foods Corp" />
+  <SYMBOL Code="HT" Name="Hersha Hospitality Trust" />
+  <SYMBOL Code="HT-B" Name="Hersha Hospitality Trust" />
+  <SYMBOL Code="HT-C" Name="Hersha Hospitality Trust" />
+  <SYMBOL Code="HTA" Name="Healthcare Trust of America I" />
+  <SYMBOL Code="HTD" Name="John Hancock Tax Advantaged Dividend" />
+  <SYMBOL Code="HTF" Name="Horizon Technology Finance Cor" />
+  <SYMBOL Code="HTGC" Name="Hercules Technology Growth Capital" />
+  <SYMBOL Code="HTGX" Name="Hercules Technology Growth Cap" />
+  <SYMBOL Code="HTGY" Name="Hercules Technology Growth Cap" />
+  <SYMBOL Code="HTGZ" Name="Hercules Technology Growth Capi" />
+  <SYMBOL Code="HTH" Name="Hilltop Holdings Inc" />
+  <SYMBOL Code="HTR" Name="Hyperion Brookfield Total Return Fund" />
+  <SYMBOL Code="HTS" Name="Hatteras Financial Corp" />
+  <SYMBOL Code="HTS-A" Name="Hatteras Financial Corp Cum Red" />
+  <SYMBOL Code="HTY" Name="John Hancock Tax-Advantaged Global" />
+  <SYMBOL Code="HTZ" Name="Hertz Global Holdings Inc" />
+  <SYMBOL Code="HUB.A" Name="Hubbell Inc A" />
+  <SYMBOL Code="HUB.B" Name="Hubbell Inc B" />
+  <SYMBOL Code="HUBS" Name="Hubspot Inc" />
+  <SYMBOL Code="HUM" Name="Humana Inc" />
+  <SYMBOL Code="HUN" Name="Huntsman Corp" />
+  <SYMBOL Code="HUS-F" Name="HSBC USA Pfd F" />
+  <SYMBOL Code="HUS-G" Name="HSBC Dep Sh Pfd G" />
+  <SYMBOL Code="HUS-H" Name="HSBC USA Dep Sh H" />
+  <SYMBOL Code="HVT" Name="Haverty Furniture Companies" />
+  <SYMBOL Code="HVT.A" Name="Haverty Furn Cl A SC" />
+  <SYMBOL Code="HW" Name="Headwaters Inc" />
+  <SYMBOL Code="HXL" Name="Hexcel Corp" />
+  <SYMBOL Code="HY" Name="Hyster-Yale Materials Handling" />
+  <SYMBOL Code="HYB" Name="New America High" />
+  <SYMBOL Code="HYF" Name="Managed High Yield Plus Fund" />
+  <SYMBOL Code="HYH" Name="Halyard Health Inc. Common Sto" />
+  <SYMBOL Code="HYI" Name="Western Asset High Yield Defined" />
+  <SYMBOL Code="HYT" Name="Blackrock High Yield Fund Vi Inc" />
+  <SYMBOL Code="HZN" Name="Horizon Global Corporation Comm" />
+  <SYMBOL Code="HZO" Name="Marinemax Inc" />
+  <SYMBOL Code="I" Name="Intelsat S.A. Common Shares" />
+  <SYMBOL Code="I-A" Name="Intelsat S.A." />
+  <SYMBOL Code="IAE" Name="ING Asia Pacific High Dividend Equity" />
+  <SYMBOL Code="IAG" Name="Iamgold Corp" />
+  <SYMBOL Code="IBA" Name="Industrias Bachoco S.A. De C.V" />
+  <SYMBOL Code="IBM" Name="International Business Machines" />
+  <SYMBOL Code="IBN" Name="Icici Bank Ltd" />
+  <SYMBOL Code="IBP" Name="Installed Building Products I" />
+  <SYMBOL Code="ICA" Name="Empresas Ica Soc Contrladora" />
+  <SYMBOL Code="ICB" Name="MS Income Securities" />
+  <SYMBOL Code="ICD" Name="Independence Contract Drilling Inc" />
+  <SYMBOL Code="ICE" Name="Intercontinental Exchange" />
+  <SYMBOL Code="ICL" Name="Israel Chemicals Ltd" />
+  <SYMBOL Code="IDA" Name="Idacorp Inc" />
+  <SYMBOL Code="IDE" Name="ING Infrastructure Industrial" />
+  <SYMBOL Code="IDT" Name="IDT Corp" />
+  <SYMBOL Code="IEX" Name="Idex Corp" />
+  <SYMBOL Code="IFF" Name="International Flavors &amp; Fragrances" />
+  <SYMBOL Code="IFN" Name="India Fund" />
+  <SYMBOL Code="IGA" Name="ING Global Advantage and Premium" />
+  <SYMBOL Code="IGD" Name="ING Global Equity Dividend and Premium" />
+  <SYMBOL Code="IGI" Name="Western Asset Investment Grade Defined" />
+  <SYMBOL Code="IGR" Name="ING Clarion Global Real Estate" />
+  <SYMBOL Code="IGT" Name="International Game Technology" />
+  <SYMBOL Code="IHC" Name="Independence Holding Company" />
+  <SYMBOL Code="IHD" Name="ING Emerging Markets High Dividend" />
+  <SYMBOL Code="IHG" Name="Intercontinental Hotels Group" />
+  <SYMBOL Code="IHS" Name="IHS Inc" />
+  <SYMBOL Code="IID" Name="ING International High Dividend Equity" />
+  <SYMBOL Code="IIF" Name="Morgan Stanley India Investment Fund Inc" />
+  <SYMBOL Code="IIM" Name="Invesco Insured Muni Income Trust" />
+  <SYMBOL Code="IL" Name="Intralinks Holdings" />
+  <SYMBOL Code="IM" Name="Ingram Micro Inc" />
+  <SYMBOL Code="IMAX" Name="Imax Corp" />
+  <SYMBOL Code="IMN" Name="Imation Corp" />
+  <SYMBOL Code="IMPR" Name="Imprivata Inc" />
+  <SYMBOL Code="IMPV" Name="Imperva Inc" />
+  <SYMBOL Code="IMS" Name="Ims Health Holdings Inc" />
+  <SYMBOL Code="INB" Name="Cohen &amp; Steers Global Income Builder" />
+  <SYMBOL Code="IND" Name="ING Group N.V." />
+  <SYMBOL Code="INF" Name="Brookfield Global Listed Infra" />
+  <SYMBOL Code="INFY" Name="Infosys Ltd" />
+  <SYMBOL Code="ING" Name="ING Group N.V." />
+  <SYMBOL Code="INGR" Name="Ingredion Inc" />
+  <SYMBOL Code="INN" Name="Summit Hotel Properties" />
+  <SYMBOL Code="INN-A" Name="Summit Hotel Properties Inc" />
+  <SYMBOL Code="INN-B" Name="Summit Hotel Properties Inc" />
+  <SYMBOL Code="INN-C" Name="Summit Hotel Properties Inc" />
+  <SYMBOL Code="INST" Name="Instructure Inc" />
+  <SYMBOL Code="INT" Name="World Fuel Services Corp" />
+  <SYMBOL Code="INVN" Name="Invensense Inc" />
+  <SYMBOL Code="INXN" Name="Interxion Holding N.V." />
+  <SYMBOL Code="INZ" Name="ING Group N.V." />
+  <SYMBOL Code="IO" Name="ION Geophysical Corp" />
+  <SYMBOL Code="IOC" Name="Interoil Corp" />
+  <SYMBOL Code="IP" Name="International Paper Company" />
+  <SYMBOL Code="IPG" Name="Interpublic Group of Companies" />
+  <SYMBOL Code="IPHI" Name="Inphi Corp" />
+  <SYMBOL Code="IPI" Name="Intrepid Potash Inc" />
+  <SYMBOL Code="IPL-D" Name="Interstate Power and Light Co" />
+  <SYMBOL Code="IQI" Name="Invesco Quality Muni Income Trust" />
+  <SYMBOL Code="IR" Name="Ingersoll-Rand Plc [Ireland]" />
+  <SYMBOL Code="IRC" Name="Inland Real Estate Corp" />
+  <SYMBOL Code="IRC-A" Name="Inland Real Estate Corp" />
+  <SYMBOL Code="IRC-B" Name="Inland Real Estate Corporation" />
+  <SYMBOL Code="IRE-B" Name="Investors Real Estate Trust 7.9" />
+  <SYMBOL Code="IRE.P" Name="The Governor and Company of The Bank of Ireland" />
+  <SYMBOL Code="IRET" Name="Investors Real Estate Trust" />
+  <SYMBOL Code="IRL" Name="Irish Investment Fund" />
+  <SYMBOL Code="IRM" Name="Iron Mountain Inc" />
+  <SYMBOL Code="IRR" Name="ING Risk Managed Natural Resources Fund" />
+  <SYMBOL Code="IRS" Name="Irsa Inversiones Y Representaciones S.A." />
+  <SYMBOL Code="ISD" Name="Prudential Short Duration High" />
+  <SYMBOL Code="ISF" Name="ING Group N.V." />
+  <SYMBOL Code="ISG" Name="ING Group N.V." />
+  <SYMBOL Code="ISH" Name="International Shipholding Corp" />
+  <SYMBOL Code="ISH-A" Name="International Shipholding Copr" />
+  <SYMBOL Code="ISH-B" Name="International Shipholding Corp" />
+  <SYMBOL Code="ISP" Name="ING Group N.V." />
+  <SYMBOL Code="IT" Name="Gartner Inc" />
+  <SYMBOL Code="ITC" Name="Itc Holdings" />
+  <SYMBOL Code="ITG" Name="Investment Technology Group" />
+  <SYMBOL Code="ITT" Name="ITT Industries" />
+  <SYMBOL Code="ITUB" Name="Itau Unibanco Banco Holding Sa" />
+  <SYMBOL Code="ITW" Name="Illinois Tool Works Inc" />
+  <SYMBOL Code="IVC" Name="Invacare Corp" />
+  <SYMBOL Code="IVH" Name="Ivy High Income Opportunities" />
+  <SYMBOL Code="IVR" Name="Invesco Mortgage Capital Inc" />
+  <SYMBOL Code="IVR-A" Name="Invesco Mortgage Capital Inc" />
+  <SYMBOL Code="IVR-B" Name="Invesco Mortgage Capital Inc" />
+  <SYMBOL Code="IVZ" Name="Invesco Plc" />
+  <SYMBOL Code="IX" Name="Orix Corp Ads" />
+  <SYMBOL Code="JAH" Name="Jarden Corp" />
+  <SYMBOL Code="JAX" Name="J. Alexander's Holdings Inc. C" />
+  <SYMBOL Code="JBK" Name="Lehman Abs Corp" />
+  <SYMBOL Code="JBL" Name="Jabil Circuit" />
+  <SYMBOL Code="JBN" Name="Select Asset Inc" />
+  <SYMBOL Code="JBR" Name="Select Asset Inc" />
+  <SYMBOL Code="JBT" Name="John Bean Technologies Corp" />
+  <SYMBOL Code="JCAP" Name="Jernigan Capital Inc" />
+  <SYMBOL Code="JCE" Name="Nuveen Core Equity Alpha Fund" />
+  <SYMBOL Code="JCI" Name="Johnson Controls" />
+  <SYMBOL Code="JCP" Name="J.C. Penney Company Inc" />
+  <SYMBOL Code="JDD" Name="Nuveen Diversified Dividend and" />
+  <SYMBOL Code="JE" Name="Just Energy Group Inc" />
+  <SYMBOL Code="JEC" Name="Jacobs Engineering Group Inc" />
+  <SYMBOL Code="JEQ" Name="Japan Equity Fund" />
+  <SYMBOL Code="JFC" Name="Jf China Region Fund" />
+  <SYMBOL Code="JFR" Name="Nuveen Floating Rate" />
+  <SYMBOL Code="JGH" Name="Nuveen Global High Income Fund" />
+  <SYMBOL Code="JGV" Name="Nuveen Global Value Opportunities Fund" />
+  <SYMBOL Code="JGW" Name="Jgwpt Holdings Inc" />
+  <SYMBOL Code="JHA" Name="Nuveen High Income December" />
+  <SYMBOL Code="JHI" Name="John Hancock Investors Trust" />
+  <SYMBOL Code="JHP" Name="Nuveen Quality Preferred Income Fund 3" />
+  <SYMBOL Code="JHS" Name="John Hancock Income Securities Trust" />
+  <SYMBOL Code="JHX" Name="James Hardie Industries Se" />
+  <SYMBOL Code="JHY" Name="Nuveen High Income 2020 Target" />
+  <SYMBOL Code="JKS" Name="Jinkosolar Holding Company Ltd" />
+  <SYMBOL Code="JLL" Name="Jones Lang Lasalle Inc" />
+  <SYMBOL Code="JLS" Name="Nuveen Mortgage Opportunity Term Fund" />
+  <SYMBOL Code="JMEI" Name="Jumei International Holding Ltd" />
+  <SYMBOL Code="JMF" Name="Nuveen Energy MLP Total Return Fund" />
+  <SYMBOL Code="JMG" Name="Journal Media Group Inc. Commo" />
+  <SYMBOL Code="JMI" Name="Javelin Mortgage Investment Co" />
+  <SYMBOL Code="JMLP" Name="Nuveen All Cap Energy MLP Oppo" />
+  <SYMBOL Code="JMM" Name="Nuveen Multi-Market Income Fund Inc" />
+  <SYMBOL Code="JMP" Name="JMP Group Inc" />
+  <SYMBOL Code="JMPB" Name="JMP Group Inc" />
+  <SYMBOL Code="JMPC" Name="JMP Group Inc" />
+  <SYMBOL Code="JMT" Name="Nuven Mortgage Opportunity Term Fund 2" />
+  <SYMBOL Code="JNJ" Name="Johnson &amp; Johnson" />
+  <SYMBOL Code="JNPR" Name="Juniper Networks" />
+  <SYMBOL Code="JNS" Name="Janus Capital Group Inc" />
+  <SYMBOL Code="JOE" Name="St. Joe Company" />
+  <SYMBOL Code="JOF" Name="Japan Smaller Capitalization Fund Inc" />
+  <SYMBOL Code="JONE" Name="Jones Energy Inc" />
+  <SYMBOL Code="JOY" Name="Joy Global Inc" />
+  <SYMBOL Code="JP" Name="Jupai Holdings Ltd" />
+  <SYMBOL Code="JPC" Name="Nuveen Preferred and Convertible" />
+  <SYMBOL Code="JPEP" Name="JP Energy Partners LP" />
+  <SYMBOL Code="JPI" Name="Nuveen Preferred and Income Term Fund" />
+  <SYMBOL Code="JPM" Name="JP Morgan Chase &amp; Co" />
+  <SYMBOL Code="JPM-A" Name="JP Morgan Chase &amp; Co" />
+  <SYMBOL Code="JPM-B" Name="Jpmorgan Chase &amp; Co. 6.70%" />
+  <SYMBOL Code="JPM-D" Name="JP Morgan Chase &amp; Co" />
+  <SYMBOL Code="JPM-E" Name="Jpmorgan Chase &amp; Co" />
+  <SYMBOL Code="JPM-F" Name="J P Morgan Chase &amp; Co Depositar" />
+  <SYMBOL Code="JPM-G" Name="J P Morgan Chase &amp; Co Depositar" />
+  <SYMBOL Code="JPM-H" Name="Jpmorgan Chase &amp; Co." />
+  <SYMBOL Code="JPM.W" Name="JP Morgan Chase &amp; Co" />
+  <SYMBOL Code="JPS" Name="Nuveen Quality Preferred 2" />
+  <SYMBOL Code="JPW" Name="Nuveen Flexible Investment Inc" />
+  <SYMBOL Code="JQC" Name="Nuveen Preferred and Convertible 2" />
+  <SYMBOL Code="JRI" Name="Nuveen Real Asset Income and Gr" />
+  <SYMBOL Code="JRO" Name="Nuveen Floating Rate Income Opportuntiy" />
+  <SYMBOL Code="JSD" Name="Nuveen Short Duration Credit O" />
+  <SYMBOL Code="JTA" Name="Nuveen Tax-Advantaged Total Return" />
+  <SYMBOL Code="JTD" Name="Nuveen Tax-Advantaged Dividend Growth" />
+  <SYMBOL Code="JTP" Name="Nuveen Quality Preferred" />
+  <SYMBOL Code="JW.A" Name="John Wiley Sons Cl A" />
+  <SYMBOL Code="JW.B" Name="John Wiley Sons Cl B" />
+  <SYMBOL Code="JWN" Name="Nordstrom" />
+  <SYMBOL Code="K" Name="Kellogg Company" />
+  <SYMBOL Code="KAI" Name="Kadant Inc" />
+  <SYMBOL Code="KAMN" Name="Kaman Corp" />
+  <SYMBOL Code="KAP" Name="Kcap Financial Inc" />
+  <SYMBOL Code="KAR" Name="Kar Auction Services Inc" />
+  <SYMBOL Code="KATE" Name="Kate Spade &amp; Company" />
+  <SYMBOL Code="KB" Name="KB Financial Group Inc" />
+  <SYMBOL Code="KBH" Name="KB Home" />
+  <SYMBOL Code="KBR" Name="KBR Inc" />
+  <SYMBOL Code="KCC" Name="Lehman Abs Corp" />
+  <SYMBOL Code="KCG" Name="Kcg Holdings Inc" />
+  <SYMBOL Code="KED" Name="Kayne Anderson Energy Development Company" />
+  <SYMBOL Code="KEF" Name="Korea Equity Fund" />
+  <SYMBOL Code="KEG" Name="Key Energy Services" />
+  <SYMBOL Code="KEM" Name="Kemet Corp" />
+  <SYMBOL Code="KEN" Name="Kenon Holdings Ltd. Ordinary Sh" />
+  <SYMBOL Code="KEP" Name="Korea Electric Power Corp" />
+  <SYMBOL Code="KEX" Name="Kirby Corp" />
+  <SYMBOL Code="KEY" Name="Keycorp" />
+  <SYMBOL Code="KEY-G" Name="Keycorp Pfd Ser A" />
+  <SYMBOL Code="KEYS" Name="Keysight Technologies Inc. Comm" />
+  <SYMBOL Code="KF" Name="Korea Fund" />
+  <SYMBOL Code="KFH" Name="KKR Financial Holdings Llc" />
+  <SYMBOL Code="KFI" Name="KKR Financial Holdings Llc" />
+  <SYMBOL Code="KFN.P" Name="KKR Financial Holdings Llc Pfd" />
+  <SYMBOL Code="KFS" Name="Kingsway Financial Services" />
+  <SYMBOL Code="KFY" Name="Korn/Ferry International" />
+  <SYMBOL Code="KGC" Name="Kinross Gold Corp" />
+  <SYMBOL Code="KHI" Name="Scudder High Income Trust" />
+  <SYMBOL Code="KIM" Name="Kimco Realty Corp" />
+  <SYMBOL Code="KIM-H" Name="Kimco Realty Corporation Deposi" />
+  <SYMBOL Code="KIM-I" Name="Kimco Realty Corporation Deposi" />
+  <SYMBOL Code="KIM-J" Name="Kimco Realty Corporation Class" />
+  <SYMBOL Code="KIM-K" Name="Kimco Realty Corporation Class" />
+  <SYMBOL Code="KING" Name="King Digital Entertainment Plc" />
+  <SYMBOL Code="KIO" Name="KKR Income Opportunities Fund" />
+  <SYMBOL Code="KKD" Name="Krispy Kreme Doughnuts" />
+  <SYMBOL Code="KKR" Name="KKR &amp; Co. L.P." />
+  <SYMBOL Code="KMB" Name="Kimberly-Clark Corp" />
+  <SYMBOL Code="KMF" Name="Kayne Anderson Midstream Energy Fund" />
+  <SYMBOL Code="KMG" Name="KMG Chemicals" />
+  <SYMBOL Code="KMI" Name="Kinder Morgan" />
+  <SYMBOL Code="KMI-A" Name="Kinder Morgan Inc." />
+  <SYMBOL Code="KMI.W" Name="Kinder Morgan Inc. W/I" />
+  <SYMBOL Code="KMM" Name="Scudder Multi-Market Income Trust" />
+  <SYMBOL Code="KMPA" Name="Kemper Corporation 7.375% Subor" />
+  <SYMBOL Code="KMPR" Name="Unitrin" />
+  <SYMBOL Code="KMT" Name="Kennametal Inc" />
+  <SYMBOL Code="KMX" Name="Carmax Inc" />
+  <SYMBOL Code="KN" Name="Knowles Corporation Common Stoc" />
+  <SYMBOL Code="KND" Name="Kindred Healthcare" />
+  <SYMBOL Code="KNL" Name="Knoll Inc" />
+  <SYMBOL Code="KNOP" Name="Knot Offshore Partners LP Commo" />
+  <SYMBOL Code="KNX" Name="Knight Transportation" />
+  <SYMBOL Code="KO" Name="Coca-Cola Company" />
+  <SYMBOL Code="KOD.W" Name="Eastman Kodak Co. Wt" />
+  <SYMBOL Code="KODK" Name="Eastman Kodak" />
+  <SYMBOL Code="KOF" Name="Coca Cola Femsa S.A.B. De C.V" />
+  <SYMBOL Code="KOP" Name="Koppers Holdings Inc" />
+  <SYMBOL Code="KORS" Name="Michael Kors Holdings Ltd" />
+  <SYMBOL Code="KOS" Name="Kosmos Energy Ltd" />
+  <SYMBOL Code="KR" Name="Kroger Company" />
+  <SYMBOL Code="KRA" Name="Kraton Performance Polymers Inc" />
+  <SYMBOL Code="KRC" Name="Kilroy Realty Corp" />
+  <SYMBOL Code="KRC-G" Name="Kilroy Realty Corp" />
+  <SYMBOL Code="KRC-H" Name="Kilroy Realty Corp" />
+  <SYMBOL Code="KRG" Name="Kite Realty Group Trust" />
+  <SYMBOL Code="KRG-A" Name="Kite Realty Group Trust" />
+  <SYMBOL Code="KRO" Name="Kronos Worldwide Inc" />
+  <SYMBOL Code="KS" Name="Kapstone Paper and Packaging Corp" />
+  <SYMBOL Code="KSM" Name="Scudder Strategic Municiple Income Trust" />
+  <SYMBOL Code="KSS" Name="Kohl's Corp" />
+  <SYMBOL Code="KST" Name="Scudder Strategic Income Trust" />
+  <SYMBOL Code="KSU" Name="Kansas City Southern" />
+  <SYMBOL Code="KSU.P" Name="Kansas Cty Sthn 4%" />
+  <SYMBOL Code="KT" Name="Korea Telecom Corp" />
+  <SYMBOL Code="KTF" Name="Scudder Municiple Income Trust" />
+  <SYMBOL Code="KTH" Name="Lehman Abs Corp" />
+  <SYMBOL Code="KTN" Name="Lehman Abs Corp" />
+  <SYMBOL Code="KTP" Name="Lehman Abs Corp" />
+  <SYMBOL Code="KW" Name="Kennedy-Wilson Holdings Inc" />
+  <SYMBOL Code="KWN" Name="Kennedy-Wilson Holdings Inc" />
+  <SYMBOL Code="KWR" Name="Quaker Chemical Corp" />
+  <SYMBOL Code="KYE" Name="Kayne Anderson Energy Total Return Fund" />
+  <SYMBOL Code="KYN" Name="Kayne Anderson MLP Investment Company" />
+  <SYMBOL Code="KYN-E" Name="Kayne Anderson MLP Investment" />
+  <SYMBOL Code="KYN-F" Name="Kayne Anderson MLP Investment" />
+  <SYMBOL Code="KYN-G" Name="Kayne Anderson MLP Investment" />
+  <SYMBOL Code="KYO" Name="Kyocera Corp" />
+  <SYMBOL Code="L" Name="Loews Corp" />
+  <SYMBOL Code="LAD" Name="Lithia Motors" />
+  <SYMBOL Code="LADR" Name="Ladder Capital Corp" />
+  <SYMBOL Code="LAZ" Name="Lazard Ltd" />
+  <SYMBOL Code="LB" Name="L Brands Inc" />
+  <SYMBOL Code="LBF" Name="Scudder Global High" />
+  <SYMBOL Code="LC" Name="Lendingclub Corp" />
+  <SYMBOL Code="LCI" Name="Lannett Co Inc" />
+  <SYMBOL Code="LCM" Name="Advent/Claymore Enhanced Growth &amp;" />
+  <SYMBOL Code="LDF" Name="Latin American Discovery Fund" />
+  <SYMBOL Code="LDL" Name="Lydall Inc" />
+  <SYMBOL Code="LDOS" Name="Leidos Holdings Inc" />
+  <SYMBOL Code="LDP" Name="Cohen &amp; Steers Ltd Duration Preferred Income Fun" />
+  <SYMBOL Code="LDR" Name="Landauer Inc" />
+  <SYMBOL Code="LEA" Name="Lear Corp" />
+  <SYMBOL Code="LEAF" Name="Springleaf Holdings Inc" />
+  <SYMBOL Code="LEE" Name="Lee Enterprises Inc" />
+  <SYMBOL Code="LEG" Name="Leggett &amp; Platt Inc" />
+  <SYMBOL Code="LEJU" Name="Leju Holdings Ltd" />
+  <SYMBOL Code="LEN" Name="Lennar Corp" />
+  <SYMBOL Code="LEN.B" Name="Lennar Corp" />
+  <SYMBOL Code="LEO" Name="Dreyfus Strategic Municipals" />
+  <SYMBOL Code="LF" Name="Leapfrog Enterprises Inc" />
+  <SYMBOL Code="LFC" Name="China Life Insurance Company Ltd" />
+  <SYMBOL Code="LFL" Name="Latam Airlines Group Sa" />
+  <SYMBOL Code="LG" Name="Laclede Group" />
+  <SYMBOL Code="LGF" Name="Lions Gate Entertainment Corp" />
+  <SYMBOL Code="LGI" Name="Lazard Global Total Return and" />
+  <SYMBOL Code="LH" Name="Laboratory Corporation of America Holdings" />
+  <SYMBOL Code="LHO" Name="Lasalle Hotel Properties" />
+  <SYMBOL Code="LHO-H" Name="Lasalle Hotl 8.375 B" />
+  <SYMBOL Code="LHO-I" Name="Lasalle Hotel Properties" />
+  <SYMBOL Code="LII" Name="Lennox International" />
+  <SYMBOL Code="LITB" Name="Lightinthebox Holding Co. Ltd" />
+  <SYMBOL Code="LL" Name="Lumber Liquidators Holdings Inc" />
+  <SYMBOL Code="LLL" Name="L-3 Communications Holdings" />
+  <SYMBOL Code="LLY" Name="Eli Lilly and Company" />
+  <SYMBOL Code="LM" Name="Legg Mason Inc" />
+  <SYMBOL Code="LMT" Name="Lockheed Martin Corp" />
+  <SYMBOL Code="LNC" Name="Lincoln National Corp" />
+  <SYMBOL Code="LNC.W" Name="Lincoln National Corp" />
+  <SYMBOL Code="LND" Name="Brasilagro Brazi ADR" />
+  <SYMBOL Code="LNKD" Name="Linkedin" />
+  <SYMBOL Code="LNN" Name="Lindsay Corp" />
+  <SYMBOL Code="LNT" Name="Alliant Energy Corp" />
+  <SYMBOL Code="LOCK" Name="Lifelock Inc" />
+  <SYMBOL Code="LOR" Name="Lazard World Dividend &amp;" />
+  <SYMBOL Code="LOW" Name="Lowe's Companies" />
+  <SYMBOL Code="LPG" Name="Dorian Lpg Ltd" />
+  <SYMBOL Code="LPI" Name="Laredo Petroleum Holdings Inc" />
+  <SYMBOL Code="LPL" Name="Lg Display Co. Limited American" />
+  <SYMBOL Code="LPT" Name="Liberty Property Trust" />
+  <SYMBOL Code="LPX" Name="Louisiana-Pacific Corp" />
+  <SYMBOL Code="LQ" Name="La Quinta Holdings Inc" />
+  <SYMBOL Code="LRN" Name="K12 Inc" />
+  <SYMBOL Code="LTC" Name="Ltc Properties" />
+  <SYMBOL Code="LUB" Name="Luby's Inc" />
+  <SYMBOL Code="LUK" Name="Leucadia National Corp" />
+  <SYMBOL Code="LUV" Name="Southwest Airlines Company" />
+  <SYMBOL Code="LUX" Name="Luxottica Group S.P.A" />
+  <SYMBOL Code="LVLT" Name="Level 3 Communications" />
+  <SYMBOL Code="LVS" Name="Las Vegas Sands" />
+  <SYMBOL Code="LXFR" Name="Luxfer Holdings Plc" />
+  <SYMBOL Code="LXFT" Name="Luxoft Holding Inc" />
+  <SYMBOL Code="LXK" Name="Lexmark International" />
+  <SYMBOL Code="LXP" Name="Lexington Realty Trust" />
+  <SYMBOL Code="LXP-C" Name="Lexington Realty Tru" />
+  <SYMBOL Code="LXU" Name="Lsb Industries Inc" />
+  <SYMBOL Code="LYB" Name="Lyondellbasell Industries Nv" />
+  <SYMBOL Code="LYG" Name="Lloyds Banking Group Plc" />
+  <SYMBOL Code="LYV" Name="Live Nation Entertainment" />
+  <SYMBOL Code="LZB" Name="La-Z-Boy Inc" />
+  <SYMBOL Code="M" Name="Macy's Inc" />
+  <SYMBOL Code="MA" Name="Mastercard Inc" />
+  <SYMBOL Code="MAA" Name="Mid-America Apartment Communities" />
+  <SYMBOL Code="MAC" Name="Macerich Company" />
+  <SYMBOL Code="MAIN" Name="Main Street Capital Corp" />
+  <SYMBOL Code="MAN" Name="Manpower Inc" />
+  <SYMBOL Code="MANU" Name="Manchester United Ltd" />
+  <SYMBOL Code="MAS" Name="Masco Corp" />
+  <SYMBOL Code="MATX" Name="Matson Inc" />
+  <SYMBOL Code="MAV" Name="Pioneer Muni High Income Advantage Trust" />
+  <SYMBOL Code="MBI" Name="MBIA Inc" />
+  <SYMBOL Code="MBLY" Name="Mobileye N.V." />
+  <SYMBOL Code="MBT" Name="Mobile Telesystems" />
+  <SYMBOL Code="MC" Name="Moelis" />
+  <SYMBOL Code="MCA" Name="Blackrock Muniyield California Insured Fund" />
+  <SYMBOL Code="MCC" Name="Medley Capital Corp" />
+  <SYMBOL Code="MCD" Name="McDonald's Corp" />
+  <SYMBOL Code="MCI" Name="Massmutual Corporate Investors" />
+  <SYMBOL Code="MCK" Name="Mckesson Corp" />
+  <SYMBOL Code="MCN" Name="Madison/Claymore Covered Call &amp; Equity Strategy" />
+  <SYMBOL Code="MCO" Name="Moody's Corp" />
+  <SYMBOL Code="MCQ" Name="Medley Capital Corporation 7.12" />
+  <SYMBOL Code="MCR" Name="MFS Charter Income Trust" />
+  <SYMBOL Code="MCRN" Name="Milacron Holdings Corp" />
+  <SYMBOL Code="MCS" Name="Marcus Corp" />
+  <SYMBOL Code="MCV" Name="Medley Capital Corp" />
+  <SYMBOL Code="MCY" Name="Mercury General Corp" />
+  <SYMBOL Code="MD" Name="Mednax Inc" />
+  <SYMBOL Code="MDC" Name="M.D.C. Holdings" />
+  <SYMBOL Code="MDLY" Name="Medley Management Inc" />
+  <SYMBOL Code="MDP" Name="Meredith Corp" />
+  <SYMBOL Code="MDR" Name="McDermott International" />
+  <SYMBOL Code="MDT" Name="Medtronic Inc" />
+  <SYMBOL Code="MDU" Name="Mdu Res Group Inc" />
+  <SYMBOL Code="MED" Name="Medifast Inc" />
+  <SYMBOL Code="MEG" Name="Media General" />
+  <SYMBOL Code="MEI" Name="Methode Electronics" />
+  <SYMBOL Code="MEN" Name="Blackrock Munienhanced Fund" />
+  <SYMBOL Code="MEP" Name="Midcoast Energy Partners L.P." />
+  <SYMBOL Code="MER-D" Name="Merrill Lyn 7.0 Topr" />
+  <SYMBOL Code="MER-E" Name="M L Cap TR 7.12" />
+  <SYMBOL Code="MER-F" Name="Merrill Ly Cap V7.28" />
+  <SYMBOL Code="MER-K" Name="ML 6.45% Trust Pfd" />
+  <SYMBOL Code="MER-M" Name="ML Cap TR II 6.45% P" />
+  <SYMBOL Code="MER-P" Name="ML Cap TR III 7.375%" />
+  <SYMBOL Code="MET" Name="Metlife Inc" />
+  <SYMBOL Code="MET-A" Name="Metlife Pfd A Fltg" />
+  <SYMBOL Code="MFA" Name="MFA Financial Inc" />
+  <SYMBOL Code="MFA-B" Name="MFA Financial Inc" />
+  <SYMBOL Code="MFC" Name="Manulife Financial Corp" />
+  <SYMBOL Code="MFD" Name="Macquarie/First Trust Global" />
+  <SYMBOL Code="MFG" Name="Mizuho Financial Group" />
+  <SYMBOL Code="MFL" Name="Blackrock Muniholdings Investment Quality Fund" />
+  <SYMBOL Code="MFM" Name="MFS Muni Income Trust" />
+  <SYMBOL Code="MFO" Name="MFA Financial Inc" />
+  <SYMBOL Code="MFT" Name="Blackrock Muniyield Investment Qualityfund" />
+  <SYMBOL Code="MFV" Name="MFS Special Value Trust" />
+  <SYMBOL Code="MG" Name="Mistras Group Inc" />
+  <SYMBOL Code="MGA" Name="Magna International" />
+  <SYMBOL Code="MGF" Name="MFS Government Markets Income Trust" />
+  <SYMBOL Code="MGM" Name="MGM Resorts International" />
+  <SYMBOL Code="MGR" Name="Affiliated Managers Group Inc" />
+  <SYMBOL Code="MGU" Name="Macquarie Global Infrastructure Total Return Fun" />
+  <SYMBOL Code="MH-A" Name="Maiden Holdings Ltd. 8.25%" />
+  <SYMBOL Code="MHD" Name="Blackrock Muniholdings Fund" />
+  <SYMBOL Code="MHF" Name="Western Asset Muni High" />
+  <SYMBOL Code="MHFI" Name="The McGraw-Hill Companies Inc" />
+  <SYMBOL Code="MHG" Name="Marine Harvest ASA Sponsored Ad" />
+  <SYMBOL Code="MHI" Name="Pioneer Muni High Income Trust" />
+  <SYMBOL Code="MHK" Name="Mohawk Industries" />
+  <SYMBOL Code="MHN" Name="Blackrock Muniholdings New York Quality Fund" />
+  <SYMBOL Code="MHNA" Name="Maiden Holdings North America" />
+  <SYMBOL Code="MHNB" Name="Maiden Holdings North America" />
+  <SYMBOL Code="MHNC" Name="Maiden Holdings North America" />
+  <SYMBOL Code="MHO" Name="M/I Homes" />
+  <SYMBOL Code="MHO-A" Name="M/I Homes Sr A Pf Ds" />
+  <SYMBOL Code="MHR" Name="Magnum Hunter Resources Corp" />
+  <SYMBOL Code="MHY" Name="Western Asset Managed High" />
+  <SYMBOL Code="MIC" Name="Macquarie Infrastructure Company Trust" />
+  <SYMBOL Code="MIE" Name="Cohen &amp; Steers MLP Income and" />
+  <SYMBOL Code="MIL" Name="Mfc Industrial Ltd" />
+  <SYMBOL Code="MIN" Name="MFS Intermediate Income Trust" />
+  <SYMBOL Code="MIT-A" Name="Ag Mortgage Investment Trust" />
+  <SYMBOL Code="MIT-B" Name="Ag Mortgage Investment Trust I" />
+  <SYMBOL Code="MITT" Name="Ag Mortgage Investment Trust" />
+  <SYMBOL Code="MIXT" Name="Mix Telematics Ltd" />
+  <SYMBOL Code="MIY" Name="Blackrock Muniyield Michigan Quality Fund" />
+  <SYMBOL Code="MJN" Name="Mead Johnson Nutrition Company" />
+  <SYMBOL Code="MKC" Name="Mccormick &amp; Company Inc" />
+  <SYMBOL Code="MKC.V" Name="Mccormick &amp; Company Inc" />
+  <SYMBOL Code="MKL" Name="Markel Corp" />
+  <SYMBOL Code="MLI" Name="Mueller Industries" />
+  <SYMBOL Code="MLM" Name="Martin Marietta Materials" />
+  <SYMBOL Code="MLP" Name="Maui Land &amp; Pineapple Company" />
+  <SYMBOL Code="MLR" Name="Miller Industries" />
+  <SYMBOL Code="MMC" Name="Marsh &amp; Mclennan Companies" />
+  <SYMBOL Code="MMD" Name="Mainstay Defined Muni Opp Fund" />
+  <SYMBOL Code="MMI" Name="Marcus &amp; Millichap" />
+  <SYMBOL Code="MMM" Name="3M Company" />
+  <SYMBOL Code="MMP" Name="Magellan Midstream Partners L.P." />
+  <SYMBOL Code="MMS" Name="Maximus Inc" />
+  <SYMBOL Code="MMT" Name="MFS Multimarket Income Trust" />
+  <SYMBOL Code="MMU" Name="Western Asset Managed Municipals Fund" />
+  <SYMBOL Code="MN" Name="Manning &amp; Napier Inc" />
+  <SYMBOL Code="MNE" Name="Blackrock Muni New York Intermediate Duration Fu" />
+  <SYMBOL Code="MNI" Name="Mcclatchy Company" />
+  <SYMBOL Code="MNK" Name="Mallinckrodt Plc Ordinary Share" />
+  <SYMBOL Code="MNP" Name="Western Asset Muni Partners Fund" />
+  <SYMBOL Code="MNR" Name="Monmouth Real Estate Investment Corp" />
+  <SYMBOL Code="MNR-A" Name="Monmouth Real Estate Inv" />
+  <SYMBOL Code="MNR-B" Name="Monmouth Real Estate Investmen" />
+  <SYMBOL Code="MO" Name="Altria Group" />
+  <SYMBOL Code="MOD" Name="Modine Manufacturing Company" />
+  <SYMBOL Code="MODN" Name="Model N Inc. Common Stock" />
+  <SYMBOL Code="MOG.A" Name="Moog Inc" />
+  <SYMBOL Code="MOG.B" Name="Moog Inc" />
+  <SYMBOL Code="MOH" Name="Molina Healthcare Inc" />
+  <SYMBOL Code="MON" Name="Monsanto Company" />
+  <SYMBOL Code="MORE" Name="Monogram Residential Trust In" />
+  <SYMBOL Code="MOS" Name="Mosaic Company" />
+  <SYMBOL Code="MOV" Name="Movado Group Inc" />
+  <SYMBOL Code="MP-D" Name="Mississippi Pr 5.25" />
+  <SYMBOL Code="MPA" Name="Blackrock Muniyield Pennsylvania Quality Fund" />
+  <SYMBOL Code="MPC" Name="Marathon Petroleum Corp" />
+  <SYMBOL Code="MPG" Name="Metaldyne Performance Group Inc" />
+  <SYMBOL Code="MPLX" Name="Mplx LP" />
+  <SYMBOL Code="MPO" Name="Midstates Petroleum Company I" />
+  <SYMBOL Code="MPSX" Name="Multi Packaging Solutions Inter" />
+  <SYMBOL Code="MPV" Name="Massmutual Participation Investors" />
+  <SYMBOL Code="MPW" Name="Medical Properties Trust" />
+  <SYMBOL Code="MPX" Name="Marine Products Corp" />
+  <SYMBOL Code="MQT" Name="Blackrock Muniyield Quality Fund II" />
+  <SYMBOL Code="MQY" Name="Blackrock Muniyield Quality Fund" />
+  <SYMBOL Code="MR" Name="Mindray Medical International Ltd" />
+  <SYMBOL Code="MRC" Name="Mrc Global Inc" />
+  <SYMBOL Code="MRIN" Name="Marin Sotfware Incorporated" />
+  <SYMBOL Code="MRK" Name="Merck &amp; Company" />
+  <SYMBOL Code="MRO" Name="Marathon Oil Corp" />
+  <SYMBOL Code="MS" Name="Morgan Stanley" />
+  <SYMBOL Code="MS-A" Name="Morgan Stanley Prfd 'A'" />
+  <SYMBOL Code="MS-E" Name="Morgan Stanley" />
+  <SYMBOL Code="MS-F" Name="Morgan Stanley" />
+  <SYMBOL Code="MS-G" Name="Morgan Stanley  6.625%" />
+  <SYMBOL Code="MS-I" Name="Morgan Stanley" />
+  <SYMBOL Code="MSA" Name="Msa Safety Inc" />
+  <SYMBOL Code="MSB" Name="Mesabi Trust" />
+  <SYMBOL Code="MSCA" Name="Main Street Capital Corporatio" />
+  <SYMBOL Code="MSCI" Name="MSCI Inc" />
+  <SYMBOL Code="MSD" Name="Morgan Stanley Emerging Markets Debt" />
+  <SYMBOL Code="MSF" Name="Morgan Stanley Emerging Markets Fund Inc" />
+  <SYMBOL Code="MSG" Name="The Madison Square Garden Comp" />
+  <SYMBOL Code="MSGN" Name="Msg Networks Inc." />
+  <SYMBOL Code="MSI" Name="Motorola Solutions" />
+  <SYMBOL Code="MSK" Name="Morgan Stanley Cap TR ViII Gdt Cap Securities" />
+  <SYMBOL Code="MSL" Name="Midsouth Bancorp" />
+  <SYMBOL Code="MSM" Name="Msc Industrial Direct Company" />
+  <SYMBOL Code="MSO" Name="Martha Stewart Living Omnimedia" />
+  <SYMBOL Code="MSP" Name="Madison Strategic Sector Premium Fund" />
+  <SYMBOL Code="MT" Name="Arcelormittal" />
+  <SYMBOL Code="MTB" Name="M&amp;T Bank Corp" />
+  <SYMBOL Code="MTB-C" Name="M&amp;T Bank Corporation Fixed Rate" />
+  <SYMBOL Code="MTB.P" Name="M&amp;T Bank Corporation Fixed Rate" />
+  <SYMBOL Code="MTB.W" Name="M&amp;T Bank Corporation Warrants" />
+  <SYMBOL Code="MTCN" Name="Arcelormittal" />
+  <SYMBOL Code="MTD" Name="Mettler-Toledo International" />
+  <SYMBOL Code="MTDR" Name="Matador Resources Company" />
+  <SYMBOL Code="MTG" Name="Mgic Investment Corp" />
+  <SYMBOL Code="MTH" Name="Meritage Corp" />
+  <SYMBOL Code="MTL" Name="Mechel Steel Group Oao" />
+  <SYMBOL Code="MTL.P" Name="Mechel Steel Group Oao American" />
+  <SYMBOL Code="MTN" Name="Vail Resorts" />
+  <SYMBOL Code="MTOR" Name="Arvinmeritor" />
+  <SYMBOL Code="MTR" Name="Mesa Royalty Trust" />
+  <SYMBOL Code="MTRN" Name="Brush Wellman Inc" />
+  <SYMBOL Code="MTS" Name="Montgomery Street Income Securities" />
+  <SYMBOL Code="MTT" Name="Western Asset Muni Defined Opportunity Trust Inc" />
+  <SYMBOL Code="MTU" Name="Mitsubishi Ufj Financial Group Inc" />
+  <SYMBOL Code="MTW" Name="Manitowoc Company" />
+  <SYMBOL Code="MTX" Name="Minerals Technologies Inc" />
+  <SYMBOL Code="MTZ" Name="Mastec Inc" />
+  <SYMBOL Code="MUA" Name="Blackrock Muniassets Fund" />
+  <SYMBOL Code="MUC" Name="Blackrock Muniholdings California Quality Fund" />
+  <SYMBOL Code="MUE" Name="Blackrock Muniholdings Quality Fund II" />
+  <SYMBOL Code="MUH" Name="Blackrock Muniholdings Fund II" />
+  <SYMBOL Code="MUI" Name="Blackrock Muni Intermediate Duration Fund Inc" />
+  <SYMBOL Code="MUJ" Name="Blackrock Muniholdings New Jersey Insured Fund" />
+  <SYMBOL Code="MUR" Name="Murphy Oil Corp" />
+  <SYMBOL Code="MUS" Name="Blackrock Muniholdings Quality Fund" />
+  <SYMBOL Code="MUSA" Name="Murphy USA Inc. Common Stock Wh" />
+  <SYMBOL Code="MUX" Name="Mcewen Mining Inc" />
+  <SYMBOL Code="MVC" Name="MVC Capital" />
+  <SYMBOL Code="MVCB" Name="MVC Capital Inc" />
+  <SYMBOL Code="MVO" Name="Mv Oil Trust" />
+  <SYMBOL Code="MVT" Name="Blackrock Munivest Fund II" />
+  <SYMBOL Code="MW" Name="Men's Wearhouse" />
+  <SYMBOL Code="MWA" Name="Mueller Water Products" />
+  <SYMBOL Code="MWE" Name="Markwest Energy Partners LP" />
+  <SYMBOL Code="MWG" Name="Morgan Stanley Cap TR IV Gtd Cap Secs" />
+  <SYMBOL Code="MWO" Name="Morgan Stanley Cap TR V Gtd Cap Secs" />
+  <SYMBOL Code="MWR" Name="Morgan Stanley Cap TR III Capital Trust Securiti" />
+  <SYMBOL Code="MWW" Name="Monster Worldwide" />
+  <SYMBOL Code="MX" Name="Magnachip Semiconductor Corp" />
+  <SYMBOL Code="MXE" Name="Mexico Equity and" />
+  <SYMBOL Code="MXF" Name="Mexico Fund" />
+  <SYMBOL Code="MXL" Name="Maxlinear Inc" />
+  <SYMBOL Code="MXPT" Name="Maxpoint Interactive Inc" />
+  <SYMBOL Code="MY" Name="China Ming Yang Wind Power Group Ltd" />
+  <SYMBOL Code="MYC" Name="Blackrock Muniyield California Fund" />
+  <SYMBOL Code="MYCC" Name="Clubcorp Holdings Inc" />
+  <SYMBOL Code="MYD" Name="Blackrock Muniyield Fund" />
+  <SYMBOL Code="MYE" Name="Myers Industries" />
+  <SYMBOL Code="MYF" Name="Blackrock Muniyield Investment Fund" />
+  <SYMBOL Code="MYI" Name="Blackrock Muniyield Quality Fund III" />
+  <SYMBOL Code="MYJ" Name="Blackrock Muniyield New Jersey Fund" />
+  <SYMBOL Code="MYN" Name="Blackrock Muniyield New York Quality Fund" />
+  <SYMBOL Code="MZF" Name="Managed Duration Investment Grade Fund" />
+  <SYMBOL Code="N" Name="Netsuite Inc" />
+  <SYMBOL Code="NAC" Name="Nuveen California Divadv Fund" />
+  <SYMBOL Code="NAD" Name="Nuveen Divadv Fund" />
+  <SYMBOL Code="NADL" Name="North Atlantic Drilling Ltd. Co" />
+  <SYMBOL Code="NAN" Name="Nuveen New York Divadv Fund" />
+  <SYMBOL Code="NAO" Name="Nordic American Offshore Ltd" />
+  <SYMBOL Code="NAP" Name="Navios Maritime Midstream Partn" />
+  <SYMBOL Code="NAT" Name="Nordic American Tanker Shipping Ltd" />
+  <SYMBOL Code="NAV" Name="Navistar International Corp" />
+  <SYMBOL Code="NAV-D" Name="Navistar Intl Pfd D" />
+  <SYMBOL Code="NAZ" Name="Nuveen Arizona Premium Fund" />
+  <SYMBOL Code="NBB" Name="Nuveen Build America Bond Fund" />
+  <SYMBOL Code="NBD" Name="Nuveen Build America Bond Opportunity Fund" />
+  <SYMBOL Code="NBG" Name="National Bank of Greece Sa" />
+  <SYMBOL Code="NBG-A" Name="Natl Bk of Gr Pfd Ad" />
+  <SYMBOL Code="NBHC" Name="National Bank Holdings Corp" />
+  <SYMBOL Code="NBL" Name="Noble Energy Inc" />
+  <SYMBOL Code="NBR" Name="Nabors Industries" />
+  <SYMBOL Code="NC" Name="Nacco Industries" />
+  <SYMBOL Code="NCA" Name="Nuveen California Muni Value Fund" />
+  <SYMBOL Code="NCI" Name="Navigant Consulting" />
+  <SYMBOL Code="NCR" Name="NCR Corp" />
+  <SYMBOL Code="NCS" Name="NCI Building Systems" />
+  <SYMBOL Code="NCT" Name="Newcastle Investment Corp" />
+  <SYMBOL Code="NCT-B" Name="Newcastle Inv Pfd B" />
+  <SYMBOL Code="NCT-C" Name="Newcastle Investment Corporatio" />
+  <SYMBOL Code="NCT-D" Name="Newcastle Invt Corp" />
+  <SYMBOL Code="NCV" Name="Agic Convertible &amp;" />
+  <SYMBOL Code="NCZ" Name="Agic Convertible &amp; II" />
+  <SYMBOL Code="NDP" Name="Tortoise Energy Independence F" />
+  <SYMBOL Code="NDRO" Name="Enduro Royalty Trust" />
+  <SYMBOL Code="NE" Name="Noble Corp" />
+  <SYMBOL Code="NEA" Name="Nuveen Insured Tax-Free Advantage Fund" />
+  <SYMBOL Code="NEE" Name="Nextera Energy" />
+  <SYMBOL Code="NEE-C" Name="Fpl Group Inc. 5 7/8% Preferre" />
+  <SYMBOL Code="NEE-G" Name="Nextera Energy Capital Holding" />
+  <SYMBOL Code="NEE-H" Name="Nextera Energy Capital Holding" />
+  <SYMBOL Code="NEE-I" Name="Nextera Energy Capital Holding" />
+  <SYMBOL Code="NEE-J" Name="Nextera Energy Capital Holding" />
+  <SYMBOL Code="NEE-P" Name="Nextera Energy Inc" />
+  <SYMBOL Code="NEE-Q" Name="Nextera Energy Inc. Corporate" />
+  <SYMBOL Code="NEFF" Name="Neff Corp" />
+  <SYMBOL Code="NEM" Name="Newmont Mining Corp" />
+  <SYMBOL Code="NEP" Name="Nextera Energy Partners LP" />
+  <SYMBOL Code="NES" Name="Nuverra Environmental Solutions Inc" />
+  <SYMBOL Code="NEU" Name="Newmarket Corp" />
+  <SYMBOL Code="NEV" Name="Nuveen Enhanced Muni Value Fund" />
+  <SYMBOL Code="NEWM" Name="New Media Investment Group Inc" />
+  <SYMBOL Code="NEWR" Name="New Relic Inc" />
+  <SYMBOL Code="NFG" Name="National Fuel Gas Company" />
+  <SYMBOL Code="NFJ" Name="Nfj Dividend Interest &amp; Premium Strategy Fund" />
+  <SYMBOL Code="NFX" Name="Newfield Exploration Company" />
+  <SYMBOL Code="NGG" Name="National Grid Transco Plc" />
+  <SYMBOL Code="NGL" Name="Ngl Energy Partners LP" />
+  <SYMBOL Code="NGLS" Name="Targa Resources Partners LP" />
+  <SYMBOL Code="NGS" Name="Natural Gas Services Group" />
+  <SYMBOL Code="NGVC" Name="Natural Grocers By Vitamin Cottage Inc" />
+  <SYMBOL Code="NHF" Name="Nexpoint Credit Strategies Fund" />
+  <SYMBOL Code="NHI" Name="National Health Investors" />
+  <SYMBOL Code="NI" Name="NiSource Inc" />
+  <SYMBOL Code="NID" Name="Nuveen Intermediate Duration M" />
+  <SYMBOL Code="NIE" Name="Agic Equity &amp; Convertible" />
+  <SYMBOL Code="NIM" Name="Nuveen Maturities Fund" />
+  <SYMBOL Code="NIO" Name="Nuveen Insured Muni Opportunity Fund" />
+  <SYMBOL Code="NIQ" Name="Nuveen Intermediate Duration Q" />
+  <SYMBOL Code="NJ" Name="Nidec Corp" />
+  <SYMBOL Code="NJR" Name="Newjersey Resources Corp" />
+  <SYMBOL Code="NKA" Name="Niska Gas Storage Partners Llc" />
+  <SYMBOL Code="NKE" Name="Nike Inc" />
+  <SYMBOL Code="NKG" Name="Nuveen Georgia Divadv Fund 2" />
+  <SYMBOL Code="NKX" Name="Nuveen Insured California Tax-Free" />
+  <SYMBOL Code="NL" Name="NL Industries" />
+  <SYMBOL Code="NLS" Name="Nautilus Group" />
+  <SYMBOL Code="NLSN" Name="Nielsen Holdings Plc" />
+  <SYMBOL Code="NLY" Name="Annaly Capital Management Inc" />
+  <SYMBOL Code="NLY-A" Name="Annaly Capital Manag" />
+  <SYMBOL Code="NLY-C" Name="Annaly Capital Management Inc" />
+  <SYMBOL Code="NLY-D" Name="Annaly Capital Management Inc" />
+  <SYMBOL Code="NM" Name="Navios Maritime Holdings Inc" />
+  <SYMBOL Code="NM-G" Name="Navios Maritime" />
+  <SYMBOL Code="NM-H" Name="Navios Maritime Holdngs Inc" />
+  <SYMBOL Code="NMA" Name="Nuveen Muni Advantage Fund" />
+  <SYMBOL Code="NMBL" Name="Nimble Storage Inc" />
+  <SYMBOL Code="NMFC" Name="New Mountain Finance Corporati" />
+  <SYMBOL Code="NMI" Name="Nuveen Muni" />
+  <SYMBOL Code="NMK-B" Name="Niagara Mohawk Holdings Inc. P" />
+  <SYMBOL Code="NMK-C" Name="Niagara Mohawk 3.60" />
+  <SYMBOL Code="NMM" Name="Navios Maritime Partners LP" />
+  <SYMBOL Code="NMO" Name="Nuveen Muni Market Opportunity Fund" />
+  <SYMBOL Code="NMR" Name="Nomura Holdings Inc ADR" />
+  <SYMBOL Code="NMS" Name="Nuveen Minnesota Municipal Inco" />
+  <SYMBOL Code="NMT" Name="Nuveen Massachusetts Premium Fund" />
+  <SYMBOL Code="NMY" Name="Nuveen Maryland Premium Fund" />
+  <SYMBOL Code="NNA" Name="Navios Maritime Acquisition Corp" />
+  <SYMBOL Code="NNC" Name="Nuveen North Carolina Premium Fund" />
+  <SYMBOL Code="NNI" Name="Nelnet Inc" />
+  <SYMBOL Code="NNN" Name="National Retail Properties" />
+  <SYMBOL Code="NNN-D" Name="National Retail Properties In" />
+  <SYMBOL Code="NNN-E" Name="National Retail Properties Depo" />
+  <SYMBOL Code="NNY" Name="Nuveen New York Muni Value Fund" />
+  <SYMBOL Code="NOA" Name="North American Energy Partners" />
+  <SYMBOL Code="NOAH" Name="Noah Holdings Ltd" />
+  <SYMBOL Code="NOC" Name="Northrop Grumman Corp" />
+  <SYMBOL Code="NOK" Name="Nokia Corp" />
+  <SYMBOL Code="NOR" Name="Noranda Aluminum Holding Corp" />
+  <SYMBOL Code="NORD" Name="Nord Anglia Education Inc" />
+  <SYMBOL Code="NOV" Name="National-Oilwell" />
+  <SYMBOL Code="NOW" Name="Servicenow Inc" />
+  <SYMBOL Code="NP" Name="Neenah Paper" />
+  <SYMBOL Code="NPD" Name="China Nepstar Chain Drugstore Ltd" />
+  <SYMBOL Code="NPF" Name="Nuveen Premier Muni" />
+  <SYMBOL Code="NPI" Name="Nuveen Premium Fund" />
+  <SYMBOL Code="NPK" Name="National Presto Industries" />
+  <SYMBOL Code="NPM" Name="Nuveen Premium Fund II" />
+  <SYMBOL Code="NPO" Name="Enpro Industries" />
+  <SYMBOL Code="NPP" Name="Nuveen Performance Plus Fund" />
+  <SYMBOL Code="NPT" Name="Nuveen Premium Fund IV" />
+  <SYMBOL Code="NPTN" Name="Neophotonics Corp" />
+  <SYMBOL Code="NPV" Name="Nuveen Virginia Premium Fund" />
+  <SYMBOL Code="NQ" Name="Netqin Mobile Inc" />
+  <SYMBOL Code="NQI" Name="Nuveen Insured Quality Fund" />
+  <SYMBOL Code="NQM" Name="Nuveen Investment Quality Fund" />
+  <SYMBOL Code="NQP" Name="Nuveen Pennsylvania Investment" />
+  <SYMBOL Code="NQS" Name="Nuveen Quality Fund" />
+  <SYMBOL Code="NQU" Name="Nuveen Quality" />
+  <SYMBOL Code="NR" Name="Newpark Resources" />
+  <SYMBOL Code="NRE" Name="Northstar Realty Europe Corp. C" />
+  <SYMBOL Code="NRF" Name="Northstar Realty Finance" />
+  <SYMBOL Code="NRF-A" Name="Northstar Realty Pfd" />
+  <SYMBOL Code="NRF-B" Name="Northstar Rlty Ser B" />
+  <SYMBOL Code="NRF-C" Name="Northstar Realty Finance Corp" />
+  <SYMBOL Code="NRF-D" Name="Northstar Realty Finance Corp" />
+  <SYMBOL Code="NRF-E" Name="Northstar Realty Finance Corp" />
+  <SYMBOL Code="NRG" Name="NRG Energy" />
+  <SYMBOL Code="NRK" Name="Nuveen Insured New York Tax-Free" />
+  <SYMBOL Code="NRP" Name="Natural Resource Partners LP" />
+  <SYMBOL Code="NRT" Name="North European Oil Royality Trust" />
+  <SYMBOL Code="NRZ" Name="New Residential Investment Corp" />
+  <SYMBOL Code="NS" Name="Nustar Energy L.P." />
+  <SYMBOL Code="NSA" Name="National Storage Affiliates Tru" />
+  <SYMBOL Code="NSAM" Name="Northstar Asset Management Grou" />
+  <SYMBOL Code="NSC" Name="Norfolk Southern Corp" />
+  <SYMBOL Code="NSH" Name="Nustar Gp Holdings Llc" />
+  <SYMBOL Code="NSL" Name="Nuveen Senior" />
+  <SYMBOL Code="NSL-A" Name="Nuveen Senior Income Fund" />
+  <SYMBOL Code="NSM" Name="Nationstar Mortgage Holdngs I" />
+  <SYMBOL Code="NSP" Name="Insperity Inc" />
+  <SYMBOL Code="NSR" Name="Neustar Inc" />
+  <SYMBOL Code="NSS" Name="Nustar Logistics L.P." />
+  <SYMBOL Code="NTC" Name="Nuveen Connecticut Premium Fund" />
+  <SYMBOL Code="NTG" Name="Tortoise MLP Fund" />
+  <SYMBOL Code="NTI" Name="Northern Tier Energy LP" />
+  <SYMBOL Code="NTL" Name="Nortel Inversora Sa ADR" />
+  <SYMBOL Code="NTP" Name="Nam Tai Electronics" />
+  <SYMBOL Code="NTT" Name="Nippon Telegraph and Telephone Corp" />
+  <SYMBOL Code="NTX" Name="Nuveen Texas Quality" />
+  <SYMBOL Code="NTZ" Name="Natuzzi S.P.A" />
+  <SYMBOL Code="NUE" Name="Nucor Corp" />
+  <SYMBOL Code="NUM" Name="Nuveen Michigan Quality" />
+  <SYMBOL Code="NUO" Name="Nuveen Ohio Quality" />
+  <SYMBOL Code="NUS" Name="Nu Skin Enterprises" />
+  <SYMBOL Code="NUV" Name="Nuveen Muni Value Fund" />
+  <SYMBOL Code="NUW" Name="Nuveen Muni Value Fund" />
+  <SYMBOL Code="NVGS" Name="Navigator Holdings" />
+  <SYMBOL Code="NVO" Name="Novo Nordisk A/S" />
+  <SYMBOL Code="NVR" Name="NVR Inc" />
+  <SYMBOL Code="NVRO" Name="Nevro Corp" />
+  <SYMBOL Code="NVS" Name="Novartis Ag" />
+  <SYMBOL Code="NVTA" Name="Invitae Corp" />
+  <SYMBOL Code="NW-C" Name="Natl Wstmst Ads 19C3" />
+  <SYMBOL Code="NWE" Name="Northwestern Corp" />
+  <SYMBOL Code="NWHM" Name="New Home Co Llc" />
+  <SYMBOL Code="NWL" Name="Newell Rubbermaid Inc" />
+  <SYMBOL Code="NWN" Name="Northwest Natural Gas Company" />
+  <SYMBOL Code="NWY" Name="New York &amp; Company" />
+  <SYMBOL Code="NX" Name="Quanex Building Products Corp" />
+  <SYMBOL Code="NXC" Name="Nuveen California Tax-Free Income" />
+  <SYMBOL Code="NXJ" Name="Nuveen New Jersey Divadv Fund" />
+  <SYMBOL Code="NXN" Name="Nuveen Insured New York Tax-Free" />
+  <SYMBOL Code="NXP" Name="Nuveen Tax Free Income Portfolio" />
+  <SYMBOL Code="NXQ" Name="Nuveen Tax Free Income Portfolio II" />
+  <SYMBOL Code="NXR" Name="Nuveen Tax Free Income Portfolio III" />
+  <SYMBOL Code="NXRT" Name="Nexpoint Residential Trust Inc" />
+  <SYMBOL Code="NYC-U" Name="New York Community Bancorp Inc" />
+  <SYMBOL Code="NYCB" Name="New York Community Bancorp" />
+  <SYMBOL Code="NYL.A" Name="NRG Yield Inc Class A" />
+  <SYMBOL Code="NYLD" Name="NRG Yield Inc" />
+  <SYMBOL Code="NYRT" Name="New York REIT Inc" />
+  <SYMBOL Code="NYT" Name="New York Times Company" />
+  <SYMBOL Code="O" Name="Realty Income Corp" />
+  <SYMBOL Code="O-F" Name="Realty Income Corp" />
+  <SYMBOL Code="OA" Name="Alliant Techsystems Inc. Common" />
+  <SYMBOL Code="OAK" Name="Oaktree Capital Group Llc" />
+  <SYMBOL Code="OAK-A" Name="Five Oaks Investment Corp. 8.75" />
+  <SYMBOL Code="OAKS" Name="Five Oaks Investment Corp" />
+  <SYMBOL Code="OAS" Name="Oasis Petroleum Inc" />
+  <SYMBOL Code="OB" Name="Onebeacon Insurance Group" />
+  <SYMBOL Code="OC" Name="Owens Corning Inc" />
+  <SYMBOL Code="OCIP" Name="Oci Partners LP" />
+  <SYMBOL Code="OCIR" Name="Oci Resources LP" />
+  <SYMBOL Code="OCN" Name="Ocwen Financial Corp" />
+  <SYMBOL Code="ODC" Name="Oil-Dri Corporation of America" />
+  <SYMBOL Code="OEC" Name="Orion Engineered Carbons S.A R" />
+  <SYMBOL Code="OFC" Name="Corporate Office Properties" />
+  <SYMBOL Code="OFC-L" Name="Corp Office Properties Trust" />
+  <SYMBOL Code="OFG" Name="Oriental Financial Group" />
+  <SYMBOL Code="OFG-A" Name="Oriental Fin Mips A" />
+  <SYMBOL Code="OFG-B" Name="Oriental Finl Pfd B" />
+  <SYMBOL Code="OFG-D" Name="Oriental Financial Group Inc" />
+  <SYMBOL Code="OGE" Name="Oge Energy Corp" />
+  <SYMBOL Code="OGS" Name="One Gas Inc" />
+  <SYMBOL Code="OHI" Name="Omega Healthcare Investors" />
+  <SYMBOL Code="OI" Name="Owens-Illinois" />
+  <SYMBOL Code="OIA" Name="Invesco Muni Income Trust" />
+  <SYMBOL Code="OIB.C" Name="Oi Sa" />
+  <SYMBOL Code="OIBR" Name="Oi S.A. Ads" />
+  <SYMBOL Code="OII" Name="Oceaneering International" />
+  <SYMBOL Code="OIS" Name="Oil States International" />
+  <SYMBOL Code="OKE" Name="Oneok Inc" />
+  <SYMBOL Code="OKS" Name="Oneok Partners L.P." />
+  <SYMBOL Code="OLN" Name="Olin Corp" />
+  <SYMBOL Code="OLP" Name="One Liberty Properties" />
+  <SYMBOL Code="OMAM" Name="Om Asset Management Ltd" />
+  <SYMBOL Code="OMC" Name="Omnicom Group Inc" />
+  <SYMBOL Code="OME" Name="Omega Protein Corp" />
+  <SYMBOL Code="OMG" Name="Om Group" />
+  <SYMBOL Code="OMI" Name="Owens &amp; Minor" />
+  <SYMBOL Code="OMN" Name="Omnova Solutions Inc" />
+  <SYMBOL Code="ONDK" Name="On Deck Capital Inc" />
+  <SYMBOL Code="ONE" Name="Higher One Holdings" />
+  <SYMBOL Code="OOMA" Name="Ooma Inc" />
+  <SYMBOL Code="OPK" Name="Opko Health Inc" />
+  <SYMBOL Code="OPWR" Name="Opower Inc" />
+  <SYMBOL Code="OPY" Name="Oppenheimer Holdings" />
+  <SYMBOL Code="ORA" Name="Ormat Technologies" />
+  <SYMBOL Code="ORAN" Name="Orange Ads" />
+  <SYMBOL Code="ORC" Name="Orchid Island Capital Inc. Com" />
+  <SYMBOL Code="ORCL" Name="Oracle Corp" />
+  <SYMBOL Code="ORI" Name="Old Republic International Corp" />
+  <SYMBOL Code="ORN" Name="Orion Marine Group Inc" />
+  <SYMBOL Code="OSK" Name="Oshkosh Truck Corp" />
+  <SYMBOL Code="OUT" Name="Outfront Media Inc" />
+  <SYMBOL Code="OXM" Name="Oxford Industries" />
+  <SYMBOL Code="OXY" Name="Occidental Petroleum Corp" />
+  <SYMBOL Code="OZM" Name="Och-Ziff Capital Management" />
+  <SYMBOL Code="P" Name="Pandora Media Inc" />
+  <SYMBOL Code="PAA" Name="Plains All American Pipeline L.P." />
+  <SYMBOL Code="PAC" Name="Grupo Aeroportuario Del Pacifico" />
+  <SYMBOL Code="PACD" Name="Pacific Drilling S.A." />
+  <SYMBOL Code="PAG" Name="Penske Automotive Group" />
+  <SYMBOL Code="PAGP" Name="Plains Gp Holdings L.P." />
+  <SYMBOL Code="PAH" Name="Platform Specialty Products Corp" />
+  <SYMBOL Code="PAI" Name="Pacific American Income Shares" />
+  <SYMBOL Code="PAM" Name="Pampa Energia S.A." />
+  <SYMBOL Code="PANW" Name="Palo Alto Networks Inc" />
+  <SYMBOL Code="PAR" Name="Par Technology Corp" />
+  <SYMBOL Code="PAY" Name="Verifone Systems" />
+  <SYMBOL Code="PAYC" Name="Paycom Software Inc" />
+  <SYMBOL Code="PB" Name="Prosperity Bancshares" />
+  <SYMBOL Code="PBA" Name="Pembina Pipeline Cor" />
+  <SYMBOL Code="PBF" Name="PBF Energy Inc" />
+  <SYMBOL Code="PBFX" Name="PBF Logistics LP" />
+  <SYMBOL Code="PBH" Name="Prestige Brand Holdings" />
+  <SYMBOL Code="PBI" Name="Pitney Bowes Inc" />
+  <SYMBOL Code="PBI-A" Name="Pitney Bowes Inc" />
+  <SYMBOL Code="PBI-B" Name="Pitney Bowes Inc .6.70% Notes" />
+  <SYMBOL Code="PBR" Name="Petroleo Brasileiro S.A.- Petrobras" />
+  <SYMBOL Code="PBR.A" Name="Petroleo Brasileiro S.A.- Petrobras" />
+  <SYMBOL Code="PBT" Name="Permian Basin Royalty Trust" />
+  <SYMBOL Code="PBY" Name="Pep Boys-Manny Moe &amp; Jack" />
+  <SYMBOL Code="PBYI" Name="Puma Biotechnology" />
+  <SYMBOL Code="PCF" Name="Putnam High Income Bond Fund" />
+  <SYMBOL Code="PCG" Name="Pacific Gas &amp; Electric Co" />
+  <SYMBOL Code="PCI" Name="Pimco Dynamic Credit Income Fun" />
+  <SYMBOL Code="PCK" Name="Pimco California Muni II" />
+  <SYMBOL Code="PCL" Name="Plum Creek Timber Company" />
+  <SYMBOL Code="PCM" Name="Pimco Commercial Mortgage Securities" />
+  <SYMBOL Code="PCN" Name="Pimco Corporate" />
+  <SYMBOL Code="PCP" Name="Precision Castparts Corp" />
+  <SYMBOL Code="PCQ" Name="Pimco California Muni" />
+  <SYMBOL Code="PDI" Name="Pimco Dynamic Income Fund" />
+  <SYMBOL Code="PDM" Name="Piedmont Office Realty Trust" />
+  <SYMBOL Code="PDS" Name="Precision Drilling Corp" />
+  <SYMBOL Code="PDT" Name="John Hancock Premium Dividend Fund" />
+  <SYMBOL Code="PE" Name="Parsley Energy" />
+  <SYMBOL Code="PEB" Name="Pebblebrook Hotel Trust" />
+  <SYMBOL Code="PEB-A" Name="Pebblebrook Hotel Trust Pfd Ser" />
+  <SYMBOL Code="PEB-B" Name="Pebblebrook Hotel Trust" />
+  <SYMBOL Code="PEB-C" Name="Pebblebrook Hotel Trust" />
+  <SYMBOL Code="PEG" Name="Public Service Enterprise Group Inc" />
+  <SYMBOL Code="PEI" Name="Pennsylvania Real Estate Investment" />
+  <SYMBOL Code="PEI-A" Name="Penn Real Estate Invest Trust" />
+  <SYMBOL Code="PEI-B" Name="Pennsylvania Real Estate Inves" />
+  <SYMBOL Code="PEN" Name="Penumbra Inc" />
+  <SYMBOL Code="PEO" Name="Petroleum Resources Corp" />
+  <SYMBOL Code="PEP" Name="Pepsico Inc" />
+  <SYMBOL Code="PER" Name="Sandridge Permian Trust" />
+  <SYMBOL Code="PES" Name="Pioneer Energy Services Corp" />
+  <SYMBOL Code="PF" Name="Pinnacle Foods Inc. Common Sto" />
+  <SYMBOL Code="PFD" Name="Flaherty &amp; Crumrine Preferred Inc" />
+  <SYMBOL Code="PFE" Name="Pfizer Inc" />
+  <SYMBOL Code="PFG" Name="Principal Financial Group Inc" />
+  <SYMBOL Code="PFGC" Name="Performance Food Group Co" />
+  <SYMBOL Code="PFH" Name="Cabco TR Jcp 7.625" />
+  <SYMBOL Code="PFK" Name="Prudential Financial Inflation-Linked" />
+  <SYMBOL Code="PFL" Name="Pimco Income Strategy Fund" />
+  <SYMBOL Code="PFN" Name="Pimco Income Strategy Fund II" />
+  <SYMBOL Code="PFO" Name="Flaherty &amp; Crumrine Preferred Fund" />
+  <SYMBOL Code="PFS" Name="Provident Financial Services" />
+  <SYMBOL Code="PFSI" Name="Pennymac Financial Services In" />
+  <SYMBOL Code="PFX" Name="Phoenix Companies" />
+  <SYMBOL Code="PG" Name="Procter &amp; Gamble Company" />
+  <SYMBOL Code="PGEM" Name="Ply Gem Holdings Inc" />
+  <SYMBOL Code="PGH" Name="Pengrowth Energy Corp" />
+  <SYMBOL Code="PGI" Name="Ptek Holdings" />
+  <SYMBOL Code="PGN" Name="Paragon Offshore Plc Ordinary S" />
+  <SYMBOL Code="PGND" Name="Pga Holdings Inc" />
+  <SYMBOL Code="PGP" Name="Pimco Global Stocksplus &amp; Income" />
+  <SYMBOL Code="PGR" Name="Progressive Corp" />
+  <SYMBOL Code="PGRE" Name="Paramount Group Inc" />
+  <SYMBOL Code="PGZ" Name="Principal Real Estate Income F" />
+  <SYMBOL Code="PH" Name="Parker-Hannifin Corp" />
+  <SYMBOL Code="PHD" Name="Pioneer Floating Rate Trust" />
+  <SYMBOL Code="PHG" Name="Koninklijke Philips Electronics" />
+  <SYMBOL Code="PHH" Name="Phh Corp" />
+  <SYMBOL Code="PHI" Name="Philippine Long Distance Telephone" />
+  <SYMBOL Code="PHK" Name="Pimco High" />
+  <SYMBOL Code="PHM" Name="Pultegroup" />
+  <SYMBOL Code="PHT" Name="Pioneer High Income Trust" />
+  <SYMBOL Code="PHX" Name="Panhandle Royalty Company" />
+  <SYMBOL Code="PII" Name="Polaris Industries Inc" />
+  <SYMBOL Code="PIM" Name="Putnam Master Intermediate Income" />
+  <SYMBOL Code="PIR" Name="Pier 1 Imports" />
+  <SYMBOL Code="PIY" Name="Merrill Lynch Depositor" />
+  <SYMBOL Code="PJC" Name="Piper Jaffray Companies" />
+  <SYMBOL Code="PJH" Name="Prudential Financial Inc" />
+  <SYMBOL Code="PJS" Name="Preferredplus Trust" />
+  <SYMBOL Code="PJT" Name="Pjt Partners Inc. Class A Commo" />
+  <SYMBOL Code="PKD" Name="Parker Drilling Company" />
+  <SYMBOL Code="PKE" Name="Park Electrochemical Corp" />
+  <SYMBOL Code="PKG" Name="Packaging Corporation of America" />
+  <SYMBOL Code="PKI" Name="Perkinelmer" />
+  <SYMBOL Code="PKO" Name="Pimco Income Opportunity Fund" />
+  <SYMBOL Code="PKX" Name="Posco ADR" />
+  <SYMBOL Code="PKY" Name="Parkway Properties" />
+  <SYMBOL Code="PL-C" Name="Protective Life Corp" />
+  <SYMBOL Code="PL-E" Name="Protective Life Corporation 6.0" />
+  <SYMBOL Code="PLD" Name="Prologis Inc" />
+  <SYMBOL Code="PLNT" Name="Planet Fitness" />
+  <SYMBOL Code="PLOW" Name="Douglas Dynamics" />
+  <SYMBOL Code="PLT" Name="Plantronics" />
+  <SYMBOL Code="PM" Name="Philip Morris International Inc" />
+  <SYMBOL Code="PMC" Name="Pharmerica Corp" />
+  <SYMBOL Code="PMF" Name="Pimco Muni" />
+  <SYMBOL Code="PML" Name="Pimco Muni II" />
+  <SYMBOL Code="PMM" Name="Putnam Managed Muni Income Trust" />
+  <SYMBOL Code="PMO" Name="Putnam Muni Opportunities Trust" />
+  <SYMBOL Code="PMT" Name="Pennymac Mortgage Investment Trust" />
+  <SYMBOL Code="PMX" Name="Pimco Muni Income Fund III" />
+  <SYMBOL Code="PN" Name="Patriot National Inc" />
+  <SYMBOL Code="PNC" Name="PNC Bank" />
+  <SYMBOL Code="PNC-P" Name="PNC Financial Services Group I" />
+  <SYMBOL Code="PNC-Q" Name="The PNC Financial Services Gro" />
+  <SYMBOL Code="PNC.W" Name="The PNC Financial Services Group" />
+  <SYMBOL Code="PNF" Name="Pimco New York Muni" />
+  <SYMBOL Code="PNI" Name="Pimco New York Muni II" />
+  <SYMBOL Code="PNK" Name="Pinnacle Entertainment" />
+  <SYMBOL Code="PNM" Name="PNM Resources Inc" />
+  <SYMBOL Code="PNR" Name="Pentair Ltd" />
+  <SYMBOL Code="PNTA" Name="Pennantpark Investment Corpora" />
+  <SYMBOL Code="PNW" Name="Pinnacle West Capital Corp" />
+  <SYMBOL Code="PNX" Name="Phoenix Companies" />
+  <SYMBOL Code="PNY" Name="Piedmont Natural Gas Company" />
+  <SYMBOL Code="POL" Name="Polyone Corp" />
+  <SYMBOL Code="POM" Name="Potomac Electric Power Company" />
+  <SYMBOL Code="POR" Name="Portland General Electric Company" />
+  <SYMBOL Code="POST" Name="Post Holdings Inc" />
+  <SYMBOL Code="POT" Name="Potash Corp. of Saskatchewan Inc" />
+  <SYMBOL Code="POWR" Name="Powersecure International Inc" />
+  <SYMBOL Code="PPG" Name="PPG Industries" />
+  <SYMBOL Code="PPL" Name="PPL Corp" />
+  <SYMBOL Code="PPP" Name="Primero Mining Corp" />
+  <SYMBOL Code="PPR" Name="ING Prime Rate Trust" />
+  <SYMBOL Code="PPS" Name="Post Properties" />
+  <SYMBOL Code="PPS-A" Name="Post Prop. 8.5 Pra" />
+  <SYMBOL Code="PPT" Name="Putnam Premier Income Trust" />
+  <SYMBOL Code="PPX" Name="PPL Capital Funding Inc" />
+  <SYMBOL Code="PQ" Name="Petroquest Energy Inc" />
+  <SYMBOL Code="PRA" Name="Pro-Assurance Corp" />
+  <SYMBOL Code="PRE" Name="Partnerre Ltd" />
+  <SYMBOL Code="PRE-D" Name="Partnerre Ltd Pfd D" />
+  <SYMBOL Code="PRE-E" Name="Partnerre Ltd" />
+  <SYMBOL Code="PRE-F" Name="Partnerre Ltd" />
+  <SYMBOL Code="PRGO" Name="Perrigo Company" />
+  <SYMBOL Code="PRH" Name="Prudential Financial Inc" />
+  <SYMBOL Code="PRI" Name="Primerica Inc" />
+  <SYMBOL Code="PRLB" Name="Proto Labs Inc" />
+  <SYMBOL Code="PRO" Name="Pros Holdings" />
+  <SYMBOL Code="PRTY" Name="Party City Holdco Inc" />
+  <SYMBOL Code="PRU" Name="Prudential Financial Inflation Retail" />
+  <SYMBOL Code="PSA" Name="Public Storage" />
+  <SYMBOL Code="PSA-A" Name="Public Storage 5.875%" />
+  <SYMBOL Code="PSA-Q" Name="Public Storage" />
+  <SYMBOL Code="PSA-R" Name="Depositary Shares Each Represe" />
+  <SYMBOL Code="PSA-S" Name="Public Storage" />
+  <SYMBOL Code="PSA-T" Name="Public Storage" />
+  <SYMBOL Code="PSA-U" Name="Public Storage" />
+  <SYMBOL Code="PSA-V" Name="Public Storage" />
+  <SYMBOL Code="PSA-W" Name="Public Storage" />
+  <SYMBOL Code="PSA-X" Name="Public Storage" />
+  <SYMBOL Code="PSA-Y" Name="Public Storagedepositary Share" />
+  <SYMBOL Code="PSA-Z" Name="Public Storage" />
+  <SYMBOL Code="PSB" Name="Business Parks" />
+  <SYMBOL Code="PSB-S" Name="PS Business Parks Inc" />
+  <SYMBOL Code="PSB-T" Name="PS Business Parks Inc" />
+  <SYMBOL Code="PSB-U" Name="PS Business Parks Inc" />
+  <SYMBOL Code="PSB-V" Name="PS Business Pks Inc Calif Dep" />
+  <SYMBOL Code="PSF" Name="Cohen &amp; Steers Preferred Fund" />
+  <SYMBOL Code="PSG" Name="Performance Sports Group Ltd" />
+  <SYMBOL Code="PSO" Name="Pearson Plc" />
+  <SYMBOL Code="PSTG" Name="Pure Storage Inc." />
+  <SYMBOL Code="PSX" Name="Phillips 66 Common Stock" />
+  <SYMBOL Code="PSXP" Name="Phillips 66 Partners LP" />
+  <SYMBOL Code="PTR" Name="Petrochina Company Ltd" />
+  <SYMBOL Code="PTY" Name="Pimco Corporate Opportunity Fund" />
+  <SYMBOL Code="PUK" Name="Prudential Public Limited Company" />
+  <SYMBOL Code="PUK-A" Name="Pru Plc Perp Sub Cap" />
+  <SYMBOL Code="PUK.P" Name="Prudential 6.75%" />
+  <SYMBOL Code="PVA" Name="Penn Virginia Corp" />
+  <SYMBOL Code="PVG" Name="Pretium Res Inc" />
+  <SYMBOL Code="PVH" Name="Phillips-Van Heusen Corp" />
+  <SYMBOL Code="PVTD" Name="Privatebancorp Inc" />
+  <SYMBOL Code="PWE" Name="Penn West Petroleum Ltd" />
+  <SYMBOL Code="PWR" Name="Quanta Services" />
+  <SYMBOL Code="PX" Name="Praxair" />
+  <SYMBOL Code="PXD" Name="Pioneer Natural Resources Company" />
+  <SYMBOL Code="PYN" Name="Pimco New York Muni Income Fund III" />
+  <SYMBOL Code="PYS" Name="Pplus Trust" />
+  <SYMBOL Code="PYT" Name="Pplus Trust" />
+  <SYMBOL Code="PZC" Name="Pimco California Muni Income Fund III" />
+  <SYMBOL Code="PZE" Name="Petrobras Argentina S.A." />
+  <SYMBOL Code="PZN" Name="Pzena Investment Management Inc" />
+  <SYMBOL Code="Q" Name="Quintiles Transitional Holdings" />
+  <SYMBOL Code="QEP" Name="Qep Resources" />
+  <SYMBOL Code="QIHU" Name="Qihoo 360 Technology Co. Ltd" />
+  <SYMBOL Code="QSR" Name="Restaurant Brands International" />
+  <SYMBOL Code="QTM" Name="Quantum Corp" />
+  <SYMBOL Code="QTS" Name="Qts Realty Trust Inc" />
+  <SYMBOL Code="QTWO" Name="Q2 Holdings Inc" />
+  <SYMBOL Code="QUAD" Name="Quad Graphics Inc" />
+  <SYMBOL Code="QUOT" Name="Quotient Technology Inc." />
+  <SYMBOL Code="R" Name="Ryder System" />
+  <SYMBOL Code="RACE" Name="Ferrari N.V." />
+  <SYMBOL Code="RAD" Name="Rite Aid Corp" />
+  <SYMBOL Code="RAI" Name="Reynolds American Inc" />
+  <SYMBOL Code="RAS" Name="Rait Financial Trust" />
+  <SYMBOL Code="RAS-A" Name="Rait Financial TR Pf" />
+  <SYMBOL Code="RAS-B" Name="Rait Financial TR Pf" />
+  <SYMBOL Code="RAS-C" Name="Rait Fin TR Pfd C" />
+  <SYMBOL Code="RATE" Name="Bankrate Inc" />
+  <SYMBOL Code="RAX" Name="Rackspace Hosting Inc" />
+  <SYMBOL Code="RBA" Name="Ritchie Bros. Auctioneers Inc" />
+  <SYMBOL Code="RBC" Name="Regal-Beloit Corp" />
+  <SYMBOL Code="RBS" Name="Royal Bank Scotland Group Plc" />
+  <SYMBOL Code="RBS-E" Name="RBS Cap Fndg TR V" />
+  <SYMBOL Code="RBS-F" Name="Royal Bank Scotland F" />
+  <SYMBOL Code="RBS-G" Name="RBS Capital Trustvii" />
+  <SYMBOL Code="RBS-H" Name="Royal Bank Scot Hadssc" />
+  <SYMBOL Code="RBS-I" Name="RBS Cap Fdg TR Vi" />
+  <SYMBOL Code="RBS-L" Name="Royal Bank Scotland" />
+  <SYMBOL Code="RBS-R" Name="Royal Bank Scotland" />
+  <SYMBOL Code="RBS-S" Name="Royal Bank Scotland" />
+  <SYMBOL Code="RBS-T" Name="Royal Bank Pfd" />
+  <SYMBOL Code="RCAP" Name="RCS Capital Corp" />
+  <SYMBOL Code="RCI" Name="Rogers Communication" />
+  <SYMBOL Code="RCL" Name="Royal Caribbean Cruises Ltd" />
+  <SYMBOL Code="RCS" Name="Rcm Strategic Global Government Fund" />
+  <SYMBOL Code="RDC" Name="Rowan Companies" />
+  <SYMBOL Code="RDN" Name="Radian Group Inc" />
+  <SYMBOL Code="RDS.A" Name="Royal Dutch Shell Plc" />
+  <SYMBOL Code="RDS.B" Name="Royal Dutch Shell" />
+  <SYMBOL Code="RDY" Name="Dr. Reddy's Laboratories Ltd" />
+  <SYMBOL Code="RE" Name="Everest Re Group" />
+  <SYMBOL Code="REG" Name="Regency Centers Corp" />
+  <SYMBOL Code="REG-F" Name="Regency Centers Corp" />
+  <SYMBOL Code="REG-G" Name="Regency Centers Corporation Pfd" />
+  <SYMBOL Code="RELX" Name="Relx Plc" />
+  <SYMBOL Code="REN" Name="Resolute Energy Corp" />
+  <SYMBOL Code="RENN" Name="Renren Inc" />
+  <SYMBOL Code="RENX" Name="Relx N.V." />
+  <SYMBOL Code="RES" Name="RPC Inc" />
+  <SYMBOL Code="RESI" Name="Altisource Residential Corporat" />
+  <SYMBOL Code="REV" Name="Revlon Inc" />
+  <SYMBOL Code="REX" Name="Rex American Resources Corporation" />
+  <SYMBOL Code="REXR" Name="Rexford Industrial Realty Inc" />
+  <SYMBOL Code="RF" Name="Regions Financial Corp" />
+  <SYMBOL Code="RF-A" Name="Regions Financial Corp" />
+  <SYMBOL Code="RF-B" Name="Regions Financial Corporation" />
+  <SYMBOL Code="RFI" Name="Cohen &amp; Steers Total Return Realty Fund" />
+  <SYMBOL Code="RFP" Name="Resolute Forest Products Inc" />
+  <SYMBOL Code="RFT" Name="Rait Financial Trust" />
+  <SYMBOL Code="RFTA" Name="Rait Financial Trust" />
+  <SYMBOL Code="RGA" Name="Reinsurance Group of America Inc" />
+  <SYMBOL Code="RGC" Name="Regal Entertainment Group" />
+  <SYMBOL Code="RGR" Name="Sturm Ruger &amp; Company" />
+  <SYMBOL Code="RGS" Name="Regis Corp" />
+  <SYMBOL Code="RGT" Name="Royce Global Value Trust Inc" />
+  <SYMBOL Code="RH" Name="Restoration Hardware Holdings" />
+  <SYMBOL Code="RHI" Name="Robert Half International Inc" />
+  <SYMBOL Code="RHP" Name="Gaylord Entertainment Company" />
+  <SYMBOL Code="RHT" Name="Red Hat Inc" />
+  <SYMBOL Code="RICE" Name="Rice Energy Inc" />
+  <SYMBOL Code="RIG" Name="Transocean Inc" />
+  <SYMBOL Code="RIGP" Name="Transocean Partners Llc" />
+  <SYMBOL Code="RIO" Name="Rio Tinto Plc" />
+  <SYMBOL Code="RIT" Name="Lmp Real Estate" />
+  <SYMBOL Code="RJD" Name="Raymond James Financial Inc" />
+  <SYMBOL Code="RJF" Name="Raymond James Financial" />
+  <SYMBOL Code="RKUS" Name="Ruckus Wireless Inc" />
+  <SYMBOL Code="RL" Name="Ralph Lauren Corp" />
+  <SYMBOL Code="RLD" Name="Reald Inc" />
+  <SYMBOL Code="RLGY" Name="Realogy Holdings Corp" />
+  <SYMBOL Code="RLH" Name="Westcoast Hospitality Corp" />
+  <SYMBOL Code="RLH-A" Name="Red Lion Htls Cap TR" />
+  <SYMBOL Code="RLI" Name="Rli Corp" />
+  <SYMBOL Code="RLJ" Name="Rlj Lodging Trust" />
+  <SYMBOL Code="RM" Name="Regional Managment Corp" />
+  <SYMBOL Code="RMAX" Name="Re/Max Holdings Inc" />
+  <SYMBOL Code="RMD" Name="Resmed Inc" />
+  <SYMBOL Code="RMP" Name="Rice Midstream Partners LP" />
+  <SYMBOL Code="RMT" Name="Royce Micro-Cap Trust" />
+  <SYMBOL Code="RNDY" Name="Roundy's Inc. Common Stock" />
+  <SYMBOL Code="RNF" Name="Rentech Nitrogen Partners L.P." />
+  <SYMBOL Code="RNG" Name="Ringcentral Inc" />
+  <SYMBOL Code="RNO" Name="Rhino Resource Partners LP" />
+  <SYMBOL Code="RNP" Name="Cohen &amp; Steers REIT and Preferred" />
+  <SYMBOL Code="RNR" Name="Renaissancere Holdings Ltd" />
+  <SYMBOL Code="RNR-C" Name="Renaissancere 6.08 C" />
+  <SYMBOL Code="RNR-E" Name="Renaissancere Holdings Ltd" />
+  <SYMBOL Code="ROG" Name="Rogers Corp" />
+  <SYMBOL Code="ROK" Name="Rockwell Automation Inc" />
+  <SYMBOL Code="ROL" Name="Rollins Inc" />
+  <SYMBOL Code="ROP" Name="Roper Industries" />
+  <SYMBOL Code="ROYT" Name="Pacific Coast Oil Trust" />
+  <SYMBOL Code="RPA-A" Name="Retail Properties of America I" />
+  <SYMBOL Code="RPAI" Name="Retail Properties of America" />
+  <SYMBOL Code="RPM" Name="RPM International Inc" />
+  <SYMBOL Code="RPT" Name="Ramco-Gershenson Properties Trust" />
+  <SYMBOL Code="RPT-D" Name="Ramco-Gershenson Properties Tru" />
+  <SYMBOL Code="RQI" Name="Cohen &amp; Steers Quality Income Realty Fund Inc" />
+  <SYMBOL Code="RRC" Name="Range Resources Corp" />
+  <SYMBOL Code="RRMS" Name="Rose Rock Midstream L.P." />
+  <SYMBOL Code="RRTS" Name="Roadrunner Transportation Systems Inc" />
+  <SYMBOL Code="RS" Name="Reliance Steel &amp; Aluminum Company" />
+  <SYMBOL Code="RSE" Name="Rouse Properties Inc. Common S" />
+  <SYMBOL Code="RSG" Name="Republic Services" />
+  <SYMBOL Code="RSO" Name="Resource Capital" />
+  <SYMBOL Code="RSO-A" Name="Resource Capital Corp" />
+  <SYMBOL Code="RSO-B" Name="Resource Capital Corp.8.25% Se" />
+  <SYMBOL Code="RSO-C" Name="Resource Capital Corp. Preferre" />
+  <SYMBOL Code="RSPP" Name="Rsp Permian Inc" />
+  <SYMBOL Code="RST" Name="Rosetta Stone" />
+  <SYMBOL Code="RT" Name="Ruby Tuesday" />
+  <SYMBOL Code="RTEC" Name="Rudolph Technologies" />
+  <SYMBOL Code="RTN" Name="Raytheon Company" />
+  <SYMBOL Code="RUBI" Name="The Rubicon Project Inc" />
+  <SYMBOL Code="RVT" Name="Royce Value Trust" />
+  <SYMBOL Code="RWT" Name="Redwood Trust" />
+  <SYMBOL Code="RXN" Name="Rexnord Corp" />
+  <SYMBOL Code="RY" Name="Royal Bank of Canada" />
+  <SYMBOL Code="RY-S" Name="Royal Bank of Canada 5.50% Non-" />
+  <SYMBOL Code="RY-T" Name="Royal Bank of Canada" />
+  <SYMBOL Code="RYAM" Name="Rayonier Advanced Materials Inc" />
+  <SYMBOL Code="RYI" Name="Ryerson Holding Corp" />
+  <SYMBOL Code="RYN" Name="Rayonier Inc. REIT" />
+  <SYMBOL Code="RZA" Name="Reinsurance Group of America I" />
+  <SYMBOL Code="S" Name="Sprint Corporation" />
+  <SYMBOL Code="SA" Name="Seabridge Gold" />
+  <SYMBOL Code="SAH" Name="Sonic Automotive" />
+  <SYMBOL Code="SAIC" Name="Science Applications Internatio" />
+  <SYMBOL Code="SALT" Name="Scorpio Bulkers Inc. Common Sto" />
+  <SYMBOL Code="SAM" Name="Boston Beer Company" />
+  <SYMBOL Code="SAN" Name="Banco Santander" />
+  <SYMBOL Code="SAN-A" Name="Banco Santander S.A. 6.80% Non" />
+  <SYMBOL Code="SAN-B" Name="Santander Finance Preferred Sa" />
+  <SYMBOL Code="SAN-C" Name="Banco Santander S.A. 6.50% Non" />
+  <SYMBOL Code="SAN-I" Name="Banco Santander Central Hispano" />
+  <SYMBOL Code="SAP" Name="SAP Ag" />
+  <SYMBOL Code="SAQ" Name="Saratoga Investment Corp" />
+  <SYMBOL Code="SAR" Name="Saratoga Investment Corp" />
+  <SYMBOL Code="SB" Name="Safe Bulkers Inc" />
+  <SYMBOL Code="SB-B" Name="Safe Bulkers Inc" />
+  <SYMBOL Code="SB-C" Name="Safe Bulkers Inc" />
+  <SYMBOL Code="SB-D" Name="Safe Bulkers Inc" />
+  <SYMBOL Code="SBGL" Name="Sibanye Gold Limited American D" />
+  <SYMBOL Code="SBH" Name="Sally Beauty Holdings" />
+  <SYMBOL Code="SBNA" Name="Scorpio Tankers Inc" />
+  <SYMBOL Code="SBNB" Name="Scorpio Tankers Inc" />
+  <SYMBOL Code="SBR" Name="Sabine Royalty Trust" />
+  <SYMBOL Code="SBS" Name="Cia De Saneamento Basico Do Estado" />
+  <SYMBOL Code="SBW" Name="Western Asset Worldwide Income Fund Inc" />
+  <SYMBOL Code="SBY" Name="Silver Bay Realty Trust Corp" />
+  <SYMBOL Code="SC" Name="Santander Consumer USA Holdings" />
+  <SYMBOL Code="SCCO" Name="Southern Peru Copper Corp" />
+  <SYMBOL Code="SCD" Name="Lmp Capital and Income Fund Inc" />
+  <SYMBOL Code="SCE-F" Name="Sce Trust I" />
+  <SYMBOL Code="SCE-G" Name="Sce Trust II" />
+  <SYMBOL Code="SCE-H" Name="Sce Trust III 5.75%" />
+  <SYMBOL Code="SCE-J" Name="Sce Trust IV" />
+  <SYMBOL Code="SCG" Name="Scana Corp" />
+  <SYMBOL Code="SCH-B" Name="Schwab Charles Corporation Depo" />
+  <SYMBOL Code="SCHW" Name="The Charles Schwab Corp" />
+  <SYMBOL Code="SCI" Name="Service Corporation International" />
+  <SYMBOL Code="SCL" Name="Stepan Company" />
+  <SYMBOL Code="SCM" Name="Stellus Capital Investment Cor" />
+  <SYMBOL Code="SCQ" Name="Stellus Capital Investment Cor" />
+  <SYMBOL Code="SCS" Name="Steelcase Inc" />
+  <SYMBOL Code="SCX" Name="L.S. Starrett Company" />
+  <SYMBOL Code="SD" Name="Sandridge Energy Inc" />
+  <SYMBOL Code="SDLP" Name="Seadrill Partners Llc" />
+  <SYMBOL Code="SDR" Name="Sandridge Mississippian Trust" />
+  <SYMBOL Code="SDRL" Name="Seadrill Ltd" />
+  <SYMBOL Code="SDT" Name="Sandridge Mississippian Trust I" />
+  <SYMBOL Code="SE" Name="Spectra Energy Corp" />
+  <SYMBOL Code="SEAS" Name="Seaworld Entertainment Inc. Co" />
+  <SYMBOL Code="SEE" Name="Sealed Air Corp" />
+  <SYMBOL Code="SEM" Name="Select Medical Holdings Corp" />
+  <SYMBOL Code="SEMG" Name="Semgroup Corp" />
+  <SYMBOL Code="SEP" Name="Spectra Energy Partners LP" />
+  <SYMBOL Code="SERV" Name="Servicemaster Global Holdings I" />
+  <SYMBOL Code="SF" Name="Stifel Financial Corp" />
+  <SYMBOL Code="SFE" Name="Safeguard Scientifics" />
+  <SYMBOL Code="SFG" Name="Stancorp Financial Group" />
+  <SYMBOL Code="SFL" Name="Ship Finance International" />
+  <SYMBOL Code="SFN" Name="Stifel Financial Corp" />
+  <SYMBOL Code="SFS" Name="Smart" />
+  <SYMBOL Code="SFUN" Name="Soufun Holdings" />
+  <SYMBOL Code="SFY" Name="Swift Energy Company" />
+  <SYMBOL Code="SGF" Name="Singapore Fund" />
+  <SYMBOL Code="SGL" Name="Strategic Global" />
+  <SYMBOL Code="SGM" Name="Stonegate Mortgage Corp" />
+  <SYMBOL Code="SGU" Name="Star Gas Partners L.P." />
+  <SYMBOL Code="SGY" Name="Stone Energy Corp" />
+  <SYMBOL Code="SGZA" Name="Selective Insurance Group Inc" />
+  <SYMBOL Code="SHAK" Name="Shake Shack Inc" />
+  <SYMBOL Code="SHG" Name="Shinhan Financial Group Co Ltd" />
+  <SYMBOL Code="SHI" Name="Sinopec Shangai Petrochemical Company Ltd" />
+  <SYMBOL Code="SHLX" Name="Shell Midstream Partners L.P." />
+  <SYMBOL Code="SHO" Name="Sunstone Hotel Investors" />
+  <SYMBOL Code="SHO-D" Name="Sunstone Hotel Investors Inc" />
+  <SYMBOL Code="SHOP" Name="Shopify Inc" />
+  <SYMBOL Code="SHW" Name="Sherwin-Williams Company" />
+  <SYMBOL Code="SID" Name="National Steel Corp" />
+  <SYMBOL Code="SIG" Name="Signet Jewelers Ltd" />
+  <SYMBOL Code="SIR" Name="Select Income REIT Common Share" />
+  <SYMBOL Code="SIX" Name="Six Flags Entertainment Corp" />
+  <SYMBOL Code="SJI" Name="South Jersey Industries" />
+  <SYMBOL Code="SJM" Name="J.M. Smucker Company" />
+  <SYMBOL Code="SJR" Name="Shaw Communications Inc" />
+  <SYMBOL Code="SJT" Name="San Juan Basin Royalty Trust" />
+  <SYMBOL Code="SJW" Name="SJW Corp" />
+  <SYMBOL Code="SKM" Name="Sk Telecom Corp" />
+  <SYMBOL Code="SKT" Name="Tanger Factory Outlet Centers" />
+  <SYMBOL Code="SKX" Name="Skechers U.S.A." />
+  <SYMBOL Code="SLB" Name="Schlumberger N.V." />
+  <SYMBOL Code="SLCA" Name="U.S. Silica Holdings Inc" />
+  <SYMBOL Code="SLF" Name="Sun Life Financial Inc" />
+  <SYMBOL Code="SLG" Name="SL Green Realty Corp" />
+  <SYMBOL Code="SLG-I" Name="SL Green Realty Corp" />
+  <SYMBOL Code="SLH" Name="Solera Holdings" />
+  <SYMBOL Code="SLRA" Name="Solar Capital Ltd" />
+  <SYMBOL Code="SLTB" Name="Scorpio Bulkers Inc. 7.50% Seni" />
+  <SYMBOL Code="SLW" Name="Silver Wheaton Corp" />
+  <SYMBOL Code="SM" Name="Sm Energy Company" />
+  <SYMBOL Code="SMFG" Name="Sumitomo Mitsui Financial Group Inc" />
+  <SYMBOL Code="SMG" Name="Scotts Miracle-Gro Company" />
+  <SYMBOL Code="SMI" Name="Semiconductor Manufacturing International" />
+  <SYMBOL Code="SMLP" Name="Summit Midstream Partners LP" />
+  <SYMBOL Code="SMM" Name="Salient Midstream &amp; MLP Fund" />
+  <SYMBOL Code="SMP" Name="Standard Motor Products" />
+  <SYMBOL Code="SN" Name="Sanchez Energy Corp" />
+  <SYMBOL Code="SNA" Name="Snap-On Inc" />
+  <SYMBOL Code="SNE" Name="Sony Corp" />
+  <SYMBOL Code="SNH" Name="Senior Housing Properties Trust" />
+  <SYMBOL Code="SNHN" Name="Senior Housing Properties Trus" />
+  <SYMBOL Code="SNI" Name="Scripps Networks Interactive Inc" />
+  <SYMBOL Code="SNN" Name="Smith &amp; Nephew Snats" />
+  <SYMBOL Code="SNOW" Name="Intrawest Resorts Holdings Inc" />
+  <SYMBOL Code="SNP" Name="China Petroleum &amp; Chemical Corp" />
+  <SYMBOL Code="SNR" Name="New Senior Investment Group Inc" />
+  <SYMBOL Code="SNV" Name="Synovus Financial Corp" />
+  <SYMBOL Code="SNV-C" Name="Synovus Financial Corp. Fixed-" />
+  <SYMBOL Code="SNX" Name="Synnex Corp" />
+  <SYMBOL Code="SNY" Name="Sanofi-Aventis Sa" />
+  <SYMBOL Code="SO" Name="Southern Company" />
+  <SYMBOL Code="SOJA" Name="The Southern Co.  Series" />
+  <SYMBOL Code="SOL" Name="Renesola Ltd" />
+  <SYMBOL Code="SON" Name="Sonoco Products Company" />
+  <SYMBOL Code="SOR" Name="Source Capital" />
+  <SYMBOL Code="SOV-C" Name="Sovereign Banc Dep S" />
+  <SYMBOL Code="SPA" Name="Sparton Corp" />
+  <SYMBOL Code="SPB" Name="Spectrum Brands Holdings" />
+  <SYMBOL Code="SPE" Name="Special Opportunities Fund Inc" />
+  <SYMBOL Code="SPG" Name="Simon Property Group" />
+  <SYMBOL Code="SPG-J" Name="Simon Prop Grp Pfd J" />
+  <SYMBOL Code="SPH" Name="Suburban Propane Partners L.P." />
+  <SYMBOL Code="SPLP" Name="Steel Partners Hldgs" />
+  <SYMBOL Code="SPN" Name="Superior Energy Services" />
+  <SYMBOL Code="SPR" Name="Spirit Aerosystems Holdings" />
+  <SYMBOL Code="SPXC" Name="SPX Corp" />
+  <SYMBOL Code="SPXX" Name="Nuveen Equity Premium and Growth Fund" />
+  <SYMBOL Code="SQM" Name="Sociedad Quimica Y Minera S.A." />
+  <SYMBOL Code="SQNS" Name="Sequans Communications S A" />
+  <SYMBOL Code="SRC" Name="Spirit Realty Capital Inc" />
+  <SYMBOL Code="SRE" Name="Sempra Energy" />
+  <SYMBOL Code="SRF" Name="The Cushing Royalty &amp; Income Fund" />
+  <SYMBOL Code="SRG" Name="Seritage Growth Properties Cla" />
+  <SYMBOL Code="SRI" Name="Stoneridge Inc" />
+  <SYMBOL Code="SRLP" Name="Sprague Resources LP" />
+  <SYMBOL Code="SRT" Name="Startek Inc" />
+  <SYMBOL Code="SRV" Name="The Cushing MLP Total Return Fund" />
+  <SYMBOL Code="SSD" Name="Simpson Manufacturing Company" />
+  <SYMBOL Code="SSE" Name="Seventy Seven Energy Inc" />
+  <SYMBOL Code="SSI" Name="Stage Stores" />
+  <SYMBOL Code="SSL" Name="Sasol Ltd" />
+  <SYMBOL Code="SSNI" Name="Silver Spring Networks Inc. Co" />
+  <SYMBOL Code="SSP" Name="E.W. Scripps Company" />
+  <SYMBOL Code="SSS" Name="Sovran Self Storage" />
+  <SYMBOL Code="SSTK" Name="Shutterstock Inc" />
+  <SYMBOL Code="SSW" Name="Seaspan Corp" />
+  <SYMBOL Code="SSW-C" Name="Seaspan Corp" />
+  <SYMBOL Code="SSW-D" Name="Seaspan Corp" />
+  <SYMBOL Code="SSW-E" Name="Seaspan Corporation" />
+  <SYMBOL Code="SSWN" Name="Seaspan Corporation" />
+  <SYMBOL Code="ST" Name="Sensata Technologies Holding N.V." />
+  <SYMBOL Code="STA-A" Name="Stag Industrial Inc. Preferred" />
+  <SYMBOL Code="STA-B" Name="Stag Industrial Inc. Cum Pfd S" />
+  <SYMBOL Code="STA-D" Name="Istar Financial Inc. Preferred" />
+  <SYMBOL Code="STA-E" Name="Istar Financial Inc. 7.875% Pre" />
+  <SYMBOL Code="STA-F" Name="Istar Financial Inc. Series F P" />
+  <SYMBOL Code="STA-G" Name="Istar Financial Inc. Preferred" />
+  <SYMBOL Code="STA-I" Name="Istar Financial Inc. Preferred" />
+  <SYMBOL Code="STAG" Name="STI Inc" />
+  <SYMBOL Code="STAR" Name="Istar Financial Inc" />
+  <SYMBOL Code="STAY" Name="Extended Stay America Inc" />
+  <SYMBOL Code="STC" Name="Stewart Information Services Corp" />
+  <SYMBOL Code="STE" Name="Steris Corp" />
+  <SYMBOL Code="STI" Name="Suntrust Banks" />
+  <SYMBOL Code="STI-A" Name="Suntrust Bks Dep Sh" />
+  <SYMBOL Code="STI-E" Name="Suntrust Banks Inc. Series E" />
+  <SYMBOL Code="STI.A" Name="Suntrust Banks Inc Class A" />
+  <SYMBOL Code="STI.B" Name="Suntrust Banks Inc Class B" />
+  <SYMBOL Code="STJ" Name="St. Jude Medical" />
+  <SYMBOL Code="STK" Name="Columbia Seligman Premium Technology" />
+  <SYMBOL Code="STL" Name="Sterling Bancorp" />
+  <SYMBOL Code="STM" Name="Stmicroelectronics N.V." />
+  <SYMBOL Code="STN" Name="Stantec Inc" />
+  <SYMBOL Code="STNG" Name="Scorpio Tankers Inc" />
+  <SYMBOL Code="STO" Name="Statoil ASA" />
+  <SYMBOL Code="STON" Name="Stonemor Partners L.P." />
+  <SYMBOL Code="STOR" Name="Store Capital Corpstore Capital" />
+  <SYMBOL Code="STR" Name="Questar Corp" />
+  <SYMBOL Code="STT" Name="State Street Corp" />
+  <SYMBOL Code="STT-C" Name="State Street Corporation Dep Sh" />
+  <SYMBOL Code="STT-D" Name="State Street Corporation Serie" />
+  <SYMBOL Code="STT-E" Name="State Street Corporation Depos" />
+  <SYMBOL Code="STV" Name="China Digital TV Holding Co" />
+  <SYMBOL Code="STWD" Name="Starwood Property Trust" />
+  <SYMBOL Code="STZ" Name="Constellation Brands Inc" />
+  <SYMBOL Code="STZ.B" Name="Constellation Brd B" />
+  <SYMBOL Code="SU" Name="Suncor Energy Inc" />
+  <SYMBOL Code="SUI" Name="Sun Communities" />
+  <SYMBOL Code="SUI-A" Name="Sun Communities Inc" />
+  <SYMBOL Code="SUM" Name="Summit Materials Inc" />
+  <SYMBOL Code="SUN" Name="Sunoco L.P." />
+  <SYMBOL Code="SUNE" Name="Sunedison Inc" />
+  <SYMBOL Code="SUP" Name="Superior Industries International" />
+  <SYMBOL Code="SVU" Name="Supervalu Inc" />
+  <SYMBOL Code="SWAY" Name="Starwood Waypoint Residential T" />
+  <SYMBOL Code="SWC" Name="Stillwater Mining Company" />
+  <SYMBOL Code="SWFT" Name="Swift Transportation Company" />
+  <SYMBOL Code="SWH" Name="Stanley Black &amp; Decker Inc" />
+  <SYMBOL Code="SWI" Name="Solarwinds Inc" />
+  <SYMBOL Code="SWJ" Name="Stanley Black &amp; Decker Inc" />
+  <SYMBOL Code="SWK" Name="Stanley Black &amp; Decker Inc" />
+  <SYMBOL Code="SWM" Name="Schweitzer-Mauduit International" />
+  <SYMBOL Code="SWN" Name="Southwestern Energy Company" />
+  <SYMBOL Code="SWNC" Name="Southwestern Energy Co" />
+  <SYMBOL Code="SWU" Name="Stanley Black &amp; Decker Inc" />
+  <SYMBOL Code="SWX" Name="Southwest Gas Corp" />
+  <SYMBOL Code="SWZ" Name="Swiss Helvetia Fund" />
+  <SYMBOL Code="SXC" Name="Suncoke Energy Inc" />
+  <SYMBOL Code="SXCP" Name="Suncoke Energy Partners L.P." />
+  <SYMBOL Code="SXE" Name="Southcross Energy Partners L" />
+  <SYMBOL Code="SXI" Name="Standex International Corp" />
+  <SYMBOL Code="SXL" Name="Sunoco Logistics Partners LP" />
+  <SYMBOL Code="SXT" Name="Sensient Technologies Corp" />
+  <SYMBOL Code="SYA" Name="Symetra Financial Corp" />
+  <SYMBOL Code="SYF" Name="Synchrony Financial" />
+  <SYMBOL Code="SYK" Name="Stryker Corp" />
+  <SYMBOL Code="SYT" Name="Syngenta Ag" />
+  <SYMBOL Code="SYX" Name="Systemax Inc" />
+  <SYMBOL Code="SYY" Name="Sysco Corp" />
+  <SYMBOL Code="SZC" Name="The Cushing Renaissance Fund" />
+  <SYMBOL Code="T" Name="AT&amp;T Inc" />
+  <SYMBOL Code="TA" Name="Travelcenters of America Llc" />
+  <SYMBOL Code="TAC" Name="Transalta Corp" />
+  <SYMBOL Code="TAHO" Name="Tahoe Res Inc" />
+  <SYMBOL Code="TAI" Name="Transamerica Income Shares" />
+  <SYMBOL Code="TAL" Name="Tal International Group" />
+  <SYMBOL Code="TANN" Name="Travelcenters of America Llc 8" />
+  <SYMBOL Code="TANO" Name="Travel Centers of America Llc" />
+  <SYMBOL Code="TANP" Name="Travelcenters of America Llc" />
+  <SYMBOL Code="TAOM" Name="Taomee Holdings Ltd" />
+  <SYMBOL Code="TAP" Name="Molson Coors Brewing Company" />
+  <SYMBOL Code="TAP.A" Name="Molson Coors Brewing Company" />
+  <SYMBOL Code="TARO" Name="Taro Pharm Inds" />
+  <SYMBOL Code="TBI" Name="Trueblue Inc" />
+  <SYMBOL Code="TC" Name="Thompson Creek Metals Company Inc" />
+  <SYMBOL Code="TCAP" Name="Triangle Capital Corp" />
+  <SYMBOL Code="TCB" Name="TCF Financial Corp" />
+  <SYMBOL Code="TCB-B" Name="TCF Financial Corp" />
+  <SYMBOL Code="TCB-C" Name="TCF Financial Corp" />
+  <SYMBOL Code="TCB.W" Name="TCF Financial Corp" />
+  <SYMBOL Code="TCCA" Name="Triangle Capital Corp" />
+  <SYMBOL Code="TCCB" Name="Triangle Capital Corporation" />
+  <SYMBOL Code="TCI" Name="Transcontinental Realty Investors" />
+  <SYMBOL Code="TCK" Name="Teck Resources Ltd" />
+  <SYMBOL Code="TCO" Name="Taubman Centers" />
+  <SYMBOL Code="TCO-J" Name="Taubman Centers Inc Preferred" />
+  <SYMBOL Code="TCO-K" Name="Taubman Centers Inc" />
+  <SYMBOL Code="TCP" Name="TCP Pipelines" />
+  <SYMBOL Code="TCPI" Name="TCP International Holdings Ltd" />
+  <SYMBOL Code="TCRX" Name="THL Credit Inc" />
+  <SYMBOL Code="TCS" Name="The Container Store Group Inc" />
+  <SYMBOL Code="TD" Name="Toronto Dominion Bank" />
+  <SYMBOL Code="TDA" Name="Telephone and Data Systems Inc" />
+  <SYMBOL Code="TDC" Name="Teradata Corp" />
+  <SYMBOL Code="TDE" Name="Telephone and Data Systems" />
+  <SYMBOL Code="TDF" Name="Templeton Dragon Fund" />
+  <SYMBOL Code="TDG" Name="Transdigm Group Inc" />
+  <SYMBOL Code="TDI" Name="Telephone and Data Systems" />
+  <SYMBOL Code="TDJ" Name="Telephone and Data Systems Inc" />
+  <SYMBOL Code="TDOC" Name="Teladoc Inc" />
+  <SYMBOL Code="TDS" Name="Telephone and Data Systems" />
+  <SYMBOL Code="TDW" Name="Tidewater Inc" />
+  <SYMBOL Code="TDY" Name="Teledyne Technologies Inc" />
+  <SYMBOL Code="TE" Name="Teco Energy" />
+  <SYMBOL Code="TEF" Name="Telefonica Sa" />
+  <SYMBOL Code="TEGP" Name="Tallgrass Energy Gp LP" />
+  <SYMBOL Code="TEI" Name="Templeton Emerging Markets" />
+  <SYMBOL Code="TEL" Name="Te Connectivity Ltd" />
+  <SYMBOL Code="TEN" Name="Tenneco Automotive" />
+  <SYMBOL Code="TEO" Name="Telecom Argentina Stet - France Telecom S.A." />
+  <SYMBOL Code="TEP" Name="Tallgrass Energy Partners LP" />
+  <SYMBOL Code="TER" Name="Teradyne Inc" />
+  <SYMBOL Code="TEU" Name="Box Ships Inc" />
+  <SYMBOL Code="TEU-C" Name="Box Ships Inc" />
+  <SYMBOL Code="TEVA" Name="Teva Pharmaceutical Industries Ltd" />
+  <SYMBOL Code="TEX" Name="Terex Corp" />
+  <SYMBOL Code="TFG" Name="Fixed Income Trust For Goldman" />
+  <SYMBOL Code="TFX" Name="Teleflex Inc" />
+  <SYMBOL Code="TG" Name="Tredegar Corp" />
+  <SYMBOL Code="TGH" Name="Textainer Group Holdings" />
+  <SYMBOL Code="TGI" Name="Triumph Group" />
+  <SYMBOL Code="TGNA" Name="Tegna Inc" />
+  <SYMBOL Code="TGP" Name="Teekay Lng Partners L.P." />
+  <SYMBOL Code="TGS" Name="Transportadora De Gas Sa Ord B" />
+  <SYMBOL Code="TGT" Name="Target Corp" />
+  <SYMBOL Code="THC" Name="Tenet Healthcare Corp" />
+  <SYMBOL Code="THG" Name="The Hanover Insurance Group" />
+  <SYMBOL Code="THGA" Name="The Hanover Insurance Group I" />
+  <SYMBOL Code="THO" Name="Thor Industries" />
+  <SYMBOL Code="THQ" Name="Tekla Healthcare Opportunities" />
+  <SYMBOL Code="THR" Name="Thermon Group Holdings Inc" />
+  <SYMBOL Code="THS" Name="Treehouse Foods" />
+  <SYMBOL Code="THW" Name="Tekla World Healthcare Fund" />
+  <SYMBOL Code="TI" Name="Telecom Italia S.P.A" />
+  <SYMBOL Code="TI.A" Name="Telecom Italia S.P.A" />
+  <SYMBOL Code="TIER" Name="Tier REIT" />
+  <SYMBOL Code="TIF" Name="Tiffany &amp; Co" />
+  <SYMBOL Code="TIME" Name="Time Inc. Common Stock When Iss" />
+  <SYMBOL Code="TISI" Name="Team Inc" />
+  <SYMBOL Code="TJX" Name="Tjx Companies" />
+  <SYMBOL Code="TK" Name="Teekay Shipping Corp" />
+  <SYMBOL Code="TKC" Name="Turkcell Iletisim Hizmetleri As" />
+  <SYMBOL Code="TKF" Name="Turkish Investment Fund" />
+  <SYMBOL Code="TKR" Name="Timken Company" />
+  <SYMBOL Code="TLI" Name="Lmp Corporate Loan Fund Inc" />
+  <SYMBOL Code="TLK" Name="P.T. Telekomunikasi Indonesia Tbk" />
+  <SYMBOL Code="TLLP" Name="Tesoro Logistics LP Common Unit" />
+  <SYMBOL Code="TLN" Name="Talen Energy Corporation" />
+  <SYMBOL Code="TLP" Name="Transmontaigne Partners L.P." />
+  <SYMBOL Code="TLYS" Name="Tilly's Inc" />
+  <SYMBOL Code="TM" Name="Toyota Motor Corp Ltd Ord" />
+  <SYMBOL Code="TMH" Name="Team Health Holdings" />
+  <SYMBOL Code="TMHC" Name="Taylor Morrison Home Corporatio" />
+  <SYMBOL Code="TMK" Name="Torchmark Corp" />
+  <SYMBOL Code="TMK-B" Name="Torchmark Corp" />
+  <SYMBOL Code="TMO" Name="Thermo Fisher Scientific Inc" />
+  <SYMBOL Code="TMST" Name="Timken Steel Corporation Common" />
+  <SYMBOL Code="TMU-A" Name="T-Mobile US Inc. 5.50% Mandatory" />
+  <SYMBOL Code="TNC" Name="Tennant Company" />
+  <SYMBOL Code="TNET" Name="Trinet Group Inc" />
+  <SYMBOL Code="TNH" Name="Terra Nitrogen Company L.P." />
+  <SYMBOL Code="TNK" Name="Teekay Tankers Ltd" />
+  <SYMBOL Code="TNP" Name="Tsakos Energy Navigation Ltd" />
+  <SYMBOL Code="TNP-B" Name="Tsakos Energy Navigation Limit" />
+  <SYMBOL Code="TNP-C" Name="Tsakos Energy Navigation Limit" />
+  <SYMBOL Code="TNP-D" Name="Tsakos Energy Navigation Limit" />
+  <SYMBOL Code="TOL" Name="Toll Brothers Inc" />
+  <SYMBOL Code="TOO" Name="Teekay Offshore Partners L.P." />
+  <SYMBOL Code="TOO-A" Name="Teekay Offshore Partners L.P." />
+  <SYMBOL Code="TOO-B" Name="Teekay Offshore Partners L.P." />
+  <SYMBOL Code="TOT" Name="Totalfinaelf S.A." />
+  <SYMBOL Code="TOWR" Name="Tower International" />
+  <SYMBOL Code="TPC" Name="Tutor Perini Corp" />
+  <SYMBOL Code="TPH" Name="Tri Pointe Homes Inc. Common S" />
+  <SYMBOL Code="TPL" Name="Texas Pacific Land Trust" />
+  <SYMBOL Code="TPRE" Name="Third Point Reinsurance Ltd. Co" />
+  <SYMBOL Code="TPUB" Name="Tribune Publishing Company Comm" />
+  <SYMBOL Code="TPVG" Name="Triplepoint Venture Growth Bdc" />
+  <SYMBOL Code="TPVZ" Name="Triplepoint Venture Growth Bdc" />
+  <SYMBOL Code="TPX" Name="Tempur-Pedic International Inc" />
+  <SYMBOL Code="TPZ" Name="Tortoise Power and Energy" />
+  <SYMBOL Code="TR" Name="Tootsie Roll Industries" />
+  <SYMBOL Code="TRC" Name="Tejon Ranch Company" />
+  <SYMBOL Code="TRCO" Name="Tribune Media Corp" />
+  <SYMBOL Code="TREC" Name="Trecora Resources" />
+  <SYMBOL Code="TREX" Name="Trex Company" />
+  <SYMBOL Code="TRF" Name="Templeton Russia Fund" />
+  <SYMBOL Code="TRGP" Name="Targa Resources" />
+  <SYMBOL Code="TRI" Name="Thomson Reuters Corp" />
+  <SYMBOL Code="TRK" Name="Speedway Motorsports" />
+  <SYMBOL Code="TRMR" Name="Tremor Video Inc" />
+  <SYMBOL Code="TRN" Name="Trinity Industries" />
+  <SYMBOL Code="TRN-A" Name="Terreno Realty Corporation Pref" />
+  <SYMBOL Code="TRNO" Name="Terreno Realty Corp" />
+  <SYMBOL Code="TROX" Name="Tronox Inc" />
+  <SYMBOL Code="TRP" Name="Transcananda Pipelines" />
+  <SYMBOL Code="TRQ" Name="Turquoise Hill Resources Ltd" />
+  <SYMBOL Code="TRR" Name="Trc Companies" />
+  <SYMBOL Code="TRU" Name="Transunion" />
+  <SYMBOL Code="TRUP" Name="Trupanion Inc" />
+  <SYMBOL Code="TRV" Name="The Travelers Companies Inc" />
+  <SYMBOL Code="TS" Name="Tenaris S.A." />
+  <SYMBOL Code="TSE" Name="Trinseo S.A." />
+  <SYMBOL Code="TSI" Name="Tcw Strategic" />
+  <SYMBOL Code="TSL" Name="Trina Solar Ltd" />
+  <SYMBOL Code="TSLF" Name="THL Credit Senior Loan Fund" />
+  <SYMBOL Code="TSLX" Name="Tpg Specialty Lending Inc" />
+  <SYMBOL Code="TSM" Name="Taiwan Semiconductor Manufacturing" />
+  <SYMBOL Code="TSN" Name="Tyson Foods" />
+  <SYMBOL Code="TSNU" Name="Tyson Foods Inc" />
+  <SYMBOL Code="TSO" Name="Tesoro Petroleum Corp" />
+  <SYMBOL Code="TSQ" Name="Townsquare Media Llc" />
+  <SYMBOL Code="TSS" Name="Total System Services" />
+  <SYMBOL Code="TSU" Name="Tim Participacoes S.A." />
+  <SYMBOL Code="TTC" Name="Toro Company" />
+  <SYMBOL Code="TTF" Name="Thai Fund" />
+  <SYMBOL Code="TTI" Name="Tetra Technologies" />
+  <SYMBOL Code="TTM" Name="Tata Motors Ltd" />
+  <SYMBOL Code="TTP" Name="Tortoise Pipeline &amp; Energy Fund" />
+  <SYMBOL Code="TU" Name="Telus Corp. Non Voting Shares" />
+  <SYMBOL Code="TUMI" Name="Tumi Holdings Inc" />
+  <SYMBOL Code="TUP" Name="Tupperware Corp" />
+  <SYMBOL Code="TV" Name="Grupo Televisa S.A." />
+  <SYMBOL Code="TVC" Name="Tennessee Valley Authority" />
+  <SYMBOL Code="TVE" Name="Tennessee Valley Authority" />
+  <SYMBOL Code="TVPT" Name="Travelport Worldwide Ltd" />
+  <SYMBOL Code="TWC" Name="Time Warner Cable Inc" />
+  <SYMBOL Code="TWI" Name="Titan International" />
+  <SYMBOL Code="TWN" Name="Taiwan Fund" />
+  <SYMBOL Code="TWO" Name="Two Harbors Investments Corp" />
+  <SYMBOL Code="TWTR" Name="Twitter Inc" />
+  <SYMBOL Code="TWX" Name="Time Warner Inc" />
+  <SYMBOL Code="TX" Name="Ternium S.A." />
+  <SYMBOL Code="TXT" Name="Textron Inc" />
+  <SYMBOL Code="TXTR" Name="Textura Corp" />
+  <SYMBOL Code="TY" Name="Tri Continental Corp" />
+  <SYMBOL Code="TY.P" Name="Tri Contl Cp 2.50 Pr" />
+  <SYMBOL Code="TYC" Name="Tyco International Ltd" />
+  <SYMBOL Code="TYG" Name="Tortoise Energy Infrastructure Corp" />
+  <SYMBOL Code="TYG-B" Name="Tortoise Energy Infrastructure" />
+  <SYMBOL Code="TYG-C" Name="Tortoise Energy Infrastructure" />
+  <SYMBOL Code="TYL" Name="Tyler Technologies" />
+  <SYMBOL Code="TZF" Name="Bear Stearns Depositor" />
+  <SYMBOL Code="UA" Name="Under Armour" />
+  <SYMBOL Code="UAL" Name="United Continental Holdings" />
+  <SYMBOL Code="UAM" Name="Universal American Financial" />
+  <SYMBOL Code="UAN" Name="Cvr Partners LP Common Units R" />
+  <SYMBOL Code="UBA" Name="Urstadt Biddle Properties Inc" />
+  <SYMBOL Code="UBP" Name="Urstadt Biddle Properties Inc" />
+  <SYMBOL Code="UBP-F" Name="Privatebancorp Inc" />
+  <SYMBOL Code="UBP-G" Name="Urstadt Biddle Properties Inc" />
+  <SYMBOL Code="UBS" Name="UBS Ag Ordinary Shares When Iss" />
+  <SYMBOL Code="UBS-D" Name="UBS Pfd Fndg TR IV" />
+  <SYMBOL Code="UCP" Name="Ucp. Inc" />
+  <SYMBOL Code="UDR" Name="United Dominion Realty Trust" />
+  <SYMBOL Code="UE" Name="Urban Edge Properties Common Sh" />
+  <SYMBOL Code="UFI" Name="Unifi Inc" />
+  <SYMBOL Code="UFS" Name="Domtar Corp" />
+  <SYMBOL Code="UGI" Name="Ugi Corp" />
+  <SYMBOL Code="UGP" Name="Ultrapar Participacoes S.A." />
+  <SYMBOL Code="UHS" Name="Universal Health Services" />
+  <SYMBOL Code="UHT" Name="Universal Health Realty Income Trust" />
+  <SYMBOL Code="UIL" Name="Uil Holdings Corp" />
+  <SYMBOL Code="UIS" Name="Unisys Corp" />
+  <SYMBOL Code="UL" Name="Unilever Plc" />
+  <SYMBOL Code="UMC" Name="United Microelectronics Corp" />
+  <SYMBOL Code="UMH" Name="Umh Properties" />
+  <SYMBOL Code="UMH-A" Name="Umh Properties Inc. 8.25% Seri" />
+  <SYMBOL Code="UMH-B" Name="Umh Properties Inc." />
+  <SYMBOL Code="UN" Name="Unilever Nv" />
+  <SYMBOL Code="UNF" Name="Unifirst Corp" />
+  <SYMBOL Code="UNH" Name="Unitedhealth Group Inc" />
+  <SYMBOL Code="UNM" Name="Unumprovident Corp" />
+  <SYMBOL Code="UNP" Name="Union Pacific Corp" />
+  <SYMBOL Code="UNT" Name="Unit Corp" />
+  <SYMBOL Code="UNVR" Name="Univar Inc" />
+  <SYMBOL Code="UPL" Name="Ultra Petroleum" />
+  <SYMBOL Code="UPS" Name="United Parcel Service" />
+  <SYMBOL Code="URI" Name="United Rentals" />
+  <SYMBOL Code="USA" Name="Liberty All-Star Equity Fund" />
+  <SYMBOL Code="USAC" Name="USA Compression Partners LP" />
+  <SYMBOL Code="USB" Name="U.S. Bancorp" />
+  <SYMBOL Code="USB-A" Name="U.S. Bancorp Depositary Shares" />
+  <SYMBOL Code="USB-H" Name="U.S. Bancorp Dep Sh" />
+  <SYMBOL Code="USB-M" Name="U.S. Bancorp" />
+  <SYMBOL Code="USB-N" Name="U.S. Bancorp" />
+  <SYMBOL Code="USB-O" Name="U.S. Bancorp" />
+  <SYMBOL Code="USDP" Name="USD Partners LP" />
+  <SYMBOL Code="USG" Name="USG Corp" />
+  <SYMBOL Code="USM" Name="United States Cellular Corp" />
+  <SYMBOL Code="USNA" Name="Usana Health Sciences Inc" />
+  <SYMBOL Code="USPH" Name="U.S. Physical Therapy" />
+  <SYMBOL Code="UTF" Name="Cohen &amp; Steers Infrastructure Fund" />
+  <SYMBOL Code="UTI" Name="Universal Technical Institute Inc" />
+  <SYMBOL Code="UTL" Name="Unitil Corp" />
+  <SYMBOL Code="UTX" Name="United Technologies Corp" />
+  <SYMBOL Code="UVE" Name="Universal Insurance Holdings Inc" />
+  <SYMBOL Code="UVV" Name="Universal Corp" />
+  <SYMBOL Code="UZA" Name="United States Cellular Corp" />
+  <SYMBOL Code="UZB" Name="United States Cellular Corpora" />
+  <SYMBOL Code="V" Name="Visa Inc" />
+  <SYMBOL Code="VAC" Name="Marriot Vacations Worldwide Cor" />
+  <SYMBOL Code="VAL" Name="Valspar Corp" />
+  <SYMBOL Code="VAL.P" Name="Vale S.A." />
+  <SYMBOL Code="VALE" Name="Vale S.A." />
+  <SYMBOL Code="VAR" Name="Varian Medical Systems" />
+  <SYMBOL Code="VBF" Name="Invesco Van Kampen Bond Fund" />
+  <SYMBOL Code="VC" Name="Visteon Corp" />
+  <SYMBOL Code="VCO" Name="Vina Concha Y Toro" />
+  <SYMBOL Code="VCRA" Name="Vocera Communications Inc" />
+  <SYMBOL Code="VCV" Name="Invesco California Value Muni Income Trust" />
+  <SYMBOL Code="VEC" Name="Vectrus Inc. Common Stock" />
+  <SYMBOL Code="VEDL" Name="Vedanta Ltd" />
+  <SYMBOL Code="VEEV" Name="Veeva Systems Inc" />
+  <SYMBOL Code="VER" Name="Vereit Inc" />
+  <SYMBOL Code="VER-F" Name="Vereit Inc" />
+  <SYMBOL Code="VET" Name="Vermilion Energy Inc" />
+  <SYMBOL Code="VFC" Name="V.F. Corp" />
+  <SYMBOL Code="VG" Name="Vonage Holdings" />
+  <SYMBOL Code="VGI" Name="Virtus Global Multi-Sector Inc" />
+  <SYMBOL Code="VGM" Name="Invesco Trust For Investment Grade Municipals" />
+  <SYMBOL Code="VGR" Name="Vector Group Ltd" />
+  <SYMBOL Code="VHI" Name="Valhi Inc" />
+  <SYMBOL Code="VIPS" Name="Vipshop Holdings Ltd" />
+  <SYMBOL Code="VIV" Name="Telecomunicacoes De Sao Paulo S/A Ads" />
+  <SYMBOL Code="VJET" Name="Voxeljet Ag" />
+  <SYMBOL Code="VKQ" Name="Invesco Muni Trust" />
+  <SYMBOL Code="VLO" Name="Valero Energy Corp" />
+  <SYMBOL Code="VLP" Name="Valero Energy Partners LP" />
+  <SYMBOL Code="VLRS" Name="Controladora Vuela Compaia De" />
+  <SYMBOL Code="VLT" Name="Invesco High" />
+  <SYMBOL Code="VLY" Name="Valley National Bancorp" />
+  <SYMBOL Code="VLY-A" Name="Valley National Bancorp" />
+  <SYMBOL Code="VLY.W" Name="Valley National Bancorp" />
+  <SYMBOL Code="VMC" Name="Vulcan Materials Company" />
+  <SYMBOL Code="VMEM" Name="Violin Memory Inc" />
+  <SYMBOL Code="VMI" Name="Valmont Industries" />
+  <SYMBOL Code="VMO" Name="Invesco Muni Opportunity Trust" />
+  <SYMBOL Code="VMW" Name="Vmware Inc" />
+  <SYMBOL Code="VNCE" Name="Vince Holding Corp. Common Stoc" />
+  <SYMBOL Code="VNO" Name="Vornado Realty Trust" />
+  <SYMBOL Code="VNO-G" Name="Vornado Rlty Pfd G" />
+  <SYMBOL Code="VNO-I" Name="Vornado Rlty Pfd I" />
+  <SYMBOL Code="VNO-J" Name="Vornado Realty Trust Pfd Cumula" />
+  <SYMBOL Code="VNO-K" Name="Vornado Realty Trust" />
+  <SYMBOL Code="VNO-L" Name="Vornado Realty Trust" />
+  <SYMBOL Code="VNTV" Name="Vantiv Inc" />
+  <SYMBOL Code="VOC" Name="Voc Energy Trust" />
+  <SYMBOL Code="VOYA" Name="ING US Inc" />
+  <SYMBOL Code="VPG" Name="Vishay Precision Group" />
+  <SYMBOL Code="VPV" Name="Invesco Pennsylvania Muni" />
+  <SYMBOL Code="VR" Name="Validus Holdings" />
+  <SYMBOL Code="VRTV" Name="Veritiv Corporation Common Stoc" />
+  <SYMBOL Code="VRX" Name="Valeant Pharmaceuticals International" />
+  <SYMBOL Code="VSH" Name="Vishay Intertechnology" />
+  <SYMBOL Code="VSI" Name="Vitamin Shoppe Inc" />
+  <SYMBOL Code="VSLR" Name="Vivint Solar Inc" />
+  <SYMBOL Code="VSTO" Name="Vista Outdoor Inc. Common Stock" />
+  <SYMBOL Code="VTA" Name="Invesco Dynamic Credit Fund" />
+  <SYMBOL Code="VTN" Name="Invesco Trust New York Muni" />
+  <SYMBOL Code="VTR" Name="Ventas Inc" />
+  <SYMBOL Code="VTRB" Name="Ventas Realty Limited Partner" />
+  <SYMBOL Code="VTTI" Name="Vtti Energy Partners LP" />
+  <SYMBOL Code="VVC" Name="Vectren Corp" />
+  <SYMBOL Code="VVI" Name="Viad Corp" />
+  <SYMBOL Code="VVR" Name="Invesco Senior Income Trust" />
+  <SYMBOL Code="VZ" Name="Verizon Communications Inc" />
+  <SYMBOL Code="VZA" Name="Verizon Communications Inc. 5.9" />
+  <SYMBOL Code="W" Name="Wayfair Inc" />
+  <SYMBOL Code="WAB" Name="Wabtec Corp" />
+  <SYMBOL Code="WAC" Name="Walter Investment Management Corp" />
+  <SYMBOL Code="WAGE" Name="Wageworks Inc" />
+  <SYMBOL Code="WAIR" Name="Wesco Aircraft Holdings Inc" />
+  <SYMBOL Code="WAL" Name="Western Alliance Bancorporation" />
+  <SYMBOL Code="WAT" Name="Waters Corp" />
+  <SYMBOL Code="WBAI" Name="500Wan.Com Ltd" />
+  <SYMBOL Code="WBC" Name="Wabco Holdings Inc" />
+  <SYMBOL Code="WBK" Name="Westpac Banking Corp" />
+  <SYMBOL Code="WBS" Name="Webster Financial Corp" />
+  <SYMBOL Code="WBS-E" Name="Webster Financial Corp" />
+  <SYMBOL Code="WBS.W" Name="Webster Financial Corp" />
+  <SYMBOL Code="WCC" Name="Wesco International" />
+  <SYMBOL Code="WCG" Name="Wellcare Group" />
+  <SYMBOL Code="WCIC" Name="Wci Communities Inc" />
+  <SYMBOL Code="WCN" Name="Waste Connections Inc" />
+  <SYMBOL Code="WD" Name="Walker &amp; Dunlop" />
+  <SYMBOL Code="WDAY" Name="Workday Inc" />
+  <SYMBOL Code="WDR" Name="Waddell &amp; Reed Financial" />
+  <SYMBOL Code="WEA" Name="Western Asset Bond Fund" />
+  <SYMBOL Code="WEC" Name="Wisconsin Energy Corp" />
+  <SYMBOL Code="WES" Name="Western Gas Partners LP" />
+  <SYMBOL Code="WEX" Name="Wex Inc" />
+  <SYMBOL Code="WF" Name="Woori Finance Holdings Co Ltd" />
+  <SYMBOL Code="WFC" Name="Wells Fargo &amp; Company" />
+  <SYMBOL Code="WFC-J" Name="Wells Fargo Pfd J" />
+  <SYMBOL Code="WFC-L" Name="Wells Fargo Pfd L" />
+  <SYMBOL Code="WFC-N" Name="Wells Fargo &amp; Company Dep Shs R" />
+  <SYMBOL Code="WFC-O" Name="Wells Fargo &amp; Company" />
+  <SYMBOL Code="WFC-P" Name="Wells Fargo &amp; Company Ser P" />
+  <SYMBOL Code="WFC-Q" Name="Wells Fargo &amp; Co" />
+  <SYMBOL Code="WFC-R" Name="Wells Fargo" />
+  <SYMBOL Code="WFC-T" Name="Wells Fargo &amp; Company Series T" />
+  <SYMBOL Code="WFC-V" Name="Wells Fargo &amp; Company Depositar" />
+  <SYMBOL Code="WFC.W" Name="Wells Fargo and Co" />
+  <SYMBOL Code="WFE-A" Name="Wells Fargo Real Estate Invest" />
+  <SYMBOL Code="WFT" Name="Weatherford International Ltd" />
+  <SYMBOL Code="WG" Name="Willbros Group" />
+  <SYMBOL Code="WGL" Name="WGL Holdings Inc" />
+  <SYMBOL Code="WGO" Name="Winnebago Industries" />
+  <SYMBOL Code="WGP" Name="Western Gas Eqty Partners LP" />
+  <SYMBOL Code="WHG" Name="Westwood Holdings Group Inc" />
+  <SYMBOL Code="WHR" Name="Whirlpool Corp" />
+  <SYMBOL Code="WHZ" Name="Whiting USA Trust II" />
+  <SYMBOL Code="WIA" Name="U.S. Treasury Inflation Prot Secs Fd" />
+  <SYMBOL Code="WIT" Name="Wipro Ltd" />
+  <SYMBOL Code="WIW" Name="U.S Treasury Inflation Prot Secs Fd 2" />
+  <SYMBOL Code="WK" Name="Workiva Llc" />
+  <SYMBOL Code="WLH" Name="William Lyon Homes" />
+  <SYMBOL Code="WLK" Name="Westlake Chemical Corp" />
+  <SYMBOL Code="WLKP" Name="Westlake Chemical Partners LP" />
+  <SYMBOL Code="WLL" Name="Whiting Petroleum Corp" />
+  <SYMBOL Code="WM" Name="Waste Management" />
+  <SYMBOL Code="WMB" Name="Williams Companies" />
+  <SYMBOL Code="WMC" Name="Western Asset Mortgage Capital" />
+  <SYMBOL Code="WMK" Name="Weis Markets" />
+  <SYMBOL Code="WMLP" Name="Westmoreland Resource Partners LP" />
+  <SYMBOL Code="WMS" Name="Advanced Drainage Systems Inc" />
+  <SYMBOL Code="WMT" Name="Wal-Mart Stores" />
+  <SYMBOL Code="WNC" Name="Wabash National Corp" />
+  <SYMBOL Code="WNR" Name="Western Refining" />
+  <SYMBOL Code="WNRL" Name="Western Refining Logistics LP" />
+  <SYMBOL Code="WNS" Name="Wns Ltd" />
+  <SYMBOL Code="WOR" Name="Worthington Industries" />
+  <SYMBOL Code="WPC" Name="W.P. Carey &amp; Co. Llc" />
+  <SYMBOL Code="WPG" Name="Washington Prime Group Inc. Com" />
+  <SYMBOL Code="WPG-H" Name="Washington Prime Group Inc. 7.5" />
+  <SYMBOL Code="WPG-I" Name="Wp Glimcher Inc" />
+  <SYMBOL Code="WPP" Name="Wausau-Mosinee Paper Corp" />
+  <SYMBOL Code="WPT" Name="World Point Terminals LP" />
+  <SYMBOL Code="WPX" Name="Wpx Energy Inc. Common Stock W" />
+  <SYMBOL Code="WPXP" Name="Wpx Energy Inc" />
+  <SYMBOL Code="WPZ" Name="Williams Partners L.P." />
+  <SYMBOL Code="WR" Name="Westar Energy" />
+  <SYMBOL Code="WRB" Name="W.R. Berkley Corp" />
+  <SYMBOL Code="WRB-B" Name="W.R. Berkley Corp" />
+  <SYMBOL Code="WRE" Name="Washington Real Estate Investment" />
+  <SYMBOL Code="WRI" Name="Weingarten Realty Investors" />
+  <SYMBOL Code="WRK" Name="Westrock Company Common Stock W" />
+  <SYMBOL Code="WSH" Name="Willis Group Holdings" />
+  <SYMBOL Code="WSM" Name="Williams-Sonoma" />
+  <SYMBOL Code="WSO" Name="Watsco Inc" />
+  <SYMBOL Code="WSO.B" Name="Watsco Inc Cl B" />
+  <SYMBOL Code="WSR" Name="Whitestone REIT" />
+  <SYMBOL Code="WST" Name="West Pharmaceutical Services" />
+  <SYMBOL Code="WTI" Name="W&amp;T Offshore" />
+  <SYMBOL Code="WTM" Name="White Mountains Insurance Group" />
+  <SYMBOL Code="WTR" Name="Aqua America" />
+  <SYMBOL Code="WTS" Name="Watts Water Technologies" />
+  <SYMBOL Code="WTW" Name="Weight Watchers International Inc" />
+  <SYMBOL Code="WU" Name="Western Union Company" />
+  <SYMBOL Code="WUBA" Name="58.Com Inc" />
+  <SYMBOL Code="WWAV" Name="The Whitewave Foods Company" />
+  <SYMBOL Code="WWE" Name="World Wrestling Entertainment" />
+  <SYMBOL Code="WWW" Name="Wolverine World Wide" />
+  <SYMBOL Code="WX" Name="Wuxi Pharmatech [Cayman] Inc" />
+  <SYMBOL Code="WY" Name="Weyerhaeuser Company" />
+  <SYMBOL Code="WY-A" Name="Weyerhaeuser Co" />
+  <SYMBOL Code="WYN" Name="Wyndham Worldwide Corp" />
+  <SYMBOL Code="X" Name="United States Steel Corp" />
+  <SYMBOL Code="XCO" Name="Exco Resources NL" />
+  <SYMBOL Code="XEC" Name="Cimarex Energy Co" />
+  <SYMBOL Code="XEL" Name="Xcel Energy Inc" />
+  <SYMBOL Code="XHR" Name="Xenia Hotels &amp; Resorts Inc" />
+  <SYMBOL Code="XIN" Name="Xinyuan Real Estate Co Ltd" />
+  <SYMBOL Code="XKE" Name="Lehman Abs Corp" />
+  <SYMBOL Code="XL" Name="XL Company Switzerland Gmbh" />
+  <SYMBOL Code="XNY" Name="China Xiniya Fashion" />
+  <SYMBOL Code="XOM" Name="Exxon Mobil Corp" />
+  <SYMBOL Code="XON" Name="Intrexon Corp" />
+  <SYMBOL Code="XOXO" Name="Xoxo Group Inc" />
+  <SYMBOL Code="XPO" Name="Express-1 Expedited Solutions" />
+  <SYMBOL Code="XRM" Name="Xerium Technologies" />
+  <SYMBOL Code="XRS" Name="Tal Education Group" />
+  <SYMBOL Code="XRX" Name="Xerox Corp" />
+  <SYMBOL Code="XTLY" Name="Xactly Corp" />
+  <SYMBOL Code="XUE" Name="Xueda Education Group" />
+  <SYMBOL Code="XYL" Name="Xylem Inc. Common Stock New Whe" />
+  <SYMBOL Code="Y" Name="Alleghany Corp" />
+  <SYMBOL Code="YDKN" Name="Yadkin Valley Financial Corp" />
+  <SYMBOL Code="YELP" Name="Yelp Inc" />
+  <SYMBOL Code="YGE" Name="Yingli Green Energy Holding Company" />
+  <SYMBOL Code="YOKU" Name="Youku.Com Inc" />
+  <SYMBOL Code="YPF" Name="Ypf Sociedad Anonima" />
+  <SYMBOL Code="YUM" Name="Yum! Brands" />
+  <SYMBOL Code="YUME" Name="Yume Inc" />
+  <SYMBOL Code="YZC" Name="Yanzhou Coal Mining Company" />
+  <SYMBOL Code="ZAYO" Name="Zayo Group Holdings Inc" />
+  <SYMBOL Code="ZB-A" Name="Zions Bc Dp Shs A" />
+  <SYMBOL Code="ZB-F" Name="Zions Bancorporation" />
+  <SYMBOL Code="ZB-G" Name="Zions Bancorporation" />
+  <SYMBOL Code="ZB-H" Name="Zions Bancorporation" />
+  <SYMBOL Code="ZBH" Name="Zimmer Biomet Holdings" />
+  <SYMBOL Code="ZBK" Name="Zion Bancorporation" />
+  <SYMBOL Code="ZEN" Name="Zendesk Inc" />
+  <SYMBOL Code="ZF" Name="Zweig Fund" />
+  <SYMBOL Code="ZFC" Name="Zais Financial Corp. Common Sto" />
+  <SYMBOL Code="ZNH" Name="China Southern Airlines Company" />
+  <SYMBOL Code="ZOES" Name="Zoe&amp;#39S Kitchen Inc" />
+  <SYMBOL Code="ZPIN" Name="Zhaopin Ltd" />
+  <SYMBOL Code="ZTR" Name="Zweig Total Return Fund" />
+  <SYMBOL Code="ZTS" Name="Zoetis Inc. Class A Common Stoc" />
+  <SYMBOL Code="ZX" Name="China Zenix Auto International" />
+</ArrayOfSYMBOL>

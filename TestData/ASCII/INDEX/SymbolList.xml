@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSYMBOL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SYMBOL Code="ADDA" Name="AMEX Advance Decline Difference" />
+  <SYMBOL Code="ADDD" Name="OTC Advance Decline Difference" />
+  <SYMBOL Code="ADDE" Name="ETFS Advance - Decline" />
+  <SYMBOL Code="ADDN" Name="NYSE Advance Decline Difference" />
+  <SYMBOL Code="ADDQ" Name="NASD Advance Decline Difference" />
+  <SYMBOL Code="ADDS" Name="TSX Advance Decline Difference" />
+  <SYMBOL Code="ADDT" Name="Total Advance Decline Difference" />
+  <SYMBOL Code="ADDV" Name="Tsxv Advance Decline Difference" />
+  <SYMBOL Code="ADDX" Name="CAD Total Advance Decline Difference" />
+  <SYMBOL Code="ADR" Name="AMEX Internationl Market Index" />
+  <SYMBOL Code="ADRA" Name="AMEX Advance Decline Ratio" />
+  <SYMBOL Code="ADRD" Name="OTC Advance Decline Ratio" />
+  <SYMBOL Code="ADRE" Name="ETFS  Advance Decline Ratio" />
+  <SYMBOL Code="ADRN" Name="NYSE Advance Decline Ratio" />
+  <SYMBOL Code="ADRQ" Name="NASD Advance Decline Ratio" />
+  <SYMBOL Code="ADRS" Name="TSX Advance Decline Ratio" />
+  <SYMBOL Code="ADRT" Name="Total Advance Decline Ratio" />
+  <SYMBOL Code="ADRV" Name="Tsxv Advance Decline Ratio" />
+  <SYMBOL Code="ADRX" Name="CAD Total Advance Decline Ratio" />
+  <SYMBOL Code="ADVA" Name="AMEX Advancing Stocks" />
+  <SYMBOL Code="ADVD" Name="OTC Advancing Stocks" />
+  <SYMBOL Code="ADVE" Name="ETFS  Advancing Stocks" />
+  <SYMBOL Code="ADVN" Name="NYSE Advancing Stocks" />
+  <SYMBOL Code="ADVQ" Name="NASD Advancing Stocks" />
+  <SYMBOL Code="ADVS" Name="TSX Advancing Stocks" />
+  <SYMBOL Code="ADVT" Name="Total Advancing Stocks" />
+  <SYMBOL Code="ADVV" Name="Tsxv Advancing Stocks" />
+  <SYMBOL Code="ADVX" Name="CAD Total Advancing Stocks" />
+  <SYMBOL Code="AEX" Name="AEX General - Netherlands" />
+  <SYMBOL Code="AMZ" Name="Alerian Mlp Index" />
+  <SYMBOL Code="ASHD" Name="AMEX Declining Stocks" />
+  <SYMBOL Code="ASHF" Name="AMEX Advances - Declines" />
+  <SYMBOL Code="ASHR" Name="AMEX Advance Decline Ratio" />
+  <SYMBOL Code="ASHU" Name="AMEX Advancing Stocks" />
+  <SYMBOL Code="ATX" Name="ATX - Austria" />
+  <SYMBOL Code="ATXR" Name="S&amp;P C.S. Ga-Atlanta Home Price Index" />
+  <SYMBOL Code="AVDA" Name="AMEX Advances Declines Volume Difference" />
+  <SYMBOL Code="AVDD" Name="OTC Advance Decline Volume Difference" />
+  <SYMBOL Code="AVDE" Name="ETFS  Advances - Declines Volume" />
+  <SYMBOL Code="AVDN" Name="NYSE Advances Declines Volume Difference" />
+  <SYMBOL Code="AVDQ" Name="NASD Advances Declines Volume Difference" />
+  <SYMBOL Code="AVDS" Name="TSX Advance Decline Volume Difference" />
+  <SYMBOL Code="AVDT" Name="Total Advances Declines Volume Difference" />
+  <SYMBOL Code="AVDV" Name="Tsxv Advance Decline Volume Difference" />
+  <SYMBOL Code="AVDX" Name="CAD Total Advance Decline Volume Difference" />
+  <SYMBOL Code="AVLD" Name="AMEX Declining Volume" />
+  <SYMBOL Code="AVLF" Name="AMEX Advance Decline Volume Difference" />
+  <SYMBOL Code="AVLR" Name="AMEX Advance Decline Vol Ratio" />
+  <SYMBOL Code="AVLU" Name="AMEX Advancing Volume" />
+  <SYMBOL Code="AVRA" Name="AMEX Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRD" Name="OTC Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRE" Name="ETFS  Advance / Decline Volume" />
+  <SYMBOL Code="AVRN" Name="NYSE Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRQ" Name="NASD Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRS" Name="TSX Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRT" Name="Total Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRV" Name="Tsxv Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVRX" Name="CAD Total Advance Decline Volume Ratio" />
+  <SYMBOL Code="AVVA" Name="AMEX Advancing Volume" />
+  <SYMBOL Code="AVVD" Name="OTC Advancing Volume" />
+  <SYMBOL Code="AVVE" Name="ETFS  Advancing Volume" />
+  <SYMBOL Code="AVVN" Name="NYSE Advancing Volume" />
+  <SYMBOL Code="AVVQ" Name="NASD Advancing Volume" />
+  <SYMBOL Code="AVVS" Name="TSX Advancing Volume" />
+  <SYMBOL Code="AVVT" Name="Total Advancing Volume" />
+  <SYMBOL Code="AVVV" Name="Tsxv Advancing Volume" />
+  <SYMBOL Code="AVVX" Name="CAD Total Advancing Volume" />
+  <SYMBOL Code="BANK" Name="Nasdaq Bank" />
+  <SYMBOL Code="BCMA" Name="Barchart Market Momentum Index Advances" />
+  <SYMBOL Code="BCMC" Name="Barchart TSX Market Momentum Index" />
+  <SYMBOL Code="BCMD" Name="Barchart Market Momentum Index Declines" />
+  <SYMBOL Code="BCME" Name="Barchart TSX Market Momentum Index Advances" />
+  <SYMBOL Code="BCMF" Name="Barchart TSX Market Momentum Index Declines" />
+  <SYMBOL Code="BCMG" Name="Barchart TSX Market Momentum Index Unch" />
+  <SYMBOL Code="BCMM" Name="Barchart Market Momentum Index" />
+  <SYMBOL Code="BCMU" Name="Barchart Market Momentum Index Unch" />
+  <SYMBOL Code="BDMA" Name="Barchart Market Momentum Advances Yesterday" />
+  <SYMBOL Code="BDMC" Name="Barchart TSX Market Momentum Yesterday" />
+  <SYMBOL Code="BDMD" Name="Barchart Market Momentum Declines Yesterday" />
+  <SYMBOL Code="BDME" Name="Barchart TSX Market Momentum Advances Yesterday" />
+  <SYMBOL Code="BDMF" Name="Barchart TSX Market Momentum Declines Yesterday" />
+  <SYMBOL Code="BDMG" Name="Barchart TSX Market Momentum Unch Yesterday" />
+  <SYMBOL Code="BDMM" Name="Barchart Market Momentum Yesterday" />
+  <SYMBOL Code="BDMU" Name="Barchart Market Momentum Unch Yesterday" />
+  <SYMBOL Code="BFMA" Name="Barchart Market Momentum Advances Last Week" />
+  <SYMBOL Code="BFMC" Name="Barchart TSX Market Momentum Last Week" />
+  <SYMBOL Code="BFMD" Name="Barchart Market Momentum Declines Last Week" />
+  <SYMBOL Code="BFME" Name="Barchart TSX Market Momentum Advances Last Week" />
+  <SYMBOL Code="BFMF" Name="Barchart TSX Market Momentum Declines Last Week" />
+  <SYMBOL Code="BFMG" Name="Barchart TSX Market Momentum Unch Last Week" />
+  <SYMBOL Code="BFMM" Name="Barchart Market Momentum Last Week" />
+  <SYMBOL Code="BFMU" Name="Barchart Market Momentum Unch Last Week" />
+  <SYMBOL Code="BFX" Name="BEL 20 - Belgium" />
+  <SYMBOL Code="BGMA" Name="Barchart Market Momentum Advances Last Month" />
+  <SYMBOL Code="BGMC" Name="Barchart TSX Market Momentum Last Month" />
+  <SYMBOL Code="BGMD" Name="Barchart Market Momentum Declines Last Month" />
+  <SYMBOL Code="BGME" Name="Barchart TSX Market Momentum Advances Last Month" />
+  <SYMBOL Code="BGMF" Name="Barchart TSX Market Momentum Declines Last Month" />
+  <SYMBOL Code="BGMG" Name="Barchart TSX Market Momentum Unch Last Month" />
+  <SYMBOL Code="BGMM" Name="Barchart Market Momentum Last Month" />
+  <SYMBOL Code="BGMU" Name="Barchart Market Momentum Unch Last Month" />
+  <SYMBOL Code="BJE" Name="NYSE Arca Mini-Biotechnology In-" />
+  <SYMBOL Code="BKNIF" Name="Bank Nifty" />
+  <SYMBOL Code="BKX" Name="KBW Bank Index" />
+  <SYMBOL Code="BOXR" Name="S&amp;P C.S. Ma-Boston Home Price Index" />
+  <SYMBOL Code="BSESN" Name="BSE 30 - India" />
+  <SYMBOL Code="BTK" Name="AMEX Biotechnology Index" />
+  <SYMBOL Code="BTS" Name="AMEX Biotechnology Index Final" />
+  <SYMBOL Code="BVSP" Name="Bovespa - Brazil" />
+  <SYMBOL Code="BWH" Name="POWERSHARES WILDERHILL CLEAN EN" />
+  <SYMBOL Code="BXD" Name="CBOE DJIA BUYWRITE INDEX" />
+  <SYMBOL Code="BXM" Name="CBOE BUYWRITE MONTHLY INDEX" />
+  <SYMBOL Code="BXN" Name="CBOE BUYWRITE MONTHLY INDEX" />
+  <SYMBOL Code="BXR" Name="CBOE RUSSELL 2000 BUYWRITE INDE" />
+  <SYMBOL Code="BXY" Name="CBOE S&amp; P 500 BUYWRITE    INDEX" />
+  <SYMBOL Code="BZJ" Name="NYSE Arca Mini-Oil Index" />
+  <SYMBOL Code="CAC40" Name="Paris CAC 40" />
+  <SYMBOL Code="CASE" Name="Egyptian EGX30" />
+  <SYMBOL Code="CELS" Name="NASDAQ Clean Edge Green Energy" />
+  <SYMBOL Code="CEX" Name="S&amp; P Chemicals Index" />
+  <SYMBOL Code="CEXR" Name="S&amp;P C.S. Oh-Cleveland Home Price Index" />
+  <SYMBOL Code="CHXR" Name="S&amp;P C.S. Il-Chicago Home Price Index" />
+  <SYMBOL Code="CIV" Name="Cboe/Cbot Corn Volatility Index" />
+  <SYMBOL Code="CKG" Name="S&amp;P 600 Barra Grwth" />
+  <SYMBOL Code="COMP" Name="Nasdaq Composite" />
+  <SYMBOL Code="CPH" Name="AMEX China Settle" />
+  <SYMBOL Code="CPR" Name="Copper Index" />
+  <SYMBOL Code="CRXR" Name="S&amp;P C.S. Nc-Charlotte Home Price Index" />
+  <SYMBOL Code="CS2R" Name="S&amp;P C.S. 20-City Composite Home Price Index" />
+  <SYMBOL Code="CSXR" Name="S&amp;P C.S. 10-City Composite Home Price Index" />
+  <SYMBOL Code="CVK" Name="Smcp 600Barr Val" />
+  <SYMBOL Code="CYM" Name="Claymore Yield ETF Iopv" />
+  <SYMBOL Code="CYO" Name="Morgan Stanley Cyclical Index F" />
+  <SYMBOL Code="CZH" Name="AMEX CHINA INDX" />
+  <SYMBOL Code="DAX" Name="Frankfurt Dax" />
+  <SYMBOL Code="DAXR" Name="S&amp;P C.S. Tx-Dallas Home Price Index" />
+  <SYMBOL Code="DCFI" Name="DOW Comp Stocks Above 50-Day Average" />
+  <SYMBOL Code="DCOF" Name="DOW Comp Stocks Above 150-Day Average" />
+  <SYMBOL Code="DCOH" Name="DOW Comp Stocks Above 100-Day Average" />
+  <SYMBOL Code="DCSE" Name="Djw US Semiconductor" />
+  <SYMBOL Code="DCTH" Name="DOW Comp Stocks Above 200-Day Average" />
+  <SYMBOL Code="DCTW" Name="DOW Comp Stocks Above 20-Day Average" />
+  <SYMBOL Code="DDA" Name="DJIA VOLATILITY INDEX - OFFER S" />
+  <SYMBOL Code="DDB" Name="DJIA VOLATILITY INDEX - BID SID" />
+  <SYMBOL Code="DDO" Name="AMEX Disk Drive Index Final Set" />
+  <SYMBOL Code="DDX" Name="AMEX Disk Drive Index" />
+  <SYMBOL Code="DECA" Name="AMEX Declining Stocks" />
+  <SYMBOL Code="DECD" Name="OTC Declining Stocks" />
+  <SYMBOL Code="DECE" Name="ETFS  Declining Stocks" />
+  <SYMBOL Code="DECN" Name="NYSE Declining Stocks" />
+  <SYMBOL Code="DECQ" Name="NASD Declining Stocks" />
+  <SYMBOL Code="DECS" Name="TSX Declining Stocks" />
+  <SYMBOL Code="DECT" Name="Total Declining Stocks" />
+  <SYMBOL Code="DECV" Name="Tsxv Declining Stocks" />
+  <SYMBOL Code="DECX" Name="CAD Total Declining Stocks" />
+  <SYMBOL Code="DEXR" Name="S&amp;P C.S. Mi-Detroit Home Price Index" />
+  <SYMBOL Code="DFI" Name="AMEX Defense Index" />
+  <SYMBOL Code="DGE" Name="AMEX Equal Weighted Pharma Index" />
+  <SYMBOL Code="DHC" Name="DYNAMIC HLTHCARE INTELL" />
+  <SYMBOL Code="DHD" Name="DYNAMIC BANKING INTELL" />
+  <SYMBOL Code="DIFI" Name="DOW Indu Stocks Above 50-Day Average" />
+  <SYMBOL Code="DIOF" Name="DOW Indu Stocks Above 150-Day Average" />
+  <SYMBOL Code="DIOH" Name="DOW Indu Stocks Above 100-Day Average" />
+  <SYMBOL Code="DITH" Name="DOW Indu Stocks Above 200-Day Average" />
+  <SYMBOL Code="DITW" Name="DOW Indu Stocks Above 20-Day Average" />
+  <SYMBOL Code="DIVD" Name="S&amp;P 500 ANNUAL DIVIDEND - 10X" />
+  <SYMBOL Code="DIVQ" Name="NASDAQ Dividend Achievers Index" />
+  <SYMBOL Code="DJC" Name="Dow Jones Composite Average" />
+  <SYMBOL Code="DJEC" Name="DJ INTERNET COMMERCE IND" />
+  <SYMBOL Code="DJI" Name="DJ Industrial Average" />
+  <SYMBOL Code="DJT" Name="DJ Transport Average" />
+  <SYMBOL Code="DJU" Name="DJ Utility Average" />
+  <SYMBOL Code="DJWO" Name="DJ WORLD STOCK INDEX" />
+  <SYMBOL Code="DLTC" Name="U.S. Large-Cap Technology Index" />
+  <SYMBOL Code="DMT" Name="Dly Mirrow Idx" />
+  <SYMBOL Code="DNXR" Name="S&amp;P C.S. Co-Denver Home Price Index" />
+  <SYMBOL Code="DOI" Name="AMEX Defense Index Final Settle" />
+  <SYMBOL Code="DOWE" Name="INDUSTRIALS EU$" />
+  <SYMBOL Code="DOWV" Name="TREASURIES IDX" />
+  <SYMBOL Code="DRCI" Name="DJ COMPREIT" />
+  <SYMBOL Code="DREI" Name="DJ EQUITYREIT" />
+  <SYMBOL Code="DRG" Name="AMEX Pharmaceutical Index" />
+  <SYMBOL Code="DRO" Name="AMEX Pharmaceutical Index Final" />
+  <SYMBOL Code="DSAE" Name="DJ US AERODEF" />
+  <SYMBOL Code="DSAF" Name="DJ US DELIVRYSRV" />
+  <SYMBOL Code="DSAG" Name="DJ US ASSETMNG" />
+  <SYMBOL Code="DSAI" Name="DJ US ELECEQUIP" />
+  <SYMBOL Code="DSAL" Name="DJ US ALUMINUM" />
+  <SYMBOL Code="DSAM" Name="DJ US MEDEQUIP" />
+  <SYMBOL Code="DSAP" Name="DJ US AUTOPARTS" />
+  <SYMBOL Code="DSAR" Name="DJ US AIRLINES" />
+  <SYMBOL Code="DSAS" Name="DJ US AEROSPACE" />
+  <SYMBOL Code="DSAT" Name="DJ US AUTOPARTS" />
+  <SYMBOL Code="DSAU" Name="DJ US AUTOMOBILE" />
+  <SYMBOL Code="DSAV" Name="DJ US MEDIAAGN" />
+  <SYMBOL Code="DSBC" Name="DJ US BRDCASTENT" />
+  <SYMBOL Code="DSBD" Name="DJ US BLDGMATFIX" />
+  <SYMBOL Code="DSBE" Name="DJ US BSTRNGEMP" />
+  <SYMBOL Code="DSBK" Name="DJ US BANKS" />
+  <SYMBOL Code="DSBM" Name="DJ US BASICMAT" />
+  <SYMBOL Code="DSBS" Name="DJ US BSCRSRCES" />
+  <SYMBOL Code="DSBT" Name="DJ US BIOTECHNO" />
+  <SYMBOL Code="DSBV" Name="DJ US BEVERAGES" />
+  <SYMBOL Code="DSCA" Name="DJ US GAMBLING" />
+  <SYMBOL Code="DSCC" Name="DJ US COMMCHEM" />
+  <SYMBOL Code="DSCE" Name="DJ US CONSELECT" />
+  <SYMBOL Code="DSCF" Name="DJ US CLOTHACCSS" />
+  <SYMBOL Code="DSCG" Name="DJ US TRAVLEIS" />
+  <SYMBOL Code="DSCH" Name="DJ US CHEMICALS" />
+  <SYMBOL Code="DSCL" Name="DJ US COAL" />
+  <SYMBOL Code="DSCM" Name="DJ US PERSPROD" />
+  <SYMBOL Code="DSCN" Name="DJ US CONSMATRLS" />
+  <SYMBOL Code="DSCP" Name="DJ US CTNRS&amp;PKNG" />
+  <SYMBOL Code="DSCR" Name="DJ US CMPTRHRDWR" />
+  <SYMBOL Code="DSCS" Name="DJ US SPLTYCNSRV" />
+  <SYMBOL Code="DSCT" Name="DJ US SEMICONDTR" />
+  <SYMBOL Code="DSCX" Name="DJ US SPCLTYCHEM" />
+  <SYMBOL Code="DSCY" Name="DJ US CONSUMSRV" />
+  <SYMBOL Code="DSDB" Name="DJ US BREWERS" />
+  <SYMBOL Code="DSDN" Name="DJ US DEFENSE" />
+  <SYMBOL Code="DSDR" Name="DJ US FDDRGRET" />
+  <SYMBOL Code="DSDS" Name="DJ US INSUPPLIER" />
+  <SYMBOL Code="DSDT" Name="U.S. Diversified REITs Index" />
+  <SYMBOL Code="DSDV" Name="DJ US CMPTRSRV" />
+  <SYMBOL Code="DSEC" Name="DJ US ELCCOMPEQP" />
+  <SYMBOL Code="DSEE" Name="DJ US ELECEQUP" />
+  <SYMBOL Code="DSEH" Name="U.S. Real Estate Holding &amp; Development Index" />
+  <SYMBOL Code="DSEN" Name="DJ US OIL&amp;GAS" />
+  <SYMBOL Code="DSES" Name="U.S. Real Estate Services Index" />
+  <SYMBOL Code="DSEU" Name="DJ US ELECTRCTY" />
+  <SYMBOL Code="DSFA" Name="DJ US FINADMIN" />
+  <SYMBOL Code="DSFB" Name="DJ US FOOD&amp;BEV" />
+  <SYMBOL Code="DSFC" Name="DJ US FXLNTELCM" />
+  <SYMBOL Code="DSFD" Name="DJ US FOODRTWHSL" />
+  <SYMBOL Code="DSFE" Name="DJ US INDUSTMACH" />
+  <SYMBOL Code="DSFH" Name="DJ US FURNISHNG" />
+  <SYMBOL Code="DSFI" Name="DJ US FINCLSRV" />
+  <SYMBOL Code="DSFN" Name="DJ US FINANCIALS" />
+  <SYMBOL Code="DSFO" Name="DJ US FOODPRODRS" />
+  <SYMBOL Code="DSFP" Name="DJ US FOODPRDCTS" />
+  <SYMBOL Code="DSFR" Name="DJ US FORESTPAPR" />
+  <SYMBOL Code="DSFT" Name="DJ US FOOTWEAR" />
+  <SYMBOL Code="DSFV" Name="U.S. Financial Services Index" />
+  <SYMBOL Code="DSGF" Name="DJ US GENFINAN" />
+  <SYMBOL Code="DSGI" Name="DJ US GENINDUST" />
+  <SYMBOL Code="DSGT" Name="DJ US GENRETAIL" />
+  <SYMBOL Code="DSGU" Name="DJ US GASDISTRIB" />
+  <SYMBOL Code="DSHB" Name="DJ US HOMECONS" />
+  <SYMBOL Code="DSHC" Name="DJ US HLTHCARE" />
+  <SYMBOL Code="DSHD" Name="DJ US DURHLDPROD" />
+  <SYMBOL Code="DSHG" Name="DJ US HLDGOODS" />
+  <SYMBOL Code="DSHI" Name="DJ US HMIMPRETL" />
+  <SYMBOL Code="DSHL" Name="U.S. Hotel &amp; Lodging REITs Index" />
+  <SYMBOL Code="DSHN" Name="DJ US NDURHLDPRD" />
+  <SYMBOL Code="DSHP" Name="DJ US HLTHCRPVDR" />
+  <SYMBOL Code="DSHR" Name="DJ US COMRVEHTRK" />
+  <SYMBOL Code="DSHV" Name="DJ US HVYCONS" />
+  <SYMBOL Code="DSIB" Name="DJ US INSBROKERS" />
+  <SYMBOL Code="DSID" Name="DJ US DVSFINDUS" />
+  <SYMBOL Code="DSIF" Name="DJ US FLLINEINS" />
+  <SYMBOL Code="DSIG" Name="DJ US INDGDS&amp;SRV" />
+  <SYMBOL Code="DSIL" Name="DJ US LIFEINSUR" />
+  <SYMBOL Code="DSIM" Name="DJ US INDMETALS" />
+  <SYMBOL Code="DSIN" Name="DJ US INDSTRIALS" />
+  <SYMBOL Code="DSIO" Name="U.S. Industrial &amp; Office REITs Index" />
+  <SYMBOL Code="DSIP" Name="DJ US PROPCASINS" />
+  <SYMBOL Code="DSIQ" Name="DJ US INDSTENGNG" />
+  <SYMBOL Code="DSIR" Name="DJ US INSURANCE" />
+  <SYMBOL Code="DSIS" Name="DJ US SUPPORTSRV" />
+  <SYMBOL Code="DSIT" Name="DJ US INDSTTRANS" />
+  <SYMBOL Code="DSIU" Name="DJ US REINSURAN" />
+  <SYMBOL Code="DSIV" Name="DJ US BUSSUPSRV" />
+  <SYMBOL Code="DSIX" Name="DJ US NLIFEINSUR" />
+  <SYMBOL Code="DSLE" Name="DJ US LEISGOODS" />
+  <SYMBOL Code="DSLG" Name="DJ US HOTELS" />
+  <SYMBOL Code="DSLW" Name="DJ US LOWCAP" />
+  <SYMBOL Code="DSMC" Name="DJ US HCREQPSRV" />
+  <SYMBOL Code="DSME" Name="DJ US MEDIA" />
+  <SYMBOL Code="DSMF" Name="DJ US MORTGFIN" />
+  <SYMBOL Code="DSMG" Name="DJ US MINING" />
+  <SYMBOL Code="DSMR" Name="U.S. Mortgage REITs Index" />
+  <SYMBOL Code="DSMS" Name="DJ US MDSUPPLIES" />
+  <SYMBOL Code="DSMT" Name="DJ US MARTRANSPT" />
+  <SYMBOL Code="DSMU" Name="DJ US MULUTILTES" />
+  <SYMBOL Code="DSNC" Name="DJ US CONSUMGDS" />
+  <SYMBOL Code="DSNF" Name="DJ US NONFERMET" />
+  <SYMBOL Code="DSNG" Name="DJ US PERHLDGDS" />
+  <SYMBOL Code="DSNS" Name="DJ US INTERNET" />
+  <SYMBOL Code="DSOE" Name="DJ US ELECOFFEQP" />
+  <SYMBOL Code="DSOG" Name="DJ US OILGAS" />
+  <SYMBOL Code="DSOI" Name="DJ US OILEQPSRV" />
+  <SYMBOL Code="DSOL" Name="DJ US INTGOILGAS" />
+  <SYMBOL Code="DSOQ" Name="DJ US OILEQPSRV" />
+  <SYMBOL Code="DSOS" Name="DJ US EXPLPROD" />
+  <SYMBOL Code="DSPB" Name="DJ US PUBLISHING" />
+  <SYMBOL Code="DSPC" Name="DJ US WSTDSPSRV" />
+  <SYMBOL Code="DSPG" Name="DJ US PERSGOODS" />
+  <SYMBOL Code="DSPL" Name="DJ US PIPELINES" />
+  <SYMBOL Code="DSPM" Name="DJ US GOLDMNG" />
+  <SYMBOL Code="DSPN" Name="DJ US PHARMBIO" />
+  <SYMBOL Code="DSPP" Name="DJ US PAPER" />
+  <SYMBOL Code="DSPR" Name="DJ US PHARMCTCLS" />
+  <SYMBOL Code="DSPT" Name="DJ US PLTPRECMET" />
+  <SYMBOL Code="DSRA" Name="DJ US APPRLRET" />
+  <SYMBOL Code="DSRB" Name="DJ US BRDLNRET" />
+  <SYMBOL Code="DSRD" Name="DJ US DRUGRET" />
+  <SYMBOL Code="DSRE" Name="U.S. Real Estate Index" />
+  <SYMBOL Code="DSRH" Name="DJ US RESTHLDG" />
+  <SYMBOL Code="DSRI" Name="DJ US RESTINVTR" />
+  <SYMBOL Code="DSRL" Name="U.S. Retail REITs Index" />
+  <SYMBOL Code="DSRN" Name="U.S. Residential REITs Index" />
+  <SYMBOL Code="DSRP" Name="DJ US RECPRODUCT" />
+  <SYMBOL Code="DSRQ" Name="DJ US RECSERVICE" />
+  <SYMBOL Code="DSRR" Name="DJ US RAILROADS" />
+  <SYMBOL Code="DSRS" Name="DJ US SPLTYRET" />
+  <SYMBOL Code="DSRT" Name="DJ US RETAIL" />
+  <SYMBOL Code="DSRU" Name="DJ US RESTRBARS" />
+  <SYMBOL Code="DSSB" Name="DJ US INVSRV" />
+  <SYMBOL Code="DSSC" Name="DJ US SEMCNDCTRS" />
+  <SYMBOL Code="DSSD" Name="DJ US SOFTDRINKS" />
+  <SYMBOL Code="DSSF" Name="DJ US CONSUMFIN" />
+  <SYMBOL Code="DSSP" Name="DJ US SPECIALFIN" />
+  <SYMBOL Code="DSSR" Name="U.S. Specialty REITs Index" />
+  <SYMBOL Code="DSST" Name="DJ US STEEL" />
+  <SYMBOL Code="DSSV" Name="DJ US SFTCPTRSRV" />
+  <SYMBOL Code="DSSW" Name="DJ US SOFTWARE" />
+  <SYMBOL Code="DSTB" Name="DJ US TOBACCO" />
+  <SYMBOL Code="DSTC" Name="DJ US TECHNOLOGY" />
+  <SYMBOL Code="DSTK" Name="DJ US TRUCKING" />
+  <SYMBOL Code="DSTL" Name="DJ US TELECOM" />
+  <SYMBOL Code="DSTP" Name="DJ US TOPCAP" />
+  <SYMBOL Code="DSTQ" Name="DJ US TECHHRDEQ" />
+  <SYMBOL Code="DSTR" Name="DJ US TIRES" />
+  <SYMBOL Code="DSTS" Name="DJ US TRANSSRV" />
+  <SYMBOL Code="DSTT" Name="DJ US TRVLTOUR" />
+  <SYMBOL Code="DSTY" Name="DJ US TOYS" />
+  <SYMBOL Code="DSUO" Name="DJ US GASWTRMUT" />
+  <SYMBOL Code="DSUT" Name="DJ US UTILITIES" />
+  <SYMBOL Code="DSVE" Name="U.S. Conventional Electricity Index" />
+  <SYMBOL Code="DSVN" Name="DJ US DISVINTNER" />
+  <SYMBOL Code="DSWC" Name="DJ US MOBTELECOM" />
+  <SYMBOL Code="DSWU" Name="DJ US WATER" />
+  <SYMBOL Code="DTCI" Name="DJ COMPREIT TR" />
+  <SYMBOL Code="DTEI" Name="DJ EQUITYREIT TR" />
+  <SYMBOL Code="DTFI" Name="DOW Tran Stocks Above 50-Day Average" />
+  <SYMBOL Code="DTFX" Name="CME FX Index" />
+  <SYMBOL Code="DTOF" Name="DOW Tran Stocks Above 150-Day Average" />
+  <SYMBOL Code="DTOH" Name="DOW Tran Stocks Above 100-Day Average" />
+  <SYMBOL Code="DTTH" Name="DOW Tran Stocks Above 200-Day Average" />
+  <SYMBOL Code="DTTW" Name="DOW Tran Stocks Above 20-Day Average" />
+  <SYMBOL Code="DTWC" Name="DJ COMPAVGTR" />
+  <SYMBOL Code="DTWI" Name="DJ INDUS AVG TR" />
+  <SYMBOL Code="DTWT" Name="DJ TRANSAVGTR" />
+  <SYMBOL Code="DTWU" Name="DJ UTILITYAVGTR" />
+  <SYMBOL Code="DUBS" Name="DJ UBS COMMODITY INDEX" />
+  <SYMBOL Code="DUFI" Name="DOW Util Stocks Above 50-Day Average" />
+  <SYMBOL Code="DUOF" Name="DOW Util Stocks Above 150-Day Average" />
+  <SYMBOL Code="DUOH" Name="DOW Util Stocks Above 100-Day Average" />
+  <SYMBOL Code="DUSL" Name="DJ US LRGCAP" />
+  <SYMBOL Code="DUSM" Name="DJ US MIDCAP" />
+  <SYMBOL Code="DUSS" Name="DJ US SMLCAP" />
+  <SYMBOL Code="DUTH" Name="DOW Util Stocks Above 200-Day Average" />
+  <SYMBOL Code="DUTW" Name="DOW Util Stocks Above 20-Day Average" />
+  <SYMBOL Code="DVAA" Name="S&amp;P 500 FORWARD DIVD - 2010" />
+  <SYMBOL Code="DVAB" Name="S&amp;P 500 FORWARD DIVD - 2011" />
+  <SYMBOL Code="DVCA" Name="AMEX Declining Volume" />
+  <SYMBOL Code="DVCD" Name="OTC Declining Volume" />
+  <SYMBOL Code="DVCE" Name="ETFS  Declining Volume" />
+  <SYMBOL Code="DVCN" Name="NYSE Declining Volume" />
+  <SYMBOL Code="DVCQ" Name="NASD Declining Volume" />
+  <SYMBOL Code="DVCS" Name="TSX Declining Volume" />
+  <SYMBOL Code="DVCT" Name="Total Declining Volume" />
+  <SYMBOL Code="DVCV" Name="Tsxv Declining Volume" />
+  <SYMBOL Code="DVCX" Name="CAD Total Declining Volume" />
+  <SYMBOL Code="DVDE" Name="IMPLIED FORWARD DVS DECEMBER" />
+  <SYMBOL Code="DVJN" Name="IMPLIED FORWARD DVS JUNE" />
+  <SYMBOL Code="DVMR" Name="IMPLIED FORWARD DVS MARCH" />
+  <SYMBOL Code="DVS" Name="S&amp;P 500 DIVIDEND INDEX - 10X" />
+  <SYMBOL Code="DVST" Name="IMPLIED FORWARD DVS SEPTEMBER" />
+  <SYMBOL Code="DWC" Name="DJ Wilshire 5000 Index (Full Cap)" />
+  <SYMBOL Code="DWCB" Name="DJ US BANKS TOTAL INDEX" />
+  <SYMBOL Code="DWE" Name="DYNAMIC ENERGY EXPLORATION &amp; PR" />
+  <SYMBOL Code="DWJ" Name="DYNAMIC IURANCE INTELLIDEX" />
+  <SYMBOL Code="DWO" Name="DYNAMIC OIL SERVICES INTELLIDEX" />
+  <SYMBOL Code="DWR" Name="DYNAMIC RETAIL INTELLIDEX" />
+  <SYMBOL Code="DWU" Name="DYNAMIC UTILITIES INTELLIDEX" />
+  <SYMBOL Code="DWY" Name="DYNAMIC TELECOMMUNICATION &amp; WIR" />
+  <SYMBOL Code="DXG" Name="AMEX Spade Defense Setl" />
+  <SYMBOL Code="DXS" Name="SPADE DEFEE" />
+  <SYMBOL Code="DXY" Name="U.S. Dollar Index" />
+  <SYMBOL Code="DYH" Name="Dynamic Top 200 Intell" />
+  <SYMBOL Code="DYI" Name="AMEX Dynamic Market Intellidex" />
+  <SYMBOL Code="DYO" Name="AMEX Dynamic Otc Intellidex" />
+  <SYMBOL Code="DZC" Name="DYNAMIC SOFTWARE INTELLIDEX" />
+  <SYMBOL Code="DZE" Name="DYNAMIC SEMICONDUCTOR INTELLIDE" />
+  <SYMBOL Code="DZF" Name="DYNAMIC FOOD &amp; BEVERAGE INTELLI" />
+  <SYMBOL Code="DZH" Name="DYNAMIC HARDWARE &amp; CO ELEC IN" />
+  <SYMBOL Code="DZL" Name="DYNAMIC LEISURE&amp;ENTERTAINMENT I" />
+  <SYMBOL Code="DZM" Name="DYNAMIC MEDIA INTELLIDEX" />
+  <SYMBOL Code="DZN" Name="DYNAMIC NETWORKING INTELLIDEX" />
+  <SYMBOL Code="DZO" Name="Dynamic Biotech &amp; Genome Intell" />
+  <SYMBOL Code="DZR" Name="DYNAMIC PHARMACEUTICAL INTELLID" />
+  <SYMBOL Code="ECO" Name="Wh Clean Energy" />
+  <SYMBOL Code="EED" Name="Claymore Bric ETF Iopv" />
+  <SYMBOL Code="EMX" Name="AMEX Major 8 European Index" />
+  <SYMBOL Code="EPX" Name="SIG OIL EXPLORATION &amp; PRODUCERS" />
+  <SYMBOL Code="ESX" Name="Sel Euro 50 Ndx" />
+  <SYMBOL Code="EUX" Name="Majr 11 Intl Ndx" />
+  <SYMBOL Code="EVZ" Name="CBOE EURO CURR VOL IND" />
+  <SYMBOL Code="EZB" Name="DYNAMIC BS MT INTELLIDEX" />
+  <SYMBOL Code="EZF" Name="DYNAMIC FINCL INTELLIDEX" />
+  <SYMBOL Code="EZK" Name="DYNAMIC ENRGY INTELLIDEX" />
+  <SYMBOL Code="EZL" Name="DYNAMIC INDUS INTELLIDEX" />
+  <SYMBOL Code="EZS" Name="DYNAMIC CN ST INTELLIDEX" />
+  <SYMBOL Code="EZV" Name="DYNAMIC TECHN INTELLIDEX" />
+  <SYMBOL Code="EZX" Name="DYNAMIC HLTHC INTELLIDEX" />
+  <SYMBOL Code="EZZ" Name="DYNAMIC CN DS INTELLIDEX" />
+  <SYMBOL Code="FBV" Name="Powershrs Db G10 Fd Iopv" />
+  <SYMBOL Code="FTSA" Name="FTSE 350" />
+  <SYMBOL Code="FTSE" Name="FTSE 100 Index" />
+  <SYMBOL Code="FTSM" Name="FTSE Mid 250 Index" />
+  <SYMBOL Code="FVX" Name="5-YEAR TREASURY NOTE" />
+  <SYMBOL Code="GDM" Name="AMEX GOLD MINERS" />
+  <SYMBOL Code="GLD" Name="Gold Index" />
+  <SYMBOL Code="GLI" Name="Mer Lyn Gbl Mkt" />
+  <SYMBOL Code="GMI" Name="Mkt Vector Gold Min Iopv" />
+  <SYMBOL Code="GNX" Name="GSCI Spot Return" />
+  <SYMBOL Code="GVX" Name="Goldman Sachs Livestock Sub Index" />
+  <SYMBOL Code="GVZ" Name="GSTI SERVICES INDEX SETTLEMENT" />
+  <SYMBOL Code="GWI" Name="Merrill Lynch Sel Sector Spdr" />
+  <SYMBOL Code="HGX" Name="Phlx Hsg Sector Index" />
+  <SYMBOL Code="HIGA" Name="AMEX New Highs" />
+  <SYMBOL Code="HIGD" Name="OTC New Highs" />
+  <SYMBOL Code="HIGN" Name="NYSE New Highs" />
+  <SYMBOL Code="HIGQ" Name="NASD New Highs" />
+  <SYMBOL Code="HIGS" Name="TSX New Highs" />
+  <SYMBOL Code="HIGV" Name="Tsxv New Highs" />
+  <SYMBOL Code="HKO" Name="AMEX Hong Kong Opt Flt Rt Index" />
+  <SYMBOL Code="HKX" Name="AMEX Hong Kong 30 Index" />
+  <SYMBOL Code="HSI" Name="Hang Seng Index" />
+  <SYMBOL Code="HUI" Name="AMEX Gold Bugs Index" />
+  <SYMBOL Code="HUV" Name="AMEX Gold Bugs Index Final Sett" />
+  <SYMBOL Code="HVX" Name="Mkt Vector Env Serv Iopv" />
+  <SYMBOL Code="HWI" Name="AMEX Computer Hardware Index" />
+  <SYMBOL Code="HWO" Name="Computer Hardware Index Fnl Set" />
+  <SYMBOL Code="ICK" Name="ISE Chindia Index" />
+  <SYMBOL Code="IDX" Name="S&amp;P 400 Midcap Index" />
+  <SYMBOL Code="IEB" Name="DYNAMIC LARGE CAP INTELL" />
+  <SYMBOL Code="IEK" Name="DYNAMIC MID CAP INTELL" />
+  <SYMBOL Code="IEY" Name="DYNAMIC SMALL CAP INTELL" />
+  <SYMBOL Code="IIB" Name="SEMI INDS PLUS" />
+  <SYMBOL Code="ILH" Name="Dynamic Lg Cap Gr Intellidex" />
+  <SYMBOL Code="ILJ" Name="Dynamic Mid Cp Gr Intellidex" />
+  <SYMBOL Code="ILK" Name="Dynamic Sml Cp Gr Intellidex" />
+  <SYMBOL Code="ILP" Name="Dynamic Mid Cp Valu Intellidex" />
+  <SYMBOL Code="ILR" Name="DYNAMIC AGR GRWTH INTLDX" />
+  <SYMBOL Code="ILU" Name="DYNAMIC DEEP VAL INTELDX" />
+  <SYMBOL Code="ILW" Name="Dynamic Lg Cp Valu Intellidex" />
+  <SYMBOL Code="ILZ" Name="Dynamic Sml Cp Valu Intellidex" />
+  <SYMBOL Code="INDS" Name="Nasdaq Industrial" />
+  <SYMBOL Code="INSR" Name="Nasdaq Inurance" />
+  <SYMBOL Code="IPSA" Name="IPSA - Chile" />
+  <SYMBOL Code="IQX" Name="S&amp;P 500 EQUAL WEIGHT" />
+  <SYMBOL Code="IQZ" Name="S&amp;P 1000" />
+  <SYMBOL Code="IRX" Name="13-WEEK TREASURY BILL" />
+  <SYMBOL Code="IUX" Name="Russell 2000 Stock Index" />
+  <SYMBOL Code="IVX" Name="S&amp;P 500 Value" />
+  <SYMBOL Code="IXB" Name="Materials Select Sector Index" />
+  <SYMBOL Code="IXCO" Name="Nasdaq Computer" />
+  <SYMBOL Code="IXE" Name="The Energy Select Sector Index" />
+  <SYMBOL Code="IXF" Name="Nasdaq Financial 100" />
+  <SYMBOL Code="IXHC" Name="NASDAQ Health Care Index" />
+  <SYMBOL Code="IXI" Name="Industrial Select Sector Index" />
+  <SYMBOL Code="IXM" Name="Financial Select Sector Index" />
+  <SYMBOL Code="IXR" Name="Consumer Staples Select Sector Index" />
+  <SYMBOL Code="IXT" Name="Technology Select Sector Index" />
+  <SYMBOL Code="IXTC" Name="Nasdaq Telecommunications" />
+  <SYMBOL Code="IXU" Name="Utilities Select Sector Index" />
+  <SYMBOL Code="IXV" Name="Healthcare Select Sector Index" />
+  <SYMBOL Code="IXY" Name="Consumer Discretionary Select Sector Index" />
+  <SYMBOL Code="JBV" Name="NYSE Arca Mini-Broker/Dealer  I-" />
+  <SYMBOL Code="JKC" Name="ML LONG/SHRT III" />
+  <SYMBOL Code="JKSE" Name="Jakarta Composite Index" />
+  <SYMBOL Code="JPN" Name="AMEX Japan Index" />
+  <SYMBOL Code="JPV" Name="AMEX Japan Index Final Settleme" />
+  <SYMBOL Code="JX" Name="Tsx Venture Composite Index" />
+  <SYMBOL Code="KBK" Name="NYSE Arca Mini-Pharmaceutical I-" />
+  <SYMBOL Code="KDX" Name="KBW Finsec Dividend Yield Index" />
+  <SYMBOL Code="KDY" Name="AMEX Hong Kong Index Float Rate" />
+  <SYMBOL Code="KGX" Name="KBW Global Ex-U.S. Financials Index" />
+  <SYMBOL Code="KIX" Name="KBW Insurance Index" />
+  <SYMBOL Code="KLCI" Name="Kuala Lumpur Composite" />
+  <SYMBOL Code="KLX" Name="Mkt Vectors Steel Iopv" />
+  <SYMBOL Code="KPX" Name="KBW Property &amp; Casualty Index" />
+  <SYMBOL Code="KRX" Name="KBW Regional Banking Index" />
+  <SYMBOL Code="KS11" Name="Seoul Composite" />
+  <SYMBOL Code="KSX" Name="KBW Capital Markets Index" />
+  <SYMBOL Code="KYX" Name="KBW Premium Yield Equity REIT Index" />
+  <SYMBOL Code="LOWA" Name="AMEX New Lows" />
+  <SYMBOL Code="LOWD" Name="OTC New Lows" />
+  <SYMBOL Code="LOWN" Name="NYSE New Lows" />
+  <SYMBOL Code="LOWQ" Name="NASD New Lows" />
+  <SYMBOL Code="LOWS" Name="TSX New Lows" />
+  <SYMBOL Code="LOWV" Name="Tsxv New Lows" />
+  <SYMBOL Code="LVXR" Name="S&amp;P C.S. Nv-Las Vegas Home Price Index" />
+  <SYMBOL Code="LXXR" Name="S&amp;P C.S. Ca-Los Angeles Home Price Index" />
+  <SYMBOL Code="M1HA" Name="1-Month Highs AMEX" />
+  <SYMBOL Code="M1HD" Name="1-Month Highs Otcbb" />
+  <SYMBOL Code="M1HE" Name="1-Month Highs ETFS" />
+  <SYMBOL Code="M1HH" Name="1-Month Highs Price GT $10" />
+  <SYMBOL Code="M1HL" Name="1-Month Highs Price Lt $10" />
+  <SYMBOL Code="M1HN" Name="1-Month Highs NYSE" />
+  <SYMBOL Code="M1HP" Name="1-Month Highs Sp500" />
+  <SYMBOL Code="M1HQ" Name="1-Month Highs Nasdaq" />
+  <SYMBOL Code="M1HU" Name="1-Month Highs Volume Lt 100K" />
+  <SYMBOL Code="M1HV" Name="1-Month Highs Volume GT 100K" />
+  <SYMBOL Code="M1HX" Name="1-Month Highs Overall" />
+  <SYMBOL Code="M1LA" Name="1-Month Lows AMEX" />
+  <SYMBOL Code="M1LD" Name="1-Month Lows Otcbb" />
+  <SYMBOL Code="M1LE" Name="1-Month Lows ETFS" />
+  <SYMBOL Code="M1LH" Name="1-Month Lows Price GT $10" />
+  <SYMBOL Code="M1LL" Name="1-Month Lows Price Lt $10" />
+  <SYMBOL Code="M1LN" Name="1-Month Lows NYSE" />
+  <SYMBOL Code="M1LP" Name="1-Month Lows Sp500" />
+  <SYMBOL Code="M1LQ" Name="1-Month Lows Nasdaq" />
+  <SYMBOL Code="M1LU" Name="1-Month Lows Volume Lt 100K" />
+  <SYMBOL Code="M1LV" Name="1-Month Lows Volume GT 100K" />
+  <SYMBOL Code="M1LX" Name="1-Month Lows Overall" />
+  <SYMBOL Code="M3HA" Name="3-Month Highs AMEX" />
+  <SYMBOL Code="M3HD" Name="3-Month Highs Otcbb" />
+  <SYMBOL Code="M3HE" Name="3-Month Highs ETFS" />
+  <SYMBOL Code="M3HH" Name="3-Month Highs Price GT $10" />
+  <SYMBOL Code="M3HL" Name="3-Month Highs Price Lt $10" />
+  <SYMBOL Code="M3HN" Name="3-Month Highs NYSE" />
+  <SYMBOL Code="M3HP" Name="3-Month Highs Sp500" />
+  <SYMBOL Code="M3HQ" Name="3-Month Highs Nasdaq" />
+  <SYMBOL Code="M3HU" Name="3-Month Highs Volume Lt 100K" />
+  <SYMBOL Code="M3HV" Name="3-Month Highs Volume GT 100K" />
+  <SYMBOL Code="M3HX" Name="3-Month Highs Overall" />
+  <SYMBOL Code="M3LA" Name="3-Month Lows AMEX" />
+  <SYMBOL Code="M3LD" Name="3-Month Lows Otcbb" />
+  <SYMBOL Code="M3LE" Name="3-Month Lows ETFS" />
+  <SYMBOL Code="M3LH" Name="3-Month Lows Price GT $10" />
+  <SYMBOL Code="M3LL" Name="3-Month Lows Price Lt $10" />
+  <SYMBOL Code="M3LN" Name="3-Month Lows NYSE" />
+  <SYMBOL Code="M3LP" Name="3-Month Lows Sp500" />
+  <SYMBOL Code="M3LQ" Name="3-Month Lows Nasdaq" />
+  <SYMBOL Code="M3LU" Name="3-Month Lows Volume Lt 100K" />
+  <SYMBOL Code="M3LV" Name="3-Month Lows Volume GT 100K" />
+  <SYMBOL Code="M3LX" Name="3-Month Lows Overall" />
+  <SYMBOL Code="M6HA" Name="6-Month Highs AMEX" />
+  <SYMBOL Code="M6HD" Name="6-Month Highs Otcbb" />
+  <SYMBOL Code="M6HE" Name="6-Month Highs ETFS" />
+  <SYMBOL Code="M6HH" Name="6-Month Highs Price GT $10" />
+  <SYMBOL Code="M6HL" Name="6-Month Highs Price Lt $10" />
+  <SYMBOL Code="M6HN" Name="6-Month Highs NYSE" />
+  <SYMBOL Code="M6HP" Name="6-Month Highs Sp500" />
+  <SYMBOL Code="M6HQ" Name="6-Month Highs Nasdaq" />
+  <SYMBOL Code="M6HU" Name="6-Month Highs Volume Lt 100K" />
+  <SYMBOL Code="M6HV" Name="6-Month Highs Volume GT 100K" />
+  <SYMBOL Code="M6HX" Name="6-Month Highs Overall" />
+  <SYMBOL Code="M6LA" Name="6-Month Lows AMEX" />
+  <SYMBOL Code="M6LD" Name="6-Month Lows Otcbb" />
+  <SYMBOL Code="M6LE" Name="6-Month Lows ETFS" />
+  <SYMBOL Code="M6LH" Name="6-Month Lows Price GT $10" />
+  <SYMBOL Code="M6LL" Name="6-Month Lows Price Lt $10" />
+  <SYMBOL Code="M6LN" Name="6-Month Lows NYSE" />
+  <SYMBOL Code="M6LP" Name="6-Month Lows Sp500" />
+  <SYMBOL Code="M6LQ" Name="6-Month Lows Nasdaq" />
+  <SYMBOL Code="M6LU" Name="6-Month Lows Volume Lt 100K" />
+  <SYMBOL Code="M6LV" Name="6-Month Lows Volume GT 100K" />
+  <SYMBOL Code="M6LX" Name="6-Month Lows Overall" />
+  <SYMBOL Code="MAHA" Name="12-Month Highs AMEX" />
+  <SYMBOL Code="MAHD" Name="12-Month Highs Otcbb" />
+  <SYMBOL Code="MAHE" Name="12-Month Highs ETFS" />
+  <SYMBOL Code="MAHH" Name="12-Month Highs Price GT $10" />
+  <SYMBOL Code="MAHL" Name="12-Month Highs Price Lt $10" />
+  <SYMBOL Code="MAHN" Name="12-Month Highs NYSE" />
+  <SYMBOL Code="MAHP" Name="12-Month Highs Sp500" />
+  <SYMBOL Code="MAHQ" Name="12-Month Highs Nasdaq" />
+  <SYMBOL Code="MAHU" Name="12-Month Highs Volume Lt 100K" />
+  <SYMBOL Code="MAHV" Name="12-Month Highs Volume GT 100K" />
+  <SYMBOL Code="MAHX" Name="12-Month Highs Overall" />
+  <SYMBOL Code="MALA" Name="12-Month Lows AMEX" />
+  <SYMBOL Code="MALD" Name="12-Month Lows Otcbb" />
+  <SYMBOL Code="MALE" Name="12-Month Lows ETFS" />
+  <SYMBOL Code="MALH" Name="12-Month Lows Price GT $10" />
+  <SYMBOL Code="MALL" Name="12-Month Lows Price Lt $10" />
+  <SYMBOL Code="MALN" Name="12-Month Lows NYSE" />
+  <SYMBOL Code="MALP" Name="12-Month Lows Sp500" />
+  <SYMBOL Code="MALQ" Name="12-Month Lows Nasdaq" />
+  <SYMBOL Code="MALU" Name="12-Month Lows Volume Lt 100K" />
+  <SYMBOL Code="MALV" Name="12-Month Lows Volume GT 100K" />
+  <SYMBOL Code="MALX" Name="12-Month Lows Overall" />
+  <SYMBOL Code="MBO" Name="CHINESE MPS BSKT" />
+  <SYMBOL Code="MDO" Name="Mid Opn/Cls Avge" />
+  <SYMBOL Code="MERV" Name="Merval - Argentina" />
+  <SYMBOL Code="MEV" Name="AMEX Mexico Index Settlement" />
+  <SYMBOL Code="MFX" Name="KBW Mortgage Finance Index" />
+  <SYMBOL Code="MGD" Name="Midcp 400Barra" />
+  <SYMBOL Code="MIA" Name="Mid O/C/H/L Avg" />
+  <SYMBOL Code="MID" Name="Midcap 400 Idx" />
+  <SYMBOL Code="MIH" Name="Mid Hi/Lo Avge" />
+  <SYMBOL Code="MIV" Name="Mid-Cap Settle" />
+  <SYMBOL Code="MIXR" Name="S&amp;P C.S. Fl-Miami Home Price Index" />
+  <SYMBOL Code="MLO" Name="AMEX Merrill Lynch Tech 100" />
+  <SYMBOL Code="MMFI" Name="Percent of Stocks Above 50-Day Average" />
+  <SYMBOL Code="MMOF" Name="Percent of Stocks Above 150-Day Average" />
+  <SYMBOL Code="MMOH" Name="Percent of Stocks Above 100-Day Average" />
+  <SYMBOL Code="MMTH" Name="Percent of Stocks Above 200-Day Average" />
+  <SYMBOL Code="MMTW" Name="Percent of Stocks Above 20-Day Average" />
+  <SYMBOL Code="MNFI" Name="Percent Above 50-Day Average Yesterday" />
+  <SYMBOL Code="MNG" Name="AMEX MINI-NATURAL GAS INDEX" />
+  <SYMBOL Code="MNOF" Name="Percent Above 150-Day Average Yesterday" />
+  <SYMBOL Code="MNOH" Name="Percent Above 100-Day Average Yesterday" />
+  <SYMBOL Code="MNTH" Name="Percent Above 200-Day Average Yesterday" />
+  <SYMBOL Code="MNTW" Name="Percent Above 20-Day Average Yesterday" />
+  <SYMBOL Code="MNXR" Name="S&amp;P C.S. Mn-Minneapolis Home Price Index" />
+  <SYMBOL Code="MOFI" Name="Percent Above 50-Day Average Last Week" />
+  <SYMBOL Code="MOOF" Name="Percent Above 150-Day Average Last Week" />
+  <SYMBOL Code="MOOH" Name="Percent Above 100-Day Average Last Week" />
+  <SYMBOL Code="MOTH" Name="Percent Above 200-Day Average Last Week" />
+  <SYMBOL Code="MOTW" Name="Percent Above 20-Day Average Last Week" />
+  <SYMBOL Code="MPFI" Name="Percent Above 50-Day Average Last Month" />
+  <SYMBOL Code="MPOF" Name="Percent Above 150-Day Average Last Month" />
+  <SYMBOL Code="MPOH" Name="Percent Above 100-Day Average Last Month" />
+  <SYMBOL Code="MPTH" Name="Percent Above 200-Day Average Last Month" />
+  <SYMBOL Code="MPTW" Name="Percent Above 20-Day Average Last Month" />
+  <SYMBOL Code="MSH" Name="AMEX Morgan Stanley Hi Tech 35" />
+  <SYMBOL Code="MTFI" Name="TSX Percent of Stocks Above 50-Day Average" />
+  <SYMBOL Code="MTOF" Name="TSX Percent of Stocks Above 150-Day Average" />
+  <SYMBOL Code="MTOH" Name="TSX Percent of Stocks Above 100-Day Average" />
+  <SYMBOL Code="MTTH" Name="TSX Percent of Stocks Above 200-Day Average" />
+  <SYMBOL Code="MTTW" Name="TSX Percent of Stocks Above 20-Day Average" />
+  <SYMBOL Code="MUFI" Name="TSX Percent Above 50-Day Average Yesterday" />
+  <SYMBOL Code="MUOF" Name="TSX Percent Above 150-Day Average Yesterday" />
+  <SYMBOL Code="MUOH" Name="TSX Percent Above 100-Day Average Yesterday" />
+  <SYMBOL Code="MUTH" Name="TSX Percent Above 200-Day Average Yesterday" />
+  <SYMBOL Code="MUTW" Name="TSX Percent Above 20-Day Average Yesterday" />
+  <SYMBOL Code="MUV" Name="Mdcp 400Bar Val" />
+  <SYMBOL Code="MVFI" Name="TSX Percent Above 50-Day Average Last Week" />
+  <SYMBOL Code="MVH" Name="Morgan Stanley High-Technology" />
+  <SYMBOL Code="MVOF" Name="TSX Percent Above 150-Day Average Last Week" />
+  <SYMBOL Code="MVOH" Name="TSX Percent Above 100-Day Average Last Week" />
+  <SYMBOL Code="MVTH" Name="TSX Percent Above 200-Day Average Last Week" />
+  <SYMBOL Code="MVTW" Name="TSX Percent Above 20-Day Average Last Week" />
+  <SYMBOL Code="MWFI" Name="TSX Percent Above 50-Day Average Last Month" />
+  <SYMBOL Code="MWOF" Name="TSX Percent Above 150-Day Average Last Month" />
+  <SYMBOL Code="MWOH" Name="TSX Percent Above 100-Day Average Last Month" />
+  <SYMBOL Code="MWTH" Name="TSX Percent Above 200-Day Average Last Month" />
+  <SYMBOL Code="MWTW" Name="TSX Percent Above 20-Day Average Last Month" />
+  <SYMBOL Code="MXX" Name="Mexico IPC" />
+  <SYMBOL Code="MXY" Name="AMEX Mexico Index" />
+  <SYMBOL Code="MYHA" Name="YTD Highs AMEX" />
+  <SYMBOL Code="MYHD" Name="YTD Highs Otcbb" />
+  <SYMBOL Code="MYHE" Name="YTD Highs ETFS" />
+  <SYMBOL Code="MYHH" Name="YTD Highs Price GT $10" />
+  <SYMBOL Code="MYHL" Name="YTD Highs Price Lt $10" />
+  <SYMBOL Code="MYHN" Name="YTD Highs NYSE" />
+  <SYMBOL Code="MYHP" Name="YTD Highs Sp500" />
+  <SYMBOL Code="MYHQ" Name="YTD Highs Nasdaq" />
+  <SYMBOL Code="MYHU" Name="YTD Highs Volume Lt 100K" />
+  <SYMBOL Code="MYHV" Name="YTD Highs Volume GT 100K" />
+  <SYMBOL Code="MYHX" Name="YTD Highs Overall" />
+  <SYMBOL Code="MYLA" Name="YTD Lows AMEX" />
+  <SYMBOL Code="MYLD" Name="YTD Lows Otcbb" />
+  <SYMBOL Code="MYLE" Name="YTD Lows ETFS" />
+  <SYMBOL Code="MYLH" Name="YTD Lows Price GT $10" />
+  <SYMBOL Code="MYLL" Name="YTD Lows Price Lt $10" />
+  <SYMBOL Code="MYLN" Name="YTD Lows NYSE" />
+  <SYMBOL Code="MYLP" Name="YTD Lows Sp500" />
+  <SYMBOL Code="MYLQ" Name="YTD Lows Nasdaq" />
+  <SYMBOL Code="MYLU" Name="YTD Lows Volume Lt 100K" />
+  <SYMBOL Code="MYLV" Name="YTD Lows Volume GT 100K" />
+  <SYMBOL Code="MYLX" Name="YTD Lows Overall" />
+  <SYMBOL Code="NAST" Name="NASDAQ Transportation Index" />
+  <SYMBOL Code="NBI" Name="Nasdaq Biotechnology" />
+  <SYMBOL Code="NBZ" Name="Nasdaq Biotech Index Final Set" />
+  <SYMBOL Code="NDFI" Name="Nasdaq 100 Stocks Above 50-Day Average" />
+  <SYMBOL Code="NDOF" Name="Nasdaq 100 Stocks Above 150-Day Average" />
+  <SYMBOL Code="NDOH" Name="Nasdaq 100 Stocks Above 100-Day Average" />
+  <SYMBOL Code="NDTH" Name="Nasdaq 100 Stocks Above 200-Day Average" />
+  <SYMBOL Code="NDTW" Name="Nasdaq 100 Stocks Above 20-Day Average" />
+  <SYMBOL Code="NDX" Name="NASDAQ 100 INDEX" />
+  <SYMBOL Code="NDXT" Name="NASDAQ 100 TECHNOLOGY" />
+  <SYMBOL Code="NDXX" Name="NASDAQ-100 Ex-Tech Sector Index" />
+  <SYMBOL Code="NDY" Name="Nasdaq 100" />
+  <SYMBOL Code="NEX" Name="Wilderhill New Energy Global In" />
+  <SYMBOL Code="NFA" Name="Cts Feed Fa" />
+  <SYMBOL Code="NGV" Name="AMEX Natural Gas Index Final Se" />
+  <SYMBOL Code="NI225" Name="Nikkei 225" />
+  <SYMBOL Code="NNY" Name="US 100" />
+  <SYMBOL Code="NNYE" Name="ENERGY IDX" />
+  <SYMBOL Code="NNYI" Name="INTERNATIONAL 100" />
+  <SYMBOL Code="NNYK" Name="FINANCIAL" />
+  <SYMBOL Code="NNYL" Name="WORLD LEADERS" />
+  <SYMBOL Code="NNYP" Name="HEALTH CARE" />
+  <SYMBOL Code="NNYY" Name="TMT IDX" />
+  <SYMBOL Code="NQGM" Name="Ndaq Global Market Composite" />
+  <SYMBOL Code="NQGS" Name="NASDAQ Global Select Market Composite Index" />
+  <SYMBOL Code="NSEI" Name="CNX Nifty" />
+  <SYMBOL Code="NSHD" Name="NYSE Declining Stocks" />
+  <SYMBOL Code="NSHF" Name="NYSE Advances - Declines" />
+  <SYMBOL Code="NSHR" Name="NYSE Advance Decline Ratio" />
+  <SYMBOL Code="NSHU" Name="NYSE Advancing Stocks" />
+  <SYMBOL Code="NVLD" Name="NYSE Declining Volume" />
+  <SYMBOL Code="NVLF" Name="NYSE Advance Decline Volume Difference" />
+  <SYMBOL Code="NVLR" Name="NYSE Advance Decline Vol Ratio" />
+  <SYMBOL Code="NVLU" Name="NYSE Advancing Volume" />
+  <SYMBOL Code="NVOT" Name="NYSE Total Volume" />
+  <SYMBOL Code="NWV" Name="AMEX Networking Index Settlemen" />
+  <SYMBOL Code="NWX" Name="AMEX Networking Index" />
+  <SYMBOL Code="NXTQ" Name="NASDAQ Q-50 Index" />
+  <SYMBOL Code="NYA" Name="NYSE Composite" />
+  <SYMBOL Code="NYI" Name="NYSE International 100 Index" />
+  <SYMBOL Code="NYL" Name="NYSE World Leaders Index" />
+  <SYMBOL Code="NYXR" Name="S&amp;P C.S. Ny-New York Home Price Index" />
+  <SYMBOL Code="NZ50" Name="NZSX 50 Index" />
+  <SYMBOL Code="OEX" Name="S&amp;P 100 Index" />
+  <SYMBOL Code="OFIN" Name="Nasdaq Other Financial Index" />
+  <SYMBOL Code="OILBR" Name="Crude Oil Brent NYMEX" />
+  <SYMBOL Code="OILSW" Name="Crude Oil Light Sweet NYMEX" />
+  <SYMBOL Code="OIV" Name="CBOE/NYMEX WTI Volatility Index" />
+  <SYMBOL Code="OMX" Name="OMX Stockholm 30 Index" />
+  <SYMBOL Code="ONE" Name="S&amp;P 100 Index" />
+  <SYMBOL Code="OOI" Name="S&amp;P Gl 100 Id" />
+  <SYMBOL Code="OSX" Name="Phlx Euro Style Oil Svc Index" />
+  <SYMBOL Code="OVX" Name="CBOE CRUDE OIL VOLATILITY INDEX" />
+  <SYMBOL Code="PHN" Name="AMEX Telecom Index" />
+  <SYMBOL Code="PHXR" Name="S&amp;P C.S. Az-Phoenix Home Price Index" />
+  <SYMBOL Code="PLD" Name="Palladium Index" />
+  <SYMBOL Code="PLT" Name="Platinum Index" />
+  <SYMBOL Code="POQ" Name="CBOE POWERPACKS TELCOM INDEX" />
+  <SYMBOL Code="POXR" Name="S&amp;P C.S. Or-Portland Home Price Index" />
+  <SYMBOL Code="PSEI" Name="Philippines Stock Exchange PSEi Index" />
+  <SYMBOL Code="QSHD" Name="NASD Declining Stocks" />
+  <SYMBOL Code="QSHF" Name="NASD Advances - Declines" />
+  <SYMBOL Code="QSHR" Name="NASD Advance Decline Ratio" />
+  <SYMBOL Code="QSHU" Name="NASD Advancing Stocks" />
+  <SYMBOL Code="QVLD" Name="NASD Declining Volume" />
+  <SYMBOL Code="QVLF" Name="NASD Advance Decline Volume Difference" />
+  <SYMBOL Code="QVLR" Name="NASD Advance Decline Vol Ratio" />
+  <SYMBOL Code="QVLU" Name="NASD Advancing Volume" />
+  <SYMBOL Code="R1FI" Name="Russell 1000 Stocks Above 50-Day Average" />
+  <SYMBOL Code="R1OF" Name="Russell 1000 Stocks Above 150-Day Average" />
+  <SYMBOL Code="R1OH" Name="Russell 1000 Stocks Above 100-Day Average" />
+  <SYMBOL Code="R1TH" Name="Russell 1000 Stocks Above 200-Day Average" />
+  <SYMBOL Code="R1TW" Name="Russell 1000 Stocks Above 20-Day Average" />
+  <SYMBOL Code="R2FI" Name="Russell 2000 Stocks Above 50-Day Average" />
+  <SYMBOL Code="R2OF" Name="Russell 2000 Stocks Above 150-Day Average" />
+  <SYMBOL Code="R2OH" Name="Russell 2000 Stocks Above 100-Day Average" />
+  <SYMBOL Code="R2TH" Name="Russell 2000 Stocks Above 200-Day Average" />
+  <SYMBOL Code="R2TW" Name="Russell 2000 Stocks Above 20-Day Average" />
+  <SYMBOL Code="R3FI" Name="Russell 3000 Stocks Above 50-Day Average" />
+  <SYMBOL Code="R3OF" Name="Russell 3000 Stocks Above 150-Day Average" />
+  <SYMBOL Code="R3OH" Name="Russell 3000 Stocks Above 100-Day Average" />
+  <SYMBOL Code="R3TH" Name="Russell 3000 Stocks Above 200-Day Average" />
+  <SYMBOL Code="R3TW" Name="Russell 3000 Stocks Above 20-Day Average" />
+  <SYMBOL Code="RAG" Name="Cboe Russell 3000 Growth Index" />
+  <SYMBOL Code="RAV" Name="Cboe Russell 3000 Value Index" />
+  <SYMBOL Code="RDG" Name="Cboe Russell Midcap Growth Index" />
+  <SYMBOL Code="RJY" Name="S.V. FOR AMEX MINI-NATURAL GAS" />
+  <SYMBOL Code="RLG" Name="Cboe 1000 Growth Index" />
+  <SYMBOL Code="RLX" Name="S&amp; P Retail Index" />
+  <SYMBOL Code="RMC" Name="Cboe Russell Midcap Index" />
+  <SYMBOL Code="RMV" Name="Cboe Russell Midcap Value Index" />
+  <SYMBOL Code="RMZ" Name="THE MSCI REIT INDEX" />
+  <SYMBOL Code="RPE" Name="AMEX Elec Pwr&amp;Nat Gas Infrastr" />
+  <SYMBOL Code="RSC" Name="Russell SmallCap Index" />
+  <SYMBOL Code="RSG" Name="Russell SmallCap Growth" />
+  <SYMBOL Code="RSV" Name="Russell SmallCap Value" />
+  <SYMBOL Code="RTCM" Name="Tsx Income Trust Index" />
+  <SYMBOL Code="RTF" Name="RUSSELL TOP 50 INDEX" />
+  <SYMBOL Code="RTG" Name="Russell 2500 Growth" />
+  <SYMBOL Code="RTI" Name="Russell 2500 Index" />
+  <SYMBOL Code="RTM" Name="Russell Microcap Index" />
+  <SYMBOL Code="RTRE" Name="Tsx Reit Capped Index" />
+  <SYMBOL Code="RTV" Name="Russell 2500 Value" />
+  <SYMBOL Code="RUA" Name="Russell 3000 Index" />
+  <SYMBOL Code="RUF" Name="ISE Homebuilders Index" />
+  <SYMBOL Code="RUI" Name="Russell 1000 Index" />
+  <SYMBOL Code="RUJ" Name="Cboe Russell Value Index" />
+  <SYMBOL Code="RUO" Name="Cboe Russell 2000 Growth Index" />
+  <SYMBOL Code="RUT" Name="Russell 2000 Index" />
+  <SYMBOL Code="RVX" Name="CBOE RUSSELL 2000 VOLATILITY IN" />
+  <SYMBOL Code="RWG" Name="Russell Top 200 Growth" />
+  <SYMBOL Code="RWI" Name="Russell Top 200 Index" />
+  <SYMBOL Code="RWV" Name="Russell Top 200 Value" />
+  <SYMBOL Code="S1FI" Name="S&amp;P 100 Stocks Above 50-Day Average" />
+  <SYMBOL Code="S1OF" Name="S&amp;P 100 Stocks Above 150-Day Average" />
+  <SYMBOL Code="S1OH" Name="S&amp;P 100 Stocks Above 100-Day Average" />
+  <SYMBOL Code="S1TH" Name="S&amp;P 100 Stocks Above 200-Day Average" />
+  <SYMBOL Code="S1TR" Name="S&amp;P 500 Automobiles &amp; Components [TR]" />
+  <SYMBOL Code="S1TW" Name="S&amp;P 100 Stocks Above 20-Day Average" />
+  <SYMBOL Code="S2TR" Name="S&amp;P 500 Banks [TR]" />
+  <SYMBOL Code="S3TR" Name="S&amp;P 500 Capital Goods [TR]" />
+  <SYMBOL Code="S4FI" Name="S&amp;P 400 Stocks Above 50-Day Average" />
+  <SYMBOL Code="S4OF" Name="S&amp;P 400 Stocks Above 150-Day Average" />
+  <SYMBOL Code="S4OH" Name="S&amp;P 400 Stocks Above 100-Day Average" />
+  <SYMBOL Code="S4TH" Name="S&amp;P 400 Stocks Above 200-Day Average" />
+  <SYMBOL Code="S4TR" Name="S&amp;P 500 -Commercial &amp; Professional Services [TR]" />
+  <SYMBOL Code="S4TW" Name="S&amp;P 400 Stocks Above 20-Day Average" />
+  <SYMBOL Code="S5FI" Name="S&amp;P 500 Stocks Above 50-Day Average" />
+  <SYMBOL Code="S5OF" Name="S&amp;P 500 Stocks Above 150-Day Average" />
+  <SYMBOL Code="S5OH" Name="S&amp;P 500 Stocks Above 100-Day Average" />
+  <SYMBOL Code="S5TH" Name="S&amp;P 500 Stocks Above 200-Day Average" />
+  <SYMBOL Code="S5TR" Name="S&amp;P 500 Consumer Durables &amp; Apparel [TR]" />
+  <SYMBOL Code="S5TW" Name="S&amp;P 500 Stocks Above 20-Day Average" />
+  <SYMBOL Code="S6CD" Name="S&amp;P SmallCap600 Capped Consumer Discretionary [s" />
+  <SYMBOL Code="S6CS" Name="S&amp;P SmallCap600 Capped Consumer Staples [sector]" />
+  <SYMBOL Code="S6EP" Name="S&amp;P SmallCap600 Capped Energy [sector]Index" />
+  <SYMBOL Code="S6FI" Name="S&amp;P 600 Stocks Above 50-Day Average" />
+  <SYMBOL Code="S6FP" Name="S&amp;P SmallCap600 Capped Financials [sector]Index" />
+  <SYMBOL Code="S6HC" Name="S&amp;P SmallCap600 Capped HealthCare [sector]Index" />
+  <SYMBOL Code="S6IP" Name="S&amp;P SmallCap600 Capped Industrials [sector]Index" />
+  <SYMBOL Code="S6MP" Name="S&amp;P SmallCap600 Capped Materials [sector]Index" />
+  <SYMBOL Code="S6OF" Name="S&amp;P 600 Stocks Above 150-Day Average" />
+  <SYMBOL Code="S6OH" Name="S&amp;P 600 Stocks Above 100-Day Average" />
+  <SYMBOL Code="S6TH" Name="S&amp;P 600 Stocks Above 200-Day Average" />
+  <SYMBOL Code="S6TP" Name="S&amp;P SmallCap600 Capped Information Technology [s" />
+  <SYMBOL Code="S6TR" Name="S&amp;P 500 Consumer Services [TR]" />
+  <SYMBOL Code="S6TW" Name="S&amp;P 600 Stocks Above 20-Day Average" />
+  <SYMBOL Code="S6UP" Name="S&amp;P SmallCap600 Capped Utilities &amp; Telecom Servi" />
+  <SYMBOL Code="S7TR" Name="S&amp;P 500 Diversified Financials [TR]" />
+  <SYMBOL Code="S8TR" Name="S&amp;P 500 Energy [TR]" />
+  <SYMBOL Code="S9TR" Name="S&amp;P 500 Food &amp; Staples Retailing [TR]" />
+  <SYMBOL Code="SAAA" Name="S&amp;P Asia Alternative Energy Index" />
+  <SYMBOL Code="SAAB" Name="S&amp;P Asia Infrastructure Index" />
+  <SYMBOL Code="SAAC" Name="S&amp;P Asia Water Index" />
+  <SYMBOL Code="SACC" Name="Alpha Shares China Small Cap Index" />
+  <SYMBOL Code="SACN" Name="Alpha Shares China Technology Index" />
+  <SYMBOL Code="SAEI" Name="S&amp;P Global Alternative Energy Index [EURO]" />
+  <SYMBOL Code="SAER" Name="S&amp;P GSCI Agriculture Capped Component 35/20 EUR" />
+  <SYMBOL Code="SAEU" Name="S&amp;P Global Alternative Energy Index" />
+  <SYMBOL Code="SAIE" Name="S&amp;P Africa 40 Index [EURO]" />
+  <SYMBOL Code="SAIU" Name="S&amp;P Africa 40 Index" />
+  <SYMBOL Code="SAJR" Name="MSCI WISE ASIA Ex-Japan Top [Net TR]" />
+  <SYMBOL Code="SAJT" Name="MSCI WISE ASIA Ex-Japan Top" />
+  <SYMBOL Code="SANA" Name="S&amp;P Agribusiness North America" />
+  <SYMBOL Code="SANC" Name="S&amp;P Agribusiness North America CAD" />
+  <SYMBOL Code="SAPE" Name="S&amp;P Asia Property 40 Index" />
+  <SYMBOL Code="SAPT" Name="S&amp;P GSCI All Metals Capped Commodity 35/20 EUR I" />
+  <SYMBOL Code="SAPU" Name="S&amp;P Asia Property 40 Index [EURO]" />
+  <SYMBOL Code="SAQA" Name="S&amp;P Global Water Index" />
+  <SYMBOL Code="SAQE" Name="S&amp;P Global Water Index [EURO]" />
+  <SYMBOL Code="SAUE" Name="S&amp;P GSCI Agriculture Capped Component 35/20 EUR" />
+  <SYMBOL Code="SBAI" Name="S&amp;P Brazil ADR Index" />
+  <SYMBOL Code="SBER" Name="S&amp;P GSCI Biofuel Index Excess Return" />
+  <SYMBOL Code="SBES" Name="BLO M Emerging Shariah Index [NetTR]" />
+  <SYMBOL Code="SBIX" Name="S&amp;P 500 Banks non-TR" />
+  <SYMBOL Code="SBNP" Name="S&amp;P Custom/BNP Paribas SPECTRUMUS Sect or Moment" />
+  <SYMBOL Code="SBSE" Name="S&amp;P BRIC Shariah Index [EURO]" />
+  <SYMBOL Code="SBSU" Name="S&amp;P BRIC Shariah Index" />
+  <SYMBOL Code="SBTR" Name="S&amp;P GSCI Biofuel Index Total Return" />
+  <SYMBOL Code="SBUP" Name="S&amp;P Food &amp; Beverage Select Industry Index" />
+  <SYMBOL Code="SCBR" Name="S&amp;P BMI Russia [Capped] [USDollar]" />
+  <SYMBOL Code="SCEI" Name="CS/RT Emerging Infrastructure Index [NetTR]" />
+  <SYMBOL Code="SCGD" Name="Credit Suisse Germany Index" />
+  <SYMBOL Code="SCGT" Name="Beacon Global Timber Index" />
+  <SYMBOL Code="SCII" Name="CAT China Infrastructure [TR]" />
+  <SYMBOL Code="SCIR" Name="S&amp;P GSCI North American Copper Index Excess Retu" />
+  <SYMBOL Code="SCIS" Name="S&amp;P GSCI North American Copper Index" />
+  <SYMBOL Code="SCIT" Name="S&amp;P GSCI North American Copper Index Total Retur" />
+  <SYMBOL Code="SCPC" Name="S&amp;P Custom/Polaris China Play Index [TWD]" />
+  <SYMBOL Code="SCPX" Name="Credit Suisse Germany Price Return Index" />
+  <SYMBOL Code="SCRC" Name="S&amp;P /CITIC China 30 Index" />
+  <SYMBOL Code="SCRE" Name="Alpha Shares China Real Estate Index" />
+  <SYMBOL Code="SCSC" Name="S&amp;P /CITIC 300 Index" />
+  <SYMBOL Code="SCSE" Name="S&amp;P /CITIC 50 Index" />
+  <SYMBOL Code="SCSR" Name="CS/RT Emerging Infrastructure Price Return Index" />
+  <SYMBOL Code="SCUT" Name="S&amp;P/CITIC 300 -  Utilities [Sector]" />
+  <SYMBOL Code="SCWI" Name="CAT China Water [TR]" />
+  <SYMBOL Code="SCWP" Name="S&amp;P Developed Ex-U.S.Property [USDollar]" />
+  <SYMBOL Code="SCYE" Name="S&amp;P Chinese Renminbi Price Return Index" />
+  <SYMBOL Code="SCYI" Name="S&amp;P Chinese Renminbi Total Return" />
+  <SYMBOL Code="SDCG" Name="Defined MultiCap Growth Index" />
+  <SYMBOL Code="SDCV" Name="Defined MultiCap Value Index" />
+  <SYMBOL Code="SDDE" Name="Wisdom Tree Domestic Dividends Index ex Financia" />
+  <SYMBOL Code="SDDV" Name="DWS Top Divide X Index [TR]" />
+  <SYMBOL Code="SDEW" Name="S&amp;P 400 Midcap Equal Weighted Index" />
+  <SYMBOL Code="SDGO" Name="Defined Large Cap Growth Opportunities Index" />
+  <SYMBOL Code="SDIP" Name="S&amp;P DCFI Index Excess Return" />
+  <SYMBOL Code="SDIS" Name="S&amp;P DCFIIndex" />
+  <SYMBOL Code="SDIT" Name="S&amp;P DCFI Index Total Return" />
+  <SYMBOL Code="SDLC" Name="Defined Large Cap Core Index" />
+  <SYMBOL Code="SDMC" Name="Defined Mid Cap Core Index" />
+  <SYMBOL Code="SDPI" Name="Goldman Sachs BRICs Nifty 50 Developed Markets I" />
+  <SYMBOL Code="SDSC" Name="Defined Small Cap Core Index" />
+  <SYMBOL Code="SDTI" Name="Goldman Sachs BRICs Nifty 50 Developed Markets I" />
+  <SYMBOL Code="SDTR" Name="S&amp;P 500 Food Beverage &amp; Tobacco [TR]" />
+  <SYMBOL Code="SDTS" Name="S&amp;P Diversified Trends Indicator" />
+  <SYMBOL Code="SDTT" Name="S&amp;P Diversified Trends Total Return Indicator Le" />
+  <SYMBOL Code="SDVO" Name="Defined Large Cap Value Opportunities Index" />
+  <SYMBOL Code="SDWI" Name="DWS Infrastru X Index [TR]" />
+  <SYMBOL Code="SEAN" Name="S&amp;P Southeast Asia 40 Index [NetTR]" />
+  <SYMBOL Code="SEBI" Name="S-Network Emerging Infrastructure Builders Index" />
+  <SYMBOL Code="SECA" Name="S&amp;P GSCI Enhanced Commodity Index" />
+  <SYMBOL Code="SECB" Name="S&amp;P GSCI Enhanced Commodity Index Excess Return" />
+  <SYMBOL Code="SECC" Name="S&amp;P GSCI Enhanced Commodity Index Total Return" />
+  <SYMBOL Code="SEIB" Name="S-Network Emerging Infrastructure Builders Index" />
+  <SYMBOL Code="SEIE" Name="S&amp;P Global Eco Index [EURO]" />
+  <SYMBOL Code="SEII" Name="CS/RT Emerging Infrastructure Index" />
+  <SYMBOL Code="SEIT" Name="S&amp;P Global REIT [AUD]" />
+  <SYMBOL Code="SEIU" Name="S&amp;P Global Eco Index" />
+  <SYMBOL Code="SEMT" Name="Brics Nifty 50 Emerging Market Tradable Index Tr" />
+  <SYMBOL Code="SENSEX" Name="BSE SENSEX" />
+  <SYMBOL Code="SEXR" Name="S&amp;P C.S. Wa-Seattle Home Price Index" />
+  <SYMBOL Code="SFTR" Name="S&amp;P 500 - Pharmaceuticals Biotechnology &amp; Life" />
+  <SYMBOL Code="SFXR" Name="S&amp;P C.S. Ca-San Francisco Home Price Index" />
+  <SYMBOL Code="SG0A" Name="S&amp;P GSCI Agriculture &amp; Live Stock Index" />
+  <SYMBOL Code="SG0B" Name="S&amp;P GSCI Agriculture &amp; Live Stock Index Excess R" />
+  <SYMBOL Code="SG0C" Name="S&amp;P GSCI Agriculture &amp; Live Stock Index Total Re" />
+  <SYMBOL Code="SG0D" Name="S&amp;P GSCI Agriculture Index Excess Return" />
+  <SYMBOL Code="SG0E" Name="S&amp;P GSCI Agriculture Index Total Return" />
+  <SYMBOL Code="SG0F" Name="S&amp;P GSCI All Cattle Index" />
+  <SYMBOL Code="SG0G" Name="S&amp;P GSCI All Cattle Index Excess Return" />
+  <SYMBOL Code="SG0H" Name="S&amp;P GSCI All Cattle Index Total Return" />
+  <SYMBOL Code="SG0I" Name="S&amp;P GSCI All Crude Index" />
+  <SYMBOL Code="SG1A" Name="S&amp;P GSCI All Crude Index Total Return" />
+  <SYMBOL Code="SG1B" Name="S&amp;P GSCI All Wheat Index" />
+  <SYMBOL Code="SG1C" Name="S&amp;P GSCI All Wheat Index Excess Return" />
+  <SYMBOL Code="SG1D" Name="S&amp;P GSCI All Wheat Index Total Return" />
+  <SYMBOL Code="SG1E" Name="S&amp;P GSCI Aluminum Index" />
+  <SYMBOL Code="SG1F" Name="S&amp;P GSCI Aluminum Index Excess Return" />
+  <SYMBOL Code="SG1G" Name="S&amp;P GSCI Aluminum Index Total Return" />
+  <SYMBOL Code="SG1H" Name="S&amp;P GSCI Soybean Oil Index" />
+  <SYMBOL Code="SG1I" Name="S&amp;P GSCI Soybean Oil Index Excess Return" />
+  <SYMBOL Code="SG1J" Name="S&amp;P GSCI All Crude Index Excess Return" />
+  <SYMBOL Code="SG2A" Name="S&amp;P GSCI Brent Crude Index" />
+  <SYMBOL Code="SG2B" Name="S&amp;P GSCI Brent Crude Index Excess Return" />
+  <SYMBOL Code="SG2C" Name="S&amp;P GSCI Brent Crude Index Total Return" />
+  <SYMBOL Code="SG2D" Name="S&amp;P GSCI Cocoa Index" />
+  <SYMBOL Code="SG2E" Name="S&amp;P GSCI Cocoa Index Excess Return" />
+  <SYMBOL Code="SG2F" Name="S&amp;P GSCI Cocoa Index Total Return" />
+  <SYMBOL Code="SG2G" Name="S&amp;P GSCI Coffee Index Co Index" />
+  <SYMBOL Code="SG2H" Name="S&amp;P GSCI Coffee Index Excess Return" />
+  <SYMBOL Code="SG2I" Name="S&amp;P GSCI Coffee Index Total Return" />
+  <SYMBOL Code="SG2J" Name="S&amp;P GSCI Soybean Oil Index Total Return" />
+  <SYMBOL Code="SG3A" Name="S&amp;P GSCI Copper Index Excess Return" />
+  <SYMBOL Code="SG3B" Name="S&amp;P GSCI Copper Index Total Return" />
+  <SYMBOL Code="SG3C" Name="S&amp;P GSCI Corn Index" />
+  <SYMBOL Code="SG3D" Name="S&amp;P GSCI Corn Index Excess Return" />
+  <SYMBOL Code="SG3E" Name="S&amp;P GSCI Corn Index Total Return" />
+  <SYMBOL Code="SG3F" Name="S&amp;P GSCI Cotton Index" />
+  <SYMBOL Code="SG3G" Name="S&amp;P GSCI Cotton Index Excess Return" />
+  <SYMBOL Code="SG3H" Name="S&amp;P GSCI Cotton Index Total Return" />
+  <SYMBOL Code="SG3I" Name="S&amp;P GSCI Crude Oil Index" />
+  <SYMBOL Code="SG3J" Name="S&amp;P GSCI Copper Index" />
+  <SYMBOL Code="SG4A" Name="S&amp;P GSCI Crude Oil Index Total Return" />
+  <SYMBOL Code="SG4B" Name="S&amp;P GSCI Energy and Metals Index" />
+  <SYMBOL Code="SG4C" Name="S&amp;P GSCI Energy and Metals Index Excess Return" />
+  <SYMBOL Code="SG4D" Name="S&amp;P GSCI Energy and Metals Index Total Return" />
+  <SYMBOL Code="SG4E" Name="S&amp;P GSCI Energy Index Excess Return" />
+  <SYMBOL Code="SG4F" Name="S&amp;P GSCI Energy Index Total Return" />
+  <SYMBOL Code="SG4G" Name="S&amp;P GSCI Feeder Cattle Index" />
+  <SYMBOL Code="SG4H" Name="S&amp;P GSCI Feeder Cattle Index Excess Return" />
+  <SYMBOL Code="SG4I" Name="S&amp;P GSCI Feeder Cattle Index Total Return" />
+  <SYMBOL Code="SG4J" Name="S&amp;P GSCI Crude Oil Index Excess Return" />
+  <SYMBOL Code="SG5A" Name="S&amp;P GSCI Gas Oil Index Excess Return" />
+  <SYMBOL Code="SG5B" Name="S&amp;P GSCI Gas Oil Index Total Return" />
+  <SYMBOL Code="SG5C" Name="S&amp;P GSCI Gold Index" />
+  <SYMBOL Code="SG5D" Name="S&amp;P GSCI Gold Index Excess Return" />
+  <SYMBOL Code="SG5E" Name="S&amp;P GSCI Gold Index Total Return" />
+  <SYMBOL Code="SG5F" Name="S&amp;P GSCI Grains Index" />
+  <SYMBOL Code="SG5G" Name="S&amp;P GSCI Grains Index Excess Return" />
+  <SYMBOL Code="SG5H" Name="S&amp;P GSCI Grains Index Total Return" />
+  <SYMBOL Code="SG5I" Name="S&amp;P GSCI Heating Oil Index" />
+  <SYMBOL Code="SG5J" Name="S&amp;P GSCI Gas Oil Index" />
+  <SYMBOL Code="SG6A" Name="S&amp;P GSCI Heating Oil Index Total Return" />
+  <SYMBOL Code="SG6B" Name="S&amp;P GSCI Industrial Metals Index Excess Return" />
+  <SYMBOL Code="SG6C" Name="S&amp;P GSCI Industrial Metals Index Total Return" />
+  <SYMBOL Code="SG6D" Name="S&amp;P GSCI Kansas Wheat Index" />
+  <SYMBOL Code="SG6E" Name="S&amp;P GSCI Kansas Wheat Index Excess Return" />
+  <SYMBOL Code="SG6F" Name="S&amp;P GSCI Kansas Wheat Index Total Return" />
+  <SYMBOL Code="SG6G" Name="S&amp;P GSCI Lead Index" />
+  <SYMBOL Code="SG6H" Name="S&amp;P GSCI Lead Index Excess Return" />
+  <SYMBOL Code="SG6I" Name="S&amp;P GSCI Lead Index Total Return" />
+  <SYMBOL Code="SG6J" Name="S&amp;P GSCI Heating Oil Index Excess Return" />
+  <SYMBOL Code="SG7A" Name="S&amp;P GSCI Lean Hogs Index Excess Return" />
+  <SYMBOL Code="SG7B" Name="S&amp;P GSCI Lean Hogs Index Total Return" />
+  <SYMBOL Code="SG7C" Name="S&amp;P GSCI Light Energy Index [CPW4]" />
+  <SYMBOL Code="SG7D" Name="S&amp;P GSCI Light Energy Index [CPW4] Excess Return" />
+  <SYMBOL Code="SG7E" Name="S&amp;P GSCI Light Energy Index [CPW4] Total Return" />
+  <SYMBOL Code="SG7F" Name="S&amp;P GSCI Live Cattle Index" />
+  <SYMBOL Code="SG7G" Name="S&amp;P GSCI Live Cattle Index Excess Return" />
+  <SYMBOL Code="SG7H" Name="S&amp;P GSCI Live Cattle Index Total Return" />
+  <SYMBOL Code="SG7I" Name="S&amp;P GSCI Livestock Index Excess Return" />
+  <SYMBOL Code="SG7J" Name="S&amp;P GSCI Lean Hogs Index" />
+  <SYMBOL Code="SG8A" Name="S&amp;P GSCI Natural Gas Index" />
+  <SYMBOL Code="SG8B" Name="S&amp;P GSCI Natural Gas Index Excess Return" />
+  <SYMBOL Code="SG8C" Name="S&amp;P GSCI Natural Gas Index Total Return" />
+  <SYMBOL Code="SG8D" Name="S&amp;P GSCI Nickel Index" />
+  <SYMBOL Code="SG8E" Name="S&amp;P GSCI Nickel Index Excess Return" />
+  <SYMBOL Code="SG8F" Name="S&amp;P GSCI Nickel Index Total Return" />
+  <SYMBOL Code="SG8G" Name="S&amp;P GSCI Non-Energy Index Excess Return" />
+  <SYMBOL Code="SG8H" Name="S&amp;P GSCI Non-Energy Index" />
+  <SYMBOL Code="SG8I" Name="S&amp;P GSCI Non-Energy Index Total Return" />
+  <SYMBOL Code="SG8J" Name="S&amp;P GSCI Livestock Index Total Return" />
+  <SYMBOL Code="SG9A" Name="S&amp;P GSCI Non-Livestock Index Excess Return" />
+  <SYMBOL Code="SG9B" Name="S&amp;P GSCI Non-Livestock Index Total Return" />
+  <SYMBOL Code="SG9C" Name="S&amp;P GSCI Non-Natural Gas Index" />
+  <SYMBOL Code="SG9D" Name="S&amp;P GSCI Non-Natural Gas Index Excess Return" />
+  <SYMBOL Code="SG9E" Name="S&amp;P GSCI Non-Natural Gas Index Total Return" />
+  <SYMBOL Code="SG9F" Name="S&amp;P GSCI Non-Precious Index" />
+  <SYMBOL Code="SG9G" Name="S&amp;P GSCI Non-Precious Index Excess Return" />
+  <SYMBOL Code="SG9H" Name="S&amp;P GSCI Non-Precious Index Total Return" />
+  <SYMBOL Code="SG9I" Name="S&amp;P GSCI Petroleumex-Gas Oil Index" />
+  <SYMBOL Code="SG9J" Name="S&amp;P GSCI Non-Livestock Index" />
+  <SYMBOL Code="SGAA" Name="S&amp;P Global Agribusiness Composite Index USD" />
+  <SYMBOL Code="SGAB" Name="S&amp;P Global Agribusiness Composite Index EUR" />
+  <SYMBOL Code="SGAC" Name="S&amp;P Global Agribusiness Equity Index" />
+  <SYMBOL Code="SGAD" Name="S&amp;P Global Agribusiness Equity Index [EURO]" />
+  <SYMBOL Code="SGCC" Name="S&amp;P GSCI Capped Commodity 35/20 Index" />
+  <SYMBOL Code="SGCR" Name="S&amp;P GSCI All Metals Capped Index Excess Return" />
+  <SYMBOL Code="SGDO" Name="S&amp;P Global Dividend Opportunities Index" />
+  <SYMBOL Code="SGEI" Name="Credit Suisse Emerging Market Infrastructure Ind" />
+  <SYMBOL Code="SGEP" Name="Credit Suisse Emerging Market Infrastructure Pri" />
+  <SYMBOL Code="SGET" Name="Goldman Sachs Liquefied Natural Gas Index [EURO]" />
+  <SYMBOL Code="SGEY" Name="Credit Suisse Emerging Market Infrastructure Ind" />
+  <SYMBOL Code="SGIA" Name="S&amp;P North American Natural Resources Sector Inde" />
+  <SYMBOL Code="SGIB" Name="S&amp;P North American Technology Sector Index" />
+  <SYMBOL Code="SGIC" Name="S&amp;P North American Technology Hardware Index" />
+  <SYMBOL Code="SGID" Name="S&amp;P North American Technology Software Index" />
+  <SYMBOL Code="SGIE" Name="S&amp;P North American Technology Services Index" />
+  <SYMBOL Code="SGIF" Name="S&amp;P North American Technology Multimedia Network" />
+  <SYMBOL Code="SGIG" Name="S&amp;P North American Technology Internet Index" />
+  <SYMBOL Code="SGIH" Name="S&amp;P North AmericanT echnology Semiconductors Ind" />
+  <SYMBOL Code="SGIR" Name="S&amp;P GSCI All Metals Index Excess Return" />
+  <SYMBOL Code="SGJ" Name="S&amp;P GSCI Energy" />
+  <SYMBOL Code="SGK" Name="S&amp;P GSCI Agriculture" />
+  <SYMBOL Code="SGLE" Name="Goldman Sachs Liquefied Natural Gas Index [EURO]" />
+  <SYMBOL Code="SGLN" Name="SGI Global Security Index [EURO] [TR]" />
+  <SYMBOL Code="SGLS" Name="SGI Global Security Index [EURO]" />
+  <SYMBOL Code="SGMA" Name="S&amp;P GSCI All Metals Index" />
+  <SYMBOL Code="SGME" Name="SGI Global Momentum [NetTR] [EURO] [NetTR] [NEWV" />
+  <SYMBOL Code="SGMU" Name="SGI Global Momentum [NetTR] [NEWVA]" />
+  <SYMBOL Code="SGON" Name="S&amp;P Global Dividend Opportunities Index [NetTR]" />
+  <SYMBOL Code="SGP" Name="S&amp;P GSCI Precious Metals" />
+  <SYMBOL Code="SGPA" Name="S&amp;P GSCI All Metals Capped Index" />
+  <SYMBOL Code="SGPG" Name="S&amp;P GSCI Agriculture Capped Index" />
+  <SYMBOL Code="SGPP" Name="S&amp;P GSCI Capped Commodity 35/20 Index Excess Ret" />
+  <SYMBOL Code="SGPR" Name="S&amp;P GSCI Agriculture Capped Index Total Return" />
+  <SYMBOL Code="SGPT" Name="S&amp;P GSCI Capped Commodity 35/20 Index Total Retu" />
+  <SYMBOL Code="SGQA" Name="S&amp;P GSCI Petroleumex-Gas Oil Index Total Return" />
+  <SYMBOL Code="SGQB" Name="S&amp;P GSCI Petroleum Index" />
+  <SYMBOL Code="SGQC" Name="S&amp;P GSCI Petroleum Index Excess Return" />
+  <SYMBOL Code="SGQD" Name="S&amp;P GSCI Petroleum Index Total Return" />
+  <SYMBOL Code="SGQE" Name="S&amp;P GSCI Precious Metals Index Excess Return" />
+  <SYMBOL Code="SGQF" Name="S&amp;P GSCI Precious Metals Index Total Return" />
+  <SYMBOL Code="SGQG" Name="S&amp;P GSCI Reduced Energy Index [CPW2]" />
+  <SYMBOL Code="SGQH" Name="S&amp;P GSCI Reduced Energy Index [CPW2] Excess Retu" />
+  <SYMBOL Code="SGQI" Name="S&amp;P GSCI Reduced Energy Index [CPW2] Total Retur" />
+  <SYMBOL Code="SGQJ" Name="S&amp;P GSCI Petroleumex GasOil Index Excess Return" />
+  <SYMBOL Code="SGRC" Name="S&amp;P GSCI All Metals Capped Commodity 35/20 EUR I" />
+  <SYMBOL Code="SGRE" Name="S&amp;P GSCI All Metals Capped Commodity 35/20 EUR I" />
+  <SYMBOL Code="SGRG" Name="S&amp;P GSCI Agriculture Capped Index Excess Return" />
+  <SYMBOL Code="SGRM" Name="Cohen &amp; Steers Global Realty Majors Portfolio [T" />
+  <SYMBOL Code="SGRT" Name="S&amp;P GSCI Agriculture Capped Component 35/20 EUR" />
+  <SYMBOL Code="SGSA" Name="S&amp;P GSCI Silver Index" />
+  <SYMBOL Code="SGSB" Name="S&amp;P GSCI Silver Index Excess Return" />
+  <SYMBOL Code="SGSC" Name="S&amp;P GSCI Silver Index Total Return" />
+  <SYMBOL Code="SGSD" Name="S&amp;P GSCI Soybeans Index" />
+  <SYMBOL Code="SGSE" Name="S&amp;P GSCI Excess Return" />
+  <SYMBOL Code="SGSF" Name="S&amp;P GSCI Soybeans Index Excess Return" />
+  <SYMBOL Code="SGSG" Name="S&amp;P GSCI Soybeans Index Total Return" />
+  <SYMBOL Code="SGSH" Name="S&amp;P GSCI Sugar Index" />
+  <SYMBOL Code="SGSJ" Name="S&amp;P GSCI Sugar Index Excess Return" />
+  <SYMBOL Code="SGSK" Name="S&amp;P GSCI Sugar Index Total Return" />
+  <SYMBOL Code="SGSM" Name="S&amp;P GSCI Ultra-Light Energy Index [CPW8] Excess" />
+  <SYMBOL Code="SGSN" Name="S&amp;P GSCI Ultra-Light Energy Index [CPW8] Total R" />
+  <SYMBOL Code="SGSO" Name="S&amp;P GSCI Unleaded Gasoline Index" />
+  <SYMBOL Code="SGSP" Name="S&amp;P GSCI Unleaded Gasoline Index Excess Return" />
+  <SYMBOL Code="SGSQ" Name="S&amp;P GSCI Unleaded Gasoline Index Total Return" />
+  <SYMBOL Code="SGSR" Name="S&amp;P GSCI Wheat Index" />
+  <SYMBOL Code="SGSS" Name="S&amp;P GSCI Wheat Index Excess Return" />
+  <SYMBOL Code="SGST" Name="S&amp;P GSCI Wheat Index Total Return" />
+  <SYMBOL Code="SGSU" Name="S&amp;P GSCI Zinc Index" />
+  <SYMBOL Code="SGSV" Name="S&amp;P GSCI Zinc Index Excess Return" />
+  <SYMBOL Code="SGSW" Name="S&amp;P GSCI Zinc Index Total Return" />
+  <SYMBOL Code="SGSX" Name="S&amp;P GSCI Ultra-LightEnergyIndex [CPW8]" />
+  <SYMBOL Code="SGT" Name="S&amp;P GSCI Total Return" />
+  <SYMBOL Code="SGTR" Name="S&amp;P GSCI All Metals Capped Index Total Return" />
+  <SYMBOL Code="SGV" Name="CASINO GAMING" />
+  <SYMBOL Code="SGWC" Name="Credit Suisse Global Warming Price Index" />
+  <SYMBOL Code="SGWE" Name="Credit Suisse Global Warming Index EUR" />
+  <SYMBOL Code="SGWM" Name="Credit Suisse Global Warming Index" />
+  <SYMBOL Code="SGWN" Name="SGI Global Wealth Effect [NetTR]" />
+  <SYMBOL Code="SGWP" Name="SGI Global Wealth Effect" />
+  <SYMBOL Code="SGWT" Name="S&amp;P GSCI Select Equal Weight Index Tr" />
+  <SYMBOL Code="SGX" Name="S&amp;P GSCI FPI Index" />
+  <SYMBOL Code="SGY" Name="S&amp;P GSCI Industrial Metals" />
+  <SYMBOL Code="SHEP" Name="Credit Suisse Hs60 Europe Index Powered By Holt" />
+  <SYMBOL Code="SHEU" Name="HS60 Europe Index" />
+  <SYMBOL Code="SHSB" Name="HS60 Index" />
+  <SYMBOL Code="SHSD" Name="HS60-EURO Index" />
+  <SYMBOL Code="SHTR" Name="S&amp;P 500 HealthCare Equipment &amp; Services [TR]" />
+  <SYMBOL Code="SHUS" Name="HS60 US Index" />
+  <SYMBOL Code="SIDO" Name="S&amp;P International Dividend Opportunities Index" />
+  <SYMBOL Code="SIII" Name="Indus India Index" />
+  <SYMBOL Code="SIIN" Name="S&amp;P India Select Index" />
+  <SYMBOL Code="SIIP" Name="S&amp;P DFFI Index Excess Return" />
+  <SYMBOL Code="SIIS" Name="S&amp;P DFFI Index" />
+  <SYMBOL Code="SIIT" Name="S&amp;P DFFI Index Total Return" />
+  <SYMBOL Code="SIN" Name="ISE Sindex Index" />
+  <SYMBOL Code="SINE" Name="S&amp;P India 10 Index [EURO]" />
+  <SYMBOL Code="SINU" Name="S&amp;P India 10 Index" />
+  <SYMBOL Code="SIPR" Name="Brics Nifty 50 Emerging Market Tradable Index Pr" />
+  <SYMBOL Code="SIRI" Name="S&amp;P Indian Rupee Total Return" />
+  <SYMBOL Code="SIRP" Name="Cohen &amp; Steers International Realty Majors Portf" />
+  <SYMBOL Code="SIS" Name="AMEX Semiconductor Index" />
+  <SYMBOL Code="SITR" Name="S&amp;P 500 Insurance [TR]" />
+  <SYMBOL Code="SIUT" Name="S&amp;P 500 2x Inverse Daily Index" />
+  <SYMBOL Code="SIV" Name="Cboe/Cbot Soybean Volatility Index" />
+  <SYMBOL Code="SJPA" Name="S&amp;P Japan 500" />
+  <SYMBOL Code="SJPB" Name="S&amp;P Japan Mid Cap 100" />
+  <SYMBOL Code="SJPC" Name="S&amp;P Japan Small Cap 250 Index" />
+  <SYMBOL Code="SJPD" Name="S&amp;P TOPIX YEN" />
+  <SYMBOL Code="SJPE" Name="S&amp;P JES100" />
+  <SYMBOL Code="SJRI" Name="S&amp;P Japan Regional Index-Tokai" />
+  <SYMBOL Code="SJTR" Name="S&amp;P 500 Semiconductors &amp; Semiconductor Equipment" />
+  <SYMBOL Code="SKTR" Name="S&amp;P 500 Materials [TR]" />
+  <SYMBOL Code="SLAC" Name="S&amp;P LAC40 [US$] [EURO] [NetTR]" />
+  <SYMBOL Code="SLCN" Name="S&amp;P US Carbon Efficient Index U.S. Carbci Index" />
+  <SYMBOL Code="SLCT" Name="S&amp;P U.S. Carbon Efficient Index [TR]" />
+  <SYMBOL Code="SLCU" Name="S&amp;P U.S. Carbon Efficient Index [NetTR]" />
+  <SYMBOL Code="SLEE" Name="S&amp;P GSCI Light Energy EUR Index" />
+  <SYMBOL Code="SLER" Name="S&amp;P GSCI Light Energy EUR Index ER" />
+  <SYMBOL Code="SLEW" Name="S&amp;P 600 Smallcap Equal Weighted Index" />
+  <SYMBOL Code="SLPE" Name="Global Listed Private Equity Index" />
+  <SYMBOL Code="SLPX" Name="Cushing 30 MLP Index USD Price Return" />
+  <SYMBOL Code="SLQR" Name="S&amp;P  500 Low Quality Rankings" />
+  <SYMBOL Code="SLRT" Name="S&amp;P GSCI Light Energy EUR Index TR" />
+  <SYMBOL Code="SLUN" Name="S&amp;P 500 2x Leverage Daily Index" />
+  <SYMBOL Code="SLUT" Name="S&amp;P 500 Gold Hedged Index" />
+  <SYMBOL Code="SLV" Name="Silver Index" />
+  <SYMBOL Code="SML" Name="S&amp;P Small Caps 600 Index" />
+  <SYMBOL Code="SMPR" Name="Goldman Sachs BRICs Nifty 50 Emerging Markets In" />
+  <SYMBOL Code="SMRW" Name="Revenue Shares MidCap Fund" />
+  <SYMBOL Code="SMSS" Name="Morgan Stanley Smart Money Equity Index [TR]" />
+  <SYMBOL Code="SMTI" Name="Goldman Sachs BRICs Nifty 50 Emerging Markets In" />
+  <SYMBOL Code="SMTR" Name="S&amp;P GSCI All Metals Index Total Return" />
+  <SYMBOL Code="SMXT" Name="DWS Mega Trends Index [NetTRw/fees]" />
+  <SYMBOL Code="SNAC" Name="Alpha Shares China All Cap Index" />
+  <SYMBOL Code="SNCH" Name="Next 11 Core 8 Index" />
+  <SYMBOL Code="SNCT" Name="Next 11 Core 8 Index [TR]" />
+  <SYMBOL Code="SNEI" Name="S&amp;P Global Nuclear Energy Index [EURO]" />
+  <SYMBOL Code="SNER" Name="S&amp;P GSCI Non-Energy EUR IndexER" />
+  <SYMBOL Code="SNEU" Name="S&amp;P Global Nuclear Energy Index" />
+  <SYMBOL Code="SNNE" Name="S&amp;P Global Infrastructure Index [EURO] [NetTR]" />
+  <SYMBOL Code="SNNT" Name="S&amp;P Global Infrastructure Index [NetTR]" />
+  <SYMBOL Code="SNRE" Name="S&amp;P Global Natural Resources Index [EURO]" />
+  <SYMBOL Code="SNRT" Name="S&amp;P GSCI Non-Energy EUR Index TR" />
+  <SYMBOL Code="SNRU" Name="S&amp;P Global Natural Resources Index" />
+  <SYMBOL Code="SNTE" Name="Next 11 Core 5 Index [TR]" />
+  <SYMBOL Code="SNUI" Name="S&amp;P GSCI Non-Energy EUR Index" />
+  <SYMBOL Code="SNXR" Name="S&amp;P C.S. Ca-San Diego Home Price Index" />
+  <SYMBOL Code="SOBC" Name="SGI-Orbeo Carbon Credit Index [EUR-TotalReturn]" />
+  <SYMBOL Code="SOCC" Name="SGI-Orbeo Carbon Credit Index [USD-TotalReturn]" />
+  <SYMBOL Code="SOTR" Name="S&amp;P 500 Media [TR]" />
+  <SYMBOL Code="SOX" Name="PHLX Semiconductor" />
+  <SYMBOL Code="SP500" Name="S&amp;P 500" />
+  <SYMBOL Code="SPAA" Name="SGI Pan Africa Index [NetTR] Panri Indexet" />
+  <SYMBOL Code="SPAB" Name="SGI Pan Africa Index [EURO] [NetTR]" />
+  <SYMBOL Code="SPAC" Name="SGI Pan Africa Index" />
+  <SYMBOL Code="SPAD" Name="S&amp;P GSCI Palladium Index" />
+  <SYMBOL Code="SPEE" Name="S&amp;P Listed Private Equity Index [EURO]" />
+  <SYMBOL Code="SPER" Name="S&amp;P GSCI Palladium Index Excess Return" />
+  <SYMBOL Code="SPEY" Name="S&amp;P Listed Private Equity Index" />
+  <SYMBOL Code="SPIN" Name="S&amp;P GSCI Platinum Index" />
+  <SYMBOL Code="SPIR" Name="S&amp;P GSCI Platinum Index Excess Return" />
+  <SYMBOL Code="SPLR" Name="S&amp;P GSCI Platinum Index Total Return" />
+  <SYMBOL Code="SPPR" Name="S&amp;P International Preferred Stock Index" />
+  <SYMBOL Code="SPRL" Name="SGI Premium List [NetTR]" />
+  <SYMBOL Code="SPRT" Name="S&amp;P GSCI Palladium Index Total Return" />
+  <SYMBOL Code="SPSU" Name="S&amp;P COMPOSITE 1500 INDEX" />
+  <SYMBOL Code="SPUS" Name="S&amp;P  Global Ex-U.S. Property [US Dollar]" />
+  <SYMBOL Code="SPX" Name="S&amp;P 500 INDEX" />
+  <SYMBOL Code="SPXT" Name="S&amp;P 500 [TR]" />
+  <SYMBOL Code="SQTR" Name="S&amp;P 500 Software &amp; Services [TR]" />
+  <SYMBOL Code="SRER" Name="S&amp;P Indian Rupee Price Return Index" />
+  <SYMBOL Code="SRFF" Name="SGI Fed Funds Index" />
+  <SYMBOL Code="SRIC" Name="S&amp;P BRIC 40 Index [NetTR]" />
+  <SYMBOL Code="SRIE" Name="S&amp;P BRIC 40 Index [EURO] [NetTR]" />
+  <SYMBOL Code="SRMP" Name="Cohen &amp; Steers US Realty Majors Portfolio [TR]" />
+  <SYMBOL Code="SRPR" Name="S&amp;P Global REIT [USD]" />
+  <SYMBOL Code="SRTR" Name="S&amp;P 500 Real Estate [TR]" />
+  <SYMBOL Code="SRUP" Name="S&amp;P 500 High Quality Rankings Index" />
+  <SYMBOL Code="SRVA" Name="Rogers Energy Producers Index [EURO]" />
+  <SYMBOL Code="SRVB" Name="Rogers Metals Producers Index [EURO]" />
+  <SYMBOL Code="SRVC" Name="Rogers Agricultural Producers Index [EURO]" />
+  <SYMBOL Code="SRVD" Name="Rogers Energy Producers Index" />
+  <SYMBOL Code="SRVE" Name="Rogers Metals Producers Index" />
+  <SYMBOL Code="SRVF" Name="Rogers Agricultural Producers Index" />
+  <SYMBOL Code="SRVG" Name="Rogers Producers Index" />
+  <SYMBOL Code="SRVH" Name="Rogers Producers US Extra Liquid Index" />
+  <SYMBOL Code="SRVI" Name="Rogers Producers Index [EURO]" />
+  <SYMBOL Code="SRVJ" Name="Rogers Producers US Extra Liquid Index [EURO]" />
+  <SYMBOL Code="SRWI" Name="Revenue Shares Large Cap Fund" />
+  <SYMBOL Code="SS1E" Name="S&amp;P 500 EQUAL WEIGHTED Materials [Sector]" />
+  <SYMBOL Code="SS1J" Name="S&amp;P 500 EQUAL WEIGHTED Energy [Sector]" />
+  <SYMBOL Code="SS2E" Name="S&amp;P 500 EQUAL WEIGHTED Consumer Discretionary [S" />
+  <SYMBOL Code="SS2J" Name="S&amp;P 500 EQUAL WEIGHTED Industrials [Sector]" />
+  <SYMBOL Code="SS3E" Name="S&amp;P 500 EQUAL WEIGHTED HealthCare [Sector]" />
+  <SYMBOL Code="SS3J" Name="S&amp;P 500 EQUAL WEIGHTED Consumer Staples [Sector]" />
+  <SYMBOL Code="SS4E" Name="S&amp;P 500 EQUAL WEIGHTED Information Technology [S" />
+  <SYMBOL Code="SS4J" Name="S&amp;P 500 EQUAL WEIGHTED Financials [Sector]" />
+  <SYMBOL Code="SS5E" Name="S&amp;P 500 EQUAL WEIGHTED Utilities [Sector]" />
+  <SYMBOL Code="SS5J" Name="S&amp;P 500 EQUAL WEIGHTED Telecommunication Service" />
+  <SYMBOL Code="SSAE" Name="S&amp;P Southeast Asia 40 Index [EURO]" />
+  <SYMBOL Code="SSAI" Name="S&amp;P Southeast Asia 40 Index [EURO] [NetTR]" />
+  <SYMBOL Code="SSAU" Name="S&amp;P Southeast Asia 40 Index" />
+  <SYMBOL Code="SSAX" Name="S&amp;P Asia50" />
+  <SYMBOL Code="SSBE" Name="S&amp;P BRIC 40 Index [EURO]" />
+  <SYMBOL Code="SSBR" Name="S&amp;P BRIC 40 Index" />
+  <SYMBOL Code="SSCA" Name="S&amp;P Asia Pacific Emerging BMI [USDollar]" />
+  <SYMBOL Code="SSCB" Name="S&amp;P Mid-East and Africa BMI [USDollar]" />
+  <SYMBOL Code="SSCE" Name="S&amp;P /Citigroup BMI EPAC Index" />
+  <SYMBOL Code="SSCH" Name="S&amp;P China BMI [USDollar]" />
+  <SYMBOL Code="SSCK" Name="S&amp;P EM BMI [USDollar]" />
+  <SYMBOL Code="SSCL" Name="S&amp;P Latin America BMI [USDollar]" />
+  <SYMBOL Code="SSCM" Name="Schwab 1000 Index" />
+  <SYMBOL Code="SSCP" Name="S&amp;P /Citigroup BMI Asia Pacific Index" />
+  <SYMBOL Code="SSCQ" Name="S&amp;P European Emerging BMI [CAPPED] [USDollar]" />
+  <SYMBOL Code="SSCS" Name="S&amp;P Developed Ex US Under USD 2 Billion [USDolla" />
+  <SYMBOL Code="SSCU" Name="S&amp;P /Citigroup BMI Europe Index" />
+  <SYMBOL Code="SSCW" Name="S&amp;P Developed Ex-U.S.BMI [USDollar]" />
+  <SYMBOL Code="SSDI" Name="S&amp;P 500 Dividend Index" />
+  <SYMBOL Code="SSEC" Name="Shanghai Composite" />
+  <SYMBOL Code="SSEN" Name="SGI Global Senior [NetTR]" />
+  <SYMBOL Code="SSER" Name="SPECTRUM-Long/Short 8% Index ER [NEWVA]" />
+  <SYMBOL Code="SSEW" Name="S&amp;P GSCI Select Equal Weight Index Spot" />
+  <SYMBOL Code="SSFA" Name="Credit Suisse Family Index" />
+  <SYMBOL Code="SSFB" Name="SGI Double Short Bund Index" />
+  <SYMBOL Code="SSFE" Name="Credit Suisse Family Index [EUR] [Price Return]" />
+  <SYMBOL Code="SSFP" Name="Credit Suisse Family Index [USD] [Price Return]" />
+  <SYMBOL Code="SSFT" Name="Credit Suisse Family Index [CHF] [Price Return]" />
+  <SYMBOL Code="SSFU" Name="Credit Suisse Family Index EUR" />
+  <SYMBOL Code="SSGA" Name="SGI Global Agriculture" />
+  <SYMBOL Code="SSGC" Name="S&amp;P GSCI Enhanced Capped Index" />
+  <SYMBOL Code="SSGD" Name="S&amp;P GLOBAL1200-Consumer Discretionary [Sector]" />
+  <SYMBOL Code="SSGE" Name="S&amp;P GLOBAL1200-Energy [Sector]" />
+  <SYMBOL Code="SSGF" Name="S&amp;P GLOBAL1200-Financials [Sector]" />
+  <SYMBOL Code="SSGG" Name="SGI Global Generics Index [EURO] [NetTR]" />
+  <SYMBOL Code="SSGH" Name="S&amp;P GLOBAL1200-HealthCare [Sector]" />
+  <SYMBOL Code="SSGI" Name="S&amp;P GLOBAL1200-Information Technology [Sector]" />
+  <SYMBOL Code="SSGL" Name="S&amp;P GLOBAL1200" />
+  <SYMBOL Code="SSGM" Name="S&amp;P GLOBAL1200-Materials [Sector]" />
+  <SYMBOL Code="SSGN" Name="S&amp;P GLOBAL1200-Industrials [Sector]" />
+  <SYMBOL Code="SSGO" Name="S&amp;P GSCI E27 WTI Index" />
+  <SYMBOL Code="SSGP" Name="S&amp;P GSCI Enhanced Capped Index Excess Return" />
+  <SYMBOL Code="SSGR" Name="S&amp;P GSCI Enhanced Capped Index Total Return" />
+  <SYMBOL Code="SSGS" Name="S&amp;P GLOBAL1200-Consumer Staples [Sector]" />
+  <SYMBOL Code="SSGT" Name="S&amp;P GLOBAL1200-Telecommunication Services [Secto" />
+  <SYMBOL Code="SSGU" Name="S&amp;P GLOBAL1200-Utilities [Sector]" />
+  <SYMBOL Code="SSGX" Name="S&amp;P GSCI E27WTI Index Excess Return" />
+  <SYMBOL Code="SSGZ" Name="S&amp;P GSCI E27WTI Index Total Return" />
+  <SYMBOL Code="SSHE" Name="S&amp;P Europe 350 Shariah Index" />
+  <SYMBOL Code="SSHF" Name="Credit Suisse Family Index CHF" />
+  <SYMBOL Code="SSHJ" Name="S&amp;P Japan 500 Shariah Index" />
+  <SYMBOL Code="SSHX" Name="S&amp;P 500 Shariah Index" />
+  <SYMBOL Code="SSIA" Name="Credit Suisse Social Awareness Index" />
+  <SYMBOL Code="SSIB" Name="S&amp;P GSCI Softs Index Excess Return" />
+  <SYMBOL Code="SSIC" Name="S&amp;P GSCI Softs Index Total Return" />
+  <SYMBOL Code="SSIP" Name="S&amp;P DFI Index Excess Return" />
+  <SYMBOL Code="SSIS" Name="S&amp;P DFI Index" />
+  <SYMBOL Code="SSIT" Name="S&amp;P DFI Index Total Return" />
+  <SYMBOL Code="SSLF" Name="S&amp;P Select Frontier Index" />
+  <SYMBOL Code="SSLS" Name="S&amp;P Custom/BNP Paribas-SPECTRUM [GRIPTEST]" />
+  <SYMBOL Code="SSMI" Name="Swiss Market" />
+  <SYMBOL Code="SSNI" Name="SGI Global Nanotechnology Index [NetTR]" />
+  <SYMBOL Code="SSPA" Name="S&amp;P ADR Index" />
+  <SYMBOL Code="SSPE" Name="S&amp;P EUROPE 350" />
+  <SYMBOL Code="SSPF" Name="S&amp;P EUROPE 350 - Financials [Sector]" />
+  <SYMBOL Code="SSPI" Name="S&amp;P EUROPE 350 - Information Technology [Sector]" />
+  <SYMBOL Code="SSPL" Name="S&amp;P 500Telecom&amp;IT" />
+  <SYMBOL Code="SSPN" Name="S&amp;P 500Energy[Sector]" />
+  <SYMBOL Code="SSPT" Name="S&amp;P EUROPE 350 - Telecommunication Services [Sec" />
+  <SYMBOL Code="SSPU" Name="S&amp;P EURO" />
+  <SYMBOL Code="SSRF" Name="S&amp;P Preferred Stock Index" />
+  <SYMBOL Code="SSRW" Name="Revenue Shares Small Cap Fund" />
+  <SYMBOL Code="SSTR" Name="SPECTRUM-Long/Short 8% Index TR [NEWVA]" />
+  <SYMBOL Code="SSTU" Name="S&amp;P 500 EQUAL WEIGHTED Utilities &amp; Telecommunica" />
+  <SYMBOL Code="SSUC" Name="S&amp;P GSCI Capped Component 35/20 Index" />
+  <SYMBOL Code="SSUP" Name="S&amp;P GSCI Capped Component 35/20 Index Excess Ret" />
+  <SYMBOL Code="SSUT" Name="S&amp;P GSCI Capped Component 35/20 Index Total Retu" />
+  <SYMBOL Code="SSWP" Name="S&amp;P GSCI Select Equal Weight Index Er" />
+  <SYMBOL Code="SSWT" Name="Credit Suisse Water Index" />
+  <SYMBOL Code="SSXP" Name="Credit Suisse Social Awareness Index [Price]" />
+  <SYMBOL Code="SSXT" Name="DWS Swi X Index [NetTRw/fees]" />
+  <SYMBOL Code="STCE" Name="S&amp;P Global Clean Energy Index [EURO]" />
+  <SYMBOL Code="STCL" Name="S&amp;P Global Clean Energy Index" />
+  <SYMBOL Code="STDA" Name="S&amp;P Target Date Retirement Income Index" />
+  <SYMBOL Code="STDB" Name="S&amp;P Target Date 2010 Index" />
+  <SYMBOL Code="STDC" Name="S&amp;P Target Date 2015 Index" />
+  <SYMBOL Code="STDD" Name="S&amp;P Target Date 2020 Index" />
+  <SYMBOL Code="STDE" Name="S&amp;P Target Date 2025 Index" />
+  <SYMBOL Code="STDF" Name="S&amp;P Target Date 2030 Index" />
+  <SYMBOL Code="STDG" Name="S&amp;P Target Date 2035 Index" />
+  <SYMBOL Code="STDH" Name="S&amp;P Target Date 2040 Index" />
+  <SYMBOL Code="STDI" Name="S&amp;P Target Date 2045 Index" />
+  <SYMBOL Code="STFE" Name="S&amp;P Global Timber and Forestry Index [EURO]" />
+  <SYMBOL Code="STFU" Name="S&amp;P Global Timber and Forestry Index" />
+  <SYMBOL Code="STI" Name="STI Index" />
+  <SYMBOL Code="STIC" Name="S&amp;P CTI Total Return USD" />
+  <SYMBOL Code="STIF" Name="S&amp;P Global Infrastructure Index [EURO]" />
+  <SYMBOL Code="STIL" Name="SGI Smart WTI Long Invest Index [NEWVA]" />
+  <SYMBOL Code="STIR" Name="S&amp;P Global Infrastructure Index" />
+  <SYMBOL Code="STIS" Name="S&amp;P Commodity Trends Indicator" />
+  <SYMBOL Code="STMP" Name="Tortoise MLP Index" />
+  <SYMBOL Code="STNC" Name="Tsx American Preferred Stock Index" />
+  <SYMBOL Code="STNU" Name="S&amp;P/Tsx North American Pref Stock Index" />
+  <SYMBOL Code="STOXX" Name="DJ Stoxx 50 Index Euro" />
+  <SYMBOL Code="STRA" Name="S&amp;P Target Risk Aggressive Index" />
+  <SYMBOL Code="STRB" Name="S&amp;P Target Risk Moderate Index" />
+  <SYMBOL Code="STRC" Name="S&amp;P Target Risk Growth Index" />
+  <SYMBOL Code="STRD" Name="S&amp;P Target Risk Conservative Index" />
+  <SYMBOL Code="STRL" Name="S&amp;P LAC40 [US$] [NetTR]" />
+  <SYMBOL Code="STRN" Name="S&amp;P 500 [NetTR]" />
+  <SYMBOL Code="STRP" Name="Credit Suisse Water Index [Usd] Price" />
+  <SYMBOL Code="STRS" Name="S&amp;P 500 TR Short" />
+  <SYMBOL Code="STRT" Name="S&amp;P 500 Telecommunication Services [TR]" />
+  <SYMBOL Code="STRU" Name="S&amp;P 500 Household &amp; Personal Products [TR]" />
+  <SYMBOL Code="STSI" Name="SGI Smart WTI Short Invest Index [NEWVA]" />
+  <SYMBOL Code="STSU" Name="S&amp;P TOP IX150 Shariah [USD]" />
+  <SYMBOL Code="STSY" Name="S&amp;P TOP IX150 Shariah" />
+  <SYMBOL Code="STTR" Name="S&amp;P 500 Technology Hardware &amp; Equipment [TR]" />
+  <SYMBOL Code="SUCD" Name="S&amp;P Select Sector Capped 20% Consumer Discretion" />
+  <SYMBOL Code="SUCS" Name="S&amp;P Select Sector Capped 20% Consumer Staples In" />
+  <SYMBOL Code="SUEP" Name="S&amp;P Select Sector Capped 20% Energy Index Net TR" />
+  <SYMBOL Code="SUFP" Name="S&amp;P Select Sector Capped 20% Financials Index Ne" />
+  <SYMBOL Code="SUHC" Name="S&amp;P Select Sector Capped 20% HealthCare Index Ne" />
+  <SYMBOL Code="SUIP" Name="S&amp;P Select Sector Capped 20% Industrials Index N" />
+  <SYMBOL Code="SUJP" Name="S&amp;P Mitsubishi Corporate Group Index" />
+  <SYMBOL Code="SUKP" Name="S&amp;P United Kingdom [PDS]" />
+  <SYMBOL Code="SUKS" Name="S&amp;P United Kingdom [USD]" />
+  <SYMBOL Code="SUMI" Name="S&amp;P Select Sector Capped 20% Materials Index Net" />
+  <SYMBOL Code="SUNI" Name="MAC GLOBAL SOLAR INDEX" />
+  <SYMBOL Code="SUPI" Name="S&amp;P Select Sector Capped 20% Utilities Index Net" />
+  <SYMBOL Code="SURI" Name="S&amp;P /Citigroup BMI REIT SUS Index" />
+  <SYMBOL Code="SUTP" Name="S&amp;P Select Sector Capped 20% Technology Index Ne" />
+  <SYMBOL Code="SVO" Name="PHLX SIG ENERGY MLP INDX" />
+  <SYMBOL Code="SVTR" Name="Next 11 Vietnam [TotalReturn] Index" />
+  <SYMBOL Code="SW0B" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Energy" />
+  <SYMBOL Code="SW0C" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Materials" />
+  <SYMBOL Code="SW0D" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Industrials" />
+  <SYMBOL Code="SW0E" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Consumer Discr" />
+  <SYMBOL Code="SW0F" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Consumer Stapl" />
+  <SYMBOL Code="SW0G" Name="S&amp;P Developed Ex-U.S.BMI [Capped] HealthCare" />
+  <SYMBOL Code="SW0H" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Financials" />
+  <SYMBOL Code="SW0I" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Information Te" />
+  <SYMBOL Code="SW1A" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Utilities" />
+  <SYMBOL Code="SW1B" Name="S&amp;P Developed Ex-U.S.Cap Range Companies Between" />
+  <SYMBOL Code="SW1C" Name="S&amp;P Emerging Under USD 2 Billion" />
+  <SYMBOL Code="SW1J" Name="S&amp;P Developed Ex-U.S.BMI [Capped] Telecommunicat" />
+  <SYMBOL Code="SWCH" Name="Credit Suisse Water Index  [Chf]" />
+  <SYMBOL Code="SWDI" Name="VTL Navellier Revenue Weighted Index" />
+  <SYMBOL Code="SWDR" Name="VTL Revenue Weighted ADR Index" />
+  <SYMBOL Code="SWET" Name="Credit Suisse Water Index [Euro]" />
+  <SYMBOL Code="SWFI" Name="Revenue Shares Large Cap Fund Financials [Sector" />
+  <SYMBOL Code="SWIB" Name="SGI Wise Bottom" />
+  <SYMBOL Code="SWIT" Name="SGI Wise Top" />
+  <SYMBOL Code="SWML" Name="Wachovia MLP Index" />
+  <SYMBOL Code="SWSP" Name="S&amp;P World Commodity Index" />
+  <SYMBOL Code="SWTE" Name="Wisdom Tree Earnings 500 Index" />
+  <SYMBOL Code="SWTM" Name="Wisdom Tree Mid Cap Earnings Index" />
+  <SYMBOL Code="SWTS" Name="Wisdom Tree Small Cap Earnings Index" />
+  <SYMBOL Code="SWTT" Name="Wisdom Tree Earnings Index" />
+  <SYMBOL Code="SWTV" Name="Wisdom Tree Large Cap Value Index" />
+  <SYMBOL Code="SWUB" Name="SGI Wise US Bottom" />
+  <SYMBOL Code="SWUL" Name="SGI Wise US Long/Short [NEWVA]" />
+  <SYMBOL Code="SWUT" Name="SGI WISE US Top" />
+  <SYMBOL Code="SXTR" Name="S&amp;P 500 Utilities [Industry Group] [TR]" />
+  <SYMBOL Code="SYTR" Name="S&amp;P 500 Transportation [Industry Group] [TR]" />
+  <SYMBOL Code="SZTR" Name="S&amp;P 500 Retailing [Industry Group] [TR]" />
+  <SYMBOL Code="TA25" Name="Tel Aviv 25 Index" />
+  <SYMBOL Code="TACK" Name="AMEX Tick" />
+  <SYMBOL Code="TACX" Name="AMEX Tick" />
+  <SYMBOL Code="TASI" Name="Tadawul All Shares Index" />
+  <SYMBOL Code="TBO" Name="AMEX Tobacco Index Settlement" />
+  <SYMBOL Code="TCFI" Name="TSX Comp Stocks Above 50-Day Average" />
+  <SYMBOL Code="TCOF" Name="TSX Comp Stocks Above 150-Day Average" />
+  <SYMBOL Code="TCOH" Name="TSX Comp Stocks Above 100-Day Average" />
+  <SYMBOL Code="TCTH" Name="TSX Comp Stocks Above 200-Day Average" />
+  <SYMBOL Code="TCTW" Name="TSX Comp Stocks Above 20-Day Average" />
+  <SYMBOL Code="TICK" Name="NYSE Tick" />
+  <SYMBOL Code="TICX" Name="NYSE Tick" />
+  <SYMBOL Code="TIKI" Name="DOW Tick" />
+  <SYMBOL Code="TIKX" Name="DOW Tick" />
+  <SYMBOL Code="TNX" Name="10-YEAR TREASURY NOTE" />
+  <SYMBOL Code="TOB" Name="AMEX Tobacco Index" />
+  <SYMBOL Code="TOOC" Name="Tsx Capped Composite Index" />
+  <SYMBOL Code="TPXR" Name="S&amp;P C.S. Fl-Tampa Home Price Index" />
+  <SYMBOL Code="TQCK" Name="NASD Tick" />
+  <SYMBOL Code="TQCX" Name="NASD Tick" />
+  <SYMBOL Code="TRA" Name="Nasdaq Transportation" />
+  <SYMBOL Code="TRCCI" Name="CRB Commodity Continuous Index" />
+  <SYMBOL Code="TRIA" Name="AMEX Trin" />
+  <SYMBOL Code="TRIN" Name="NYSE Trin" />
+  <SYMBOL Code="TRIQ" Name="NASD Trin" />
+  <SYMBOL Code="TSFI" Name="TSX 60 Stocks Above 50-Day Average" />
+  <SYMBOL Code="TSOF" Name="TSX 60 Stocks Above 150-Day Average" />
+  <SYMBOL Code="TSOH" Name="TSX 60 Stocks Above 100-Day Average" />
+  <SYMBOL Code="TSTH" Name="TSX 60 Stocks Above 200-Day Average" />
+  <SYMBOL Code="TSTW" Name="TSX 60 Stocks Above 20-Day Average" />
+  <SYMBOL Code="TSX" Name="TSX COMPOSITE INDEX" />
+  <SYMBOL Code="TTCD" Name="Tsx Consumer Discretionary Capped Index" />
+  <SYMBOL Code="TTCS" Name="Tsx Consumer Staples Capped Index" />
+  <SYMBOL Code="TTEN" Name="Tsx Capped Energy Index" />
+  <SYMBOL Code="TTFS" Name="Tsx Financials Capped Index" />
+  <SYMBOL Code="TTGD" Name="Tsx Global Gold Index" />
+  <SYMBOL Code="TTHC" Name="Tsx Health Care Capped Index" />
+  <SYMBOL Code="TTIN" Name="Tsx Industrials Capped Index" />
+  <SYMBOL Code="TTMN" Name="Tsx Metals And Mining Capped Index" />
+  <SYMBOL Code="TTMT" Name="Tsx Materials Capped Index" />
+  <SYMBOL Code="TTRE" Name="Tsx Real Estate Capped Index" />
+  <SYMBOL Code="TTTK" Name="Tsx Information Tech Capped Index" />
+  <SYMBOL Code="TTTS" Name="Tsx Telecom Services Capped Index" />
+  <SYMBOL Code="TTUT" Name="Tsx Utilities Capped Index" />
+  <SYMBOL Code="TVFI" Name="TSX Venture Stocks Above 50-Day Average" />
+  <SYMBOL Code="TVOF" Name="TSX Venture Stocks Above 150-Day Average" />
+  <SYMBOL Code="TVOH" Name="TSX Venture Stocks Above 100-Day Average" />
+  <SYMBOL Code="TVTH" Name="TSX Venture Stocks Above 200-Day Average" />
+  <SYMBOL Code="TVTW" Name="TSX Venture Stocks Above 20-Day Average" />
+  <SYMBOL Code="TWII" Name="Taiwan Weighted Index" />
+  <SYMBOL Code="TXBE" Name="Tsx Global Base Metals Ew Index" />
+  <SYMBOL Code="TXBM" Name="Tsx Global Base Metals Index" />
+  <SYMBOL Code="TXCT" Name="Tsx Clean Technology Index" />
+  <SYMBOL Code="TXDC" Name="Tsx Composite Dividend Index" />
+  <SYMBOL Code="TXDE" Name="Tsx Diversified Banks Ew Index" />
+  <SYMBOL Code="TXDV" Name="Tsx Canadian Dividend Aristocrats Index" />
+  <SYMBOL Code="TXEI" Name="Tsx Equity Income Index" />
+  <SYMBOL Code="TXEW" Name="Tsx 60 Equal Weight Index" />
+  <SYMBOL Code="TXFO" Name="Tsx Completion Index" />
+  <SYMBOL Code="TXGM" Name="Tsx Global Mining Index" />
+  <SYMBOL Code="TXOE" Name="Tsx Oil And Gas Ew Index" />
+  <SYMBOL Code="TXPR" Name="Tsx Preferred Share Index" />
+  <SYMBOL Code="TXSC" Name="Tsx 60 Capped Index" />
+  <SYMBOL Code="TXSI" Name="Tsx 60 Shariah Index" />
+  <SYMBOL Code="TXSX" Name="Tsx 60 Index" />
+  <SYMBOL Code="TXTW" Name="Tsx Smallcap Index" />
+  <SYMBOL Code="TYX" Name="30-YEAR TREASURY BOND" />
+  <SYMBOL Code="UNCA" Name="AMEX Unchanged Stocks" />
+  <SYMBOL Code="UNCD" Name="OTC Unchanged Stocks" />
+  <SYMBOL Code="UNCE" Name="ETFS  Unchanged Stocks" />
+  <SYMBOL Code="UNCN" Name="NYSE Unchanged Stocks" />
+  <SYMBOL Code="UNCQ" Name="NASD Unchanged Stocks" />
+  <SYMBOL Code="UNCS" Name="TSX Unchanged Stocks" />
+  <SYMBOL Code="UNCT" Name="Total Unchanged Stocks" />
+  <SYMBOL Code="UNCV" Name="Tsxv Unchanged Stocks" />
+  <SYMBOL Code="UNCX" Name="CAD Total Unchanged Stocks" />
+  <SYMBOL Code="UOI" Name="US Oil Iopv" />
+  <SYMBOL Code="UTY" Name="Phlx Utility Index" />
+  <SYMBOL Code="UVCA" Name="AMEX Unchanged Volume" />
+  <SYMBOL Code="UVCD" Name="OTC Unchanged Volume" />
+  <SYMBOL Code="UVCE" Name="ETFS  Unchanged Volume" />
+  <SYMBOL Code="UVCN" Name="NYSE Unchanged Volume" />
+  <SYMBOL Code="UVCQ" Name="NASD Unchanged Volume" />
+  <SYMBOL Code="UVCS" Name="TSX Unchanged Volume" />
+  <SYMBOL Code="UVCT" Name="Total Unchanged Volume" />
+  <SYMBOL Code="UVCV" Name="Tsxv Unchanged Volume" />
+  <SYMBOL Code="UVCX" Name="CAD Total Unchanged Volume" />
+  <SYMBOL Code="VFTSE" Name="FTSE Volatility Index" />
+  <SYMBOL Code="VFWA" Name="VOL Index First Forward Implied Volatility" />
+  <SYMBOL Code="VFWB" Name="VOL Index Second Forward Implied Volatility" />
+  <SYMBOL Code="VFY" Name="Mini Biotechnology Index" />
+  <SYMBOL Code="VGH" Name="Mini Pharmaceutical Index" />
+  <SYMBOL Code="VIO" Name="CBOE OIL INDEX REDUCED LEAP 199" />
+  <SYMBOL Code="VIX" Name="CBOE Volatility Index" />
+  <SYMBOL Code="VJW" Name="Mini Securities Broker Dealer In" />
+  <SYMBOL Code="VLA" Name="Value Line Index" />
+  <SYMBOL Code="VLG" Name="Value Line Geometric" />
+  <SYMBOL Code="VVOL" Name="VOL Index Average Forward Implied Volatility" />
+  <SYMBOL Code="VWA" Name="CBOE MARKET VOLATILITY -SPX ASK" />
+  <SYMBOL Code="VWB" Name="CBOE MARKET VOLATILITY -SPX BID" />
+  <SYMBOL Code="VXB" Name="JUMBO CBOE VOLATILITY INDEX" />
+  <SYMBOL Code="VXD" Name="CBOE DJIA VOLATILITY INDEX" />
+  <SYMBOL Code="VXDE" Name="DEC CBOE VOLATILITY INDEX" />
+  <SYMBOL Code="VXJU" Name="JUN CBOE VOLATILITY INDEX" />
+  <SYMBOL Code="VXMA" Name="MAR CBOE VOLATILITY INDEX" />
+  <SYMBOL Code="VXN" Name="CBOE NASDAQ Volatility Index" />
+  <SYMBOL Code="VXO" Name="CBOE OEX VOLATILITY INDEX" />
+  <SYMBOL Code="VXSE" Name="SEP CBOE VOLATILITY INDEX" />
+  <SYMBOL Code="VXV" Name="CBOE S&amp;P 500 3M VOLATILITY INDEX" />
+  <SYMBOL Code="WDXR" Name="S&amp;P C.S. Dc-Washington Home Price Index" />
+  <SYMBOL Code="WIV" Name="Cboe/Cbot Wheat Volatility Index" />
+  <SYMBOL Code="WIX" Name="Cboe/Cbot Wheat Volatility Index" />
+  <SYMBOL Code="WMX" Name="ISE Walmart Suplr Index" />
+  <SYMBOL Code="XAL" Name="AMEX Airline Index" />
+  <SYMBOL Code="XAO" Name="XAO All Ordinaries" />
+  <SYMBOL Code="XAU" Name="Phlx Gold Silver Index" />
+  <SYMBOL Code="XAX" Name="AMEX Composite Index" />
+  <SYMBOL Code="XBD" Name="AMEX Securities Broker Dealer" />
+  <SYMBOL Code="XBEL" Name="Brussels BEL 20" />
+  <SYMBOL Code="XBS" Name="AMEX Securities Broker/Dealer I" />
+  <SYMBOL Code="XCI" Name="AMEX Computers Index" />
+  <SYMBOL Code="XEO" Name="S&amp; P 100 INDEX[EUROPEAN    STYLE" />
+  <SYMBOL Code="XFI" Name="Financial Ndx" />
+  <SYMBOL Code="XHL" Name="Healthcare Ndx" />
+  <SYMBOL Code="XIBX" Name="IBEX 35" />
+  <SYMBOL Code="XID" Name="Industrial Ndx" />
+  <SYMBOL Code="XII" Name="AMEX Institutional Index" />
+  <SYMBOL Code="XIT" Name="Info Tech Ndx" />
+  <SYMBOL Code="XJO" Name="S&amp;P/ASX 200" />
+  <SYMBOL Code="XMI" Name="Major Market Index" />
+  <SYMBOL Code="XNA" Name="Nat Resource Ndx" />
+  <SYMBOL Code="XNG" Name="AMEX Natural Gas Index" />
+  <SYMBOL Code="XOI" Name="AMEX Oil Index" />
+  <SYMBOL Code="XSP" Name="S&amp; P 500 MINI-SPX OPTIO    IND" />
+  <SYMBOL Code="XSV" Name="AMEX Institutional Index Open S" />
+  <SYMBOL Code="XTC" Name="AMEX North Ameican Telecom Index" />
+  <SYMBOL Code="XTV" Name="North American Telecommunicatio" />
+  <SYMBOL Code="XU100" Name="Borsa Istanbul 100 Index" />
+  <SYMBOL Code="ZAX" Name="ZACKS MICRO CAP INDEX" />
+  <SYMBOL Code="ZOC" Name="CBOE TECHNOLOGY INDEX REDUCED L" />
+</ArrayOfSYMBOL>
