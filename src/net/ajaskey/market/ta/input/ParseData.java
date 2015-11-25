@@ -221,15 +221,16 @@ public class ParseData {
 	}
 
 	/**
+	 * 
 	 * net.ajaskey.market.ta.input.parseFiles
 	 *
-	 * @param filenames
+	 * @param directoryNames
 	 * @param calendarDays
 	 * @return
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static List<TickerData> parseFiles(List<String> fileNames, int calendarDays)
+	public static List<TickerData> parseFiles(List<String> directoryNames, int calendarDays)
 	    throws FileNotFoundException, ParseException {
 
 		final List<TickerData> tdList = new ArrayList<TickerData>();
@@ -241,12 +242,12 @@ public class ParseData {
 		cal.set(Calendar.DAY_OF_YEAR, newDay);
 		// System.out.println(Utils.calendarToString(cal));
 
-		if (fileNames == null) {
+		if (directoryNames == null) {
 			System.out.println("List of files is null in parseFiles");
 			throw new FileNotFoundException();
 		}
 
-		for (final String fname : fileNames) {
+		for (final String fname : directoryNames) {
 
 			final File flist = new File(fname);
 

@@ -62,7 +62,7 @@ public class GenerateRegression {
 
 		final Calendar cal = Calendar.getInstance();
 		cal.set(1981, Calendar.APRIL, 11);
-		final long days = Utils.getTimeSpan(cal, Utils.baseDate);
+		final long days = Utils.getTimeSpan(cal, Utils.getBaseDate());
 
 		final RegressionMethods regMeth = new RegressionMethods();
 		regMeth.addData(spx.getCloseData(), spx.getDateData(), (days * 5) / 7);

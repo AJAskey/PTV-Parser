@@ -129,13 +129,13 @@ public class TickerData {
 	 *
 	 * This methods serves as a constructor for the class.
 	 *
-	 * @param t
-	 * @param d
-	 * @param o
-	 * @param h
-	 * @param l
-	 * @param c
-	 * @param v
+	 * @param t Ticker symbol name
+	 * @param d Data of DailyData
+	 * @param o Opening price.
+	 * @param h High daily price.
+	 * @param l Low daily price.
+	 * @param c Closing price.
+	 * @param v Volume traded.
 	 */
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
@@ -184,21 +184,20 @@ public class TickerData {
 	}
 
 	/**
+	 * Parses a list file names containing ticker data.
 	 *
-	 * net.ajaskey.market.ta.build
-	 *
-	 * @param fileNames
-	 * @return
-	 * @throws ParseException
-	 * @throws FileNotFoundException
+	 * @param directoryNames List of directories to read data files.
+	 * @return List of TickerData corresponding to the list for filenames.
+	 * @throws ParseException Error occurred during parsing.
+	 * @throws FileNotFoundException A file in the list was not found.
 	 */
-	static public List<TickerData> build(List<String> fileNames) throws ParseException, FileNotFoundException {
+	static public List<TickerData> build(List<String> directoryNames) throws ParseException, FileNotFoundException {
 
-		if ((fileNames == null) || (fileNames.size() < 1)) {
+		if ((directoryNames == null) || (directoryNames.size() < 1)) {
 			System.out.println("Invalid list of fileNames sent to net.ajaskey.market.ta.build()");
 			throw new FileNotFoundException();
 		}
-		final List<TickerData> tdList = ParseData.parseFiles(fileNames);
+		final List<TickerData> tdList = ParseData.parseFiles(directoryNames);
 		for (final TickerData t : tdList) {
 			t.generateDerived();
 		}
