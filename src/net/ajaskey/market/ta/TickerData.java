@@ -319,7 +319,7 @@ public class TickerData {
 
 		final Calendar calBase = Calendar.getInstance();
 
-		if ((year < 2000) || (year > calBase.get(Calendar.YEAR))) {
+		if ((year < 1900) || (year > calBase.get(Calendar.YEAR))) {
 			return -1;
 		} else if ((month < Calendar.JANUARY) || (month > Calendar.DECEMBER)) {
 			return -1;
