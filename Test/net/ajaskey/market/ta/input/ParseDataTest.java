@@ -82,6 +82,7 @@ public class ParseDataTest {
 
 	@Test
 	public void testParseFile1() throws FileNotFoundException, ParseException {
+		ParseData.clearValidTickers();
 		ParseData.setValidTicker("QQQ");
 		ParseData.setValidTicker("MSFT");
 		ParseData.setValidTicker("NVAX");
