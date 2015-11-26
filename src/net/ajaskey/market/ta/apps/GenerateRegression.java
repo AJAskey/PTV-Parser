@@ -6,8 +6,10 @@ import java.text.ParseException;
 import java.util.Calendar;
 
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.methods.RegressionMethods;
+import net.ajaskey.market.ta.methods.RegressionOutput;
 
 /**
  * This class...
@@ -28,7 +30,7 @@ import net.ajaskey.market.ta.methods.RegressionMethods;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -54,28 +56,35 @@ public class GenerateRegression {
 		ParseData.clearValidTickers();
 		ParseData.setValidTicker("SPX");
 
-		TickerData spx = ParseData.parseOneFile("spx-1950-yahoo.csv");
+		final TickerData spx = ParseData.parseOneFile("spx-1950-yahoo.csv");
 
 		System.out.println(spx.DailyDataString(0));
 
-		RegressionMethods rm = new RegressionMethods();
-		rm.addData(spx.getCloseData(), spx.getDateData(),261*35);
-		rm.regress();
+		final Calendar cal = Calendar.getInstance();
+		cal.set(1981, Calendar.APRIL, 11);
+		final long days = Utils.getTimeSpan(cal, Utils.getBaseDate());
 
-		double slope = rm.sreg.getSlope();
-		System.out.println(slope * 180.0 / Math.PI);
+		final RegressionMethods regMeth = new RegressionMethods();
+		regMeth.addData(spx.getCloseData(), spx.getDateData(), (days * 5) / 7);
+		regMeth.regress();
 
-		Calendar cal = Calendar.getInstance();
-		cal.set(2018, Calendar.MARCH, 15);
-		double x = rm.findX(cal);
-		double y = rm.sreg.predict(x);
+		final double slope = regMeth.getSlope();
+		System.out.println((slope * 180.0) / Math.PI);
+
+		cal.set(2015, Calendar.MARCH, 15);
+		final double x = regMeth.findX(cal);
+		final double y = regMeth.predict(x);
 		System.out.println(y);
 
-		double err = Math.sqrt(rm.sreg.getMeanSquareError());
-		double err2 = err * 2.0;
-		double err3 = err * 3.0;
+		final double err = Math.sqrt(regMeth.getMeanSquareError());
+		final double err2 = err * 2.0;
+		final double err3 = err * 3.0;
 		System.out.printf("%.2f  %.2f  %.2f %.2f %.2f %.2f %.2f %.2f%n", err, (y - err3), (y - err2), (y - err), y,
 		    (y + err), (y + err2), (y + err3));
+
+		final RegressionOutput out = regMeth.getOutput(cal);
+
+		System.out.println(out.toString());
 
 	}
 

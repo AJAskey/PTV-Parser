@@ -48,6 +48,8 @@ public class GenStockList {
 	private static boolean			init					= false;
 	private static List<String>	ignoreNames;
 
+	private static List<String>	dontIgnoreTickers;
+
 	private static List<String>	sp500List			= null;
 	private static List<String>	sp600List			= null;
 	private static List<String>	ndxList				= null;
@@ -56,20 +58,30 @@ public class GenStockList {
 
 		if (!init) {
 
-			// fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
+			fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 			TickerFullName.build(fullfilenames);
 
 			final String arg = "dataPath";
 			final String dataPath = System.getProperty(arg, "");
-			// filenames.add(dataPath + "\\ASCII\\AMEX");
 			filenames.add(dataPath + "\\ASCII\\NASDAQ");
 			filenames.add(dataPath + "\\ASCII\\NYSE");
+			filenames.add(dataPath + "\\ASCII\\AMEX");
 			init = true;
 		}
 		ParseData.clearValidTickers();
 		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
+
+		/**
+		 * DontIgnoreTickers overrides general strings of IgnoreNames
+		 */
+		dontIgnoreTickers = new ArrayList<String>();
+		dontIgnoreTickers.add("QQQ");
+		dontIgnoreTickers.add("DIA");
+		dontIgnoreTickers.add("QQEW");
+		dontIgnoreTickers.add("SPY");
+		dontIgnoreTickers.add("IWO");
 
 		ignoreNames = new ArrayList<String>();
 		ignoreNames.add(" ETF");
@@ -77,7 +89,7 @@ public class GenStockList {
 		ignoreNames.add(" BULL");
 		ignoreNames.add(" BEAR");
 		ignoreNames.add(" INDEX");
-		ignoreNames.add(" SPDR");
+		ignoreNames.add("SPDR");
 		ignoreNames.add("DIREXION");
 		ignoreNames.add(" SECTOR");
 		ignoreNames.add(" FUTURES");
@@ -86,6 +98,12 @@ public class GenStockList {
 		ignoreNames.add(" FUND");
 		ignoreNames.add(" ETN");
 		ignoreNames.add("VANGUARD TOTAL");
+		ignoreNames.add("PCG-");
+		ignoreNames.add("DB-XT");
+		ignoreNames.add("WISDOMTREE");
+		ignoreNames.add(" EATON VANCE");
+		ignoreNames.add(" SCHWAB");
+		ignoreNames.add("LIBERTY GLOBAL");
 	}
 
 	/**
@@ -97,11 +115,11 @@ public class GenStockList {
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
 
-		System.out.println("Processing...");
+		System.out.println("GenStockList Processing...");
 
 		GenStockList.findStocks("stock-list", 500000, 10.0);
 
-		System.out.println("Done.");
+		System.out.println("GenStockList Done.");
 
 	}
 
@@ -111,19 +129,33 @@ public class GenStockList {
 	 * @param ticker
 	 * @return
 	 */
-	private static boolean checkName(String tickerName) {
+	private static boolean checkName(String tickerName, String ticker) {
 
-		boolean ret = true;
+		boolean ret = false;
 
-		for (final String s : ignoreNames) {
-			if (tickerName == null) {
-				ret = false;
-			} else if (tickerName.toUpperCase().contains(s)) {
-				ret = false;
-				System.out.println("Ignoring : " + tickerName);
-				break;
+		for (final String s : dontIgnoreTickers) {
+			if (tickerName != null) {
+				if (ticker.equalsIgnoreCase(s)) {
+					ret = true;
+					System.out.println("Not Ignoring : " + ticker);
+					break;
+				}
 			}
 		}
+
+		if (!ret) {
+			ret = true;
+			for (final String s : ignoreNames) {
+				if (tickerName == null) {
+					ret = false;
+				} else if (tickerName.toUpperCase().contains(s)) {
+					ret = false;
+					// System.out.println("Ignoring : " + tickerName);
+					break;
+				}
+			}
+		}
+
 		return ret;
 	}
 
@@ -158,7 +190,7 @@ public class GenStockList {
 		for (final TickerData td : tdAll) {
 			td.generateDerived();
 			if ((td.getAvgVol20() >= minVol) && (td.getCurrentPrice() >= minPrice)) {
-				if (GenStockList.checkName(td.getTickerName())) {
+				if (GenStockList.checkName(td.getTickerName(), td.getTicker())) {
 					tdStocks.add(td);
 					maxNameLen = Math.max(maxNameLen, td.getTickerName().length() + 2);
 					maxTickerLen = Math.max(maxTickerLen, td.getTicker().length() + 1);

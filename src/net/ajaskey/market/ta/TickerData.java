@@ -17,10 +17,15 @@ import net.ajaskey.market.ta.methods.UtilMethods;
 
 /**
  *
+ * This class serves as the main class for gathering data associated with a
+ * specific ticker symbol. A collection of market data is stored in a list of
+ * TickerData objects.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -31,7 +36,9 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
+ *         </p>
  *
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,6 +47,7 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class TickerData {
@@ -122,12 +130,19 @@ public class TickerData {
 	 * This methods serves as a constructor for the class.
 	 *
 	 * @param t
+	 *          Ticker symbol name
 	 * @param d
+	 *          Data of DailyData
 	 * @param o
+	 *          Opening price.
 	 * @param h
+	 *          High daily price.
 	 * @param l
+	 *          Low daily price.
 	 * @param c
+	 *          Closing price.
 	 * @param v
+	 *          Volume traded.
 	 */
 	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
 		final DailyData dd = new DailyData(d, o, h, l, c, v);
@@ -176,38 +191,68 @@ public class TickerData {
 	}
 
 	/**
+	 * Parses a list file names containing ticker data.
 	 *
-	 * net.ajaskey.market.ta.build
-	 *
-	 * @param fileNames
-	 * @return
+	 * @param directoryNames
+	 *          List of directories to read data files.
+	 * @return List of TickerData corresponding to the list for filenames.
 	 * @throws ParseException
+	 *           Error occurred during parsing.
 	 * @throws FileNotFoundException
+	 *           A file in the list was not found.
 	 */
-	static public List<TickerData> build(List<String> fileNames) throws ParseException, FileNotFoundException {
+	static public List<TickerData> build(List<String> directoryNames) throws ParseException, FileNotFoundException {
 
-		if ((fileNames == null) || (fileNames.size() < 1)) {
+		if ((directoryNames == null) || (directoryNames.size() < 1)) {
 			System.out.println("Invalid list of fileNames sent to net.ajaskey.market.ta.build()");
 			throw new FileNotFoundException();
 		}
-		final List<TickerData> tdList = ParseData.parseFiles(fileNames);
-		for (final TickerData t : tdList) {
-			t.generateDerived();
+		List<TickerData> tdList = null;
+		try {
+			tdList = ParseData.parseFiles(directoryNames);
+			for (final TickerData t : tdList) {
+				t.generateDerived();
+			}
+		} catch (FileNotFoundException e) {
+			tdList.clear();
 		}
 		return tdList;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.clearTickerData
+	 *
+	 * @param tdList
+	 */
+	public static void clearTickerData(List<TickerData> tdList) {
+		if (tdList != null) {
+			for (final TickerData td : tdList) {
+				TickerData.clearTickerData(td);
+			}
+			tdList.clear();
+		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.clearTickerData
+	 *
+	 * @param td
+	 */
 	public static void clearTickerData(TickerData td) {
-		td.data.clear();
-		td.openData = null;
-		td.highData = null;
-		td.lowData = null;
-		td.closeData = null;
-		td.volumeData = null;
-		td.trueHighData = null;
-		td.trueLowData = null;
-		td.typicalPriceData = null;
-		td = null;
+		if (td != null) {
+			td.data.clear();
+			td.openData = null;
+			td.highData = null;
+			td.lowData = null;
+			td.closeData = null;
+			td.volumeData = null;
+			td.trueHighData = null;
+			td.trueLowData = null;
+			td.typicalPriceData = null;
+			td.dateData = null;
+		}
 	}
 
 	/**
@@ -288,7 +333,7 @@ public class TickerData {
 
 		final Calendar calBase = Calendar.getInstance();
 
-		if ((year < 2000) || (year > calBase.get(Calendar.YEAR))) {
+		if ((year < 1900) || (year > calBase.get(Calendar.YEAR))) {
 			return -1;
 		} else if ((month < Calendar.JANUARY) || (month > Calendar.DECEMBER)) {
 			return -1;

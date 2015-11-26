@@ -126,7 +126,6 @@ AIB       	Aurora Infrastructure Buy Write Income Trust      	ASX
 AIK       	Armidale Investment Corporation Limited           	ASX       
 AIO       	Asciano Group                                     	ASX       
 AIOKOB    	Asciano Limited                                   	ASX       
-AIOKOC    	Asciano Limited                                   	ASX       
 AIOKOD    	Asciano Limited                                   	ASX       
 AIOKOF    	Asciano Limited                                   	ASX       
 AIOKOQ    	Asciano Limited                                   	ASX       
@@ -193,6 +192,7 @@ AMC       	Amcor Ltd                                         	ASX
 AMCKOB    	Amcor Limited                                     	ASX       
 AMCKOC    	Amcor Limited                                     	ASX       
 AMCKOP    	Amcor Limited                                     	ASX       
+AMCKOQ    	Amcor Limited                                     	ASX       
 AMCKOT    	Amcor Limited                                     	ASX       
 AMH       	AMCIL Ltd                                         	ASX       
 AMI       	Aurelia Metals Limited                            	ASX       
@@ -208,7 +208,6 @@ AMPKOE    	Amp Limited                                       	ASX
 AMPKOF    	Amp Limited                                       	ASX       
 AMPKOQ    	Amp Limited                                       	ASX       
 AMPKOR    	Amp Limited                                       	ASX       
-AMPKOU    	Amp Limited                                       	ASX       
 AMPKOV    	Amp Limited                                       	ASX       
 AMPLOA    	Amp Limited                                       	ASX       
 AMPLOC    	Amp Limited                                       	ASX       
@@ -353,6 +352,7 @@ ASXKOC    	Asx Limited                                       	ASX
 ASXKOD    	Asx Limited                                       	ASX       
 ASXKOP    	Asx Limited                                       	ASX       
 ASXKOS    	Asx Limited                                       	ASX       
+ASXKOU    	Asx Limited                                       	ASX       
 ASZ       	ASG Group Ltd                                     	ASX       
 ATC       	Advantage Telecommunications Ltd                  	ASX       
 ATCOA     	Altech Chemicals Ltd                              	ASX       
@@ -500,7 +500,6 @@ BGSO      	Birimian Gold Limited                             	ASX
 BHP       	BHP Billiton Ltd                                  	ASX       
 BHPKOA    	Bhp Billiton Limited                              	ASX       
 BHPKOB    	Bhp Billiton Limited                              	ASX       
-BHPKOJ    	Bhp Billiton Limited                              	ASX       
 BHPKOK    	Bhp Billiton Limited                              	ASX       
 BHPKOL    	Bhp Billiton Limited                              	ASX       
 BHPKOO    	Bhp Billiton Limited                              	ASX       
@@ -532,7 +531,6 @@ BHPQOE    	Bhp Billiton Limited                              	ASX
 BHPQOF    	Bhp Billiton Limited                              	ASX       
 BHPQOT    	Bhp Billiton Limited                              	ASX       
 BHPQOY    	Bhp Billiton Limited                              	ASX       
-BHPQOZ    	Bhp Billiton Limited                              	ASX       
 BIC       	Biron Capital Ltd                                 	ASX       
 BIG       	BIgShop.com.au                                    	ASX       
 BIS       	                                                  	ASX       
@@ -687,8 +685,10 @@ CAYOA     	Canyon Resources Limited                          	ASX
 CAZ       	Cazaly Resources Ltd                              	ASX       
 CBA       	Commonwealth Bank Ltd                             	ASX       
 CBAHA     	Commonwealth Bank Of Australia.                   	ASX       
+CBAKOB    	Commonwealth Bank Of Australia.                   	ASX       
 CBAKOE    	Commonwealth Bank Of Australia.                   	ASX       
 CBAKOM    	Commonwealth Bank Of Australia.                   	ASX       
+CBAKON    	Commonwealth Bank Of Australia.                   	ASX       
 CBAKOU    	Commonwealth Bank Of Australia.                   	ASX       
 CBAKOZ    	Commonwealth Bank Of Australia.                   	ASX       
 CBALOA    	Commonwealth Bank Of Australia.                   	ASX       
@@ -719,6 +719,8 @@ CBAQOQ    	Commonwealth Bank Of Australia.                   	ASX
 CBAQOR    	Commonwealth Bank Of Australia.                   	ASX       
 CBAQOS    	Commonwealth Bank Of Australia.                   	ASX       
 CBAQOT    	Commonwealth Bank Of Australia.                   	ASX       
+CBAQOU    	Commonwealth Bank Of Australia.                   	ASX       
+CBAQOW    	Commonwealth Bank Of Australia.                   	ASX       
 CBAQOX    	Commonwealth Bank Of Australia.                   	ASX       
 CBC       	China Broadband Corporation ltd                   	ASX       
 CBCO      	Cbg Capital Limited                               	ASX       
@@ -1019,7 +1021,6 @@ DMPKOD    	Dominos Pizza Enterprises Limited                 	ASX
 DMPKOE    	Dominos Pizza Enterprises Limited                 	ASX       
 DMPKOP    	Dominos Pizza Enterprises Limited                 	ASX       
 DMPKOQ    	Dominos Pizza Enterprises Limited                 	ASX       
-DMPKOR    	Dominos Pizza Enterprises Limited                 	ASX       
 DMY       	Dromana Estate Ltd                                	ASX       
 DNA       	Donaco International Limited                      	ASX       
 DNK       	Danakali Limited                                  	ASX       
@@ -1255,7 +1256,6 @@ FLTKOE    	Flight Centre Travel Group Limited                	ASX
 FLTKOP    	Flight Centre Travel Group Limited                	ASX       
 FLTKOQ    	Flight Centre Travel Group Limited                	ASX       
 FLTKOS    	Flight Centre Travel Group Limited                	ASX       
-FLTKOT    	Flight Centre Travel Group Limited                	ASX       
 FMG       	Fortescue Metals Group Ltd                        	ASX       
 FMGKOC    	Fortescue Metals Group Ltd                        	ASX       
 FMGKOD    	Fortescue Metals Group Ltd                        	ASX       
@@ -1337,6 +1337,7 @@ FXUKOX    	Currency Warrant Aus/usd.                         	ASX
 FXUKOY    	Currency Warrant Aus/usd.                         	ASX       
 FXUMOQ    	FXUMOQ                                            	ASX       
 FXUMOR    	FXUMOR                                            	ASX       
+FXUMOS    	FXUMOS                                            	ASX       
 FXUQOA    	FXUQOA                                            	ASX       
 FXUQOP    	FXUQOP                                            	ASX       
 FXUQOQ    	FXUQOQ                                            	ASX       
@@ -1400,7 +1401,6 @@ GGH       	Global Gold Holdings Ltd                          	ASX
 GGX       	Gas2Grid Ltd                                      	ASX       
 GHC       	Generation Healthcare Reit                        	ASX       
 GID       	Gi Dynamics Inc                                   	ASX       
-GIP       	Gippsland Ltd                                     	ASX       
 GJT       	Galileo Japan Trust                               	ASX       
 GLA       	Gladiator Resources Ltd                           	ASX       
 GLAOA     	Gladiator Resources Limited                       	ASX       
@@ -1437,6 +1437,7 @@ GNE       	Genesis Energy Limited                            	ASX
 GNG       	Gr Engineering Services Limited                   	ASX       
 GNV       	Green Invest Ltd                                  	ASX       
 GNX       	Genex Power Limited                               	ASX       
+GOE       	Go Energy Group Limited                           	ASX       
 GOLD      	Gold Bullion Ltd                                  	ASX       
 GOR       	Gold Road Resources Limited                       	ASX       
 GOVT      	GOVT                                              	ASX       
@@ -1637,7 +1638,6 @@ ILB       	Ishares Ubs Government Inflation Index Fund       	ASX
 ILC       	Ishares S&p/asx 20                                	ASX       
 ILH       	Ilh Group Limited.                                	ASX       
 ILU       	Iluka Resources Ltd                               	ASX       
-ILUKOA    	Iluka Resources Limited                           	ASX       
 ILUKOB    	Iluka Resources Limited                           	ASX       
 ILUKOC    	Iluka Resources Limited                           	ASX       
 ILUKOH    	Iluka Resources Limited                           	ASX       
@@ -1735,6 +1735,8 @@ JHC       	Japara Healthcare Limited                         	ASX
 JHX       	James Hardie Industries NV (CUFS)                 	ASX       
 JHXKOC    	James Hardie Industries Plc                       	ASX       
 JHXKOF    	James Hardie Industries Plc                       	ASX       
+JHXKOP    	James Hardie Industries Se                        	ASX       
+JHXKOS    	James Hardie Industries Plc                       	ASX       
 JHXKOU    	James Hardie Industries Plc                       	ASX       
 JHXQOA    	James Hardie Industries Plc                       	ASX       
 JIN       	JIN                                               	ASX       
@@ -1762,6 +1764,8 @@ KBC       	Keybridge Capital Ltd                             	ASX
 KBCPA     	Keybridge Capital Limited                         	ASX       
 KBL       	Kimberley Metals Limited                          	ASX       
 KBLGA     	Kimberley Metals Limited                          	ASX       
+KBU       	Kabuni Ltd                                        	ASX       
+KBUO      	Kabuni Ltd                                        	ASX       
 KCN       	Kingsgate Consolidated Ltd                        	ASX       
 KDL       	Kimberley Diamonds Ltd                            	ASX       
 KDR       	Kidman Resources Limited                          	ASX       
@@ -1840,6 +1844,7 @@ LINO      	Lindian Resources Ltd                             	ASX
 LIO       	Lion Energy Ltd                                   	ASX       
 LIT       	Lithium Australia Nl                              	ASX       
 LITCB     	Lithium Australia Nl                              	ASX       
+LITCC     	Lithium Australia Nl                              	ASX       
 LKE       	Lake Resources NL                                 	ASX       
 LKO       	Lakes Oil NL                                      	ASX       
 LKOGA     	Lakes Oil Nl                                      	ASX       
@@ -1939,7 +1944,6 @@ MFG       	Magellan Financial Group                          	ASX
 MFGKOA    	Magellan Financial Group Limited                  	ASX       
 MFGKOC    	Magellan Financial Group Limited                  	ASX       
 MFGKOP    	Magellan Financial Group Limited                  	ASX       
-MFGKOR    	Magellan Financial Group Limited                  	ASX       
 MFGOC     	Magellan Financial Group                          	ASX       
 MGC       	Mg Unit Trust                                     	ASX       
 MGE       	Magnetic Minerals                                 	ASX       
@@ -1971,6 +1975,7 @@ MHI       	Merchant House International Ltd                  	ASX
 MHM       	Macquarie Harbour Mining Ltd                      	ASX       
 MIG       	Macquarie Infrastructure Group                    	ASX       
 MIH       	Mnc Media Investment Ltd                          	ASX       
+MIL       	Magnesium International Ltd                       	ASX       
 MIN       	Mineral Resources Ltd                             	ASX       
 MINKOA    	Mineral Resources Limited                         	ASX       
 MINKOC    	Mineral Resources Limited                         	ASX       
@@ -1978,6 +1983,7 @@ MINKOP    	Mineral Resources Limited                         	ASX
 MINKOQ    	Mineral Resources Limited                         	ASX       
 MINQOE    	Mineral Resources Limited                         	ASX       
 MIR       	Mirrabooka Investments Ltd                        	ASX       
+MIRN      	Mirrabooka Investments Limited                    	ASX       
 MIZ       	Minera Gold Limited                               	ASX       
 MIZOA     	Minera Gold Limited                               	ASX       
 MJP       	Martin Aircraft Company Limited                   	ASX       
@@ -2082,7 +2088,6 @@ MQGQOC    	Macquarie Group Limited                           	ASX
 MQGQOF    	Macquarie Group Limited                           	ASX       
 MQGQOH    	Macquarie Group Limited                           	ASX       
 MQGQOQ    	Macquarie Group Limited                           	ASX       
-MQGQOV    	Macquarie Group Limited                           	ASX       
 MQGQOX    	Macquarie Group Limited                           	ASX       
 MQGQOY    	Macquarie Group Limited                           	ASX       
 MRC       	Mineral Commodities Ltd                           	ASX       
@@ -2098,6 +2103,7 @@ MRQOA     	Mrg Metals Limited                                	ASX
 MRR       	Minrex Resources Nl                               	ASX       
 MRV       	Moreton Resources Ltd                             	ASX       
 MSB       	Mesoblast Ltd                                     	ASX       
+MSBKOB    	Mesoblast Limited                                 	ASX       
 MSBKOC    	Mesoblast Limited                                 	ASX       
 MSBKOF    	Mesoblast Limited                                 	ASX       
 MSBKOQ    	Mesoblast Limited                                 	ASX       
@@ -2154,6 +2160,7 @@ MYQ       	Myfiziq Limited                                   	ASX
 MYR       	Myer Holdings Limited                             	ASX       
 MYRKOB    	Myer Holdings Limited                             	ASX       
 MYRKOC    	Myer Holdings Limited                             	ASX       
+MYRKOD    	Myer Holdings Limited                             	ASX       
 MYRKOP    	Myer Holdings Limited                             	ASX       
 MYRKOR    	Myer Holdings Limited                             	ASX       
 MYRKOS    	Myer Holdings Limited                             	ASX       
@@ -2201,7 +2208,6 @@ NABQOD    	National Australia Bank Limited                   	ASX
 NABQOF    	National Australia Bank Limited                   	ASX       
 NABQOG    	National Australia Bank Limited                   	ASX       
 NABQOP    	National Australia Bank Limited                   	ASX       
-NABQOQ    	National Australia Bank Limited                   	ASX       
 NABQOR    	National Australia Bank Limited                   	ASX       
 NABQOW    	National Australia Bank Limited                   	ASX       
 NAC       	Naos Absolute Opportunities Company Limited       	ASX       
@@ -2215,12 +2221,10 @@ NCC       	Naos Emerging Opportunities Company Limited       	ASX
 NCK       	Nick Scali Ltd                                    	ASX       
 NCL       	Netccentric Limited                               	ASX       
 NCM       	Newcrest Mining Ltd                               	ASX       
-NCMKOD    	Newcrest Mining Limited                           	ASX       
 NCMKOE    	Newcrest Mining Limited                           	ASX       
 NCMKOH    	Newcrest Mining Limited                           	ASX       
 NCMKOI    	Newcrest Mining Limited                           	ASX       
 NCMKOK    	Newcrest Mining Limited                           	ASX       
-NCMKOL    	Newcrest Mining Limited                           	ASX       
 NCMKOP    	Newcrest Mining Limited                           	ASX       
 NCMKOT    	Newcrest Mining Limited                           	ASX       
 NCMKOU    	Newcrest Mining Limited                           	ASX       
@@ -2228,7 +2232,6 @@ NCMKOV    	Newcrest Mining Limited                           	ASX
 NCMLOA    	Newcrest Mining Limited                           	ASX       
 NCMLOB    	Newcrest Mining Limited                           	ASX       
 NCMLOE    	Newcrest Mining Limited                           	ASX       
-NCMLOL    	Newcrest Mining Limited                           	ASX       
 NCMLON    	Newcrest Mining Limited                           	ASX       
 NCMLOP    	Newcrest Mining Limited                           	ASX       
 NCMLOQ    	Newcrest Mining Limited                           	ASX       
@@ -2237,7 +2240,6 @@ NCMLOT    	Newcrest Mining Limited                           	ASX
 NCMLOX    	Newcrest Mining Limited                           	ASX       
 NCMQOA    	Newcrest Mining Limited                           	ASX       
 NCMQOB    	Newcrest Mining Limited                           	ASX       
-NCMQOR    	Newcrest Mining Limited                           	ASX       
 NCO       	NCO                                               	ASX       
 NCOO      	Namibian Copper Nl                                	ASX       
 NCR       	Nucoal Resources Nl                               	ASX       
@@ -2387,7 +2389,6 @@ ORGN      	Origin Energy Limited                             	ASX
 ORGQOA    	Origin Energy Limited                             	ASX       
 ORGQOY    	Origin Energy Limited                             	ASX       
 ORGQOZ    	Origin Energy Limited                             	ASX       
-ORGR      	Origin Energy Limited                             	ASX       
 ORH       	Orient Resource Holdings Ltd                      	ASX       
 ORI       	Orica Ltd                                         	ASX       
 ORIKOA    	Orica Limited                                     	ASX       
@@ -2421,7 +2422,6 @@ OZF       	Spdr S&p/asx 200 Financials Ex A-reit Fund        	ASX
 OZG       	Ozgrowth Ltd                                      	ASX       
 OZGOA     	Ozgrowth Limited                                  	ASX       
 OZL       	OZ Minerals                                       	ASX       
-OZLKOA    	Oz Minerals Limited                               	ASX       
 OZLKOD    	Oz Minerals Limited                               	ASX       
 OZLKOG    	Oz Minerals Limited                               	ASX       
 OZLKOQ    	Oz Minerals Limited                               	ASX       
@@ -2545,7 +2545,6 @@ PPTKOS    	Perpetual Limited                                 	ASX
 PPTQOA    	Perpetual Limited                                 	ASX       
 PPX       	PaperlinX Ltd                                     	ASX       
 PPY       	Papyrus Australia Ltd                             	ASX       
-PRA       	Promesa Limited                                   	ASX       
 PRG       	Programmed Maintenance Services Ltd               	ASX       
 PRL       	Petrel Energy Limited                             	ASX       
 PRO       	Prophecy International Holdings Ltd               	ASX       
@@ -2585,6 +2584,7 @@ PUN       	Pegasus Metals Ltd                                	ASX
 PVA       	Psivia Corp                                       	ASX       
 PVD       	Pura Vida Energy Nl                               	ASX       
 PVE       	Po Valley Energy Ltd                              	ASX       
+PWH       	Pwr Holdings Limited                              	ASX       
 PWN       	Potash West Nl                                    	ASX       
 PWNCA     	Potash West Nl                                    	ASX       
 PWW       	Power Resources Ltd                               	ASX       
@@ -2603,7 +2603,6 @@ QANKOB    	Qantas Airways Limited                            	ASX
 QANKOC    	Qantas Airways Limited                            	ASX       
 QANKOF    	Qantas Airways Limited                            	ASX       
 QANKOG    	Qantas Airways Limited                            	ASX       
-QANKOQ    	Qantas Airways Limited                            	ASX       
 QANKOR    	Qantas Airways Limited                            	ASX       
 QANKOS    	Qantas Airways Limited                            	ASX       
 QAU       	Betashares Gold Bullion Etf (a$ Hedged)           	ASX       
@@ -2732,13 +2731,13 @@ RIOKOA    	Rio Tinto Limited                                 	ASX
 RIOKOB    	Rio Tinto Limited                                 	ASX       
 RIOKOE    	Rio Tinto Limited                                 	ASX       
 RIOKOF    	Rio Tinto Limited                                 	ASX       
-RIOKOG    	Rio Tinto Limited                                 	ASX       
 RIOKOP    	Rio Tinto Limited                                 	ASX       
 RIOKOR    	Rio Tinto Limited                                 	ASX       
 RIOKOT    	Rio Tinto Limited                                 	ASX       
 RIOKOU    	Rio Tinto Limited                                 	ASX       
 RIOKOW    	Rio Tinto Limited                                 	ASX       
 RIOKOX    	Rio Tinto Limited                                 	ASX       
+RIOKOY    	Rio Tinto Limited                                 	ASX       
 RIOLOB    	Rio Tinto Limited                                 	ASX       
 RIOLOF    	Rio Tinto Limited                                 	ASX       
 RIOLOG    	Rio Tinto Limited                                 	ASX       
@@ -2822,6 +2821,7 @@ RWDO      	Reward Minerals Ltd                               	ASX
 RWH       	Royal Wolf Holdings Limited                       	ASX       
 RXH       	Rewardle Holdings Limited                         	ASX       
 RXL       	Rox Resources Ltd                                 	ASX       
+RXLR      	Rox Resources Limited                             	ASX       
 RXM       	Rex Minerals Ltd                                  	ASX       
 RXP       	Rxp Services Limited                              	ASX       
 RYD       	Ryder Capital Limited                             	ASX       
@@ -2855,7 +2855,6 @@ SBN       	Sun Biomedical Ltd                                	ASX
 SBR       	Sabre Resources Ltd                               	ASX       
 SBU       	Siburan Resources Limited                         	ASX       
 SBUO      	Siburan Resources Limited                         	ASX       
-SCD       	Scantech Ltd                                      	ASX       
 SCG       	Scentre Group                                     	ASX       
 SCGKOA    	Scentre Group                                     	ASX       
 SCGKOB    	Scentre Group                                     	ASX       
@@ -2896,12 +2895,13 @@ SFL       	Spring Fg Limited                                 	ASX
 SFN       	Stanfield Funds Management Limited                	ASX       
 SFR       	Sandfire Resources NL                             	ASX       
 SFRKOC    	Sandfire Resources Nl                             	ASX       
-SFRKOD    	Sandfire Resources Nl                             	ASX       
 SFRKOJ    	Sandfire Resources Nl                             	ASX       
 SFRKOL    	Sandfire Resources Nl                             	ASX       
+SFRKOP    	Sandfire Resources Nl                             	ASX       
 SFRKOR    	Sandfire Resources Nl                             	ASX       
 SFRKOS    	Sandfire Resources Nl                             	ASX       
 SFRKOT    	Sandfire Resources Nl                             	ASX       
+SFRKOV    	Sandfire Resources Nl                             	ASX       
 SFX       	Sheffield Resources Limited                       	ASX       
 SFY       	StreetTracks S&P/ASX 50 Fund                      	ASX       
 SFZ       	South American Ferro Metals Limited               	ASX       
@@ -2909,6 +2909,7 @@ SGC       	Sydney Gas Company Nl                             	ASX
 SGF       	Sg Fleet Group Limited                            	ASX       
 SGH       	Slater & Gordon Ltd                               	ASX       
 SGHKOA    	Slater & Gordon Limited                           	ASX       
+SGHKOE    	Slater & Gordon Limited                           	ASX       
 SGHKOF    	Slater & Gordon Limited                           	ASX       
 SGHKOH    	Slater & Gordon Limited                           	ASX       
 SGHKOP    	Slater & Gordon Limited                           	ASX       
@@ -2967,7 +2968,6 @@ SIV       	Silver Chef Ltd                                   	ASX
 SIX       	Sprintex Limited                                  	ASX       
 SKB       	Skydive The Beach Group Limited                   	ASX       
 SKC       	Sky City Entertainment Group Ltd                  	ASX       
-SKE       	Skilled Group Ltd                                 	ASX       
 SKF       	Skyfii Ltd                                        	ASX       
 SKI       	Spark Infrastructure Group                        	ASX       
 SKIKOA    	Spark Infrastructure Group                        	ASX       
@@ -3017,7 +3017,6 @@ SPFKOO    	SPFKOO                                            	ASX
 SPFKOQ    	S&p 500 Emini Futures                             	ASX       
 SPFKOR    	S&p 500 Emini Futures                             	ASX       
 SPFKOS    	S&p 500 Emini Futures                             	ASX       
-SPFKOT    	S&p 500 Emini Futures                             	ASX       
 SPFKOU    	S&p 500 Emini Futures                             	ASX       
 SPFKOV    	S&p 500 Emini Futures                             	ASX       
 SPFKOX    	S&p 500 Emini Futures                             	ASX       
@@ -3044,6 +3043,7 @@ SRIO      	Sipa Resources Limited                            	ASX
 SRK       	Strike Resources Ltd                              	ASX       
 SRQ       	Straits Metals Limited                            	ASX       
 SRR       	Shaw River Resources Ltd                          	ASX       
+SRS       	Spicers Limited                                   	ASX       
 SRT       	Startrack Communications                          	ASX       
 SRTO      	Star Striker Limited                              	ASX       
 SRTOA     	Star Striker Limited                              	ASX       
@@ -3091,6 +3091,7 @@ SUM       	Sumatra Copper & Gold Plc                         	ASX
 SUN       	Suncorp-Metway Ltd                                	ASX       
 SUNKOA    	Suncorp Group Limited                             	ASX       
 SUNKOD    	Suncorp Group Limited                             	ASX       
+SUNKOF    	Suncorp Group Limited                             	ASX       
 SUNKOW    	Suncorp Group Limited                             	ASX       
 SUNPC     	Suncorp Group Limited                             	ASX       
 SUNPD     	Suncorp Group Limited                             	ASX       
@@ -3138,7 +3139,6 @@ SYDKOD    	Sydney Airport                                    	ASX
 SYDKOE    	Sydney Airport                                    	ASX       
 SYDKOP    	Sydney Airport                                    	ASX       
 SYDKOQ    	Sydney Airport                                    	ASX       
-SYDKOS    	Sydney Airport                                    	ASX       
 SYI       	Spdr Msci Australia Select High Dividend Yield Fund	ASX       
 SYP       	Style Plantation Ltd                              	ASX       
 SYR       	Syrah Resources Ltd                               	ASX       
@@ -3175,6 +3175,7 @@ TDO       	3D Oil Ltd                                        	ASX
 TDX       	TDX                                               	ASX       
 TEG       	Triangle Energy (global) Limited                  	ASX       
 TEN       	Ten Network Holdings Ltd                          	ASX       
+TER       	Terrain Australia Ltd                             	ASX       
 TEX       	Target Energy Ltd                                 	ASX       
 TEXO      	Target Energy Ltd                                 	ASX       
 TFC       	TFS Corporation Ltd                               	ASX       
@@ -3198,7 +3199,6 @@ TLGO      	Talga Resources Ltd                               	ASX
 TLM       	Talisman Mining Ltd                               	ASX       
 TLS       	Telstra Corporation Ltd                           	ASX       
 TLSKOB    	Telstra Corporation Limited.                      	ASX       
-TLSKOD    	Telstra Corporation Limited.                      	ASX       
 TLSKOG    	Telstra Corporation Limited.                      	ASX       
 TLSKOH    	Telstra Corporation Limited.                      	ASX       
 TLSKOI    	Telstra Corporation Limited.                      	ASX       
@@ -3209,6 +3209,7 @@ TLSKOQ    	Telstra Corporation Limited.                      	ASX
 TLSKOR    	Telstra Corporation Limited.                      	ASX       
 TLSKOS    	Telstra Corporation Limited.                      	ASX       
 TLSKOT    	Telstra Corporation Limited.                      	ASX       
+TLSKOY    	Telstra Corporation Limited.                      	ASX       
 TLSKOZ    	Telstra Corporation Limited.                      	ASX       
 TLSLOD    	Telstra Corporation Limited.                      	ASX       
 TLSLOE    	Telstra Corporation Limited.                      	ASX       
@@ -3258,7 +3259,6 @@ TPO       	Tian Poh Resources Limited                        	ASX
 TPP       	Tempo Australia Ltd                               	ASX       
 TPR       	Timpetra Resources Limited                        	ASX       
 TPS       	Threat Protect Australia Limited                  	ASX       
-TRG       	Treasury Group Ltd                                	ASX       
 TRL       	Tanga Resources Limited                           	ASX       
 TRLOA     	Tanga Resources Limited                           	ASX       
 TRM       	Truscott Mining Corporation Ltd                   	ASX       
@@ -3285,6 +3285,7 @@ TTSKOB    	Tatts Group Limited                               	ASX
 TTSKOC    	Tatts Group Limited                               	ASX       
 TTSKOD    	Tatts Group Limited                               	ASX       
 TTSKOQ    	Tatts Group Limited                               	ASX       
+TTSKOR    	Tatts Group Limited                               	ASX       
 TTW       	Toptung Ltd                                       	ASX       
 TTWO      	Toptung Ltd                                       	ASX       
 TUP       	Ttg Mobile Coupon Services Limited                	ASX       
@@ -3353,7 +3354,6 @@ VET       	Vocation Limited                                  	ASX
 VEU       	VEU                                               	ASX       
 VGB       	Vanguard Australian Government Bond Index Etf     	ASX       
 VGE       	VGE                                               	ASX       
-VGI       	Vista Group International Limited                 	ASX       
 VGL       	Volante Group Ltd                                 	ASX       
 VGS       	VGS                                               	ASX       
 VHY       	Vanguard Australian Shares High Yield Etf         	ASX       
@@ -3412,6 +3412,8 @@ WBCKOA    	Westpac Banking Corporation                       	ASX
 WBCKOG    	Westpac Banking Corporation                       	ASX       
 WBCKOK    	Westpac Banking Corporation                       	ASX       
 WBCKOL    	Westpac Banking Corporation                       	ASX       
+WBCKOM    	Westpac Banking Corporation                       	ASX       
+WBCKON    	Westpac Banking Corporation                       	ASX       
 WBCKOP    	Westpac Banking Corporation                       	ASX       
 WBCKOQ    	Westpac Banking Corporation                       	ASX       
 WBCKOU    	Westpac Banking Corporation                       	ASX       
@@ -3535,7 +3537,6 @@ WOWKOD    	Woolworths Limited                                	ASX
 WOWKOE    	Woolworths Limited                                	ASX       
 WOWKOI    	Woolworths Limited                                	ASX       
 WOWKOJ    	Woolworths Limited                                	ASX       
-WOWKOR    	Woolworths Limited                                	ASX       
 WOWKOT    	Woolworths Limited                                	ASX       
 WOWKOV    	Woolworths Limited                                	ASX       
 WOWKOY    	Woolworths Limited                                	ASX       
@@ -3553,6 +3554,7 @@ WPLKOP    	Woodside Petroleum Limited                        	ASX
 WPLKOQ    	Woodside Petroleum Limited                        	ASX       
 WPLKOT    	Woodside Petroleum Limited                        	ASX       
 WPLKOV    	Woodside Petroleum Limited                        	ASX       
+WPLKOW    	Woodside Petroleum Limited                        	ASX       
 WPLKOY    	Woodside Petroleum Limited                        	ASX       
 WPLKOZ    	Woodside Petroleum Limited                        	ASX       
 WPLLOA    	Woodside Petroleum Limited                        	ASX       
@@ -3597,12 +3599,12 @@ XFL       	S&P/ASX 50                                        	ASX
 XGD       	S&P/ASX All Ordinaries Gold                       	ASX       
 XHJ       	S&P/ASX 200 Health Care                           	ASX       
 XIJ       	S&P/ASX 200 Information Technology                	ASX       
+XIP       	Xenith Ip Group Limited                           	ASX       
 XJO       	S&P/ASX 200                                       	ASX       
 XJOKOF    	XJOKOF                                            	ASX       
 XJOKOG    	XJOKOG                                            	ASX       
 XJOKOS    	XJOKOS                                            	ASX       
 XJOKOU    	XJOKOU                                            	ASX       
-XJOKOV    	XJOKOV                                            	ASX       
 XJOKOY    	XJOKOY                                            	ASX       
 XJOLOB    	XJOLOB                                            	ASX       
 XJOLOH    	XJOLOH                                            	ASX       

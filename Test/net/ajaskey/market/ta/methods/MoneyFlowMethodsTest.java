@@ -53,7 +53,7 @@ public class MoneyFlowMethodsTest {
 		this.tdSC = ParseData.parseOneFile("TestData\\cs-mfi.csv");
 		this.tdSC.generateDerived();
 
-		this.td = ParseData.parseOneFile("TestData\\QQQ-27oct2015.txt");
+		this.td = ParseData.parseOneFile("TestData\\QQQ-TickerDataTest.txt");
 		this.td.generateDerived();
 	}
 

@@ -40,8 +40,10 @@ AGT       	Agt Food and Ingredients                          	TSX
 AGU       	Agrium Inc                                        	TSX       
 AHF       	Aston Hill Financial Inc                          	TSX       
 AHF.DB    	Aston Hill Financial Inc                          	TSX       
+AHF.DB.A  	0Nbaston Hill Financial Inc 6.5 Pct Debs          	TSX       
 AHY.UN    	Advantaged CDN High Yiel                          	TSX       
 AI        	Atrium Mortgage Investme                          	TSX       
+AI.DB     	Atrium Mortgage Inv Corp                          	TSX       
 AI.DB.A   	Atrium Mortgage Inv Corp                          	TSX       
 AI.DB.B   	Atrium Mortgage Inv Corp                          	TSX       
 AIF       	Altus Group Limited                               	TSX       
@@ -82,7 +84,6 @@ AQX.A     	Alignvest Acquisition Co                          	TSX
 AQX.WT    	Alignvest Acquisition Co                          	TSX       
 AR        	Argonaut Gold Inc.                                	TSX       
 ARE       	Aecon Group Inc                                   	TSX       
-ARE.DB.A  	Aecon Group Inc 6.25 Pct                          	TSX       
 ARE.DB.B  	Aecon Group Inc 5.50 Pct                          	TSX       
 ARG       	Amerigo Resources Ltd.                            	TSX       
 ARL       	Africo Resources Ltd.                             	TSX       
@@ -308,7 +309,6 @@ CAG.UN    	Coxe Global Agribusiness                          	TSX
 CAH.UN    	Canadian High Yield Focu                          	TSX       
 CAL       	Caledonia Mining Corpora                          	TSX       
 CAM       	Canam Group Inc.                                  	TSX       
-CAM.DB    	Canam Group Inc 6.25 Pct                          	TSX       
 CAO       	Cara Operations Limited                           	TSX       
 CAR.UN    	CDN Apartment Un                                  	TSX       
 CAS       	Cascades Inc                                      	TSX       
@@ -318,6 +318,7 @@ CBD       	Ishares Balanced Income                           	TSX
 CBD.A     	Ishares Balanced Income                           	TSX       
 CBF       	Canbanc 8 Income Corp                             	TSX       
 CBH       	Ishares 1-10 Yr Laddered                          	TSX       
+CBH.A     	Ishares 1-10Yr Laddered                           	TSX       
 CBL       	Callidus Capital Corp                             	TSX       
 CBN       	Ishares Balanced Growth                           	TSX       
 CBN.A     	Ishares Balanced Growth                           	TSX       
@@ -403,7 +404,6 @@ CJ        	Cardinal Energy Ltd                               	TSX
 CJ.DB     	Cardinal Energy Ltd 5.50 Pct Debs                 	TSX       
 CJ.R      	Cardinal Energy Ltd Sub Receipts                  	TSX       
 CJP       	Ishares Japan Fund Idx E                          	TSX       
-CJP.A     	Ishares Japan Fund Idx E                          	TSX       
 CJR.B     	Corus Entertainment Inc.                          	TSX       
 CJT       	Cargojet Inc.                                     	TSX       
 CJT.A     	Cargojet Inc. Variable V                          	TSX       
@@ -815,7 +815,9 @@ FXM.A     	F A Morningstar Cda Valu                          	TSX
 G         	Goldcorp Inc                                      	TSX       
 GAF.UN    	Global Alpha Worldwide G                          	TSX       
 GBF       	Globalance Dividend Growers Corp                  	TSX       
+GBG.A     	Gibraltar Growth Corp Cl A                        	TSX       
 GBG.UN    	Gibraltar Growth Corporation                      	TSX       
+GBG.WT    	Great Basin Gold Ltd Wts                          	TSX       
 GBT       	Bmtc Group Inc.                                   	TSX       
 GBU       	Gabriel Res J                                     	TSX       
 GC        	Great Canadian Gaming Co                          	TSX       
@@ -893,10 +895,10 @@ GXO       	Granite Oil Corp                                  	TSX
 GZT       	Gazit Globe Ltd                                   	TSX       
 H         	Hydro One Limited                                 	TSX       
 HAB       	Horizons Active Corporat                          	TSX       
+HAB.A     	Horizons Active Corporat                          	TSX       
 HAC       	Horizons Seasonal Rotati                          	TSX       
 HAC.A     	Horizons Seasonal Rotati                          	TSX       
 HAD       	Horizons Active CDN Bond                          	TSX       
-HAD.A     	Horizons Active CDN Bond                          	TSX       
 HAF       	Horizons Active Global F                          	TSX       
 HAJ       	Horizons Active Emerging                          	TSX       
 HAL       	Horizons Active CDN Divi                          	TSX       
@@ -925,7 +927,6 @@ HED       	Horizons BP SP TSX Energ                          	TSX
 HEE       	Horizons Enhanced Income                          	TSX       
 HEE.A     	Horizons Enhd Income Ene                          	TSX       
 HEF       	Horizons Enhanced Income                          	TSX       
-HEF.A     	Horizons Enhd Income Fin                          	TSX       
 HEJ       	Horizons Enhd Inc Intl E                          	TSX       
 HEN.UN    	Energy Leaders Income Fd                          	TSX       
 HEP       	Horizons Enhanced Income                          	TSX       
@@ -937,7 +938,6 @@ HEX       	Horizons Enhanced Income                          	TSX
 HEX.A     	Horizons Enhd Income Equ                          	TSX       
 HFD       	Horizons BP SP TSX Cap F                          	TSX       
 HFP       	Horizons Active Flt Rate                          	TSX       
-HFP.A     	Horizons Active Flt Rate                          	TSX       
 HFR       	Horizons Active Floating                          	TSX       
 HFR.A     	Horizons Active Floating                          	TSX       
 HFU       	Horizons Betapro S&P/Tsx                          	TSX       
@@ -950,6 +950,7 @@ HGU       	Horizons BP SP TSX Globa                          	TSX
 HGY       	Horizons Gold Yield ETF                           	TSX       
 HGY.A     	Horizons Gold Yield ETF                           	TSX       
 HHF       	Horizons Morningstar Hdg                          	TSX       
+HHF.A     	Horizons Morningstar Hdg                          	TSX       
 HHL.UN    	Healthcare Leaders Incom                          	TSX       
 HHY.UN    	High Rock CDN High Yield                          	TSX       
 HIG.UN    	Global Healthcare Inc and Grwth Fd                	TSX       
@@ -1118,7 +1119,6 @@ KEL       	Kelt Exploration Ltd                              	TSX
 KER       	Kerr Mines Inc                                    	TSX       
 KEY       	Keyera Corp                                       	TSX       
 KFS       	Kingsway Fin                                      	TSX       
-KFS.WT.V  	Kingsway Fin Svcs Warran                          	TSX       
 KGI       	Kirkland Lake Gold Inc.                           	TSX       
 KGI.DB    	Kirkland Lake Gold Inc 6                          	TSX       
 KGI.DB.A  	Kirkland Lake Gold Inc 7                          	TSX       
@@ -1282,7 +1282,6 @@ NB        	Niocorp Developments Ltd                          	TSX
 NBD       	Norbord Inc.                                      	TSX       
 NBZ       	Northern Blizzard Resour                          	TSX       
 NCC.A     	Newfoundland Capital Cor                          	TSX       
-NCC.B     	Newfoundland Capital Cor                          	TSX       
 NCD.UN    	North American Adv Cover                          	TSX       
 NCF       	Northcliff Resources Ltd                          	TSX       
 NCQ       	Novacopper Inc                                    	TSX       
@@ -1329,6 +1328,7 @@ NUS       	Nautilus Minerals Inc.                            	TSX
 NUX       	New Pacific Metals Corp                           	TSX       
 NVA       	Nuvista Energy Ltd.                               	TSX       
 NVC       	Neovasc Inc                                       	TSX       
+NVU.DB    	Northview Apartment REIT 5.75 Pct Debs            	TSX       
 NVU.UN    	Northview Apartment REIT                          	TSX       
 NWC       	The North West Company I                          	TSX       
 NWH.DB    	Northwest Healthcare Pro                          	TSX       
@@ -1365,7 +1365,6 @@ ORA       	Aura Minerals  Inc.                               	TSX
 ORE       	Orezone Gold Corporation                          	TSX       
 ORL       	Orocobre Limited                                  	TSX       
 ORT       	Orbite Aluminae Inc                               	TSX       
-ORT.DB.B  	Orbite Technologies Inc                           	TSX       
 ORV       	Orvana Minerals J                                 	TSX       
 OSF.UN    	Oil Sands Sector Fund                             	TSX       
 OSL.UN    	Ocp Senior Credit Fund                            	TSX       
@@ -1387,7 +1386,6 @@ PAA       	Pan American J                                    	TSX
 PAR.DB    	Partners REIT 8 Pct Debs                          	TSX       
 PAR.DB.A  	Partners REIT 6 Pct Debs                          	TSX       
 PAR.DB.B  	Partners REIT 5.5 Pct De                          	TSX       
-PAR.RT    	Partners REIT RTS                                 	TSX       
 PAR.UN    	Partners REIT Units                               	TSX       
 PAY       	Posera Hdx Ltd                                    	TSX       
 PBD       	Purpose Total Return Bon                          	TSX       
@@ -1571,6 +1569,7 @@ RBM       	Response Biomedical Corp                          	TSX
 RBN.UN    	Blue Ribbon Income Fund                           	TSX       
 RBO       	RBC 1 To 5 Yr Laddered C                          	TSX       
 RBS       	R Split III Corp. Capita                          	TSX       
+RBS.PR.B  	R Split III Corp Pref Cl                          	TSX       
 RC        	Rdm Corp                                          	TSX       
 RCD       	RBC Quant CDN Dividend L                          	TSX       
 RCE       	RBC Quant Canadian Equit                          	TSX       
@@ -1594,6 +1593,7 @@ RFP       	Resolute Forest Products                          	TSX
 RGL       	Royal Gold J                                      	TSX       
 RGX       	Argex Titanium Inc                                	TSX       
 RGX.DB    	Argex Titanium Inc 8.0 P                          	TSX       
+RHF       	RBC Quant EAFE Equity Ldrs [Ca                    	TSX       
 RHI       	RBC Quant EAFE Div Leade                          	TSX       
 RHP       	RBC Quant European Div L                          	TSX       
 RHS       	RBC Quant US Equity Lead                          	TSX       
@@ -1637,11 +1637,11 @@ RTU.UN    	CDN Resources Un                                  	TSX
 RUD       	RBC Quant US Div Leaders                          	TSX       
 RUD.U     	RBC Quant US Div Leaders                          	TSX       
 RUE       	RBC Quant US Equity Lead                          	TSX       
+RUE.U     	RBC Quant US Equity Lead                          	TSX       
 RUS       	Russel Metals                                     	TSX       
 RUS.DB    	Russel Metals Inc 7.75%                           	TSX       
 RVX       	Resverlogix Corp.                                 	TSX       
 RWC       	First Asset MSCI Canada                           	TSX       
-RWC.A     	First Asset MSCI Cda Low                          	TSX       
 RWE       	First Asset MSCI Europe                           	TSX       
 RWE.A     	First Asset MSCI Europe                           	TSX       
 RWE.B     	First Asset MSCI Europe                           	TSX       
@@ -1771,7 +1771,6 @@ SVY       	Savanna Energy Services                           	TSX
 SW        	Sierra Wireless                                   	TSX       
 SWY       	Stornoway Diamond Corp.                           	TSX       
 SWY.WT.A  	Stornoway Diamond Corp W                          	TSX       
-SXI       	Synex Intl J                                      	TSX       
 SXP       	Supremex Inc.                                     	TSX       
 T         	Telus Corporation                                 	TSX       
 TA        	Transalta Corporation                             	TSX       
@@ -1843,6 +1842,7 @@ TMD.WT.B  	Titan Medical Inc Wts Cl                          	TSX
 TMD.WT.C  	Titan Medical Inc Wts Cl                          	TSX       
 TMD.WT.D  	Titan Medical Inc Wts Cl                          	TSX       
 TMD.WT.E  	Titan Medical Inc Wts Cl                          	TSX       
+TMD.WT.F  	Titan Medical Inc Wts Cl F                        	TSX       
 TMI       	Trimetals Mining Inc                              	TSX       
 TMI.B     	Trimetals Mining Inc Cla                          	TSX       
 TML       	Treasury Metals Inc.                              	TSX       

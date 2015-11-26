@@ -7,10 +7,14 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 /**
+ *
+ * This class contains static utility methods used by this project.
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -21,7 +25,9 @@ import java.util.concurrent.TimeUnit;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
+ *         </p>
  *
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -30,11 +36,12 @@ import java.util.concurrent.TimeUnit;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class Utils {
 
-	public final static Calendar					baseDate		= Calendar.getInstance();
+	private final static Calendar					baseDate		= Calendar.getInstance();
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("E dd-MMM-yyyy");
 
@@ -43,18 +50,7 @@ public class Utils {
 	public static String									NL					= System.lineSeparator();
 	public static String									TAB					= "\t";
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public Utils() {
-		Utils.baseDate.set(Calendar.YEAR, 1900);
-		Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
-		Utils.baseDate.set(Calendar.HOUR, 0);
-		Utils.baseDate.set(Calendar.MINUTE, 0);
-		Utils.baseDate.set(Calendar.SECOND, 1);
-		Utils.baseDate.set(Calendar.MILLISECOND, 0);
-	}
+	private static boolean								initialized	= false;
 
 	/**
 	 * net.ajaskey.market.ta.printCalendar
@@ -70,6 +66,17 @@ public class Utils {
 		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
 		return ret;
 
+	}
+
+	/**
+	 *
+	 * Returns the base date of 01-Jan-1900.
+	 *
+	 * @return baseDate
+	 */
+	public static Calendar getBaseDate() {
+		Utils.init();
+		return baseDate;
 	}
 
 	public static String getDayOfWeek(Calendar cal) {
@@ -97,9 +104,9 @@ public class Utils {
 	 * @return
 	 */
 	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
+		Utils.init();
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
 	}
-
 
 	/**
 	 *
@@ -125,6 +132,22 @@ public class Utils {
 			return sdf2.format(cal.getTime());
 		}
 		return "";
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	private static void init() {
+		if (!initialized) {
+			Utils.baseDate.set(Calendar.YEAR, 1900);
+			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
+			Utils.baseDate.set(Calendar.HOUR, 0);
+			Utils.baseDate.set(Calendar.MINUTE, 0);
+			Utils.baseDate.set(Calendar.SECOND, 1);
+			Utils.baseDate.set(Calendar.MILLISECOND, 0);
+			initialized = true;
+		}
 	}
 
 }

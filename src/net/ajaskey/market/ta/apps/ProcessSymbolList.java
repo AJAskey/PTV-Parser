@@ -161,7 +161,7 @@ public class ProcessSymbolList {
 		pwAll.close();
 		pwUSMF.close();
 
-		System.out.println("Done.");
+		System.out.println("ProcessSymbolList Done.");
 	}
 
 	/**

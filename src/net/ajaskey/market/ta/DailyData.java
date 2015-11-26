@@ -9,8 +9,8 @@ import java.util.Calendar;
  * This class serves as a container for daily price and volume data for a
  * specific entity.
  *
- * A java.utils.List of DailyData objects is used to hold available price and
- * time data for a specific entity.
+ * A java.utils.List of DailyData objects is used to hold available price,
+ * volume, and time data for a specific entity.
  *
  * @author
  *         <p>
@@ -64,11 +64,17 @@ public class DailyData {
 	 * This methods serves as a constructor for the class.
 	 *
 	 * @param d
+	 *          Calendar date of the data.
 	 * @param o
+	 *          Opening price.
 	 * @param h
+	 *          High price.
 	 * @param l
+	 *          Low price.
 	 * @param c
+	 *          Closing price.
 	 * @param v
+	 *          Volume of daily activity.
 	 */
 	public DailyData(Calendar d, double o, double h, double l, double c, double v) {
 		this.date = d;
@@ -210,9 +216,9 @@ public class DailyData {
 	}
 
 	/**
-	 * Sets the daily change value.
-	 *
-	 * net.ajaskey.market.ta.setDailyChg
+	 * Sets the change value based on the price passed in. It is assumed that this
+	 * price is the close from the previous day, but can be any price the use
+	 * wants to send in.
 	 *
 	 * @param closeYesterday
 	 *          the close from the previous day.
@@ -228,28 +234,11 @@ public class DailyData {
 	}
 
 	/**
-	 * net.ajaskey.market.ta.setDateData
 	 *
-	 * @param date2
-	 */
-	public void setDateData(Calendar cal) {
-		// TODO Auto-generated method stub
-
-	}
-
-	/**
-	 * @param daysSinceBase
-	 *          the daysSinceBase to set
-	 */
-	public void setDaysSinceBase() {
-		this.daysSinceBase = Utils.getTimeSpan(this.date, Utils.baseDate);
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.setTrueHigh
+	 * Sets the high of the daily daily and the close from price passed in.
 	 *
 	 * @param closeYesterday
+	 *          previous closing price.
 	 */
 	public void setTrueHigh(double closeYesterday) {
 		this.trueHigh = Math.max(closeYesterday, this.high);
@@ -257,18 +246,20 @@ public class DailyData {
 
 	/**
 	 *
-	 * net.ajaskey.market.ta.setTrueLow
+	 * Sets the low of the daily daily and the close from price passed in.
 	 *
 	 * @param closeYesterday
+	 *          previous closing price.
 	 */
 	public void setTrueLow(double closeYesterday) {
 		this.trueLow = Math.min(closeYesterday, this.low);
 	}
 
 	/**
-	 * net.ajaskey.market.ta.setVolume
+	 * Sets the daily volume
 	 *
 	 * @param vol
+	 *          Volume
 	 */
 	public void setVolume(double vol) {
 		this.volume = vol;
@@ -283,6 +274,13 @@ public class DailyData {
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
 		    this.close, (int) (double) (this.volume));
 		return ret.trim();
+	}
+
+	/**
+	 * Set calendar days since the base of 1900.
+	 */
+	private void setDaysSinceBase() {
+		this.daysSinceBase = Utils.getTimeSpan(this.date, Utils.getBaseDate());
 	}
 
 }

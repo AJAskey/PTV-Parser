@@ -43,26 +43,31 @@ CLF17     	Crude Oil WTI {Jan 17}                            	NYMEX
 CLF18     	Crude Oil WTI {Jan 18}                            	NYMEX     
 CLF19     	Crude Oil WTI {Jan 19}                            	NYMEX     
 CLF20     	Crude Oil WTI {Jan 20}                            	NYMEX     
+CLF21     	Crude Oil WTI {Jan 21}                            	NYMEX     
 CLG16     	Crude Oil WTI {Feb 16}                            	NYMEX     
 CLG17     	Crude Oil WTI {Feb 17}                            	NYMEX     
 CLG18     	Crude Oil WTI {Feb 18}                            	NYMEX     
 CLG19     	Crude Oil WTI {Feb 19}                            	NYMEX     
 CLG20     	Crude Oil WTI {Feb 20}                            	NYMEX     
+CLG21     	Crude Oil WTI {Feb 21}                            	NYMEX     
 CLH16     	Crude Oil WTI {Mar 16}                            	NYMEX     
 CLH17     	Crude Oil WTI {Mar 17}                            	NYMEX     
 CLH18     	Crude Oil WTI {Mar 18}                            	NYMEX     
 CLH19     	Crude Oil WTI {Mar 19}                            	NYMEX     
 CLH20     	Crude Oil WTI {Mar 20}                            	NYMEX     
+CLH21     	Crude Oil WTI {Mar 21}                            	NYMEX     
 CLJ16     	Crude Oil WTI {Apr 16}                            	NYMEX     
 CLJ17     	Crude Oil WTI {Apr 17}                            	NYMEX     
 CLJ18     	Crude Oil WTI {Apr 18}                            	NYMEX     
 CLJ19     	Crude Oil WTI {Apr 19}                            	NYMEX     
 CLJ20     	Crude Oil WTI {Apr 20}                            	NYMEX     
+CLJ21     	Crude Oil WTI {Apr 21}                            	NYMEX     
 CLK16     	Crude Oil WTI {May 16}                            	NYMEX     
 CLK17     	Crude Oil WTI {May 17}                            	NYMEX     
 CLK18     	Crude Oil WTI {May 18}                            	NYMEX     
 CLK19     	Crude Oil WTI {May 19}                            	NYMEX     
 CLK20     	Crude Oil WTI {May 20}                            	NYMEX     
+CLK21     	Crude Oil WTI {May 21}                            	NYMEX     
 CLM16     	Crude Oil WTI {Jun 16}                            	NYMEX     
 CLM17     	Crude Oil WTI {Jun 17}                            	NYMEX     
 CLM18     	Crude Oil WTI {Jun 18}                            	NYMEX     
@@ -71,32 +76,37 @@ CLM20     	Crude Oil WTI {Jun 20}                            	NYMEX
 CLM21     	Crude Oil WTI {Jun 21}                            	NYMEX     
 CLM22     	Crude Oil WTI {Jun 22}                            	NYMEX     
 CLM23     	Crude Oil WTI {Jun 23}                            	NYMEX     
+CLM24     	Crude Oil WTI {Jun 24}                            	NYMEX     
 CLN16     	Crude Oil WTI {Jul 16}                            	NYMEX     
 CLN17     	Crude Oil WTI {Jul 17}                            	NYMEX     
 CLN18     	Crude Oil WTI {Jul 18}                            	NYMEX     
 CLN19     	Crude Oil WTI {Jul 19}                            	NYMEX     
 CLN20     	Crude Oil WTI {Jul 20}                            	NYMEX     
+CLN21     	Crude Oil WTI {Jul 21}                            	NYMEX     
 CLQ16     	Crude Oil WTI {Aug 16}                            	NYMEX     
 CLQ17     	Crude Oil WTI {Aug 17}                            	NYMEX     
 CLQ18     	Crude Oil WTI {Aug 18}                            	NYMEX     
 CLQ19     	Crude Oil WTI {Aug 19}                            	NYMEX     
 CLQ20     	Crude Oil WTI {Aug 20}                            	NYMEX     
+CLQ21     	Crude Oil WTI {Aug 21}                            	NYMEX     
 CLU16     	Crude Oil WTI {Sep 16}                            	NYMEX     
 CLU17     	Crude Oil WTI {Sep 17}                            	NYMEX     
 CLU18     	Crude Oil WTI {Sep 18}                            	NYMEX     
 CLU19     	Crude Oil WTI {Sep 19}                            	NYMEX     
 CLU20     	Crude Oil WTI {Sep 20}                            	NYMEX     
+CLU21     	Crude Oil WTI {Sep 21}                            	NYMEX     
 CLV16     	Crude Oil WTI {Oct 16}                            	NYMEX     
 CLV17     	Crude Oil WTI {Oct 17}                            	NYMEX     
 CLV18     	Crude Oil WTI {Oct 18}                            	NYMEX     
 CLV19     	Crude Oil WTI {Oct 19}                            	NYMEX     
 CLV20     	Crude Oil WTI {Oct 20}                            	NYMEX     
-CLX15     	Crude Oil WTI {Nov 15}                            	NYMEX     
+CLV21     	Crude Oil WTI {Oct 21}                            	NYMEX     
 CLX16     	Crude Oil WTI {Nov 16}                            	NYMEX     
 CLX17     	Crude Oil WTI {Nov 17}                            	NYMEX     
 CLX18     	Crude Oil WTI {Nov 18}                            	NYMEX     
 CLX19     	Crude Oil WTI {Nov 19}                            	NYMEX     
 CLX20     	Crude Oil WTI {Nov 20}                            	NYMEX     
+CLX21     	Crude Oil WTI {Nov 21}                            	NYMEX     
 CLZ15     	Crude Oil WTI {Dec 15}                            	NYMEX     
 CLZ16     	Crude Oil WTI {Dec 16}                            	NYMEX     
 CLZ17     	Crude Oil WTI {Dec 17}                            	NYMEX     
@@ -106,6 +116,7 @@ CLZ20     	Crude Oil WTI {Dec 20}                            	NYMEX
 CLZ21     	Crude Oil WTI {Dec 21}                            	NYMEX     
 CLZ22     	Crude Oil WTI {Dec 22}                            	NYMEX     
 CLZ23     	Crude Oil WTI {Dec 23}                            	NYMEX     
+CLZ24     	Crude Oil WTI {Dec 24}                            	NYMEX     
 D2.C      	Ethanol T2 ROB Continuation                       	NYMEX     
 D2F16     	Ethanol T2 ROB {Jan 16}                           	NYMEX     
 D2G16     	Ethanol T2 ROB {Feb 16}                           	NYMEX     
@@ -515,7 +526,6 @@ MTU16     	Gulf Sour Crude Oil {Sep 16}                      	NYMEX
 MTU17     	Gulf Sour Crude Oil {Sep 17}                      	NYMEX     
 MTV16     	Gulf Sour Crude Oil {Oct 16}                      	NYMEX     
 MTV17     	Gulf Sour Crude Oil {Oct 17}                      	NYMEX     
-MTX15     	Gulf Sour Crude Oil {Nov 15}                      	NYMEX     
 MTX16     	Gulf Sour Crude Oil {Nov 16}                      	NYMEX     
 MTX17     	Gulf Sour Crude Oil {Nov 17}                      	NYMEX     
 MTZ15     	Gulf Sour Crude Oil {Dec 15}                      	NYMEX     
@@ -915,6 +925,7 @@ QMM17     	E-Mini Crude Oil {Jun 17}                         	NYMEX
 QMM18     	E-Mini Crude Oil {Jun 18}                         	NYMEX     
 QMM19     	E-Mini Crude Oil {Jun 19}                         	NYMEX     
 QMM20     	E-Mini Crude Oil {Jun 20}                         	NYMEX     
+QMM21     	E-Mini Crude Oil {Jun 21}                         	NYMEX     
 QMN16     	E-Mini Crude Oil {Jul 16}                         	NYMEX     
 QMN17     	E-Mini Crude Oil {Jul 17}                         	NYMEX     
 QMN18     	E-Mini Crude Oil {Jul 18}                         	NYMEX     
@@ -935,7 +946,6 @@ QMV17     	E-Mini Crude Oil {Oct 17}                         	NYMEX
 QMV18     	E-Mini Crude Oil {Oct 18}                         	NYMEX     
 QMV19     	E-Mini Crude Oil {Oct 19}                         	NYMEX     
 QMV20     	E-Mini Crude Oil {Oct 20}                         	NYMEX     
-QMX15     	E-Mini Crude Oil {Nov 15}                         	NYMEX     
 QMX16     	E-Mini Crude Oil {Nov 16}                         	NYMEX     
 QMX17     	E-Mini Crude Oil {Nov 17}                         	NYMEX     
 QMX18     	E-Mini Crude Oil {Nov 18}                         	NYMEX     
@@ -947,6 +957,7 @@ QMZ17     	E-Mini Crude Oil {Dec 17}                         	NYMEX
 QMZ18     	E-Mini Crude Oil {Dec 18}                         	NYMEX     
 QMZ19     	E-Mini Crude Oil {Dec 19}                         	NYMEX     
 QMZ20     	E-Mini Crude Oil {Dec 20}                         	NYMEX     
+QMZ21     	E-Mini Crude Oil {Dec 21}                         	NYMEX     
 QU.C      	E-Mini Gasoline Continuation                      	NYMEX     
 QUF16     	E-Mini Gasoline {Jan 16}                          	NYMEX     
 QUG16     	E-Mini Gasoline {Feb 16}                          	NYMEX     
@@ -970,7 +981,6 @@ RBF19     	Gasoline RBOB {Jan 19}                            	NYMEX
 RBG16     	Gasoline RBOB {Feb 16}                            	NYMEX     
 RBG17     	Gasoline RBOB {Feb 17}                            	NYMEX     
 RBG18     	Gasoline RBOB {Feb 18}                            	NYMEX     
-RBG19     	Gasoline RBOB {Feb 19}                            	NYMEX     
 RBH16     	Gasoline RBOB {Mar 16}                            	NYMEX     
 RBH17     	Gasoline RBOB {Mar 17}                            	NYMEX     
 RBH18     	Gasoline RBOB {Mar 18}                            	NYMEX     
@@ -1278,7 +1288,6 @@ WSV17     	Crude Oil WTI (F) {Oct 17}                        	NYMEX
 WSV18     	Crude Oil WTI (F) {Oct 18}                        	NYMEX     
 WSV19     	Crude Oil WTI (F) {Oct 19}                        	NYMEX     
 WSV20     	Crude Oil WTI (F) {Oct 20}                        	NYMEX     
-WSX15     	Crude Oil WTI (F) {Nov 15}                        	NYMEX     
 WSX16     	Crude Oil WTI (F) {Nov 16}                        	NYMEX     
 WSX17     	Crude Oil WTI (F) {Nov 17}                        	NYMEX     
 WSX18     	Crude Oil WTI (F) {Nov 18}                        	NYMEX     

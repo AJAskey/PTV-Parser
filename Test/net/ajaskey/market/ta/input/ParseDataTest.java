@@ -82,11 +82,12 @@ public class ParseDataTest {
 
 	@Test
 	public void testParseFile1() throws FileNotFoundException, ParseException {
+		ParseData.clearValidTickers();
 		ParseData.setValidTicker("QQQ");
 		ParseData.setValidTicker("MSFT");
 		ParseData.setValidTicker("NVAX");
 		ParseData.setValidTicker("xyz");
-		final List<TickerData> tdAll = ParseData.parseFile(new File("TestData\\NASDAQ\\NASDAQ_20150921.csv"));
+		final List<TickerData> tdAll = ParseData.parseFile(new File("TestData\\ASCII\\NASDAQ\\NASDAQ_20151021.csv"));
 		System.out.println(tdAll.size());
 		Assert.assertEquals(tdAll.size(), 3);
 	}
@@ -148,11 +149,11 @@ public class ParseDataTest {
 
 	@Test
 	public void testParseOneFile() throws FileNotFoundException, IOException, ParseException {
-		final TickerData td = ParseData.parseOneFile("TestData\\QQQ.csv");
-		Assert.assertEquals(td.getClose(0), 112.78, 0.1);
-		Assert.assertEquals(td.getOpen(16), 101.94, 0.1);
-		Assert.assertEquals(td.getHigh(456), 85.65, 0.1);
-		Assert.assertEquals(td.getLow(205), 102.38, 0.1);
+		final TickerData td = ParseData.parseOneFile("TestData\\QQQ-TickerDataTest.txt");
+		Assert.assertEquals(td.getClose(0), 112.85, 0.01);
+		Assert.assertEquals(td.getOpen(16), 101.94, 0.01);
+		Assert.assertEquals(td.getHigh(50), 110.67, 0.01);
+		Assert.assertEquals(td.getLow(40), 104.85, 0.01);
 	}
 
 	@Test

@@ -277,6 +277,7 @@ BRZ21     	Brazilian Real (P) {Dec 21}                       	CME
 BRZ22     	Brazilian Real (P) {Dec 22}                       	CME       
 BRZ23     	Brazilian Real (P) {Dec 23}                       	CME       
 BRZ24     	Brazilian Real (P) {Dec 24}                       	CME       
+BRZ25     	Brazilian Real (P) {Dec 25}                       	CME       
 BS        	S&P Health Care                                   	CME       
 BS.C      	S&P Health Care Continuation                      	CME       
 BSH16     	S&P Health Care {Mar 16}                          	CME       
@@ -321,7 +322,6 @@ CMM16     	E-Micro USD/CNY {Jun 16}                          	CME
 CMN16     	E-Micro USD/CNY {Jul 16}                          	CME       
 CMQ16     	E-Micro USD/CNY {Aug 16}                          	CME       
 CMU16     	E-Micro USD/CNY {Sep 16}                          	CME       
-CMV15     	E-Micro USD/CNY {Oct 15}                          	CME       
 CMX15     	E-Micro USD/CNY {Nov 15}                          	CME       
 CMZ15     	E-Micro USD/CNY {Dec 15}                          	CME       
 CN.C      	Renminbi USD Banking Continuation                 	CME       
@@ -340,7 +340,6 @@ CNQ16     	Renminbi USD Banking {Aug 16}                     	CME
 CNU16     	Renminbi USD Banking {Sep 16}                     	CME       
 CNU17     	Renminbi USD Banking {Sep 17}                     	CME       
 CNU18     	Renminbi USD Banking {Sep 18}                     	CME       
-CNV15     	Renminbi USD Banking {Oct 15}                     	CME       
 CNV16     	Renminbi USD Banking {Oct 16}                     	CME       
 CNX15     	Renminbi USD Banking {Nov 15}                     	CME       
 CNX16     	Renminbi USD Banking {Nov 16}                     	CME       
@@ -606,6 +605,7 @@ EDH23     	Eurodollar (P) {Mar 23}                           	CME
 EDH24     	Eurodollar (P) {Mar 24}                           	CME       
 EDH25     	Eurodollar (P) {Mar 25}                           	CME       
 EDJ16     	Eurodollar (P) {Apr 16}                           	CME       
+EDK16     	Eurodollar (P) {May 16}                           	CME       
 EDM16     	Eurodollar (P) {Jun 16}                           	CME       
 EDM17     	Eurodollar (P) {Jun 17}                           	CME       
 EDM18     	Eurodollar (P) {Jun 18}                           	CME       
@@ -626,7 +626,6 @@ EDU22     	Eurodollar (P) {Sep 22}                           	CME
 EDU23     	Eurodollar (P) {Sep 23}                           	CME       
 EDU24     	Eurodollar (P) {Sep 24}                           	CME       
 EDU25     	Eurodollar (P) {Sep 25}                           	CME       
-EDV15     	Eurodollar (P) {Oct 15}                           	CME       
 EDX15     	Eurodollar (P) {Nov 15}                           	CME       
 EDZ15     	Eurodollar (P) {Dec 15}                           	CME       
 EDZ16     	Eurodollar (P) {Dec 16}                           	CME       
@@ -649,7 +648,6 @@ EMM16     	1-Month Libor (P) {Jun 16}                        	CME
 EMN16     	1-Month Libor (P) {Jul 16}                        	CME       
 EMQ16     	1-Month Libor (P) {Aug 16}                        	CME       
 EMU16     	1-Month Libor (P) {Sep 16}                        	CME       
-EMV15     	1-Month Libor (P) {Oct 15}                        	CME       
 EMV16     	1-Month Libor (P) {Oct 16}                        	CME       
 EMX15     	1-Month Libor (P) {Nov 15}                        	CME       
 EMX16     	1-Month Libor (P) {Nov 16}                        	CME       
@@ -701,6 +699,7 @@ FCU16     	Feeder Cattle (P) {Sep 16}                        	CME
 FCV15     	Feeder Cattle (P) {Oct 15}                        	CME       
 FCV16     	Feeder Cattle (P) {Oct 16}                        	CME       
 FCX15     	Feeder Cattle (P) {Nov 15}                        	CME       
+FCX16     	Feeder Cattle (P) {Nov 16}                        	CME       
 FE        	Feeder Cattle (P) {Nov 99}                        	CME       
 FE.C      	3-Month EuriBor Continuation                      	CME       
 FEF16     	3-Month EuriBor {Jan 16}                          	CME       
@@ -737,7 +736,6 @@ FEU22     	3-Month EuriBor {Sep 22}                          	CME
 FEU23     	3-Month EuriBor {Sep 23}                          	CME       
 FEU24     	3-Month EuriBor {Sep 24}                          	CME       
 FEU25     	3-Month EuriBor {Sep 25}                          	CME       
-FEV15     	3-Month EuriBor {Oct 15}                          	CME       
 FEX15     	3-Month EuriBor {Nov 15}                          	CME       
 FEZ15     	3-Month EuriBor {Dec 15}                          	CME       
 FEZ16     	3-Month EuriBor {Dec 16}                          	CME       
@@ -813,11 +811,13 @@ G7        	S&P GS Excess Index                               	CME
 G7.C      	S&P GS Excess Index Continuation                  	CME       
 G7F16     	S&P GS Excess Index {Jan 16}                      	CME       
 G7G16     	S&P GS Excess Index {Feb 16}                      	CME       
+G7H16     	S&P GS Excess Index {Mar 16}                      	CME       
 G7X15     	S&P GS Excess Index {Nov 15}                      	CME       
 G7Z15     	S&P GS Excess Index {Dec 15}                      	CME       
 GD        	S&P GSCI                                          	CME       
 GD.C      	S&P GSCI Continuation                             	CME       
 GDF16     	S&P GSCI {Jan 16}                                 	CME       
+GDG16     	S&P GSCI {Feb 16}                                 	CME       
 GDX15     	S&P GSCI {Nov 15}                                 	CME       
 GDZ15     	S&P GSCI {Dec 15}                                 	CME       
 GE        	Eurodollar                                        	CME       
@@ -835,6 +835,7 @@ GEH23     	Eurodollar {Mar 23}                               	CME
 GEH24     	Eurodollar {Mar 24}                               	CME       
 GEH25     	Eurodollar {Mar 25}                               	CME       
 GEJ16     	Eurodollar {Apr 16}                               	CME       
+GEK16     	Eurodollar {May 16}                               	CME       
 GEM16     	Eurodollar {Jun 16}                               	CME       
 GEM17     	Eurodollar {Jun 17}                               	CME       
 GEM18     	Eurodollar {Jun 18}                               	CME       
@@ -855,7 +856,6 @@ GEU22     	Eurodollar {Sep 22}                               	CME
 GEU23     	Eurodollar {Sep 23}                               	CME       
 GEU24     	Eurodollar {Sep 24}                               	CME       
 GEU25     	Eurodollar {Sep 25}                               	CME       
-GEV15     	Eurodollar {Oct 15}                               	CME       
 GEX15     	Eurodollar {Nov 15}                               	CME       
 GEZ15     	Eurodollar {Dec 15}                               	CME       
 GEZ16     	Eurodollar {Dec 16}                               	CME       
@@ -878,6 +878,7 @@ GFU16     	Feeder Cattle {Sep 16}                            	CME
 GFV15     	Feeder Cattle {Oct 15}                            	CME       
 GFV16     	Feeder Cattle {Oct 16}                            	CME       
 GFX15     	Feeder Cattle {Nov 15}                            	CME       
+GFX16     	Feeder Cattle {Nov 16}                            	CME       
 GH.C      	1-Month Libor Continuation                        	CME       
 GHF16     	1-Month Libor {Jan 16}                            	CME       
 GHG16     	1-Month Libor {Feb 16}                            	CME       
@@ -888,7 +889,6 @@ GHM16     	1-Month Libor {Jun 16}                            	CME
 GHN16     	1-Month Libor {Jul 16}                            	CME       
 GHQ16     	1-Month Libor {Aug 16}                            	CME       
 GHU16     	1-Month Libor {Sep 16}                            	CME       
-GHV15     	1-Month Libor {Oct 15}                            	CME       
 GHV16     	1-Month Libor {Oct 16}                            	CME       
 GHX15     	1-Month Libor {Nov 15}                            	CME       
 GHX16     	1-Month Libor {Nov 16}                            	CME       
@@ -896,6 +896,7 @@ GHZ15     	1-Month Libor {Dec 15}                            	CME
 GI        	S&P GSCI (P)                                      	CME       
 GI.C      	S&P GSCI (P) Continuation                         	CME       
 GIF16     	S&P GSCI (P) {Jan 16}                             	CME       
+GIG16     	S&P GSCI (P) {Feb 16}                             	CME       
 GIX15     	S&P GSCI (P) {Nov 15}                             	CME       
 GIZ15     	S&P GSCI (P) {Dec 15}                             	CME       
 GJ.C      	EuroYen Tibor Continuation                        	CME       
@@ -967,7 +968,6 @@ H5Q16     	USD/offshore RMB {Aug 16}                         	CME
 H5U16     	USD/offshore RMB {Sep 16}                         	CME       
 H5U17     	USD/offshore RMB {Sep 17}                         	CME       
 H5U18     	USD/offshore RMB {Sep 18}                         	CME       
-H5V15     	USD/offshore RMB {Oct 15}                         	CME       
 H5V16     	USD/offshore RMB {Oct 16}                         	CME       
 H5X15     	USD/offshore RMB {Nov 15}                         	CME       
 H5X16     	USD/offshore RMB {Nov 16}                         	CME       
@@ -985,7 +985,6 @@ H6M16     	E-Micro USD/CNH {Jun 16}                          	CME
 H6N16     	E-Micro USD/CNH {Jul 16}                          	CME       
 H6Q16     	E-Micro USD/CNH {Aug 16}                          	CME       
 H6U16     	E-Micro USD/CNH {Sep 16}                          	CME       
-H6V15     	E-Micro USD/CNH {Oct 15}                          	CME       
 H6X15     	E-Micro USD/CNH {Nov 15}                          	CME       
 H6Z15     	E-Micro USD/CNH {Dec 15}                          	CME       
 HE        	Lean Hogs                                         	CME       
@@ -1234,7 +1233,6 @@ KZM17     	Korean Won {Jun 17}                               	CME
 KZN16     	Korean Won {Jul 16}                               	CME       
 KZQ16     	Korean Won {Aug 16}                               	CME       
 KZU16     	Korean Won {Sep 16}                               	CME       
-KZV15     	Korean Won {Oct 15}                               	CME       
 KZV16     	Korean Won {Oct 16}                               	CME       
 KZX15     	Korean Won {Nov 15}                               	CME       
 KZX16     	Korean Won {Nov 16}                               	CME       
@@ -1429,10 +1427,10 @@ M6H17     	Mexican Peso {Mar 17}                             	CME
 M6J16     	Mexican Peso {Apr 16}                             	CME       
 M6K16     	Mexican Peso {May 16}                             	CME       
 M6M16     	Mexican Peso {Jun 16}                             	CME       
+M6M17     	Mexican Peso {Jun 17}                             	CME       
 M6N16     	Mexican Peso {Jul 16}                             	CME       
 M6Q16     	Mexican Peso {Aug 16}                             	CME       
 M6U16     	Mexican Peso {Sep 16}                             	CME       
-M6V15     	Mexican Peso {Oct 15}                             	CME       
 M6V16     	Mexican Peso {Oct 16}                             	CME       
 M6X15     	Mexican Peso {Nov 15}                             	CME       
 M6X16     	Mexican Peso {Nov 16}                             	CME       
@@ -1475,7 +1473,6 @@ MQM17     	Mexican Peso (P) {Jun 17}                         	CME
 MQN16     	Mexican Peso (P) {Jul 16}                         	CME       
 MQQ16     	Mexican Peso (P) {Aug 16}                         	CME       
 MQU16     	Mexican Peso (P) {Sep 16}                         	CME       
-MQV15     	Mexican Peso (P) {Oct 15}                         	CME       
 MQV16     	Mexican Peso (P) {Oct 16}                         	CME       
 MQX15     	Mexican Peso (P) {Nov 15}                         	CME       
 MQX16     	Mexican Peso (P) {Nov 16}                         	CME       
@@ -1499,6 +1496,7 @@ N5X15     	Chilean Peso {Nov 15}                             	CME
 N5X16     	Chilean Peso {Nov 16}                             	CME       
 N5Z15     	Chilean Peso {Dec 15}                             	CME       
 N5Z16     	Chilean Peso {Dec 16}                             	CME       
+N5Z17     	Chilean Peso {Dec 17}                             	CME       
 N6        	New Zealand Dollar                                	CME       
 N6.C      	New Zealand Dollar Continuation                   	CME       
 N6H16     	New Zealand Dollar {Mar 16}                       	CME       
@@ -1581,6 +1579,7 @@ O8H17     	Cocoa Euro Cash USD {Mar 17}                      	CME
 O8K16     	Cocoa Euro Cash USD {May 16}                      	CME       
 O8K17     	Cocoa Euro Cash USD {May 17}                      	CME       
 O8N16     	Cocoa Euro Cash USD {Jul 16}                      	CME       
+O8N17     	Cocoa Euro Cash USD {Jul 17}                      	CME       
 O8U16     	Cocoa Euro Cash USD {Sep 16}                      	CME       
 O8Z15     	Cocoa Euro Cash USD {Dec 15}                      	CME       
 O8Z16     	Cocoa Euro Cash USD {Dec 16}                      	CME       
@@ -1610,7 +1609,6 @@ QTQ16     	Chinese Renminbi {Aug 16}                         	CME
 QTU16     	Chinese Renminbi {Sep 16}                         	CME       
 QTU17     	Chinese Renminbi {Sep 17}                         	CME       
 QTU18     	Chinese Renminbi {Sep 18}                         	CME       
-QTV15     	Chinese Renminbi {Oct 15}                         	CME       
 QTV16     	Chinese Renminbi {Oct 16}                         	CME       
 QTX15     	Chinese Renminbi {Nov 15}                         	CME       
 QTX16     	Chinese Renminbi {Nov 16}                         	CME       
@@ -1631,7 +1629,6 @@ QVM17     	Renminbi/Euro {Jun 17}                            	CME
 QVN16     	Renminbi/Euro {Jul 16}                            	CME       
 QVQ16     	Renminbi/Euro {Aug 16}                            	CME       
 QVU16     	Renminbi/Euro {Sep 16}                            	CME       
-QVV15     	Renminbi/Euro {Oct 15}                            	CME       
 QVV16     	Renminbi/Euro {Oct 16}                            	CME       
 QVX15     	Renminbi/Euro {Nov 15}                            	CME       
 QVX16     	Renminbi/Euro {Nov 16}                            	CME       
@@ -1662,6 +1659,7 @@ R6U19     	Russian Ruble {Sep 19}                            	CME
 R6U20     	Russian Ruble {Sep 20}                            	CME       
 R6V16     	Russian Ruble {Oct 16}                            	CME       
 R6X15     	Russian Ruble {Nov 15}                            	CME       
+R6X16     	Russian Ruble {Nov 16}                            	CME       
 R6Z15     	Russian Ruble {Dec 15}                            	CME       
 R6Z16     	Russian Ruble {Dec 16}                            	CME       
 R6Z17     	Russian Ruble {Dec 17}                            	CME       
@@ -1681,7 +1679,6 @@ RAN16     	South African (P) {Jul 16}                        	CME
 RAQ16     	South African (P) {Aug 16}                        	CME       
 RAU16     	South African (P) {Sep 16}                        	CME       
 RAU17     	South African (P) {Sep 17}                        	CME       
-RAV15     	South African (P) {Oct 15}                        	CME       
 RAV16     	South African (P) {Oct 16}                        	CME       
 RAX15     	South African (P) {Nov 15}                        	CME       
 RAX16     	South African (P) {Nov 16}                        	CME       
@@ -1772,6 +1769,12 @@ S6Z16     	Swiss Franc {Dec 16}                              	CME
 S6Z17     	Swiss Franc {Dec 17}                              	CME       
 S6Z18     	Swiss Franc {Dec 18}                              	CME       
 S6Z19     	Swiss Franc {Dec 19}                              	CME       
+SE.C      	S&P MLP Total Return Continuation                 	CME       
+SEH16     	S&P MLP Total Return {Mar 16}                     	CME       
+SEM16     	S&P MLP Total Return {Jun 16}                     	CME       
+SEU16     	S&P MLP Total Return {Sep 16}                     	CME       
+SEZ15     	S&P MLP Total Return {Dec 15}                     	CME       
+SEZ16     	S&P MLP Total Return {Dec 16}                     	CME       
 SF        	Swiss Franc (P)                                   	CME       
 SF.C      	Swiss Franc (P) Continuation                      	CME       
 SFH16     	Swiss Franc (P) {Mar 16}                          	CME       
@@ -1836,7 +1839,6 @@ T3N16     	USD/ZAR {Jul 16}                                  	CME
 T3Q16     	USD/ZAR {Aug 16}                                  	CME       
 T3U16     	USD/ZAR {Sep 16}                                  	CME       
 T3U17     	USD/ZAR {Sep 17}                                  	CME       
-T3V15     	USD/ZAR {Oct 15}                                  	CME       
 T3V16     	USD/ZAR {Oct 16}                                  	CME       
 T3X15     	USD/ZAR {Nov 15}                                  	CME       
 T3X16     	USD/ZAR {Nov 16}                                  	CME       
@@ -1857,12 +1859,12 @@ T6N16     	South African Rand {Jul 16}                       	CME
 T6Q16     	South African Rand {Aug 16}                       	CME       
 T6U16     	South African Rand {Sep 16}                       	CME       
 T6U17     	South African Rand {Sep 17}                       	CME       
-T6V15     	South African Rand {Oct 15}                       	CME       
 T6V16     	South African Rand {Oct 16}                       	CME       
 T6X15     	South African Rand {Nov 15}                       	CME       
 T6X16     	South African Rand {Nov 16}                       	CME       
 T6Z15     	South African Rand {Dec 15}                       	CME       
 T6Z16     	South African Rand {Dec 16}                       	CME       
+T6Z17     	South African Rand {Dec 17}                       	CME       
 TB        	13-Week T-Bill Rate                               	CME       
 TK.C      	Russell 1000 Growth Continuation                  	CME       
 TKH16     	Russell 1000 Growth {Mar 16}                      	CME       

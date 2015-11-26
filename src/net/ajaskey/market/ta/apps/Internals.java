@@ -34,7 +34,7 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -54,7 +54,7 @@ public class Internals {
 	private static List<String>			filenames	= new ArrayList<String>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
 	public static PrintWriter				pwAll			= null;
-	private static int							million		= 1000000;
+	private static final int				MILLION		= 1000000;
 
 	private static double						ndxClose;
 	private static double						spxClose;
@@ -81,31 +81,31 @@ public class Internals {
 
 			pwAll = new PrintWriter("out\\breadth.txt");
 
-			// Internals.processIndex();
+			Internals.processIndex();
 
-			// Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
-			// Internals.processAnIndex("lists\\sp600-list.txt", "SML");
-			// Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
-			// Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-			// Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+			Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
+			Internals.processAnIndex("lists\\sp600-list.txt", "SML");
+			Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
+			Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+			Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
-			// double val = Internals.processListPercent("lists\\sp500-list.txt",
-			// days);
-			// System.out.printf("SPX days to recover %.2f%n", val);
-			// val = Internals.processListPercent("lists\\nasdaq100-list.txt", days);
-			// System.out.printf("NDX days to recover %.2f%n", val);
+			double val = Internals.processListPercent("lists\\sp500-list.txt", days);
+			System.out.printf("SPX days to recover %.2f%n", val);
+			val = Internals.processListPercent("lists\\nasdaq100-list.txt", days);
+			System.out.printf("NDX days to recover %.2f%n", val);
 
 			Internals.printBreath("lists\\sp500-list.txt", "SPX", days);
 			Internals.printBreath("lists\\nasdaq100-list.txt", "NDX", days);
 			Internals.printBreath("lists\\sp600-list.txt", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+			//Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
 
 		pwAll.close();
-		System.out.println("Done.");
+		System.out.println("Internals Done.");
 
 	}
 
@@ -121,7 +121,7 @@ public class Internals {
 		final String dataPath = System.getProperty(arg, "");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
-		tdList.clear();
+		TickerData.clearTickerData(tdList);
 		tdList = ParseData.parseFiles(filenames, 50);
 
 		final TickerData spx = TickerData.getTickerData(tdList, "SPX.IDX");
@@ -147,6 +147,8 @@ public class Internals {
 			smlClosePast = sml.getClose(days);
 			// System.out.println(smlClose);
 		}
+
+		TickerData.clearTickerData(tdList);
 
 	}
 
@@ -224,9 +226,10 @@ public class Internals {
 		final String dataPath = System.getProperty(arg, "");
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
+		filenames.add(dataPath + "\\ASCII\\AMEX");
 
 		final int tdays = ((days * 7) / 5) + 1;
-		final int dataDays = Math.max(30, (int) (tdays * 2.25));
+		final int dataDays = Math.max(30, (int) (tdays * 3.25));
 
 		tdList.clear();
 		tdList = ParseData.parseFiles(filenames, dataDays);
@@ -260,9 +263,9 @@ public class Internals {
 			td.generateDerived();
 			// System.out.println(td.getTicker() + " " + td.getDaysOfData() + " " +
 			// days*2);
-			if (td.getDaysOfData() > (days * 2)) {
+			if (td.getDaysOfData() > (days * 3)) {
 				double chg = 0;
-				volume += UtilMethods.sma(td.getVolumeData(), days * 2);
+				volume += UtilMethods.sma(td.getVolumeData(), days * 3);
 				for (int i = 0; i < days; i++) {
 					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 					priceChg = td.getClose(i) - td.getClose(i + 1);
@@ -297,7 +300,7 @@ public class Internals {
 
 		Utils.makeDir("out");
 		double cumForce = 0;
-		pwAll.printf("%n\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
+		pwAll.printf("\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
 		for (int i = 0; i < days; i++) {
 			final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);
@@ -308,9 +311,9 @@ public class Internals {
 			final double avgVol = volume;
 			final double volRatio = vol[i] / avgVol;
 
-			final long volDiff = (volUp[i] - volDown[i]) / million;
-			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / million);
-			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / million);
+			final long volDiff = (volUp[i] - volDown[i]) / MILLION;
+			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
+			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
 			pwAll.printf("\t%.2f\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f \t%s%n", price[i], sUp, sDown, sDaily, percent,
 			    sForce, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
@@ -322,16 +325,19 @@ public class Internals {
 		final int sumDown = UtilMethods.sum(down, days);
 		final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;
 
-		final long sumVolUp = UtilMethods.sum(volUp, days) / million;
-		final long sumVolDown = UtilMethods.sum(volDown, days) / million;
+		final long sumVolUp = UtilMethods.sum(volUp, days) / MILLION;
+		final long sumVolDown = UtilMethods.sum(volDown, days) / MILLION;
 		final long sumVolDiff = sumVolUp - sumVolDown;
 		final String sSumVolUp = NumberFormat.getIntegerInstance().format(sumVolUp);
 		final String sSumVolDown = NumberFormat.getIntegerInstance().format(sumVolDown);
 		final String sSumVolDiff = NumberFormat.getIntegerInstance().format(sumVolDiff);
 
+		final double sumVol = UtilMethods.sma(vol, vol.length);
+		final double volRatio = sumVol / volume;
+
 		final double sumPrice = UtilMethods.sum(price, days);
-		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s %n", sumPrice, sumUp, sumDown,
-		    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff);
+		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f%n", sumPrice, sumUp, sumDown,
+		    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff, volRatio);
 
 		double currentPrice = 1.0;
 		double pastPrice = 1.0;
@@ -352,8 +358,10 @@ public class Internals {
 			cmt = "Down";
 		}
 		pwAll.printf(
-		    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago. %n",
+		    "%s %.2f Points per Component with overall change of %.2f%% from closing price %.2f which was %d days ago.%n%n",
 		    cmt, sumPrice / tdList.size(), perChg, currentPrice, days + 1);
+
+		TickerData.clearTickerData(tdList);
 
 	}
 
@@ -367,9 +375,9 @@ public class Internals {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static void processAnIndex(String list, String listName)
 	    throws FileNotFoundException, IOException, ParseException {
+
 		final int[] inc = { 10, 20 };
 
 		try {
@@ -396,7 +404,6 @@ public class Internals {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static void processIndex() throws FileNotFoundException, ParseException {
 
 		ParseData.clearValidTickers();
@@ -412,7 +419,7 @@ public class Internals {
 		final String dataPath = System.getProperty(arg, "");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
-		tdList.clear();
+		TickerData.clearTickerData(tdList);
 		tdList = ParseData.parseFiles(filenames, 100);
 
 		for (final TickerData td : tdList) {
@@ -455,7 +462,7 @@ public class Internals {
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 
-		tdList.clear();
+		TickerData.clearTickerData(tdList);
 		tdList = ParseData.parseFiles(filenames, Math.max(70, 50 + days));
 
 		final int[] daily = new int[days];
@@ -473,6 +480,9 @@ public class Internals {
 				}
 			}
 		}
+
+		TickerData.clearTickerData(tdList);
+
 		int sum = 0;
 		for (final int i : daily) {
 			// System.out.println(i);
@@ -493,7 +503,6 @@ public class Internals {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
 	private static double processListPercent(String list, int days)
 	    throws FileNotFoundException, IOException, ParseException {
 
@@ -506,7 +515,7 @@ public class Internals {
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 
-		tdList.clear();
+		TickerData.clearTickerData(tdList);
 		tdList = ParseData.parseFiles(filenames, Math.max(70, 50 + days));
 
 		final double[] daily = new double[days];

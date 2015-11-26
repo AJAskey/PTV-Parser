@@ -48,7 +48,7 @@ public class MovingAverageMethodsTest {
 		this.tdSC = ParseData.parseOneFile("TestData\\cs-movavg.csv");
 		this.tdSC.generateDerived();
 
-		this.td = ParseData.parseOneFile("TestData\\qqq.csv");
+		this.td = ParseData.parseOneFile("TestData\\QQQ-TickerDataTest.txt");
 		this.td.generateDerived();
 	}
 
@@ -63,13 +63,13 @@ public class MovingAverageMethodsTest {
 	public void testEma10a() {
 		final double ema10 = MovingAverageMethods.ema(this.td.getCloseData(), 10);
 		// System.out.println(ema10);
-		Assert.assertEquals(ema10, 108.51, 0.1);
+		Assert.assertEquals(ema10, 109.13, 0.1);
 	}
 
 	@Test
 	public void testEma25() {
 		final double ema25 = MovingAverageMethods.ema(this.td.getCloseData(), 25);
 		System.out.println(ema25);
-		Assert.assertEquals(ema25, 106.76, 0.1);
+		Assert.assertEquals(ema25, 107.07, 0.1);
 	}
 }

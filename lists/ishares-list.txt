@@ -103,7 +103,7 @@ HEWG      	Currency Hedged MSCI Germ Ishares                 	AMEX
 HEWI      	Ishares Currency Hedged MSCI IT                   	AMEX      
 HEWJ      	Currency Hedged MSCI Japan Ishares                	AMEX      
 HEWL      	Ishares Currency Hedged MSCI Sw                   	AMEX      
-HEWP      	Ishares Currency Hedged MSCI Sp                   	AMEX      
+HEWP      	Ishares Currency Hedged MSCI SP                   	AMEX      
 HEWU      	Ishares Currency Hedged MSCI Un                   	AMEX      
 HEWW      	Ishares Currency Hedged MSCI Me                   	AMEX      
 HEWY      	Ishares Currency Hedged MSCI So                   	AMEX      
@@ -114,6 +114,7 @@ HSCZ      	Ishares Currency Hedged MSCI Ea                   	AMEX
 HYG       	Iboxx $ High Yield Corporate Bd Ishares           	AMEX      
 HYGH      	Interest Rate Hedged High Yield Ishares           	AMEX      
 HYXU      	Global Ex-US High Yield Corp Bond Fund Ishares    	AMEX      
+IAGG      	Ishares International Aggregate                   	AMEX      
 IAI       	DJ US Broker-Dealers Ishares                      	AMEX      
 IAK       	DJ US Insurance Ishares                           	AMEX      
 IAT       	DJ US Regional Banks Ishares                      	AMEX      
@@ -614,6 +615,7 @@ O075      	Ishares Plc                                       	LSE
 O080      	ISHARES IBOXX EURO LIQUID CORP(DT ZERT)           	LSE       
 O092      	Ishares Plc                                       	LSE       
 O102      	Ishares Plc                                       	LSE       
+O109      	Ishares Plc                                       	LSE       
 O115      	ISHARES CT ISHARES MSCI TURKEY                    	LSE       
 O119      	Ishares Plc                                       	LSE       
 O120      	Ishares Plc                                       	LSE       
@@ -695,12 +697,8 @@ QAT       	MSCI Qatar Capped Ishares                         	NASDAQ
 SOXX      	PHLX Sox Semiconductor Sector Ishares             	NASDAQ    
 UAE       	Ishares MSCI UAE Capped ETF                       	NASDAQ    
 WOOD      	S&P Global Timber & Forestry Idx Ishares          	NASDAQ    
-BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
 CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
-CMOXF     	Ishares Global Water Index ETF                    	OTCBB     
 CYMEF     	Ishares BRIC Index F                              	OTCBB     
-CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
-ICDZF     	Ishares Can Hyb Corp                              	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
@@ -714,7 +712,6 @@ IOOXF     	Ishares Core Canadia                              	OTCBB
 IRSHF     	Ishares S&P/Tsx Capp                              	OTCBB     
 ISARF     	Ishares CDN Universe                              	OTCBB     
 ISDJF     	Ishares DOW Jones CD                              	OTCBB     
-ISDXF     	Ishares Can Corp                                  	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
 ISHXF     	Ishares Dex All Government Bond Index Fund        	OTCBB     
@@ -735,6 +732,7 @@ QL3       	Ishares Usd Asia Hy Bond Etfs$                    	SGX
 CBD       	Ishares Balanced Income                           	TSX       
 CBD.A     	Ishares Balanced Income                           	TSX       
 CBH       	Ishares 1-10 Yr Laddered                          	TSX       
+CBH.A     	Ishares 1-10Yr Laddered                           	TSX       
 CBN       	Ishares Balanced Growth                           	TSX       
 CBN.A     	Ishares Balanced Growth                           	TSX       
 CBO       	Ishares 1-5Yr Laddered C                          	TSX       
@@ -756,7 +754,6 @@ CIE.A     	Ishares Intl Fundamental                          	TSX
 CIF       	Ishares Global Infrastru                          	TSX       
 CIF.A     	Ishares Global Infrastru                          	TSX       
 CJP       	Ishares Japan Fund Idx E                          	TSX       
-CJP.A     	Ishares Japan Fund Idx E                          	TSX       
 CLF       	Ishares 1-5 Yr Ladder Go                          	TSX       
 CLF.A     	Ishares 1-5 Yr Ladder Go                          	TSX       
 CLG       	Ishares 1-10 Yr Ladder G                          	TSX       

@@ -121,7 +121,6 @@ public interface TaMethodsIF {
 	 */
 	double calcDiPlus(double[] high, double[] low, double[] close, int days);
 
-
 	/**
 	 * net.ajaskey.market.ta.methods.calcMFI
 	 *
@@ -131,8 +130,6 @@ public interface TaMethodsIF {
 	 * @return
 	 */
 	double calcMFI(double[] typicalPrice, double[] volume, int days);
-
-
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcSmaTrend

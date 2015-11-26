@@ -1,15 +1,22 @@
 
 package net.ajaskey.market.ta.methods;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-import org.apache.commons.math3.stat.regression.RegressionResults;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import net.ajaskey.market.ta.Utils;
 
 /**
- * This class...
+ * This class provide linear regression data for a set of time/price values. The
+ * class is extended from
+ * org.apache.commons.math3.stat.regression.SimpleRegression and all of the
+ * methods of the parent class are available for use. Methods provide by this
+ * class are for convenience.
  *
  * @author Andy Askey
  *         <p>
@@ -40,17 +47,63 @@ import net.ajaskey.market.ta.Utils;
  *         </p>
  *
  */
-public class RegressionMethods {
+public class RegressionMethods extends SimpleRegression {
+
+	/**
+	 *
+	 * This class contains a data point that has been added to the regression data
+	 * set.
+	 *
+	 *
+	 */
+	public class DataPoint {
+
+		public Calendar	daDate;
+		public long			daDays;
+		public double		daPrice;
+
+		/**
+		 * This method serves as a constructor for the class.
+		 *
+		 */
+		public DataPoint(Calendar cal, double price) {
+			this.daDate = cal;
+			this.daDays = Utils.getTimeSpan(cal, RegressionMethods.this.baseCal);
+			this.daPrice = price;
+		}
+	}
+
+	/**
+	 *
+	 * This class is used to sort a list of DataPoint objects.
+	 *
+	 *
+	 */
+	public class SortPoints implements Comparator<DataPoint> {
+
+		@Override
+		public int compare(DataPoint d1, DataPoint d2) {
+			int retval = 0;
+			if (d1.daDays > d2.daDays) {
+				retval = 1;
+			} else if (d1.daDays > d2.daDays) {
+				retval = -1;
+			}
+			return retval;
+		}
+	}
 
 	/**
 	 *
 	 */
-	@SuppressWarnings("unused")
-	private static final long	serialVersionUID	= -3141249013668879111L;
-	private Calendar					baseCal						= null;
+	private static final long	serialVersionUID	= 1L;
 
-	public SimpleRegression		sreg							= new SimpleRegression();
-	public RegressionResults	results						= null;
+	List<DataPoint>						points						= new ArrayList<>();
+	private Calendar					baseCal						= null;
+	private int								dataCount;
+
+	private Calendar					minDate						= null;
+	private Calendar					maxDate						= null;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -59,25 +112,50 @@ public class RegressionMethods {
 	public RegressionMethods() {
 		this.baseCal = Calendar.getInstance();
 		this.baseCal.set(1900, Calendar.JANUARY, 1, 12, 0, 1);
+		this.dataCount = 0;
+		this.minDate = Calendar.getInstance();
+		this.maxDate = this.baseCal;
 	}
 
 	/**
 	 *
 	 * net.ajaskey.market.ta.methods.addData
 	 *
-	 * @param val
+	 * @param price
 	 * @param dates
-	 * @param days 
+	 * @param days
 	 */
-	public void addData(double[] val, Calendar[] dates, int days) {
-		
-		final int knt = Math.min(days, val.length);
+	public void addData(double[] price, Calendar[] dates, long days) {
+
+		final long knt = Math.min(days, price.length);
 		for (int i = 0; i < knt; i++) {
 			final long dayNumber = Utils.getTimeSpan(dates[i], this.baseCal);
-			this.sreg.addData(dayNumber, val[i]);
+			this.addData(dayNumber, price[i]);
+
+			if (dates[i].before(this.minDate)) {
+				this.minDate = dates[i];
+			}
+
+			if (dates[i].after(this.maxDate)) {
+				this.maxDate = dates[i];
+			}
+
+			this.points.add(new DataPoint(dates[i], price[i]));
+
+			this.dataCount++;
 		}
+		Collections.sort(this.points, new SortPoints());
+		System.out.println(Utils.calendarToString(this.minDate));
+		System.out.println(Utils.calendarToString(this.maxDate));
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.findX
+	 *
+	 * @param cal
+	 * @return
+	 */
 	public double findX(Calendar cal) {
 		double ret = 0;
 		try {
@@ -88,8 +166,41 @@ public class RegressionMethods {
 		return ret;
 	}
 
-	public void regress() {
-		this.results = this.sreg.regress();
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.getOutput
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public RegressionOutput getOutput(Calendar cal) {
+		try {
+			if (this.dataCount > 0) {
+				final RegressionOutput output = new RegressionOutput(this, Utils.getTimeSpan(cal, this.baseCal));
+
+				return output;
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
+
+
 }
+
+/**
+ * double sumDelta = 0; int knt=0; for (int i = 0; i < spx.getDataCount(); i++)
+ * { dd = TickerData.getDataOfDate(spx, spx.getDate(i)); if (dd != null) { yy =
+ * dd.getClose();
+ * 
+ * x = rm.findX(spx.getDate(i)); y = rm.sreg.predict(x);
+ * 
+ * delta = yy - y; sumDelta += delta/err; knt++; } }
+ * 
+ * x = rm.findX(cal); y = rm.sreg.predict(x); double avgDelta =
+ * sumDelta/(double)knt; double expectedPrice = y * (1.0+avgDelta);
+ * System.out.printf("%.3f %.2f",avgDelta, expectedPrice);
+ * 
+ */

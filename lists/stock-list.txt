@@ -367,6 +367,7 @@ DGI   	Digitalglobe Inc                            	NYSE      	none
 DGX   	Quest Diagnostics Inc                       	NYSE      	SP500     
 DHI   	D.R. Horton                                 	NYSE      	SP500     
 DHR   	Danaher Corp                                	NYSE      	SP500     
+DIA   	SPDR DOW 30 ETF                             	AMEX      	none      
 DIS   	Walt Disney Company                         	NYSE      	SP500     
 DISCA 	Discovery Communications Inc                	NASDAQ    	SP500     
 DISCK 	Discovery Communications Inc                	NASDAQ    	SP500     
@@ -666,6 +667,7 @@ ITT   	ITT Industries                              	NYSE      	none
 ITW   	Illinois Tool Works Inc                     	NYSE      	SP500     
 IVR   	Invesco Mortgage Capital Inc                	NYSE      	none      
 IVZ   	Invesco Plc                                 	NYSE      	SP500     
+IWO   	Russell 2000 Growth Index Ishares           	AMEX      	none      
 JACK  	Jack In The Box Inc                         	NASDAQ    	SP600     
 JAH   	Jarden Corp                                 	NYSE      	none      
 JAZZ  	Jazz Pharmaceuticals                        	NASDAQ    	none      
@@ -722,8 +724,6 @@ L     	Loews Corp                                  	NYSE      	SP500
 LAMR  	Lamar Advertising Company                   	NASDAQ    	none      
 LAZ   	Lazard Ltd                                  	NYSE      	none      
 LB    	L Brands Inc                                	NYSE      	SP500     
-LBTYA 	Liberty Global                              	NASDAQ    	NDX       
-LBTYK 	Liberty Global                              	NASDAQ    	NDX       
 LC    	Lendingclub Corp                            	NYSE      	none      
 LCI   	Lannett Co Inc                              	NYSE      	SP600     
 LDOS  	Leidos Holdings Inc                         	NYSE      	none      
@@ -747,6 +747,7 @@ LMCK  	Liberty Media Corporation                   	NASDAQ    	NDX
 LMT   	Lockheed Martin Corp                        	NYSE      	SP500     
 LNC   	Lincoln National Corp                       	NYSE      	SP500     
 LNCE  	Snyder's Lance Inc                          	NASDAQ    	SP600     
+LNG   	Cheniere Energy                             	AMEX      	none      
 LNKD  	Linkedin                                    	NYSE      	none      
 LNT   	Alliant Energy Corp                         	NYSE      	none      
 LOCK  	Lifelock Inc                                	NYSE      	none      
@@ -1027,6 +1028,7 @@ QGEN  	Qiagen N.V.                                 	NASDAQ    	none
 QIHU  	Qihoo 360 Technology Co. Ltd                	NYSE      	none      
 QLGC  	Qlogic Corp                                 	NASDAQ    	SP600     
 QLIK  	Qlik Technologies Inc                       	NASDAQ    	none      
+QQQ   	Powershares QQQ                             	NASDAQ    	none      
 QRVO  	Qorvo Inc                                   	NASDAQ    	SP500     
 QSII  	Quality Systems                             	NASDAQ    	SP600     
 QSR   	Restaurant Brands International             	NYSE      	none      
@@ -1097,7 +1099,6 @@ SBUX  	Starbucks Corp                              	NASDAQ    	SP500
 SC    	Santander Consumer USA Holdings             	NYSE      	none      
 SCCO  	Southern Peru Copper Corp                   	NYSE      	none      
 SCG   	Scana Corp                                  	NYSE      	SP500     
-SCHW  	The Charles Schwab Corp                     	NYSE      	SP500     
 SCI   	Service Corporation International           	NYSE      	none      
 SCMP  	Sucampo Pharmaceuticals                     	NASDAQ    	none      
 SCSS  	Select Comfort Corp                         	NASDAQ    	SP600     
@@ -1155,6 +1156,7 @@ SPNC  	The Spectranetics Corp                      	NASDAQ    	none
 SPR   	Spirit Aerosystems Holdings                 	NYSE      	none      
 SPWR  	Sunpower Corp                               	NASDAQ    	none      
 SPXC  	SPX Corp                                    	NYSE      	none      
+SPY   	SPDR S&P 500 ETF                            	AMEX      	none      
 SQM   	Sociedad Quimica Y Minera S.A.              	NYSE      	none      
 SRCL  	Stericycle Inc                              	NASDAQ    	SP500     
 SRE   	Sempra Energy                               	NYSE      	SP500     
@@ -1191,6 +1193,7 @@ SXL   	Sunoco Logistics Partners LP                	NYSE      	none
 SYF   	Synchrony Financial                         	NYSE      	none      
 SYK   	Stryker Corp                                	NYSE      	SP500     
 SYMC  	Symantec Corp                               	NASDAQ    	SP500     
+SYRG  	Synergy Resources Cp                        	AMEX      	none      
 SYT   	Syngenta Ag                                 	NYSE      	none      
 SYY   	Sysco Corp                                  	NYSE      	SP500     
 T     	AT&T Inc                                    	NYSE      	SP500     
@@ -1289,6 +1292,7 @@ URBN  	Urban Outfitters                            	NASDAQ    	SP500
 URI   	United Rentals                              	NYSE      	SP500     
 USB   	U.S. Bancorp                                	NYSE      	SP500     
 USG   	USG Corp                                    	NYSE      	none      
+USO   	US Oil                                      	AMEX      	none      
 UTHR  	United Therapeutics Corp                    	NASDAQ    	none      
 UTX   	United Technologies Corp                    	NYSE      	SP500     
 UVE   	Universal Insurance Holdings Inc            	NYSE      	SP600     
@@ -1342,7 +1346,6 @@ WDR   	Waddell & Reed Financial                    	NYSE      	none
 WEC   	Wisconsin Energy Corp                       	NYSE      	SP500     
 WEN   	The Wendy's Company                         	NASDAQ    	none      
 WERN  	Werner Enterprises                          	NASDAQ    	none      
-WETF  	Wisdomtree Invstmnts                        	NASDAQ    	none      
 WFC   	Wells Fargo & Company                       	NYSE      	SP500     
 WFM   	Whole Foods Market                          	NASDAQ    	SP500     
 WFT   	Weatherford International Ltd               	NYSE      	none      
