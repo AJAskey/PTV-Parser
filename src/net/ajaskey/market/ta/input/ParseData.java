@@ -135,6 +135,10 @@ public class ParseData {
 	 */
 	static public List<TickerData> parseFile(File file) throws ParseException, FileNotFoundException {
 
+		if ((validTickers == null) || (validTickers.size() == 0)) {
+			return null;
+		}
+
 		final List<TickerData> tdList = new ArrayList<TickerData>();
 
 		try {
@@ -246,10 +250,17 @@ public class ParseData {
 			System.out.println("List of files is null in parseFiles");
 			throw new FileNotFoundException();
 		}
+		
+
 
 		for (final String fname : directoryNames) {
 
 			final File flist = new File(fname);
+			
+			if (!flist.exists()) {
+				tdList.clear();
+				return tdList;
+			}
 
 			for (final File f : flist.listFiles()) {
 
@@ -272,7 +283,9 @@ public class ParseData {
 
 						final List<TickerData> td = ParseData.parseFile(f);
 
-						ParseData.mergeLists(tdList, td);
+						if (td != null) {
+							ParseData.mergeLists(tdList, td);
+						}
 					}
 				}
 			}
