@@ -1,11 +1,9 @@
-package net.ajaskey.market.ta;
 
-import static org.junit.Assert.*;
+package net.ajaskey.market.ta;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 
 /**
  * This class...
@@ -26,7 +24,7 @@ import org.junit.Test;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *         
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -41,7 +39,7 @@ import org.junit.Test;
  */
 public class ValidateDataTest {
 
-	/** 
+	/**
 	 * net.ajaskey.market.ta.setUpBeforeClass
 	 *
 	 * @throws java.lang.Exception
@@ -50,7 +48,7 @@ public class ValidateDataTest {
 	public static void setUpBeforeClass() throws Exception {
 	}
 
-	/** 
+	/**
 	 * net.ajaskey.market.ta.setUp
 	 *
 	 * @throws java.lang.Exception
@@ -64,23 +62,26 @@ public class ValidateDataTest {
 	 */
 	@Test
 	public void testInit() {
-		//fail("Not yet implemented");
+		// fail("Not yet implemented");
 	}
 
 	/**
-	 * Test method for {@link net.ajaskey.market.ta.ValidateData#isHoliday(java.util.Calendar)}.
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.ValidateData#isHoliday(java.util.Calendar)}.
 	 */
 	@Test
 	public void testIsHoliday() {
-	//	fail("Not yet implemented");
+		// fail("Not yet implemented");
 	}
 
 	/**
-	 * Test method for {@link net.ajaskey.market.ta.ValidateData#validate(net.ajaskey.market.ta.TickerData)}.
+	 * Test method for
+	 * {@link net.ajaskey.market.ta.ValidateData#validate(net.ajaskey.market.ta.TickerData)}
+	 * .
 	 */
 	@Test
 	public void testValidate() {
-		//fail("Not yet implemented");
+		// fail("Not yet implemented");
 	}
 
 }
