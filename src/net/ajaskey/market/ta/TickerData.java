@@ -214,7 +214,6 @@ public class TickerData {
 				t.generateDerived();
 			}
 		} catch (FileNotFoundException e) {
-			tdList.clear();
 		}
 		return tdList;
 	}

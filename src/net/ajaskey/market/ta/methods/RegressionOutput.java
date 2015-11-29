@@ -3,8 +3,6 @@ package net.ajaskey.market.ta.methods;
 
 import org.apache.commons.math3.stat.regression.RegressionResults;
 
-import net.ajaskey.market.ta.Utils;
-
 /**
  * This class...
  *
@@ -24,7 +22,7 @@ import net.ajaskey.market.ta.Utils;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -48,7 +46,7 @@ public class RegressionOutput {
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @param regressionMethods
 	 *
 	 * @param parameters
@@ -63,21 +61,21 @@ public class RegressionOutput {
 	 * @param copyData
 	 */
 	public RegressionOutput(RegressionMethods reg, long days) {
-		results = reg.regress();
+		this.results = reg.regress();
 
-		count = results.getN();
-		predictedPrice = reg.predict(days);
-		meanErr = Math.sqrt(results.getMeanSquareError());
-		slope = reg.getSlope() * 180.0 / Math.PI;
-		r2 = results.getRSquared();
-		
+		this.count = this.results.getN();
+		this.predictedPrice = reg.predict(days);
+		this.meanErr = Math.sqrt(this.results.getMeanSquareError());
+		this.slope = (reg.getSlope() * 180.0) / Math.PI;
+		this.r2 = this.results.getRSquared();
+
 	}
 
 	@Override
 	public String toString() {
 		String str = null;
-		str = String.format("Values:%d Predicted:%.2f MeanErr:%.2f Slope:%.2f RSquared:%.2f%n", count, predictedPrice,
-		    meanErr, slope, r2);
+		str = String.format("Values:%d Predicted:%.2f MeanErr:%.2f Slope:%.2f RSquared:%.2f%n", this.count,
+		    this.predictedPrice, this.meanErr, this.slope, this.r2);
 
 		return str;
 	}

@@ -78,6 +78,8 @@ public class Internals {
 		try {
 			final int days = 10;
 			Internals.getClosingPrices(days);
+			
+			Utils.makeDir("out");
 
 			pwAll = new PrintWriter("out\\breadth.txt");
 
@@ -269,16 +271,16 @@ public class Internals {
 				for (int i = 0; i < days; i++) {
 					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 					priceChg = td.getClose(i) - td.getClose(i + 1);
-					final double val = Math.abs(chg * td.getAvgVol20());
+					final double forceVal = Math.abs(priceChg * td.getVolume(i) / td.getAvgVol20());
 					if (chg > 0.0) {
 						daily[i]++;
 						up[i]++;
-						forceUp[i] += val;
+						forceUp[i] += forceVal;
 						volUp[i] += (long) td.getVolume(i);
 					} else if (chg < 0.0) {
 						daily[i]--;
 						down[i]++;
-						forceDown[i] += val;
+						forceDown[i] += forceVal;
 						volDown[i] += (long) td.getVolume(i);
 					}
 					vol[i] += td.getVolume(i);
