@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.ajaskey.market.ta.DailyData;
+import net.ajaskey.market.ta.InterdayData;
 import net.ajaskey.market.ta.TickerData;
 
 /**
@@ -225,7 +226,7 @@ public class ParseData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.parseFiles
 	 *
 	 * @param directoryNames
@@ -250,13 +251,11 @@ public class ParseData {
 			System.out.println("List of files is null in parseFiles");
 			throw new FileNotFoundException();
 		}
-		
-
 
 		for (final String fname : directoryNames) {
 
 			final File flist = new File(fname);
-			
+
 			if (!flist.exists()) {
 				tdList.clear();
 				return tdList;
@@ -292,6 +291,71 @@ public class ParseData {
 		}
 
 		return tdList;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.parseInterdayFile
+	 *
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 */
+	static public List<InterdayData> parseInterdayFile(File file)
+	    throws IOException, FileNotFoundException, ParseException {
+
+		String tkr = "";
+		double open = 0;
+		double high = 0;
+		double low = 0;
+		double close = 0;
+		double volume = 0;
+
+		final List<InterdayData> data = new ArrayList<>();
+
+		if (file == null) {
+			throw new FileNotFoundException();
+		}
+
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+
+			String line = "";
+			while (line != null) {
+				line = br.readLine();
+
+				if ((line != null) && (line.length() > 10) && (!line.contains("Symbol,"))) {
+					final String fld[] = line.split(",");
+
+					if (fld.length == 7) {
+						tkr = fld[0].trim();
+						open = ParseData.toDouble(fld[2].trim());
+						high = ParseData.toDouble(fld[3].trim());
+						low = ParseData.toDouble(fld[4].trim());
+						close = ParseData.toDouble(fld[5].trim());
+						volume = ParseData.toDouble(fld[6].trim());
+
+						InterdayData theData = null;
+						for (final InterdayData id : data) {
+							if (tkr.equalsIgnoreCase(id.getTicker())) {
+								theData = id;
+								break;
+							}
+						}
+						if (theData == null) {
+							theData = new InterdayData();
+							theData.setTicker(tkr);
+							data.add(theData);
+						}
+						theData.addData(open, high, low, close, volume);
+					}
+				}
+			}
+		}
+
+		return data;
+
 	}
 
 	/**
@@ -515,12 +579,16 @@ public class ParseData {
 	 * @return
 	 */
 	private static Double toDouble(String str) {
-		final int idx = str.indexOf(".");
 		String dStr;
-		if (idx > 0) {
-			dStr = str;
-		} else {
-			dStr = str + ".0";
+		try {
+			final int idx = str.indexOf(".");
+			if (idx > 0) {
+				dStr = str;
+			} else {
+				dStr = str + ".0";
+			}
+		} catch (final Exception e) {
+			dStr = "0.0";
 		}
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
