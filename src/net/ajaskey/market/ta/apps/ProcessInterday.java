@@ -13,6 +13,7 @@ import java.util.List;
 import net.ajaskey.market.ta.InterdayData;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.ta.apps.helpers.InterdaySumData;
 import net.ajaskey.market.ta.input.ParseData;
 
 /**
@@ -71,29 +72,42 @@ public class ProcessInterday {
 		arg = "dataPath";
 		final String dataPath = System.getProperty(arg, "");
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		// filenames.add(dataPath + "\\ASCII\\NYSE");
 		ParseData.clearValidTickers();
 		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
 		tdList = ParseData.parseFiles(filenames, 60);
 
 		Utils.makeDir("out");
 		List<InterdayData> filteredList = ProcessInterday.filterList(idList, 0.99, 50000, 200, 0.01);
-		ProcessInterday.printList(filteredList, "out\\all-interday.txt");
+		InterdaySumData sd = setSumData(filteredList);
+		ProcessInterday.printList(filteredList, sd, "out\\all-interday.txt");
 
 		filteredList.clear();
 		filteredList = ProcessInterday.filterList(idList, 4.99, 500000, 290, 0.10);
-		ProcessInterday.printList(filteredList, "out\\filtered-interday.txt");
+		sd = setSumData(filteredList);
+		ProcessInterday.printList(filteredList, sd, "out\\filtered-interday.txt");
 
 	}
 
 	/**
-	 *
-	 * net.ajaskey.market.ta.apps.filterList
-	 *
+	 * Creates a sublist of InterdayData based on filter criteria.
+	 * 
 	 * @param idList
-	 * @return
+	 *          List of InterdayData object to filter
+	 * @param priceLimit
+	 *          lowest price to consider
+	 * @param volumeLimit
+	 *          lowest volume to consider
+	 * @param tickLimit
+	 *          lowest number of data points to consider
+	 * @param rangeLimit
+	 *          smallest interday price change to consider
+	 * 
+	 * @return A List of InterdayData objects that meet all the criteria passed
+	 *         in.
 	 */
-	private static List<InterdayData> filterList(List<InterdayData> idList, double price, long volume, int ticks,
-	    double minRange) {
+	private static List<InterdayData> filterList(List<InterdayData> idList, double priceLimit, long volumeLimit, int tickLimit,
+	    double rangeLimit) {
 
 		final List<InterdayData> filterList = new ArrayList<>();
 
@@ -103,17 +117,23 @@ public class ProcessInterday {
 			 * Stocks over $5 that have moved and have a reasonable about of daily
 			 * data.
 			 */
-			if ((id.getDayHigh() > price) && (Math.abs(id.getRange()) > minRange) && (id.getUpdates() > ticks)) {
+			TickerData td = null;
+			if ((id.getDayHigh() > priceLimit) && (Math.abs(id.getPriceRange()) > rangeLimit) && (id.getUpdates() > tickLimit)) {
 
-				final TickerData td = TickerData.getFromList(id.getTicker(), tdList);
-				td.generateDerived();
+				if (id.getTd() == null) {
+					td = TickerData.getFromList(id.getTicker(), tdList);
+					td.generateDerived();
+					id.setTd(td);
+				} else {
+					td = id.getTd();
+				}
 
 				/**
 				 * Stocks over 500k volume and todays volume greater than average daily
 				 * volume.
 				 */
-				if (((long) td.getAvgVol20() > volume) && ((id.getSumVol() > (long) td.getAvgVol20()))) {
-					id.setTd(td);
+				long vol20 = (long) td.getAvgVol20();
+				if ((vol20 > volumeLimit) && ((id.getSumVol() > vol20))) {
 					filterList.add(id);
 				}
 			}
@@ -123,22 +143,39 @@ public class ProcessInterday {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.setSumData
+	 *
+	 * @param list
+	 * @return
+	 */
+	private static InterdaySumData setSumData(List<InterdayData> list) {
+		InterdaySumData sd = new InterdaySumData();
+		for (final InterdayData id : list) {
+
+			sd.priceInRng = 0;
+			if (id.getPriceRange() > 0.0) {
+				sd.priceInRng = (id.getDayClose() - id.getDayLow()) / id.getPriceRange();
+			}
+
+			sd.totUp += id.getSumUp();
+			sd.totDown += id.getSumDown();
+			sd.totForceUp += id.getSumForceUp();
+			sd.totForceDown += id.getSumForceDown();
+		}
+		return sd;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.apps.processAllBreadth
 	 *
 	 * @param list
+	 * @param sd
 	 * @throws FileNotFoundException
 	 */
-	private static void printList(List<InterdayData> list, String outfile) throws FileNotFoundException {
-
-		int totUp = 0;
-		int totDown = 0;
-		double totFUp = 0;
-		double totFDown = 0;
-		int totPosDiv = 0;
-		int totNegDiv = 0;
-		int totBottom5th = 0;
-		int totTop5th = 0;
+	private static void printList(List<InterdayData> list, InterdaySumData sd, String outfile)
+	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(outfile)) {
 			pw.printf(
@@ -148,50 +185,16 @@ public class ProcessInterday {
 
 				// System.out.println(id.getTicker() + " " + id.getUpdates());
 
-				final int diff = id.getSumUp() - id.getSumDown();
-				final long fDiff = (long) (id.getSumForceUp() - id.getSumForceDown());
-
-				if ((diff < -10) && (fDiff > 1000)) {
-					totPosDiv++;
-				} else if ((diff > 10) && (fDiff < -1000)) {
-					totNegDiv++;
-				}
-
-				double priceInRng = 0;
-				if (id.getRange() > 0.0) {
-					priceInRng = (id.getDayClose() - id.getDayLow()) / id.getRange();
-				}
-
-				totUp += id.getSumUp();
-				totDown += id.getSumDown();
-				totFUp += id.getSumForceUp();
-				totFDown += id.getSumForceDown();
-
-				final double fv = Math.abs(((double) fDiff / id.getSumVol()) * 100.0);
-				final double rngPerc = id.getRange() / id.getDayClose();
-
 				pw.printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.4f\t%.2f%n",
-				    id.getTicker(), id.getUpdates(), id.getSumUp(), id.getSumDown(), diff, (long) id.getSumForceUp(),
-				    (long) id.getSumForceDown(), fDiff, id.getSumVol(), fv, id.getDayOpen(), id.getDayHigh(), id.getDayLow(),
-				    id.getDayClose(), id.getRange(), rngPerc, priceInRng);
-
-				if (priceInRng > 0.80) {
-					totTop5th++;
-				} else if (priceInRng < 0.20) {
-					totBottom5th++;
-				}
-
+				    id.getTicker(), id.getUpdates(), id.getSumUp(), id.getSumDown(), id.getUpDownDiff(), (long) id.getSumForceUp(),
+				    (long) id.getSumForceDown(), id.getForceDiff(), id.getSumVol(), id.getForceVolume(), id.getDayOpen(), id.getDayHigh(),
+				    id.getDayLow(), id.getDayClose(), id.getPriceRange(), id.getRangePercent(), sd.priceInRng);
 			}
 
-			String diff = NumberFormat.getIntegerInstance().format(totUp - totDown);
-			String fdiff = NumberFormat.getIntegerInstance().format(totFUp - totFDown);
+			final String strDiff = NumberFormat.getIntegerInstance().format(sd.totUp - sd.totDown);
+			final String strFdiff = NumberFormat.getIntegerInstance().format(sd.totForceUp - sd.totForceDown);
 
-			// System.out.printf("%d %d %n", totNegDiv, totPosDiv);
-			// System.out.printf("%d %d %n", totBottom5th, totTop5th);
-			System.out.printf("%d  %10s %18s %n", list.size(), diff, fdiff);
-			// System.out.printf("%.2f %d%n", ((double) (totUp - totDown) / (double)
-			// list.size()),
-			// (long) ((totFUp - totFDown) / list.size()));
+			System.out.printf("%d  %10s %18s %n", list.size(), strDiff, strFdiff);
 
 		}
 	}

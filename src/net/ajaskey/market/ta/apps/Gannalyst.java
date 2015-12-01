@@ -11,7 +11,6 @@ import java.util.List;
 
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
-import net.ajaskey.market.ta.ValidateData;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 
