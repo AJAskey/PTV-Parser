@@ -35,22 +35,35 @@ package net.ajaskey.market.ta;
  */
 public class InterdayData {
 
-	private String	ticker;
-	private int			sumUp					= 0;
-	private int			sumDown				= 0;
-	private double	sumForceUp		= 0;
-	private double	sumForceDown	= 0;
-	private long		sumVol				= 0;
-	private double	dayLow				= 999999.9;
-	private double	dayOpen				= -1.0;
-	private double	dayClose			= 0;
-	private int			updates				= 0;
+	private String			ticker;
+	private int					sumUp					= 0;
+	private int					sumDown				= 0;
+	private double			sumForceUp		= 0;
+	private double			sumForceDown	= 0;
+	private long				sumVol				= 0;
+	private double			dayLow				= 999999.9;
+	private double			dayOpen				= -1.0;
+	private double			dayClose			= 0;
+	private int					updates				= 0;
+	private double			dayHigh				= -999999.9;
+	private double			range					= 0;
+	private TickerData	td						= null;
 
-	private double	dayHigh				= -999999.9;
-
+	/**
+	 *
+	 * net.ajaskey.market.ta.addData
+	 *
+	 * @param open
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param volume
+	 */
 	public void addData(double open, double high, double low, double close, double volume) {
 
 		this.updates++;
+		
+		//System.out.println(ticker + "  " + updates);
 
 		if (this.dayOpen < 0.0) {
 			this.dayOpen = open;
@@ -68,6 +81,7 @@ public class InterdayData {
 		this.sumVol += (long) volume;
 		this.dayLow = Math.min(this.dayLow, low);
 		this.dayHigh = Math.max(this.dayHigh, high);
+		this.range = this.dayHigh - this.dayLow;
 	}
 
 	/**
@@ -96,6 +110,13 @@ public class InterdayData {
 	 */
 	public double getDayOpen() {
 		return this.dayOpen;
+	}
+
+	/**
+	 * @return the range
+	 */
+	public double getRange() {
+		return this.range;
 	}
 
 	/**
@@ -134,6 +155,13 @@ public class InterdayData {
 	}
 
 	/**
+	 * @return the td
+	 */
+	public TickerData getTd() {
+		return this.td;
+	}
+
+	/**
 	 * @return the ticker
 	 */
 	public String getTicker() {
@@ -161,6 +189,16 @@ public class InterdayData {
 	 */
 	public void setSumForceUp(double sumForceUp) {
 		this.sumForceUp = sumForceUp;
+	}
+
+	/**
+	 * @param td
+	 *          the td to set
+	 */
+	public void setTd(TickerData td) {
+		if (td == null) {
+			this.td = td;
+		}
 	}
 
 	/**
