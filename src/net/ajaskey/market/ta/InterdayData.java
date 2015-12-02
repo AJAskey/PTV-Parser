@@ -124,9 +124,6 @@ public class InterdayData {
 		}
 	}
 
-	
-
-	
 	/**
 	 * @return the ticker
 	 */
@@ -134,7 +131,6 @@ public class InterdayData {
 		return ticker;
 	}
 
-	
 	/**
 	 * @return the sumUp
 	 */
@@ -142,7 +138,6 @@ public class InterdayData {
 		return sumUp;
 	}
 
-	
 	/**
 	 * @return the sumDown
 	 */
@@ -150,7 +145,6 @@ public class InterdayData {
 		return sumDown;
 	}
 
-	
 	/**
 	 * @return the sumForceUp
 	 */
@@ -158,7 +152,6 @@ public class InterdayData {
 		return sumForceUp;
 	}
 
-	
 	/**
 	 * @return the sumForceDown
 	 */
@@ -166,7 +159,6 @@ public class InterdayData {
 		return sumForceDown;
 	}
 
-	
 	/**
 	 * @return the sumVol
 	 */
@@ -174,7 +166,6 @@ public class InterdayData {
 		return sumVol;
 	}
 
-	
 	/**
 	 * @return the dayLow
 	 */
@@ -182,7 +173,6 @@ public class InterdayData {
 		return dayLow;
 	}
 
-	
 	/**
 	 * @return the dayOpen
 	 */
@@ -190,7 +180,6 @@ public class InterdayData {
 		return dayOpen;
 	}
 
-	
 	/**
 	 * @return the dayClose
 	 */
@@ -198,7 +187,6 @@ public class InterdayData {
 		return dayClose;
 	}
 
-	
 	/**
 	 * @return the updates
 	 */
@@ -206,7 +194,6 @@ public class InterdayData {
 		return updates;
 	}
 
-	
 	/**
 	 * @return the dayHigh
 	 */
@@ -214,7 +201,6 @@ public class InterdayData {
 		return dayHigh;
 	}
 
-	
 	/**
 	 * @return the priceRange
 	 */
@@ -222,7 +208,6 @@ public class InterdayData {
 		return priceRange;
 	}
 
-	
 	/**
 	 * @return the upDownDiff
 	 */
@@ -230,7 +215,6 @@ public class InterdayData {
 		return upDownDiff;
 	}
 
-	
 	/**
 	 * @return the forceDiff
 	 */
@@ -238,7 +222,6 @@ public class InterdayData {
 		return forceDiff;
 	}
 
-	
 	/**
 	 * @return the forceVolume
 	 */
@@ -246,7 +229,6 @@ public class InterdayData {
 		return forceVolume;
 	}
 
-	
 	/**
 	 * @return the rangePercent
 	 */
@@ -254,7 +236,6 @@ public class InterdayData {
 		return rangePercent;
 	}
 
-	
 	/**
 	 * @return the td
 	 */
@@ -283,9 +264,7 @@ public class InterdayData {
 	 *          the td to set
 	 */
 	public void setTd(TickerData td) {
-		if (td == null) {
-			this.td = td;
-		}
+		this.td = td;
 	}
 
 	/**

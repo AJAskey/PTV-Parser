@@ -64,8 +64,9 @@ public class ProcessInterday {
 		String arg = "InterdayDataPath";
 		final String idDataPath = System.getProperty(arg, "");
 
-		final File nazFile = new File(idDataPath + "\\NASDAQ_20151130.csv");
+		final File nazFile = new File(idDataPath + "\\NASDAQ_20151201.csv");
 		final List<InterdayData> idList = ParseData.parseInterdayFile(nazFile);
+		System.out.println("Total Tickers : " + idList.size());
 
 		final List<String> filenames = new ArrayList<>();
 
@@ -78,9 +79,13 @@ public class ProcessInterday {
 		tdList = ParseData.parseFiles(filenames, 60);
 
 		Utils.makeDir("out");
+
+		InterdaySumData sd = setSumData(idList);
+		ProcessInterday.printList(idList, sd, "out\\all-interday.txt");
+
 		List<InterdayData> filteredList = ProcessInterday.filterList(idList, 0.99, 50000, 200, 0.01);
-		InterdaySumData sd = setSumData(filteredList);
-		ProcessInterday.printList(filteredList, sd, "out\\all-interday.txt");
+		sd = setSumData(filteredList);
+		ProcessInterday.printList(filteredList, sd, "out\\most-interday.txt");
 
 		filteredList.clear();
 		filteredList = ProcessInterday.filterList(idList, 4.99, 500000, 290, 0.10);
@@ -106,8 +111,8 @@ public class ProcessInterday {
 	 * @return A List of InterdayData objects that meet all the criteria passed
 	 *         in.
 	 */
-	private static List<InterdayData> filterList(List<InterdayData> idList, double priceLimit, long volumeLimit, int tickLimit,
-	    double rangeLimit) {
+	private static List<InterdayData> filterList(List<InterdayData> idList, double priceLimit, long volumeLimit,
+	    int tickLimit, double rangeLimit) {
 
 		final List<InterdayData> filterList = new ArrayList<>();
 
@@ -118,7 +123,8 @@ public class ProcessInterday {
 			 * data.
 			 */
 			TickerData td = null;
-			if ((id.getDayHigh() > priceLimit) && (Math.abs(id.getPriceRange()) > rangeLimit) && (id.getUpdates() > tickLimit)) {
+			if ((id.getDayHigh() > priceLimit) && (Math.abs(id.getPriceRange()) > rangeLimit)
+			    && (id.getUpdates() > tickLimit)) {
 
 				if (id.getTd() == null) {
 					td = TickerData.getFromList(id.getTicker(), tdList);
@@ -150,7 +156,9 @@ public class ProcessInterday {
 	 * @return
 	 */
 	private static InterdaySumData setSumData(List<InterdayData> list) {
+
 		InterdaySumData sd = new InterdaySumData();
+
 		for (final InterdayData id : list) {
 
 			sd.priceInRng = 0;
@@ -162,6 +170,31 @@ public class ProcessInterday {
 			sd.totDown += id.getSumDown();
 			sd.totForceUp += id.getSumForceUp();
 			sd.totForceDown += id.getSumForceDown();
+
+			if (id.getTd() != null) {
+				if (id.getSumVol() > (id.getTd().getAvgVol20() * 2.0)) {
+					if (id.getDayOpen() < id.getDayClose()) {
+						if (sd.priceInRng > 0.75) {
+							sd.upOnVolume++;
+						}
+					} else if (id.getDayOpen() > id.getDayClose()) {
+						if (sd.priceInRng < 0.25) {
+							sd.downOnVolume++;
+						}
+					}
+				}
+			}
+
+			/**
+			 * Greater than 1% more or at least an 80 cent move.
+			 */
+			if ((id.getRangePercent() > 0.009) || (id.getPriceRange() > 0.79)) {
+				if (sd.priceInRng > 0.85) {
+					sd.upperRange++;
+				} else if (sd.priceInRng < 0.15) {
+					sd.lowerRange++;
+				}
+			}
 		}
 		return sd;
 	}
@@ -186,15 +219,17 @@ public class ProcessInterday {
 				// System.out.println(id.getTicker() + " " + id.getUpdates());
 
 				pw.printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.4f\t%.2f%n",
-				    id.getTicker(), id.getUpdates(), id.getSumUp(), id.getSumDown(), id.getUpDownDiff(), (long) id.getSumForceUp(),
-				    (long) id.getSumForceDown(), id.getForceDiff(), id.getSumVol(), id.getForceVolume(), id.getDayOpen(), id.getDayHigh(),
-				    id.getDayLow(), id.getDayClose(), id.getPriceRange(), id.getRangePercent(), sd.priceInRng);
+				    id.getTicker(), id.getUpdates(), id.getSumUp(), id.getSumDown(), id.getUpDownDiff(),
+				    (long) id.getSumForceUp(), (long) id.getSumForceDown(), id.getForceDiff(), id.getSumVol(),
+				    id.getForceVolume(), id.getDayOpen(), id.getDayHigh(), id.getDayLow(), id.getDayClose(), id.getPriceRange(),
+				    id.getRangePercent(), sd.priceInRng);
 			}
 
 			final String strDiff = NumberFormat.getIntegerInstance().format(sd.totUp - sd.totDown);
 			final String strFdiff = NumberFormat.getIntegerInstance().format(sd.totForceUp - sd.totForceDown);
 
-			System.out.printf("%d  %10s %18s %n", list.size(), strDiff, strFdiff);
+			System.out.printf("%5d  %10s %18s  %d  %d  %d  %d %n", list.size(), strDiff, strFdiff, sd.upperRange,
+			    sd.lowerRange, sd.upOnVolume, sd.downOnVolume);
 
 		}
 	}

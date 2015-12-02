@@ -1,8 +1,11 @@
 
-package net.ajaskey.market.ta.apps.helpers;
+package net.ajaskey.market.ta;
+
+import java.util.Calendar;
 
 /**
- * This class...
+ * This class calculates various range square angles, dates, and price levels.
+ * It is currently a place holder for a future effort.
  *
  * @author Andy Askey
  *         <p>
@@ -20,7 +23,7 @@ package net.ajaskey.market.ta.apps.helpers;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -33,32 +36,17 @@ package net.ajaskey.market.ta.apps.helpers;
  *         </p>
  *
  */
-public class InterdaySumData {
-
-	public int		totUp;
-	public int		totDown;
-	public double	totForceUp;
-	public double	totForceDown;
-	public double	priceInRng;
-	public int		upperRange;
-	public int		lowerRange;
-	public int		upOnVolume;
-	public int		downOnVolume;
-
+public class GannData {
+	
+	//TODO Place price, time, volume knowledge here.
+	
+	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public InterdaySumData() {
-		this.totUp = 0;
-		this.totDown = 0;
-		this.totForceUp = 0;
-		this.totForceDown = 0;
-		this.priceInRng = 0.0;
-		upperRange = 0;
-		lowerRange = 0;
-		upOnVolume = 0;
-		downOnVolume = 0;
+	public GannData(double startPrice, Calendar startDate, double endPrice, Calendar endDate) {
+		
 	}
 
 }

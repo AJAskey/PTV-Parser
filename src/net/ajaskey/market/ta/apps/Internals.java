@@ -78,7 +78,7 @@ public class Internals {
 		try {
 			final int days = 10;
 			Internals.getClosingPrices(days);
-			
+
 			Utils.makeDir("out");
 
 			pwAll = new PrintWriter("out\\breadth.txt");
@@ -100,7 +100,8 @@ public class Internals {
 			Internals.printBreath("lists\\nasdaq100-list.txt", "NDX", days);
 			Internals.printBreath("lists\\sp600-list.txt", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
-			//Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
+
+			// Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
@@ -272,6 +273,9 @@ public class Internals {
 					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 					priceChg = td.getClose(i) - td.getClose(i + 1);
 					final double forceVal = Math.abs(priceChg * td.getVolume(i) / td.getAvgVol20());
+
+					System.out.printf("%10s %10.2f %10.2f%n", td.getTicker(), priceChg, forceVal);
+
 					if (chg > 0.0) {
 						daily[i]++;
 						up[i]++;
@@ -302,7 +306,7 @@ public class Internals {
 
 		Utils.makeDir("out");
 		double cumForce = 0;
-		pwAll.printf("\t%s%n\tChg\tUp\tDown\tDiff\tPercent\tForce\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
+		pwAll.printf("\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
 		for (int i = 0; i < days; i++) {
 			final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);
@@ -317,12 +321,13 @@ public class Internals {
 			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
 			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
-			pwAll.printf("\t%.2f\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f \t%s%n", price[i], sUp, sDown, sDaily, percent,
-			    sForce, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
+			double fv = (long) ((forceUp[i] - forceDown[i]) / price[i] * 100.0);
+			pwAll.printf("\t%.2f\t%d\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%.2f \t%s%n", price[i], (long) fv, sUp, sDown, sDaily,
+			    percent, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
 
-			cumForce += (forceUp[i] - forceDown[i]);
+			cumForce += fv;
 		}
-		final String sCumForce = NumberFormat.getIntegerInstance().format((int) cumForce);
+		final String sCumForce = NumberFormat.getIntegerInstance().format((int) (cumForce/(double)days));
 		final int sumUp = UtilMethods.sum(up, days);
 		final int sumDown = UtilMethods.sum(down, days);
 		final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;
@@ -338,8 +343,8 @@ public class Internals {
 		final double volRatio = sumVol / volume;
 
 		final double sumPrice = UtilMethods.sum(price, days);
-		pwAll.printf("\t%.2f\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%s\t%.2f%n", sumPrice, sumUp, sumDown,
-		    UtilMethods.sum(daily, days), pDaily, sCumForce, sSumVolUp, sSumVolDown, sSumVolDiff, volRatio);
+		pwAll.printf("\t%.2f\t%s\t%d\t%d\t%d\t%.1f%%\t%s\t%s\t%s\t%.2f%n", sumPrice, sCumForce, sumUp, sumDown,
+		    UtilMethods.sum(daily, days), pDaily, sSumVolUp, sSumVolDown, sSumVolDiff, volRatio);
 
 		double currentPrice = 1.0;
 		double pastPrice = 1.0;
