@@ -11,7 +11,6 @@ import java.util.List;
 
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.Utils;
-import net.ajaskey.market.ta.ValidateData;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 
@@ -76,19 +75,19 @@ public class Gannalyst {
 		Utils.makeDir("gann");
 
 		for (final TickerData td : tdAll) {
-			if (ValidateData.validate(td)) {
-				td.generateDerived();
-				try (PrintWriter pw = new PrintWriter("gann\\" + td.getTicker() + ".csv")) {
-					for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
-						final String d = sdf.format(td.getDate(i).getTime());
-						pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-						    (int) td.getVolume(i));
-						// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
-						// td.getOpen(i), td.getHigh(i), td.getLow(i),
-						// td.getClose(i), (int) td.getVolume(i));
-					}
+			// if (ValidateData.validate(td)) {
+			td.generateDerived();
+			try (PrintWriter pw = new PrintWriter("gann\\" + td.getTicker() + ".csv")) {
+				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
+					final String d = sdf.format(td.getDate(i).getTime());
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+					    (int) td.getVolume(i));
+					// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
+					// td.getOpen(i), td.getHigh(i), td.getLow(i),
+					// td.getClose(i), (int) td.getVolume(i));
 				}
 			}
+			// }
 		}
 		System.out.println("Done.");
 	}

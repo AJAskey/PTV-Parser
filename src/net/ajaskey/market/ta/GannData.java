@@ -1,10 +1,11 @@
 
-package net.ajaskey.market.ta.methods;
+package net.ajaskey.market.ta;
 
-import org.apache.commons.math3.stat.regression.RegressionResults;
+import java.util.Calendar;
 
 /**
- * This class...
+ * This class calculates various range square angles, dates, and price levels.
+ * It is currently a place holder for a future effort.
  *
  * @author Andy Askey
  *         <p>
@@ -22,7 +23,7 @@ import org.apache.commons.math3.stat.regression.RegressionResults;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -35,49 +36,17 @@ import org.apache.commons.math3.stat.regression.RegressionResults;
  *         </p>
  *
  */
-public class RegressionOutput {
-
-	public RegressionResults	results					= null;
-	public long								count;
-	public double							predictedPrice	= 0;
-	public double							meanErr					= 0;
-	public double							slope						= 0;
-	public double							r2							= 0;
-
+public class GannData {
+	
+	//TODO Place price, time, volume knowledge here.
+	
+	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
-	 * @param regressionMethods
-	 *
-	 * @param parameters
-	 * @param varcov
-	 * @param isSymmetricCompressed
-	 * @param nobs
-	 * @param rank
-	 * @param sumy
-	 * @param sumysq
-	 * @param sse
-	 * @param containsConstant
-	 * @param copyData
 	 */
-	public RegressionOutput(RegressionMethods reg, long days) {
-		this.results = reg.regress();
-
-		this.count = this.results.getN();
-		this.predictedPrice = reg.predict(days);
-		this.meanErr = Math.sqrt(this.results.getMeanSquareError());
-		this.slope = (reg.getSlope() * 180.0) / Math.PI;
-		this.r2 = this.results.getRSquared();
-
-	}
-
-	@Override
-	public String toString() {
-		String str = null;
-		str = String.format("Values:%d Predicted:%.2f MeanErr:%.2f Slope:%.2f RSquared:%.2f%n", this.count,
-		    this.predictedPrice, this.meanErr, this.slope, this.r2);
-
-		return str;
+	public GannData(double startPrice, Calendar startDate, double endPrice, Calendar endDate) {
+		
 	}
 
 }
