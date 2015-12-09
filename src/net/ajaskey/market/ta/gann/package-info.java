@@ -1,11 +1,5 @@
-
-package net.ajaskey.market.ta;
-
-import java.util.Calendar;
-
 /**
- * This class calculates various range square angles, dates, and price levels.
- * It is currently a place holder for a future effort.
+ * This class...
  *
  * @author Andy Askey
  *         <p>
@@ -23,7 +17,7 @@ import java.util.Calendar;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *         
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -36,17 +30,5 @@ import java.util.Calendar;
  *         </p>
  *
  */
-public class GannData {
-	
-	//TODO Place price, time, volume knowledge here.
-	
-	
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public GannData(double startPrice, Calendar startDate, double endPrice, Calendar endDate) {
-		
-	}
 
-}
+package net.ajaskey.market.ta.gann;
