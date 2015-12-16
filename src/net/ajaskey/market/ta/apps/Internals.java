@@ -274,7 +274,8 @@ public class Internals {
 					priceChg = td.getClose(i) - td.getClose(i + 1);
 					final double forceVal = Math.abs(priceChg * td.getVolume(i) / td.getAvgVol20());
 
-					System.out.printf("%10s %10.2f %10.2f%n", td.getTicker(), priceChg, forceVal);
+					// System.out.printf("%10s %10.2f %10.2f%n", td.getTicker(), priceChg,
+					// forceVal);
 
 					if (chg > 0.0) {
 						daily[i]++;
@@ -312,8 +313,6 @@ public class Internals {
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);
 			final String sDown = NumberFormat.getIntegerInstance().format(down[i]);
 			final String sDaily = NumberFormat.getIntegerInstance().format(daily[i]);
-			final String sForce = NumberFormat.getIntegerInstance().format((int) (forceUp[i] - forceDown[i]));
-			// double avgVol = sumVol / (double) days;
 			final double avgVol = volume;
 			final double volRatio = vol[i] / avgVol;
 
@@ -321,13 +320,16 @@ public class Internals {
 			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
 			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
-			double fv = (long) ((forceUp[i] - forceDown[i]) / price[i] * 100.0);
+			//double fv = (long) ((forceUp[i] - forceDown[i]) / price[i] * 100.0);
+			double fv = (long) ((forceUp[i] - forceDown[i]) );
 			pwAll.printf("\t%.2f\t%d\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%.2f \t%s%n", price[i], (long) fv, sUp, sDown, sDaily,
 			    percent, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
 
+			System.out.println(listName + "  " + forceUp[i] + "  " + forceDown[i] + "  " + fv);
+
 			cumForce += fv;
 		}
-		final String sCumForce = NumberFormat.getIntegerInstance().format((int) (cumForce/(double)days));
+		final String sCumForce = NumberFormat.getIntegerInstance().format((int)cumForce);
 		final int sumUp = UtilMethods.sum(up, days);
 		final int sumDown = UtilMethods.sum(down, days);
 		final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;

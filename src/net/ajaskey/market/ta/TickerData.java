@@ -64,6 +64,8 @@ public class TickerData {
 	 * Derived values
 	 */
 	private Integer								daysOfData;
+	
+	private DerivedData derived;
 
 	private Double								sma23;
 	private Double								smaPerc23;
@@ -152,6 +154,9 @@ public class TickerData {
 		this.fundies = Fundamentals.getWithTicker(this.ticker);
 		this.data.add(dd);
 		this.daysOfData = 0;
+
+		this.derived = null;
+		
 		this.sma23 = 0.0;
 		this.sma65 = 0.0;
 		this.sma130 = 0.0;
@@ -404,7 +409,7 @@ public class TickerData {
 	 */
 	public static TickerData getTickerData(List<TickerData> list, String ticker) {
 		for (final TickerData td : list) {
-			if (td.getTicker().compareTo(ticker) == 0) {
+			if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
 				return td;
 			}
 		}

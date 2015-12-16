@@ -79,6 +79,40 @@ public class UtilMethods {
 	}
 
 	/**
+	 * Calculate the percentage change from p2 to p1
+	 *
+	 * @param p1
+	 *          most recent data point
+	 * @param p2
+	 *          historic data point
+	 * @return percentage change
+	 */
+	static public double calcPercentChange(double p1, double p2) {
+		double ret = 0.0;
+		try {
+			if (p2 != 0.0) {
+				ret = (p1 - p2) / p2;
+			}
+		} catch (final Exception e) {
+			ret = 0.0;
+		}
+		return ret * 100.0;
+	}
+
+	/**
+	 * Calculate the percentage change from p2 to p1
+	 *
+	 * @param p1
+	 *          most recent data point
+	 * @param p2
+	 *          historic data point
+	 * @return change
+	 */
+	static public double calcPriceChange(double p1, double p2) {
+		return p1 - p2;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.methods.getDataSlice
 	 *
@@ -672,6 +706,7 @@ public class UtilMethods {
 			}
 		}
 		return da;
+
 	}
 
 }

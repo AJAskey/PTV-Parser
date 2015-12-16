@@ -15,10 +15,15 @@ import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 
 /**
+ * 
+ * This class generates the data used by the Gannalyst program found @
+ * http://gannalyst-professional.software.informer.com/5.0
+ *
  * @author Andy Askey
- *
+ *         <p>
  *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *
+ *         </p>
+ *         <p>
  *         Permission is hereby granted, free of charge, to any person obtaining
  *         a copy of this software and associated documentation files (the
  *         "Software"), to deal in the Software without restriction, including
@@ -29,7 +34,9 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
- *
+ *         </p>
+ * 
+ *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -38,6 +45,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *         SOFTWARE.
+ *         </p>
  *
  */
 public class Gannalyst {
@@ -77,7 +85,7 @@ public class Gannalyst {
 		for (final TickerData td : tdAll) {
 			// if (ValidateData.validate(td)) {
 			td.generateDerived();
-			try (PrintWriter pw = new PrintWriter("gann\\" + td.getTicker() + ".csv")) {
+			try (PrintWriter pw = new PrintWriter("\\Dev\\TA\\gann\\" + td.getTicker() + ".csv")) {
 				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
 					final String d = sdf.format(td.getDate(i).getTime());
 					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
