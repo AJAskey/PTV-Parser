@@ -62,13 +62,13 @@ public class DailyBreadth {
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\breadth.txt"));
 
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 50);
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 80);
 
 		// for (TickerData td : tdAll) {
 		// System.out.println(td.getTicker());
 		// }
 
-		System.out.println("\tAdv\tDecl\t%Adv\t10dma\tAdvVol\tDeclVol\t%AdvVol\t10dma\t%35day\tHighs\tLows");
+		System.out.println("\tAdv\tDecl\t%Adv\tDiff10ma\tAdvVol\tDeclVol\t%AdvVol\tDiff10ma\t%50dVol\tHighs\tLows");
 
 		final TickerData adva = TickerData.getTickerData(tdAll, "adva.idx");
 		final TickerData avva = TickerData.getTickerData(tdAll, "avva.idx");
@@ -114,6 +114,24 @@ public class DailyBreadth {
 		final TickerData dvce = TickerData.getTickerData(tdAll, "dvce.idx");
 		final DailyBreadthData dbEtf = new DailyBreadthData(adve, dece, avve, dvce, null, null);
 
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\nasdaq100-list.txt"));
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		final List<TickerData> tdNdxList = ParseData.parseFiles(filenames, 370);
+		DailyBreadthData dbNdx = new DailyBreadthData(tdNdxList);
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\sp500-list.txt"));
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+		final List<TickerData> tdSpxList = ParseData.parseFiles(filenames, 370);
+		DailyBreadthData dbSpx = new DailyBreadthData(tdSpxList);
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\sp600-list.txt"));
+		filenames.add(dataPath + "\\ASCII\\AMEX");
+		final List<TickerData> tdSp600List = ParseData.parseFiles(filenames, 370);
+		DailyBreadthData dbSp600 = new DailyBreadthData(tdSp600List);
+
 		System.out.println("NASD\t" + dbNaz.toString());
 		System.out.println("NYSE\t" + dbNyse.toString());
 		System.out.println("AMEX\t" + dbAmex.toString());
@@ -122,6 +140,10 @@ public class DailyBreadth {
 		dbTotal.setNewHighs();
 		dbTotal.setNewLows();
 		System.out.println("Total\t" + dbTotal.toString());
+		System.out.println("");
+		System.out.println("SPX\t" + dbSpx.toString());
+		System.out.println("NDX\t" + dbNdx.toString());
+		System.out.println("SP600\t" + dbSp600.toString());
 
 	}
 
