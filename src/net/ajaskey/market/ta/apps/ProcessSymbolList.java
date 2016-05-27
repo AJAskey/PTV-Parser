@@ -1,7 +1,9 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -80,6 +82,7 @@ public class ProcessSymbolList {
 		final PrintWriter pwSector = new PrintWriter("lists\\sector-list.txt");
 		final PrintWriter pwDJUS = new PrintWriter("lists\\djus-list.txt");
 		final PrintWriter pwUSMF = new PrintWriter("lists\\usmf-list.txt");
+		final PrintWriter pwOPRA = new PrintWriter("lists\\oex-options-list.txt");
 
 		final PrintWriter pwAll = new PrintWriter("lists\\master-list.txt");
 
@@ -94,8 +97,9 @@ public class ProcessSymbolList {
 				final String dirName = fpath.substring(idx, idx2 - 1);
 
 				// ignore options
-				if ((dirName.compareToIgnoreCase("OPRA") != 0) && (dirName.compareToIgnoreCase("HKEX") != 0)
-				    && (dirName.compareToIgnoreCase("WCE") != 0)) {
+				// if ((dirName.compareToIgnoreCase("OPRA") != 0) &&
+				// (dirName.compareToIgnoreCase("HKEX") != 0)
+				if ((dirName.compareToIgnoreCase("HKEX") != 0) && (dirName.compareToIgnoreCase("WCE") != 0)) {
 
 					final String oFile = "symbols\\" + dirName + "_SymbolList.txt";
 
@@ -126,6 +130,12 @@ public class ProcessSymbolList {
 										pwDJUS.printf(fmt, codePlus, name, dirName);
 									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", codePlus, name, dirName);
+								} else if (dirName.compareToIgnoreCase("OPRA") == 0) {
+									if (code.contains("OEX.XO")) {
+										pwOPRA.println(code);
+									}
+									pw.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
+									pwAll.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
 								} else {
 									final String fmt = "%-10s\t%-50s\t%-10s%n";
 									pw.printf(fmt, code, name, dirName);
@@ -160,6 +170,9 @@ public class ProcessSymbolList {
 		pwDJUS.close();
 		pwAll.close();
 		pwUSMF.close();
+		pwOPRA.close();
+
+		buildOexList();
 
 		System.out.println("ProcessSymbolList Done.");
 	}
@@ -182,6 +195,41 @@ public class ProcessSymbolList {
 					list.add(f);
 				}
 			}
+		}
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.buildOexList
+	 * 
+	 * @throws IOException
+	 *
+	 */
+	private static void buildOexList() throws IOException {
+		System.out.println("in OexList");
+
+		final String iFile = "symbols\\OPRA_SymbolList.txt";
+		File file = new File(iFile);
+		if (file.exists()) {
+
+			PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
+
+			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
+
+				String line = br.readLine();
+
+				while (line != null) {
+
+					if (line.contains("OEX.X")) {
+						String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
+						    .replaceAll("Call_", "Call") + "\tOPRA";
+						oFile.println(str);
+					}
+					line = br.readLine();
+				}
+			}
+			oFile.close();
+
 		}
 
 	}

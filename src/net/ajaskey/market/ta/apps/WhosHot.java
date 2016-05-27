@@ -101,7 +101,7 @@ public class WhosHot {
 
 		System.out.println("Processing...");
 
-		//WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
+		WhosHot.processList("lists\\caseshiller-list-mod.txt", "cs", 0, 0);
 		//WhosHot.processList("lists\\djus-list.txt", "djus", 0, 0);
 		//WhosHot.processList("lists\\etf-list-mod.txt", "etf", 0, 500000);
 		WhosHot.processList("lists\\stock-list.txt", "stocks", 0, 750000);
@@ -144,7 +144,7 @@ public class WhosHot {
 		System.out.println("Tickers found : " + tdAll.size());
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived(offset);
+			td.generateDerived(offset,false);
 		}
 
 		Utils.makeDir("out");

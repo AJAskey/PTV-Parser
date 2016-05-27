@@ -78,7 +78,7 @@ public class DailyBreadthData {
 		double sumAvgVol = 0;
 
 		for (final TickerData td : tdList) {
-			td.generateDerived();
+			td.generateDerived(false);
 			double chg = UtilMethods.calcPriceChange(td.getCurrentPrice(), td.getClose(1));
 			if (chg > 0.0) {
 				this.adv++;
@@ -140,8 +140,8 @@ public class DailyBreadthData {
 		this.percentAdvancing = ((double) this.adv / (double) knt) * 100.0;
 		this.percentAdvancingVol = ((double) this.advVol / (double) this.totVol) * 100.0;
 
-		adDiff10dma = (sumAdv - sumDec) / 10;
-		adVolDiff10dma = (sumVolAdv - sumVolDec) / 10 / 1000000;
+		adDiff10dma = (sumAdv - sumDec); // / 10;
+		adVolDiff10dma = (sumVolAdv - sumVolDec) / 1000000; // /10;
 
 	}
 
@@ -160,18 +160,18 @@ public class DailyBreadthData {
 	    TickerData highs, TickerData lows) {
 
 		this.init();
-		advancing.generateDerived();
-		declining.generateDerived();
-		advancingVol.generateDerived();
-		decliningVol.generateDerived();
+		advancing.generateDerived(false);
+		declining.generateDerived(false);
+		advancingVol.generateDerived(false);
+		decliningVol.generateDerived(false);
 		if (highs != null) {
-			highs.generateDerived();
+			highs.generateDerived(false);
 			this.newHighs = (int) highs.getClose(0);
 		} else {
 			this.newHighs = 0;
 		}
 		if (lows != null) {
-			lows.generateDerived();
+			lows.generateDerived(false);
 			this.newLows = (int) lows.getClose(0);
 		} else {
 			this.newLows = 0;
@@ -194,8 +194,8 @@ public class DailyBreadthData {
 			sum += (advancing.getClose(i) - declining.getClose(i));
 			sumVol += (advancingVol.getClose(i) - decliningVol.getClose(i));
 		}
-		this.adDiff10dma = sum / 10;
-		this.adVolDiff10dma = sumVol / 10;
+		this.adDiff10dma = sum; // / 10;
+		this.adVolDiff10dma = sumVol; // / 10;
 
 		double sumVolume = 0;
 		final int days = 50;

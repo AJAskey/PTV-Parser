@@ -129,7 +129,7 @@ public class Internals {
 
 		final TickerData spx = TickerData.getTickerData(tdList, "SPX.IDX");
 		if (spx != null) {
-			spx.generateDerived();
+			spx.generateDerived(false);
 			spxClose = spx.getCurrentPrice();
 			spxClosePast = spx.getClose(days);
 			// System.out.println(spxClose);
@@ -137,7 +137,7 @@ public class Internals {
 
 		final TickerData ndx = TickerData.getTickerData(tdList, "NDX.IDX");
 		if (ndx != null) {
-			ndx.generateDerived();
+			ndx.generateDerived(false);
 			ndxClose = ndx.getCurrentPrice();
 			ndxClosePast = ndx.getClose(days);
 			// System.out.println(ndxClose);
@@ -145,7 +145,7 @@ public class Internals {
 
 		final TickerData sml = TickerData.getTickerData(tdList, "SML.IDX");
 		if (sml != null) {
-			sml.generateDerived();
+			sml.generateDerived(false);
 			smlClose = sml.getCurrentPrice();
 			smlClosePast = sml.getClose(days);
 			// System.out.println(smlClose);
@@ -263,7 +263,7 @@ public class Internals {
 
 		Calendar[] cal = null;
 		for (final TickerData td : tdList) {
-			td.generateDerived();
+			td.generateDerived(false);
 			// System.out.println(td.getTicker() + " " + td.getDaysOfData() + " " +
 			// days*2);
 			if (td.getDaysOfData() > (days * 3)) {
@@ -432,7 +432,7 @@ public class Internals {
 		tdList = ParseData.parseFiles(filenames, 100);
 
 		for (final TickerData td : tdList) {
-			td.generateDerived();
+			td.generateDerived(false);
 
 			for (int days = 10; days < 31; days += 5) {
 
@@ -476,7 +476,7 @@ public class Internals {
 
 		final int[] daily = new int[days];
 		for (final TickerData td : tdList) {
-			td.generateDerived();
+			td.generateDerived(false);
 			if (td.getDaysOfData() > days) {
 				double chg = 0;
 				for (int i = 0; i < days; i++) {
@@ -530,7 +530,7 @@ public class Internals {
 		final double[] daily = new double[days];
 		double sumChg = 0;
 		for (final TickerData td : tdList) {
-			td.generateDerived();
+			td.generateDerived(false);
 			if (td.getDaysOfData() > days) {
 				double chg = 0;
 				for (int i = 0; i < days; i++) {

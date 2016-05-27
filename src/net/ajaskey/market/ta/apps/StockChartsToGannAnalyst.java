@@ -82,11 +82,11 @@ public class StockChartsToGannAnalyst {
 
 				if (td == null) {
 					td = new TickerData("SPX", cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]),
-					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]));
+					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
 					// System.out.println(line);
 				} else {
 					final DailyData dd = new DailyData(cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]),
-					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]));
+					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
 					// System.out.println(line);
 					td.addData(dd);
 				}

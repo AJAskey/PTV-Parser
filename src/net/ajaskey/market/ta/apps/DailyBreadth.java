@@ -68,7 +68,7 @@ public class DailyBreadth {
 		// System.out.println(td.getTicker());
 		// }
 
-		System.out.println("\tAdv\tDecl\t%Adv\tDiff10ma\tAdvVol\tDeclVol\t%AdvVol\tDiff10ma\t%50dVol\tHighs\tLows");
+		System.out.println("\tAdv\tDecl\t%Adv\tSumDiff10d\tAdvVol\tDeclVol\t%AdvVol\tSumDiff10d\t%50dVol\tHighs\tLows");
 
 		final TickerData adva = TickerData.getTickerData(tdAll, "adva.idx");
 		final TickerData avva = TickerData.getTickerData(tdAll, "avva.idx");

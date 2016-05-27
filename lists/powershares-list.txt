@@ -3,7 +3,6 @@ AGA       	DB Agriculture Dble Short ETN Powershares         	AMEX
 AGF       	DB Agriculture Long ETN Powershares               	AMEX      
 BAB       	Build America Bond Powershares                    	AMEX      
 BDD       	DB Base Metals Dble Long ETN Powershares          	AMEX      
-BDG       	DB Base Metals Long ETN Powershares               	AMEX      
 BKLN      	Senior Loan Portfolio Powershares                 	AMEX      
 BOM       	DB Base Metals Dble Short ETN Powershares         	AMEX      
 BOS       	DB Base Metals Short ETN Powershares              	AMEX      
@@ -22,15 +21,12 @@ DEE       	DB Commodity Dble Short ETN Powershares           	AMEX
 DGL       	DB Gold Powershares                               	AMEX      
 DGP       	DB Gold Double Long ETN Powershares               	AMEX      
 DGZ       	DB Gold Short ETN Powershares                     	AMEX      
-DPU       	DB Commodity Long ETN Powershares                 	AMEX      
 DSUM      	Chinese Yuan Dim Sum Bond Powershares             	AMEX      
 DTO       	DB Crude Oil Dble Short ETN Powershares           	AMEX      
 DWAQ      	Dynamic OTC Powershares                           	AMEX      
 DYY       	DB Commodity Dble Long ETN Powershares            	AMEX      
 DZZ       	DB Gold Double Short ETN Powershares              	AMEX      
-EEHB      	S&P Emrg Mkts High Beta Powershares               	AMEX      
 EELV      	S&P Emrg Mkts Low Volatily Powershares            	AMEX      
-IDHB      	S&P Intl Dev High Beta Powershares                	AMEX      
 IDHQ      	S&P Intl Dev High Quality Powershares             	AMEX      
 IDLV      	S&P Intl Dev Low Volatility Powershares           	AMEX      
 JGBD      	DB 3X Inver Jap Gov Bond ETN Powershares          	AMEX      
@@ -38,9 +34,7 @@ JGBL      	DB Japan Gov Bond ETN Powershares                 	AMEX
 JGBS      	DB Inverse Jap Gov Bond ETN Powershares           	AMEX      
 JGBT      	DB 3X Japan Gov Bond ETN Powershares              	AMEX      
 KBWB      	KBW Bank Powershares                              	AMEX      
-KBWC      	KBW Capital Markets Powershares                   	AMEX      
 KBWD      	KBW High Div Yield Financial Powershares          	AMEX      
-KBWI      	KBW Insurance Powershares                         	AMEX      
 KBWP      	KBW Prop & Casuality Insur Powershares            	AMEX      
 KBWR      	KBW Regional Banking Powershares                  	AMEX      
 KBWY      	KBW Prem Yield Equity REIT Powershares            	AMEX      
@@ -118,16 +112,3 @@ SZO       	DB Crude Oil Short ETN Powershares                	AMEX
 UDN       	DB US Dollar Index Bearish Powershares            	AMEX      
 UUP       	DB US Dollar Index Bullish Powershares            	AMEX      
 PSBW      	Powershares Glbal Funds Ireland Plc Powershares   	LSE       
-PAGG      	Global Agriculture Powershares                    	NASDAQ    
-PNQI      	Nasdaq Internet Powershares                       	NASDAQ    
-PRFZ      	FTSE Rafi US 1500 Small-Mid Powershares           	NASDAQ    
-PSAU      	Global Gold & Prec Metals Powershares             	NASDAQ    
-PSCC      	S&P Smallcap Cnsmr Staples Powershares            	NASDAQ    
-PSCD      	S&P Smallcap Cnsmr Discret Powershares            	NASDAQ    
-PSCE      	S&P Smallcap Energy Powershares                   	NASDAQ    
-PSCF      	S&P Smallcap Financials Powershares               	NASDAQ    
-PSCH      	S&P Smallcap Health Care Powershares              	NASDAQ    
-PSCI      	S&P Smallcap Industrials Powershares              	NASDAQ    
-PSCM      	S&P Smallcap Materials Powershares                	NASDAQ    
-PSCT      	S&P Smallcap Info Tech Powershares                	NASDAQ    
-PSCU      	S&P Smallcap Utilities Powershares                	NASDAQ    

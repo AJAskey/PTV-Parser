@@ -1,7 +1,6 @@
 AFK       	Africa Index ETF Market Vectors                   	AMEX      
 ALD       	Asia Local Debt ETF Wisdomtree                    	AMEX      
 ANGL      	Fallen Angel HY Bond ETF Market Vectors           	AMEX      
-BBH       	Biotech ETF Market Vectors                        	AMEX      
 BIV       	Interm-Term Bond ETF Vanguard                     	AMEX      
 BJK       	Gaming ETF Market Vectors                         	AMEX      
 BLV       	Long-Term Bond Index ETF Vanguard                 	AMEX      
@@ -59,7 +58,6 @@ NLR       	Uranium+Nuclear Energy ETF Market Vectors         	AMEX
 OIH       	Oil Services ETF Market Vectors                   	AMEX      
 PEK       	China ETF Market Vectors                          	AMEX      
 PLND      	Poland ETF Market Vectors                         	AMEX      
-PPH       	Pharmaceutical ETF Market Vectors                 	AMEX      
 PRB       	Pre-Refunded Muni ETF Market Vectors              	AMEX      
 PUTX      	Alps ETF Trust Alps Enhanced Pu                   	AMEX      
 REMX      	Rare Earth/Str Metals ETF Market Vectors          	AMEX      
@@ -91,7 +89,6 @@ VBR       	Smallcap Value ETF Vanguard                       	AMEX
 VCR       	Consumer Discretionary ETF Vanguard               	AMEX      
 VDC       	Consumer Staples ETF Vanguard                     	AMEX      
 VDE       	Energy ETF Vanguard                               	AMEX      
-VEA       	EAFE ETF MSCI Vanguard                            	AMEX      
 VEU       	FTSE All-World Ex-US ETF Vanguard                 	AMEX      
 VFH       	Financial ETF Vanguard                            	AMEX      
 VGK       	Europe ETF FTSE Vanguard                          	AMEX      
@@ -137,7 +134,6 @@ W1        	Crude Oil ETF VIX                                 	CFE
 CASE      	Go Ucits ETF Solutions P                          	LSE       
 CASH      	Go Ucits ETF Solutions P                          	LSE       
 CEMA      	CS ETF [Ie] Plc                                   	LSE       
-CEML      	CS ETF [Ie] Plc                                   	LSE       
 CEU       	CS ETF [Ie] Plc                                   	LSE       
 CEUS      	CS ETF [Ie] Plc                                   	LSE       
 CIND      	CS ETF [Ie] Plc                                   	LSE       
@@ -150,11 +146,11 @@ CORE      	Go Ucits ETF Solutions P                          	LSE
 CORG      	Go Ucits ETF Solutions P                          	LSE       
 CPXJ      	CS ETF [Ie] Plc                                   	LSE       
 CRED      	Go Ucits ETF Solutions P                          	LSE       
-CREE      	Go Ucits ETF Solutions P                          	LSE       
 CREG      	Go Ucits ETF Solutions P                          	LSE       
+CRGH      	Go Ucits ETF Solutions Plc                        	LSE       
+CRRY      	Lam Zyfin Global Markets Ucits ETF Plc            	LSE       
 CSBR      	CS ETF [Ie] Plc                                   	LSE       
 CSCA      	CS ETF [Ie] Plc                                   	LSE       
-CSCL      	CS ETF [Ie] Plc                                   	LSE       
 CSJP      	CS ETF [Ie] Plc                                   	LSE       
 CSKR      	CS ETF [Ie] Plc                                   	LSE       
 CSPX      	CS ETF [Ie] Plc                                   	LSE       
@@ -164,9 +160,7 @@ CSUS      	CS ETF [Ie] Plc                                   	LSE
 CUKL      	CS ETF [Ie] Plc                                   	LSE       
 CUKS      	CS ETF [Ie] Plc                                   	LSE       
 CUKX      	CS ETF [Ie] Plc                                   	LSE       
-CURY      	Lam Zyfin Global Markets Ucits ETF Plc            	LSE       
 CUSS      	CS ETF [Ie] Plc                                   	LSE       
-DAXIV     	Recon Capital DAX ETF In                          	LSE       
 DEL2      	Go Ucits ETF Solutions P                          	LSE       
 DES2      	Go Ucits ETF Solutions P                          	LSE       
 DL2P      	Go Ucits ETF Solutions P                          	LSE       
@@ -176,10 +170,8 @@ DXJFEIV   	Wisdomtree Japan Equity Ucits ETF - EUR           	LSE
 DXJZEIV   	Wisdomtree Japan Equity Ucits ETF - Jpy           	LSE       
 FWEC      	Go Ucits ETF Solutions P                          	LSE       
 FWEG      	Go Ucits ETF Solutions P                          	LSE       
-FWEU      	Go Ucits ETF Solutions P                          	LSE       
 HEDFEIV   	Wisdomtree Europe Equity Ucits ETF - EUR          	LSE       
 ISPY      	Go Ucits ETF Solutions Plc                        	LSE       
-LOCE      	Go Ucits ETF Solutions P                          	LSE       
 LOCG      	Go Ucits ETF Solutions P                          	LSE       
 LOCL      	Go Ucits ETF Solutions P                          	LSE       
 LUK2      	Go Ucits ETF Solutions P                          	LSE       
@@ -189,7 +181,6 @@ ROBE      	Go Ucits ETF Solutions P                          	LSE
 ROBG      	Go Ucits ETF Solutions P                          	LSE       
 ROBO      	Go Ucits ETF Solutions P                          	LSE       
 SUK2      	Go Ucits ETF Solutions P                          	LSE       
-UC03      	UBS (Irl) ETF Plc                                 	LSE       
 UC04      	UBS (Irl) ETF Plc                                 	LSE       
 UC07      	UBS (Irl) ETF Plc                                 	LSE       
 UC10      	UBS (Irl) ETF Plc                                 	LSE       
@@ -197,7 +188,9 @@ UC12      	UBS (Irl) ETF Plc                                 	LSE
 UC13      	UBS (Irl) ETF Plc                                 	LSE       
 UC42      	UBS (Irl) ETF Plc                                 	LSE       
 UC49      	UBS (Irl) ETF Plc                                 	LSE       
+UC51      	UBS (Irl) ETF Plc                                 	LSE       
 UC53      	UBS (Irl) ETF Plc                                 	LSE       
+UC73      	UBS (Irl) ETF Plc                                 	LSE       
 UC74      	UBS (Irl) ETF Plc                                 	LSE       
 UC75      	UBS (Irl) ETF Plc                                 	LSE       
 UKSR      	UBS (Irl) ETF Plc                                 	LSE       
@@ -206,36 +199,19 @@ XSPU      	DB X-Trackers Dbx S&P 500 ETF $                   	LSE
 ZC1G      	BMO Ucits ETF Icav                                	LSE       
 ZC3G      	BMO Ucits ETF Icav                                	LSE       
 ZC7G      	BMO Ucits ETF Icav                                	LSE       
-ZHYG      	BMO Ucits ETF Icav                                	LSE       
-ZIEG      	BMO Ucits ETF Icav                                	LSE       
-ZILE      	BMO Ucits ETF Icav                                	LSE       
-ZILK      	BMO Ucits ETF Icav                                	LSE       
-ZILS      	BMO Ucits ETF Icav                                	LSE       
-ZISG      	BMO Ucits ETF Icav                                	LSE       
-EMCB      	Emrg Mkts Corporate Bond ETF Wisdomtree           	NASDAQ    
-VCIT      	Interm-Term Corp Bd Idx ETF Vanguard              	NASDAQ    
-VCLT      	Long-Term Corp Bond Idx ETF Vanguard              	NASDAQ    
-VCSH      	Short-Term Corp Bd Idx ETF Vanguard               	NASDAQ    
-VGIT      	Interm-Term Govt Bd Idx ETF Vanguard              	NASDAQ    
-VGLT      	Long-Term Govt Bond Idx ETF Vanguard              	NASDAQ    
-VGSH      	Short-Term Govt Bd Idx ETF Vanguard               	NASDAQ    
-VMBS      	Mortgage Backed Securities ETF Vanguard           	NASDAQ    
-VNQI      	Global Ex-US Real Estate ETF Vanguard             	NASDAQ    
-VONE      	Russell 1000 Index ETF Vanguard                   	NASDAQ    
-VONG      	Russell 1000 Growth Index ETF Vanguard            	NASDAQ    
-VONV      	Russell 1000 Value Index ETF Vanguard             	NASDAQ    
-VTHR      	Russell 3000 Index ETF Vanguard                   	NASDAQ    
-VTWG      	Russell 2000 Growth Index ETF Vanguard            	NASDAQ    
-VTWO      	Russell 2000 Index ETF Vanguard                   	NASDAQ    
-VTWV      	Russell 2000 Value Index ETF Vanguard             	NASDAQ    
-VXUS      	Total Intl Stock Idx ETF Vanguard                 	NASDAQ    
+FDIV      	First Trust ETF IV                                	NASDAQ    
+FMB       	First Trust ETF III                               	NASDAQ    
+FTLB      	First Trust ETF Vi                                	NASDAQ    
+FTSM      	First Trust ETF IV                                	NASDAQ    
+FV        	First Trust ETF Vi                                	NASDAQ    
+RDVY      	First Trust ETF Vi                                	NASDAQ    
+YDIV      	First Trust ETF Vi                                	NASDAQ    
 BSLGOLDETF	BIRLA SL GOLD ETF - GO                            	NSE       
 CSTNL     	CS ETF Ie On S&P 500                              	OTCBB     
 D07       	Spdr Djia Etf Trust                               	SGX       
 G1K       	Lyxor Etf Msci Asia Apex 50 10                    	SGX       
 G1M       	Lyxor Etf Msci Malaysia 10                        	SGX       
 G1N       	Lyxor Etf Msci India 10                           	SGX       
-H1M       	Lyxor Etf Eastern Europe 10                       	SGX       
 H1N       	Lyxor Etf Msci Emerging Mkt 10                    	SGX       
 H1P       	Lyxor Etf Msci World 10                           	SGX       
 H1Q       	Lyxor Etf Nasdaq100 10                            	SGX       
@@ -285,8 +261,6 @@ LG8       	Dbxt Msci India Trn Etf 10                        	SGX
 LG9       	Dbxt Msci China Trn Etf 10                        	SGX       
 MT7       	Lyxor Etf Asia Real Estate 10                     	SGX       
 N2E       	Dbxt Msci Philippines Etf 10                      	SGX       
-NF4       	Lyxor Etf Asia Technology 10                      	SGX       
-NF6       	Lyxor Etf Asia Con Stap 10                        	SGX       
 O9A       	Dbxt Msci Singapore Im Etf 10                     	SGX       
 O9B       	Dbxt Msci Asiapac Exjap Etf 10                    	SGX       
 O9C       	Dbxt Msci Bangladesh Im Etf 10                    	SGX       
@@ -295,6 +269,11 @@ P2P       	Lyxor Etf Thai Set 10                             	SGX
 P2Q       	Lyxor Etf Indonesia 10                            	SGX       
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 SH8       	Dbxt Iboxx Indonesia Etf 10                       	SGX       
+CXF.A     	First Asset CDN Convert Bond ETF AC               	TSX       
+HUF.V     	Horizons Active US Float Rate Bd ETF AC           	TSX       
+HXQ.U     	Horizons Nasdaq 100 Index ETF USD                 	TSX       
+RIT.A     	Fa Canadian REIT ETF Adv Cls                      	TSX       
+RWW.D     	First Asset MSCI Wld Lr Wtd Uh ETF AC             	TSX       
 ZDY       	BMO US Dividend ETF CAD                           	TSX       
 ZDY.U     	BMO US Dividend ETF USD                           	TSX       
 ZPW.U     	BMO US Put Write ETF USD                          	TSX       

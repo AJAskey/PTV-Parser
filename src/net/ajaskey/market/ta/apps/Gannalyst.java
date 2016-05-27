@@ -84,7 +84,7 @@ public class Gannalyst {
 
 		for (final TickerData td : tdAll) {
 			// if (ValidateData.validate(td)) {
-			td.generateDerived();
+			td.generateDerived(false);
 			try (PrintWriter pw = new PrintWriter("\\Dev\\TA\\gann\\" + td.getTicker() + ".csv")) {
 				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
 					final String d = sdf.format(td.getDate(i).getTime());

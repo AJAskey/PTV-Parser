@@ -2,7 +2,6 @@ ACWF      	Ishares Factorselect MSCI Globa                   	AMEX
 ACWV      	All Country World Min Vol MSCI Ishares            	AMEX      
 AGG       	Aggregate Bond Ishares                            	AMEX      
 AGZ       	Agency Bond Ishares                               	AMEX      
-AIA       	S&P Asia 50 Index Ishares                         	AMEX      
 AOA       	S&P Aggressive Allocation Ishares                 	AMEX      
 AOK       	S&P Conservative Allocation Ishares               	AMEX      
 AOM       	S&P Moderate Allocation Ishares                   	AMEX      
@@ -17,9 +16,14 @@ CLYH      	Ishares Interest Rate Hedged 10                   	AMEX
 CMBS      	CMBS Bond Ishares                                 	AMEX      
 CMDT      	DOW Jones-UBS Roll Select Ishares                 	AMEX      
 CMF       	S&P CA Amt-Free Municipal Bd Ishares              	AMEX      
+CNDF      	Ishares Edge MSCI Multifactor C                   	AMEX      
+CNSF      	Ishares Edge MSCI Multifactor C                   	AMEX      
 CRBN      	Ishares MSCI ACWI Low Carbon Ta                   	AMEX      
 CRED      	Core US Credit Bond ETF Ishares                   	AMEX      
 CSJ       	1-3 Year Credit Bond Ishares                      	AMEX      
+DEFA      	Ishares Adaptive Currency Hedge                   	AMEX      
+DEWJ      	Ishares Adaptive Currency Hedge                   	AMEX      
+DEZU      	Ishares Adaptive Currency Hedge                   	AMEX      
 DGRO      	Dividend Growth Ishares                           	AMEX      
 DSI       	KLD 400 Social Index Ishares                      	AMEX      
 DVY       	DJ Select Dividend Index Ishares                  	AMEX      
@@ -43,11 +47,11 @@ EMBH      	Ishares Interest Rate Hedged EM                   	AMEX
 EMHY      	Emrg Mkts High Yield Bond Fund Ishares            	AMEX      
 EMHZ      	Ishares MSCI Emerging Markets H                   	AMEX      
 ENOR      	Norway Capped Investable Mkt Idx Fd MSCI Ishares  	AMEX      
-ENZL      	New Zealand Invstb Mkt Idx MSCI Ishares           	AMEX      
 EPHE      	Philippines Invstb Mkt Idx MSCI Ishares           	AMEX      
 EPOL      	Poland Investable Mkt Index MSCI Ishares          	AMEX      
 EPP       	Pacific Ex-Japan MSCI Ishares                     	AMEX      
 EPU       	All Peru Capped Index MSCI Ishares                	AMEX      
+ERGF      	Ishares Edge MSCI Multifactor E                   	AMEX      
 ERUS      	Russia Capped Index MSCI Ishares                  	AMEX      
 EUMV      	MSCI Europe Minimum Vol Ishares                   	AMEX      
 EUSA      	USA Index MSCI Ishares                            	AMEX      
@@ -73,13 +77,14 @@ EWUS      	United Kingdom Smallcap Index Fund MSCI Ishares   	AMEX
 EWW       	Mexico Investable Mkt Idx MSCI Ishares            	AMEX      
 EWY       	South Korea Index MSCI Ishares                    	AMEX      
 EWZ       	Brazil Index MSCI Ishares                         	AMEX      
-EWZS      	Brazil Smallcap Index MSCI Ishares                	AMEX      
 EXI       	S&P Global Industrials Ishares                    	AMEX      
 EZA       	South Africa Index MSCI Ishares                   	AMEX      
 EZU       	EMU Index MSCI Ishares                            	AMEX      
+FIBR      	Ishares Edge U.S. Fixed Income                    	AMEX      
 FILL      	Global Energy Producers MSCI Ishares              	AMEX      
 FLOT      	Floating Rate Note Ishares                        	AMEX      
 FM        	MSCI Frontier 100 Ishares                         	AMEX      
+FNCF      	Ishares Edge MSCI Multifactor F                   	AMEX      
 FTY       	FTSE Nareit Real Estate 50 Ishares                	AMEX      
 FXI       	FTSE China 25 Index Fund Ishares                  	AMEX      
 GBF       	Government/Credit Bond Ishares                    	AMEX      
@@ -92,12 +97,14 @@ HACV      	Ishares Currency Hedged MSCI AC                   	AMEX
 HACW      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HAUD      	Ishares Currency Hedged MSCI Au                   	AMEX      
 HAWX      	Ishares Currency Hedged MSCI AC                   	AMEX      
+HCRF      	Ishares Edge MSCI Multifactor H                   	AMEX      
 HDV       	Core High Dividend ETF Ishares                    	AMEX      
 HEEM      	Ishares Currency Hedged MSCI EM                   	AMEX      
 HEFA      	Currency Hedged MSCI EAFE Ishares                 	AMEX      
 HEFV      	Ishares Currency Hedged MSCI Ea                   	AMEX      
 HEMV      	Ishares Currency Hedged MSCI EM                   	AMEX      
 HEUS      	Ishares Currency Hedged MSCI EU                   	AMEX      
+HEUV      	Ishares Currency Hedged MSCI EU                   	AMEX      
 HEWC      	Ishares Currency Hedged MSCI CA                   	AMEX      
 HEWG      	Currency Hedged MSCI Germ Ishares                 	AMEX      
 HEWI      	Ishares Currency Hedged MSCI IT                   	AMEX      
@@ -119,11 +126,9 @@ IAI       	DJ US Broker-Dealers Ishares                      	AMEX
 IAK       	DJ US Insurance Ishares                           	AMEX      
 IAT       	DJ US Regional Banks Ishares                      	AMEX      
 IAU       	Gold Trust Ishares                                	AMEX      
-IBCB      	2016 Investment Grade Ishares                     	AMEX      
 IBCC      	2018 Investment Grade Ishares                     	AMEX      
 IBCD      	2020 Investment Grade Ishares                     	AMEX      
 IBCE      	2023 Investment Grade Ishares                     	AMEX      
-IBDA      	Inc. Isharesbond 2016 Ishares                     	AMEX      
 IBDB      	Inc. Isharesbond 2018 Ishares                     	AMEX      
 IBDC      	Inc. Isharesbond 2020 Ishares                     	AMEX      
 IBDD      	Inc. Isharesbond 2023 Ishares                     	AMEX      
@@ -162,9 +167,9 @@ IEUR      	Core Europe Ishares                               	AMEX
 IEV       	S&P Europe 350 Index Ishares                      	AMEX      
 IEZ       	DJ US Oil Equipment Index Ishares                 	AMEX      
 IGE       	S&P Natural Resources North Amer Ishares          	AMEX      
-IGF       	S&P Global Infrastructure Index Ishares           	AMEX      
 IGM       	S&P Technology North Amer Ishares                 	AMEX      
 IGN       	S&P Tech-Multimd Ntwk North Amer Ishares          	AMEX      
+IGRO      	Ishares International Dividend                    	AMEX      
 IGV       	S&P Tech-Software North Amer Ishares              	AMEX      
 IHE       	DJ US Pharmaceuticals Ishares                     	AMEX      
 IHF       	DJ US Healthcare Provider Ishares                 	AMEX      
@@ -180,6 +185,7 @@ ILTB      	10+ Year Government/Credit Bond Ishares           	AMEX
 IMTM      	Ishares MSCI International Mome                   	AMEX      
 INC       	Ishares U.S. Fixed Income Balan                   	AMEX      
 INDA      	India Index Fund MSCI Ishares                     	AMEX      
+INDF      	Ishares Edge MSCI Multifactor I                   	AMEX      
 INTF      	Ishares Factorselect MSCI Inter                   	AMEX      
 IOO       	S&P Global 100 Index Ishares                      	AMEX      
 IPAC      	Core Pacific Ishares                              	AMEX      
@@ -187,6 +193,7 @@ IPFF      	S&P Intl Preferred Stock Index Ishares            	AMEX
 IQLT      	Ishares MSCI International Deve                   	AMEX      
 ISCF      	Ishares Factorselect MSCI Intl                    	AMEX      
 ISTB      	Core Short-Term US Bond Ishares                   	AMEX      
+ISZE      	Ishares MSCI International Deve                   	AMEX      
 ITA       	DJ US Aerospace & Defense Ishares                 	AMEX      
 ITB       	DJ US Home Construction Ishares                   	AMEX      
 ITIP      	Intl Inflation-Linked Bond Fund Ishares           	AMEX      
@@ -216,7 +223,6 @@ IXG       	S&P Global Financials Ishares                     	AMEX
 IXJ       	S&P Global Healthcare Ishares                     	AMEX      
 IXN       	S&P Global Technology Ishares                     	AMEX      
 IXP       	S&P Global Telecommunications Ishares             	AMEX      
-IXUS      	Core MSCI Total Intl Ishares                      	AMEX      
 IYC       	DJ US Consumer Services Ishares                   	AMEX      
 IYE       	DJ US Energy Ishares                              	AMEX      
 IYF       	DJ US Financial Sector Ishares                    	AMEX      
@@ -236,7 +242,6 @@ JKE       	Mstar Large Growth Index Ishares                  	AMEX
 JKF       	Mstar Large Value Index Ishares                   	AMEX      
 JKG       	Mstar Mid Core Index Ishares                      	AMEX      
 JKH       	Mstar Mid Growth Index Ishares                    	AMEX      
-JKI       	Mstar Mid Value Index Ishares                     	AMEX      
 JKJ       	Mstar Small Core Index Ishares                    	AMEX      
 JKK       	Mstar Small Growth Index Ishares                  	AMEX      
 JKL       	Mstar Small Value Index Ishares                   	AMEX      
@@ -250,8 +255,8 @@ LEMB      	Emrg Mkts Local Cur Bond Ishares                  	AMEX
 LQD       	Iboxx $ Invest Grade Corp Bond Ishares            	AMEX      
 LQDH      	Ishares Interest Rate Hedged Co                   	AMEX      
 LRGF      	Ishares Factorselect MSCI USA E                   	AMEX      
+MATF      	Ishares Edge MSCI Multifactor M                   	AMEX      
 MBB       	MBS Bond Ishares                                  	AMEX      
-MCHI      	China Index MSCI Ishares                          	AMEX      
 MEAR      	Ishares Short Maturity Municipa                   	AMEX      
 MTUM      	MSCI USA Momentum Factor Ishares                  	AMEX      
 MUB       	S&P National Amt-Free Muni Bd Ishares             	AMEX      
@@ -267,31 +272,30 @@ QLTC      	B-Ca Rated Corporate Bond Fund Ishares            	AMEX
 QUAL      	MSCI USA Quality Factor Ishares                   	AMEX      
 REET      	Ishares Trust Ishares Global Re                   	AMEX      
 REM       	FTSE Nareit Mort Plus Cp Idx Ishares              	AMEX      
-REZ       	FTSE Nareit Resid Plus Cp Idx Ishares             	AMEX      
+REZ       	Ishares Residential Real Estate Capped            	AMEX      
 RING      	Global Gold Miners MSCI Ishares                   	AMEX      
 RXI       	S&P Global Cons Discretionary Ishares             	AMEX      
 SCJ       	Japan Smallcap Index MSCI Ishares                 	AMEX      
-SCZ       	EAFE Smallcap Index MSCI Ishares                  	AMEX      
 SHV       	Short-Treasury Bond Ishares                       	AMEX      
 SHY       	1-3 Year Treasury Bond Ishares                    	AMEX      
 SHYG      	0-5 Year High Yield Core Ishares                  	AMEX      
 SIZE      	MSCI USA Size Factor Ishares                      	AMEX      
-SLQD      	0-5 Year Investment Grade Ishares                 	AMEX      
 SLV       	Silver Trust Ishares                              	AMEX      
 SLVP      	Global Silver Miners MSCI Ishares                 	AMEX      
 SMIN      	India Smallcap Index Fund MSCI Ishares            	AMEX      
 SMLF      	Ishares Factorselect MSCI USA S                   	AMEX      
 STIP      	0-5 Year Tips Bond Ishares                        	AMEX      
 SUB       	S&P S/T Natnl Amt-Free Muni Bd Ishares            	AMEX      
+TCHF      	Ishares Edge MSCI Multifactor T                   	AMEX      
 TFLO      	Treasury Floating Rate Ishares                    	AMEX      
 THD       	Thailand Invest Mkt Index MSCI Ishares            	AMEX      
 TIP       	Tips Bond Ishares                                 	AMEX      
 TLH       	10-20 Year Treasury Bd Ishares                    	AMEX      
-TLT       	20+ Year Trsy Bond Ishares                        	AMEX      
 TOK       	Kokusai Index MSCI Ishares                        	AMEX      
 TUR       	Turkey Invest Mkt Index MSCI Ishares              	AMEX      
 URTH      	World Index MSCI Ishares                          	AMEX      
 USMV      	USA Min Volatility MSCI Ishares                   	AMEX      
+UTLF      	Ishares Edge MSCI Multifactor U                   	AMEX      
 VEGI      	Global Agriculture Prod MSCI Ishares              	AMEX      
 VLUE      	MSCI USA Value Factor Ishares                     	AMEX      
 WPS       	S&P Dev Ex-US Property Index Ishares              	AMEX      
@@ -319,6 +323,8 @@ IVV       	iShares S&P 500                                   	ASX
 IZZ       	iShares FTSE Xinhua China                         	ASX       
 BACK      	Ishares IV Plc                                    	LSE       
 BACS      	Ishares IV Plc                                    	LSE       
+BBEB      	Ishares III Plc                                   	LSE       
+BBSB      	Ishares III Plc                                   	LSE       
 BRIC      	Ishares II Plc                                    	LSE       
 CBE0      	Ishares Vii Plc                                   	LSE       
 CBE3      	Ishares Vii Plc                                   	LSE       
@@ -328,25 +334,21 @@ CBU0      	Ishares Vii Plc                                   	LSE
 CBU3      	Ishares Vii Plc                                   	LSE       
 CBU7      	Ishares Vii Plc                                   	LSE       
 CCAU      	Ishares Vii Plc                                   	LSE       
-CCL1      	Ishares Vii Plc                                   	LSE       
 CE01      	Ishares Vii Plc                                   	LSE       
 CE31      	Ishares Vii Plc                                   	LSE       
 CE71      	Ishares Vii Plc                                   	LSE       
 CEA1      	Ishares Vii Plc                                   	LSE       
-CEMG      	Ishares V Public Limited                          	LSE       
 CES1      	Ishares Vii Plc                                   	LSE       
 CEU1      	Ishares Vii Plc                                   	LSE       
 CID1      	Ishares Vii Plc                                   	LSE       
 CJPU      	Ishares Vii Plc                                   	LSE       
 CKR1      	Ishares Vii Plc                                   	LSE       
 CMB1      	Ishares Vii Plc                                   	LSE       
-CML1      	Ishares Vii Plc                                   	LSE       
 CMX1      	Ishares Vii Plc                                   	LSE       
 CNX1      	Ishares Vii Plc                                   	LSE       
 CNYA      	Ishares IV Plc                                    	LSE       
 CORP      	Ishares Plc                                       	LSE       
 CPJ1      	Ishares Vii Plc                                   	LSE       
-CPJU      	Ishares Vii Plc                                   	LSE       
 CRPH      	Ishares Vi Plc (The Comp                          	LSE       
 CRPS      	Ishares Plc                                       	LSE       
 CRU1      	Ishares Vii Plc                                   	LSE       
@@ -391,7 +393,6 @@ ES15      	Ishares Plc                                       	LSE
 EUCF      	Ishares Vi Plc (The Comp                          	LSE       
 EUE       	Ishares II Plc                                    	LSE       
 EULC      	Ishares IV Plc                                    	LSE       
-EUMC      	Ishares IV Plc                                    	LSE       
 EUN       	Ishares II Plc                                    	LSE       
 EUXS      	Ishares Plc                                       	LSE       
 EXFN      	Ishares II Plc                                    	LSE       
@@ -409,7 +410,6 @@ IASH      	Ishares IV Plc                                    	LSE
 IASP      	Ishares II Plc                                    	LSE       
 IAUP      	Ishares V Public Limited Company                  	LSE       
 IAUS      	Ishares III Plc                                   	LSE       
-IAUT      	Ishares V Public Limited Company                  	LSE       
 IBC1      	Ishares Plc                                       	LSE       
 IBCI      	Ishares Plc                                       	LSE       
 IBCX      	Ishares Plc                                       	LSE       
@@ -425,6 +425,7 @@ IBTL      	Ishares IV Plc                                    	LSE
 IBTM      	Ishares II Plc                                    	LSE       
 IBTS      	Ishares Plc                                       	LSE       
 IBZL      	Ishares Plc                                       	LSE       
+ICDU      	Ishares V Public Limited Company                  	LSE       
 ICOV      	Ishares III Plc                                   	LSE       
 IDAP      	Ishares Plc                                       	LSE       
 IDAR      	Ishares II Plc                                    	LSE       
@@ -486,6 +487,7 @@ IEQU      	Ishares IV Plc                                    	LSE
 IESE      	Ishares II Plc                                    	LSE       
 IESG      	Ishares II Plc                                    	LSE       
 IESP      	Ishares V Public Limited Company                  	LSE       
+IESU      	Ishares V Public Limited Company                  	LSE       
 IESZ      	Ishares IV Plc                                    	LSE       
 IEUR      	Ishares Plc                                       	LSE       
 IEUT      	Ishares Plc                                       	LSE       
@@ -493,9 +495,7 @@ IEUX      	Ishares Plc                                       	LSE
 IEVL      	Ishares IV Plc                                    	LSE       
 IEX5      	Ishares III Plc                                   	LSE       
 IEXF      	Ishares III Plc                                   	LSE       
-IFEUI     	Ishares FTSE Epra/Nareit Europe Index Fu          	LSE       
 IFFF      	Ishares Plc                                       	LSE       
-IFGLI     	Ishares FTSE Epra/Nareit Global Real Est          	LSE       
 IFIN      	Ishares V Public Limited Company                  	LSE       
 IFRB      	Ishares V Public Limited Company                  	LSE       
 IFRE      	Ishares IV Plc                                    	LSE       
@@ -516,9 +516,11 @@ IGSU      	Ishares II Plc                                    	LSE
 IGUS      	Ishares V Public Limited Company                  	LSE       
 IGWD      	Ishares V Public Limited Company                  	LSE       
 IH2O      	Ishares II Plc                                    	LSE       
+IHCU      	Ishares V Public Limited Company                  	LSE       
 IHYG      	Ishares Plc                                       	LSE       
 IHYU      	Ishares II Plc                                    	LSE       
 IITB      	Ishares V Public Limited Company                  	LSE       
+IITU      	Ishares V Public Limited Company                  	LSE       
 IJPA      	Ishares III Plc                                   	LSE       
 IJPD      	Ishares Plc                                       	LSE       
 IJPE      	Ishares MSCI Japan EUR Hedged                     	LSE       
@@ -559,6 +561,7 @@ ISFR      	Ishares IV Plc                                    	LSE
 ISJP      	Ishares III Plc                                   	LSE       
 ISLN      	Ishares Physical Metals Plc                       	LSE       
 ISP6      	Ishares III Plc                                   	LSE       
+ISRL      	Ishares IV Plc                                    	LSE       
 ISUS      	Ishares II Plc                                    	LSE       
 ISWD      	Ishares II Plc                                    	LSE       
 ISXF      	Ishares III Plc                                   	LSE       
@@ -566,6 +569,11 @@ ITKY      	Ishares II Plc                                    	LSE
 ITPS      	Ishares II Plc                                    	LSE       
 ITWN      	Ishares Plc                                       	LSE       
 IUAG      	Ishares II Plc                                    	LSE       
+IUCD      	Ishares V Public Limited Company                  	LSE       
+IUES      	Ishares V Public Limited Company                  	LSE       
+IUFS      	Ishares V Public Limited Company                  	LSE       
+IUHC      	Ishares V Public Limited Company                  	LSE       
+IUIT      	Ishares V Public Limited Company                  	LSE       
 IUKD      	Ishares Plc                                       	LSE       
 IUKP      	Ishares II Plc                                    	LSE       
 IUSA      	Ishares Plc                                       	LSE       
@@ -593,39 +601,9 @@ MVEU      	Ishares Vi Plc (The Comp                          	LSE
 MVOL      	Ishares Vi Plc (The Comp                          	LSE       
 MVUS      	Ishares Vi Plc (The Comp                          	LSE       
 NK4E      	Ishares II Plc                                    	LSE       
-O003      	Ishares Plc                                       	LSE       
-O006      	Ishares Plc                                       	LSE       
-O007      	Ishares Plc                                       	LSE       
-O008      	Ishares Plc                                       	LSE       
-O010      	Ishares Plc                                       	LSE       
-O011      	Ishares Plc                                       	LSE       
-O012      	Ishares Plc                                       	LSE       
-O019      	Ishares Plc                                       	LSE       
-O025      	Ishares Plc                                       	LSE       
-O026      	Ishares Plc                                       	LSE       
-O028      	Ishares Plc                                       	LSE       
-O033      	Ishares Plc                                       	LSE       
-O034      	Ishares Plc                                       	LSE       
-O041      	Ishares Plc                                       	LSE       
-O056      	Ishares Plc                                       	LSE       
-O057      	Ishares Plc                                       	LSE       
-O061      	Ishares Plc                                       	LSE       
-O073      	Ishares Plc                                       	LSE       
-O075      	Ishares Plc                                       	LSE       
-O080      	ISHARES IBOXX EURO LIQUID CORP(DT ZERT)           	LSE       
-O092      	Ishares Plc                                       	LSE       
-O102      	Ishares Plc                                       	LSE       
-O109      	Ishares Plc                                       	LSE       
-O115      	ISHARES CT ISHARES MSCI TURKEY                    	LSE       
-O119      	Ishares Plc                                       	LSE       
-O120      	Ishares Plc                                       	LSE       
-O124      	Ishares Plc                                       	LSE       
-O126      	BLACKROCK ASSET MNGT DEUTSCHELAND ISHARES SMI (DE)	LSE       
 QDIV      	Ishares II Plc                                    	LSE       
 SAAA      	Ishares Vi Plc (The Comp                          	LSE       
 SAUS      	Ishares III Plc                                   	LSE       
-SAUT      	Ishares V Public Limited Company                  	LSE       
-SBEL      	Ishares V Public Limited Company                  	LSE       
 SCOV      	Ishares III Plc                                   	LSE       
 SDEU      	Ishares V Public Limited Company                  	LSE       
 SDHG      	Ishares IV Plc                                    	LSE       
@@ -640,7 +618,6 @@ SEMB      	Ishares II Plc                                    	LSE
 SEML      	Ishares III Plc                                   	LSE       
 SEMS      	Ishares III Plc                                   	LSE       
 SESP      	Ishares V Public Limited Company                  	LSE       
-SFIN      	Ishares V Public Limited Company                  	LSE       
 SFRB      	Ishares V Public Limited Company                  	LSE       
 SGCC      	Ishares III Plc                                   	LSE       
 SGEA      	Ishares III Plc                                   	LSE       
@@ -649,12 +626,9 @@ SGLN      	Ishares Physical Metals Plc                       	LSE
 SGLO      	Ishares III Plc                                   	LSE       
 SHYG      	Ishares Plc                                       	LSE       
 SHYU      	Ishares II Plc                                    	LSE       
-SITB      	Ishares V Public Limited Company                  	LSE       
 SJPA      	Ishares III Plc                                   	LSE       
-SLXH      	Ishares Plc                                       	LSE       
 SLXX      	Ishares Plc                                       	LSE       
 SMEA      	Ishares III Plc                                   	LSE       
-SNLD      	Ishares V Public Limited Company                  	LSE       
 SPAG      	Ishares V Public Limited Company                  	LSE       
 SPDM      	Ishares Physical Metals Plc                       	LSE       
 SPGP      	Ishares V Public Limited Company                  	LSE       
@@ -668,63 +642,69 @@ SSAC      	Ishares V Public Limited Company                  	LSE
 SSLN      	Ishares Physical Metals Plc                       	LSE       
 SSXF      	Ishares III Plc                                   	LSE       
 SUAG      	Ishares II Plc                                    	LSE       
+SUSE      	Ishares II Plc                                    	LSE       
+SUSS      	Ishares II Plc                                    	LSE       
 SWDA      	Ishares III Plc                                   	LSE       
 SXFN      	Ishares II Plc                                    	LSE       
-UKPR      	Ishares III Plc                                   	LSE       
+TASE      	Ishares IV Plc                                    	LSE       
+UI18      	Ishares IV Plc                                    	LSE       
+UIFS      	Ishares V Public Limited Company                  	LSE       
 UKRE      	Ishares III Plc                                   	LSE       
 USPR      	Ishares III Plc                                   	LSE       
 USRE      	Ishares III Plc                                   	LSE       
 WOOD      	Ishares II Plc                                    	LSE       
 EUE       	Ishares Euro STOX50                               	MLSE      
-AAXJ      	All Country Asia Ex Jpn Idx MSCI Ishares          	NASDAQ    
-ACWI      	ACWI Index MSCI Ishares                           	NASDAQ    
-ACWX      	ACWI Ex-US Index MSCI Ishares                     	NASDAQ    
-COMT      	Ishares Commodities Select Stra                   	NASDAQ    
-EEMA      	Emrg Mkts Asia MSCI Ishares                       	NASDAQ    
-EEML      	Emrg Mkts Latin Amer MSCI Ishares                 	NASDAQ    
-EMIF      	S&P Emrg Mkts Infrastructure Ishares              	NASDAQ    
-EUFN      	Europe Financials Index MSCI Ishares              	NASDAQ    
-GNMA      	GNMA Bond Ishares                                 	NASDAQ    
-IBB       	Nasdaq Biotechnology Ishares                      	NASDAQ    
-ICLN      	S&P Global Clean Energy Index Ishares             	NASDAQ    
-IEUS      	Ishares Trust                                     	NASDAQ    
-IFEU      	FTSE Epra/Nareit Dev EU Idx Ishares               	NASDAQ    
-IFGL      	FTSE Epra/Nareit Dev Re Ex-US Ishares             	NASDAQ    
-IGOV      	S&P/Citi Intl Treasury Bond Ishares               	NASDAQ    
-INDY      	S&P India Nifty 50 Index Ishares                  	NASDAQ    
-ISHG      	S&P/Citi 1-3 Yr Intl Treasury Bd Ishares          	NASDAQ    
-QAT       	MSCI Qatar Capped Ishares                         	NASDAQ    
-SOXX      	PHLX Sox Semiconductor Sector Ishares             	NASDAQ    
-UAE       	Ishares MSCI UAE Capped ETF                       	NASDAQ    
-WOOD      	S&P Global Timber & Forestry Idx Ishares          	NASDAQ    
+ACWI      	Ishares MSCI ACWI                                 	NASDAQ    
+ACWX      	Ishares MSCI ACWI                                 	NASDAQ    
+AIA       	Ishares Asia 50 ETF                               	NASDAQ    
+EEMA      	Ishares MSCI EM Asia                              	NASDAQ    
+EEML      	Ishares MSCI EM La                                	NASDAQ    
+EMIF      	Ishares SP Emg Mk In                              	NASDAQ    
+ENZL      	Ishares MSCI New Zea                              	NASDAQ    
+EUFN      	Ishares MSCI EUR Fin                              	NASDAQ    
+EWZS      	Ishares MSCI Brazil                               	NASDAQ    
+GNMA      	Ishares GNMA Bd ETF                               	NASDAQ    
+IEUS      	Ishares MSCI Europe                               	NASDAQ    
+IFEU      	Ishares Europe Dvlpd                              	NASDAQ    
+IFGL      	Ishares Intl Devlp                                	NASDAQ    
+IGF       	Ishares Global Infra                              	NASDAQ    
+IGOV      	Ishares Intl Trsy Bd                              	NASDAQ    
+INDY      	Ishares India 50 ETF                              	NASDAQ    
+ISHG      	Ishares 1-3 Yr Intl                               	NASDAQ    
+JKI       	Ishares Mrgng Mid Va                              	NASDAQ    
+MCHI      	Ishares MSCI China E                              	NASDAQ    
+MPCT      	Ishares MSCI Global Impact ETF                    	NASDAQ    
+SCZ       	Ishares MSCI EAFE Sm                              	NASDAQ    
+SLQD      	Ishares 0-5 Ig Corp                               	NASDAQ    
+SOXX      	Ishares PHLX SC ETF                               	NASDAQ    
+TLT       	Ishares  20                                       	NASDAQ    
+UAE       	Ishares MSCI UAE Cap                              	NASDAQ    
+BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
+CLYAF     	Ishares Global Agric                              	OTCBB     
 CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
-CYMEF     	Ishares BRIC Index F                              	OTCBB     
+CMOXF     	Ishares S&P Global W                              	OTCBB     
+ICDZF     	Ishares Can Hyb Corp                              	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
-IHSEF     	Ishares Plc                                       	OTCBB     
 IHSFF     	Ishares II Plc                                    	OTCBB     
 IHSXF     	Ishares Plc - Ishare                              	OTCBB     
 IHSZF     	Ishares II Plc                                    	OTCBB     
-IIREF     	Ishares MSCI World                                	OTCBB     
 INITF     	Ishares Dex Short Term Bond Index Fund            	OTCBB     
-IOOXF     	Ishares Core Canadia                              	OTCBB     
-IRSHF     	Ishares S&P/Tsx Capp                              	OTCBB     
 ISARF     	Ishares CDN Universe                              	OTCBB     
 ISDJF     	Ishares DOW Jones CD                              	OTCBB     
+ISDXF     	Ishares Can Corp                                  	OTCBB     
+ISESF     	Ishares S&P/Tsx Capp                              	OTCBB     
+ISEXF     	Ishares MSCI                                      	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
-ISHXF     	Ishares Dex All Government Bond Index Fund        	OTCBB     
 ISRPF     	Ishares Plc                                       	OTCBB     
 ISRVF     	Ishares V Plc Accum Ordinary Sh                   	OTCBB     
 ISRWF     	Ishares II Plc                                    	OTCBB     
 ISRZF     	Ishares II Plc                                    	OTCBB     
+ISXIF     	Ishares Bse Sensex                                	OTCBB     
 IUNSF     	Ishares S&P/Tsx Capp                              	OTCBB     
-IUNTF     	Ishares MSCI EAFE In                              	OTCBB     
 IZIZF     	Ishares III Plc                                   	OTCBB     
-I17       	Ishares S&p500 Ivv 10                             	SGX       
-I19       	Ishares Msci Singapore Ews 100                    	SGX       
-I21       	Ishares Dj Us Tech Iyw 10                         	SGX       
 N6M       	Ishares Usd Asia Bond Etf                         	SGX       
 O9P       	Ishares Usd Asia Hy Bond Etf                      	SGX       
 QL2       	Ishares Usd Asia Bond Etf S$                      	SGX       
@@ -732,7 +712,6 @@ QL3       	Ishares Usd Asia Hy Bond Etfs$                    	SGX
 CBD       	Ishares Balanced Income                           	TSX       
 CBD.A     	Ishares Balanced Income                           	TSX       
 CBH       	Ishares 1-10 Yr Laddered                          	TSX       
-CBH.A     	Ishares 1-10Yr Laddered                           	TSX       
 CBN       	Ishares Balanced Growth                           	TSX       
 CBN.A     	Ishares Balanced Growth                           	TSX       
 CBO       	Ishares 1-5Yr Laddered C                          	TSX       
@@ -754,6 +733,7 @@ CIE.A     	Ishares Intl Fundamental                          	TSX
 CIF       	Ishares Global Infrastru                          	TSX       
 CIF.A     	Ishares Global Infrastru                          	TSX       
 CJP       	Ishares Japan Fund Idx E                          	TSX       
+CJP.A     	Ishares Japan Fund Idx E                          	TSX       
 CLF       	Ishares 1-5 Yr Ladder Go                          	TSX       
 CLF.A     	Ishares 1-5 Yr Ladder Go                          	TSX       
 CLG       	Ishares 1-10 Yr Ladder G                          	TSX       
@@ -838,10 +818,13 @@ XMC       	Ishares SP US Midcap Ind                          	TSX
 XMD       	Ishares SP TSX Completio                          	TSX       
 XMH       	Ishares SP US Midcap Ind                          	TSX       
 XMI       	Ishares MSCI EAFE Min Vo                          	TSX       
+XML       	Ishares Edge MSCI Mv EAFE ETF CAD Hgd             	TSX       
 XMM       	Ishares MSCI Emerg Mkts                           	TSX       
+XMS       	Ishares Edge MSCI Mv USA ETF CAD Hgd              	TSX       
 XMU       	Ishares MSCI USA Min Vol                          	TSX       
 XMV       	Ishares MSCI Canada Min                           	TSX       
 XMW       	Ishares MSCI All Country                          	TSX       
+XMY       	Ishares Edge MSCI Mv Glbl ETF CAD Hgd             	TSX       
 XPF       	Ishares SP TSX Na Pref S                          	TSX       
 XQB       	Ishares Core Hi Quality                           	TSX       
 XQB.A     	Ishares Core Hi Quality                           	TSX       

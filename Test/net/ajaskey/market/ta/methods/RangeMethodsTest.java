@@ -50,10 +50,10 @@ public class RangeMethodsTest {
 	 */
 	public RangeMethodsTest() throws FileNotFoundException, ParseException {
 		this.tdSC = ParseData.parseOneFile("TestData\\cs-atr.csv");
-		this.tdSC.generateDerived();
+		this.tdSC.generateDerived(false);
 
 		this.td = ParseData.parseOneFile("TestData\\QQQ-TickerDataTest.txt");
-		this.td.generateDerived();
+		this.td.generateDerived(false);
 	}
 
 	/**

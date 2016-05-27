@@ -171,7 +171,12 @@ public class ParseData {
 
 							// System.out.println("\t" + line);
 
-							if (fld.length == 7) {
+							if ((fld.length == 7) || ((fld.length == 8) && (fld[0].contains("OEX.XO")))) {
+								
+								double oi = 0;
+								if (fld.length == 8) {
+									oi = ParseData.toDouble(fld[7]);
+								}
 
 								final TickerData tdCheck = TickerData.getFromList(fld[0], tdList);
 
@@ -181,11 +186,11 @@ public class ParseData {
 								TickerData td;
 								if (tdCheck != null) {
 									final DailyData dd = new DailyData(cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
-									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]));
+									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]), oi);
 									tdCheck.addData(dd);
 								} else {
 									td = new TickerData(fld[0], cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
-									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]));
+									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]), oi);
 
 									final String exch = file.getParent();
 									final int idx = exch.lastIndexOf("\\");
@@ -194,6 +199,7 @@ public class ParseData {
 									tdList.add(td);
 									// System.out.println("Added : " + fld[0]);
 								}
+
 							} else {
 								throw new ParseException("bad data", 1);
 							}
@@ -421,7 +427,7 @@ public class ParseData {
 						final double l = ParseData.toDouble(fld[3].trim());
 						final double c = ParseData.toDouble(fld[4].trim());
 						final double v = ParseData.toDouble(fld[5].trim());
-						final DailyData d = new DailyData(cal, o, h, l, c, v);
+						final DailyData d = new DailyData(cal, o, h, l, c, v, 0);
 						tickerData.addData(d);
 						if (tickerData.getDataCount() >= days) {
 							line = null; // break from read loop
@@ -437,7 +443,7 @@ public class ParseData {
 			throw new ParseException("bad data", 1);
 		}
 
-		tickerData.generateDerived();
+		tickerData.generateDerived(false);
 
 		return tickerData;
 	}

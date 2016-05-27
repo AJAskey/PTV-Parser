@@ -64,8 +64,8 @@ public class TickerData {
 	 * Derived values
 	 */
 	private Integer								daysOfData;
-	
-	private DerivedData derived;
+
+	private DerivedData						derived;
 
 	private Double								sma23;
 	private Double								smaPerc23;
@@ -84,6 +84,7 @@ public class TickerData {
 	private double[]							lowData;
 	private double[]							closeData;
 	private double[]							volumeData;
+	private double[]							oiData;
 	private double[]							trueHighData;
 	private double[]							trueLowData;
 	private double[]							typicalPriceData;
@@ -119,6 +120,9 @@ public class TickerData {
 	private double								rsi14;
 	private final TaMethods				taMethods	= new TaMethods();
 
+	final static private String		TAB				= "\t";
+	final static private String		NL				= System.lineSeparator();
+
 	/**
 	 *
 	 * This methods serves as a constructor for the class.
@@ -146,8 +150,8 @@ public class TickerData {
 	 * @param v
 	 *          Volume traded.
 	 */
-	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v) {
-		final DailyData dd = new DailyData(d, o, h, l, c, v);
+	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v, double oi) {
+		final DailyData dd = new DailyData(d, o, h, l, c, v, oi);
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
 		this.tickerExchange = "Unknown";
@@ -156,7 +160,7 @@ public class TickerData {
 		this.daysOfData = 0;
 
 		this.derived = null;
-		
+
 		this.sma23 = 0.0;
 		this.sma65 = 0.0;
 		this.sma130 = 0.0;
@@ -216,7 +220,7 @@ public class TickerData {
 		try {
 			tdList = ParseData.parseFiles(directoryNames);
 			for (final TickerData t : tdList) {
-				t.generateDerived();
+				t.generateDerived(false);
 			}
 		} catch (FileNotFoundException e) {
 		}
@@ -252,6 +256,7 @@ public class TickerData {
 			td.lowData = null;
 			td.closeData = null;
 			td.volumeData = null;
+			td.oiData = null;
 			td.trueHighData = null;
 			td.trueLowData = null;
 			td.typicalPriceData = null;
@@ -496,6 +501,7 @@ public class TickerData {
 		this.lowData = new double[this.daysOfData];
 		this.closeData = new double[this.daysOfData];
 		this.volumeData = new double[this.daysOfData];
+		this.oiData = new double[this.daysOfData];
 		int knt = 0;
 		int pos = 0;
 		for (final DailyData dd : this.data) {
@@ -505,6 +511,7 @@ public class TickerData {
 				this.lowData[pos] = dd.getLow();
 				this.closeData[pos] = dd.getClose();
 				this.volumeData[pos] = dd.getVolume();
+				this.oiData[pos] = dd.getOi();
 				this.dateData[pos] = dd.getDate();
 				pos++;
 			}
@@ -517,8 +524,8 @@ public class TickerData {
 	 * net.ajaskey.market.ta.generateDerived
 	 *
 	 */
-	public void generateDerived() {
-		this.generateDerived(0);
+	public void generateDerived(boolean isReverse) {
+		this.generateDerived(0, isReverse);
 	}
 
 	/**
@@ -527,7 +534,7 @@ public class TickerData {
 	 *
 	 * @param start
 	 */
-	public void generateDerived(int start) {
+	public void generateDerived(int start, boolean isReverse) {
 
 		/**
 		 * Must sort prices by date before many of the following calculations
@@ -535,7 +542,7 @@ public class TickerData {
 		Collections.sort(this.data, new SortDailyData());
 		this.normalizeZeroVolume();
 
-		this.fillDataArrays(start, false);
+		this.fillDataArrays(start, isReverse);
 
 		/**
 		 * TrueHigh and TrueLow are set for entire data series without regard to
@@ -737,7 +744,7 @@ public class TickerData {
 
 	public String getDailyDataString(int day) {
 		final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
-		    this.closeData[day], this.volumeData[day]);
+		    this.closeData[day], this.volumeData[day], this.oiData[day]);
 		return dd.toString();
 	}
 
@@ -1074,10 +1081,17 @@ public class TickerData {
 	}
 
 	/**
-	 * @return the openData
+	 * @return the volumeData
 	 */
 	public double[] getVolumeData() {
 		return this.volumeData;
+	}
+
+	/**
+	 * @return the openData
+	 */
+	public double[] getOiData() {
+		return this.oiData;
 	}
 
 	/**
@@ -1223,5 +1237,26 @@ public class TickerData {
 		if (this.daysOfData > 65) {
 			this.rsStRaw = this.setRawStRS();
 		}
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.ta.rSort
+	 *
+	 */
+	public void rSort() {
+		Collections.sort(this.data, new SortDailyDataReverse());
+		fillDataArrays(0, true);
+	}
+
+	@Override
+	public String toString() {
+		String str = ticker + TAB + tickerName + TAB + tickerExchange + NL;
+		for (DailyData dd : data) {
+			str += TAB + dd.toString() + NL;
+		}
+
+		return str;
+
 	}
 }

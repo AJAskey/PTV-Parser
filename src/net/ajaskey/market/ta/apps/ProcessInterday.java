@@ -128,7 +128,7 @@ public class ProcessInterday {
 
 				if (id.getTd() == null) {
 					td = TickerData.getFromList(id.getTicker(), tdList);
-					td.generateDerived();
+					td.generateDerived(false);
 					id.setTd(td);
 				} else {
 					td = id.getTd();

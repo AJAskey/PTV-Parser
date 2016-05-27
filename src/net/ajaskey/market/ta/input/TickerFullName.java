@@ -150,4 +150,10 @@ public class TickerFullName {
 		return this.ticker;
 	}
 
+	static public void dumpTickers() {
+		for (final TickerFullName tkr : tickerNames) {
+			System.out.println(tkr.ticker + "\t" + tkr.name);
+		}
+	}
+
 }

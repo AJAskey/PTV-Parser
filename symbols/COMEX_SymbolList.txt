@@ -1,77 +1,78 @@
 AL        	Aluminum                                          	COMEX     
 AL.C      	Aluminum Continuation                             	COMEX     
-ALF16     	Aluminum {Jan 16}                                 	COMEX     
-ALG16     	Aluminum {Feb 16}                                 	COMEX     
-ALH16     	Aluminum {Mar 16}                                 	COMEX     
+ALF17     	Aluminum {Jan 17}                                 	COMEX     
+ALG17     	Aluminum {Feb 17}                                 	COMEX     
+ALH17     	Aluminum {Mar 17}                                 	COMEX     
 ALJ16     	Aluminum {Apr 16}                                 	COMEX     
+ALJ17     	Aluminum {Apr 17}                                 	COMEX     
 ALK16     	Aluminum {May 16}                                 	COMEX     
 ALM16     	Aluminum {Jun 16}                                 	COMEX     
 ALN16     	Aluminum {Jul 16}                                 	COMEX     
 ALQ16     	Aluminum {Aug 16}                                 	COMEX     
 ALU16     	Aluminum {Sep 16}                                 	COMEX     
-ALV15     	Aluminum {Oct 15}                                 	COMEX     
 ALV16     	Aluminum {Oct 16}                                 	COMEX     
-ALX15     	Aluminum {Nov 15}                                 	COMEX     
-ALZ15     	Aluminum {Dec 15}                                 	COMEX     
+ALX16     	Aluminum {Nov 16}                                 	COMEX     
+ALZ16     	Aluminum {Dec 16}                                 	COMEX     
 GC        	Gold                                              	COMEX     
 GC.C      	Gold Continuation                                 	COMEX     
-GCF16     	Gold {Jan 16}                                     	COMEX     
-GCG16     	Gold {Feb 16}                                     	COMEX     
 GCG17     	Gold {Feb 17}                                     	COMEX     
+GCG18     	Gold {Feb 18}                                     	COMEX     
 GCJ16     	Gold {Apr 16}                                     	COMEX     
 GCJ17     	Gold {Apr 17}                                     	COMEX     
+GCK16     	Gold {May 16}                                     	COMEX     
 GCM16     	Gold {Jun 16}                                     	COMEX     
 GCM17     	Gold {Jun 17}                                     	COMEX     
 GCM18     	Gold {Jun 18}                                     	COMEX     
 GCM19     	Gold {Jun 19}                                     	COMEX     
 GCM20     	Gold {Jun 20}                                     	COMEX     
 GCM21     	Gold {Jun 21}                                     	COMEX     
+GCN16     	Gold {Jul 16}                                     	COMEX     
 GCQ16     	Gold {Aug 16}                                     	COMEX     
 GCQ17     	Gold {Aug 17}                                     	COMEX     
-GCV15     	Gold {Oct 15}                                     	COMEX     
 GCV16     	Gold {Oct 16}                                     	COMEX     
-GCX15     	Gold {Nov 15}                                     	COMEX     
-GCZ15     	Gold {Dec 15}                                     	COMEX     
+GCV17     	Gold {Oct 17}                                     	COMEX     
 GCZ16     	Gold {Dec 16}                                     	COMEX     
 GCZ17     	Gold {Dec 17}                                     	COMEX     
 GCZ18     	Gold {Dec 18}                                     	COMEX     
 GCZ19     	Gold {Dec 19}                                     	COMEX     
 GCZ20     	Gold {Dec 20}                                     	COMEX     
+GCZ21     	Gold {Dec 21}                                     	COMEX     
 GR.C      	E-Micro Gold Continuation                         	COMEX     
-GRG16     	E-Micro Gold {Feb 16}                             	COMEX     
 GRG17     	E-Micro Gold {Feb 17}                             	COMEX     
+GRG18     	E-Micro Gold {Feb 18}                             	COMEX     
 GRJ16     	E-Micro Gold {Apr 16}                             	COMEX     
 GRJ17     	E-Micro Gold {Apr 17}                             	COMEX     
 GRM16     	E-Micro Gold {Jun 16}                             	COMEX     
 GRM17     	E-Micro Gold {Jun 17}                             	COMEX     
 GRQ16     	E-Micro Gold {Aug 16}                             	COMEX     
 GRQ17     	E-Micro Gold {Aug 17}                             	COMEX     
-GRV15     	E-Micro Gold {Oct 15}                             	COMEX     
 GRV16     	E-Micro Gold {Oct 16}                             	COMEX     
-GRZ15     	E-Micro Gold {Dec 15}                             	COMEX     
+GRV17     	E-Micro Gold {Oct 17}                             	COMEX     
 GRZ16     	E-Micro Gold {Dec 16}                             	COMEX     
+GRZ17     	E-Micro Gold {Dec 17}                             	COMEX     
 GW.C      	Gold Kilo Continuation                            	COMEX     
-GWF16     	Gold Kilo {Jan 16}                                	COMEX     
-GWG16     	Gold Kilo {Feb 16}                                	COMEX     
-GWJ16     	Gold Kilo {Apr 16}                                	COMEX     
+GWG17     	Gold Kilo {Feb 17}                                	COMEX     
+GWJ17     	Gold Kilo {Apr 17}                                	COMEX     
+GWK16     	Gold Kilo {May 16}                                	COMEX     
 GWM16     	Gold Kilo {Jun 16}                                	COMEX     
+GWN16     	Gold Kilo {Jul 16}                                	COMEX     
 GWQ16     	Gold Kilo {Aug 16}                                	COMEX     
 GWV16     	Gold Kilo {Oct 16}                                	COMEX     
-GWX15     	Gold Kilo {Nov 15}                                	COMEX     
-GWZ15     	Gold Kilo {Dec 15}                                	COMEX     
+GWZ16     	Gold Kilo {Dec 16}                                	COMEX     
 HG        	High Grade Copper                                 	COMEX     
 HG.C      	High Grade Copper Continuation                    	COMEX     
-HGF16     	High Grade Copper {Jan 16}                        	COMEX     
 HGF17     	High Grade Copper {Jan 17}                        	COMEX     
-HGG16     	High Grade Copper {Feb 16}                        	COMEX     
+HGF18     	High Grade Copper {Jan 18}                        	COMEX     
 HGG17     	High Grade Copper {Feb 17}                        	COMEX     
-HGH16     	High Grade Copper {Mar 16}                        	COMEX     
+HGG18     	High Grade Copper {Feb 18}                        	COMEX     
 HGH17     	High Grade Copper {Mar 17}                        	COMEX     
 HGH18     	High Grade Copper {Mar 18}                        	COMEX     
 HGH19     	High Grade Copper {Mar 19}                        	COMEX     
 HGH20     	High Grade Copper {Mar 20}                        	COMEX     
+HGH21     	High Grade Copper {Mar 21}                        	COMEX     
 HGJ16     	High Grade Copper {Apr 16}                        	COMEX     
 HGJ17     	High Grade Copper {Apr 17}                        	COMEX     
+HGJ18     	High Grade Copper {Apr 18}                        	COMEX     
 HGK16     	High Grade Copper {May 16}                        	COMEX     
 HGK17     	High Grade Copper {May 17}                        	COMEX     
 HGK18     	High Grade Copper {May 18}                        	COMEX     
@@ -91,23 +92,22 @@ HGU17     	High Grade Copper {Sep 17}                        	COMEX
 HGU18     	High Grade Copper {Sep 18}                        	COMEX     
 HGU19     	High Grade Copper {Sep 19}                        	COMEX     
 HGU20     	High Grade Copper {Sep 20}                        	COMEX     
-HGV15     	High Grade Copper {Oct 15}                        	COMEX     
 HGV16     	High Grade Copper {Oct 16}                        	COMEX     
 HGV17     	High Grade Copper {Oct 17}                        	COMEX     
-HGX15     	High Grade Copper {Nov 15}                        	COMEX     
 HGX16     	High Grade Copper {Nov 16}                        	COMEX     
-HGZ15     	High Grade Copper {Dec 15}                        	COMEX     
+HGX17     	High Grade Copper {Nov 17}                        	COMEX     
 HGZ16     	High Grade Copper {Dec 16}                        	COMEX     
 HGZ17     	High Grade Copper {Dec 17}                        	COMEX     
 HGZ18     	High Grade Copper {Dec 18}                        	COMEX     
 HGZ19     	High Grade Copper {Dec 19}                        	COMEX     
+HGZ20     	High Grade Copper {Dec 20}                        	COMEX     
 HJ.C      	High Grade Copper(F) Continuation                 	COMEX     
-HJF16     	High Grade Copper(F) {Jan 16}                     	COMEX     
 HJF17     	High Grade Copper(F) {Jan 17}                     	COMEX     
-HJG16     	High Grade Copper(F) {Feb 16}                     	COMEX     
+HJF18     	High Grade Copper(F) {Jan 18}                     	COMEX     
 HJG17     	High Grade Copper(F) {Feb 17}                     	COMEX     
-HJH16     	High Grade Copper(F) {Mar 16}                     	COMEX     
+HJG18     	High Grade Copper(F) {Feb 18}                     	COMEX     
 HJH17     	High Grade Copper(F) {Mar 17}                     	COMEX     
+HJH18     	High Grade Copper(F) {Mar 18}                     	COMEX     
 HJJ16     	High Grade Copper(F) {Apr 16}                     	COMEX     
 HJJ17     	High Grade Copper(F) {Apr 17}                     	COMEX     
 HJK16     	High Grade Copper(F) {May 16}                     	COMEX     
@@ -120,24 +120,37 @@ HJQ16     	High Grade Copper(F) {Aug 16}                     	COMEX
 HJQ17     	High Grade Copper(F) {Aug 17}                     	COMEX     
 HJU16     	High Grade Copper(F) {Sep 16}                     	COMEX     
 HJU17     	High Grade Copper(F) {Sep 17}                     	COMEX     
-HJV15     	High Grade Copper(F) {Oct 15}                     	COMEX     
 HJV16     	High Grade Copper(F) {Oct 16}                     	COMEX     
-HJX15     	High Grade Copper(F) {Nov 15}                     	COMEX     
+HJV17     	High Grade Copper(F) {Oct 17}                     	COMEX     
 HJX16     	High Grade Copper(F) {Nov 16}                     	COMEX     
-HJZ15     	High Grade Copper(F) {Dec 15}                     	COMEX     
+HJX17     	High Grade Copper(F) {Nov 17}                     	COMEX     
 HJZ16     	High Grade Copper(F) {Dec 16}                     	COMEX     
+HJZ17     	High Grade Copper(F) {Dec 17}                     	COMEX     
+LD.C      	Lead Continuation                                 	COMEX     
+LDF17     	Lead {Jan 17}                                     	COMEX     
+LDG17     	Lead {Feb 17}                                     	COMEX     
+LDH17     	Lead {Mar 17}                                     	COMEX     
+LDJ16     	Lead {Apr 16}                                     	COMEX     
+LDK16     	Lead {May 16}                                     	COMEX     
+LDM16     	Lead {Jun 16}                                     	COMEX     
+LDN16     	Lead {Jul 16}                                     	COMEX     
+LDQ16     	Lead {Aug 16}                                     	COMEX     
+LDU16     	Lead {Sep 16}                                     	COMEX     
+LDV16     	Lead {Oct 16}                                     	COMEX     
+LDX16     	Lead {Nov 16}                                     	COMEX     
+LDZ16     	Lead {Dec 16}                                     	COMEX     
 QC.C      	E-Mini Copper Continuation                        	COMEX     
-QCF16     	E-Mini Copper {Jan 16}                            	COMEX     
 QCF17     	E-Mini Copper {Jan 17}                            	COMEX     
-QCG16     	E-Mini Copper {Feb 16}                            	COMEX     
+QCF18     	E-Mini Copper {Jan 18}                            	COMEX     
 QCG17     	E-Mini Copper {Feb 17}                            	COMEX     
-QCH16     	E-Mini Copper {Mar 16}                            	COMEX     
+QCG18     	E-Mini Copper {Feb 18}                            	COMEX     
 QCH17     	E-Mini Copper {Mar 17}                            	COMEX     
 QCH18     	E-Mini Copper {Mar 18}                            	COMEX     
 QCH19     	E-Mini Copper {Mar 19}                            	COMEX     
 QCH20     	E-Mini Copper {Mar 20}                            	COMEX     
-QCJ16     	E-Mini Copper {Apr 16}                            	COMEX     
+QCH21     	E-Mini Copper {Mar 21}                            	COMEX     
 QCJ17     	E-Mini Copper {Apr 17}                            	COMEX     
+QCJ18     	E-Mini Copper {Apr 18}                            	COMEX     
 QCK16     	E-Mini Copper {May 16}                            	COMEX     
 QCK17     	E-Mini Copper {May 17}                            	COMEX     
 QCK18     	E-Mini Copper {May 18}                            	COMEX     
@@ -159,46 +172,48 @@ QCU19     	E-Mini Copper {Sep 19}                            	COMEX
 QCU20     	E-Mini Copper {Sep 20}                            	COMEX     
 QCV16     	E-Mini Copper {Oct 16}                            	COMEX     
 QCV17     	E-Mini Copper {Oct 17}                            	COMEX     
-QCX15     	E-Mini Copper {Nov 15}                            	COMEX     
 QCX16     	E-Mini Copper {Nov 16}                            	COMEX     
-QCZ15     	E-Mini Copper {Dec 15}                            	COMEX     
+QCX17     	E-Mini Copper {Nov 17}                            	COMEX     
 QCZ16     	E-Mini Copper {Dec 16}                            	COMEX     
 QCZ17     	E-Mini Copper {Dec 17}                            	COMEX     
 QCZ18     	E-Mini Copper {Dec 18}                            	COMEX     
 QCZ19     	E-Mini Copper {Dec 19}                            	COMEX     
-QI.C      	Silver emiNY Continuation                         	COMEX     
-QIF16     	Silver emiNY {Jan 16}                             	COMEX     
-QIF17     	Silver emiNY {Jan 17}                             	COMEX     
-QIH16     	Silver emiNY {Mar 16}                             	COMEX     
-QIH17     	Silver emiNY {Mar 17}                             	COMEX     
-QIK16     	Silver emiNY {May 16}                             	COMEX     
-QIK17     	Silver emiNY {May 17}                             	COMEX     
-QIN16     	Silver emiNY {Jul 16}                             	COMEX     
-QIN17     	Silver emiNY {Jul 17}                             	COMEX     
-QIU16     	Silver emiNY {Sep 16}                             	COMEX     
-QIU17     	Silver emiNY {Sep 17}                             	COMEX     
-QIZ15     	Silver emiNY {Dec 15}                             	COMEX     
-QIZ16     	Silver emiNY {Dec 16}                             	COMEX     
-QO.C      	Gold emiNY Continuation                           	COMEX     
-QOG16     	Gold emiNY {Feb 16}                               	COMEX     
-QOG17     	Gold emiNY {Feb 17}                               	COMEX     
-QOJ16     	Gold emiNY {Apr 16}                               	COMEX     
-QOJ17     	Gold emiNY {Apr 17}                               	COMEX     
-QOM16     	Gold emiNY {Jun 16}                               	COMEX     
-QOM17     	Gold emiNY {Jun 17}                               	COMEX     
-QOQ16     	Gold emiNY {Aug 16}                               	COMEX     
-QOQ17     	Gold emiNY {Aug 17}                               	COMEX     
-QOV16     	Gold emiNY {Oct 16}                               	COMEX     
-QOZ15     	Gold emiNY {Dec 15}                               	COMEX     
-QOZ16     	Gold emiNY {Dec 16}                               	COMEX     
+QCZ20     	E-Mini Copper {Dec 20}                            	COMEX     
+QI.C      	E-Mini Silver Continuation                        	COMEX     
+QIF17     	E-Mini Silver {Jan 17}                            	COMEX     
+QIF18     	E-Mini Silver {Jan 18}                            	COMEX     
+QIH17     	E-Mini Silver {Mar 17}                            	COMEX     
+QIH18     	E-Mini Silver {Mar 18}                            	COMEX     
+QIK16     	E-Mini Silver {May 16}                            	COMEX     
+QIK17     	E-Mini Silver {May 17}                            	COMEX     
+QIN16     	E-Mini Silver {Jul 16}                            	COMEX     
+QIN17     	E-Mini Silver {Jul 17}                            	COMEX     
+QIU16     	E-Mini Silver {Sep 16}                            	COMEX     
+QIU17     	E-Mini Silver {Sep 17}                            	COMEX     
+QIZ16     	E-Mini Silver {Dec 16}                            	COMEX     
+QIZ17     	E-Mini Silver {Dec 17}                            	COMEX     
+QO.C      	E-Mini Gold Continuation                          	COMEX     
+QOG17     	E-Mini Gold {Feb 17}                              	COMEX     
+QOG18     	E-Mini Gold {Feb 18}                              	COMEX     
+QOJ17     	E-Mini Gold {Apr 17}                              	COMEX     
+QOM16     	E-Mini Gold {Jun 16}                              	COMEX     
+QOM17     	E-Mini Gold {Jun 17}                              	COMEX     
+QOQ16     	E-Mini Gold {Aug 16}                              	COMEX     
+QOQ17     	E-Mini Gold {Aug 17}                              	COMEX     
+QOV16     	E-Mini Gold {Oct 16}                              	COMEX     
+QOV17     	E-Mini Gold {Oct 17}                              	COMEX     
+QOZ16     	E-Mini Gold {Dec 16}                              	COMEX     
+QOZ17     	E-Mini Gold {Dec 17}                              	COMEX     
 SI        	Silver                                            	COMEX     
 SI.C      	Silver Continuation                               	COMEX     
-SIF16     	Silver {Jan 16}                                   	COMEX     
 SIF17     	Silver {Jan 17}                                   	COMEX     
-SIH16     	Silver {Mar 16}                                   	COMEX     
+SIF18     	Silver {Jan 18}                                   	COMEX     
 SIH17     	Silver {Mar 17}                                   	COMEX     
+SIH18     	Silver {Mar 18}                                   	COMEX     
+SIJ16     	Silver {Apr 16}                                   	COMEX     
 SIK16     	Silver {May 16}                                   	COMEX     
 SIK17     	Silver {May 17}                                   	COMEX     
+SIM16     	Silver {Jun 16}                                   	COMEX     
 SIN16     	Silver {Jul 16}                                   	COMEX     
 SIN17     	Silver {Jul 17}                                   	COMEX     
 SIN18     	Silver {Jul 18}                                   	COMEX     
@@ -206,34 +221,31 @@ SIN19     	Silver {Jul 19}                                   	COMEX
 SIN20     	Silver {Jul 20}                                   	COMEX     
 SIU16     	Silver {Sep 16}                                   	COMEX     
 SIU17     	Silver {Sep 17}                                   	COMEX     
-SIV15     	Silver {Oct 15}                                   	COMEX     
-SIX15     	Silver {Nov 15}                                   	COMEX     
-SIZ15     	Silver {Dec 15}                                   	COMEX     
 SIZ16     	Silver {Dec 16}                                   	COMEX     
 SIZ17     	Silver {Dec 17}                                   	COMEX     
 SIZ18     	Silver {Dec 18}                                   	COMEX     
 SIZ19     	Silver {Dec 19}                                   	COMEX     
+SIZ20     	Silver {Dec 20}                                   	COMEX     
 SO.C      	Silver 1000-oz Continuation                       	COMEX     
-SOF16     	Silver 1000-oz {Jan 16}                           	COMEX     
-SOH16     	Silver 1000-oz {Mar 16}                           	COMEX     
+SOF17     	Silver 1000-oz {Jan 17}                           	COMEX     
+SOH17     	Silver 1000-oz {Mar 17}                           	COMEX     
+SOJ16     	Silver 1000-oz {Apr 16}                           	COMEX     
 SOK16     	Silver 1000-oz {May 16}                           	COMEX     
+SOM16     	Silver 1000-oz {Jun 16}                           	COMEX     
 SON16     	Silver 1000-oz {Jul 16}                           	COMEX     
 SOU16     	Silver 1000-oz {Sep 16}                           	COMEX     
-SOV15     	Silver 1000-oz {Oct 15}                           	COMEX     
-SOX15     	Silver 1000-oz {Nov 15}                           	COMEX     
-SOZ15     	Silver 1000-oz {Dec 15}                           	COMEX     
+SOZ16     	Silver 1000-oz {Dec 16}                           	COMEX     
 VJ        	Gold VIX                                          	COMEX     
 ZA.C      	Zinc Continuation                                 	COMEX     
-ZAF16     	Zinc {Jan 16}                                     	COMEX     
-ZAG16     	Zinc {Feb 16}                                     	COMEX     
-ZAH16     	Zinc {Mar 16}                                     	COMEX     
+ZAF17     	Zinc {Jan 17}                                     	COMEX     
+ZAG17     	Zinc {Feb 17}                                     	COMEX     
+ZAH17     	Zinc {Mar 17}                                     	COMEX     
 ZAJ16     	Zinc {Apr 16}                                     	COMEX     
 ZAK16     	Zinc {May 16}                                     	COMEX     
 ZAM16     	Zinc {Jun 16}                                     	COMEX     
 ZAN16     	Zinc {Jul 16}                                     	COMEX     
 ZAQ16     	Zinc {Aug 16}                                     	COMEX     
 ZAU16     	Zinc {Sep 16}                                     	COMEX     
-ZAV15     	Zinc {Oct 15}                                     	COMEX     
 ZAV16     	Zinc {Oct 16}                                     	COMEX     
-ZAX15     	Zinc {Nov 15}                                     	COMEX     
-ZAZ15     	Zinc {Dec 15}                                     	COMEX     
+ZAX16     	Zinc {Nov 16}                                     	COMEX     
+ZAZ16     	Zinc {Dec 16}                                     	COMEX     

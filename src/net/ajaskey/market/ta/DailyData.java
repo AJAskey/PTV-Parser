@@ -47,6 +47,7 @@ public class DailyData {
 	private final Double						low;
 	private final Double						close;
 	private Double									volume;
+	private Double                  oi;
 
 	private double									trueHigh;
 	private double									trueLow;
@@ -76,7 +77,7 @@ public class DailyData {
 	 * @param v
 	 *          Volume of daily activity.
 	 */
-	public DailyData(Calendar d, double o, double h, double l, double c, double v) {
+	public DailyData(Calendar d, double o, double h, double l, double c, double v, double oi) {
 		this.date = d;
 		this.date.set(Calendar.HOUR_OF_DAY, 0);
 		this.date.set(Calendar.MINUTE, 0);
@@ -87,6 +88,7 @@ public class DailyData {
 		this.high = h;
 		this.low = l;
 		this.close = c;
+		this.oi = oi;
 		this.setVolume(v);
 		this.trueHigh = 0.0;
 		this.trueLow = 0.0;
@@ -94,6 +96,16 @@ public class DailyData {
 		this.dailyPercentChg = 0.0;
 		this.dailyRng = 0.0;
 		this.dailyPercentRng = 0.0;
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.ta.getOi
+	 *
+	 * @return the Oi
+	 */
+	public Double getOi() {
+		return this.oi;
 	}
 
 	/**
@@ -271,8 +283,8 @@ public class DailyData {
 	@Override
 	public String toString() {
 		final String sDate = this.sdf.format(this.date.getTime());
-		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d%n", sDate, this.open, this.high, this.low,
-		    this.close, (int) (double) (this.volume));
+		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %d %d%n", sDate, this.open, this.high, this.low,
+		    this.close, (int) (double) (this.volume), (int) (double) (this.oi));
 		return ret.trim();
 	}
 

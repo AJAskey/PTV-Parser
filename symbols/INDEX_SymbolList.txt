@@ -130,7 +130,6 @@ CS2R.IDX  	S&P C.S. 20-City Composite Home Price Index       	INDEX
 CSXR.IDX  	S&P C.S. 10-City Composite Home Price Index       	INDEX     
 CVK.IDX   	Smcp 600Barr Val                                  	INDEX     
 CYM.IDX   	Claymore Yield ETF Iopv                           	INDEX     
-CYO.IDX   	Morgan Stanley Cyclical Index F                   	INDEX     
 CZH.IDX   	AMEX CHINA INDX                                   	INDEX     
 DAX.IDX   	Frankfurt Dax                                     	INDEX     
 DAXR.IDX  	S&P C.S. Tx-Dallas Home Price Index               	INDEX     
@@ -402,10 +401,7 @@ DZO.IDX   	Dynamic Biotech & Genome Intell                   	INDEX
 DZR.IDX   	DYNAMIC PHARMACEUTICAL INTELLID                   	INDEX     
 ECO.IDX   	Wh Clean Energy                                   	INDEX     
 EED.IDX   	Claymore Bric ETF Iopv                            	INDEX     
-EMX.IDX   	AMEX Major 8 European Index                       	INDEX     
 EPX.IDX   	SIG OIL EXPLORATION & PRODUCERS                   	INDEX     
-ESX.IDX   	Sel Euro 50 Ndx                                   	INDEX     
-EUX.IDX   	Majr 11 Intl Ndx                                  	INDEX     
 EVZ.IDX   	CBOE EURO CURR VOL IND                            	INDEX     
 EZB.IDX   	DYNAMIC BS MT INTELLIDEX                          	INDEX     
 EZF.IDX   	DYNAMIC FINCL INTELLIDEX                          	INDEX     
@@ -422,12 +418,10 @@ FTSM.IDX  	FTSE Mid 250 Index                                	INDEX
 FVX.IDX   	5-YEAR TREASURY NOTE                              	INDEX     
 GDM.IDX   	AMEX GOLD MINERS                                  	INDEX     
 GLD.IDX   	Gold Index                                        	INDEX     
-GLI.IDX   	Mer Lyn Gbl Mkt                                   	INDEX     
 GMI.IDX   	Mkt Vector Gold Min Iopv                          	INDEX     
 GNX.IDX   	GSCI Spot Return                                  	INDEX     
 GVX.IDX   	Goldman Sachs Livestock Sub Index                 	INDEX     
 GVZ.IDX   	GSTI SERVICES INDEX SETTLEMENT                    	INDEX     
-GWI.IDX   	Merrill Lynch Sel Sector Spdr                     	INDEX     
 HGX.IDX   	Phlx Hsg Sector Index                             	INDEX     
 HIGA.IDX  	AMEX New Highs                                    	INDEX     
 HIGD.IDX  	OTC New Highs                                     	INDEX     
@@ -448,7 +442,6 @@ IDX.IDX   	S&P 400 Midcap Index                              	INDEX
 IEB.IDX   	DYNAMIC LARGE CAP INTELL                          	INDEX     
 IEK.IDX   	DYNAMIC MID CAP INTELL                            	INDEX     
 IEY.IDX   	DYNAMIC SMALL CAP INTELL                          	INDEX     
-IIB.IDX   	SEMI INDS PLUS                                    	INDEX     
 ILH.IDX   	Dynamic Lg Cap Gr Intellidex                      	INDEX     
 ILJ.IDX   	Dynamic Mid Cp Gr Intellidex                      	INDEX     
 ILK.IDX   	Dynamic Sml Cp Gr Intellidex                      	INDEX     
@@ -479,7 +472,6 @@ IXU.IDX   	Utilities Select Sector Index                     	INDEX
 IXV.IDX   	Healthcare Select Sector Index                    	INDEX     
 IXY.IDX   	Consumer Discretionary Select Sector Index        	INDEX     
 JBV.IDX   	NYSE Arca Mini-Broker/Dealer  I-                  	INDEX     
-JKC.IDX   	ML LONG/SHRT III                                  	INDEX     
 JKSE.IDX  	Jakarta Composite Index                           	INDEX     
 JPN.IDX   	AMEX Japan Index                                  	INDEX     
 JPV.IDX   	AMEX Japan Index Final Settleme                   	INDEX     
@@ -487,7 +479,6 @@ JX.IDX    	Tsx Venture Composite Index                       	INDEX
 KBK.IDX   	NYSE Arca Mini-Pharmaceutical I-                  	INDEX     
 KDX.IDX   	KBW Finsec Dividend Yield Index                   	INDEX     
 KDY.IDX   	AMEX Hong Kong Index Float Rate                   	INDEX     
-KGX.IDX   	KBW Global Ex-U.S. Financials Index               	INDEX     
 KIX.IDX   	KBW Insurance Index                               	INDEX     
 KLCI.IDX  	Kuala Lumpur Composite                            	INDEX     
 KLX.IDX   	Mkt Vectors Steel Iopv                            	INDEX     
@@ -592,7 +583,6 @@ MALQ.IDX  	12-Month Lows Nasdaq                              	INDEX
 MALU.IDX  	12-Month Lows Volume Lt 100K                      	INDEX     
 MALV.IDX  	12-Month Lows Volume GT 100K                      	INDEX     
 MALX.IDX  	12-Month Lows Overall                             	INDEX     
-MBO.IDX   	CHINESE MPS BSKT                                  	INDEX     
 MDO.IDX   	Mid Opn/Cls Avge                                  	INDEX     
 MERV.IDX  	Merval - Argentina                                	INDEX     
 MEV.IDX   	AMEX Mexico Index Settlement                      	INDEX     
@@ -824,9 +814,7 @@ S6UP.IDX  	S&P SmallCap600 Capped Utilities & Telecom Servi  	INDEX
 S7TR.IDX  	S&P 500 Diversified Financials [TR]               	INDEX     
 S8TR.IDX  	S&P 500 Energy [TR]                               	INDEX     
 S9TR.IDX  	S&P 500 Food & Staples Retailing [TR]             	INDEX     
-SAAA.IDX  	S&P Asia Alternative Energy Index                 	INDEX     
 SAAB.IDX  	S&P Asia Infrastructure Index                     	INDEX     
-SAAC.IDX  	S&P Asia Water Index                              	INDEX     
 SACC.IDX  	Alpha Shares China Small Cap Index                	INDEX     
 SACN.IDX  	Alpha Shares China Technology Index               	INDEX     
 SAEI.IDX  	S&P Global Alternative Energy Index [EURO]        	INDEX     
@@ -876,7 +864,6 @@ SCYI.IDX  	S&P Chinese Renminbi Total Return                 	INDEX
 SDCG.IDX  	Defined MultiCap Growth Index                     	INDEX     
 SDCV.IDX  	Defined MultiCap Value Index                      	INDEX     
 SDDE.IDX  	Wisdom Tree Domestic Dividends Index ex Financia  	INDEX     
-SDDV.IDX  	DWS Top Divide X Index [TR]                       	INDEX     
 SDEW.IDX  	S&P 400 Midcap Equal Weighted Index               	INDEX     
 SDGO.IDX  	Defined Large Cap Growth Opportunities Index      	INDEX     
 SDIP.IDX  	S&P DCFI Index Excess Return                      	INDEX     
@@ -891,7 +878,6 @@ SDTR.IDX  	S&P 500 Food Beverage & Tobacco [TR]              	INDEX
 SDTS.IDX  	S&P Diversified Trends Indicator                  	INDEX     
 SDTT.IDX  	S&P Diversified Trends Total Return Indicator Le  	INDEX     
 SDVO.IDX  	Defined Large Cap Value Opportunities Index       	INDEX     
-SDWI.IDX  	DWS Infrastru X Index [TR]                        	INDEX     
 SEAN.IDX  	S&P Southeast Asia 40 Index [NetTR]               	INDEX     
 SEBI.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX     
 SECA.IDX  	S&P GSCI Enhanced Commodity Index                 	INDEX     
@@ -1013,18 +999,11 @@ SGAD.IDX  	S&P Global Agribusiness Equity Index [EURO]       	INDEX
 SGCC.IDX  	S&P GSCI Capped Commodity 35/20 Index             	INDEX     
 SGCR.IDX  	S&P GSCI All Metals Capped Index Excess Return    	INDEX     
 SGDO.IDX  	S&P Global Dividend Opportunities Index           	INDEX     
-SGEI.IDX  	Credit Suisse Emerging Market Infrastructure Ind  	INDEX     
-SGEP.IDX  	Credit Suisse Emerging Market Infrastructure Pri  	INDEX     
 SGET.IDX  	Goldman Sachs Liquefied Natural Gas Index [EURO]  	INDEX     
-SGEY.IDX  	Credit Suisse Emerging Market Infrastructure Ind  	INDEX     
 SGIA.IDX  	S&P North American Natural Resources Sector Inde  	INDEX     
 SGIB.IDX  	S&P North American Technology Sector Index        	INDEX     
-SGIC.IDX  	S&P North American Technology Hardware Index      	INDEX     
 SGID.IDX  	S&P North American Technology Software Index      	INDEX     
-SGIE.IDX  	S&P North American Technology Services Index      	INDEX     
 SGIF.IDX  	S&P North American Technology Multimedia Network  	INDEX     
-SGIG.IDX  	S&P North American Technology Internet Index      	INDEX     
-SGIH.IDX  	S&P North AmericanT echnology Semiconductors Ind  	INDEX     
 SGIR.IDX  	S&P GSCI All Metals Index Excess Return           	INDEX     
 SGJ.IDX   	S&P GSCI Energy                                   	INDEX     
 SGK.IDX   	S&P GSCI Agriculture                              	INDEX     
@@ -1081,9 +1060,6 @@ SGSX.IDX  	S&P GSCI Ultra-LightEnergyIndex [CPW8]            	INDEX
 SGT.IDX   	S&P GSCI Total Return                             	INDEX     
 SGTR.IDX  	S&P GSCI All Metals Capped Index Total Return     	INDEX     
 SGV.IDX   	CASINO GAMING                                     	INDEX     
-SGWC.IDX  	Credit Suisse Global Warming Price Index          	INDEX     
-SGWE.IDX  	Credit Suisse Global Warming Index EUR            	INDEX     
-SGWM.IDX  	Credit Suisse Global Warming Index                	INDEX     
 SGWN.IDX  	SGI Global Wealth Effect [NetTR]                  	INDEX     
 SGWP.IDX  	SGI Global Wealth Effect                          	INDEX     
 SGWT.IDX  	S&P GSCI Select Equal Weight Index Tr             	INDEX     
@@ -1091,19 +1067,14 @@ SGX.IDX   	S&P GSCI FPI Index                                	INDEX
 SGY.IDX   	S&P GSCI Industrial Metals                        	INDEX     
 SHEP.IDX  	Credit Suisse Hs60 Europe Index Powered By Holt   	INDEX     
 SHEU.IDX  	HS60 Europe Index                                 	INDEX     
-SHSB.IDX  	HS60 Index                                        	INDEX     
-SHSD.IDX  	HS60-EURO Index                                   	INDEX     
 SHTR.IDX  	S&P 500 HealthCare Equipment & Services [TR]      	INDEX     
 SHUS.IDX  	HS60 US Index                                     	INDEX     
 SIDO.IDX  	S&P International Dividend Opportunities Index    	INDEX     
 SIII.IDX  	Indus India Index                                 	INDEX     
-SIIN.IDX  	S&P India Select Index                            	INDEX     
 SIIP.IDX  	S&P DFFI Index Excess Return                      	INDEX     
 SIIS.IDX  	S&P DFFI Index                                    	INDEX     
 SIIT.IDX  	S&P DFFI Index Total Return                       	INDEX     
 SIN.IDX   	ISE Sindex Index                                  	INDEX     
-SINE.IDX  	S&P India 10 Index [EURO]                         	INDEX     
-SINU.IDX  	S&P India 10 Index                                	INDEX     
 SIPR.IDX  	Brics Nifty 50 Emerging Market Tradable Index Pr  	INDEX     
 SIRI.IDX  	S&P Indian Rupee Total Return                     	INDEX     
 SIRP.IDX  	Cohen & Steers International Realty Majors Portf  	INDEX     
@@ -1284,8 +1255,6 @@ SSUC.IDX  	S&P GSCI Capped Component 35/20 Index             	INDEX
 SSUP.IDX  	S&P GSCI Capped Component 35/20 Index Excess Ret  	INDEX     
 SSUT.IDX  	S&P GSCI Capped Component 35/20 Index Total Retu  	INDEX     
 SSWP.IDX  	S&P GSCI Select Equal Weight Index Er             	INDEX     
-SSWT.IDX  	Credit Suisse Water Index                         	INDEX     
-SSXP.IDX  	Credit Suisse Social Awareness Index [Price]      	INDEX     
 SSXT.IDX  	DWS Swi X Index [NetTRw/fees]                     	INDEX     
 STCE.IDX  	S&P Global Clean Energy Index [EURO]              	INDEX     
 STCL.IDX  	S&P Global Clean Energy Index                     	INDEX     
@@ -1316,7 +1285,6 @@ STRC.IDX  	S&P Target Risk Growth Index                      	INDEX
 STRD.IDX  	S&P Target Risk Conservative Index                	INDEX     
 STRL.IDX  	S&P LAC40 [US$] [NetTR]                           	INDEX     
 STRN.IDX  	S&P 500 [NetTR]                                   	INDEX     
-STRP.IDX  	Credit Suisse Water Index [Usd] Price             	INDEX     
 STRS.IDX  	S&P 500 TR Short                                  	INDEX     
 STRT.IDX  	S&P 500 Telecommunication Services [TR]           	INDEX     
 STRU.IDX  	S&P 500 Household & Personal Products [TR]        	INDEX     
@@ -1352,10 +1320,8 @@ SW1A.IDX  	S&P Developed Ex-U.S.BMI [Capped] Utilities       	INDEX
 SW1B.IDX  	S&P Developed Ex-U.S.Cap Range Companies Between  	INDEX     
 SW1C.IDX  	S&P Emerging Under USD 2 Billion                  	INDEX     
 SW1J.IDX  	S&P Developed Ex-U.S.BMI [Capped] Telecommunicat  	INDEX     
-SWCH.IDX  	Credit Suisse Water Index  [Chf]                  	INDEX     
 SWDI.IDX  	VTL Navellier Revenue Weighted Index              	INDEX     
 SWDR.IDX  	VTL Revenue Weighted ADR Index                    	INDEX     
-SWET.IDX  	Credit Suisse Water Index [Euro]                  	INDEX     
 SWFI.IDX  	Revenue Shares Large Cap Fund Financials [Sector  	INDEX     
 SWIB.IDX  	SGI Wise Bottom                                   	INDEX     
 SWIT.IDX  	SGI Wise Top                                      	INDEX     

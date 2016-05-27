@@ -91,7 +91,7 @@ public class ProcessMarketInternals {
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
 
 		for (final TickerData t : tdAll) {
-			t.generateDerived();
+			t.generateDerived(false);
 		}
 
 		try (PrintWriter pw = new PrintWriter("out\\industry-rs.txt")) {
@@ -141,7 +141,7 @@ public class ProcessMarketInternals {
 		try (PrintWriter pw = new PrintWriter("out\\advance-decline.txt")) {
 
 			for (final TickerData td : tdAll) {
-				td.generateDerived();
+				td.generateDerived(false);
 				advDecl = taMethods.calcAdvDecl(td.getCloseData(), 260);
 				pw.println(td.getTicker() + "  :  " + advDecl);
 			}
@@ -173,7 +173,7 @@ public class ProcessMarketInternals {
 		double[] close = null;
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived();
+			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVQ.IDX")) {
 				adv = td.getCloseData();
 			} else if (td.getTicker().equalsIgnoreCase("DECQ.IDX")) {
@@ -230,7 +230,7 @@ public class ProcessMarketInternals {
 		double[] close = null;
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived();
+			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVN.IDX")) {
 				adv = td.getCloseData();
 			} else if (td.getTicker().equalsIgnoreCase("DECN.IDX")) {
@@ -287,7 +287,7 @@ public class ProcessMarketInternals {
 		double[] close = null;
 
 		for (final TickerData td : tdAll) {
-			td.generateDerived();
+			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVD.IDX")) {
 				adv = td.getCloseData();
 			} else if (td.getTicker().equalsIgnoreCase("DECD.IDX")) {

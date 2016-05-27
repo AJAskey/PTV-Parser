@@ -1,506 +1,501 @@
-Ticker	Company	Local Price	Shares Outstanding	Market Cap
-MMM	3M Co	157.21	"624,745,000.00"	"98,216,161,450.00"
-ACE	ACE Limited	113.54	"323,805,000.00"	"36,764,819,700.00"
-AES	AES Corp	10.95	"682,827,000.00"	"7,476,955,650.00"
-AFL	AFLAC Inc	63.75	"430,694,000.00"	"27,456,742,500.00"
-GAS	AGL Resources	62.5	"120,088,000.00"	"7,505,500,000.00"
-AME	AMETEK Inc	54.82	"242,164,000.00"	"13,275,430,480.00"
-T	AT&T Inc	33.51	"6,151,000,000.00"	"206,120,010,000.00"
-ABBV	AbbVie Inc.	59.55	"1,655,276,000.00"	"98,571,685,800.00"
-ABT	Abbott Laboratories	44.8	"1,490,441,000.00"	"66,771,756,800.00"
-ACN	Accenture plc	107.2	"624,135,000.00"	"66,907,272,000.00"
-ATVI	Activision Blizzard Inc	34.76	"729,020,000.00"	"25,340,735,200.00"
-ADBE	Adobe Systems Inc	88.66	"497,645,000.00"	"44,121,205,700.00"
-AAP	Advance Auto Parts Inc	198.43	"73,217,000.00"	"14,528,449,310.00"
-AET	Aetna Inc	114.78	"348,598,000.00"	"40,012,078,440.00"
-AMG	Affiliated Managers Grp	180.26	"54,284,000.00"	"9,785,233,840.00"
-A	Agilent Technologies Inc	37.76	"331,403,000.00"	"12,513,777,280.00"
-APD	Air Products & Chemicals Inc	138.98	"214,982,000.00"	"29,878,198,360.00"
-ARG	Airgas Inc	96.16	"74,654,000.00"	"7,178,728,640.00"
-AKAM	Akamai Technologies Inc	60.82	"178,595,000.00"	"10,862,147,900.00"
-AA	Alcoa Inc	8.93	"1,309,802,000.00"	"11,696,531,860.00"
-ALXN	Alexion Pharmaceuticals Inc	176	"226,155,000.00"	"39,803,280,000.00"
-ALLE	Allegion plc	65.17	"95,812,000.00"	"6,244,068,040.00"
-AGN	Allergan plc	308.47	"393,636,000.00"	"121,424,896,920.00"
-ADS	Alliance Data Systems Corp	297.31	"61,433,000.00"	"18,264,645,230.00"
-ALL	Allstate Corp	61.88	"400,390,000.00"	"24,776,133,200.00"
-GOOGL	Alphabet Inc A	737.39	"289,886,000.00"	"213,759,037,540.00"
-GOOG	Alphabet Inc C	710.81	"343,929,000.00"	"244,468,172,490.00"
-ALTR	Altera Corp	52.55	"302,472,000.00"	"15,894,903,600.00"
-MO	Altria Group Inc	60.47	"1,960,695,000.00"	"118,563,226,650.00"
-AMZN	Amazon.com Inc	625.9	"467,710,000.00"	"292,739,689,000.00"
-AEE	Ameren Corp	43.68	"242,635,000.00"	"10,598,296,800.00"
-AAL	American Airlines Group Inc.	46.22	"671,821,000.00"	"31,051,566,620.00"
-AEP	American Electric Power	56.65	"490,560,000.00"	"27,790,224,000.00"
-AXP	American Express Co	73.26	"1,001,283,000.00"	"73,353,992,580.00"
-AIG	American Intl Group Inc	63.06	"1,293,887,000.00"	"81,592,514,220.00"
-AMT	American Tower Corp A	102.23	"423,279,000.00"	"43,271,812,170.00"
-AMP	Ameriprise Financial Inc	115.36	"178,221,000.00"	"20,559,574,560.00"
-ABC	AmerisourceBergen Corp	96.51	"216,202,000.00"	"20,865,655,020.00"
-AMGN	Amgen Inc	158.18	"758,250,000.00"	"119,939,985,000.00"
-APH	Amphenol Corp A	54.22	"309,147,000.00"	"16,761,950,340.00"
-APC	Anadarko Petroleum Corp	66.88	"508,012,000.00"	"33,975,842,560.00"
-ADI	Analog Devices Inc	60.12	"313,675,000.00"	"18,858,141,000.00"
-ANTM	Anthem Inc	139.15	"261,587,000.00"	"36,399,831,050.00"
-AON	Aon plc	93.31	"280,043,000.00"	"26,130,812,330.00"
-APA	Apache Corp	47.13	"377,987,000.00"	"17,814,527,310.00"
-AIV	Apartment Investment & Mgmt	39.19	"156,282,000.00"	"6,124,691,580.00"
-AAPL	Apple Inc.	119.5	"5,702,722,000.00"	"681,475,279,000.00"
-AMAT	Applied Materials Inc	16.77	"1,200,619,000.00"	"20,134,380,630.00"
-ADM	Archer-Daniels-Midland Co	45.66	"608,940,000.00"	"27,804,200,400.00"
-AIZ	Assurant Inc	81.53	"66,818,000.00"	"5,447,671,540.00"
-AN	AutoNation Inc	63.19	"113,441,000.00"	"7,168,336,790.00"
-AZO	AutoZone Inc	784.41	"30,872,000.00"	"24,216,305,520.00"
-ADSK	Autodesk Inc	55.19	"226,199,000.00"	"12,483,922,810.00"
-ADP	Automatic Data Processing	86.99	"465,810,000.00"	"40,520,811,900.00"
-AVGO	Avago Technologies Ltd	123.13	"273,490,000.00"	"33,674,823,700.00"
-AVB	AvalonBay Communities Inc	174.83	"132,902,000.00"	"23,235,256,660.00"
-AVY	Avery Dennison Corp	64.97	"91,438,000.00"	"5,940,726,860.00"
-BBT	BB&T Corp	37.15	"779,607,000.00"	"28,962,400,050.00"
-BHI	Baker Hughes Inc	52.68	"435,882,000.00"	"22,962,263,760.00"
-BLL	Ball Corp	68.5	"138,167,000.00"	"9,464,439,500.00"
-BAC	Bank of America Corp	16.78	"10,468,545,000.00"	"175,662,185,100.00"
-BCR	Bard C.R. Inc	186.35	"74,199,000.00"	"13,826,983,650.00"
-BXLT	Baxalta Inc	34.46	"676,969,000.00"	"23,328,351,740.00"
-BAX	Baxter Intl Inc	37.39	"545,539,000.00"	"20,397,703,210.00"
-BDX	Becton Dickinson & Co	142.52	"210,254,000.00"	"29,965,400,080.00"
-BBBY	Bed Bath & Beyond Inc	59.63	"169,596,000.00"	"10,113,009,480.00"
-BRK.B	Berkshire Hathaway B	136.02	"2,464,999,000.00"	"335,289,163,980.00"
-BBY	Best Buy Co Inc	35.03	"352,771,000.00"	"12,357,568,130.00"
-BIIB	Biogen Inc	290.51	"235,169,000.00"	"68,318,946,190.00"
-BLK	BlackRock Inc	351.97	"166,379,000.00"	"58,560,416,630.00"
-HRB	Block H & R Inc	37.26	"235,785,000.00"	"8,785,349,100.00"
-BA	Boeing Co	148.07	"679,495,000.00"	"100,612,824,650.00"
-BWA	Borgwarner Inc	42.82	"226,315,000.00"	"9,690,808,300.00"
-BXP	Boston Properties Inc	125.85	"153,574,000.00"	"19,327,287,900.00"
-BSX	Boston Scientific Corp	18.28	"1,343,957,000.00"	"24,567,533,960.00"
-BMY	Bristol-Myers Squibb	65.95	"1,667,503,000.00"	"109,971,822,850.00"
-BRCM	Broadcom Corp A	51.4	"559,000,000.00"	"28,732,600,000.00"
-BF.B	Brown-Forman Corp B	106.18	"121,963,000.00"	"12,950,031,340.00"
-CA	CA Inc	27.71	"441,305,000.00"	"12,228,561,550.00"
-CBG	CBRE Group Inc.	37.28	"333,180,000.00"	"12,420,950,400.00"
-CBS	CBS Corp B	46.52	"444,408,000.00"	"20,673,860,160.00"
-CF	CF Industries Holdings	50.77	"233,048,000.00"	"11,831,846,960.00"
-CHRW	CH Robinson Worldwide Inc	69.38	"141,801,000.00"	"9,838,153,380.00"
-CME	CME Group Inc	94.47	"337,756,000.00"	"31,907,809,320.00"
-CMS	CMS Energy Corp	36.07	"276,668,000.00"	"9,979,414,760.00"
-CNX	CONSOL Energy Inc	6.66	"229,004,000.00"	"1,525,166,640.00"
-CSX	CSX Corp	26.99	"983,737,000.00"	"26,551,061,630.00"
-CVS	CVS Health Corporation	98.78	"1,114,486,000.00"	"110,088,927,080.00"
-CVC	Cablevision Systems Co A	32.59	"222,337,000.00"	"7,245,962,830.00"
-COG	Cabot Oil & Gas A	21.71	"413,808,000.00"	"8,983,771,680.00"
-CAM	Cameron International Corp	68.01	"191,514,000.00"	"13,024,867,140.00"
-CPB	Campbell Soup Co	50.79	"310,521,000.00"	"15,771,361,590.00"
-COF	Capital One Financial	78.9	"542,429,000.00"	"42,797,648,100.00"
-CAH	Cardinal Health Inc	82.2	"327,359,000.00"	"26,908,909,800.00"
-KMX	Carmax Inc	59.01	"208,042,000.00"	"12,276,558,420.00"
-CCL	Carnival Corp	54.08	"593,457,000.00"	"32,094,154,560.00"
-CAT	Caterpillar Inc	72.99	"602,633,000.00"	"43,986,182,670.00"
-CELG	Celgene Corp	122.71	"790,540,000.00"	"97,007,163,400.00"
-CNP	Centerpoint Energy Inc	18.55	"430,262,000.00"	"7,981,360,100.00"
-CTL	CenturyLink Inc	28.21	"562,986,000.00"	"15,881,835,060.00"
-CERN	Cerner Corp	66.29	"345,074,000.00"	"22,874,955,460.00"
-CHK	Chesapeake Energy Corp	7.13	"662,986,000.00"	"4,727,090,180.00"
-CVX	Chevron Corp	90.88	"1,881,735,000.00"	"171,012,076,800.00"
-CMG	Chipotle Mexican Grill Inc.	640.23	"31,142,000.00"	"19,938,042,660.00"
-CB	Chubb Corp	129.35	"226,977,000.00"	"29,359,474,950.00"
-CI	Cigna Corporation	134.04	"257,495,000.00"	"34,514,629,800.00"
-XEC	Cimarex Energy Co	118.06	"94,456,000.00"	"11,151,475,360.00"
-CINF	Cincinnati Financial Corp	60.23	"164,093,000.00"	"9,883,321,390.00"
-CTAS	Cintas Corp	93.09	"110,211,000.00"	"10,259,541,990.00"
-CSCO	Cisco Systems Inc	28.85	"5,085,889,000.00"	"146,727,897,650.00"
-C	Citigroup Inc	53.17	"3,009,845,000.00"	"160,033,458,650.00"
-CTXS	Citrix Systems Inc	82.1	"160,701,000.00"	"13,193,552,100.00"
-CLX	Clorox Co	121.94	"128,644,000.00"	"15,686,849,360.00"
-COH	Coach Inc	31.2	"276,627,000.00"	"8,630,762,400.00"
-KO	Coca-Cola Co	42.35	"4,350,004,000.00"	"184,222,669,400.00"
-CCE	Coca-Cola Enterprises	51.34	"229,086,000.00"	"11,761,275,240.00"
-CTSH	Cognizant Tech Solutions Corp	68.11	"609,529,000.00"	"41,515,020,190.00"
-CL	Colgate-Palmolive Co	66.35	"900,132,000.00"	"59,723,758,200.00"
-CPGX	Columbia Pipeline Group	20.77	"317,615,000.00"	"6,596,863,550.00"
-CMCSA	Comcast Corp A	62.62	"2,114,785,000.00"	"132,427,836,700.00"
-CMCSK	Comcast Corp A Spl	62.71	"368,198,000.00"	"23,089,696,580.00"
-CMA	Comerica Inc (MI)	43.4	"177,929,000.00"	"7,722,118,600.00"
-CSC	Computer Sciences	66.59	"138,332,000.00"	"9,211,527,880.00"
-CAG	ConAgra Foods Inc	40.55	"431,735,000.00"	"17,506,854,250.00"
-COP	ConocoPhillips	53.35	"1,233,459,000.00"	"65,805,037,650.00"
-ED	Consolidated Edison Inc	65.75	"292,872,000.00"	"19,256,334,000.00"
-STZ	Constellation Brands Inc A	134.8	"171,987,000.00"	"23,183,847,600.00"
-GLW	Corning Inc	18.6	"1,225,935,000.00"	"22,802,391,000.00"
-COST	Costco Wholesale Corp	158.12	"439,488,000.00"	"69,491,842,560.00"
-CCI	Crown Castle Intl Corp	85.46	"333,761,000.00"	"28,523,215,060.00"
-CMI	Cummins Inc	103.51	"178,650,000.00"	"18,492,061,500.00"
-DTE	DTE Energy Co	81.59	"179,476,000.00"	"14,643,446,840.00"
-DVA	DaVita HealthCare Partners Inc	77.51	"215,500,000.00"	"16,703,405,000.00"
-DHR	Danaher Corp	93.31	"683,488,000.00"	"63,776,265,280.00"
-DRI	Darden Restaurants Inc	61.89	"126,669,000.00"	"7,839,544,410.00"
-DE	Deere & Co	78	"328,166,000.00"	"25,596,948,000.00"
-DLPH	Delphi Automotive PLC	83.19	"284,349,000.00"	"23,654,993,310.00"
-DAL	Delta Air Lines	50.84	"795,398,000.00"	"40,438,034,320.00"
-XRAY	Dentsply Intl	60.85	"139,808,000.00"	"8,507,316,800.00"
-DVN	Devon Energy Corp	41.93	"411,000,000.00"	"17,233,230,000.00"
-DO	Diamond Offshore Drilling	19.88	"137,159,000.00"	"2,726,720,920.00"
-DFS	Discover Financial Services	56.22	"435,307,000.00"	"24,472,959,540.00"
-DISCA	Discovery Communications Inc A	29.44	"149,302,000.00"	"4,395,450,880.00"
-DISCK	Discovery Communications Inc C	27.52	"274,284,000.00"	"7,548,295,680.00"
-DG	Dollar General Corp	67.77	"294,660,000.00"	"19,969,108,200.00"
-DLTR	Dollar Tree Inc	65.49	"234,718,000.00"	"15,371,681,820.00"
-D	Dominion Resources Inc	71.43	"594,322,000.00"	"42,452,420,460.00"
-DOV	Dover Corp	64.43	"156,465,000.00"	"10,081,039,950.00"
-DOW	Dow Chemical	51.67	"1,158,102,000.00"	"59,839,130,340.00"
-DPS	Dr Pepper Snapple Group	89.37	"190,886,000.00"	"17,059,481,820.00"
-DUK	Duke Energy Corp	71.47	"688,330,000.00"	"49,194,945,100.00"
-DNB	Dun & Bradstreet Corp	113.87	"36,111,000.00"	"4,111,959,570.00"
-ETFC	E*TRADE Financial Corp	28.51	"290,174,000.00"	"8,272,860,740.00"
-DD	E. I. du Pont de Nemours and Company	63.4	"904,838,000.00"	"57,366,729,200.00"
-EMC	EMC Corp	26.22	"1,924,726,000.00"	"50,466,315,720.00"
-EOG	EOG Resources	85.85	"549,171,000.00"	"47,146,330,350.00"
-EQT	EQT Corporation	66.07	"152,404,000.00"	"10,069,332,280.00"
-EMN	Eastman Chemical Co	72.17	"148,664,000.00"	"10,729,080,880.00"
-ETN	Eaton Corp plc	55.91	"467,500,000.00"	"26,137,925,000.00"
-ECL	Ecolab Inc	120.35	"295,092,000.00"	"35,514,322,200.00"
-EIX	Edison Intl	60.52	"325,811,000.00"	"19,718,081,720.00"
-EW	Edwards Lifesciences Corp	157.15	"107,516,000.00"	"16,896,139,400.00"
-EA	Electronic Arts	72.07	"311,746,000.00"	"22,467,534,220.00"
-EMR	Emerson Electric Co	47.23	"657,140,000.00"	"31,036,722,200.00"
-ENDP	Endo International plc	59.99	"226,398,000.00"	"13,581,616,020.00"
-ESV	Ensco PLC - CL A	16.63	"235,750,000.00"	"3,920,522,500.00"
-ETR	Entergy Corp	68.16	"179,528,000.00"	"12,236,628,480.00"
-EFX	Equifax Inc	106.57	"118,244,000.00"	"12,601,263,080.00"
-EQIX	Equinix Inc	296.68	"56,958,000.00"	"16,898,299,440.00"
-EQR	Equity Residential	77.32	"364,082,000.00"	"28,150,820,240.00"
-ESS	Essex Property Trust	220.44	"65,744,000.00"	"14,492,607,360.00"
-EL	Estee Lauder Cos.	80.46	"225,861,000.00"	"18,172,776,060.00"
-ES	Eversource Energy	50.94	"317,173,000.00"	"16,156,792,620.00"
-EXC	Exelon Corp	27.92	"861,618,000.00"	"24,056,374,560.00"
-EXPE	Expedia	136.3	"116,334,000.00"	"15,856,324,200.00"
-EXPD	Expeditors Intl of WA Inc	49.79	"189,160,000.00"	"9,418,276,400.00"
-ESRX	Express Scripts Holding Co.	86.38	"675,731,000.00"	"58,369,643,780.00"
-XOM	Exxon Mobil Corp	82.74	"4,169,449,000.00"	"344,980,210,260.00"
-FFIV	F5 Networks Inc	110.2	"71,004,000.00"	"7,824,640,800.00"
-FLIR	FLIR Systems Inc	26.67	"140,248,000.00"	"3,740,414,160.00"
-FMC	FMC Corp	40.71	"133,615,000.00"	"5,439,466,650.00"
-FTI	FMC Technologies Inc	33.83	"229,474,000.00"	"7,763,105,420.00"
-FB	Facebook Inc	101.97	"2,259,737,000.00"	"230,425,381,890.00"
-FAST	Fastenal Co	39.16	"290,165,000.00"	"11,362,861,400.00"
-FDX	FedEx Corp	156.05	"282,430,000.00"	"44,073,201,500.00"
-FIS	Fidelity National Information	72.92	"281,583,000.00"	"20,533,032,360.00"
-FITB	Fifth Third Bancorp (OH)	19.05	"803,250,000.00"	"15,301,912,500.00"
-FSLR	First Solar Inc	57.07	"100,903,000.00"	"5,758,534,210.00"
-FE	FirstEnergy Corp	31.2	"422,453,000.00"	"13,180,533,600.00"
-FISV	Fiserv Inc	96.51	"234,578,000.00"	"22,639,122,780.00"
-FLS	Flowserve Corp	46.36	"133,368,000.00"	"6,182,940,480.00"
-FLR	Fluor Corp	47.81	"144,943,000.00"	"6,929,724,830.00"
-F	Ford Motor Co	14.81	"3,896,986,000.00"	"57,714,362,660.00"
-FOSL	Fossil Group Inc	54.41	"48,147,000.00"	"2,619,678,270.00"
-BEN	Franklin Resources Inc	40.76	"613,818,000.00"	"25,019,221,680.00"
-FCX	Freeport-McMoRan Inc	11.77	"1,136,928,000.00"	"13,381,642,560.00"
-FTR	Frontier Communications Corp	5.14	"1,168,207,000.00"	"6,004,583,980.00"
-GME	GameStop Corp A	46.07	"106,720,000.00"	"4,916,590,400.00"
-GPS	Gap Inc	27.22	"417,355,000.00"	"11,360,403,100.00"
-GRMN	Garmin Ltd	35.47	"190,936,000.00"	"6,772,499,920.00"
-GD	General Dynamics	148.58	"322,727,000.00"	"47,950,777,660.00"
-GE	General Electric Co	28.92	"10,096,429,000.00"	"291,988,726,680.00"
-GGP	General Growth Properties Inc	28.95	"885,657,000.00"	"25,639,770,150.00"
-GIS	General Mills Inc	58.11	"598,738,000.00"	"34,792,665,180.00"
-GM	General Motors Company	34.91	"1,583,997,000.00"	"55,297,335,270.00"
-GPC	Genuine Parts Co	90.76	"151,597,000.00"	"13,758,943,720.00"
-GNW	Genworth Financial Inc	4.68	"497,419,000.00"	"2,327,920,920.00"
-GILD	Gilead Sciences Inc	108.13	"1,467,606,000.00"	"158,692,236,780.00"
-GS	Goldman Sachs Group Inc	187.5	"432,871,000.00"	"81,163,312,500.00"
-GT	Goodyear Tire & Rubber Co	32.84	"269,399,000.00"	"8,847,063,160.00"
-GWW	Grainger W.W. Inc	210	"65,975,000.00"	"13,854,750,000.00"
-HCA	HCA Holdings Inc	68.79	"415,192,000.00"	"28,561,057,680.00"
-HCP	HCP Inc	37.2	"462,587,000.00"	"17,208,236,400.00"
-HAL	Halliburton Co	38.38	"854,749,000.00"	"32,805,266,620.00"
-HBI	Hanesbrands Inc	31.94	"402,477,000.00"	"12,855,115,380.00"
-HOG	Harley-Davidson Inc	49.45	"205,967,000.00"	"10,185,068,150.00"
-HAR	Harman Intl Industries Inc	109.96	"71,172,000.00"	"7,826,073,120.00"
-HRS	Harris Corp	79.13	"124,071,000.00"	"9,817,738,230.00"
-HIG	Hartford Finl Services Group	46.26	"414,845,000.00"	"19,190,729,700.00"
-HAS	Hasbro Inc	76.83	"124,903,000.00"	"9,596,297,490.00"
-HP	Helmerich & Payne Inc	56.27	"107,751,000.00"	"6,063,148,770.00"
-HSY	Hershey Foods Corp	88.69	"158,765,000.00"	"14,080,867,850.00"
-HES	Hess Corp	56.21	"287,058,000.00"	"16,135,530,180.00"
-HPQ	Hewlett-Packard Co	26.96	"1,806,415,000.00"	"48,700,948,400.00"
-HD	Home Depot Inc	123.64	"1,284,103,000.00"	"158,766,494,920.00"
-HON	Honeywell Intl Inc	103.28	"781,762,000.00"	"80,740,379,360.00"
-HRL	Hormel Foods Corp	67.55	"264,275,000.00"	"17,851,776,250.00"
-DHI	Horton D.R. Inc	29.44	"366,778,000.00"	"10,797,944,320.00"
-HST	Host Hotels & Resorts Inc	17.33	"751,123,000.00"	"13,016,961,590.00"
-HCBK	Hudson City Bancorp	10.12	"529,529,000.00"	"5,358,833,480.00"
-HUM	Humana Inc	178.63	"148,144,000.00"	"26,462,962,720.00"
-JBHT	Hunt J.B. Transport Services	76.37	"116,251,000.00"	"8,878,088,870.00"
-HBAN	Huntington Bancshares (OH)	10.97	"803,066,000.00"	"8,809,634,020.00"
-ITW	Illinois Tool Works Inc	91.94	"366,089,000.00"	"33,658,222,660.00"
-IR	Ingersoll-Rand Plc	59.26	"265,353,000.00"	"15,724,818,780.00"
-INTC	Intel Corp	33.86	"4,754,000,000.00"	"160,970,440,000.00"
-ICE	Intercontinental Exchange Inc	252.4	"110,489,000.00"	"27,887,423,600.00"
-IPG	Interpublic Group Cos	22.93	"410,401,000.00"	"9,410,494,930.00"
-IBM	Intl Business Machines Corp	140.08	"979,530,000.00"	"137,212,562,400.00"
-IFF	Intl Flavors & Fragrances	116.06	"80,586,000.00"	"9,352,811,160.00"
-IP	Intl Paper Co	42.69	"417,741,000.00"	"17,833,363,290.00"
-INTU	Intuit Inc	97.43	"277,307,000.00"	"27,018,021,010.00"
-ISRG	Intuitive Surgical Inc	496.6	"37,019,000.00"	"18,383,635,400.00"
-IVZ	Invesco Ltd	33.17	"428,719,000.00"	"14,220,609,230.00"
-IRM	Iron Mountain Inc	30.64	"210,826,000.00"	"6,459,708,640.00"
-JPM	JP Morgan Chase & Co	64.25	"3,698,067,000.00"	"237,600,804,750.00"
-JEC	Jacobs Engineering Group Inc	40.14	"123,799,000.00"	"4,969,291,860.00"
-JNJ	Johnson & Johnson	101.03	"2,769,106,000.00"	"279,762,779,180.00"
-JCI	Johnson Controls Inc	45.18	"654,069,000.00"	"29,550,837,420.00"
-JNPR	Juniper Networks Inc	31.39	"384,427,000.00"	"12,067,163,530.00"
-KLAC	KLA-Tencor Corporation	67.12	"157,531,000.00"	"10,573,480,720.00"
-KSU	Kansas City Southern Inc	82.76	"110,360,000.00"	"9,133,393,600.00"
-K	Kellogg Co	70.52	"353,581,000.00"	"24,934,532,120.00"
-GMCR	Keurig Green Mountain Inc	50.75	"154,058,000.00"	"7,818,443,500.00"
-KEY	KeyCorp	12.42	"840,861,000.00"	"10,443,493,620.00"
-KMB	Kimberly-Clark	119.71	"364,275,000.00"	"43,607,360,250.00"
-KIM	Kimco Realty Corp	26.77	"413,135,000.00"	"11,059,623,950.00"
-KMI	Kinder Morgan Inc	27.35	"2,191,937,000.00"	"59,949,476,950.00"
-KSS	Kohl's Corp	46.12	"197,876,000.00"	"9,126,041,120.00"
-KR	Kroger Co	37.8	"971,424,000.00"	"36,719,827,200.00"
-LB	L Brands Inc	95.98	"291,964,000.00"	"28,022,704,720.00"
-LLL	L-3 Communications Holdings	126.4	"80,332,000.00"	"10,153,964,800.00"
-LH	Lab Corp of America Hldgs	122.74	"100,600,000.00"	"12,347,644,000.00"
-LRCX	Lam Research Corp	76.59	"158,187,000.00"	"12,115,542,330.00"
-LM	Legg Mason Inc	44.75	"109,708,000.00"	"4,909,433,000.00"
-LEG	Leggett & Platt	45.03	"136,829,000.00"	"6,161,409,870.00"
-LEN	Lennar Corp	50.07	"173,937,000.00"	"8,709,025,590.00"
-LUK	Leucadia National Corp (NY)	20.01	"366,603,000.00"	"7,335,726,030.00"
-LVLT	Level 3 Communications	50.95	"355,833,000.00"	"18,129,691,350.00"
-LLY	Lilly Eli & Co	81.57	"1,108,541,000.00"	"90,423,689,370.00"
-LNC	Lincoln National Corp	53.51	"250,952,000.00"	"13,428,441,520.00"
-LLTC	Linear Technology Corp	44.42	"239,758,000.00"	"10,650,050,360.00"
-LMT	Lockheed Martin	219.83	"310,535,000.00"	"68,264,909,050.00"
-L	Loews Corp	36.46	"363,082,000.00"	"13,237,969,720.00"
-LOW	Lowe's Cos Inc	73.83	"925,233,000.00"	"68,309,952,390.00"
-LYB	LyondellBasell Industries N.V.	92.91	"465,875,000.00"	"43,284,446,250.00"
-MTB	M&T Bank Corp	119.85	"133,238,000.00"	"15,968,574,300.00"
-MAC	Macerich Co	84.74	"158,321,000.00"	"13,416,121,540.00"
-M	Macy's Inc	50.98	"330,983,000.00"	"16,873,513,340.00"
-MNK	Mallinckrodt plc	65.67	"117,343,000.00"	"7,705,914,810.00"
-MRO	Marathon Oil Corp	18.38	"677,185,000.00"	"12,446,660,300.00"
-MPC	Marathon Petroleum Corp.	51.8	"536,157,000.00"	"27,772,932,600.00"
-MAR	Marriott Intl A	76.78	"265,888,000.00"	"20,414,880,640.00"
-MMC	Marsh & McLennan Companies	55.74	"529,993,000.00"	"29,541,809,820.00"
-MLM	Martin Marietta Materials	155.15	"67,001,000.00"	"10,395,205,150.00"
-MAS	Masco Corp	29	"343,950,000.00"	"9,974,550,000.00"
-MA	Mastercard Inc A	98.99	"1,108,884,000.00"	"109,768,427,160.00"
-MAT	Mattel Inc	24.58	"338,613,000.00"	"8,323,107,540.00"
-MKC	McCormick & Co	83.98	"115,965,000.00"	"9,738,740,700.00"
-MCD	McDonald's Corp	112.25	"941,810,000.00"	"105,718,172,500.00"
-MHFI	McGraw Hill Financial Inc	92.64	"272,500,000.00"	"25,244,400,000.00"
-MCK	McKesson Corp	178.8	"232,403,000.00"	"41,553,656,400.00"
-MJN	Mead Johnson Nutrition Co	82	"202,739,000.00"	"16,624,598,000.00"
-MDT	Medtronic plc	73.92	"1,414,189,000.00"	"104,536,850,880.00"
-MRK	Merck & Co Inc	54.66	"2,816,635,000.00"	"153,957,269,100.00"
-MET	Metlife Inc	50.38	"1,116,881,000.00"	"56,268,464,780.00"
-KORS	Michael Kors Holdings Ltd	38.64	"193,422,000.00"	"7,473,826,080.00"
-MCHP	Microchip Technology Inc	48.29	"211,091,000.00"	"10,193,584,390.00"
-MU	Micron Technology Inc	16.56	"1,076,436,000.00"	"17,825,780,160.00"
-MSFT	Microsoft Corp	52.64	"7,997,981,000.00"	"421,013,719,840.00"
-MHK	Mohawk Industries Inc	195.5	"73,913,000.00"	"14,449,991,500.00"
-TAP	Molson Coors Brewing Co B	88.1	"179,593,000.00"	"15,822,143,300.00"
-MDLZ	Mondelez International Inc	46.16	"1,611,307,000.00"	"74,377,931,120.00"
-MON	Monsanto Co.	93.22	"467,835,000.00"	"43,611,578,700.00"
-MNST	Monster Beverage Corp New	136.32	"205,498,000.00"	"28,013,487,360.00"
-MCO	Moody's Corp	96.16	"200,300,000.00"	"19,260,848,000.00"
-MS	Morgan Stanley	32.97	"1,953,385,000.00"	"64,403,103,450.00"
-MOS	Mosaic Co	33.79	"337,159,000.00"	"11,392,602,610.00"
-MSI	Motorola Solutions Inc	69.97	"176,677,000.00"	"12,362,089,690.00"
-MUR	Murphy Oil Corp	28.43	"172,752,000.00"	"4,911,339,360.00"
-MYL	Mylan NV	44.09	"491,554,000.00"	"21,672,615,860.00"
-NKE	NIKE Inc B	131.03	"677,894,000.00"	"88,824,450,820.00"
-NRG	NRG Energy	12.89	"330,655,000.00"	"4,262,142,950.00"
-NDAQ	Nasdaq Inc	57.89	"168,930,000.00"	"9,779,357,700.00"
-NOV	National Oilwell Varco Inc	37.64	"383,809,000.00"	"14,446,570,760.00"
-NAVI	Navient Corp	13.19	"374,033,000.00"	"4,933,495,270.00"
-NTAP	NetApp Inc	34	"300,083,000.00"	"10,202,822,000.00"
-NFLX	NetFlix Inc	108.38	"426,005,000.00"	"46,170,421,900.00"
-NWL	Newell Rubbermaid Inc	42.43	"267,800,000.00"	"11,362,754,000.00"
-NFX	Newfield Exploration Co	40.19	"162,966,000.00"	"6,549,603,540.00"
-NEM	Newmont Mining Corp	19.46	"529,055,000.00"	"10,295,410,300.00"
-NWSA	News Corp A	15.4	"380,999,000.00"	"5,867,384,600.00"
-NWS	News Corp B	15.48	"199,630,000.00"	"3,090,272,400.00"
-NEE	NextEra Energy Inc	102.66	"460,272,000.00"	"47,251,523,520.00"
-NLSN	Nielsen Holdings plc	47.51	"366,860,000.00"	"17,429,518,600.00"
-NI	Nisource Inc	19.16	"317,859,000.00"	"6,090,178,440.00"
-NBL	Noble Energy Inc	35.84	"425,066,000.00"	"15,234,365,440.00"
-JWN	Nordstrom Inc	65.21	"188,234,000.00"	"12,274,739,140.00"
-NSC	Norfolk Southern Corp	80.03	"301,387,000.00"	"24,120,001,610.00"
-NTRS	Northern Trust Corp (IL)	70.39	"232,853,000.00"	"16,390,522,670.00"
-NOC	Northrop Grumman Corp	187.75	"187,393,000.00"	"35,183,035,750.00"
-NUE	Nucor Corp	42.3	"319,600,000.00"	"13,519,080,000.00"
-NVDA	Nvidia Corp	28.37	"539,000,000.00"	"15,291,430,000.00"
-ORLY	O'Reilly Automotive	276.26	"99,403,000.00"	"27,461,072,780.00"
-OKE	ONEOK Inc	33.92	"209,167,000.00"	"7,094,944,640.00"
-OXY	Occidental Petroleum	74.54	"763,951,000.00"	"56,944,907,540.00"
-OMC	Omnicom Group	74.92	"242,948,000.00"	"18,201,664,160.00"
-ORCL	Oracle Corp	38.84	"4,336,077,000.00"	"168,413,230,680.00"
-OI	Owens-Illinois Inc	21.55	"160,768,000.00"	"3,464,550,400.00"
-PCAR	PACCAR Inc	52.65	"354,968,000.00"	"18,689,065,200.00"
-PCG	PG&E Corporation	53.4	"489,166,000.00"	"26,121,464,400.00"
-PNC	PNC Finl Services Group	90.26	"513,600,000.00"	"46,357,536,000.00"
-PPG	PPG Industries Inc	104.26	"270,721,000.00"	"28,225,371,460.00"
-PPL	PPL Corp	34.4	"669,970,000.00"	"23,046,968,000.00"
-PVH	PVH Corp	90.95	"82,543,000.00"	"7,507,285,850.00"
-PH	Parker-Hannifin Corp	104.7	"138,419,000.00"	"14,492,469,300.00"
-PDCO	Patterson Cos Inc	47.4	"103,376,000.00"	"4,900,022,400.00"
-PYPL	PayPal Holdings Inc.	36.01	"1,218,736,000.00"	"43,886,683,360.00"
-PAYX	Paychex Inc	51.58	"361,206,000.00"	"18,631,005,480.00"
-PNR	Pentair PLC	55.92	"180,056,000.00"	"10,068,731,520.00"
-PBCT	People's United Financial Inc	15.95	"309,993,000.00"	"4,944,388,350.00"
-POM	Pepco Holdings Inc	26.63	"253,466,000.00"	"6,749,799,580.00"
-PEP	PepsiCo Inc	102.19	"1,468,993,000.00"	"150,116,394,670.00"
-PKI	PerkinElmer Inc	51.64	"113,383,000.00"	"5,855,098,120.00"
-PRGO	Perrigo Company plc	157.74	"146,279,000.00"	"23,074,049,460.00"
-PFE	Pfizer Inc	33.82	"6,167,348,000.00"	"208,579,709,360.00"
-PM	Philip Morris International	88.4	"1,549,186,000.00"	"136,948,042,400.00"
-PSX	Phillips 66	89.05	"538,000,000.00"	"47,908,900,000.00"
-PNW	Pinnacle West Capital (AZ)	63.51	"110,814,000.00"	"7,037,797,140.00"
-PXD	Pioneer Natural Resources	137.14	"149,308,000.00"	"20,476,099,120.00"
-PBI	Pitney Bowes Inc	20.65	"201,919,000.00"	"4,169,627,350.00"
-PCL	Plum Creek Timber Co	40.74	"174,729,000.00"	"7,118,459,460.00"
-PX	Praxair Inc	111.09	"286,472,000.00"	"31,824,174,480.00"
-PCP	Precision Castparts Corp	230.81	"137,498,000.00"	"31,735,913,380.00"
-PFG	Principal Financial Group	50.16	"294,745,000.00"	"14,784,409,200.00"
-PLD	ProLogis Inc	42.73	"524,127,000.00"	"22,395,946,710.00"
-PG	Procter & Gamble	76.38	"2,712,562,000.00"	"207,185,485,560.00"
-PGR	Progressive Corp	33.13	"585,932,000.00"	"19,411,927,160.00"
-PRU	Prudential Financial Inc	82.5	"451,000,000.00"	"37,207,500,000.00"
-PEG	Public Service Enterprise Grp	41.29	"505,863,000.00"	"20,887,083,270.00"
-PSA	Public Storage	229.46	"172,967,000.00"	"39,689,007,820.00"
-PHM	Pulte Group Inc	18.33	"352,790,000.00"	"6,466,640,700.00"
-QCOM	QUALCOMM Inc	59.42	"1,571,202,000.00"	"93,360,822,840.00"
-QRVO	"Qorvo, Inc"	43.93	"149,531,000.00"	"6,568,896,830.00"
-PWR	Quanta Services Inc	20.11	"204,158,000.00"	"4,105,617,380.00"
-DGX	Quest Diagnostics	67.95	"143,553,000.00"	"9,754,426,350.00"
-RL	Ralph Lauren Corp	110.77	"59,767,000.00"	"6,620,390,590.00"
-RRC	Range Resources Corp	30.44	"169,362,000.00"	"5,155,379,280.00"
-RTN	Raytheon Co	117.4	"303,548,000.00"	"35,636,535,200.00"
-O	Realty Income Corp	49.46	"249,586,000.00"	"12,344,523,560.00"
-RHT	Red Hat Inc	79.11	"183,483,000.00"	"14,515,340,130.00"
-REGN	Regeneron Pharmaceuticals Inc	557.39	"101,737,000.00"	"56,707,186,430.00"
-RF	Regions Financial Corp	9.35	"1,324,907,000.00"	"12,387,880,450.00"
-RSG	Republic Services Inc	43.74	"348,917,000.00"	"15,261,629,580.00"
-RAI	Reynolds American Inc	48.32	"1,429,102,000.00"	"69,054,208,640.00"
-RHI	Robert Half Intl Inc	52.66	"134,500,000.00"	"7,082,770,000.00"
-ROK	Rockwell Automation Inc	109.16	"134,106,000.00"	"14,639,010,960.00"
-COL	Rockwell Collins	86.72	"131,770,000.00"	"11,427,094,400.00"
-ROP	"Roper Technologies, Inc"	186.35	"100,666,000.00"	"18,759,109,100.00"
-ROST	Ross Stores Inc	50.58	"413,790,000.00"	"20,929,498,200.00"
-RCL	Royal Caribbean Cruises Ltd	98.35	"219,944,000.00"	"21,631,492,400.00"
-R	Ryder System Inc	71.78	"53,374,000.00"	"3,831,185,720.00"
-SCG	SCANA Corp	59.22	"142,917,000.00"	"8,463,544,740.00"
-SLG	SL Green Realty Corp	118.62	"99,614,000.00"	"11,816,212,680.00"
-CRM	Salesforce.com	77.71	"660,000,000.00"	"51,288,600,000.00"
-SNDK	SanDisk Corp	77	"204,439,000.00"	"15,741,803,000.00"
-HSIC	Schein Henry Inc	151.71	"83,397,000.00"	"12,652,158,870.00"
-SLB	Schlumberger Ltd	78.16	"1,265,449,000.00"	"98,907,493,840.00"
-SCHW	Schwab Charles Corp	30.52	"1,315,624,000.00"	"40,152,844,480.00"
-SNI	Scripps Networks Interactive	60.08	"94,201,000.00"	"5,659,596,080.00"
-STX	Seagate Technology	38.06	"302,034,000.00"	"11,495,414,040.00"
-SEE	Sealed Air Corp	49.12	"205,842,000.00"	"10,110,959,040.00"
-SRE	Sempra Energy	102.41	"247,916,000.00"	"25,389,077,560.00"
-SHW	Sherwin-Williams Co	266.83	"93,211,000.00"	"24,871,491,130.00"
-SIAL	Sigma-Aldrich Corp	139.72	"119,428,000.00"	"16,686,480,160.00"
-SIG	Signet Jewelers Ltd	150.94	"79,592,000.00"	"12,013,616,480.00"
-SPG	Simon Property Group	201.46	"309,410,000.00"	"62,333,738,600.00"
-SWKS	Skyworks Solutions Inc	77.24	"190,738,000.00"	"14,732,603,120.00"
-SJM	Smucker J.M. Co	117.39	"119,665,000.00"	"14,047,474,350.00"
-SNA	Snap On Inc	165.89	"58,172,000.00"	"9,650,153,080.00"
-SO	Southern Co	45.1	"908,425,000.00"	"40,969,967,500.00"
-LUV	Southwest Airlines Co	46.29	"659,356,000.00"	"30,521,589,240.00"
-SWN	Southwestern Energy Co	11.04	"384,442,000.00"	"4,244,239,680.00"
-SE	Spectra Energy Corp	28.57	"671,363,000.00"	"19,180,840,910.00"
-STJ	St Jude Medical Inc	63.81	"281,745,000.00"	"17,978,148,450.00"
-SWK	Stanley Black & Decker	105.98	"153,239,000.00"	"16,240,269,220.00"
-SPLS	Staples Inc	12.99	"643,566,000.00"	"8,359,922,340.00"
-SBUX	Starbucks Corp	62.57	"1,484,200,000.00"	"92,866,394,000.00"
-HOT	Starwood Hotel & Resort World	79.87	"170,379,000.00"	"13,608,170,730.00"
-STT	State Street Corp	69	"408,113,000.00"	"28,159,797,000.00"
-SRCL	Stericycle Inc	121.37	"84,833,000.00"	"10,296,181,210.00"
-SYK	Stryker Corp	95.62	"376,558,000.00"	"36,006,475,960.00"
-STI	SunTrust Banks Inc (GA)	41.52	"518,045,000.00"	"21,509,228,400.00"
-SYMC	Symantec Corp	20.6	"684,173,000.00"	"14,093,963,800.00"
-SYY	Sysco Corp	41.25	"594,918,000.00"	"24,540,367,500.00"
-TROW	T Rowe Price Group Inc	75.62	"256,213,000.00"	"19,374,827,060.00"
-TEL	TE Connectivity Ltd.	64.44	"402,384,000.00"	"25,929,624,960.00"
-TE	TECO Energy Inc	27	"235,216,000.00"	"6,350,832,000.00"
-TGNA	TEGNA Inc	27.04	"226,472,000.00"	"6,123,802,880.00"
-TJX	TJX Cos Inc	73.19	"674,371,000.00"	"49,357,213,490.00"
-TGT	Target Corp	77.18	"628,430,000.00"	"48,502,227,400.00"
-THC	Tenet Healthcare	31.37	"99,564,000.00"	"3,123,322,680.00"
-TDC	Teradata Corp	28.11	"141,600,000.00"	"3,980,376,000.00"
-TSO	Tesoro Corp	106.93	"123,097,000.00"	"13,162,762,210.00"
-TXN	Texas Instruments Inc	56.72	"1,026,386,000.00"	"58,216,613,920.00"
-TXT	Textron Inc	42.17	"276,422,000.00"	"11,656,715,740.00"
-ADT	The ADT Corp.	33.04	"169,933,000.00"	"5,614,586,320.00"
-BK	The Bank of New York Mellon Corp	41.65	"1,106,518,000.00"	"46,086,474,700.00"
-KHC	The Kraft Heinz Company	77.97	"1,212,833,000.00"	"94,564,589,010.00"
-PCLN	The Priceline Group Inc	"1,454.24"	"50,702,000.00"	"73,732,876,480.00"
-WMB	The Williams Companies Inc	39.44	"749,711,000.00"	"29,568,601,840.00"
-TMO	Thermo Fisher Scientific	130.78	"398,488,000.00"	"52,114,260,640.00"
-TIF	Tiffany & Co	82.44	"128,947,000.00"	"10,630,390,680.00"
-TWC	Time Warner Cable Inc	189.4	"282,974,000.00"	"53,595,275,600.00"
-TWX	Time Warner Inc	75.34	"815,581,000.00"	"61,445,872,540.00"
-TMK	Torchmark Corp	58.01	"125,115,000.00"	"7,257,921,150.00"
-TSS	Total System Services Inc	52.45	"183,950,000.00"	"9,648,177,500.00"
-TSCO	Tractor Supply Co	92.39	"135,819,000.00"	"12,548,317,410.00"
-RIG	Transocean Ltd	15.83	"363,554,000.00"	"5,755,059,820.00"
-TRV	Travelers Cos Inc	112.89	"311,206,000.00"	"35,132,045,340.00"
-TRIP	TripAdvisor Inc.	83.78	"131,296,000.00"	"10,999,978,880.00"
-FOXA	Twenty-First Century Fox Inc A	30.69	"1,220,940,000.00"	"37,470,648,600.00"
-FOX	Twenty-First Century Fox Inc B	30.88	"798,521,000.00"	"24,658,328,480.00"
-TYC	Tyco Intl	36.44	"421,516,000.00"	"15,360,043,040.00"
-TSN	Tyson Foods Inc A	44.36	"304,359,000.00"	"13,501,365,240.00"
-USB	US Bancorp	42.18	"1,761,004,000.00"	"74,279,148,720.00"
-UA	Under Armour Inc A	95.08	"179,962,000.00"	"17,110,786,960.00"
-UNP	Union Pacific Corp	89.35	"867,692,000.00"	"77,528,280,200.00"
-UAL	United Continental Holding Inc	60.31	"377,762,000.00"	"22,782,826,220.00"
-UPS	United Parcel Service Inc B	103.02	"698,448,000.00"	"71,954,112,960.00"
-URI	United Rentals Inc	74.86	"95,370,000.00"	"7,139,398,200.00"
-UTX	United Technologies Corp	98.41	"890,598,000.00"	"87,643,749,180.00"
-UNH	Unitedhealth Group Inc	117.78	"953,563,000.00"	"112,310,650,140.00"
-UHS	Universal Health Services B	122.09	"91,736,000.00"	"11,200,048,240.00"
-UNM	Unum Group	34.65	"246,681,000.00"	"8,547,496,650.00"
-URBN	Urban Outfitters	28.6	"128,131,000.00"	"3,664,546,600.00"
-VFC	VF Corp	67.52	"425,642,000.00"	"28,739,347,840.00"
-VLO	Valero Energy Corp	65.92	"497,112,000.00"	"32,769,623,040.00"
-VAR	Varian Medical Systems Inc	78.53	"98,717,000.00"	"7,752,246,010.00"
-VTR	Ventas Inc	53.72	"332,502,000.00"	"17,862,007,440.00"
-VRSN	VeriSign Inc	80.6	"113,493,000.00"	"9,147,535,800.00"
-VRSK	Verisk Analytics Inc	71.61	"168,487,000.00"	"12,065,354,070.00"
-VZ	Verizon Communications Inc	46.88	"4,065,691,000.00"	"190,599,594,080.00"
-VRTX	Vertex Pharmaceuticals Inc	124.74	"244,656,000.00"	"30,518,389,440.00"
-VIAB	Viacom Inc B	49.31	"347,460,000.00"	"17,133,252,600.00"
-V	Visa Inc	77.58	"1,951,387,000.00"	"151,388,603,460.00"
-VNO	Vornado Realty Trust	100.55	"188,497,000.00"	"18,953,373,350.00"
-VMC	Vulcan Materials Co	96.58	"133,186,000.00"	"12,863,103,880.00"
-WEC	WEC Energy Group Inc	51.56	"315,684,000.00"	"16,276,667,040.00"
-WMT	Wal-Mart Stores	57.24	"3,220,549,000.00"	"184,344,224,760.00"
-WBA	Walgreens Boots Alliance Inc	84.68	"1,092,283,000.00"	"92,494,524,440.00"
-DIS	Walt Disney Co	113.74	"1,687,858,000.00"	"191,976,968,920.00"
-WM	Waste Management Inc	53.76	"452,250,000.00"	"24,312,960,000.00"
-WAT	Waters Corp	127.8	"82,270,000.00"	"10,514,106,000.00"
-WFC	Wells Fargo & Co	54.14	"5,133,359,000.00"	"277,920,056,260.00"
-HCN	Welltower Inc	64.87	"351,885,000.00"	"22,826,779,950.00"
-WRK	WestRock Co	53.76	"261,848,000.00"	"14,076,948,480.00"
-WDC	Western Digital Corp	66.82	"230,403,000.00"	"15,395,528,460.00"
-WU	Western Union Co	19.25	"511,432,000.00"	"9,845,066,000.00"
-WY	Weyerhaeuser Co	29.33	"514,194,000.00"	"15,081,310,020.00"
-WHR	Whirlpool Corp	160.14	"78,418,000.00"	"12,557,858,520.00"
-WFM	Whole Foods Market Inc	29.96	"357,858,000.00"	"10,721,425,680.00"
-WYN	Wyndham Worldwide Corp	81.35	"118,111,000.00"	"9,608,329,850.00"
-WYNN	Wynn Resorts Ltd	69.95	"101,537,000.00"	"7,102,513,150.00"
-XL	XL Group Plc	38.08	"302,314,000.00"	"11,512,117,120.00"
-XEL	Xcel Energy Inc	35.63	"507,211,000.00"	"18,071,927,930.00"
-XRX	Xerox Corp	9.39	"1,068,795,000.00"	"10,035,985,050.00"
-XLNX	Xilinx Inc	47.62	"258,658,000.00"	"12,317,293,960.00"
-XYL	Xylem Inc	36.41	"181,499,000.00"	"6,608,378,590.00"
-YHOO	Yahoo Inc	35.62	"941,391,000.00"	"33,532,347,420.00"
-YUM	Yum! Brands Inc	70.91	"431,206,000.00"	"30,576,817,460.00"
-ZBH	Zimmer Biomet Holdings Inc	104.57	"203,365,000.00"	"21,265,878,050.00"
-ZION	Zions Bancorp (UT)	28.77	"204,170,000.00"	"5,873,970,900.00"
-ZTS	Zoetis Inc	43.01	"498,944,000.00"	"21,459,581,440.00"
-EBAY	eBay Inc.	27.9	"1,218,228,000.00"	"33,988,561,200.00"
+Symbol	Name
+A	"Agilent Technologies, Inc."
+AA	"Alcoa, Inc."
+AAL	American Airlines Group Inc.
+AAP	Advance Auto Parts Inc.
+AAPL	"Apple, Inc."
+ABBV	AbbVie Inc.
+ABC	AmerisourceBergen Corp.
+ABT	Abbott Laboratories
+ACN	Accenture Ltd.
+ADBE	"Adobe Systems, Inc."
+ADI	"Analog Devices, Inc."
+ADM	Archer Daniels Midland Co.
+ADP	"Automatic Data Processing, Inc."
+ADS	Alliance Data Systems
+ADSK	"Autodesk, Inc."
+ADT	ADT Corp.
+AEE	Ameren Corp.
+AEP	"American Elec Pwr Co., Inc."
+AES	AES Corp.
+AET	"Aetna, Inc."
+AFL	"Aflac, Inc."
+AGN	Allergan plc
+AIG	"American Intl Group, Inc."
+AIV	Apartment Investment and Management Co.
+AIZ	Assurant Inc.
+AKAM	"Akamai Technologies, Inc."
+ALL	Allstate Corp.
+ALLE	Allegion Public Ltd. Co.
+ALXN	"Alexion Pharmaceuticals, Inc."
+AMAT	"Applied Materials, Inc."
+AME	"Ametek, Inc."
+AMG	Affiliated Managers Group Inc.
+AMGN	"Amgen, Inc."
+AMP	Ameriprise Financial Inc.
+AMT	American Tower Corp.
+AMZN	"Amazon.com, Inc."
+AN	"Autonation, Inc."
+ANTM	"Anthem, Inc."
+AON	Aon Corp.
+APA	Apache Corp.
+APC	Anadarko Petroleum Corp.
+APD	"Air Products and Chemicals, Inc."
+APH	Amphenol Corp.
+ARG	"Airgas, Inc."
+ATVI	Activision Blizzard Inc.
+AVB	"Avalonbay Communities, Inc."
+AVGO	Broadcom Ltd.
+AVY	Avery Dennison Corp.
+AWK	American Water Works Co. Inc.
+AXP	American Express Co.
+AZO	Autozone Inc. Nevada
+BA	Boeing Co.
+BAC	Bank Of America Corp.
+BAX	Baxter Intl Inc.
+BBBY	"Bed Bath & Beyond, Inc."
+BBT	BB&T Corp.
+BBY	"Best Buy Co, Inc."
+BCR	"Bard C R, Inc."
+BDX	Becton Dickinson and Co.
+BEN	"Franklin Resources, Inc."
+BF/B	Brown-Forman Corp. - Class B
+BHI	"Baker Hughes, Inc."
+BIIB	Biogen Inc.
+BK	Bank of New York Mellon Corp
+BLK	"Blackrock, Inc."
+BLL	Ball Corp.
+BMY	Bristol Myers Squibb Co.
+BRK/B	"Berkshire Hathaway, Inc."
+BSX	Boston Scientific Corp.
+BWA	"BorgWarner, Inc."
+BXLT	Baxalta Inc.
+BXP	"Boston Properties, Inc."
+C	"Citigroup, Inc."
+CA	CA Inc.
+CAG	"Conagra, Inc."
+CAH	"Cardinal Health, Inc."
+CAM	Cameron International Corp.
+CAT	"Caterpillar, Inc."
+CB	Chubb Ltd.
+CBG	"CBRE Group, Inc."
+CBS	CBS Corp.
+CCE	"Coca Cola Enterprises, Inc."
+CCI	Crown Castle Intl Corp.
+CCL	Carnival Corp.
+CELG	Celgene Corp.
+CERN	Cerner Corp.
+CF	"CF Industries Holdings, Inc."
+CFG	Citizens Financial Group Inc.
+CHD	"Church & Dwight Co, Inc."
+CHK	Chesapeake Energy Corp.
+CHRW	"C.H. Robinson Worldwide, Inc."
+CI	CIGNA Corp.
+CINF	Cincinnati Financial Corp.
+CL	Colgate-Palmolive Co.
+CLX	Clorox Co.
+CMA	"Comerica, Inc."
+CMCSA	Comcast Corp.
+CME	CME Group Inc.
+CMG	Chipotle Mexican Grill Inc.
+CMI	Cummins Inc.
+CMS	CMS Energy Corp.
+CNP	"CenterPoint Energy, Inc."
+COF	Capital One Fncl Corp.
+COG	Cabot Oil & Gas Corp.
+COH	"Coach, Inc."
+COL	Rockwell Collins
+COP	ConocoPhillips
+COST	Costco Wholesale Corp.
+CPB	Campbell Soup Co.
+CPGX	"Columbia Pipeline Group, Inc."
+CRM	"Salesforce.com, Inc."
+CSCO	"Cisco Systems, Inc."
+CSRA	CSRA Inc.
+CSX	CSX Corp.
+CTAS	Cintas Corp.
+CTL	"CenturyLink, Inc."
+CTSH	Cognizant Technology Solutions Corp.
+CTXS	"Citrix Systems, Inc."
+CVC	Cablevision Systems
+CVS	CVS Health Corp.
+CVX	Chevron Corp.
+CXO	Concho Resources Inc.
+D	Dominion Resources Inc
+DAL	Delta Air Lines Inc.
+DD	DuPont Co.
+DE	Deere & Co.
+DFS	Discover Financial Services
+DG	Dollar General Corp.
+DGX	Quest Diagnostics Inc.
+DHI	DR Horton Inc.
+DHR	Danaher Corp.
+DIS	Walt Disney Co.
+DISCA	"Discovery Communications, LLC"
+DLPH	Delphi Automotive PLC
+DLTR	"Dollar Tree, Inc."
+DNB	Dun & Bradstreet Corp.
+DO	"Diamond Offshore Drilling, Inc."
+DOV	Dover Corp.
+DOW	Dow Chemical Co.
+DPS	"Dr. Pepper Snapple Group, Inc."
+DRI	"Darden Restaurants, Inc."
+DTE	DTE Energy Co.
+DUK	Duke Energy Corp.
+DVA	DaVita Healthcare Partners Inc.
+DVN	Devon Energy Corp.
+EA	"Electronic Arts, Inc."
+EBAY	"eBay, Inc."
+ECL	"Ecolab, Inc."
+ED	"Consolidated Edison, Inc."
+EFX	"Equifax, Inc."
+EIX	"Edison Intl, Inc."
+EL	Estee Lauder Cos.
+EMC	EMC Corp.
+EMN	Eastman Chemical Co.
+EMR	Emerson Electric Co.
+ENDP	"Endo Pharmaceuticals Holdings, Inc."
+EOG	"EOG Resources, Inc."
+EQIX	"Equinix, Inc."
+EQR	Equity Residential Property Trust
+EQT	EQT Corp.
+ES	Eversource Energy
+ESRX	"Express Scripts, Inc."
+ESS	"Essex Property Trust, Inc."
+ESV	Ensco plc
+ETFC	E*Trade Financial Corp.
+ETN	Eaton Corp.
+ETR	Entergy Corp Hldg Co.
+EW	Edwards Lifesciences Corp.
+EXC	Exelon Corp.
+EXPD	"Expeditors Intl of Washington, Inc."
+EXPE	"Expedia, Inc"
+EXR	Extra Space Storage Inc.
+F	Ford Motor Co.
+FAST	Fastenal Co.
+FB	"Facebook, Inc."
+FCX	"Freeport-McMoRan, Inc."
+FDX	FedEx Corp.
+FE	Firstenergy Corp.
+FFIV	"F5 Networks, Inc."
+FIS	"Fidelity National Information Services, Inc."
+FISV	"Fiserv, Inc."
+FITB	Fifth Third Bancorp
+FLIR	"FLIR Systems, Inc."
+FLR	Fluor Corp.
+FLS	Flowserve Corp.
+FMC	FMC Corp.
+FOXA	21st Century Fox Inc.
+FRT	Federal Realty Investment Trust
+FSLR	First Solar Inc.
+FTI	"FMC Technologies, Inc."
+FTR	Frontier Communications Corp.
+GAS	"AGL Resources, Inc."
+GD	General Dynamics Corp.
+GE	General Electric Co.
+GGP	General Growth Properties Inc.
+GILD	"Gilead Sciences, Inc."
+GIS	General Mills Incorporate
+GLW	"Corning, Inc."
+GM	General Motors Co.
+GME	Gamestop Corp.
+GOOGL	Alphabet Inc.
+GPC	Genuine Parts Co.
+GPS	"Gap, Inc."
+GRMN	Garmin Ltd.
+GS	"Goldman Sachs Group, Inc."
+GT	Goodyear Tire & Rubber Co.
+GWW	"WW Grainger, Inc."
+HAL	Halliburton Co.
+HAR	"Harman Intl Inds, Inc."
+HAS	"Hasbro, Inc."
+HBAN	Huntington Bancshares Inc.
+HBI	"HanesBrands, Inc."
+HCA	HCA Holdings Inc.
+HCN	Welltower Inc.
+HCP	"HCP, Inc."
+HD	"Home Depot, Inc."
+HES	Hess Corp.
+HIG	"Hartford Financial Services Group, Inc."
+HOG	Harley Davidson Inc
+HON	Honeywell Intl
+HOT	Starwood Hotels & Resorts Worldwide Inc.
+HP	Helmerich & Payne Inc.
+HPE	Hewlett Packard Enterprise Co.
+HPQ	Hewlett-Packard Co.
+HRB	"H & R Block, Inc."
+HRL	Hormel Foods Corp.
+HRS	Harris Corp.
+HSIC	"Henry Schein, Inc."
+HST	Host Hotels & Resorts Inc.
+HSY	Hershey Foods Corp.
+HUM	"Humana, Inc."
+IBM	International Business Machines
+ICE	"IntercontinentalExchange Group, Inc."
+IFF	Intl Flavors & Fragrances
+ILMN	"Illumina, Inc."
+INTC	Intel Corp.
+INTU	"Intuit, Inc."
+IP	International Paper Co.
+IPG	Interpublic Grp Of Cos
+IR	Ingersoll-Rand Plc
+IRM	"Iron Mountain, Inc."
+ISRG	"Intuitive Surgical, Inc."
+ITW	"Illinois Tool Works, Inc."
+IVZ	Invesco Ltd.
+JBHT	"J.B. Hunt Transport Services, Inc."
+JCI	"Johnson Controls, Inc."
+JEC	Jacobs Engineering Group Inc.
+JNJ	Johnson & Johnson
+JNPR	Juniper Networks
+JPM	J.P. Morgan Chase & Co.
+JWN	"Nordstrom, Inc."
+K	Kellogg Co.
+KEY	Keycorp
+KHC	Kraft Heinz Co.
+KIM	Kimco Realty Corp.
+KLAC	KLA-Tencor Corp.
+KMB	Kimberly Clark Corp.
+KMI	Kinder Morgan Inc.
+KMX	Carmax Inc.
+KO	Coca Cola Co.
+KORS	Michael Kors Holdings Ltd.
+KR	Kroger Co.
+KSS	Kohls Corp.
+KSU	Kansas City Southern Corp.
+L	Loews Corp.
+LB	"L Brands, Inc."
+LEG	"Leggett & Platt, Inc."
+LEN	Lennar Corp.
+LH	Laboratory Amer Holding Corp.
+LLL	L-3 Communications Titan Corp.
+LLTC	Linear Technology Corp.
+LLY	Eli Lilly & Co.
+LM	"Legg Mason, Inc."
+LMT	Lockheed Martin Corp.
+LNC	Lincoln National Corp.
+LOW	"Lowes Companies, Inc."
+LRCX	Lam Research Corp.
+LUK	Leucadia National Corp.
+LUV	Southwest Airlines Co.
+LVLT	"Level 3 Communications, Inc."
+LYB	LyondellBasell Industries NV
+M	Macy's Inc.
+MA	Mastercard
+MAC	Macerich Co.
+MAR	Marriott Intl Inc New
+MAS	Masco Corp.
+MAT	"Mattel, Inc."
+MCD	McDonalds Corp.
+MCHP	Microchip Technology Inc.
+MCK	McKesson Corp.
+MCO	Moody's Corp.
+MDLZ	"Mondelez International, Inc."
+MDT	"Medtronic, Inc."
+MET	"Metlife, Inc."
+MHFI	"McGraw Hill Financial, Inc."
+MHK	"Mohawk Inds, Inc."
+MJN	Mead Johnson Nutrition Co.
+MKC	"Mccormick & Co., Inc."
+MLM	Martin Marietta Materials
+MMC	Marsh and Mclennan Co.
+MMM	3M Co.
+MNK	Mallinckrodt plc
+MNST	Monster Beverage Corp.
+MO	Altria Group Inc.
+MON	Monsanto Co.
+MOS	Mosaic Co.
+MPC	Marathon Petroleum Corp.
+MRK	"Merck & Co., Inc."
+MRO	Marathon Oil
+MS	Morgan Stanley
+MSFT	Microsoft Corp.
+MSI	Motorola Solutions Inc.
+MTB	M&T Bank Corp.
+MU	"Micron Technology, Inc."
+MUR	Murphy Oil Corp. Holding Co.
+MYL	Mylan N.V.
+NAVI	Navient Corp.
+NBL	"Noble Energy, Inc."
+NDAQ	Nasdaq OMX Group Inc.
+NEE	NextEra Energy Inc.
+NEM	Newmont Mining Corp.
+NFLX	"Netflix, Inc."
+NFX	Newfield Exploration Co.
+NI	"Nisource, Inc."
+NKE	Nike Inc.
+NLSN	Nielsen NV
+NOC	Northrop Grumman Corp.
+NOV	"National Oilwell Varco, Inc."
+NRG	NRG Energy Inc.
+NSC	Norfolk Southern Corp.
+NTAP	"Network Appliance, Inc."
+NTRS	Northern Trust Corp.
+NUE	Nucor Corp.
+NVDA	NVIDIA Corp.
+NWL	Newell Rubbermaid Inc.
+NWSA	News Corp.
+O	Realty Income Corp.
+OI	"Owens Illinois, Inc."
+OKE	"Oneok, Inc."
+OMC	"Omnicom Group, Inc."
+ORCL	Oracle Corp.
+ORLY	"O'Reilly Automotive, Inc."
+OXY	Occidental Petroleum Corp.
+PAYX	"Paychex, Inc."
+PBCT	Peoples Bank
+PBI	"Pitney Bowes, Inc."
+PCAR	"PACCAR, Inc."
+PCG	PG&E Corp.
+PCLN	priceline.com Inc.
+PDCO	Patterson Dental Co.
+PEG	Public Service Enterprise
+PEP	"Pepsico, Inc."
+PFE	"Pfizer, Inc."
+PFG	Principal Financial Group
+PG	Procter & Gamble Co.
+PGR	Progressive Corp.
+PH	Parker Hannifin Corp.
+PHM	"PulteGroup, Inc."
+PKI	"Perkinelmer, Inc."
+PLD	"ProLogis, Inc."
+PM	Philip Morris Intl Inc.
+PNC	PNC Financial Services Gr
+PNR	"Pentair, Inc."
+PNW	Pinnacle West Cap Corp.
+POM	Pepco Holdings Inc.
+PPG	"PPG Industries, Inc."
+PPL	PPL Corp.
+PRGO	Perrigo Co.
+PRU	Prudential Financial Inc.
+PSA	"Public Storage, Inc."
+PSX	Phillips 66
+PVH	PVH Corp.
+PWR	"Quanta Services, Inc."
+PX	"Praxair, Inc."
+PXD	Pioneer Natural Resources Co.
+PYPL	"PayPal Holdings, Inc."
+QCOM	QUALCOMM Inc.
+QRVO	"Qorvo, Inc."
+R	"Ryder System, Inc."
+RAI	Reynolds American Inc.
+RCL	Royal Caribbean Cruises
+REGN	"Regeneron Pharmaceuticals, Inc."
+RF	Regions Financial Corp.
+RHI	"Robert Half Intl, Inc."
+RHT	"Red Hat, Inc."
+RIG	"Transocean, Inc."
+RL	Polo Ralph Lauren Corp.
+ROK	Rockwell Automation
+ROP	"Roper Technologies, Inc."
+ROST	"Ross Stores, Inc."
+RRC	Range Resources Corp.
+RSG	"Republic Services, Inc."
+RTN	Raytheon
+SBUX	Starbucks Corp.
+SCG	Scana Corp.
+SCHW	Charles Schwab Corp.
+SE	Spectra Energy Corp.
+SEE	Sealed Air Corp New
+SHW	Sherwin Williams Co.
+SIG	Signet Jewelers Ltd.
+SJM	The J. M. Smucker Co.
+SLB	Schlumberger Ltd.
+SLG	SL Green Realty Corp.
+SNA	Snap On Inc. Holding Co.
+SNDK	SanDisk Corp.
+SNI	Scripps Networks Interactive Inc.
+SO	Southern Co.
+SPG	"Simon Property Group, Inc."
+SPLS	"Staples, Inc."
+SRCL	"Stericycle, Inc."
+SRE	Sempra Energy
+STI	"Suntrust Banks, Inc."
+STJ	St. Jude Medical Inc.
+STT	State Street Corp.
+STX	"Seagate Technology Holdings, Inc."
+STZ	"Constellation Brands, Inc."
+SWK	Stanley Black & Decker Inc.
+SWKS	Skyworks Solutions Inc.
+SWN	Southwestern Energy Co.
+SYF	Synchrony Financial
+SYK	Stryker Corp.
+SYMC	Symantec Corp.
+SYY	Sysco Corp.
+T	"AT&T, Inc."
+TAP	Molson Coors Brewing Co.
+TDC	Teradata Corp.
+TE	"Teco Energy, Inc."
+TEL	TE Connectivity Ltd.
+TGNA	TEGNA Inc.
+TGT	Target Corp.
+THC	Tenet Healthcare Corp.
+TIF	Tiffany and Co.
+TJX	"TJX Cos., Inc."
+TMK	Torchmark Corp.
+TMO	Thermo Fisher Scientific Inc.
+TRIP	"TripAdvisor, Inc."
+TROW	"T. Rowe Price Associates, Inc."
+TRV	"The Travelers Cos., Inc."
+TSCO	Tractor Supply Co.
+TSN	Tyson Foods Inc Cl A
+TSO	Tesoro Petroleum Corp.
+TSS	"Total System Services, Inc."
+TWC	Time Warner Cable Inc.
+TWX	"Time Warner, Inc."
+TXN	"Texas Instruments, Inc."
+TXT	"Textron, Inc."
+TYC	Tyco Intl Ltd.
+UA	"Under Armour, Inc."
+UAL	United Continental Holdings Inc.
+UDR	United Dominion Realty Trust
+UHS	Universal Health Services - Class B
+UNH	"Unitedhealth Group, Inc."
+UNM	Unum Group
+UNP	Union Pacific Corp.
+UPS	"United Parcel Service, Inc."
+URBN	"Urban Outfitters, Inc."
+URI	"United Rentals, Inc."
+USB	US Bancorp
+UTX	United Technologies Corp.
+V	Visa Inc.
+VAR	Varian Medical Systems In
+VFC	VFCorp
+VIAB	Viacom Inc - Class B
+VLO	Valero Energy Corp
+VMC	Vulcan Materials Co.
+VNO	Vornado Realty Trust
+VRSK	Verisk Analytics Inc.
+VRSN	"VeriSign, Inc."
+VRTX	Vertex Pharmaceuticals Inc.
+VTR	"Ventas, Inc."
+VZ	Verizon Communications
+WAT	Waters Corp.
+WBA	"Walgreens Boots Alliance, Inc."
+WDC	Western Digital Corp.
+WEC	"WEC Energy Group, Inc."
+WFC	Wells Fargo & Co.
+WFM	"Whole Foods Market, Inc."
+WHR	Whirlpool Corp.
+WLTW	Willis Towers Watson Public Ltd. Co.
+WM	"Waste Management, Inc."
+WMB	"Williams Cos., Inc."
+WMT	"Wal-Mart Stores, Inc."
+WRK	WestRock Co.
+WU	Western Union Co.
+WY	Weyerhaeuser Co.
+WYN	Wyndham Worldwide Corp.
+WYNN	Wynn Resorts Ltd
+XEC	Cimarex Energy Co.
+XEL	Xcel Energy
+XL	XL Group plc
+XLNX	"Xilinx, Inc."
+XOM	Exxon Mobil Corp.
+XRAY	DENTSPLY Intl Inc.
+XRX	Xerox Corp.
+XYL	Xylem Inc.
+YHOO	"Yahoo!, Inc."
+YUM	Yum! Brands Inc.
+ZBH	"Zimmer Biomet Holdings, Inc."
+ZION	Zions Bancorp
+ZTS	Zoetis Inc.

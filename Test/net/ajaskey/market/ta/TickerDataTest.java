@@ -57,7 +57,7 @@ public class TickerDataTest {
 	public static void setUpBeforeClass() throws Exception {
 		cal.set(1980, Calendar.MARCH, 15, 23, 45);
 		tdQQQ = ParseData.parseOneFile("TestData\\QQQ-TickerDataTest.txt");
-		tdQQQ.generateDerived();
+		tdQQQ.generateDerived(false);
 	}
 
 	/**

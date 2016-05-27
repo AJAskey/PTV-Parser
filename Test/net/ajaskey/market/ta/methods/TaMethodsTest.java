@@ -76,7 +76,7 @@ public class TaMethodsTest {
 	 */
 	public TaMethodsTest() throws FileNotFoundException, ParseException {
 		this.tdSC = ParseData.parseOneFile("TestData\\cs-rsi.csv");
-		this.tdSC.generateDerived();
+		this.tdSC.generateDerived(false);
 	}
 
 	/**

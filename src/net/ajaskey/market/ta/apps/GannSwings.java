@@ -56,7 +56,7 @@ public class GannSwings {
 	public static void main(String[] args) throws FileNotFoundException, ParseException {
 
 		final TickerData td = ParseData.parseOneFile("out\\QQQ.txt");
-		td.generateDerived();
+		td.generateDerived(false);
 
 		final Calendar start = Calendar.getInstance();
 		start.set(2015, Calendar.JULY, 20, 0, 0, 1);
