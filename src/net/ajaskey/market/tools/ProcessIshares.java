@@ -50,10 +50,108 @@ public class ProcessIshares {
 	/** Transportation */
 	static private String	IYT		= "https://www.ishares.com/us/products/239501/ishares-transportation-average-etf/1449138789749.ajax?fileType=csv&fileName=IYT_holdings&dataType=fund";
 
+	/** Oil and Gas Exploration */
+	static private String	IEO		= "https://www.ishares.com/us/products/239517/ishares-us-oil-gas-exploration-production-etf/1449138789749.ajax?fileType=csv&fileName=IEO_holdings&dataType=fund";
+
+	/** Oil Equipment and Services */
+	static private String	IEZ		= "https://www.ishares.com/us/products/239518/ishares-us-oil-equipment-services-etf/1449138789749.ajax?fileType=csv&fileName=IEZ_holdings&dataType=fund";
+
+	/** American Natural Resources */
+	static private String	IGE		= "https://www.ishares.com/us/products/239768/ishares-north-american-natural-resources-etf/1449138789749.ajax?fileType=csv&fileName=IGE_holdings&dataType=fund";
+
+	/** Global Timber and Forestry */
+	static private String	WOOD	= "https://www.ishares.com/us/products/239752/ishares-global-timber-forestry-etf/1449138789749.ajax?fileType=csv&fileName=WOOD_holdings&dataType=fund";
+
+	/** Global Gold Miners */
+	static private String	RING	= "https://www.ishares.com/us/products/239654/ishares-msci-global-gold-miners-etf/1449138789749.ajax?fileType=csv&fileName=RING_holdings&dataType=fund";
+
+	/** Global Metal Miners */
+	static private String	PICK	= "https://www.ishares.com/us/products/239655/ishares-msci-global-metals-mining-producers-etf/1449138789749.ajax?fileType=csv&fileName=PICK_holdings&dataType=fund";
+
 	// static private String = "";
 
 	/**
+	 *
+	 * net.ajaskey.market.tools.isValid
+	 *
+	 * @param s
+	 * @return
+	 */
+	public static boolean isValid(String s) {
+		if (ProcessIshares.isNumber(s)) {
+			return false;
+		}
+
+		int idx = s.indexOf(".");
+		if (idx > 0) {
+			return false;
+		}
+
+		idx = s.indexOf(" ");
+		if (idx > 0) {
+			return false;
+		}
+
+		if (s.matches(".*\\d.*")) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * 
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		ProcessIshares.processIshare("ITB");
+		ProcessIshares.processIshare("SOXX");
+		ProcessIshares.processIshare("IYC");
+		ProcessIshares.processIshare("IYK");
+		ProcessIshares.processIshare("IYG");
+
+		ProcessIshares.processIshare("IAT");
+		ProcessIshares.processIshare("IAK");
+		ProcessIshares.processIshare("IYH");
+		ProcessIshares.processIshare("IHI");
+		ProcessIshares.processIshare("IHF");
+		ProcessIshares.processIshare("IHE");
+
+		ProcessIshares.processIshare("IYJ");
+		ProcessIshares.processIshare("ITA");
+		ProcessIshares.processIshare("IYT");
+
+		ProcessIshares.processIshare("IEO");
+		ProcessIshares.processIshare("IEZ");
+
+		ProcessIshares.processIshare("IGE");
+		ProcessIshares.processIshare("WOOD");
+		ProcessIshares.processIshare("RING");
+		ProcessIshares.processIshare("PICK");
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.isNumber
+	 *
+	 * @param s
+	 * @return
+	 */
+	private static boolean isNumber(String s) {
+		try {
+			Long.parseLong(s);
+			return true;
+		} catch (final Exception e) {
+			return false;
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.processIshare
 	 *
 	 * @param iShare
@@ -91,6 +189,18 @@ public class ProcessIshares {
 			url = ITA;
 		} else if (iShare.contains("IYT")) {
 			url = IYT;
+		} else if (iShare.contains("IEO")) {
+			url = IEO;
+		} else if (iShare.contains("IEZ")) {
+			url = IEZ;
+		} else if (iShare.contains("IGE")) {
+			url = IGE;
+		} else if (iShare.contains("WOOD")) {
+			url = WOOD;
+		} else if (iShare.contains("RING")) {
+			url = RING;
+		} else if (iShare.contains("PICK")) {
+			url = PICK;
 		}
 
 		else {
@@ -102,8 +212,9 @@ public class ProcessIshares {
 
 			List<String> resp = new ArrayList<>();
 			resp = WebGet.getIshares(url);
-			for (String s : resp) {
-				if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0)) {
+			for (final String s : resp) {
+				if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0)
+				    && (ProcessIshares.isValid(s))) {
 					System.out.println(s);
 					pw.println(s);
 				}
@@ -111,26 +222,6 @@ public class ProcessIshares {
 			System.out.println(resp.size());
 
 		}
-
-	}
-
-	public static void main(String[] args) throws FileNotFoundException {
-		processIshare("ITB");
-		processIshare("SOXX");
-		processIshare("IYC");
-		processIshare("IYK");
-		processIshare("IYG");
-
-		processIshare("IAT");
-		processIshare("IAK");
-		processIshare("IYH");
-		processIshare("IHI");
-		processIshare("IHF");
-		processIshare("IHE");
-
-		processIshare("IYJ");
-		processIshare("ITA");
-		processIshare("IYT");
 
 	}
 
