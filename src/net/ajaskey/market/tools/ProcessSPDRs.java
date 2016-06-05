@@ -7,9 +7,9 @@ import java.util.List;
 
 public class ProcessSPDRs {
 
-	private static String sDummy = ",\"SPDR\",\"0.0%\",\"0.0\",\"0.0\",\"0.0%\",\"1 M\",\"0.0 - 1.0\",";
-	private static String header = "\"Symbol\",\"Company Name\",\"Index Weight\",\"Last\",\"Change\",\"%Change\",\"Volume\",\"52 Week Range\",";
-	private static PrintWriter pwAll;
+	//private static String sDummy = ",\"SPDR\",\"0.0%\",\"0.0\",\"0.0\",\"0.0%\",\"1 M\",\"0.0 - 1.0\",";
+	//private static String header = "\"Symbol\",\"Company Name\",\"Index Weight\",\"Last\",\"Change\",\"%Change\",\"Volume\",\"52 Week Range\",";
+	//private static PrintWriter pwAll;
 
 	/**
 	 * 

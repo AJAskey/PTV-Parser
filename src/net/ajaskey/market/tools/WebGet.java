@@ -1,3 +1,4 @@
+
 package net.ajaskey.market.tools;
 
 import java.io.BufferedReader;
@@ -8,11 +9,10 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class WebGet {
-	
-	private static String NL =  System.lineSeparator();
-	
+
+	private static String NL = System.lineSeparator();
+
 	private static String getFromUrl(String url) throws IOException {
 		final StringBuilder sb = new StringBuilder();
 
@@ -27,14 +27,14 @@ public class WebGet {
 		}
 		return sb.toString();
 	}
-	
+
 	/**
 	 * 
 	 * @param url
 	 * @return
 	 */
 	public static List<String> getSPDR(String url) {
-		
+
 		String response;
 		try {
 			response = getFromUrl(url);
@@ -45,32 +45,47 @@ public class WebGet {
 			final String[] fld = response.split(NL);
 			final List<String> ret = new ArrayList<>();
 
-			for (int knt=0; knt<fld.length; knt++) {
+			for (int knt = 0; knt < fld.length; knt++) {
 				ret.add(fld[knt]);
 			}
 			return ret;
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 
 	 * @param url
 	 * @return
 	 */
 	public static List<String> getIshares(String url) {
-		
+
 		String response;
 		try {
 			response = getFromUrl(url);
 		} catch (final IOException e) {
 			response = null;
 		}
+		boolean found = false;
+		final List<String> ret = new ArrayList<>();
 		if (response != null) {
-			final String[] fld = response.split(NL);
-			final List<String> ret = new ArrayList<>();
+			final String[] line = response.split(NL);
 
-			System.out.println(response);
+			for (String s : line) {
+				String[] fld = s.split(",");
+
+				if (found) {
+					if (!fld[0].matches("^\\W*$")) {
+						ret.add(fld[0].replaceAll("\"", ""));
+					}
+				}
+
+				if (!found && fld[0].contains("Ticker")) {
+					found = true;
+				}
+
+			}
+			// System.out.println(response);
 			return ret;
 		}
 		return null;
