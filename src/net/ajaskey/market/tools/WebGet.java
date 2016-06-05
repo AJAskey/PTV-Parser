@@ -1,0 +1,79 @@
+package net.ajaskey.market.tools;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class WebGet {
+	
+	private static String NL =  System.lineSeparator();
+	
+	private static String getFromUrl(String url) throws IOException {
+		final StringBuilder sb = new StringBuilder();
+
+		final URL myURL = new URL(url);
+		final URLConnection myURLConnection = myURL.openConnection();
+		myURLConnection.connect();
+		String line;
+		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
+			while ((line = resp.readLine()) != null) {
+				sb.append(line + NL);
+			}
+		}
+		return sb.toString();
+	}
+	
+	/**
+	 * 
+	 * @param url
+	 * @return
+	 */
+	public static List<String> getSPDR(String url) {
+		
+		String response;
+		try {
+			response = getFromUrl(url);
+		} catch (final IOException e) {
+			response = null;
+		}
+		if (response != null) {
+			final String[] fld = response.split(NL);
+			final List<String> ret = new ArrayList<>();
+
+			for (int knt=0; knt<fld.length; knt++) {
+				ret.add(fld[knt]);
+			}
+			return ret;
+		}
+		return null;
+	}
+	
+	/**
+	 * 
+	 * @param url
+	 * @return
+	 */
+	public static List<String> getIshares(String url) {
+		
+		String response;
+		try {
+			response = getFromUrl(url);
+		} catch (final IOException e) {
+			response = null;
+		}
+		if (response != null) {
+			final String[] fld = response.split(NL);
+			final List<String> ret = new ArrayList<>();
+
+			System.out.println(response);
+			return ret;
+		}
+		return null;
+	}
+
+}

@@ -1086,6 +1086,10 @@ public class TickerData {
 	public double[] getVolumeData() {
 		return this.volumeData;
 	}
+	
+	public double getOi(int day) {
+		return this.oiData[day];
+	}
 
 	/**
 	 * @return the openData

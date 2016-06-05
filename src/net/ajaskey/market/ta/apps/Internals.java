@@ -320,8 +320,9 @@ public class Internals {
 			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
 			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
-			//double fv = (long) ((forceUp[i] - forceDown[i]) / price[i] * 100.0);
-			double fv = (long) ((forceUp[i] - forceDown[i]) );
+			
+			double fv = (long) ((forceUp[i] - forceDown[i]) * volRatio);
+			
 			pwAll.printf("\t%.2f\t%d\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%.2f \t%s%n", price[i], (long) fv, sUp, sDown, sDaily,
 			    percent, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
 
