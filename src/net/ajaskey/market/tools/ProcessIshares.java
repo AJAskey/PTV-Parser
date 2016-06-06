@@ -29,6 +29,9 @@ public class ProcessIshares {
 	/** Insurance */
 	static private String	IAK		= "https://www.ishares.com/us/products/239515/ishares-us-insurance-etf/1449138789749.ajax?fileType=csv&fileName=IAK_holdings&dataType=fund";
 
+	/** Brokers Dealers */
+	static private String	IAI		= "https://www.ishares.com/us/products/239504/ishares-us-brokerdealers-etf/1449138789749.ajax?fileType=csv&fileName=IAI_holdings&dataType=fund";
+
 	/** Health Care */
 	static private String	IYH		= "https://www.ishares.com/us/products/239511/ishares-us-healthcare-etf/1449138789749.ajax?fileType=csv&fileName=IYH_holdings&dataType=fund";
 
@@ -37,6 +40,9 @@ public class ProcessIshares {
 
 	/** Health Care Providers */
 	static private String	IHF		= "https://www.ishares.com/us/products/239510/ishares-us-healthcare-providers-etf/1449138789749.ajax?fileType=csv&fileName=IHF_holdings&dataType=fund";
+
+	/** Biotech */
+	static private String	IBB		= "https://www.ishares.com/us/products/239699/ishares-nasdaq-biotechnology-etf/1449138789749.ajax?fileType=csv&fileName=IBB_holdings&dataType=fund";
 
 	/** Pharmaceuticals */
 	static private String	IHE		= "https://www.ishares.com/us/products/239519/ishares-us-pharmaceuticals-etf/1449138789749.ajax?fileType=csv&fileName=IHE_holdings&dataType=fund";
@@ -67,6 +73,15 @@ public class ProcessIshares {
 
 	/** Global Metal Miners */
 	static private String	PICK	= "https://www.ishares.com/us/products/239655/ishares-msci-global-metals-mining-producers-etf/1449138789749.ajax?fileType=csv&fileName=PICK_holdings&dataType=fund";
+
+	/** SP500 */
+	static private String	IVV		= "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf/1449138789749.ajax?fileType=csv&fileName=IVV_holdings&dataType=fund";
+
+	/** SP400 */
+	static private String	IJH		= "https://www.ishares.com/us/products/239763/ishares-core-sp-midcap-etf/1449138789749.ajax?fileType=csv&fileName=IJH_holdings&dataType=fund";
+
+	/** SP600 */
+	static private String	IJR		= "https://www.ishares.com/us/products/239774/ishares-core-sp-smallcap-etf/1449138789749.ajax?fileType=csv&fileName=IJR_holdings&dataType=fund";
 
 	// static private String = "";
 
@@ -115,6 +130,9 @@ public class ProcessIshares {
 
 		ProcessIshares.processIshare("IAT");
 		ProcessIshares.processIshare("IAK");
+		ProcessIshares.processIshare("IAI");
+
+		ProcessIshares.processIshare("IBB");
 		ProcessIshares.processIshare("IYH");
 		ProcessIshares.processIshare("IHI");
 		ProcessIshares.processIshare("IHF");
@@ -127,10 +145,16 @@ public class ProcessIshares {
 		ProcessIshares.processIshare("IEO");
 		ProcessIshares.processIshare("IEZ");
 
+		ProcessIshares.processIshare("IVV");
+		ProcessIshares.processIshare("IJH");
+		ProcessIshares.processIshare("IJR");
+
 		ProcessIshares.processIshare("IGE");
 		ProcessIshares.processIshare("WOOD");
 		ProcessIshares.processIshare("RING");
 		ProcessIshares.processIshare("PICK");
+
+		System.out.println("Done.");
 
 	}
 
@@ -175,8 +199,12 @@ public class ProcessIshares {
 			url = IAT;
 		} else if (iShare.contains("IAK")) {
 			url = IAK;
+		} else if (iShare.contains("IAI")) {
+			url = IAI;
 		} else if (iShare.contains("IYH")) {
 			url = IYH;
+		} else if (iShare.contains("IBB")) {
+			url = IBB;
 		} else if (iShare.contains("IHI")) {
 			url = IHI;
 		} else if (iShare.contains("IHF")) {
@@ -201,6 +229,12 @@ public class ProcessIshares {
 			url = RING;
 		} else if (iShare.contains("PICK")) {
 			url = PICK;
+		} else if (iShare.contains("IVV")) {
+			url = IVV;
+		} else if (iShare.contains("IJH")) {
+			url = IJH;
+		} else if (iShare.contains("IJR")) {
+			url = IJR;
 		}
 
 		else {
@@ -215,11 +249,11 @@ public class ProcessIshares {
 			for (final String s : resp) {
 				if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0)
 				    && (ProcessIshares.isValid(s))) {
-					System.out.println(s);
+					// System.out.println(s);
 					pw.println(s);
 				}
 			}
-			System.out.println(resp.size());
+			System.out.println("Processed " + iShare + " : " + resp.size());
 
 		}
 
