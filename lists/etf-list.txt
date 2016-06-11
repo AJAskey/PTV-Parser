@@ -160,6 +160,7 @@ CSUS      	CS ETF [Ie] Plc                                   	LSE
 CUKL      	CS ETF [Ie] Plc                                   	LSE       
 CUKS      	CS ETF [Ie] Plc                                   	LSE       
 CUKX      	CS ETF [Ie] Plc                                   	LSE       
+CURY      	Lam Zyfin Global Markets Ucits ETF Plc            	LSE       
 CUSS      	CS ETF [Ie] Plc                                   	LSE       
 DEL2      	Go Ucits ETF Solutions P                          	LSE       
 DES2      	Go Ucits ETF Solutions P                          	LSE       
@@ -169,7 +170,6 @@ DXGYEIV   	Wisdomtree Germany Equity Ucits ETF - EU          	LSE
 DXJFEIV   	Wisdomtree Japan Equity Ucits ETF - EUR           	LSE       
 DXJZEIV   	Wisdomtree Japan Equity Ucits ETF - Jpy           	LSE       
 FWEC      	Go Ucits ETF Solutions P                          	LSE       
-FWEG      	Go Ucits ETF Solutions P                          	LSE       
 HEDFEIV   	Wisdomtree Europe Equity Ucits ETF - EUR          	LSE       
 ISPY      	Go Ucits ETF Solutions Plc                        	LSE       
 LOCG      	Go Ucits ETF Solutions P                          	LSE       
@@ -194,11 +194,9 @@ UC73      	UBS (Irl) ETF Plc                                 	LSE
 UC74      	UBS (Irl) ETF Plc                                 	LSE       
 UC75      	UBS (Irl) ETF Plc                                 	LSE       
 UKSR      	UBS (Irl) ETF Plc                                 	LSE       
+ULOV      	UBS (Irl) ETF Plc                                 	LSE       
 USPY      	Go Ucits ETF Solutions Plc                        	LSE       
 XSPU      	DB X-Trackers Dbx S&P 500 ETF $                   	LSE       
-ZC1G      	BMO Ucits ETF Icav                                	LSE       
-ZC3G      	BMO Ucits ETF Icav                                	LSE       
-ZC7G      	BMO Ucits ETF Icav                                	LSE       
 FDIV      	First Trust ETF IV                                	NASDAQ    
 FMB       	First Trust ETF III                               	NASDAQ    
 FTLB      	First Trust ETF Vi                                	NASDAQ    
@@ -270,10 +268,10 @@ P2Q       	Lyxor Etf Indonesia 10                            	SGX
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 SH8       	Dbxt Iboxx Indonesia Etf 10                       	SGX       
 CXF.A     	First Asset CDN Convert Bond ETF AC               	TSX       
-HUF.V     	Horizons Active US Float Rate Bd ETF AC           	TSX       
+HAU.U     	Horizons Active US Dividend ETF USD               	TSX       
 HXQ.U     	Horizons Nasdaq 100 Index ETF USD                 	TSX       
 RIT.A     	Fa Canadian REIT ETF Adv Cls                      	TSX       
-RWW.D     	First Asset MSCI Wld Lr Wtd Uh ETF AC             	TSX       
+SBT.B     	Silver Bullion Trust CAD ETF Non Cur              	TSX       
 ZDY       	BMO US Dividend ETF CAD                           	TSX       
 ZDY.U     	BMO US Dividend ETF USD                           	TSX       
 ZPW.U     	BMO US Put Write ETF USD                          	TSX       
