@@ -22,13 +22,13 @@ AKH19     	Ethanol Futures (P) {Mar 19}                      	CBOT
 AKJ17     	Ethanol Futures (P) {Apr 17}                      	CBOT      
 AKJ18     	Ethanol Futures (P) {Apr 18}                      	CBOT      
 AKJ19     	Ethanol Futures (P) {Apr 19}                      	CBOT      
-AKK16     	Ethanol Futures (P) {May 16}                      	CBOT      
 AKK17     	Ethanol Futures (P) {May 17}                      	CBOT      
 AKK18     	Ethanol Futures (P) {May 18}                      	CBOT      
 AKK19     	Ethanol Futures (P) {May 19}                      	CBOT      
 AKM16     	Ethanol Futures (P) {Jun 16}                      	CBOT      
 AKM17     	Ethanol Futures (P) {Jun 17}                      	CBOT      
 AKM18     	Ethanol Futures (P) {Jun 18}                      	CBOT      
+AKM19     	Ethanol Futures (P) {Jun 19}                      	CBOT      
 AKN16     	Ethanol Futures (P) {Jul 16}                      	CBOT      
 AKN17     	Ethanol Futures (P) {Jul 17}                      	CBOT      
 AKN18     	Ethanol Futures (P) {Jul 18}                      	CBOT      
@@ -117,9 +117,9 @@ F0.C      	Urea FOB Egypt Swap Continuation                  	CBOT
 F0F17     	Urea FOB Egypt Swap {Jan 17}                      	CBOT      
 F0G17     	Urea FOB Egypt Swap {Feb 17}                      	CBOT      
 F0H17     	Urea FOB Egypt Swap {Mar 17}                      	CBOT      
-F0J16     	Urea FOB Egypt Swap {Apr 16}                      	CBOT      
 F0J17     	Urea FOB Egypt Swap {Apr 17}                      	CBOT      
 F0K16     	Urea FOB Egypt Swap {May 16}                      	CBOT      
+F0K17     	Urea FOB Egypt Swap {May 17}                      	CBOT      
 F0M16     	Urea FOB Egypt Swap {Jun 16}                      	CBOT      
 F0N16     	Urea FOB Egypt Swap {Jul 16}                      	CBOT      
 F0Q16     	Urea FOB Egypt Swap {Aug 16}                      	CBOT      
@@ -134,11 +134,11 @@ F5G17     	Urea FOB NOLA Swap {Feb 17}                       	CBOT
 F5G18     	Urea FOB NOLA Swap {Feb 18}                       	CBOT      
 F5H17     	Urea FOB NOLA Swap {Mar 17}                       	CBOT      
 F5H18     	Urea FOB NOLA Swap {Mar 18}                       	CBOT      
-F5J16     	Urea FOB NOLA Swap {Apr 16}                       	CBOT      
 F5J17     	Urea FOB NOLA Swap {Apr 17}                       	CBOT      
 F5J18     	Urea FOB NOLA Swap {Apr 18}                       	CBOT      
 F5K16     	Urea FOB NOLA Swap {May 16}                       	CBOT      
 F5K17     	Urea FOB NOLA Swap {May 17}                       	CBOT      
+F5K18     	Urea FOB NOLA Swap {May 18}                       	CBOT      
 F5M16     	Urea FOB NOLA Swap {Jun 16}                       	CBOT      
 F5M17     	Urea FOB NOLA Swap {Jun 17}                       	CBOT      
 F5N16     	Urea FOB NOLA Swap {Jul 16}                       	CBOT      
@@ -157,9 +157,9 @@ F7.C      	UAN FOB NOLA Swap Continuation                    	CBOT
 F7F17     	UAN FOB NOLA Swap {Jan 17}                        	CBOT      
 F7G17     	UAN FOB NOLA Swap {Feb 17}                        	CBOT      
 F7H17     	UAN FOB NOLA Swap {Mar 17}                        	CBOT      
-F7J16     	UAN FOB NOLA Swap {Apr 16}                        	CBOT      
 F7J17     	UAN FOB NOLA Swap {Apr 17}                        	CBOT      
 F7K16     	UAN FOB NOLA Swap {May 16}                        	CBOT      
+F7K17     	UAN FOB NOLA Swap {May 17}                        	CBOT      
 F7M16     	UAN FOB NOLA Swap {Jun 16}                        	CBOT      
 F7N16     	UAN FOB NOLA Swap {Jul 16}                        	CBOT      
 F7Q16     	UAN FOB NOLA Swap {Aug 16}                        	CBOT      
@@ -171,9 +171,9 @@ F8.C      	DAP FOB NOLA Swap Continuation                    	CBOT
 F8F17     	DAP FOB NOLA Swap {Jan 17}                        	CBOT      
 F8G17     	DAP FOB NOLA Swap {Feb 17}                        	CBOT      
 F8H17     	DAP FOB NOLA Swap {Mar 17}                        	CBOT      
-F8J16     	DAP FOB NOLA Swap {Apr 16}                        	CBOT      
 F8J17     	DAP FOB NOLA Swap {Apr 17}                        	CBOT      
 F8K16     	DAP FOB NOLA Swap {May 16}                        	CBOT      
+F8K17     	DAP FOB NOLA Swap {May 17}                        	CBOT      
 F8M16     	DAP FOB NOLA Swap {Jun 16}                        	CBOT      
 F8N16     	DAP FOB NOLA Swap {Jul 16}                        	CBOT      
 F8Q16     	DAP FOB NOLA Swap {Aug 16}                        	CBOT      
@@ -182,20 +182,20 @@ F8V16     	DAP FOB NOLA Swap {Oct 16}                        	CBOT
 F8X16     	DAP FOB NOLA Swap {Nov 16}                        	CBOT      
 F8Z16     	DAP FOB NOLA Swap {Dec 16}                        	CBOT      
 F9.C      	Urea FOB Yuzhny Swap Continuation                 	CBOT      
-F9J16     	Urea FOB Yuzhny Swap {Apr 16}                     	CBOT      
 F9K16     	Urea FOB Yuzhny Swap {May 16}                     	CBOT      
 F9M16     	Urea FOB Yuzhny Swap {Jun 16}                     	CBOT      
 F9N16     	Urea FOB Yuzhny Swap {Jul 16}                     	CBOT      
 F9Q16     	Urea FOB Yuzhny Swap {Aug 16}                     	CBOT      
 F9U16     	Urea FOB Yuzhny Swap {Sep 16}                     	CBOT      
 F9V16     	Urea FOB Yuzhny Swap {Oct 16}                     	CBOT      
+F9X16     	Urea FOB Yuzhny Swap {Nov 16}                     	CBOT      
 FD.C      	DAP FOB Tampa Swap Continuation                   	CBOT      
 FDF17     	DAP FOB Tampa Swap {Jan 17}                       	CBOT      
 FDG17     	DAP FOB Tampa Swap {Feb 17}                       	CBOT      
 FDH17     	DAP FOB Tampa Swap {Mar 17}                       	CBOT      
-FDJ16     	DAP FOB Tampa Swap {Apr 16}                       	CBOT      
 FDJ17     	DAP FOB Tampa Swap {Apr 17}                       	CBOT      
 FDK16     	DAP FOB Tampa Swap {May 16}                       	CBOT      
+FDK17     	DAP FOB Tampa Swap {May 17}                       	CBOT      
 FDM16     	DAP FOB Tampa Swap {Jun 16}                       	CBOT      
 FDN16     	DAP FOB Tampa Swap {Jul 16}                       	CBOT      
 FDQ16     	DAP FOB Tampa Swap {Aug 16}                       	CBOT      
@@ -214,13 +214,13 @@ FFG19     	30-Day Fed Funds (P) {Feb 19}                     	CBOT
 FFH17     	30-Day Fed Funds (P) {Mar 17}                     	CBOT      
 FFH18     	30-Day Fed Funds (P) {Mar 18}                     	CBOT      
 FFH19     	30-Day Fed Funds (P) {Mar 19}                     	CBOT      
-FFJ16     	30-Day Fed Funds (P) {Apr 16}                     	CBOT      
 FFJ17     	30-Day Fed Funds (P) {Apr 17}                     	CBOT      
 FFJ18     	30-Day Fed Funds (P) {Apr 18}                     	CBOT      
 FFJ19     	30-Day Fed Funds (P) {Apr 19}                     	CBOT      
 FFK16     	30-Day Fed Funds (P) {May 16}                     	CBOT      
 FFK17     	30-Day Fed Funds (P) {May 17}                     	CBOT      
 FFK18     	30-Day Fed Funds (P) {May 18}                     	CBOT      
+FFK19     	30-Day Fed Funds (P) {May 19}                     	CBOT      
 FFM16     	30-Day Fed Funds (P) {Jun 16}                     	CBOT      
 FFM17     	30-Day Fed Funds (P) {Jun 17}                     	CBOT      
 FFM18     	30-Day Fed Funds (P) {Jun 18}                     	CBOT      
@@ -256,13 +256,13 @@ FZG19     	Ethanol Forward {Feb 19}                          	CBOT
 FZH17     	Ethanol Forward {Mar 17}                          	CBOT      
 FZH18     	Ethanol Forward {Mar 18}                          	CBOT      
 FZH19     	Ethanol Forward {Mar 19}                          	CBOT      
-FZJ16     	Ethanol Forward {Apr 16}                          	CBOT      
 FZJ17     	Ethanol Forward {Apr 17}                          	CBOT      
 FZJ18     	Ethanol Forward {Apr 18}                          	CBOT      
 FZJ19     	Ethanol Forward {Apr 19}                          	CBOT      
 FZK16     	Ethanol Forward {May 16}                          	CBOT      
 FZK17     	Ethanol Forward {May 17}                          	CBOT      
 FZK18     	Ethanol Forward {May 18}                          	CBOT      
+FZK19     	Ethanol Forward {May 19}                          	CBOT      
 FZM16     	Ethanol Forward {Jun 16}                          	CBOT      
 FZM17     	Ethanol Forward {Jun 17}                          	CBOT      
 FZM18     	Ethanol Forward {Jun 18}                          	CBOT      
@@ -384,11 +384,9 @@ SN16      	Soybeans (P) {Jul 16}                             	CBOT
 SN17      	Soybeans (P) {Jul 17}                             	CBOT      
 SN18      	Soybeans (P) {Jul 18}                             	CBOT      
 SN19      	Soybeans (P) {Jul 19}                             	CBOT      
-SQ.C      	Black Sea Wheat Continuation                      	CBOT      
 SQ16      	Soybeans (P) {Aug 16}                             	CBOT      
 SQ17      	Soybeans (P) {Aug 17}                             	CBOT      
 SQ18      	Soybeans (P) {Aug 18}                             	CBOT      
-SQK16     	Black Sea Wheat {May 16}                          	CBOT      
 SQN16     	Black Sea Wheat {Jul 16}                          	CBOT      
 SQU16     	Black Sea Wheat {Sep 16}                          	CBOT      
 SQZ16     	Black Sea Wheat {Dec 16}                          	CBOT      
@@ -599,13 +597,13 @@ ZKH19     	Ethanol Futures {Mar 19}                          	CBOT
 ZKJ17     	Ethanol Futures {Apr 17}                          	CBOT      
 ZKJ18     	Ethanol Futures {Apr 18}                          	CBOT      
 ZKJ19     	Ethanol Futures {Apr 19}                          	CBOT      
-ZKK16     	Ethanol Futures {May 16}                          	CBOT      
 ZKK17     	Ethanol Futures {May 17}                          	CBOT      
 ZKK18     	Ethanol Futures {May 18}                          	CBOT      
 ZKK19     	Ethanol Futures {May 19}                          	CBOT      
 ZKM16     	Ethanol Futures {Jun 16}                          	CBOT      
 ZKM17     	Ethanol Futures {Jun 17}                          	CBOT      
 ZKM18     	Ethanol Futures {Jun 18}                          	CBOT      
+ZKM19     	Ethanol Futures {Jun 19}                          	CBOT      
 ZKN16     	Ethanol Futures {Jul 16}                          	CBOT      
 ZKN17     	Ethanol Futures {Jul 17}                          	CBOT      
 ZKN18     	Ethanol Futures {Jul 18}                          	CBOT      
@@ -705,13 +703,13 @@ ZQG19     	30-Day Fed Funds {Feb 19}                         	CBOT
 ZQH17     	30-Day Fed Funds {Mar 17}                         	CBOT      
 ZQH18     	30-Day Fed Funds {Mar 18}                         	CBOT      
 ZQH19     	30-Day Fed Funds {Mar 19}                         	CBOT      
-ZQJ16     	30-Day Fed Funds {Apr 16}                         	CBOT      
 ZQJ17     	30-Day Fed Funds {Apr 17}                         	CBOT      
 ZQJ18     	30-Day Fed Funds {Apr 18}                         	CBOT      
 ZQJ19     	30-Day Fed Funds {Apr 19}                         	CBOT      
 ZQK16     	30-Day Fed Funds {May 16}                         	CBOT      
 ZQK17     	30-Day Fed Funds {May 17}                         	CBOT      
 ZQK18     	30-Day Fed Funds {May 18}                         	CBOT      
+ZQK19     	30-Day Fed Funds {May 19}                         	CBOT      
 ZQM16     	30-Day Fed Funds {Jun 16}                         	CBOT      
 ZQM17     	30-Day Fed Funds {Jun 17}                         	CBOT      
 ZQM18     	30-Day Fed Funds {Jun 18}                         	CBOT      

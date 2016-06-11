@@ -13,6 +13,7 @@ import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.UtilMethods;
+import net.ajaskey.market.tools.ProcessIshares;
 
 /**
  * This class...
@@ -78,32 +79,58 @@ public class BreadthOfList {
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 
-		System.out.println("Ticker\t23dma\t65dma\t130dma\t260dma\tUpDays\tUpVol");
+		System.out.println("Ticker\tName\t23dma\t65dma\t130dma\t260dma");
 
-		BreadthOfList.processGroup("SPX");
-		BreadthOfList.processGroup("MID");
-		BreadthOfList.processGroup("SML");
-		BreadthOfList.processGroup("NDX");
+		//BreadthOfList.processGroup("SPX", "SP500");
+		//BreadthOfList.processGroup("MID", "SP400");
+		//BreadthOfList.processGroup("SML", "SP600");
+		BreadthOfList.processGroup("NDX", "Nasdaq 100");
 
-		BreadthOfList.processGroup("XRT");
-		BreadthOfList.processGroup("KRE");
-		BreadthOfList.processGroup("IBB");
-		BreadthOfList.processGroup("XHB");
-		BreadthOfList.processGroup("SMH");
-		BreadthOfList.processGroup("TRANS");
+		BreadthOfList.processGroup("IVV", "SP500");
+		BreadthOfList.processGroup("IJH", "SP400");
+		BreadthOfList.processGroup("IJR", "SP600");
 
-		BreadthOfList.processGroup("XLB");
-		BreadthOfList.processGroup("XLE");
-		BreadthOfList.processGroup("XLF");
-		BreadthOfList.processGroup("XLI");
-		BreadthOfList.processGroup("XLK");
-		BreadthOfList.processGroup("XLP");
-		BreadthOfList.processGroup("XLU");
-		BreadthOfList.processGroup("XLV");
-		BreadthOfList.processGroup("XLY");
-		BreadthOfList.processGroup("XLRE");
+		BreadthOfList.processGroup("XRT", "Retail");
+		//BreadthOfList.processGroup("KRE", "Regional Banks");
+		BreadthOfList.processGroup("IBB", "Biotech");
+		//BreadthOfList.processGroup("XHB", "Home Builders");
+		//BreadthOfList.processGroup("SMH", "Semiconductors");
+		//BreadthOfList.processGroup("TRANS", "Transports");
 
-		// Utils.makeDir("breadth");
+		BreadthOfList.processGroup("XLB", "SPDR Materials");
+		BreadthOfList.processGroup("XLE", "SPDR Energy");
+		BreadthOfList.processGroup("XLF", "SPDR Financials");
+		BreadthOfList.processGroup("XLI", "SPDR Industrials");
+		BreadthOfList.processGroup("XLK", "SPDR Technology");
+		BreadthOfList.processGroup("XLP", "SPDR Consumer Staples");
+		BreadthOfList.processGroup("XLU", "SPDR Utilities");
+		BreadthOfList.processGroup("XLV", "SPDR Health Care");
+		BreadthOfList.processGroup("XLY", "SPDR Consumer Discretionary");
+		BreadthOfList.processGroup("XLRE", "SPDR Real Estate");
+
+		BreadthOfList.processGroup("ITB", "Home Builders");
+		BreadthOfList.processGroup("SOXX", "Semiconductors");
+		BreadthOfList.processGroup("IYC", "Consumer Services");
+		BreadthOfList.processGroup("IYK", "Consumer Goods");
+		BreadthOfList.processGroup("IYG", "Finacial Services");
+		BreadthOfList.processGroup("IAT", "Regional Banks");
+		BreadthOfList.processGroup("IAK", "Insurance");
+		BreadthOfList.processGroup("IAI", "Brokers Dealers");
+		BreadthOfList.processGroup("IYH", "Health Care");
+		BreadthOfList.processGroup("IHI", "Medical Devices");
+		BreadthOfList.processGroup("IHF", "Health Care Providers");
+		BreadthOfList.processGroup("IHE", "Pharmaceuticals");
+		BreadthOfList.processGroup("IYJ", "Industrials");
+		BreadthOfList.processGroup("ITA", "Aerospace Defense");
+		BreadthOfList.processGroup("IYT", "Transportation");
+		BreadthOfList.processGroup("IEO", "Oil and Gas Exploration");
+		BreadthOfList.processGroup("IEZ", "Oil Equipment and Services");
+		BreadthOfList.processGroup("IGE", "American Natural Resources");
+		BreadthOfList.processGroup("WOOD", "Lumber and Timber");
+		BreadthOfList.processGroup("RING", "Gold Miners");
+		BreadthOfList.processGroup("PICK", "Metal Miners");
+		
+		System.out.println("Done.");
 
 	}
 
@@ -116,10 +143,11 @@ public class BreadthOfList {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	private static void processGroup(String name) throws FileNotFoundException, IOException, ParseException {
+	private static void processGroup(String name, String indexName)
+	    throws FileNotFoundException, IOException, ParseException {
 		final List<TickerData> tdAll = BreadthOfList.readList(name);
 		final List<BreadthData> bd = BreadthOfList.processList(tdAll);
-		BreadthOfList.writeData(bd, name);
+		BreadthOfList.writeData(bd, name, indexName);
 		tdAll.clear();
 		bd.clear();
 	}
@@ -200,8 +228,9 @@ public class BreadthOfList {
 	 *
 	 * @param bd
 	 * @param name
+	 * @param indexName 
 	 */
-	private static void writeData(List<BreadthData> bdList, String name) {
+	private static void writeData(List<BreadthData> bdList, String name, String indexName) {
 		final int knt = bdList.size();
 		long over23dma = 0;
 		long over65dma = 0;
@@ -240,8 +269,9 @@ public class BreadthOfList {
 		// System.out.println(TAB+over23dma + TAB + over65dma + TAB + over130dma +
 		// TAB + over260dma);
 
-		System.out.println(name + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB + Math.round(per130dma)
-		    + TAB + Math.round(per260dma) + TAB + Math.round(perUpDays) + TAB + Math.round(perUpVol));
+		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB + Math.round(per130dma)
+		    + TAB + Math.round(per260dma)); 
+		// + TAB + Math.round(perUpDays) + TAB + Math.round(perUpVol));
 
 	}
 

@@ -40,6 +40,7 @@ CCH17     	Cocoa {Mar 17}                                    	NYBOT
 CCH18     	Cocoa {Mar 18}                                    	NYBOT     
 CCK16     	Cocoa {May 16}                                    	NYBOT     
 CCK17     	Cocoa {May 17}                                    	NYBOT     
+CCK18     	Cocoa {May 18}                                    	NYBOT     
 CCN16     	Cocoa {Jul 16}                                    	NYBOT     
 CCN17     	Cocoa {Jul 17}                                    	NYBOT     
 CCU16     	Cocoa {Sep 16}                                    	NYBOT     
@@ -50,9 +51,9 @@ CT        	Cotton #2                                         	NYBOT
 CTH17     	Cotton #2 {Mar 17}                                	NYBOT     
 CTH18     	Cotton #2 {Mar 18}                                	NYBOT     
 CTH19     	Cotton #2 {Mar 19}                                	NYBOT     
-CTK16     	Cotton #2 {May 16}                                	NYBOT     
 CTK17     	Cotton #2 {May 17}                                	NYBOT     
 CTK18     	Cotton #2 {May 18}                                	NYBOT     
+CTK19     	Cotton #2 {May 19}                                	NYBOT     
 CTN16     	Cotton #2 {Jul 16}                                	NYBOT     
 CTN17     	Cotton #2 {Jul 17}                                	NYBOT     
 CTN18     	Cotton #2 {Jul 18}                                	NYBOT     
@@ -146,9 +147,9 @@ H0        	Indian Rupee                                      	NYBOT
 H0F17     	Indian Rupee {Jan 17}                             	NYBOT     
 H0G17     	Indian Rupee {Feb 17}                             	NYBOT     
 H0H17     	Indian Rupee {Mar 17}                             	NYBOT     
-H0J16     	Indian Rupee {Apr 16}                             	NYBOT     
 H0J17     	Indian Rupee {Apr 17}                             	NYBOT     
 H0K16     	Indian Rupee {May 16}                             	NYBOT     
+H0K17     	Indian Rupee {May 17}                             	NYBOT     
 H0M16     	Indian Rupee {Jun 16}                             	NYBOT     
 H0N16     	Indian Rupee {Jul 16}                             	NYBOT     
 H0Q16     	Indian Rupee {Aug 16}                             	NYBOT     
@@ -177,7 +178,6 @@ H8J18     	Brazilian Real {Apr 18}                           	NYBOT
 H8J19     	Brazilian Real {Apr 19}                           	NYBOT     
 H8J20     	Brazilian Real {Apr 20}                           	NYBOT     
 H8J21     	Brazilian Real {Apr 21}                           	NYBOT     
-H8K16     	Brazilian Real {May 16}                           	NYBOT     
 H8K17     	Brazilian Real {May 17}                           	NYBOT     
 H8K18     	Brazilian Real {May 18}                           	NYBOT     
 H8K19     	Brazilian Real {May 19}                           	NYBOT     
@@ -188,6 +188,7 @@ H8M17     	Brazilian Real {Jun 17}                           	NYBOT
 H8M18     	Brazilian Real {Jun 18}                           	NYBOT     
 H8M19     	Brazilian Real {Jun 19}                           	NYBOT     
 H8M20     	Brazilian Real {Jun 20}                           	NYBOT     
+H8M21     	Brazilian Real {Jun 21}                           	NYBOT     
 H8N16     	Brazilian Real {Jul 16}                           	NYBOT     
 H8N17     	Brazilian Real {Jul 17}                           	NYBOT     
 H8N18     	Brazilian Real {Jul 18}                           	NYBOT     
@@ -233,7 +234,6 @@ HYU16     	Canadian/Yen {Sep 16}                             	NYBOT
 HYZ16     	Canadian/Yen {Dec 16}                             	NYBOT     
 JCH17     	ICE Corn {Mar 17}                                 	NYBOT     
 JCH18     	ICE Corn {Mar 18}                                 	NYBOT     
-JCK16     	ICE Corn {May 16}                                 	NYBOT     
 JCK17     	ICE Corn {May 17}                                 	NYBOT     
 JCK18     	ICE Corn {May 18}                                 	NYBOT     
 JCN16     	ICE Corn {Jul 16}                                 	NYBOT     
@@ -251,7 +251,6 @@ JFF17     	ICE Soybean Meal {Jan 17}                         	NYBOT
 JFF18     	ICE Soybean Meal {Jan 18}                         	NYBOT     
 JFH17     	ICE Soybean Meal {Mar 17}                         	NYBOT     
 JFH18     	ICE Soybean Meal {Mar 18}                         	NYBOT     
-JFK16     	ICE Soybean Meal {May 16}                         	NYBOT     
 JFK17     	ICE Soybean Meal {May 17}                         	NYBOT     
 JFK18     	ICE Soybean Meal {May 18}                         	NYBOT     
 JFN16     	ICE Soybean Meal {Jul 16}                         	NYBOT     
@@ -281,7 +280,6 @@ JLF17     	ICE Soybean Oil {Jan 17}                          	NYBOT
 JLF18     	ICE Soybean Oil {Jan 18}                          	NYBOT     
 JLH17     	ICE Soybean Oil {Mar 17}                          	NYBOT     
 JLH18     	ICE Soybean Oil {Mar 18}                          	NYBOT     
-JLK16     	ICE Soybean Oil {May 16}                          	NYBOT     
 JLK17     	ICE Soybean Oil {May 17}                          	NYBOT     
 JLK18     	ICE Soybean Oil {May 18}                          	NYBOT     
 JLN16     	ICE Soybean Oil {Jul 16}                          	NYBOT     
@@ -306,7 +304,6 @@ JSF17     	ICE Soybeans {Jan 17}                             	NYBOT
 JSF18     	ICE Soybeans {Jan 18}                             	NYBOT     
 JSH17     	ICE Soybeans {Mar 17}                             	NYBOT     
 JSH18     	ICE Soybeans {Mar 18}                             	NYBOT     
-JSK16     	ICE Soybeans {May 16}                             	NYBOT     
 JSK17     	ICE Soybeans {May 17}                             	NYBOT     
 JSK18     	ICE Soybeans {May 18}                             	NYBOT     
 JSN16     	ICE Soybeans {Jul 16}                             	NYBOT     
@@ -325,7 +322,6 @@ JSX18     	ICE Soybeans {Nov 18}                             	NYBOT
 JSX19     	ICE Soybeans {Nov 19}                             	NYBOT     
 JWH17     	ICE Wheat {Mar 17}                                	NYBOT     
 JWH18     	ICE Wheat {Mar 18}                                	NYBOT     
-JWK16     	ICE Wheat {May 16}                                	NYBOT     
 JWK17     	ICE Wheat {May 17}                                	NYBOT     
 JWK18     	ICE Wheat {May 18}                                	NYBOT     
 JWN16     	ICE Wheat {Jul 16}                                	NYBOT     
@@ -342,6 +338,7 @@ KCH19     	Coffee {Mar 19}                                   	NYBOT
 KCK16     	Coffee {May 16}                                   	NYBOT     
 KCK17     	Coffee {May 17}                                   	NYBOT     
 KCK18     	Coffee {May 18}                                   	NYBOT     
+KCK19     	Coffee {May 19}                                   	NYBOT     
 KCN16     	Coffee {Jul 16}                                   	NYBOT     
 KCN17     	Coffee {Jul 17}                                   	NYBOT     
 KCN18     	Coffee {Jul 18}                                   	NYBOT     
@@ -400,16 +397,6 @@ MIH17     	MSCI USA Growth {Mar 17}                          	NYBOT
 MIM16     	MSCI USA Growth {Jun 16}                          	NYBOT     
 MIU16     	MSCI USA Growth {Sep 16}                          	NYBOT     
 MIZ16     	MSCI USA Growth {Dec 16}                          	NYBOT     
-N3H17     	MSCI USA EW NTR {Mar 17}                          	NYBOT     
-N3M16     	MSCI USA EW NTR {Jun 16}                          	NYBOT     
-N3M17     	MSCI USA EW NTR {Jun 17}                          	NYBOT     
-N3U16     	MSCI USA EW NTR {Sep 16}                          	NYBOT     
-N3Z16     	MSCI USA EW NTR {Dec 16}                          	NYBOT     
-N7H17     	FTSE 100 EW NTR GBP {Mar 17}                      	NYBOT     
-N7M16     	FTSE 100 EW NTR GBP {Jun 16}                      	NYBOT     
-N7M17     	FTSE 100 EW NTR GBP {Jun 17}                      	NYBOT     
-N7U16     	FTSE 100 EW NTR GBP {Sep 16}                      	NYBOT     
-N7Z16     	FTSE 100 EW NTR GBP {Dec 16}                      	NYBOT     
 NS        	Dollar/Krone                                      	NYBOT     
 NSH17     	Dollar/Krone {Mar 17}                             	NYBOT     
 NSM16     	Dollar/Krone {Jun 16}                             	NYBOT     
@@ -424,6 +411,7 @@ OJH19     	Orange Juice {Mar 19}                             	NYBOT
 OJK16     	Orange Juice {May 16}                             	NYBOT     
 OJK17     	Orange Juice {May 17}                             	NYBOT     
 OJK18     	Orange Juice {May 18}                             	NYBOT     
+OJK19     	Orange Juice {May 19}                             	NYBOT     
 OJN16     	Orange Juice {Jul 16}                             	NYBOT     
 OJN17     	Orange Juice {Jul 17}                             	NYBOT     
 OJN18     	Orange Juice {Jul 18}                             	NYBOT     
@@ -536,9 +524,9 @@ SB        	Sugar #11                                         	NYBOT
 SBH17     	Sugar #11 {Mar 17}                                	NYBOT     
 SBH18     	Sugar #11 {Mar 18}                                	NYBOT     
 SBH19     	Sugar #11 {Mar 19}                                	NYBOT     
-SBK16     	Sugar #11 {May 16}                                	NYBOT     
 SBK17     	Sugar #11 {May 17}                                	NYBOT     
 SBK18     	Sugar #11 {May 18}                                	NYBOT     
+SBK19     	Sugar #11 {May 19}                                	NYBOT     
 SBN16     	Sugar #11 {Jul 16}                                	NYBOT     
 SBN17     	Sugar #11 {Jul 17}                                	NYBOT     
 SBN18     	Sugar #11 {Jul 18}                                	NYBOT     
@@ -550,6 +538,7 @@ SDF18     	Sugar #16 {Jan 18}                                	NYBOT
 SDH17     	Sugar #16 {Mar 17}                                	NYBOT     
 SDH18     	Sugar #16 {Mar 18}                                	NYBOT     
 SDK17     	Sugar #16 {May 17}                                	NYBOT     
+SDK18     	Sugar #16 {May 18}                                	NYBOT     
 SDN16     	Sugar #16 {Jul 16}                                	NYBOT     
 SDN17     	Sugar #16 {Jul 17}                                	NYBOT     
 SDU16     	Sugar #16 {Sep 16}                                	NYBOT     
@@ -589,7 +578,6 @@ VVM16     	Russell 1000 Value {Jun 16}                       	NYBOT
 VVU16     	Russell 1000 Value {Sep 16}                       	NYBOT     
 VVZ16     	Russell 1000 Value {Dec 16}                       	NYBOT     
 WVH17     	Cotton World {Mar 17}                             	NYBOT     
-WVK16     	Cotton World {May 16}                             	NYBOT     
 WVK17     	Cotton World {May 17}                             	NYBOT     
 WVN16     	Cotton World {Jul 16}                             	NYBOT     
 WVV16     	Cotton World {Oct 16}                             	NYBOT     
@@ -601,8 +589,8 @@ YAU16     	Aussie/Yen {Sep 16}                               	NYBOT
 YAZ16     	Aussie/Yen {Dec 16}                               	NYBOT     
 YGG17     	Gold mini-sized {Feb 17}                          	NYBOT     
 YGG18     	Gold mini-sized {Feb 18}                          	NYBOT     
-YGJ16     	Gold mini-sized {Apr 16}                          	NYBOT     
 YGJ17     	Gold mini-sized {Apr 17}                          	NYBOT     
+YGJ18     	Gold mini-sized {Apr 18}                          	NYBOT     
 YGK16     	Gold mini-sized {May 16}                          	NYBOT     
 YGM16     	Gold mini-sized {Jun 16}                          	NYBOT     
 YGM17     	Gold mini-sized {Jun 17}                          	NYBOT     
@@ -623,7 +611,6 @@ YIF17     	Silver mini-sized {Jan 17}                        	NYBOT
 YIF18     	Silver mini-sized {Jan 18}                        	NYBOT     
 YIH17     	Silver mini-sized {Mar 17}                        	NYBOT     
 YIH18     	Silver mini-sized {Mar 18}                        	NYBOT     
-YIJ16     	Silver mini-sized {Apr 16}                        	NYBOT     
 YIK16     	Silver mini-sized {May 16}                        	NYBOT     
 YIK17     	Silver mini-sized {May 17}                        	NYBOT     
 YIM16     	Silver mini-sized {Jun 16}                        	NYBOT     
@@ -632,6 +619,7 @@ YIN17     	Silver mini-sized {Jul 17}                        	NYBOT
 YIN18     	Silver mini-sized {Jul 18}                        	NYBOT     
 YIN19     	Silver mini-sized {Jul 19}                        	NYBOT     
 YIN20     	Silver mini-sized {Jul 20}                        	NYBOT     
+YIQ16     	Silver mini-sized {Aug 16}                        	NYBOT     
 YIU16     	Silver mini-sized {Sep 16}                        	NYBOT     
 YIU17     	Silver mini-sized {Sep 17}                        	NYBOT     
 YIZ16     	Silver mini-sized {Dec 16}                        	NYBOT     
@@ -656,8 +644,8 @@ YPZ16     	Pound/Dollar {Dec 16}                             	NYBOT
 YV        	NYSE Composite                                    	NYBOT     
 ZGG17     	ICE Gold 100-oz {Feb 17}                          	NYBOT     
 ZGG18     	ICE Gold 100-oz {Feb 18}                          	NYBOT     
-ZGJ16     	ICE Gold 100-oz {Apr 16}                          	NYBOT     
 ZGJ17     	ICE Gold 100-oz {Apr 17}                          	NYBOT     
+ZGJ18     	ICE Gold 100-oz {Apr 18}                          	NYBOT     
 ZGK16     	ICE Gold 100-oz {May 16}                          	NYBOT     
 ZGM16     	ICE Gold 100-oz {Jun 16}                          	NYBOT     
 ZGM17     	ICE Gold 100-oz {Jun 17}                          	NYBOT     
@@ -678,7 +666,6 @@ ZIF17     	ICE Silver 5000-oz {Jan 17}                       	NYBOT
 ZIF18     	ICE Silver 5000-oz {Jan 18}                       	NYBOT     
 ZIH17     	ICE Silver 5000-oz {Mar 17}                       	NYBOT     
 ZIH18     	ICE Silver 5000-oz {Mar 18}                       	NYBOT     
-ZIJ16     	ICE Silver 5000-oz {Apr 16}                       	NYBOT     
 ZIK16     	ICE Silver 5000-oz {May 16}                       	NYBOT     
 ZIK17     	ICE Silver 5000-oz {May 17}                       	NYBOT     
 ZIM16     	ICE Silver 5000-oz {Jun 16}                       	NYBOT     
@@ -687,6 +674,7 @@ ZIN17     	ICE Silver 5000-oz {Jul 17}                       	NYBOT
 ZIN18     	ICE Silver 5000-oz {Jul 18}                       	NYBOT     
 ZIN19     	ICE Silver 5000-oz {Jul 19}                       	NYBOT     
 ZIN20     	ICE Silver 5000-oz {Jul 20}                       	NYBOT     
+ZIQ16     	ICE Silver 5000-oz {Aug 16}                       	NYBOT     
 ZIU16     	ICE Silver 5000-oz {Sep 16}                       	NYBOT     
 ZIU17     	ICE Silver 5000-oz {Sep 17}                       	NYBOT     
 ZIZ16     	ICE Silver 5000-oz {Dec 16}                       	NYBOT     

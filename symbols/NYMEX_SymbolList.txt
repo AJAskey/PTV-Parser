@@ -7,7 +7,6 @@ BHH17     	ULSD NY Harbor (F) {Mar 17}                       	NYMEX
 BHH18     	ULSD NY Harbor (F) {Mar 18}                       	NYMEX     
 BHJ17     	ULSD NY Harbor (F) {Apr 17}                       	NYMEX     
 BHJ18     	ULSD NY Harbor (F) {Apr 18}                       	NYMEX     
-BHK16     	ULSD NY Harbor (F) {May 16}                       	NYMEX     
 BHK17     	ULSD NY Harbor (F) {May 17}                       	NYMEX     
 BHK18     	ULSD NY Harbor (F) {May 18}                       	NYMEX     
 BHM16     	ULSD NY Harbor (F) {Jun 16}                       	NYMEX     
@@ -35,6 +34,7 @@ CJ.C      	CME Cocoa Continuation                            	NYMEX
 CJH17     	CME Cocoa {Mar 17}                                	NYMEX     
 CJH18     	CME Cocoa {Mar 18}                                	NYMEX     
 CJK17     	CME Cocoa {May 17}                                	NYMEX     
+CJK18     	CME Cocoa {May 18}                                	NYMEX     
 CJN16     	CME Cocoa {Jul 16}                                	NYMEX     
 CJN17     	CME Cocoa {Jul 17}                                	NYMEX     
 CJU16     	CME Cocoa {Sep 16}                                	NYMEX     
@@ -120,7 +120,6 @@ D2.C      	Ethanol T2 ROB Continuation                       	NYMEX
 D2F17     	Ethanol T2 ROB {Jan 17}                           	NYMEX     
 D2G17     	Ethanol T2 ROB {Feb 17}                           	NYMEX     
 D2H17     	Ethanol T2 ROB {Mar 17}                           	NYMEX     
-D2J16     	Ethanol T2 ROB {Apr 16}                           	NYMEX     
 D2K16     	Ethanol T2 ROB {May 16}                           	NYMEX     
 D2M16     	Ethanol T2 ROB {Jun 16}                           	NYMEX     
 D2N16     	Ethanol T2 ROB {Jul 16}                           	NYMEX     
@@ -133,7 +132,6 @@ D4        	Diesel CARB LA OPIS                               	NYMEX
 D4.C      	Diesel CARB LA OPIS Continuation                  	NYMEX     
 D4F17     	Diesel CARB LA OPIS {Jan 17}                      	NYMEX     
 D4G17     	Diesel CARB LA OPIS {Feb 17}                      	NYMEX     
-D4J16     	Diesel CARB LA OPIS {Apr 16}                      	NYMEX     
 D4K16     	Diesel CARB LA OPIS {May 16}                      	NYMEX     
 D4M16     	Diesel CARB LA OPIS {Jun 16}                      	NYMEX     
 D4N16     	Diesel CARB LA OPIS {Jul 16}                      	NYMEX     
@@ -143,7 +141,6 @@ D4V16     	Diesel CARB LA OPIS {Oct 16}                      	NYMEX
 D4X16     	Diesel CARB LA OPIS {Nov 16}                      	NYMEX     
 D4Z16     	Diesel CARB LA OPIS {Dec 16}                      	NYMEX     
 FH.C      	Ethanol Swaps-NY Continuation                     	NYMEX     
-FHJ16     	Ethanol Swaps-NY {Apr 16}                         	NYMEX     
 FHK16     	Ethanol Swaps-NY {May 16}                         	NYMEX     
 FHM16     	Ethanol Swaps-NY {Jun 16}                         	NYMEX     
 FHN16     	Ethanol Swaps-NY {Jul 16}                         	NYMEX     
@@ -154,7 +151,6 @@ FLF17     	Ethanol Swaps-Chgo {Jan 17}                       	NYMEX
 FLF18     	Ethanol Swaps-Chgo {Jan 18}                       	NYMEX     
 FLG17     	Ethanol Swaps-Chgo {Feb 17}                       	NYMEX     
 FLH17     	Ethanol Swaps-Chgo {Mar 17}                       	NYMEX     
-FLJ16     	Ethanol Swaps-Chgo {Apr 16}                       	NYMEX     
 FLJ17     	Ethanol Swaps-Chgo {Apr 17}                       	NYMEX     
 FLK16     	Ethanol Swaps-Chgo {May 16}                       	NYMEX     
 FLK17     	Ethanol Swaps-Chgo {May 17}                       	NYMEX     
@@ -194,7 +190,6 @@ HHJ18     	Natural Gas LDay (F) {Apr 18}                     	NYMEX
 HHJ19     	Natural Gas LDay (F) {Apr 19}                     	NYMEX     
 HHJ20     	Natural Gas LDay (F) {Apr 20}                     	NYMEX     
 HHJ21     	Natural Gas LDay (F) {Apr 21}                     	NYMEX     
-HHK16     	Natural Gas LDay (F) {May 16}                     	NYMEX     
 HHK17     	Natural Gas LDay (F) {May 17}                     	NYMEX     
 HHK18     	Natural Gas LDay (F) {May 18}                     	NYMEX     
 HHK19     	Natural Gas LDay (F) {May 19}                     	NYMEX     
@@ -257,7 +252,6 @@ HOH19     	ULSD NY Harbor {Mar 19}                           	NYMEX
 HOJ17     	ULSD NY Harbor {Apr 17}                           	NYMEX     
 HOJ18     	ULSD NY Harbor {Apr 18}                           	NYMEX     
 HOJ19     	ULSD NY Harbor {Apr 19}                           	NYMEX     
-HOK16     	ULSD NY Harbor {May 16}                           	NYMEX     
 HOK17     	ULSD NY Harbor {May 17}                           	NYMEX     
 HOK18     	ULSD NY Harbor {May 18}                           	NYMEX     
 HOK19     	ULSD NY Harbor {May 19}                           	NYMEX     
@@ -310,7 +304,6 @@ HPJ18     	Natural Gas (F) {Apr 18}                          	NYMEX
 HPJ19     	Natural Gas (F) {Apr 19}                          	NYMEX     
 HPJ20     	Natural Gas (F) {Apr 20}                          	NYMEX     
 HPJ21     	Natural Gas (F) {Apr 21}                          	NYMEX     
-HPK16     	Natural Gas (F) {May 16}                          	NYMEX     
 HPK17     	Natural Gas (F) {May 17}                          	NYMEX     
 HPK18     	Natural Gas (F) {May 18}                          	NYMEX     
 HPK19     	Natural Gas (F) {May 19}                          	NYMEX     
@@ -362,7 +355,6 @@ HV.C      	US Steel Coil Continuation                        	NYMEX
 HVF17     	US Steel Coil {Jan 17}                            	NYMEX     
 HVG17     	US Steel Coil {Feb 17}                            	NYMEX     
 HVH17     	US Steel Coil {Mar 17}                            	NYMEX     
-HVJ16     	US Steel Coil {Apr 16}                            	NYMEX     
 HVJ17     	US Steel Coil {Apr 17}                            	NYMEX     
 HVK16     	US Steel Coil {May 16}                            	NYMEX     
 HVK17     	US Steel Coil {May 17}                            	NYMEX     
@@ -391,7 +383,6 @@ JMG19     	PJM Monthly On Peak {Feb 19}                      	NYMEX
 JMH17     	PJM Monthly On Peak {Mar 17}                      	NYMEX     
 JMH18     	PJM Monthly On Peak {Mar 18}                      	NYMEX     
 JMH19     	PJM Monthly On Peak {Mar 19}                      	NYMEX     
-JMJ16     	PJM Monthly On Peak {Apr 16}                      	NYMEX     
 JMJ17     	PJM Monthly On Peak {Apr 17}                      	NYMEX     
 JMJ18     	PJM Monthly On Peak {Apr 18}                      	NYMEX     
 JMJ19     	PJM Monthly On Peak {Apr 19}                      	NYMEX     
@@ -434,7 +425,6 @@ JPG17     	PJM Monthly Off Peak {Feb 17}                     	NYMEX
 JPG18     	PJM Monthly Off Peak {Feb 18}                     	NYMEX     
 JPH17     	PJM Monthly Off Peak {Mar 17}                     	NYMEX     
 JPH18     	PJM Monthly Off Peak {Mar 18}                     	NYMEX     
-JPJ16     	PJM Monthly Off Peak {Apr 16}                     	NYMEX     
 JPJ17     	PJM Monthly Off Peak {Apr 17}                     	NYMEX     
 JPJ18     	PJM Monthly Off Peak {Apr 18}                     	NYMEX     
 JPK16     	PJM Monthly Off Peak {May 16}                     	NYMEX     
@@ -464,7 +454,6 @@ JPZ18     	PJM Monthly Off Peak {Dec 18}                     	NYMEX
 KA.C      	CME Sugar #11 Continuation                        	NYMEX     
 KAH17     	CME Sugar #11 {Mar 17}                            	NYMEX     
 KAH18     	CME Sugar #11 {Mar 18}                            	NYMEX     
-KAK16     	CME Sugar #11 {May 16}                            	NYMEX     
 KAK17     	CME Sugar #11 {May 17}                            	NYMEX     
 KAK18     	CME Sugar #11 {May 18}                            	NYMEX     
 KAN16     	CME Sugar #11 {Jul 16}                            	NYMEX     
@@ -486,6 +475,7 @@ KT.C      	CME Coffee Continuation                           	NYMEX
 KTH17     	CME Coffee {Mar 17}                               	NYMEX     
 KTH18     	CME Coffee {Mar 18}                               	NYMEX     
 KTK17     	CME Coffee {May 17}                               	NYMEX     
+KTK18     	CME Coffee {May 18}                               	NYMEX     
 KTN16     	CME Coffee {Jul 16}                               	NYMEX     
 KTN17     	CME Coffee {Jul 17}                               	NYMEX     
 KTU16     	CME Coffee {Sep 16}                               	NYMEX     
@@ -565,7 +555,6 @@ NGJ25     	Natural Gas {Apr 25}                              	NYMEX
 NGJ26     	Natural Gas {Apr 26}                              	NYMEX     
 NGJ27     	Natural Gas {Apr 27}                              	NYMEX     
 NGJ28     	Natural Gas {Apr 28}                              	NYMEX     
-NGK16     	Natural Gas {May 16}                              	NYMEX     
 NGK17     	Natural Gas {May 17}                              	NYMEX     
 NGK18     	Natural Gas {May 18}                              	NYMEX     
 NGK19     	Natural Gas {May 19}                              	NYMEX     
@@ -672,22 +661,22 @@ NGZ28     	Natural Gas {Dec 28}                              	NYMEX
 PA        	Palladium                                         	NYMEX     
 PA.C      	Palladium Continuation                            	NYMEX     
 PAH17     	Palladium {Mar 17}                                	NYMEX     
-PAJ16     	Palladium {Apr 16}                                	NYMEX     
 PAK16     	Palladium {May 16}                                	NYMEX     
 PAM16     	Palladium {Jun 16}                                	NYMEX     
 PAM17     	Palladium {Jun 17}                                	NYMEX     
 PAN16     	Palladium {Jul 16}                                	NYMEX     
+PAQ16     	Palladium {Aug 16}                                	NYMEX     
 PAU16     	Palladium {Sep 16}                                	NYMEX     
 PAZ16     	Palladium {Dec 16}                                	NYMEX     
 PL        	Platinum                                          	NYMEX     
 PL.C      	Platinum Continuation                             	NYMEX     
 PLF17     	Platinum {Jan 17}                                 	NYMEX     
-PLJ16     	Platinum {Apr 16}                                 	NYMEX     
 PLJ17     	Platinum {Apr 17}                                 	NYMEX     
 PLK16     	Platinum {May 16}                                 	NYMEX     
 PLM16     	Platinum {Jun 16}                                 	NYMEX     
 PLN16     	Platinum {Jul 16}                                 	NYMEX     
 PLN17     	Platinum {Jul 17}                                 	NYMEX     
+PLQ16     	Platinum {Aug 16}                                 	NYMEX     
 PLV16     	Platinum {Oct 16}                                 	NYMEX     
 PN        	Propane                                           	NYMEX     
 QA.C      	Crude Oil Brent (F) Continuation                  	NYMEX     
@@ -726,7 +715,6 @@ QAK20     	Crude Oil Brent (F) {May 20}                      	NYMEX
 QAK21     	Crude Oil Brent (F) {May 21}                      	NYMEX     
 QAK22     	Crude Oil Brent (F) {May 22}                      	NYMEX     
 QAK23     	Crude Oil Brent (F) {May 23}                      	NYMEX     
-QAM16     	Crude Oil Brent (F) {Jun 16}                      	NYMEX     
 QAM17     	Crude Oil Brent (F) {Jun 17}                      	NYMEX     
 QAM18     	Crude Oil Brent (F) {Jun 18}                      	NYMEX     
 QAM19     	Crude Oil Brent (F) {Jun 19}                      	NYMEX     
@@ -804,7 +792,6 @@ QGJ18     	E-Mini Natural Gas {Apr 18}                       	NYMEX
 QGJ19     	E-Mini Natural Gas {Apr 19}                       	NYMEX     
 QGJ20     	E-Mini Natural Gas {Apr 20}                       	NYMEX     
 QGJ21     	E-Mini Natural Gas {Apr 21}                       	NYMEX     
-QGK16     	E-Mini Natural Gas {May 16}                       	NYMEX     
 QGK17     	E-Mini Natural Gas {May 17}                       	NYMEX     
 QGK18     	E-Mini Natural Gas {May 18}                       	NYMEX     
 QGK19     	E-Mini Natural Gas {May 19}                       	NYMEX     
@@ -858,9 +845,9 @@ QHF17     	E-Mini ULSD NYHarbor {Jan 17}                     	NYMEX
 QHG17     	E-Mini ULSD NYHarbor {Feb 17}                     	NYMEX     
 QHH17     	E-Mini ULSD NYHarbor {Mar 17}                     	NYMEX     
 QHJ17     	E-Mini ULSD NYHarbor {Apr 17}                     	NYMEX     
-QHK16     	E-Mini ULSD NYHarbor {May 16}                     	NYMEX     
 QHK17     	E-Mini ULSD NYHarbor {May 17}                     	NYMEX     
 QHM16     	E-Mini ULSD NYHarbor {Jun 16}                     	NYMEX     
+QHM17     	E-Mini ULSD NYHarbor {Jun 17}                     	NYMEX     
 QHN16     	E-Mini ULSD NYHarbor {Jul 16}                     	NYMEX     
 QHQ16     	E-Mini ULSD NYHarbor {Aug 16}                     	NYMEX     
 QHU16     	E-Mini ULSD NYHarbor {Sep 16}                     	NYMEX     
@@ -869,7 +856,6 @@ QHX16     	E-Mini ULSD NYHarbor {Nov 16}                     	NYMEX
 QHZ16     	E-Mini ULSD NYHarbor {Dec 16}                     	NYMEX     
 QL        	Coal Appalachian                                  	NYMEX     
 QL.C      	Coal Appalachian Continuation                     	NYMEX     
-QLK16     	Coal Appalachian {May 16}                         	NYMEX     
 QLM16     	Coal Appalachian {Jun 16}                         	NYMEX     
 QLN16     	Coal Appalachian {Jul 16}                         	NYMEX     
 QLQ16     	Coal Appalachian {Aug 16}                         	NYMEX     
@@ -951,9 +937,9 @@ QUF17     	E-Mini Gasoline {Jan 17}                          	NYMEX
 QUG17     	E-Mini Gasoline {Feb 17}                          	NYMEX     
 QUH17     	E-Mini Gasoline {Mar 17}                          	NYMEX     
 QUJ17     	E-Mini Gasoline {Apr 17}                          	NYMEX     
-QUK16     	E-Mini Gasoline {May 16}                          	NYMEX     
 QUK17     	E-Mini Gasoline {May 17}                          	NYMEX     
 QUM16     	E-Mini Gasoline {Jun 16}                          	NYMEX     
+QUM17     	E-Mini Gasoline {Jun 17}                          	NYMEX     
 QUN16     	E-Mini Gasoline {Jul 16}                          	NYMEX     
 QUQ16     	E-Mini Gasoline {Aug 16}                          	NYMEX     
 QUU16     	E-Mini Gasoline {Sep 16}                          	NYMEX     
@@ -975,7 +961,6 @@ RBH19     	Gasoline RBOB {Mar 19}                            	NYMEX
 RBJ17     	Gasoline RBOB {Apr 17}                            	NYMEX     
 RBJ18     	Gasoline RBOB {Apr 18}                            	NYMEX     
 RBJ19     	Gasoline RBOB {Apr 19}                            	NYMEX     
-RBK16     	Gasoline RBOB {May 16}                            	NYMEX     
 RBK17     	Gasoline RBOB {May 17}                            	NYMEX     
 RBK18     	Gasoline RBOB {May 18}                            	NYMEX     
 RBK19     	Gasoline RBOB {May 19}                            	NYMEX     
@@ -1020,13 +1005,13 @@ RTH19     	Gasoline RBOB (F) {Mar 19}                        	NYMEX
 RTJ17     	Gasoline RBOB (F) {Apr 17}                        	NYMEX     
 RTJ18     	Gasoline RBOB (F) {Apr 18}                        	NYMEX     
 RTJ19     	Gasoline RBOB (F) {Apr 19}                        	NYMEX     
-RTK16     	Gasoline RBOB (F) {May 16}                        	NYMEX     
 RTK17     	Gasoline RBOB (F) {May 17}                        	NYMEX     
 RTK18     	Gasoline RBOB (F) {May 18}                        	NYMEX     
 RTK19     	Gasoline RBOB (F) {May 19}                        	NYMEX     
 RTM16     	Gasoline RBOB (F) {Jun 16}                        	NYMEX     
 RTM17     	Gasoline RBOB (F) {Jun 17}                        	NYMEX     
 RTM18     	Gasoline RBOB (F) {Jun 18}                        	NYMEX     
+RTM19     	Gasoline RBOB (F) {Jun 19}                        	NYMEX     
 RTN16     	Gasoline RBOB (F) {Jul 16}                        	NYMEX     
 RTN17     	Gasoline RBOB (F) {Jul 17}                        	NYMEX     
 RTN18     	Gasoline RBOB (F) {Jul 18}                        	NYMEX     
@@ -1080,7 +1065,6 @@ SCK19     	Crude Oil Brent {May 19}                          	NYMEX
 SCK20     	Crude Oil Brent {May 20}                          	NYMEX     
 SCK21     	Crude Oil Brent {May 21}                          	NYMEX     
 SCK22     	Crude Oil Brent {May 22}                          	NYMEX     
-SCM16     	Crude Oil Brent {Jun 16}                          	NYMEX     
 SCM17     	Crude Oil Brent {Jun 17}                          	NYMEX     
 SCM18     	Crude Oil Brent {Jun 18}                          	NYMEX     
 SCM19     	Crude Oil Brent {Jun 19}                          	NYMEX     
@@ -1137,7 +1121,6 @@ TRG17     	Iron Ore 62% Fe CFR {Feb 17}                      	NYMEX
 TRG18     	Iron Ore 62% Fe CFR {Feb 18}                      	NYMEX     
 TRH17     	Iron Ore 62% Fe CFR {Mar 17}                      	NYMEX     
 TRH18     	Iron Ore 62% Fe CFR {Mar 18}                      	NYMEX     
-TRJ16     	Iron Ore 62% Fe CFR {Apr 16}                      	NYMEX     
 TRJ17     	Iron Ore 62% Fe CFR {Apr 17}                      	NYMEX     
 TRJ18     	Iron Ore 62% Fe CFR {Apr 18}                      	NYMEX     
 TRK16     	Iron Ore 62% Fe CFR {May 16}                      	NYMEX     
@@ -1176,7 +1159,6 @@ UXG20     	Uranium {Feb 20}                                  	NYMEX
 UXH17     	Uranium {Mar 17}                                  	NYMEX     
 UXH18     	Uranium {Mar 18}                                  	NYMEX     
 UXH19     	Uranium {Mar 19}                                  	NYMEX     
-UXJ16     	Uranium {Apr 16}                                  	NYMEX     
 UXJ17     	Uranium {Apr 17}                                  	NYMEX     
 UXJ18     	Uranium {Apr 18}                                  	NYMEX     
 UXJ19     	Uranium {Apr 19}                                  	NYMEX     
@@ -1288,6 +1270,6 @@ WSZ22     	Crude Oil WTI (F) {Dec 22}                        	NYMEX
 WSZ23     	Crude Oil WTI (F) {Dec 23}                        	NYMEX     
 WSZ24     	Crude Oil WTI (F) {Dec 24}                        	NYMEX     
 X0        	Crude 24-Mon Strip                                	NYMEX     
-X3        	Nat Gas 12-Mon Strip                              	NYMEX     
-X4        	Nat Gas 24-Mon Strip                              	NYMEX     
+X3        	PJM Monthly On Peak {Nov 08}                      	NYMEX     
+X4        	Crude Oil WTI {Jul 09}                            	NYMEX     
 X9        	Crude 12-Mon Strip                                	NYMEX     

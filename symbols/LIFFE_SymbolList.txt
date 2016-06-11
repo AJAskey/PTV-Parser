@@ -110,9 +110,9 @@ IJ.C      	1-Month EONIA Continuation                        	LIFFE
 IJF17     	1-Month EONIA {Jan 17}                            	LIFFE     
 IJG17     	1-Month EONIA {Feb 17}                            	LIFFE     
 IJH17     	1-Month EONIA {Mar 17}                            	LIFFE     
-IJJ16     	1-Month EONIA {Apr 16}                            	LIFFE     
 IJJ17     	1-Month EONIA {Apr 17}                            	LIFFE     
 IJK16     	1-Month EONIA {May 16}                            	LIFFE     
+IJK17     	1-Month EONIA {May 17}                            	LIFFE     
 IJM16     	1-Month EONIA {Jun 16}                            	LIFFE     
 IJN16     	1-Month EONIA {Jul 16}                            	LIFFE     
 IJQ16     	1-Month EONIA {Aug 16}                            	LIFFE     
@@ -156,11 +156,11 @@ JHG17     	U.S Treasury Repo {Feb 17}                        	LIFFE
 JHG18     	U.S Treasury Repo {Feb 18}                        	LIFFE     
 JHH17     	U.S Treasury Repo {Mar 17}                        	LIFFE     
 JHH18     	U.S Treasury Repo {Mar 18}                        	LIFFE     
-JHJ16     	U.S Treasury Repo {Apr 16}                        	LIFFE     
 JHJ17     	U.S Treasury Repo {Apr 17}                        	LIFFE     
 JHJ18     	U.S Treasury Repo {Apr 18}                        	LIFFE     
 JHK16     	U.S Treasury Repo {May 16}                        	LIFFE     
 JHK17     	U.S Treasury Repo {May 17}                        	LIFFE     
+JHK18     	U.S Treasury Repo {May 18}                        	LIFFE     
 JHM16     	U.S Treasury Repo {Jun 16}                        	LIFFE     
 JHM17     	U.S Treasury Repo {Jun 17}                        	LIFFE     
 JHN16     	U.S Treasury Repo {Jul 16}                        	LIFFE     
@@ -182,11 +182,11 @@ JRG17     	Mortgage-Backed Repo {Feb 17}                     	LIFFE
 JRG18     	Mortgage-Backed Repo {Feb 18}                     	LIFFE     
 JRH17     	Mortgage-Backed Repo {Mar 17}                     	LIFFE     
 JRH18     	Mortgage-Backed Repo {Mar 18}                     	LIFFE     
-JRJ16     	Mortgage-Backed Repo {Apr 16}                     	LIFFE     
 JRJ17     	Mortgage-Backed Repo {Apr 17}                     	LIFFE     
 JRJ18     	Mortgage-Backed Repo {Apr 18}                     	LIFFE     
 JRK16     	Mortgage-Backed Repo {May 16}                     	LIFFE     
 JRK17     	Mortgage-Backed Repo {May 17}                     	LIFFE     
+JRK18     	Mortgage-Backed Repo {May 18}                     	LIFFE     
 JRM16     	Mortgage-Backed Repo {Jun 16}                     	LIFFE     
 JRM17     	Mortgage-Backed Repo {Jun 17}                     	LIFFE     
 JRN16     	Mortgage-Backed Repo {Jul 16}                     	LIFFE     
@@ -208,11 +208,11 @@ JUG17     	Agency Repo {Feb 17}                              	LIFFE
 JUG18     	Agency Repo {Feb 18}                              	LIFFE     
 JUH17     	Agency Repo {Mar 17}                              	LIFFE     
 JUH18     	Agency Repo {Mar 18}                              	LIFFE     
-JUJ16     	Agency Repo {Apr 16}                              	LIFFE     
 JUJ17     	Agency Repo {Apr 17}                              	LIFFE     
 JUJ18     	Agency Repo {Apr 18}                              	LIFFE     
 JUK16     	Agency Repo {May 16}                              	LIFFE     
 JUK17     	Agency Repo {May 17}                              	LIFFE     
+JUK18     	Agency Repo {May 18}                              	LIFFE     
 JUM16     	Agency Repo {Jun 16}                              	LIFFE     
 JUM17     	Agency Repo {Jun 17}                              	LIFFE     
 JUN16     	Agency Repo {Jul 16}                              	LIFFE     
@@ -261,6 +261,7 @@ LWH17     	Wheat {Mar 17}                                    	LIFFE
 LWH18     	Wheat {Mar 18}                                    	LIFFE     
 LWK16     	Wheat {May 16}                                    	LIFFE     
 LWK17     	Wheat {May 17}                                    	LIFFE     
+LWK18     	Wheat {May 18}                                    	LIFFE     
 LWN16     	Wheat {Jul 16}                                    	LIFFE     
 LWN17     	Wheat {Jul 17}                                    	LIFFE     
 LWX16     	Wheat {Nov 16}                                    	LIFFE     
@@ -297,7 +298,6 @@ N4J17     	UK Base Electric Gregorian {Apr 17}               	LIFFE
 N4J18     	UK Base Electric Gregorian {Apr 18}               	LIFFE     
 N4J19     	UK Base Electric Gregorian {Apr 19}               	LIFFE     
 N4J20     	UK Base Electric Gregorian {Apr 20}               	LIFFE     
-N4K16     	UK Base Electric Gregorian {May 16}               	LIFFE     
 N4K17     	UK Base Electric Gregorian {May 17}               	LIFFE     
 N4K18     	UK Base Electric Gregorian {May 18}               	LIFFE     
 N4K19     	UK Base Electric Gregorian {May 19}               	LIFFE     
@@ -363,7 +363,6 @@ N8J17     	UK Peak Electric Gregorian {Apr 17}               	LIFFE
 N8J18     	UK Peak Electric Gregorian {Apr 18}               	LIFFE     
 N8J19     	UK Peak Electric Gregorian {Apr 19}               	LIFFE     
 N8J20     	UK Peak Electric Gregorian {Apr 20}               	LIFFE     
-N8K16     	UK Peak Electric Gregorian {May 16}               	LIFFE     
 N8K17     	UK Peak Electric Gregorian {May 17}               	LIFFE     
 N8K18     	UK Peak Electric Gregorian {May 18}               	LIFFE     
 N8K19     	UK Peak Electric Gregorian {May 19}               	LIFFE     
@@ -415,6 +414,7 @@ QEM16     	2-Year Gilt {Jun 16}                              	LIFFE
 QEU16     	2-Year Gilt {Sep 16}                              	LIFFE     
 RM.C      	Robusta Coffee 10-T Continuation                  	LIFFE     
 RMF17     	Robusta Coffee 10-T {Jan 17}                      	LIFFE     
+RMF18     	Robusta Coffee 10-T {Jan 18}                      	LIFFE     
 RMH17     	Robusta Coffee 10-T {Mar 17}                      	LIFFE     
 RMK16     	Robusta Coffee 10-T {May 16}                      	LIFFE     
 RMK17     	Robusta Coffee 10-T {May 17}                      	LIFFE     
