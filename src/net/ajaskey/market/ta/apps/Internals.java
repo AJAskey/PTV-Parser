@@ -85,21 +85,22 @@ public class Internals {
 
 			Internals.processIndex();
 
-			Internals.processAnIndex("lists\\sp500-list.txt", "SPX");
-			Internals.processAnIndex("lists\\sp600-list.txt", "SML");
-			Internals.processAnIndex("lists\\nasdaq100-list.txt", "NDX");
-			Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-			Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+			//Internals.processAnIndex("lists\\ivv-components.csv", "SPX");
+			//Internals.processAnIndex("lists\\ijr-components.csv", "SML");
+			//Internals.processAnIndex("lists\\ndx-components.csv", "NDX");
+			//Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
+			//Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
 
 			double val = Internals.processListPercent("lists\\sp500-list.txt", days);
 			System.out.printf("SPX days to recover %.2f%n", val);
 			val = Internals.processListPercent("lists\\nasdaq100-list.txt", days);
 			System.out.printf("NDX days to recover %.2f%n", val);
 
-			Internals.printBreath("lists\\sp500-list.txt", "SPX", days);
-			Internals.printBreath("lists\\nasdaq100-list.txt", "NDX", days);
-			Internals.printBreath("lists\\sp600-list.txt", "SML", days);
+			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
+			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
+			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
 
 			// Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
 

@@ -77,14 +77,15 @@ public class GenStockList {
 		 * DontIgnoreTickers overrides general strings of IgnoreNames
 		 */
 		dontIgnoreTickers = new ArrayList<String>();
-		dontIgnoreTickers.add("QQQ");
-		dontIgnoreTickers.add("DIA");
-		dontIgnoreTickers.add("QQEW");
-		dontIgnoreTickers.add("SPY");
-		dontIgnoreTickers.add("IWO");
+		//dontIgnoreTickers.add("QQQ");
+		//dontIgnoreTickers.add("DIA");
+		//dontIgnoreTickers.add("QQEW");
+		//dontIgnoreTickers.add("SPY");
+		//dontIgnoreTickers.add("IWO");
 
 		ignoreNames = new ArrayList<String>();
 		ignoreNames.add(" ETF");
+		ignoreNames.add("PROSHRES");
 		ignoreNames.add("SHARES");
 		ignoreNames.add(" BULL");
 		ignoreNames.add(" BEAR");

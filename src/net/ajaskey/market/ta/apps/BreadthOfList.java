@@ -116,7 +116,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IAT", "Regional Banks");
 		BreadthOfList.processGroup("IAK", "Insurance");
 		BreadthOfList.processGroup("IAI", "Brokers Dealers");
-		BreadthOfList.processGroup("IYH", "Health Care");
+		//BreadthOfList.processGroup("IYH", "Health Care");
 		BreadthOfList.processGroup("IHI", "Medical Devices");
 		BreadthOfList.processGroup("IHF", "Health Care Providers");
 		BreadthOfList.processGroup("IHE", "Pharmaceuticals");
