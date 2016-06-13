@@ -11,9 +11,7 @@ import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.apps.helpers.BreadthData;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
-import net.ajaskey.market.ta.methods.MovingAverageMethods;
 import net.ajaskey.market.ta.methods.UtilMethods;
-import net.ajaskey.market.tools.ProcessIshares;
 
 /**
  * This class...
@@ -81,9 +79,6 @@ public class BreadthOfList {
 
 		System.out.println("Ticker\tName\t23dma\t65dma\t130dma\t260dma");
 
-		//BreadthOfList.processGroup("SPX", "SP500");
-		//BreadthOfList.processGroup("MID", "SP400");
-		//BreadthOfList.processGroup("SML", "SP600");
 		BreadthOfList.processGroup("NDX", "Nasdaq 100");
 
 		BreadthOfList.processGroup("IVV", "SP500");
@@ -91,11 +86,8 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IJR", "SP600");
 
 		BreadthOfList.processGroup("XRT", "Retail");
-		//BreadthOfList.processGroup("KRE", "Regional Banks");
+		;
 		BreadthOfList.processGroup("IBB", "Biotech");
-		//BreadthOfList.processGroup("XHB", "Home Builders");
-		//BreadthOfList.processGroup("SMH", "Semiconductors");
-		//BreadthOfList.processGroup("TRANS", "Transports");
 
 		BreadthOfList.processGroup("XLB", "SPDR Materials");
 		BreadthOfList.processGroup("XLE", "SPDR Energy");
@@ -116,7 +108,6 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IAT", "Regional Banks");
 		BreadthOfList.processGroup("IAK", "Insurance");
 		BreadthOfList.processGroup("IAI", "Brokers Dealers");
-		//BreadthOfList.processGroup("IYH", "Health Care");
 		BreadthOfList.processGroup("IHI", "Medical Devices");
 		BreadthOfList.processGroup("IHF", "Health Care Providers");
 		BreadthOfList.processGroup("IHE", "Pharmaceuticals");
@@ -129,7 +120,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("WOOD", "Lumber and Timber");
 		BreadthOfList.processGroup("RING", "Gold Miners");
 		BreadthOfList.processGroup("PICK", "Metal Miners");
-		
+
 		System.out.println("Done.");
 
 	}
@@ -145,9 +136,11 @@ public class BreadthOfList {
 	 */
 	private static void processGroup(String name, String indexName)
 	    throws FileNotFoundException, IOException, ParseException {
+
 		final List<TickerData> tdAll = BreadthOfList.readList(name);
-		final List<BreadthData> bd = BreadthOfList.processList(tdAll);
-		BreadthOfList.writeData(bd, name, indexName);
+		final List<BreadthData> bd = BreadthOfList.processList(tdAll, 0);
+		final List<BreadthData> bd1week = BreadthOfList.processList(tdAll, 6);
+		BreadthOfList.writeData(bd, bd1week, name, indexName);
 		tdAll.clear();
 		bd.clear();
 	}
@@ -157,12 +150,13 @@ public class BreadthOfList {
 	 * net.ajaskey.market.ta.apps.processList
 	 *
 	 * @param tdList
+	 * @param offset
 	 * @return
 	 */
-	private static List<BreadthData> processList(List<TickerData> tdList) {
+	private static List<BreadthData> processList(List<TickerData> tdList, int offset) {
 		final List<BreadthData> retList = new ArrayList<>();
 		for (final TickerData td : tdList) {
-			td.fillDataArrays(0, false);
+			td.fillDataArrays(offset, false);
 
 			if (td.getDataCount() > 260) {
 
@@ -174,22 +168,17 @@ public class BreadthOfList {
 				data.setDma130(UtilMethods.sma(td.getCloseData(), 130));
 				data.setDma260(UtilMethods.sma(td.getCloseData(), 260));
 
-				for (int i = 1; i < UD_DAYS; i++) {
-					final double yesterday = td.getClose(i);
-					final double today = td.getClose(i - 1);
-					final long volToday = (long) td.getVolume(i - 1);
-					data.addVol(volToday);
-					if (today > yesterday) {
-						data.addUpDay();
-						data.addUpVol(volToday);
-					} else if (yesterday > today) {
-						data.addDownDay();
-						data.addDownVol(volToday);
-					}
-
-					// System.out.println(today + TAB +
-					// yesterday+TAB+volToday+TAB+data.getUpVol()+TAB+data.getDownVol());
-				}
+				/**
+				 * for (int i = 1; i < UD_DAYS; i++) { final double yesterday =
+				 * td.getClose(i); final double today = td.getClose(i - 1); final long
+				 * volToday = (long) td.getVolume(i - 1); data.addVol(volToday); if
+				 * (today > yesterday) { data.addUpDay(); data.addUpVol(volToday); }
+				 * else if (yesterday > today) { data.addDownDay();
+				 * data.addDownVol(volToday); }
+				 * 
+				 * // System.out.println(today + TAB + //
+				 * yesterday+TAB+volToday+TAB+data.getUpVol()+TAB+data.getDownVol()); }
+				 */
 
 				// System.out.println(td.getTicker() + " : " + data.toString() + TAB +
 				// td.getDataCount());
@@ -225,21 +214,24 @@ public class BreadthOfList {
 
 	/**
 	 * net.ajaskey.market.ta.apps.writeData
+	 * 
+	 * @param bd1week
 	 *
 	 * @param bd
 	 * @param name
-	 * @param indexName 
+	 * @param indexName
 	 */
-	private static void writeData(List<BreadthData> bdList, String name, String indexName) {
+	private static void writeData(List<BreadthData> bdList, List<BreadthData> bd1week, String name, String indexName) {
 		final int knt = bdList.size();
 		long over23dma = 0;
 		long over65dma = 0;
 		long over130dma = 0;
 		long over260dma = 0;
-		long upDays = 0;
-		long totDays = 0;
-		long upVol = 0;
-		long totVol = 0;
+		long over23dma1w = 0;
+		long over65dma1w = 0;
+		long over130dma1w = 0;
+		long over260dma1w = 0;
+
 		for (final BreadthData bd : bdList) {
 			final double p = bd.getPrice();
 			if (p > bd.getDma23()) {
@@ -254,24 +246,38 @@ public class BreadthOfList {
 			if (p > bd.getDma260()) {
 				over260dma++;
 			}
-			upDays += bd.getUpDays();
-			totDays += UD_DAYS;
-			upVol += bd.getUpVol();
-			totVol += bd.getTotVol();
+		}
+		for (final BreadthData bd : bd1week) {
+			final double p = bd.getPrice();
+			if (p > bd.getDma23()) {
+				over23dma1w++;
+			}
+			if (p > bd.getDma65()) {
+				over65dma1w++;
+			}
+			if (p > bd.getDma130()) {
+				over130dma1w++;
+			}
+			if (p > bd.getDma260()) {
+				over260dma1w++;
+			}
 		}
 		final double per23dma = ((((double) over23dma / (double) knt) * 100.0) - 50.0) / 5.0;
 		final double per65dma = ((((double) over65dma / (double) knt) * 100.0) - 50.0) / 5.0;
 		final double per130dma = ((((double) over130dma / (double) knt) * 100.0) - 50.0) / 5.0;
 		final double per260dma = ((((double) over260dma / (double) knt) * 100.0) - 50.0) / 5.0;
-		final double perUpDays = ((((double) upDays / (double) totDays) * 100.0) - 50.0) / 5.0;
-		final double perUpVol = ((((double) upVol / (double) totVol) * 100.0) - 50.0) / 5.0;
 
-		// System.out.println(TAB+over23dma + TAB + over65dma + TAB + over130dma +
-		// TAB + over260dma);
+		final double per23dma1w = ((((double) over23dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
+		final double per65dma1w = ((((double) over65dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
+		final double per130dma1w = ((((double) over130dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
+		final double per260dma1w = ((((double) over260dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
 
-		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB + Math.round(per130dma)
-		    + TAB + Math.round(per260dma)); 
-		// + TAB + Math.round(perUpDays) + TAB + Math.round(perUpVol));
+		double avg = (Math.round(per23dma) + Math.round(per65dma) + Math.round(per130dma) + Math.round(per260dma)) / 4.0;
+		double avg1w = (Math.round(per23dma1w) + Math.round(per65dma1w) + Math.round(per130dma1w) + Math.round(per260dma1w))
+		    / 4.0;
+
+		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
+		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
 
 	}
 

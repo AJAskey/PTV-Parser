@@ -42,12 +42,12 @@ public class BreadthData {
 	private double				dma65;
 	private double				dma130;
 	private double				dma260;
-	private long					upDays;
-	private long					downDays;
-	private long					upVol;
-	private long					downVol;
+	//private long					upDays;
+	//private long					downDays;
+	//private long					upVol;
+	//private long					downVol;
 	private double				price;
-	private long					totVol;
+	//private long					totVol;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -58,54 +58,64 @@ public class BreadthData {
 		this.dma23 = 0;
 		this.dma65 = 0;
 		this.dma260 = 0;
-		this.upDays = 0;
-		this.downDays = 0;
-		this.upVol = 0;
-		this.downVol = 0;
-		this.totVol = 0;
+		//this.upDays = 0;
+		//this.downDays = 0;
+		//this.upVol = 0;
+		//this.downVol = 0;
+		//this.totVol = 0;
 	}
 
 	/**
 	 * @param downDays
 	 *          the downDays to set
 	 */
+	/**
 	public void addDownDay() {
 		this.downDays++;
 	}
+	*/
 
 	/**
 	 * @param downVol
 	 *          the downVol to set
 	 */
+	/**
 	public void addDownVol(long downVol) {
 		this.downVol += downVol;
 	}
+	*/
 
 	/**
 	 *
 	 * net.ajaskey.market.ta.apps.helpers.addUpDays
 	 *
 	 */
+	/**
 	public void addUpDay() {
 		this.upDays++;
 	}
+	*/
 
 	/**
 	 * @param upVol
 	 *          the upVol to set
 	 */
+	/**
 	public void addUpVol(long upVol) {
 		this.upVol += upVol;
 	}
+	*/
 
 	/**
 	 * net.ajaskey.market.ta.apps.helpers.addVol
 	 *
 	 * @param volToday
 	 */
+	/**
 	public void addVol(long volToday) {
 		this.totVol += volToday;
 	}
+	*/
 
 	/**
 	 * @return the ema130
@@ -124,16 +134,20 @@ public class BreadthData {
 	/**
 	 * @return the downDays
 	 */
+	/**
 	public long getDownDays() {
 		return this.downDays;
 	}
+	*/
 
 	/**
 	 * @return the downVol
 	 */
+	/**
 	public long getDownVol() {
 		return this.downVol;
 	}
+	*/
 
 	/**
 	 * @return the ema23
@@ -159,23 +173,29 @@ public class BreadthData {
 	/**
 	 * @return the totVol
 	 */
+	/**
 	public long getTotVol() {
 		return this.totVol;
 	}
+	*/
 
 	/**
 	 * @return the upDays
 	 */
+	/**
 	public long getUpDays() {
 		return this.upDays;
 	}
+	*/
 
 	/**
 	 * @return the upVol
 	 */
+	/**
 	public long getUpVol() {
 		return this.upVol;
 	}
+	*/
 
 	/**
 	 * @param ema130
@@ -219,8 +239,8 @@ public class BreadthData {
 
 	@Override
 	public String toString() {
-		final String str = this.price + this.TAB + this.dma23 + this.TAB + this.dma65 + this.TAB + this.dma260 + this.TAB
-		    + this.upDays + this.TAB + this.downDays;
+		final String str = this.price + this.TAB + this.dma23 + this.TAB + this.dma65 + this.TAB + this.dma260;
+		//+ this.TAB + this.upDays + this.TAB + this.downDays;
 		return str;
 
 	}
