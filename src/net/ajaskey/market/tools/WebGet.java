@@ -35,11 +35,11 @@ public class WebGet {
 	 */
 	public static List<String> getSPDR(String url) {
 
-		String response;
+		String response = null;
 		try {
 			response = getFromUrl(url);
 		} catch (final IOException e) {
-			response = null;
+			return null;
 		}
 		if (response != null) {
 			final String[] fld = response.split(NL);
