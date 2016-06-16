@@ -81,7 +81,7 @@ public class Utils {
 
 	public static String getDayOfWeek(Calendar cal) {
 		final int dow = cal.get(Calendar.DAY_OF_WEEK);
-		return daysOfWeek[dow];
+		return daysOfWeek[dow-1];
 	}
 
 	/**

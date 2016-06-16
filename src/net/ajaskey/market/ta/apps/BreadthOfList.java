@@ -52,8 +52,6 @@ public class BreadthOfList {
 	private static List<String>	fullfilenames	= new ArrayList<>();
 	final private static String	TAB						= "\t";
 
-	final private static int		UD_DAYS				= 45;
-
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
@@ -168,26 +166,10 @@ public class BreadthOfList {
 				data.setDma130(UtilMethods.sma(td.getCloseData(), 130));
 				data.setDma260(UtilMethods.sma(td.getCloseData(), 260));
 
-				/**
-				 * for (int i = 1; i < UD_DAYS; i++) { final double yesterday =
-				 * td.getClose(i); final double today = td.getClose(i - 1); final long
-				 * volToday = (long) td.getVolume(i - 1); data.addVol(volToday); if
-				 * (today > yesterday) { data.addUpDay(); data.addUpVol(volToday); }
-				 * else if (yesterday > today) { data.addDownDay();
-				 * data.addDownVol(volToday); }
-				 * 
-				 * // System.out.println(today + TAB + //
-				 * yesterday+TAB+volToday+TAB+data.getUpVol()+TAB+data.getDownVol()); }
-				 */
 
-				// System.out.println(td.getTicker() + " : " + data.toString() + TAB +
-				// td.getDataCount());
 
 				retList.add(data);
-			} else {
-				// System.out.println("Warning... " + td.getTicker() + " does not have
-				// 200 days of data.");
-			}
+			}// else {System.out.println("Warning... " + td.getTicker() + " does not have 200 days of data.");}
 		}
 		return retList;
 	}
