@@ -181,11 +181,7 @@ ROBE      	Go Ucits ETF Solutions P                          	LSE
 ROBG      	Go Ucits ETF Solutions P                          	LSE       
 ROBO      	Go Ucits ETF Solutions P                          	LSE       
 SUK2      	Go Ucits ETF Solutions P                          	LSE       
-UC04      	UBS (Irl) ETF Plc                                 	LSE       
 UC07      	UBS (Irl) ETF Plc                                 	LSE       
-UC10      	UBS (Irl) ETF Plc                                 	LSE       
-UC12      	UBS (Irl) ETF Plc                                 	LSE       
-UC13      	UBS (Irl) ETF Plc                                 	LSE       
 UC42      	UBS (Irl) ETF Plc                                 	LSE       
 UC49      	UBS (Irl) ETF Plc                                 	LSE       
 UC51      	UBS (Irl) ETF Plc                                 	LSE       
@@ -197,6 +193,10 @@ UKSR      	UBS (Irl) ETF Plc                                 	LSE
 ULOV      	UBS (Irl) ETF Plc                                 	LSE       
 USPY      	Go Ucits ETF Solutions Plc                        	LSE       
 XSPU      	DB X-Trackers Dbx S&P 500 ETF $                   	LSE       
+ZC1G      	BMO Ucits ETF Icav                                	LSE       
+ZC3G      	BMO Ucits ETF Icav                                	LSE       
+ZC7G      	BMO Ucits ETF Icav                                	LSE       
+ZHYG      	BMO Ucits ETF Icav                                	LSE       
 FDIV      	First Trust ETF IV                                	NASDAQ    
 FMB       	First Trust ETF III                               	NASDAQ    
 FTLB      	First Trust ETF Vi                                	NASDAQ    
@@ -268,8 +268,10 @@ P2Q       	Lyxor Etf Indonesia 10                            	SGX
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 SH8       	Dbxt Iboxx Indonesia Etf 10                       	SGX       
 CXF.A     	First Asset CDN Convert Bond ETF AC               	TSX       
+HAU.A     	Horizons Active US Dividend ETF AC                	TSX       
 HAU.U     	Horizons Active US Dividend ETF USD               	TSX       
 HXQ.U     	Horizons Nasdaq 100 Index ETF USD                 	TSX       
+RIE.U     	RBC Quant EAFE Equity Leaders ETF USD             	TSX       
 RIT.A     	Fa Canadian REIT ETF Adv Cls                      	TSX       
 SBT.B     	Silver Bullion Trust CAD ETF Non Cur              	TSX       
 ZDY       	BMO US Dividend ETF CAD                           	TSX       
