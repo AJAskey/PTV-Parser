@@ -82,6 +82,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IVV", "SP500");
 		BreadthOfList.processGroup("IJH", "SP400");
 		BreadthOfList.processGroup("IJR", "SP600");
+		BreadthOfList.processGroup("DIA", "DJIA");
 
 		BreadthOfList.processGroup("XRT", "Retail");
 		;
@@ -109,7 +110,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IHI", "Medical Devices");
 		BreadthOfList.processGroup("IHF", "Health Care Providers");
 		BreadthOfList.processGroup("IHE", "Pharmaceuticals");
-		BreadthOfList.processGroup("IYJ", "Industrials");
+		//BreadthOfList.processGroup("IYJ", "Industrials");
 		BreadthOfList.processGroup("ITA", "Aerospace Defense");
 		BreadthOfList.processGroup("IYT", "Transportation");
 		BreadthOfList.processGroup("IEO", "Oil and Gas Exploration");
@@ -166,10 +167,8 @@ public class BreadthOfList {
 				data.setDma130(UtilMethods.sma(td.getCloseData(), 130));
 				data.setDma260(UtilMethods.sma(td.getCloseData(), 260));
 
-
-
 				retList.add(data);
-			}// else {System.out.println("Warning... " + td.getTicker() + " does not have 200 days of data.");}
+			} 
 		}
 		return retList;
 	}

@@ -83,7 +83,7 @@ public class ProcessIshares {
 	/** SP600 */
 	static private String	IJR		= "https://www.ishares.com/us/products/239774/ishares-core-sp-smallcap-etf/1449138789749.ajax?fileType=csv&fileName=IJR_holdings&dataType=fund";
 
-	// static private String = "";
+	
 
 	/**
 	 *

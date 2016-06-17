@@ -83,13 +83,7 @@ public class Internals {
 
 			pwAll = new PrintWriter("out\\breadth.txt");
 
-			Internals.processIndex();
-
-			//Internals.processAnIndex("lists\\ivv-components.csv", "SPX");
-			//Internals.processAnIndex("lists\\ijr-components.csv", "SML");
-			//Internals.processAnIndex("lists\\ndx-components.csv", "NDX");
-			//Internals.processAnIndex("lists\\stock-list.txt", "Stocks");
-			//Internals.processAnIndex("lists\\etf-list-mod.txt", "ETF");
+			Internals.processIndex();;
 
 			double val = Internals.processListPercent("lists\\sp500-list.txt", days);
 			System.out.printf("SPX days to recover %.2f%n", val);
@@ -101,8 +95,6 @@ public class Internals {
 			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
 			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
-
-			// Internals.printBreath("lists\\etf-list-mod.txt", "ETF", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();

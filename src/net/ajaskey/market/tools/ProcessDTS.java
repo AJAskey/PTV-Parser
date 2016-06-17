@@ -1,13 +1,21 @@
 
 package net.ajaskey.market.tools;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import net.ajaskey.market.ta.Utils;
 
@@ -52,6 +60,12 @@ public class ProcessDTS {
 
 	final static private String						folderPath	= "d:/temp/dts";
 
+	final static private Charset					charset			= Charset.forName("UTF-8");
+	final static private Locale						locale			= Locale.getDefault();
+
+	static public Map<String, Integer>		mNames			= null;
+	static public Map<String, Integer>		mDays				= null;
+
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -59,8 +73,12 @@ public class ProcessDTS {
 	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) {
+		Calendar baseCal = Calendar.getInstance();
 
-		//ProcessDTS.updateDtsFiles();
+		mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+		mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
+
+		// ProcessDTS.updateDtsFiles();
 		ProcessDTS.readAndProcess();
 	}
 
@@ -131,7 +149,7 @@ public class ProcessDTS {
 			}
 		}
 	}
-	
+
 	/**
 	 * 
 	 * net.ajaskey.market.tools.readAndProcess
@@ -142,10 +160,64 @@ public class ProcessDTS {
 		File[] listOfFiles = allFiles.listFiles();
 
 		for (File file : listOfFiles) {
-		    if (file.isFile()) {
-		        System.out.println(file.getName());
-		    }
+			if (file.isFile()) {
+				System.out.println(file.getName());
+				Path path = file.toPath();
+				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+					String line;
+					while ((line = reader.readLine()) != null) {
+						if (line.contains("Withheld Income and Employment Taxes")) {
+							System.out.println(line);
+						}
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.findName
+	 *
+	 * @param map
+	 * @param key
+	 * @return
+	 */
+	public static String findName(Map<String, Integer> map, Integer key) {
+		for (Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
+	}
+	
+	public class DataStruct {
+		Calendar calInfo;
+		int daily;
+		int monthly;
+		int yearly;
+		
+	}
+	
+	public class DtsSorter implements Comparator<DataStruct> {
+
+		/* (non-Javadoc)
+		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+		 */
+		@Override
+		public int compare(DataStruct d1, DataStruct d2) {
+			int ret = 0;
+			if (d1.calInfo.before(d2.calInfo)) {
+				ret = -1;
+			} else if (d1.calInfo.after(d2.calInfo)) {
+				ret = 1;
+			}
+			return ret;
+		}
+		
 	}
 
 }
