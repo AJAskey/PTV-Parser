@@ -9,15 +9,16 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.tools.helpers.DtsData;
+import net.ajaskey.market.tools.helpers.DtsSorter;
 
 /**
  * This class...
@@ -53,18 +54,138 @@ import net.ajaskey.market.ta.Utils;
  */
 public class ProcessDTS {
 
-	final static private String						url					= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
-	final static private String						urlA				= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
+	final static private String					url					= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 
-	final static private SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
+	final static private String					urlA				= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String						folderPath	= "d:/temp/dts";
+	final static private String					folderPath	= "d:/temp/dts";
+	final static private Charset				charset			= Charset.forName("UTF-8");
 
-	final static private Charset					charset			= Charset.forName("UTF-8");
-	final static private Locale						locale			= Locale.getDefault();
+	final static private Locale					locale			= Locale.getDefault();
 
-	static public Map<String, Integer>		mNames			= null;
-	static public Map<String, Integer>		mDays				= null;
+	static public Map<String, Integer>	mNames			= null;
+
+	static public Map<String, Integer>	mDays				= null;
+
+	public static final List<DtsData>		dtsList			= new ArrayList<>();
+
+	private static final int						avgWin			= 2;
+
+	/**
+	 * net.ajaskey.market.tools.CalculateAverage
+	 *
+	 */
+	private static void calculateAverages() {
+		final int len = dtsList.size() - avgWin;
+		final double winSize = (2.0 * avgWin) + 1.0;
+
+		for (int i = avgWin; i < len; i++) {
+			long tot = 0;
+			long ytot = 0;
+			for (int j = i - avgWin; j < (i + avgWin); j++) {
+				tot += dtsList.get(j).getWith().daily;
+				ytot += dtsList.get(j).getWith().yearly;
+			}
+			double a = tot / winSize;
+			dtsList.get(i).getWith().dailyAvg = a;
+			a = ytot / winSize;
+			dtsList.get(i).getWith().yearlyAvg = a;
+		}
+
+		for (int i = avgWin; i < len; i++) {
+			long tot = 0;
+			long ytot = 0;
+			for (int j = i - avgWin; j < (i + avgWin); j++) {
+				tot += dtsList.get(j).getInd().daily;
+				ytot += dtsList.get(j).getInd().yearly;
+			}
+			double a = tot / winSize;
+			dtsList.get(i).getInd().dailyAvg = a;
+			a = ytot / winSize;
+			dtsList.get(i).getInd().yearlyAvg = a;
+		}
+
+		for (int i = avgWin; i < len; i++) {
+			long tot = 0;
+			long ytot = 0;
+			for (int j = i - avgWin; j < (i + avgWin); j++) {
+				tot += dtsList.get(j).getCorp().daily;
+				ytot += dtsList.get(j).getCorp().yearly;
+			}
+			double a = tot / winSize;
+			dtsList.get(i).getCorp().dailyAvg = a;
+			a = ytot / winSize;
+			dtsList.get(i).getCorp().yearlyAvg = a;
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.findName
+	 *
+	 * @param map
+	 * @param key
+	 * @return
+	 */
+	public static String findName(Map<String, Integer> map, Integer key) {
+		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.findDate
+	 *
+	 * @param cal
+	 * @return
+	 */
+	private static DtsData findYearAgoData(Calendar cal) {
+		return findYearsAgoData(cal, 1);
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.findYearsAgoData
+	 *
+	 * @param cal
+	 * @param lookBackYears
+	 * @return
+	 */
+	private static DtsData findYearsAgoData(Calendar cal, int lookBackYears) {
+		if (cal != null) {
+			final int previousDoy = cal.get(Calendar.DAY_OF_YEAR);
+			int previousYr = cal.get(Calendar.YEAR) - lookBackYears;
+			for (final DtsData d : dtsList) {
+				final int doy = d.getDate().get(Calendar.DAY_OF_YEAR);
+				int yr = d.getDate().get(Calendar.YEAR);
+				if (yr == previousYr) {
+					if (previousDoy <= doy) {
+						return d;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.getDateName
+	 *
+	 * @param c
+	 * @return
+	 */
+	private static String getDateName(Calendar c) {
+		if (c != null) {
+			return DtsData.sdf.format(c.getTime()) + "00";
+		}
+		return "";
+	}
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -73,27 +194,81 @@ public class ProcessDTS {
 	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) {
-		Calendar baseCal = Calendar.getInstance();
+		final Calendar baseCal = Calendar.getInstance();
 
 		mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
 		mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
 
 		// ProcessDTS.updateDtsFiles();
 		ProcessDTS.readAndProcess();
+
+		Collections.sort(dtsList, new DtsSorter());
+
+		ProcessDTS.calculateAverages();
+
+		// for (final DtsData dts : dtsList) {
+		// System.out.println(dts);
+		// }
+
+		final Calendar now = Calendar.getInstance();
+		now.set(2016, Calendar.JUNE, 10);
+
+		DtsData dNow = ProcessDTS.findYearsAgoData(now, 0);
+
+		final DtsData dOld = ProcessDTS.findYearAgoData(now);
+
+		Utils.printCalendar(dNow.getDate());
+		Utils.printCalendar(dOld.getDate());
+
+		System.out.println(dOld);
+		System.out.println(dNow);
+
+		double chg = findYearlyChangeWithheld(dOld, dNow);
+		System.out.println(chg);
+
+		chg = findYearlyChangeIndividual(dOld, dNow);
+		System.out.println(chg);
+
+		chg = findYearlyChangeCorporate(dOld, dNow);
+		System.out.println(chg);
+
+		chg = findYearlyChangeTotal(dOld, dNow);
+		System.out.println(chg);
 	}
 
 	/**
-	 * 
-	 * net.ajaskey.market.tools.getDateName
 	 *
-	 * @param c
-	 * @return
+	 * net.ajaskey.market.tools.readAndProcess
+	 *
 	 */
-	private static String getDateName(Calendar c) {
-		if (c != null) {
-			return sdf.format(c.getTime()) + "00";
+	private static void readAndProcess() {
+		final File allFiles = new File(folderPath);
+		final File[] listOfFiles = allFiles.listFiles();
+
+		for (final File file : listOfFiles) {
+			if (file.isFile()) {
+				// System.out.println(file.getName());
+				final Path path = file.toPath();
+				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+					String line;
+					final DtsData d = new DtsData(file.getName());
+					// Utils.printCalendar(d.getDate());
+					while ((line = reader.readLine()) != null) {
+						if (line.contains("Withheld Income and Employment Taxes")) {
+							d.setWith(line);
+						} else if (line.contains("Individual Income Taxes")) {
+							d.setInd(line);
+						} else if (line.contains("Corporation Income Taxes")) {
+							d.setCorp(line);
+						}
+					}
+					dtsList.add(d);
+
+				} catch (final IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		return "";
 	}
 
 	/**
@@ -101,6 +276,7 @@ public class ProcessDTS {
 	 * net.ajaskey.market.tools.updateDtsFiles
 	 *
 	 */
+	@SuppressWarnings("unused")
 	private static void updateDtsFiles() {
 		Utils.makeDir(folderPath);
 
@@ -135,7 +311,6 @@ public class ProcessDTS {
 							pw.println(s);
 						}
 					} catch (final FileNotFoundException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -150,74 +325,26 @@ public class ProcessDTS {
 		}
 	}
 
-	/**
-	 * 
-	 * net.ajaskey.market.tools.readAndProcess
-	 *
-	 */
-	private static void readAndProcess() {
-		File allFiles = new File(folderPath);
-		File[] listOfFiles = allFiles.listFiles();
+	private static double findYearlyChangeWithheld(DtsData older, DtsData newer) {
+		double chg = (double) (newer.getWith().yearlyAvg - older.getWith().yearlyAvg) / (double) older.getWith().yearlyAvg;
+		return chg * 100.0;
+	}
 
-		for (File file : listOfFiles) {
-			if (file.isFile()) {
-				System.out.println(file.getName());
-				Path path = file.toPath();
-				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
-					String line;
-					while ((line = reader.readLine()) != null) {
-						if (line.contains("Withheld Income and Employment Taxes")) {
-							System.out.println(line);
-						}
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
+	private static double findYearlyChangeIndividual(DtsData older, DtsData newer) {
+		double chg = (double) (newer.getInd().yearlyAvg - older.getInd().yearlyAvg) / (double) older.getInd().yearlyAvg;
+		return chg * 100.0;
 	}
-	
-	/**
-	 * 
-	 * net.ajaskey.market.tools.findName
-	 *
-	 * @param map
-	 * @param key
-	 * @return
-	 */
-	public static String findName(Map<String, Integer> map, Integer key) {
-		for (Map.Entry<String, Integer> entry : map.entrySet()) {
-			if (entry.getValue() == key) {
-				return entry.getKey();
-			}
-		}
-		return "NotFound";
-	}
-	
-	public class DataStruct {
-		Calendar calInfo;
-		int daily;
-		int monthly;
-		int yearly;
-		
-	}
-	
-	public class DtsSorter implements Comparator<DataStruct> {
 
-		/* (non-Javadoc)
-		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
-		 */
-		@Override
-		public int compare(DataStruct d1, DataStruct d2) {
-			int ret = 0;
-			if (d1.calInfo.before(d2.calInfo)) {
-				ret = -1;
-			} else if (d1.calInfo.after(d2.calInfo)) {
-				ret = 1;
-			}
-			return ret;
-		}
-		
+	private static double findYearlyChangeCorporate(DtsData older, DtsData newer) {
+		double chg = (double) (newer.getCorp().yearlyAvg - older.getCorp().yearlyAvg) / (double) older.getCorp().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	private static double findYearlyChangeTotal(DtsData older, DtsData newer) {
+		double newTot = (double) (newer.getWith().yearlyAvg + newer.getInd().yearlyAvg + newer.getCorp().yearlyAvg);
+		double oldTot = (double) (older.getWith().yearlyAvg + older.getInd().yearlyAvg + older.getCorp().yearlyAvg);
+		double chg = (newTot - oldTot) / oldTot;
+		return chg * 100.0;
 	}
 
 }

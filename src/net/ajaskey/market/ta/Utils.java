@@ -81,7 +81,7 @@ public class Utils {
 
 	public static String getDayOfWeek(Calendar cal) {
 		final int dow = cal.get(Calendar.DAY_OF_WEEK);
-		return daysOfWeek[dow-1];
+		return daysOfWeek[dow - 1];
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class Utils {
 
 	public static void printCalendar(Calendar cal) {
 		if (cal != null) {
-			System.out.println(sdf2.format(cal.getTime()));
+			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
 	}
 
