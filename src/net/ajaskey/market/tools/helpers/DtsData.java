@@ -209,8 +209,7 @@ public class DtsData {
 	}
 
 	public String toString() {
-		String str = Utils.stringCalendar(this.date);
-		//str += "\n\tWithheld   : " + this.with + "\n\tIndividual : " + this.ind + "\n\tCorporate  : " + this.corp;
+		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
 		str += String.format("%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s", this.with, this.ind, this.corp);
 		return str;
 	}

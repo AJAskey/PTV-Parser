@@ -72,6 +72,74 @@ public class ProcessDTS {
 	private static final int						avgWin			= 2;
 
 	/**
+	 *
+	 * net.ajaskey.market.tools.findName
+	 *
+	 * @param map
+	 * @param key
+	 * @return
+	 */
+	public static String findName(Map<String, Integer> map, Integer key) {
+		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
+	}
+
+	/**
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) {
+		final Calendar baseCal = Calendar.getInstance();
+
+		mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+		mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
+
+		// ProcessDTS.updateDtsFiles();
+		ProcessDTS.readAndProcess();
+
+		Collections.sort(dtsList, new DtsSorter());
+
+		ProcessDTS.calculateAverages();
+
+		// for (final DtsData dts : dtsList) {
+		// System.out.println(dts);
+		// }
+
+		final Calendar now = Calendar.getInstance();
+		now.set(2016, Calendar.JUNE, 10);
+
+		final DtsData dNow = ProcessDTS.findYearsAgoData(now, 0);
+
+		final DtsData dOld = ProcessDTS.findYearAgoData(now);
+
+		Utils.printCalendar(dNow.getDate());
+		Utils.printCalendar(dOld.getDate());
+
+		System.out.println(dOld);
+		System.out.println(dNow);
+
+		double chg = ProcessDTS.findYearlyChangeWithheld(dOld, dNow);
+		System.out.println(chg);
+
+		chg = ProcessDTS.findYearlyChangeIndividual(dOld, dNow);
+		System.out.println(chg);
+
+		chg = ProcessDTS.findYearlyChangeCorporate(dOld, dNow);
+		System.out.println(chg);
+
+		chg = ProcessDTS.findYearlyChangeTotal(dOld, dNow);
+		System.out.println(chg);
+
+		ProcessDTS.dumpReport1();
+	}
+
+	/**
 	 * net.ajaskey.market.tools.CalculateAverage
 	 *
 	 */
@@ -120,21 +188,40 @@ public class ProcessDTS {
 
 	}
 
-	/**
-	 *
-	 * net.ajaskey.market.tools.findName
-	 *
-	 * @param map
-	 * @param key
-	 * @return
-	 */
-	public static String findName(Map<String, Integer> map, Integer key) {
-		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
-			if (entry.getValue() == key) {
-				return entry.getKey();
+	private static void dumpReport1() {
+
+		final Calendar tommorrow = Calendar.getInstance();
+		tommorrow.add(Calendar.DATE, 1);
+
+		final Calendar cal = Calendar.getInstance();
+		cal.set(2015, Calendar.JANUARY, 1);
+
+		while (cal.before(tommorrow)) {
+
+			final int dom = cal.get(Calendar.DAY_OF_MONTH);
+
+			/**
+			 * Account for weekend and holiday
+			 */
+			if ((dom == 6) || (dom == 7) || (dom == 8) || (dom == 9)) {
+
+				final DtsData dCal = ProcessDTS.findYearsAgoData(cal, 0);
+				final DtsData dNow = ProcessDTS.findYearsAgoData(cal, 1);
+
+				//Utils.printCalendar(dNow.getDate());
+				//Utils.printCalendar(cal);
+				final double chg = ProcessDTS.findYearlyChangeTotal(dNow, dCal);
+				System.out.println(dNow);
+				System.out.println(dCal);
+				String s = String.format("\tChange : %6.2f%%", chg);
+				System.out.println(s);
+				cal.add(Calendar.DATE, 15);
 			}
+
+			cal.add(Calendar.DATE, 1);
+
 		}
-		return "NotFound";
+
 	}
 
 	/**
@@ -145,11 +232,33 @@ public class ProcessDTS {
 	 * @return
 	 */
 	private static DtsData findYearAgoData(Calendar cal) {
-		return findYearsAgoData(cal, 1);
+		return ProcessDTS.findYearsAgoData(cal, 1);
+	}
+
+	private static double findYearlyChangeCorporate(DtsData older, DtsData newer) {
+		final double chg = (newer.getCorp().yearlyAvg - older.getCorp().yearlyAvg) / older.getCorp().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	private static double findYearlyChangeIndividual(DtsData older, DtsData newer) {
+		final double chg = (newer.getInd().yearlyAvg - older.getInd().yearlyAvg) / older.getInd().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	private static double findYearlyChangeTotal(DtsData older, DtsData newer) {
+		final double newTot = newer.getWith().yearlyAvg + newer.getInd().yearlyAvg + newer.getCorp().yearlyAvg;
+		final double oldTot = older.getWith().yearlyAvg + older.getInd().yearlyAvg + older.getCorp().yearlyAvg;
+		final double chg = (newTot - oldTot) / oldTot;
+		return chg * 100.0;
+	}
+
+	private static double findYearlyChangeWithheld(DtsData older, DtsData newer) {
+		final double chg = (newer.getWith().yearlyAvg - older.getWith().yearlyAvg) / older.getWith().yearlyAvg;
+		return chg * 100.0;
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.findYearsAgoData
 	 *
 	 * @param cal
@@ -159,10 +268,10 @@ public class ProcessDTS {
 	private static DtsData findYearsAgoData(Calendar cal, int lookBackYears) {
 		if (cal != null) {
 			final int previousDoy = cal.get(Calendar.DAY_OF_YEAR);
-			int previousYr = cal.get(Calendar.YEAR) - lookBackYears;
+			final int previousYr = cal.get(Calendar.YEAR) - lookBackYears;
 			for (final DtsData d : dtsList) {
 				final int doy = d.getDate().get(Calendar.DAY_OF_YEAR);
-				int yr = d.getDate().get(Calendar.YEAR);
+				final int yr = d.getDate().get(Calendar.YEAR);
 				if (yr == previousYr) {
 					if (previousDoy <= doy) {
 						return d;
@@ -185,55 +294,6 @@ public class ProcessDTS {
 			return DtsData.sdf.format(c.getTime()) + "00";
 		}
 		return "";
-	}
-
-	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) {
-		final Calendar baseCal = Calendar.getInstance();
-
-		mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
-		mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
-
-		// ProcessDTS.updateDtsFiles();
-		ProcessDTS.readAndProcess();
-
-		Collections.sort(dtsList, new DtsSorter());
-
-		ProcessDTS.calculateAverages();
-
-		// for (final DtsData dts : dtsList) {
-		// System.out.println(dts);
-		// }
-
-		final Calendar now = Calendar.getInstance();
-		now.set(2016, Calendar.JUNE, 10);
-
-		DtsData dNow = ProcessDTS.findYearsAgoData(now, 0);
-
-		final DtsData dOld = ProcessDTS.findYearAgoData(now);
-
-		Utils.printCalendar(dNow.getDate());
-		Utils.printCalendar(dOld.getDate());
-
-		System.out.println(dOld);
-		System.out.println(dNow);
-
-		double chg = findYearlyChangeWithheld(dOld, dNow);
-		System.out.println(chg);
-
-		chg = findYearlyChangeIndividual(dOld, dNow);
-		System.out.println(chg);
-
-		chg = findYearlyChangeCorporate(dOld, dNow);
-		System.out.println(chg);
-
-		chg = findYearlyChangeTotal(dOld, dNow);
-		System.out.println(chg);
 	}
 
 	/**
@@ -284,7 +344,7 @@ public class ProcessDTS {
 		tommorrow.add(Calendar.DATE, 1);
 
 		final Calendar cal = Calendar.getInstance();
-		cal.set(2015, Calendar.JANUARY, 1);
+		cal.set(2014, Calendar.JANUARY, 1);
 
 		while (cal.before(tommorrow)) {
 
@@ -323,28 +383,6 @@ public class ProcessDTS {
 				cal.add(Calendar.DATE, 1);
 			}
 		}
-	}
-
-	private static double findYearlyChangeWithheld(DtsData older, DtsData newer) {
-		double chg = (double) (newer.getWith().yearlyAvg - older.getWith().yearlyAvg) / (double) older.getWith().yearlyAvg;
-		return chg * 100.0;
-	}
-
-	private static double findYearlyChangeIndividual(DtsData older, DtsData newer) {
-		double chg = (double) (newer.getInd().yearlyAvg - older.getInd().yearlyAvg) / (double) older.getInd().yearlyAvg;
-		return chg * 100.0;
-	}
-
-	private static double findYearlyChangeCorporate(DtsData older, DtsData newer) {
-		double chg = (double) (newer.getCorp().yearlyAvg - older.getCorp().yearlyAvg) / (double) older.getCorp().yearlyAvg;
-		return chg * 100.0;
-	}
-
-	private static double findYearlyChangeTotal(DtsData older, DtsData newer) {
-		double newTot = (double) (newer.getWith().yearlyAvg + newer.getInd().yearlyAvg + newer.getCorp().yearlyAvg);
-		double oldTot = (double) (older.getWith().yearlyAvg + older.getInd().yearlyAvg + older.getCorp().yearlyAvg);
-		double chg = (newTot - oldTot) / oldTot;
-		return chg * 100.0;
 	}
 
 }
