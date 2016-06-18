@@ -1,4 +1,3 @@
-
 package net.ajaskey.market.ta.apps;
 
 import java.io.IOException;

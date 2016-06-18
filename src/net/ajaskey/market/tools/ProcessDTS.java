@@ -54,22 +54,26 @@ import net.ajaskey.market.tools.helpers.DtsSorter;
  */
 public class ProcessDTS {
 
-	final static private String					url					= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
+	final static private String					url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 
-	final static private String					urlA				= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
+	final static private String					urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String					folderPath	= "d:/temp/dts";
-	final static private Charset				charset			= Charset.forName("UTF-8");
+	final static private String					folderPath				= "d:/temp/dts";
+	final static private Charset				charset						= Charset.forName("UTF-8");
 
-	final static private Locale					locale			= Locale.getDefault();
+	final static private Locale					locale						= Locale.getDefault();
 
-	static public Map<String, Integer>	mNames			= null;
+	static public Map<String, Integer>	mNames						= null;
 
-	static public Map<String, Integer>	mDays				= null;
+	static public Map<String, Integer>	mDays							= null;
 
-	public static final List<DtsData>		dtsList			= new ArrayList<>();
+	public static final List<DtsData>		dtsList						= new ArrayList<>();
 
-	private static final int						avgWin			= 2;
+	private static final int						avgWin						= 2;
+
+	final static public int							webDownloadYear		= 2016;
+	final static public int							webDownloadMonth	= Calendar.JUNE;
+	final static public int							webDownloadDay		= 1;
 
 	/**
 	 *
@@ -100,43 +104,29 @@ public class ProcessDTS {
 		mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
 		mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
 
-		// ProcessDTS.updateDtsFiles();
+		ProcessDTS.updateDtsFiles();
 		ProcessDTS.readAndProcess();
 
 		Collections.sort(dtsList, new DtsSorter());
 
 		ProcessDTS.calculateAverages();
 
-		// for (final DtsData dts : dtsList) {
-		// System.out.println(dts);
-		// }
+		DtsData recent = dtsList.get(dtsList.size() - 3);
+		DtsData yrAgo = ProcessDTS.findYearAgoData(recent.getDate());
 
-		final Calendar now = Calendar.getInstance();
-		now.set(2016, Calendar.JUNE, 10);
+		final double chg = ProcessDTS.findYearlyChangeTotal(yrAgo, recent);
+		System.out.println(yrAgo);
+		System.out.println(recent);
+		String s = String.format("\tChange     ==>%6.2f%%", chg);
 
-		final DtsData dNow = ProcessDTS.findYearsAgoData(now, 0);
+		System.out.println(s + "\n\n\n\n\n");
 
-		final DtsData dOld = ProcessDTS.findYearAgoData(now);
-
-		Utils.printCalendar(dNow.getDate());
-		Utils.printCalendar(dOld.getDate());
-
-		System.out.println(dOld);
-		System.out.println(dNow);
-
-		double chg = ProcessDTS.findYearlyChangeWithheld(dOld, dNow);
-		System.out.println(chg);
-
-		chg = ProcessDTS.findYearlyChangeIndividual(dOld, dNow);
-		System.out.println(chg);
-
-		chg = ProcessDTS.findYearlyChangeCorporate(dOld, dNow);
-		System.out.println(chg);
-
-		chg = ProcessDTS.findYearlyChangeTotal(dOld, dNow);
-		System.out.println(chg);
-
-		ProcessDTS.dumpReport1();
+		try {
+			ProcessDTS.dumpReport1();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -188,38 +178,48 @@ public class ProcessDTS {
 
 	}
 
-	private static void dumpReport1() {
+	/**
+	 * 
+	 * net.ajaskey.market.tools.dumpReport1
+	 * 
+	 * @throws FileNotFoundException
+	 *
+	 */
+	private static void dumpReport1() throws FileNotFoundException {
 
-		final Calendar tommorrow = Calendar.getInstance();
-		tommorrow.add(Calendar.DATE, 1);
+		try (PrintWriter pw = new PrintWriter("out/dts-out.txt")) {
 
-		final Calendar cal = Calendar.getInstance();
-		cal.set(2015, Calendar.JANUARY, 1);
+			final Calendar tommorrow = Calendar.getInstance();
+			tommorrow.add(Calendar.DATE, 1);
 
-		while (cal.before(tommorrow)) {
+			final Calendar cal = Calendar.getInstance();
+			cal.set(2015, Calendar.JANUARY, 1);
 
-			final int dom = cal.get(Calendar.DAY_OF_MONTH);
+			while (cal.before(tommorrow)) {
 
-			/**
-			 * Account for weekend and holiday
-			 */
-			if ((dom == 6) || (dom == 7) || (dom == 8) || (dom == 9)) {
+				final int dom = cal.get(Calendar.DAY_OF_MONTH);
 
-				final DtsData dCal = ProcessDTS.findYearsAgoData(cal, 0);
-				final DtsData dNow = ProcessDTS.findYearsAgoData(cal, 1);
+				/**
+				 * Account for weekend and holiday
+				 */
+				if (dom == 6) {
 
-				//Utils.printCalendar(dNow.getDate());
-				//Utils.printCalendar(cal);
-				final double chg = ProcessDTS.findYearlyChangeTotal(dNow, dCal);
-				System.out.println(dNow);
-				System.out.println(dCal);
-				String s = String.format("\tChange : %6.2f%%", chg);
-				System.out.println(s);
-				cal.add(Calendar.DATE, 15);
+					final DtsData dRecent = ProcessDTS.findYearsAgoData(cal, 0);
+					final DtsData dYrAgo = ProcessDTS.findYearsAgoData(dRecent.getDate(), 1);
+
+					// Utils.printCalendar(dNow.getDate());
+					// Utils.printCalendar(cal);
+					final double chg = ProcessDTS.findYearlyChangeTotal(dYrAgo, dRecent);
+					pw.println(dYrAgo);
+					pw.println(dRecent);
+					String s = String.format("\tChange     ==>%6.2f%%", chg);
+					pw.println(s);
+					cal.add(Calendar.DATE, 15);
+				}
+
+				cal.add(Calendar.DATE, 1);
+
 			}
-
-			cal.add(Calendar.DATE, 1);
-
 		}
 
 	}
@@ -344,7 +344,7 @@ public class ProcessDTS {
 		tommorrow.add(Calendar.DATE, 1);
 
 		final Calendar cal = Calendar.getInstance();
-		cal.set(2014, Calendar.JANUARY, 1);
+		cal.set(webDownloadYear, webDownloadMonth, webDownloadDay);
 
 		while (cal.before(tommorrow)) {
 

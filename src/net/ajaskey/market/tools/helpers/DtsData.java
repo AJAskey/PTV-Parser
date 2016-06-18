@@ -42,6 +42,8 @@ public class DtsData {
 
 	final static public SimpleDateFormat	sdf	= new SimpleDateFormat("yyMMdd");
 
+
+
 	private final DtsDataTally						with;
 	private final DtsDataTally						ind;
 	private final DtsDataTally						corp;
@@ -210,7 +212,8 @@ public class DtsData {
 
 	public String toString() {
 		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		str += String.format("%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s", this.with, this.ind, this.corp);
+		double tot = this.getWith().yearlyAvg + this.getInd().yearlyAvg + this.getCorp().yearlyAvg;
+		str += String.format("%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>\t\t\t\t\t\t\t\t\t\t   %10.2f", this.with, this.ind, this.corp, tot);
 		return str;
 	}
 
