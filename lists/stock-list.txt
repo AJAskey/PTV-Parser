@@ -13,17 +13,16 @@ ACAD  	Acadia Pharmaceutica                        	NASDAQ    	none
 ACAS  	Amer Capital Ltd                            	NASDAQ    	none      
 ACC   	American Campus Communities Inc             	NYSE      	none      
 ACCO  	Acco Brands Corp                            	NYSE      	none      
+ACHC  	Acadia Healthcr Co                          	NASDAQ    	none      
 ACIA  	Acacia Communica Cm                         	NASDAQ    	none      
 ACM   	Aecom Technology Corp                       	NYSE      	none      
 ACN   	Accenture Plc                               	NYSE      	SP500     
 ACOR  	Acorda Therapeutics                         	NASDAQ    	SP600     
-ACXM  	Acxiom Cp                                   	NASDAQ    	none      
 ADBE  	Adobe Systems Inc                           	NASDAQ    	SP500     
 ADI   	Analog Devices Cmn                          	NASDAQ    	SP500     
 ADM   	Archer Daniels Midland Company              	NYSE      	SP500     
 ADP   	Automatic Data Procs                        	NASDAQ    	SP500     
 ADPT  	Adeptus Health Inc                          	NYSE      	SP600     
-ADRO  	Aduro Biotech Cmn                           	NASDAQ    	none      
 ADS   	Alliance Data Systems Corp                  	NYSE      	SP500     
 ADSK  	Autodesk Inc                                	NASDAQ    	SP500     
 AEE   	Ameren Corp                                 	NYSE      	SP500     
@@ -71,6 +70,7 @@ AMAT  	Applied Materials                           	NASDAQ    	SP500
 AMBA  	Ambarella Inc.                              	NASDAQ    	none      
 AMCX  	Amc Networks Cl A                           	NASDAQ    	none      
 AME   	Amtek Inc                                   	NYSE      	SP500     
+AMG   	Affiliated Managers Group                   	NYSE      	SP500     
 AMGN  	Amgen                                       	NASDAQ    	SP500     
 AMH   	American Homes 4 Rent                       	NYSE      	none      
 AMP   	Ameriprise Financial Services               	NYSE      	SP500     
@@ -100,13 +100,12 @@ ARG   	Airgas Inc                                  	NYSE      	SP500
 ARI   	Apollo Commercial Real Estate               	NYSE      	none      
 ARMH  	Arm Holdings Plc                            	NASDAQ    	none      
 ARMK  	Aramark Holdings Corp                       	NYSE      	none      
-ARR   	Armour Residential R                        	NYSE      	none      
 ARRS  	Arris Group Inc                             	NASDAQ    	none      
 ARW   	Arrow Electronics                           	NYSE      	none      
 ASB   	Associated Banc-Corp                        	NYSE      	none      
 ASML  	Asml Hldg NY Reg                            	NASDAQ    	none      
 ATI   	Allegheny Technologies Inc                  	NYSE      	none      
-ATO   	Atmos Energy Corp                           	NYSE      	none      
+ATU   	Actuant Corp                                	NYSE      	SP600     
 ATVI  	Activision Blizzard                         	NASDAQ    	SP500     
 ATW   	Atwood Oceanics                             	NYSE      	SP600     
 AU    	Anglogold Ashanti Ltd                       	NYSE      	none      
@@ -139,7 +138,6 @@ BBT   	BB&T Corp                                   	NYSE      	SP500
 BBY   	Best Buy Co                                 	NYSE      	SP500     
 BC    	Brunswick Corp                              	NYSE      	none      
 BCE   	BCE Inc                                     	NYSE      	none      
-BCR   	C.R. Bard                                   	NYSE      	SP500     
 BDX   	Becton Dickinson and Company                	NYSE      	SP500     
 BEAV  	BE Aerospace Inc                            	NASDAQ    	none      
 BECN  	Beacon Roofing Suppl                        	NASDAQ    	none      
@@ -161,10 +159,10 @@ BIN   	Progressive Waste Solutions Ltd             	NYSE      	none
 BITA  	Bitauto Holdings Ltd                        	NYSE      	none      
 BK    	Bank of New York Mellon Corp                	NYSE      	SP500     
 BKD   	Brookdale Senior Living Inc                 	NYSE      	none      
-BKE   	Buckle Inc                                  	NYSE      	SP600     
 BKS   	Barnes & Noble                              	NYSE      	SP600     
 BKU   	BankUnited Inc                              	NYSE      	none      
 BLDR  	Builders Firstsource                        	NASDAQ    	none      
+BLK   	Blackrock                                   	NYSE      	SP500     
 BLL   	Ball Corp                                   	NYSE      	SP500     
 BLMN  	Bloomin' Brands Inc                         	NASDAQ    	none      
 BLOX  	Infoblox Inc                                	NYSE      	none      
@@ -209,12 +207,12 @@ CAL   	Caleres Inc                                 	NYSE      	SP600
 CALM  	Cal-Maine Foods In                          	NASDAQ    	SP600     
 CAR   	Avis Budget Group I                         	NASDAQ    	none      
 CAT   	Caterpillar Inc                             	NYSE      	SP500     
+CATY  	Cathay Genl Bncp                            	NASDAQ    	none      
 CAVM  	Cavium Inc.                                 	NASDAQ    	none      
 CB    	Chubb Limited                               	NYSE      	SP500     
 CBD   	Companhia Brasileira De Distribuicao        	NYSE      	none      
 CBG   	CBRE Group Inc                              	NYSE      	SP500     
 CBI   	Chicago Bridge & Iron Company N.V.          	NYSE      	none      
-CBL   	Cbl & Associates Properties                 	NYSE      	none      
 CBS   	CBS Corp                                    	NYSE      	SP500     
 CCE   	Coca Cola European Partners                 	NYSE      	SP500     
 CCI   	Crown Castle International Corp             	NYSE      	SP500     
@@ -236,7 +234,6 @@ CFX   	Colfax Corp                                 	NYSE      	none
 CHD   	Church & Dwight Company                     	NYSE      	SP500     
 CHKP  	Check Point Software                        	NASDAQ    	NDX       
 CHL   	China Mobile [Hong Kong] Ltd                	NYSE      	none      
-CHRS  	Coherus Bio Cmn Stk                         	NASDAQ    	none      
 CHRW  	C.H. Robinson Ww                            	NASDAQ    	SP500     
 CHS   	Chico's Fas                                 	NYSE      	none      
 CHTR  	Charter Communicatio                        	NASDAQ    	NDX       
@@ -250,7 +247,6 @@ CL    	Colgate-Palmolive Company                   	NYSE      	SP500
 CLI   	Mack-Cali Realty Corp                       	NYSE      	none      
 CLNY  	Colony Financial Inc                        	NYSE      	none      
 CLR   	Continental Resources                       	NYSE      	none      
-CLS   	Celestica Inc                               	NYSE      	none      
 CLVS  	Clovis Oncology Inc                         	NASDAQ    	none      
 CLX   	Clorox Company                              	NYSE      	SP500     
 CMA   	Comerica Inc                                	NYSE      	SP500     
@@ -274,7 +270,6 @@ COH   	Coach Inc                                   	NYSE      	SP500
 COL   	Rockwell Collins                            	NYSE      	SP500     
 COMM  	Commscope Holding Co                        	NASDAQ    	none      
 CONE  	Cyrusone Inc Cmn                            	NASDAQ    	none      
-COO   	Cooper Companies                            	NYSE      	none      
 COP   	Conocophillips                              	NYSE      	SP500     
 COR   	Coresite Realty Corp                        	NYSE      	SP600     
 COST  	Costco Wholesale                            	NASDAQ    	SP500     
@@ -288,6 +283,7 @@ CPGX  	Columbia Pipeline Group Inc. C              	NYSE      	SP500
 CPHD  	Cepheid Inc                                 	NASDAQ    	none      
 CPL   	Cpfl Energia S.A.                           	NYSE      	none      
 CPN   	Calpine Corp                                	NYSE      	none      
+CPPL  	Columbia Pipeline Partners LP               	NYSE      	none      
 CPRT  	Copart Inc.                                 	NASDAQ    	none      
 CPXX  	Celator Pharma Cmn                          	NASDAQ    	none      
 CRC   	California Resources Corporatio             	NYSE      	none      
@@ -313,7 +309,6 @@ CTAS  	Cintas Corp                                 	NASDAQ    	SP500
 CTB   	Cooper Tire & Rubber Company                	NYSE      	none      
 CTL   	Centurylink                                 	NYSE      	SP500     
 CTLT  	Catalent Inc                                	NYSE      	none      
-CTRE  	Caretrust REIT Inc.                         	NASDAQ    	SP600     
 CTRP  	Ctrip.Com Intl Ltd                          	NASDAQ    	NDX       
 CTSH  	Cognizant Tech Sol                          	NASDAQ    	SP500     
 CTXS  	Citrix Systems Inc                          	NASDAQ    	SP500     
@@ -324,6 +319,7 @@ CVC   	Cablevision Systems Corp                    	NYSE      	SP500
 CVE   	Cenovus Energy Inc                          	NYSE      	none      
 CVI   	Cvr Energy Inc                              	NYSE      	none      
 CVS   	CVS Corp                                    	NYSE      	SP500     
+CVT   	Cvent Inc                                   	NYSE      	none      
 CVX   	Chevron Corp                                	NYSE      	SP500     
 CWEI  	Clayton Williams Energy                     	NYSE      	none      
 CXO   	Concho Resources Inc                        	NYSE      	SP500     
@@ -346,6 +342,7 @@ DDS   	Dillard's                                   	NYSE      	none
 DE    	Deere & Company                             	NYSE      	SP500     
 DECK  	Deckers Outdoor Corp                        	NYSE      	none      
 DEI   	Douglas Emmett                              	NYSE      	none      
+DEO   	Diageo Plc                                  	NYSE      	none      
 DEPO  	Depomed Inc                                 	NASDAQ    	SP600     
 DERM  	Dermira Inc. Cm ST                          	NASDAQ    	none      
 DF    	Dean Foods Company                          	NYSE      	none      
@@ -370,6 +367,7 @@ DO    	Diamond Offshore Drilling                   	NYSE      	SP500
 DOV   	Dover Corp                                  	NYSE      	SP500     
 DOW   	Dow Chemical Company                        	NYSE      	SP500     
 DOX   	Amdocs Ltd Ord                              	NASDAQ    	none      
+DPM   	Dcp Midstream Partners LP                   	NYSE      	none      
 DPS   	Dr Pepper Snapple Group Inc                 	NYSE      	SP500     
 DPZ   	Domino's Pizza Inc                          	NYSE      	none      
 DRE   	Duke Realty Corp                            	NYSE      	none      
@@ -408,6 +406,7 @@ EMES  	Emerge Energy Services LP Commo             	NYSE      	none
 EMN   	Eastman Chemical Company                    	NYSE      	SP500     
 EMR   	Emerson Electric Company                    	NYSE      	SP500     
 ENB   	Enbridge Inc                                	NYSE      	none      
+ENBL  	Enable Midstream Partners LP                	NYSE      	none      
 ENDP  	Endo Int'l Plc                              	NASDAQ    	SP500     
 ENLC  	Enlink Midstream Llc                        	NYSE      	none      
 ENLK  	Enlink Midstream Partners LP                	NYSE      	none      
@@ -418,7 +417,6 @@ EQIX  	Equinix Inc.                                	NASDAQ    	SP500
 EQR   	Equity Residential                          	NYSE      	SP500     
 EQT   	Eqt Corp                                    	NYSE      	SP500     
 EQY   	Equity One                                  	NYSE      	none      
-ERII  	Energy Recovery Inc                         	NASDAQ    	none      
 ERJ   	Embraer-Empresa Brasileira De Aeronautica   	NYSE      	none      
 ES    	Eversource Energy                           	NYSE      	SP500     
 ESRX  	Express Scripts                             	NASDAQ    	SP500     
@@ -428,12 +426,12 @@ ETFC  	E*Trade Finl Corp                           	NASDAQ    	SP500
 ETN   	Eaton Corp                                  	NYSE      	SP500     
 ETP   	Energy Transfer Partners                    	NYSE      	none      
 ETR   	Entergy Corp                                	NYSE      	SP500     
-EURN  	Euronav Nv                                  	NYSE      	none      
 EV    	Eaton Vance Corp                            	NYSE      	none      
 EVHC  	Envision Healthcare Holdings                	NYSE      	none      
 EW    	Edwards Lifesciences Corp                   	NYSE      	SP500     
 EWBC  	East West Bancorp                           	NASDAQ    	none      
 EXAM  	Examworks Group                             	NYSE      	SP600     
+EXAS  	Exact Sciences Cor                          	NASDAQ    	none      
 EXC   	Exelon Corp                                 	NYSE      	SP500     
 EXP   	Eagle Materials Inc                         	NYSE      	none      
 EXPD  	Expeditors Intl                             	NASDAQ    	SP500     
@@ -441,6 +439,7 @@ EXPE  	Expedia Inc.                                	NASDAQ    	SP500
 EXPR  	Express Inc                                 	NYSE      	SP600     
 EXR   	Extra Space Storage Inc                     	NYSE      	SP500     
 F     	Ford Motor Company                          	NYSE      	SP500     
+FAF   	First American Corp                         	NYSE      	none      
 FANG  	Diamondback Energy                          	NASDAQ    	none      
 FAST  	Fastenal Co                                 	NASDAQ    	SP500     
 FB    	Facebook Inc                                	NASDAQ    	SP500     
@@ -455,7 +454,9 @@ FEIC  	F E I Company                               	NASDAQ    	none
 FET   	Forum Energy Technologies Inc               	NYSE      	none      
 FEYE  	Fireeye Inc.                                	NASDAQ    	none      
 FFIV  	F5 Networks Inc.                            	NASDAQ    	SP500     
+FGP   	Ferrellgas Partners L.P.                    	NYSE      	none      
 FHN   	First Tennessee National Corp               	NYSE      	none      
+FI    	Frank's International N.V.                  	NYSE      	none      
 FII   	Federated Investors                         	NYSE      	none      
 FINL  	Finish Line Cl A                            	NASDAQ    	SP600     
 FIS   	Fidelity National Information Services      	NYSE      	SP500     
@@ -479,6 +480,7 @@ FNF   	Fidelity National Financial                 	NYSE      	none
 FNFG  	First Niagara Finl                          	NASDAQ    	none      
 FNSR  	Finisar Corp                                	NASDAQ    	none      
 FNV   	Franco Nev Corp                             	NYSE      	none      
+FOE   	Ferro Corp                                  	NYSE      	none      
 FOSL  	Fossil Group Cmn Stk                        	NASDAQ    	none      
 FOX   	21St Centry Fox B Cm                        	NASDAQ    	none      
 FOXA  	21St Centry Fox A Cm                        	NASDAQ    	SP500     
@@ -503,6 +505,7 @@ GG    	Goldcorp Inc                                	NYSE      	none
 GGP   	General Growth Properties                   	NYSE      	SP500     
 GIII  	G-III Apparel Gp I                          	NASDAQ    	SP600     
 GILD  	Gilead Sciences Inc                         	NASDAQ    	SP500     
+GIMO  	Gigamon Inc                                 	NYSE      	none      
 GIS   	General Mills                               	NYSE      	SP500     
 GLNG  	Golar Lng Ltd                               	NASDAQ    	none      
 GLPI  	Gaming & Leisure                            	NASDAQ    	none      
@@ -530,7 +533,6 @@ GS    	Goldman Sachs Group                         	NYSE      	SP500
 GSK   	Glaxosmithkline Plc                         	NYSE      	none      
 GT    	Goodyear Tire Rubber                        	NASDAQ    	SP500     
 GTN   	Gray Television                             	NYSE      	none      
-GWB   	Great Western Bancorp Inc                   	NYSE      	none      
 GXP   	Great Plains Energy Inc                     	NYSE      	none      
 HA    	Hawaiian Hldgs Inc                          	NASDAQ    	SP600     
 HAIN  	Hain Celestial Grp                          	NASDAQ    	none      
@@ -549,7 +551,6 @@ HDP   	Hortonworks Cmn                             	NASDAQ    	none
 HDS   	HD Supply Hlds Cmm                          	NASDAQ    	none      
 HES   	Hess Corp                                   	NYSE      	SP500     
 HFC   	Hollyfrontier Corp                          	NYSE      	none      
-HIBB  	Hibbett Sports Inc                          	NASDAQ    	SP600     
 HIG   	Hartford Financial Services Group           	NYSE      	SP500     
 HIW   	Highwoods Properties                        	NYSE      	none      
 HLF   	Herbalife Ltd                               	NYSE      	none      
@@ -557,6 +558,7 @@ HLS   	Healthsouth Corp                            	NYSE      	none
 HLT   	Hilton Worldwide Holdings Inc               	NYSE      	none      
 HMC   	Honda Motor Company                         	NYSE      	none      
 HMHC  	Houghton Mifflin Har                        	NASDAQ    	none      
+HMNY  	Helios and Matsn Ana                        	NASDAQ    	none      
 HMSY  	Hms Hldgs Cp                                	NASDAQ    	SP600     
 HOG   	Harley-Davidson Inc                         	NYSE      	SP500     
 HOLX  	Hologic Inc.                                	NASDAQ    	none      
@@ -586,7 +588,6 @@ ICLR  	Icon Plc                                    	NASDAQ    	none
 ICPT  	Intercept Pharmaceut                        	NASDAQ    	none      
 IDTI  	Integrated Devices                          	NASDAQ    	none      
 IDXX  	Idexx Laboratories                          	NASDAQ    	none      
-IFF   	International Flavors & Fragrances          	NYSE      	SP500     
 IGT   	International Game Technology               	NYSE      	none      
 IILG  	Interval Leisure Cmn                        	NASDAQ    	SP600     
 ILMN  	Illumina Inc.                               	NASDAQ    	SP500     
@@ -602,7 +603,6 @@ ING   	ING Group N.V.                              	NYSE      	none
 INGR  	Ingredion Inc                               	NYSE      	none      
 INO   	Inovio Pharma Cmn                           	NASDAQ    	none      
 INOV  	Inovalon Hldgs Cm A                         	NASDAQ    	none      
-INSM  	Insmed Inc                                  	NASDAQ    	none      
 INSY  	Insys Theraptcs Cmn                         	NASDAQ    	none      
 INTC  	Intel Corp                                  	NASDAQ    	SP500     
 INTU  	Intuit Inc                                  	NASDAQ    	SP500     
@@ -645,9 +645,9 @@ KATE  	Kate Spade & Company                        	NYSE      	none
 KBH   	KB Home                                     	NYSE      	none      
 KBR   	KBR Inc                                     	NYSE      	none      
 KCG   	Kcg Holdings Inc                            	NYSE      	none      
-KEX   	Kirby Corp                                  	NYSE      	none      
 KEY   	Keycorp                                     	NYSE      	SP500     
 KEYS  	Keysight Technologies Inc. Comm             	NYSE      	none      
+KFY   	Korn/Ferry International                    	NYSE      	SP600     
 KHC   	Kraft Heinz Co Cmn                          	NASDAQ    	SP500     
 KIM   	Kimco Realty Corp                           	NYSE      	SP500     
 KITE  	Kite Pharma Inc. Cm                         	NASDAQ    	none      
@@ -684,12 +684,14 @@ LGF   	Lions Gate Entertainment Corp               	NYSE      	none
 LH    	Laboratory Corporation of America Holdings  	NYSE      	SP500     
 LHO   	Lasalle Hotel Properties                    	NYSE      	none      
 LITE  	Lumentum Hld Cm                             	NASDAQ    	SP600     
+LIVN  	Livanova Plc Or Sh                          	NASDAQ    	none      
 LKQ   	LKQ Corp                                    	NASDAQ    	none      
 LL    	Lumber Liquidators Holdings Inc             	NYSE      	SP600     
 LLL   	L-3 Communications Holdings                 	NYSE      	SP500     
 LLTC  	Linear Technology                           	NASDAQ    	SP500     
 LLY   	Eli Lilly and Company                       	NYSE      	SP500     
 LM    	Legg Mason Inc                              	NYSE      	SP500     
+LMCK  	Liberty Media CS C                          	NASDAQ    	none      
 LMT   	Lockheed Martin Corp                        	NYSE      	SP500     
 LNC   	Lincoln National Corp                       	NYSE      	SP500     
 LNCE  	Snyders-Lance Inc                           	NASDAQ    	none      
@@ -703,7 +705,6 @@ LPLA  	Lpl Financial Hld Cm                        	NASDAQ    	none
 LPX   	Louisiana-Pacific Corp                      	NYSE      	none      
 LQ    	La Quinta Holdings Inc                      	NYSE      	none      
 LRCX  	Lam Research Corp                           	NASDAQ    	SP500     
-LSXMA 	Liberty Srs XM CS A                         	NASDAQ    	none      
 LSXMK 	Liberty Srs XM CS C                         	NASDAQ    	none      
 LTRPA 	Liberty Tripadv A Cm                        	NASDAQ    	none      
 LUK   	Leucadia National Corp                      	NYSE      	SP500     
@@ -775,6 +776,7 @@ MRD   	Memorial Rsrc Dev CS                        	NASDAQ    	none
 MRK   	Merck & Company                             	NYSE      	SP500     
 MRKT  	Markit Ltd. Com Sh                          	NASDAQ    	none      
 MRO   	Marathon Oil Corp                           	NYSE      	SP500     
+MRVL  	Marvell Tech Group                          	NASDAQ    	none      
 MS    	Morgan Stanley                              	NYSE      	SP500     
 MSCC  	Microsemi Corp                              	NASDAQ    	none      
 MSCI  	MSCI Inc                                    	NYSE      	none      
@@ -809,7 +811,9 @@ NEM   	Newmont Mining Corp                         	NYSE      	SP500
 NERV  	Minerva Neuroscie Cm                        	NASDAQ    	none      
 NFLX  	Netflix Inc.                                	NASDAQ    	SP500     
 NFX   	Newfield Exploration Company                	NYSE      	SP500     
+NGG   	National Grid Transco Plc                   	NYSE      	none      
 NGL   	Ngl Energy Partners LP                      	NYSE      	none      
+NGVT  	Ingevity Corporation                        	NYSE      	none      
 NI    	NiSource Inc                                	NYSE      	SP500     
 NKE   	Nike Inc                                    	NYSE      	SP500     
 NKTR  	Nektar Therapeutics                         	NASDAQ    	SP600     
@@ -826,13 +830,16 @@ NRZ   	New Residential Investment Corp             	NYSE      	none
 NSAM  	Northstar Asset Management Grou             	NYSE      	none      
 NSC   	Norfolk Southern Corp                       	NYSE      	SP500     
 NSM   	Nationstar Mortgage Holdngs I               	NYSE      	none      
+NSR   	Neustar Inc                                 	NYSE      	none      
 NTAP  	Netapp Inc.                                 	NASDAQ    	SP500     
 NTCT  	Netscout Systems I                          	NASDAQ    	none      
 NTES  	Netease Inc Ads                             	NASDAQ    	none      
+NTI   	Northern Tier Energy LP                     	NYSE      	none      
 NUAN  	Nuance Communicatns                         	NASDAQ    	none      
 NUE   	Nucor Corp                                  	NYSE      	SP500     
 NUS   	Nu Skin Enterprises                         	NYSE      	none      
 NUVA  	Nuvasive Inc.                               	NASDAQ    	SP600     
+NVCR  	Novocure Ltd Ord Sh                         	NASDAQ    	none      
 NVDA  	Nvidia Corporation                          	NASDAQ    	SP500     
 NVO   	Novo Nordisk A/S                            	NYSE      	none      
 NVRO  	Nevro Corp                                  	NYSE      	none      
@@ -843,8 +850,10 @@ NWSA  	News Cp Cl A Cmn ST                         	NASDAQ    	SP500
 NXPI  	Nxp Semiconductors                          	NASDAQ    	NDX       
 NXTM  	Nxstage Medical Inc                         	NASDAQ    	none      
 NYCB  	New York Community Bancorp                  	NYSE      	none      
+NYLD  	NRG Yield Inc                               	NYSE      	none      
 NYT   	New York Times Company                      	NYSE      	none      
 O     	Realty Income Corp                          	NYSE      	SP500     
+OAS   	Oasis Petroleum Inc                         	NYSE      	none      
 OC    	Owens Corning Inc                           	NYSE      	none      
 ODFL  	Old Dominion Freig                          	NASDAQ    	none      
 OFC   	Corporate Office Properties                 	NYSE      	none      
@@ -860,13 +869,15 @@ OLLI  	Ollies Bargain CS                           	NASDAQ    	none
 OLN   	Olin Corp                                   	NYSE      	none      
 OMC   	Omnicom Group Inc                           	NYSE      	SP500     
 OMF   	Onemain Holdings Inc.                       	NYSE      	none      
-OMI   	Owens & Minor                               	NYSE      	none      
 ONB   	Old National Bncp Cm                        	NASDAQ    	SP600     
 ONCE  	Spark Therap Cmn                            	NASDAQ    	none      
+OPHT  	Ophthotech Corp Cmn                         	NASDAQ    	none      
 OPWR  	Opower Inc                                  	NYSE      	none      
+ORBK  	Orbotech Ltd.                               	NASDAQ    	none      
 ORCL  	Oracle Corp                                 	NYSE      	SP500     
 ORI   	Old Republic International Corp             	NYSE      	none      
 ORLY  	O'Reilly Automotive                         	NASDAQ    	SP500     
+OSG   	Overseas Shipholding Group Inc              	AMEX      	none      
 OSK   	Oshkosh Truck Corp                          	NYSE      	none      
 OUT   	Outfront Media Inc                          	NYSE      	none      
 OXY   	Occidental Petroleum Corp                   	NYSE      	SP500     
@@ -875,7 +886,6 @@ P     	Pandora Media Inc                           	NYSE      	none
 PAA   	Plains All American Pipeline L.P.           	NYSE      	none      
 PAAS  	Pan Amer Silver Corp                        	NASDAQ    	none      
 PACW  	Pacwest Bancorp                             	NASDAQ    	none      
-PAG   	Penske Automotive Group                     	NYSE      	none      
 PAGP  	Plains Gp Holdings L.P.                     	NYSE      	none      
 PANW  	Palo Alto Networks Inc                      	NYSE      	none      
 PAY   	Verifone Systems                            	NYSE      	none      
@@ -921,6 +931,7 @@ PLD   	Prologis Inc                                	NYSE      	SP500
 PM    	Philip Morris International Inc             	NYSE      	SP500     
 PNC   	PNC Bank                                    	NYSE      	SP500     
 PNK   	Pinnacle Entmt Cm                           	NASDAQ    	SP600     
+PNM   	PNM Resources Inc                           	NYSE      	none      
 PNR   	Pentair Ltd                                 	NYSE      	SP500     
 PNW   	Pinnacle West Capital Corp                  	NYSE      	SP500     
 PODD  	Insulet Corporation                         	NASDAQ    	none      
@@ -933,7 +944,6 @@ PRAA  	Pra Group Inc Cmn                           	NASDAQ    	SP600
 PRGO  	Perrigo Company                             	NYSE      	SP500     
 PRU   	Prudential Financial Inflation Retail       	NYSE      	SP500     
 PSA   	Public Storage                              	NYSE      	SP500     
-PSTG  	Pure Storage Inc.                           	NYSE      	none      
 PSX   	Phillips 66 Common Stock                    	NYSE      	SP500     
 PSXP  	Phillips 66 Partners LP                     	NYSE      	none      
 PTC   	Ptc Inc.                                    	NASDAQ    	none      
@@ -950,12 +960,13 @@ Q     	Quintiles Transitional Holdings             	NYSE      	none
 QCOM  	Qualcomm Inc                                	NASDAQ    	SP500     
 QEP   	Qep Resources                               	NYSE      	none      
 QGEN  	Qiagen N.V.                                 	NASDAQ    	none      
-QHC   	Quorum Health Corporation Commo             	NYSE      	none      
 QIHU  	Qihoo 360 Technology Co. Ltd                	NYSE      	none      
+QLGC  	Qlogic Cp                                   	NASDAQ    	SP600     
 QLIK  	Qlik Technologies In                        	NASDAQ    	none      
 QRVO  	Qorvo Inc. Cmn                              	NASDAQ    	SP500     
 QSII  	Quality Systems Inc                         	NASDAQ    	SP600     
 QSR   	Restaurant Brands International             	NYSE      	none      
+QUOT  	Quotient Technology Inc.                    	NYSE      	none      
 QVCA  	Liberty Int Qvc Sr A                        	NASDAQ    	NDX       
 R     	Ryder System                                	NYSE      	SP500     
 RAI   	Reynolds American Inc                       	NYSE      	SP500     
@@ -964,6 +975,7 @@ RAX   	Rackspace Hosting Inc                       	NYSE      	none
 RCII  	Rent-A-Center Inc                           	NASDAQ    	SP600     
 RCL   	Royal Caribbean Cruises Ltd                 	NYSE      	SP500     
 RDC   	Rowan Companies                             	NYSE      	none      
+RDEN  	Elizabeth Arden                             	NASDAQ    	none      
 RDN   	Radian Group Inc                            	NYSE      	none      
 RDS.A 	Royal Dutch Shell Plc                       	NYSE      	none      
 RDS.B 	Royal Dutch Shell                           	NYSE      	none      
@@ -993,7 +1005,6 @@ ROP   	Roper Industries                            	NYSE      	SP500
 ROST  	Ross Stores Inc.                            	NASDAQ    	SP500     
 ROVI  	Rovi Corp Cmn                               	NASDAQ    	SP600     
 RPAI  	Retail Properties of America                	NYSE      	none      
-RPM   	RPM International Inc                       	NYSE      	none      
 RRC   	Range Resources Corp                        	NYSE      	SP500     
 RRD   	Rr Donnelley Sons                           	NASDAQ    	none      
 RRR   	Rd Rock Rsrts Cla Cm                        	NASDAQ    	none      
@@ -1002,9 +1013,10 @@ RSG   	Republic Services                           	NYSE      	SP500
 RSPP  	Rsp Permian Inc                             	NYSE      	none      
 RTN   	Raytheon Company                            	NYSE      	SP500     
 RUBI  	The Rubicon Project Inc                     	NYSE      	none      
+RVNC  	Revance Therapeutics                        	NASDAQ    	none      
 RXN   	Rexnord Corp                                	NYSE      	none      
 RY    	Royal Bank of Canada                        	NYSE      	none      
-RYI   	Ryerson Holding Corp                        	NYSE      	none      
+RYAAY 	Ryanair Hldgs Plc                           	NASDAQ    	none      
 SA    	Seabridge Gold                              	NYSE      	none      
 SAAS  	Incontact Inc                               	NASDAQ    	none      
 SABR  	Sabre Corporation Cm                        	NASDAQ    	none      
@@ -1023,6 +1035,8 @@ SC    	Santander Consumer USA Holdings             	NYSE      	none
 SCCO  	Southern Peru Copper Corp                   	NYSE      	none      
 SCG   	Scana Corp                                  	NYSE      	SP500     
 SCI   	Service Corporation International           	NYSE      	none      
+SCLN  	Sciclone Pharmaceut                         	NASDAQ    	none      
+SCMP  	Sucampo Pharma. Inc.                        	NASDAQ    	none      
 SCS   	Steelcase Inc                               	NYSE      	none      
 SCSS  	Select Comfort Cp                           	NASDAQ    	SP600     
 SCTY  	Solarcity Corporatio                        	NASDAQ    	none      
@@ -1038,6 +1052,7 @@ SERV  	Servicemaster Global Holdings I             	NYSE      	none
 SF    	Stifel Financial Corp                       	NYSE      	none      
 SFL   	Ship Finance International                  	NYSE      	none      
 SFM   	Sprouts Farmers Mark                        	NASDAQ    	none      
+SFR   	Colony Starwood Homes                       	NYSE      	none      
 SGEN  	Seattle Genetics Inc                        	NASDAQ    	none      
 SHAK  	Shake Shack Inc                             	NYSE      	none      
 SHLD  	Sears Hldgs Corp                            	NASDAQ    	none      
@@ -1081,20 +1096,18 @@ SRC   	Spirit Realty Capital Inc                   	NYSE      	none
 SRCL  	Stericycle Inc.                             	NASDAQ    	SP500     
 SRE   	Sempra Energy                               	NYSE      	SP500     
 SRPT  	Sarepta Therapeutics                        	NASDAQ    	none      
-SSNC  	SS&C Technologies                           	NASDAQ    	none      
 SSRI  	Silver Stand Res                            	NASDAQ    	none      
 SSS   	Sovran Self Storage                         	NYSE      	none      
 SSW   	Seaspan Corp                                	NYSE      	none      
 SSYS  	Stratasys Ltd.                              	NASDAQ    	none      
 ST    	Sensata Technologies Holding N.V.           	NYSE      	none      
-STAR  	Istar Financial Inc                         	NYSE      	none      
+STAG  	STI Inc                                     	NYSE      	none      
 STCK  	Bmc Stock Holdings                          	NASDAQ    	none      
 STE   	Steris Corp                                 	NYSE      	none      
 STI   	Suntrust Banks                              	NYSE      	SP500     
 STJ   	St. Jude Medical                            	NYSE      	SP500     
 STL   	Sterling Bancorp                            	NYSE      	SP600     
 STLD  	Steel Dynamics Inc                          	NASDAQ    	none      
-STMP  	Stamps.Com Inc                              	NASDAQ    	SP600     
 STO   	Statoil ASA                                 	NYSE      	none      
 STOR  	Store Capital Corpstore Capital             	NYSE      	none      
 STR   	Questar Corp                                	NYSE      	none      
@@ -1123,6 +1136,7 @@ TAHO  	Tahoe Res Inc                               	NYSE      	none
 TAP   	Molson Coors Brewing Company                	NYSE      	SP500     
 TASR  	Taser Intl Inc                              	NASDAQ    	SP600     
 TCB   	TCF Financial Corp                          	NYSE      	none      
+TCBI  	Texas Capital Bncsh                         	NASDAQ    	SP600     
 TCK   	Teck Resources Ltd                          	NYSE      	none      
 TD    	Toronto Dominion Bank                       	NYSE      	none      
 TDC   	Teradata Corp                               	NYSE      	SP500     
@@ -1142,6 +1156,8 @@ THS   	Treehouse Foods                             	NYSE      	none
 TIF   	Tiffany & Co                                	NYSE      	SP500     
 TILE  	Interface Inc Cmn                           	NASDAQ    	SP600     
 TIME  	Time Inc. Common Stock When Iss             	NYSE      	none      
+TISI  	Team Inc                                    	NYSE      	none      
+TIVO  	Tivo Inc                                    	NASDAQ    	none      
 TJX   	Tjx Companies                               	NYSE      	SP500     
 TKR   	Timken Company                              	NYSE      	none      
 TLLP  	Tesoro Logistics LP Common Unit             	NYSE      	none      
@@ -1178,13 +1194,10 @@ TSRO  	Tesaro Inc.                                 	NASDAQ    	none
 TSS   	Total System Services                       	NYSE      	SP500     
 TTM   	Tata Motors Ltd                             	NYSE      	none      
 TTWO  	Take-Two Interacti                          	NASDAQ    	SP600     
-TUMI  	Tumi Holdings Inc                           	NYSE      	SP600     
 TV    	Grupo Televisa S.A.                         	NYSE      	none      
 TVPT  	Travelport Worldwide Ltd                    	NYSE      	none      
-TWC   	Time Warner Cable Inc                       	NYSE      	SP500     
 TWTR  	Twitter Inc                                 	NYSE      	none      
 TWX   	Time Warner Inc                             	NYSE      	SP500     
-TX    	Ternium S.A.                                	NYSE      	none      
 TXN   	Texas Instruments                           	NASDAQ    	SP500     
 TXRH  	Texas Roadhouse Inc                         	NASDAQ    	SP600     
 TXT   	Textron Inc                                 	NYSE      	SP500     
@@ -1197,6 +1210,8 @@ UBNT  	Ubiquiti Networks I                         	NASDAQ    	none
 UCBI  	United Comm Banks                           	NASDAQ    	SP600     
 UE    	Urban Edge Properties Common Sh             	NYSE      	none      
 UGI   	Ugi Corp                                    	NYSE      	none      
+UGLD  	Vs 3X Gold                                  	NASDAQ    	none      
+UGP   	Ultrapar Participacoes S.A.                 	NYSE      	none      
 UHS   	Universal Health Services                   	NYSE      	SP500     
 UL    	Unilever Plc                                	NYSE      	none      
 ULTA  	Ulta Salon Cosmetic                         	NASDAQ    	NDX       
@@ -1217,10 +1232,8 @@ USO   	US Oil                                      	AMEX      	none
 UTHR  	United Therapeutic                          	NASDAQ    	none      
 UTX   	United Technologies Corp                    	NYSE      	SP500     
 V     	Visa Inc                                    	NYSE      	SP500     
-VA    	Virgin America CS                           	NASDAQ    	none      
 VAL   	Valspar Corp                                	NYSE      	none      
 VAR   	Varian Medical Systems                      	NYSE      	SP500     
-VC    	Visteon Corp                                	NYSE      	none      
 VCIT  	Vanguard Interm Corp                        	NASDAQ    	none      
 VCSH  	Vanguard Sht Tm Cor                         	NASDAQ    	none      
 VEA   	FTSE Developed Markets Vanguard             	AMEX      	none      
@@ -1244,6 +1257,7 @@ VRSN  	Verisign Inc.                               	NASDAQ    	SP500
 VRTX  	Vertex Pharmaceutic                         	NASDAQ    	SP500     
 VRX   	Valeant Pharmaceuticals International       	NYSE      	none      
 VSH   	Vishay Intertechnology                      	NYSE      	none      
+VSTO  	Vista Outdoor Inc. Common Stock             	NYSE      	none      
 VTR   	Ventas Inc                                  	NYSE      	SP500     
 VWR   	Vwr Corporation Cmn                         	NASDAQ    	none      
 VZ    	Verizon Communications Inc                  	NYSE      	SP500     
@@ -1255,7 +1269,6 @@ WB    	Weibo Corp. Ads                             	NASDAQ    	none
 WBA   	Walgreens Bts Aln Cm                        	NASDAQ    	SP500     
 WBMD  	Webmd Health Corp                           	NASDAQ    	none      
 WBS   	Webster Financial Corp                      	NYSE      	none      
-WCC   	Wesco International                         	NYSE      	none      
 WCN   	Waste Connections Inc.                      	NYSE      	none      
 WDAY  	Workday Inc                                 	NYSE      	none      
 WDC   	Western Digital Cp                          	NASDAQ    	SP500     
@@ -1266,6 +1279,7 @@ WEN   	Wendys Company [The]                        	NASDAQ    	none
 WERN  	Werner Enterprise                           	NASDAQ    	none      
 WFC   	Wells Fargo & Company                       	NYSE      	SP500     
 WFM   	Whole Foods Market                          	NASDAQ    	SP500     
+WGP   	Western Gas Eqty Partners LP                	NYSE      	none      
 WHR   	Whirlpool Corp                              	NYSE      	SP500     
 WIT   	Wipro Ltd                                   	NYSE      	none      
 WLK   	Westlake Chemical Corp                      	NYSE      	none      
@@ -1274,12 +1288,12 @@ WLTW  	Willis Towers Wts Cm                        	NASDAQ    	SP500
 WM    	Waste Management                            	NYSE      	SP500     
 WMB   	Williams Companies                          	NYSE      	SP500     
 WMGI  	Wright Med Grp Nv                           	NASDAQ    	none      
+WMS   	Advanced Drainage Systems Inc               	NYSE      	none      
 WMT   	Wal-Mart Stores                             	NYSE      	SP500     
 WNC   	Wabash National Corp                        	NYSE      	none      
 WNR   	Western Refining                            	NYSE      	none      
 WOOF  	Vca Inc.                                    	NASDAQ    	none      
 WPG   	Washington Prime Group Inc. Com             	NYSE      	none      
-WPX   	Wpx Energy Inc. Common Stock W              	NYSE      	none      
 WPZ   	Williams Partners L.P.                      	NYSE      	none      
 WR    	Westar Energy                               	NYSE      	none      
 WRI   	Weingarten Realty Investors                 	NYSE      	none      

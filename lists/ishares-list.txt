@@ -18,6 +18,7 @@ CMDT      	DOW Jones-UBS Roll Select Ishares                 	AMEX
 CMF       	S&P CA Amt-Free Municipal Bd Ishares              	AMEX      
 CNDF      	Ishares Edge MSCI Multifactor C                   	AMEX      
 CNSF      	Ishares Edge MSCI Multifactor C                   	AMEX      
+CNYA      	Ishares MSCI China A ETF                          	AMEX      
 CRBN      	Ishares MSCI ACWI Low Carbon Ta                   	AMEX      
 CRED      	Core US Credit Bond ETF Ishares                   	AMEX      
 CSJ       	1-3 Year Credit Bond Ishares                      	AMEX      
@@ -96,6 +97,7 @@ GVI       	Interm Govt/Credit Bond Ishares                   	AMEX
 HACV      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HACW      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HAUD      	Ishares Currency Hedged MSCI Au                   	AMEX      
+HAWX      	Ishares Currency Hedged MSCI AC                   	AMEX      
 HCRF      	Ishares Edge MSCI Multifactor H                   	AMEX      
 HDV       	Core High Dividend ETF Ishares                    	AMEX      
 HEEM      	Ishares Currency Hedged MSCI EM                   	AMEX      
@@ -619,6 +621,7 @@ SEML      	Ishares III Plc                                   	LSE
 SEMS      	Ishares III Plc                                   	LSE       
 SESP      	Ishares V Public Limited Company                  	LSE       
 SFIN      	Ishares V Public Limited Company                  	LSE       
+SFRB      	Ishares V Public Limited Company                  	LSE       
 SGCC      	Ishares III Plc                                   	LSE       
 SGEA      	Ishares III Plc                                   	LSE       
 SGIL      	Ishares III Plc                                   	LSE       
@@ -686,18 +689,19 @@ UAE       	Ishares MSCI UAE Cap                              	NASDAQ
 BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
 CFYFF     	Ishares Canadian Fun                              	OTCBB     
 CLYAF     	Ishares Global Agric                              	OTCBB     
-CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
 CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
 IHPXF     	Ishares MSCI Europe                               	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
+IHSEF     	Ishares Plc                                       	OTCBB     
 IHSFF     	Ishares II Plc                                    	OTCBB     
+IHSXF     	Ishares Plc - Ishare                              	OTCBB     
 IHSZF     	Ishares II Plc                                    	OTCBB     
 INITF     	Ishares Dex Short Term Bond Index Fund            	OTCBB     
 IPYYF     	Ishares Physical Metals Plc - Ishares Physical G  	OTCBB     
+ISDJF     	Ishares DOW Jones CD                              	OTCBB     
 ISESF     	Ishares S&P/Tsx Capp                              	OTCBB     
-ISEXF     	Ishares MSCI                                      	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
 ISHXF     	Ishares Dex All Government Bond Index Fund        	OTCBB     
