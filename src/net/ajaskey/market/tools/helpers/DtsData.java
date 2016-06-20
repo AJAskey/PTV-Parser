@@ -42,8 +42,6 @@ public class DtsData {
 
 	final static public SimpleDateFormat	sdf	= new SimpleDateFormat("yyMMdd");
 
-
-
 	private final DtsDataTally						with;
 	private final DtsDataTally						ind;
 	private final DtsDataTally						corp;
@@ -147,7 +145,7 @@ public class DtsData {
 			if (idx > 5) {
 				final String aDate = str.substring(0, idx);
 				this.date.setTime(sdf.parse(aDate));
-				//Utils.printCalendar(this.date);
+				// Utils.printCalendar(this.date);
 			}
 		} catch (Exception e) {
 			System.out.println("Error processing date : " + str);
@@ -212,8 +210,12 @@ public class DtsData {
 
 	public String toString() {
 		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		double tot = this.getWith().yearlyAvg + this.getInd().yearlyAvg + this.getCorp().yearlyAvg;
-		str += String.format("%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>\t\t\t\t\t\t\t\t\t\t   %10.2f", this.with, this.ind, this.corp, tot);
+		double dtot = this.getWith().dailyAvg + this.getInd().dailyAvg + this.getCorp().dailyAvg;
+		double mtot = this.getWith().monthlyAvg + this.getInd().monthlyAvg + this.getCorp().monthlyAvg;
+		double ytot = this.getWith().yearlyAvg + this.getInd().yearlyAvg + this.getCorp().yearlyAvg;
+		str += String.format(
+		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%47sDailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f",
+		    this.with, this.ind, this.corp, " ", dtot, mtot, ytot);
 		return str;
 	}
 

@@ -69,7 +69,7 @@ public class ProcessDTS {
 
 	public static final List<DtsData>		dtsList						= new ArrayList<>();
 
-	private static final int						avgWin						= 2;
+	private static final int						avgWin						= 1;
 
 	final static public int							webDownloadYear		= 2016;
 	final static public int							webDownloadMonth	= Calendar.JUNE;
@@ -111,15 +111,16 @@ public class ProcessDTS {
 
 		ProcessDTS.calculateAverages();
 
-		DtsData recent = dtsList.get(dtsList.size() - 3);
+		DtsData recent = dtsList.get(dtsList.size() - avgWin - 1);
 		DtsData yrAgo = ProcessDTS.findYearAgoData(recent.getDate());
 
-		final double chg = ProcessDTS.findYearlyChangeTotal(yrAgo, recent);
+		final double yChg = ProcessDTS.findYearlyChangeTotal(yrAgo, recent);
+		final double mChg = ProcessDTS.findMonthlyChangeTotal(yrAgo, recent);
 		System.out.println(yrAgo);
 		System.out.println(recent);
-		String s = String.format("\tChange     ==>%6.2f%%", chg);
+		String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%", " ", mChg, yChg);
 
-		System.out.println(s + "\n\n\n\n\n");
+		System.out.println(s + "\n\n");
 
 		try {
 			ProcessDTS.dumpReport1();
@@ -127,8 +128,22 @@ public class ProcessDTS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		CompareReport(2016, Calendar.JUNE, 9);
+
+		DtsData d1 = findData(newCalendar(2016, Calendar.JUNE, 9));
+		DtsData d2 = findData(newCalendar(2015, Calendar.JUNE, 9));
+		System.out.println("\n\n"+d1);
+		System.out.println(d2);
+		
 	}
 
+	private static Calendar newCalendar(int year, int month, int day) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(year, month, day, 1, 2, 3);
+		return cal;
+	}
+	
 	/**
 	 * net.ajaskey.market.tools.CalculateAverage
 	 *
@@ -139,39 +154,57 @@ public class ProcessDTS {
 
 		for (int i = avgWin; i < len; i++) {
 			long tot = 0;
+			long mtot = 0;
 			long ytot = 0;
 			for (int j = i - avgWin; j < (i + avgWin); j++) {
 				tot += dtsList.get(j).getWith().daily;
+				mtot += dtsList.get(j).getWith().monthly;
 				ytot += dtsList.get(j).getWith().yearly;
 			}
 			double a = tot / winSize;
 			dtsList.get(i).getWith().dailyAvg = a;
+
+			a = mtot / winSize;
+			dtsList.get(i).getWith().monthlyAvg = a;
+
 			a = ytot / winSize;
 			dtsList.get(i).getWith().yearlyAvg = a;
 		}
 
 		for (int i = avgWin; i < len; i++) {
 			long tot = 0;
+			long mtot = 0;
 			long ytot = 0;
 			for (int j = i - avgWin; j < (i + avgWin); j++) {
 				tot += dtsList.get(j).getInd().daily;
+				mtot += dtsList.get(j).getInd().monthly;
 				ytot += dtsList.get(j).getInd().yearly;
 			}
 			double a = tot / winSize;
 			dtsList.get(i).getInd().dailyAvg = a;
+
+			a = mtot / winSize;
+			dtsList.get(i).getInd().monthlyAvg = a;
+
 			a = ytot / winSize;
 			dtsList.get(i).getInd().yearlyAvg = a;
 		}
 
 		for (int i = avgWin; i < len; i++) {
 			long tot = 0;
+			long mtot = 0;
 			long ytot = 0;
 			for (int j = i - avgWin; j < (i + avgWin); j++) {
 				tot += dtsList.get(j).getCorp().daily;
+				mtot += dtsList.get(j).getCorp().monthly;
 				ytot += dtsList.get(j).getCorp().yearly;
 			}
 			double a = tot / winSize;
 			dtsList.get(i).getCorp().dailyAvg = a;
+
+			a = mtot / winSize;
+			dtsList.get(i).getCorp().monthlyAvg = a;
+
 			a = ytot / winSize;
 			dtsList.get(i).getCorp().yearlyAvg = a;
 		}
@@ -209,10 +242,11 @@ public class ProcessDTS {
 
 					// Utils.printCalendar(dNow.getDate());
 					// Utils.printCalendar(cal);
-					final double chg = ProcessDTS.findYearlyChangeTotal(dYrAgo, dRecent);
+					final double yChg = ProcessDTS.findYearlyChangeTotal(dYrAgo, dRecent);
+					final double mChg = ProcessDTS.findMonthlyChangeTotal(dYrAgo, dRecent);
 					pw.println(dYrAgo);
 					pw.println(dRecent);
-					String s = String.format("\tChange     ==>%6.2f%%", chg);
+					String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%%n", " ", mChg, yChg);
 					pw.println(s);
 					cal.add(Calendar.DATE, 15);
 				}
@@ -221,6 +255,29 @@ public class ProcessDTS {
 
 			}
 		}
+	}
+
+	private static void CompareReport(int year, int olderMonth, int olderDay) {
+		CompareReport(year, olderMonth, olderDay, year, olderMonth, olderDay);
+	}
+
+	private static void CompareReport(int olderYr, int olderMonth, int olderDay, int recentYr, int recentMonth,
+	    int recentDay) {
+		Calendar older = Calendar.getInstance();
+		older.set(olderYr, olderMonth, olderDay, 1, 1, 1);
+		final DtsData dOlder = ProcessDTS.findYearsAgoData(older, 1);
+
+		Calendar recent = Calendar.getInstance();
+		recent.set(recentYr, recentMonth, recentDay, 1, 1, 1);
+		final DtsData dRecent = ProcessDTS.findYearsAgoData(recent, 0);
+
+		final double yChg = ProcessDTS.findYearlyChangeTotal(dOlder, dRecent);
+		final double mChg = ProcessDTS.findMonthlyChangeTotal(dOlder, dRecent);
+
+		System.out.println(dOlder);
+		System.out.println(dRecent);
+		String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%%n", " ", mChg, yChg);
+		System.out.println(s);
 
 	}
 
@@ -256,6 +313,20 @@ public class ProcessDTS {
 		final double chg = (newer.getWith().yearlyAvg - older.getWith().yearlyAvg) / older.getWith().yearlyAvg;
 		return chg * 100.0;
 	}
+	
+	private static DtsData findData(Calendar cal) {
+		if (cal != null) {
+			for (final DtsData d : dtsList) {
+				if (d.getDate().equals(cal)) {
+					return d;
+				} else if (d.getDate().after(cal)) {
+					return d;
+				}
+			}
+		}
+		return null;
+	}
+	
 
 	/**
 	 *
@@ -280,6 +351,21 @@ public class ProcessDTS {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.findMonthlyChangeTotal
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	private static double findMonthlyChangeTotal(DtsData older, DtsData newer) {
+		final double newTot = newer.getWith().monthlyAvg + newer.getInd().monthlyAvg + newer.getCorp().monthlyAvg;
+		final double oldTot = older.getWith().monthlyAvg + older.getInd().monthlyAvg + older.getCorp().monthlyAvg;
+		final double chg = (newTot - oldTot) / oldTot;
+		return chg * 100.0;
 	}
 
 	/**

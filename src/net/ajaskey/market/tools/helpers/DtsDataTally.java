@@ -39,6 +39,7 @@ public class DtsDataTally {
 	public int		monthly;
 	public int		yearly;
 	public double	dailyAvg;
+	public double	monthlyAvg;
 	public double	yearlyAvg;
 
 	/**
@@ -50,12 +51,13 @@ public class DtsDataTally {
 		this.monthly = 0;
 		this.yearly = 0;
 		this.dailyAvg = 0.0;
+		this.monthlyAvg = 0.0;
 		this.yearlyAvg = 0.0;
 	}
 
 	public String toString() {
-		String str = String.format("Daily:%7d  MTD:%9d  YTD:%10d  DailyAvg:%11.2f  YTDAvg:%11.2f", this.daily,
-		    this.monthly, this.yearly, this.dailyAvg, this.yearlyAvg);
+		String str = String.format("Daily:%7d  MTD:%9d  YTD:%10d  DailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f", this.daily,
+		    this.monthly, this.yearly, this.dailyAvg, this.monthlyAvg, this.yearlyAvg);
 		return str;
 	}
 }
