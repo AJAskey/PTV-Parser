@@ -26,7 +26,6 @@ AE        	Wheat {Mar 13}                                    	LIFFE
 CA.C      	No. 7 Cocoa Continuation                          	LIFFE     
 CAH17     	No. 7 Cocoa {Mar 17}                              	LIFFE     
 CAH18     	No. 7 Cocoa {Mar 18}                              	LIFFE     
-CAK16     	No. 7 Cocoa {May 16}                              	LIFFE     
 CAK17     	No. 7 Cocoa {May 17}                              	LIFFE     
 CAK18     	No. 7 Cocoa {May 18}                              	LIFFE     
 CAN16     	No. 7 Cocoa {Jul 16}                              	LIFFE     
@@ -41,7 +40,6 @@ EGH18     	EuroDollar {Mar 18}                               	LIFFE
 EGH19     	EuroDollar {Mar 19}                               	LIFFE     
 EGH20     	EuroDollar {Mar 20}                               	LIFFE     
 EGH21     	EuroDollar {Mar 21}                               	LIFFE     
-EGK16     	EuroDollar {May 16}                               	LIFFE     
 EGM16     	EuroDollar {Jun 16}                               	LIFFE     
 EGM17     	EuroDollar {Jun 17}                               	LIFFE     
 EGM18     	EuroDollar {Jun 18}                               	LIFFE     
@@ -55,6 +53,7 @@ EGU17     	EuroDollar {Sep 17}                               	LIFFE
 EGU18     	EuroDollar {Sep 18}                               	LIFFE     
 EGU19     	EuroDollar {Sep 19}                               	LIFFE     
 EGU20     	EuroDollar {Sep 20}                               	LIFFE     
+EGU21     	EuroDollar {Sep 21}                               	LIFFE     
 EGZ16     	EuroDollar {Dec 16}                               	LIFFE     
 EGZ17     	EuroDollar {Dec 17}                               	LIFFE     
 EGZ18     	EuroDollar {Dec 18}                               	LIFFE     
@@ -82,6 +81,7 @@ FM18      	3-Month Euroswiss {Jun 18}                        	LIFFE
 FM19      	3-Month Euroswiss {Jun 19}                        	LIFFE     
 FM20      	3-Month Euroswiss {Jun 20}                        	LIFFE     
 FM21      	3-Month Euroswiss {Jun 21}                        	LIFFE     
+FM22      	3-Month Euroswiss {Jun 22}                        	LIFFE     
 FU16      	3-Month Euroswiss {Sep 16}                        	LIFFE     
 FU17      	3-Month Euroswiss {Sep 17}                        	LIFFE     
 FU18      	3-Month Euroswiss {Sep 18}                        	LIFFE     
@@ -127,13 +127,13 @@ IMH19     	3-Month EuriBor {Mar 19}                          	LIFFE
 IMH20     	3-Month EuriBor {Mar 20}                          	LIFFE     
 IMH21     	3-Month EuriBor {Mar 21}                          	LIFFE     
 IMH22     	3-Month EuriBor {Mar 22}                          	LIFFE     
-IMK16     	3-Month EuriBor {May 16}                          	LIFFE     
 IMM16     	3-Month EuriBor {Jun 16}                          	LIFFE     
 IMM17     	3-Month EuriBor {Jun 17}                          	LIFFE     
 IMM18     	3-Month EuriBor {Jun 18}                          	LIFFE     
 IMM19     	3-Month EuriBor {Jun 19}                          	LIFFE     
 IMM20     	3-Month EuriBor {Jun 20}                          	LIFFE     
 IMM21     	3-Month EuriBor {Jun 21}                          	LIFFE     
+IMM22     	3-Month EuriBor {Jun 22}                          	LIFFE     
 IMN16     	3-Month EuriBor {Jul 16}                          	LIFFE     
 IMQ16     	3-Month EuriBor {Aug 16}                          	LIFFE     
 IMU16     	3-Month EuriBor {Sep 16}                          	LIFFE     
@@ -240,13 +240,13 @@ LH19      	3-Month Sterling {Mar 19}                         	LIFFE
 LH20      	3-Month Sterling {Mar 20}                         	LIFFE     
 LH21      	3-Month Sterling {Mar 21}                         	LIFFE     
 LH22      	3-Month Sterling {Mar 22}                         	LIFFE     
-LK16      	3-Month Sterling {May 16}                         	LIFFE     
 LM16      	3-Month Sterling {Jun 16}                         	LIFFE     
 LM17      	3-Month Sterling {Jun 17}                         	LIFFE     
 LM18      	3-Month Sterling {Jun 18}                         	LIFFE     
 LM19      	3-Month Sterling {Jun 19}                         	LIFFE     
 LM20      	3-Month Sterling {Jun 20}                         	LIFFE     
 LM21      	3-Month Sterling {Jun 21}                         	LIFFE     
+LM22      	3-Month Sterling {Jun 22}                         	LIFFE     
 LN16      	3-Month Sterling {Jul 16}                         	LIFFE     
 LU16      	3-Month Sterling {Sep 16}                         	LIFFE     
 LU17      	3-Month Sterling {Sep 17}                         	LIFFE     
@@ -436,21 +436,27 @@ SWZ17     	No. 5 White Sugar {Dec 17}                        	LIFFE
 VF.C      	5-Yr Euro Swapnote Continuation                   	LIFFE     
 VFM16     	5-Yr Euro Swapnote {Jun 16}                       	LIFFE     
 VFU16     	5-Yr Euro Swapnote {Sep 16}                       	LIFFE     
+VFZ16     	5-Yr Euro Swapnote {Dec 16}                       	LIFFE     
 VT.C      	10-Yr Euro Swapnote Continuation                  	LIFFE     
 VTM16     	10-Yr Euro Swapnote {Jun 16}                      	LIFFE     
 VTU16     	10-Yr Euro Swapnote {Sep 16}                      	LIFFE     
+VTZ16     	10-Yr Euro Swapnote {Dec 16}                      	LIFFE     
 VW.C      	2-Yr Euro Swapnote Continuation                   	LIFFE     
 VWM16     	2-Yr Euro Swapnote {Jun 16}                       	LIFFE     
 VWU16     	2-Yr Euro Swapnote {Sep 16}                       	LIFFE     
+VWZ16     	2-Yr Euro Swapnote {Dec 16}                       	LIFFE     
 VX.C      	2-Yr Dollar Swapnote Continuation                 	LIFFE     
 VXM16     	2-Yr Dollar Swapnote {Jun 16}                     	LIFFE     
 VXU16     	2-Yr Dollar Swapnote {Sep 16}                     	LIFFE     
+VXZ16     	2-Yr Dollar Swapnote {Dec 16}                     	LIFFE     
 VY.C      	5-Yr Dollar Swapnote Continuation                 	LIFFE     
 VYM16     	5-Yr Dollar Swapnote {Jun 16}                     	LIFFE     
 VYU16     	5-Yr Dollar Swapnote {Sep 16}                     	LIFFE     
+VYZ16     	5-Yr Dollar Swapnote {Dec 16}                     	LIFFE     
 VZ.C      	10Yr Dollar Swapnote Continuation                 	LIFFE     
 VZM16     	10Yr Dollar Swapnote {Jun 16}                     	LIFFE     
 VZU16     	10Yr Dollar Swapnote {Sep 16}                     	LIFFE     
+VZZ16     	10Yr Dollar Swapnote {Dec 16}                     	LIFFE     
 X         	FTSE 100                                          	LIFFE     
 X.C       	FTSE 100 Continuation                             	LIFFE     
 XH17      	FTSE 100 {Mar 17}                                 	LIFFE     

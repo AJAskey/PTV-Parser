@@ -148,7 +148,6 @@ FHQ16     	Ethanol Swaps-NY {Aug 16}                         	NYMEX
 FHU16     	Ethanol Swaps-NY {Sep 16}                         	NYMEX     
 FL.C      	Ethanol Swaps-Chgo Continuation                   	NYMEX     
 FLF17     	Ethanol Swaps-Chgo {Jan 17}                       	NYMEX     
-FLF18     	Ethanol Swaps-Chgo {Jan 18}                       	NYMEX     
 FLG17     	Ethanol Swaps-Chgo {Feb 17}                       	NYMEX     
 FLH17     	Ethanol Swaps-Chgo {Mar 17}                       	NYMEX     
 FLJ17     	Ethanol Swaps-Chgo {Apr 17}                       	NYMEX     
@@ -890,7 +889,6 @@ QMK18     	E-Mini Crude Oil {May 18}                         	NYMEX
 QMK19     	E-Mini Crude Oil {May 19}                         	NYMEX     
 QMK20     	E-Mini Crude Oil {May 20}                         	NYMEX     
 QMK21     	E-Mini Crude Oil {May 21}                         	NYMEX     
-QMM16     	E-Mini Crude Oil {Jun 16}                         	NYMEX     
 QMM17     	E-Mini Crude Oil {Jun 17}                         	NYMEX     
 QMM18     	E-Mini Crude Oil {Jun 18}                         	NYMEX     
 QMM19     	E-Mini Crude Oil {Jun 19}                         	NYMEX     
@@ -1059,18 +1057,21 @@ SCJ19     	Crude Oil Brent {Apr 19}                          	NYMEX
 SCJ20     	Crude Oil Brent {Apr 20}                          	NYMEX     
 SCJ21     	Crude Oil Brent {Apr 21}                          	NYMEX     
 SCJ22     	Crude Oil Brent {Apr 22}                          	NYMEX     
+SCJ23     	Crude Oil Brent {Apr 23}                          	NYMEX     
 SCK17     	Crude Oil Brent {May 17}                          	NYMEX     
 SCK18     	Crude Oil Brent {May 18}                          	NYMEX     
 SCK19     	Crude Oil Brent {May 19}                          	NYMEX     
 SCK20     	Crude Oil Brent {May 20}                          	NYMEX     
 SCK21     	Crude Oil Brent {May 21}                          	NYMEX     
 SCK22     	Crude Oil Brent {May 22}                          	NYMEX     
+SCK23     	Crude Oil Brent {May 23}                          	NYMEX     
 SCM17     	Crude Oil Brent {Jun 17}                          	NYMEX     
 SCM18     	Crude Oil Brent {Jun 18}                          	NYMEX     
 SCM19     	Crude Oil Brent {Jun 19}                          	NYMEX     
 SCM20     	Crude Oil Brent {Jun 20}                          	NYMEX     
 SCM21     	Crude Oil Brent {Jun 21}                          	NYMEX     
 SCM22     	Crude Oil Brent {Jun 22}                          	NYMEX     
+SCM23     	Crude Oil Brent {Jun 23}                          	NYMEX     
 SCN16     	Crude Oil Brent {Jul 16}                          	NYMEX     
 SCN17     	Crude Oil Brent {Jul 17}                          	NYMEX     
 SCN18     	Crude Oil Brent {Jul 18}                          	NYMEX     
@@ -1078,6 +1079,7 @@ SCN19     	Crude Oil Brent {Jul 19}                          	NYMEX
 SCN20     	Crude Oil Brent {Jul 20}                          	NYMEX     
 SCN21     	Crude Oil Brent {Jul 21}                          	NYMEX     
 SCN22     	Crude Oil Brent {Jul 22}                          	NYMEX     
+SCN23     	Crude Oil Brent {Jul 23}                          	NYMEX     
 SCQ16     	Crude Oil Brent {Aug 16}                          	NYMEX     
 SCQ17     	Crude Oil Brent {Aug 17}                          	NYMEX     
 SCQ18     	Crude Oil Brent {Aug 18}                          	NYMEX     
@@ -1085,6 +1087,7 @@ SCQ19     	Crude Oil Brent {Aug 19}                          	NYMEX
 SCQ20     	Crude Oil Brent {Aug 20}                          	NYMEX     
 SCQ21     	Crude Oil Brent {Aug 21}                          	NYMEX     
 SCQ22     	Crude Oil Brent {Aug 22}                          	NYMEX     
+SCQ23     	Crude Oil Brent {Aug 23}                          	NYMEX     
 SCU16     	Crude Oil Brent {Sep 16}                          	NYMEX     
 SCU17     	Crude Oil Brent {Sep 17}                          	NYMEX     
 SCU18     	Crude Oil Brent {Sep 18}                          	NYMEX     
@@ -1092,6 +1095,7 @@ SCU19     	Crude Oil Brent {Sep 19}                          	NYMEX
 SCU20     	Crude Oil Brent {Sep 20}                          	NYMEX     
 SCU21     	Crude Oil Brent {Sep 21}                          	NYMEX     
 SCU22     	Crude Oil Brent {Sep 22}                          	NYMEX     
+SCU23     	Crude Oil Brent {Sep 23}                          	NYMEX     
 SCV16     	Crude Oil Brent {Oct 16}                          	NYMEX     
 SCV17     	Crude Oil Brent {Oct 17}                          	NYMEX     
 SCV18     	Crude Oil Brent {Oct 18}                          	NYMEX     
@@ -1099,6 +1103,7 @@ SCV19     	Crude Oil Brent {Oct 19}                          	NYMEX
 SCV20     	Crude Oil Brent {Oct 20}                          	NYMEX     
 SCV21     	Crude Oil Brent {Oct 21}                          	NYMEX     
 SCV22     	Crude Oil Brent {Oct 22}                          	NYMEX     
+SCV23     	Crude Oil Brent {Oct 23}                          	NYMEX     
 SCX16     	Crude Oil Brent {Nov 16}                          	NYMEX     
 SCX17     	Crude Oil Brent {Nov 17}                          	NYMEX     
 SCX18     	Crude Oil Brent {Nov 18}                          	NYMEX     
@@ -1106,6 +1111,7 @@ SCX19     	Crude Oil Brent {Nov 19}                          	NYMEX
 SCX20     	Crude Oil Brent {Nov 20}                          	NYMEX     
 SCX21     	Crude Oil Brent {Nov 21}                          	NYMEX     
 SCX22     	Crude Oil Brent {Nov 22}                          	NYMEX     
+SCX23     	Crude Oil Brent {Nov 23}                          	NYMEX     
 SCZ16     	Crude Oil Brent {Dec 16}                          	NYMEX     
 SCZ17     	Crude Oil Brent {Dec 17}                          	NYMEX     
 SCZ18     	Crude Oil Brent {Dec 18}                          	NYMEX     
@@ -1113,6 +1119,7 @@ SCZ19     	Crude Oil Brent {Dec 19}                          	NYMEX
 SCZ20     	Crude Oil Brent {Dec 20}                          	NYMEX     
 SCZ21     	Crude Oil Brent {Dec 21}                          	NYMEX     
 SCZ22     	Crude Oil Brent {Dec 22}                          	NYMEX     
+SCZ23     	Crude Oil Brent {Dec 23}                          	NYMEX     
 TR        	Iron Ore 62% Fe CFR                               	NYMEX     
 TR.C      	Iron Ore 62% Fe CFR Continuation                  	NYMEX     
 TRF17     	Iron Ore 62% Fe CFR {Jan 17}                      	NYMEX     
@@ -1221,7 +1228,6 @@ WSK18     	Crude Oil WTI (F) {May 18}                        	NYMEX
 WSK19     	Crude Oil WTI (F) {May 19}                        	NYMEX     
 WSK20     	Crude Oil WTI (F) {May 20}                        	NYMEX     
 WSK21     	Crude Oil WTI (F) {May 21}                        	NYMEX     
-WSM16     	Crude Oil WTI (F) {Jun 16}                        	NYMEX     
 WSM17     	Crude Oil WTI (F) {Jun 17}                        	NYMEX     
 WSM18     	Crude Oil WTI (F) {Jun 18}                        	NYMEX     
 WSM19     	Crude Oil WTI (F) {Jun 19}                        	NYMEX     

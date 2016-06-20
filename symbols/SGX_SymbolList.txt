@@ -49,19 +49,17 @@
 43D       	Mm2 Asia Ltd.                                     	SGX       
 43E       	Anchor Resources Limited                          	SGX       
 43F       	Acromec Limited                                   	SGX       
-43GR      	Artivision Technologies Ltd R                     	SGX       
-43HR      	Artivision Technologies Ltd R1                    	SGX       
 43IW      	China Star Food Group W180417                     	SGX       
 43J       	Vashion Group Ltd.                                	SGX       
 43KR      	Starburst Holdings Limited R                      	SGX       
 43LR      	Starburst Holdings Limited R1                     	SGX       
+43MW      	Starburst Holdings Ltd W210614                    	SGX       
 500       	Tai Sin Electric Limited                          	SGX       
 502       	Hsr Global Limited                                	SGX       
 504       	Klw Holdings Ltd                                  	SGX       
 505       	Asiamedic Limited                                 	SGX       
 508       	Fuji Offset Plates Mfg Ltd                        	SGX       
 510       	Hiap Seng Engineering Ltd                         	SGX       
-526       	Hg Metal Manufacturing Ltd                        	SGX       
 528       	Second Chance Properties Ltd                      	SGX       
 530       	China Titanium Ltd.                               	SGX       
 532       	Equation Corp Limited                             	SGX       
@@ -108,9 +106,7 @@
 5AL       	Annica Holdings Limited                           	SGX       
 5AM       	Asiatravel.com Holdings Ltd                       	SGX       
 5AU       	Ap Oil International Limited                      	SGX       
-5BA       	Vashion Group Ltd.                                	SGX       
 5BI       	Carriernet Global Ltd                             	SGX       
-5BM       	Mfs Technology Ltd                                	SGX       
 5BS       	Pne Micron Holdings Ltd                           	SGX       
 5CF       	Okp Holdings Limited                              	SGX       
 5CH       	Dmx Technologies Group Ltd                        	SGX       
@@ -345,7 +341,6 @@ AWI       	Thakral Corporation Ltd                           	SGX
 AWK       	Fuxing China Group Limited                        	SGX       
 AWM       	Shanghai Turbo Enterprises Ltd                    	SGX       
 AWO       	Mirach Energy Limited                             	SGX       
-AWQ       	A-sonic Aerospace Limited                         	SGX       
 AWS       	Global Yellow Pages Limited                       	SGX       
 AWUW      	Global Yellow Pages W190625                       	SGX       
 AWV       	Captii Limited                                    	SGX       
@@ -440,7 +435,6 @@ BHK       	Siic Environment Holdings Ltd.                    	SGX
 BHO       	Top Global Limited                                	SGX       
 BHQ       	Sunningdale Tech Ltd                              	SGX       
 BHU       	Sutl Enterprise Limited                           	SGX       
-BIMW      	Ocbc Bk Mb Epw160510                              	SGX       
 BIOZ      	Perennial S$300m4.65%n181023                      	SGX       
 BIP       	Vibrant Group Limited                             	SGX       
 BIX       	Ellipsiz Ltd                                      	SGX       
@@ -644,6 +638,12 @@ BUBW      	Hsi 20000 Mb Epw160728                            	SGX
 BUCW      	Uob Mb Ecw161031                                  	SGX       
 BUDW      	Dbs Mb Ecw161031                                  	SGX       
 BUEW      	Hsi 20800 Vt Ecw160728                            	SGX       
+BUHR      	Yongnam Holdings Limited R                        	SGX       
+BUIR      	Yongnam Holdings Limited R1                       	SGX       
+BUKW      	Hsi 20800 Mb Epw160728                            	SGX       
+BULW      	Hsi 21400 Mb Ecw160728                            	SGX       
+BUMW      	Uob Mb Ecw161130                                  	SGX       
+BUNW      	Ocbc Bk Mb Epw161227                              	SGX       
 C04       	Casa Holdings Limited                             	SGX       
 C05       	Chemical Industries (f.e.) Ltd                    	SGX       
 C06       	Csc Holdings Ltd                                  	SGX       
@@ -808,7 +808,6 @@ J2T       	Hock Lian Seng Holdings Ltd                       	SGX
 J36       	Jardine Matheson Hldgs Ltd                        	SGX       
 J37       	Jardine Strategic Hldgs Ltd                       	SGX       
 J69U      	Frasers Centrepoint Trust                         	SGX       
-J7X       	Tiger Airways Holdings Limited                    	SGX       
 J85       	Cdl Hospitality Trusts                            	SGX       
 J91U      	Cambridge Industrial Trust                        	SGX       
 JA9       	Changjiang Fertilizer Hlgs Ltd                    	SGX       
@@ -864,7 +863,6 @@ KV7       	Dbxt Aud Mm Etf Sgd 5                             	SGX
 KV8       	Dbxt Eonia Tr Etf Usd 5                           	SGX       
 L02       	Manhattan Resources Limited                       	SGX       
 L03       	Lian Beng Group Ltd                               	SGX       
-L07Z      	Lta $500m4.17%n160510                             	SGX       
 L09       	Lung Kee (bermuda) Hldgs Ltd                      	SGX       
 L17       	Lion Teck Chiang Ltd                              	SGX       
 L19       	Lum Chang Holdings Limited                        	SGX       
@@ -1003,7 +1001,6 @@ QL3       	Ishares Usd Asia Hy Bond Etfs$                    	SGX
 QR9       	Cimb S&p Asia Pac Dividend S$                     	SGX       
 QS0       	Cimb Ft Asean 40 100 S$                           	SGX       
 QS9       	Radiance Group Limited                            	SGX       
-R01       	Raffles Medical Group Ltd                         	SGX       
 R07       	Rotary Engineering Limited                        	SGX       
 R14       	Ramba Energy Limited                              	SGX       
 R1LS      	N513100t 180401                                   	SGX       

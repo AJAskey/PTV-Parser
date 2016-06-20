@@ -5,7 +5,6 @@ AAOI      	Applied Optoelect Cm                              	NASDAQ
 AAON      	Aaon Inc                                          	NASDAQ    
 AAPC      	Atlantic Alliance Or                              	NASDAQ    
 AAPL      	Apple Inc.                                        	NASDAQ    
-AAVL      	Avalanche Biot Cm ST                              	NASDAQ    
 AAWW      	Atlas Air Ww                                      	NASDAQ    
 AAXJ      	Ishrs MSCI Aca Xjpn                               	NASDAQ    
 ABAC      	Aoxin Tianli Grp                                  	NASDAQ    
@@ -172,6 +171,7 @@ ANCB      	Anchor Bancorp                                    	NASDAQ
 ANCX      	Access National Corp                              	NASDAQ    
 ANDA      	Andina Acq Cp Ord Sh                              	NASDAQ    
 ANDAR     	Andina Acq Cp Rt                                  	NASDAQ    
+ANDAU     	Andina Acq Cp Unit                                	NASDAQ    
 ANDAW     	Andina Acq Cp Wt                                  	NASDAQ    
 ANDE      	Andersons Inc [The                                	NASDAQ    
 ANGI      	Angie's List Inc.                                 	NASDAQ    
@@ -363,6 +363,7 @@ BLUE      	Bluebird Bio Cmn                                  	NASDAQ
 BLVD      	Boulevard AC Cm ST A                              	NASDAQ    
 BLVDU     	Boulevard Acqu Unit                               	NASDAQ    
 BLVDW     	Boulevard Acquisi Wt                              	NASDAQ    
+BMCH      	Bmc Stock Holdings                                	NASDAQ    
 BMLA      	Recon Bullmark Latam                              	NASDAQ    
 BMRC      	Bank of Marin Bancrp                              	NASDAQ    
 BMRN      	Biomarin Pharmaceut                               	NASDAQ    
@@ -453,6 +454,7 @@ CARO      	Carolina Finacl Cmn                               	NASDAQ
 CART      	Carolina Trust Bank                               	NASDAQ    
 CARV      	Carver Bancorp                                    	NASDAQ    
 CARZ      	Frsttrst Nq Gbl Auto                              	NASDAQ    
+CASC      	Cascadian Therapeutics Inc.                       	NASDAQ    
 CASH      	Meta Financial Grp                                	NASDAQ    
 CASI      	Casi Phrmactcls Inc                               	NASDAQ    
 CASM      	Cas Medical Sys Inc                               	NASDAQ    
@@ -649,7 +651,7 @@ COLM      	Columbia Sprtswr                                  	NASDAQ
 COMM      	Commscope Holding Co                              	NASDAQ    
 COMT      	Ishrs Cmdty Sel Stra                              	NASDAQ    
 CONE      	Cyrusone Inc Cmn                                  	NASDAQ    
-CONN      	Conn'S Inc.                                       	NASDAQ    
+CONN      	Conn's Inc.                                       	NASDAQ    
 COOL      	Majesco Entertainmnt                              	NASDAQ    
 CORE      	Core Mark Holding                                 	NASDAQ    
 CORI      	Corium Intl Cmn                                   	NASDAQ    
@@ -719,13 +721,12 @@ CSWI      	Csw Industrials Inc                               	NASDAQ
 CSX       	CSX Corporation                                   	NASDAQ    
 CTAS      	Cintas Corp                                       	NASDAQ    
 CTBI      	Community TR Bancp                                	NASDAQ    
-CTCM      	Ctc Media Inc                                     	NASDAQ    
 CTG       	Computer Task Gp Inc                              	NASDAQ    
 CTHR      	Charles & Colvard                                 	NASDAQ    
 CTIB      	Cti Inds Corp                                     	NASDAQ    
 CTIC      	Cti Biopharm Corp.                                	NASDAQ    
 CTMX      	Cytomx Thera Cmn Stk                              	NASDAQ    
-CTRE      	Caretrust Reit Inc.                               	NASDAQ    
+CTRE      	Caretrust REIT Inc.                               	NASDAQ    
 CTRL      	Control4 Corporation                              	NASDAQ    
 CTRN      	Citi Trends Inc.                                  	NASDAQ    
 CTRP      	Ctrip.Com Intl Ltd                                	NASDAQ    
@@ -773,13 +774,13 @@ CYRXW     	Cryoport Inc Wts                                  	NASDAQ
 CYTK      	Cytokinetics                                      	NASDAQ    
 CYTR      	Cytrx Cp                                          	NASDAQ    
 CYTX      	Cytori Therapeutics                               	NASDAQ    
+CYTXW     	Cytori Therapeutics Inc                           	NASDAQ    
 CZFC      	Citizens First Corp                               	NASDAQ    
 CZNC      	Citizens Nrthn Cp                                 	NASDAQ    
 CZR       	Caesars Entertnmt                                 	NASDAQ    
 CZWI      	Citizens Community                                	NASDAQ    
 DAIO      	Data I O Cp                                       	NASDAQ    
 DAKT      	Daktronics Inc                                    	NASDAQ    
-DATE      	Jiayuan.Com Internat                              	NASDAQ    
 DAVE      	Famous Daves of Am                                	NASDAQ    
 DAX       	Recon Cp DAX ETF                                  	NASDAQ    
 DBVT      	Dbv Technologies Ads                              	NASDAQ    
@@ -950,7 +951,6 @@ ENTA      	Enanta Pharmaceutica                              	NASDAQ
 ENTG      	Entegris Inc                                      	NASDAQ    
 ENTL      	Entellus Medical Cm                               	NASDAQ    
 ENZL      	Ishares MSCI New Zea                              	NASDAQ    
-ENZN      	Enzon Pharma Inc                                  	NASDAQ    
 ENZY      	Enzymotec Ltd.                                    	NASDAQ    
 EPAY      	Bottomline Tech In                                	NASDAQ    
 EPIQ      	Epiq Systems Inc                                  	NASDAQ    
@@ -1080,6 +1080,7 @@ FISI      	Financial Institut                                	NASDAQ
 FISV      	Fiserv Inc.                                       	NASDAQ    
 FITB      	Fifth Third Bncp                                  	NASDAQ    
 FITBI     	Fifth Third Bancorp                               	NASDAQ    
+FITS      	The Health and Fitness ETF                        	NASDAQ    
 FIVE      	Five Below Inc.                                   	NASDAQ    
 FIVN      	Five9 Inc Cmn                                     	NASDAQ    
 FIZZ      	Natl Beverage Cp                                  	NASDAQ    
@@ -1107,6 +1108,7 @@ FMI       	Foundation Medicine                               	NASDAQ
 FMK       	First TR Mega Cp Alp                              	NASDAQ    
 FMNB      	Farmers Natl Banc Cp                              	NASDAQ    
 FNBC      	First Nbc Bank Holdi                              	NASDAQ    
+FNCX      	Function(X) Inc.                                  	NASDAQ    
 FNFG      	First Niagara Finl                                	NASDAQ    
 FNGN      	Financial Engines Cm                              	NASDAQ    
 FNHC      	Federated Natl Hldg                               	NASDAQ    
@@ -1184,7 +1186,6 @@ FUNC      	First United Corp                                 	NASDAQ
 FUND      	Sprott Focus Trust                                	NASDAQ    
 FV        	First Trust ETF Vi                                	NASDAQ    
 FVC       	FT DWA Dyn Foc 5 ETF                              	NASDAQ    
-FWM       	Fairway Gp Hld Cl A                               	NASDAQ    
 FWP       	Forward Pharma Ads                                	NASDAQ    
 FWRD      	Foward Air Corp                                   	NASDAQ    
 FXCB      	Fox Chase Bancrp                                  	NASDAQ    
@@ -1224,6 +1225,7 @@ GFNCP     	General Fn Cum Pfd C                              	NASDAQ
 GFNSL     	Genrl Fin Sr Nt 2021                              	NASDAQ    
 GGAC      	Garnero Gr AC Ord Sh                              	NASDAQ    
 GGACR     	Garnero Grp Acq Righ                              	NASDAQ    
+GGACU     	Garnero Grp Acq Unit                              	NASDAQ    
 GGACW     	Gernero Grp Acq Wrnt                              	NASDAQ    
 GGAL      	Grupo Fin Galicia                                 	NASDAQ    
 GHDX      	Genomic Health Inc.                               	NASDAQ    
@@ -1257,7 +1259,6 @@ GNCA      	Genocea Biosciences                               	NASDAQ
 GNCMA     	Gen Communication                                 	NASDAQ    
 GNMA      	Ishares GNMA Bd ETF                               	NASDAQ    
 GNMK      	Genmark Diagnostics                               	NASDAQ    
-GNOW      	American Caresource                               	NASDAQ    
 GNRX      	Vaneck Vectors Gener                              	NASDAQ    
 GNTX      	Gentex Corp                                       	NASDAQ    
 GNVC      	Genvec Inc                                        	NASDAQ    
@@ -1265,6 +1266,7 @@ GOGL      	Golden Ocean Gp Cmn                               	NASDAQ
 GOGO      	Gogo Inc Cmn Stk                                  	NASDAQ    
 GOLD      	Randgold Res Ltd                                  	NASDAQ    
 GOOD      	Gladstone Comml                                   	NASDAQ    
+GOODM     	Gladstone Commercial Corporatio                   	NASDAQ    
 GOODN     	Gladstone Pfd C                                   	NASDAQ    
 GOODO     	Gladstone Commercial                              	NASDAQ    
 GOODP     	Gladstone Commercia                               	NASDAQ    
@@ -1278,7 +1280,7 @@ GPIAU     	Gp Investments Unit                               	NASDAQ
 GPIAW     	Gp Investments Aq Wt                              	NASDAQ    
 GPIC      	Gaming Partners Intl                              	NASDAQ    
 GPOR      	Gulfport Energy Corp                              	NASDAQ    
-GPP       	Green Plains Cmn Un                               	NASDAQ    
+GPP       	Green Plains Partners LP                          	NASDAQ    
 GPRE      	Green Plains Inc Cmn                              	NASDAQ    
 GPRO      	Gopro Inc Cl A Cmn                                	NASDAQ    
 GRBK      	Green Brick Partners                              	NASDAQ    
@@ -1293,7 +1295,6 @@ GRSHU     	Gores Holdings Unit                               	NASDAQ
 GRSHW     	Gores Holdings Warr                               	NASDAQ    
 GRVY      	Gravity Co. Ltd.                                  	NASDAQ    
 GSBC      	Great Southern Bncp                               	NASDAQ    
-GSIG      	Gsi Group Inc                                     	NASDAQ    
 GSIT      	Gsi Technology Inc                                	NASDAQ    
 GSM       	Ferroglobe Plc Os                                 	NASDAQ    
 GSOL      	Global Sources Ltd                                	NASDAQ    
@@ -1302,7 +1303,7 @@ GT        	Goodyear Tire Rubber                              	NASDAQ
 GTIM      	Good Times Rest                                   	NASDAQ    
 GTLS      	Chart Industries In                               	NASDAQ    
 GTWN      	Georgetown Bancp Cmn                              	NASDAQ    
-GTXI      	Gtx Inc.                                          	NASDAQ    
+GTXI      	GTX Inc.                                          	NASDAQ    
 GUID      	Guidance Software                                 	NASDAQ    
 GULF      	Wisdomtree                                        	NASDAQ    
 GURE      	Gulf Resources Inc                                	NASDAQ    
@@ -1343,6 +1344,7 @@ HCSG      	Healthcare Svcs Gp                                	NASDAQ
 HDNG      	Hardinge Inc                                      	NASDAQ    
 HDP       	Hortonworks Cmn                                   	NASDAQ    
 HDRA      	Hydra Ind Acq Cmn                                 	NASDAQ    
+HDRAR     	Hydra Ind Acq RTS                                 	NASDAQ    
 HDRAU     	Hydra Ind Acq Cp Uts                              	NASDAQ    
 HDRAW     	Hydra Indt Acq Wts                                	NASDAQ    
 HDS       	HD Supply Hlds Cmm                                	NASDAQ    
@@ -1354,7 +1356,6 @@ HEOP      	Heritage Oaks Bancp                               	NASDAQ
 HERO      	Hercules Offshore Cm                              	NASDAQ    
 HFBC      	Hopfed Bancorp Inc                                	NASDAQ    
 HFBL      	Home Federal                                      	NASDAQ    
-HFFC      	HF Financial Corp                                 	NASDAQ    
 HFWA      	Heritage Financial                                	NASDAQ    
 HGSH      	China Hgs Real Est                                	NASDAQ    
 HIBB      	Hibbett Sports Inc                                	NASDAQ    
@@ -1394,7 +1395,7 @@ HSGX      	Histogenics Cp Cmn                                	NASDAQ
 HSIC      	Henry Schein Inc.                                 	NASDAQ    
 HSII      	Heidrick & Struggl                                	NASDAQ    
 HSKA      	Heska Corp                                        	NASDAQ    
-HSNI      	Hsn Inc. Cmn Stk                                  	NASDAQ    
+HSNI      	HSN Inc. Cmn Stk                                  	NASDAQ    
 HSON      	Hudson Global Cmn                                 	NASDAQ    
 HSTM      	Healthstream Inc                                  	NASDAQ    
 HTBI      	Hometrust Bancshares                              	NASDAQ    
@@ -1462,7 +1463,6 @@ III       	Information Svcs Grp                              	NASDAQ
 IIIN      	Insteel Industries                                	NASDAQ    
 IIJI      	Internet Init Jap                                 	NASDAQ    
 IILG      	Interval Leisure Cmn                              	NASDAQ    
-IILGV     	Interval Leisure Group Inc.                       	NASDAQ    
 IIN       	Intricon Corp                                     	NASDAQ    
 IIVI      	I I V I Inc                                       	NASDAQ    
 IKGH      	Iao Kun Grp Holdings                              	NASDAQ    
@@ -1571,6 +1571,7 @@ JJSF      	J J Snack Foods                                   	NASDAQ
 JKHY      	Jack Henry & Assoc                                	NASDAQ    
 JKI       	Ishares Mrgng Mid Va                              	NASDAQ    
 JMBA      	Jamba Inc. Cmn Stk                                	NASDAQ    
+JMU       	Wowo Ltd Ads                                      	NASDAQ    
 JNP       	Juniper Pharm Inc.                                	NASDAQ    
 JOBS      	51Job Inc.                                        	NASDAQ    
 JOUT      	Johnson Outdoors I                                	NASDAQ    
@@ -1609,7 +1610,6 @@ KIRK      	Kirkland's Inc                                    	NASDAQ
 KITE      	Kite Pharma Inc. Cm                               	NASDAQ    
 KLAC      	K L A-Tencor Corp                                 	NASDAQ    
 KLIC      	Kulicke and Soffa                                 	NASDAQ    
-KLRE      	Klr Energy Acq Cm A                               	NASDAQ    
 KLREU     	Klr Energy Acq Ut                                 	NASDAQ    
 KLREW     	Klr Energy Acq Wt                                 	NASDAQ    
 KLXI      	Klx Inc.                                          	NASDAQ    
@@ -1742,6 +1742,7 @@ LULU      	Lululemon Athletica                               	NASDAQ
 LUNA      	Luna Innovations Inc                              	NASDAQ    
 LVHD      	Legg Mason Lv HD ETF                              	NASDAQ    
 LVNTA     	Liberty Vntrs Srs A                               	NASDAQ    
+LVNTB     	Liberty Vntrs Srs B                               	NASDAQ    
 LWAY      	Lifeway Foods Inc                                 	NASDAQ    
 LXRX      	Lexicon Pharmaceutcl                              	NASDAQ    
 LYTS      	L S I Industries I                                	NASDAQ    
@@ -1833,6 +1834,7 @@ MIK       	The Michaels Comp Cm                              	NASDAQ
 MILN      	Glbl X Mlnls Thm ETF                              	NASDAQ    
 MIME      	Mimecast Limited Ord                              	NASDAQ    
 MIND      	Mitcham Inds Inc                                  	NASDAQ    
+MINDP     	Mitcham Industries Inc.                           	NASDAQ    
 MINI      	Mobile Mini Inc                                   	NASDAQ    
 MIRN      	Mirna Therap Cmn Stk                              	NASDAQ    
 MITK      	Mitek Systems Inc                                 	NASDAQ    
@@ -1904,7 +1906,6 @@ MTRX      	Matrix Service Co                                 	NASDAQ
 MTSC      	M T S Systems Cp                                  	NASDAQ    
 MTSI      	Macom Technology S                                	NASDAQ    
 MTSL      	M E R Tlmgt Sol                                   	NASDAQ    
-MTSN      	Mattson Tech Inc                                  	NASDAQ    
 MU        	Micron Technology                                 	NASDAQ    
 MVIS      	Microvision                                       	NASDAQ    
 MXIM      	Maxim Integrated                                  	NASDAQ    
@@ -1980,7 +1981,6 @@ NOVT      	Novanta Inc                                       	NASDAQ
 NRCIA     	National Resh Cla Cm                              	NASDAQ    
 NRCIB     	Natl Research Cl B                                	NASDAQ    
 NRIM      	Northrim Bancorp Inc                              	NASDAQ    
-NRX       	Nephrogenex Inc                                   	NASDAQ    
 NSEC      	Natl Security Gp I                                	NASDAQ    
 NSIT      	Insight Enterpr                                   	NASDAQ    
 NSPH      	Nanosphere Inc.                                   	NASDAQ    
@@ -2027,6 +2027,9 @@ NWLI      	Natl Wstrn Life Gp A                              	NASDAQ
 NWPX      	Northwest Pipe Co                                 	NASDAQ    
 NWS       	News Cp Cl B Cmn ST                               	NASDAQ    
 NWSA      	News Cp Cl A Cmn ST                               	NASDAQ    
+NXEO      	Nexeo Solutions Inc.                              	NASDAQ    
+NXEOU     	Nexeo Solutions Inc.                              	NASDAQ    
+NXEOW     	Nexeo Solutions Inc.                              	NASDAQ    
 NXPI      	Nxp Semiconductors                                	NASDAQ    
 NXST      	Nexstar Broadcasting                              	NASDAQ    
 NXTD      	Nxt-Id Inc. Cmn Stk                               	NASDAQ    
@@ -2061,6 +2064,7 @@ OHRP      	Ohr Pharmceutial Cm                               	NASDAQ
 OIIM      	O2Micro Intl Ltd                                  	NASDAQ    
 OKSB      	Southwest Bncp Inc                                	NASDAQ    
 OLBK      	Old Line Bancshs MD                               	NASDAQ    
+OLD       	The Long-Term Care ETF                            	NASDAQ    
 OLED      	Universal Display                                 	NASDAQ    
 OLLI      	Ollies Bargain CS                                 	NASDAQ    
 OMAB      	Grupo Aeroportuario                               	NASDAQ    
@@ -2073,6 +2077,7 @@ ONB       	Old National Bncp Cm                              	NASDAQ
 ONCE      	Spark Therap Cmn                                  	NASDAQ    
 ONCS      	Oncosec Medical Cm                                	NASDAQ    
 ONEQ      	Nasdaq Comp Ndx Fund                              	NASDAQ    
+ONS       	Oncobiologics Inc.                                	NASDAQ    
 ONSIU     	Oncobiologics Unit                                	NASDAQ    
 ONTX      	Onconova Therapeutic                              	NASDAQ    
 ONTY      	Oncothyreon Inc                                   	NASDAQ    
@@ -2089,6 +2094,7 @@ OPXAW     	Opexa Therap Warrant                              	NASDAQ
 ORBC      	Orbcomm Inc.                                      	NASDAQ    
 ORBK      	Orbotech Ltd.                                     	NASDAQ    
 OREX      	Orexigen Therapeutic                              	NASDAQ    
+ORG       	The Organics ETF                                  	NASDAQ    
 ORIG      	Ocean Rig Udw Inc                                 	NASDAQ    
 ORIT      	Oritani Financial                                 	NASDAQ    
 ORLY      	O'Reilly Automotive                               	NASDAQ    
@@ -2122,6 +2128,7 @@ OXLCN     	Oxford Lane 8.125 Pf                              	NASDAQ
 OXLCO     	Oxford Lane Cap 7.5                               	NASDAQ    
 OZRK      	Bank of The Ozarks                                	NASDAQ    
 PAAC      	Pacific Spec Acq Ord                              	NASDAQ    
+PAACR     	Pacific Spc Aq Right                              	NASDAQ    
 PAACU     	Pacific Spc Acq Unit                              	NASDAQ    
 PAACW     	Pacific Spc Acq Wrnt                              	NASDAQ    
 PAAS      	Pan Amer Silver Corp                              	NASDAQ    
@@ -2144,6 +2151,7 @@ PBHC      	Pathfinder Bcp MD                                 	NASDAQ
 PBIB      	Porter Bancorp Inc.                               	NASDAQ    
 PBIP      	Prudential Bancorp                                	NASDAQ    
 PBMD      	Prima Biomed Ltd                                  	NASDAQ    
+PBNC      	Paragon Commercial Corporation                    	NASDAQ    
 PBPB      	Potbelly Corp Cmn                                 	NASDAQ    
 PBSK      	Poage Bankshares Inc                              	NASDAQ    
 PCAR      	Paccar Inc.                                       	NASDAQ    
@@ -2151,7 +2159,7 @@ PCBK      	Pacific Continental                               	NASDAQ
 PCCC      	PC Connection Inc                                 	NASDAQ    
 PCH       	Potlatch Cp                                       	NASDAQ    
 PCLN      	The Priceline Gp Cm                               	NASDAQ    
-PCMI      	Pcm Inc.                                          	NASDAQ    
+PCMI      	PCM Inc.                                          	NASDAQ    
 PCO       	Pendrell Corporation                              	NASDAQ    
 PCOM      	Points Intl Ltd                                   	NASDAQ    
 PCRX      	Pacira Pharm Inc                                  	NASDAQ    
@@ -2192,7 +2200,7 @@ PGC       	Peapack Gladstone Fi                              	NASDAQ
 PGLC      	Pershing Gold Cmn                                 	NASDAQ    
 PGNX      	Progenics Pharmaceut                              	NASDAQ    
 PGTI      	Pgt Inc.                                          	NASDAQ    
-PHII      	Phi Inc.                                          	NASDAQ    
+PHII      	PHI Inc.                                          	NASDAQ    
 PHIIK     	PHI Inc Non-Voting                                	NASDAQ    
 PHMD      	Photomedex Inc                                    	NASDAQ    
 PICO      	Pico Holdings Inc.                                	NASDAQ    
@@ -2313,7 +2321,6 @@ QDEL      	Quidel Cp                                         	NASDAQ
 QGEN      	Qiagen N.V.                                       	NASDAQ    
 QINC      	First TR Rba Ql ETF                               	NASDAQ    
 QIWI      	Qiwi Plc ADR                                      	NASDAQ    
-QKLS      	Qkl Stores Inc                                    	NASDAQ    
 QLC       	Flxshrs US Ql Lg Cap                              	NASDAQ    
 QLGC      	Qlogic Cp                                         	NASDAQ    
 QLIK      	Qlik Technologies In                              	NASDAQ    
@@ -2357,6 +2364,7 @@ RDCM      	Radcom Ltd                                        	NASDAQ
 RDEN      	Elizabeth Arden                                   	NASDAQ    
 RDHL      	Redhill Biophrma ADR                              	NASDAQ    
 RDI       	Reading Intl Cl A                                 	NASDAQ    
+RDIB      	Reading Intl Cl B                                 	NASDAQ    
 RDNT      	Radnet Inc                                        	NASDAQ    
 RDUS      	Radius Health Cmn                                 	NASDAQ    
 RDVY      	First Trust ETF Vi                                	NASDAQ    
@@ -2558,6 +2566,7 @@ SKYY      	First Trust ISE Clou                              	NASDAQ
 SLAB      	Silicon Labs Inc                                  	NASDAQ    
 SLCT      	Select Bancorp Inc.                               	NASDAQ    
 SLGN      	Silgan Holdings                                   	NASDAQ    
+SLIM      	The Obesity ETF                                   	NASDAQ    
 SLM       	SLM Corporation                                   	NASDAQ    
 SLMAP     	SLM Cp Srs A Pfd                                  	NASDAQ    
 SLMBP     	SLM Cp Srs B Pfd                                  	NASDAQ    
@@ -2583,7 +2592,6 @@ SNAK      	Inventure Foods Inc                               	NASDAQ
 SNBC      	Sun Bancorp Inc                                   	NASDAQ    
 SNC       	State Natl Co Cmn                                 	NASDAQ    
 SNCR      	Synchronoss Technolo                              	NASDAQ    
-SNDK      	Sandisk Corporation                               	NASDAQ    
 SNDX      	Syndax Pharma Common                              	NASDAQ    
 SNFCA     	Security Natl Finl                                	NASDAQ    
 SNHY      	Sun Hydraulics Cor                                	NASDAQ    
@@ -2700,7 +2708,6 @@ SYPR      	Sypris Solutions                                  	NASDAQ
 SYRX      	Sysorex Global Cmn                                	NASDAQ    
 SYUT      	Synutra Internationa                              	NASDAQ    
 SZMK      	Sizmek Inc Common ST                              	NASDAQ    
-SZYM      	Solazyme Inc                                      	NASDAQ    
 TACO      	Del Taco Rest Cmn                                 	NASDAQ    
 TACOW     	Del Taco Rest Wts                                 	NASDAQ    
 TACT      	Transact Tech Inc                                 	NASDAQ    
@@ -2711,8 +2718,6 @@ TASR      	Taser Intl Inc                                    	NASDAQ
 TAST      	Carrols Rstrnt Group                              	NASDAQ    
 TATT      	T A T Tech Ltd                                    	NASDAQ    
 TAX       	Liberty Tax Cl A Cmn                              	NASDAQ    
-TAXI      	Medallion Fin Cp                                  	NASDAQ    
-TAXIL     	Medallion Financial Corp.                         	NASDAQ    
 TAYD      	Taylor Devices Inc.                               	NASDAQ    
 TBBK      	The Bancorp Inc.                                  	NASDAQ    
 TBIO      	Transgenomic Cmn                                  	NASDAQ    
@@ -2926,6 +2931,7 @@ VIP       	Vimpelcom Ltd Ads                                 	NASDAQ
 VIRC      	Virco MFG Cp                                      	NASDAQ    
 VIRT      	Virtu Financial Cm A                              	NASDAQ    
 VISN      	Visionchina Media I                               	NASDAQ    
+VIVE      	Viveve Medical                                    	NASDAQ    
 VIVO      	Meridian Bioscience                               	NASDAQ    
 VKTX      	Viking Thera Cmn                                  	NASDAQ    
 VKTXW     	Viking Theraptcs Wts                              	NASDAQ    
@@ -2958,7 +2964,6 @@ VRTU      	Virtusa Corporation                               	NASDAQ
 VRTX      	Vertex Pharmaceutic                               	NASDAQ    
 VSAR      	Versartis Inc. Cmn                                	NASDAQ    
 VSAT      	Viasat Inc                                        	NASDAQ    
-VSCP      	Virtualscopics Inc                                	NASDAQ    
 VSEC      	V S E Cp                                          	NASDAQ    
 VSTM      	Verastem Inc.                                     	NASDAQ    
 VTAE      	Vitae Pharmace Cm ST                              	NASDAQ    
@@ -3038,7 +3043,7 @@ WOOF      	Vca Inc.                                          	NASDAQ
 WOWO      	Wowo Ltd Ads                                      	NASDAQ    
 WPCS      	Wpcs Intl Inc                                     	NASDAQ    
 WPPGY     	Wpp Plc ADR                                       	NASDAQ    
-WPRT      	Westport Innovations                              	NASDAQ    
+WPRT      	Westport Fuel Systems Inc.                        	NASDAQ    
 WRES      	Warren Resources In                               	NASDAQ    
 WRLD      	World Acceptance Cp                               	NASDAQ    
 WSBC      	Wesbanco Inc.                                     	NASDAQ    
@@ -3059,6 +3064,7 @@ WVVI      	Willamette Valley                                 	NASDAQ
 WWD       	Woodward Inc.                                     	NASDAQ    
 WYIG      	Jm Global Holding Cm                              	NASDAQ    
 WYIGU     	Jm Global Hold Unit                               	NASDAQ    
+WYIGW     	Jm Global Holdin Wt                               	NASDAQ    
 WYNN      	Wynn Resorts Limited                              	NASDAQ    
 XBIT      	Xbiotech Inc. Cmn                                 	NASDAQ    
 XBKS      	Xenith Bankshares I                               	NASDAQ    

@@ -23,22 +23,24 @@ AOZ16     	MSCI Pan-Euro Index {Dec 16}                      	NYBOT
 AR        	Aussie/New Zealand                                	NYBOT     
 ARH17     	Aussie/New Zealand {Mar 17}                       	NYBOT     
 ARM16     	Aussie/New Zealand {Jun 16}                       	NYBOT     
+ARM17     	Aussie/New Zealand {Jun 17}                       	NYBOT     
 ARU16     	Aussie/New Zealand {Sep 16}                       	NYBOT     
 ARZ16     	Aussie/New Zealand {Dec 16}                       	NYBOT     
 AS        	Aussie/Canadian                                   	NYBOT     
 ASH17     	Aussie/Canadian {Mar 17}                          	NYBOT     
 ASM16     	Aussie/Canadian {Jun 16}                          	NYBOT     
+ASM17     	Aussie/Canadian {Jun 17}                          	NYBOT     
 ASU16     	Aussie/Canadian {Sep 16}                          	NYBOT     
 ASZ16     	Aussie/Canadian {Dec 16}                          	NYBOT     
 AU        	Australian Dollar                                 	NYBOT     
 AUH17     	Australian Dollar {Mar 17}                        	NYBOT     
 AUM16     	Australian Dollar {Jun 16}                        	NYBOT     
+AUM17     	Australian Dollar {Jun 17}                        	NYBOT     
 AUU16     	Australian Dollar {Sep 16}                        	NYBOT     
 AUZ16     	Australian Dollar {Dec 16}                        	NYBOT     
 CC        	Cocoa                                             	NYBOT     
 CCH17     	Cocoa {Mar 17}                                    	NYBOT     
 CCH18     	Cocoa {Mar 18}                                    	NYBOT     
-CCK16     	Cocoa {May 16}                                    	NYBOT     
 CCK17     	Cocoa {May 17}                                    	NYBOT     
 CCK18     	Cocoa {May 18}                                    	NYBOT     
 CCN16     	Cocoa {Jul 16}                                    	NYBOT     
@@ -80,6 +82,7 @@ DQZ16     	MSCI USA Index {Dec 16}                           	NYBOT
 DX        	U.S. Dollar Index                                 	NYBOT     
 DXH17     	U.S. Dollar Index {Mar 17}                        	NYBOT     
 DXM16     	U.S. Dollar Index {Jun 16}                        	NYBOT     
+DXM17     	U.S. Dollar Index {Jun 17}                        	NYBOT     
 DXU16     	U.S. Dollar Index {Sep 16}                        	NYBOT     
 DXZ16     	U.S. Dollar Index {Dec 16}                        	NYBOT     
 EHH17     	MSCI Europe Index {Mar 17}                        	NYBOT     
@@ -89,11 +92,13 @@ EHZ16     	MSCI Europe Index {Dec 16}                        	NYBOT
 EJ        	Euro/Yen                                          	NYBOT     
 EJH17     	Euro/Yen {Mar 17}                                 	NYBOT     
 EJM16     	Euro/Yen {Jun 16}                                 	NYBOT     
+EJM17     	Euro/Yen {Jun 17}                                 	NYBOT     
 EJU16     	Euro/Yen {Sep 16}                                 	NYBOT     
 EJZ16     	Euro/Yen {Dec 16}                                 	NYBOT     
 EK        	Krone/Krona                                       	NYBOT     
 EKH17     	Krone/Krona {Mar 17}                              	NYBOT     
 EKM16     	Krone/Krona {Jun 16}                              	NYBOT     
+EKM17     	Krone/Krona {Jun 17}                              	NYBOT     
 EKU16     	Krone/Krona {Sep 16}                              	NYBOT     
 EKZ16     	Krone/Krona {Dec 16}                              	NYBOT     
 ELH17     	MSCI Europe Growth {Mar 17}                       	NYBOT     
@@ -107,16 +112,19 @@ ENZ16     	MSCI Europe Value {Dec 16}                        	NYBOT
 EP        	Euro/Canadian                                     	NYBOT     
 EPH17     	Euro/Canadian {Mar 17}                            	NYBOT     
 EPM16     	Euro/Canadian {Jun 16}                            	NYBOT     
+EPM17     	Euro/Canadian {Jun 17}                            	NYBOT     
 EPU16     	Euro/Canadian {Sep 16}                            	NYBOT     
 EPZ16     	Euro/Canadian {Dec 16}                            	NYBOT     
 EQ        	Euro/Australian                                   	NYBOT     
 EQH17     	Euro/Australian {Mar 17}                          	NYBOT     
 EQM16     	Euro/Australian {Jun 16}                          	NYBOT     
+EQM17     	Euro/Australian {Jun 17}                          	NYBOT     
 EQU16     	Euro/Australian {Sep 16}                          	NYBOT     
 EQZ16     	Euro/Australian {Dec 16}                          	NYBOT     
 EU        	Euro Futures                                      	NYBOT     
 EUH17     	Euro Futures {Mar 17}                             	NYBOT     
 EUM16     	Euro Futures {Jun 16}                             	NYBOT     
+EUM17     	Euro Futures {Jun 17}                             	NYBOT     
 EUU16     	Euro Futures {Sep 16}                             	NYBOT     
 EUZ16     	Euro Futures {Dec 16}                             	NYBOT     
 G8H17     	ICE Gold Miners {Mar 17}                          	NYBOT     
@@ -126,21 +134,25 @@ G8Z16     	ICE Gold Miners {Dec 16}                          	NYBOT
 GB        	Euro/Pound                                        	NYBOT     
 GBH17     	Euro/Pound {Mar 17}                               	NYBOT     
 GBM16     	Euro/Pound {Jun 16}                               	NYBOT     
+GBM17     	Euro/Pound {Jun 17}                               	NYBOT     
 GBU16     	Euro/Pound {Sep 16}                               	NYBOT     
 GBZ16     	Euro/Pound {Dec 16}                               	NYBOT     
 GN        	Pound/New Zealand                                 	NYBOT     
 GNH17     	Pound/New Zealand {Mar 17}                        	NYBOT     
 GNM16     	Pound/New Zealand {Jun 16}                        	NYBOT     
+GNM17     	Pound/New Zealand {Jun 17}                        	NYBOT     
 GNU16     	Pound/New Zealand {Sep 16}                        	NYBOT     
 GNZ16     	Pound/New Zealand {Dec 16}                        	NYBOT     
 GY        	Euro/Forint                                       	NYBOT     
 GYH17     	Euro/Forint {Mar 17}                              	NYBOT     
 GYM16     	Euro/Forint {Jun 16}                              	NYBOT     
+GYM17     	Euro/Forint {Jun 17}                              	NYBOT     
 GYU16     	Euro/Forint {Sep 16}                              	NYBOT     
 GYZ16     	Euro/Forint {Dec 16}                              	NYBOT     
 GZ        	Euro/Koruna                                       	NYBOT     
 GZH17     	Euro/Koruna {Mar 17}                              	NYBOT     
 GZM16     	Euro/Koruna {Jun 16}                              	NYBOT     
+GZM17     	Euro/Koruna {Jun 17}                              	NYBOT     
 GZU16     	Euro/Koruna {Sep 16}                              	NYBOT     
 GZZ16     	Euro/Koruna {Dec 16}                              	NYBOT     
 H0        	Indian Rupee                                      	NYBOT     
@@ -221,15 +233,18 @@ H8Z19     	Brazilian Real {Dec 19}                           	NYBOT
 H8Z20     	Brazilian Real {Dec 20}                           	NYBOT     
 HCH17     	Turkish Lira/Euro {Mar 17}                        	NYBOT     
 HCM16     	Turkish Lira/Euro {Jun 16}                        	NYBOT     
+HCM17     	Turkish Lira/Euro {Jun 17}                        	NYBOT     
 HCU16     	Turkish Lira/Euro {Sep 16}                        	NYBOT     
 HCZ16     	Turkish Lira/Euro {Dec 16}                        	NYBOT     
 HDH17     	Turkish Lira/USD {Mar 17}                         	NYBOT     
 HDM16     	Turkish Lira/USD {Jun 16}                         	NYBOT     
+HDM17     	Turkish Lira/USD {Jun 17}                         	NYBOT     
 HDU16     	Turkish Lira/USD {Sep 16}                         	NYBOT     
 HDZ16     	Turkish Lira/USD {Dec 16}                         	NYBOT     
 HY        	Canadian/Yen                                      	NYBOT     
 HYH17     	Canadian/Yen {Mar 17}                             	NYBOT     
 HYM16     	Canadian/Yen {Jun 16}                             	NYBOT     
+HYM17     	Canadian/Yen {Jun 17}                             	NYBOT     
 HYU16     	Canadian/Yen {Sep 16}                             	NYBOT     
 HYZ16     	Canadian/Yen {Dec 16}                             	NYBOT     
 JCH17     	ICE Corn {Mar 17}                                 	NYBOT     
@@ -274,6 +289,7 @@ JFZ19     	ICE Soybean Meal {Dec 19}                         	NYBOT
 JJ        	New Zealand Dollar                                	NYBOT     
 JJH17     	New Zealand Dollar {Mar 17}                       	NYBOT     
 JJM16     	New Zealand Dollar {Jun 16}                       	NYBOT     
+JJM17     	New Zealand Dollar {Jun 17}                       	NYBOT     
 JJU16     	New Zealand Dollar {Sep 16}                       	NYBOT     
 JJZ16     	New Zealand Dollar {Dec 16}                       	NYBOT     
 JLF17     	ICE Soybean Oil {Jan 17}                          	NYBOT     
@@ -335,7 +351,6 @@ KC        	Coffee                                            	NYBOT
 KCH17     	Coffee {Mar 17}                                   	NYBOT     
 KCH18     	Coffee {Mar 18}                                   	NYBOT     
 KCH19     	Coffee {Mar 19}                                   	NYBOT     
-KCK16     	Coffee {May 16}                                   	NYBOT     
 KCK17     	Coffee {May 17}                                   	NYBOT     
 KCK18     	Coffee {May 18}                                   	NYBOT     
 KCK19     	Coffee {May 19}                                   	NYBOT     
@@ -351,16 +366,19 @@ KCZ18     	Coffee {Dec 18}                                   	NYBOT
 KJ        	Krona/Yen                                         	NYBOT     
 KJH17     	Krona/Yen {Mar 17}                                	NYBOT     
 KJM16     	Krona/Yen {Jun 16}                                	NYBOT     
+KJM17     	Krona/Yen {Jun 17}                                	NYBOT     
 KJU16     	Krona/Yen {Sep 16}                                	NYBOT     
 KJZ16     	Krona/Yen {Dec 16}                                	NYBOT     
 KU        	Dollar/Krona                                      	NYBOT     
 KUH17     	Dollar/Krona {Mar 17}                             	NYBOT     
 KUM16     	Dollar/Krona {Jun 16}                             	NYBOT     
+KUM17     	Dollar/Krona {Jun 17}                             	NYBOT     
 KUU16     	Dollar/Krona {Sep 16}                             	NYBOT     
 KUZ16     	Dollar/Krona {Dec 16}                             	NYBOT     
 KY        	Krone/Yen                                         	NYBOT     
 KYH17     	Krone/Yen {Mar 17}                                	NYBOT     
 KYM16     	Krone/Yen {Jun 16}                                	NYBOT     
+KYM17     	Krone/Yen {Jun 17}                                	NYBOT     
 KYU16     	Krone/Yen {Sep 16}                                	NYBOT     
 KYZ16     	Krone/Yen {Dec 16}                                	NYBOT     
 L0H17     	MSCI ACWI ex-US {Mar 17}                          	NYBOT     
@@ -400,6 +418,7 @@ MIZ16     	MSCI USA Growth {Dec 16}                          	NYBOT
 NS        	Dollar/Krone                                      	NYBOT     
 NSH17     	Dollar/Krone {Mar 17}                             	NYBOT     
 NSM16     	Dollar/Krone {Jun 16}                             	NYBOT     
+NSM17     	Dollar/Krone {Jun 17}                             	NYBOT     
 NSU16     	Dollar/Krone {Sep 16}                             	NYBOT     
 NSZ16     	Dollar/Krone {Dec 16}                             	NYBOT     
 OJF17     	Orange Juice {Jan 17}                             	NYBOT     
@@ -408,7 +427,6 @@ OJF19     	Orange Juice {Jan 19}                             	NYBOT
 OJH17     	Orange Juice {Mar 17}                             	NYBOT     
 OJH18     	Orange Juice {Mar 18}                             	NYBOT     
 OJH19     	Orange Juice {Mar 19}                             	NYBOT     
-OJK16     	Orange Juice {May 16}                             	NYBOT     
 OJK17     	Orange Juice {May 17}                             	NYBOT     
 OJK18     	Orange Juice {May 18}                             	NYBOT     
 OJK19     	Orange Juice {May 19}                             	NYBOT     
@@ -424,56 +442,67 @@ OJX18     	Orange Juice {Nov 18}                             	NYBOT
 OL        	Euro/Krone                                        	NYBOT     
 OLH17     	Euro/Krone {Mar 17}                               	NYBOT     
 OLM16     	Euro/Krone {Jun 16}                               	NYBOT     
+OLM17     	Euro/Krone {Jun 17}                               	NYBOT     
 OLU16     	Euro/Krone {Sep 16}                               	NYBOT     
 OLZ16     	Euro/Krone {Dec 16}                               	NYBOT     
 OR        	Dollar/Rand                                       	NYBOT     
 ORH17     	Dollar/Rand {Mar 17}                              	NYBOT     
 ORM16     	Dollar/Rand {Jun 16}                              	NYBOT     
+ORM17     	Dollar/Rand {Jun 17}                              	NYBOT     
 ORU16     	Dollar/Rand {Sep 16}                              	NYBOT     
 ORZ16     	Dollar/Rand {Dec 16}                              	NYBOT     
 PK        	Pound/Krone                                       	NYBOT     
 PKH17     	Pound/Krone {Mar 17}                              	NYBOT     
 PKM16     	Pound/Krone {Jun 16}                              	NYBOT     
+PKM17     	Pound/Krone {Jun 17}                              	NYBOT     
 PKU16     	Pound/Krone {Sep 16}                              	NYBOT     
 PKZ16     	Pound/Krone {Dec 16}                              	NYBOT     
 PP        	Japanese Yen                                      	NYBOT     
 PPH17     	Japanese Yen {Mar 17}                             	NYBOT     
 PPM16     	Japanese Yen {Jun 16}                             	NYBOT     
+PPM17     	Japanese Yen {Jun 17}                             	NYBOT     
 PPU16     	Japanese Yen {Sep 16}                             	NYBOT     
 PPZ16     	Japanese Yen {Dec 16}                             	NYBOT     
 PR        	Canadian Dollar                                   	NYBOT     
 PRH17     	Canadian Dollar {Mar 17}                          	NYBOT     
 PRM16     	Canadian Dollar {Jun 16}                          	NYBOT     
+PRM17     	Canadian Dollar {Jun 17}                          	NYBOT     
 PRU16     	Canadian Dollar {Sep 16}                          	NYBOT     
 PRZ16     	Canadian Dollar {Dec 16}                          	NYBOT     
 PS        	Pound/Krona                                       	NYBOT     
 PSH17     	Pound/Krona {Mar 17}                              	NYBOT     
 PSM16     	Pound/Krona {Jun 16}                              	NYBOT     
+PSM17     	Pound/Krona {Jun 17}                              	NYBOT     
 PSU16     	Pound/Krona {Sep 16}                              	NYBOT     
 PSZ16     	Pound/Krona {Dec 16}                              	NYBOT     
 PV        	Pound/Australian                                  	NYBOT     
 PVH17     	Pound/Australian {Mar 17}                         	NYBOT     
 PVM16     	Pound/Australian {Jun 16}                         	NYBOT     
+PVM17     	Pound/Australian {Jun 17}                         	NYBOT     
 PVU16     	Pound/Australian {Sep 16}                         	NYBOT     
 PVZ16     	Pound/Australian {Dec 16}                         	NYBOT     
 PW        	Pound/Canadian                                    	NYBOT     
 PWH17     	Pound/Canadian {Mar 17}                           	NYBOT     
 PWM16     	Pound/Canadian {Jun 16}                           	NYBOT     
+PWM17     	Pound/Canadian {Jun 17}                           	NYBOT     
 PWU16     	Pound/Canadian {Sep 16}                           	NYBOT     
 PWZ16     	Pound/Canadian {Dec 16}                           	NYBOT     
 PX        	Pound/Rand                                        	NYBOT     
 PXH17     	Pound/Rand {Mar 17}                               	NYBOT     
 PXM16     	Pound/Rand {Jun 16}                               	NYBOT     
+PXM17     	Pound/Rand {Jun 17}                               	NYBOT     
 PXU16     	Pound/Rand {Sep 16}                               	NYBOT     
 PXZ16     	Pound/Rand {Dec 16}                               	NYBOT     
 PY        	Euro/Rand                                         	NYBOT     
 PYH17     	Euro/Rand {Mar 17}                                	NYBOT     
 PYM16     	Euro/Rand {Jun 16}                                	NYBOT     
+PYM17     	Euro/Rand {Jun 17}                                	NYBOT     
 PYU16     	Euro/Rand {Sep 16}                                	NYBOT     
 PYZ16     	Euro/Rand {Dec 16}                                	NYBOT     
 PZ        	Swiss Franc                                       	NYBOT     
 PZH17     	Swiss Franc {Mar 17}                              	NYBOT     
 PZM16     	Swiss Franc {Jun 16}                              	NYBOT     
+PZM17     	Swiss Franc {Jun 17}                              	NYBOT     
 PZU16     	Swiss Franc {Sep 16}                              	NYBOT     
 PZZ16     	Swiss Franc {Dec 16}                              	NYBOT     
 R1H17     	MSCI Canada Index {Mar 17}                        	NYBOT     
@@ -502,6 +531,7 @@ RJZ16     	Russell 2000 Mini {Dec 16}                        	NYBOT
 RK        	Euro/Krona                                        	NYBOT     
 RKH17     	Euro/Krona {Mar 17}                               	NYBOT     
 RKM16     	Euro/Krona {Jun 16}                               	NYBOT     
+RKM17     	Euro/Krona {Jun 17}                               	NYBOT     
 RKU16     	Euro/Krona {Sep 16}                               	NYBOT     
 RKZ16     	Euro/Krona {Dec 16}                               	NYBOT     
 RN        	Russell 2500                                      	NYBOT     
@@ -514,6 +544,7 @@ RX        	Russell 1000                                      	NYBOT
 RZ        	Euro/Swiss                                        	NYBOT     
 RZH17     	Euro/Swiss {Mar 17}                               	NYBOT     
 RZM16     	Euro/Swiss {Jun 16}                               	NYBOT     
+RZM17     	Euro/Swiss {Jun 17}                               	NYBOT     
 RZU16     	Euro/Swiss {Sep 16}                               	NYBOT     
 RZZ16     	Euro/Swiss {Dec 16}                               	NYBOT     
 S2H17     	MSCI EMLA Index {Mar 17}                          	NYBOT     
@@ -548,11 +579,13 @@ SDX17     	Sugar #16 {Nov 17}                                	NYBOT
 SS        	Pound/Swiss                                       	NYBOT     
 SSH17     	Pound/Swiss {Mar 17}                              	NYBOT     
 SSM16     	Pound/Swiss {Jun 16}                              	NYBOT     
+SSM17     	Pound/Swiss {Jun 17}                              	NYBOT     
 SSU16     	Pound/Swiss {Sep 16}                              	NYBOT     
 SSZ16     	Pound/Swiss {Dec 16}                              	NYBOT     
 SY        	Pound/Yen                                         	NYBOT     
 SYH17     	Pound/Yen {Mar 17}                                	NYBOT     
 SYM16     	Pound/Yen {Jun 16}                                	NYBOT     
+SYM17     	Pound/Yen {Jun 17}                                	NYBOT     
 SYU16     	Pound/Yen {Sep 16}                                	NYBOT     
 SYZ16     	Pound/Yen {Dec 16}                                	NYBOT     
 TH        	Russell 3000                                      	NYBOT     
@@ -560,11 +593,13 @@ TO        	Russell 2000                                      	NYBOT
 UY        	Dollar/Forint                                     	NYBOT     
 UYH17     	Dollar/Forint {Mar 17}                            	NYBOT     
 UYM16     	Dollar/Forint {Jun 16}                            	NYBOT     
+UYM17     	Dollar/Forint {Jun 17}                            	NYBOT     
 UYU16     	Dollar/Forint {Sep 16}                            	NYBOT     
 UYZ16     	Dollar/Forint {Dec 16}                            	NYBOT     
 UZ        	Dollar/Koruna                                     	NYBOT     
 UZH17     	Dollar/Koruna {Mar 17}                            	NYBOT     
 UZM16     	Dollar/Koruna {Jun 16}                            	NYBOT     
+UZM17     	Dollar/Koruna {Jun 17}                            	NYBOT     
 UZU16     	Dollar/Koruna {Sep 16}                            	NYBOT     
 UZZ16     	Dollar/Koruna {Dec 16}                            	NYBOT     
 VU        	Russell 1000 Growth                               	NYBOT     
@@ -585,6 +620,7 @@ WVZ16     	Cotton World {Dec 16}                             	NYBOT
 YA        	Aussie/Yen                                        	NYBOT     
 YAH17     	Aussie/Yen {Mar 17}                               	NYBOT     
 YAM16     	Aussie/Yen {Jun 16}                               	NYBOT     
+YAM17     	Aussie/Yen {Jun 17}                               	NYBOT     
 YAU16     	Aussie/Yen {Sep 16}                               	NYBOT     
 YAZ16     	Aussie/Yen {Dec 16}                               	NYBOT     
 YGG17     	Gold mini-sized {Feb 17}                          	NYBOT     
@@ -629,16 +665,19 @@ YIZ19     	Silver mini-sized {Dec 19}                        	NYBOT
 YIZ20     	Silver mini-sized {Dec 20}                        	NYBOT     
 YNH17     	Colombian Peso {Mar 17}                           	NYBOT     
 YNM16     	Colombian Peso {Jun 16}                           	NYBOT     
+YNM17     	Colombian Peso {Jun 17}                           	NYBOT     
 YNU16     	Colombian Peso {Sep 16}                           	NYBOT     
 YNZ16     	Colombian Peso {Dec 16}                           	NYBOT     
 YO        	Mexican Peso                                      	NYBOT     
 YOH17     	Mexican Peso {Mar 17}                             	NYBOT     
 YOM16     	Mexican Peso {Jun 16}                             	NYBOT     
+YOM17     	Mexican Peso {Jun 17}                             	NYBOT     
 YOU16     	Mexican Peso {Sep 16}                             	NYBOT     
 YOZ16     	Mexican Peso {Dec 16}                             	NYBOT     
 YP        	Pound/Dollar                                      	NYBOT     
 YPH17     	Pound/Dollar {Mar 17}                             	NYBOT     
 YPM16     	Pound/Dollar {Jun 16}                             	NYBOT     
+YPM17     	Pound/Dollar {Jun 17}                             	NYBOT     
 YPU16     	Pound/Dollar {Sep 16}                             	NYBOT     
 YPZ16     	Pound/Dollar {Dec 16}                             	NYBOT     
 YV        	NYSE Composite                                    	NYBOT     
@@ -685,10 +724,12 @@ ZIZ20     	ICE Silver 5000-oz {Dec 20}                       	NYBOT
 ZJ        	New Zealand/Yen                                   	NYBOT     
 ZJH17     	New Zealand/Yen {Mar 17}                          	NYBOT     
 ZJM16     	New Zealand/Yen {Jun 16}                          	NYBOT     
+ZJM17     	New Zealand/Yen {Jun 17}                          	NYBOT     
 ZJU16     	New Zealand/Yen {Sep 16}                          	NYBOT     
 ZJZ16     	New Zealand/Yen {Dec 16}                          	NYBOT     
 ZY        	Swiss/Yen                                         	NYBOT     
 ZYH17     	Swiss/Yen {Mar 17}                                	NYBOT     
 ZYM16     	Swiss/Yen {Jun 16}                                	NYBOT     
+ZYM17     	Swiss/Yen {Jun 17}                                	NYBOT     
 ZYU16     	Swiss/Yen {Sep 16}                                	NYBOT     
 ZYZ16     	Swiss/Yen {Dec 16}                                	NYBOT     
