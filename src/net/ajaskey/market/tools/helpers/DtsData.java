@@ -2,7 +2,9 @@
 package net.ajaskey.market.tools.helpers;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import net.ajaskey.market.ta.Utils;
 
@@ -40,12 +42,250 @@ import net.ajaskey.market.ta.Utils;
  */
 public class DtsData {
 
-	final static public SimpleDateFormat	sdf	= new SimpleDateFormat("yyMMdd");
+	final static public SimpleDateFormat	sdf			= new SimpleDateFormat("yyMMdd");
 
-	private final DtsDataTally						with;
-	private final DtsDataTally						ind;
-	private final DtsDataTally						corp;
-	private final Calendar								date;
+	public static final List<DtsData>			dtsList	= new ArrayList<>();
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findData
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static DtsData findData(Calendar cal) {
+		if (cal != null) {
+			for (final DtsData d : DtsData.dtsList) {
+				if (d.getDate().equals(cal)) {
+					return d;
+				} else if (d.getDate().after(cal)) {
+					return d;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findData
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static DtsData findData(int days, int year) {
+		int knt = 0;
+		for (final DtsData d : DtsData.dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				knt++;
+				if (knt >= days) {
+					return d;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findData
+	 *
+	 * @param days
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public static DtsData findData(int days, int month, int year) {
+		int knt = 0;
+		for (final DtsData d : DtsData.dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				if (d.getDate().get(Calendar.MONTH) == month) {
+					knt++;
+					if (knt >= days) {
+						return d;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findMonthlyChangeTotal
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	public static double findMonthlyChangeTotal(DtsData older, DtsData newer) {
+		final double newTot = newer.getWith().monthlyAvg + newer.getInd().monthlyAvg + newer.getCorp().monthlyAvg;
+		final double oldTot = older.getWith().monthlyAvg + older.getInd().monthlyAvg + older.getCorp().monthlyAvg;
+		final double chg = (newTot - oldTot) / oldTot;
+		return chg * 100.0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.findDate
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static DtsData findYearAgoData(Calendar cal) {
+		return DtsData.findYearsAgoData(cal, 1);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findYearlyChangeCorporate
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	public static double findYearlyChangeCorporate(DtsData older, DtsData newer) {
+		final double chg = (newer.getCorp().yearlyAvg - older.getCorp().yearlyAvg) / older.getCorp().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findYearlyChangeIndividual
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	public static double findYearlyChangeIndividual(DtsData older, DtsData newer) {
+		final double chg = (newer.getInd().yearlyAvg - older.getInd().yearlyAvg) / older.getInd().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findYearlyChangeTotal
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	public static double findYearlyChangeTotal(DtsData older, DtsData newer) {
+		final double newTot = newer.getWith().yearlyAvg + newer.getInd().yearlyAvg + newer.getCorp().yearlyAvg;
+		final double oldTot = older.getWith().yearlyAvg + older.getInd().yearlyAvg + older.getCorp().yearlyAvg;
+		final double chg = (newTot - oldTot) / oldTot;
+		return chg * 100.0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.findYearlyChangeWithheld
+	 *
+	 * @param older
+	 * @param newer
+	 * @return
+	 */
+	public static double findYearlyChangeWithheld(DtsData older, DtsData newer) {
+		final double chg = (newer.getWith().yearlyAvg - older.getWith().yearlyAvg) / older.getWith().yearlyAvg;
+		return chg * 100.0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.findYearsAgoData
+	 *
+	 * @param cal
+	 * @param lookBackYears
+	 * @return
+	 */
+	public static DtsData findYearsAgoData(Calendar cal, int lookBackYears) {
+		if (cal != null) {
+			final int previousDoy = cal.get(Calendar.DAY_OF_YEAR);
+			final int previousYr = cal.get(Calendar.YEAR) - lookBackYears;
+			for (final DtsData d : DtsData.dtsList) {
+				final int doy = d.getDate().get(Calendar.DAY_OF_YEAR);
+				final int yr = d.getDate().get(Calendar.YEAR);
+				if (yr == previousYr) {
+					if (previousDoy <= doy) {
+						return d;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.getDataDaysInMonth
+	 *
+	 * @param day
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public static int getDataDaysInMonth(int day, int month, int year) {
+		int ret = 0;
+		for (final DtsData d : dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				if (d.getDate().get(Calendar.MONTH) == month) {
+					if (d.getDate().get(Calendar.DATE) <= day) {
+						ret++;
+					}
+				}
+			}
+		}
+
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.getDataDaysInYear
+	 *
+	 * @param day
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public static int getDataDaysInYear(int day, int month, int year) {
+		int ret = 0;
+		for (final DtsData d : dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				if (d.getDate().get(Calendar.MONTH) <= month) {
+					ret++;
+					if ((d.getDate().get(Calendar.MONTH) == month) && (d.getDate().get(Calendar.DATE) >= day)) {
+						return ret;
+					}
+				}
+			}
+		}
+
+		return 0;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.newCalendar
+	 *
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @return
+	 */
+	public static Calendar newCalendar(int year, int month, int day) {
+		final Calendar cal = Calendar.getInstance();
+		cal.set(year, month, day, 0, 0, 0);
+		return cal;
+	}
+
+	private final DtsDataTally	with;
+
+	private final DtsDataTally	ind;
+
+	private final DtsDataTally	corp;
+
+	private final Calendar			date;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -60,7 +300,7 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.getCorp
 	 *
 	 * @return
@@ -80,7 +320,7 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.getInd
 	 *
 	 * @return
@@ -90,7 +330,7 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.getWith
 	 *
 	 * @return
@@ -100,7 +340,7 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.setCorp
 	 *
 	 * @param str
@@ -147,7 +387,7 @@ public class DtsData {
 				this.date.setTime(sdf.parse(aDate));
 				// Utils.printCalendar(this.date);
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			System.out.println("Error processing date : " + str);
 			e.printStackTrace();
 		}
@@ -208,11 +448,14 @@ public class DtsData {
 		}
 	}
 
+	@Override
 	public String toString() {
 		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		double dtot = this.getWith().dailyAvg + this.getInd().dailyAvg + this.getCorp().dailyAvg;
-		double mtot = this.getWith().monthlyAvg + this.getInd().monthlyAvg + this.getCorp().monthlyAvg;
-		double ytot = this.getWith().yearlyAvg + this.getInd().yearlyAvg + this.getCorp().yearlyAvg;
+		str += "\t" + getDataDaysInYear(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		str += "\t" + getDataDaysInMonth(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		final double dtot = this.getWith().dailyAvg + this.getInd().dailyAvg + this.getCorp().dailyAvg;
+		final double mtot = this.getWith().monthlyAvg + this.getInd().monthlyAvg + this.getCorp().monthlyAvg;
+		final double ytot = this.getWith().yearlyAvg + this.getInd().yearlyAvg + this.getCorp().yearlyAvg;
 		str += String.format(
 		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%47sDailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f",
 		    this.with, this.ind, this.corp, " ", dtot, mtot, ytot);

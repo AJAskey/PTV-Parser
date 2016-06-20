@@ -20,7 +20,7 @@ package net.ajaskey.market.tools.helpers;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -55,9 +55,10 @@ public class DtsDataTally {
 		this.yearlyAvg = 0.0;
 	}
 
+	@Override
 	public String toString() {
-		String str = String.format("Daily:%7d  MTD:%9d  YTD:%10d  DailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f", this.daily,
-		    this.monthly, this.yearly, this.dailyAvg, this.monthlyAvg, this.yearlyAvg);
+		final String str = String.format("Daily:%7d  MTD:%9d  YTD:%10d  DailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f",
+		    this.daily, this.monthly, this.yearly, this.dailyAvg, this.monthlyAvg, this.yearlyAvg);
 		return str;
 	}
 }
