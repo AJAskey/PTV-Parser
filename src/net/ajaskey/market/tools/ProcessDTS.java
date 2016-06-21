@@ -57,7 +57,7 @@ public class ProcessDTS {
 
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "e:/temp/dts";
+	final static private String		folderPath				= "d:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	private static final int			avgWin						= 1;
@@ -155,19 +155,22 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		// ProcessDTS.updateDtsFiles();
-		
+		ProcessDTS.updateDtsFiles();
+
 		ProcessDTS.readAndProcess();
 
 		ProcessDTS.calculateAverages();
 
 		// DtsReports.CompareReport(2016, Calendar.JUNE, 9);
 
-		//final DtsData d2 = DtsData.findData(9, Calendar.JUNE, 2016);
-		//final DtsData d1 = DtsData.findData(9, Calendar.JUNE, 2015);
-		final DtsData d1 = DtsData.findData(112, 2015);
-		final DtsData d2 = DtsData.findData(112, 2016);
+		// final DtsData d2 = DtsData.findData(9, Calendar.JUNE, 2016);
+		// final DtsData d1 = DtsData.findData(9, Calendar.JUNE, 2015);
+		final DtsData d1 = DtsData.findData(113, 2015);
+		final DtsData d2 = DtsData.findData(114, 2016);
 		System.out.println(DtsReports.genDiffReport(d1, d2));
+
+		DtsData dLast = DtsData.dtsList.get(DtsData.dtsList.size() - 1);
+		System.out.println("\n\nLast DTS report ==>\n" + dLast);
 
 	}
 
@@ -204,7 +207,7 @@ public class ProcessDTS {
 				}
 			}
 		}
-		
+
 		Collections.sort(DtsData.dtsList, new DtsSorter());
 
 	}
