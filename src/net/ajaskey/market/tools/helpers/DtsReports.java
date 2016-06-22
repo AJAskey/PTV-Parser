@@ -51,49 +51,6 @@ public class DtsReports {
 	final static private String					NL					= System.getProperty("line.separator");
 	final static private String					TAB					= "\t";
 
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.CompareReport
-	 *
-	 * @param year
-	 * @param olderMonth
-	 * @param olderDay
-	 */
-	public static void CompareReport(int year, int olderMonth, int olderDay) {
-		DtsReports.CompareReport(year, olderMonth, olderDay, year, olderMonth, olderDay);
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.CompareReport
-	 *
-	 * @param olderYr
-	 * @param olderMonth
-	 * @param olderDay
-	 * @param recentYr
-	 * @param recentMonth
-	 * @param recentDay
-	 */
-	public static void CompareReport(int olderYr, int olderMonth, int olderDay, int recentYr, int recentMonth,
-	    int recentDay) {
-		final Calendar older = Calendar.getInstance();
-		older.set(olderYr, olderMonth, olderDay, 1, 1, 1);
-		final DtsData dOlder = DtsData.findYearsAgoData(older, 1);
-
-		final Calendar recent = Calendar.getInstance();
-		recent.set(recentYr, recentMonth, recentDay, 1, 1, 1);
-		final DtsData dRecent = DtsData.findYearsAgoData(recent, 0);
-
-		final double yChg = DtsData.findYearlyChangeTotal(dOlder, dRecent);
-		final double mChg = DtsData.findMonthlyChangeTotal(dOlder, dRecent);
-
-		System.out.println(dOlder);
-		System.out.println(dRecent);
-		String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%%n", " ", mChg, yChg);
-		s += DtsReports.dtsToDate(olderDay, olderMonth, olderYr - 1) + NL;
-		s += DtsReports.dtsToDate(recentDay, recentMonth, recentYr);
-		System.out.println(s);
-	}
 
 	/**
 	 *
@@ -117,50 +74,131 @@ public class DtsReports {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.dumpCompareMonths
 	 *
-	 * net.ajaskey.market.tools.dumpReport1
-	 *
-	 * @throws FileNotFoundException
-	 *
+	 * @param yearRecent
+	 * @param yearPast
+	 * @param month
 	 */
-	public static void dumpReport1() throws FileNotFoundException {
+	public static void dumpCompareMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
 
-		try (PrintWriter pw = new PrintWriter("out/dts-out.txt")) {
+		DtsReports.dumpCompareWithheldMonths(yearRecent, yearPast, month);
+		DtsReports.dumpCompareIndividualMonths(yearRecent, yearPast, month);
+		DtsReports.dumpCompareCorporateMonths(yearRecent, yearPast, month);
 
-			final Calendar tommorrow = Calendar.getInstance();
-			tommorrow.add(Calendar.DATE, 1);
-
-			final Calendar cal = Calendar.getInstance();
-			cal.set(2015, Calendar.JANUARY, 1);
-
-			while (cal.before(tommorrow)) {
-
-				final int dom = cal.get(Calendar.DAY_OF_MONTH);
-
-				/**
-				 * Account for weekend and holiday
-				 */
-				if (dom == 6) {
-
-					final DtsData dRecent = DtsData.findYearsAgoData(cal, 0);
-					final DtsData dYrAgo = DtsData.findYearsAgoData(dRecent.getDate(), 1);
-
-					// Utils.printCalendar(dNow.getDate());
-					// Utils.printCalendar(cal);
-					final double yChg = DtsData.findYearlyChangeTotal(dYrAgo, dRecent);
-					final double mChg = DtsData.findMonthlyChangeTotal(dYrAgo, dRecent);
-					pw.println(dYrAgo);
-					pw.println(dRecent);
-					final String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%%n", " ", mChg, yChg);
-					pw.println(s);
-					cal.add(Calendar.DATE, 15);
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-combined-" + monStr + ".txt")) {
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						pw.println(DtsReports.genDiffReport(dPast, dRecent));
+						pw.println(NL);
+						lastDay = cDay;
+					}
 				}
 
-				cal.add(Calendar.DATE, 1);
-
 			}
+
+			// Last Day of Month
+			pw.println(NL + NL + "Last day of month comparison.");
+			final DtsData dRecent = DtsData.findLastOfMonthData(month, 2016);
+			final DtsData dPast = DtsData.findLastOfMonthData(month, 2015);
+			pw.println(DtsReports.genDiffReport(dPast, dRecent));
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+
+	public static void dumpCompareWithheldMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
+
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-withheld-" + monStr + ".txt")) {
+			pw.println("Withheld data =>" + NL);
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						String str = DtsData.formatDate(dPast.getDate());
+						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
+						pw.println(str + DtsReports.genTallyDiffReport(dPast.getWith(), dRecent.getWith()));
+						lastDay = cDay;
+					}
+				}
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void dumpCompareIndividualMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
+
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-individual-" + monStr + ".txt")) {
+			pw.println("Individual data =>" + NL);
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						String str = DtsData.formatDate(dPast.getDate());
+						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
+						pw.println(str + DtsReports.genTallyDiffReport(dPast.getInd(), dRecent.getInd()));
+						lastDay = cDay;
+					}
+				}
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void dumpCompareCorporateMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
+
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-corporate-" + monStr + ".txt")) {
+			pw.println("Corporate data =>" + NL);
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						String str = DtsData.formatDate(dPast.getDate());
+						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
+						pw.println(str + DtsReports.genTallyDiffReport(dPast.getCorp(), dRecent.getCorp()));
+						lastDay = cDay;
+					}
+				}
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
 
 	/**
 	 *
@@ -180,7 +218,7 @@ public class DtsReports {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.genDiffReport
 	 *
 	 * @param dOlder
@@ -188,23 +226,56 @@ public class DtsReports {
 	 * @return
 	 */
 	public static String genDiffReport(DtsData dOlder, DtsData dRecent) {
-		
-		if ( (dOlder == null) || (dRecent == null) )
+
+		if ((dOlder == null) || (dRecent == null)) {
 			return "Invalid data!";
-		
+		}
+
 		String ret = dOlder.toString() + NL + dRecent.toString() + NL;
 
-		final double newMon = dRecent.getWith().monthlyAvg + dRecent.getInd().monthlyAvg + dRecent.getCorp().monthlyAvg;
-		final double oldMon = dOlder.getWith().monthlyAvg + dOlder.getInd().monthlyAvg + dOlder.getCorp().monthlyAvg;
+		final double newMon = dRecent.getWith().monthly + dRecent.getInd().monthly + dRecent.getCorp().monthly;
+		final double oldMon = dOlder.getWith().monthly + dOlder.getInd().monthly + dOlder.getCorp().monthly;
 		final double chgMon = ((newMon - oldMon) / oldMon) * 100.0;
 
-		final double newTot = dRecent.getWith().yearlyAvg + dRecent.getInd().yearlyAvg + dRecent.getCorp().yearlyAvg;
-		final double oldTot = dOlder.getWith().yearlyAvg + dOlder.getInd().yearlyAvg + dOlder.getCorp().yearlyAvg;
+		final double newTot = dRecent.getWith().yearly + dRecent.getInd().yearly + dRecent.getCorp().yearly;
+		final double oldTot = dOlder.getWith().yearly + dOlder.getInd().yearly + dOlder.getCorp().yearly;
 		final double chgTot = ((newTot - oldTot) / oldTot) * 100.0;
 
-		final String s = String.format("\tChange     ==>%69sMonthlyAvg:%11.2f%%  YTDAvg:%11.2f%%%n", " ", chgMon, chgTot);
+		final String s = String.format("\tChange     ==>%18sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgTot);
 
 		ret += s;
+
+		return ret;
+	}
+
+	public static String genTallyDiffReport(DtsDataTally dOlder, DtsDataTally dRecent) {
+
+		if ((dOlder == null) || (dRecent == null)) {
+			return "Invalid data!";
+		}
+
+		String ret = dOlder.toString() + NL + dRecent.toString() + NL;
+
+		final double chgMon = ((double) (dRecent.monthly - dOlder.monthly) / (double) dOlder.monthly) * 100.0;
+		final double chgYr = ((double) (dRecent.yearly - dOlder.yearly) / (double) dOlder.yearly) * 100.0;
+
+		final String s = String.format("Change ==>%7sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgYr);
+
+		ret += s;
+
+		return ret;
+	}
+
+	public static String genLastDataDayReport() {
+		String ret = "Last DTS report ==>" + NL;
+
+		final DtsData dLast = DtsData.dtsList.get(DtsData.dtsList.size() - 1);
+		final Calendar cal = Calendar.getInstance();
+		cal.set(dLast.getDate().get(Calendar.YEAR), dLast.getDate().get(Calendar.MONTH),
+		    dLast.getDate().get(Calendar.DATE));
+		cal.add(Calendar.YEAR, -1);
+		final DtsData dLastYr = DtsData.findData(cal);
+		ret += DtsReports.genDiffReport(dLastYr, dLast);
 
 		return ret;
 	}

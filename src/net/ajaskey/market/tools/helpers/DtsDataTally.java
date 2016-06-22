@@ -35,12 +35,9 @@ package net.ajaskey.market.tools.helpers;
  */
 public class DtsDataTally {
 
-	public int		daily;
-	public int		monthly;
-	public int		yearly;
-	public double	dailyAvg;
-	public double	monthlyAvg;
-	public double	yearlyAvg;
+	public int	daily;
+	public int	monthly;
+	public int	yearly;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -50,15 +47,11 @@ public class DtsDataTally {
 		this.daily = 0;
 		this.monthly = 0;
 		this.yearly = 0;
-		this.dailyAvg = 0.0;
-		this.monthlyAvg = 0.0;
-		this.yearlyAvg = 0.0;
 	}
 
 	@Override
 	public String toString() {
-		final String str = String.format("Daily:%7d  MTD:%9d  YTD:%10d  DailyAvg:%11.2f  MonthlyAvg:%11.2f   YTDAvg:%11.2f",
-		    this.daily, this.monthly, this.yearly, this.dailyAvg, this.monthlyAvg, this.yearlyAvg);
+		final String str = String.format("Daily:%7d    MTD:%9d    YTD:%10d", this.daily, this.monthly, this.yearly);
 		return str;
 	}
 }
