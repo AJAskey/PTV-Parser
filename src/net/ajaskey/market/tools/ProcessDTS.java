@@ -54,13 +54,10 @@ import net.ajaskey.market.tools.helpers.DtsSorter;
 public class ProcessDTS {
 
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
-
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
 	final static private String		folderPath				= "e:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
-
-	private static final int			avgWin						= 1;
 
 	final static public int				webDownloadYear		= 2016;
 	final static public int				webDownloadMonth	= Calendar.JUNE;
@@ -93,6 +90,7 @@ public class ProcessDTS {
 		ProcessDTS.readAndProcess();
 
 		System.out.println(DtsReports.genLastDataDayReport());
+		DtsReports.writeEomCsv(DtsData.newCalendar(2014, Calendar.JANUARY, 1));
 
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
@@ -135,6 +133,7 @@ public class ProcessDTS {
 			}
 		}
 
+		// Sort the list from oldest to newest for future processing.
 		Collections.sort(DtsData.dtsList, new DtsSorter());
 
 	}

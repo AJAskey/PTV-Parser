@@ -133,6 +133,13 @@ public class Utils {
 		}
 		return "";
 	}
+	
+	public static String stringDate(Calendar cal) {
+		if (cal != null) {
+			return sdf.format(cal.getTime());
+		}
+		return "";
+	}
 
 	/**
 	 * This method serves as a constructor for the class.

@@ -50,7 +50,8 @@ public class DtsReports {
 	final static private Locale					locale			= Locale.getDefault();
 	final static private String					NL					= System.getProperty("line.separator");
 	final static private String					TAB					= "\t";
-
+	final static private String					COMMA				= ",";
+	final static private String					COMMA2				= ",,";
 
 	/**
 	 *
@@ -198,8 +199,6 @@ public class DtsReports {
 		}
 	}
 
-	
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.findName
@@ -278,6 +277,40 @@ public class DtsReports {
 		ret += DtsReports.genDiffReport(dLastYr, dLast);
 
 		return ret;
+	}
+
+	public static String genCsvData(DtsData d) {
+		String ret = Utils.stringDate(d.getDate());
+		ret += COMMA2 + d.getWith().monthly + COMMA2 + d.getWith().yearly;
+		ret += COMMA2 + d.getInd().monthly + COMMA2 + d.getInd().yearly;
+		ret += COMMA2 + d.getCorp().monthly + COMMA2 + d.getCorp().yearly;
+		long tot = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
+		ret += COMMA2 + tot;
+
+		return ret;
+	}
+
+	public static void writeEomCsv(Calendar startDate) {
+
+		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
+			
+			pw.println(",,Withheld,,,,Individual,,,,Corporate,,,,Total");
+			pw.println("Date,,EOM,,YTD,,EOM,,YTD,,EOM,,YTD,,YTD");
+
+			DtsData d = DtsData.findLastOfMonthData(startDate.get(Calendar.MONTH), startDate.get(Calendar.YEAR));
+
+			while (d != null) {
+				pw.println(genCsvData(d));
+				Calendar cal = Calendar.getInstance();
+				cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+				cal.add(Calendar.MONTH, 1);
+				d = DtsData.findLastOfMonthData(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
