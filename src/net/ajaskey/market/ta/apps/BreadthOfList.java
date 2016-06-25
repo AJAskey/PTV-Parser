@@ -3,6 +3,7 @@ package net.ajaskey.market.ta.apps;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,8 @@ public class BreadthOfList {
 	private static List<String>	fullfilenames	= new ArrayList<>();
 	final private static String	TAB						= "\t";
 
+	private static PrintWriter	pw						= null;
+
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
@@ -63,6 +66,8 @@ public class BreadthOfList {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		System.out.println("Processing...");
+
+		pw = new PrintWriter("out\\BreadthOfList.txt");
 
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 		fullfilenames.add("symbols\\NYSE_SymbolList.txt");
@@ -110,7 +115,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("IHI", "Medical Devices");
 		BreadthOfList.processGroup("IHF", "Health Care Providers");
 		BreadthOfList.processGroup("IHE", "Pharmaceuticals");
-		//BreadthOfList.processGroup("IYJ", "Industrials");
+		// BreadthOfList.processGroup("IYJ", "Industrials");
 		BreadthOfList.processGroup("ITA", "Aerospace Defense");
 		BreadthOfList.processGroup("IYT", "Transportation");
 		BreadthOfList.processGroup("IEO", "Oil and Gas Exploration");
@@ -120,6 +125,7 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("RING", "Gold Miners");
 		BreadthOfList.processGroup("PICK", "Metal Miners");
 
+		pw.close();
 		System.out.println("Done.");
 
 	}
@@ -168,7 +174,7 @@ public class BreadthOfList {
 				data.setDma260(UtilMethods.sma(td.getCloseData(), 260));
 
 				retList.add(data);
-			} 
+			}
 		}
 		return retList;
 	}
@@ -201,8 +207,10 @@ public class BreadthOfList {
 	 * @param bd
 	 * @param name
 	 * @param indexName
+	 * @throws FileNotFoundException
 	 */
-	private static void writeData(List<BreadthData> bdList, List<BreadthData> bd1week, String name, String indexName) {
+	private static void writeData(List<BreadthData> bdList, List<BreadthData> bd1week, String name, String indexName)
+	    throws FileNotFoundException {
 		final int knt = bdList.size();
 		long over23dma = 0;
 		long over65dma = 0;
@@ -258,6 +266,8 @@ public class BreadthOfList {
 		    / 4.0;
 
 		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
+		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
+		pw.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
 		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
 
 	}
