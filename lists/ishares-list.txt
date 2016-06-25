@@ -660,6 +660,7 @@ UKPR      	Ishares III Plc                                   	LSE
 UKRE      	Ishares III Plc                                   	LSE       
 USPR      	Ishares III Plc                                   	LSE       
 USRE      	Ishares III Plc                                   	LSE       
+WING      	Ishares IV Plc                                    	LSE       
 WOOD      	Ishares II Plc                                    	LSE       
 EUE       	Ishares Euro STOX50                               	MLSE      
 ACWI      	Ishares MSCI ACWI                                 	NASDAQ    
@@ -671,7 +672,9 @@ EMIF      	Ishares SP Emg Mk In                              	NASDAQ
 ENZL      	Ishares MSCI New Zea                              	NASDAQ    
 EUFN      	Ishares MSCI EUR Fin                              	NASDAQ    
 EWZS      	Ishares MSCI Brazil                               	NASDAQ    
+FALN      	Ishares Fallen Angels USD Bond                    	NASDAQ    
 GNMA      	Ishares GNMA Bd ETF                               	NASDAQ    
+HYXE      	Ishares Iboxx $ High Yield Ex O                   	NASDAQ    
 IEUS      	Ishares MSCI Europe                               	NASDAQ    
 IFEU      	Ishares Europe Dvlpd                              	NASDAQ    
 IFGL      	Ishares Intl Devlp                                	NASDAQ    
@@ -687,11 +690,10 @@ SOXX      	Ishares PHLX SC ETF                               	NASDAQ
 TLT       	Ishares  20                                       	NASDAQ    
 UAE       	Ishares MSCI UAE Cap                              	NASDAQ    
 BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
-CFYFF     	Ishares Canadian Fun                              	OTCBB     
 CLYAF     	Ishares Global Agric                              	OTCBB     
+CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
 CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
-IHPXF     	Ishares MSCI Europe                               	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
 IHSEF     	Ishares Plc                                       	OTCBB     
@@ -746,6 +748,7 @@ CLG       	Ishares 1-10 Yr Ladder G                          	TSX
 CLG.A     	Ishares 1-10Yr Ladder Go                          	TSX       
 CLU       	Ishares US Fundamental I                          	TSX       
 CLU.A     	Ishares US Fundamental I                          	TSX       
+CLU.B     	Ishares US Fundamental I                          	TSX       
 CLU.C     	Ishares US Fundamental I                          	TSX       
 CMR       	Ishares Premium Money Ma                          	TSX       
 COW       	Ishares Global Agri Inde                          	TSX       
@@ -759,7 +762,6 @@ CSD.A     	Ishares Adv Shrt Dur Hi                           	TSX
 CUD       	Ishares SP US Div Grower                          	TSX       
 CUD.A     	Ishares SP US Div Grower                          	TSX       
 CVD       	Ishares Convertible Bond                          	TSX       
-CVD.A     	Ishares Convertible Bond                          	TSX       
 CWO       	Ishares Emg Mkts Fundame                          	TSX       
 CWO.A     	Ishares Emg Mkts Fundame                          	TSX       
 CWW       	Ishares SP Global Water                           	TSX       
@@ -832,7 +834,6 @@ XMW       	Ishares MSCI All Country                          	TSX
 XMY       	Ishares Edge MSCI Mv Glbl ETF CAD Hgd             	TSX       
 XPF       	Ishares SP TSX Na Pref S                          	TSX       
 XQB       	Ishares Core Hi Quality                           	TSX       
-XQB.A     	Ishares Core Hi Quality                           	TSX       
 XQQ       	Ishares Nasdaq 100 Index                          	TSX       
 XRB       	Ishares CDN Real Return                           	TSX       
 XRE       	Ishares SP TSX Capped Re                          	TSX       
