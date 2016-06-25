@@ -68,7 +68,6 @@ CLK18     	Crude Oil WTI {May 18}                            	NYMEX
 CLK19     	Crude Oil WTI {May 19}                            	NYMEX     
 CLK20     	Crude Oil WTI {May 20}                            	NYMEX     
 CLK21     	Crude Oil WTI {May 21}                            	NYMEX     
-CLM16     	Crude Oil WTI {Jun 16}                            	NYMEX     
 CLM17     	Crude Oil WTI {Jun 17}                            	NYMEX     
 CLM18     	Crude Oil WTI {Jun 18}                            	NYMEX     
 CLM19     	Crude Oil WTI {Jun 19}                            	NYMEX     
@@ -308,7 +307,6 @@ HPK18     	Natural Gas (F) {May 18}                          	NYMEX
 HPK19     	Natural Gas (F) {May 19}                          	NYMEX     
 HPK20     	Natural Gas (F) {May 20}                          	NYMEX     
 HPK21     	Natural Gas (F) {May 21}                          	NYMEX     
-HPM16     	Natural Gas (F) {Jun 16}                          	NYMEX     
 HPM17     	Natural Gas (F) {Jun 17}                          	NYMEX     
 HPM18     	Natural Gas (F) {Jun 18}                          	NYMEX     
 HPM19     	Natural Gas (F) {Jun 19}                          	NYMEX     
@@ -355,7 +353,6 @@ HVF17     	US Steel Coil {Jan 17}                            	NYMEX
 HVG17     	US Steel Coil {Feb 17}                            	NYMEX     
 HVH17     	US Steel Coil {Mar 17}                            	NYMEX     
 HVJ17     	US Steel Coil {Apr 17}                            	NYMEX     
-HVK16     	US Steel Coil {May 16}                            	NYMEX     
 HVK17     	US Steel Coil {May 17}                            	NYMEX     
 HVM16     	US Steel Coil {Jun 16}                            	NYMEX     
 HVM17     	US Steel Coil {Jun 17}                            	NYMEX     
@@ -490,7 +487,6 @@ MTH17     	Gulf Sour Crude Oil {Mar 17}                      	NYMEX
 MTH18     	Gulf Sour Crude Oil {Mar 18}                      	NYMEX     
 MTJ17     	Gulf Sour Crude Oil {Apr 17}                      	NYMEX     
 MTK17     	Gulf Sour Crude Oil {May 17}                      	NYMEX     
-MTM16     	Gulf Sour Crude Oil {Jun 16}                      	NYMEX     
 MTM17     	Gulf Sour Crude Oil {Jun 17}                      	NYMEX     
 MTN16     	Gulf Sour Crude Oil {Jul 16}                      	NYMEX     
 MTN17     	Gulf Sour Crude Oil {Jul 17}                      	NYMEX     
@@ -796,7 +792,6 @@ QGK18     	E-Mini Natural Gas {May 18}                       	NYMEX
 QGK19     	E-Mini Natural Gas {May 19}                       	NYMEX     
 QGK20     	E-Mini Natural Gas {May 20}                       	NYMEX     
 QGK21     	E-Mini Natural Gas {May 21}                       	NYMEX     
-QGM16     	E-Mini Natural Gas {Jun 16}                       	NYMEX     
 QGM17     	E-Mini Natural Gas {Jun 17}                       	NYMEX     
 QGM18     	E-Mini Natural Gas {Jun 18}                       	NYMEX     
 QGM19     	E-Mini Natural Gas {Jun 19}                       	NYMEX     
@@ -855,7 +850,6 @@ QHX16     	E-Mini ULSD NYHarbor {Nov 16}                     	NYMEX
 QHZ16     	E-Mini ULSD NYHarbor {Dec 16}                     	NYMEX     
 QL        	Coal Appalachian                                  	NYMEX     
 QL.C      	Coal Appalachian Continuation                     	NYMEX     
-QLM16     	Coal Appalachian {Jun 16}                         	NYMEX     
 QLN16     	Coal Appalachian {Jul 16}                         	NYMEX     
 QLQ16     	Coal Appalachian {Aug 16}                         	NYMEX     
 QLU16     	Coal Appalachian {Sep 16}                         	NYMEX     
@@ -1275,7 +1269,5 @@ WSZ21     	Crude Oil WTI (F) {Dec 21}                        	NYMEX
 WSZ22     	Crude Oil WTI (F) {Dec 22}                        	NYMEX     
 WSZ23     	Crude Oil WTI (F) {Dec 23}                        	NYMEX     
 WSZ24     	Crude Oil WTI (F) {Dec 24}                        	NYMEX     
-X0        	Crude 24-Mon Strip                                	NYMEX     
 X3        	PJM Monthly On Peak {Nov 08}                      	NYMEX     
 X4        	Crude Oil WTI {Jul 09}                            	NYMEX     
-X9        	Crude 12-Mon Strip                                	NYMEX     

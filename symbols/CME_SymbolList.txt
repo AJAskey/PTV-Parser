@@ -663,6 +663,7 @@ EYM17     	EuroYen Tibor (P) {Jun 17}                        	CME
 EYM18     	EuroYen Tibor (P) {Jun 18}                        	CME       
 EYM19     	EuroYen Tibor (P) {Jun 19}                        	CME       
 EYM20     	EuroYen Tibor (P) {Jun 20}                        	CME       
+EYM21     	EuroYen Tibor (P) {Jun 21}                        	CME       
 EYU16     	EuroYen Tibor (P) {Sep 16}                        	CME       
 EYU17     	EuroYen Tibor (P) {Sep 17}                        	CME       
 EYU18     	EuroYen Tibor (P) {Sep 18}                        	CME       
@@ -820,7 +821,6 @@ FWZ16     	Palm Olein MY Swaps {Dec 16}                      	CME
 FWZ17     	Palm Olein MY Swaps {Dec 17}                      	CME       
 G0.C      	Cocoa Euro CME Continuation                       	CME       
 G0H17     	Cocoa Euro CME {Mar 17}                           	CME       
-G0K16     	Cocoa Euro CME {May 16}                           	CME       
 G0K17     	Cocoa Euro CME {May 17}                           	CME       
 G0N16     	Cocoa Euro CME {Jul 16}                           	CME       
 G0N17     	Cocoa Euro CME {Jul 17}                           	CME       
@@ -930,6 +930,7 @@ GJM17     	EuroYen Tibor {Jun 17}                            	CME
 GJM18     	EuroYen Tibor {Jun 18}                            	CME       
 GJM19     	EuroYen Tibor {Jun 19}                            	CME       
 GJM20     	EuroYen Tibor {Jun 20}                            	CME       
+GJM21     	EuroYen Tibor {Jun 21}                            	CME       
 GJU16     	EuroYen Tibor {Sep 16}                            	CME       
 GJU17     	EuroYen Tibor {Sep 17}                            	CME       
 GJU18     	EuroYen Tibor {Sep 18}                            	CME       
@@ -1648,6 +1649,7 @@ NYZ16     	Nikkei 225 {Dec 16}                               	CME
 O6        	USD/Canadian Dollar                               	CME       
 O8.C      	Cocoa Euro Cash USD Continuation                  	CME       
 O8H17     	Cocoa Euro Cash USD {Mar 17}                      	CME       
+O8H18     	Cocoa Euro Cash USD {Mar 18}                      	CME       
 O8K17     	Cocoa Euro Cash USD {May 17}                      	CME       
 O8N16     	Cocoa Euro Cash USD {Jul 16}                      	CME       
 O8N17     	Cocoa Euro Cash USD {Jul 17}                      	CME       

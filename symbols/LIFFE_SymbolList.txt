@@ -1,8 +1,8 @@
 A7.C      	MSCI EMI Continuation                             	LIFFE     
 A7H17     	MSCI EMI {Mar 17}                                 	LIFFE     
-A7K16     	MSCI EMI {May 16}                                 	LIFFE     
 A7M16     	MSCI EMI {Jun 16}                                 	LIFFE     
 A7M17     	MSCI EMI {Jun 17}                                 	LIFFE     
+A7M18     	MSCI EMI {Jun 18}                                 	LIFFE     
 A7N16     	MSCI EMI {Jul 16}                                 	LIFFE     
 A7Q16     	MSCI EMI {Aug 16}                                 	LIFFE     
 A7U16     	MSCI EMI {Sep 16}                                 	LIFFE     
@@ -12,9 +12,9 @@ A7Z16     	MSCI EMI {Dec 16}                                 	LIFFE
 A7Z17     	MSCI EMI {Dec 17}                                 	LIFFE     
 A8.C      	MSCI Far East ex-Japan Continuation               	LIFFE     
 A8H17     	MSCI Far East ex-Japan {Mar 17}                   	LIFFE     
-A8K16     	MSCI Far East ex-Japan {May 16}                   	LIFFE     
 A8M16     	MSCI Far East ex-Japan {Jun 16}                   	LIFFE     
 A8M17     	MSCI Far East ex-Japan {Jun 17}                   	LIFFE     
+A8M18     	MSCI Far East ex-Japan {Jun 18}                   	LIFFE     
 A8N16     	MSCI Far East ex-Japan {Jul 16}                   	LIFFE     
 A8Q16     	MSCI Far East ex-Japan {Aug 16}                   	LIFFE     
 A8U16     	MSCI Far East ex-Japan {Sep 16}                   	LIFFE     
@@ -66,6 +66,7 @@ F6H17     	MSCI World NTR Index {Mar 17}                     	LIFFE
 F6M16     	MSCI World NTR Index {Jun 16}                     	LIFFE     
 F6M17     	MSCI World NTR Index {Jun 17}                     	LIFFE     
 F6U16     	MSCI World NTR Index {Sep 16}                     	LIFFE     
+F6U17     	MSCI World NTR Index {Sep 17}                     	LIFFE     
 F6Z16     	MSCI World NTR Index {Dec 16}                     	LIFFE     
 FH17      	3-Month Euroswiss {Mar 17}                        	LIFFE     
 FH18      	3-Month Euroswiss {Mar 18}                        	LIFFE     
@@ -233,6 +234,7 @@ L7H17     	MSCI Europe NTR Index {Mar 17}                    	LIFFE
 L7M16     	MSCI Europe NTR Index {Jun 16}                    	LIFFE     
 L7M17     	MSCI Europe NTR Index {Jun 17}                    	LIFFE     
 L7U16     	MSCI Europe NTR Index {Sep 16}                    	LIFFE     
+L7U17     	MSCI Europe NTR Index {Sep 17}                    	LIFFE     
 L7Z16     	MSCI Europe NTR Index {Dec 16}                    	LIFFE     
 LH17      	3-Month Sterling {Mar 17}                         	LIFFE     
 LH18      	3-Month Sterling {Mar 18}                         	LIFFE     
@@ -259,7 +261,6 @@ LWF17     	Wheat {Jan 17}                                    	LIFFE
 LWF18     	Wheat {Jan 18}                                    	LIFFE     
 LWH17     	Wheat {Mar 17}                                    	LIFFE     
 LWH18     	Wheat {Mar 18}                                    	LIFFE     
-LWK16     	Wheat {May 16}                                    	LIFFE     
 LWK17     	Wheat {May 17}                                    	LIFFE     
 LWK18     	Wheat {May 18}                                    	LIFFE     
 LWN16     	Wheat {Jul 16}                                    	LIFFE     
@@ -277,6 +278,7 @@ N3H17     	UK Base Electricity {Mar 17}                      	LIFFE
 N3M16     	UK Base Electricity {Jun 16}                      	LIFFE     
 N3M17     	UK Base Electricity {Jun 17}                      	LIFFE     
 N3U16     	UK Base Electricity {Sep 16}                      	LIFFE     
+N3U17     	UK Base Electricity {Sep 17}                      	LIFFE     
 N3Z16     	UK Base Electricity {Dec 16}                      	LIFFE     
 N4.C      	UK Base Electric Gregorian Continuation           	LIFFE     
 N4F17     	UK Base Electric Gregorian {Jan 17}               	LIFFE     
@@ -342,6 +344,7 @@ N7H17     	UK Peak Electricity {Mar 17}                      	LIFFE
 N7M16     	UK Peak Electricity {Jun 16}                      	LIFFE     
 N7M17     	UK Peak Electricity {Jun 17}                      	LIFFE     
 N7U16     	UK Peak Electricity {Sep 16}                      	LIFFE     
+N7U17     	UK Peak Electricity {Sep 17}                      	LIFFE     
 N7Z16     	UK Peak Electricity {Dec 16}                      	LIFFE     
 N8.C      	UK Peak Electric Gregorian Continuation           	LIFFE     
 N8F17     	UK Peak Electric Gregorian {Jan 17}               	LIFFE     
@@ -461,9 +464,11 @@ X         	FTSE 100                                          	LIFFE
 X.C       	FTSE 100 Continuation                             	LIFFE     
 XH17      	FTSE 100 {Mar 17}                                 	LIFFE     
 XM16      	FTSE 100 {Jun 16}                                 	LIFFE     
+XM17      	FTSE 100 {Jun 17}                                 	LIFFE     
 XU16      	FTSE 100 {Sep 16}                                 	LIFFE     
 XZ16      	FTSE 100 {Dec 16}                                 	LIFFE     
 Y         	FTSE 250                                          	LIFFE     
 Y.C       	FTSE 250 Continuation                             	LIFFE     
 YM16      	FTSE 250 {Jun 16}                                 	LIFFE     
 YU16      	FTSE 250 {Sep 16}                                 	LIFFE     
+YZ16      	FTSE 250 {Dec 16}                                 	LIFFE     

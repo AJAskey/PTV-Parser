@@ -1,12 +1,12 @@
-06GG      	BARCLAYS BANK PLC UNDATED FLTG RATE PRIM CAP NOTES'2'USD	LSE       
+01OO      	NORDIC INVESTMENT BANK 5.25% BDS 26/11/2019 GBP(VAR)	LSE       
 06GH      	BARCLAYS BANK PLC 9% PERM INT BEARING CAP BDS GBP(VAR)(BR)	LSE       
 07KY      	UK TREASURY STRIP UK 8% TREASURY STRIP 7/6/2021 PRINCIPAL	LSE       
+08GG      	BARCLAYS BANK PLC UNDATED FLTG RATE PRIM CAP NTS`3` GBP BR	LSE       
 0AH7      	BAYWA AG NPV(VINK)                                	LSE       
 0AI4      	CARLSBERG `B`DKK20                                	LSE       
 0APM      	DANIELI & C EUR1                                  	LSE       
 0B4R      	FUCHS PETROLUB AG NPV                             	LSE       
 0B67      	GALP ENERGIA SGPS EUR1 CLS`B`                     	LSE       
-0BD3      	HAFSLUND ASA NOK1`B`                              	LSE       
 0BJP      	IMPREGILO SPA NPV                                 	LSE       
 0BKH      	ITALCEMENTI(FABBR RIUN CEM)SPA EUR1               	LSE       
 0BKR      	ITALMOBILIARE SPA EUR2.60                         	LSE       
@@ -22,7 +22,6 @@
 0DIP      	AKVA GROUP ASA NOK1                               	LSE       
 0DJI      	ALM. BRAND DKK80                                  	LSE       
 0DJV      	ALTRI SGPS S.A. EUR0.25                           	LSE       
-0DK7      	AMANDA CAPITAL OYJ NPV                            	LSE       
 0DK9      	AMADEUS AG PERSONALDIENSTLEI NPV                  	LSE       
 0DKX      	AEDIFICA NPV                                      	LSE       
 0DLI      	AMSTERDAM COMMODITIES NV EUR0.45                  	LSE       
@@ -32,6 +31,7 @@
 0DNH      	ATOS ORIGIN EUR1                                  	LSE       
 0DNW      	AUSTEVOLL SEAFOOD ASA NOK0.50                     	LSE       
 0DOL      	BIOFRONTERA AG NPV                                	LSE       
+0DOS      	BANK HANDLOWY W WARSZAWIE PLN4                    	LSE       
 0DP0      	BANK PEKAO SA PLN1                                	LSE       
 0DP4      	BASWARE OYJ NPV                                   	LSE       
 0DPB      	BAVARIAN NORDIC RESEARCH INDSTITUTE DKK10         	LSE       
@@ -45,10 +45,8 @@
 0DQP      	BELVEDERE EUR2                                    	LSE       
 0DQZ      	BANCA GENERALI EUR1                               	LSE       
 0DRH      	BANK MILLENNIUM S.A. PLN1                         	LSE       
-0DRM      	BANCA INTERMOBILIARE SPA EUR1                     	LSE       
 0DRV      	BIOTEC PHARMACON NOK1                             	LSE       
 0DSO      	BOLZONI SPA NPV                                   	LSE       
-0DT1      	BANQUE NATIONALE DE BELGIQUE NPV                  	LSE       
 0DTB      	BOCONCEPT HLDG SER`B`DKK10                        	LSE       
 0DTF      	BOIRON EUR1                                       	LSE       
 0DTI      	BONHEUR ASA NOK1.25                               	LSE       
@@ -78,6 +76,7 @@
 0E5V      	DIGITAL MULTIMEDIA TECHNOLOGIES SPA ORD EUR0.10   	LSE       
 0E64      	DO & CO RESTAURANTS & CATERUNG AG NPV             	LSE       
 0E6Y      	DRILLISCH AG NPV                                  	LSE       
+0E7S      	DEVOTEAM SA EUR0.15                               	LSE       
 0E7Z      	EUROTECH SPA NPV                                  	LSE       
 0E9S      	EKORNES NOK1(REGD)                                	LSE       
 0E9V      	ENERGIEKONTOR AG NPV                              	LSE       
@@ -87,9 +86,7 @@
 0EEE      	CTS EVENTIM NPV                                   	LSE       
 0EEI      	EVN AG NPV                                        	LSE       
 0EEV      	EXMAR SA NPV                                      	LSE       
-0EEZ      	ATHENS WATER SUPPLY & SEWERAGE SA EUR0.60(REGD)   	LSE       
 0EG8      	FINNAIR EUR0.85                                   	LSE       
-0EGH      	FIERA MILANO EUR1                                 	LSE       
 0EHB      	FNM SPA NPV                                       	LSE       
 0EHF      	FRED OLSEN ENERGY ASA NOK20                       	LSE       
 0EIE      	F-SECURE OYJ NPV                                  	LSE       
@@ -140,6 +137,7 @@
 0FFY      	NOKIAN RENKAA(NOKIAN TYRES) EUR0.2                	LSE       
 0FG8      	AUDI AG NPV                                       	LSE       
 0FGH      	NORWEGIAN AIR SHUTLE ASA NOK0.10                  	LSE       
+0FGL      	NEXUS AG NPV                                      	LSE       
 0FH7      	OHB TELEDATA AG NPV                               	LSE       
 0FHP      	OLAV THON EIENDOMSSELSKAP NOK10                   	LSE       
 0FI1      	OPAP SA EUR0.30(CR)                               	LSE       
@@ -159,6 +157,7 @@
 0FNZ      	PONSSE NPV                                        	LSE       
 0FP9      	BANCA PROFILO EUR0.52                             	LSE       
 0FPB      	PARIS ORLEANS EUR2                                	LSE       
+0FPQ      	PHOENIX SOLAR AG ORD (NPV)                        	LSE       
 0FQ8      	PORTUGAL TELECOM SGPS SA EUR0.35(REGD)            	LSE       
 0FQI      	PUBLICIS GROUPE SA EUR0.40                        	LSE       
 0FQR      	PFEIFFER VACUUM TECHNOLOGY ORD NPV                	LSE       
@@ -167,6 +166,7 @@
 0FRJ      	RATIONAL AG NPV                                   	LSE       
 0FS8      	RENEWABLE ENERGY CORP AS NOK1                     	LSE       
 0FSN      	RESILUX NPV                                       	LSE       
+0FSO      	RETAIL ESTATES NPV                                	LSE       
 0FTC      	RINGKJOBING LANDBOBANK DKK5                       	LSE       
 0FUZ      	RWE AG(NEU) NON VTG PRF NPV                       	LSE       
 0FVZ      	SAFT GROUPE S.A. EUR1                             	LSE       
@@ -192,7 +192,6 @@
 0G9W      	GESTEVISION TELECINCO SA ORD EUR0.5               	LSE       
 0GA3      	TELECOM ITALIA SPA(NEW) DI RISP EUR0.55           	LSE       
 0GAF      	TELENET NPV                                       	LSE       
-0GAW      	TOTENS SPAREBANK NOK100(GRUNNFONDSBEVIS)          	LSE       
 0GB6      	TECHNOPOLIS OYJ NPV                               	LSE       
 0GB7      	TELEKOMUNIKACJA POLSKA PLN3                       	LSE       
 0GC8      	TAKKT AG NPV                                      	LSE       
@@ -223,7 +222,9 @@
 0GRZ      	RAYSEARCH LABORATORIES AB SER`B`NPV               	LSE       
 0GSU      	MEDA AB SER`A`NPV                                 	LSE       
 0GT1      	CASTELLUM AB SEK0.50                              	LSE       
+0GT3      	PROACT IT GROUP NPV                               	LSE       
 0GTM      	DIOS FASTIGHETER AB NPV                           	LSE       
+0GTN      	BIOGAIA AG SER`B`NPV                              	LSE       
 0GTO      	KAPSCH TRAFFICCOM AG NPV                          	LSE       
 0GTP      	FINGERPRINT CARDS AB SER`B`NPV                    	LSE       
 0GTR      	HUSQVARNA SER`B`NPV                               	LSE       
@@ -327,6 +328,7 @@
 0HYK      	SEADRILL LTD USD2                                 	LSE       
 0HZC      	EURAZEO ORD NPV                                   	LSE       
 0HZD      	WENDEL INVESTISSEMENT EUR4                        	LSE       
+0I1W      	ROYAL CARIBBEAN CRUISES COM STK USD0.01           	LSE       
 0I2R      	ATLANTIA SPA EUR1                                 	LSE       
 0I3Z      	DEUTSCHE EUROSHOP AG NPV                          	LSE       
 0I5O      	BERGMAN & BEVING AB SER B NPV                     	LSE       
@@ -350,6 +352,7 @@
 0IKJ      	WARTSILA OYJ ABP EUR3.5                           	LSE       
 0ILI      	FLUIDRA SA EUR1                                   	LSE       
 0ILL      	LABORATORIOS FARMACEUTOCOS ROVI SA EUR0.06        	LSE       
+0IMT      	PHOTOCURE ASA NOK0.5                              	LSE       
 0IN2      	GROUPE BRUXELLES LAMBERT(NEW) NPV                 	LSE       
 0IN3      	IMS(INTERNATIONAL METAL SERVICE) NPV              	LSE       
 0INB      	ST MICROELECTRONICS EUR1.04                       	LSE       
@@ -368,9 +371,11 @@
 0IVM      	SPAREBANKEN MIDT NORGE PRIMARY CAPITAL CERT NOK25 	LSE       
 0IW5      	THALES EUR3                                       	LSE       
 0IWK      	ALTRAN TECHNOLOGIES EUR0.50                       	LSE       
+0IWU      	FABASOFT AG NPV                                   	LSE       
 0IWV      	VAN DE VELDE ORD NPV                              	LSE       
 0IX0      	GENERALE LOCATION EUR4                            	LSE       
 0IXT      	LATECOERE EUR2                                    	LSE       
+0IXY      	FONCIERE LYONNAISE EUR2                           	LSE       
 0IXZ      	BOLLORE SA EUR16                                  	LSE       
 0IY1      	ATRIA EUR1.70                                     	LSE       
 0IYN      	MOLOGEN HLDGS AG ORD NPV                          	LSE       
@@ -385,7 +390,6 @@
 0J2W      	BIOTIE THERAPIES CORP EUR1                        	LSE       
 0J3F      	SODEXHO EUR4                                      	LSE       
 0J3X      	COFINIMMO ORD NPV                                 	LSE       
-0J5B      	ELECTROMAGNETIC GEOSERVICES NOK0.25               	LSE       
 0J5Y      	PROSAFE SE EUR0.25                                	LSE       
 0J6V      	FONCIERE DES REGIONS GFR EUR3                     	LSE       
 0J6X      	TELEPERFORMANCE EUR2.50                           	LSE       
@@ -424,14 +428,14 @@
 0JYZ      	LOOMIS AB NPV`B`                                  	LSE       
 0JZ8      	PINGUINLUTOSA NV NPV                              	LSE       
 0K11      	WACKER NEUSON SE NPV                              	LSE       
-0K1Q      	TELESTE CORP NPV                                  	LSE       
 0K4O      	ICADE (NEW) NPV                                   	LSE       
 0K4Y      	FUNCOM EUR0.04                                    	LSE       
 0K5E      	DRAGERWERK AG NON VTG PREF NPV                    	LSE       
+0K6S      	REALDOLMEN SA NPV                                 	LSE       
 0K78      	ASSICURAZIONI GENERALI SPA EUR1                   	LSE       
 0K7C      	INTERSEROH SE NPV                                 	LSE       
 0K7F      	AURUBIS AG ORD NPV                                	LSE       
-0K7I      	WILLIAM DEMANT HLDGS DKK1                         	LSE       
+0K7K      	AP ALTERNATIVE ASSETS COMMON UNITS                	LSE       
 0K7Y      	AMER SPORTS CORP NPV`A`                           	LSE       
 0K82      	AUTOSTRADA TORINO-MILANO-SPA EUR0.50              	LSE       
 0K8N      	BENETEAU EUR0.10                                  	LSE       
@@ -443,14 +447,12 @@
 0K9H      	FAES FARMA SA EUR0.1                              	LSE       
 0K9N      	RALLYE EUR3                                       	LSE       
 0K9P      	GN STORE NORD DKK4                                	LSE       
-0K9T      	ELLAKTOR SA EUR0.81                               	LSE       
 0K9V      	HAL TRUST CERTS(1 UNIT)                           	LSE       
 0K9W      	HUHTAMAKI OYJ `I`NPV                              	LSE       
 0KA0      	INGENICO EUR1                                     	LSE       
 0KA1      	INTRALOT SA EUR0.30                               	LSE       
 0KA3      	IPSOS EUR0.25                                     	LSE       
 0KAV      	ARNOLDO MONDADORI EDITORE SPA EUR0.26             	LSE       
-0KAZ      	MYTILINEOS HLDGS EUR0.60(REGD)                    	LSE       
 0KB3      	NEXITY EUR5                                       	LSE       
 0KB6      	NORSKE SKOGSINDUSTRIER ASA NOK10                  	LSE       
 0KBQ      	RATOS AB NPV SER `B`                              	LSE       
@@ -465,7 +467,6 @@
 0KD1      	TUBACEX EUR0.45                                   	LSE       
 0KDK      	BARCO(NEW) NPV                                    	LSE       
 0KED      	INFINEON TECHNOLOGIES AG ORD NPV                  	LSE       
-0KEH      	BROOKFIELD ASSET MANAGEMENT INC LIMITED VTG SHS NPV CL`A`	LSE       
 0KFE      	MUNCHENER RUCKVERSICHERUNGS AG NPV(REGD)          	LSE       
 0KFX      	DANONE ORD EUR0.25                                	LSE       
 0KG0      	TIETO OYJ ORD NPV                                 	LSE       
@@ -473,10 +474,12 @@
 0KI5      	UPONOR OYJ NPV                                    	LSE       
 0KII      	SSAB AB SER`A`NPV                                 	LSE       
 0KIZ      	NEW WAVE GROUP AB SER`B`NPV                       	LSE       
+0KJ7      	IBERSOL SGPS SA EUR1                              	LSE       
 0KJB      	MAN AG ORD NPV                                    	LSE       
 0KK7      	BEE TEAM SPA NPV                                  	LSE       
 0KLO      	PORTUCEL-EMPRESA PRODUTORA DE PASTA EUR1          	LSE       
 0KO8      	ENEA SA PLN1                                      	LSE       
+0KUR      	PSI AG ORD NPV                                    	LSE       
 0KUY      	PNE WIND AG NPV(REGD)                             	LSE       
 0KV7      	TOMRA SYSTEMS ASA NOK1                            	LSE       
 0KVG      	BLACK EARTH FARMING LTD SWEDISH DEP RECEIPT       	LSE       
@@ -509,6 +512,7 @@
 0LRI      	JUMBO SA EUR1.4                                   	LSE       
 0LS5      	NG2 SA PLN0.10                                    	LSE       
 0LTM      	EUROCASH SA PLN1                                  	LSE       
+0LVL      	LPP SA PLN2                                       	LSE       
 0M0A      	ROCKWOOL INTERNATIONAL `B`SHS DKK10               	LSE       
 0M0Q      	SOS CORPORACION ALIMENTARIA SA EUR1.5025          	LSE       
 0M14      	POLARCUS LTD USD0.02                              	LSE       
@@ -527,14 +531,15 @@
 0M6P      	S.E.S.SA FIDUCIARY DR EACH REP 1`A`SHS NPV        	LSE       
 0M6S      	ALLIANZ SE ORD SHS NPV(REGD)                      	LSE       
 0M8V      	PHILIP MORRIS INTERNATIONAL INC NPV               	LSE       
+0M8Y      	FORMPIPE SOFTWARE AB NPV                          	LSE       
 0M98      	GERRY WEBER INTERNATIONAL AG NPV                  	LSE       
 0M9A      	HANNOVER RUECKVERSICHERUNGS AG ORD NPV(REGD)      	LSE       
-0MA6      	OMV PETROM SA RON0.10                             	LSE       
 0MC5      	PUBLIC POWER CORP S.A. EUR4.60                    	LSE       
 0MCG      	HAMBORNER REIT AG NPV                             	LSE       
 0MCJ      	SVENSKA CELLULOSA AB-SCA SER`A`NPV                	LSE       
 0MCK      	SVENSKA CELLULOSA AB-SCA SER`B`NPV                	LSE       
 0MD5      	EXEL COMPOSITES OYJ NPV                           	LSE       
+0MD9      	NORTH ENERGY ASA NOK1                             	LSE       
 0MDT      	ELECTROLUX AB SER`B`NPV                           	LSE       
 0MEC      	NORDEX AG NPV(POST REVERSE-SPLIT)                 	LSE       
 0MET      	KONECRANES OYJ NPV                                	LSE       
@@ -614,8 +619,8 @@
 0ML0      	SONAE SGPS SA EUR1                                	LSE       
 0ML1      	EDP RENOVAVEIS SA EUR5                            	LSE       
 0MMJ      	TOM TAILOR HOLDING AG NPV                         	LSE       
+0MMZ      	LUBELSKI WEGIEL `BOGDANKA` SA PLN5                	LSE       
 0MN3      	POLSKA GRUPA ENERGETYCZNA SA PLN10                	LSE       
-0MN5      	SWORD GROUP EUR1 (POST CONSOLIDATION)             	LSE       
 0MNC      	RTL GROUP NPV                                     	LSE       
 0MNQ      	CYFROWY POLSAT SA PLN0.04                         	LSE       
 0MOP      	TDC A/S DKK1                                      	LSE       
@@ -645,11 +650,9 @@
 0MUM      	EDENRED ORD                                       	LSE       
 0MUN      	IREN SPA EUR1                                     	LSE       
 0MV2      	FREENET AG NPV                                    	LSE       
-0MV4      	PHILIP MORRIS(CZ) CZK1000                         	LSE       
 0MV5      	VT GROUP ORD GBP0.05                              	LSE       
 0MV6      	LAURENT-PERRIER EUR3.8                            	LSE       
 0MV8      	TECHNICOLOR SA EUR0.10                            	LSE       
-0MVM      	SII EUR2                                          	LSE       
 0MW2      	STOCKMANN AB(OY) `B`EUR2                          	LSE       
 0MW7      	LEGRAND PROMESSE EUR4                             	LSE       
 0MWK      	LINDAB INTL AB NPV                                	LSE       
@@ -699,7 +702,6 @@
 0NC6      	INVESTOR AB SER`B`NPV                             	LSE       
 0NCV      	LENZING AG NPV                                    	LSE       
 0ND2      	LPKF LASER & ELECTRONICS AG NPV                   	LSE       
-0ND3      	LANDI RENZO SPA EUR0.10                           	LSE       
 0ND5      	LUNDBECK(H) A/S DKK5                              	LSE       
 0ND7      	LUXOTTICA GROUP EUR0.06                           	LSE       
 0NDA      	MANITOU EUR1                                      	LSE       
@@ -715,7 +717,7 @@
 0NF8      	CREDITO VALTELLINESE EUR3.5                       	LSE       
 0NFP      	PRIMA INDUSTRIE SPA EUR2.5                        	LSE       
 0NFS      	ESPRINET EUR0.15(POST SUBDIVISION)                	LSE       
-0NG6      	ADENOR GROUP NPV(POST SPLIT)                      	LSE       
+0NGP      	HOME INVEST BELGIUM NPV                           	LSE       
 0NHV      	RECTICEL NPV                                      	LSE       
 0NHY      	REPLY SPA EUR0.52                                 	LSE       
 0NI1      	RHEINMETALL AG NPV                                	LSE       
@@ -744,6 +746,7 @@
 0NMK      	VESTAS WIND SYSTEMS DKK1                          	LSE       
 0NMR      	WERELDHAVE NV EUR10                               	LSE       
 0NMU      	WOLTERS-KLUWER NV CVA EUR0.12                     	LSE       
+0NMX      	WESTAG & GETALIT AG PREF NPV                      	LSE       
 0NNC      	ZIGNAGO VETRO EUR0.10                             	LSE       
 0NNF      	ALFA LAVAL AB NPV                                 	LSE       
 0NNR      	LUNDIN PETROLEUM AB NPV                           	LSE       
@@ -841,7 +844,6 @@
 0NZM      	L`OREAL EUR0.20                                   	LSE       
 0NZR      	SOLVAY S.A. NPV                                   	LSE       
 0NZT      	UCB S.A. NPV                                      	LSE       
-0NZY      	ECKERT & ZIEGLER ORD NPV                          	LSE       
 0O05      	SCHOELLER BLECKMANN OILFIELD EUR1                 	LSE       
 0O0F      	CANCOM IT SYSTEM AG NPV                           	LSE       
 0O0J      	LEONI AG NPV                                      	LSE       
@@ -887,6 +889,7 @@
 0O8X      	WIRE CARD AG NPV                                  	LSE       
 0O93      	HALDEX AB ORD NPV                                 	LSE       
 0O9B      	ALMIRALL SA EUR0.12                               	LSE       
+0O9C      	COMPAGNIE DU BOIS SAUVAGE SA NPV                  	LSE       
 0O9P      	SEMCON AB ORD NPV                                 	LSE       
 0O9Q      	ALSTRIA OFFICE REIT-AG NPV (BR)                   	LSE       
 0OA1      	PKC GROUP OYJ NPV                                 	LSE       
@@ -912,14 +915,13 @@
 0OGA      	GEMALTO EUR1                                      	LSE       
 0OGK      	SUBSEA 7 SA COM STK USD2                          	LSE       
 0OHG      	NH HOTELES S.A. EUR2                              	LSE       
+0OHL      	TELEFONICA O2 CZECH REPUBLIC A.S. CZK100          	LSE       
 0OIQ      	ACERINOX SA ORD EUR0.25                           	LSE       
 0OIR      	ALK-ABELLO A/S DKK10 ORD `B`                      	LSE       
 0OJA      	FLSMIDTH & CO AS DKK20                            	LSE       
 0OJC      	GJENSIDIGE FORSIKRING ASA NOK2                    	LSE       
-0OJV      	SNIACE(SDAD.N.IND.APL.CEL.E.) EUR0.10             	LSE       
 0OJX      	TERNA ENERGY SA EUR0.30                           	LSE       
 0OK7      	AKKA TECHNOLOGIES EUR1.53                         	LSE       
-0OKR      	HELLENIC EXCHANGES HLDGS EUR1.75                  	LSE       
 0OLD      	ADIDAS AG NPV                                     	LSE       
 0OLF      	APERAM ORD                                        	LSE       
 0OLG      	BAUER AG NPV                                      	LSE       
@@ -927,7 +929,6 @@
 0OLN      	DIALOG SEMICONDUCTOR GBP0.10                      	LSE       
 0OM4      	STADA ARZNEIMITTEL AG ORD NPV(REGD)(VINKULIERT)   	LSE       
 0OMB      	CATTOLICA ASSICURAZIONI EUR3                      	LSE       
-0OMG      	CRYO-SAVE GROUP NV ORD EUR0.10                    	LSE       
 0OMK      	ESSILOR INTERNATIONAL EUR0.18                     	LSE       
 0ON7      	D`IETEREN NV NPV                                  	LSE       
 0ONG      	FINMECCANICA SPA EUR4.4                           	LSE       
@@ -966,14 +967,12 @@
 32WY      	RSA INSURANCE GROUP PLC 6.701% PERP GTD SUB CAP SECS GBP50000	LSE       
 32XB      	SOCO FINANCE(JERSEY) 4.5% GTD CNV BDS 16/05/13 USD100000	LSE       
 32XF      	GE CAPITAL EUROPEAN FUNDING FLTG RATE NTS 17/05/21 EUR1000	LSE       
-32ZH      	EDP FINANCE BV 4.625% INST 13/06/16 EUR50000      	LSE       
-33DR      	BRITISH LAND CO PLC 5.357% 1ST MTG DEB BDS 31/03/28 GBP1	LSE       
 33FX      	JPMORGAN CHASE BANK NATL ASS 5.375% SUB NTS 28/09/16 GBP50000	LSE       
 33GL      	BRITISH TELECOMMUNICATIONS 8.625% BDS 26/3/2020 GBP(VAR)	LSE       
-33GX      	GESB 8.35% GTD SEC BDS 15/11/2018 GBP1000         	LSE       
-33HG      	ROYAL BANK OF SCOTLAND 4.35% SUBORD NTS 23/01/17 EUR50000	LSE       
 33XX      	JPMORGAN CHASE & CO FLTG RATE NTS 27/06/12 GBP50000	LSE       
+33YB      	TELEFONAKTIEBOLAGET LM ERICSSON 5.375% NTS 27/06/17 EUR50000	LSE       
 33YX      	B.A.T.INTERNATIONAL FINANCE 5.375% NTS 29/06/17 EUR50000	LSE       
+34AN      	GENERAL ELECTRIC CAPITAL CORP 6.5%/FLTG RTE SUB DEB 15/9/67 GBP `REGS`	LSE       
 34FJ      	STANDARD CHARTERED BANK 7.75% SUBORD NTS 03/04/18 GBP50000	LSE       
 34FU      	THAMES WATER UTILITIES CAYMAN FIN CLS`A`7.241%UNWRAP GTD BDS 09/04/58 GBP	LSE       
 34FV      	ROYAL BANK OF SCOTLAND 6.934% SUBORD NTS 09/04/18 EUR50000	LSE       
@@ -986,6 +985,7 @@
 35BY      	BANK OF AMERICA CORP 7% SNR NTS 15/06/16 EUR50000 	LSE       
 35CE      	QTEL INTERNATIONAL FINANCE LTD 7.875% GTD NTS 10/06/19 USD100000 REG`S	LSE       
 35LS      	HSBC BANK PLC 5.375% SUB NTS 22/8/33 GBP(VAR)     	LSE       
+35NU      	PRUDENTIAL 5.875% NOTES 11/5/2029 GBP(VAR)        	LSE       
 35PG      	FRIENDS PROVIDENT 6.875% STEP-UP TIER 1 INS CP SEC GBP VAR	LSE       
 35SU      	GMAC LLC 5.375% NTS 06/06/11 EUR1000              	LSE       
 365       	UKBETTING ORD GBP0.01                             	LSE       
@@ -1014,7 +1014,6 @@
 38WL      	VATTENFALL AB 6.25% NTS 17/03/21 EUR50000         	LSE       
 38WR      	HSBC BANK PLC PALMS678 23/03/12(DOHA BANK)USD6.59 	LSE       
 38YE      	NOKIA CORP 6.75% NTS 04/02/19 EUR50000            	LSE       
-39AS      	GE CAPITAL EUROPEAN FUNDING 6.025% NTS 01/03/38 EUR1000	LSE       
 39AZ      	HSBC BANK PLC LEPO WTS 11/02/19(SHANGHAI PUDONG DEV)	LSE       
 39BB      	HSBC BANK PLC LEPO WTS 11/02/19(`A`DAQIN RAILWAY) USD	LSE       
 39BC      	HSBC BANK PLC LEPO WTS 11/02/19(SHANXI XISHAN COAL)USD	LSE       
@@ -1022,6 +1021,9 @@
 39BG      	HSBC BANK PLC LEPO WTS 11/02/19(`A`CHINA VANKE CO)USD	LSE       
 39BN      	HSBC BANK PLC PALMS706 18/05/09(COM BK QATAR)USD18.41	LSE       
 39BQ      	G4S PLC 7.75% NTS 13/05/19 GBP50000               	LSE       
+39DP      	ROYAL BANK OF CANADA 4.625% CVD BDS 22/01/18 EUR50000	LSE       
+39GI      	MACEDONIA(REPUBLIC OF) 9.875% NTS 08/01/13 EUR50000	LSE       
+39GJ      	6.35% SEC BDS 08/07/41 GBP50000                   	LSE       
 39OI      	UNITED UTILITIES WATER 5.375% BDS 14/5/18 GBP(VAR)	LSE       
 3EC       	FT-SE E300 Euro Blanc                             	LSE       
 3IN       	3I INFRASTRUCTURE LTD ORD NPV WI                  	LSE       
@@ -1034,6 +1036,7 @@
 40OS      	TESCO 6% MED TRM NTS 14/12/2029 GBP(VAR)          	LSE       
 41DX      	BARCLAYS BANK PLC FR SUB STP-UP CALL NTS 28/6/16 USD'144A'	LSE       
 41KU      	NORTHERN ROCK 3.875% COVERED BDS 18/10/11 EUR50000	LSE       
+41NW      	SEVERN TRENT WATER UTILITIES FIN 6.25% GTD BDS 7/6/2029 GBP(VAR)	LSE       
 41TC      	SB CAPITAL SA 5.93% LN PART NTS 14/11/11 USD100000	LSE       
 41TN      	CORP ANDINA DE FOMENTO FLTG RATE NTS 16/11/11 EUR50000	LSE       
 41ZU      	MERRILL LYNCH & CO INC FLTG RATE NTS 21/02/12 GBP50000	LSE       
@@ -1043,18 +1046,21 @@
 42PZ      	EKSPORTFINANS ASA 4.375% NTS 26/10/11 EUR1000     	LSE       
 43AK      	HSBC BANK PALMS668 05/03/12(COM BK OF QTR)USD13.08	LSE       
 43EP      	HSBC BANK PLC LEPO WTS 7/01/19 (BHARAT HEAVY ELECT)USD	LSE       
+43ER      	HSBC BANK PLC PALMS700 30/04/12(ARAB POTASH)USD45.74	LSE       
 43EZ      	ROLLS-ROYCE 6.75% GTD NTS 30/04/19 GBP50000       	LSE       
 43JX      	IMPERIAL TOBACCO FINANCE 7.75% GTD NTS 24/06/19 GBP50000	LSE       
 43MB      	UBS AG LONDON BRANCH 6.375% NTS 20/07/16 GBP1000  	LSE       
 43RC      	ABBEY NATIONAL TREASURY SERVICES 3.625% CVD BDS 14/10/16 EUR50000	LSE       
+43RL      	EDF ENERGY NETWORKS(SPN) 6.125% SEN UNSEC NTS 12/11/31 GBP50000	LSE       
 43RW      	HSBC BANK PLC LEPO 29/07/19(CHINA STATE CONS)USD  	LSE       
 43TD      	ABU DHABI NATIONAL ENERGY COMPANY 6.25% NTS 16/09/19 USD100000`REG S`	LSE       
+43VI      	KUWAIT PROJECTS CO(CAYMAN) 8.875% NTS 17/10/16 USD100000	LSE       
 43WZ      	PORTUGAL TELECOM INTL FINANCE BV 5% NTS 04/11/19 EUR50000	LSE       
 44AB      	TATE & LYLE INTERNATIONAL FINANCE 6.75% GTD NTS 25/11/19 GBP50000	LSE       
 44BB      	TELEFONICA EMISIONES SAU 5.289% INST 09/12/22 GBP50000	LSE       
 44CQ      	HSBC BANK PLC LEPO WTS 12/11/19(OIL&NAT GAS)USD   	LSE       
 44GQ      	CLOSE BROTHERS GROUP PLC 6.50% BDS 10/02/17 GBP1000	LSE       
-44IU      	AUSTRALIA & NEW ZEALAND BANK GROUP 3.75% NTS 10/03/17 EUR50000	LSE       
+44KC      	BANK OF AMERICA CORP 4.75% SNR NTS 03/04/17 EUR50000	LSE       
 44MU      	NORDEA BANK AB 4.5% SUBORD NTS 26/03/20 EUR50000  	LSE       
 44OY      	HSBC BANK PLC PALMS584 06/06/11(GALFAR ENG) USD5.61	LSE       
 44WT      	TELEFONICA EMISIONES SAU 3.661% BDS 18/09/17 EUR50000	LSE       
@@ -1070,30 +1076,31 @@
 45LV      	ALFA BOND ISSUANCE 7.875%LN PTG NTS 25/9/17 USD REG`S	LSE       
 45NJ      	QTEL INTERNATIONAL FINANCE LTD 4.75% NTS 16/02/21 USD200000 REG S	LSE       
 45NK      	QTEL INTERNATIONAL FINANCE LTD 3.375% NTS 14/10/16 USD200000 REG S	LSE       
-45PI      	STEEL CAPITAL SA 6.7% LN PART NTS 25/10/17 USD1000 REG S	LSE       
+45NP      	QTEL INTERNATIONAL FINANCE LTD 3.375% GTD 14/10/16 USD200000 144A	LSE       
 45QK      	NATIONAL GRID ELECTRICITY TRANS. 3.806% RTL PRC IDX LKD BDS 27/7/2020 GBP	LSE       
 45ZN      	ROYAL BANK OF SCOTLAND PLC 4.125% CVD BDS 15/01/18 EUR100000	LSE       
 46HP      	NATIONWIDE BUILDING SOCIETY 4.625% CVD BDS 08/02/21 EUR100000 11-3	LSE       
 46HU      	LLOYDS TSB BANK PLC 6% CVD BDS 8/2/30 GBP100000 11-5	LSE       
 46JC      	BARCLAYS BANK PLC 9.5% SUBORD BDS 7/8/2021 GBP(VAR)	LSE       
-47AG      	NORDEA HYPOTEK AB 3.5% CVD BDS 18/01/17 EUR50000  	LSE       
 47AW      	VODAFONE GROUP 4.65% NTS 20/01/22 EUR50000        	LSE       
 47EK      	HSBC BANK PLC LEPO WTS 03/06/20(LUZH LAO)USD0.000001	LSE       
 47IE      	S & U 31.5% CUM PRF 12 1/2P                       	LSE       
+47OG      	NORTHERN ROCK 6.375% NOTES 2/12/2019 GBP1000      	LSE       
 47PF      	ROLLS-ROYCE 7.375% NTS 14/6/2016 GBP(VAR)         	LSE       
 47QK      	NATIONAL GRID ELECTRICITY TRANS. 6.5% BDS 27/7/2028 GBP(VAR)	LSE       
+47RH      	COVENTRY BUILDING SOCIETY 6% SNR UNSEC NTS 16/10/19 GBP50000	LSE       
 47VU      	ENTERPRISE INNS 6.5% SNR UNSUB NTS 6/12/18 GBP REG `S`	LSE       
 47YC      	PRUDENTIAL 6.5% PERP SUB CAP SECS USD(VAR)        	LSE       
 48CT      	B.A.T.INTERNATIONAL FINANCE 6.375% NTS 12/12/19 GBP(VAR)	LSE       
 48DW      	RMPA SERVICES 5.337% GTD SEC BDS 30/9/38 GBP(VAR)REG`S	LSE       
 48HO      	MID KENT WATER 4% PERP DEB STK                    	LSE       
 48LK      	HAMMERSON PLC 7.25% BDS 21/4/2028 GBP(VAR)(BR)    	LSE       
+48VK      	MARSTON`S ISSUER PLC CLS`A3`SEC FXD/FLTG RTE NTS 15/7/32 GBP	LSE       
 49HF      	TELEFONICA EMISIONES SAU 5.375% INST 02/02/18 GBP50000	LSE       
 49HI      	TELEFONICA EMISIONES SAU 5.375% INST 02/02/26 GBP50000	LSE       
 49KY      	UK TREASURY STRIP UK TREASURY STRIP 7/12/2018 COUPON	LSE       
 49MY      	GE CAPITAL UK FUNDING 5.125% NTS 24/05/23 GBP1000 	LSE       
 49RA      	VODAFONE GROUP 4.75% NTS 14/06/16 EUR50000        	LSE       
-49WP      	NIBC BANK NV 7.625% PERP DEBT SECS USD5000        	LSE       
 4ELE      	                                                  	LSE       
 4EU5      	FT-SE 4Good Europe 50 Index                       	LSE       
 4GEU      	FT-SE 4Good Europe Index                          	LSE       
@@ -1105,6 +1112,7 @@
 4UK5      	FT-SE 4Good UK 50 Index                           	LSE       
 4US1      	FT-SE 4Good US 100 Index                          	LSE       
 50NC      	BRITISH SKY BROADCASTING GROUP 6% GTD NTS 21/05/27 GBP50000	LSE       
+50OR      	AEGON NV 6.125% NTS 15/12/2031 GBP(VAR)           	LSE       
 50PS      	PETERBOROUGH(PROGRESS HEALTH) PLC 5.58% GTD SEC BDS 02/10/42 GBP50000	LSE       
 50UC      	ASTRAZENECA PLC 5.75% SNR UNSUB NTS 12/11/31 GBP50000	LSE       
 50WS      	HSBC BANK PALMS 389 22/1/09(COMM BK QATAR)USD54.50	LSE       
@@ -1115,30 +1123,31 @@
 51FS      	ROYAL BANK OF SCOTLAND 6.625% NTS 17/09/18 GBP50000	LSE       
 51NS      	ONTARIO(PROVINCE OF) 4.75% INST 23/04/19 EUR50000 	LSE       
 51PA      	BG ENERGY CAPITAL 5.125% NTS 07/12/17 GBP50000    	LSE       
+51PO      	HSBC BANK PLC 6.25% SUBORD NTS 30/1/2041 GBP(VAR) 	LSE       
 51TJ      	UNILEVER 4.75% NTS 16/06/17 GBP2000               	LSE       
 51XL      	TELEFONICA EUROPE BV 5.875% NTS 14/2/33 EUR100000 	LSE       
 52CU      	DERBY HEALTHCARE 5.564% NTS 30/6/41 GBP1000       	LSE       
 52TC      	KAWASAKI KISEN KAISHA 0% CNV BDS 04/04/13 JPY1000000	LSE       
 52VC      	STANDARD CHARTERED BANK 5.375%/FLTG RATE STEP-UP UNDATED NTS GBP	LSE       
 52VE      	SEGRO PLC 5.75% NTS 20/06/35 GBP(VAR)             	LSE       
+52WW      	HSBC BANK PLC 4.75% SUBORD NTS 24/03/46 GBP50000  	LSE       
+53PM      	NEXT 5.875% BDS 12/10/16 GBP50000                 	LSE       
 54GW      	FULLER SMITH & TURNER 8% 2ND CUM PRF GBP1         	LSE       
 54HN      	IRISH LIFE ASSURANCE PLC STEP UP PERP CAP NTS EUR50000	LSE       
 54JZ      	EUROFIMA 5% INST 03/04/17 USD2000                 	LSE       
 54QM      	EIB SUKUK CO.LTD TRUST CERT 12/06/12 USD100000    	LSE       
 54QT      	XSTRATA FINANCE CANADA 5.25% NTS 13/06/17 EUR50000	LSE       
 54UN      	MORGAN STANLEY EUR 5.5% SNR NTS 02/10/17 EUR50000 	LSE       
-54VX      	TESCO 5.5% SNR NTS 15/11/17 USD100000 `144A`      	LSE       
 54XF      	GLAXOSMITHKLINE CAPITAL 5.625% NTS 13/12/17 EUR50000	LSE       
 55AH      	QUEBEC SER`QG`4.625% GLB NTS 14/05/18 USD1000     	LSE       
-55PX      	WESTPAC BANKING CORP 4.625% INST 14/03/11 EUR50000	LSE       
 55QN      	HSBC BANK LEPO WTS 20/2/18(BHARTI ARTL)USD0.000001	LSE       
 55QQ      	HSBC BANK LEPO WTS 20/02/18(HDFC)USD0.000001      	LSE       
 55QR      	HSBC BANK LEPO WTS 20/02/18(ITC LTD)USD0.000001   	LSE       
+56CP      	NATIONAL GRID 5% INST 2/7/18 EUR1000              	LSE       
 56IL      	UBS AG 8.75% EURO MED TERM NTS 18/12/2025 GBP     	LSE       
 56QG      	ROYAL BANK OF SCOTLAND 4.625% TO FLTG RATE SUB NTS 22/9/21 EUR	LSE       
-57HB      	HONG KONG & SHANGHAI BANKING CORP PRIM CAP UNDATED F/R NTS(3)USD(VAR)BR	LSE       
 57MC      	WELLCOME TRUST FINANCE 4.625% GTD BDS 25/07/36 GBP50000	LSE       
-58TO      	UNIFUND PLC GTD SEC BDS 07/12/47 GBP50000         	LSE       
+58KN      	AT&T INC 5.5% NTS 15/03/27 GBP50000               	LSE       
 58UT      	DP WORLD LTD 6.85% NTS 02/07/37 USD100000 `REGS`  	LSE       
 58XK      	BARCLAYS BANK PLC 7.434% STP UP PERP RSV CAP INS USD REG`S	LSE       
 58XX      	STANDARD CHARTERED BANK 5.875% DATED NTS 26/09/17 EUR50000	LSE       
@@ -1148,12 +1157,12 @@
 59PH      	CENTRICA PLC 6.375% NTS 10/03/22 GBP50000         	LSE       
 59PQ      	ROYAL BANK OF SCOTLAND GROUP PLC NON CUM PRF GBP0.01	LSE       
 59SS      	BARCLAYS BANK PLC 8.25% UNDATED SUBORD NTS GBP50000	LSE       
+59XG      	VODAFONE GROUP 8.125% NTS 26/11/18 GBP50000       	LSE       
 60BT      	SWEDBANK MORTGAGE AB 3.625% S.O. BDS 05/10/16 EUR50000	LSE       
 60DW      	BARCLAYS BANK PLC FXD TO FRN 03/09/19 EUR1000     	LSE       
 60FH      	GE CAPITAL EUROPEAN FUNDING 5.375% NTS 23/01/20 EUR1000	LSE       
 60GF      	HSBC BANK PLC PALMS763 19/10/12(MDTN & GLF INS)USD7.49	LSE       
 60HU      	PROVIDENT FINANCIAL 8% GTD BDS 23/10/19 GBP1000   	LSE       
-60IY      	GE CAPITAL UK FUNDING 5.875% NTS 04/11/20 GBP2000 	LSE       
 60KI      	TELEFONICA EMISIONES SAU 4.693% INST 11/11/19 EUR50000	LSE       
 60KU      	DONG ENERGY AS 4% BDS 16/12/16 EUR1000            	LSE       
 60NW      	NATIONAL WESTMINSTER BANK 5.125% NOTES 30/6/2011 EUR(VAR)	LSE       
@@ -1174,7 +1183,9 @@
 61MP      	LLOYDS TSB BANK PLC 7.625% NTS 22/04/25 GBP1000   	LSE       
 61QB      	HSBC BANK PLC LEPO 08/06/20(COFCO TUNHE CO)USD0.000001	LSE       
 61RF      	BRITISH AMERICAN TOBACCO HLDGS(NL) 4% GTD NTS 07/07/20 EUR50000	LSE       
+61RN      	PSB FINANCE SA 11.25% LN PTG NTS 8/7/16 USD100000 	LSE       
 61SA      	HSBC BANK PLC LEPO 22/06/20 (CHINA INT`L)USD 0.000001	LSE       
+61VZ      	MORGAN STANLEY 5.375% SNR NTS 10/08/20 EUR50000   	LSE       
 61XB      	POHJOLA BANK PLC 3% INST 08/09/17 EUR50000        	LSE       
 61ZG      	GOLD FIELDS OROGEN HLDG LTD 4.875% NTS 07/10/20 USD1000 REG S	LSE       
 62AF      	ROYAL BANK OF SCOTLAND PLC 3.875% CVD BDS 19/10/20 EUR50000	LSE       
@@ -1186,16 +1197,18 @@
 62HO      	HSBC BANK UNDATED FLTG RATE PRIM CAP NTS USD JUN85	LSE       
 62ZB      	HSBC BANK PLC LEPO 03/06/20(GREE ELECTRIC)USD0.000001	LSE       
 64DE      	HSBC HLDGS 5.75% EUR MED TRM NTS 20/12/27 GBP1000 	LSE       
-64PI      	ROYAL BANK OF SCOTLAND 7.375% UNDATED SUB NOTES 31/8/2010 GBP	LSE       
 65DI      	NETWORK RAIL INFRASTRUCTURE FINANCE 4.625% NOTES 21/07/20 GBP50000	LSE       
 65HB      	HOUSING FINANCE CORP 8.625% DEB STK 2023          	LSE       
 65HT      	NATIONAL WESTMINSTER BANK PRIM CAP FLTG RATE NTS'B'USD(VAR)(BR)	LSE       
 65LF      	GENERAL ELECTRIC CAPITAL CORP 4.125% NTS 19/09/35 EUR(VAR)	LSE       
 65LH      	GENERAL ELECTRIC CAPITAL CORP 4.875% NTS 18/09/37 GBP(VAR)	LSE       
+65WK      	ABBEY NATIONAL TREASURY SERVICES 4.25% CVD BDS 12/04/21 EUR50000	LSE       
+66GS      	CENTRICA 5.5% NTS 24/10/16 GBP50000               	LSE       
 66IH      	SPAIN(GOVT OF) 11.75% LN STK 2010(BR)             	LSE       
-66KT      	BANK OF AMERICA CORP 5.25% SUB NTS 09/11/16 GBP50000	LSE       
 66TJ      	KAZKOMMERTS INTERNATIONAL BV 6.875% SNR NTS 13/02/17 EUR50000	LSE       
+66WL      	JPMORGAN CHASE & CO 6.128%/FLTG RTE SUB CALL NTS 30/5/17 GBP	LSE       
 67LN      	KAZMUNAIGAZ FINANCE SUB 9.125% NTS 02/07/18 USD100000 `REGS`	LSE       
+67SH      	TESCO 5.875% NTS 12/09/16 EUR50000                	LSE       
 67TC      	HSBC BANK LEPO WTS 12/11/18(LARSEN&TOUBRO)USD     	LSE       
 67YO      	HSBC BANK PLC PALMS713 04/06/12(JARIR MARKET)USD46.33	LSE       
 68BR      	HBOS CAPITAL FUNDING NO 4 LP 9.54%/FLTG RTE NON VTG NON CUM PREF	LSE       
@@ -1204,12 +1217,15 @@
 68DN      	LLOYDS TSB BANK 6.375% NTS 17/06/16 EUR50000      	LSE       
 68MC      	PLACES FOR PEOPLE HOMES 5.09% SEC BDS 31/7/43 GBP1000`REGS`	LSE       
 68MT      	HARBOUR FUNDING 5.28% SEC BDS 31/3/44 GBP(VAR) REG`S`	LSE       
+68OP      	WESSEX WATER SERVICES FINANCE 5.75% GTD BDS 14/10/33 GBP(VAR) REG`S`	LSE       
 68PS      	PERMANENT FINANCING (NO.3) SER`5`CLS`A`FRN 10/6/42 GBP(VAR)REG`S`	LSE       
 69GI      	NATIONAL GRID GAS 6% INST 13/05/38 GBP50000       	LSE       
 69WA      	BARCLAYS BANK PLC 6% SUB NTS 23/01/18 EUR50000    	LSE       
 69WR      	AVIVA 6.875%/FLTG RTE NTS 20/05/58 GBP50000       	LSE       
+69WU      	AVIVA 6.875%/FLTG RATE NTS 22/05/38 EUR50000      	LSE       
 70PZ      	F&C ASSET MANAGEMENT FXD/FLTG RTE SUB NTS 20/12/26 GBP50000	LSE       
 70SG      	WPP GROUP 6% GTD BDS 04/04/17 GBP50000            	LSE       
+70SL      	HSBK (EUROPE) B.V. 7.25% NTS 03/05/17 USD100000 REG`S	LSE       
 70UF      	CAM GLOBAL FINANCE S.A. FLTG RATE NTS 08/02/12 GBP50000	LSE       
 70ZZ      	LUKOIL INTERNATIONAL FINANCE BV 6.656% NTS 07/06/22 USD100000 `REGS`	LSE       
 71HP      	GE CAPITAL UK FUNDING 6.25% NTS 05/05/38 GBP1000  	LSE       
@@ -1217,6 +1233,7 @@
 71WI      	SWEDBANK AB 2.375% GTD NTS 24/03/11 EUR50000      	LSE       
 71ZC      	GLAXOSMITHKLINE CAPITAL 6.375% NTS 09/03/39 GBP50000	LSE       
 72AF      	SHELL INTERNATIONAL FINANCE BV 4.375% GTD NTS 14/05/18 EUR1000	LSE       
+72HN      	MERCHANTS TRUST 3.65% CUM PRF GBP1                	LSE       
 72KU      	HSBC BANK PLC 5% SUB EUR MED TRM NTS 20/3/23 GBP(VAR)	LSE       
 72LC      	NORTHUMBRIAN WATER FINANCE 6.875% GTD BDS 6/2/2023 GBP(VAR)(BR)	LSE       
 72NS      	BRITISH TELECOMMUNICATIONS 5.75% BDS 7/12/2028 GBP(VAR)(BR)	LSE       
@@ -1232,7 +1249,6 @@
 74ZF      	TESCO 5.2% NTS 05/03/57 GBP50000                  	LSE       
 75AT      	LEGAL & GENERAL GROUP PERP PREF CALL CAP SECS GBP50000	LSE       
 75NI      	EVRAZ GROUP SA 9.5% NTS 24/04/18 USD100000 `REGS` 	LSE       
-75ST      	CADBURY SCHWEPPES FINANCE 7.25% NTS 18/07/18 GBP50000	LSE       
 75SV      	SVENSKA HANDELSBANKEN FLTG RATE NTS 18/07/11 EUR50000	LSE       
 75XN      	CENTRICA PLC 7% NTS 19/09/33 GBP50000             	LSE       
 76AH      	LLOYDS TSB BANK 13% STEP-UP PERP CAP SECS  GBP100000	LSE       
@@ -1241,8 +1257,6 @@
 76IF      	SCOTTISH AMICABLE FINANCE 8.5% UNDATED SUB GTD BDS GBP(VAR)(BR)	LSE       
 76LZ      	BARCLAYS BANK PLC 5%/FRN 09/08/19 EUR1000         	LSE       
 76MN      	SCOTTISH & SOUTHERN ENERGY 5% NTS 01/10/18 GBP500000	LSE       
-76MV      	ROYAL BANK OF SCOTLAND 5.375% NTS 30/09/19 EUR50000	LSE       
-76PE      	UK TREASURY STRIP 5.25% TREASURY STRIP 7/12/12 (PRINCIPAL)	LSE       
 76RO      	LLOYDS TSB BANK PLC 5.375% NTS 03/09/19 EUR50000  	LSE       
 76SF      	INTER AMERICAN DEVELOPMENT BANK 3.875% NTS 17/09/19 USD1000	LSE       
 76YJ      	BANK OF AMERICA CORP 6.125% SNR NTS 15/09/21 GBP50000	LSE       
@@ -1250,8 +1264,10 @@
 76ZH      	ANGLO AMERICAN CAPITAL 4.375% GTD NTS 02/12/16 EUR50000	LSE       
 77FO      	INTER AMERICAN DEVELOPMENT BANK 3.875% NTS 14/02/20 USD1000	LSE       
 77II      	SWEDBANK MORTGAGE AB 3.375% S.O. BDS 22/03/17 EUR50000	LSE       
+77KH      	SWEDISH COVERED BOND CORPORATION 3.25% NTS 30/03/17 EUR50000	LSE       
 77LQ      	SUMMIT FINANCE (LAW) 6.484% GTD BDS 31/3/2028 GBP(VAR)	LSE       
 77MP      	THOMAS COOK GROUP PLC 7.75% GTD NTS 22/06/17 GBP50000	LSE       
+77OB      	RUSSIAN FEDERATION MINISTRY FINANCE 5% BDS 29/04/20 USD100000`REG S`	LSE       
 77OC      	RUSSIA 5% BDS 29/04/20 USD100000`144A`            	LSE       
 77OH      	KAZMUNAIGAZ FINANCE SUB 7% NTS 05/05/20 USD100000`REG S`	LSE       
 77TX      	HSBC BANK PLC LEPO 09/06/20(CHONGQING CHANGAN AUTO)USD	LSE       
@@ -1265,6 +1281,7 @@
 78HZ      	ONTARIO(PROVINCE OF) 3% INSTRUMENT 28/09/20 EUR1000	LSE       
 78KO      	HSBC BANK PLC LEPO WTS 2/6/20(BEIQI FOTON)USD0.000001	LSE       
 78UU      	HALYK SAVINGS BANK OF KAZAKHSTN JSC 7.25% NTS 28/01/21 USD200000 REG S	LSE       
+78ZE      	ABBEY NATIONAL TREASURY SERVICES 4.375% BDS 24/01/18 EUR100000	LSE       
 79QK      	ANGLO AMERICAN CAPITAL 9.375% SNR NTS 08/04/19 USD100000`144A`	LSE       
 79SF      	NESTLE HLDGS INC 7.25% NTS 31/01/11 AUD2000       	LSE       
 7DIG      	7Digital Group PLC                                	LSE       
@@ -1279,6 +1296,7 @@
 80ZX      	FIRSTGROUP 6.125% BDS 18/1/19 GBP(VAR) REG`S`     	LSE       
 81CE      	LEGAL & GENERAL GROUP 5.875% UNDATED RESET SUBNTS GBP(VAR)	LSE       
 82ET      	COMMONWEALTH BANK OF AUSTRALIA ACCRED FLTG RATE NTS 08/02/11 GBP50000	LSE       
+82HL      	ASPIRE DEFENCE FINANCE 4.674% SER'B'GTD SEC BD 31/3/40 GBP50000	LSE       
 82HM      	URUGUAY 7.625% BDS 21/03/36 USD1                  	LSE       
 82LJ      	BARCLAYS BANK PLC FR SUB STP-UP CALL NTS 28/6/16 USD`REGS`	LSE       
 82XW      	AUSTRALIA & NEW ZEALAND BANK GROUP 5.125% NTS 14/11/11 USD1000	LSE       
@@ -1286,7 +1304,6 @@
 83GI      	GLAXOSMITHKLINE CAPITAL 5.25% NTS 10/04/42 GBP50000	LSE       
 83HC      	TESCO 5.125% NTS 10/04/47 EUR50000                	LSE       
 83HH      	COMPAGNIE DE ST-GOBAIN 4.75% NTS 11/04/17 EUR50000	LSE       
-83HJ      	COMPAGNIE DE ST-GOBAIN SNR FLTG RATE NTS 11/04/12 EUR50000	LSE       
 83IR      	GE CAPITAL UK FUNDING 5.625% NTS 25/04/19 GBP1000 	LSE       
 83JB      	SHELL INTERNATIONAL FINANCE BV 4.625% GTD NTS 22/05/17 EUR50000	LSE       
 83JG      	GENERAL MOTORS ACC CORP OF CANADA 6% NTS 23/05/12 EUR50000	LSE       
@@ -1295,18 +1312,18 @@
 84BH      	LLOYDS TSB BANK PLC 5.8% SNR NTS 13/01/20 USD100000`144A`	LSE       
 84DG      	GE CAPITAL EUROPEAN FUNDING 6% NTS 15/01/19 EUR50000	LSE       
 84FX      	TESCO 6.125% NTS 24/02/22 GBP50000                	LSE       
-84RM      	ANHEUSER-BUSCH INBEV SA 6.5% NTS 23/06/17 GBP1000 	LSE       
 84YJ      	EDF ENERGY NETWORKS(LPN) 6.125%  NTS 7/6/27 GBP(VAR)	LSE       
 85MJ      	NETWORK RAIL INFRASTRUCTURE FINANCE 4.75% NTS 29/11/35 GBP50000	LSE       
 85OX      	BRITISH TELECOMMUNICATIONS 3.50%  IDX LKD NTS 25/4/2025 GBP(VAR)	LSE       
 85OY      	NETWORK RAIL INFRASTRUCTURE FINANCE 4.75% NTS 22/01/24 GBP1000	LSE       
 85QJ      	BRITISH AIRWAYS 7.25% BDS 23/8/16 GBP(VAR)        	LSE       
-85WZ      	COMPAGNIE DE ST-GOBAIN 4.875% SER`B`BDS 31/5/16 EUR50000	LSE       
+85QU      	BROADGATE FINANCING CLS'A2'4.949% BDS 5/04/31 GBP5000	LSE       
 85YQ      	URUGUAY 8% BDS 18/11/22 USD100000                 	LSE       
 85YR      	NETWORK RAIL INFRASTRUCTURE FINANCE 4.375% NTS 09/12/30 GBP50000	LSE       
 86IP      	WITAN INVESTMENT TRUST 2.7% CUM PRF GBP1          	LSE       
 86KD      	XSTRATA FINANCE CANADA 7.375% GTD NTS 27/05/20GBP50000	LSE       
 87GF      	BANK OF SCOTLAND PLC UNDATED FLTG RATE PRIM CAP NOTES USD BR	LSE       
+87HJ      	LLOYDS TSB BANK PRIM CAP UNDATED FLTG RATE NTS USD10000	LSE       
 87IM      	SVENSK EXPORTKREDIT AKTIEBOLAGET 5.125% GLOBAL NTS 01/03/17 USD2000	LSE       
 87JI      	BA COVERED BOND ISSUER 4.25% AGGR PRIN AMT CVD BDS 05/04/17 EUR	LSE       
 87JS      	DIB SUKUK CO LTD TRUST CERTS 22/03/12 USD100000   	LSE       
@@ -1319,13 +1336,17 @@
 88LH      	BARCLAYS BANK PLC FRN 13/02/12 EUR100             	LSE       
 88MH      	IMPERIAL TOBACCO FINANCE 9% GTD NTS 17/02/22 GBP50000	LSE       
 88NJ      	LCR FINANCE 4.5% GTD BDS 2028 GBP1000 REG'S'(REGD)	LSE       
+88QT      	HSBC HLDGS 6.50% NTS 20/05/24 GBP50000 `15`       	LSE       
 88RJ      	BARCLAYS BANK PLC 10% SUB NTS 21/05/21 GBP50000   	LSE       
 88RK      	FRIENDS PROVIDENT GROUP PLC 12% GTD SUBORD NTS 21/05/21 GBP50000	LSE       
+88VK      	LEGAL & GENERAL GROUP 9.325% SUB NTS 23/07/41 GBP50000	LSE       
 89LQ      	HBOS TREASURY SERVICES 4.875% BDS 04/06/19 EUR50000	LSE       
+89LX      	NATIONAL WESTMINSTER BANK 6.5% NOTES 7/9/2021 GBP(VAR)	LSE       
 89SK      	HBOS TREASURY SERVICES 4.875% SOCIAL HSG CVD BDS 20/12/24 GBP	LSE       
 89UX      	PORTUGAL TELECOM INTL FINANCE BV 4.375% NTS 24/03/17 EUR50000	LSE       
 90RP      	WELLS FARGO BANK NA FLTG RATE NTS 19/09/11 EUR50000	LSE       
 91ER      	KAZKOMMERTS INTERNATIONAL BV 7.5% NTS 29/11/16 USD100000 `REGS`	LSE       
+91ET      	WACHOVIA CORP 4.875% SUB NTS 29/11/35 GBP50000    	LSE       
 91FG      	ANZ NATIONAL(INTL) FLTG RATE NTS 13/12/11 GBP50000	LSE       
 91IZ      	MARKS & SPENCER 5.875% NTS 29/05/12 GBP50000      	LSE       
 91ME      	ALDAR FUNDING LTD TRUST CERT  10/11/2011 USD100000	LSE       
@@ -1336,7 +1357,6 @@
 92CN      	HSBC HLDGS 7% SUBORD NTS 07/04/38 GBP50000        	LSE       
 92EA      	HSBC BANK PLC LEPO WTS 19/02/19(CHINA RAILWAY CONS)USD	LSE       
 92FC      	ABU DHABI NATIONAL ENERGY COMPANY 7.25% NTS 01/08/18 USD100000 `REGS`	LSE       
-92IG      	LLOYDS TSB BANK PLC FRN 6/05/11 GBP100000         	LSE       
 92JE      	HSBC BANK PLC LEPO WTS 19/02/19(HAITONG SECURITIES)USD	LSE       
 92JL      	HSBC BANK PLC LEPO WTS 11/02/19(INDUS & COMM BK) USD	LSE       
 92JM      	HSBC BANK PLC LEPO WTS 11/02/19(ALUM CORP OF CH) USD	LSE       
@@ -1345,6 +1365,7 @@
 92MB      	HSBC BANK PALMS663 23/01/12(ETIHAD ETISALT)USD7.75	LSE       
 92NE      	SAFEWAY 6.125% BDS 17/12/2018 GBP(VAR)            	LSE       
 92NQ      	HSBC BANK PLC PALMS`677`12/3/12(UNION BK ABU)USD0.54	LSE       
+92PG      	ANHEUSER-BUSCH INBEV SA 9.75% NTS 30/07/24 GBP75000	LSE       
 92SA      	NATIONAL GRID GAS 6.375% INST 03/03/20 GBP50000   	LSE       
 92TM      	HSBC BANK PLC LEPO WTS 19/02/19(KWEICHOW MOUTAI)USD	LSE       
 92TN      	HSBC BANK PLC LEPO WTS 11/02/19(CHINA PETROL&CHEM) USD	LSE       
@@ -1357,9 +1378,9 @@
 92TV      	HSBC BANK PLC LEPO WTS 11/02/19(CH MERCHANTS BK) USD	LSE       
 92TX      	HSBC BANK PLC LEPO WTS 11/02/19(CHINA UTD TELECOM) USD	LSE       
 92TY      	HSBC BANK PLC LEPO WTS 11/02/19(SHANGHAI INTL PORT)USD	LSE       
-92VF      	GE CAPITAL UK FUNDING 5.875% NTS 18/01/33 GBP1000 	LSE       
 92XH      	HSBC BANK PALMS`654` 09/01/12(BANK MUSCAT)USD2.10 	LSE       
 93AD      	BARCLAYS BANK PLC 4.875% NTS 13/08/19 EUR50000    	LSE       
+93CW      	NATIONWIDE BUILDING SOCIETY 5.625% NTS 09/09/19 GBP50000	LSE       
 93DF      	AUSTRALIA & NEW ZEALAND BANK GROUP 5.125% SUBORD DATED NTS 10/09/19 EUR	LSE       
 93EV      	WILLIAM HILL PLC 7.125% GTD NTS 11/11/16 GBP50000 	LSE       
 93GR      	EASTERN GROUP 8.5% BDS 31/3/25 GBP(VAR)           	LSE       
@@ -1368,21 +1389,23 @@
 93OD      	BANK OF SCOTLAND PLC 6.375% SUBORD INST 16/8/2019 GBP(VAR)	LSE       
 93PX      	BBVA SENIOR FINANCE SA UNIPERSONAL FRN 23/12/11 EUR50000	LSE       
 93QG      	TELSTRA CORPORATION 6.375% INST 29/6/2011 EUR1000 	LSE       
-93TR      	3I GROUP 5.625% NTS 17/03/17 EUR50000             	LSE       
+93SF      	PERMANENT MASTER ISSUER PLC S3 CLS A MTG BKD NTS 15/07/42 GBP50000	LSE       
 93WA      	LLOYDS TSB BANK PLC 6.5% SUBORD NTS 24/03/20 EUR50000	LSE       
+94BX      	SMITHS GROUP 4.125% GTD NTS 05/05/17 EUR1000      	LSE       
 94FM      	HSBC BANK PLC 3.125% NTS 15/11/17 EUR50000        	LSE       
 94GK      	BRITISH TRANSCO INTL FINANCE BV 0% GTD BDS 4/11/2021 USD(VAR)	LSE       
 94HJ      	LLOYDS TSB BANK 9.625% SUBORD BDS 6/4/2023 GBP(VAR)(BR)	LSE       
 94HS      	SB CAPITAL SA 5.4% LN PTG 24/3/17 USD100000 REG`S 	LSE       
-94JC      	NATIONAL EXPRESS GROUP 6.625% MTN 17/06/20 GBP50000	LSE       
 94KX      	NORDEA BANK AB 4% NTS 29/06/20 EUR50000           	LSE       
 94LQ      	YORKSHIRE WATER SERVICES BRADFD FIN 6% FXD/FLTG RTE NTS 24/04/25 GBP50000 B1	LSE       
+94MD      	ANHEUSER-BUSCH INBEV SA 4% NTS 26/04/18 EUR1000   	LSE       
+94NS      	GE CAPITAL TRUST II 5.5%FLTG 9/67 TST SEC GE CAP II EUR REGS	LSE       
 94NX      	GE CAPITAL TRUST IV 4.625%FLTG TST SEC GE CAP IV EUR REG`S	LSE       
 94OR      	BARCLAYS BANK PLC 6% NTS 14/01/21 EUR50000        	LSE       
 94PJ      	HSBC BANK PLC LEPO 04/06/20(CITIC GUOAN INF)USD0.00001	LSE       
 94PN      	HSBC BANK PLC LEPO 04/06/20(YOUNGOR GRP)USD0.00001	LSE       
+94PU      	BG ENERGY CAPITAL 3.625% MTN 16/07/19 EUR1000     	LSE       
 94RL      	BANK OF AMERICA CORP 4.625% SNR NTS 07/08/17 EUR50000	LSE       
-94VY      	BAA FUNDING 18 6.25% BDS 10/09/18 GBP50000 B-1    	LSE       
 94XC      	KAZAKHSTAN TEMIR ZHOLY 6.375% NTS 06/10/20 USD200000 REG`S	LSE       
 94ZF      	HSBC BANK PLC LEPO WTS 19/08/20(CHINA EVERBRIGHT BK)	LSE       
 94ZK      	DUBAI ELECTRICITY & WATER AUTHORITY 7.375% NTS 21/10/20 USD100000 REG S	LSE       
@@ -1393,7 +1416,7 @@
 96DU      	LLOYDS TSB BANK 7.50% NTS 15/04/24 GBP100000      	LSE       
 96DV      	VATTENFALL AB 6.875% NTS 15/04/39 GBP50000        	LSE       
 96GL      	CABLE & WIRELESS INTERN FINANCE BV 8.625% BDS 25/3/2019 GBP10000	LSE       
-96QO      	LLOYDS TSB BANK PLC 6.5% NTS 17/09/40 GBP1000     	LSE       
+97YI      	TULLETT PREBON GROUP HLDGS PLC 7.04% GTD NTS 06/07/16 GBP50000	LSE       
 98IV      	HALIFAX 9.375% SUBORD BDS 15/5/2021 GBP(VAR)(BR)  	LSE       
 98PI      	TESCO 4% IDX LKD NOTES 8/9/16 GBP(VAR)            	LSE       
 A2D1      	A2D Funding Plc                                   	LSE       
@@ -1438,6 +1461,7 @@ ACDF      	Ashmore Sicav                                     	LSE
 ACDXUSR   	FTSE Developed Ex US All                          	LSE       
 ACHL      	Asian Citrus Holdings Limited                     	LSE       
 ACID      	Acer Incorporated                                 	LSE       
+ACIM      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 ACL       	Acal Plc                                          	LSE       
 ACNAN     	FTSE North America All C                          	LSE       
 ACNANCH   	FTSE North America All C                          	LSE       
@@ -1465,6 +1489,7 @@ AD13      	FTSE Dev Europe Lms Inde                          	LSE
 AD17      	FTSE Dev Lms Ex Na Index                          	LSE       
 AD20      	FTSE Dev Europe Lms Ex U                          	LSE       
 AD4       	Adept4 Plc                                        	LSE       
+AD71      	Royal Bank of Scotland P                          	LSE       
 ADA       	Adams Plc                                         	LSE       
 ADAM      	Adamas Finance Asia Limi                          	LSE       
 ADGO      	Adgorithms Ltd                                    	LSE       
@@ -1497,8 +1522,8 @@ AFMC      	Aberdeen Frontier Markets Investment Com          	LSE
 AFN       	Advfn Plc                                         	LSE       
 AFPO      	African Potash Limited                            	LSE       
 AFRB      	Afi Development Plc                               	LSE       
-AFRK      	Afarak Group Plc                                  	LSE       
 AFS       	Amiad Water Systems Ltd                           	LSE       
+AFSL      	Lyxor International Asse                          	LSE       
 AFSU      	Lyxor International Asse                          	LSE       
 AG01      	FTSE All-Emerging                                 	LSE       
 AG02      	FTSE All-Emerging Latin                           	LSE       
@@ -1531,6 +1556,7 @@ AGY       	Allergy Therapeutics Plc                          	LSE
 AHCG      	Action Hotels Plc                                 	LSE       
 AHT       	Ashtead Group Plc                                 	LSE       
 AI68      	National Grid Gas Plc                             	LSE       
+AIA       	Altin Ag                                          	LSE       
 AIEA      	Airea Plc                                         	LSE       
 AIF       	Acorn Income Fund Ld                              	LSE       
 AIFZ      	Acorn Income Fund Ld                              	LSE       
@@ -1583,7 +1609,6 @@ AMS       	Advanced Medical Solutions Group Plc              	LSE
 AMYT      	Amryt Pharma Plc                                  	LSE       
 AN        	ALTERNATIVE NETWORKS ORD GBP0.00125               	LSE       
 AN94      	Barclays Bank Plc                                 	LSE       
-AN95      	Barclays Bank Plc                                 	LSE       
 ANA       	All Nippon Airways Co Ld                          	LSE       
 ANCR      	Animalcare Group Plc                              	LSE       
 ANDEAN40  	FTSE Andean 40                                    	LSE       
@@ -1669,6 +1694,7 @@ ATMA      	Atlas Mara Co-Nvest Limi                          	LSE
 ATMW      	Atlas Mara Co-Nvest Limi                          	LSE       
 ATQT      	Attraqt Group Plc                                 	LSE       
 ATR       	Asian Total Return Inves                          	LSE       
+ATRF      	Ashmore Sicav                                     	LSE       
 ATS       	Artemis Alpha Trust Plc                           	LSE       
 ATSS      	Artemis Alpha Trust Plc                           	LSE       
 ATST      	Alliance Trust Plc                                	LSE       
@@ -1766,6 +1792,7 @@ AXS       	Accsys Technologies Plc                           	LSE
 AXX       	FTSE Aim All-Share Index                          	LSE       
 AYM       	Anglesey Mining Plc                               	LSE       
 AZN       	Astrazeneca Plc                                   	LSE       
+B038      	Barclays Bank Plc                                 	LSE       
 B041      	Barclays Bank Plc                                 	LSE       
 B051      	Barclays Bank Plc                                 	LSE       
 BA        	Bae Systems Plc                                   	LSE       
@@ -1802,8 +1829,7 @@ BCAP      	Better Capital Pcc Limited                        	LSE
 BCGR      	Blue Capital Global Rein                          	LSE       
 BCN       	Bacanora Minerals Ltd                             	LSE       
 BCRE      	Bcre - Brack Capital Rea                          	LSE       
-BD26      	BRISTOL WATER 4% CONS DEB STK IRRD                	LSE       
-BD32      	Lewis (John) Partnership                          	LSE       
+BD15      	Tate & Lyle Plc                                   	LSE       
 BD45      	Lewis (John) Partnership                          	LSE       
 BD56      	National Grid Electricit                          	LSE       
 BD95      	Haven Funding Plc                                 	LSE       
@@ -1888,6 +1914,7 @@ BP.A      	BP Plc                                            	LSE
 BP.B      	BP Plc                                            	LSE       
 BPC       	Bahamas Petroleum Company Plc                     	LSE       
 BPI       	British Polythene Industries Plc                  	LSE       
+BPKD      	Bank Pekao Sa                                     	LSE       
 BPM       	B.P. Marsh & Partners Plc                         	LSE       
 BQAD      	Bank Audi S.A.L.                                  	LSE       
 BQE       	Bioquell Plc                                      	LSE       
@@ -1920,6 +1947,7 @@ BRW       	Brewin Dolphin Holdings Plc                       	LSE
 BRWM      	Blackrock World Mining Trust Plc                  	LSE       
 BRY       	Brady Plc                                         	LSE       
 BRZ       	Amundi Investment Solutions                       	LSE       
+BS41      	3I Group Plc                                      	LSE       
 BSC       	British Smaller Companies Vct2 Plc                	LSE       
 BSE       	Base Resources Limited                            	LSE       
 BSIF      	Bluefield Solar Income F                          	LSE       
@@ -1939,7 +1967,6 @@ BUYB      	Powershares Glbal Funds                           	LSE
 BVA       	Banco Bilbao Vizcaya Argentaria Sa                	LSE       
 BVC       	Batm Advanced Communications Ld                   	LSE       
 BVIC      	Britvic Plc                                       	LSE       
-BVM       	Belgravium Technologies Plc                       	LSE       
 BVS       	Bovis Homes Group Plc                             	LSE       
 BVT       	Baronsmead Vct 2 Plc                              	LSE       
 BVXP      	Bioventix Plc                                     	LSE       
@@ -1949,6 +1976,7 @@ BWSA      	Bristol & West Plc                                	LSE
 BWY       	Bellway Plc                                       	LSE       
 BXP       	Beximco Pharmaceuticals Limited                   	LSE       
 BYBG      	Amundi ETF                                        	LSE       
+BYBU      	Amundi ETF                                        	LSE       
 BYG       	Big Yellow Group Plc                              	LSE       
 BYOT      	Byotrol Plc                                       	LSE       
 BZM       	Bellzone Mining Plc                               	LSE       
@@ -1993,6 +2021,7 @@ CBU0      	Ishares Vii Plc                                   	LSE
 CBU3      	Ishares Vii Plc                                   	LSE       
 CBU7      	Ishares Vii Plc                                   	LSE       
 CBUY      	Cloudbuy Plc                                      	LSE       
+CC1G      	Amundi ETF                                        	LSE       
 CC1U      	Amundi ETF                                        	LSE       
 CCAP      	Charlemagne Capital Limited                       	LSE       
 CCAU      	Ishares Vii Plc                                   	LSE       
@@ -2066,6 +2095,8 @@ CHRT      	Cohort Plc                                        	LSE
 CHT       	Constellation Healthcare                          	LSE       
 CHZN      	Jsc Chelyabinsk Zinc Pla                          	LSE       
 CI1       	Amundi ETF                                        	LSE       
+CI2G      	Amundi ETF                                        	LSE       
+CI2U      	Amundi ETF                                        	LSE       
 CIC       	Conygar Investment Company Plc [The]              	LSE       
 CICZ      	Conygar Zdp Plc                                   	LSE       
 CID1      	Ishares Vii Plc                                   	LSE       
@@ -2077,6 +2108,7 @@ CIR       	Circassia Pharmaceutical                          	LSE
 CIRC      	Circle Holdings Plc                               	LSE       
 CITY      	Cityfibre Infrastructure Holdings Plc             	LSE       
 CIU       	Cape Plc                                          	LSE       
+CJ1G      	Amundi ETF                                        	LSE       
 CJPU      	Ishares Vii Plc                                   	LSE       
 CKN       	Clarkson Plc                                      	LSE       
 CKR1      	Ishares Vii Plc                                   	LSE       
@@ -2112,6 +2144,7 @@ CMXC      	CS ETF [Ie] Plc                                   	LSE
 CN1       	Amundi ETF                                        	LSE       
 CNA       	Centrica Plc                                      	LSE       
 CNAA      	Multi Units France                                	LSE       
+CNAL      	Multi Units France                                	LSE       
 CNC       	Concurrent Technologies Plc                       	LSE       
 CNCT      	Connect Group Plc                                 	LSE       
 CNDX      	CS ETF [Ie] Plc                                   	LSE       
@@ -2136,6 +2169,7 @@ COD       	Compagnie De Saint Gobain Sa                      	LSE
 COFF      	ETFS Commodity Securities Limited                 	LSE       
 COG       	Cambridge Cognition Hold                          	LSE       
 COGG      	Go Ucits ETF Solutions P                          	LSE       
+COM       	Comptoir Group Plc                                	LSE       
 COMF      	Etfx Fund Company Plc                             	LSE       
 COMS      	Coms Plc                                          	LSE       
 CON       	Connemara Mining Company Plc                      	LSE       
@@ -2228,6 +2262,7 @@ CTR       	Charles Taylor Plc                                	LSE
 CTY       	City of London Investment Trust Plc               	LSE       
 CU01      	Ishares Vii Plc                                   	LSE       
 CU1       	Ishares Vii Plc                                   	LSE       
+CU2G      	Amundi ETF                                        	LSE       
 CU2U      	Amundi ETF                                        	LSE       
 CU31      	Ishares Vii Plc                                   	LSE       
 CU71      	Ishares Vii Plc                                   	LSE       
@@ -2288,6 +2323,7 @@ DEMD      	Wisdomtree Issuer Plc                             	LSE
 DEMEIV    	Wisdomtree Emerging Mark                          	LSE       
 DEMG      	Deltex Medical Group Plc                          	LSE       
 DEMP      	Wisdomtree Issuer Plc                             	LSE       
+DEMV      	Ossiam Lux                                        	LSE       
 DES2      	Go Ucits ETF Solutions P                          	LSE       
 DESD      	Wisdomtree Issuer Plc                             	LSE       
 DESE      	Wisdomtree Issuer Plc                             	LSE       
@@ -2299,7 +2335,7 @@ DFS       	Dfs Furniture Plc                                 	LSE
 DFX       	Defenx Plc                                        	LSE       
 DGB       	Digital Barriers Plc                              	LSE       
 DGE       	Diageo Plc                                        	LSE       
-DGED      	Diageo Plc                                        	LSE       
+DGRG      	Wisdomtree Issuer Plc                             	LSE       
 DGS       	Digital Globe Services                            	LSE       
 DGSD      	Wisdomtree Issuer Plc                             	LSE       
 DGSE      	Wisdomtree Issuer Plc                             	LSE       
@@ -2313,7 +2349,6 @@ DIG       	Dunedin Income Growth Investment Trust P          	LSE
 DIGS      	Gcp Student Living Plc                            	LSE       
 DIL2      	Damille Investments II L                          	LSE       
 DIS       	Distil Plc                                        	LSE       
-DISG      	Multi Units Luxembourg                            	LSE       
 DISW      	Multi Units Luxembourg                            	LSE       
 DIVI      	Diverse Income Trust [The] Plc                    	LSE       
 DJAN      	Daejan Holdings Plc                               	LSE       
@@ -2342,7 +2377,6 @@ DNRG      	Ishares II Plc                                    	LSE
 DODS      	Dods [Group] Plc                                  	LSE       
 DOM       	Domino's Pizza Group Plc                          	LSE       
 DOTD      	Dotdigital Group Plc                              	LSE       
-DP2F      	Downing Two Vct Plc                               	LSE       
 DP2G      	Downing Two Vct Plc                               	LSE       
 DP3A      	Downing Three Vct Plc                             	LSE       
 DPA       	Dp Aircraft I Limited                             	LSE       
@@ -2373,7 +2407,6 @@ DUPD      	Dragon-Ukrainian Properties & Developmen          	LSE
 DVO       	Devro Plc                                         	LSE       
 DVT       	Davictus Plc                                      	LSE       
 DVUK      	Source Markets II Plc                             	LSE       
-DVUS      	Source Markets II Plc                             	LSE       
 DVW       	Dee Valley Group Plc                              	LSE       
 DVWA      	Dee Valley Group Plc                              	LSE       
 DWCG      	DW Catalyst Fund Limited                          	LSE       
@@ -2382,6 +2415,7 @@ DWHT      	Dewhurst Plc                                      	LSE
 DWOD      	Ishares II Plc                                    	LSE       
 DX        	DX Group                                          	LSE       
 DXGEEIV   	Wt Geequcetfusdhine                               	LSE       
+DXGG      	Wisdomtree Issuer Plc                             	LSE       
 DXGP      	Wisdomtree Issuer Plc                             	LSE       
 DXGPIV    	Wisdomtree Germany Equit                          	LSE       
 DXGY      	Wisdomtree Issuer Plc                             	LSE       
@@ -2508,7 +2542,6 @@ ECWZ      	EW&Po Finance Plc                                 	LSE
 EDEN      	Eden Research Plc                                 	LSE       
 EDGF      	Edge Performance Vct Plc                          	LSE       
 EDGG      	Edge Performance Vct Plc                          	LSE       
-EDGH      	Edge Performance Vct Plc                          	LSE       
 EDHAPAC   	FTSE Edhec Risk Asia/Pacific                      	LSE       
 EDHAPXJ   	FTSE Edhec Risk Asia/Pacific Ex JP                	LSE       
 EDHAW     	FTSE Edhec Risk All World                         	LSE       
@@ -2595,6 +2628,7 @@ EMIN      	SSGA SPDR ETFS Europe I                           	LSE
 EMIS      	Emis Group Plc                                    	LSE       
 EMLA      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 EMLB      	Pimco Fixed Income Source ETFS Plc                	LSE       
+EMLD      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 EMLI      	Pimco Fixed Income Sourc                          	LSE       
 EMLP      	Pimco Fixed Income Sourc                          	LSE       
 EMM       	Emerging Market Minerals                          	LSE       
@@ -2603,6 +2637,7 @@ EMOD      	SSGA SPDR ETFS Europe I Plc                       	LSE
 EMR       	Empresaria Group Plc                              	LSE       
 EMRD      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 EMRG      	SSGA SPDR ETFS Europe I Plc                       	LSE       
+EMSD      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 EMSM      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 EMUE      	SSGA SPDR ETFS Europe I                           	LSE       
 EMUL      	Ishares IV Plc                                    	LSE       
@@ -2697,6 +2732,7 @@ ETLN      	Etalon Group Limited                              	LSE
 ETO       	Entertainment One Limited                         	LSE       
 ETX       	E-Therapeutics Plc                                	LSE       
 EU13      	SSGA SPDR ETFS Europe I                           	LSE       
+EU35      	SSGA SPDR ETFS Europe II                          	LSE       
 EU5L      	Sg Issuer                                         	LSE       
 EU5S      	Sg Issuer                                         	LSE       
 EUA       	Eurasia Mining Plc                                	LSE       
@@ -2817,17 +2853,18 @@ FH02      	FTSE Asiatop Capped                               	LSE
 FIF       	Finsbury Food Group Plc                           	LSE       
 FIGOV01   	FTSE Finland Government                           	LSE       
 FIND      	ETFS Commodity Securities Limited                 	LSE       
+FINW      	Multi Units Luxembourg                            	LSE       
 FIPP      	Frontier Ip Group Plc                             	LSE       
 FISH      	Fishing Republic Plc                              	LSE       
 FITB      	Fitbug Holdings Plc                               	LSE       
 FIVE      	X5 Retail Group N.V                               	LSE       
 FJET      	Fastjet Plc                                       	LSE       
 FJV       	Fidelity Japanese Values Plc                      	LSE       
-FKE       	Fiske Plc                                         	LSE       
 FKL       	Falkland Islands Holdings Plc                     	LSE       
 FKU       	First Trust Global Funds                          	LSE       
 FKUD      	First Trust Global Funds Public Limited           	LSE       
 FLFQVVF   	FTSE Latin America Qual/                          	LSE       
+FLIV      	ETFS Commodity Securities Limited                 	LSE       
 FLK       	Fletcher King Plc                                 	LSE       
 FLKS      	FTSE Lujain Kuwait Shariah Index                  	LSE       
 FLKW      	FTSE Lujain Kuwait Index                          	LSE       
@@ -3075,7 +3112,6 @@ FUM       	Futura Medical Plc                                	LSE
 FUSYQVCF  	FTSE USA Yield/Qual/Vol                           	LSE       
 FUTR      	Future Plc                                        	LSE       
 FVTT      	FTSE Vietnam Index                                	LSE       
-FWEC      	Go Ucits ETF Solutions P                          	LSE       
 FXC       	Ishares Plc                                       	LSE       
 FXI       	Fusionex International P                          	LSE       
 FXPO      	Ferrexpo Plc                                      	LSE       
@@ -3100,6 +3136,7 @@ GAN       	Gameaccount Network Plc                           	LSE
 GASD      	Boost Issuer Public Limi                          	LSE       
 GAW       	Games Workshop Group Plc                          	LSE       
 GAZ       	Jsc Gazprom Neft                                  	LSE       
+GB82      	Goldman Sachs Internatio                          	LSE       
 GBCA      	ETFS Foreign Exchange Limited                     	LSE       
 GBCH      	ETFS Foreign Exchange Limited                     	LSE       
 GBDV      	SSGA SPDR ETFS Europe I                           	LSE       
@@ -3159,7 +3196,6 @@ GI18      	Ishares IV Plc                                    	LSE
 GILI      	Multi Units France                                	LSE       
 GILS      	Multi Units France                                	LSE       
 GIN       	SSGA SPDR ETFS Europe II                          	LSE       
-GIPO      	Grand Group Investment P                          	LSE       
 GKN       	Gkn Plc                                           	LSE       
 GKP       	Gulf Keystone Petroleum Ltd                       	LSE       
 GLAF      	Gli Alternative Finance Plc                       	LSE       
@@ -3205,7 +3241,6 @@ GPNIKK1   	FTSE Japan Green Chip 35                          	LSE
 GPNYL007  	FTSE Germany Unhedged In                          	LSE       
 GPOR      	Great Portland Estates Plc                        	LSE       
 GPPS005   	FTSE Japan Unhedged USD                           	LSE       
-GPRT      	Goldenport Holdings Inc.                          	LSE       
 GPSCW002  	FTSE Developed Small Cap                          	LSE       
 GPSSG239  	FTSE Greater China Hkd I                          	LSE       
 GPTRP006  	FTSE Cuspacglhdntind                              	LSE       
@@ -3325,6 +3360,7 @@ HLTG      	Multi Units Luxembourg                            	LSE
 HLTH      	SSGA SPDR ETFS Europe II                          	LSE       
 HLTW      	Multi Units Luxembourg                            	LSE       
 HMAD      	HSBC ETFS Plc                                     	LSE       
+HMAF      	HSBC ETFS Plc                                     	LSE       
 HMBR      	HSBC ETFS Plc                                     	LSE       
 HMCD      	HSBC ETFS Plc                                     	LSE       
 HMCH      	HSBC ETFS Plc                                     	LSE       
@@ -3413,6 +3449,7 @@ HW        	Harwood Wealth Management                         	LSE
 HWC       	Highway Capital Plc                               	LSE       
 HWDN      	Howden Joinery Group Plc                          	LSE       
 HWG       	Harworth Group Plc                                	LSE       
+HWSL      	Hadrian's Wall Secured Investments Limit          	LSE       
 HYD       	Hydro International Plc                           	LSE       
 HYDG      	Hydrogen Group Plc                                	LSE       
 HYDR      	Jsc Rushydro                                      	LSE       
@@ -3575,7 +3612,6 @@ IH2O      	Ishares II Plc                                    	LSE
 IHC       	Inspiration Healthcare G                          	LSE       
 IHCU      	Ishares V Public Limited Company                  	LSE       
 IHG       	Intercontinental Hotels Group Plc                 	LSE       
-IHUK      	Impact Holdings [Uk] Plc                          	LSE       
 IHYG      	Ishares Plc                                       	LSE       
 IHYU      	Ishares II Plc                                    	LSE       
 III       	3I Group Plc                                      	LSE       
@@ -3635,6 +3671,7 @@ INS       	Instem Plc                                        	LSE
 INSE      	Inspired Energy Plc                               	LSE       
 INSP      	Inspirit Energy Holdings                          	LSE       
 INTU      	Intu Properties Plc                               	LSE       
+INUG      	Multi Units Luxembourg                            	LSE       
 INV       	Investment Company Plc                            	LSE       
 INVP      	Investec Plc                                      	LSE       
 INVR      	Investec Plc                                      	LSE       
@@ -3769,7 +3806,6 @@ JFJ       	Jpmorgan Japanese Investment Trust Plc            	LSE
 JGC       	Jupiter Green Investment Trust Plc                	LSE       
 JGCI      	Jpmorgan Global Converti                          	LSE       
 JHD       	James Halstead Plc                                	LSE       
-JHDA      	James Halstead Plc                                	LSE       
 JIGC      	Jpmorgan Income & Growth Investment Trus          	LSE       
 JIGI      	Jpmorgan Income & Growth Investment Trus          	LSE       
 JIGU      	Jpmorgan Income & Growth Investment Trus          	LSE       
@@ -3803,6 +3839,7 @@ JPEL      	J.P. Morgan Private Equity Ld                     	LSE
 JPEX      	Source Markets Public Li                          	LSE       
 JPGB      	ETFS Foreign Exchange Limited                     	LSE       
 JPHG      	Amundi ETF                                        	LSE       
+JPHU      	Amundi ETF                                        	LSE       
 JPI       	Jpmorgan Income & Capital Trust Plc               	LSE       
 JPIU      	Jpmorgan Income & Capital Trust Plc               	LSE       
 JPIZ      	Jpmorgan Income & Capital Trust Plc               	LSE       
@@ -3864,6 +3901,8 @@ KNOS      	Kainos Group Plc                                  	LSE
 KOD       	Kodal Minerals Plc                                	LSE       
 KOOV      	Koovs Plc                                         	LSE       
 KRS       	Keras Resources Plc                               	LSE       
+KRW       	Lyxor International Asse                          	LSE       
+KRWL      	Lyxor International Asse                          	LSE       
 KSK       	Ksk Power Ventur Plc                              	LSE       
 KUBC      	Kubera Cross-Border Fund Limited                  	LSE       
 KWE       	Kennedy Wilson Real Esta                          	LSE       
@@ -3893,16 +3932,17 @@ LBUL      	ETFS Commodity Securities Limited                 	LSE
 LC53      	Sga Societe Generale Acc                          	LSE       
 LC57      	Sga Societe Generale Acc                          	LSE       
 LC62      	Sga Societe Generale Acc                          	LSE       
+LC64      	Sga Societe Generale Acc                          	LSE       
 LCAD      	ETFS Foreign Exchange Limited                     	LSE       
 LCAN      	Multi Units Luxembourg                            	LSE       
 LCAU      	Multi Units Luxembourg                            	LSE       
 LCFE      	ETFS Commodity Securities Limited                 	LSE       
 LCG       	London Capital Group Holdings Plc                 	LSE       
 LCHF      	ETFS Foreign Exchange Limited                     	LSE       
+LCNY      	ETFS Foreign Exchange Limited                     	LSE       
 LCOC      	ETFS Commodity Securities Limited                 	LSE       
 LCOP      	ETFS Commodity Securities Limited                 	LSE       
 LCOR      	ETFS Commodity Securities Limited                 	LSE       
-LCOU      	UBS Ag                                            	LSE       
 LCPE      	Ossiam Lux                                        	LSE       
 LCRP      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 LCRW      	Ossiam Lux                                        	LSE       
@@ -3910,7 +3950,6 @@ LCTO      	ETFS Commodity Securities Limited                 	LSE
 LDCU      	Pimco Fixed Income Sourc                          	LSE       
 LDSG      	Leeds Group Plc                                   	LSE       
 LEAF      	Leaf Clean Energy Company                         	LSE       
-LEAL      	Lead All Investments Limited                      	LSE       
 LEED      	ETFS Commodity Securities Limited                 	LSE       
 LEF       	Ludgate Environmental Fund Limited                	LSE       
 LEG       	Legendary Investments Plc                         	LSE       
@@ -3920,6 +3959,7 @@ LEMD      	Lyxor International Asse                          	LSE
 LEML      	Lyxor International Asse                          	LSE       
 LEMV      	Ossiam Lux                                        	LSE       
 LEU3      	ETFS Foreign Exchange Li                          	LSE       
+LEU5      	Sg Issuer                                         	LSE       
 LEUR      	ETFS Foreign Exchange Limited                     	LSE       
 LFAS      	Multi Units France                                	LSE       
 LFI       	London Finance & Investment Group Plc             	LSE       
@@ -3939,6 +3979,7 @@ LHEA      	ETFS Commodity Securities Limited                 	LSE
 LID       	Lidco Group Plc                                   	LSE       
 LIFE      	Life Science Developments Limited                 	LSE       
 LIME      	ETFS Commodity Securities Limited                 	LSE       
+LINP      	ETFS Foreign Exchange Limited                     	LSE       
 LINR      	ETFS Foreign Exchange Limited                     	LSE       
 LIO       	Liontrust Asset Management Plc                    	LSE       
 LIV       	Livermore Investments Group Limited               	LSE       
@@ -3953,6 +3994,7 @@ LKOH      	Lukoil [Oao]                                      	LSE
 LKUU      	Multi Units France                                	LSE       
 LKUW      	Multi Units France                                	LSE       
 LLCT      	ETFS Commodity Securities Limited                 	LSE       
+LLD6      	Lloyds Banking Group Plc                          	LSE       
 LLEA      	ETFS Commodity Securities Limited                 	LSE       
 LLHO      	ETFS Commodity Securities Limited                 	LSE       
 LLOY      	Lloyds Banking Group Plc                          	LSE       
@@ -3962,9 +4004,11 @@ LLPE      	Lloyds Banking Group Plc                          	LSE
 LLST      	ETFS Commodity Securities Limited                 	LSE       
 LME       	Limitless Earth Plc                               	LSE       
 LMI       	Lonmin Plc                                        	LSE       
+LMMV      	Ossiam Lux                                        	LSE       
 LMP       	Londonmetric Property Pl                          	LSE       
 LMS       	Lms Capital Plc                                   	LSE       
 LND       	Landore Resources Limited                         	LSE       
+LNEY      	ETFS Commodity Securities Limited                 	LSE       
 LNGA      	ETFS Commodity Securities Limited                 	LSE       
 LNIK      	ETFS Commodity Securities Limited                 	LSE       
 LNOK      	ETFS Foreign Exchange Limited                     	LSE       
@@ -3973,6 +4017,7 @@ LNTA      	Lenta Ltd                                         	LSE
 LNZD      	ETFS Foreign Exchange Limited                     	LSE       
 LOCG      	Go Ucits ETF Solutions P                          	LSE       
 LOCL      	Go Ucits ETF Solutions P                          	LSE       
+LOGP      	Lansdowne Oil & Gas Plc                           	LSE       
 LOIL      	ETFS Commodity Securities Limited                 	LSE       
 LOK       	Lok'n Store Group Plc                             	LSE       
 LOOK      	Lookers Plc                                       	LSE       
@@ -4014,14 +4059,13 @@ LTMU      	Lyxor International Asse                          	LSE
 LTOD      	Larsen and Toubro Limite                          	LSE       
 LUD5      	ETFS Foreign Exchange Limited                     	LSE       
 LUK2      	Go Ucits ETF Solutions P                          	LSE       
-LUMV      	Ossiam Lux                                        	LSE       
 LUSB      	ETFS Foreign Exchange Li                          	LSE       
 LUSC      	SSGA SPDR ETFS Europe I Plc                       	LSE       
-LUTR      	SSGA SPDR ETFS Europe I Plc                       	LSE       
 LUXG      	Amundi ETF                                        	LSE       
 LVD       	Lavendon Group Plc                                	LSE       
 LVRT      	Levrett Plc                                       	LSE       
 LWB       	Low & Bonar Plc                                   	LSE       
+LWCU      	Amundi ETF                                        	LSE       
 LWDB      	Law Debenture Corporation Plc                     	LSE       
 LWEA      	ETFS Commodity Securities Limited                 	LSE       
 LWI       	Lowland Investment Company Plc                    	LSE       
@@ -4029,6 +4073,10 @@ LWMV      	Ossiam Lux                                        	LSE
 LWRF      	Lightwaverf Plc                                   	LSE       
 LXB       	Lxb Retail Properties Plc                         	LSE       
 LYX5      	Lyxor Index Fund                                  	LSE       
+LYXM      	Lyxor Index Fund                                  	LSE       
+LYXQ      	Lyxor Index Fund                                  	LSE       
+LYXS      	Lyxor Index Fund                                  	LSE       
+LYXV      	Lyxor Index Fund                                  	LSE       
 LYXW      	Lyxor Index Fund                                  	LSE       
 LZIC      	ETFS Commodity Securities Limited                 	LSE       
 M0EB      	FTSE Euromid Eurobloc                             	LSE       
@@ -4050,11 +4098,9 @@ MANX      	Manx Telecom Plc                                  	LSE
 MARL      	Mariana Resources Limited                         	LSE       
 MARS      	Marston's Plc                                     	LSE       
 MATD      	Petro Matad Limited                               	LSE       
-MATG      	Multi Units Luxembourg                            	LSE       
 MATW      	Multi Units Luxembourg                            	LSE       
 MAV4      	Maven Income & Growth Vc                          	LSE       
 MAVD      	Magyar Telekom Telecommu                          	LSE       
-MAW       	Maruwa Co. Ltd                                    	LSE       
 MAYA      	Mayair Group Plc                                  	LSE       
 MBH       	Michelmersh Brick Holdings Plc                    	LSE       
 MBO       	Mobilityone Limited                               	LSE       
@@ -4098,8 +4144,10 @@ MERL      	Merlin Entertainments Pl                          	LSE
 MES       	Messaging International Plc                       	LSE       
 MEUD      	Lyxor Index Fund                                  	LSE       
 MEUG      	Lyxor International Asse                          	LSE       
+MEUU      	Lyxor International Asse                          	LSE       
 MEXL      	Multi Units France                                	LSE       
 MF01      	Societe Generale Effekte                          	LSE       
+MF03      	Societe Generale Effekte                          	LSE       
 MF04      	Societe Generale Effekte                          	LSE       
 MF11      	Societe Generale Effekte                          	LSE       
 MF20      	Societe Generale Effekte                          	LSE       
@@ -4110,6 +4158,7 @@ MF36      	Societe Generale Effekte                          	LSE
 MF37      	Societe Generale Effekte                          	LSE       
 MF60      	Societe Generale Effekte                          	LSE       
 MF75      	Societe Generale Effekte                          	LSE       
+MF76      	Societe Generale Effekte                          	LSE       
 MFON      	Ojsc Megafon                                      	LSE       
 MFX       	Manx Financial Group Plc                          	LSE       
 MGAM      	Morgan Crucible Co Plc                            	LSE       
@@ -4301,7 +4350,6 @@ NBNK      	Nbnk Investments Plc                              	LSE
 NBPE      	Nb Private Equity Partners Limited                	LSE       
 NBPZ      	Nb Private Equity Partners Limited                	LSE       
 NBS       	Nationwide Building Society                       	LSE       
-NBSP      	Newcastle Building Society                        	LSE       
 NBSR      	Newcastle Building Society                        	LSE       
 NCA       	New Century Aim Vct Plc                           	LSE       
 NCA2      	New Century Aim Vct 2 Pl                          	LSE       
@@ -4313,7 +4361,7 @@ NCSP      	Public Joint Stock Compa                          	LSE
 NCT       	Northcote Energy Limited                          	LSE       
 NCYF      	New City High Yield Fund Limited                  	LSE       
 NDKX      	FTSE Denmark 20 Index                             	LSE       
-NDUS      	SSGA SPDR ETFS Europe II                          	LSE       
+NEP       	Neptune-Calculus Income and Growth Vct P          	LSE       
 NEPI      	New Europe Property Investments Plc               	LSE       
 NESF      	Nextenergy Solar Fund Li                          	LSE       
 NET       	Netcall Plc                                       	LSE       
@@ -4432,6 +4480,7 @@ NXR       	Norcros Plc                                       	LSE
 NXT       	Next Plc                                          	LSE       
 NYO       	Nyota Minerals Ld                                 	LSE       
 NZDP      	ETFS Foreign Exchange Limited                     	LSE       
+NZGB      	ETFS Foreign Exchange Limited                     	LSE       
 OAP3      	Octopus Apollo Vct Plc                            	LSE       
 OBT       	Obtala Resources Limited                          	LSE       
 OCDO      	Ocado Group Plc                                   	LSE       
@@ -4448,6 +4497,7 @@ OGN       	Origin Enterprises Plc                            	LSE
 OGZD      	Oao Gazprom                                       	LSE       
 OIG       	Oryx International Growth Fund Ltd                	LSE       
 OILB      	ETFS Oil Securities Ld                            	LSE       
+OILD      	UBS Ag                                            	LSE       
 OILE      	UBS Ag                                            	LSE       
 OILL      	UBS Ag                                            	LSE       
 OILW      	ETFS Oil Securities Ld                            	LSE       
@@ -4476,6 +4526,7 @@ ORE       	Orogen Gold Plc                                   	LSE
 ORM       	Ormonde Mining Plc                                	LSE       
 OSB       	Onesavings Bank Plc                               	LSE       
 OSB1      	ETFS Oil Securities Limi                          	LSE       
+OSB2      	ETFS Oil Securities Limi                          	LSE       
 OSB3      	ETFS Oil Securities Limi                          	LSE       
 OSEC      	Octopus Second Aim Vct Plc                        	LSE       
 OSI       	Osirium Technologies Plc                          	LSE       
@@ -4492,7 +4543,6 @@ OUT       	Outsourcery Plc                                   	LSE
 OVG       	Ovoca Gold Plc                                    	LSE       
 OXB       	Oxford Biomedica Plc                              	LSE       
 OXF       	Oxford Technology 4 Venture Capital Trus          	LSE       
-OXH       	Oxford Technology 2 Venture Capital Trus          	LSE       
 OXIG      	Oxford Instruments Plc                            	LSE       
 OXP       	Oxford Pharmascience Group Plc                    	LSE       
 OXT       	Oxford Technology Venture Capital Trust           	LSE       
@@ -4587,7 +4637,6 @@ PHTM      	Photo-Me International Plc                        	LSE
 PIER      	Brighton Pier Group Plc (The)                     	LSE       
 PIK       	Pik Group                                         	LSE       
 PIL       	Produce Investments Plc                           	LSE       
-PILR      	Pacific Industrial & Logistics REIT Plc           	LSE       
 PIM       	Plant Impact Plc                                  	LSE       
 PIMT      	ETFS Hedged Commodity Securities Limited          	LSE       
 PIN       	Pantheon International Participations Pl          	LSE       
@@ -4612,11 +4661,11 @@ PMO       	Premier Oil Plc                                   	LSE
 PMO1      	Premier Oil Plc                                   	LSE       
 PMP       	Portmeirion Group Plc                             	LSE       
 PMR       	Panmure Gordon & Co. Plc                          	LSE       
+PMU3      	Sga Societe Generale Acc                          	LSE       
 PNGA      	ETFS Hedged Commodity Securities Limited          	LSE       
 PNL       	Personal Assets Trust Plc                         	LSE       
 PNN       	Pennon Group Plc                                  	LSE       
 PNS       	Panther Securities Plc                            	LSE       
-POBA      	Nationwide Building Society                       	LSE       
 POG       	Petropavlovsk Plc                                 	LSE       
 POL       	Polo Resources Limited                            	LSE       
 POLR      	Polar Capital Holdings Plc                        	LSE       
@@ -4671,7 +4720,6 @@ PTR       	Petroneft Resources Plc                           	LSE
 PTSG      	Premier Technical Servic                          	LSE       
 PTY       	Parity Group Plc                                  	LSE       
 PUB       	Punch Taverns Plc                                 	LSE       
-PUM9      	Puma Vct 9 Plc                                    	LSE       
 PURE      	Purecircle Limited                                	LSE       
 PURI      	Puricore Plc                                      	LSE       
 PURP      	Purplebricks Group Plc                            	LSE       
@@ -4680,6 +4728,7 @@ PUS5      	ETFS Foreign Exchange Limited                     	LSE
 PVCS      	Pv Crystalox Solar Plc                            	LSE       
 PVG       	Premier Veterinary Group                          	LSE       
 PVN       	Proven Vct Plc                                    	LSE       
+PVR       	Providence Resources Plc                          	LSE       
 PWS       	Pinewood Shepperton Plc                           	LSE       
 PXOG      	Prospex Oil and Gas Plc                           	LSE       
 PXS       	Provexis Plc                                      	LSE       
@@ -4723,6 +4772,7 @@ RBN       	Robinson Plc                                      	LSE
 RBPI      	Royal Bank of Scotland Plc                        	LSE       
 RBPX      	Royal Bank of Scotland Plc                        	LSE       
 RBS       	Royal Bank of Scotland Group Plc                  	LSE       
+RBSU      	Royal Bank of Scotland Plc                        	LSE       
 RC2       	Reconstruction Capital I                          	LSE       
 RCDO      	Ricardo Plc                                       	LSE       
 RCHA      	Rothschilds Continuation Finance [C.I.]           	LSE       
@@ -4806,7 +4856,6 @@ RRE       	Rockrose Energy Plc                               	LSE
 RRL       	Range Resources Limited                           	LSE       
 RRR       	Red Rock Resources Plc                            	LSE       
 RRS       	Randgold Resources Ld                             	LSE       
-RS2G      	Amundi ETF                                        	LSE       
 RS2U      	Amundi ETF                                        	LSE       
 RS72      	Royal Bank of Scotland P                          	LSE       
 RS74      	Royal Bank of Scotland P                          	LSE       
@@ -4818,11 +4867,11 @@ RSGL      	Lyxor International Asse                          	LSE
 RSS       	Rab Special Situations Company Limited            	LSE       
 RST       	Restore Plc                                       	LSE       
 RSTI      	Joint Stock Company Ross                          	LSE       
+RSVL      	Lyxor International Asse                          	LSE       
 RSW       	Renishaw Plc                                      	LSE       
-RT40      	Royal Bank of Scotland P                          	LSE       
 RT62      	Royal Bank of Scotland P                          	LSE       
-RT82      	Royal Bank of Scotland P                          	LSE       
 RTC       	Rtc Group Plc                                     	LSE       
+RTHM      	Rhythmone Plc                                     	LSE       
 RTN       	Restaurant Group Plc                              	LSE       
 RTO       	Rentokil Initial Plc                              	LSE       
 RTWO      	Etfx Fund Company Plc                             	LSE       
@@ -4874,6 +4923,7 @@ SAU3      	ETFS Foreign Exchange Li                          	LSE
 SAUP      	ETFS Foreign Exchange Limited                     	LSE       
 SAUS      	Ishares III Plc                                   	LSE       
 SAV       	Savannah Resources Plc                            	LSE       
+SB42      	Sga Societe Generale Acc                          	LSE       
 SBEG      	UBS ETF                                           	LSE       
 SBEM      	UBS ETF                                           	LSE       
 SBER      	Sberbank of Russia                                	LSE       
@@ -4945,7 +4995,6 @@ SEMB      	Ishares II Plc                                    	LSE
 SEMH      	SSGA SPDR ETFS Europe II                          	LSE       
 SEML      	Ishares III Plc                                   	LSE       
 SEMS      	Ishares III Plc                                   	LSE       
-SEN       	Senterra Energy Plc                               	LSE       
 SEP       	Standard Life European Private Equity TR          	LSE       
 SEPL      	Seplat Petroleum Develop                          	LSE       
 SEPU      	Sepura Plc                                        	LSE       
@@ -4957,6 +5006,7 @@ SESP      	Ishares V Public Limited Company                  	LSE
 SEU3      	ETFS Foreign Exchange Li                          	LSE       
 SEU5      	Sg Issuer                                         	LSE       
 SEUC      	SSGA SPDR ETFS Europe I                           	LSE       
+SEUE      	SSGA SPDR ETFS Europe I                           	LSE       
 SEUP      	ETFS Foreign Exchange Limited                     	LSE       
 SEUR      	ETFS Foreign Exchange Limited                     	LSE       
 SEV       	Servision Plc                                     	LSE       
@@ -4965,6 +5015,7 @@ SF05      	Sga Societe Generale Acc                          	LSE
 SF06      	Sga Societe Generale Acc                          	LSE       
 SF27      	Sga Societe Generale Acc                          	LSE       
 SF47      	Sga Societe Generale Acc                          	LSE       
+SF76      	Sga Societe Generale Acc                          	LSE       
 SF84      	Sga Societe Generale Acc                          	LSE       
 SF87      	Sga Societe Generale Acc                          	LSE       
 SF99      	Sga Societe Generale Acc                          	LSE       
@@ -4977,13 +5028,15 @@ SG01      	Sga Societe Generale Acc                          	LSE
 SG03      	Sga Societe Generale Acc                          	LSE       
 SG04      	Sga Societe Generale Acc                          	LSE       
 SG05      	Sga Societe Generale Acc                          	LSE       
+SG06      	Sg Issuer                                         	LSE       
 SG15      	Sg Issuer                                         	LSE       
 SG16      	Sg Issuer                                         	LSE       
 SG17      	Sg Issuer                                         	LSE       
 SG18      	Sg Issuer                                         	LSE       
 SG21      	SOCIETE GENERALE ACCEPTANCE NV PROT ACCELTOR CERT 2/2/12 EPEZ E1 EUR0 C	LSE       
+SG27      	SOCIETE GENERALE ACCEPTANCE NV CERT 03/01/10BEAR E1 USD0 C	LSE       
 SG29      	SOCIETE GENERALE ACCEPTANCE NV ENH H/YLD CERT 30/07/08 BARC E1 GBX0 C	LSE       
-SG32      	SOCIETE GENERALE ACCEPTANCE NV CERT 24/10/08 TREI E1 GBX C	LSE       
+SG34      	SOCIETE GENERALE ACCEPTANCE NV REV CNVT CERT 18/12/08GSK E1 GBX1275 C	LSE       
 SG35      	SOCIETE GENERALE ACCEPTANCE NV PROT ACCLR CERT 13/6/12SX50 E1 EUR4500 C	LSE       
 SG36      	SOCIETE GENERALE ACCEPTANCE NV PROT REV ACC CERT 21/6/10 EPEZ E1 EUR0 C	LSE       
 SG41      	SOCIETE GENERALE ACCEPTANCE NV CERT 5/9/08(GLOBL IDX AUTOCALL) GBP E1 C	LSE       
@@ -5008,13 +5061,16 @@ SGLO      	Ishares III Plc                                   	LSE
 SGLP      	Source Physical Markets Plc                       	LSE       
 SGM       	Sigma Capital Group Plc                           	LSE       
 SGP       	Supergroup Plc                                    	LSE       
+SGQD      	Multi Units Luxembourg                            	LSE       
 SGQE      	Multi Units Luxembourg                            	LSE       
 SGQL      	Multi Units Luxembourg                            	LSE       
 SGQP      	Multi Units Luxembourg                            	LSE       
 SGQX      	Multi Units Luxembourg                            	LSE       
 SGR       	Shore Capital Group Limited                       	LSE       
+SGRA      	ETFS Commodity Securities Limited                 	LSE       
 SGRO      	Segro Plc                                         	LSE       
 SGS100    	FTSE SGX Asia Shariah 10                          	LSE       
+SGVB      	Lyxor Index Fund                                  	LSE       
 SGVL      	Lyxor Index Fund                                  	LSE       
 SGZ       	Scotgold Resources Limited                        	LSE       
 SHAW      	Shawbrook Group Plc                               	LSE       
@@ -5034,7 +5090,6 @@ SIA       	Soco International Plc                            	LSE
 SIGB      	Sherborne Investors (Gue                          	LSE       
 SIGT      	Seneca Global Income & G                          	LSE       
 SIHL      	Symphony International Holdings Ld                	LSE       
-SILG      	UBS Ag                                            	LSE       
 SIM       	Simigon Ltd.                                      	LSE       
 SIME      	ETFS Commodity Securities Limited                 	LSE       
 SINP      	ETFS Foreign Exchange Limited                     	LSE       
@@ -5059,7 +5114,6 @@ SKG       	Smurfit Kappa Group Plc                           	LSE
 SKGB      	ETFS Foreign Exchange Limited                     	LSE       
 SKIP      	Skipton Building Society                          	LSE       
 SKP       	Skyepharma Plc                                    	LSE       
-SKS       	Shanks Group Plc                                  	LSE       
 SKY       	British Sky Broadcasting                          	LSE       
 SL        	STANDARD LIFE PLC ORD GBP0.10                     	LSE       
 SL06      	Sga Societe Generale Acc                          	LSE       
@@ -5068,10 +5122,12 @@ SL21      	Sga Societe Generale Acc                          	LSE
 SL29      	Sga Societe Generale Acc                          	LSE       
 SL37      	SOCIETE GENERALE ACCEPTANCE NV PUT WTS 18/06/10(HANG SENG)HKD8000	LSE       
 SL39      	SOCIETE GENERALE ACCEPTANCE NV CALL WTS 18/06/10(NIKKEI 225)JPY10000	LSE       
+SL41      	SOCIETE GENERALE ACCEPTANCE NV PUT WTS 18/06/10(NIKKEI 225)JPY8000	LSE       
 SL42      	SOCIETE GENERALE ACCEPTANCE NV CALL WTS 20/6/08 AAL E0.1 GBX3300 C	LSE       
 SL47      	SOCIETE GENERALE ACCEPTANCE NV PUT WTS 20/6/08 BARC E1 GBX600 C	LSE       
 SL53      	SOCIETE GENERALE ACCEPTANCE NV CALL WTS 20/6/08 F100 E0.001 GBP6700 C	LSE       
 SLCT      	ETFS Commodity Securities Limited                 	LSE       
+SLEA      	ETFS Commodity Securities Limited                 	LSE       
 SLED      	Lebanese Company For The                          	LSE       
 SLES      	Standard Life Equity Income Trust Plc             	LSE       
 SLET      	Standard Life Equity Income Trust Plc             	LSE       
@@ -5132,14 +5188,16 @@ SMWH      	Wh Smith Plc                                      	LSE
 SMX       	FTSE Smallcap                                     	LSE       
 SMXX      	FTSE Smallcap [Exit]                              	LSE       
 SN        	Smith & Nephew                                    	LSE       
-SNAK      	Snacktime Plc                                     	LSE       
 SND       	Sanderson Group Plc                               	LSE       
+SNEY      	ETFS Commodity Securities Limited                 	LSE       
 SNG       	Synairgen Plc                                     	LSE       
 SNGA      	ETFS Commodity Securities Limited                 	LSE       
 SNGR      	Societatea Nationala De                           	LSE       
 SNIK      	ETFS Commodity Securities Limited                 	LSE       
 SNN       	Sanne Group Plc                                   	LSE       
+SNOK      	ETFS Foreign Exchange Limited                     	LSE       
 SNOP      	ETFS Foreign Exchange Limited                     	LSE       
+SNP       	China Petroleum & Chemic                          	LSE       
 SNR       	Senior Plc                                        	LSE       
 SNT       	Sabien Technology Group Plc                       	LSE       
 SNTY      	Synety Group Plc                                  	LSE       
@@ -5217,6 +5275,7 @@ SS09      	FTSE Asia Pacific Small                           	LSE
 SSA       	Sistema Jsfc                                      	LSE       
 SSAC      	Ishares V Public Limited Company                  	LSE       
 SSE       	Sse Plc                                           	LSE       
+SSFT      	ETFS Commodity Securities Limited                 	LSE       
 SSHY      	Pimco Fixed Income Sourc                          	LSE       
 SSIL      	ETFS Commodity Securities Limited                 	LSE       
 SSLN      	Ishares Physical Metals Plc                       	LSE       
@@ -5232,6 +5291,7 @@ SSYO      	ETFS Commodity Securities Limited                 	LSE
 STAB      	Standard Chartered Plc                            	LSE       
 STAC      	Standard Chartered Plc                            	LSE       
 STAF      	Staffline Group Plc                               	LSE       
+STAG      	Multi Units Luxembourg                            	LSE       
 STAN      	Standard Chartered Plc                            	LSE       
 STAR      	Starcom Plc                                       	LSE       
 STAW      	Multi Units Luxembourg                            	LSE       
@@ -5247,6 +5307,7 @@ STHR      	Sthree Plc                                        	LSE
 STHS      	Pimco Fixed Income Source ETFS Plc                	LSE       
 STHY      	Pimco Fixed Income Source ETFS Plc                	LSE       
 STI       	Stratex International Plc                         	LSE       
+STIM      	ETFS Commodity Securities Limited                 	LSE       
 STJ       	St. James's Place Plc                             	LSE       
 STL       	Stilo International Plc                           	LSE       
 STM       	Stm Group PC                                      	LSE       
@@ -5273,7 +5334,6 @@ SUN       	Surgical Innovations Group Plc                    	LSE
 SUP3      	ETFS Foreign Exchange Li                          	LSE       
 SUP5      	ETFS Foreign Exchange Limited                     	LSE       
 SUS       	S & U Plc                                         	LSE       
-SUSB      	ETFS Foreign Exchange Li                          	LSE       
 SUSC      	SSGA SPDR ETFS Europe I                           	LSE       
 SUSD      	SSGA SPDR ETFS Europe I                           	LSE       
 SUSE      	Ishares II Plc                                    	LSE       
@@ -5326,7 +5386,6 @@ SZ30      	Sga Societe Generale Acc                          	LSE
 SZ51      	Sga Societe Generale Acc                          	LSE       
 SZ53      	Sga Societe Generale Acc                          	LSE       
 SZ61      	Sga Societe Generale Acc                          	LSE       
-SZ64      	Sga Societe Generale Acc                          	LSE       
 SZIC      	ETFS Commodity Securities Limited                 	LSE       
 T16       	United Kingdom                                    	LSE       
 T17       	United Kingdom                                    	LSE       
@@ -5405,6 +5464,7 @@ TG21      	United Kingdom                                    	LSE
 TG22      	United Kingdom                                    	LSE       
 TG44      	United Kingdom                                    	LSE       
 TG52      	United Kingdom                                    	LSE       
+THAG      	Multi Units France                                	LSE       
 THAL      	Thalassa Holdings Limited                         	LSE       
 THL       	Tongaat Hulett Limited                            	LSE       
 THR       	Thor Mining Plc                                   	LSE       
@@ -5529,6 +5589,8 @@ TW50      	FTSE Tsec Taiwan 50 Inde                          	LSE
 TW50U     	Tsec Taiwan 50 Index                              	LSE       
 TWDP      	Tsec Taiwan Dividend                              	LSE       
 TWEI      	Tsec Taiwan Eight Industries                      	LSE       
+TWND      	Lyxor International Asse                          	LSE       
+TWNL      	Lyxor International Asse                          	LSE       
 TWSH      	Tsec Taiwan Shariah Index                         	LSE       
 TWTECH    	Tsec Taiwan Technology                            	LSE       
 TXH       	Tex Holdings Plc                                  	LSE       
@@ -5616,13 +5678,14 @@ UC76      	UBS ETF                                           	LSE
 UC77      	UBS ETF                                           	LSE       
 UC78      	UBS ETF                                           	LSE       
 UC79      	UBS ETF                                           	LSE       
+UC81      	UBS ETF                                           	LSE       
 UC82      	UBS ETF                                           	LSE       
 UC85      	UBS ETF                                           	LSE       
-UC87      	UBS ETF                                           	LSE       
 UC89      	UBS ETF                                           	LSE       
 UC90      	UBS ETFS Plc                                      	LSE       
 UC93      	UBS ETF                                           	LSE       
 UC94      	UBS ETF                                           	LSE       
+UC97      	UBS ETF                                           	LSE       
 UC98      	UBS ETF                                           	LSE       
 UCAP      	Ossiam Lux                                        	LSE       
 UCG       	United Carpets Group Plc                          	LSE       
@@ -5637,7 +5700,6 @@ UI18      	Ishares IV Plc                                    	LSE
 UIFS      	Ishares V Public Limited Company                  	LSE       
 UINC      	First Trust Global Funds Public Limited           	LSE       
 UJO       	Union Jack Oil Plc                                	LSE       
-UK19      	Goldman Sachs Internatio                          	LSE       
 UK3L      	ETFS Equity Securities L                          	LSE       
 UK3S      	ETFS Equity Securities L                          	LSE       
 UKA5      	Sg Issuer                                         	LSE       
@@ -5732,6 +5794,7 @@ UTL       	Utilico Investments Limited                       	LSE
 UTLC      	Utilico Finance Limited                           	LSE       
 UTLD      	Utilico Finance Limited                           	LSE       
 UTLE      	Utilico Finance Limited                           	LSE       
+UTLF      	Uil Finance Limited                               	LSE       
 UTW       	Utilitywise Plc                                   	LSE       
 UU        	United Utilities                                  	LSE       
 UVEL      	Univision Engineering Limited                     	LSE       
@@ -5772,6 +5835,7 @@ VGAS      	Volga Gas Plc                                     	LSE
 VGOV      	Vanguard Funds Plc                                	LSE       
 VHYD      	Vanguard Funds Plc                                	LSE       
 VHYL      	Vanguard Funds Plc                                	LSE       
+VILX      	Boost Issuer Public Limited Company               	LSE       
 VIN       	Value and Income Trust Plc                        	LSE       
 VIP       	Vipera Plc                                        	LSE       
 VIS       	Vitesse Media Plc                                 	LSE       
@@ -5835,6 +5899,7 @@ WCOB      	Wisdomtree Issuer Plc                             	LSE
 WCOD      	SSGA SPDR ETFS Europe II Plc                      	LSE       
 WCOS      	SSGA SPDR ETFS Europe II Plc                      	LSE       
 WCW       	Walker Crips Group Plc                            	LSE       
+WDMV      	Ossiam Lux                                        	LSE       
 WDSC      	SSGA SPDR ETFS Europe II                          	LSE       
 WEAT      	ETFS Commodity Securities Limited                 	LSE       
 WEB       	Webis Holdings Plc                                	LSE       
@@ -5846,6 +5911,7 @@ WGB       	Walker Greenbank Plc                              	LSE
 WHEA      	SSGA SPDR ETFS Europe II Plc                      	LSE       
 WHI       	W.H. Ireland Group Plc                            	LSE       
 WHTE      	UBS Ag                                            	LSE       
+WHTG      	UBS Ag                                            	LSE       
 WHTU      	UBS Ag                                            	LSE       
 WI01      	FTSE World                                        	LSE       
 WI02      	FTSE World Ex South Afri                          	LSE       
@@ -5891,6 +5957,7 @@ WIMAL     	FTSE Malaysia Index                               	LSE
 WIMEX     	FTSE Mexico Index                                 	LSE       
 WIN       	Wincanton Plc                                     	LSE       
 WINE      	Majestic Wine Plc                                 	LSE       
+WING      	Ishares IV Plc                                    	LSE       
 WINK      	M Winkworth Plc                                   	LSE       
 WINLD     	FTSE Netherlands Index                            	LSE       
 WINOR     	FTSE Norway Index                                 	LSE       
@@ -6022,6 +6089,7 @@ XDWU      	Concept Fund Solutions Plc                        	LSE
 XECS      	DB X-Trackers Dbx MSCI EM Consu                   	LSE       
 XEL       	Xcite Energy Limited                              	LSE       
 XEMD      	DB X-Trackers Dbx MSCI Emerging                   	LSE       
+XEO2      	DB X-Trackers II                                  	LSE       
 XEOU      	DB X-Trackers                                     	LSE       
 XESC      	DB X-Trackers Dbx Euro Stoxx 50                   	LSE       
 XESG      	DB X-Trackers Dbx MSCI Emerging                   	LSE       
@@ -6148,7 +6216,6 @@ XMBR      	DB X-Trackers Dbx MSCI Brazil E                   	LSE
 XMCX      	DB X-Trackers Dbx FTSE 250 ETF                    	LSE       
 XMED      	DB X-Trackers Dbx MSCI Europe E                   	LSE       
 XMEE      	DB X-Trackers Dbx MSCI EM Easte                   	LSE       
-XMEF      	DB X-Trackers Dbx MSCI Emerging                   	LSE       
 XMEH      	DB X-Trackers Dbx MSCI Emerging                   	LSE       
 XMEM      	DB X-Trackers Dbx MSCI Emerging                   	LSE       
 XMEN      	DB X-Trackers Dbx MSCI EM Telec                   	LSE       
@@ -6243,7 +6310,7 @@ ZC1G      	BMO Ucits ETF Icav                                	LSE
 ZC3G      	BMO Ucits ETF Icav                                	LSE       
 ZC7G      	BMO Ucits ETF Icav                                	LSE       
 ZCC       	Zccm Investments Holding                          	LSE       
-ZENB      	Zenith Bank Plc                                   	LSE       
+ZEG       	Zegona Communications Pl                          	LSE       
 ZHYG      	BMO Ucits ETF Icav                                	LSE       
 ZIEG      	BMO Ucits ETF Icav                                	LSE       
 ZILK      	BMO Ucits ETF Icav                                	LSE       

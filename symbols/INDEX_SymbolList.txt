@@ -835,11 +835,16 @@ SAUE.IDX  	S&P GSCI Agriculture Capped Component 35/20 EUR   	INDEX
 SBAI.IDX  	S&P Brazil ADR Index                              	INDEX     
 SBER.IDX  	S&P GSCI Biofuel Index Excess Return              	INDEX     
 SBES.IDX  	BLO M Emerging Shariah Index [NetTR]              	INDEX     
+SBFI.IDX  	S&P Materials Stocks Above 50-Day Average         	INDEX     
 SBIX.IDX  	S&P 500 Banks non-TR                              	INDEX     
 SBNP.IDX  	S&P Custom/BNP Paribas SPECTRUMUS Sect or Moment  	INDEX     
+SBOF.IDX  	S&P Materials Stocks Above 150-Day Average        	INDEX     
+SBOH.IDX  	S&P Materials Stocks Above 100-Day Average        	INDEX     
 SBSE.IDX  	S&P BRIC Shariah Index [EURO]                     	INDEX     
 SBSU.IDX  	S&P BRIC Shariah Index                            	INDEX     
+SBTH.IDX  	S&P Materials Stocks Above 200-Day Average        	INDEX     
 SBTR.IDX  	S&P GSCI Biofuel Index Total Return               	INDEX     
+SBTW.IDX  	S&P Materials Stocks Above 20-Day Average         	INDEX     
 SBUP.IDX  	S&P Food & Beverage Select Industry Index         	INDEX     
 SCBR.IDX  	S&P BMI Russia [Capped] [USDollar]                	INDEX     
 SCEI.IDX  	CS/RT Emerging Infrastructure Index [NetTR]       	INDEX     
@@ -883,6 +888,7 @@ SEBI.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX
 SECA.IDX  	S&P GSCI Enhanced Commodity Index                 	INDEX     
 SECB.IDX  	S&P GSCI Enhanced Commodity Index Excess Return   	INDEX     
 SECC.IDX  	S&P GSCI Enhanced Commodity Index Total Return    	INDEX     
+SEFI.IDX  	S&P Energies Stocks Above 50-Day Average          	INDEX     
 SEIB.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX     
 SEIE.IDX  	S&P Global Eco Index [EURO]                       	INDEX     
 SEII.IDX  	CS/RT Emerging Infrastructure Index               	INDEX     
@@ -890,8 +896,17 @@ SEIT.IDX  	S&P Global REIT [AUD]                             	INDEX
 SEIU.IDX  	S&P Global Eco Index                              	INDEX     
 SEMT.IDX  	Brics Nifty 50 Emerging Market Tradable Index Tr  	INDEX     
 SENSEX.IDX	BSE SENSEX                                        	INDEX     
+SEOF.IDX  	S&P Energies Stocks Above 150-Day Average         	INDEX     
+SEOH.IDX  	S&P Energies Stocks Above 100-Day Average         	INDEX     
+SETH.IDX  	S&P Energies Stocks Above 200-Day Average         	INDEX     
+SETW.IDX  	S&P Energies Stocks Above 20-Day Average          	INDEX     
 SEXR.IDX  	S&P C.S. Wa-Seattle Home Price Index              	INDEX     
+SFFI.IDX  	S&P Financials Stocks Above 50-Day Average        	INDEX     
+SFOF.IDX  	S&P Financials Stocks Above 150-Day Average       	INDEX     
+SFOH.IDX  	S&P Financials Stocks Above 100-Day Average       	INDEX     
+SFTH.IDX  	S&P Financials Stocks Above 200-Day Average       	INDEX     
 SFTR.IDX  	S&P 500 - Pharmaceuticals Biotechnology & Life    	INDEX     
+SFTW.IDX  	S&P Financials Stocks Above 20-Day Average        	INDEX     
 SFXR.IDX  	S&P C.S. Ca-San Francisco Home Price Index        	INDEX     
 SG0A.IDX  	S&P GSCI Agriculture & Live Stock Index           	INDEX     
 SG0B.IDX  	S&P GSCI Agriculture & Live Stock Index Excess R  	INDEX     
@@ -1070,16 +1085,21 @@ SHEU.IDX  	HS60 Europe Index                                 	INDEX
 SHTR.IDX  	S&P 500 HealthCare Equipment & Services [TR]      	INDEX     
 SHUS.IDX  	HS60 US Index                                     	INDEX     
 SIDO.IDX  	S&P International Dividend Opportunities Index    	INDEX     
+SIFI.IDX  	S&P Industrials Stocks Above 50-Day Average       	INDEX     
 SIII.IDX  	Indus India Index                                 	INDEX     
 SIIP.IDX  	S&P DFFI Index Excess Return                      	INDEX     
 SIIS.IDX  	S&P DFFI Index                                    	INDEX     
 SIIT.IDX  	S&P DFFI Index Total Return                       	INDEX     
 SIN.IDX   	ISE Sindex Index                                  	INDEX     
+SIOF.IDX  	S&P Industrials Stocks Above 150-Day Average      	INDEX     
+SIOH.IDX  	S&P Industrials Stocks Above 100-Day Average      	INDEX     
 SIPR.IDX  	Brics Nifty 50 Emerging Market Tradable Index Pr  	INDEX     
 SIRI.IDX  	S&P Indian Rupee Total Return                     	INDEX     
 SIRP.IDX  	Cohen & Steers International Realty Majors Portf  	INDEX     
 SIS.IDX   	AMEX Semiconductor Index                          	INDEX     
+SITH.IDX  	S&P Industrials Stocks Above 200-Day Average      	INDEX     
 SITR.IDX  	S&P 500 Insurance [TR]                            	INDEX     
+SITW.IDX  	S&P Industrials Stocks Above 20-Day Average       	INDEX     
 SIUT.IDX  	S&P 500 2x Inverse Daily Index                    	INDEX     
 SIV.IDX   	Cboe/Cbot Soybean Volatility Index                	INDEX     
 SJPA.IDX  	S&P Japan 500                                     	INDEX     
@@ -1089,7 +1109,12 @@ SJPD.IDX  	S&P TOPIX YEN                                     	INDEX
 SJPE.IDX  	S&P JES100                                        	INDEX     
 SJRI.IDX  	S&P Japan Regional Index-Tokai                    	INDEX     
 SJTR.IDX  	S&P 500 Semiconductors & Semiconductor Equipment  	INDEX     
+SKFI.IDX  	S&P Info Tech Stocks Above 50-Day Average         	INDEX     
+SKOF.IDX  	S&P Info Tech Stocks Above 150-Day Average        	INDEX     
+SKOH.IDX  	S&P Info Tech Stocks Above 100-Day Average        	INDEX     
+SKTH.IDX  	S&P Info Tech Stocks Above 200-Day Average        	INDEX     
 SKTR.IDX  	S&P 500 Materials [TR]                            	INDEX     
+SKTW.IDX  	S&P Info Tech Stocks Above 20-Day Average         	INDEX     
 SLAC.IDX  	S&P LAC40 [US$] [EURO] [NetTR]                    	INDEX     
 SLCN.IDX  	S&P US Carbon Efficient Index U.S. Carbci Index   	INDEX     
 SLCT.IDX  	S&P U.S. Carbon Efficient Index [TR]              	INDEX     
@@ -1097,9 +1122,14 @@ SLCU.IDX  	S&P U.S. Carbon Efficient Index [NetTR]           	INDEX
 SLEE.IDX  	S&P GSCI Light Energy EUR Index                   	INDEX     
 SLER.IDX  	S&P GSCI Light Energy EUR Index ER                	INDEX     
 SLEW.IDX  	S&P 600 Smallcap Equal Weighted Index             	INDEX     
+SLFI.IDX  	S&P Telcomm Stocks Above 50-Day Average           	INDEX     
+SLOF.IDX  	S&P Telcomm Stocks Above 150-Day Average          	INDEX     
+SLOH.IDX  	S&P Telcomm Stocks Above 100-Day Average          	INDEX     
 SLPE.IDX  	Global Listed Private Equity Index                	INDEX     
 SLPX.IDX  	Cushing 30 MLP Index USD Price Return             	INDEX     
 SLRT.IDX  	S&P GSCI Light Energy EUR Index TR                	INDEX     
+SLTH.IDX  	S&P Telcomm Stocks Above 200-Day Average          	INDEX     
+SLTW.IDX  	S&P Telcomm Stocks Above 20-Day Average           	INDEX     
 SLUN.IDX  	S&P 500 2x Leverage Daily Index                   	INDEX     
 SLUT.IDX  	S&P 500 Gold Hedged Index                         	INDEX     
 SLV.IDX   	Silver Index                                      	INDEX     
@@ -1136,13 +1166,18 @@ SPAD.IDX  	S&P GSCI Palladium Index                          	INDEX
 SPEE.IDX  	S&P Listed Private Equity Index [EURO]            	INDEX     
 SPER.IDX  	S&P GSCI Palladium Index Excess Return            	INDEX     
 SPEY.IDX  	S&P Listed Private Equity Index                   	INDEX     
+SPFI.IDX  	S&P Con Staples Stocks Above 50-Day Average       	INDEX     
 SPIN.IDX  	S&P GSCI Platinum Index                           	INDEX     
 SPIR.IDX  	S&P GSCI Platinum Index Excess Return             	INDEX     
 SPLR.IDX  	S&P GSCI Platinum Index Total Return              	INDEX     
+SPOF.IDX  	S&P Con Staples Stocks Above 150-Day Average      	INDEX     
+SPOH.IDX  	S&P Con Staples Stocks Above 100-Day Average      	INDEX     
 SPPR.IDX  	S&P International Preferred Stock Index           	INDEX     
 SPRL.IDX  	SGI Premium List [NetTR]                          	INDEX     
 SPRT.IDX  	S&P GSCI Palladium Index Total Return             	INDEX     
 SPSU.IDX  	S&P COMPOSITE 1500 INDEX                          	INDEX     
+SPTH.IDX  	S&P Con Staples Stocks Above 200-Day Average      	INDEX     
+SPTW.IDX  	S&P Con Staples Stocks Above 20-Day Average       	INDEX     
 SPUS.IDX  	S&P  Global Ex-U.S. Property [US Dollar]          	INDEX     
 SPX.IDX   	S&P 500 INDEX                                     	INDEX     
 SPXT.IDX  	S&P 500 [TR]                                      	INDEX     
@@ -1294,6 +1329,7 @@ STTR.IDX  	S&P 500 Technology Hardware & Equipment [TR]      	INDEX
 SUCD.IDX  	S&P Select Sector Capped 20% Consumer Discretion  	INDEX     
 SUCS.IDX  	S&P Select Sector Capped 20% Consumer Staples In  	INDEX     
 SUEP.IDX  	S&P Select Sector Capped 20% Energy Index Net TR  	INDEX     
+SUFI.IDX  	S&P Utilities Stocks Above 50-Day Average         	INDEX     
 SUFP.IDX  	S&P Select Sector Capped 20% Financials Index Ne  	INDEX     
 SUHC.IDX  	S&P Select Sector Capped 20% HealthCare Index Ne  	INDEX     
 SUIP.IDX  	S&P Select Sector Capped 20% Industrials Index N  	INDEX     
@@ -1302,11 +1338,20 @@ SUKP.IDX  	S&P United Kingdom [PDS]                          	INDEX
 SUKS.IDX  	S&P United Kingdom [USD]                          	INDEX     
 SUMI.IDX  	S&P Select Sector Capped 20% Materials Index Net  	INDEX     
 SUNI.IDX  	MAC GLOBAL SOLAR INDEX                            	INDEX     
+SUOF.IDX  	S&P Utilities Stocks Above 150-Day Average        	INDEX     
+SUOH.IDX  	S&P Utilities Stocks Above 100-Day Average        	INDEX     
 SUPI.IDX  	S&P Select Sector Capped 20% Utilities Index Net  	INDEX     
 SURI.IDX  	S&P /Citigroup BMI REIT SUS Index                 	INDEX     
+SUTH.IDX  	S&P Utilities Stocks Above 200-Day Average        	INDEX     
 SUTP.IDX  	S&P Select Sector Capped 20% Technology Index Ne  	INDEX     
+SUTW.IDX  	S&P Utilities Stocks Above 20-Day Average         	INDEX     
+SVFI.IDX  	S&P Health Care Stocks Above 50-Day Average       	INDEX     
 SVO.IDX   	PHLX SIG ENERGY MLP INDX                          	INDEX     
+SVOF.IDX  	S&P Health Care Stocks Above 150-Day Average      	INDEX     
+SVOH.IDX  	S&P Health Care Stocks Above 100-Day Average      	INDEX     
+SVTH.IDX  	S&P Health Care Stocks Above 200-Day Average      	INDEX     
 SVTR.IDX  	Next 11 Vietnam [TotalReturn] Index               	INDEX     
+SVTW.IDX  	S&P Health Care Stocks Above 20-Day Average       	INDEX     
 SW0B.IDX  	S&P Developed Ex-U.S.BMI [Capped] Energy          	INDEX     
 SW0C.IDX  	S&P Developed Ex-U.S.BMI [Capped] Materials       	INDEX     
 SW0D.IDX  	S&P Developed Ex-U.S.BMI [Capped] Industrials     	INDEX     
@@ -1335,7 +1380,12 @@ SWUB.IDX  	SGI Wise US Bottom                                	INDEX
 SWUL.IDX  	SGI Wise US Long/Short [NEWVA]                    	INDEX     
 SWUT.IDX  	SGI WISE US Top                                   	INDEX     
 SXTR.IDX  	S&P 500 Utilities [Industry Group] [TR]           	INDEX     
+SYFI.IDX  	S&P Con Discret Stocks Above 50-Day Average       	INDEX     
+SYOF.IDX  	S&P Con Discret Stocks Above 150-Day Average      	INDEX     
+SYOH.IDX  	S&P Con Discret Stocks Above 100-Day Average      	INDEX     
+SYTH.IDX  	S&P Con Discret Stocks Above 200-Day Average      	INDEX     
 SYTR.IDX  	S&P 500 Transportation [Industry Group] [TR]      	INDEX     
+SYTW.IDX  	S&P Con Discret Stocks Above 20-Day Average       	INDEX     
 SZTR.IDX  	S&P 500 Retailing [Industry Group] [TR]           	INDEX     
 TA25.IDX  	Tel Aviv 25 Index                                 	INDEX     
 TACK.IDX  	AMEX Tick                                         	INDEX     

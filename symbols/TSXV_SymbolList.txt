@@ -30,7 +30,6 @@ AER       	Alternative Earth Resour                          	TSXV
 AFE       	Africa Energy Corp                                	TSXV      
 AFM       	Alphamin Resources Corp.                          	TSXV      
 AFR       	African Metals Corporati                          	TSXV      
-AFS.H     	Afrasia Mineral Fields Inc.                       	TSXV      
 AFY       	Anthem United Inc                                 	TSXV      
 AGB       	Atlantic Gold Corporatio                          	TSXV      
 AGB.WT    	Atlantic Gold Corp Wts                            	TSXV      
@@ -89,6 +88,7 @@ ANE       	Altan Nevada Minerals Li                          	TSXV
 ANF       	Anfield Nickel Corp.                              	TSXV      
 ANG       	Angel Gold Corp                                   	TSXV      
 ANK       	Angkor Gold Corp                                  	TSXV      
+ANL.H     	Atlantic Industrial Minerals Inc.                 	TSXV      
 ANZ       	Alianza Minerals Ltd                              	TSXV      
 AOS       	Alberta Oilsands Inc.                             	TSXV      
 AOT       	Ascot Resources Ltd.                              	TSXV      
@@ -232,7 +232,6 @@ BRI.WT    	Brazil Resources Inc Wts                          	TSXV
 BRL       	Bearclaw Capital Corp                             	TSXV      
 BRM       	Biorem Inc.                                       	TSXV      
 BRN.PR.A  	Brookfield Investments C                          	TSXV      
-BRO.H     	Barksdale Capital Corp                            	TSXV      
 BRS       	Brs Resources Ltd                                 	TSXV      
 BRU       	Brunswick Resources Inc                           	TSXV      
 BSK       	Blue Sky Uranium Corp                             	TSXV      
@@ -275,7 +274,6 @@ CCD       	Cascadero Copper Corpora                          	TSXV
 CCE       	Commerce Resources Corp.                          	TSXV      
 CCK       	Canada Coal Inc                                   	TSXV      
 CCN.P     	Cortina Capital Corp                              	TSXV      
-CCY       	Catalyst Copper Corp                              	TSXV      
 CD        	Cantex Mine Development                           	TSXV      
 CDA       	Canuc Resources Corporat                          	TSXV      
 CDB       	Cordoba Minerals Corp                             	TSXV      
@@ -306,7 +304,7 @@ CHC       	Chc Student Housing Corp                          	TSXV
 CHK.P     	Campar Capital Corporati                          	TSXV      
 CHN       	China Education Resource                          	TSXV      
 CHQ       	Carrus Capital Corporati                          	TSXV      
-CHY.H     	Cypress Hills Resource C                          	TSXV      
+CID       	Cicada Ventures Ltd.                              	TSXV      
 CIN       	Canadian Intl Minerals I                          	TSXV      
 CIO       	Central Iron Ore Limited                          	TSXV      
 CIP.H     	Canadian International P                          	TSXV      
@@ -400,7 +398,6 @@ CWN       	Cwn Mining Acquisition C                          	TSXV
 CWQ.H     	Curlew Lake Resources Inc                         	TSXV      
 CWS.H     	Cons Westview Res Corp                            	TSXV      
 CWV       	Crown Point Energy Inc                            	TSXV      
-CX        	Carbonone Technologies I                          	TSXV      
 CXB       	Calibre Mining Corp.                              	TSXV      
 CXD       	Cadan Resources Corporat                          	TSXV      
 CXM       	Carmax Mining Corp                                	TSXV      
@@ -412,7 +409,6 @@ CYF       	Canyon Creek Food Co Ltd                          	TSXV
 CYM       	Cymat Technologies Ltd                            	TSXV      
 CYP       	Cypress Development Corp                          	TSXV      
 CYX       	Calyx Bio-Venture Inc.                            	TSXV      
-CZ.H      	0Necassius Ventures Ltd                           	TSXV      
 CZH       	Crazy Horse Resources In                          	TSXV      
 CZO       	Ceapro Inc                                        	TSXV      
 CZX       	Canada Zinc Metals Corp.                          	TSXV      
@@ -522,6 +518,7 @@ ERA       	Elcora Resources Corp                             	TSXV
 ERC       	Eros Resources Corp                               	TSXV      
 ERG       	Ergoresearch Ltd                                  	TSXV      
 ERL.H     	Earl Resources Limited                            	TSXV      
+ERN.H     	Earny Resources Ltd                               	TSXV      
 ERX       	Era Resources Inc                                 	TSXV      
 ES        	Eight Solutions Inc.                              	TSXV      
 ESE       	Estec Systems Corp.                               	TSXV      
@@ -643,6 +640,7 @@ GNH       	Golden Hope Mines Ltd                             	TSXV
 GNT       	Gentor Resources Inc                              	TSXV      
 GOE       	Goldeneye Resources Corp                          	TSXV      
 GOG       	Golden Tag Resources Ltd                          	TSXV      
+GOK       	Ginsms Inc.                                       	TSXV      
 GOM       	Golden Dawn Minerals Inc                          	TSXV      
 GOP       	Gourmet Ocean Products I                          	TSXV      
 GP        	Golden Peak Minerals Inc                          	TSXV      
@@ -667,6 +665,7 @@ GRM       	Goldrock Mines Corp                               	TSXV
 GRR       	Golden Reign Resources L                          	TSXV      
 GRV       	Gold Reach Resources Ltd                          	TSXV      
 GRX.H     	Greenshield Explorations                          	TSXV      
+GRY.H     	Gainey Resources Ltd                              	TSXV      
 GRZ       	Gold Reserve Inc                                  	TSXV      
 GSA       	Groundstar Resources Ltd                          	TSXV      
 GSH       	Golden Share Mining Corp                          	TSXV      
@@ -741,6 +740,7 @@ IBC       	International Bethlehem                           	TSXV
 IBH       	International Barrier Te                          	TSXV      
 IBT       	Ibex Technologies Inc.                            	TSXV      
 ICG       	Integra Gold Corp.                                	TSXV      
+ICL       	Itasca Capital Ltd                                	TSXV      
 ICM       	Iconic Minerals Ltd                               	TSXV      
 ICO       	Ico Therapeutics Inc.                             	TSXV      
 ICU       	Global Copper Group Inc                           	TSXV      
@@ -753,9 +753,11 @@ IDM       	Idm Mining Ltd                                    	TSXV
 IDW       	Id Watchdog Inc.                                  	TSXV      
 IEI       	Imperial Equities Inc.                            	TSXV      
 IES       	Intercept Energy Service                          	TSXV      
+IEX.H     	Icon Exploration Inc                              	TSXV      
 IFD       	Intrinsic4D Inc                                   	TSXV      
 IFR       	International Frontier R                          	TSXV      
 IFX       	Imaflex Inc                                       	TSXV      
+IGC.H     	Igc Resources Inc                                 	TSXV      
 IGD       	Intigold Mines Ltd                                	TSXV      
 IGO       	Independence Gold Corp                            	TSXV      
 IGP       	Imperial Ginseng Product                          	TSXV      
@@ -779,6 +781,7 @@ ION       	Alset Energy Corp                                 	TSXV
 IOT       	Innovotech Inc.                                   	TSXV      
 IOU       	Iou Financial Inc                                 	TSXV      
 IPC       	Iplayco Corporation Ltd.                          	TSXV      
+IPD       	International Parkside P                          	TSXV      
 IPT       	Impact Silver Corp.                               	TSXV      
 IQ        	Airiq Inc.                                        	TSXV      
 IRC       	Ironside Resources Inc                            	TSXV      
@@ -787,6 +790,7 @@ IRO       	Inter-Rock Minerals Inc.                          	TSXV
 IRR       	Inform Resources Corp                             	TSXV      
 IS        	Iron South Mining Corp                            	TSXV      
 ISD       	Isign Media Solutions In                          	TSXV      
+ISS       	International Samuel Exploration Corp             	TSXV      
 ITG       	Intact Gold Corp                                  	TSXV      
 ITM       	Intema Solutions Inc                              	TSXV      
 ITT       	Internet of Things Inc                            	TSXV      
@@ -814,6 +818,7 @@ JTR       	Greenspace Brands Inc                             	TSXV
 JUB       	Jubilee Gold Exploration Ltd                      	TSXV      
 JVL.H     	Javelle Capital Corp                              	TSXV      
 JX        	S&P/TSX Venture Composit                          	TSXV      
+JZR       	Jazz Resources Inc.                               	TSXV      
 KAM       	Kaminak Gold Corporation                          	TSXV      
 KAP       	Kapuskasing Gold Corp                             	TSXV      
 KAR       	Karmin Exploration Inc                            	TSXV      
@@ -837,6 +842,7 @@ KNE       	Kane Biotech Inc                                  	TSXV
 KNG       	Kingsmen Resources Ltd                            	TSXV      
 KNT       	K92 Mining Inc                                    	TSXV      
 KNX       	Knick Exploration Inc.                            	TSXV      
+KR        	Kr Investment Ltd                                 	TSXV      
 KRS       	Kairos Capital Corporati                          	TSXV      
 KS        	Klondike Silver Corp                              	TSXV      
 KSK       	Kiska Metals Corporation                          	TSXV      
@@ -849,18 +855,15 @@ KXM       	Kobex Capital Corp                                	TSXV
 KYS.H     	Kaymus Resources Inc                              	TSXV      
 KYU       	Kaiyue International Inc                          	TSXV      
 KZD       	Kaizen Discovery Inc                              	TSXV      
-KZX       	Kazax Minerals Inc                                	TSXV      
 KZZ       	Nunavik Nickel Mines Ltd                          	TSXV      
 LA        	Los Andes Copper Limited                          	TSXV      
 LAB       	Imperus Technologies Cor                          	TSXV      
 LAD       	New Carolin Gold Corp                             	TSXV      
 LAK       	Lakeside Minerals Inc                             	TSXV      
 LAT       	Latin American Minerals                           	TSXV      
-LBC       	Libero Mining Corporation                         	TSXV      
 LBL       	Lattice Biologics Ltd                             	TSXV      
 LDM       	Lago Dourado Minerals Lt                          	TSXV      
 LEN       	Lund Enterprises Corp                             	TSXV      
-LES       	Leis Industries Limited                           	TSXV      
 LET       	Letho Resources Corp                              	TSXV      
 LGN       	Legend Gold Corp                                  	TSXV      
 LGO       	Largo Resources Ltd.                              	TSXV      
@@ -883,7 +886,6 @@ LMG       	Lincoln Mining Corporati                          	TSXV
 LMR       	Lomiko Metals Inc.                                	TSXV      
 LMT       	Luminor Medical Technologies Inc                  	TSXV      
 LND       	Inspira Financial Inc                             	TSXV      
-LND.DB    	Inspira Financial Inc 4.00 Pct Debs               	TSXV      
 LNE       	Loon Energy Corporation                           	TSXV      
 LOT       	Tomagold Corporation                              	TSXV      
 LPC       	Lorne Park Capital Partn                          	TSXV      
@@ -893,7 +895,6 @@ LRA       	Lara Exploration Ltd                              	TSXV
 LRL       	Luxor Industrial Corpora                          	TSXV      
 LRN       	Kgic Inc                                          	TSXV      
 LSI       	Lonestar West Inc.                                	TSXV      
-LTA.H     	Leeta Gold Corp                                   	TSXV      
 LTX       	Labrador Technologies In                          	TSXV      
 LXE       	Leucrotta Exploration In                          	TSXV      
 M         	Mosaic Capital Corporati                          	TSXV      
@@ -918,7 +919,7 @@ MCG       	Mountain China Resorts H                          	TSXV
 MCI       	Minnova Corp                                      	TSXV      
 MCK       	Manson Creek Resources L                          	TSXV      
 MCM.A     	Matachewan Cons Mines                             	TSXV      
-MCP.P     	Maestro Capital Corporat                          	TSXV      
+MCP.P     	Maestro Capital Corporation                       	TSXV      
 MCR       	Macro Enterprises Inc.                            	TSXV      
 MCS       	Mcchip Resources Inc                              	TSXV      
 MCU       	Mega Copper Ltd.                                  	TSXV      
@@ -937,6 +938,7 @@ MEK       	Metals Creek Resources C                          	TSXV
 MFM       	Marifil Mines Ltd.                                	TSXV      
 MFS       	Medifocus Inc                                     	TSXV      
 MFX       	Minfocus Exploration Cor                          	TSXV      
+MGC.H     	Midasco Capital Corp                              	TSXV      
 MGG       	Minaurum Gold Inc.                                	TSXV      
 MGI       	Magnum Goldcorp Inc                               	TSXV      
 MGW       	Maple Leaf Green World I                          	TSXV      
@@ -958,6 +960,7 @@ MKN       	Makena Resources Inc                              	TSXV
 MKR       	Melkior Resources Inc                             	TSXV      
 MKT       	Deepmarkit Corp                                   	TSXV      
 MKU.H     	Mukuba Resources Limited                          	TSXV      
+ML        	Mercator Minerals Ltd                             	TSXV      
 MLM       	Millstream Mines Ltd.                             	TSXV      
 MLN       	Marlin Gold Mining Ltd                            	TSXV      
 MLR       	Melior Resources Inc                              	TSXV      
@@ -1005,6 +1008,7 @@ MUL.P     	Mercal Capital Corp                               	TSXV
 MUM       	Mustang Minerals Corp.                            	TSXV      
 MUN       	Mundoro Capital Inc                               	TSXV      
 MV        	Movit Media Corp                                  	TSXV      
+MVA.P     	Mira Vii Acquisition Cor                          	TSXV      
 MVD.H     	Mega View Digital Entertainment Corp              	TSXV      
 MVM       	Millenmin Ventures Inc                            	TSXV      
 MVN       	Madalena Energy Inc                               	TSXV      
@@ -1024,7 +1028,6 @@ NAN       	North American Nickel In                          	TSXV
 NAP       	Napier Ventures Inc                               	TSXV      
 NAR       	North Arrow Minerals Inc                          	TSXV      
 NBL.P     	Nobelium Tech Corp                                	TSXV      
-NBO.H     	Nebo Capital Corp                                 	TSXV      
 NBR       	Nubian Resources Ltd                              	TSXV      
 NCA       	Newcastle Gold Ltd                                	TSXV      
 NCE       	Nesscap Energy Inc                                	TSXV      
@@ -1135,6 +1138,7 @@ ONV       	Oronova Resource Corp                             	TSXV
 OOO       	Otis Gold Corp.                                   	TSXV      
 OPS       	Opsens Inc.                                       	TSXV      
 OPW       	Opawica Explorations Inc                          	TSXV      
+ORC.A     	Orca Exploration Group Inc. Cl A                  	TSXV      
 ORC.B     	Orca Exploration Group I                          	TSXV      
 ORE       	0Neorezone Gold Corporation                       	TSXV      
 ORG       	Orca Gold Inc                                     	TSXV      
@@ -1151,6 +1155,7 @@ PA        	Palamina Corp                                     	TSXV
 PAL       	Parallel Mining Corp                              	TSXV      
 PAN       	Pangolin Diamonds Corp                            	TSXV      
 PAV       	Pacific Arc Resources Lt                          	TSXV      
+PAV.H     	Pacific Arc Resources Ltd                         	TSXV      
 PBA.H     	Petro Basin Energy Corp                           	TSXV      
 PBM       	Pacific Bay Minerals Ltd                          	TSXV      
 PBR       	Para Resources Inc                                	TSXV      
@@ -1159,7 +1164,6 @@ PCI       	Perlite Canada Inc.                               	TSXV
 PCO       	Phoenix Canada Oil Co.Lt                          	TSXV      
 PCQ       	Petrolympic Ltd.                                  	TSXV      
 PCR       	Pinecrest Resources Ltd                           	TSXV      
-PDA.H     	Panda Capital Inc                                 	TSXV      
 PDP       	Pediapharm Inc                                    	TSXV      
 PDQ       	Petrodorado Energy Ltd                            	TSXV      
 PE        	Pure Energy Minerals Lim                          	TSXV      
@@ -1181,7 +1185,6 @@ PGS       	Paget Minerals Corp.                              	TSXV
 PGV       	Prodigy Ventures Inc                              	TSXV      
 PGX       	Prosper Gold Corp                                 	TSXV      
 PGZ       	Pan Global Resources Inc                          	TSXV      
-PHC.H     	Phoenix Metals Corporati                          	TSXV      
 PHI       	Philippine Metals Inc                             	TSXV      
 PHL.H     	Planet Health Corp                                	TSXV      
 PHM       	Patient Home Monitoring                           	TSXV      
@@ -1205,6 +1208,7 @@ PMR       	Prime Meridian Resources                          	TSXV
 PMX       	Proam Exploration Corpor                          	TSXV      
 PNG       	Kraken Sonar Inc                                  	TSXV      
 PNN       	Pennine Petroleum Corpor                          	TSXV      
+PNR.H     	Prince Resource Corp                              	TSXV      
 POC       	Pacific Iron Ore Corpora                          	TSXV      
 POE       	Pan Orient Energy Corp.                           	TSXV      
 POR       	Portofino Resources Inc                           	TSXV      
@@ -1294,6 +1298,7 @@ RFC       	Rifco Inc.                                        	TSXV
 RG        	Romios Gold Resources In                          	TSXV      
 RGC       	Redstar Gold Corp.                                	TSXV      
 RGD       	Reunion Gold Corporation                          	TSXV      
+RGI       	Reco International Group Inc.                     	TSXV      
 RGM       	Remington Resources Inc.                          	TSXV      
 RGZ       	Randsburg International                           	TSXV      
 RHA       	Annidis Corporation                               	TSXV      
@@ -1319,6 +1324,7 @@ RNK       	Rainmaker Entertainment                           	TSXV
 RNP       	Royalty North Partners Ltd                        	TSXV      
 ROB       	Red Hut Metals Inc                                	TSXV      
 ROE       	Renaissance Oil Corp                              	TSXV      
+ROE.WT    	Renaissance Oil Corp Wts                          	TSXV      
 ROE.WT.A  	Renaissance Oil Corp Wts A                        	TSXV      
 ROG       	Roxgold Inc.                                      	TSXV      
 ROI       	Route1 Inc.                                       	TSXV      
@@ -1333,7 +1339,6 @@ RPM       	Rye Patch Gold Corp                               	TSXV
 RPR       	Rapier Gold Inc                                   	TSXV      
 RPT       	Arpetrol Ltd                                      	TSXV      
 RPX       	Red Pine Exploration Inc                          	TSXV      
-RQM.H     	Redquest Capital Corp                             	TSXV      
 RRC       	Rockridge Capital Corp.                           	TSXV      
 RRE       	Reg Technologies Inc                              	TSXV      
 RRI       	Riverside Resources Inc.                          	TSXV      
@@ -1341,6 +1346,7 @@ RRL       	Relentless Resources Ltd                          	TSXV
 RRM.H     	Ross River Minerals Inc                           	TSXV      
 RRR.UN    	R and R Real Estate Inve                          	TSXV      
 RRS       	Rogue Resources Inc                               	TSXV      
+RSL       	Royal Sapphire Corp                               	TSXV      
 RST       	Rosita Mining Corporatio                          	TSXV      
 RSV       	Resolve Ventures Inc.                             	TSXV      
 RSY       	Rsi International System                          	TSXV      
@@ -1363,6 +1369,7 @@ RW        	Renoworks Software Inc.                           	TSXV
 RX        	Biosyent Inc.                                     	TSXV      
 RYE       	Rhyolite Resources Ltd                            	TSXV      
 RYO       	Rio Silver Inc                                    	TSXV      
+RYP.H     	Ripper Oil and Gas Inc                            	TSXV      
 RYR       	Royal Road Minerals Limi                          	TSXV      
 RYU       	Ryu Apparel Inc                                   	TSXV      
 RZ        	Revolver Resources Inc                            	TSXV      
@@ -1375,8 +1382,8 @@ SAN       	Solar Alliance Energy Inc                         	TSXV
 SAT       	Asian Television Network                          	TSXV      
 SAY.H     	Sparta Capital Ltd                                	TSXV      
 SB        	Stratabound Minerals Corp                         	TSXV      
-SBG.H     	Spirit Bear Capital Corp                          	TSXV      
 SBM       	Sirona Biochem Corp.                              	TSXV      
+SBO.H     	Schwabo Capital Corp                              	TSXV      
 SBW       	Strongbow Exploration In                          	TSXV      
 SBX       	Sea Breeze Power Corp                             	TSXV      
 SC.H      	Serrano Resources Ltd                             	TSXV      
@@ -1422,7 +1429,6 @@ SIR       	Serengeti Resources Inc.                          	TSXV
 SJL       	Saint Jean Carbon Inc                             	TSXV      
 SJR.A     	Shaw Communications Inc.                          	TSXV      
 SKE       	Skeena Resources Limited                          	TSXV      
-SKK       	Strikewell Energy Corp.                           	TSXV      
 SKP       	Strikepoint Gold Inc.                             	TSXV      
 SKX       	Striker Exploration Corp                          	TSXV      
 SLC       	Slyce Inc                                         	TSXV      
@@ -1522,7 +1528,6 @@ TAE       	Transamerican Energy Inc                          	TSXV
 TAE.H     	Transamerican Energy Inc                          	TSXV      
 TAJ       	Tajiri Resources Corp                             	TSXV      
 TAN       	Tanager Energy Inc                                	TSXV      
-TAR       	Astar Minerals Ltd                                	TSXV      
 TAU       	Tintina Resources Inc.                            	TSXV      
 TBR       	Timberline Resources Cor                          	TSXV      
 TCA       	Timia Capital Corp                                	TSXV      
@@ -1539,6 +1544,8 @@ TGC       	Terra Nova Energy Ltd                             	TSXV
 TGK       	Trio Gold Corp                                    	TSXV      
 TGV       	Tango Mining Limited                              	TSXV      
 TGX       	True North GEMS Inc.                              	TSXV      
+THH       	Theia Resources Ltd.                              	TSXV      
+THM       	Thunder Mountain Gold In                          	TSXV      
 THX       	Thor Explorations Ltd.                            	TSXV      
 TIC       	Titanium Corporation Inc                          	TSXV      
 TII       	Terra Firma Capital Corp                          	TSXV      
@@ -1567,6 +1574,7 @@ TON       	Standard Tolling Corp                             	TSXV
 TOO       	Toro Oil and Gas Ltd                              	TSXV      
 TPC       	Tenth Avenue Petroleum C                          	TSXV      
 TPN       	Taipan Resources Inc.                             	TSXV      
+TQY.H     	Tanqueray Exploration Lt                          	TSXV      
 TRA       	Teras Resources Inc                               	TSXV      
 TRB       	Tribute Resources Inc                             	TSXV      
 TRG.H     	Trigen Resources Inc                              	TSXV      
@@ -1608,7 +1616,6 @@ UBR       	Uragold Bay Resources In                          	TSXV
 UBS.H     	Unique Broadband Systems                          	TSXV      
 UCU       	Ucore Rare Metals Inc                             	TSXV      
 UFC       	Urbanfund Corp.                                   	TSXV      
-UG        	Uge International Ltd                             	TSXV      
 UGD       	Unigold Inc.                                      	TSXV      
 UGE       	Uge International Ltd                             	TSXV      
 UHO       	United Hunter Oil and Ga                          	TSXV      
@@ -1646,7 +1653,6 @@ VIV       	Avivagen Inc                                      	TSXV
 VLA       	Vela Minerals Ltd                                 	TSXV      
 VLC.H     	Velocity Minerals Ltd                             	TSXV      
 VLT       	Voltaic Minerals Corp                             	TSXV      
-VLV       	Venerable Ventures Ltd.                           	TSXV      
 VML       	Viscount Mining Corp                              	TSXV      
 VMY.H     	Voice Mobility Internati                          	TSXV      
 VOL       	Volcanic Metals Corp                              	TSXV      
@@ -1685,6 +1691,7 @@ WCB       	Wcb Resources Ltd                                 	TSXV
 WCC       	Consolidated Woodjam Cop                          	TSXV      
 WCE       	Wescan Energy Corp                                	TSXV      
 WCX       	Williams Creek Gold Limi                          	TSXV      
+WDG       	Giyani Gold Corp                                  	TSXV      
 WEB       	Westbridge Energy Corpor                          	TSXV      
 WED       	The Westaim Corporation                           	TSXV      
 WEE       	Wavefront Technology Sol                          	TSXV      
@@ -1706,7 +1713,6 @@ WML       	Wealth Minerals Ltd.                              	TSXV
 WMM       	West Melville Metals Inc                          	TSXV      
 WMR       	Westminster Resources Lt                          	TSXV      
 WMT       	West Mountain Environmen                          	TSXV      
-WP        	Western Pacific Trust Co                          	TSXV      
 WPQ       	Wpc Resources Inc                                 	TSXV      
 WR        	Worldwide Resources Corp                          	TSXV      
 WRI       	Waseco Resources Inc.                             	TSXV      
@@ -1717,7 +1723,6 @@ WRY       	Western Troy Cap Res Inc                          	TSXV
 WSE       	Wellstar Energy Corp                              	TSXV      
 WSH.P     	Westshire Capital II Corp                         	TSXV      
 WST       	Westridge Resources Inc                           	TSXV      
-WTR       	Westcore Energy Ltd.                              	TSXV      
 WZR       	Westernzagros Resources                           	TSXV      
 XAG       	Xtierra Inc.                                      	TSXV      
 XBC       	Xebec Adsorption Inc                              	TSXV      
@@ -1729,6 +1734,7 @@ XME       	Xmet Inc                                          	TSXV
 XND       	Xander Resources Inc                              	TSXV      
 XOP       	Canadian Overseas Petrol                          	TSXV      
 XOP.WT    	Canadian Overseas Petroleum Ltd Wts               	TSXV      
+XOP.WT.A  	Canadian Overseas Petroleum Ltd Wts A             	TSXV      
 XTM       	Transition Metals Corp                            	TSXV      
 XTT       	X Terra Resources Inc                             	TSXV      
 XX        	Avante Logixx Inc                                 	TSXV      
