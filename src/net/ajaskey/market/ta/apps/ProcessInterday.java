@@ -10,9 +10,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.InterdayData;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.apps.helpers.InterdaySumData;
 import net.ajaskey.market.ta.input.ParseData;
 

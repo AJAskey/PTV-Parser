@@ -83,7 +83,21 @@ public class ProcessIshares {
 	/** SP600 */
 	static private String	IJR		= "https://www.ishares.com/us/products/239774/ishares-core-sp-smallcap-etf/1449138789749.ajax?fileType=csv&fileName=IJR_holdings&dataType=fund";
 
-	
+	/**
+	 *
+	 * net.ajaskey.market.tools.isNumber
+	 *
+	 * @param s
+	 * @return
+	 */
+	private static boolean isNumber(String s) {
+		try {
+			Long.parseLong(s);
+			return true;
+		} catch (final Exception e) {
+			return false;
+		}
+	}
 
 	/**
 	 *
@@ -115,7 +129,7 @@ public class ProcessIshares {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
@@ -156,22 +170,6 @@ public class ProcessIshares {
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.isNumber
-	 *
-	 * @param s
-	 * @return
-	 */
-	private static boolean isNumber(String s) {
-		try {
-			Long.parseLong(s);
-			return true;
-		} catch (final Exception e) {
-			return false;
-		}
 	}
 
 	/**

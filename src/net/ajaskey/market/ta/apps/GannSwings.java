@@ -6,9 +6,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 
 /**

@@ -1,8 +1,9 @@
 
 package net.ajaskey.market.tools.helpers;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -23,7 +24,7 @@ import java.util.Calendar;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -39,46 +40,48 @@ import java.util.Calendar;
 public class LongShort {
 
 	public enum MarketType {
-		DEALER, PM, LEVERED, OTHER, TOTAL, NONRPT
+		DEALER, PM, LEVERED, OTHER, NONRPT, OI
 	};
-	
+
 	public enum SourceType {
-		NAS100,SP500
+		NDX, SPX, RUT, VIX
 	}
 
-	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyMMdd");
-
-	public MarketType											type;
-	public SourceType                     source;
-	public long														longPos;
-	public long														shortPos;
-	public double													pc;
-	public Calendar												date	= Calendar.getInstance();
+	public MarketType	type;
+	public SourceType	source;
+	public long				longPos;
+	public long				shortPos;
+	public long				spreadPos;
+	public double			pc;
+	public Calendar		date	= null;
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @param d
 	 *
 	 */
-	public LongShort(String l, String s, String d, MarketType mt, SourceType st) {
+	public LongShort(String l, String s, String sp, Calendar d, MarketType mt, SourceType st) {
 		try {
 
-			date.setTime(sdf.parse(d.trim()));
-			type=mt;
-			source=st;
+			this.date = Utils.makeCopy(d);
+			// Utils.printCalendar(date);
+			this.type = mt;
+			this.source = st;
 
-			longPos = Long.parseLong(l.trim());
-			shortPos = Long.parseLong(s.trim());
-			if (longPos > 0) {
-				pc = (double) shortPos / (double) longPos;
+			this.longPos = Long.parseLong(l.trim());
+			this.shortPos = Long.parseLong(s.trim());
+			this.spreadPos = Long.parseLong(sp.trim());
+			if (this.longPos > 0) {
+				this.pc = (double) this.shortPos / (double) this.longPos;
 			} else {
-				pc = 0.0;
+				this.pc = 0.0;
 			}
-		} catch (Exception e) {
-			longPos = 0;
-			shortPos = 0;
-			pc = 0.0;
+		} catch (final Exception e) {
+			this.longPos = 0;
+			this.shortPos = 0;
+			this.spreadPos = 0;
+			this.pc = 0.0;
 			e.printStackTrace();
 		}
 	}

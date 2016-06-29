@@ -29,32 +29,7 @@ public class WebGet {
 	}
 
 	/**
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public static List<String> getSPDR(String url) {
-
-		String response = null;
-		try {
-			response = getFromUrl(url);
-		} catch (final IOException e) {
-			return null;
-		}
-		if (response != null) {
-			final String[] fld = response.split(NL);
-			final List<String> ret = new ArrayList<>();
-
-			for (int knt = 0; knt < fld.length; knt++) {
-				ret.add(fld[knt]);
-			}
-			return ret;
-		}
-		return null;
-	}
-
-	/**
-	 * 
+	 *
 	 * @param url
 	 * @return
 	 */
@@ -62,7 +37,7 @@ public class WebGet {
 
 		String response;
 		try {
-			response = getFromUrl(url);
+			response = WebGet.getFromUrl(url);
 		} catch (final IOException e) {
 			response = null;
 		}
@@ -71,8 +46,8 @@ public class WebGet {
 		if (response != null) {
 			final String[] line = response.split(NL);
 
-			for (String s : line) {
-				String[] fld = s.split(",");
+			for (final String s : line) {
+				final String[] fld = s.split(",");
 
 				if (found) {
 					if (!fld[0].matches("^\\W*$")) {
@@ -86,6 +61,31 @@ public class WebGet {
 
 			}
 			// System.out.println(response);
+			return ret;
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * @param url
+	 * @return
+	 */
+	public static List<String> getSPDR(String url) {
+
+		String response = null;
+		try {
+			response = WebGet.getFromUrl(url);
+		} catch (final IOException e) {
+			return null;
+		}
+		if (response != null) {
+			final String[] fld = response.split(NL);
+			final List<String> ret = new ArrayList<>();
+
+			for (final String element : fld) {
+				ret.add(element);
+			}
 			return ret;
 		}
 		return null;

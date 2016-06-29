@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class provide linear regression data for a set of time/price values. The

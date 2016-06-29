@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.SortTickerRs;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.ta.methods.TaMethods;

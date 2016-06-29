@@ -7,11 +7,13 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.CotsData;
+import net.ajaskey.market.tools.helpers.CotsReports;
 import net.ajaskey.market.tools.helpers.LongShort;
 
 /**
@@ -33,7 +35,7 @@ import net.ajaskey.market.tools.helpers.LongShort;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -48,14 +50,29 @@ import net.ajaskey.market.tools.helpers.LongShort;
  */
 public class ProcessCOTS {
 
-	final static private String		folderPath	= "e:/temp/cots";
-	final static private Charset	charset			= Charset.forName("UTF-8");
-	private static final String		TAB					= "\t";
+	final static private String						folderPath	= "e:/temp/cots";
+	final static private Charset					charset			= Charset.forName("UTF-8");
+	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
+	private static final String						TAB					= "\t";
 
 	/**
-	 * 
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		final Calendar cal = Calendar.getInstance();
+		cal.set(2016, Calendar.JUNE, 14);
+		ProcessCOTS.readAndProcess(cal);
+
+		CotsReports.writeSummary(CotsData.dataPoint, LongShort.SourceType.SPX, cal);
+
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.readAndProcess
-	 * 
+	 *
 	 * 0:Market_and_Exchange_Names 1:As_of_Date_In_Form_YYMMDD
 	 * 2:Report_Date_as_MM_DD_YYYY 3:CFTC_Contract_Market_Code 4:CFTC_Market_Code
 	 * 5:CFTC_Region_Code 6:CFTC_Commodity_Code 7:Open_Interest_All
@@ -99,9 +116,10 @@ public class ProcessCOTS {
 	 *
 	 */
 
-	private static void readAndProcess() {
+	private static void readAndProcess(Calendar cal) {
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
+		final Calendar rptDate = Calendar.getInstance();
 
 		for (final File file : listOfFiles) {
 			if (file.isFile()) {
@@ -111,16 +129,39 @@ public class ProcessCOTS {
 					String line = reader.readLine(); // Header
 
 					while ((line = reader.readLine()) != null) {
-						String fld[] = line.trim().split(TAB);
-						String name = fld[0].trim();
-						if (name.contains("NASDAQ-100 Consolidated")) {
-							CotsData.setDataPoint(fld[8], fld[9], fld[1], LongShort.MarketType.DEALER, LongShort.SourceType.NAS100);
-							CotsData.setDataPoint(fld[11], fld[12], fld[1], LongShort.MarketType.PM, LongShort.SourceType.NAS100);
-						} else if (name.contains("S&P 500 STOCK INDEX")) {
-							CotsData.setDataPoint(fld[8], fld[9], fld[1], LongShort.MarketType.DEALER, LongShort.SourceType.SP500);
-							CotsData.setDataPoint(fld[11], fld[12], fld[1], LongShort.MarketType.PM, LongShort.SourceType.SP500);
+						final String fld[] = line.trim().split(TAB);
+						final String name = fld[0].trim();
+						final String day = fld[1].trim();
+						try {
+							rptDate.setTime(sdf.parse(day));
+						} catch (final ParseException e) {
+							rptDate.set(1950, Calendar.DECEMBER, 25);
+							e.printStackTrace();
 						}
 
+						// Filter on date if provided.
+						if ((cal == null) || (Utils.sameDate(cal, rptDate))) {
+
+							LongShort.SourceType st = null;
+							if (name.contains("NASDAQ-100 Consolidated")) {
+								st = LongShort.SourceType.NDX;
+							} else if (name.contains("S&P 500 Consolidated")) {
+								st = LongShort.SourceType.SPX;
+							} else if (name.contains("RUSSELL 2000 MINI")) {
+								st = LongShort.SourceType.RUT;
+							} else if (name.contains("VIX FUTURES")) {
+								st = LongShort.SourceType.VIX;
+							}
+							if (st != null) {
+								CotsData.setDataPoint(fld[7], fld[7], "0", rptDate, LongShort.MarketType.OI, st);
+								CotsData.setDataPoint(fld[8], fld[9], fld[10], rptDate, LongShort.MarketType.DEALER, st);
+								CotsData.setDataPoint(fld[11], fld[12], fld[13], rptDate, LongShort.MarketType.PM, st);
+								CotsData.setDataPoint(fld[14], fld[15], fld[16], rptDate, LongShort.MarketType.LEVERED, st);
+								CotsData.setDataPoint(fld[17], fld[18], fld[19], rptDate, LongShort.MarketType.OTHER, st);
+								CotsData.setDataPoint(fld[22], fld[23], "0", rptDate, LongShort.MarketType.NONRPT, st);
+							}
+
+						}
 					}
 
 				} catch (final IOException e) {
@@ -128,22 +169,6 @@ public class ProcessCOTS {
 				}
 			}
 		}
-
-		for (LongShort ls : CotsData.dataPoint) {
-			System.out.println(Utils.stringDate(ls.date) + TAB + ls.source + TAB + ls.type + TAB + ls.longPos + TAB
-			    + ls.shortPos + TAB + ls.pc);
-		}
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		readAndProcess();
-
 	}
 
 }

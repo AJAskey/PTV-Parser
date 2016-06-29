@@ -4,6 +4,8 @@ package net.ajaskey.market.ta;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.Utils;
+
 /**
  *
  * This class serves as a container for daily price and volume data for a

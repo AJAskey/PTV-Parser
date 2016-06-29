@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Map;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -51,7 +51,7 @@ public class DtsReports {
 	final static private String					NL					= System.getProperty("line.separator");
 	final static private String					TAB					= "\t";
 	final static private String					COMMA				= ",";
-	final static private String					COMMA2				= ",,";
+	final static private String					COMMA2			= ",,";
 
 	/**
 	 *
@@ -74,8 +74,62 @@ public class DtsReports {
 		return str;
 	}
 
+	public static void dumpCompareCorporateMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
+
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-corporate-" + monStr + ".txt")) {
+			pw.println("Corporate data =>" + NL);
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						String str = DtsData.formatDate(dPast.getDate());
+						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
+						pw.println(str + DtsReports.genTallyDiffReport(dPast.getCorp(), dRecent.getCorp()));
+						lastDay = cDay;
+					}
+				}
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void dumpCompareIndividualMonths(int yearRecent, int yearPast, int month) {
+		DtsReports.init();
+
+		int lastDay = 0;
+		final String monStr = DtsReports.findName(mNames, month);
+		try (PrintWriter pw = new PrintWriter("out/dts-individual-" + monStr + ".txt")) {
+			pw.println("Individual data =>" + NL);
+			for (int i = 0; i < 23; i++) {
+				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
+				final DtsData dPast = DtsData.findData(i, month, yearPast);
+				if ((dRecent != null) && (dPast != null)) {
+					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
+					if (cDay > lastDay) {
+						String str = DtsData.formatDate(dPast.getDate());
+						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
+						pw.println(str + DtsReports.genTallyDiffReport(dPast.getInd(), dRecent.getInd()));
+						lastDay = cDay;
+					}
+				}
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.dumpCompareMonths
 	 *
 	 * @param yearRecent
@@ -145,60 +199,6 @@ public class DtsReports {
 		}
 	}
 
-	public static void dumpCompareIndividualMonths(int yearRecent, int yearPast, int month) {
-		DtsReports.init();
-
-		int lastDay = 0;
-		final String monStr = DtsReports.findName(mNames, month);
-		try (PrintWriter pw = new PrintWriter("out/dts-individual-" + monStr + ".txt")) {
-			pw.println("Individual data =>" + NL);
-			for (int i = 0; i < 23; i++) {
-				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
-				final DtsData dPast = DtsData.findData(i, month, yearPast);
-				if ((dRecent != null) && (dPast != null)) {
-					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
-					if (cDay > lastDay) {
-						String str = DtsData.formatDate(dPast.getDate());
-						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
-						pw.println(str + DtsReports.genTallyDiffReport(dPast.getInd(), dRecent.getInd()));
-						lastDay = cDay;
-					}
-				}
-			}
-
-		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public static void dumpCompareCorporateMonths(int yearRecent, int yearPast, int month) {
-		DtsReports.init();
-
-		int lastDay = 0;
-		final String monStr = DtsReports.findName(mNames, month);
-		try (PrintWriter pw = new PrintWriter("out/dts-corporate-" + monStr + ".txt")) {
-			pw.println("Corporate data =>" + NL);
-			for (int i = 0; i < 23; i++) {
-				final DtsData dRecent = DtsData.findData(i, month, yearRecent);
-				final DtsData dPast = DtsData.findData(i, month, yearPast);
-				if ((dRecent != null) && (dPast != null)) {
-					final int cDay = dRecent.getDate().get(Calendar.DAY_OF_MONTH);
-					if (cDay > lastDay) {
-						String str = DtsData.formatDate(dPast.getDate());
-						str += NL + DtsData.formatDate(dRecent.getDate()) + NL;
-						pw.println(str + DtsReports.genTallyDiffReport(dPast.getCorp(), dRecent.getCorp()));
-						lastDay = cDay;
-					}
-				}
-			}
-
-		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.findName
@@ -216,6 +216,17 @@ public class DtsReports {
 		return "NotFound";
 	}
 
+	public static String genCsvData(DtsData d) {
+		String ret = Utils.stringDate(d.getDate());
+		ret += COMMA2 + d.getWith().monthly + COMMA2 + d.getWith().yearly;
+		ret += COMMA2 + d.getInd().monthly + COMMA2 + d.getInd().yearly;
+		ret += COMMA2 + d.getCorp().monthly + COMMA2 + d.getCorp().yearly;
+		final long tot = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
+		ret += COMMA2 + tot;
+
+		return ret;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.genDiffReport
@@ -230,11 +241,16 @@ public class DtsReports {
 			return "Invalid data!";
 		}
 
+		// Utils.printCalendar(dOlder.getDate());
+		// Utils.printCalendar(dRecent.getDate());
+
 		String ret = dOlder.toString() + NL + dRecent.toString() + NL;
 
 		final double newMon = dRecent.getWith().monthly + dRecent.getInd().monthly + dRecent.getCorp().monthly;
 		final double oldMon = dOlder.getWith().monthly + dOlder.getInd().monthly + dOlder.getCorp().monthly;
 		final double chgMon = ((newMon - oldMon) / oldMon) * 100.0;
+
+		// System.out.println(newMon+TAB+oldMon+TAB+chgMon);
 
 		final double newTot = dRecent.getWith().yearly + dRecent.getInd().yearly + dRecent.getCorp().yearly;
 		final double oldTot = dOlder.getWith().yearly + dOlder.getInd().yearly + dOlder.getCorp().yearly;
@@ -243,6 +259,20 @@ public class DtsReports {
 		final String s = String.format("\tChange     ==>%18sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgTot);
 
 		ret += s;
+
+		return ret;
+	}
+
+	public static String genLastDataDayReport() {
+		String ret = "Last DTS report ==>" + NL;
+
+		final DtsData dLast = DtsData.dtsList.get(DtsData.dtsList.size() - 1);
+		final Calendar cal = Calendar.getInstance();
+		cal.set(dLast.getDate().get(Calendar.YEAR), dLast.getDate().get(Calendar.MONTH),
+		    dLast.getDate().get(Calendar.DATE));
+		cal.add(Calendar.YEAR, -1);
+		final DtsData dLastYr = DtsData.findData(cal);
+		ret += DtsReports.genDiffReport(dLastYr, dLast);
 
 		return ret;
 	}
@@ -265,54 +295,6 @@ public class DtsReports {
 		return ret;
 	}
 
-	public static String genLastDataDayReport() {
-		String ret = "Last DTS report ==>" + NL;
-
-		final DtsData dLast = DtsData.dtsList.get(DtsData.dtsList.size() - 1);
-		final Calendar cal = Calendar.getInstance();
-		cal.set(dLast.getDate().get(Calendar.YEAR), dLast.getDate().get(Calendar.MONTH),
-		    dLast.getDate().get(Calendar.DATE));
-		cal.add(Calendar.YEAR, -1);
-		final DtsData dLastYr = DtsData.findData(cal);
-		ret += DtsReports.genDiffReport(dLastYr, dLast);
-
-		return ret;
-	}
-
-	public static String genCsvData(DtsData d) {
-		String ret = Utils.stringDate(d.getDate());
-		ret += COMMA2 + d.getWith().monthly + COMMA2 + d.getWith().yearly;
-		ret += COMMA2 + d.getInd().monthly + COMMA2 + d.getInd().yearly;
-		ret += COMMA2 + d.getCorp().monthly + COMMA2 + d.getCorp().yearly;
-		long tot = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
-		ret += COMMA2 + tot;
-
-		return ret;
-	}
-
-	public static void writeEomCsv(Calendar startDate) {
-
-		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
-			
-			pw.println(",,Withheld,,,,Individual,,,,Corporate,,,,Total");
-			pw.println("Date,,EOM,,YTD,,EOM,,YTD,,EOM,,YTD,,YTD");
-
-			DtsData d = DtsData.findLastOfMonthData(startDate.get(Calendar.MONTH), startDate.get(Calendar.YEAR));
-
-			while (d != null) {
-				pw.println(genCsvData(d));
-				Calendar cal = Calendar.getInstance();
-				cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
-				cal.add(Calendar.MONTH, 1);
-				d = DtsData.findLastOfMonthData(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
-
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.init
@@ -326,6 +308,29 @@ public class DtsReports {
 			mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
 			initialized = true;
 		}
+	}
+
+	public static void writeEomCsv(Calendar startDate) {
+
+		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
+
+			pw.println(",,Withheld,,,,Individual,,,,Corporate,,,,Total");
+			pw.println("Date,,EOM,,YTD,,EOM,,YTD,,EOM,,YTD,,YTD");
+
+			DtsData d = DtsData.findLastOfMonthData(startDate.get(Calendar.MONTH), startDate.get(Calendar.YEAR));
+
+			while (d != null) {
+				pw.println(DtsReports.genCsvData(d));
+				final Calendar cal = Calendar.getInstance();
+				cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+				cal.add(Calendar.MONTH, 1);
+				d = DtsData.findLastOfMonthData(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+
+			}
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

@@ -14,7 +14,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.DtsData;
 import net.ajaskey.market.tools.helpers.DtsReports;
 import net.ajaskey.market.tools.helpers.DtsSorter;

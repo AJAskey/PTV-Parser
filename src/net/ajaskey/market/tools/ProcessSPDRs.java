@@ -15,7 +15,30 @@ public class ProcessSPDRs {
 	// private static PrintWriter pwAll;
 
 	/**
-	 * 
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+
+		ProcessSPDRs.processSpdr("xlb");
+		ProcessSPDRs.processSpdr("xle");
+		ProcessSPDRs.processSpdr("xlf");
+		ProcessSPDRs.processSpdr("xli");
+		ProcessSPDRs.processSpdr("xlk");
+		ProcessSPDRs.processSpdr("xlp");
+		ProcessSPDRs.processSpdr("xlu");
+		ProcessSPDRs.processSpdr("xlv");
+		ProcessSPDRs.processSpdr("xly");
+		// processSpdr("xlfs");
+		ProcessSPDRs.processSpdr("xlre");
+
+	}
+
+	// https://www.spdrs.com/site-content/xls/DIA_All_Holdings.xls?fund=DIA&docname=All+Holdings&onyx_code1=1286&onyx_code2=1506
+
+	/**
+	 *
 	 * @param spdr
 	 * @throws FileNotFoundException
 	 */
@@ -33,39 +56,16 @@ public class ProcessSPDRs {
 			if (resp.size() > 2) {
 
 				int knt = 0;
-				for (String s : resp) {
+				for (final String s : resp) {
 
 					if (knt > 1) {
-						String str[] = s.split(",");
+						final String str[] = s.split(",");
 						pwComp.println(str[0].replaceAll("\"", ""));
 					}
 					knt++;
 				}
 			}
 		}
-	}
-
-	// https://www.spdrs.com/site-content/xls/DIA_All_Holdings.xls?fund=DIA&docname=All+Holdings&onyx_code1=1286&onyx_code2=1506
-
-	/**
-	 * 
-	 * @param args
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) throws FileNotFoundException {
-
-		processSpdr("xlb");
-		processSpdr("xle");
-		processSpdr("xlf");
-		processSpdr("xli");
-		processSpdr("xlk");
-		processSpdr("xlp");
-		processSpdr("xlu");
-		processSpdr("xlv");
-		processSpdr("xly");
-		// processSpdr("xlfs");
-		processSpdr("xlre");
-
 	}
 
 }

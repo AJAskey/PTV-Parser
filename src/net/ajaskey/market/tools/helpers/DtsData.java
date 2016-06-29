@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -164,6 +164,20 @@ public class DtsData {
 		return chg * 100.0;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.formatDate
+	 *
+	 * @param date
+	 * @return
+	 */
+	public static String formatDate(Calendar date) {
+		String str = Utils.stringCalendar(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
+		str += "\t" + DtsData.getDataDaysInYear(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		str += "\t"
+		    + DtsData.getDataDaysInMonth(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		return str;
+	}
 
 	/**
 	 *
@@ -398,34 +412,9 @@ public class DtsData {
 		}
 	}
 
-	public String toWithheldString() {
-		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getDataDaysInYear(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
-		    this.date.get(Calendar.YEAR));
-		str += "\t" + DtsData.getDataDaysInMonth(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
-		    this.date.get(Calendar.YEAR));
-		str += String.format("%n\tWithheld   ==> %s%n", this.with);
-		return str;
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.helpers.formatDate
-	 *
-	 * @param date
-	 * @return
-	 */
-	public static String formatDate(Calendar date) {
-		String str = Utils.stringCalendar(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getDataDaysInYear(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
-		str += "\t"
-		    + DtsData.getDataDaysInMonth(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
-		return str;
-	}
-
 	@Override
 	public String toString() {
-		String str = formatDate(this.date);
+		String str = DtsData.formatDate(this.date);
 
 		final long dtot = this.getWith().daily + this.getInd().daily + this.getCorp().daily;
 		final long mtot = this.getWith().monthly + this.getInd().monthly + this.getCorp().monthly;
@@ -433,6 +422,16 @@ public class DtsData {
 		str += String.format(
 		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%sDaily:%7d    MTD:%9d    YTD:%10d",
 		    this.with, this.ind, this.corp, " ", dtot, mtot, ytot);
+		return str;
+	}
+
+	public String toWithheldString() {
+		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
+		str += "\t" + DtsData.getDataDaysInYear(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
+		    this.date.get(Calendar.YEAR));
+		str += "\t" + DtsData.getDataDaysInMonth(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
+		    this.date.get(Calendar.YEAR));
+		str += String.format("%n\tWithheld   ==> %s%n", this.with);
 		return str;
 	}
 

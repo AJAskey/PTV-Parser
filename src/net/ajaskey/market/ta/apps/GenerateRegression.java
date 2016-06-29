@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.Utils;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.methods.RegressionMethods;
 import net.ajaskey.market.ta.methods.RegressionOutput;

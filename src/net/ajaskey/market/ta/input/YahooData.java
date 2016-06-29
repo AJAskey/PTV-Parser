@@ -9,7 +9,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.ajaskey.market.ta.Utils;
+import net.ajaskey.market.misc.Utils;
 
 /**
  * @author Andy Askey
