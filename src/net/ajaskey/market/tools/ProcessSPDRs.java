@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.tools.helpers.WebGet;
+
 public class ProcessSPDRs {
 
 	// private static String sDummy =

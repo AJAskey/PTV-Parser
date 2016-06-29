@@ -50,7 +50,7 @@ import net.ajaskey.market.tools.helpers.LongShort;
  */
 public class ProcessCOTS {
 
-	final static private String						folderPath	= "e:/temp/cots";
+	final static private String						folderPath	= "i:/temp/cots";
 	final static private Charset					charset			= Charset.forName("UTF-8");
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
 	private static final String						TAB					= "\t";
