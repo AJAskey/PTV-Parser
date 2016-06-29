@@ -109,22 +109,6 @@ public class Utils {
 	}
 
 	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	private static void init() {
-		if (!initialized) {
-			Utils.baseDate.set(Calendar.YEAR, 1900);
-			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
-			Utils.baseDate.set(Calendar.HOUR, 0);
-			Utils.baseDate.set(Calendar.MINUTE, 0);
-			Utils.baseDate.set(Calendar.SECOND, 1);
-			Utils.baseDate.set(Calendar.MILLISECOND, 0);
-			initialized = true;
-		}
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.makeCopy
 	 *
@@ -228,6 +212,22 @@ public class Utils {
 			return sdf.format(cal.getTime());
 		}
 		return "";
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	private static void init() {
+		if (!initialized) {
+			Utils.baseDate.set(Calendar.YEAR, 1900);
+			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
+			Utils.baseDate.set(Calendar.HOUR, 0);
+			Utils.baseDate.set(Calendar.MINUTE, 0);
+			Utils.baseDate.set(Calendar.SECOND, 1);
+			Utils.baseDate.set(Calendar.MILLISECOND, 0);
+			initialized = true;
+		}
 	}
 
 }

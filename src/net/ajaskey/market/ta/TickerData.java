@@ -53,8 +53,12 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  */
 public class TickerData {
 
+	final static private String		TAB				= "\t";
+	final static private String		NL				= System.lineSeparator();
 	private String								ticker;
+
 	private String								tickerName;
+
 	private String								tickerExchange;
 
 	private Fundamentals					fundies;
@@ -65,9 +69,7 @@ public class TickerData {
 	 * Derived values
 	 */
 	private Integer								daysOfData;
-
 	private DerivedData						derived;
-
 	private Double								sma23;
 	private Double								smaPerc23;
 	private TrendType							sma23Trend;
@@ -118,11 +120,9 @@ public class TickerData {
 	private double								lrAngle260;
 	private double								lrInt260;
 	private double								lrSlope260;
+
 	private double								rsi14;
 	private final TaMethods				taMethods	= new TaMethods();
-
-	final static private String		TAB				= "\t";
-	final static private String		NL				= System.lineSeparator();
 
 	/**
 	 *
@@ -223,7 +223,7 @@ public class TickerData {
 			for (final TickerData t : tdList) {
 				t.generateDerived(false);
 			}
-		} catch (FileNotFoundException e) {
+		} catch (final FileNotFoundException e) {
 		}
 		return tdList;
 	}
@@ -891,6 +891,17 @@ public class TickerData {
 		return this.mfi65;
 	}
 
+	public double getOi(int day) {
+		return this.oiData[day];
+	}
+
+	/**
+	 * @return the openData
+	 */
+	public double[] getOiData() {
+		return this.oiData;
+	}
+
 	public double getOpen(int day) {
 		return this.openData[day];
 	}
@@ -1087,16 +1098,15 @@ public class TickerData {
 	public double[] getVolumeData() {
 		return this.volumeData;
 	}
-	
-	public double getOi(int day) {
-		return this.oiData[day];
-	}
 
 	/**
-	 * @return the openData
+	 *
+	 * net.ajaskey.market.ta.rSort
+	 *
 	 */
-	public double[] getOiData() {
-		return this.oiData;
+	public void rSort() {
+		Collections.sort(this.data, new SortDailyDataReverse());
+		this.fillDataArrays(0, true);
 	}
 
 	/**
@@ -1117,6 +1127,17 @@ public class TickerData {
 	 */
 	public void setTickerExchange(String tickerExchange) {
 		this.tickerExchange = tickerExchange;
+	}
+
+	@Override
+	public String toString() {
+		String str = this.ticker + TAB + this.tickerName + TAB + this.tickerExchange + NL;
+		for (final DailyData dd : this.data) {
+			str += TAB + dd.toString() + NL;
+		}
+
+		return str;
+
 	}
 
 	/**
@@ -1242,26 +1263,5 @@ public class TickerData {
 		if (this.daysOfData > 65) {
 			this.rsStRaw = this.setRawStRS();
 		}
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.rSort
-	 *
-	 */
-	public void rSort() {
-		Collections.sort(this.data, new SortDailyDataReverse());
-		fillDataArrays(0, true);
-	}
-
-	@Override
-	public String toString() {
-		String str = ticker + TAB + tickerName + TAB + tickerExchange + NL;
-		for (DailyData dd : data) {
-			str += TAB + dd.toString() + NL;
-		}
-
-		return str;
-
 	}
 }

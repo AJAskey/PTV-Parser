@@ -118,19 +118,19 @@ public class DailyBreadth {
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\nasdaq100-list.txt"));
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		final List<TickerData> tdNdxList = ParseData.parseFiles(filenames, 370);
-		DailyBreadthData dbNdx = new DailyBreadthData(tdNdxList);
+		final DailyBreadthData dbNdx = new DailyBreadthData(tdNdxList);
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\sp500-list.txt"));
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		final List<TickerData> tdSpxList = ParseData.parseFiles(filenames, 370);
-		DailyBreadthData dbSpx = new DailyBreadthData(tdSpxList);
+		final DailyBreadthData dbSpx = new DailyBreadthData(tdSpxList);
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\sp600-list.txt"));
 		filenames.add(dataPath + "\\ASCII\\AMEX");
 		final List<TickerData> tdSp600List = ParseData.parseFiles(filenames, 370);
-		DailyBreadthData dbSp600 = new DailyBreadthData(tdSp600List);
+		final DailyBreadthData dbSp600 = new DailyBreadthData(tdSp600List);
 
 		System.out.println("NASD\t" + dbNaz.toString());
 		System.out.println("NYSE\t" + dbNyse.toString());

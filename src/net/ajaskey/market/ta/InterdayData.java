@@ -58,23 +58,23 @@ public class InterdayData {
 	 *
 	 */
 	public InterdayData() {
-		ticker = "none";
-		sumUp = 0;
-		sumDown = 0;
-		sumForceUp = 0;
-		sumForceDown = 0;
-		sumVol = 0;
-		dayLow = 999999.9;
-		dayOpen = -1.0;
-		dayClose = 0;
-		updates = 0;
-		dayHigh = -999999.9;
-		priceRange = 0;
-		upDownDiff = 0;
-		forceDiff = 0;
-		forceVolume = 0.0;
-		rangePercent = 0;
-		td = null;
+		this.ticker = "none";
+		this.sumUp = 0;
+		this.sumDown = 0;
+		this.sumForceUp = 0;
+		this.sumForceDown = 0;
+		this.sumVol = 0;
+		this.dayLow = 999999.9;
+		this.dayOpen = -1.0;
+		this.dayClose = 0;
+		this.updates = 0;
+		this.dayHigh = -999999.9;
+		this.priceRange = 0;
+		this.upDownDiff = 0;
+		this.forceDiff = 0;
+		this.forceVolume = 0.0;
+		this.rangePercent = 0;
+		this.td = null;
 	}
 
 	/**
@@ -125,122 +125,122 @@ public class InterdayData {
 	}
 
 	/**
-	 * @return the ticker
-	 */
-	public String getTicker() {
-		return ticker;
-	}
-
-	/**
-	 * @return the sumUp
-	 */
-	public int getSumUp() {
-		return sumUp;
-	}
-
-	/**
-	 * @return the sumDown
-	 */
-	public int getSumDown() {
-		return sumDown;
-	}
-
-	/**
-	 * @return the sumForceUp
-	 */
-	public double getSumForceUp() {
-		return sumForceUp;
-	}
-
-	/**
-	 * @return the sumForceDown
-	 */
-	public double getSumForceDown() {
-		return sumForceDown;
-	}
-
-	/**
-	 * @return the sumVol
-	 */
-	public long getSumVol() {
-		return sumVol;
-	}
-
-	/**
-	 * @return the dayLow
-	 */
-	public double getDayLow() {
-		return dayLow;
-	}
-
-	/**
-	 * @return the dayOpen
-	 */
-	public double getDayOpen() {
-		return dayOpen;
-	}
-
-	/**
 	 * @return the dayClose
 	 */
 	public double getDayClose() {
-		return dayClose;
-	}
-
-	/**
-	 * @return the updates
-	 */
-	public int getUpdates() {
-		return updates;
+		return this.dayClose;
 	}
 
 	/**
 	 * @return the dayHigh
 	 */
 	public double getDayHigh() {
-		return dayHigh;
+		return this.dayHigh;
 	}
 
 	/**
-	 * @return the priceRange
+	 * @return the dayLow
 	 */
-	public double getPriceRange() {
-		return priceRange;
+	public double getDayLow() {
+		return this.dayLow;
 	}
 
 	/**
-	 * @return the upDownDiff
+	 * @return the dayOpen
 	 */
-	public int getUpDownDiff() {
-		return upDownDiff;
+	public double getDayOpen() {
+		return this.dayOpen;
 	}
 
 	/**
 	 * @return the forceDiff
 	 */
 	public long getForceDiff() {
-		return forceDiff;
+		return this.forceDiff;
 	}
 
 	/**
 	 * @return the forceVolume
 	 */
 	public double getForceVolume() {
-		return forceVolume;
+		return this.forceVolume;
+	}
+
+	/**
+	 * @return the priceRange
+	 */
+	public double getPriceRange() {
+		return this.priceRange;
 	}
 
 	/**
 	 * @return the rangePercent
 	 */
 	public double getRangePercent() {
-		return rangePercent;
+		return this.rangePercent;
+	}
+
+	/**
+	 * @return the sumDown
+	 */
+	public int getSumDown() {
+		return this.sumDown;
+	}
+
+	/**
+	 * @return the sumForceDown
+	 */
+	public double getSumForceDown() {
+		return this.sumForceDown;
+	}
+
+	/**
+	 * @return the sumForceUp
+	 */
+	public double getSumForceUp() {
+		return this.sumForceUp;
+	}
+
+	/**
+	 * @return the sumUp
+	 */
+	public int getSumUp() {
+		return this.sumUp;
+	}
+
+	/**
+	 * @return the sumVol
+	 */
+	public long getSumVol() {
+		return this.sumVol;
 	}
 
 	/**
 	 * @return the td
 	 */
 	public TickerData getTd() {
-		return td;
+		return this.td;
+	}
+
+	/**
+	 * @return the ticker
+	 */
+	public String getTicker() {
+		return this.ticker;
+	}
+
+	/**
+	 * @return the updates
+	 */
+	public int getUpdates() {
+		return this.updates;
+	}
+
+	/**
+	 * @return the upDownDiff
+	 */
+	public int getUpDownDiff() {
+		return this.upDownDiff;
 	}
 
 	/**

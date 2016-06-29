@@ -44,15 +44,15 @@ public class OptionData {
 		PUT, CALL
 	};
 
+	final static private DateFormat	df	= new SimpleDateFormat("dd-MMM-yyyy");
 	private Calendar								opex;
 	private int											level;
 	private OptionType							type;
 	private Calendar								date;
 	private double									price;
 	private long										volume;
-	private long										oi;
 
-	final static private DateFormat	df	= new SimpleDateFormat("dd-MMM-yyyy");
+	private long										oi;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -62,9 +62,10 @@ public class OptionData {
 	 */
 	public OptionData(String str) throws ParseException {
 
-		if (str == null)
+		if (str == null) {
 			return;
-		
+		}
+
 		final String fld[] = str.split("_");
 		if (fld.length == 4) {
 			this.setOpex(fld[1]);
@@ -128,6 +129,36 @@ public class OptionData {
 	}
 
 	/**
+	 *
+	 * net.ajaskey.market.ta.apps.helpers.setData
+	 *
+	 * @param cal
+	 * @param pr
+	 * @param vol
+	 * @param interest
+	 * @throws ParseException
+	 */
+	public void setData(Calendar cal, double pr, long vol, long interest) throws ParseException {
+		if (this.date == null) {
+			this.date = Calendar.getInstance();
+			this.date.set(1900, 1, 1);
+			this.setPrice(pr);
+			this.setVolume(vol);
+			this.setOi(interest);
+		}
+		if (cal.compareTo(this.date) > 0) {
+			this.date = cal;
+			this.setPrice(pr);
+			this.setVolume(vol);
+			this.setOi(interest);
+		}
+	}
+
+	public void setOi(long interest) {
+		this.oi = interest;
+	}
+
+	/**
 	 * @param opex
 	 *          the opex to set
 	 * @throws ParseException
@@ -149,37 +180,5 @@ public class OptionData {
 
 	public void setVolume(long vol) {
 		this.volume = vol;
-	}
-
-	public void setOi(long interest) {
-		this.oi = interest;
-	}
-
-	
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.apps.helpers.setData
-	 *
-	 * @param cal
-	 * @param pr
-	 * @param vol
-	 * @param interest
-	 * @throws ParseException
-	 */
-	public void setData(Calendar cal, double pr, long vol, long interest) throws ParseException {
-		if (this.date == null) {
-			this.date = Calendar.getInstance();
-			date.set(1900, 1, 1);
-			setPrice(pr);
-			setVolume(vol);
-			setOi(interest);
-			}
-		if (cal.compareTo(date) > 0) {
-			this.date = cal;
-			setPrice(pr);
-			setVolume(vol);
-			setOi(interest);
-		}
 	}
 }

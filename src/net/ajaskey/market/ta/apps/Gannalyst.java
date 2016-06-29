@@ -15,7 +15,7 @@ import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 
 /**
- * 
+ *
  * This class generates the data used by the Gannalyst program found @
  * http://gannalyst-professional.software.informer.com/5.0
  *
@@ -35,7 +35,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF

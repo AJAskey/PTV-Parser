@@ -65,20 +65,6 @@ public class ProcessDTS {
 	final static public int				webDownloadDay		= 1;
 
 	/**
-	 *
-	 * net.ajaskey.market.tools.getDateName
-	 *
-	 * @param c
-	 * @return
-	 */
-	private static String getDateName(Calendar c) {
-		if (c != null) {
-			return DtsData.sdf.format(c.getTime()) + "00";
-		}
-		return "";
-	}
-
-	/**
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
@@ -103,6 +89,20 @@ public class ProcessDTS {
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.getDateName
+	 *
+	 * @param c
+	 * @return
+	 */
+	private static String getDateName(Calendar c) {
+		if (c != null) {
+			return DtsData.sdf.format(c.getTime()) + "00";
+		}
+		return "";
 	}
 
 	/**
@@ -149,7 +149,6 @@ public class ProcessDTS {
 	 * net.ajaskey.market.tools.updateDtsFiles
 	 *
 	 */
-	@SuppressWarnings("unused")
 	private static void updateDtsFiles() {
 		Utils.makeDir(folderPath);
 

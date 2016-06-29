@@ -55,10 +55,10 @@ public class InterdaySumData {
 		this.totForceUp = 0;
 		this.totForceDown = 0;
 		this.priceInRng = 0.0;
-		upperRange = 0;
-		lowerRange = 0;
-		upOnVolume = 0;
-		downOnVolume = 0;
+		this.upperRange = 0;
+		this.lowerRange = 0;
+		this.upOnVolume = 0;
+		this.downOnVolume = 0;
 	}
 
 }

@@ -9,7 +9,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
@@ -124,8 +123,8 @@ public class DumpTickerData {
 
 				td.generateDerived(false);
 
-				writePTVData(td);
-				//writeMAData(td);
+				DumpTickerData.writePTVData(td);
+				// writeMAData(td);
 
 			}
 		}
@@ -133,7 +132,28 @@ public class DumpTickerData {
 	}
 
 	/**
-	 * 
+	 *
+	 * net.ajaskey.market.ta.apps.writeMAData
+	 *
+	 * @param td
+	 * @throws FileNotFoundException
+	 */
+	private static void writeMAData(TickerData td) throws FileNotFoundException {
+		try (PrintWriter pw = new PrintWriter("ma-data\\" + td.getTicker() + ".txt")) {
+			td.rSort();
+			// pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
+			System.out.println("Processing " + td.getTicker());
+			for (int i = 0; i < td.getDaysOfData(); i++) {
+				final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+				final String sDate = sdf.format(td.getDate(i).getTime()) + ",16:00:00";
+				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+				    (int) td.getVolume(i));
+			}
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.apps.writePTVData
 	 *
 	 * @param td
@@ -165,27 +185,6 @@ public class DumpTickerData {
 					pw1.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
 					    (int) td.getVolume(i));
 				}
-			}
-		}
-	}
-	
-	/**
-	 * 
-	 * net.ajaskey.market.ta.apps.writeMAData
-	 *
-	 * @param td
-	 * @throws FileNotFoundException
-	 */
-	private static void writeMAData(TickerData td) throws FileNotFoundException {
-		try (PrintWriter pw = new PrintWriter("ma-data\\" + td.getTicker() + ".txt")) {
-			td.rSort();
-			//pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
-			System.out.println("Processing " + td.getTicker());
-			for (int i = 0; i < td.getDaysOfData(); i++) {
-				final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-				final String sDate = sdf.format(td.getDate(i).getTime()) + ",16:00:00";
-				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-				    (int) td.getVolume(i));
 			}
 		}
 	}

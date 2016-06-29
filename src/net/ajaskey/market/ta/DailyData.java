@@ -285,8 +285,9 @@ public class DailyData {
 	@Override
 	public String toString() {
 		final String sDate = this.sdf.format(this.date.getTime());
-		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %5d %5d %9.2f %9.2f%n", sDate, this.open, this.high, this.low,
-		    this.close, (int) (double) (this.volume), (int) (double) (this.oi), this.close * this.volume, this.close*this.oi);
+		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %5d %5d %9.2f %9.2f%n", sDate, this.open, this.high,
+		    this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi), this.close * this.volume,
+		    this.close * this.oi);
 		return ret.trim();
 	}
 

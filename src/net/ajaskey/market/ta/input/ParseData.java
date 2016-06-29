@@ -172,7 +172,7 @@ public class ParseData {
 							// System.out.println("\t" + line);
 
 							if ((fld.length == 7) || ((fld.length == 8) && (fld[0].contains("OEX.XO")))) {
-								
+
 								double oi = 0;
 								if (fld.length == 8) {
 									oi = ParseData.toDouble(fld[7]);

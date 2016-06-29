@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -74,18 +73,17 @@ public class OexOptions {
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\OEX-Options-list.txt"));
 		tdList = ParseData.parseFiles(filenames, 15);
 
-		Calendar today = Calendar.getInstance();
-		
+		final Calendar today = Calendar.getInstance();
+
 		long puts = 0;
 		long calls = 0;
 
-		int i = 0;
-		for (TickerData td : tdList) {
+		for (final TickerData td : tdList) {
 			td.fillDataArrays(0, true);
-			OptionData od = new OptionData(td.getTickerName());
+			final OptionData od = new OptionData(td.getTickerName());
 
 			if (od.getOpex().after(today)) {
-				
+
 				if (od.getType() == OptionData.OptionType.CALL) {
 					calls += od.getOi();
 				} else if (od.getType() == OptionData.OptionType.PUT) {

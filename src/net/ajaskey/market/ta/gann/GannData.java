@@ -23,7 +23,7 @@ import java.util.Calendar;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -37,72 +37,64 @@ import java.util.Calendar;
  *
  */
 public class GannData {
-	
-	//TODO Place price, time, volume knowledge here.
-	
-	
-	/**
-	 * @return the startDate
-	 */
-	public Calendar getStartDate() {
-		return startDate;
-	}
 
+	// TODO Place price, time, volume knowledge here.
 
-	
-	/**
-	 * @return the endDate
-	 */
-	public Calendar getEndDate() {
-		return endDate;
-	}
+	private final Calendar	startDate;
 
+	private final Calendar	endDate;
 
-	
-	/**
-	 * @return the startPrice
-	 */
-	public double getStartPrice() {
-		return startPrice;
-	}
+	private final double		startPrice;
 
+	private final double		endPrice;
 
-	
-	/**
-	 * @return the endPrice
-	 */
-	public double getEndPrice() {
-		return endPrice;
-	}
+	private GannLines				gannLines;
 
-
-	
-	/**
-	 * @return the gannLines
-	 */
-	public GannLines getGannLines() {
-		return gannLines;
-	}
-
-
-	private Calendar startDate;
-	private Calendar endDate;
-	private double startPrice;
-	private double endPrice;
-	
-	private GannLines gannLines;
-	
-	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public GannData(double sPrice, Calendar sDate, double ePrice, Calendar eDate) {
-		startDate = sDate;
-		endDate = eDate;
-		startPrice = sPrice;
-		endPrice = ePrice;
-		
+		this.startDate = sDate;
+		this.endDate = eDate;
+		this.startPrice = sPrice;
+		this.endPrice = ePrice;
+
+	}
+
+	/**
+	 * @return the endDate
+	 */
+	public Calendar getEndDate() {
+		return this.endDate;
+	}
+
+	/**
+	 * @return the endPrice
+	 */
+	public double getEndPrice() {
+		return this.endPrice;
+	}
+
+	/**
+	 * @return the gannLines
+	 */
+	public GannLines getGannLines() {
+		return this.gannLines;
+	}
+
+	/**
+	 * @return the startDate
+	 */
+	public Calendar getStartDate() {
+		return this.startDate;
+	}
+
+	/**
+	 * @return the startPrice
+	 */
+	public double getStartPrice() {
+		return this.startPrice;
 	}
 
 }

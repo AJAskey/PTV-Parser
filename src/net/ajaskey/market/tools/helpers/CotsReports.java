@@ -57,7 +57,7 @@ public class CotsReports {
 		for (final LongShort ls : list) {
 			if (ls.source == st) {
 				if (Utils.sameDate(ls.date, cal)) {
-					String str = String.format("%6.2f", ls.pc);
+					final String str = String.format("%6.2f", ls.pc);
 					System.out.println(Utils.stringDate(ls.date) + TAB + ls.source + TAB + ls.type + TAB + ls.longPos + TAB
 					    + ls.shortPos + TAB + ls.spreadPos + TAB + str);
 
@@ -109,25 +109,25 @@ public class CotsReports {
 			}
 		}
 		if (knt == 6) {
-			double totPC = (double) totShorts / (double) totLongs;
+			final double totPC = (double) totShorts / (double) totLongs;
 			System.out.println(NL);
 			System.out.printf("%s OI : %d  Spread Positions : %d%n", st, oi.longPos, totSpread);
 			System.out.printf("%19sLong      Short    Short/Long  %%-Longs    %%-Shorts %n", " ");
-			String fmt = "%-10s : %10d %10d %10.2f %10.2f%% %10.2f%% %n";
-			double percl = (double) dealer.longPos / (double) totLongs * 100.0;
-			double percs = (double) dealer.shortPos / (double) totShorts * 100.0;
+			final String fmt = "%-10s : %10d %10d %10.2f %10.2f%% %10.2f%% %n";
+			double percl = ((double) dealer.longPos / (double) totLongs) * 100.0;
+			double percs = ((double) dealer.shortPos / (double) totShorts) * 100.0;
 			System.out.printf(fmt, dealer.type, dealer.longPos, dealer.shortPos, dealer.pc, percl, percs);
-			percl = (double) pm.longPos / (double) totLongs * 100.0;
-			percs = (double) pm.shortPos / (double) totShorts * 100.0;
+			percl = ((double) pm.longPos / (double) totLongs) * 100.0;
+			percs = ((double) pm.shortPos / (double) totShorts) * 100.0;
 			System.out.printf(fmt, pm.type, pm.longPos, pm.shortPos, pm.pc, percl, percs);
-			percl = (double) levered.longPos / (double) totLongs * 100.0;
-			percs = (double) levered.shortPos / (double) totShorts * 100.0;
+			percl = ((double) levered.longPos / (double) totLongs) * 100.0;
+			percs = ((double) levered.shortPos / (double) totShorts) * 100.0;
 			System.out.printf(fmt, levered.type, levered.longPos, levered.shortPos, levered.pc, percl, percs);
-			percl = (double) other.longPos / (double) totLongs * 100.0;
-			percs = (double) other.shortPos / (double) totShorts * 100.0;
+			percl = ((double) other.longPos / (double) totLongs) * 100.0;
+			percs = ((double) other.shortPos / (double) totShorts) * 100.0;
 			System.out.printf(fmt, other.type, other.longPos, other.shortPos, other.pc, percl, percs);
-			percl = (double) nonrpt.longPos / (double) totLongs * 100.0;
-			percs = (double) nonrpt.shortPos / (double) totShorts * 100.0;
+			percl = ((double) nonrpt.longPos / (double) totLongs) * 100.0;
+			percs = ((double) nonrpt.shortPos / (double) totShorts) * 100.0;
 			System.out.printf(fmt, nonrpt.type, nonrpt.longPos, nonrpt.shortPos, nonrpt.pc, percl, percs);
 			percl = 100.0;
 			percs = 100.0;

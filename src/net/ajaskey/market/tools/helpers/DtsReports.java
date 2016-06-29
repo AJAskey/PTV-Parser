@@ -295,21 +295,6 @@ public class DtsReports {
 		return ret;
 	}
 
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.init
-	 *
-	 */
-	private static void init() {
-
-		if (!initialized) {
-			final Calendar baseCal = Calendar.getInstance();
-			mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
-			mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
-			initialized = true;
-		}
-	}
-
 	public static void writeEomCsv(Calendar startDate) {
 
 		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
@@ -331,6 +316,21 @@ public class DtsReports {
 			e.printStackTrace();
 		}
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.init
+	 *
+	 */
+	private static void init() {
+
+		if (!initialized) {
+			final Calendar baseCal = Calendar.getInstance();
+			mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+			mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
+			initialized = true;
+		}
 	}
 
 }

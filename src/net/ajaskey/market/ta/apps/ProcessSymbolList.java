@@ -172,9 +172,45 @@ public class ProcessSymbolList {
 		pwUSMF.close();
 		pwOPRA.close();
 
-		buildOexList();
+		ProcessSymbolList.buildOexList();
 
 		System.out.println("ProcessSymbolList Done.");
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.buildOexList
+	 *
+	 * @throws IOException
+	 *
+	 */
+	private static void buildOexList() throws IOException {
+		System.out.println("in OexList");
+
+		final String iFile = "symbols\\OPRA_SymbolList.txt";
+		final File file = new File(iFile);
+		if (file.exists()) {
+
+			final PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
+
+			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
+
+				String line = br.readLine();
+
+				while (line != null) {
+
+					if (line.contains("OEX.X")) {
+						final String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
+						    .replaceAll("Call_", "Call") + "\tOPRA";
+						oFile.println(str);
+					}
+					line = br.readLine();
+				}
+			}
+			oFile.close();
+
+		}
+
 	}
 
 	/**
@@ -196,42 +232,6 @@ public class ProcessSymbolList {
 				}
 			}
 		}
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.ta.apps.buildOexList
-	 * 
-	 * @throws IOException
-	 *
-	 */
-	private static void buildOexList() throws IOException {
-		System.out.println("in OexList");
-
-		final String iFile = "symbols\\OPRA_SymbolList.txt";
-		File file = new File(iFile);
-		if (file.exists()) {
-
-			PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
-
-			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
-
-				String line = br.readLine();
-
-				while (line != null) {
-
-					if (line.contains("OEX.X")) {
-						String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
-						    .replaceAll("Call_", "Call") + "\tOPRA";
-						oFile.println(str);
-					}
-					line = br.readLine();
-				}
-			}
-			oFile.close();
-
-		}
-
 	}
 
 }

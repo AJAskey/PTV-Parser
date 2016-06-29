@@ -131,8 +131,8 @@ public class DailyBreadthData {
 
 		}
 
-		//System.out.println(totVol + "  " + (long) sumAvgVol);
-		percentVolume = (double) totVol / sumAvgVol * 100.0;
+		// System.out.println(totVol + " " + (long) sumAvgVol);
+		this.percentVolume = (this.totVol / sumAvgVol) * 100.0;
 
 		this.advVol /= 1000000;
 		this.decVol /= 1000000;
@@ -140,13 +140,13 @@ public class DailyBreadthData {
 		this.percentAdvancing = ((double) this.adv / (double) knt) * 100.0;
 		this.percentAdvancingVol = ((double) this.advVol / (double) this.totVol) * 100.0;
 
-		adDiff10dma = (sumAdv - sumDec); // / 10;
-		adVolDiff10dma = (sumVolAdv - sumVolDec) / 1000000; // /10;
+		this.adDiff10dma = (sumAdv - sumDec); // / 10;
+		this.adVolDiff10dma = (sumVolAdv - sumVolDec) / 1000000; // /10;
 
 	}
 
 	/**
-	 * 
+	 *
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param advancing
@@ -205,9 +205,9 @@ public class DailyBreadthData {
 		final double avgVol = sumVolume / days;
 		this.percentVolume = (this.totVol / avgVol) * 100.0;
 
-		if ((newHighs == 0) && (newLows == 0)) {
-			newHighs = -1;
-			newLows = -1;
+		if ((this.newHighs == 0) && (this.newLows == 0)) {
+			this.newHighs = -1;
+			this.newLows = -1;
 		}
 
 	}

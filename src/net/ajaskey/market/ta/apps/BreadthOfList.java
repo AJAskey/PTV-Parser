@@ -201,7 +201,7 @@ public class BreadthOfList {
 
 	/**
 	 * net.ajaskey.market.ta.apps.writeData
-	 * 
+	 *
 	 * @param bd1week
 	 *
 	 * @param bd
@@ -261,9 +261,10 @@ public class BreadthOfList {
 		final double per130dma1w = ((((double) over130dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
 		final double per260dma1w = ((((double) over260dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
 
-		double avg = (Math.round(per23dma) + Math.round(per65dma) + Math.round(per130dma) + Math.round(per260dma)) / 4.0;
-		double avg1w = (Math.round(per23dma1w) + Math.round(per65dma1w) + Math.round(per130dma1w) + Math.round(per260dma1w))
+		final double avg = (Math.round(per23dma) + Math.round(per65dma) + Math.round(per130dma) + Math.round(per260dma))
 		    / 4.0;
+		final double avg1w = (Math.round(per23dma1w) + Math.round(per65dma1w) + Math.round(per130dma1w)
+		    + Math.round(per260dma1w)) / 4.0;
 
 		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
 		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);

@@ -106,6 +106,12 @@ public class TickerFullName {
 		}
 	}
 
+	static public void dumpTickers() {
+		for (final TickerFullName tkr : tickerNames) {
+			System.out.println(tkr.ticker + "\t" + tkr.name);
+		}
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.getName
@@ -148,12 +154,6 @@ public class TickerFullName {
 
 	public String getTicker() {
 		return this.ticker;
-	}
-
-	static public void dumpTickers() {
-		for (final TickerFullName tkr : tickerNames) {
-			System.out.println(tkr.ticker + "\t" + tkr.name);
-		}
 	}
 
 }

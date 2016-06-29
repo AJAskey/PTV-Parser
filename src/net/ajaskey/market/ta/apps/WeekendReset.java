@@ -1,3 +1,4 @@
+
 package net.ajaskey.market.ta.apps;
 
 import java.io.IOException;
@@ -69,20 +70,20 @@ public class WeekendReset {
 		/**
 		 * Create stock-fundies-list.txt for stocks in the stock-list.com.
 		 */
-		//GenerateFundies.main(args);
-		//System.gc();
+		// GenerateFundies.main(args);
+		// System.gc();
 
 		/**
 		 * Write the price-time-volume data for all stocks into single file per
 		 * ticker format.
 		 */
-		//DumpTickerData.main(args);
-		//System.gc();
+		// DumpTickerData.main(args);
+		// System.gc();
 
 		/**
 		 * Write breadth data as a checkout to determine if reset is valid.
 		 */
-		//Internals.main(args);
+		// Internals.main(args);
 
 		System.out.println("Weekend Reset Complete.");
 

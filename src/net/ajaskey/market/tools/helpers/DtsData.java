@@ -46,6 +46,26 @@ public class DtsData {
 
 	public static final List<DtsData>			dtsList	= new ArrayList<>();
 
+	private final DtsDataTally						with;
+
+	private final DtsDataTally						ind;
+
+	private final DtsDataTally						corp;
+
+	private final Calendar								date;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DtsData(String theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.setDate(theDate);
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.findData
@@ -241,26 +261,6 @@ public class DtsData {
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, 0, 0, 0);
 		return cal;
-	}
-
-	private final DtsDataTally	with;
-
-	private final DtsDataTally	ind;
-
-	private final DtsDataTally	corp;
-
-	private final Calendar			date;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DtsData(String theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		this.setDate(theDate);
 	}
 
 	/**

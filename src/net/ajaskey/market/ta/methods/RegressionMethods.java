@@ -186,21 +186,19 @@ public class RegressionMethods extends SimpleRegression {
 		return null;
 	}
 
-
-
 }
 
 /**
  * double sumDelta = 0; int knt=0; for (int i = 0; i < spx.getDataCount(); i++)
  * { dd = TickerData.getDataOfDate(spx, spx.getDate(i)); if (dd != null) { yy =
  * dd.getClose();
- * 
+ *
  * x = rm.findX(spx.getDate(i)); y = rm.sreg.predict(x);
- * 
+ *
  * delta = yy - y; sumDelta += delta/err; knt++; } }
- * 
+ *
  * x = rm.findX(cal); y = rm.sreg.predict(x); double avgDelta =
  * sumDelta/(double)knt; double expectedPrice = y * (1.0+avgDelta);
  * System.out.printf("%.3f %.2f",avgDelta, expectedPrice);
- * 
+ *
  */

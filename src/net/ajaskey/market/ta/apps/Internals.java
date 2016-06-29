@@ -83,7 +83,8 @@ public class Internals {
 
 			pwAll = new PrintWriter("out\\breadth.txt");
 
-			Internals.processIndex();;
+			Internals.processIndex();
+			;
 
 			double val = Internals.processListPercent("lists\\sp500-list.txt", days);
 			System.out.printf("SPX days to recover %.2f%n", val);
@@ -265,7 +266,7 @@ public class Internals {
 				for (int i = 0; i < days; i++) {
 					chg = (td.getClose(i) - td.getClose(i + 1)) / td.getClose(i + 1);
 					priceChg = td.getClose(i) - td.getClose(i + 1);
-					final double forceVal = Math.abs(priceChg * td.getVolume(i) / td.getAvgVol20());
+					final double forceVal = Math.abs((priceChg * td.getVolume(i)) / td.getAvgVol20());
 
 					// System.out.printf("%10s %10.2f %10.2f%n", td.getTicker(), priceChg,
 					// forceVal);
@@ -313,9 +314,9 @@ public class Internals {
 			final String sVolUp = NumberFormat.getIntegerInstance().format(volUp[i] / MILLION);
 			final String sVolDown = NumberFormat.getIntegerInstance().format(volDown[i] / MILLION);
 			final String sVolDiff = NumberFormat.getIntegerInstance().format(volDiff);
-			
-			double fv = (long) ((forceUp[i] - forceDown[i]) * volRatio);
-			
+
+			final double fv = (long) ((forceUp[i] - forceDown[i]) * volRatio);
+
 			pwAll.printf("\t%.2f\t%d\t%s\t%s\t%s\t%.1f%%\t%s\t%s\t%s\t%.2f \t%s%n", price[i], (long) fv, sUp, sDown, sDaily,
 			    percent, sVolUp, sVolDown, sVolDiff, volRatio, Utils.getString(cal[i]));
 
@@ -323,7 +324,7 @@ public class Internals {
 
 			cumForce += fv;
 		}
-		final String sCumForce = NumberFormat.getIntegerInstance().format((int)cumForce);
+		final String sCumForce = NumberFormat.getIntegerInstance().format((int) cumForce);
 		final int sumUp = UtilMethods.sum(up, days);
 		final int sumDown = UtilMethods.sum(down, days);
 		final double pDaily = (sumUp / (double) (sumUp + sumDown)) * 100.0;
