@@ -3,17 +3,22 @@ package net.ajaskey.market.tools;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.CotsData;
 import net.ajaskey.market.tools.helpers.CotsReports;
+import net.ajaskey.market.tools.helpers.CotsSorter;
 import net.ajaskey.market.tools.helpers.LongShort;
 
 /**
@@ -50,10 +55,13 @@ import net.ajaskey.market.tools.helpers.LongShort;
  */
 public class ProcessCOTS {
 
-	final static private String						folderPath	= "i:/temp/cots";
+	final static private String						folderPath	= "f:/temp/cots";
 	final static private Charset					charset			= Charset.forName("UTF-8");
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
 	private static final String						TAB					= "\t";
+	private static final String						COMMA				= ",";
+
+	private static List<String>						validNames	= new ArrayList<>();
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -61,11 +69,28 @@ public class ProcessCOTS {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		validNames.add("NASDAQ-100 Consolidated");
+		validNames.add("S&P 500 Consolidated");
+		//validNames.add("RUSSELL 2000 MINI");
+		//validNames.add("VIX FUTURES");
+
 		final Calendar cal = Calendar.getInstance();
 		cal.set(2016, Calendar.JUNE, 14);
-		ProcessCOTS.readAndProcess(cal);
+		
+		ProcessCOTS.readAndProcess(null);
 
-		CotsReports.writeSummary(CotsData.dataPoint, LongShort.SourceType.SPX, cal);
+		CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX, cal);
+
+		System.out.println("\n");
+
+		CotsReports.dumpRaw(CotsData.dataPoints);
+
+		try {
+			CotsReports.writeSpreadsheets(CotsData.dataPoints, LongShort.SourceType.NDX);
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -115,7 +140,6 @@ public class ProcessCOTS {
 	 * 81:Contract_Units 82:CFTC_SubGroup_Code 83:FutOnly_or_Combined
 	 *
 	 */
-
 	private static void readAndProcess(Calendar cal) {
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
@@ -131,36 +155,43 @@ public class ProcessCOTS {
 					while ((line = reader.readLine()) != null) {
 						final String fld[] = line.trim().split(TAB);
 						final String name = fld[0].trim();
-						final String day = fld[1].trim();
-						try {
-							rptDate.setTime(sdf.parse(day));
-						} catch (final ParseException e) {
-							rptDate.set(1950, Calendar.DECEMBER, 25);
-							e.printStackTrace();
-						}
 
-						// Filter on date if provided.
-						if ((cal == null) || (Utils.sameDate(cal, rptDate))) {
-
-							LongShort.SourceType st = null;
-							if (name.contains("NASDAQ-100 Consolidated")) {
-								st = LongShort.SourceType.NDX;
-							} else if (name.contains("S&P 500 Consolidated")) {
-								st = LongShort.SourceType.SPX;
-							} else if (name.contains("RUSSELL 2000 MINI")) {
-								st = LongShort.SourceType.RUT;
-							} else if (name.contains("VIX FUTURES")) {
-								st = LongShort.SourceType.VIX;
-							}
-							if (st != null) {
-								CotsData.setDataPoint(fld[7], fld[7], "0", rptDate, LongShort.MarketType.OI, st);
-								CotsData.setDataPoint(fld[8], fld[9], fld[10], rptDate, LongShort.MarketType.DEALER, st);
-								CotsData.setDataPoint(fld[11], fld[12], fld[13], rptDate, LongShort.MarketType.PM, st);
-								CotsData.setDataPoint(fld[14], fld[15], fld[16], rptDate, LongShort.MarketType.LEVERED, st);
-								CotsData.setDataPoint(fld[17], fld[18], fld[19], rptDate, LongShort.MarketType.OTHER, st);
-								CotsData.setDataPoint(fld[22], fld[23], "0", rptDate, LongShort.MarketType.NONRPT, st);
+						if (ProcessCOTS.validName(name)) {
+							final String day = fld[1].trim();
+							try {
+								rptDate.setTime(sdf.parse(day));
+							} catch (final ParseException e) {
+								rptDate.set(1950, Calendar.DECEMBER, 25);
+								e.printStackTrace();
 							}
 
+							// Filter on date if provided.
+							if ((cal == null) || (Utils.sameDate(cal, rptDate))) {
+
+								LongShort.SourceType st = null;
+								if (name.contains("NASDAQ-100 Consolidated")) {
+									st = LongShort.SourceType.NDX;
+								} else if (name.contains("S&P 500 Consolidated")) {
+									st = LongShort.SourceType.SPX;
+								} else if (name.contains("RUSSELL 2000 MINI")) {
+									st = LongShort.SourceType.RUT;
+								} else if (name.contains("VIX FUTURES")) {
+									st = LongShort.SourceType.VIX;
+								}
+								if (st != null) {
+									CotsData.setDataPoint(fld[7], fld[7], "0", rptDate, LongShort.MarketType.OI, st);
+									CotsData.setDataPoint(fld[8], fld[9], fld[10], rptDate, LongShort.MarketType.DEALER, st);
+									CotsData.setDataPoint(fld[11], fld[12], fld[13], rptDate, LongShort.MarketType.PM, st);
+									CotsData.setDataPoint(fld[14], fld[15], fld[16], rptDate, LongShort.MarketType.LEVERED, st);
+									CotsData.setDataPoint(fld[17], fld[18], fld[19], rptDate, LongShort.MarketType.OTHER, st);
+									CotsData.setDataPoint(fld[22], fld[23], "0", rptDate, LongShort.MarketType.NONRPT, st);
+									CotsData.setDataPoint(fld[59], fld[60], fld[61], rptDate, LongShort.MarketType.TRADER_DEALER, st);
+									CotsData.setDataPoint(fld[62], fld[63], fld[64], rptDate, LongShort.MarketType.TRADER_PM, st);
+									CotsData.setDataPoint(fld[65], fld[66], fld[67], rptDate, LongShort.MarketType.TRADER_LEVERED, st);
+									CotsData.setDataPoint(fld[68], fld[69], fld[70], rptDate, LongShort.MarketType.TRADER_OTHER, st);
+								}
+
+							}
 						}
 					}
 
@@ -169,6 +200,24 @@ public class ProcessCOTS {
 				}
 			}
 		}
+
+		Collections.sort(CotsData.dataPoints, new CotsSorter());
+	}
+
+	/**
+	 * net.ajaskey.market.tools.validName
+	 *
+	 * @param name
+	 * @return
+	 */
+	private static boolean validName(String name) {
+		// System.out.println(name);
+		for (final String s : validNames) {
+			if (name.contains(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

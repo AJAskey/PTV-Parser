@@ -66,7 +66,7 @@ public class DtsReports {
 		DtsReports.init();
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, 0, 0);
-		String str = "DTS as of ==> " + Utils.stringCalendar(cal) + NL;
+		String str = "DTS as of ==> " + Utils.stringDate2(cal) + NL;
 		final int dmonth = DtsData.getDataDaysInMonth(day, month, year);
 		final int dyear = DtsData.getDataDaysInYear(day, month, year);
 		str += TAB + "Reports in " + DtsReports.findName(mNames, month) + " : " + dmonth + NL;
@@ -74,6 +74,14 @@ public class DtsReports {
 		return str;
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.dumpCompareCorporateMonths
+	 *
+	 * @param yearRecent
+	 * @param yearPast
+	 * @param month
+	 */
 	public static void dumpCompareCorporateMonths(int yearRecent, int yearPast, int month) {
 		DtsReports.init();
 
@@ -295,6 +303,21 @@ public class DtsReports {
 		return ret;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.init
+	 *
+	 */
+	private static void init() {
+
+		if (!initialized) {
+			final Calendar baseCal = Calendar.getInstance();
+			mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+			mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
+			initialized = true;
+		}
+	}
+
 	public static void writeEomCsv(Calendar startDate) {
 
 		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
@@ -316,21 +339,6 @@ public class DtsReports {
 			e.printStackTrace();
 		}
 
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.init
-	 *
-	 */
-	private static void init() {
-
-		if (!initialized) {
-			final Calendar baseCal = Calendar.getInstance();
-			mNames = baseCal.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
-			mDays = baseCal.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);
-			initialized = true;
-		}
 	}
 
 }

@@ -2,6 +2,7 @@
 package net.ajaskey.market.misc;
 
 import java.io.File;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
@@ -50,6 +51,8 @@ public class Utils {
 	public static String									NL					= System.lineSeparator();
 	public static String									TAB					= "\t";
 
+	private static NumberFormat						intFmt			= null;
+
 	private static boolean								initialized	= false;
 
 	/**
@@ -66,6 +69,21 @@ public class Utils {
 		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
 		return ret;
 
+	}
+
+	public static String formatInt(int i) {
+		return (Utils.formatInt((long) i));
+	}
+
+	public static String formatInt(long i) {
+		String ret = "";
+		Utils.init();
+		try {
+			ret = intFmt.format(i);
+		} catch (final Exception e) {
+			ret = "not number";
+		}
+		return ret;
 	}
 
 	/**
@@ -109,6 +127,23 @@ public class Utils {
 	}
 
 	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	private static void init() {
+		if (!initialized) {
+			Utils.baseDate.set(Calendar.YEAR, 1900);
+			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
+			Utils.baseDate.set(Calendar.HOUR, 0);
+			Utils.baseDate.set(Calendar.MINUTE, 0);
+			Utils.baseDate.set(Calendar.SECOND, 1);
+			Utils.baseDate.set(Calendar.MILLISECOND, 0);
+			intFmt = NumberFormat.getNumberInstance();
+			initialized = true;
+		}
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.makeCopy
 	 *
@@ -116,8 +151,12 @@ public class Utils {
 	 * @return
 	 */
 	public static Calendar makeCopy(Calendar cal) {
-		final Calendar newCal = Calendar.getInstance();
-		newCal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+		Calendar newCal = null;
+		if (cal == null) {
+			newCal = Calendar.getInstance();
+		} else {
+			newCal = (Calendar) cal.clone();
+		}
 		return newCal;
 	}
 
@@ -134,6 +173,12 @@ public class Utils {
 		}
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.misc.printCalendar
+	 *
+	 * @param cal
+	 */
 	public static void printCalendar(Calendar cal) {
 		if (cal != null) {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
@@ -200,7 +245,7 @@ public class Utils {
 		return false;
 	}
 
-	public static String stringCalendar(Calendar cal) {
+	public static String stringDate2(Calendar cal) {
 		if (cal != null) {
 			return sdf2.format(cal.getTime());
 		}
@@ -213,21 +258,4 @@ public class Utils {
 		}
 		return "";
 	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	private static void init() {
-		if (!initialized) {
-			Utils.baseDate.set(Calendar.YEAR, 1900);
-			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
-			Utils.baseDate.set(Calendar.HOUR, 0);
-			Utils.baseDate.set(Calendar.MINUTE, 0);
-			Utils.baseDate.set(Calendar.SECOND, 1);
-			Utils.baseDate.set(Calendar.MILLISECOND, 0);
-			initialized = true;
-		}
-	}
-
 }

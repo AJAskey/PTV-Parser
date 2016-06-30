@@ -46,26 +46,6 @@ public class DtsData {
 
 	public static final List<DtsData>			dtsList	= new ArrayList<>();
 
-	private final DtsDataTally						with;
-
-	private final DtsDataTally						ind;
-
-	private final DtsDataTally						corp;
-
-	private final Calendar								date;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DtsData(String theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		this.setDate(theDate);
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.findData
@@ -192,7 +172,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static String formatDate(Calendar date) {
-		String str = Utils.stringCalendar(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
+		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getDataDaysInYear(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
 		str += "\t"
 		    + DtsData.getDataDaysInMonth(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
@@ -261,6 +241,26 @@ public class DtsData {
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, 0, 0, 0);
 		return cal;
+	}
+
+	private final DtsDataTally	with;
+
+	private final DtsDataTally	ind;
+
+	private final DtsDataTally	corp;
+
+	private final Calendar			date;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DtsData(String theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.setDate(theDate);
 	}
 
 	/**
@@ -426,7 +426,7 @@ public class DtsData {
 	}
 
 	public String toWithheldString() {
-		String str = Utils.stringCalendar(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
+		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getDataDaysInYear(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
 		    this.date.get(Calendar.YEAR));
 		str += "\t" + DtsData.getDataDaysInMonth(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),

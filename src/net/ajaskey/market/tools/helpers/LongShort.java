@@ -40,7 +40,7 @@ import net.ajaskey.market.misc.Utils;
 public class LongShort {
 
 	public enum MarketType {
-		DEALER, PM, LEVERED, OTHER, NONRPT, OI
+		DEALER, PM, LEVERED, OTHER, NONRPT, OI, TRADER_DEALER, TRADER_PM, TRADER_LEVERED, TRADER_OTHER
 	};
 
 	public enum SourceType {
@@ -54,6 +54,7 @@ public class LongShort {
 	public long				spreadPos;
 	public double			pc;
 	public Calendar		date	= null;
+	public boolean		valid;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -62,6 +63,7 @@ public class LongShort {
 	 *
 	 */
 	public LongShort(String l, String s, String sp, Calendar d, MarketType mt, SourceType st) {
+
 		try {
 
 			this.date = Utils.makeCopy(d);
@@ -69,20 +71,49 @@ public class LongShort {
 			this.type = mt;
 			this.source = st;
 
-			this.longPos = Long.parseLong(l.trim());
-			this.shortPos = Long.parseLong(s.trim());
-			this.spreadPos = Long.parseLong(sp.trim());
+			if (l.trim().length() > 0) {
+				this.longPos = Long.parseLong(l.trim());
+			} else {
+				this.longPos = 0;
+			}
+			if (s.trim().length() > 0) {
+				this.shortPos = Long.parseLong(s.trim());
+			} else {
+				this.shortPos = 0;
+			}
+			if (sp.trim().length() > 0) {
+				this.spreadPos = Long.parseLong(sp.trim());
+			} else {
+				this.spreadPos = 0;
+			}
 			if (this.longPos > 0) {
 				this.pc = (double) this.shortPos / (double) this.longPos;
 			} else {
 				this.pc = 0.0;
 			}
+			this.valid = true;
 		} catch (final Exception e) {
 			this.longPos = 0;
 			this.shortPos = 0;
 			this.spreadPos = 0;
 			this.pc = 0.0;
+			this.valid = false;
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public String toString() {
+		long tot = 0;
+		if (this.type == MarketType.OI) {
+			tot = this.longPos;
+		} else {
+			tot = this.longPos + this.shortPos + this.spreadPos;
+		}
+		final String ret = String.format("%10s    %-9s : %15s %12s %12s %12s %12s %10.2f", Utils.getString(this.date),
+		    this.source, this.type, Utils.formatInt(this.longPos), Utils.formatInt(this.shortPos),
+		    Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc);
+		return ret;
+	}
+
 }

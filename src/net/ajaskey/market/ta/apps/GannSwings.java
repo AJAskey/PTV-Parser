@@ -78,7 +78,7 @@ public class GannSwings {
 		for (int i = 0; i < (incs * 4); i++) {
 			dates[i] = GannSwings.getCalendarDate(stop, (int) Math.round(rDate));
 			rDate += dateInc;
-			System.out.println(i + 1 + "  " + Utils.stringCalendar(dates[i]));
+			System.out.println(i + 1 + "  " + Utils.stringDate2(dates[i]));
 		}
 
 		dateInc = rangeTd / incs;
@@ -87,7 +87,7 @@ public class GannSwings {
 		for (int i = 0; i < (incs * 4); i++) {
 			dates[i] = GannSwings.getTradingDate(stop, (int) Math.round(rDate));
 			rDate += dateInc;
-			System.out.println(i + 1 + "  " + Utils.stringCalendar(dates[i]));
+			System.out.println(i + 1 + "  " + Utils.stringDate2(dates[i]));
 		}
 
 		System.out.println("Done.");
