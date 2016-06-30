@@ -45,70 +45,120 @@ public class CotsReports {
 	private static final String	TAB	= "\t";
 	private static final String	NL	= System.getProperty("line.separator");
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.dumpRaw
+	 *
+	 * @param list
+	 */
 	public static void dumpRaw(List<LongShort> list) {
-		for (LongShort ls : list) {
+		for (final LongShort ls : list) {
 			System.out.println(ls);
 		}
 	}
 
-	private static void writeSpreadSheetHeader(PrintWriter pw) {
-		pw.println("Date\tLong\tShort\tSpread\tShortToLong\tPercentLong\tPercentShort\tPercentSpread");
+	/**
+	 * net.ajaskey.market.tools.helpers.printSummary
+	 *
+	 * @param fmt
+	 * @param type
+	 * @param longPos
+	 * @param shortPos
+	 * @param pc
+	 * @param percl
+	 * @param percs
+	 * @param perct
+	 */
+	private static void printSummary(LongShort ls, long totLongs, long totShorts) {
+
+		final String fmt = "%-10s : %10s %10s %10.2f %10.2f%% %10.2f%%  %10.2f%% %n";
+		final double percl = ((double) ls.longPos / (double) totLongs) * 100.0;
+		final double percs = ((double) ls.shortPos / (double) totShorts) * 100.0;
+		final double perct = (percl + percs) / 2.0;
+		System.out.printf(fmt, ls.type, Utils.formatInt(ls.longPos), Utils.formatInt(ls.shortPos), ls.pc, percl, percs,
+		    perct);
 	}
 
-	private static void writeSpreadSheetData(PrintWriter pw, LongShort ls, double oi) {
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeSpreadSheetData
+	 *
+	 * @param pw
+	 * @param ls
+	 * @param oi
+	 */
+	private static void writeCsvData(PrintWriter pw, LongShort ls, double oi) {
 		double percOIlong = 0.0;
 		double percOIshort = 0.0;
 		double percOIspread = 0.0;
 
 		if (oi > 0.0) {
-			percOIlong = (double) ls.longPos / oi;
-			percOIshort = (double) ls.shortPos / oi;
-			percOIspread = (double) ls.spreadPos / oi;
+			percOIlong = ls.longPos / oi;
+			percOIshort = ls.shortPos / oi;
+			percOIspread = ls.spreadPos / oi;
 		}
-		pw.printf("%10s\t%10d\t%10d\t%10d\t%10.2f\t%10.2f\t%10.2f\t%10.2f%n", Utils.getString(ls.date), ls.longPos,
-		    ls.shortPos, ls.spreadPos, ls.pc, percOIlong, percOIshort, percOIspread);
+		pw.printf("%10s,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date), ls.longPos, ls.shortPos,
+		    ls.spreadPos, ls.pc, percOIlong, percOIshort, percOIspread);
 
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeSpreadSheetHeader
+	 *
+	 * @param pw
+	 */
+	private static void writeCsvHeader(PrintWriter pw) {
+		pw.println("Date,Long,Short,Spread,ShortToLong,PercentLong,PercentShort,PercentSpread");
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeSpreadsheets
+	 *
+	 * @param list
+	 * @param st
+	 * @throws FileNotFoundException
+	 */
 	public static void writeSpreadsheets(List<LongShort> list, LongShort.SourceType st) throws FileNotFoundException {
-		PrintWriter pwOI = new PrintWriter("out\\" + st + "-oi-data.csv");
-		PrintWriter pwDealer = new PrintWriter("out\\" + st + "-dealer-data.csv");
-		PrintWriter pwPM = new PrintWriter("out\\" + st + "-pm-data.csv");
-		PrintWriter pwLevered = new PrintWriter("out\\" + st + "-levered-data.csv");
-		PrintWriter pwNonrpt = new PrintWriter("out\\" + st + "-nonrpt-data.csv");
-		PrintWriter pwOther = new PrintWriter("out\\" + st + "-other-data.csv");
+		final PrintWriter pwOI = new PrintWriter("out\\" + st + "-oi-data.csv");
+		final PrintWriter pwDealer = new PrintWriter("out\\" + st + "-dealer-data.csv");
+		final PrintWriter pwPM = new PrintWriter("out\\" + st + "-pm-data.csv");
+		final PrintWriter pwLevered = new PrintWriter("out\\" + st + "-levered-data.csv");
+		final PrintWriter pwNonrpt = new PrintWriter("out\\" + st + "-nonrpt-data.csv");
+		final PrintWriter pwOther = new PrintWriter("out\\" + st + "-other-data.csv");
 
 		pwOI.println("Date\tOI");
-		writeSpreadSheetHeader(pwDealer);
-		writeSpreadSheetHeader(pwPM);
-		writeSpreadSheetHeader(pwLevered);
-		writeSpreadSheetHeader(pwNonrpt);
-		writeSpreadSheetHeader(pwOther);
+		CotsReports.writeCsvHeader(pwDealer);
+		CotsReports.writeCsvHeader(pwPM);
+		CotsReports.writeCsvHeader(pwLevered);
+		CotsReports.writeCsvHeader(pwNonrpt);
+		CotsReports.writeCsvHeader(pwOther);
 
 		double oi = 0.0;
 
-		for (LongShort ls : list) {
+		for (final LongShort ls : list) {
 			if (ls.source == st) {
 
 				switch (ls.type) {
 					case OI: // needs to be first in data group, always is so far
-						oi = (double) ls.longPos;
-						pwOI.printf("%10s\t%10d%n", Utils.getString(ls.date), ls.longPos);
+						oi = ls.longPos;
+						pwOI.printf("%10s,%10d%n", Utils.getString(ls.date), ls.longPos);
 						break;
 					case DEALER:
-						writeSpreadSheetData(pwDealer, ls, oi);
+						CotsReports.writeCsvData(pwDealer, ls, oi);
 						break;
-					case LEVERED:
-						writeSpreadSheetData(pwLevered, ls, oi);
+					case ETFxn:
+						CotsReports.writeCsvData(pwLevered, ls, oi);
 						break;
 					case NONRPT:
-						writeSpreadSheetData(pwNonrpt, ls, oi);
+						CotsReports.writeCsvData(pwNonrpt, ls, oi);
 						break;
 					case OTHER:
-						writeSpreadSheetData(pwOther, ls, oi);
+						CotsReports.writeCsvData(pwOther, ls, oi);
 						break;
 					case PM:
-						writeSpreadSheetData(pwPM, ls, oi);
+						CotsReports.writeCsvData(pwPM, ls, oi);
 						break;
 					case TRADER_DEALER:
 						break;
@@ -126,8 +176,52 @@ public class CotsReports {
 		pwOther.close();
 	}
 
+	public static void writeCsvCombined(List<LongShort> list, LongShort.MarketType mt) throws FileNotFoundException {
+
+		final PrintWriter pwCombined = new PrintWriter("out\\" + mt + "-combo-data.csv");
+
+		CotsReports.writeCsvHeader(pwCombined);
+
+		double oi = 0.0;
+
+		long totLong = 0;
+		long totShort = 0;
+		long totSpread = 0;
+
+		Calendar prevCal = list.get(0).date;
+
+		for (final LongShort ls : list) {
+
+			if (ls.type == mt) {
+
+				totLong += ls.longPos;
+				totShort += ls.shortPos;
+				totSpread += ls.spreadPos;
+
+				//System.out.println("Adding " + ls.source + TAB + ls.type + TAB + Utils.stringDate(ls.date));
+
+			}
+			if (prevCal.after(ls.date)) {
+				LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
+				theLs.date = prevCal;
+				CotsReports.writeCsvData(pwCombined, theLs, oi);
+				prevCal = ls.date;
+				totLong = 0;
+				totShort = 0;
+				totSpread = 0;
+
+			}
+		}
+		
+		LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
+		theLs.date = prevCal;
+		CotsReports.writeCsvData(pwCombined, theLs, oi);
+
+		pwCombined.close();
+	}
+
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.writeSummary
 	 *
 	 * @param list
@@ -145,17 +239,19 @@ public class CotsReports {
 		long totShorts = 0;
 		long totSpread = 0;
 		int knt = 0;
+		boolean complete = false;
+
 		for (final LongShort ls : list) {
-			if (ls.source == st) {
+
+			if ((!complete) && (ls.source == st)) {
+
 				if (Utils.sameDate(ls.date, cal)) {
-					String str = String.format("%6.2f", ls.pc);
-					
-					//System.out.println(Utils.stringDate(ls.date) + TAB + ls.source + TAB + ls.type + TAB + ls.longPos + TAB
-					//    + ls.shortPos + TAB + ls.spreadPos + TAB + str);
+
+					String.format("%6.2f", ls.pc);
 
 					switch (ls.type) {
 						case DEALER:
-						case LEVERED:
+						case ETFxn:
 						case NONRPT:
 						case OTHER:
 						case PM:
@@ -165,7 +261,6 @@ public class CotsReports {
 							break;
 						default:
 							break;
-
 					}
 
 					switch (ls.type) {
@@ -181,7 +276,7 @@ public class CotsReports {
 							pm = ls;
 							knt++;
 							break;
-						case LEVERED:
+						case ETFxn:
 							levered = ls;
 							knt++;
 							break;
@@ -192,6 +287,7 @@ public class CotsReports {
 						case NONRPT:
 							nonrpt = ls;
 							knt++;
+							complete = true;
 							break;
 						default:
 							break;
@@ -201,30 +297,25 @@ public class CotsReports {
 			}
 		}
 		if (knt == 6) {
-			double totPC = (double) totShorts / (double) totLongs;
 			System.out.println(NL);
-			System.out.printf("%s OI : %d  Spread Positions : %d   %s %n", st, oi.longPos, totSpread,
-			    Utils.getString(oi.date));
-			System.out.printf("%19sLong      Short    Short/Long  %%-Longs    %%-Shorts %n", " ");
-			String fmt = "%-10s : %10d %10d %10.2f %10.2f%% %10.2f%% %n";
-			double percl = (double) dealer.longPos / (double) totLongs * 100.0;
-			double percs = (double) dealer.shortPos / (double) totShorts * 100.0;
-			System.out.printf(fmt, dealer.type, dealer.longPos, dealer.shortPos, dealer.pc, percl, percs);
-			percl = (double) pm.longPos / (double) totLongs * 100.0;
-			percs = (double) pm.shortPos / (double) totShorts * 100.0;
-			System.out.printf(fmt, pm.type, pm.longPos, pm.shortPos, pm.pc, percl, percs);
-			percl = (double) levered.longPos / (double) totLongs * 100.0;
-			percs = (double) levered.shortPos / (double) totShorts * 100.0;
-			System.out.printf(fmt, levered.type, levered.longPos, levered.shortPos, levered.pc, percl, percs);
-			percl = (double) other.longPos / (double) totLongs * 100.0;
-			percs = (double) other.shortPos / (double) totShorts * 100.0;
-			System.out.printf(fmt, other.type, other.longPos, other.shortPos, other.pc, percl, percs);
-			percl = (double) nonrpt.longPos / (double) totLongs * 100.0;
-			percs = (double) nonrpt.shortPos / (double) totShorts * 100.0;
-			System.out.printf(fmt, nonrpt.type, nonrpt.longPos, nonrpt.shortPos, nonrpt.pc, percl, percs);
-			percl = 100.0;
-			percs = 100.0;
-			System.out.printf(fmt, "Total", totLongs, totShorts, totPC, percl, percs);
+			double perc = (double) totSpread / (double) oi.longPos * 100.0;
+			System.out.printf("%s OI : %s  Spread Positions : %s  %6.1f%%   %s %n", st, Utils.formatInt(oi.longPos),
+			    Utils.formatInt(totSpread), perc, Utils.getString(oi.date));
+
+			System.out.printf("%18sLong       Short    Short/Long  %%-Longs    %%-Shorts      %%-Total %n", " ");
+
+			CotsReports.printSummary(dealer, totLongs, totShorts);
+
+			CotsReports.printSummary(pm, totLongs, totShorts);
+
+			CotsReports.printSummary(levered, totLongs, totShorts);
+
+			CotsReports.printSummary(other, totLongs, totShorts);
+
+			CotsReports.printSummary(nonrpt, totLongs, totShorts);
+
+			CotsReports.printSummary(new LongShort(totLongs, totShorts, 0, LongShort.MarketType.TOTALS), totLongs, totShorts);
+
 		} else {
 			System.out.println("Error - writeSummry() invalid data!");
 		}

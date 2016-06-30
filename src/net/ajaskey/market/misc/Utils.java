@@ -159,6 +159,12 @@ public class Utils {
 		}
 		return newCal;
 	}
+	
+	public static Calendar buildCalendar(int year, int month, int day) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(year, month, day);
+		return cal;
+	}
 
 	/**
 	 *

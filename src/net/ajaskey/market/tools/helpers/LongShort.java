@@ -40,7 +40,7 @@ import net.ajaskey.market.misc.Utils;
 public class LongShort {
 
 	public enum MarketType {
-		DEALER, PM, LEVERED, OTHER, NONRPT, OI, TRADER_DEALER, TRADER_PM, TRADER_LEVERED, TRADER_OTHER
+		DEALER, PM, ETFxn, OTHER, NONRPT, OI, TRADER_DEALER, TRADER_PM, TRADER_LEVERED, TRADER_OTHER, TOTALS
 	};
 
 	public enum SourceType {
@@ -55,6 +55,18 @@ public class LongShort {
 	public double			pc;
 	public Calendar		date	= null;
 	public boolean		valid;
+
+	public LongShort(long longs, long shorts, long spreads, MarketType mt) {
+		longPos = longs;
+		shortPos = shorts;
+		spreadPos = spreads;
+		if (longs > 0) {
+			pc = (double) shorts / (double) longs;
+		} else {
+			pc = 0.0;
+		}
+		type = mt;
+	}
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -100,6 +112,18 @@ public class LongShort {
 			this.valid = false;
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public LongShort() {
+		this.longPos = 0;
+		this.shortPos = 0;
+		this.spreadPos = 0;
+		this.pc = 0.0;
+		this.valid = false;
 	}
 
 	@Override
