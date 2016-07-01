@@ -44,7 +44,7 @@ public class LongShort {
 	};
 
 	public enum SourceType {
-		NDX, SPX, RUT, VIX
+		DJIA, DJIA_C, SPX, SPX_C, NDX, NDX_C, RUT, EMINI500, EMINI400, VIX
 	}
 
 	public MarketType	type;

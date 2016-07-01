@@ -21,6 +21,7 @@ import net.ajaskey.market.tools.helpers.CotsData;
 import net.ajaskey.market.tools.helpers.CotsReports;
 import net.ajaskey.market.tools.helpers.CotsSorter;
 import net.ajaskey.market.tools.helpers.LongShort;
+import net.ajaskey.market.tools.helpers.LongShort.SourceType;
 import net.ajaskey.market.tools.helpers.WebGet;
 
 /**
@@ -57,147 +58,174 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final static private String						folderPath	= "i:/temp/cots";
-	final static private Charset					charset			= Charset.forName("UTF-8");
-	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
-	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("MMMM dd, yyyy");
-	private static final String						TAB					= "\t";
+	final private static String						folderPath		= "f:/temp/cots";
+	final private static Charset					charset				= Charset.forName("UTF-8");
+	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
+	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
+	final private static String						TAB						= "\t";
 
-	private static List<String>						validNames	= new ArrayList<>();
+	final private static String						DJIA_C_Name		= "DJIA Consolidated";
+	final private static String						DJIA_Name			= "DOW JONES INDUSTRIAL AVG";
+	final private static String						SPX_C_Name		= "S&P 500 Consolidated";
+	final private static String						SPX_Name			= "S&P 500 STOCK INDEX";
+	final private static String						NDX_C_Name		= "NASDAQ-100 Consolidated";
+	final private static String						NDX_Name			= "NASDAQ-100 STOCK INDEX (MINI)";
+	final private static String						EMINI500_Name	= "E-MINI S&P 500 STOCK INDEX";
+	final private static String						EMINI400_Name	= "E-MINI S&P 400 STOCK INDEX";
+	final private static String						RUT_Name			= "RUSSELL 2000 MINI";
+	final private static String						VIX_Name			= "VIX FUTURES";
+
+	private static List<String>						validNames		= new ArrayList<>();
 
 	/**
-	 * net.ajaskey.market.tools.main
+	 * 
+	 * net.ajaskey.market.tools.getLatestCots
 	 *
-	 * @param args
 	 */
-	public static void main(String[] args) {
-		validNames.add("NASDAQ-100 Consolidated");
-		validNames.add("S&P 500 Consolidated");
-		validNames.add("RUSSELL 2000 MINI");
-		// validNames.add("VIX FUTURES");
+	private static void getLatestCots() {
+		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
+		List<String> resp = new ArrayList<>();
 
-		getLatestCots();
+		resp = WebGet.getSPDR(url);
 
-		try {
-			readDaily();
-		} catch (ParseException e) {
-			e.printStackTrace();
+		if (resp != null) {
+
+			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
+				for (final String s : resp) {
+					pw.println(s);
+				}
+			} catch (final FileNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
+	}
+
+	public static void runCan01() throws ParseException {
+		validNames.clear();
+
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		ProcessCOTS.readDaily();
+
+		ProcessCOTS.readAndProcess(null);
+
+		CotsReports.dumpRaw(CotsData.dataPoints);
+	}
+
+	public static void runCan02() throws ParseException {
+		validNames.clear();
+
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		ProcessCOTS.readDaily();
 
 		ProcessCOTS.readAndProcess(null);
 
 		Utils.makeDir("out");
 
-		CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX,
-		    Utils.buildCalendar(2016, Calendar.JUNE, 21));
+		try {
+			Calendar cal = Utils.buildCalendar(2016, Calendar.JUNE, 21);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX_C, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.NDX_C, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.NDX, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.DJIA_C, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.DJIA_C, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.RUT, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.EMINI500, cal);
+			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.EMINI400, cal);
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+	}
 
-		System.out.println("\n");
+	public static void runCan03() throws ParseException {
+		validNames.clear();
 
-		CotsReports.dumpRaw(CotsData.dataPoints);
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		ProcessCOTS.readDaily();
+
+		ProcessCOTS.readAndProcess(null);
+
+		Utils.makeDir("out");
 
 		try {
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.SPX_C);
 			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.SPX);
-			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.LEVERED);
-			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.PM);
-			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.DEALER);
-			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.NONRPT);
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.DJIA_C);
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.DJIA);
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.NDX_C);
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.NDX);
+
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void runCan04() throws ParseException {
+		validNames.clear();
 
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+
+		ProcessCOTS.readDaily();
+
+		ProcessCOTS.readAndProcess(null);
+
+		Utils.makeDir("out");
+
+		try {
+
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
-	 * net.ajaskey.market.tools.readDaily
-	 * 
-	 * @throws ParseException
+	 * net.ajaskey.market.tools.main
 	 *
+	 * @param args
+	 * @throws ParseException
 	 */
-	private static void readDaily() throws ParseException {
+	public static void main(String[] args) throws ParseException {
 
-		final File allFiles = new File(folderPath);
-		final File[] listOfFiles = allFiles.listFiles();
-		final Calendar rptDate = Calendar.getInstance();
+		System.out.println("Processing...");
+		
+		CotsReports.setRptPrefix("Test_");
 
-		for (final File file : listOfFiles) {
+		runCan04();
 
-			if ((file.isFile()) && (file.getName().toLowerCase().contains("daily"))) {
-
-				System.out.println(file.getName());
-				final Path path = file.toPath();
-
-				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
-
-					String line = reader.readLine(); // Header
-
-					boolean processing = false;
-					LongShort.SourceType st = null;
-					String dStr = null;
-					String oiStr = null;
-
-					while ((line = reader.readLine()) != null) {
-
-						if (line.length() > 5) {
-							String s = line.substring(0, 5);
-							if (!s.contains("<")) {
-
-								if (dStr == null) {
-									if (line.contains("Traders in Financial Futures - Options and Futures Combined Positions as of")) {
-										int idx = line.indexOf("as of") + 6;
-										String str = line.substring(idx);
-										rptDate.setTime(sdf2.parse(str.trim()));
-										// Utils.printCalendar(rptDate);
-										dStr = sdf.format(rptDate.getTime());
-										// System.out.println(dStr);
-									}
-								}
-
-								if ((!processing) && (ProcessCOTS.validName(line))) {
-
-									if (line.contains("NASDAQ-100 Consolidated")) {
-										st = LongShort.SourceType.NDX;
-									} else if (line.contains("S&P 500 Consolidated")) {
-										st = LongShort.SourceType.SPX;
-									} else if (line.contains("RUSSELL 2000 MINI")) {
-										st = LongShort.SourceType.RUT;
-									} else if (line.contains("VIX FUTURES")) {
-										st = LongShort.SourceType.VIX;
-									}
-									processing = true;
-
-									// System.out.println(st);
-								}
-
-								if (processing) {
-
-									if (line.contains("Open Interest is")) {
-										int idx = line.indexOf("Open Interest is") + 16;
-										String str = line.substring(idx);
-										oiStr = str.trim().replaceAll(",", "");
-										// System.out.println(oiStr);
-									} else if (line.contains(",")) {
-										String str = line.trim().replaceAll(",", "");
-										String fld[] = str.split("\\s+");
-										// for (String s : fld) {
-										// System.out.println("\t" + s);
-										// }
-										CotsData.setDataPoint(oiStr, oiStr, "0", rptDate, LongShort.MarketType.OI, st);
-										CotsData.setDataPoint(fld[0], fld[1], fld[2], rptDate, LongShort.MarketType.DEALER, st);
-										CotsData.setDataPoint(fld[3], fld[4], fld[5], rptDate, LongShort.MarketType.PM, st);
-										CotsData.setDataPoint(fld[6], fld[7], fld[8], rptDate, LongShort.MarketType.LEVERED, st);
-										CotsData.setDataPoint(fld[9], fld[10], fld[11], rptDate, LongShort.MarketType.OTHER, st);
-										CotsData.setDataPoint(fld[12], fld[13], "0", rptDate, LongShort.MarketType.NONRPT, st);
-										processing = false;
-									}
-								}
-							}
-						}
-					}
-				} catch (final IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
+		System.out.println("Done.");
 
 	}
 
@@ -279,16 +307,10 @@ public class ProcessCOTS {
 							// Filter on date if provided.
 							if ((cal == null) || (Utils.sameDate(cal, rptDate))) {
 
-								LongShort.SourceType st = null;
-								if (name.contains("NASDAQ-100 Consolidated")) {
-									st = LongShort.SourceType.NDX;
-								} else if (name.contains("S&P 500 Consolidated")) {
-									st = LongShort.SourceType.SPX;
-								} else if (name.contains("RUSSELL 2000 MINI")) {
-									st = LongShort.SourceType.RUT;
-								} else if (name.contains("VIX FUTURES")) {
-									st = LongShort.SourceType.VIX;
-								}
+								final LongShort.SourceType st = ProcessCOTS.setSourceType(name);
+
+								// System.out.println(st);
+
 								if (st != null) {
 									CotsData.setDataPoint(fld[7], fld[7], "0", rptDate, LongShort.MarketType.OI, st);
 									CotsData.setDataPoint(fld[8], fld[9], fld[10], rptDate, LongShort.MarketType.DEALER, st);
@@ -316,6 +338,127 @@ public class ProcessCOTS {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.readDaily
+	 *
+	 * @throws ParseException
+	 *
+	 */
+	private static void readDaily() throws ParseException {
+
+		final File allFiles = new File(folderPath);
+		final File[] listOfFiles = allFiles.listFiles();
+		final Calendar rptDate = Calendar.getInstance();
+
+		for (final File file : listOfFiles) {
+
+			if ((file.isFile()) && (file.getName().toLowerCase().contains("daily"))) {
+
+				System.out.println(file.getName());
+				final Path path = file.toPath();
+
+				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+
+					String line = reader.readLine(); // Header
+
+					boolean processing = false;
+					LongShort.SourceType st = null;
+					String dStr = null;
+					String oiStr = null;
+
+					while ((line = reader.readLine()) != null) {
+
+						String tLine = line.trim();
+
+						if (tLine.length() > 5) {
+							final String s = tLine.substring(0, 5);
+							if (!s.contains("<")) {
+
+								if (dStr == null) {
+									if (tLine.contains("Traders in Financial Futures - Options and Futures Combined Positions as of")) {
+										final int idx = tLine.indexOf("as of") + 6;
+										final String str = tLine.substring(idx);
+										rptDate.setTime(sdf2.parse(str.trim()));
+										// Utils.printCalendar(rptDate);
+										dStr = sdf.format(rptDate.getTime());
+										// System.out.println(dStr);
+									}
+								}
+
+								if ((!processing) && (ProcessCOTS.validName(tLine))) {
+
+									st = ProcessCOTS.setSourceType(tLine);
+
+									if (st != null) {
+										processing = true;
+									}
+
+									// System.out.println(st);
+								}
+
+								if (processing) {
+
+									if (tLine.contains("Open Interest is")) {
+										final int idx = tLine.indexOf("Open Interest is") + 16;
+										final String str = tLine.substring(idx);
+										oiStr = str.replaceAll(",", "");
+										// System.out.println(oiStr);
+									} else if (tLine.contains(",")) {
+										final String str = tLine.replaceAll(",", "");
+										final String fld[] = str.split("\\s+");
+
+										CotsData.setDataPoint(oiStr, oiStr, "0", rptDate, LongShort.MarketType.OI, st);
+										CotsData.setDataPoint(fld[0], fld[1], fld[2], rptDate, LongShort.MarketType.DEALER, st);
+										CotsData.setDataPoint(fld[3], fld[4], fld[5], rptDate, LongShort.MarketType.PM, st);
+										CotsData.setDataPoint(fld[6], fld[7], fld[8], rptDate, LongShort.MarketType.LEVERED, st);
+										CotsData.setDataPoint(fld[9], fld[10], fld[11], rptDate, LongShort.MarketType.OTHER, st);
+										CotsData.setDataPoint(fld[12], fld[13], "0", rptDate, LongShort.MarketType.NONRPT, st);
+										processing = false;
+									}
+								}
+							}
+						}
+					}
+				} catch (final IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.setSourceType
+	 *
+	 * @param line
+	 * @return
+	 */
+	private static SourceType setSourceType(String line) {
+		LongShort.SourceType st = null;
+		if (line.contains(DJIA_C_Name)) {
+			st = LongShort.SourceType.DJIA_C;
+		} else if (line.contains(DJIA_Name)) {
+			st = LongShort.SourceType.DJIA;
+		} else if (line.contains(NDX_C_Name)) {
+			st = LongShort.SourceType.NDX_C;
+		} else if (line.contains(NDX_Name)) {
+			st = LongShort.SourceType.NDX;
+		} else if (line.contains(EMINI500_Name)) {
+			st = LongShort.SourceType.EMINI500;
+		} else if (line.contains(SPX_C_Name)) {
+			st = LongShort.SourceType.SPX_C;
+		} else if (line.contains(SPX_Name)) {
+			st = LongShort.SourceType.SPX;
+		} else if (line.contains(RUT_Name)) {
+			st = LongShort.SourceType.RUT;
+		} else if (line.contains(EMINI400_Name)) {
+			st = LongShort.SourceType.EMINI400;
+		} else if (line.contains(VIX_Name)) {
+			st = LongShort.SourceType.VIX;
+		}
+		return st;
+	}
+
+	/**
 	 * net.ajaskey.market.tools.validName
 	 *
 	 * @param name
@@ -325,29 +468,11 @@ public class ProcessCOTS {
 		// System.out.println(name);
 		for (final String s : validNames) {
 			if (name.contains(s)) {
+				// System.out.println("true for : " + name);
 				return true;
 			}
 		}
 		return false;
-	}
-
-	private static void getLatestCots() {
-		String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
-		List<String> resp = new ArrayList<>();
-
-		resp = WebGet.getSPDR(url);
-
-		if (resp != null) {
-
-			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
-				for (final String s : resp) {
-					pw.println(s);
-				}
-			} catch (final FileNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-
 	}
 
 }
