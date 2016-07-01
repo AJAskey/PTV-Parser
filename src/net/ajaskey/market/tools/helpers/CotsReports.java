@@ -3,7 +3,9 @@ package net.ajaskey.market.tools.helpers;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
@@ -42,8 +44,16 @@ import net.ajaskey.market.misc.Utils;
  */
 public class CotsReports {
 
-	private static final String	TAB	= "\t";
-	private static final String	NL	= System.getProperty("line.separator");
+	private static final String	TAB					= "\t";
+	private static final String	NL					= System.getProperty("line.separator");
+
+	private static List<String>	csvOI				= new ArrayList<>();
+	private static List<String>	csvDealer		= new ArrayList<>();
+	private static List<String>	csvPM				= new ArrayList<>();
+	private static List<String>	csvETF			= new ArrayList<>();
+	private static List<String>	csvOther		= new ArrayList<>();
+	private static List<String>	csvNonrpt		= new ArrayList<>();
+	private static List<String>	csvCombined	= new ArrayList<>();
 
 	/**
 	 *
@@ -87,7 +97,7 @@ public class CotsReports {
 	 * @param ls
 	 * @param oi
 	 */
-	private static void writeCsvData(PrintWriter pw, LongShort ls, double oi) {
+	private static void writeCsvData(List<String> csvList, LongShort ls, double oi) {
 		double percOIlong = 0.0;
 		double percOIshort = 0.0;
 		double percOIspread = 0.0;
@@ -97,8 +107,10 @@ public class CotsReports {
 			percOIshort = ls.shortPos / oi;
 			percOIspread = ls.spreadPos / oi;
 		}
-		pw.printf("%10s,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date), ls.longPos, ls.shortPos,
-		    ls.spreadPos, ls.pc, percOIlong, percOIshort, percOIspread);
+		long delta = ls.longPos - ls.shortPos;
+		String str = String.format("%10s,%10d,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date),
+		    ls.longPos, ls.shortPos, ls.spreadPos, delta, ls.pc, percOIlong, percOIshort, percOIspread);
+		csvList.add(str);
 
 	}
 
@@ -109,7 +121,7 @@ public class CotsReports {
 	 * @param pw
 	 */
 	private static void writeCsvHeader(PrintWriter pw) {
-		pw.println("Date,Long,Short,Spread,ShortToLong,PercentLong,PercentShort,PercentSpread");
+		pw.println("Date,Long,Short,Spread,Delta,ShortToLong,PercentLong,PercentShort,PercentSpread");
 	}
 
 	/**
@@ -120,7 +132,7 @@ public class CotsReports {
 	 * @param st
 	 * @throws FileNotFoundException
 	 */
-	public static void writeSpreadsheets(List<LongShort> list, LongShort.SourceType st) throws FileNotFoundException {
+	public static void writeCsv(List<LongShort> list, LongShort.SourceType st) throws FileNotFoundException {
 		final PrintWriter pwOI = new PrintWriter("out\\" + st + "-oi-data.csv");
 		final PrintWriter pwDealer = new PrintWriter("out\\" + st + "-dealer-data.csv");
 		final PrintWriter pwPM = new PrintWriter("out\\" + st + "-pm-data.csv");
@@ -135,6 +147,13 @@ public class CotsReports {
 		CotsReports.writeCsvHeader(pwNonrpt);
 		CotsReports.writeCsvHeader(pwOther);
 
+		csvOI.clear();
+		csvDealer.clear();
+		csvPM.clear();
+		csvETF.clear();
+		csvOther.clear();
+		csvNonrpt.clear();
+
 		double oi = 0.0;
 
 		for (final LongShort ls : list) {
@@ -143,24 +162,23 @@ public class CotsReports {
 				switch (ls.type) {
 					case OI: // needs to be first in data group, always is so far
 						oi = ls.longPos;
-						pwOI.printf("%10s,%10d%n", Utils.getString(ls.date), ls.longPos);
+						String str = String.format("%10s,%10d%n", Utils.getString(ls.date), ls.longPos);
+						csvOI.add(str);
 						break;
 					case DEALER:
-						CotsReports.writeCsvData(pwDealer, ls, oi);
+						CotsReports.writeCsvData(csvDealer, ls, oi);
 						break;
-					case ETFxn:
-						CotsReports.writeCsvData(pwLevered, ls, oi);
+					case LEVERED:
+						CotsReports.writeCsvData(csvETF, ls, oi);
 						break;
 					case NONRPT:
-						CotsReports.writeCsvData(pwNonrpt, ls, oi);
+						CotsReports.writeCsvData(csvNonrpt, ls, oi);
 						break;
 					case OTHER:
-						CotsReports.writeCsvData(pwOther, ls, oi);
+						CotsReports.writeCsvData(csvOther, ls, oi);
 						break;
 					case PM:
-						CotsReports.writeCsvData(pwPM, ls, oi);
-						break;
-					case TRADER_DEALER:
+						CotsReports.writeCsvData(csvPM, ls, oi);
 						break;
 					default:
 						break;
@@ -168,6 +186,38 @@ public class CotsReports {
 				}
 			}
 		}
+
+		Collections.reverse(csvOI);
+		Collections.reverse(csvDealer);
+		Collections.reverse(csvPM);
+		Collections.reverse(csvETF);
+		Collections.reverse(csvOther);
+		Collections.reverse(csvNonrpt);
+
+		for (String s : csvOI) {
+			pwOI.print(s);
+		}
+
+		for (String s : csvDealer) {
+			pwDealer.print(s);
+		}
+
+		for (String s : csvPM) {
+			pwPM.print(s);
+		}
+
+		for (String s : csvETF) {
+			pwLevered.print(s);
+		}
+
+		for (String s : csvOther) {
+			pwOther.print(s);
+		}
+
+		for (String s : csvNonrpt) {
+			pwNonrpt.print(s);
+		}
+
 		pwOI.close();
 		pwDealer.close();
 		pwPM.close();
@@ -198,13 +248,14 @@ public class CotsReports {
 				totShort += ls.shortPos;
 				totSpread += ls.spreadPos;
 
-				//System.out.println("Adding " + ls.source + TAB + ls.type + TAB + Utils.stringDate(ls.date));
+				// System.out.println("Adding " + ls.source + TAB + ls.type + TAB +
+				// Utils.stringDate(ls.date));
 
 			}
 			if (prevCal.after(ls.date)) {
 				LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
 				theLs.date = prevCal;
-				CotsReports.writeCsvData(pwCombined, theLs, oi);
+				CotsReports.writeCsvData(csvCombined, theLs, oi);
 				prevCal = ls.date;
 				totLong = 0;
 				totShort = 0;
@@ -212,10 +263,15 @@ public class CotsReports {
 
 			}
 		}
-		
+
 		LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
 		theLs.date = prevCal;
-		CotsReports.writeCsvData(pwCombined, theLs, oi);
+		CotsReports.writeCsvData(csvCombined, theLs, oi);
+
+		Collections.reverse(csvCombined);
+		for (String s : csvCombined) {
+			pwCombined.print(s);
+		}
 
 		pwCombined.close();
 	}
@@ -251,7 +307,7 @@ public class CotsReports {
 
 					switch (ls.type) {
 						case DEALER:
-						case ETFxn:
+						case LEVERED:
 						case NONRPT:
 						case OTHER:
 						case PM:
@@ -276,7 +332,7 @@ public class CotsReports {
 							pm = ls;
 							knt++;
 							break;
-						case ETFxn:
+						case LEVERED:
 							levered = ls;
 							knt++;
 							break;
@@ -320,5 +376,7 @@ public class CotsReports {
 			System.out.println("Error - writeSummry() invalid data!");
 		}
 	}
+	
+
 
 }

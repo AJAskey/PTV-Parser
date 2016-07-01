@@ -40,7 +40,7 @@ import net.ajaskey.market.misc.Utils;
 public class LongShort {
 
 	public enum MarketType {
-		DEALER, PM, ETFxn, OTHER, NONRPT, OI, TRADER_DEALER, TRADER_PM, TRADER_LEVERED, TRADER_OTHER, TOTALS
+		DEALER, PM, LEVERED, OTHER, NONRPT, OI, TRADER_DEALER, TRADER_PM, TRADER_LEVERED, TRADER_OTHER, TOTALS
 	};
 
 	public enum SourceType {

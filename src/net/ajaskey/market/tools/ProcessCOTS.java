@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +21,7 @@ import net.ajaskey.market.tools.helpers.CotsData;
 import net.ajaskey.market.tools.helpers.CotsReports;
 import net.ajaskey.market.tools.helpers.CotsSorter;
 import net.ajaskey.market.tools.helpers.LongShort;
+import net.ajaskey.market.tools.helpers.WebGet;
 
 /**
  * This class...
@@ -55,12 +57,11 @@ import net.ajaskey.market.tools.helpers.LongShort;
  */
 public class ProcessCOTS {
 
-	final static private String						folderPath	= "f:/temp/cots";
+	final static private String						folderPath	= "i:/temp/cots";
 	final static private Charset					charset			= Charset.forName("UTF-8");
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
 	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("MMMM dd, yyyy");
 	private static final String						TAB					= "\t";
-	private static final String						COMMA				= ",";
 
 	private static List<String>						validNames	= new ArrayList<>();
 
@@ -74,6 +75,8 @@ public class ProcessCOTS {
 		validNames.add("S&P 500 Consolidated");
 		validNames.add("RUSSELL 2000 MINI");
 		// validNames.add("VIX FUTURES");
+
+		getLatestCots();
 
 		try {
 			readDaily();
@@ -93,8 +96,11 @@ public class ProcessCOTS {
 		CotsReports.dumpRaw(CotsData.dataPoints);
 
 		try {
-			CotsReports.writeSpreadsheets(CotsData.dataPoints, LongShort.SourceType.SPX);
-			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.ETFxn);
+			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.SPX);
+			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.LEVERED);
+			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.PM);
+			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.DEALER);
+			CotsReports.writeCsvCombined(CotsData.dataPoints, LongShort.MarketType.NONRPT);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -108,18 +114,20 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static void readDaily() throws ParseException {
+
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
 		final Calendar rptDate = Calendar.getInstance();
 
 		for (final File file : listOfFiles) {
-			
+
 			if ((file.isFile()) && (file.getName().toLowerCase().contains("daily"))) {
-				
+
 				System.out.println(file.getName());
 				final Path path = file.toPath();
-				
+
 				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+
 					String line = reader.readLine(); // Header
 
 					boolean processing = false;
@@ -129,58 +137,61 @@ public class ProcessCOTS {
 
 					while ((line = reader.readLine()) != null) {
 
-						if (dStr == null) {
-							if (line.contains("Traders in Financial Futures - Options and Futures Combined Positions as of")) {
-								int idx = line.indexOf("as of") + 6;
-								String str = line.substring(idx);
-								Calendar cal = Calendar.getInstance();
-								rptDate.setTime(sdf2.parse(str.trim()));
-								// Utils.printCalendar(rptDate);
-								dStr = sdf.format(rptDate.getTime());
-								// System.out.println(dStr);
+						if (line.length() > 5) {
+							String s = line.substring(0, 5);
+							if (!s.contains("<")) {
+
+								if (dStr == null) {
+									if (line.contains("Traders in Financial Futures - Options and Futures Combined Positions as of")) {
+										int idx = line.indexOf("as of") + 6;
+										String str = line.substring(idx);
+										rptDate.setTime(sdf2.parse(str.trim()));
+										// Utils.printCalendar(rptDate);
+										dStr = sdf.format(rptDate.getTime());
+										// System.out.println(dStr);
+									}
+								}
+
+								if ((!processing) && (ProcessCOTS.validName(line))) {
+
+									if (line.contains("NASDAQ-100 Consolidated")) {
+										st = LongShort.SourceType.NDX;
+									} else if (line.contains("S&P 500 Consolidated")) {
+										st = LongShort.SourceType.SPX;
+									} else if (line.contains("RUSSELL 2000 MINI")) {
+										st = LongShort.SourceType.RUT;
+									} else if (line.contains("VIX FUTURES")) {
+										st = LongShort.SourceType.VIX;
+									}
+									processing = true;
+
+									// System.out.println(st);
+								}
+
+								if (processing) {
+
+									if (line.contains("Open Interest is")) {
+										int idx = line.indexOf("Open Interest is") + 16;
+										String str = line.substring(idx);
+										oiStr = str.trim().replaceAll(",", "");
+										// System.out.println(oiStr);
+									} else if (line.contains(",")) {
+										String str = line.trim().replaceAll(",", "");
+										String fld[] = str.split("\\s+");
+										// for (String s : fld) {
+										// System.out.println("\t" + s);
+										// }
+										CotsData.setDataPoint(oiStr, oiStr, "0", rptDate, LongShort.MarketType.OI, st);
+										CotsData.setDataPoint(fld[0], fld[1], fld[2], rptDate, LongShort.MarketType.DEALER, st);
+										CotsData.setDataPoint(fld[3], fld[4], fld[5], rptDate, LongShort.MarketType.PM, st);
+										CotsData.setDataPoint(fld[6], fld[7], fld[8], rptDate, LongShort.MarketType.LEVERED, st);
+										CotsData.setDataPoint(fld[9], fld[10], fld[11], rptDate, LongShort.MarketType.OTHER, st);
+										CotsData.setDataPoint(fld[12], fld[13], "0", rptDate, LongShort.MarketType.NONRPT, st);
+										processing = false;
+									}
+								}
 							}
 						}
-
-						if ((!processing) && (ProcessCOTS.validName(line))) {
-
-							if (line.contains("NASDAQ-100 Consolidated")) {
-								st = LongShort.SourceType.NDX;
-							} else if (line.contains("S&P 500 Consolidated")) {
-								st = LongShort.SourceType.SPX;
-							} else if (line.contains("RUSSELL 2000 MINI")) {
-								st = LongShort.SourceType.RUT;
-							} else if (line.contains("VIX FUTURES")) {
-								st = LongShort.SourceType.VIX;
-							}
-							processing = true;
-
-							// System.out.println(st);
-						}
-
-						if (processing) {
-
-							if (line.contains("Open Interest is")) {
-								int idx = line.indexOf("Open Interest is") + 16;
-								String str = line.substring(idx);
-								oiStr = str.trim().replaceAll(",", "");
-								// System.out.println(oiStr);
-							} else if (line.contains(",")) {
-								String str = line.trim().replaceAll(",", "");
-								String fld[] = str.split("\\s+");
-								// for (String s : fld) {
-								// System.out.println("\t" + s);
-								// }
-								CotsData.setDataPoint(oiStr, oiStr, "0", rptDate, LongShort.MarketType.OI, st);
-								CotsData.setDataPoint(fld[0], fld[1], fld[2], rptDate, LongShort.MarketType.DEALER, st);
-								CotsData.setDataPoint(fld[3], fld[4], fld[5], rptDate, LongShort.MarketType.PM, st);
-								CotsData.setDataPoint(fld[6], fld[7], fld[8], rptDate, LongShort.MarketType.ETFxn, st);
-								CotsData.setDataPoint(fld[9], fld[10], fld[11], rptDate, LongShort.MarketType.OTHER, st);
-								CotsData.setDataPoint(fld[12], fld[13], "0", rptDate, LongShort.MarketType.NONRPT, st);
-								processing = false;
-							}
-
-						}
-
 					}
 				} catch (final IOException e) {
 					e.printStackTrace();
@@ -237,14 +248,18 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static void readAndProcess(Calendar cal) {
+
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
 		final Calendar rptDate = Calendar.getInstance();
 
 		for (final File file : listOfFiles) {
+
 			if ((file.isFile()) && (!file.getName().toLowerCase().contains("daily"))) {
+
 				System.out.println(file.getName());
 				final Path path = file.toPath();
+
 				try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
 					String line = reader.readLine(); // Header
 
@@ -278,7 +293,7 @@ public class ProcessCOTS {
 									CotsData.setDataPoint(fld[7], fld[7], "0", rptDate, LongShort.MarketType.OI, st);
 									CotsData.setDataPoint(fld[8], fld[9], fld[10], rptDate, LongShort.MarketType.DEALER, st);
 									CotsData.setDataPoint(fld[11], fld[12], fld[13], rptDate, LongShort.MarketType.PM, st);
-									CotsData.setDataPoint(fld[14], fld[15], fld[16], rptDate, LongShort.MarketType.ETFxn, st);
+									CotsData.setDataPoint(fld[14], fld[15], fld[16], rptDate, LongShort.MarketType.LEVERED, st);
 									CotsData.setDataPoint(fld[17], fld[18], fld[19], rptDate, LongShort.MarketType.OTHER, st);
 									CotsData.setDataPoint(fld[22], fld[23], "0", rptDate, LongShort.MarketType.NONRPT, st);
 									CotsData.setDataPoint(fld[59], fld[60], fld[61], rptDate, LongShort.MarketType.TRADER_DEALER, st);
@@ -314,6 +329,25 @@ public class ProcessCOTS {
 			}
 		}
 		return false;
+	}
+
+	private static void getLatestCots() {
+		String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
+		List<String> resp = new ArrayList<>();
+
+		resp = WebGet.getSPDR(url);
+
+		if (resp != null) {
+
+			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
+				for (final String s : resp) {
+					pw.println(s);
+				}
+			} catch (final FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 }
