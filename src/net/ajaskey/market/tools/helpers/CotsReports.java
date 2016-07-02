@@ -299,7 +299,7 @@ public class CotsReports {
 	 * @param pw
 	 */
 	private static void writeCsvHeader(PrintWriter pw) {
-		pw.println("Date,Long,Short,Spread,Delta,ShortToLong,PercentLong,PercentShort,PercentSpread");
+		pw.println("Date,Long,Short,Spread,Long-Short,ShortToLong,PercentLong,PercentShort,PercentSpread");
 	}
 
 	/**

@@ -329,6 +329,19 @@ public class TickerData {
 		return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
 	}
 
+	static public DailyData getDailyDate(TickerData td, Calendar cal) {
+
+		for (DailyData dd : td.getData()) {
+			if (Utils.sameDate(cal, dd.getDate())) {
+				return dd;
+			} else if (dd.getDate().after(cal)) {
+				return dd;
+			}
+		}
+		return null;
+
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.getIndexOfDate

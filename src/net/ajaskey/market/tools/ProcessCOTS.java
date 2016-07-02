@@ -58,7 +58,7 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						folderPath		= "f:/temp/cots";
+	final private static String						folderPath		= "i:/temp/cots";
 	final private static Charset					charset				= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
@@ -118,6 +118,7 @@ public class ProcessCOTS {
 		ProcessCOTS.readAndProcess(null);
 
 		CotsReports.dumpRaw(CotsData.dataPoints);
+
 	}
 
 	public static void runCan02() throws ParseException {
@@ -140,7 +141,7 @@ public class ProcessCOTS {
 		Utils.makeDir("out");
 
 		try {
-			Calendar cal = Utils.buildCalendar(2016, Calendar.JUNE, 21);
+			Calendar cal = Utils.buildCalendar(2016, Calendar.JUNE, 28);
 			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX_C, cal);
 			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.SPX, cal);
 			CotsReports.writeSummary(CotsData.dataPoints, LongShort.SourceType.NDX_C, cal);
@@ -182,8 +183,6 @@ public class ProcessCOTS {
 			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.NDX_C);
 			CotsReports.writeCsv(CotsData.dataPoints, LongShort.SourceType.NDX);
 
-			CotsReports.writeCsvCombined(CotsData.dataPoints);
-
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -192,9 +191,15 @@ public class ProcessCOTS {
 	public static void runCan04() throws ParseException {
 		validNames.clear();
 
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
 		validNames.add(SPX_C_Name);
 		validNames.add(SPX_Name);
 		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
 
 		ProcessCOTS.readDaily();
 
@@ -221,7 +226,9 @@ public class ProcessCOTS {
 
 		System.out.println("Processing...");
 		
-		CotsReports.setRptPrefix("Test_");
+		getLatestCots();
+		
+		CotsReports.setRptPrefix("All_");
 
 		runCan04();
 

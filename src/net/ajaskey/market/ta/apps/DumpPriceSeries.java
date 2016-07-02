@@ -72,15 +72,15 @@ public class DumpPriceSeries {
 			final String dataPath = System.getProperty(arg, "");
 			filenames.add(dataPath + "\\ASCII\\INDEX");
 
-			final Calendar cal = Utils.buildCalendar(2015, Calendar.JANUARY, 6);
-			final Calendar endCal = Utils.buildCalendar(2016, Calendar.JUNE, 22);
+			final Calendar cal = Utils.buildCalendar(2012, Calendar.JANUARY, 3);
+			final Calendar endCal = Utils.buildCalendar(2016, Calendar.JULY, 1);
 
-			final List<TickerData> tdList = ParseData.parseFiles(filenames, 400);
+			final List<TickerData> tdList = ParseData.parseFiles(filenames, 1700);
 
 			final TickerData td = TickerData.getFromList("SPX.IDX", tdList);
 
 			while (cal.before(endCal)) {
-				final DailyData dd = TickerData.getDataOfDate(td, cal);
+				final DailyData dd = TickerData.getDailyDate(td, cal);
 				if (dd != null) {
 					final String str = String.format("%s,%9.2f", Utils.getString(cal), dd.getClose());
 					pw.println(str);
