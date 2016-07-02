@@ -187,10 +187,10 @@ public class ProcessCOTS {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void runCan04() throws ParseException {
-		validNames.clear();
 
+	public static void runAllCombo(String prefix) throws ParseException {
+
+		validNames.clear();
 		validNames.add(DJIA_C_Name);
 		validNames.add(DJIA_Name);
 		validNames.add(NDX_C_Name);
@@ -201,11 +201,90 @@ public class ProcessCOTS {
 		validNames.add(EMINI400_Name);
 		validNames.add(RUT_Name);
 
+		CotsReports.setRptPrefix(prefix);
+		
 		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+		
+		try {
 
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runSpxCombo(String prefix) throws ParseException {
+		validNames.clear();
+
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+
+		CotsReports.setRptPrefix(prefix);
+		
+		ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 
-		Utils.makeDir("out");
+		try {
+
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runNdxCombo(String prefix) throws ParseException {
+		validNames.clear();
+
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+
+		CotsReports.setRptPrefix(prefix);
+		
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runDjiaCombo(String prefix) throws ParseException {
+		validNames.clear();
+
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+
+		CotsReports.setRptPrefix(prefix);
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsvCombined(CotsData.dataPoints);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runRutCombo(String prefix) throws ParseException {
+		validNames.clear();
+
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		CotsReports.setRptPrefix(prefix);
+		
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
 
 		try {
 
@@ -225,12 +304,16 @@ public class ProcessCOTS {
 	public static void main(String[] args) throws ParseException {
 
 		System.out.println("Processing...");
-		
-		getLatestCots();
-		
-		CotsReports.setRptPrefix("All_");
 
-		runCan04();
+		getLatestCots();
+
+		Utils.makeDir("out");
+
+		runAllCombo("All_");
+		runSpxCombo("SPX_");
+		runNdxCombo("NDX_");
+		runDjiaCombo("DJIA_");
+		runRutCombo("RUT_");
 
 		System.out.println("Done.");
 
@@ -351,6 +434,8 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static void readDaily() throws ParseException {
+		
+		CotsData.dataPoints.clear();
 
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();

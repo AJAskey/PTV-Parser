@@ -102,6 +102,7 @@ public class ProcessDTS {
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
+		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
 
 	}
 
