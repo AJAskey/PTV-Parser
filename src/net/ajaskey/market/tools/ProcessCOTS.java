@@ -202,10 +202,10 @@ public class ProcessCOTS {
 		validNames.add(RUT_Name);
 
 		CotsReports.setRptPrefix(prefix);
-		
+
 		ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
-		
+
 		try {
 
 			CotsReports.writeCsvCombined(CotsData.dataPoints);
@@ -223,7 +223,7 @@ public class ProcessCOTS {
 		validNames.add(EMINI500_Name);
 
 		CotsReports.setRptPrefix(prefix);
-		
+
 		ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 
@@ -243,7 +243,7 @@ public class ProcessCOTS {
 		validNames.add(NDX_Name);
 
 		CotsReports.setRptPrefix(prefix);
-		
+
 		ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 
@@ -282,9 +282,8 @@ public class ProcessCOTS {
 		validNames.add(RUT_Name);
 
 		CotsReports.setRptPrefix(prefix);
-		
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
+
+		readAndParse();
 
 		try {
 
@@ -293,6 +292,47 @@ public class ProcessCOTS {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static void readAndParse() throws ParseException {
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+		parseData();
+	}
+
+	/**
+	 * net.ajaskey.market.tools.parseData
+	 *
+	 */
+	private static void parseData() {
+		
+		for (LongShort ls : CotsData.dataPoints) {
+			
+			CotsData cd = findDate(ls.date);
+			
+			if (cd == null) {
+				cd = new CotsData(ls);
+				CotsData.cotsList.add(cd);
+			} else {
+				cd.setData(ls);
+				cd.update();
+			}
+		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.findDate
+	 *
+	 * @param date
+	 * @return
+	 */
+	private static CotsData findDate(Calendar date) {
+		for (CotsData cd : CotsData.cotsList) {
+			if (Utils.sameDate(cd.date, date)) {
+				return cd;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -306,14 +346,23 @@ public class ProcessCOTS {
 		System.out.println("Processing...");
 
 		getLatestCots();
+		
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
 
 		Utils.makeDir("out");
+		
+		readAndParse();
+		
+		for (CotsData cd : CotsData.cotsList) {
+			System.out.println(cd);
+		}
 
-		runAllCombo("All_");
-		runSpxCombo("SPX_");
-		runNdxCombo("NDX_");
-		runDjiaCombo("DJIA_");
-		runRutCombo("RUT_");
+		// runAllCombo("All_");
+		// runSpxCombo("SPX_");
+		// runNdxCombo("NDX_");
+		// runDjiaCombo("DJIA_");
+		// runRutCombo("RUT_");
 
 		System.out.println("Done.");
 
@@ -434,7 +483,7 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static void readDaily() throws ParseException {
-		
+
 		CotsData.dataPoints.clear();
 
 		final File allFiles = new File(folderPath);

@@ -212,6 +212,17 @@ public class Internals {
 		return (avg < ((-1.0) * obosLevel));
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.ta.apps.printBreath
+	 *
+	 * @param list
+	 * @param listName
+	 * @param days
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	private static void printBreath(String list, String listName, int days)
 	    throws FileNotFoundException, IOException, ParseException {
 
@@ -301,7 +312,8 @@ public class Internals {
 
 		Utils.makeDir("out");
 		double cumForce = 0;
-		pwAll.printf("\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName);
+		String desc = "Chg=Total Change of all components        Force=Chg * Volume, summed for each component";
+		pwAll.printf("\t%s\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName, desc);
 		for (int i = 0; i < days; i++) {
 			final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);

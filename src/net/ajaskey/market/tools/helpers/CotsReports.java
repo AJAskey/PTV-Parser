@@ -106,7 +106,7 @@ public class CotsReports {
 
 			}
 			if (prevCal.after(ls.date)) {
-				final LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
+				final LongShort theLs = new LongShort(totLong, totShort, totSpread, ls.date, LongShort.MarketType.TOTALS, ls.source);
 				theLs.date = prevCal;
 				CotsReports.writeCsvData(csvCombined, theLs, oi);
 				prevCal = ls.date;
@@ -117,7 +117,7 @@ public class CotsReports {
 			}
 		}
 
-		final LongShort theLs = new LongShort(totLong, totShort, totSpread, LongShort.MarketType.TOTALS);
+		final LongShort theLs = new LongShort(totLong, totShort, totSpread, prevCal, LongShort.MarketType.TOTALS, null);
 		theLs.date = prevCal;
 		CotsReports.writeCsvData(csvCombined, theLs, oi);
 
@@ -403,7 +403,7 @@ public class CotsReports {
 
 				CotsReports.printSummary(pw, nonrpt, totLongs, totShorts);
 
-				CotsReports.printSummary(pw, new LongShort(totLongs, totShorts, 0, LongShort.MarketType.TOTALS), totLongs,
+				CotsReports.printSummary(pw, new LongShort(totLongs, totShorts, 0, cal, LongShort.MarketType.TOTALS, null), totLongs,
 				    totShorts);
 
 			} else {

@@ -44,7 +44,7 @@ public class LongShort {
 	};
 
 	public enum SourceType {
-		DJIA, DJIA_C, SPX, SPX_C, NDX, NDX_C, RUT, EMINI500, EMINI400, VIX
+		ALL, DJIA, DJIA_C, SPX, SPX_C, NDX, NDX_C, RUT, EMINI500, EMINI400, VIX
 	}
 
 	public MarketType	type;
@@ -53,19 +53,21 @@ public class LongShort {
 	public long				shortPos;
 	public long				spreadPos;
 	public double			pc;
+	public long				delta;
 	public Calendar		date	= null;
 	public boolean		valid;
 
-	public LongShort(long longs, long shorts, long spreads, MarketType mt) {
+	public LongShort(long longs, long shorts, long spreads, Calendar d, MarketType mt, SourceType st) {
+
+		this.date = Utils.makeCopy(d);
+		// Utils.printCalendar(date);
+		this.type = mt;
+		this.source = st;
+
 		longPos = longs;
 		shortPos = shorts;
 		spreadPos = spreads;
-		if (longs > 0) {
-			pc = (double) shorts / (double) longs;
-		} else {
-			pc = 0.0;
-		}
-		type = mt;
+		update();
 	}
 
 	/**
@@ -98,11 +100,7 @@ public class LongShort {
 			} else {
 				this.spreadPos = 0;
 			}
-			if (this.longPos > 0) {
-				this.pc = (double) this.shortPos / (double) this.longPos;
-			} else {
-				this.pc = 0.0;
-			}
+			update();
 			this.valid = true;
 		} catch (final Exception e) {
 			this.longPos = 0;
@@ -112,6 +110,15 @@ public class LongShort {
 			this.valid = false;
 			e.printStackTrace();
 		}
+	}
+
+	public void update() {
+		if (this.longPos > 0) {
+			this.pc = (double) this.shortPos / (double) this.longPos;
+		} else {
+			this.pc = 0.0;
+		}
+		delta = longPos - shortPos;
 	}
 
 	/**
@@ -134,9 +141,9 @@ public class LongShort {
 		} else {
 			tot = this.longPos + this.shortPos + this.spreadPos;
 		}
-		final String ret = String.format("%10s    %-9s : %15s %12s %12s %12s %12s %10.2f", Utils.getString(this.date),
+		final String ret = String.format("%10s    %-9s : %15s %12s %12s %12s %12s %10.2f %9d", Utils.getString(this.date),
 		    this.source, this.type, Utils.formatInt(this.longPos), Utils.formatInt(this.shortPos),
-		    Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc);
+		    Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc, this.delta);
 		return ret;
 	}
 
