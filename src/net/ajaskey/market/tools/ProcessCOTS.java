@@ -139,60 +139,7 @@ public class ProcessCOTS {
 
 		try {
 
-			CotsReports.writeCsv("All_",outputPath);
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void runNdxCombo(String prefix) throws ParseException {
-		validNames.clear();
-
-		validNames.add(NDX_C_Name);
-		validNames.add(NDX_Name);
-
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
-
-		try {
-
-			CotsReports.writeCsvCombined(CotsData.dataPoints);
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void runDjiaCombo(String prefix) throws ParseException {
-		validNames.clear();
-
-		validNames.add(DJIA_C_Name);
-		validNames.add(DJIA_Name);
-
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
-
-		try {
-
-			CotsReports.writeCsvCombined(CotsData.dataPoints);
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void runRutCombo(String prefix) throws ParseException {
-		validNames.clear();
-
-		validNames.add(EMINI400_Name);
-		validNames.add(RUT_Name);
-
-		readAndParse();
-
-		try {
-
-			CotsReports.writeCsvCombined(CotsData.dataPoints);
+			CotsReports.writeCsv("All_", outputPath);
 
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();

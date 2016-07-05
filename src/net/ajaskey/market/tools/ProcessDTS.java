@@ -62,7 +62,7 @@ public class ProcessDTS {
 
 	final static public int				webDownloadYear		= 2016;
 	final static public int				webDownloadMonth	= Calendar.JULY;
-	final static public int				webDownloadDay		= 1;
+	final static public int				webDownloadDay		= 31;
 
 	/**
 	 *
