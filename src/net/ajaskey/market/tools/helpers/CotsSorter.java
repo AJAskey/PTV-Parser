@@ -35,7 +35,7 @@ import java.util.Comparator;
  *         </p>
  *
  */
-public class CotsSorter implements Comparator<LongShort> {
+public class CotsSorter implements Comparator<CotsData> {
 
 	/*
 	 * (non-Javadoc)
@@ -43,11 +43,11 @@ public class CotsSorter implements Comparator<LongShort> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(LongShort ls1, LongShort ls2) {
+	public int compare(CotsData cd1, CotsData cd2) {
 		int ret = 0;
-		if (ls1.date.before(ls2.date)) {
+		if (cd2.date.before(cd1.date)) {
 			ret = 1;
-		} else if (ls1.date.after(ls2.date)) {
+		} else if (cd2.date.after(cd1.date)) {
 			ret = -1;
 		}
 		return ret;

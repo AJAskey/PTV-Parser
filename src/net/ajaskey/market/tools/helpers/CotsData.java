@@ -14,8 +14,13 @@ public class CotsData {
 
 	private static final String		TAB					= "\t";
 	private static final String		NL					= System.getProperty("line.separator");
+
 	public Calendar								date				= null;
 	public long										oi					= 0;
+	public long										totalLong		= 0;
+	public long										totalShort	= 0;
+	public long										totalSpread	= 0;
+
 	public LongShort							dealer			= null;
 	public LongShort							pm					= null;
 	public LongShort							levered			= null;
@@ -187,15 +192,36 @@ public class CotsData {
 		}
 		if (this.pm != null) {
 			this.pm.update();
+			totalLong += pm.longPos;
+			totalShort += pm.shortPos;
+			totalSpread += pm.spreadPos;
 		}
 		if (this.levered != null) {
 			this.levered.update();
+			totalLong += levered.longPos;
+			totalShort += levered.shortPos;
+			totalSpread += levered.spreadPos;
 		}
 		if (this.other != null) {
 			this.other.update();
+			totalLong += other.longPos;
+			totalShort += other.shortPos;
+			totalSpread += other.spreadPos;
 		}
 		if (this.nonrpt != null) {
+			totalLong += nonrpt.longPos;
+			totalShort += nonrpt.shortPos;
+			totalSpread += nonrpt.spreadPos;
 			this.nonrpt.update();
 		}
+	}
+
+	public static CotsData findDate(Calendar date) {
+		for (CotsData cd : CotsData.cotsList) {
+			if (Utils.sameDate(cd.date, date)) {
+				return cd;
+			}
+		}
+		return null;
 	}
 }
