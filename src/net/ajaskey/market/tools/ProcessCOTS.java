@@ -22,7 +22,6 @@ import net.ajaskey.market.tools.helpers.CotsReports;
 import net.ajaskey.market.tools.helpers.CotsSorter;
 import net.ajaskey.market.tools.helpers.LongShort;
 import net.ajaskey.market.tools.helpers.LongShort.SourceType;
-import net.ajaskey.market.tools.helpers.LongShortSorter;
 import net.ajaskey.market.tools.helpers.WebGet;
 
 /**
@@ -59,8 +58,8 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						folderPath		= "i:/temp/cots";
-	final private static String						outputPath		= "i:/temp/out";
+	final private static String						folderPath		= "f:/temp/cots";
+	final private static String						outputPath		= "f:/temp/out";
 	final private static Charset					charset				= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
@@ -76,11 +75,13 @@ public class ProcessCOTS {
 	final private static String						EMINI400_Name	= "E-MINI S&P 400 STOCK INDEX";
 	final private static String						RUT_Name			= "RUSSELL 2000 MINI";
 	final private static String						VIX_Name			= "VIX FUTURES";
+	final private static String						EM_Name				= "MSCI EMERGING MKTS MINI INDEX";
+	final private static String						USD_Name			= "U.S. DOLLAR INDEX";
 
 	private static List<String>						validNames		= new ArrayList<>();
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.getLatestCots
 	 *
 	 */
@@ -102,57 +103,51 @@ public class ProcessCOTS {
 		}
 	}
 
-	public static void runAllCombo(String prefix) throws ParseException {
+	/**
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) throws ParseException, FileNotFoundException {
+
+		System.out.println("Processing...");
+
+		// ProcessCOTS.getLatestCots();
 
 		validNames.clear();
-		validNames.add(DJIA_C_Name);
-		validNames.add(DJIA_Name);
-		validNames.add(NDX_C_Name);
-		validNames.add(NDX_Name);
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
-		validNames.add(EMINI400_Name);
-		validNames.add(RUT_Name);
+		// validNames.add(SPX_C_Name);
+		// validNames.add(SPX_Name);
+		// validNames.add(EMINI500_Name);
 
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
+		// validNames.add(VIX_Name);
+		// validNames.add(EM_Name);
+		validNames.add(USD_Name);
 
-		try {
+		Utils.makeDir(outputPath);
 
-			CotsReports.writeCsv("ALL_", outputPath);
+		ProcessCOTS.readAndParse();
 
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+		// for (CotsData cd : CotsData.cotsList) {
+		// System.out.println(cd);
+		// }
 
-	public static void runSpxCombo(String prefix) throws ParseException {
-		validNames.clear();
+		String prefix = "USD_";
+		CotsReports.writeAllCsv(prefix, outputPath);
 
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
+		CotsReports.writeCsv(prefix, outputPath);
 
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
+		CotsReports.writeSummary(outputPath, prefix, Utils.buildCalendar(2016, Calendar.JUNE, 28));
 
-		try {
+		// runAllCombo("All_");
+		// runSpxCombo("SPX_");
+		// runNdxCombo("NDX_");
+		// runDjiaCombo("DJIA_");
+		// runRutCombo("RUT_");
 
-			CotsReports.writeCsv("All_", outputPath);
+		System.out.println("Done.");
 
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private static void readAndParse() throws ParseException {
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
-		parseData();
-
-		Collections.sort(CotsData.dataPoints, new LongShortSorter());
-		Collections.sort(CotsData.cotsList, new CotsSorter());
 	}
 
 	/**
@@ -161,7 +156,7 @@ public class ProcessCOTS {
 	 */
 	private static void parseData() {
 
-		for (LongShort ls : CotsData.dataPoints) {
+		for (final LongShort ls : CotsData.dataPoints) {
 
 			CotsData cd = CotsData.findDate(ls.date);
 
@@ -175,48 +170,12 @@ public class ProcessCOTS {
 		}
 	}
 
-	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 * @throws ParseException
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException {
+	private static void readAndParse() throws ParseException {
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+		ProcessCOTS.parseData();
 
-		System.out.println("Processing...");
-
-		getLatestCots();
-
-		validNames.clear();
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
-
-		// validNames.add(VIX_Name);
-
-		Utils.makeDir(outputPath);
-
-		readAndParse();
-
-		// for (CotsData cd : CotsData.cotsList) {
-		// System.out.println(cd);
-		// }
-
-		CotsReports.writeAllCsv("SPX_", outputPath);
-
-		CotsReports.writeCsv("SPX_", outputPath);
-
-		CotsReports.writeSummary("SPX_", Utils.buildCalendar(2016, Calendar.JUNE, 28));
-
-		// runAllCombo("All_");
-		// runSpxCombo("SPX_");
-		// runNdxCombo("NDX_");
-		// runDjiaCombo("DJIA_");
-		// runRutCombo("RUT_");
-
-		System.out.println("Done.");
-
+		Collections.sort(CotsData.cotsList, new CotsSorter());
 	}
 
 	/**
@@ -356,7 +315,7 @@ public class ProcessCOTS {
 
 					while ((line = reader.readLine()) != null) {
 
-						String tLine = line.trim();
+						final String tLine = line.trim();
 
 						if (tLine.length() > 5) {
 							final String s = tLine.substring(0, 5);
@@ -415,6 +374,50 @@ public class ProcessCOTS {
 
 	}
 
+	public static void runAllCombo(String prefix) throws ParseException {
+
+		validNames.clear();
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsv("ALL_", outputPath);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runSpxCombo(String prefix) throws ParseException {
+		validNames.clear();
+
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsv("All_", outputPath);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 * net.ajaskey.market.tools.setSourceType
 	 *
@@ -443,6 +446,10 @@ public class ProcessCOTS {
 			st = LongShort.SourceType.EMINI400;
 		} else if (line.contains(VIX_Name)) {
 			st = LongShort.SourceType.VIX;
+		} else if (line.contains(EM_Name)) {
+			st = LongShort.SourceType.EM;
+		} else if (line.contains(USD_Name)) {
+			st = LongShort.SourceType.USD;
 		}
 		return st;
 	}

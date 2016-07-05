@@ -75,7 +75,7 @@ public class DtsReports {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.dumpCompareCorporateMonths
 	 *
 	 * @param yearRecent
@@ -264,7 +264,32 @@ public class DtsReports {
 		final double oldTot = dOlder.getWith().yearly + dOlder.getInd().yearly + dOlder.getCorp().yearly;
 		final double chgTot = ((newTot - oldTot) / oldTot) * 100.0;
 
-		final String s = String.format("\tChange     ==>%18sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgTot);
+		final double chgDayWith = ((double) (dRecent.getWith().daily - dOlder.getWith().daily)
+		    / (double) dOlder.getWith().daily) * 100.0;
+		final double chgMonthWith = ((double) (dRecent.getWith().monthly - dOlder.getWith().monthly)
+		    / (double) dOlder.getWith().monthly) * 100.0;
+		final double chgYearWith = ((double) (dRecent.getWith().yearly - dOlder.getWith().yearly)
+		    / (double) dOlder.getWith().yearly) * 100.0;
+
+		final double chgDayInd = ((double) (dRecent.getInd().daily - dOlder.getInd().daily)
+		    / (double) dOlder.getInd().daily) * 100.0;
+		final double chgMonthInd = ((double) (dRecent.getInd().monthly - dOlder.getInd().monthly)
+		    / (double) dOlder.getInd().monthly) * 100.0;
+		final double chgYearInd = ((double) (dRecent.getInd().yearly - dOlder.getInd().yearly)
+		    / (double) dOlder.getInd().yearly) * 100.0;
+
+		final double chgDayCorp = ((double) (dRecent.getCorp().daily - dOlder.getCorp().daily)
+		    / (double) dOlder.getCorp().daily) * 100.0;
+		final double chgMonthCorp = ((double) (dRecent.getCorp().monthly - dOlder.getCorp().monthly)
+		    / (double) dOlder.getCorp().monthly) * 100.0;
+		final double chgYearCorp = ((double) (dRecent.getCorp().yearly - dOlder.getCorp().yearly)
+		    / (double) dOlder.getCorp().yearly) * 100.0;
+
+		String s = String.format("\tChange     ==>%18sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgTot);
+
+		s += String.format("\t  Withheld   =>%12.2f%%     %12.2f%%     %12.2f%% %n", chgDayWith, chgMonthWith, chgYearWith);
+		s += String.format("\t  Individual =>%12.2f%%     %12.2f%%     %12.2f%% %n", chgDayInd, chgMonthInd, chgYearInd);
+		s += String.format("\t  Corporate  =>%12.2f%%     %12.2f%%     %12.2f%% %n", chgDayCorp, chgMonthCorp, chgYearCorp);
 
 		ret += s;
 

@@ -44,7 +44,7 @@ public class LongShort {
 	};
 
 	public enum SourceType {
-		ALL, DJIA, DJIA_C, SPX, SPX_C, NDX, NDX_C, RUT, EMINI500, EMINI400, VIX
+		ALL, DJIA, DJIA_C, SPX, SPX_C, NDX, NDX_C, RUT, EMINI500, EMINI400, VIX, EM, USD
 	}
 
 	public MarketType	type;
@@ -57,6 +57,18 @@ public class LongShort {
 	public Calendar		date	= null;
 	public boolean		valid;
 
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public LongShort() {
+		this.longPos = 0;
+		this.shortPos = 0;
+		this.spreadPos = 0;
+		this.pc = 0.0;
+		this.valid = false;
+	}
+
 	public LongShort(long longs, long shorts, long spreads, Calendar d, MarketType mt, SourceType st) {
 
 		this.date = Utils.makeCopy(d);
@@ -64,10 +76,10 @@ public class LongShort {
 		this.type = mt;
 		this.source = st;
 
-		longPos = longs;
-		shortPos = shorts;
-		spreadPos = spreads;
-		update();
+		this.longPos = longs;
+		this.shortPos = shorts;
+		this.spreadPos = spreads;
+		this.update();
 	}
 
 	/**
@@ -100,7 +112,7 @@ public class LongShort {
 			} else {
 				this.spreadPos = 0;
 			}
-			update();
+			this.update();
 			this.valid = true;
 		} catch (final Exception e) {
 			this.longPos = 0;
@@ -110,27 +122,6 @@ public class LongShort {
 			this.valid = false;
 			e.printStackTrace();
 		}
-	}
-
-	public void update() {
-		if (this.longPos > 0) {
-			this.pc = (double) this.shortPos / (double) this.longPos;
-		} else {
-			this.pc = 0.0;
-		}
-		delta = longPos - shortPos;
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public LongShort() {
-		this.longPos = 0;
-		this.shortPos = 0;
-		this.spreadPos = 0;
-		this.pc = 0.0;
-		this.valid = false;
 	}
 
 	@Override
@@ -145,6 +136,15 @@ public class LongShort {
 		    this.source, this.type, Utils.formatInt(this.longPos), Utils.formatInt(this.shortPos),
 		    Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc, this.delta);
 		return ret;
+	}
+
+	public void update() {
+		if (this.longPos > 0) {
+			this.pc = (double) this.shortPos / (double) this.longPos;
+		} else {
+			this.pc = 0.0;
+		}
+		this.delta = this.longPos - this.shortPos;
 	}
 
 }

@@ -90,18 +90,18 @@ public class DtsData {
 	 *
 	 * net.ajaskey.market.tools.helpers.findData
 	 *
-	 * @param days
+	 * @param dataDayOfMonth
 	 * @param month
 	 * @param year
 	 * @return
 	 */
-	public static DtsData findData(int days, int month, int year) {
+	public static DtsData findData(int dataDayOfMonth, int month, int year) {
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == year) {
 				if (d.getDate().get(Calendar.MONTH) == month) {
 					knt++;
-					if (knt >= days) {
+					if (knt >= dataDayOfMonth) {
 						return d;
 					}
 				}
@@ -226,21 +226,6 @@ public class DtsData {
 		}
 
 		return 0;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.newCalendar
-	 *
-	 * @param year
-	 * @param month
-	 * @param day
-	 * @return
-	 */
-	public static Calendar newCalendar(int year, int month, int day) {
-		final Calendar cal = Calendar.getInstance();
-		cal.set(year, month, day, 0, 0, 0);
-		return cal;
 	}
 
 	private final DtsDataTally	with;

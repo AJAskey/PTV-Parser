@@ -57,7 +57,7 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "i:/temp/dts";
+	final static private String		folderPath				= "f:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
@@ -86,12 +86,17 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		ProcessDTS.updateDtsFiles();
+		// ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 
+		final DtsData dd1 = DtsData.findData(22, Calendar.JUNE, 2015);
+		final DtsData dd2 = DtsData.findData(22, Calendar.JUNE, 2016);
+		System.out.println(DtsReports.genDiffReport(dd1, dd2));
+
 		System.out.println(DtsReports.genLastDataDayReport());
-		DtsReports.writeEomCsv(DtsData.newCalendar(2013, Calendar.OCTOBER, 1));
+
+		DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
 
 		DtsReports.dumpCompareMonths(2016, 2014, Calendar.OCTOBER);
 		DtsReports.dumpCompareMonths(2016, 2014, Calendar.NOVEMBER);

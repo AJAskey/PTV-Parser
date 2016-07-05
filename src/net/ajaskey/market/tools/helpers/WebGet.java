@@ -13,6 +13,21 @@ public class WebGet {
 
 	private static String NL = System.lineSeparator();
 
+	private static String getFromUrl(String url) throws IOException {
+		final StringBuilder sb = new StringBuilder();
+
+		final URL myURL = new URL(url);
+		final URLConnection myURLConnection = myURL.openConnection();
+		myURLConnection.connect();
+		String line;
+		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
+			while ((line = resp.readLine()) != null) {
+				sb.append(line + NL);
+			}
+		}
+		return sb.toString();
+	}
+
 	/**
 	 *
 	 * @param url
@@ -74,21 +89,6 @@ public class WebGet {
 			return ret;
 		}
 		return null;
-	}
-
-	private static String getFromUrl(String url) throws IOException {
-		final StringBuilder sb = new StringBuilder();
-
-		final URL myURL = new URL(url);
-		final URLConnection myURLConnection = myURL.openConnection();
-		myURLConnection.connect();
-		String line;
-		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
-			while ((line = resp.readLine()) != null) {
-				sb.append(line + NL);
-			}
-		}
-		return sb.toString();
 	}
 
 }

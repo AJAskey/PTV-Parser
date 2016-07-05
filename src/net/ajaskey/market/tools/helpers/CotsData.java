@@ -15,29 +15,24 @@ public class CotsData {
 	private static final String		TAB					= "\t";
 	private static final String		NL					= System.getProperty("line.separator");
 
-	public Calendar								date				= null;
-	public long										oi					= 0;
-	public long										totalLong		= 0;
-	public long										totalShort	= 0;
-	public long										totalSpread	= 0;
-
-	public LongShort							dealer			= null;
-	public LongShort							pm					= null;
-	public LongShort							levered			= null;
-
-	public LongShort							other				= null;
-	public LongShort							nonrpt			= null;
-
 	/**
-	 * This method serves as a constructor for the class.
+	 * 
+	 * net.ajaskey.market.tools.helpers.findDate
 	 *
+	 * @param date
+	 * @return
 	 */
-	public CotsData(LongShort ls) {
-		this.setData(ls);
+	public static CotsData findDate(Calendar date) {
+		for (final CotsData cd : CotsData.cotsList) {
+			if (Utils.sameDate(cd.date, date)) {
+				return cd;
+			}
+		}
+		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.setDataPoint
 	 *
 	 * @param l
@@ -104,6 +99,30 @@ public class CotsData {
 		if (tmp.valid) {
 			dataPoints.add(tmp);
 		}
+	}
+
+	public Calendar		date				= null;
+	public long				oi					= 0;
+
+	public long				totalLong		= 0;
+	public long				totalShort	= 0;
+	public long				totalSpread	= 0;
+
+	public LongShort	dealer			= null;
+	public LongShort	pm					= null;
+
+	public LongShort	levered			= null;
+
+	public LongShort	other				= null;
+
+	public LongShort	nonrpt			= null;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public CotsData(LongShort ls) {
+		this.setData(ls);
 	}
 
 	/**
@@ -182,7 +201,7 @@ public class CotsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.update
 	 *
 	 */
@@ -192,36 +211,27 @@ public class CotsData {
 		}
 		if (this.pm != null) {
 			this.pm.update();
-			totalLong += pm.longPos;
-			totalShort += pm.shortPos;
-			totalSpread += pm.spreadPos;
+			this.totalLong += this.pm.longPos;
+			this.totalShort += this.pm.shortPos;
+			this.totalSpread += this.pm.spreadPos;
 		}
 		if (this.levered != null) {
 			this.levered.update();
-			totalLong += levered.longPos;
-			totalShort += levered.shortPos;
-			totalSpread += levered.spreadPos;
+			this.totalLong += this.levered.longPos;
+			this.totalShort += this.levered.shortPos;
+			this.totalSpread += this.levered.spreadPos;
 		}
 		if (this.other != null) {
 			this.other.update();
-			totalLong += other.longPos;
-			totalShort += other.shortPos;
-			totalSpread += other.spreadPos;
+			this.totalLong += this.other.longPos;
+			this.totalShort += this.other.shortPos;
+			this.totalSpread += this.other.spreadPos;
 		}
 		if (this.nonrpt != null) {
-			totalLong += nonrpt.longPos;
-			totalShort += nonrpt.shortPos;
-			totalSpread += nonrpt.spreadPos;
+			this.totalLong += this.nonrpt.longPos;
+			this.totalShort += this.nonrpt.shortPos;
+			this.totalSpread += this.nonrpt.spreadPos;
 			this.nonrpt.update();
 		}
-	}
-
-	public static CotsData findDate(Calendar date) {
-		for (CotsData cd : CotsData.cotsList) {
-			if (Utils.sameDate(cd.date, date)) {
-				return cd;
-			}
-		}
-		return null;
 	}
 }
