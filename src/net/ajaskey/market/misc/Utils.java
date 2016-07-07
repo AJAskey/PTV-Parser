@@ -5,6 +5,8 @@ import java.io.File;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -46,21 +48,40 @@ public class Utils {
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("E dd-MMM-yyyy");
 
-	public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+	//public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
 
 	public static String									NL					= System.lineSeparator();
 	public static String									TAB					= "\t";
 
 	private static NumberFormat						intFmt			= null;
 
+	static public Map<String, Integer>		mapNames		= null;
+	static public Map<String, Integer>		mapDays			= null;
+	final static public Locale						locale			= Locale.getDefault();
+
 	private static boolean								initialized	= false;
+
+	/**
+	 * 
+	 * net.ajaskey.market.misc.buildCalendar
+	 *
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @return
+	 */
+	public static Calendar buildCalendar(int year, int month, int day) {
+		final Calendar cal = Calendar.getInstance();
+		cal.set(year, month, day);
+		return cal;
+	}
 
 	/**
 	 * net.ajaskey.market.ta.printCalendar
 	 *
 	 * @param cal
 	 */
-	public static String calendarToString(Calendar cal) {
+	public static String calendarToLongString(Calendar cal) {
 		String ret = cal.toString() + "\n";
 		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
 		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
@@ -71,10 +92,24 @@ public class Utils {
 
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.formatInt
+	 *
+	 * @param i
+	 * @return
+	 */
 	public static String formatInt(int i) {
 		return (Utils.formatInt((long) i));
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.formatInt
+	 *
+	 * @param i
+	 * @return
+	 */
 	public static String formatInt(long i) {
 		String ret = "";
 		Utils.init();
@@ -97,9 +132,35 @@ public class Utils {
 		return baseDate;
 	}
 
-	public static String getDayOfWeek(Calendar cal) {
-		final int dow = cal.get(Calendar.DAY_OF_WEEK);
-		return daysOfWeek[dow - 1];
+	/**
+	 * 
+	 * net.ajaskey.market.misc.getDayOfWeek
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static String getDayName(Calendar cal) {
+		init();
+		return findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
+	}
+	
+	public static String getMonthName(Calendar cal) {
+		init();
+		return findName(mapNames, cal.get(Calendar.MONTH));
+	}
+	
+	public static String getMonthName(int month) {
+		init();
+		return findName(mapNames, month);
+	}
+	
+	private static String findName(Map<String, Integer> map, Integer key) {
+		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
 	}
 
 	/**
@@ -132,12 +193,10 @@ public class Utils {
 	 */
 	private static void init() {
 		if (!initialized) {
-			Utils.baseDate.set(Calendar.YEAR, 1900);
-			Utils.baseDate.set(Calendar.DAY_OF_YEAR, 1);
-			Utils.baseDate.set(Calendar.HOUR, 0);
-			Utils.baseDate.set(Calendar.MINUTE, 0);
-			Utils.baseDate.set(Calendar.SECOND, 1);
-			Utils.baseDate.set(Calendar.MILLISECOND, 0);
+			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
+			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
+			
 			intFmt = NumberFormat.getNumberInstance();
 			initialized = true;
 		}
@@ -159,12 +218,6 @@ public class Utils {
 		}
 		return newCal;
 	}
-	
-	public static Calendar buildCalendar(int year, int month, int day) {
-		Calendar cal = Calendar.getInstance();
-		cal.set(year, month, day);
-		return cal;
-	}
 
 	/**
 	 *
@@ -180,7 +233,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.printCalendar
 	 *
 	 * @param cal
@@ -251,16 +304,30 @@ public class Utils {
 		return false;
 	}
 
-	public static String stringDate2(Calendar cal) {
+	/**
+	 * 
+	 * net.ajaskey.market.misc.stringDate
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static String stringDate(Calendar cal) {
 		if (cal != null) {
-			return sdf2.format(cal.getTime());
+			return sdf.format(cal.getTime());
 		}
 		return "";
 	}
 
-	public static String stringDate(Calendar cal) {
+	/**
+	 * 
+	 * net.ajaskey.market.misc.stringDate2
+	 *
+	 * @param cal
+	 * @return
+	 */
+	public static String stringDate2(Calendar cal) {
 		if (cal != null) {
-			return sdf.format(cal.getTime());
+			return sdf2.format(cal.getTime());
 		}
 		return "";
 	}

@@ -86,15 +86,11 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		// ProcessDTS.updateDtsFiles();
+		//ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 
-		final DtsData dd1 = DtsData.findData(22, Calendar.JUNE, 2015);
-		final DtsData dd2 = DtsData.findData(22, Calendar.JUNE, 2016);
-		System.out.println(DtsReports.genDiffReport(dd1, dd2));
-
-		System.out.println(DtsReports.genLastDataDayReport());
+		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 
 		DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
 
@@ -194,7 +190,7 @@ public class ProcessDTS {
 				}
 			}
 			cal.add(Calendar.DATE, 1);
-			final String day = Utils.getDayOfWeek(cal);
+			final String day = Utils.getDayName(cal);
 			if (day.contains("SAT")) {
 				cal.add(Calendar.DATE, 2);
 			} else if (day.contains("SUN")) {

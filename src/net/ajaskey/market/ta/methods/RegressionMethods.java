@@ -145,8 +145,8 @@ public class RegressionMethods extends SimpleRegression {
 			this.dataCount++;
 		}
 		Collections.sort(this.points, new SortPoints());
-		System.out.println(Utils.calendarToString(this.minDate));
-		System.out.println(Utils.calendarToString(this.maxDate));
+		System.out.println(Utils.calendarToLongString(this.minDate));
+		System.out.println(Utils.calendarToLongString(this.maxDate));
 	}
 
 	/**

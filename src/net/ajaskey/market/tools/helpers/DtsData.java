@@ -73,12 +73,12 @@ public class DtsData {
 	 * @param cal
 	 * @return
 	 */
-	public static DtsData findData(int days, int year) {
+	public static DtsData findData(int rptOfYear, int year) {
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == year) {
 				knt++;
-				if (knt >= days) {
+				if (knt >= rptOfYear) {
 					return d;
 				}
 			}
@@ -90,18 +90,18 @@ public class DtsData {
 	 *
 	 * net.ajaskey.market.tools.helpers.findData
 	 *
-	 * @param dataDayOfMonth
+	 * @param rptOfMonth
 	 * @param month
 	 * @param year
 	 * @return
 	 */
-	public static DtsData findData(int dataDayOfMonth, int month, int year) {
+	public static DtsData findData(int rptOfMonth, int month, int year) {
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == year) {
 				if (d.getDate().get(Calendar.MONTH) == month) {
 					knt++;
-					if (knt >= dataDayOfMonth) {
+					if (knt >= rptOfMonth) {
 						return d;
 					}
 				}
@@ -173,9 +173,9 @@ public class DtsData {
 	 */
 	public static String formatDate(Calendar date) {
 		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getDataDaysInYear(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		str += "\t" + DtsData.getNumReportsInYear(date);
 		str += "\t"
-		    + DtsData.getDataDaysInMonth(date.get(Calendar.DATE), date.get(Calendar.MONTH), date.get(Calendar.YEAR));
+		    + DtsData.getNumReportsInMonth(date);
 		return str;
 	}
 
@@ -188,12 +188,12 @@ public class DtsData {
 	 * @param year
 	 * @return
 	 */
-	public static int getDataDaysInMonth(int day, int month, int year) {
+	public static int getNumReportsInMonth(Calendar cal) {
 		int ret = 0;
 		for (final DtsData d : dtsList) {
-			if (d.getDate().get(Calendar.YEAR) == year) {
-				if (d.getDate().get(Calendar.MONTH) == month) {
-					if (d.getDate().get(Calendar.DATE) <= day) {
+			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+				if (d.getDate().get(Calendar.MONTH) ==  cal.get(Calendar.MONTH)) {
+					if (d.getDate().get(Calendar.DATE) <= cal.get(Calendar.DATE)) {
 						ret++;
 					}
 				}
@@ -204,21 +204,20 @@ public class DtsData {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.getNumReportsInYear
 	 *
-	 * net.ajaskey.market.tools.helpers.getDataDaysInYear
-	 *
-	 * @param day
-	 * @param month
-	 * @param year
+	 * @param cal
 	 * @return
 	 */
-	public static int getDataDaysInYear(int day, int month, int year) {
+	public static int getNumReportsInYear(Calendar cal) {
 		int ret = 0;
 		for (final DtsData d : dtsList) {
-			if (d.getDate().get(Calendar.YEAR) == year) {
-				if (d.getDate().get(Calendar.MONTH) <= month) {
+			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+				if (d.getDate().get(Calendar.MONTH) <= cal.get(Calendar.MONTH)) {
 					ret++;
-					if ((d.getDate().get(Calendar.MONTH) == month) && (d.getDate().get(Calendar.DATE) >= day)) {
+					if ((d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH))
+					    && (d.getDate().get(Calendar.DATE) >= cal.get(Calendar.DATE))) {
 						return ret;
 					}
 				}
@@ -410,12 +409,16 @@ public class DtsData {
 		return str;
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.toWithheldString
+	 *
+	 * @return
+	 */
 	public String toWithheldString() {
 		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getDataDaysInYear(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
-		    this.date.get(Calendar.YEAR));
-		str += "\t" + DtsData.getDataDaysInMonth(this.date.get(Calendar.DATE), this.date.get(Calendar.MONTH),
-		    this.date.get(Calendar.YEAR));
+		str += "\t" + DtsData.getNumReportsInYear(date);
+		str += "\t" + DtsData.getNumReportsInMonth(this.date);
 		str += String.format("%n\tWithheld   ==> %s%n", this.with);
 		return str;
 	}
