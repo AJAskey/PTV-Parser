@@ -48,7 +48,8 @@ public class Utils {
 	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("E dd-MMM-yyyy");
 
-	//public static String[]								daysOfWeek	= { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+	// public static String[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU",
+	// "FRI", "SAT" };
 
 	public static String									NL					= System.lineSeparator();
 	public static String									TAB					= "\t";
@@ -140,20 +141,32 @@ public class Utils {
 	 * @return
 	 */
 	public static String getDayName(Calendar cal) {
-		init();
-		return findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
+		try {
+			init();
+			return findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
+		} catch (Exception e) {
+			return "unknown-day";
+		}
 	}
-	
+
 	public static String getMonthName(Calendar cal) {
-		init();
-		return findName(mapNames, cal.get(Calendar.MONTH));
+		try {
+			init();
+			return findName(mapNames, cal.get(Calendar.MONTH));
+		} catch (Exception e) {
+			return "unknown-month";
+		}
 	}
-	
+
 	public static String getMonthName(int month) {
-		init();
-		return findName(mapNames, month);
+		try {
+			init();
+			return findName(mapNames, month);
+		} catch (Exception e) {
+			return "unknown-month";
+		}
 	}
-	
+
 	private static String findName(Map<String, Integer> map, Integer key) {
 		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
 			if (entry.getValue() == key) {
@@ -196,7 +209,7 @@ public class Utils {
 			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
 			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
 			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
-			
+
 			intFmt = NumberFormat.getNumberInstance();
 			initialized = true;
 		}
