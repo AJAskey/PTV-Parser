@@ -277,7 +277,7 @@ public class DtsReports {
 	 */
 	public static String genLastReport(REPORT_RANGE rr) {
 
-		String ret = "Most recent DTS report ==>" + NL;
+		String ret = "Most recent DTS report : " + rr + " ==>" + NL;
 
 		final DtsData dLast = DtsData.dtsList.get(DtsData.dtsList.size() - 1);
 
