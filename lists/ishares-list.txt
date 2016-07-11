@@ -193,7 +193,6 @@ IPFF      	S&P Intl Preferred Stock Index Ishares            	AMEX
 IQLT      	Ishares MSCI International Deve                   	AMEX      
 ISCF      	Ishares Factorselect MSCI Intl                    	AMEX      
 ISTB      	Core Short-Term US Bond Ishares                   	AMEX      
-ISZE      	Ishares MSCI International Deve                   	AMEX      
 ITA       	DJ US Aerospace & Defense Ishares                 	AMEX      
 ITB       	DJ US Home Construction Ishares                   	AMEX      
 ITIP      	Intl Inflation-Linked Bond Fund Ishares           	AMEX      
@@ -326,6 +325,7 @@ BACS      	Ishares IV Plc                                    	LSE
 BBEB      	Ishares III Plc                                   	LSE       
 BBSB      	Ishares III Plc                                   	LSE       
 BRIC      	Ishares II Plc                                    	LSE       
+CBE0      	Ishares Vii Plc                                   	LSE       
 CBE3      	Ishares Vii Plc                                   	LSE       
 CBE7      	Ishares Vii Plc                                   	LSE       
 CBR1      	Ishares Vii Plc                                   	LSE       
@@ -499,6 +499,7 @@ IEVL      	Ishares IV Plc                                    	LSE
 IEX5      	Ishares III Plc                                   	LSE       
 IEXF      	Ishares III Plc                                   	LSE       
 IFFF      	Ishares Plc                                       	LSE       
+IFRB      	Ishares V Public Limited Company                  	LSE       
 IFRE      	Ishares IV Plc                                    	LSE       
 IFSE      	Ishares IV Plc                                    	LSE       
 IFSU      	Ishares IV Plc                                    	LSE       
@@ -536,7 +537,6 @@ IMIB      	Ishares II Plc                                    	LSE
 IMV       	Ishares Vi Plc (The Comp                          	LSE       
 INAA      	Ishares Plc                                       	LSE       
 INFR      	Ishares II Plc                                    	LSE       
-INLD      	Ishares V Public Limited Company                  	LSE       
 INRG      	Ishares II Plc                                    	LSE       
 INXG      	Ishares II Plc                                    	LSE       
 IOGP      	Ishares V Public Limited Company                  	LSE       
@@ -596,6 +596,7 @@ IWVL      	Ishares IV Plc                                    	LSE
 LQDE      	Ishares Plc                                       	LSE       
 LQDG      	Ishares Plc                                       	LSE       
 LQDH      	Ishares Plc                                       	LSE       
+LQDS      	Ishares Plc                                       	LSE       
 LTAM      	Ishares II Plc                                    	LSE       
 MIDD      	Ishares Plc                                       	LSE       
 MINV      	Ishares Vi Plc (The Comp                          	LSE       
@@ -604,8 +605,10 @@ MVOL      	Ishares Vi Plc (The Comp                          	LSE
 MVUS      	Ishares Vi Plc (The Comp                          	LSE       
 NK4E      	Ishares II Plc                                    	LSE       
 QDIV      	Ishares II Plc                                    	LSE       
+RISE      	Ishares IV Plc                                    	LSE       
 SAAA      	Ishares Vi Plc (The Comp                          	LSE       
 SAUS      	Ishares III Plc                                   	LSE       
+SBEL      	Ishares V Public Limited Company                  	LSE       
 SCOV      	Ishares III Plc                                   	LSE       
 SDEU      	Ishares V Public Limited Company                  	LSE       
 SDHG      	Ishares IV Plc                                    	LSE       
@@ -620,7 +623,6 @@ SEMB      	Ishares II Plc                                    	LSE
 SEML      	Ishares III Plc                                   	LSE       
 SEMS      	Ishares III Plc                                   	LSE       
 SESP      	Ishares V Public Limited Company                  	LSE       
-SFIN      	Ishares V Public Limited Company                  	LSE       
 SFRB      	Ishares V Public Limited Company                  	LSE       
 SGCC      	Ishares III Plc                                   	LSE       
 SGEA      	Ishares III Plc                                   	LSE       
@@ -690,20 +692,21 @@ SOXX      	Ishares PHLX SC ETF                               	NASDAQ
 TLT       	Ishares  20                                       	NASDAQ    
 UAE       	Ishares MSCI UAE Cap                              	NASDAQ    
 BCYIF     	Ishares Plc FTSE 100                              	OTCBB     
-CLYAF     	Ishares Global Agric                              	OTCBB     
 CLYLF     	Ishares S&P/Tsx CDN                               	OTCBB     
 CYSXF     	Ishares S&P/Tsx Cana                              	OTCBB     
+DJXXF     	Ishares Stoxx Europe 600 Ucits ETF [De]           	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
+IHPXF     	Ishares MSCI Europe                               	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
 IHSEF     	Ishares Plc                                       	OTCBB     
 IHSFF     	Ishares II Plc                                    	OTCBB     
 IHSXF     	Ishares Plc - Ishare                              	OTCBB     
 IHSZF     	Ishares II Plc                                    	OTCBB     
+IIREF     	Ishares MSCI World                                	OTCBB     
 INITF     	Ishares Dex Short Term Bond Index Fund            	OTCBB     
 IPYYF     	Ishares Physical Metals Plc - Ishares Physical G  	OTCBB     
 ISDJF     	Ishares DOW Jones CD                              	OTCBB     
-ISESF     	Ishares S&P/Tsx Capp                              	OTCBB     
 ISHAF     	Ishares                                           	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
 ISHXF     	Ishares Dex All Government Bond Index Fund        	OTCBB     
@@ -762,6 +765,7 @@ CSD.A     	Ishares Adv Shrt Dur Hi                           	TSX
 CUD       	Ishares SP US Div Grower                          	TSX       
 CUD.A     	Ishares SP US Div Grower                          	TSX       
 CVD       	Ishares Convertible Bond                          	TSX       
+CVD.A     	Ishares Convertible Bond                          	TSX       
 CWO       	Ishares Emg Mkts Fundame                          	TSX       
 CWO.A     	Ishares Emg Mkts Fundame                          	TSX       
 CWW       	Ishares SP Global Water                           	TSX       
