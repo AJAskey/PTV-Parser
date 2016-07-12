@@ -351,5 +351,33 @@ public class DtsReports {
 		}
 
 	}
+	
+	public static void writeQuarterly(String fname) throws FileNotFoundException {
+		
+		try (PrintWriter pw = new PrintWriter(fname)) {
+		
+		DtsQuarterly q2013 = new DtsQuarterly(2013);
+		DtsQuarterly q2014 = new DtsQuarterly(2014);
+		DtsQuarterly q2015 = new DtsQuarterly(2015);
+		DtsQuarterly q2016 = new DtsQuarterly(2016);
+		
+
+		
+		printQuarterly(pw, q2014, q2015);
+
+		}
+	}
+
+	/** 
+	 * net.ajaskey.market.tools.helpers.printQuarterly
+	 *
+	 * @param pw
+	 * @param q2014
+	 * @param q2015
+	 */
+	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
+		pw.println(y1.toCombinedString(y2));
+		
+	}
 
 }

@@ -16,6 +16,7 @@ import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.DtsData;
+import net.ajaskey.market.tools.helpers.DtsQuarterly;
 import net.ajaskey.market.tools.helpers.DtsReports;
 import net.ajaskey.market.tools.helpers.DtsSorter;
 import net.ajaskey.market.tools.helpers.WebGet;
@@ -89,7 +90,15 @@ public class ProcessDTS {
 		//ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
+		
+		try {
+			DtsReports.writeQuarterly("qtr.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+		/**
 		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 
 		DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
@@ -105,6 +114,7 @@ public class ProcessDTS {
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
 		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
 
+*/
 	}
 
 	/**

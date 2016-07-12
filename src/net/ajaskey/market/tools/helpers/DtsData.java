@@ -85,6 +85,32 @@ public class DtsData {
 		}
 		return null;
 	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.findLastReportOfMonth
+	 *
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public static DtsData findLastReportOfMonth(int month, int year) {
+		boolean found = false;
+		DtsData previous = null;
+		for (final DtsData d : DtsData.dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				if (d.getDate().get(Calendar.MONTH) == month) {
+						found = true;
+						previous = d;
+				} else if (found) {
+					return previous;
+				}
+			} else if (found) {
+				return previous;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 *
@@ -233,7 +259,7 @@ public class DtsData {
 
 	private final DtsDataTally	corp;
 
-	private final Calendar			date;
+	private Calendar			date;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -246,6 +272,15 @@ public class DtsData {
 		this.date = Calendar.getInstance();
 		this.setDate(theDate);
 	}
+	
+	public DtsData(Calendar theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		date = (Calendar) theDate.clone();
+	}
+
 
 	/**
 	 *
