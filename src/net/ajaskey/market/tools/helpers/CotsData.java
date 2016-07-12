@@ -15,8 +15,32 @@ public class CotsData {
 	private static final String		TAB					= "\t";
 	private static final String		NL					= System.getProperty("line.separator");
 
+	public Calendar								date				= null;
+
+	public long										oi					= 0;
+
+	public long										totalLong		= 0;
+
+	public long										totalShort	= 0;
+	public long										totalSpread	= 0;
+
+	public LongShort							dealer			= null;
+	public LongShort							pm					= null;
+	public LongShort							levered			= null;
+
+	public LongShort							other				= null;
+	public LongShort							nonrpt			= null;
+
 	/**
-	 * 
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public CotsData(LongShort ls) {
+		this.setData(ls);
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.helpers.findDate
 	 *
 	 * @param date
@@ -99,30 +123,6 @@ public class CotsData {
 		if (tmp.valid) {
 			dataPoints.add(tmp);
 		}
-	}
-
-	public Calendar		date				= null;
-	public long				oi					= 0;
-
-	public long				totalLong		= 0;
-	public long				totalShort	= 0;
-	public long				totalSpread	= 0;
-
-	public LongShort	dealer			= null;
-	public LongShort	pm					= null;
-
-	public LongShort	levered			= null;
-
-	public LongShort	other				= null;
-
-	public LongShort	nonrpt			= null;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public CotsData(LongShort ls) {
-		this.setData(ls);
 	}
 
 	/**

@@ -16,7 +16,6 @@ import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.DtsData;
-import net.ajaskey.market.tools.helpers.DtsQuarterly;
 import net.ajaskey.market.tools.helpers.DtsReports;
 import net.ajaskey.market.tools.helpers.DtsSorter;
 import net.ajaskey.market.tools.helpers.WebGet;
@@ -58,12 +57,49 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "f:/temp/dts";
+	final static private String		folderPath				= "d:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
-	final static public int				webDownloadMonth	= Calendar.JULY;
-	final static public int				webDownloadDay		= 31;
+	final static public int				webDownloadMonth	= Calendar.JUNE;
+	final static public int				webDownloadDay		= 30;
+
+	/**
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) {
+
+		ProcessDTS.updateDtsFiles();
+
+		ProcessDTS.readAndProcess();
+		
+
+		try {
+			DtsReports.writeFiscalYear("fy.txt");
+			DtsReports.writeQuarterly("qtr.txt");
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
+
+		/**
+		 * System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
+		 * 
+		 * DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
+		 * 
+		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
+		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
+		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
+		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
+		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
+		 * 
+		 */
+	}
 
 	/**
 	 *
@@ -77,44 +113,6 @@ public class ProcessDTS {
 			return DtsData.sdf.format(c.getTime()) + "00";
 		}
 		return "";
-	}
-
-	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) {
-
-		//ProcessDTS.updateDtsFiles();
-
-		ProcessDTS.readAndProcess();
-		
-		try {
-			DtsReports.writeQuarterly("qtr.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		/**
-		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
-
-		DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
-
-		DtsReports.dumpCompareMonths(2016, 2014, Calendar.OCTOBER);
-		DtsReports.dumpCompareMonths(2016, 2014, Calendar.NOVEMBER);
-		DtsReports.dumpCompareMonths(2016, 2014, Calendar.DECEMBER);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JANUARY);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.FEBRUARY);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
-		DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
-
-*/
 	}
 
 	/**

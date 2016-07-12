@@ -59,49 +59,6 @@ public class CotsReports {
 
 	/**
 	 *
-	 * net.ajaskey.market.tools.helpers.formatCsvData
-	 *
-	 * @param ls
-	 * @param oi
-	 * @return
-	 */
-	private static String formatCsvData(LongShort ls, double oi) {
-		double percOIlong = 0.0;
-		double percOIshort = 0.0;
-		double percOIspread = 0.0;
-
-		if (oi > 0.0) {
-			percOIlong = ls.longPos / oi;
-			percOIshort = ls.shortPos / oi;
-			percOIspread = ls.spreadPos / oi;
-		}
-		final long delta = ls.longPos - ls.shortPos;
-		final String str = String.format("%10s,%10d,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date),
-		    ls.longPos, ls.shortPos, ls.spreadPos, delta, ls.pc, percOIlong, percOIshort, percOIspread);
-		return str;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.printSummary
-	 *
-	 * @param pw
-	 * @param ls
-	 * @param totLongs
-	 * @param totShorts
-	 */
-	private static void printSummary(PrintWriter pw, LongShort ls, long totLongs, long totShorts) {
-
-		final String fmt = "%-10s : %10s %10s %10.2f %10s %10.2f%% %10.2f%%  %10.2f%% %n";
-		final double percl = ((double) ls.longPos / (double) totLongs) * 100.0;
-		final double percs = ((double) ls.shortPos / (double) totShorts) * 100.0;
-		final double perct = (percl + percs) / 2.0;
-		pw.printf(fmt, ls.type, Utils.formatInt(ls.longPos), Utils.formatInt(ls.shortPos), ls.pc, Utils.formatInt(ls.delta),
-		    percl, percs, perct);
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.tools.helpers.writeAllCsv
 	 *
 	 * @param source
@@ -162,16 +119,6 @@ public class CotsReports {
 
 	/**
 	 *
-	 * net.ajaskey.market.tools.helpers.writeCsvHeader
-	 *
-	 * @param pw
-	 */
-	private static void writeCsvHeader(PrintWriter pw) {
-		pw.println("Date,Long,Short,Spread,Long-Short,ShortToLong,PercentLong,PercentShort,PercentSpread");
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.tools.helpers.writeSummary
 	 *
 	 * @param st
@@ -201,6 +148,59 @@ public class CotsReports {
 			System.out.println(Utils.getString(cal) + " not found.");
 		}
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.formatCsvData
+	 *
+	 * @param ls
+	 * @param oi
+	 * @return
+	 */
+	private static String formatCsvData(LongShort ls, double oi) {
+		double percOIlong = 0.0;
+		double percOIshort = 0.0;
+		double percOIspread = 0.0;
+
+		if (oi > 0.0) {
+			percOIlong = ls.longPos / oi;
+			percOIshort = ls.shortPos / oi;
+			percOIspread = ls.spreadPos / oi;
+		}
+		final long delta = ls.longPos - ls.shortPos;
+		final String str = String.format("%10s,%10d,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date),
+		    ls.longPos, ls.shortPos, ls.spreadPos, delta, ls.pc, percOIlong, percOIshort, percOIspread);
+		return str;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.printSummary
+	 *
+	 * @param pw
+	 * @param ls
+	 * @param totLongs
+	 * @param totShorts
+	 */
+	private static void printSummary(PrintWriter pw, LongShort ls, long totLongs, long totShorts) {
+
+		final String fmt = "%-10s : %10s %10s %10.2f %10s %10.2f%% %10.2f%%  %10.2f%% %n";
+		final double percl = ((double) ls.longPos / (double) totLongs) * 100.0;
+		final double percs = ((double) ls.shortPos / (double) totShorts) * 100.0;
+		final double perct = (percl + percs) / 2.0;
+		pw.printf(fmt, ls.type, Utils.formatInt(ls.longPos), Utils.formatInt(ls.shortPos), ls.pc, Utils.formatInt(ls.delta),
+		    percl, percs, perct);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeCsvHeader
+	 *
+	 * @param pw
+	 */
+	private static void writeCsvHeader(PrintWriter pw) {
+		pw.println("Date,Long,Short,Spread,Long-Short,ShortToLong,PercentLong,PercentShort,PercentSpread");
 	}
 
 }

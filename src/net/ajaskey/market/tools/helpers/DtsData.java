@@ -46,6 +46,34 @@ public class DtsData {
 
 	public static final List<DtsData>			dtsList	= new ArrayList<>();
 
+	private final DtsDataTally						with;
+
+	private final DtsDataTally						ind;
+
+	private final DtsDataTally						corp;
+
+	private Calendar											date;
+
+	public DtsData(Calendar theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.date = (Calendar) theDate.clone();
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DtsData(String theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.setDate(theDate);
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.findData
@@ -81,32 +109,6 @@ public class DtsData {
 				if (knt >= rptOfYear) {
 					return d;
 				}
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * 
-	 * net.ajaskey.market.tools.helpers.findLastReportOfMonth
-	 *
-	 * @param month
-	 * @param year
-	 * @return
-	 */
-	public static DtsData findLastReportOfMonth(int month, int year) {
-		boolean found = false;
-		DtsData previous = null;
-		for (final DtsData d : DtsData.dtsList) {
-			if (d.getDate().get(Calendar.YEAR) == year) {
-				if (d.getDate().get(Calendar.MONTH) == month) {
-						found = true;
-						previous = d;
-				} else if (found) {
-					return previous;
-				}
-			} else if (found) {
-				return previous;
 			}
 		}
 		return null;
@@ -162,6 +164,32 @@ public class DtsData {
 
 	/**
 	 *
+	 * net.ajaskey.market.tools.helpers.findLastReportOfMonth
+	 *
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public static DtsData findLastReportOfMonth(int month, int year) {
+		boolean found = false;
+		DtsData previous = null;
+		for (final DtsData d : DtsData.dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == year) {
+				if (d.getDate().get(Calendar.MONTH) == month) {
+					found = true;
+					previous = d;
+				} else if (found) {
+					return previous;
+				}
+			} else if (found) {
+				return previous;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.helpers.findMonthlyChangeTotal
 	 *
 	 * @param older
@@ -200,8 +228,7 @@ public class DtsData {
 	public static String formatDate(Calendar date) {
 		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getNumReportsInYear(date);
-		str += "\t"
-		    + DtsData.getNumReportsInMonth(date);
+		str += "\t" + DtsData.getNumReportsInMonth(date);
 		return str;
 	}
 
@@ -218,7 +245,7 @@ public class DtsData {
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
-				if (d.getDate().get(Calendar.MONTH) ==  cal.get(Calendar.MONTH)) {
+				if (d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH)) {
 					if (d.getDate().get(Calendar.DATE) <= cal.get(Calendar.DATE)) {
 						ret++;
 					}
@@ -230,7 +257,7 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.getNumReportsInYear
 	 *
 	 * @param cal
@@ -252,35 +279,6 @@ public class DtsData {
 
 		return 0;
 	}
-
-	private final DtsDataTally	with;
-
-	private final DtsDataTally	ind;
-
-	private final DtsDataTally	corp;
-
-	private Calendar			date;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DtsData(String theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		this.setDate(theDate);
-	}
-	
-	public DtsData(Calendar theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		date = (Calendar) theDate.clone();
-	}
-
 
 	/**
 	 *
@@ -445,16 +443,27 @@ public class DtsData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.toWithheldString
 	 *
 	 * @return
 	 */
 	public String toWithheldString() {
-		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getNumReportsInYear(date);
-		str += "\t" + DtsData.getNumReportsInMonth(this.date);
+		String str = this.getDatePlus();
 		str += String.format("%n\tWithheld   ==> %s%n", this.with);
+		return str;
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.getDatePlus
+	 *
+	 * @return
+	 */
+	public String getDatePlus() {
+		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
+		str += "\t" + DtsData.getNumReportsInYear(this.date);
+		str += "\t" + DtsData.getNumReportsInMonth(this.date);
 		return str;
 	}
 
