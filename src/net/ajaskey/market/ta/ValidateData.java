@@ -177,6 +177,10 @@ public class ValidateData {
 
 	public static boolean validate(TickerData td) {
 
+		if ((td == null) || (td.getDate(0) == null)) {
+			return false;
+		}
+
 		td.fillDataArrays(0, false);
 
 		Calendar cal = td.getDate(0);

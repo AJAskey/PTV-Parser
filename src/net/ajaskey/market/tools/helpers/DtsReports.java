@@ -109,6 +109,14 @@ public class DtsReports {
 		}
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.dumpCompareIndividualMonths
+	 *
+	 * @param yearRecent
+	 * @param yearPast
+	 * @param month
+	 */
 	public static void dumpCompareIndividualMonths(int yearRecent, int yearPast, int month) {
 
 		int lastDay = 0;
@@ -349,7 +357,7 @@ public class DtsReports {
 
 		double ema = 0;
 		double sma = 0;
-		final int emaLen = 5;
+		final int emaLen = 7;
 		final double emaMult = 2.0 / (emaLen + 1);
 		int knt = 0;
 
@@ -357,11 +365,11 @@ public class DtsReports {
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
 			cal.set(yr, Calendar.OCTOBER, 1);
-			//Utils.printCalendar(cal);
+			// Utils.printCalendar(cal);
 
 			final Calendar tomorrow = Calendar.getInstance();
 			tomorrow.add(Calendar.DATE, 1);
-			//Utils.printCalendar(tomorrow);
+			// Utils.printCalendar(tomorrow);
 
 			while (cal.before(tomorrow)) {
 
@@ -508,13 +516,34 @@ public class DtsReports {
 
 		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
 
-			new DtsQuarterly(2013);
-			new DtsQuarterly(2014);
+			DtsQuarterly q2013 = new DtsQuarterly(2013);
+			DtsQuarterly q2014 = new DtsQuarterly(2014);
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
 			final DtsQuarterly q2016 = new DtsQuarterly(2016);
 
+			DtsReports.printQuarterly(pw, q2013, q2014);
+			DtsReports.printQuarterly(pw, q2014, q2015);
 			DtsReports.printQuarterly(pw, q2015, q2016);
 
+		}
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.dumpRaw
+	 *
+	 * @param fname
+	 * @param cal
+	 * @throws FileNotFoundException
+	 */
+	public static void dumpRaw(String fname, Calendar cal) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + "_raw.txt")) {
+			for (DtsData d : DtsData.dtsList) {
+				if ((Utils.sameDate(d.getDate(), cal)) || (d.getDate().after(cal))) {
+					pw.println(d);
+				}
+			}
 		}
 	}
 

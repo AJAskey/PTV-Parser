@@ -274,8 +274,12 @@ public class TickerData {
 	 * @return
 	 */
 	static public DailyData getDataOfDate(TickerData td, Calendar cal) {
-		return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
-		    cal.get(Calendar.DAY_OF_MONTH));
+		try {
+			return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
+			    cal.get(Calendar.DAY_OF_MONTH));
+		} catch (Exception e) {
+		}
+		return null;
 	}
 
 	/**
@@ -309,10 +313,13 @@ public class TickerData {
 	 * @return
 	 */
 	public static TickerData getFromList(String ticker, List<TickerData> tdList) {
-		for (final TickerData td : tdList) {
-			if (td.getTicker().equalsIgnoreCase(ticker)) {
-				return td;
+		try {
+			for (final TickerData td : tdList) {
+				if (td.getTicker().equalsIgnoreCase(ticker)) {
+					return td;
+				}
 			}
+		} catch (Exception e) {
 		}
 		return null;
 	}
@@ -326,7 +333,11 @@ public class TickerData {
 	 * @return
 	 */
 	static public int getIndexOfDate(TickerData td, Calendar cal) {
-		return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+		try {
+			return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	static public DailyData getDailyDate(TickerData td, Calendar cal) {
@@ -404,16 +415,19 @@ public class TickerData {
 	 * @return
 	 */
 	static public List<DailyData> getSlice(TickerData td, Calendar start, int days) {
-		if ((td != null) && (start != null) && (days >= 0)) {
-			if (days > td.getDaysOfData()) {
-				days = td.getDaysOfData();
-			} else if (days == 0) {
-				days = td.getDaysOfData();
+		try {
+			if ((td != null) && (start != null) && (days >= 0)) {
+				if (days > td.getDaysOfData()) {
+					days = td.getDaysOfData();
+				} else if (days == 0) {
+					days = td.getDaysOfData();
+				}
+				final int idx = TickerData.getIndexOfDate(td, start);
+				if (idx >= 0) {
+					return td.getData().subList(idx, idx + days);
+				}
 			}
-			final int idx = TickerData.getIndexOfDate(td, start);
-			if (idx >= 0) {
-				return td.getData().subList(idx, idx + days);
-			}
+		} catch (Exception e) {
 		}
 		return null;
 	}
@@ -427,10 +441,13 @@ public class TickerData {
 	 * @return
 	 */
 	public static TickerData getTickerData(List<TickerData> list, String ticker) {
-		for (final TickerData td : list) {
-			if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
-				return td;
+		try {
+			for (final TickerData td : list) {
+				if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
+					return td;
+				}
 			}
+		} catch (Exception e) {
 		}
 		return null;
 	}
@@ -447,14 +464,18 @@ public class TickerData {
 	public static int getTradingDays(TickerData td, Calendar start, Calendar stop) {
 
 		int ret = 0;
-		final int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
-		    start.get(Calendar.DAY_OF_MONTH));
-		if (idx1 >= 0) {
-			final int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
-			    stop.get(Calendar.DAY_OF_MONTH));
-			if (idx2 < idx1) {
-				ret = ((idx1 - idx2) + 1);
+		try {
+			final int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
+			    start.get(Calendar.DAY_OF_MONTH));
+			if (idx1 >= 0) {
+				final int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
+				    stop.get(Calendar.DAY_OF_MONTH));
+				if (idx2 < idx1) {
+					ret = ((idx1 - idx2) + 1);
+				}
 			}
+		} catch (Exception e) {
+			ret = 0;
 		}
 		return ret;
 	}
@@ -739,6 +760,9 @@ public class TickerData {
 	}
 
 	public double getClose(int day) {
+		if ((closeData == null) || (closeData.length < day)) {
+			return 0.0;
+		}
 		return this.closeData[day];
 	}
 
@@ -757,6 +781,14 @@ public class TickerData {
 	}
 
 	public String getDailyDataString(int day) {
+		if ((dateData == null) || (openData == null) || (highData == null) || (lowData == null) || (closeData == null)
+		    || (volumeData == null) || (oiData == null)) {
+			return "";
+		}
+		if ((dateData.length < day) || (openData.length < day) || (highData.length < day) || (lowData.length < day)
+		    || (closeData.length < day) || (volumeData.length < day) || (oiData.length < day)) {
+			return "";
+		}
 		final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
 		    this.closeData[day], this.volumeData[day], this.oiData[day]);
 		return dd.toString();
@@ -773,6 +805,9 @@ public class TickerData {
 	}
 
 	public Calendar getDate(int day) {
+		if ((dateData == null) || (dateData.length < day)) {
+			return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
+		}
 		return this.dateData[day];
 	}
 
@@ -813,6 +848,9 @@ public class TickerData {
 	}
 
 	public double getHigh(int day) {
+		if ((highData == null) || (highData.length < day)) {
+			return 0.0;
+		}
 		return this.highData[day];
 	}
 
@@ -831,6 +869,9 @@ public class TickerData {
 	}
 
 	public double getLow(int day) {
+		if ((lowData == null) || (lowData.length < day)) {
+			return 0.0;
+		}
 		return this.lowData[day];
 	}
 
@@ -905,6 +946,9 @@ public class TickerData {
 	}
 
 	public double getOi(int day) {
+		if ((oiData == null) || (oiData.length < day)) {
+			return 0.0;
+		}
 		return this.oiData[day];
 	}
 
@@ -916,6 +960,9 @@ public class TickerData {
 	}
 
 	public double getOpen(int day) {
+		if ((openData == null) || (openData.length < day)) {
+			return 0.0;
+		}
 		return this.openData[day];
 	}
 
@@ -1102,6 +1149,9 @@ public class TickerData {
 	}
 
 	public double getVolume(int day) {
+		if ((volumeData == null) || (volumeData.length < day)) {
+			return 0.0;
+		}
 		return this.volumeData[day];
 	}
 

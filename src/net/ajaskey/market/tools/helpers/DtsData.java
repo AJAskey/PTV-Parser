@@ -46,32 +46,17 @@ public class DtsData {
 
 	public static final List<DtsData>			dtsList	= new ArrayList<>();
 
-	private final DtsDataTally						with;
-
-	private final DtsDataTally						ind;
-
-	private final DtsDataTally						corp;
-
-	private Calendar											date;
-
-	public DtsData(Calendar theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		this.date = (Calendar) theDate.clone();
-	}
-
 	/**
-	 * This method serves as a constructor for the class.
 	 *
+	 * net.ajaskey.market.tools.helpers.cleanString
+	 *
+	 * @param str
+	 * @param idx
+	 * @return
 	 */
-	public DtsData(String theDate) {
-		this.with = new DtsDataTally();
-		this.ind = new DtsDataTally();
-		this.corp = new DtsDataTally();
-		this.date = Calendar.getInstance();
-		this.setDate(theDate);
+	private static String cleanString(String str, int idx) {
+		final String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
+		return s;
 	}
 
 	/**
@@ -283,6 +268,36 @@ public class DtsData {
 		return 0;
 	}
 
+	private final DtsDataTally	with;
+
+	private final DtsDataTally	ind;
+
+	private final DtsDataTally	corp;
+
+	private Calendar						date;
+
+	private int									rptKnt	= 0;
+
+	public DtsData(Calendar theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.date = (Calendar) theDate.clone();
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DtsData(String theDate) {
+		this.with = new DtsDataTally();
+		this.ind = new DtsDataTally();
+		this.corp = new DtsDataTally();
+		this.date = Calendar.getInstance();
+		this.setDate(theDate);
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.getCorp
@@ -305,12 +320,35 @@ public class DtsData {
 
 	/**
 	 *
+	 * net.ajaskey.market.tools.helpers.getDatePlus
+	 *
+	 * @return
+	 */
+	public String getDatePlus() {
+		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
+		str += "\t" + DtsData.getNumReportsInYear(this.date);
+		str += "\t" + DtsData.getNumReportsInMonth(this.date);
+		return str;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.helpers.getInd
 	 *
 	 * @return
 	 */
 	public DtsDataTally getInd() {
 		return this.ind;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.getRptKnt
+	 *
+	 * @return
+	 */
+	public int getRptKnt() {
+		return this.rptKnt;
 	}
 
 	/**
@@ -325,15 +363,11 @@ public class DtsData {
 
 	/**
 	 * 
-	 * net.ajaskey.market.tools.helpers.cleanString
+	 * net.ajaskey.market.tools.helpers.incRptKnt
 	 *
-	 * @param str
-	 * @param idx
-	 * @return
 	 */
-	private static String cleanString(String str, int idx) {
-		String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
-		return s;
+	public void setRptKnt(int knt) {
+		this.rptKnt = knt;
 	}
 
 	/**
@@ -351,7 +385,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = cleanString(str, idx);
+			final String s = DtsData.cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.corp.daily = Integer.parseInt(fld[0].trim());
@@ -406,7 +440,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = cleanString(str, idx);
+			final String s = DtsData.cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.ind.daily = Integer.parseInt(fld[0].trim());
@@ -433,7 +467,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = cleanString(str, idx);
+			final String s = DtsData.cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.with.daily = Integer.parseInt(fld[0].trim());
@@ -447,7 +481,7 @@ public class DtsData {
 
 	@Override
 	public String toString() {
-		String str = DtsData.formatDate(this.date);
+		String str = DtsData.formatDate(this.date) + " " + this.rptKnt;
 
 		final long dtot = this.getWith().daily + this.getInd().daily + this.getCorp().daily;
 		final long mtot = this.getWith().monthly + this.getInd().monthly + this.getCorp().monthly;
@@ -467,19 +501,6 @@ public class DtsData {
 	public String toWithheldString() {
 		String str = this.getDatePlus();
 		str += String.format("%n\tWithheld   ==> %s%n", this.with);
-		return str;
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.helpers.getDatePlus
-	 *
-	 * @return
-	 */
-	public String getDatePlus() {
-		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
-		str += "\t" + DtsData.getNumReportsInYear(this.date);
-		str += "\t" + DtsData.getNumReportsInMonth(this.date);
 		return str;
 	}
 

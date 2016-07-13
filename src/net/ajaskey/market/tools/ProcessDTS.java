@@ -57,7 +57,7 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "d:/temp/dts";
+	final static private String		folderPath				= "f:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
@@ -72,27 +72,28 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		ProcessDTS.updateDtsFiles();
+		// ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
-		
 
-		
 		try {
+			DtsReports.dumpRaw("dump", Utils.buildCalendar(2014, Calendar.JANUARY, 1));
 			DtsReports.writeFiscalYear("fy");
 			DtsReports.writeQuarterly("qtr");
+			DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
+			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
+			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 
 		/**
-		 * System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 		 * 
-		 * DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
+		 * );
+		 * 
+		 * 
 		 * 
 		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
 		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
@@ -126,6 +127,8 @@ public class ProcessDTS {
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
 
+		int knt = 0;
+		int lastYr = 0;
 		for (final File file : listOfFiles) {
 			if (file.isFile()) {
 				// System.out.println(file.getName());
@@ -137,6 +140,12 @@ public class ProcessDTS {
 					while ((line = reader.readLine()) != null) {
 						if (line.contains("Withheld Income and Employment Taxes")) {
 							d.setWith(line);
+							if (d.getDate().get(Calendar.YEAR) > lastYr) {
+								knt = 0;
+								lastYr = d.getDate().get(Calendar.YEAR);
+							}
+							knt++;
+						  d.setRptKnt(knt);
 						} else if (line.contains("Individual Income Taxes")) {
 							d.setInd(line);
 						} else if (line.contains("Corporation Income Taxes")) {
