@@ -1,0 +1,2 @@
+SET top=\Dev\TA\working
+java -classpath %top%\lib\randoop\randoop-all-3.0.1.jar;%top%\bin randoop.main.Main gentests --classlist=market-ta-classes.txt --junit-output-dir=%top%\Test --junit-package-name=net.ajaskey.market.ta --timelimit=20 --log=log.txt
