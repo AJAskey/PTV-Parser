@@ -440,7 +440,7 @@ public class TickerData {
 	 * @param ticker
 	 * @return
 	 */
-	public static TickerData getTickerData(List<TickerData> list, String ticker) {
+	public static TickerData getTickerData(List<TickerData> list, String ticker) {	
 		try {
 			for (final TickerData td : list) {
 				if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
@@ -781,17 +781,21 @@ public class TickerData {
 	}
 
 	public String getDailyDataString(int day) {
-		if ((dateData == null) || (openData == null) || (highData == null) || (lowData == null) || (closeData == null)
-		    || (volumeData == null) || (oiData == null)) {
+		try {
+			if ((dateData == null) || (openData == null) || (highData == null) || (lowData == null) || (closeData == null)
+			    || (volumeData == null) || (oiData == null)) {
+				return "";
+			}
+			if ((dateData.length < day) || (openData.length < day) || (highData.length < day) || (lowData.length < day)
+			    || (closeData.length < day) || (volumeData.length < day) || (oiData.length < day)) {
+				return "";
+			}
+			final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
+			    this.closeData[day], this.volumeData[day], this.oiData[day]);
+			return dd.toString();
+		} catch (Exception e) {
 			return "";
 		}
-		if ((dateData.length < day) || (openData.length < day) || (highData.length < day) || (lowData.length < day)
-		    || (closeData.length < day) || (volumeData.length < day) || (oiData.length < day)) {
-			return "";
-		}
-		final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
-		    this.closeData[day], this.volumeData[day], this.oiData[day]);
-		return dd.toString();
 	}
 
 	/**
@@ -805,10 +809,14 @@ public class TickerData {
 	}
 
 	public Calendar getDate(int day) {
-		if ((dateData == null) || (dateData.length < day)) {
+		try {
+			if ((dateData == null) || (dateData.length < day)) {
+				return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
+			}
+			return this.dateData[day];
+		} catch (Exception e) {
 			return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
 		}
-		return this.dateData[day];
 	}
 
 	/**
@@ -848,10 +856,14 @@ public class TickerData {
 	}
 
 	public double getHigh(int day) {
-		if ((highData == null) || (highData.length < day)) {
+		try {
+			if ((highData == null) || (highData.length < day)) {
+				return 0.0;
+			}
+			return this.highData[day];
+		} catch (Exception e) {
 			return 0.0;
 		}
-		return this.highData[day];
 	}
 
 	/**
@@ -869,10 +881,14 @@ public class TickerData {
 	}
 
 	public double getLow(int day) {
-		if ((lowData == null) || (lowData.length < day)) {
+		try {
+			if ((lowData == null) || (lowData.length < day)) {
+				return 0.0;
+			}
+			return this.lowData[day];
+		} catch (Exception e) {
 			return 0.0;
 		}
-		return this.lowData[day];
 	}
 
 	/**
@@ -946,10 +962,14 @@ public class TickerData {
 	}
 
 	public double getOi(int day) {
-		if ((oiData == null) || (oiData.length < day)) {
+		try {
+			if ((oiData == null) || (oiData.length < day)) {
+				return 0.0;
+			}
+			return this.oiData[day];
+		} catch (Exception e) {
 			return 0.0;
 		}
-		return this.oiData[day];
 	}
 
 	/**
@@ -960,10 +980,14 @@ public class TickerData {
 	}
 
 	public double getOpen(int day) {
-		if ((openData == null) || (openData.length < day)) {
+		try {
+			if ((openData == null) || (openData.length < day)) {
+				return 0.0;
+			}
+			return this.openData[day];
+		} catch (Exception e) {
 			return 0.0;
 		}
-		return this.openData[day];
 	}
 
 	/**
@@ -1149,10 +1173,14 @@ public class TickerData {
 	}
 
 	public double getVolume(int day) {
-		if ((volumeData == null) || (volumeData.length < day)) {
+		try {
+			if ((volumeData == null) || (volumeData.length < day)) {
+				return 0.0;
+			}
+			return this.volumeData[day];
+		} catch (Exception e) {
 			return 0.0;
 		}
-		return this.volumeData[day];
 	}
 
 	/**

@@ -57,7 +57,7 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "f:/temp/dts";
+	final static private String		folderPath				= "d:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
@@ -72,7 +72,7 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		// ProcessDTS.updateDtsFiles();
+		ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 
