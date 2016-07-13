@@ -57,12 +57,12 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "f:/temp/dts";
+	final static private String		folderPath				= "d:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
-	final static public int				webDownloadMonth	= Calendar.JUNE;
-	final static public int				webDownloadDay		= 30;
+	final static public int				webDownloadMonth	= Calendar.JULY;
+	final static public int				webDownloadDay		= 1;
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -77,6 +77,7 @@ public class ProcessDTS {
 		ProcessDTS.readAndProcess();
 		
 
+		
 		try {
 			DtsReports.writeFiscalYear("fy");
 			DtsReports.writeQuarterly("qtr");
@@ -84,8 +85,9 @@ public class ProcessDTS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 
-//		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
+		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 
 		/**
 		 * System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
@@ -144,6 +146,7 @@ public class ProcessDTS {
 					DtsData.dtsList.add(d);
 
 				} catch (final IOException e) {
+					System.out.println(file.getName());
 					e.printStackTrace();
 				}
 			}

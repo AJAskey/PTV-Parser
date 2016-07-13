@@ -273,7 +273,7 @@ public class DtsData {
 					ret++;
 					if ((d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH))
 					    && (d.getDate().get(Calendar.DATE) >= cal.get(Calendar.DATE))) {
-						
+
 						return ret;
 					}
 				}
@@ -324,6 +324,19 @@ public class DtsData {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.cleanString
+	 *
+	 * @param str
+	 * @param idx
+	 * @return
+	 */
+	private static String cleanString(String str, int idx) {
+		String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
+		return s;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.setCorp
 	 *
@@ -338,7 +351,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = str.substring(idx).trim().replaceAll("\\$", "").replaceAll(",", "").trim();
+			final String s = cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.corp.daily = Integer.parseInt(fld[0].trim());
@@ -393,7 +406,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = str.substring(idx).trim().replaceAll("\\$", "").replaceAll(",", "").trim();
+			final String s = cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.ind.daily = Integer.parseInt(fld[0].trim());
@@ -420,7 +433,7 @@ public class DtsData {
 
 		try {
 			final int idx = str.indexOf("Taxes") + 6;
-			final String s = str.substring(idx).trim().replaceAll("\\$", "").replaceAll(",", "").trim();
+			final String s = cleanString(str, idx);
 
 			final String fld[] = s.split("\\s+");
 			this.with.daily = Integer.parseInt(fld[0].trim());

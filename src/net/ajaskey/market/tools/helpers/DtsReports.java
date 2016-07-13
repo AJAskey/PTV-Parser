@@ -357,11 +357,11 @@ public class DtsReports {
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
 			cal.set(yr, Calendar.OCTOBER, 1);
-			Utils.printCalendar(cal);
+			//Utils.printCalendar(cal);
 
 			final Calendar tomorrow = Calendar.getInstance();
 			tomorrow.add(Calendar.DATE, 1);
-			Utils.printCalendar(tomorrow);
+			//Utils.printCalendar(tomorrow);
 
 			while (cal.before(tomorrow)) {
 
