@@ -3,6 +3,7 @@ package net.ajaskey.market.tools.helpers;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
@@ -40,6 +41,10 @@ import net.ajaskey.market.misc.Utils;
  *
  */
 public class DtsReports {
+
+	public static enum DTS_TYPE {
+		CORPORATE, INDIVIDUAL, WITHHELD, COMBINED
+	}
 
 	public static enum REPORT_RANGE {
 		MONTH, YEAR
@@ -328,6 +333,134 @@ public class DtsReports {
 		return ret;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.printFiscalYear
+	 *
+	 * @param fname
+	 * @param type
+	 * @throws FileNotFoundException
+	 */
+	private static void printFiscalYear(String fname, DTS_TYPE type) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		double ema = 0;
+		double sma = 0;
+		final int emaLen = 5;
+		final double emaMult = 2.0 / (emaLen + 1);
+		int knt = 0;
+
+		try (PrintWriter pw = new PrintWriter(fname)) {
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+			Utils.printCalendar(cal);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+			Utils.printCalendar(tomorrow);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+					if (p != null) {
+						long pVal = 0;
+						long dVal = 0;
+
+						switch (type) {
+							case COMBINED:
+								pVal = p.getCorp().yearly + p.getWith().yearly + p.getInd().yearly;
+								dVal = d.getCorp().yearly + d.getWith().yearly + d.getInd().yearly;
+								break;
+							case CORPORATE:
+								pVal = p.getCorp().yearly;
+								dVal = d.getCorp().yearly;
+								break;
+							case INDIVIDUAL:
+								pVal = p.getInd().yearly;
+								dVal = d.getInd().yearly;
+								break;
+							case WITHHELD:
+								pVal = p.getWith().yearly;
+								dVal = d.getWith().yearly;
+								break;
+						}
+
+						double chg = 0;
+						if (pVal > 0.0) {
+							chg = (double) (dVal - pVal) / (double) pVal;
+						}
+
+						if (knt < emaLen) {
+							knt++;
+							sma += chg;
+						} else if (knt == emaLen) {
+							knt++;
+							sma += chg;
+							sma /= emaLen;
+							ema = sma;
+						} else {
+							final double pEma = ema;
+							ema = ((chg - pEma) * emaMult) + pEma;
+						}
+
+						final String d1 = p.getDatePlus();
+						final String d2 = d.getDatePlus();
+
+						final DecimalFormat fmt = new DecimalFormat("#.##");
+						String sEma = null;
+
+						if (knt <= emaLen) {
+							sEma = "";
+						} else {
+							sEma = fmt.format(ema);
+						}
+
+						final String str = String.format("%s\t%s\t%10d\t%10d\t%10.2f\t%s%n", d1, d2, pVal, dVal, chg, sEma);
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
+		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printQuarterly
+	 *
+	 * @param pw
+	 * @param q2014
+	 * @param q2015
+	 */
+	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
+		pw.println(y1.toCombinedString(y2));
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeEomCsv
+	 *
+	 * @param startDate
+	 */
 	public static void writeEomCsv(Calendar startDate) {
 
 		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
@@ -351,79 +484,37 @@ public class DtsReports {
 
 	}
 
-	public static void writeQuarterly(String fname) throws FileNotFoundException {
-
-		try (PrintWriter pw = new PrintWriter(fname)) {
-
-			new DtsQuarterly(2013);
-			final DtsQuarterly q2014 = new DtsQuarterly(2014);
-			final DtsQuarterly q2015 = new DtsQuarterly(2015);
-			new DtsQuarterly(2016);
-
-			DtsReports.printQuarterly(pw, q2014, q2015);
-
-		}
-	}
-
 	/**
-	 * net.ajaskey.market.tools.helpers.printQuarterly
 	 *
-	 * @param pw
-	 * @param q2014
-	 * @param q2015
+	 * net.ajaskey.market.tools.helpers.writeFiscalYear
+	 *
+	 * @param fname
+	 * @throws FileNotFoundException
 	 */
-	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
-		pw.println(y1.toCombinedString(y2));
-
-	}
-
 	public static void writeFiscalYear(String fname) throws FileNotFoundException {
 
-		if (fname.length() < 1)
+		if (fname.length() < 1) {
 			return;
+		}
 
-		try (PrintWriter pw = new PrintWriter(fname)) {
-			Calendar cal = Calendar.getInstance();
-			int yr = cal.get(Calendar.YEAR) - 1;
-			cal.set(yr, Calendar.DECEMBER, 1);
+		DtsReports.printFiscalYear("out\\" + fname + "_tot.txt", DTS_TYPE.COMBINED);
+		DtsReports.printFiscalYear("out\\" + fname + "_corp.txt", DTS_TYPE.CORPORATE);
+		DtsReports.printFiscalYear("out\\" + fname + "_ind.txt", DTS_TYPE.INDIVIDUAL);
+		DtsReports.printFiscalYear("out\\" + fname + "_with.txt", DTS_TYPE.WITHHELD);
 
-			Calendar tommorrow = Calendar.getInstance();
-			tommorrow.add(Calendar.DATE, 1);
+	}
 
-			int knt;
-			while (cal.before(tommorrow)) {
+	public static void writeQuarterly(String fname) throws FileNotFoundException {
 
-				DtsData d = DtsData.findData(cal);
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
 
-				System.out.println();
+			new DtsQuarterly(2013);
+			new DtsQuarterly(2014);
+			final DtsQuarterly q2015 = new DtsQuarterly(2015);
+			final DtsQuarterly q2016 = new DtsQuarterly(2016);
 
-				if (d != null) {
-					knt = DtsData.getNumReportsInYear(cal);
-					DtsData p = DtsData.findData(knt, cal.get(Calendar.YEAR) - 1);
-					if (p != null) {
-						long pTot = p.getCorp().yearly + p.getWith().yearly + p.getInd().yearly;
-						long dTot = d.getCorp().yearly + d.getWith().yearly + d.getInd().yearly;
-						double chg = 0;
-						if (pTot > 0.0) {
-							chg = (double) (dTot - pTot) / (double) pTot;
-						}
+			DtsReports.printQuarterly(pw, q2015, q2016);
 
-						String d1 = p.getDatePlus();
-						String d2 = d.getDatePlus();
-
-						String str = String.format("%s\t%s\t%10d %10d %10.2f%n", d1, d2, pTot, dTot, chg);
-
-						pw.printf("%s", str);
-					}
-				}
-				cal.add(Calendar.DATE, 1);
-				final String day = Utils.getDayName(cal);
-				if (day.contains("SAT")) {
-					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
-					cal.add(Calendar.DATE, 1);
-				}
-			}
 		}
 	}
 

@@ -57,7 +57,7 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "d:/temp/dts";
+	final static private String		folderPath				= "f:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
@@ -78,14 +78,14 @@ public class ProcessDTS {
 		
 
 		try {
-			DtsReports.writeFiscalYear("fy.txt");
-			DtsReports.writeQuarterly("qtr.txt");
+			DtsReports.writeFiscalYear("fy");
+			DtsReports.writeQuarterly("qtr");
 		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
+//		System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 
 		/**
 		 * System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));

@@ -256,6 +256,11 @@ public class Utils {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
 	}
+	
+	public static void print(String str) {
+		System.out.println(str);
+	}
+
 
 	/**
 	 *
@@ -343,5 +348,13 @@ public class Utils {
 			return sdf2.format(cal.getTime());
 		}
 		return "";
+	}
+
+	/** 
+	 * net.ajaskey.market.misc.newline
+	 *
+	 */
+	public static void newline() {
+		System.out.println();
 	}
 }

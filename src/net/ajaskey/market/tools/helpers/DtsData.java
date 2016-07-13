@@ -83,8 +83,10 @@ public class DtsData {
 	 */
 	public static DtsData findData(Calendar cal) {
 		if (cal != null) {
+			// Utils.printCalendar(cal);
 			for (final DtsData d : DtsData.dtsList) {
-				if (d.getDate().equals(cal)) {
+				// Utils.printCalendar(d.getDate());
+				if (Utils.sameDate(d.getDate(), cal)) {
 					return d;
 				} else if (d.getDate().after(cal)) {
 					return d;
@@ -271,6 +273,7 @@ public class DtsData {
 					ret++;
 					if ((d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH))
 					    && (d.getDate().get(Calendar.DATE) >= cal.get(Calendar.DATE))) {
+						
 						return ret;
 					}
 				}
@@ -453,7 +456,7 @@ public class DtsData {
 		str += String.format("%n\tWithheld   ==> %s%n", this.with);
 		return str;
 	}
-	
+
 	/**
 	 * 
 	 * net.ajaskey.market.tools.helpers.getDatePlus
