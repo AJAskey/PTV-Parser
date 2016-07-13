@@ -286,16 +286,6 @@ public class TickerDataTest {
 		Assert.assertEquals(td, 0);
 	}
 
-	/**
-	 * Test method for
-	 * {@link net.ajaskey.market.ta.TickerData#DailyDataString(int)}.
-	 */
-	@Test
-	public void testDailyDataString() {
-		String str = tdQQQ.DailyDataString(20);
-		System.out.println(str);
-		Assert.assertEquals(str, "Fri 25-Sep-2015  104.91  105.01  102.28  102.92 44700000");
-	}
 
 	/**
 	 * Test method for

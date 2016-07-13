@@ -118,14 +118,7 @@ public class DailyDataTest {
 		Assert.assertEquals(cal.get(Calendar.DATE), 15);
 	}
 
-	/**
-	 * Test method for {@link net.ajaskey.market.ta.DailyData#getDaysSinceBase()}.
-	 */
-	@Test
-	public void testGetDaysSinceBase() {
-		Assert.assertEquals(this.dd.getDaysSinceBase(), 29292);
 
-	}
 
 	/**
 	 * Test method for {@link net.ajaskey.market.ta.DailyData#getHigh()}.
@@ -224,19 +217,6 @@ public class DailyDataTest {
 		Assert.assertEquals(this.dd.getVolume(), 100.0, 0.01);
 	}
 
-	/**
-	 * Test method for {@link net.ajaskey.market.ta.DailyData#toString()}.
-	 */
-	@Test
-	public final void testToString() {
-		final Calendar cal = Calendar.getInstance();
-		cal.set(1990, Calendar.MARCH, 15, 23, 45);
-		this.dd = new DailyData(cal, 100.0, 200.0, 150.5, 111.1, 123456.0, 0.0);
-		//System.out.println(this.dd.toString());
-		final String expStr = "Thu 15-Mar-1990  100.00  200.00  150.50  111.10 123456 0";
-		final String tstStr = this.dd.toString();
-		final int cmp = expStr.compareTo(tstStr);
-		Assert.assertEquals(cmp, 0);
-	}
+
 
 }
