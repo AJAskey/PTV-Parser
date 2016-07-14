@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.methods.EmaContinuousSeries;
 
 /**
  * This class...
@@ -110,7 +111,7 @@ public class DtsReports {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.helpers.dumpCompareIndividualMonths
 	 *
 	 * @param yearRecent
@@ -206,6 +207,25 @@ public class DtsReports {
 
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
+		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.dumpRaw
+	 *
+	 * @param fname
+	 * @param cal
+	 * @throws FileNotFoundException
+	 */
+	public static void dumpRaw(String fname, Calendar cal) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + "_raw.txt")) {
+			for (final DtsData d : DtsData.dtsList) {
+				if ((Utils.sameDate(d.getDate(), cal)) || (d.getDate().after(cal))) {
+					pw.println(d);
+				}
+			}
 		}
 	}
 
@@ -342,6 +362,98 @@ public class DtsReports {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.helpers.getChg
+	 *
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	private static double getChg(int dVal, int pVal) {
+		double chg = 0.0;
+		if (pVal > 0.0) {
+			chg = (double) (dVal - pVal) / (double) pVal;
+		}
+		return chg;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printDailyCompare
+	 *
+	 * @param string
+	 * @throws FileNotFoundException
+	 */
+	private static void printDailyCompare(String fname) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		final EmaContinuousSeries wEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries iEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries cEma = new EmaContinuousSeries(7);
+
+		try (PrintWriter pw = new PrintWriter(fname)) {
+
+			pw.println(TAB + TAB + TAB + TAB + TAB + TAB + "Date" + TAB + TAB + TAB + TAB + TAB + TAB + TAB + "Withheld" + TAB
+			    + TAB + TAB + TAB + "Individual" + TAB + TAB + TAB + TAB + "Corporate");
+
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+			// Utils.printCalendar(cal);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+			// Utils.printCalendar(tomorrow);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+
+					if (p != null) {
+
+						final double withChg = DtsReports.getChg(d.getWith().yearly, p.getWith().yearly);
+						final double indChg = DtsReports.getChg(d.getInd().yearly, p.getInd().yearly);
+						final double corpChg = DtsReports.getChg(d.getCorp().yearly, p.getCorp().yearly);
+
+						final double withEma = wEma.addValue(withChg);
+						final double indEma = iEma.addValue(indChg);
+						final double corpEma = cEma.addValue(corpChg);
+
+						String d1 = p.getDatePlus();
+						d1 = d1.replaceAll(" ", "\t");
+						String d2 = d.getDatePlus();
+						d2 = d2.replaceAll(" ", "\t");
+
+						final String str = String.format(
+						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f%n", d1, d2,
+						    p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly, indChg,
+						    indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma);
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
+		}
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.printFiscalYear
 	 *
@@ -355,12 +467,6 @@ public class DtsReports {
 			return;
 		}
 
-		double ema = 0;
-		double sma = 0;
-		final int emaLen = 7;
-		final double emaMult = 2.0 / (emaLen + 1);
-		int knt = 0;
-
 		try (PrintWriter pw = new PrintWriter(fname)) {
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
@@ -370,6 +476,8 @@ public class DtsReports {
 			final Calendar tomorrow = Calendar.getInstance();
 			tomorrow.add(Calendar.DATE, 1);
 			// Utils.printCalendar(tomorrow);
+
+			EmaContinuousSeries ema = new EmaContinuousSeries(7);
 
 			while (cal.before(tomorrow)) {
 
@@ -407,33 +515,13 @@ public class DtsReports {
 						if (pVal > 0.0) {
 							chg = (double) (dVal - pVal) / (double) pVal;
 						}
-
-						if (knt < emaLen) {
-							knt++;
-							sma += chg;
-						} else if (knt == emaLen) {
-							knt++;
-							sma += chg;
-							sma /= emaLen;
-							ema = sma;
-						} else {
-							final double pEma = ema;
-							ema = ((chg - pEma) * emaMult) + pEma;
-						}
+						ema.addValue(chg);
 
 						final String d1 = p.getDatePlus();
 						final String d2 = d.getDatePlus();
 
-						final DecimalFormat fmt = new DecimalFormat("#.##");
-						String sEma = null;
-
-						if (knt <= emaLen) {
-							sEma = "";
-						} else {
-							sEma = fmt.format(ema);
-						}
-
-						final String str = String.format("%s\t%s\t%10d\t%10d\t%10.2f\t%s%n", d1, d2, pVal, dVal, chg, sEma);
+						final String str = String.format("%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f%n", d1, d2, pVal, dVal, chg,
+						    ema.getEma());
 
 						pw.printf("%s", str);
 
@@ -505,6 +593,8 @@ public class DtsReports {
 			return;
 		}
 
+		DtsReports.printDailyCompare("out\\" + fname + "daily-compare.txt");
+
 		DtsReports.printFiscalYear("out\\" + fname + "_tot.txt", DTS_TYPE.COMBINED);
 		DtsReports.printFiscalYear("out\\" + fname + "_corp.txt", DTS_TYPE.CORPORATE);
 		DtsReports.printFiscalYear("out\\" + fname + "_ind.txt", DTS_TYPE.INDIVIDUAL);
@@ -516,8 +606,8 @@ public class DtsReports {
 
 		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
 
-			DtsQuarterly q2013 = new DtsQuarterly(2013);
-			DtsQuarterly q2014 = new DtsQuarterly(2014);
+			final DtsQuarterly q2013 = new DtsQuarterly(2013);
+			final DtsQuarterly q2014 = new DtsQuarterly(2014);
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
 			final DtsQuarterly q2016 = new DtsQuarterly(2016);
 
@@ -525,25 +615,6 @@ public class DtsReports {
 			DtsReports.printQuarterly(pw, q2014, q2015);
 			DtsReports.printQuarterly(pw, q2015, q2016);
 
-		}
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.helpers.dumpRaw
-	 *
-	 * @param fname
-	 * @param cal
-	 * @throws FileNotFoundException
-	 */
-	public static void dumpRaw(String fname, Calendar cal) throws FileNotFoundException {
-
-		try (PrintWriter pw = new PrintWriter("out\\" + fname + "_raw.txt")) {
-			for (DtsData d : DtsData.dtsList) {
-				if ((Utils.sameDate(d.getDate(), cal)) || (d.getDate().after(cal))) {
-					pw.println(d);
-				}
-			}
 		}
 	}
 
