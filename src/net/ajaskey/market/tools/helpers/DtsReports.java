@@ -593,7 +593,7 @@ public class DtsReports {
 			return;
 		}
 
-		DtsReports.printDailyCompare("out\\" + fname + "daily-compare.txt");
+		DtsReports.printDailyCompare("out\\" + fname + "_daily-compare.txt");
 
 		DtsReports.printFiscalYear("out\\" + fname + "_tot.txt", DTS_TYPE.COMBINED);
 		DtsReports.printFiscalYear("out\\" + fname + "_corp.txt", DTS_TYPE.CORPORATE);
