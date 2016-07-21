@@ -51,9 +51,9 @@ public class CotsReports {
 	 *
 	 * @param list
 	 */
-	public static void dumpRaw(List<LongShort> list) {
-		for (final LongShort ls : list) {
-			System.out.println(ls);
+	public static void dumpRaw() {
+		for (final CotsData cd : CotsData.cotsList) {
+			System.out.println(cd);
 		}
 	}
 

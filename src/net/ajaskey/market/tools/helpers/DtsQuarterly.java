@@ -190,6 +190,7 @@ public class DtsQuarterly {
 		dc.getCorp().monthly = d1.getCorp().monthly + d2.getCorp().monthly + d3.getCorp().monthly;
 		dc.getInd().monthly = d2.getInd().monthly + d2.getInd().monthly + d3.getInd().monthly;
 		dc.getWith().monthly = d3.getWith().monthly + d2.getWith().monthly + d3.getWith().monthly;
+		dc.getUnEmp().monthly = d3.getUnEmp().monthly + d2.getUnEmp().monthly + d3.getUnEmp().monthly;
 
 		return dc;
 	}
@@ -199,12 +200,16 @@ public class DtsQuarterly {
 		double chg = 0;
 		if ((d1 != null) && (d2 != null)) {
 			ret += String.format(this.fmtDate, str, Utils.getString(d1.getDate()), Utils.getString(d2.getDate()));
+
 			chg = this.getChg(d1.getWith().monthly, d2.getWith().monthly);
 			ret += String.format(this.fmtStr, "Withheld", d1.getWith().monthly, d2.getWith().monthly, chg);
+
 			chg = this.getChg(d1.getInd().monthly, d2.getInd().monthly);
 			ret += String.format(this.fmtStr, "Individual", d1.getInd().monthly, d2.getInd().monthly, chg);
+
 			chg = this.getChg(d1.getCorp().monthly, d2.getCorp().monthly);
 			ret += String.format(this.fmtStr, "Corporate", d1.getCorp().monthly, d2.getCorp().monthly, chg);
+
 			final long tot1 = d1.getWith().monthly + d1.getInd().monthly + d1.getCorp().monthly;
 			final long tot2 = d2.getWith().monthly + d2.getInd().monthly + d2.getCorp().monthly;
 			chg = this.getChg(tot1, tot2);

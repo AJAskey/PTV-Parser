@@ -48,7 +48,7 @@ public class DtsReports {
 	}
 
 	public static enum REPORT_RANGE {
-		MONTH, YEAR
+		DAY, MONTH, YEAR
 	}
 
 	final static private String	NL			= System.getProperty("line.separator");
@@ -320,6 +320,11 @@ public class DtsReports {
 		final int yr = dLast.getDate().get(Calendar.YEAR) - 1;
 
 		switch (rr) {
+			case DAY:
+				Calendar cal = Utils.makeCopy(dLast.getDate());
+				cal.add(Calendar.YEAR, -1);
+				dPrevious = DtsData.findData(cal);
+				break;
 			case MONTH:
 				knt = DtsData.getNumReportsInMonth(dLast.getDate());
 				dPrevious = DtsData.findData(knt, dLast.getDate().get(Calendar.MONTH), yr);
@@ -615,6 +620,71 @@ public class DtsReports {
 			DtsReports.printQuarterly(pw, q2014, q2015);
 			DtsReports.printQuarterly(pw, q2015, q2016);
 
+		}
+	}
+
+	public static void writeUnemploymentTaxes(String fname) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		final EmaContinuousSeries ema = new EmaContinuousSeries(7);
+
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
+
+			pw.println("Date" +  TAB + "Change" + TAB + "EMA");
+
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+
+					if (p != null) {
+
+						double chgT = DtsReports.getChg(d.getUnEmp().yearly, p.getUnEmp().yearly);
+						double chg = 0;
+						if (chgT > 0.0) {
+							chg = Math.min(chgT, 0.25);
+						} else if (chgT < 0.0) {
+							chg = Math.max(chgT, -0.25);							
+						}
+						
+
+						final double emaVal = ema.addValue(chg);
+
+						String d1 = p.getDatePlus();
+						d1 = d1.replaceAll(" ", "\t");
+						String d2 = d.getDatePlus();
+						d2 = d2.replaceAll(" ", "\t");
+
+						final String str = String.format("%s\t%s\t%5.2f\t%5.2f%n", d1, d2, chg, emaVal);
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
 		}
 	}
 

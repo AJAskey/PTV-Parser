@@ -274,14 +274,23 @@ public class DtsData {
 
 	private final DtsDataTally	corp;
 
+	private final DtsDataTally	unEmp;
+
 	private Calendar						date;
 
 	private int									rptKnt	= 0;
 
+	/**
+	 * 
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param theDate
+	 */
 	public DtsData(Calendar theDate) {
 		this.with = new DtsDataTally();
 		this.ind = new DtsDataTally();
 		this.corp = new DtsDataTally();
+		unEmp = new DtsDataTally();
 		this.date = Calendar.getInstance();
 		this.date = (Calendar) theDate.clone();
 	}
@@ -294,6 +303,7 @@ public class DtsData {
 		this.with = new DtsDataTally();
 		this.ind = new DtsDataTally();
 		this.corp = new DtsDataTally();
+		unEmp = new DtsDataTally();
 		this.date = Calendar.getInstance();
 		this.setDate(theDate);
 	}
@@ -306,6 +316,10 @@ public class DtsData {
 	 */
 	public DtsDataTally getCorp() {
 		return this.corp;
+	}
+
+	public DtsDataTally getUnEmp() {
+		return this.unEmp;
 	}
 
 	/**
@@ -397,6 +411,27 @@ public class DtsData {
 		}
 	}
 
+	public void setUnEmp(String str) {
+
+		if (str == null) {
+			System.out.println("Error : setUnEmp(String str) String is NULL!");
+			return;
+		}
+
+		try {
+			final int idx = str.indexOf("Taxes") + 6;
+			final String s = DtsData.cleanString(str, idx);
+
+			final String fld[] = s.split("\\s+");
+			this.unEmp.daily = Integer.parseInt(fld[0].trim());
+			this.unEmp.monthly = Integer.parseInt(fld[1].trim());
+			this.unEmp.yearly = Integer.parseInt(fld[2].trim());
+		} catch (final Exception e) {
+			System.out.println("Error processing line : " + str);
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.setDate
@@ -481,14 +516,14 @@ public class DtsData {
 
 	@Override
 	public String toString() {
-		String str = DtsData.formatDate(this.date) + " " + this.rptKnt;
+		String str = DtsData.formatDate(this.date); // + " " + this.rptKnt;
 
 		final long dtot = this.getWith().daily + this.getInd().daily + this.getCorp().daily;
 		final long mtot = this.getWith().monthly + this.getInd().monthly + this.getCorp().monthly;
 		final long ytot = this.getWith().yearly + this.getInd().yearly + this.getCorp().yearly;
 		str += String.format(
-		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%sDaily:%7d    MTD:%9d    YTD:%10d",
-		    this.with, this.ind, this.corp, " ", dtot, mtot, ytot);
+		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%sDaily:%7s    MTD:%9s    YTD:%10s",
+		    this.with, this.ind, this.corp, " ", Utils.formatInt(dtot), Utils.formatInt(mtot), Utils.formatInt(ytot));
 		return str;
 	}
 

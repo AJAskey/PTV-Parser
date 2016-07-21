@@ -72,36 +72,40 @@ public class ProcessDTS {
 	 */
 	public static void main(String[] args) {
 
-		//ProcessDTS.updateDtsFiles();
+		ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 
+		/**
+		 * try { DtsReports.writeUnemploymentTaxes("unemployment");
+		 * DtsReports.writeQuarterly("qtr"); } catch (FileNotFoundException e) { //
+		 * TODO Auto-generated catch block e.printStackTrace(); }
+		 */
+
 		try {
 			DtsReports.dumpRaw("dump", Utils.buildCalendar(2014, Calendar.JANUARY, 1));
+			DtsReports.writeUnemploymentTaxes("unemployment");
 			DtsReports.writeFiscalYear("fy");
 			DtsReports.writeQuarterly("qtr");
 			DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
+			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
+			DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
 		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 
-
-		/**
-		 * 
-		 * );
-		 * 
-		 * 
-		 * 
-		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
-		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
-		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
-		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
-		 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
-		 * 
-		 */
+	/**
+	 * 
+	 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MARCH);
+	 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.APRIL);
+	 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.MAY);
+	 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
+	 * DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
+	 * 
+	 */
 	}
 
 	/**
@@ -145,11 +149,13 @@ public class ProcessDTS {
 								lastYr = d.getDate().get(Calendar.YEAR);
 							}
 							knt++;
-						  d.setRptKnt(knt);
+							d.setRptKnt(knt);
 						} else if (line.contains("Individual Income Taxes")) {
 							d.setInd(line);
 						} else if (line.contains("Corporation Income Taxes")) {
 							d.setCorp(line);
+						} else if (line.contains("Federal Unemployment Taxes")) {
+							d.setUnEmp(line);
 						}
 					}
 					DtsData.dtsList.add(d);

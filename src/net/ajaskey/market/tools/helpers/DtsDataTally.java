@@ -1,6 +1,8 @@
 
 package net.ajaskey.market.tools.helpers;
 
+import net.ajaskey.market.misc.Utils;
+
 /**
  * This class...
  *
@@ -51,7 +53,7 @@ public class DtsDataTally {
 
 	@Override
 	public String toString() {
-		final String str = String.format("Daily:%7d    MTD:%9d    YTD:%10d", this.daily, this.monthly, this.yearly);
+		final String str = String.format("Daily:%7s    MTD:%9s    YTD:%10s", Utils.formatInt(this.daily), Utils.formatInt(this.monthly), Utils.formatInt(this.yearly));
 		return str;
 	}
 }

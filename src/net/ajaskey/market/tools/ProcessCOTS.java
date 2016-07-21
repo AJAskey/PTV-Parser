@@ -58,8 +58,8 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						folderPath		= "i:/temp/cots";
-	final private static String						outputPath		= "i:/temp/out";
+	final private static String						folderPath		= "f:/temp/cots";
+	final private static String						outputPath		= "f:/temp/out";
 	final private static Charset					charset				= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
@@ -93,12 +93,9 @@ public class ProcessCOTS {
 
 		ProcessCOTS.getLatestCots();
 
-		validNames.clear();
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
 
 		// validNames.add(VIX_Name);
+
 		// validNames.add(EM_Name);
 		// validNames.add(USD_Name);
 
@@ -106,25 +103,50 @@ public class ProcessCOTS {
 
 		ProcessCOTS.readAndParse();
 
-		// for (CotsData cd : CotsData.cotsList) {
-		// System.out.println(cd);
-		// }
+		// CotsReports.dumpRaw();
 
-		final String prefix = "SPX_";
+		final String prefix = setSPX();
+		Calendar cal = Utils.buildCalendar(2016, Calendar.JULY, 12);
+		
 		CotsReports.writeAllCsv(prefix, outputPath);
 
 		CotsReports.writeCsv(prefix, outputPath);
 
-		CotsReports.writeSummary(outputPath, prefix, Utils.buildCalendar(2016, Calendar.JULY, 5));
-
-		// runAllCombo("All_");
-		// runSpxCombo("SPX_");
-		// runNdxCombo("NDX_");
-		// runDjiaCombo("DJIA_");
-		// runRutCombo("RUT_");
+		CotsReports.writeSummary(outputPath, prefix, cal);
 
 		System.out.println("Done.");
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.setAllIndex
+	 *
+	 */
+	private static String setAllIndex() {
+		validNames.clear();
+
+		
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(RUT_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+
+		return "Index_";
+	}
+	
+	private static String setSPX() {
+		validNames.clear();
+
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+
+		return "SPX_";
 	}
 
 	public static void runAllCombo(String prefix) throws ParseException {
@@ -215,7 +237,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
-		ProcessCOTS.readDaily();
+		// ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
 
