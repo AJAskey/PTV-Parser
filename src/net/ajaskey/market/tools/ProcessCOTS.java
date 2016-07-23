@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.output.CreateSpxPriceList;
 import net.ajaskey.market.tools.helpers.CotsData;
 import net.ajaskey.market.tools.helpers.CotsReports;
 import net.ajaskey.market.tools.helpers.CotsSorter;
@@ -93,7 +94,6 @@ public class ProcessCOTS {
 
 		ProcessCOTS.getLatestCots();
 
-
 		// validNames.add(VIX_Name);
 
 		// validNames.add(EM_Name);
@@ -103,11 +103,15 @@ public class ProcessCOTS {
 
 		ProcessCOTS.readAndParse();
 
+		CreateSpxPriceList spx = new CreateSpxPriceList(Utils.buildCalendar(2012, Calendar.JANUARY, 3),
+		    Calendar.getInstance(), 7);
+		List<String> spxList = spx.getList();
+
 		// CotsReports.dumpRaw();
 
 		final String prefix = setSPX();
 		Calendar cal = Utils.buildCalendar(2016, Calendar.JULY, 12);
-		
+
 		CotsReports.writeAllCsv(prefix, outputPath);
 
 		CotsReports.writeCsv(prefix, outputPath);
@@ -125,7 +129,6 @@ public class ProcessCOTS {
 	private static String setAllIndex() {
 		validNames.clear();
 
-		
 		validNames.add(SPX_C_Name);
 		validNames.add(SPX_Name);
 		validNames.add(EMINI500_Name);
@@ -138,7 +141,7 @@ public class ProcessCOTS {
 
 		return "Index_";
 	}
-	
+
 	private static String setSPX() {
 		validNames.clear();
 
@@ -237,7 +240,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
-		// ProcessCOTS.readDaily();
+		ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
 

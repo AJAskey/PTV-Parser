@@ -553,6 +553,18 @@ public class DtsReports {
 	 */
 	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
 		pw.println(y1.toCombinedString(y2));
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printQuarterlyEst
+	 *
+	 * @param pw
+	 * @param q2015
+	 * @param q2016
+	 * @param i
+	 */
+	private static void printQuarterlyEst(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2, int qtr) {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -614,7 +626,8 @@ public class DtsReports {
 			final DtsQuarterly q2013 = new DtsQuarterly(2013);
 			final DtsQuarterly q2014 = new DtsQuarterly(2014);
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
-			final DtsQuarterly q2016 = new DtsQuarterly(2016);
+			DtsQuarterly q2016 = new DtsQuarterly(2016);
+			q2016.calcEstimate(3);
 
 			DtsReports.printQuarterly(pw, q2013, q2014);
 			DtsReports.printQuarterly(pw, q2014, q2015);
@@ -633,7 +646,7 @@ public class DtsReports {
 
 		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
 
-			pw.println("Date" +  TAB + "Change" + TAB + "EMA");
+			pw.println("Date" + TAB + "Change" + TAB + "EMA");
 
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
@@ -659,9 +672,8 @@ public class DtsReports {
 						if (chgT > 0.0) {
 							chg = Math.min(chgT, 0.25);
 						} else if (chgT < 0.0) {
-							chg = Math.max(chgT, -0.25);							
+							chg = Math.max(chgT, -0.25);
 						}
-						
 
 						final double emaVal = ema.addValue(chg);
 

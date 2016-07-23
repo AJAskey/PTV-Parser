@@ -218,4 +218,35 @@ public class DtsQuarterly {
 		return ret;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.helpers.calcEstimate
+	 *
+	 */
+	public void calcEstimate(int qtr) {
+
+		if ((qtr < 1) || (qtr > 4))
+			return;
+
+		String ret = "";
+		long tot = 0;
+		if ((qtr == 1) && (this.q1 != null)) {
+
+			tot = this.q1.getWith().monthly + this.q1.getInd().monthly + this.q1.getCorp().monthly;
+			ret += String.format("\tTotal      : %9d%n", tot);
+		} else if ((qtr == 2) && (this.q2 != null)) {
+
+			tot = this.q2.getWith().monthly + this.q2.getInd().monthly + this.q2.getCorp().monthly;
+			ret += String.format("\tTotal      : %9d%n", tot);
+		} else if ((qtr == 3) && (this.q4 != null)) {
+
+			tot = this.q3.getWith().monthly + this.q3.getInd().monthly + this.q3.getCorp().monthly;
+			ret += String.format("\tTotal      : %9d%n", tot);
+		} else if ((qtr == 4) && (this.q4 != null)) {
+
+			tot = this.q4.getWith().monthly + this.q4.getInd().monthly + this.q4.getCorp().monthly;
+			ret += String.format("\tTotal      : %9d%n", tot);
+		}
+
+	}
+
 }
