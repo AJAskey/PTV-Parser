@@ -4,6 +4,7 @@ package net.ajaskey.market.tools;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -118,17 +119,21 @@ public class PEAnalysis {
 			}
 		}
 
-		System.out.println("Date,EPS,SPX,VIX,PE,PE-VIX");
-		
-		// Process based on GAAP-EPS Date
-		for (PEAnalysisData pe : GaapEps) {
-			PEAnalysisData spx = getSPX(pe.date);
-			PEAnalysisData vix = getVIX(pe.date);
+		try (PrintWriter pw = new PrintWriter("out\\peanalysis.csv")) {
 
-			if ((spx != null) && (vix != null)) {
-				double gpe = spx.price / pe.price;
-				double gpeVix = gpe / vix.price;
-				System.out.println(Utils.getString(pe.date) + "," + pe.price + "," + spx.price + "," + vix.price + "," + gpe + "," + gpeVix);
+			pw.println("Date,EPS,SPX,VIX,PE,PE-VIX");
+
+			// Process based on GAAP-EPS Date
+			for (PEAnalysisData pe : GaapEps) {
+				PEAnalysisData spx = getSPX(pe.date);
+				PEAnalysisData vix = getVIX(pe.date);
+
+				if ((spx != null) && (vix != null)) {
+					double gpe = spx.price / pe.price;
+					double gpeVix = gpe / vix.price;
+					pw.printf("%s,%7.2f,%8.2f,%6.2f,%6.2f,%5.2f%n",
+							Utils.getString(pe.date), pe.price, spx.price, vix.price, gpe, gpeVix);
+				}
 			}
 		}
 
