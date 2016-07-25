@@ -63,6 +63,8 @@ public class CreateSpxPriceList {
 	public CreateSpxPriceList(Calendar sDate, Calendar eDate, int inc) {
 		currentDate = Utils.makeCopy(sDate);
 		increment = inc;
+		
+		endDate = eDate;
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		TickerFullName.build(fullfilenames);

@@ -65,17 +65,18 @@ public class CotsReports {
 	 * @param outputPath
 	 * @throws FileNotFoundException
 	 */
-	public static void writeAllCsv(String source, String outputPath) throws FileNotFoundException {
+	public static void writeAllCsv(String source, String outputPath, List<String> spx) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(outputPath + "\\" + source + "combined.csv")) {
 
-			pw.println("Date,OI,Dealer,PM,Levered,Other,NonRpt");
+			pw.println("Date,OI,Dealer,PM,Levered,Other,NonRpt,,SPX");
 
+			int i = 0;
 			for (final CotsData cd : CotsData.cotsList) {
 
-				pw.printf("%s,%d,%d,%d,%d,%d,%d%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
-				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta);
-
+				pw.printf("%s,%d,%d,%d,%d,%d,%d,%s%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
+				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta, spx.get(i));
+				i++;
 			}
 		}
 

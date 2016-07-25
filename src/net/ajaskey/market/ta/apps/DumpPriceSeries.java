@@ -73,7 +73,7 @@ public class DumpPriceSeries {
 			filenames.add(dataPath + "\\ASCII\\INDEX");
 
 			final Calendar cal = Utils.buildCalendar(2012, Calendar.JANUARY, 3);
-			final Calendar endCal = Utils.buildCalendar(2016, Calendar.JULY, 1);
+			final Calendar endCal = Utils.buildCalendar(2016, Calendar.JULY, 13);
 
 			final List<TickerData> tdList = ParseData.parseFiles(filenames, 1700);
 

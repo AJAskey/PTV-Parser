@@ -59,8 +59,8 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						folderPath		= "f:/temp/cots";
-	final private static String						outputPath		= "f:/temp/out";
+	final private static String						folderPath		= "d:/temp/cots";
+	final private static String						outputPath		= "d:/temp/out";
 	final private static Charset					charset				= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
@@ -91,10 +91,12 @@ public class ProcessCOTS {
 	public static void main(String[] args) throws ParseException, FileNotFoundException {
 
 		System.out.println("Processing...");
+		
+		final String prefix = setVIX();
 
-		ProcessCOTS.getLatestCots();
+		// ProcessCOTS.getLatestCots();
 
-		// validNames.add(VIX_Name);
+		//validNames.add(VIX_Name);
 
 		// validNames.add(EM_Name);
 		// validNames.add(USD_Name);
@@ -106,13 +108,17 @@ public class ProcessCOTS {
 		CreateSpxPriceList spx = new CreateSpxPriceList(Utils.buildCalendar(2012, Calendar.JANUARY, 3),
 		    Calendar.getInstance(), 7);
 		List<String> spxList = spx.getList();
+		
+		for (String s : spxList) {
+			System.out.println(s);
+		}
 
-		// CotsReports.dumpRaw();
+		CotsReports.dumpRaw();
 
-		final String prefix = setSPX();
-		Calendar cal = Utils.buildCalendar(2016, Calendar.JULY, 12);
+		
+		Calendar cal = Utils.buildCalendar(2016, Calendar.JULY, 19);
 
-		CotsReports.writeAllCsv(prefix, outputPath);
+		CotsReports.writeAllCsv(prefix, outputPath, spxList);
 
 		CotsReports.writeCsv(prefix, outputPath);
 
@@ -150,6 +156,14 @@ public class ProcessCOTS {
 		validNames.add(EMINI500_Name);
 
 		return "SPX_";
+	}
+	
+	private static String setVIX() {
+		validNames.clear();
+
+		validNames.add(VIX_Name);
+
+		return "VIX_";
 	}
 
 	public static void runAllCombo(String prefix) throws ParseException {
@@ -240,7 +254,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
-		ProcessCOTS.readDaily();
+		//ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
 
