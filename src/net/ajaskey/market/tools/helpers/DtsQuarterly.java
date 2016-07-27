@@ -47,7 +47,7 @@ public class DtsQuarterly {
 	public DtsData							q4				= null;
 	public boolean							complete	= false;
 
-	final private String				fmtStr		= "\t%s\t%9d\t%9d\t%10.2f%n";
+	final private String				fmtStr		= "\t%10s\t%9d\t%9d\t%10.1f%%%n";
 
 	final private String				fmtDate		= "%s\t\t%s\t%s%n";
 
@@ -201,52 +201,21 @@ public class DtsQuarterly {
 		if ((d1 != null) && (d2 != null)) {
 			ret += String.format(this.fmtDate, str, Utils.getString(d1.getDate()), Utils.getString(d2.getDate()));
 
-			chg = this.getChg(d1.getWith().monthly, d2.getWith().monthly);
+			chg = this.getChg(d1.getWith().monthly, d2.getWith().monthly) * 100.0;
 			ret += String.format(this.fmtStr, "Withheld", d1.getWith().monthly, d2.getWith().monthly, chg);
 
-			chg = this.getChg(d1.getInd().monthly, d2.getInd().monthly);
+			chg = this.getChg(d1.getInd().monthly, d2.getInd().monthly) * 100.0;
 			ret += String.format(this.fmtStr, "Individual", d1.getInd().monthly, d2.getInd().monthly, chg);
 
-			chg = this.getChg(d1.getCorp().monthly, d2.getCorp().monthly);
+			chg = this.getChg(d1.getCorp().monthly, d2.getCorp().monthly) * 100.0;
 			ret += String.format(this.fmtStr, "Corporate", d1.getCorp().monthly, d2.getCorp().monthly, chg);
 
 			final long tot1 = d1.getWith().monthly + d1.getInd().monthly + d1.getCorp().monthly;
 			final long tot2 = d2.getWith().monthly + d2.getInd().monthly + d2.getCorp().monthly;
-			chg = this.getChg(tot1, tot2);
+			chg = this.getChg(tot1, tot2) * 100.0;
 			ret += String.format(this.fmtStr, "Total", tot1, tot2, chg);
 		}
 		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.calcEstimate
-	 *
-	 */
-	public void calcEstimate(int qtr) {
-
-		if ((qtr < 1) || (qtr > 4))
-			return;
-
-		String ret = "";
-		long tot = 0;
-		if ((qtr == 1) && (this.q1 != null)) {
-
-			tot = this.q1.getWith().monthly + this.q1.getInd().monthly + this.q1.getCorp().monthly;
-			ret += String.format("\tTotal      : %9d%n", tot);
-		} else if ((qtr == 2) && (this.q2 != null)) {
-
-			tot = this.q2.getWith().monthly + this.q2.getInd().monthly + this.q2.getCorp().monthly;
-			ret += String.format("\tTotal      : %9d%n", tot);
-		} else if ((qtr == 3) && (this.q4 != null)) {
-
-			tot = this.q3.getWith().monthly + this.q3.getInd().monthly + this.q3.getCorp().monthly;
-			ret += String.format("\tTotal      : %9d%n", tot);
-		} else if ((qtr == 4) && (this.q4 != null)) {
-
-			tot = this.q4.getWith().monthly + this.q4.getInd().monthly + this.q4.getCorp().monthly;
-			ret += String.format("\tTotal      : %9d%n", tot);
-		}
-
 	}
 
 }

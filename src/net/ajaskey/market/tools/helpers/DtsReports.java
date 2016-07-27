@@ -627,7 +627,6 @@ public class DtsReports {
 			final DtsQuarterly q2014 = new DtsQuarterly(2014);
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
 			DtsQuarterly q2016 = new DtsQuarterly(2016);
-			q2016.calcEstimate(3);
 
 			DtsReports.printQuarterly(pw, q2013, q2014);
 			DtsReports.printQuarterly(pw, q2014, q2015);
