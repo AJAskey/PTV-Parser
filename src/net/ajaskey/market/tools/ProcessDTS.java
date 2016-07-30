@@ -88,7 +88,7 @@ public class ProcessDTS {
 
 		Utils.makeDir("out");
 
-		ProcessDTS.updateDtsFiles();
+		//ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 		
