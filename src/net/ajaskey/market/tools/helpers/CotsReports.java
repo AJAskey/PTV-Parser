@@ -3,6 +3,7 @@ package net.ajaskey.market.tools.helpers;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -69,13 +70,14 @@ public class CotsReports {
 
 		try (PrintWriter pw = new PrintWriter(outputPath + "\\" + source + "combined.csv")) {
 
-			pw.println("Date,OI,Dealer,PM,Levered,Other,NonRpt,,SPX");
+			pw.println("Date,OI,Dealer,PM,Levered,Other,NonRpt,Hedged,Specs,SPX,");
 
 			int i = 0;
 			for (final CotsData cd : CotsData.cotsList) {
 
-				pw.printf("%s,%d,%d,%d,%d,%d,%d,%s%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
-				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta, spx.get(i));
+				pw.printf("%s,%d,%d,%d,%d,%d,%d,%d,%d,%s%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
+				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta, (cd.pm.delta + cd.other.delta),
+				    (cd.levered.delta + cd.nonrpt.delta), spx.get(i));
 				i++;
 			}
 		}
@@ -202,6 +204,54 @@ public class CotsReports {
 	 */
 	private static void writeCsvHeader(PrintWriter pw) {
 		pw.println("Date,Long,Short,Spread,Long-Short,ShortToLong,PercentLong,PercentShort,PercentSpread");
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.writeOptuma
+	 *
+	 * @param prefix
+	 * @param outputpath
+	 * @throws FileNotFoundException
+	 */
+	public static void writeOptuma(String prefix, String outputPath) throws FileNotFoundException {
+
+		final String header = "Date,Long,Short,Net";
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		try (PrintWriter pwDealer = new PrintWriter(outputPath + "\\" + prefix + "dealer-optuma.csv");
+		    PrintWriter pwPM = new PrintWriter(outputPath + "\\" + prefix + "pm-optuma.csv");
+		    PrintWriter pwLevered = new PrintWriter(outputPath + "\\" + prefix + "levered-optuma.csv");
+		    PrintWriter pwNonrpt = new PrintWriter(outputPath + "\\" + prefix + "nonrpt-optuma.csv");
+		    PrintWriter pwOther = new PrintWriter(outputPath + "\\" + prefix + "other-optuma.csv");
+		    PrintWriter pwHedged = new PrintWriter(outputPath + "\\" + prefix + "hedged-optuma.csv");
+		    PrintWriter pwSpecs = new PrintWriter(outputPath + "\\" + prefix + "specs-optuma.csv")) {
+
+			pwDealer.println(header);
+			pwPM.println(header);
+			pwLevered.println(header);
+			pwNonrpt.println(header);
+			pwOther.println(header);
+
+			for (final CotsData cd : CotsData.cotsList) {
+				String theDate = sdf.format(cd.date.getTime());
+				pwDealer.printf("%s,%d,%d,%d%n", theDate, cd.dealer.longPos, cd.dealer.shortPos, cd.dealer.delta);
+				pwPM.printf("%s,%d,%d,%d%n", theDate, cd.pm.longPos, cd.pm.shortPos, cd.pm.delta);
+				pwLevered.printf("%s,%d,%d,%d%n", theDate, cd.levered.longPos, cd.levered.shortPos, cd.levered.delta);
+				pwNonrpt.printf("%s,%d,%d,%d%n", theDate, cd.nonrpt.longPos, cd.nonrpt.shortPos, cd.nonrpt.delta);
+				pwOther.printf("%s,%d,%d,%d%n", theDate, cd.other.longPos, cd.other.shortPos, cd.other.delta);
+
+				long hedgedLong = cd.pm.longPos + cd.other.longPos;
+				long hedgedShort = cd.pm.shortPos + cd.other.shortPos;
+				long hedgedDelta = hedgedLong - hedgedShort;
+				pwHedged.printf("%s,%d,%d,%d%n", theDate, hedgedLong, hedgedShort, hedgedDelta);
+
+				long specLong = cd.levered.longPos + cd.nonrpt.longPos;
+				long specShort = cd.levered.shortPos + cd.nonrpt.shortPos;
+				long specDelta = specLong - specShort;
+				pwSpecs.printf("%s,%d,%d,%d%n", theDate, specLong, specShort, specDelta);
+			}
+		}
+
 	}
 
 }

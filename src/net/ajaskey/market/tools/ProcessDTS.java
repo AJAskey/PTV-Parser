@@ -57,7 +57,7 @@ public class ProcessDTS {
 	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "f:/temp/dts";
+	final static private String		folderPath				= "d:/temp/dts";
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
@@ -87,8 +87,9 @@ public class ProcessDTS {
 	public static void main(String[] args) {
 
 		Utils.makeDir("out");
+		Utils.makeDir("out/optuma");
 
-		//ProcessDTS.updateDtsFiles();
+		ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
 		
@@ -100,10 +101,13 @@ public class ProcessDTS {
 			DtsReports.writeFiscalYear("fy");
 			DtsReports.writeQuarterly("quarterly");
 			DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
+			DtsReports.writeOptuma();
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
+			DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
 			DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
+			DtsReports.dumpCompareMonths(2016, 2015, Calendar.AUGUST);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

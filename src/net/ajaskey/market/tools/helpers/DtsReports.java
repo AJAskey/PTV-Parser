@@ -4,6 +4,7 @@ package net.ajaskey.market.tools.helpers;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
@@ -396,11 +397,12 @@ public class DtsReports {
 		final EmaContinuousSeries wEma = new EmaContinuousSeries(7);
 		final EmaContinuousSeries iEma = new EmaContinuousSeries(7);
 		final EmaContinuousSeries cEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries tEma = new EmaContinuousSeries(7);
 
 		try (PrintWriter pw = new PrintWriter(fname)) {
 
 			pw.println(TAB + TAB + TAB + TAB + TAB + TAB + "Date" + TAB + TAB + TAB + TAB + TAB + TAB + TAB + "Withheld" + TAB
-			    + TAB + TAB + TAB + "Individual" + TAB + TAB + TAB + TAB + "Corporate");
+			    + TAB + TAB + TAB + "Individual" + TAB + TAB + TAB + TAB + "Corporate" + TAB + TAB + TAB + TAB + "Total");
 
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
@@ -427,9 +429,14 @@ public class DtsReports {
 						final double indChg = DtsReports.getChg(d.getInd().yearly, p.getInd().yearly);
 						final double corpChg = DtsReports.getChg(d.getCorp().yearly, p.getCorp().yearly);
 
+						int totD = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
+						int totP = p.getWith().yearly + p.getInd().yearly + p.getCorp().yearly;
+						final double totChg = DtsReports.getChg(totD, totP);
+
 						final double withEma = wEma.addValue(withChg);
 						final double indEma = iEma.addValue(indChg);
 						final double corpEma = cEma.addValue(corpChg);
+						final double totEma = tEma.addValue(totChg);
 
 						String d1 = p.getDatePlus();
 						d1 = d1.replaceAll(" ", "\t");
@@ -437,9 +444,9 @@ public class DtsReports {
 						d2 = d2.replaceAll(" ", "\t");
 
 						final String str = String.format(
-						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f%n", d1, d2,
-						    p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly, indChg,
-						    indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma);
+						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%7.4f\t%7.4f\t%10d\t%10d\t%7.4f\t%7.4f%n",
+						    d1, d2, p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly,
+						    indChg, indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma, totP, totD, totChg, totEma);
 
 						pw.printf("%s", str);
 
@@ -456,6 +463,40 @@ public class DtsReports {
 			}
 		}
 
+	}
+
+	public static void writeOptuma() throws FileNotFoundException {
+		
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		try (PrintWriter pwWith = new PrintWriter("out/optuma/dts-withheld-optuma.csv")) {
+			pwWith.println("Date,Withheld");
+			for (DtsData d : DtsData.dtsList) {
+				String theDate = sdf.format(d.getDate().getTime());
+				pwWith.printf("%s,%d%n", theDate, d.getWith().yearly);
+			}
+		}
+		try (PrintWriter pwInd = new PrintWriter("out/optuma/dts-individual-optuma.csv")) {
+			pwInd.println("Date,Individual");
+			for (DtsData d : DtsData.dtsList) {
+				String theDate = sdf.format(d.getDate().getTime());
+				pwInd.printf("%s,%d%n", theDate, d.getInd().yearly);
+			}
+		}
+		try (PrintWriter pwCorp = new PrintWriter("out/optuma/dts-corporate-optuma.csv")) {
+			pwCorp.println("Date,Corporate");
+			for (DtsData d : DtsData.dtsList) {
+				String theDate = sdf.format(d.getDate().getTime());
+				pwCorp.printf("%s,%d%n", theDate, d.getCorp().yearly);
+			}
+		}
+		try (PrintWriter pwTotal = new PrintWriter("out/optuma/dts-total-optuma.csv")) {
+			pwTotal.println("Date,Total");
+			for (DtsData d : DtsData.dtsList) {
+				String theDate = sdf.format(d.getDate().getTime());
+				pwTotal.printf("%s,%d%n", theDate, d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly);
+			}
+		}
 	}
 
 	/**
@@ -525,7 +566,7 @@ public class DtsReports {
 						final String d1 = p.getDatePlus();
 						final String d2 = d.getDatePlus();
 
-						final String str = String.format("%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f%n", d1, d2, pVal, dVal, chg,
+						final String str = String.format("%s\t%s\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2, pVal, dVal, chg,
 						    ema.getEma());
 
 						pw.printf("%s", str);
@@ -575,6 +616,8 @@ public class DtsReports {
 	 * @param startDate
 	 */
 	public static void writeEomCsv(Calendar startDate) {
+
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
 

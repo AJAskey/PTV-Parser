@@ -2,6 +2,7 @@
 package net.ajaskey.market.tools;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import net.ajaskey.market.tools.helpers.SpxEarningsData;
@@ -39,8 +40,8 @@ import net.ajaskey.market.tools.helpers.SpxEarningsData;
  *
  */
 public class SpxEarnings {
-	
-	final private static double SpxPrice = 2162.54;
+
+	final private static double SpxPrice = 2170.84;
 
 	/**
 	 * net.ajaskey.market.tools.getEarnings
@@ -67,7 +68,8 @@ public class SpxEarnings {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		final List<SpxEarningsData> data = SpxEarningsData.readData("SP500-Earnings.txt");
+		String dateStr = "29Jul2016";
+		final List<SpxEarningsData> data = SpxEarningsData.readData("SP500-Earnings-" + dateStr + ".txt");
 
 		double totCap = 0;
 		for (final SpxEarningsData d : data) {
@@ -77,18 +79,20 @@ public class SpxEarnings {
 
 		final double fudge = 15.0;
 
-		double totEarn = 0;
-		for (final SpxEarningsData d : data) {
-			final double wt = d.mktcap / totCap;
-			final double perc = wt * 100.0;
-			final double e = SpxEarnings.getEarnings(d);
-			final double earn = e * wt * fudge;
-			totEarn += earn;
-			System.out.printf("%s\t%9.2f%%\t%9.5f\t%9.2f\t%9.2f\t%9.5f %n", d.ticker, perc, wt, d.div, e, earn);
+		try (PrintWriter pw = new PrintWriter("out\\spx-pe-calcs-" + dateStr + ".txt")) {
+			double totEarn = 0;
+			for (final SpxEarningsData d : data) {
+				final double wt = d.mktcap / totCap;
+				final double perc = wt * 100.0;
+				final double e = SpxEarnings.getEarnings(d);
+				final double earn = e * wt * fudge;
+				totEarn += earn;
+				pw.printf("%s\t%9.2f%%\t%9.5f\t%9.2f\t%9.2f\t%9.5f %n", d.ticker, perc, wt, d.div, e, earn);
+			}
+			pw.printf("Earnings : %6.2f%n", totEarn);
+			double pe = SpxPrice / totEarn;
+			pw.printf("PE       : %6.2f%n", pe);
 		}
-		System.out.printf("Earnings : %6.2f%n", totEarn);
-		double pe = SpxPrice / totEarn;
-		System.out.printf("PE       : %6.2f%n", pe);
 
 	}
 

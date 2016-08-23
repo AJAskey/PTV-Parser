@@ -99,7 +99,7 @@ public class CreateSpxPriceList {
 		while (currentDate.before(endDate)) {
 			final DailyData dd = TickerData.getDailyDate(td, currentDate);
 			if (dd != null) {
-				final String str = String.format("%s,%9.2f", Utils.getString(currentDate), dd.getClose());
+				final String str = String.format("%9.2f,%s",  dd.getClose(), Utils.getString(currentDate));
 				retArr.add(str);
 			}
 			currentDate.add(Calendar.DATE, increment);

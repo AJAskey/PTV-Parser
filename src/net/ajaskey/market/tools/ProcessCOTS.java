@@ -59,27 +59,29 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						folderPath		= "d:/temp/cots";
-	final private static String						outputPath		= "d:/temp/out";
-	final private static Charset					charset				= Charset.forName("UTF-8");
-	final private static SimpleDateFormat	sdf						= new SimpleDateFormat("yyMMdd");
-	final private static SimpleDateFormat	sdf2					= new SimpleDateFormat("MMMM dd, yyyy");
-	final private static String						TAB						= "\t";
+	final private static String						outputPath			= "d:/dev/ta/working/out/optuma";
+	final private static String						folderPath			= "d:/temp/cots";
+	final private static Charset					charset					= Charset.forName("UTF-8");
+	final private static SimpleDateFormat	sdf							= new SimpleDateFormat("yyMMdd");
+	final private static SimpleDateFormat	sdf2						= new SimpleDateFormat("MMMM dd, yyyy");
+	final private static String						TAB							= "\t";
 
-	final private static String						DJIA_C_Name		= "DJIA Consolidated";
-	final private static String						DJIA_Name			= "DOW JONES INDUSTRIAL AVG";
-	final private static String						SPX_C_Name		= "S&P 500 Consolidated";
-	final private static String						SPX_Name			= "S&P 500 STOCK INDEX";
-	final private static String						NDX_C_Name		= "NASDAQ-100 Consolidated";
-	final private static String						NDX_Name			= "NASDAQ-100 STOCK INDEX (MINI)";
-	final private static String						EMINI500_Name	= "E-MINI S&P 500 STOCK INDEX";
-	final private static String						EMINI400_Name	= "E-MINI S&P 400 STOCK INDEX";
-	final private static String						RUT_Name			= "RUSSELL 2000 MINI";
-	final private static String						VIX_Name			= "VIX FUTURES";
-	final private static String						EM_Name				= "MSCI EMERGING MKTS MINI INDEX";
-	final private static String						USD_Name			= "U.S. DOLLAR INDEX";
+	final private static String						DJIA_C_Name			= "DJIA Consolidated";
+	final private static String						DJIA_Name				= "DOW JONES INDUSTRIAL AVG";
+	final private static String						SPX_C_Name			= "S&P 500 Consolidated";
+	final private static String						SPX_Name				= "S&P 500 STOCK INDEX";
+	final private static String						NDX_C_Name			= "NASDAQ-100 Consolidated";
+	final private static String						NDX_Name				= "NASDAQ-100 STOCK INDEX (MINI)";
+	final private static String						EMINI500_Name		= "E-MINI S&P 500 STOCK INDEX";
+	final private static String						EMINI400_Name		= "E-MINI S&P 400 STOCK INDEX";
+	final private static String						RUT_Name				= "RUSSELL 2000 MINI";
+	final private static String						VIX_Name				= "VIX FUTURES";
+	final private static String						EM_Name					= "MSCI EMERGING MKTS MINI INDEX";
+	final private static String						USD_Name				= "U.S. DOLLAR INDEX";
+	final private static String						Commodity_Name	= "BLOOMBERG COMMODITY INDEX";
+	final private static String						Commodity_Name2	= "DOW JONES UBS EXCESS RETURN";
 
-	private static List<String>						validNames		= new ArrayList<>();
+	private static List<String>						validNames			= new ArrayList<>();
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -91,12 +93,13 @@ public class ProcessCOTS {
 	public static void main(String[] args) throws ParseException, FileNotFoundException {
 
 		System.out.println("Processing...");
-		
-		final String prefix = setVIX();
+
+		// final String prefix = setAllIndex();
+		// final String prefix = setSPX();
+		 final String prefix = setVIX();
+		// final String prefix = setCommodity();
 
 		// ProcessCOTS.getLatestCots();
-
-		//validNames.add(VIX_Name);
 
 		// validNames.add(EM_Name);
 		// validNames.add(USD_Name);
@@ -108,19 +111,20 @@ public class ProcessCOTS {
 		CreateSpxPriceList spx = new CreateSpxPriceList(Utils.buildCalendar(2012, Calendar.JANUARY, 3),
 		    Calendar.getInstance(), 7);
 		List<String> spxList = spx.getList();
-		
+
 		for (String s : spxList) {
 			System.out.println(s);
 		}
 
 		CotsReports.dumpRaw();
 
-		
-		Calendar cal = Utils.buildCalendar(2016, Calendar.JULY, 19);
+		Calendar cal = Utils.buildCalendar(2016, Calendar.AUGUST, 16);
 
 		CotsReports.writeAllCsv(prefix, outputPath, spxList);
 
-		CotsReports.writeCsv(prefix, outputPath);
+		// CotsReports.writeCsv(prefix, outputPath);
+
+		CotsReports.writeOptuma(prefix, outputPath);
 
 		CotsReports.writeSummary(outputPath, prefix, cal);
 
@@ -157,13 +161,22 @@ public class ProcessCOTS {
 
 		return "SPX_";
 	}
-	
+
 	private static String setVIX() {
 		validNames.clear();
 
 		validNames.add(VIX_Name);
 
 		return "VIX_";
+	}
+
+	private static String setCommodity() {
+		validNames.clear();
+
+		validNames.add(Commodity_Name);
+		validNames.add(Commodity_Name2);
+
+		return "CMDTY_";
 	}
 
 	public static void runAllCombo(String prefix) throws ParseException {
@@ -254,7 +267,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
-		//ProcessCOTS.readDaily();
+		// ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
 
@@ -489,6 +502,8 @@ public class ProcessCOTS {
 			st = LongShort.SourceType.EM;
 		} else if (line.contains(USD_Name)) {
 			st = LongShort.SourceType.USD;
+		} else if ((line.contains(Commodity_Name)) || (line.contains(Commodity_Name2))) {
+			st = LongShort.SourceType.CMDTY;
 		}
 		return st;
 	}

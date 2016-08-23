@@ -29,7 +29,7 @@ import java.util.List;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -44,34 +44,36 @@ import java.util.List;
  */
 public class SpxEarningsData {
 
-	public String	ticker;
-	public double	mktcap;
-	public double	shares;
-	public double	netIncAfterTax;
-	public double	eps;
-	public double	eps1y;
-	public double div;
+	private static final double	NA_VALUE	= -99999999.99;
+
+	public String								ticker;
+	public double								mktcap;
+	public double								shares;
+	public double								netIncAfterTax;
+	public double								eps;
+	public double								eps1y;
+	public double								div;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public SpxEarningsData() {
-		ticker = null;
-		mktcap = 0;
-		shares = 0;
-		netIncAfterTax = 0;
-		eps = 0;
-		eps1y = 0;
-		div = 0;
+		this.ticker = null;
+		this.mktcap = 0;
+		this.shares = 0;
+		this.netIncAfterTax = 0;
+		this.eps = 0;
+		this.eps1y = 0;
+		this.div = 0;
 	}
 
 	public static List<SpxEarningsData> readData(String fname) throws IOException {
-		List<SpxEarningsData> data = new ArrayList<>();
+		final List<SpxEarningsData> data = new ArrayList<>();
 		final Charset charset = Charset.forName("UTF-8");
 
-		File file = new File("data\\" + fname);
-		Path path = file.toPath();
+		final File file = new File("data\\" + fname);
+		final Path path = file.toPath();
 
 		String line;
 		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
@@ -79,16 +81,16 @@ public class SpxEarningsData {
 			while ((line = reader.readLine()) != null) {
 				if (line.length() > 10) {
 					try {
-						SpxEarningsData d = new SpxEarningsData();
+						final SpxEarningsData d = new SpxEarningsData();
 
-						String fld[] = line.split("\\t");
+						final String fld[] = line.split("\\t");
 
 						// for (String s : fld) {
 						// System.out.printf("%12s", s);
 						// }
 						// System.out.println();
 
-						d.ticker = fld[0].trim();
+						d.ticker = fld[0].trim().replaceAll("\"", "");
 
 						if (!d.ticker.contains("BRK.A")) {
 
@@ -98,41 +100,56 @@ public class SpxEarningsData {
 
 							if (fld[2].trim().length() > 0.0) {
 								d.shares = Double.parseDouble(fld[2].trim());
+								if (d.shares == NA_VALUE) {
+									d.shares = 0.0;
+								}
 							}
 
 							if (fld[3].trim().length() > 0.0) {
 								d.netIncAfterTax = Double.parseDouble(fld[3].trim());
+								if (d.netIncAfterTax == NA_VALUE) {
+									d.netIncAfterTax = 0.0;
+								}
 							}
 
 							if (fld[4].trim().length() > 0.0) {
 								d.eps = Double.parseDouble(fld[4].trim());
+								if (d.eps == NA_VALUE) {
+									d.eps = 0.0;
+								}
 							}
 
 							if (fld[5].trim().length() > 0.0) {
 								d.eps1y = Double.parseDouble(fld[5].trim());
+								if (d.eps1y == NA_VALUE) {
+									d.eps1y = 0.0;
+								}
 							}
-							
+
 							if (fld[6].trim().length() > 0.0) {
 								d.div = Double.parseDouble(fld[6].trim());
 							}
 
+							System.out.print(d);
 
 							data.add(d);
 						}
-					} catch (Exception e) {
+					} catch (final Exception e) {
 						System.out.println("Error : " + line);
 					}
 				}
 			}
 		}
 
-		// SpxEarningsData d = new SpxEarningsData();
-		// d.ticker = "BRK.A";
-		// d.eps = 10.0;
-		// d.mktcap = 200000;
-		// data.add(d);
-
 		return data;
+	}
+
+	@Override
+	public String toString() {
+		final String str = String.format("%-9s %10.1f %11.3f %10.1f %10.3f %10.3f %n", this.ticker, this.mktcap,
+		    this.shares, this.netIncAfterTax, this.eps, this.eps1y);
+		return str;
+
 	}
 
 }
