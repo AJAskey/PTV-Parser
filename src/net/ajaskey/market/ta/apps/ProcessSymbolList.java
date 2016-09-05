@@ -61,6 +61,10 @@ public class ProcessSymbolList {
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
+	}
+
+	public static void parseXml() throws ParserConfigurationException, SAXException, IOException {
+
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
 

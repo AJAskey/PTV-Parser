@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.input.SpxLongTermPrices;
 
 /**
  * This class...
@@ -66,7 +67,7 @@ public class CotsReports {
 	 * @param outputPath
 	 * @throws FileNotFoundException
 	 */
-	public static void writeAllCsv(String source, String outputPath, List<String> spx) throws FileNotFoundException {
+	public static void writeAllCsv(String source, String outputPath, List<SpxLongTermPrices> spx) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(outputPath + "\\" + source + "combined.csv")) {
 
@@ -75,9 +76,16 @@ public class CotsReports {
 			int i = 0;
 			for (final CotsData cd : CotsData.cotsList) {
 
+				String price;
+				try {
+					price = SpxLongTermPrices.getClose(cd.date);
+				} catch (Exception e) {
+					price = "";
+				}
+
 				pw.printf("%s,%d,%d,%d,%d,%d,%d,%d,%d,%s%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
 				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta, (cd.pm.delta + cd.other.delta),
-				    (cd.levered.delta + cd.nonrpt.delta), spx.get(i));
+				    (cd.levered.delta + cd.nonrpt.delta), price);
 				i++;
 			}
 		}

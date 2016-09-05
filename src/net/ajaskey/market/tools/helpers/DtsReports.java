@@ -497,6 +497,13 @@ public class DtsReports {
 				pwTotal.printf("%s,%d%n", theDate, d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly);
 			}
 		}
+		try (PrintWriter pwUnemp = new PrintWriter("out/optuma/dts-unemp-optuma.csv")) {
+			pwUnemp.println("Date,Unemployment");
+			for (DtsData d : DtsData.dtsList) {
+				String theDate = sdf.format(d.getDate().getTime());
+				pwUnemp.printf("%s,%d%n", theDate, d.getUnEmp().yearly);
+			}
+		}
 	}
 
 	/**

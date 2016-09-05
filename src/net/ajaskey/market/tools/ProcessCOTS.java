@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.input.SpxLongTermPrices;
 import net.ajaskey.market.ta.output.CreateSpxPriceList;
 import net.ajaskey.market.tools.helpers.CotsData;
 import net.ajaskey.market.tools.helpers.CotsReports;
@@ -88,15 +89,15 @@ public class ProcessCOTS {
 	 *
 	 * @param args
 	 * @throws ParseException
-	 * @throws FileNotFoundException
+	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException {
+	public static void main(String[] args) throws ParseException, IOException {
 
 		System.out.println("Processing...");
 
 		// final String prefix = setAllIndex();
-		// final String prefix = setSPX();
-		 final String prefix = setVIX();
+		 final String prefix = setSPX();
+		//final String prefix = setVIX();
 		// final String prefix = setCommodity();
 
 		// ProcessCOTS.getLatestCots();
@@ -108,19 +109,13 @@ public class ProcessCOTS {
 
 		ProcessCOTS.readAndParse();
 
-		CreateSpxPriceList spx = new CreateSpxPriceList(Utils.buildCalendar(2012, Calendar.JANUARY, 3),
-		    Calendar.getInstance(), 7);
-		List<String> spxList = spx.getList();
-
-		for (String s : spxList) {
-			System.out.println(s);
-		}
+		SpxLongTermPrices spxData = new SpxLongTermPrices();
 
 		CotsReports.dumpRaw();
 
-		Calendar cal = Utils.buildCalendar(2016, Calendar.AUGUST, 16);
+		Calendar cal = Utils.buildCalendar(2016, Calendar.AUGUST, 30);
 
-		CotsReports.writeAllCsv(prefix, outputPath, spxList);
+		CotsReports.writeAllCsv(prefix, outputPath, spxData.spxList);
 
 		// CotsReports.writeCsv(prefix, outputPath);
 
