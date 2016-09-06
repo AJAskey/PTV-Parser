@@ -1,7 +1,7 @@
-
 package net.ajaskey.market.tools;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,6 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.OhlcvData;
+import net.ajaskey.market.tools.helpers.OhlcvData.FormType;
 import net.ajaskey.market.tools.helpers.ProcessExcel;
 import net.ajaskey.market.tools.helpers.SortOhlcv;
 
@@ -60,7 +61,6 @@ public class ConvertOHLCV {
 	final static private Charset					charset		= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
-	static private OhlcvData.FormType			form			= OhlcvData.FormType.SHORT;
 	final private static String						shortPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dc";
 	final private static String						fullPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dohlcv";
 
@@ -85,12 +85,35 @@ public class ConvertOHLCV {
 			if (ext.contains("xls")) {
 				ConvertOHLCV.parseXlsFile(chooser.getSelectedFile().getAbsolutePath());
 
-			} else 	if (ext.contains("htm")) {
+			} else if (ext.contains("html")) {
 				ConvertOHLCV.parseHtmlFile(chooser.getSelectedFile().toPath());
 			}
 		}
-		
+
 		System.out.println("Done.");
+	}
+
+	/**
+	 * net.ajaskey.market.tools.getFormat
+	 *
+	 * @return
+	 */
+	private static FormType getFormat() {
+		int fullknt = 0;
+		OhlcvData.FormType fmt = OhlcvData.FormType.SHORT;
+
+		for (final OhlcvData d : data) {
+			if (d.getForm() == OhlcvData.FormType.FULL) {
+				fullknt++;
+			}
+		}
+		final int tot = data.size();
+		final double ratio = (double) fullknt / (double) tot;
+		if (ratio > .25) {
+			fmt = OhlcvData.FormType.FULL;
+		}
+
+		return fmt;
 	}
 
 	/**
@@ -102,6 +125,8 @@ public class ConvertOHLCV {
 	 * @throws ParseException
 	 */
 	private static void parseHtmlFile(Path path) throws IOException, ParseException {
+
+		OhlcvData.FormType form = OhlcvData.FormType.SHORT;
 
 		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
 			String line;
@@ -132,13 +157,13 @@ public class ConvertOHLCV {
 					final double l = Double.parseDouble(fld[4].trim());
 					final long v = Long.parseLong(fld[6].trim());
 					final OhlcvData d = new OhlcvData(cal, o, h, l, c, v);
-					if (d.getForm() == OhlcvData.FormType.FULL) {
-						form = OhlcvData.FormType.FULL;
-					}
+
 					data.add(d);
 				}
 			}
 		}
+
+		form = ConvertOHLCV.getFormat();
 
 		Collections.sort(data, new SortOhlcv());
 		if (form == OhlcvData.FormType.SHORT) {
@@ -156,10 +181,16 @@ public class ConvertOHLCV {
 	 * @throws IOException
 	 */
 	private static void parseXlsFile(String fullFileName) throws IOException {
+		final File f = new File(fullFileName);
+		final String fName = f.getName();
 		final List<ProcessExcel> peList = ProcessExcel.parseFred(fullFileName);
 		for (final ProcessExcel pe : peList) {
 			System.out.println(Utils.stringDate(pe.date) + "\t" + pe.value);
+			final OhlcvData d = new OhlcvData(pe.date, 0.0, 0.0, 0.0, pe.value, 0);
+			data.add(d);
 		}
+		Collections.sort(data, new SortOhlcv());
+		ConvertOHLCV.writeShortForm(fName);
 	}
 
 	/**
@@ -197,7 +228,6 @@ public class ConvertOHLCV {
 				pw.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
 			}
 		}
-
 	}
 
 }
