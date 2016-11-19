@@ -222,7 +222,7 @@ public class GenStockList {
 
 	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
 		if (ndxList == null) {
-			ndxList = ParseData.getTickerList("lists\\nasdaq100-list.txt");
+			ndxList = ParseData.getTickerList("lists\\ndx-components.csv");
 		}
 		for (final String s : ndxList) {
 			if (ticker.equalsIgnoreCase(s)) {
@@ -243,7 +243,7 @@ public class GenStockList {
 	 */
 	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
 		if (sp500List == null) {
-			sp500List = ParseData.getTickerList("lists\\sp500-list.txt");
+			sp500List = ParseData.getTickerList("lists\\ivv-components.csv");
 		}
 		for (final String s : sp500List) {
 			if (ticker.equalsIgnoreCase(s)) {
@@ -264,7 +264,7 @@ public class GenStockList {
 	 */
 	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
 		if (sp600List == null) {
-			sp600List = ParseData.getTickerList("lists\\sp600-list.txt");
+			sp600List = ParseData.getTickerList("lists\\ijr-components.csv");
 		}
 		for (final String s : sp600List) {
 			if (ticker.equalsIgnoreCase(s)) {

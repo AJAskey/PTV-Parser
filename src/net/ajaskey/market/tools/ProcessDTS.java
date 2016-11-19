@@ -17,6 +17,7 @@ import java.util.List;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.DtsData;
 import net.ajaskey.market.tools.helpers.DtsReports;
+import net.ajaskey.market.tools.helpers.DtsReports.DTS_TYPE;
 import net.ajaskey.market.tools.helpers.DtsSorter;
 import net.ajaskey.market.tools.helpers.WebGet;
 
@@ -61,7 +62,7 @@ public class ProcessDTS {
 	final static private Charset	charset						= Charset.forName("UTF-8");
 
 	final static public int				webDownloadYear		= 2016;
-	final static public int				webDownloadMonth	= Calendar.JULY;
+	final static public int				webDownloadMonth	= Calendar.OCTOBER;
 	final static public int				webDownloadDay		= 20;
 
 	/**
@@ -92,11 +93,22 @@ public class ProcessDTS {
 		ProcessDTS.updateDtsFiles();
 
 		ProcessDTS.readAndProcess();
-		
+
 		ProcessDTS.getSPX();
+
+		DtsReports.writeYY(DTS_TYPE.CORPORATE);
+		DtsReports.writeYY(DTS_TYPE.INDIVIDUAL);
+		DtsReports.writeYY(DTS_TYPE.WITHHELD);
+		DtsReports.writeYY(DTS_TYPE.COMBINED);
 
 		try {
 			DtsReports.dumpRaw("dump", Utils.buildCalendar(2014, Calendar.JANUARY, 1));
+
+			DtsReports.writeSumDaily(DTS_TYPE.CORPORATE);
+			DtsReports.writeSumDaily(DTS_TYPE.INDIVIDUAL);
+			DtsReports.writeSumDaily(DTS_TYPE.WITHHELD);
+			DtsReports.writeSumDaily(DTS_TYPE.COMBINED);
+
 			DtsReports.writeUnemploymentTaxes("unemployment");
 			DtsReports.writeFiscalYear("fy");
 			DtsReports.writeQuarterly("quarterly");
@@ -105,21 +117,23 @@ public class ProcessDTS {
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.JUNE);
 			DtsReports.dumpCompareMonths(2016, 2015, Calendar.JULY);
 			DtsReports.dumpCompareMonths(2016, 2015, Calendar.AUGUST);
+			DtsReports.dumpCompareMonths(2016, 2015, Calendar.SEPTEMBER);
+			DtsReports.dumpCompareMonths(2016, 2015, Calendar.OCTOBER);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+
 	}
 
-	/** 
+	/**
 	 * net.ajaskey.market.tools.getSPX
 	 *
 	 */
 	private static void getSPX() {
 		Calendar cal = DtsData.dtsList.get(0).getDate();
-		
+
 	}
 
 	/**

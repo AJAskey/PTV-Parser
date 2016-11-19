@@ -35,6 +35,7 @@ public class ProcessSPDRs {
 		// processSpdr("xlfs");
 		ProcessSPDRs.processSpdr("xlre");
 
+		System.out.println("Done.");
 	}
 
 	// https://www.spdrs.com/site-content/xls/DIA_All_Holdings.xls?fund=DIA&docname=All+Holdings&onyx_code1=1286&onyx_code2=1506

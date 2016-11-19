@@ -124,9 +124,11 @@ public class ConvertOHLCV {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	private static void parseHtmlFile(Path path) throws IOException, ParseException {
+	public static void parseHtmlFile(Path path) throws IOException, ParseException {
 
 		OhlcvData.FormType form = OhlcvData.FormType.SHORT;
+		
+		data.clear();
 
 		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
 			String line;
@@ -180,7 +182,7 @@ public class ConvertOHLCV {
 	 * @param absolutePath
 	 * @throws IOException
 	 */
-	private static void parseXlsFile(String fullFileName) throws IOException {
+	public static void parseXlsFile(String fullFileName) throws IOException {
 		final File f = new File(fullFileName);
 		final String fName = f.getName();
 		final List<ProcessExcel> peList = ProcessExcel.parseFred(fullFileName);
@@ -225,6 +227,7 @@ public class ConvertOHLCV {
 
 		try (PrintWriter pw = new PrintWriter(shortPath + "/" + fname)) {
 			for (final OhlcvData d : data) {
+				System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
 				pw.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
 			}
 		}

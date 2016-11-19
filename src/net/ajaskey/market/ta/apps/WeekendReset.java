@@ -8,6 +8,9 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import net.ajaskey.market.tools.ProcessIshares;
+import net.ajaskey.market.tools.ProcessSPDRs;
+
 /**
  * This application runs the other applications to reset the stock lists to
  * contain new those stocks that meets the price and volume requirements.
@@ -66,6 +69,10 @@ public class WeekendReset {
 		 */
 		GenStockList.main(args);
 		System.gc();
+		
+		ProcessIshares.main(args);
+		
+		ProcessSPDRs.main(args);
 
 		System.out.println("Weekend Reset Complete.");
 

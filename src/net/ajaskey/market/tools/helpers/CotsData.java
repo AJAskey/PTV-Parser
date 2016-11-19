@@ -234,4 +234,13 @@ public class CotsData {
 			this.nonrpt.update();
 		}
 	}
+
+	/** 
+	 * net.ajaskey.market.tools.helpers.clear
+	 *
+	 */
+	public static void clear() {
+		dataPoints.clear();
+		cotsList.clear();
+	}
 }

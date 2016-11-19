@@ -84,12 +84,12 @@ public class Internals {
 			pwAll = new PrintWriter("out\\breadth.txt");
 
 			Internals.processIndex();
-			;
 
-			double val = Internals.processListPercent("lists\\sp500-list.txt", days);
-			System.out.printf("SPX days to recover %.2f%n", val);
-			val = Internals.processListPercent("lists\\nasdaq100-list.txt", days);
-			System.out.printf("NDX days to recover %.2f%n", val);
+			// double val = Internals.processListPercent("lists\\ivv-components.csv",
+			// days);
+			// System.out.printf("SPX days to recover %.2f%n", val);
+			// val = Internals.processListPercent("lists\\ndx-components.csv", days);
+			// System.out.printf("NDX days to recover %.2f%n", val);
 
 			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
 			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
@@ -313,7 +313,8 @@ public class Internals {
 		Utils.makeDir("out");
 		double cumForce = 0;
 		String desc = "Chg=Total Change of all components        Force=Chg * Volume, summed for each component";
-		pwAll.printf("\t%s\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n", listName, desc);
+		pwAll.printf("\t%s\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n",
+		    listName, desc);
 		for (int i = 0; i < days; i++) {
 			final double percent = ((double) up[i] / (double) ParseData.getValidTickerCount()) * 100.0;
 			final String sUp = NumberFormat.getIntegerInstance().format(up[i]);

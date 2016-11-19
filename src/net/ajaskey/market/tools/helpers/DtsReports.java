@@ -3,9 +3,10 @@ package net.ajaskey.market.tools.helpers;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.methods.EmaContinuousSeries;
@@ -322,7 +323,7 @@ public class DtsReports {
 
 		switch (rr) {
 			case DAY:
-				Calendar cal = Utils.makeCopy(dLast.getDate());
+				final Calendar cal = Utils.makeCopy(dLast.getDate());
 				cal.add(Calendar.YEAR, -1);
 				dPrevious = DtsData.findData(cal);
 				break;
@@ -365,6 +366,204 @@ public class DtsReports {
 		ret += s;
 
 		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeEomCsv
+	 *
+	 * @param startDate
+	 */
+	public static void writeEomCsv(Calendar startDate) {
+
+		new SimpleDateFormat("yyyy-MM-dd");
+
+		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
+
+			pw.println(",,Withheld,,,,Individual,,,,Corporate,,,,Total");
+			pw.println("Date,,EOM,,YTD,,EOM,,YTD,,EOM,,YTD,,YTD");
+
+			DtsData d = DtsData.findLastOfMonthData(startDate.get(Calendar.MONTH), startDate.get(Calendar.YEAR));
+
+			while (d != null) {
+				pw.println(DtsReports.genCsvData(d));
+				final Calendar cal = Calendar.getInstance();
+				cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+				cal.add(Calendar.MONTH, 1);
+				d = DtsData.findLastOfMonthData(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+
+			}
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.writeFiscalYear
+	 *
+	 * @param fname
+	 * @throws FileNotFoundException
+	 */
+	public static void writeFiscalYear(String fname) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		DtsReports.printDailyCompare("out\\" + fname + "_daily-compare.txt");
+
+		DtsReports.printFiscalYear("out\\" + fname + "_tot.txt", DTS_TYPE.COMBINED);
+		DtsReports.printFiscalYear("out\\" + fname + "_corp.txt", DTS_TYPE.CORPORATE);
+		DtsReports.printFiscalYear("out\\" + fname + "_ind.txt", DTS_TYPE.INDIVIDUAL);
+		DtsReports.printFiscalYear("out\\" + fname + "_with.txt", DTS_TYPE.WITHHELD);
+
+	}
+
+	public static void writeOptuma() throws FileNotFoundException {
+
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		final String path = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS";
+
+		try (PrintWriter pwWith = new PrintWriter(path + "\\dts-withheld-optuma.csv")) {
+			pwWith.println("Date,Withheld");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwWith.printf("%s,%d%n", theDate, d.getWith().yearly);
+			}
+		}
+		try (PrintWriter pwInd = new PrintWriter(path + "\\dts-individual-optuma.csv")) {
+			pwInd.println("Date,Individual");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwInd.printf("%s,%d%n", theDate, d.getInd().yearly);
+			}
+		}
+		try (PrintWriter pwCorp = new PrintWriter(path + "\\dts-corporate-optuma.csv")) {
+			pwCorp.println("Date,Corporate");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwCorp.printf("%s,%d%n", theDate, d.getCorp().yearly);
+			}
+		}
+		try (PrintWriter pwTotal = new PrintWriter(path + "\\dts-total-optuma.csv")) {
+			pwTotal.println("Date,Total");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwTotal.printf("%s,%d%n", theDate, d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly);
+			}
+		}
+		try (PrintWriter pwUnemp = new PrintWriter(path + "\\dts-unemp-optuma.csv")) {
+			pwUnemp.println("Date,Unemployment");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwUnemp.printf("%s,%d%n", theDate, d.getUnEmp().yearly);
+			}
+		}
+
+		try (PrintWriter pwWith = new PrintWriter(path + "\\dts-withheld-daily.csv")) {
+			pwWith.println("Date,Withheld");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwWith.printf("%s,%d%n", theDate, d.getWith().daily);
+			}
+		}
+		try (PrintWriter pwInd = new PrintWriter(path + "\\dts-individual-daily.csv")) {
+			pwInd.println("Date,Individual");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwInd.printf("%s,%d%n", theDate, d.getInd().daily);
+			}
+		}
+		try (PrintWriter pwCorp = new PrintWriter(path + "\\dts-corporate-daily.csv")) {
+			pwCorp.println("Date,Corporate");
+			for (final DtsData d : DtsData.dtsList) {
+				final String theDate = sdf.format(d.getDate().getTime());
+				pwCorp.printf("%s,%d%n", theDate, d.getCorp().daily);
+			}
+		}
+	}
+
+	public static void writeQuarterly(String fname) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
+
+			final DtsQuarterly q2013 = new DtsQuarterly(2013);
+			final DtsQuarterly q2014 = new DtsQuarterly(2014);
+			final DtsQuarterly q2015 = new DtsQuarterly(2015);
+			final DtsQuarterly q2016 = new DtsQuarterly(2016);
+
+			DtsReports.printQuarterly(pw, q2013, q2014);
+			DtsReports.printQuarterly(pw, q2014, q2015);
+			DtsReports.printQuarterly(pw, q2015, q2016);
+
+		}
+	}
+
+	public static void writeUnemploymentTaxes(String fname) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		final EmaContinuousSeries ema = new EmaContinuousSeries(7);
+
+		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
+
+			pw.println("Date" + TAB + "Change" + TAB + "EMA");
+
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+
+					if (p != null) {
+
+						final double chgT = DtsReports.getChg(d.getUnEmp().yearly, p.getUnEmp().yearly);
+						double chg = 0;
+						if (chgT > 0.0) {
+							chg = Math.min(chgT, 0.25);
+						} else if (chgT < 0.0) {
+							chg = Math.max(chgT, -0.25);
+						}
+
+						final double emaVal = ema.addValue(chg);
+
+						String d1 = p.getDatePlus();
+						d1 = d1.replaceAll(" ", "\t");
+						String d2 = d.getDatePlus();
+						d2 = d2.replaceAll(" ", "\t");
+
+						final String str = String.format("%s\t%s\t%5.2f\t%5.2f%n", d1, d2, chg, emaVal);
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
+		}
 	}
 
 	/**
@@ -429,8 +628,8 @@ public class DtsReports {
 						final double indChg = DtsReports.getChg(d.getInd().yearly, p.getInd().yearly);
 						final double corpChg = DtsReports.getChg(d.getCorp().yearly, p.getCorp().yearly);
 
-						int totD = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
-						int totP = p.getWith().yearly + p.getInd().yearly + p.getCorp().yearly;
+						final int totD = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
+						final int totP = p.getWith().yearly + p.getInd().yearly + p.getCorp().yearly;
 						final double totChg = DtsReports.getChg(totD, totP);
 
 						final double withEma = wEma.addValue(withChg);
@@ -465,47 +664,6 @@ public class DtsReports {
 
 	}
 
-	public static void writeOptuma() throws FileNotFoundException {
-		
-		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-		try (PrintWriter pwWith = new PrintWriter("out/optuma/dts-withheld-optuma.csv")) {
-			pwWith.println("Date,Withheld");
-			for (DtsData d : DtsData.dtsList) {
-				String theDate = sdf.format(d.getDate().getTime());
-				pwWith.printf("%s,%d%n", theDate, d.getWith().yearly);
-			}
-		}
-		try (PrintWriter pwInd = new PrintWriter("out/optuma/dts-individual-optuma.csv")) {
-			pwInd.println("Date,Individual");
-			for (DtsData d : DtsData.dtsList) {
-				String theDate = sdf.format(d.getDate().getTime());
-				pwInd.printf("%s,%d%n", theDate, d.getInd().yearly);
-			}
-		}
-		try (PrintWriter pwCorp = new PrintWriter("out/optuma/dts-corporate-optuma.csv")) {
-			pwCorp.println("Date,Corporate");
-			for (DtsData d : DtsData.dtsList) {
-				String theDate = sdf.format(d.getDate().getTime());
-				pwCorp.printf("%s,%d%n", theDate, d.getCorp().yearly);
-			}
-		}
-		try (PrintWriter pwTotal = new PrintWriter("out/optuma/dts-total-optuma.csv")) {
-			pwTotal.println("Date,Total");
-			for (DtsData d : DtsData.dtsList) {
-				String theDate = sdf.format(d.getDate().getTime());
-				pwTotal.printf("%s,%d%n", theDate, d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly);
-			}
-		}
-		try (PrintWriter pwUnemp = new PrintWriter("out/optuma/dts-unemp-optuma.csv")) {
-			pwUnemp.println("Date,Unemployment");
-			for (DtsData d : DtsData.dtsList) {
-				String theDate = sdf.format(d.getDate().getTime());
-				pwUnemp.printf("%s,%d%n", theDate, d.getUnEmp().yearly);
-			}
-		}
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.helpers.printFiscalYear
@@ -530,7 +688,7 @@ public class DtsReports {
 			tomorrow.add(Calendar.DATE, 1);
 			// Utils.printCalendar(tomorrow);
 
-			EmaContinuousSeries ema = new EmaContinuousSeries(7);
+			final EmaContinuousSeries ema = new EmaContinuousSeries(7);
 
 			while (cal.before(tomorrow)) {
 
@@ -615,138 +773,162 @@ public class DtsReports {
 		// TODO Auto-generated method stub
 
 	}
+	
+	private static long getTotal(long [] vals) {
+		long tot = 0;
+		for (long i : vals) {
+			tot += i;
+		}
+		return tot;
+	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.writeCumulative
 	 *
-	 * net.ajaskey.market.tools.helpers.writeEomCsv
-	 *
-	 * @param startDate
+	 * @param type
+	 * @throws FileNotFoundException
 	 */
-	public static void writeEomCsv(Calendar startDate) {
+	public static void writeSumDaily(DTS_TYPE type) throws FileNotFoundException {
+		int range = 250;
+		long sum[] = new long[range];
+		int ptr = 0;
 
 		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		try (PrintWriter pw = new PrintWriter("out/dts.csv")) {
+		String fname = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS\\";
 
-			pw.println(",,Withheld,,,,Individual,,,,Corporate,,,,Total");
-			pw.println("Date,,EOM,,YTD,,EOM,,YTD,,EOM,,YTD,,YTD");
+		if (type == DTS_TYPE.CORPORATE) {
+			fname += "dts-sum-corporate.csv";
+		} else if (type == DTS_TYPE.INDIVIDUAL) {
+			fname += "dts-sum-individual.csv";
+		} else if (type == DTS_TYPE.WITHHELD) {
+			fname += "dts-sum-withheld.csv";
+		} else {
+			fname += "dts-sum-combined.csv";
+		}
 
-			DtsData d = DtsData.findLastOfMonthData(startDate.get(Calendar.MONTH), startDate.get(Calendar.YEAR));
+		try (PrintWriter pw = new PrintWriter(fname)) {
 
-			while (d != null) {
-				pw.println(DtsReports.genCsvData(d));
-				final Calendar cal = Calendar.getInstance();
-				cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
-				cal.add(Calendar.MONTH, 1);
-				d = DtsData.findLastOfMonthData(cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+			pw.println("Date,Change");
 
+			boolean filled = false;
+			
+			for (DtsData dts : DtsData.dtsList) {
+				if (type == DTS_TYPE.CORPORATE) {
+					sum[ptr] = dts.getCorp().daily;
+				} else if (type == DTS_TYPE.INDIVIDUAL) {
+					sum[ptr] = dts.getInd().daily;
+				} else if (type == DTS_TYPE.WITHHELD) {
+					sum[ptr] = dts.getWith().daily;
+				} else {
+					sum[ptr] = dts.getCorp().daily + dts.getInd().daily + dts.getWith().daily;
+				}
+				ptr++;
+				if (ptr > range-1) {
+					filled = true;
+					ptr = 0;
+				}
+				if (filled) {
+					String theDate = sdf.format(dts.getDate().getTime());
+					// System.out.printf("%s,%.2f%n", theDate, total);
+					pw.printf("%s,%d%n", theDate, getTotal(sum));
+
+				}
 			}
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
 		}
 
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.helpers.writeYY
 	 *
-	 * net.ajaskey.market.tools.helpers.writeFiscalYear
-	 *
-	 * @param fname
-	 * @throws FileNotFoundException
+	 * @param type
 	 */
-	public static void writeFiscalYear(String fname) throws FileNotFoundException {
+	public static void writeYY(DTS_TYPE type) {
 
-		if (fname.length() < 1) {
-			return;
+		List<Integer> ytd = new ArrayList<>();
+		List<Calendar> date = new ArrayList<>();
+		String fname = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS\\";
+
+		if (type == DTS_TYPE.CORPORATE) {
+			fname += "dts-yy-corporate.csv";
+		} else if (type == DTS_TYPE.INDIVIDUAL) {
+			fname += "dts-yy-individual.csv";
+		} else if (type == DTS_TYPE.WITHHELD) {
+			fname += "dts-yy-withheld.csv";
+		} else {
+			fname += "dts-yy-combined.csv";
 		}
 
-		DtsReports.printDailyCompare("out\\" + fname + "_daily-compare.txt");
+		for (DtsData dts : DtsData.dtsList) {
+			if (type == DTS_TYPE.CORPORATE) {
+				ytd.add(dts.getCorp().yearly);
+			} else if (type == DTS_TYPE.INDIVIDUAL) {
+				ytd.add(dts.getInd().yearly);
+			} else if (type == DTS_TYPE.WITHHELD) {
+				ytd.add(dts.getWith().yearly);
+			} else {
+				ytd.add(dts.getCorp().yearly + dts.getInd().yearly + dts.getWith().yearly);
+			}
+			date.add(dts.getDate());
+		}
+		Calendar cal = Utils.buildCalendar(date.get(0).get(Calendar.YEAR), date.get(0).get(Calendar.MONTH),
+		    date.get(0).get(Calendar.DATE));
+		cal.add(Calendar.YEAR, 1);
 
-		DtsReports.printFiscalYear("out\\" + fname + "_tot.txt", DTS_TYPE.COMBINED);
-		DtsReports.printFiscalYear("out\\" + fname + "_corp.txt", DTS_TYPE.CORPORATE);
-		DtsReports.printFiscalYear("out\\" + fname + "_ind.txt", DTS_TYPE.INDIVIDUAL);
-		DtsReports.printFiscalYear("out\\" + fname + "_with.txt", DTS_TYPE.WITHHELD);
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+		try (PrintWriter pw = new PrintWriter(fname)) {
+
+			pw.println("Date,Change");
+
+			int len = date.size();
+			double chg = 0;
+			for (int i = 0; i < len; i++) {
+				int idx = getIndex(date, i);
+
+				if (i > 10) {
+					// double lastChg = Math.abs(chg * 2.0);
+					chg = ((double) (ytd.get(idx) - ytd.get(i)) / (double) ytd.get(i)) * 100.0;
+					// if (chg > 5.0) {
+					// if (Math.abs(chg) > lastChg) {
+					// chg /= 10.0;
+					// }
+					// }
+				} else {
+					chg = ((double) (ytd.get(idx) - ytd.get(i)) / (double) ytd.get(i)) * 100.0;
+				}
+
+				String theDate = sdf.format(date.get(idx).getTime());
+				// System.out.printf("%s,%.2f%n", theDate, chg);
+				pw.printf("%s,%.2f%n", theDate, chg);
+				if (idx >= len - 1)
+					break;
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public static void writeQuarterly(String fname) throws FileNotFoundException {
+	private static int getIndex(List<Calendar> date, int idx) {
 
-		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
+		Calendar cal = Utils.buildCalendar(date.get(idx).get(Calendar.YEAR), date.get(idx).get(Calendar.MONTH),
+		    date.get(idx).get(Calendar.DATE));
+		cal.add(Calendar.YEAR, 1);
 
-			final DtsQuarterly q2013 = new DtsQuarterly(2013);
-			final DtsQuarterly q2014 = new DtsQuarterly(2014);
-			final DtsQuarterly q2015 = new DtsQuarterly(2015);
-			DtsQuarterly q2016 = new DtsQuarterly(2016);
-
-			DtsReports.printQuarterly(pw, q2013, q2014);
-			DtsReports.printQuarterly(pw, q2014, q2015);
-			DtsReports.printQuarterly(pw, q2015, q2016);
-
-		}
-	}
-
-	public static void writeUnemploymentTaxes(String fname) throws FileNotFoundException {
-
-		if (fname.length() < 1) {
-			return;
-		}
-
-		final EmaContinuousSeries ema = new EmaContinuousSeries(7);
-
-		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
-
-			pw.println("Date" + TAB + "Change" + TAB + "EMA");
-
-			final Calendar cal = Calendar.getInstance();
-			final int yr = cal.get(Calendar.YEAR) - 2;
-			cal.set(yr, Calendar.OCTOBER, 1);
-
-			final Calendar tomorrow = Calendar.getInstance();
-			tomorrow.add(Calendar.DATE, 1);
-
-			while (cal.before(tomorrow)) {
-
-				final DtsData d = DtsData.findData(cal);
-
-				if (d != null) {
-
-					final Calendar pCal = Utils.makeCopy(cal);
-					pCal.add(Calendar.YEAR, -1);
-					final DtsData p = DtsData.findData(pCal);
-
-					if (p != null) {
-
-						double chgT = DtsReports.getChg(d.getUnEmp().yearly, p.getUnEmp().yearly);
-						double chg = 0;
-						if (chgT > 0.0) {
-							chg = Math.min(chgT, 0.25);
-						} else if (chgT < 0.0) {
-							chg = Math.max(chgT, -0.25);
-						}
-
-						final double emaVal = ema.addValue(chg);
-
-						String d1 = p.getDatePlus();
-						d1 = d1.replaceAll(" ", "\t");
-						String d2 = d.getDatePlus();
-						d2 = d2.replaceAll(" ", "\t");
-
-						final String str = String.format("%s\t%s\t%5.2f\t%5.2f%n", d1, d2, chg, emaVal);
-
-						pw.printf("%s", str);
-
-						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
-					}
-				}
-				cal.add(Calendar.DATE, 1);
-				final String day = Utils.getDayName(cal);
-				if (day.contains("SAT")) {
-					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
-					cal.add(Calendar.DATE, 1);
-				}
+		int index = -1;
+		for (Calendar c : date) {
+			index++;
+			if (Utils.sameDate(cal, c)) {
+				break;
+			} else if (c.after(cal)) {
+				break;
 			}
 		}
+		return index;
 	}
 
 }

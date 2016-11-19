@@ -61,10 +61,6 @@ public class ProcessSymbolList {
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-	}
-
-	public static void parseXml() throws ParserConfigurationException, SAXException, IOException {
-
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -92,7 +88,7 @@ public class ProcessSymbolList {
 
 		for (final File f : list) {
 			final String fpath = f.getAbsolutePath();
-			// System.out.println(fpath);
+			 System.out.println(fpath);
 			int idx = fpath.indexOf("ASCII");
 			idx += 6;
 			final int idx2 = fpath.indexOf("SymbolList.xml");

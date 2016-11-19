@@ -188,9 +188,9 @@ public class DtsQuarterly {
 	private DtsData combineQuarterly(DtsData d1, DtsData d2, DtsData d3) {
 		final DtsData dc = new DtsData(d3.getDate());
 		dc.getCorp().monthly = d1.getCorp().monthly + d2.getCorp().monthly + d3.getCorp().monthly;
-		dc.getInd().monthly = d2.getInd().monthly + d2.getInd().monthly + d3.getInd().monthly;
-		dc.getWith().monthly = d3.getWith().monthly + d2.getWith().monthly + d3.getWith().monthly;
-		dc.getUnEmp().monthly = d3.getUnEmp().monthly + d2.getUnEmp().monthly + d3.getUnEmp().monthly;
+		dc.getInd().monthly = d1.getInd().monthly + d2.getInd().monthly + d3.getInd().monthly;
+		dc.getWith().monthly = d1.getWith().monthly + d2.getWith().monthly + d3.getWith().monthly;
+		dc.getUnEmp().monthly = d1.getUnEmp().monthly + d2.getUnEmp().monthly + d3.getUnEmp().monthly;
 
 		return dc;
 	}

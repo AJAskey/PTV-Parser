@@ -84,6 +84,8 @@ public class ProcessCOTS {
 
 	private static List<String>						validNames			= new ArrayList<>();
 
+	private static SpxLongTermPrices			spxData;
+
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -95,35 +97,49 @@ public class ProcessCOTS {
 
 		System.out.println("Processing...");
 
-		// final String prefix = setAllIndex();
-		 final String prefix = setSPX();
-		//final String prefix = setVIX();
-		// final String prefix = setCommodity();
-
-		// ProcessCOTS.getLatestCots();
-
-		// validNames.add(EM_Name);
-		// validNames.add(USD_Name);
-
 		Utils.makeDir(outputPath);
 
 		ProcessCOTS.readAndParse();
 
-		SpxLongTermPrices spxData = new SpxLongTermPrices();
+		spxData = new SpxLongTermPrices();
 
 		CotsReports.dumpRaw();
 
-		Calendar cal = Utils.buildCalendar(2016, Calendar.AUGUST, 30);
+		process("All");
+		process("SPX");
+		process("DJIA");
+		process("NDX");
+		process("RUT");
+		process("VIX");
 
-		CotsReports.writeAllCsv(prefix, outputPath, spxData.spxList);
+		System.out.println("Done.");
+	}
+
+	private static void process(String str) throws FileNotFoundException, ParseException {
+
+		String prefix = "none";
+
+		if (str.contains("All")) {
+			prefix = setAllIndex();
+		} else if (str.contains("SPX")) {
+			prefix = setSPX();
+		} else if (str.contains("NDX")) {
+			prefix = setNDX();
+		} else if (str.contains("DJIA")) {
+			prefix = setDJIA();
+		} else if (str.contains("RUT")) {
+			prefix = setRUT();
+		}else if (str.contains("VIX")) {
+			prefix = setVIX();
+		}
+
+		ProcessCOTS.readAndParse();
+
+		CotsReports.writeAllCsv(prefix, outputPath, SpxLongTermPrices.spxList);
 
 		// CotsReports.writeCsv(prefix, outputPath);
 
-		CotsReports.writeOptuma(prefix, outputPath);
-
-		CotsReports.writeSummary(outputPath, prefix, cal);
-
-		System.out.println("Done.");
+		CotsReports.writeOptuma(prefix, "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\COTS");
 
 	}
 
@@ -155,6 +171,33 @@ public class ProcessCOTS {
 		validNames.add(EMINI500_Name);
 
 		return "SPX_";
+	}
+
+	private static String setDJIA() {
+		validNames.clear();
+
+		validNames.add(DJIA_Name);
+		validNames.add(DJIA_C_Name);
+
+		return "DJIA_";
+	}
+
+	private static String setNDX() {
+		validNames.clear();
+
+		validNames.add(NDX_Name);
+		validNames.add(NDX_C_Name);
+
+		return "NDX_";
+	}
+	
+	private static String setRUT() {
+		validNames.clear();
+
+		validNames.add(RUT_Name);
+		validNames.add(EMINI400_Name);
+
+		return "RUT_";
 	}
 
 	private static String setVIX() {
@@ -320,6 +363,8 @@ public class ProcessCOTS {
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
 		final Calendar rptDate = Calendar.getInstance();
+
+		CotsData.clear();
 
 		for (final File file : listOfFiles) {
 
