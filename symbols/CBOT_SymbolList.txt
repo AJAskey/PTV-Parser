@@ -1,9 +1,8 @@
 AH        	BBerg Commodity Inde                              	CBOT      
 AH.C      	BBerg Commodity Inde Continuation                 	CBOT      
 AHH17     	BBerg Commodity Inde {Mar 17}                     	CBOT      
-AHM16     	BBerg Commodity Inde {Jun 16}                     	CBOT      
 AHM17     	BBerg Commodity Inde {Jun 17}                     	CBOT      
-AHU16     	BBerg Commodity Inde {Sep 16}                     	CBOT      
+AHU17     	BBerg Commodity Inde {Sep 17}                     	CBOT      
 AHZ16     	BBerg Commodity Inde {Dec 16}                     	CBOT      
 AHZ17     	BBerg Commodity Inde {Dec 17}                     	CBOT      
 AHZ18     	BBerg Commodity Inde {Dec 18}                     	CBOT      
@@ -26,25 +25,25 @@ AKJ19     	Ethanol Futures (P) {Apr 19}                      	CBOT
 AKK17     	Ethanol Futures (P) {May 17}                      	CBOT      
 AKK18     	Ethanol Futures (P) {May 18}                      	CBOT      
 AKK19     	Ethanol Futures (P) {May 19}                      	CBOT      
-AKM16     	Ethanol Futures (P) {Jun 16}                      	CBOT      
 AKM17     	Ethanol Futures (P) {Jun 17}                      	CBOT      
 AKM18     	Ethanol Futures (P) {Jun 18}                      	CBOT      
 AKM19     	Ethanol Futures (P) {Jun 19}                      	CBOT      
-AKN16     	Ethanol Futures (P) {Jul 16}                      	CBOT      
 AKN17     	Ethanol Futures (P) {Jul 17}                      	CBOT      
 AKN18     	Ethanol Futures (P) {Jul 18}                      	CBOT      
-AKQ16     	Ethanol Futures (P) {Aug 16}                      	CBOT      
+AKN19     	Ethanol Futures (P) {Jul 19}                      	CBOT      
 AKQ17     	Ethanol Futures (P) {Aug 17}                      	CBOT      
 AKQ18     	Ethanol Futures (P) {Aug 18}                      	CBOT      
-AKU16     	Ethanol Futures (P) {Sep 16}                      	CBOT      
+AKQ19     	Ethanol Futures (P) {Aug 19}                      	CBOT      
 AKU17     	Ethanol Futures (P) {Sep 17}                      	CBOT      
 AKU18     	Ethanol Futures (P) {Sep 18}                      	CBOT      
-AKV16     	Ethanol Futures (P) {Oct 16}                      	CBOT      
+AKU19     	Ethanol Futures (P) {Sep 19}                      	CBOT      
 AKV17     	Ethanol Futures (P) {Oct 17}                      	CBOT      
 AKV18     	Ethanol Futures (P) {Oct 18}                      	CBOT      
+AKV19     	Ethanol Futures (P) {Oct 19}                      	CBOT      
 AKX16     	Ethanol Futures (P) {Nov 16}                      	CBOT      
 AKX17     	Ethanol Futures (P) {Nov 17}                      	CBOT      
 AKX18     	Ethanol Futures (P) {Nov 18}                      	CBOT      
+AKX19     	Ethanol Futures (P) {Nov 19}                      	CBOT      
 AKZ16     	Ethanol Futures (P) {Dec 16}                      	CBOT      
 AKZ17     	Ethanol Futures (P) {Dec 17}                      	CBOT      
 AKZ18     	Ethanol Futures (P) {Dec 18}                      	CBOT      
@@ -56,17 +55,13 @@ BOH17     	Soybean Oil (P) {Mar 17}                          	CBOT
 BOH18     	Soybean Oil (P) {Mar 18}                          	CBOT      
 BOK17     	Soybean Oil (P) {May 17}                          	CBOT      
 BOK18     	Soybean Oil (P) {May 18}                          	CBOT      
-BON16     	Soybean Oil (P) {Jul 16}                          	CBOT      
 BON17     	Soybean Oil (P) {Jul 17}                          	CBOT      
 BON18     	Soybean Oil (P) {Jul 18}                          	CBOT      
 BON19     	Soybean Oil (P) {Jul 19}                          	CBOT      
-BOQ16     	Soybean Oil (P) {Aug 16}                          	CBOT      
 BOQ17     	Soybean Oil (P) {Aug 17}                          	CBOT      
 BOQ18     	Soybean Oil (P) {Aug 18}                          	CBOT      
-BOU16     	Soybean Oil (P) {Sep 16}                          	CBOT      
 BOU17     	Soybean Oil (P) {Sep 17}                          	CBOT      
 BOU18     	Soybean Oil (P) {Sep 18}                          	CBOT      
-BOV16     	Soybean Oil (P) {Oct 16}                          	CBOT      
 BOV17     	Soybean Oil (P) {Oct 17}                          	CBOT      
 BOV18     	Soybean Oil (P) {Oct 18}                          	CBOT      
 BOV19     	Soybean Oil (P) {Oct 19}                          	CBOT      
@@ -80,23 +75,22 @@ CH17      	Corn (P) {Mar 17}                                 	CBOT
 CH18      	Corn (P) {Mar 18}                                 	CBOT      
 CK17      	Corn (P) {May 17}                                 	CBOT      
 CK18      	Corn (P) {May 18}                                 	CBOT      
-CN16      	Corn (P) {Jul 16}                                 	CBOT      
 CN17      	Corn (P) {Jul 17}                                 	CBOT      
 CN18      	Corn (P) {Jul 18}                                 	CBOT      
 CN19      	Corn (P) {Jul 19}                                 	CBOT      
 CS.C      	Soybean Crush Continuation                        	CBOT      
 CSF17     	Soybean Crush {Jan 17}                            	CBOT      
+CSF18     	Soybean Crush {Jan 18}                            	CBOT      
 CSH17     	Soybean Crush {Mar 17}                            	CBOT      
+CSH18     	Soybean Crush {Mar 18}                            	CBOT      
 CSK17     	Soybean Crush {May 17}                            	CBOT      
-CSN16     	Soybean Crush {Jul 16}                            	CBOT      
+CSK18     	Soybean Crush {May 18}                            	CBOT      
 CSN17     	Soybean Crush {Jul 17}                            	CBOT      
-CSQ16     	Soybean Crush {Aug 16}                            	CBOT      
 CSQ17     	Soybean Crush {Aug 17}                            	CBOT      
-CSU16     	Soybean Crush {Sep 16}                            	CBOT      
 CSU17     	Soybean Crush {Sep 17}                            	CBOT      
-CSV16     	Soybean Crush {Oct 16}                            	CBOT      
+CSV17     	Soybean Crush {Oct 17}                            	CBOT      
 CSZ16     	Soybean Crush {Dec 16}                            	CBOT      
-CU16      	Corn (P) {Sep 16}                                 	CBOT      
+CSZ17     	Soybean Crush {Dec 17}                            	CBOT      
 CU17      	Corn (P) {Sep 17}                                 	CBOT      
 CU18      	Corn (P) {Sep 18}                                 	CBOT      
 CZ16      	Corn (P) {Dec 16}                                 	CBOT      
@@ -107,9 +101,8 @@ D1        	Wheat VIX                                         	CBOT
 DH        	DJ Real Estate Index                              	CBOT      
 DH.C      	DJ Real Estate Index Continuation                 	CBOT      
 DHH17     	DJ Real Estate Index {Mar 17}                     	CBOT      
-DHM16     	DJ Real Estate Index {Jun 16}                     	CBOT      
 DHM17     	DJ Real Estate Index {Jun 17}                     	CBOT      
-DHU16     	DJ Real Estate Index {Sep 16}                     	CBOT      
+DHU17     	DJ Real Estate Index {Sep 17}                     	CBOT      
 DHZ16     	DJ Real Estate Index {Dec 16}                     	CBOT      
 DJ        	DJIA                                              	CBOT      
 F0.C      	Urea FOB Egypt Swap Continuation                  	CBOT      
@@ -117,13 +110,13 @@ F0F17     	Urea FOB Egypt Swap {Jan 17}                      	CBOT
 F0G17     	Urea FOB Egypt Swap {Feb 17}                      	CBOT      
 F0H17     	Urea FOB Egypt Swap {Mar 17}                      	CBOT      
 F0J17     	Urea FOB Egypt Swap {Apr 17}                      	CBOT      
-F0K16     	Urea FOB Egypt Swap {May 16}                      	CBOT      
 F0K17     	Urea FOB Egypt Swap {May 17}                      	CBOT      
-F0M16     	Urea FOB Egypt Swap {Jun 16}                      	CBOT      
-F0N16     	Urea FOB Egypt Swap {Jul 16}                      	CBOT      
-F0Q16     	Urea FOB Egypt Swap {Aug 16}                      	CBOT      
-F0U16     	Urea FOB Egypt Swap {Sep 16}                      	CBOT      
+F0M17     	Urea FOB Egypt Swap {Jun 17}                      	CBOT      
+F0N17     	Urea FOB Egypt Swap {Jul 17}                      	CBOT      
+F0Q17     	Urea FOB Egypt Swap {Aug 17}                      	CBOT      
+F0U17     	Urea FOB Egypt Swap {Sep 17}                      	CBOT      
 F0V16     	Urea FOB Egypt Swap {Oct 16}                      	CBOT      
+F0V17     	Urea FOB Egypt Swap {Oct 17}                      	CBOT      
 F0X16     	Urea FOB Egypt Swap {Nov 16}                      	CBOT      
 F0Z16     	Urea FOB Egypt Swap {Dec 16}                      	CBOT      
 F5.C      	Urea FOB NOLA Swap Continuation                   	CBOT      
@@ -135,17 +128,16 @@ F5H17     	Urea FOB NOLA Swap {Mar 17}                       	CBOT
 F5H18     	Urea FOB NOLA Swap {Mar 18}                       	CBOT      
 F5J17     	Urea FOB NOLA Swap {Apr 17}                       	CBOT      
 F5J18     	Urea FOB NOLA Swap {Apr 18}                       	CBOT      
-F5K16     	Urea FOB NOLA Swap {May 16}                       	CBOT      
 F5K17     	Urea FOB NOLA Swap {May 17}                       	CBOT      
 F5K18     	Urea FOB NOLA Swap {May 18}                       	CBOT      
-F5M16     	Urea FOB NOLA Swap {Jun 16}                       	CBOT      
 F5M17     	Urea FOB NOLA Swap {Jun 17}                       	CBOT      
-F5N16     	Urea FOB NOLA Swap {Jul 16}                       	CBOT      
+F5M18     	Urea FOB NOLA Swap {Jun 18}                       	CBOT      
 F5N17     	Urea FOB NOLA Swap {Jul 17}                       	CBOT      
-F5Q16     	Urea FOB NOLA Swap {Aug 16}                       	CBOT      
+F5N18     	Urea FOB NOLA Swap {Jul 18}                       	CBOT      
 F5Q17     	Urea FOB NOLA Swap {Aug 17}                       	CBOT      
-F5U16     	Urea FOB NOLA Swap {Sep 16}                       	CBOT      
+F5Q18     	Urea FOB NOLA Swap {Aug 18}                       	CBOT      
 F5U17     	Urea FOB NOLA Swap {Sep 17}                       	CBOT      
+F5U18     	Urea FOB NOLA Swap {Sep 18}                       	CBOT      
 F5V16     	Urea FOB NOLA Swap {Oct 16}                       	CBOT      
 F5V17     	Urea FOB NOLA Swap {Oct 17}                       	CBOT      
 F5X16     	Urea FOB NOLA Swap {Nov 16}                       	CBOT      
@@ -157,13 +149,13 @@ F7F17     	UAN FOB NOLA Swap {Jan 17}                        	CBOT
 F7G17     	UAN FOB NOLA Swap {Feb 17}                        	CBOT      
 F7H17     	UAN FOB NOLA Swap {Mar 17}                        	CBOT      
 F7J17     	UAN FOB NOLA Swap {Apr 17}                        	CBOT      
-F7K16     	UAN FOB NOLA Swap {May 16}                        	CBOT      
 F7K17     	UAN FOB NOLA Swap {May 17}                        	CBOT      
-F7M16     	UAN FOB NOLA Swap {Jun 16}                        	CBOT      
-F7N16     	UAN FOB NOLA Swap {Jul 16}                        	CBOT      
-F7Q16     	UAN FOB NOLA Swap {Aug 16}                        	CBOT      
-F7U16     	UAN FOB NOLA Swap {Sep 16}                        	CBOT      
+F7M17     	UAN FOB NOLA Swap {Jun 17}                        	CBOT      
+F7N17     	UAN FOB NOLA Swap {Jul 17}                        	CBOT      
+F7Q17     	UAN FOB NOLA Swap {Aug 17}                        	CBOT      
+F7U17     	UAN FOB NOLA Swap {Sep 17}                        	CBOT      
 F7V16     	UAN FOB NOLA Swap {Oct 16}                        	CBOT      
+F7V17     	UAN FOB NOLA Swap {Oct 17}                        	CBOT      
 F7X16     	UAN FOB NOLA Swap {Nov 16}                        	CBOT      
 F7Z16     	UAN FOB NOLA Swap {Dec 16}                        	CBOT      
 F8.C      	DAP FOB NOLA Swap Continuation                    	CBOT      
@@ -171,35 +163,35 @@ F8F17     	DAP FOB NOLA Swap {Jan 17}                        	CBOT
 F8G17     	DAP FOB NOLA Swap {Feb 17}                        	CBOT      
 F8H17     	DAP FOB NOLA Swap {Mar 17}                        	CBOT      
 F8J17     	DAP FOB NOLA Swap {Apr 17}                        	CBOT      
-F8K16     	DAP FOB NOLA Swap {May 16}                        	CBOT      
 F8K17     	DAP FOB NOLA Swap {May 17}                        	CBOT      
-F8M16     	DAP FOB NOLA Swap {Jun 16}                        	CBOT      
-F8N16     	DAP FOB NOLA Swap {Jul 16}                        	CBOT      
-F8Q16     	DAP FOB NOLA Swap {Aug 16}                        	CBOT      
-F8U16     	DAP FOB NOLA Swap {Sep 16}                        	CBOT      
+F8M17     	DAP FOB NOLA Swap {Jun 17}                        	CBOT      
+F8N17     	DAP FOB NOLA Swap {Jul 17}                        	CBOT      
+F8Q17     	DAP FOB NOLA Swap {Aug 17}                        	CBOT      
+F8U17     	DAP FOB NOLA Swap {Sep 17}                        	CBOT      
 F8V16     	DAP FOB NOLA Swap {Oct 16}                        	CBOT      
+F8V17     	DAP FOB NOLA Swap {Oct 17}                        	CBOT      
 F8X16     	DAP FOB NOLA Swap {Nov 16}                        	CBOT      
 F8Z16     	DAP FOB NOLA Swap {Dec 16}                        	CBOT      
 F9.C      	Urea FOB Yuzhny Swap Continuation                 	CBOT      
-F9K16     	Urea FOB Yuzhny Swap {May 16}                     	CBOT      
-F9M16     	Urea FOB Yuzhny Swap {Jun 16}                     	CBOT      
-F9N16     	Urea FOB Yuzhny Swap {Jul 16}                     	CBOT      
-F9Q16     	Urea FOB Yuzhny Swap {Aug 16}                     	CBOT      
-F9U16     	Urea FOB Yuzhny Swap {Sep 16}                     	CBOT      
+F9F17     	Urea FOB Yuzhny Swap {Jan 17}                     	CBOT      
+F9G17     	Urea FOB Yuzhny Swap {Feb 17}                     	CBOT      
+F9H17     	Urea FOB Yuzhny Swap {Mar 17}                     	CBOT      
+F9J17     	Urea FOB Yuzhny Swap {Apr 17}                     	CBOT      
 F9V16     	Urea FOB Yuzhny Swap {Oct 16}                     	CBOT      
 F9X16     	Urea FOB Yuzhny Swap {Nov 16}                     	CBOT      
+F9Z16     	Urea FOB Yuzhny Swap {Dec 16}                     	CBOT      
 FD.C      	DAP FOB Tampa Swap Continuation                   	CBOT      
 FDF17     	DAP FOB Tampa Swap {Jan 17}                       	CBOT      
 FDG17     	DAP FOB Tampa Swap {Feb 17}                       	CBOT      
 FDH17     	DAP FOB Tampa Swap {Mar 17}                       	CBOT      
 FDJ17     	DAP FOB Tampa Swap {Apr 17}                       	CBOT      
-FDK16     	DAP FOB Tampa Swap {May 16}                       	CBOT      
 FDK17     	DAP FOB Tampa Swap {May 17}                       	CBOT      
-FDM16     	DAP FOB Tampa Swap {Jun 16}                       	CBOT      
-FDN16     	DAP FOB Tampa Swap {Jul 16}                       	CBOT      
-FDQ16     	DAP FOB Tampa Swap {Aug 16}                       	CBOT      
-FDU16     	DAP FOB Tampa Swap {Sep 16}                       	CBOT      
+FDM17     	DAP FOB Tampa Swap {Jun 17}                       	CBOT      
+FDN17     	DAP FOB Tampa Swap {Jul 17}                       	CBOT      
+FDQ17     	DAP FOB Tampa Swap {Aug 17}                       	CBOT      
+FDU17     	DAP FOB Tampa Swap {Sep 17}                       	CBOT      
 FDV16     	DAP FOB Tampa Swap {Oct 16}                       	CBOT      
+FDV17     	DAP FOB Tampa Swap {Oct 17}                       	CBOT      
 FDX16     	DAP FOB Tampa Swap {Nov 16}                       	CBOT      
 FDZ16     	DAP FOB Tampa Swap {Dec 16}                       	CBOT      
 FF        	30-Day Fed Funds (P)                              	CBOT      
@@ -216,25 +208,25 @@ FFH19     	30-Day Fed Funds (P) {Mar 19}                     	CBOT
 FFJ17     	30-Day Fed Funds (P) {Apr 17}                     	CBOT      
 FFJ18     	30-Day Fed Funds (P) {Apr 18}                     	CBOT      
 FFJ19     	30-Day Fed Funds (P) {Apr 19}                     	CBOT      
-FFK16     	30-Day Fed Funds (P) {May 16}                     	CBOT      
 FFK17     	30-Day Fed Funds (P) {May 17}                     	CBOT      
 FFK18     	30-Day Fed Funds (P) {May 18}                     	CBOT      
 FFK19     	30-Day Fed Funds (P) {May 19}                     	CBOT      
-FFM16     	30-Day Fed Funds (P) {Jun 16}                     	CBOT      
 FFM17     	30-Day Fed Funds (P) {Jun 17}                     	CBOT      
 FFM18     	30-Day Fed Funds (P) {Jun 18}                     	CBOT      
-FFN16     	30-Day Fed Funds (P) {Jul 16}                     	CBOT      
+FFM19     	30-Day Fed Funds (P) {Jun 19}                     	CBOT      
 FFN17     	30-Day Fed Funds (P) {Jul 17}                     	CBOT      
 FFN18     	30-Day Fed Funds (P) {Jul 18}                     	CBOT      
-FFQ16     	30-Day Fed Funds (P) {Aug 16}                     	CBOT      
+FFN19     	30-Day Fed Funds (P) {Jul 19}                     	CBOT      
 FFQ17     	30-Day Fed Funds (P) {Aug 17}                     	CBOT      
 FFQ18     	30-Day Fed Funds (P) {Aug 18}                     	CBOT      
-FFU16     	30-Day Fed Funds (P) {Sep 16}                     	CBOT      
+FFQ19     	30-Day Fed Funds (P) {Aug 19}                     	CBOT      
 FFU17     	30-Day Fed Funds (P) {Sep 17}                     	CBOT      
 FFU18     	30-Day Fed Funds (P) {Sep 18}                     	CBOT      
+FFU19     	30-Day Fed Funds (P) {Sep 19}                     	CBOT      
 FFV16     	30-Day Fed Funds (P) {Oct 16}                     	CBOT      
 FFV17     	30-Day Fed Funds (P) {Oct 17}                     	CBOT      
 FFV18     	30-Day Fed Funds (P) {Oct 18}                     	CBOT      
+FFV19     	30-Day Fed Funds (P) {Oct 19}                     	CBOT      
 FFX16     	30-Day Fed Funds (P) {Nov 16}                     	CBOT      
 FFX17     	30-Day Fed Funds (P) {Nov 17}                     	CBOT      
 FFX18     	30-Day Fed Funds (P) {Nov 18}                     	CBOT      
@@ -242,8 +234,8 @@ FFZ16     	30-Day Fed Funds (P) {Dec 16}                     	CBOT
 FFZ17     	30-Day Fed Funds (P) {Dec 17}                     	CBOT      
 FFZ18     	30-Day Fed Funds (P) {Dec 18}                     	CBOT      
 FV.C      	5-Year T-Note (P) Continuation                    	CBOT      
-FVM16     	5-Year T-Note (P) {Jun 16}                        	CBOT      
-FVU16     	5-Year T-Note (P) {Sep 16}                        	CBOT      
+FVH17     	5-Year T-Note (P) {Mar 17}                        	CBOT      
+FVM17     	5-Year T-Note (P) {Jun 17}                        	CBOT      
 FVZ16     	5-Year T-Note (P) {Dec 16}                        	CBOT      
 FZ.C      	Ethanol Forward Continuation                      	CBOT      
 FZF17     	Ethanol Forward {Jan 17}                          	CBOT      
@@ -258,25 +250,25 @@ FZH19     	Ethanol Forward {Mar 19}                          	CBOT
 FZJ17     	Ethanol Forward {Apr 17}                          	CBOT      
 FZJ18     	Ethanol Forward {Apr 18}                          	CBOT      
 FZJ19     	Ethanol Forward {Apr 19}                          	CBOT      
-FZK16     	Ethanol Forward {May 16}                          	CBOT      
 FZK17     	Ethanol Forward {May 17}                          	CBOT      
 FZK18     	Ethanol Forward {May 18}                          	CBOT      
 FZK19     	Ethanol Forward {May 19}                          	CBOT      
-FZM16     	Ethanol Forward {Jun 16}                          	CBOT      
 FZM17     	Ethanol Forward {Jun 17}                          	CBOT      
 FZM18     	Ethanol Forward {Jun 18}                          	CBOT      
-FZN16     	Ethanol Forward {Jul 16}                          	CBOT      
+FZM19     	Ethanol Forward {Jun 19}                          	CBOT      
 FZN17     	Ethanol Forward {Jul 17}                          	CBOT      
 FZN18     	Ethanol Forward {Jul 18}                          	CBOT      
-FZQ16     	Ethanol Forward {Aug 16}                          	CBOT      
+FZN19     	Ethanol Forward {Jul 19}                          	CBOT      
 FZQ17     	Ethanol Forward {Aug 17}                          	CBOT      
 FZQ18     	Ethanol Forward {Aug 18}                          	CBOT      
-FZU16     	Ethanol Forward {Sep 16}                          	CBOT      
+FZQ19     	Ethanol Forward {Aug 19}                          	CBOT      
 FZU17     	Ethanol Forward {Sep 17}                          	CBOT      
 FZU18     	Ethanol Forward {Sep 18}                          	CBOT      
+FZU19     	Ethanol Forward {Sep 19}                          	CBOT      
 FZV16     	Ethanol Forward {Oct 16}                          	CBOT      
 FZV17     	Ethanol Forward {Oct 17}                          	CBOT      
 FZV18     	Ethanol Forward {Oct 18}                          	CBOT      
+FZV19     	Ethanol Forward {Oct 19}                          	CBOT      
 FZX16     	Ethanol Forward {Nov 16}                          	CBOT      
 FZX17     	Ethanol Forward {Nov 17}                          	CBOT      
 FZX18     	Ethanol Forward {Nov 18}                          	CBOT      
@@ -284,81 +276,80 @@ FZZ16     	Ethanol Forward {Dec 16}                          	CBOT
 FZZ17     	Ethanol Forward {Dec 17}                          	CBOT      
 FZZ18     	Ethanol Forward {Dec 18}                          	CBOT      
 M0.C      	2-Year EUR I/R Swap Continuation                  	CBOT      
-M0M16     	2-Year EUR I/R Swap {Jun 16}                      	CBOT      
-M0U16     	2-Year EUR I/R Swap {Sep 16}                      	CBOT      
+M0H17     	2-Year EUR I/R Swap {Mar 17}                      	CBOT      
 M0Z16     	2-Year EUR I/R Swap {Dec 16}                      	CBOT      
 M1.C      	5-Year EUR I/R Swap Continuation                  	CBOT      
-M1M16     	5-Year EUR I/R Swap {Jun 16}                      	CBOT      
-M1U16     	5-Year EUR I/R Swap {Sep 16}                      	CBOT      
+M1H17     	5-Year EUR I/R Swap {Mar 17}                      	CBOT      
 M1Z16     	5-Year EUR I/R Swap {Dec 16}                      	CBOT      
 M2.C      	10-Year EUR I/R Swap Continuation                 	CBOT      
-M2M16     	10-Year EUR I/R Swap {Jun 16}                     	CBOT      
-M2U16     	10-Year EUR I/R Swap {Sep 16}                     	CBOT      
+M2H17     	10-Year EUR I/R Swap {Mar 17}                     	CBOT      
 M2Z16     	10-Year EUR I/R Swap {Dec 16}                     	CBOT      
 MK        	HRW Wheat mini-sized                              	CBOT      
 MK.C      	HRW Wheat mini-sized Continuation                 	CBOT      
 MKH17     	HRW Wheat mini-sized {Mar 17}                     	CBOT      
 MKH18     	HRW Wheat mini-sized {Mar 18}                     	CBOT      
+MKH19     	HRW Wheat mini-sized {Mar 19}                     	CBOT      
 MKK17     	HRW Wheat mini-sized {May 17}                     	CBOT      
 MKK18     	HRW Wheat mini-sized {May 18}                     	CBOT      
-MKN16     	HRW Wheat mini-sized {Jul 16}                     	CBOT      
+MKK19     	HRW Wheat mini-sized {May 19}                     	CBOT      
 MKN17     	HRW Wheat mini-sized {Jul 17}                     	CBOT      
 MKN18     	HRW Wheat mini-sized {Jul 18}                     	CBOT      
-MKU16     	HRW Wheat mini-sized {Sep 16}                     	CBOT      
+MKN19     	HRW Wheat mini-sized {Jul 19}                     	CBOT      
 MKU17     	HRW Wheat mini-sized {Sep 17}                     	CBOT      
+MKU18     	HRW Wheat mini-sized {Sep 18}                     	CBOT      
 MKZ16     	HRW Wheat mini-sized {Dec 16}                     	CBOT      
 MKZ17     	HRW Wheat mini-sized {Dec 17}                     	CBOT      
+MKZ18     	HRW Wheat mini-sized {Dec 18}                     	CBOT      
 O         	Oats (P)                                          	CBOT      
 O.C       	Oats (P) Continuation                             	CBOT      
 OH17      	Oats (P) {Mar 17}                                 	CBOT      
 OH18      	Oats (P) {Mar 18}                                 	CBOT      
 OK17      	Oats (P) {May 17}                                 	CBOT      
 OK18      	Oats (P) {May 18}                                 	CBOT      
-ON16      	Oats (P) {Jul 16}                                 	CBOT      
 ON17      	Oats (P) {Jul 17}                                 	CBOT      
 ON18      	Oats (P) {Jul 18}                                 	CBOT      
-OU16      	Oats (P) {Sep 16}                                 	CBOT      
+ON19      	Oats (P) {Jul 19}                                 	CBOT      
 OU17      	Oats (P) {Sep 17}                                 	CBOT      
 OU18      	Oats (P) {Sep 18}                                 	CBOT      
+OU19      	Oats (P) {Sep 19}                                 	CBOT      
 OZ16      	Oats (P) {Dec 16}                                 	CBOT      
 OZ17      	Oats (P) {Dec 17}                                 	CBOT      
 RD.C      	2-Year USD I/R Swap Continuation                  	CBOT      
-RDM16     	2-Year USD I/R Swap {Jun 16}                      	CBOT      
-RDU16     	2-Year USD I/R Swap {Sep 16}                      	CBOT      
+RDH17     	2-Year USD I/R Swap {Mar 17}                      	CBOT      
 RDZ16     	2-Year USD I/R Swap {Dec 16}                      	CBOT      
 RH.C      	5-Year USD I/R Swap Continuation                  	CBOT      
-RHM16     	5-Year USD I/R Swap {Jun 16}                      	CBOT      
-RHU16     	5-Year USD I/R Swap {Sep 16}                      	CBOT      
+RHH17     	5-Year USD I/R Swap {Mar 17}                      	CBOT      
 RHZ16     	5-Year USD I/R Swap {Dec 16}                      	CBOT      
 RQ.C      	10-Year USD I/R Swap Continuation                 	CBOT      
-RQM16     	10-Year USD I/R Swap {Jun 16}                     	CBOT      
-RQU16     	10-Year USD I/R Swap {Sep 16}                     	CBOT      
+RQH17     	10-Year USD I/R Swap {Mar 17}                     	CBOT      
 RQZ16     	10-Year USD I/R Swap {Dec 16}                     	CBOT      
 RR        	Rough Rice (P)                                    	CBOT      
 RR.C      	Rough Rice (P) Continuation                       	CBOT      
 RRF17     	Rough Rice (P) {Jan 17}                           	CBOT      
+RRF18     	Rough Rice (P) {Jan 18}                           	CBOT      
 RRH17     	Rough Rice (P) {Mar 17}                           	CBOT      
 RRK17     	Rough Rice (P) {May 17}                           	CBOT      
-RRN16     	Rough Rice (P) {Jul 16}                           	CBOT      
 RRN17     	Rough Rice (P) {Jul 17}                           	CBOT      
-RRU16     	Rough Rice (P) {Sep 16}                           	CBOT      
+RRU17     	Rough Rice (P) {Sep 17}                           	CBOT      
 RRX16     	Rough Rice (P) {Nov 16}                           	CBOT      
+RRX17     	Rough Rice (P) {Nov 17}                           	CBOT      
 RW.C      	30-Year USD I/R Swap Continuation                 	CBOT      
-RWM16     	30-Year USD I/R Swap {Jun 16}                     	CBOT      
-RWU16     	30-Year USD I/R Swap {Sep 16}                     	CBOT      
+RWH17     	30-Year USD I/R Swap {Mar 17}                     	CBOT      
 RWZ16     	30-Year USD I/R Swap {Dec 16}                     	CBOT      
 S         	Soybeans (P)                                      	CBOT      
 S.C       	Soybeans (P) Continuation                         	CBOT      
 SA.C      	7-Year USD I/R Swap Continuation                  	CBOT      
-SAM16     	7-Year USD I/R Swap {Jun 16}                      	CBOT      
-SAU16     	7-Year USD I/R Swap {Sep 16}                      	CBOT      
+SAH17     	7-Year USD I/R Swap {Mar 17}                      	CBOT      
 SAZ16     	7-Year USD I/R Swap {Dec 16}                      	CBOT      
 SF17      	Soybeans (P) {Jan 17}                             	CBOT      
 SF18      	Soybeans (P) {Jan 18}                             	CBOT      
+SF19      	Soybeans (P) {Jan 19}                             	CBOT      
 SH17      	Soybeans (P) {Mar 17}                             	CBOT      
 SH18      	Soybeans (P) {Mar 18}                             	CBOT      
+SH19      	Soybeans (P) {Mar 19}                             	CBOT      
 SK17      	Soybeans (P) {May 17}                             	CBOT      
 SK18      	Soybeans (P) {May 18}                             	CBOT      
+SK19      	Soybeans (P) {May 19}                             	CBOT      
 SM        	Soybean Meal (P)                                  	CBOT      
 SM.C      	Soybean Meal (P) Continuation                     	CBOT      
 SMF17     	Soybean Meal (P) {Jan 17}                         	CBOT      
@@ -367,120 +358,124 @@ SMH17     	Soybean Meal (P) {Mar 17}                         	CBOT
 SMH18     	Soybean Meal (P) {Mar 18}                         	CBOT      
 SMK17     	Soybean Meal (P) {May 17}                         	CBOT      
 SMK18     	Soybean Meal (P) {May 18}                         	CBOT      
-SMN16     	Soybean Meal (P) {Jul 16}                         	CBOT      
 SMN17     	Soybean Meal (P) {Jul 17}                         	CBOT      
 SMN18     	Soybean Meal (P) {Jul 18}                         	CBOT      
-SMQ16     	Soybean Meal (P) {Aug 16}                         	CBOT      
 SMQ17     	Soybean Meal (P) {Aug 17}                         	CBOT      
 SMQ18     	Soybean Meal (P) {Aug 18}                         	CBOT      
-SMU16     	Soybean Meal (P) {Sep 16}                         	CBOT      
 SMU17     	Soybean Meal (P) {Sep 17}                         	CBOT      
 SMU18     	Soybean Meal (P) {Sep 18}                         	CBOT      
-SMV16     	Soybean Meal (P) {Oct 16}                         	CBOT      
 SMV17     	Soybean Meal (P) {Oct 17}                         	CBOT      
 SMV18     	Soybean Meal (P) {Oct 18}                         	CBOT      
 SMZ16     	Soybean Meal (P) {Dec 16}                         	CBOT      
 SMZ17     	Soybean Meal (P) {Dec 17}                         	CBOT      
 SMZ18     	Soybean Meal (P) {Dec 18}                         	CBOT      
-SN16      	Soybeans (P) {Jul 16}                             	CBOT      
 SN17      	Soybeans (P) {Jul 17}                             	CBOT      
 SN18      	Soybeans (P) {Jul 18}                             	CBOT      
 SN19      	Soybeans (P) {Jul 19}                             	CBOT      
-SQ16      	Soybeans (P) {Aug 16}                             	CBOT      
+SN20      	Soybeans (P) {Jul 20}                             	CBOT      
+SQ.C      	Black Sea Wheat Continuation                      	CBOT      
 SQ17      	Soybeans (P) {Aug 17}                             	CBOT      
 SQ18      	Soybeans (P) {Aug 18}                             	CBOT      
-SQN16     	Black Sea Wheat {Jul 16}                          	CBOT      
-SQU16     	Black Sea Wheat {Sep 16}                          	CBOT      
+SQ19      	Soybeans (P) {Aug 19}                             	CBOT      
 SQZ16     	Black Sea Wheat {Dec 16}                          	CBOT      
 SR.C      	20-Year USD I/R Swap Continuation                 	CBOT      
-SRM16     	20-Year USD I/R Swap {Jun 16}                     	CBOT      
-SRU16     	20-Year USD I/R Swap {Sep 16}                     	CBOT      
+SRH17     	20-Year USD I/R Swap {Mar 17}                     	CBOT      
 SRZ16     	20-Year USD I/R Swap {Dec 16}                     	CBOT      
-SU16      	Soybeans (P) {Sep 16}                             	CBOT      
 SU17      	Soybeans (P) {Sep 17}                             	CBOT      
 SU18      	Soybeans (P) {Sep 18}                             	CBOT      
+SU19      	Soybeans (P) {Sep 19}                             	CBOT      
 SX16      	Soybeans (P) {Nov 16}                             	CBOT      
 SX17      	Soybeans (P) {Nov 17}                             	CBOT      
 SX18      	Soybeans (P) {Nov 18}                             	CBOT      
 SX19      	Soybeans (P) {Nov 19}                             	CBOT      
+SX20      	Soybeans (P) {Nov 20}                             	CBOT      
 TF.C      	3-Year T-Note (P) Continuation                    	CBOT      
-TFM16     	3-Year T-Note (P) {Jun 16}                        	CBOT      
-TFU16     	3-Year T-Note (P) {Sep 16}                        	CBOT      
+TFH17     	3-Year T-Note (P) {Mar 17}                        	CBOT      
+TFZ16     	3-Year T-Note (P) {Dec 16}                        	CBOT      
 TN.C      	Ultra 10-Year T-Note Continuation                 	CBOT      
 TNH17     	Ultra 10-Year T-Note {Mar 17}                     	CBOT      
-TNM16     	Ultra 10-Year T-Note {Jun 16}                     	CBOT      
-TNU16     	Ultra 10-Year T-Note {Sep 16}                     	CBOT      
+TNM17     	Ultra 10-Year T-Note {Jun 17}                     	CBOT      
 TNZ16     	Ultra 10-Year T-Note {Dec 16}                     	CBOT      
 TU.C      	2-Year T-Note (P) Continuation                    	CBOT      
-TUM16     	2-Year T-Note (P) {Jun 16}                        	CBOT      
-TUU16     	2-Year T-Note (P) {Sep 16}                        	CBOT      
+TUH17     	2-Year T-Note (P) {Mar 17}                        	CBOT      
+TUM17     	2-Year T-Note (P) {Jun 17}                        	CBOT      
 TUZ16     	2-Year T-Note (P) {Dec 16}                        	CBOT      
 TY.C      	10-Year T-Note (P) Continuation                   	CBOT      
 TYH17     	10-Year T-Note (P) {Mar 17}                       	CBOT      
-TYM16     	10-Year T-Note (P) {Jun 16}                       	CBOT      
-TYU16     	10-Year T-Note (P) {Sep 16}                       	CBOT      
+TYM17     	10-Year T-Note (P) {Jun 17}                       	CBOT      
 TYZ16     	10-Year T-Note (P) {Dec 16}                       	CBOT      
 UD.C      	Ultra T-Bond Continuation                         	CBOT      
 UDH17     	Ultra T-Bond {Mar 17}                             	CBOT      
-UDM16     	Ultra T-Bond {Jun 16}                             	CBOT      
-UDU16     	Ultra T-Bond {Sep 16}                             	CBOT      
+UDM17     	Ultra T-Bond {Jun 17}                             	CBOT      
 UDZ16     	Ultra T-Bond {Dec 16}                             	CBOT      
 UL.C      	Ultra T-Bond (P) Continuation                     	CBOT      
 ULH17     	Ultra T-Bond (P) {Mar 17}                         	CBOT      
-ULM16     	Ultra T-Bond (P) {Jun 16}                         	CBOT      
-ULU16     	Ultra T-Bond (P) {Sep 16}                         	CBOT      
+ULM17     	Ultra T-Bond (P) {Jun 17}                         	CBOT      
 ULZ16     	Ultra T-Bond (P) {Dec 16}                         	CBOT      
 US.C      	T-Bond (P) Continuation                           	CBOT      
 USH17     	T-Bond (P) {Mar 17}                               	CBOT      
-USM16     	T-Bond (P) {Jun 16}                               	CBOT      
-USU16     	T-Bond (P) {Sep 16}                               	CBOT      
+USM17     	T-Bond (P) {Jun 17}                               	CBOT      
 USZ16     	T-Bond (P) {Dec 16}                               	CBOT      
 VO        	Corn VIX                                          	CBOT      
 W         	Wheat (P)                                         	CBOT      
 W.C       	Wheat (P) Continuation                            	CBOT      
 WH17      	Wheat (P) {Mar 17}                                	CBOT      
 WH18      	Wheat (P) {Mar 18}                                	CBOT      
+WH19      	Wheat (P) {Mar 19}                                	CBOT      
 WK17      	Wheat (P) {May 17}                                	CBOT      
 WK18      	Wheat (P) {May 18}                                	CBOT      
-WN16      	Wheat (P) {Jul 16}                                	CBOT      
+WK19      	Wheat (P) {May 19}                                	CBOT      
+WL.C      	EU Wheat Continuation                             	CBOT      
+WLH17     	EU Wheat {Mar 17}                                 	CBOT      
+WLH18     	EU Wheat {Mar 18}                                 	CBOT      
+WLK17     	EU Wheat {May 17}                                 	CBOT      
+WLK18     	EU Wheat {May 18}                                 	CBOT      
+WLU17     	EU Wheat {Sep 17}                                 	CBOT      
+WLU18     	EU Wheat {Sep 18}                                 	CBOT      
+WLZ16     	EU Wheat {Dec 16}                                 	CBOT      
+WLZ17     	EU Wheat {Dec 17}                                 	CBOT      
 WN17      	Wheat (P) {Jul 17}                                	CBOT      
 WN18      	Wheat (P) {Jul 18}                                	CBOT      
-WU16      	Wheat (P) {Sep 16}                                	CBOT      
+WN19      	Wheat (P) {Jul 19}                                	CBOT      
 WU17      	Wheat (P) {Sep 17}                                	CBOT      
+WU18      	Wheat (P) {Sep 18}                                	CBOT      
 WX        	Soybean VIX                                       	CBOT      
 WZ16      	Wheat (P) {Dec 16}                                	CBOT      
 WZ17      	Wheat (P) {Dec 17}                                	CBOT      
+WZ18      	Wheat (P) {Dec 18}                                	CBOT      
 XK.C      	Soybeans mini-sized Continuation                  	CBOT      
 XKF17     	Soybeans mini-sized {Jan 17}                      	CBOT      
 XKF18     	Soybeans mini-sized {Jan 18}                      	CBOT      
+XKF19     	Soybeans mini-sized {Jan 19}                      	CBOT      
 XKH17     	Soybeans mini-sized {Mar 17}                      	CBOT      
 XKH18     	Soybeans mini-sized {Mar 18}                      	CBOT      
+XKH19     	Soybeans mini-sized {Mar 19}                      	CBOT      
 XKK17     	Soybeans mini-sized {May 17}                      	CBOT      
 XKK18     	Soybeans mini-sized {May 18}                      	CBOT      
-XKN16     	Soybeans mini-sized {Jul 16}                      	CBOT      
+XKK19     	Soybeans mini-sized {May 19}                      	CBOT      
 XKN17     	Soybeans mini-sized {Jul 17}                      	CBOT      
 XKN18     	Soybeans mini-sized {Jul 18}                      	CBOT      
 XKN19     	Soybeans mini-sized {Jul 19}                      	CBOT      
-XKQ16     	Soybeans mini-sized {Aug 16}                      	CBOT      
+XKN20     	Soybeans mini-sized {Jul 20}                      	CBOT      
 XKQ17     	Soybeans mini-sized {Aug 17}                      	CBOT      
 XKQ18     	Soybeans mini-sized {Aug 18}                      	CBOT      
-XKU16     	Soybeans mini-sized {Sep 16}                      	CBOT      
+XKQ19     	Soybeans mini-sized {Aug 19}                      	CBOT      
 XKU17     	Soybeans mini-sized {Sep 17}                      	CBOT      
 XKU18     	Soybeans mini-sized {Sep 18}                      	CBOT      
+XKU19     	Soybeans mini-sized {Sep 19}                      	CBOT      
 XKX16     	Soybeans mini-sized {Nov 16}                      	CBOT      
 XKX17     	Soybeans mini-sized {Nov 17}                      	CBOT      
 XKX18     	Soybeans mini-sized {Nov 18}                      	CBOT      
 XKX19     	Soybeans mini-sized {Nov 19}                      	CBOT      
+XKX20     	Soybeans mini-sized {Nov 20}                      	CBOT      
 XN.C      	Corn mini-sized Continuation                      	CBOT      
 XNH17     	Corn mini-sized {Mar 17}                          	CBOT      
 XNH18     	Corn mini-sized {Mar 18}                          	CBOT      
 XNK17     	Corn mini-sized {May 17}                          	CBOT      
 XNK18     	Corn mini-sized {May 18}                          	CBOT      
-XNN16     	Corn mini-sized {Jul 16}                          	CBOT      
 XNN17     	Corn mini-sized {Jul 17}                          	CBOT      
 XNN18     	Corn mini-sized {Jul 18}                          	CBOT      
 XNN19     	Corn mini-sized {Jul 19}                          	CBOT      
-XNU16     	Corn mini-sized {Sep 16}                          	CBOT      
 XNU17     	Corn mini-sized {Sep 17}                          	CBOT      
 XNU18     	Corn mini-sized {Sep 18}                          	CBOT      
 XNZ16     	Corn mini-sized {Dec 16}                          	CBOT      
@@ -490,25 +485,26 @@ XNZ19     	Corn mini-sized {Dec 19}                          	CBOT
 XW.C      	Wheat mini-sized Continuation                     	CBOT      
 XWH17     	Wheat mini-sized {Mar 17}                         	CBOT      
 XWH18     	Wheat mini-sized {Mar 18}                         	CBOT      
+XWH19     	Wheat mini-sized {Mar 19}                         	CBOT      
 XWK17     	Wheat mini-sized {May 17}                         	CBOT      
 XWK18     	Wheat mini-sized {May 18}                         	CBOT      
-XWN16     	Wheat mini-sized {Jul 16}                         	CBOT      
+XWK19     	Wheat mini-sized {May 19}                         	CBOT      
 XWN17     	Wheat mini-sized {Jul 17}                         	CBOT      
 XWN18     	Wheat mini-sized {Jul 18}                         	CBOT      
-XWU16     	Wheat mini-sized {Sep 16}                         	CBOT      
+XWN19     	Wheat mini-sized {Jul 19}                         	CBOT      
 XWU17     	Wheat mini-sized {Sep 17}                         	CBOT      
+XWU18     	Wheat mini-sized {Sep 18}                         	CBOT      
 XWZ16     	Wheat mini-sized {Dec 16}                         	CBOT      
 XWZ17     	Wheat mini-sized {Dec 17}                         	CBOT      
+XWZ18     	Wheat mini-sized {Dec 18}                         	CBOT      
 YC.C      	Corn mini-sized (P) Continuation                  	CBOT      
 YCH17     	Corn mini-sized (P) {Mar 17}                      	CBOT      
 YCH18     	Corn mini-sized (P) {Mar 18}                      	CBOT      
 YCK17     	Corn mini-sized (P) {May 17}                      	CBOT      
 YCK18     	Corn mini-sized (P) {May 18}                      	CBOT      
-YCN16     	Corn mini-sized (P) {Jul 16}                      	CBOT      
 YCN17     	Corn mini-sized (P) {Jul 17}                      	CBOT      
 YCN18     	Corn mini-sized (P) {Jul 18}                      	CBOT      
 YCN19     	Corn mini-sized (P) {Jul 19}                      	CBOT      
-YCU16     	Corn mini-sized (P) {Sep 16}                      	CBOT      
 YCU17     	Corn mini-sized (P) {Sep 17}                      	CBOT      
 YCU18     	Corn mini-sized (P) {Sep 18}                      	CBOT      
 YCZ16     	Corn mini-sized (P) {Dec 16}                      	CBOT      
@@ -518,47 +514,52 @@ YCZ19     	Corn mini-sized (P) {Dec 19}                      	CBOT
 YK.C      	Soybeans mini-siz(P) Continuation                 	CBOT      
 YKF17     	Soybeans mini-siz(P) {Jan 17}                     	CBOT      
 YKF18     	Soybeans mini-siz(P) {Jan 18}                     	CBOT      
+YKF19     	Soybeans mini-siz(P) {Jan 19}                     	CBOT      
 YKH17     	Soybeans mini-siz(P) {Mar 17}                     	CBOT      
 YKH18     	Soybeans mini-siz(P) {Mar 18}                     	CBOT      
+YKH19     	Soybeans mini-siz(P) {Mar 19}                     	CBOT      
 YKK17     	Soybeans mini-siz(P) {May 17}                     	CBOT      
 YKK18     	Soybeans mini-siz(P) {May 18}                     	CBOT      
-YKN16     	Soybeans mini-siz(P) {Jul 16}                     	CBOT      
+YKK19     	Soybeans mini-siz(P) {May 19}                     	CBOT      
 YKN17     	Soybeans mini-siz(P) {Jul 17}                     	CBOT      
 YKN18     	Soybeans mini-siz(P) {Jul 18}                     	CBOT      
 YKN19     	Soybeans mini-siz(P) {Jul 19}                     	CBOT      
-YKQ16     	Soybeans mini-siz(P) {Aug 16}                     	CBOT      
+YKN20     	Soybeans mini-siz(P) {Jul 20}                     	CBOT      
 YKQ17     	Soybeans mini-siz(P) {Aug 17}                     	CBOT      
 YKQ18     	Soybeans mini-siz(P) {Aug 18}                     	CBOT      
-YKU16     	Soybeans mini-siz(P) {Sep 16}                     	CBOT      
+YKQ19     	Soybeans mini-siz(P) {Aug 19}                     	CBOT      
 YKU17     	Soybeans mini-siz(P) {Sep 17}                     	CBOT      
 YKU18     	Soybeans mini-siz(P) {Sep 18}                     	CBOT      
+YKU19     	Soybeans mini-siz(P) {Sep 19}                     	CBOT      
 YKX16     	Soybeans mini-siz(P) {Nov 16}                     	CBOT      
 YKX17     	Soybeans mini-siz(P) {Nov 17}                     	CBOT      
 YKX18     	Soybeans mini-siz(P) {Nov 18}                     	CBOT      
 YKX19     	Soybeans mini-siz(P) {Nov 19}                     	CBOT      
-YM        	DJIA mini-sized                                   	CBOT      
-YM.C      	DJIA mini-sized Continuation                      	CBOT      
-YMH17     	DJIA mini-sized {Mar 17}                          	CBOT      
-YMM16     	DJIA mini-sized {Jun 16}                          	CBOT      
-YMM17     	DJIA mini-sized {Jun 17}                          	CBOT      
-YMU16     	DJIA mini-sized {Sep 16}                          	CBOT      
-YMZ16     	DJIA mini-sized {Dec 16}                          	CBOT      
+YKX20     	Soybeans mini-siz(P) {Nov 20}                     	CBOT      
+YM        	Dow Indu 30 E-Mini                                	CBOT      
+YM.C      	Dow Indu 30 E-Mini Continuation                   	CBOT      
+YMH17     	Dow Indu 30 E-Mini {Mar 17}                       	CBOT      
+YMM17     	Dow Indu 30 E-Mini {Jun 17}                       	CBOT      
+YMU17     	Dow Indu 30 E-Mini {Sep 17}                       	CBOT      
+YMZ16     	Dow Indu 30 E-Mini {Dec 16}                       	CBOT      
 YW.C      	Wheat mini-sized (P) Continuation                 	CBOT      
 YWH17     	Wheat mini-sized (P) {Mar 17}                     	CBOT      
 YWH18     	Wheat mini-sized (P) {Mar 18}                     	CBOT      
+YWH19     	Wheat mini-sized (P) {Mar 19}                     	CBOT      
 YWK17     	Wheat mini-sized (P) {May 17}                     	CBOT      
 YWK18     	Wheat mini-sized (P) {May 18}                     	CBOT      
-YWN16     	Wheat mini-sized (P) {Jul 16}                     	CBOT      
+YWK19     	Wheat mini-sized (P) {May 19}                     	CBOT      
 YWN17     	Wheat mini-sized (P) {Jul 17}                     	CBOT      
 YWN18     	Wheat mini-sized (P) {Jul 18}                     	CBOT      
-YWU16     	Wheat mini-sized (P) {Sep 16}                     	CBOT      
+YWN19     	Wheat mini-sized (P) {Jul 19}                     	CBOT      
 YWU17     	Wheat mini-sized (P) {Sep 17}                     	CBOT      
+YWU18     	Wheat mini-sized (P) {Sep 18}                     	CBOT      
 YWZ16     	Wheat mini-sized (P) {Dec 16}                     	CBOT      
 YWZ17     	Wheat mini-sized (P) {Dec 17}                     	CBOT      
+YWZ18     	Wheat mini-sized (P) {Dec 18}                     	CBOT      
 ZB.C      	T-Bond Continuation                               	CBOT      
 ZBH17     	T-Bond {Mar 17}                                   	CBOT      
-ZBM16     	T-Bond {Jun 16}                                   	CBOT      
-ZBU16     	T-Bond {Sep 16}                                   	CBOT      
+ZBM17     	T-Bond {Jun 17}                                   	CBOT      
 ZBZ16     	T-Bond {Dec 16}                                   	CBOT      
 ZC        	Corn                                              	CBOT      
 ZC.C      	Corn Continuation                                 	CBOT      
@@ -566,11 +567,9 @@ ZCH17     	Corn {Mar 17}                                     	CBOT
 ZCH18     	Corn {Mar 18}                                     	CBOT      
 ZCK17     	Corn {May 17}                                     	CBOT      
 ZCK18     	Corn {May 18}                                     	CBOT      
-ZCN16     	Corn {Jul 16}                                     	CBOT      
 ZCN17     	Corn {Jul 17}                                     	CBOT      
 ZCN18     	Corn {Jul 18}                                     	CBOT      
 ZCN19     	Corn {Jul 19}                                     	CBOT      
-ZCU16     	Corn {Sep 16}                                     	CBOT      
 ZCU17     	Corn {Sep 17}                                     	CBOT      
 ZCU18     	Corn {Sep 18}                                     	CBOT      
 ZCZ16     	Corn {Dec 16}                                     	CBOT      
@@ -578,12 +577,12 @@ ZCZ17     	Corn {Dec 17}                                     	CBOT
 ZCZ18     	Corn {Dec 18}                                     	CBOT      
 ZCZ19     	Corn {Dec 19}                                     	CBOT      
 ZE.C      	3-Year T-Note Continuation                        	CBOT      
-ZEM16     	3-Year T-Note {Jun 16}                            	CBOT      
-ZEU16     	3-Year T-Note {Sep 16}                            	CBOT      
+ZEH17     	3-Year T-Note {Mar 17}                            	CBOT      
+ZEZ16     	3-Year T-Note {Dec 16}                            	CBOT      
 ZF        	5-Year T-Note                                     	CBOT      
 ZF.C      	5-Year T-Note Continuation                        	CBOT      
-ZFM16     	5-Year T-Note {Jun 16}                            	CBOT      
-ZFU16     	5-Year T-Note {Sep 16}                            	CBOT      
+ZFH17     	5-Year T-Note {Mar 17}                            	CBOT      
+ZFM17     	5-Year T-Note {Jun 17}                            	CBOT      
 ZFZ16     	5-Year T-Note {Dec 16}                            	CBOT      
 ZK        	Ethanol Futures                                   	CBOT      
 ZK.C      	Ethanol Futures Continuation                      	CBOT      
@@ -602,25 +601,25 @@ ZKJ19     	Ethanol Futures {Apr 19}                          	CBOT
 ZKK17     	Ethanol Futures {May 17}                          	CBOT      
 ZKK18     	Ethanol Futures {May 18}                          	CBOT      
 ZKK19     	Ethanol Futures {May 19}                          	CBOT      
-ZKM16     	Ethanol Futures {Jun 16}                          	CBOT      
 ZKM17     	Ethanol Futures {Jun 17}                          	CBOT      
 ZKM18     	Ethanol Futures {Jun 18}                          	CBOT      
 ZKM19     	Ethanol Futures {Jun 19}                          	CBOT      
-ZKN16     	Ethanol Futures {Jul 16}                          	CBOT      
 ZKN17     	Ethanol Futures {Jul 17}                          	CBOT      
 ZKN18     	Ethanol Futures {Jul 18}                          	CBOT      
-ZKQ16     	Ethanol Futures {Aug 16}                          	CBOT      
+ZKN19     	Ethanol Futures {Jul 19}                          	CBOT      
 ZKQ17     	Ethanol Futures {Aug 17}                          	CBOT      
 ZKQ18     	Ethanol Futures {Aug 18}                          	CBOT      
-ZKU16     	Ethanol Futures {Sep 16}                          	CBOT      
+ZKQ19     	Ethanol Futures {Aug 19}                          	CBOT      
 ZKU17     	Ethanol Futures {Sep 17}                          	CBOT      
 ZKU18     	Ethanol Futures {Sep 18}                          	CBOT      
-ZKV16     	Ethanol Futures {Oct 16}                          	CBOT      
+ZKU19     	Ethanol Futures {Sep 19}                          	CBOT      
 ZKV17     	Ethanol Futures {Oct 17}                          	CBOT      
 ZKV18     	Ethanol Futures {Oct 18}                          	CBOT      
+ZKV19     	Ethanol Futures {Oct 19}                          	CBOT      
 ZKX16     	Ethanol Futures {Nov 16}                          	CBOT      
 ZKX17     	Ethanol Futures {Nov 17}                          	CBOT      
 ZKX18     	Ethanol Futures {Nov 18}                          	CBOT      
+ZKX19     	Ethanol Futures {Nov 19}                          	CBOT      
 ZKZ16     	Ethanol Futures {Dec 16}                          	CBOT      
 ZKZ17     	Ethanol Futures {Dec 17}                          	CBOT      
 ZKZ18     	Ethanol Futures {Dec 18}                          	CBOT      
@@ -632,17 +631,13 @@ ZLH17     	Soybean Oil {Mar 17}                              	CBOT
 ZLH18     	Soybean Oil {Mar 18}                              	CBOT      
 ZLK17     	Soybean Oil {May 17}                              	CBOT      
 ZLK18     	Soybean Oil {May 18}                              	CBOT      
-ZLN16     	Soybean Oil {Jul 16}                              	CBOT      
 ZLN17     	Soybean Oil {Jul 17}                              	CBOT      
 ZLN18     	Soybean Oil {Jul 18}                              	CBOT      
 ZLN19     	Soybean Oil {Jul 19}                              	CBOT      
-ZLQ16     	Soybean Oil {Aug 16}                              	CBOT      
 ZLQ17     	Soybean Oil {Aug 17}                              	CBOT      
 ZLQ18     	Soybean Oil {Aug 18}                              	CBOT      
-ZLU16     	Soybean Oil {Sep 16}                              	CBOT      
 ZLU17     	Soybean Oil {Sep 17}                              	CBOT      
 ZLU18     	Soybean Oil {Sep 18}                              	CBOT      
-ZLV16     	Soybean Oil {Oct 16}                              	CBOT      
 ZLV17     	Soybean Oil {Oct 17}                              	CBOT      
 ZLV18     	Soybean Oil {Oct 18}                              	CBOT      
 ZLV19     	Soybean Oil {Oct 19}                              	CBOT      
@@ -658,16 +653,12 @@ ZMH17     	Soybean Meal {Mar 17}                             	CBOT
 ZMH18     	Soybean Meal {Mar 18}                             	CBOT      
 ZMK17     	Soybean Meal {May 17}                             	CBOT      
 ZMK18     	Soybean Meal {May 18}                             	CBOT      
-ZMN16     	Soybean Meal {Jul 16}                             	CBOT      
 ZMN17     	Soybean Meal {Jul 17}                             	CBOT      
 ZMN18     	Soybean Meal {Jul 18}                             	CBOT      
-ZMQ16     	Soybean Meal {Aug 16}                             	CBOT      
 ZMQ17     	Soybean Meal {Aug 17}                             	CBOT      
 ZMQ18     	Soybean Meal {Aug 18}                             	CBOT      
-ZMU16     	Soybean Meal {Sep 16}                             	CBOT      
 ZMU17     	Soybean Meal {Sep 17}                             	CBOT      
 ZMU18     	Soybean Meal {Sep 18}                             	CBOT      
-ZMV16     	Soybean Meal {Oct 16}                             	CBOT      
 ZMV17     	Soybean Meal {Oct 17}                             	CBOT      
 ZMV18     	Soybean Meal {Oct 18}                             	CBOT      
 ZMZ16     	Soybean Meal {Dec 16}                             	CBOT      
@@ -675,8 +666,7 @@ ZMZ17     	Soybean Meal {Dec 17}                             	CBOT
 ZMZ18     	Soybean Meal {Dec 18}                             	CBOT      
 ZN.C      	10-Year T-Note Continuation                       	CBOT      
 ZNH17     	10-Year T-Note {Mar 17}                           	CBOT      
-ZNM16     	10-Year T-Note {Jun 16}                           	CBOT      
-ZNU16     	10-Year T-Note {Sep 16}                           	CBOT      
+ZNM17     	10-Year T-Note {Jun 17}                           	CBOT      
 ZNZ16     	10-Year T-Note {Dec 16}                           	CBOT      
 ZO        	Oats                                              	CBOT      
 ZO.C      	Oats Continuation                                 	CBOT      
@@ -684,12 +674,12 @@ ZOH17     	Oats {Mar 17}                                     	CBOT
 ZOH18     	Oats {Mar 18}                                     	CBOT      
 ZOK17     	Oats {May 17}                                     	CBOT      
 ZOK18     	Oats {May 18}                                     	CBOT      
-ZON16     	Oats {Jul 16}                                     	CBOT      
 ZON17     	Oats {Jul 17}                                     	CBOT      
 ZON18     	Oats {Jul 18}                                     	CBOT      
-ZOU16     	Oats {Sep 16}                                     	CBOT      
+ZON19     	Oats {Jul 19}                                     	CBOT      
 ZOU17     	Oats {Sep 17}                                     	CBOT      
 ZOU18     	Oats {Sep 18}                                     	CBOT      
+ZOU19     	Oats {Sep 19}                                     	CBOT      
 ZOZ16     	Oats {Dec 16}                                     	CBOT      
 ZOZ17     	Oats {Dec 17}                                     	CBOT      
 ZQ        	30-Day Fed Funds                                  	CBOT      
@@ -706,25 +696,25 @@ ZQH19     	30-Day Fed Funds {Mar 19}                         	CBOT
 ZQJ17     	30-Day Fed Funds {Apr 17}                         	CBOT      
 ZQJ18     	30-Day Fed Funds {Apr 18}                         	CBOT      
 ZQJ19     	30-Day Fed Funds {Apr 19}                         	CBOT      
-ZQK16     	30-Day Fed Funds {May 16}                         	CBOT      
 ZQK17     	30-Day Fed Funds {May 17}                         	CBOT      
 ZQK18     	30-Day Fed Funds {May 18}                         	CBOT      
 ZQK19     	30-Day Fed Funds {May 19}                         	CBOT      
-ZQM16     	30-Day Fed Funds {Jun 16}                         	CBOT      
 ZQM17     	30-Day Fed Funds {Jun 17}                         	CBOT      
 ZQM18     	30-Day Fed Funds {Jun 18}                         	CBOT      
-ZQN16     	30-Day Fed Funds {Jul 16}                         	CBOT      
+ZQM19     	30-Day Fed Funds {Jun 19}                         	CBOT      
 ZQN17     	30-Day Fed Funds {Jul 17}                         	CBOT      
 ZQN18     	30-Day Fed Funds {Jul 18}                         	CBOT      
-ZQQ16     	30-Day Fed Funds {Aug 16}                         	CBOT      
+ZQN19     	30-Day Fed Funds {Jul 19}                         	CBOT      
 ZQQ17     	30-Day Fed Funds {Aug 17}                         	CBOT      
 ZQQ18     	30-Day Fed Funds {Aug 18}                         	CBOT      
-ZQU16     	30-Day Fed Funds {Sep 16}                         	CBOT      
+ZQQ19     	30-Day Fed Funds {Aug 19}                         	CBOT      
 ZQU17     	30-Day Fed Funds {Sep 17}                         	CBOT      
 ZQU18     	30-Day Fed Funds {Sep 18}                         	CBOT      
+ZQU19     	30-Day Fed Funds {Sep 19}                         	CBOT      
 ZQV16     	30-Day Fed Funds {Oct 16}                         	CBOT      
 ZQV17     	30-Day Fed Funds {Oct 17}                         	CBOT      
 ZQV18     	30-Day Fed Funds {Oct 18}                         	CBOT      
+ZQV19     	30-Day Fed Funds {Oct 19}                         	CBOT      
 ZQX16     	30-Day Fed Funds {Nov 16}                         	CBOT      
 ZQX17     	30-Day Fed Funds {Nov 17}                         	CBOT      
 ZQX18     	30-Day Fed Funds {Nov 18}                         	CBOT      
@@ -733,49 +723,57 @@ ZQZ17     	30-Day Fed Funds {Dec 17}                         	CBOT
 ZQZ18     	30-Day Fed Funds {Dec 18}                         	CBOT      
 ZR.C      	Rough Rice Continuation                           	CBOT      
 ZRF17     	Rough Rice {Jan 17}                               	CBOT      
+ZRF18     	Rough Rice {Jan 18}                               	CBOT      
 ZRH17     	Rough Rice {Mar 17}                               	CBOT      
 ZRK17     	Rough Rice {May 17}                               	CBOT      
-ZRN16     	Rough Rice {Jul 16}                               	CBOT      
 ZRN17     	Rough Rice {Jul 17}                               	CBOT      
-ZRU16     	Rough Rice {Sep 16}                               	CBOT      
+ZRU17     	Rough Rice {Sep 17}                               	CBOT      
 ZRX16     	Rough Rice {Nov 16}                               	CBOT      
+ZRX17     	Rough Rice {Nov 17}                               	CBOT      
 ZS        	Soybeans                                          	CBOT      
 ZS.C      	Soybeans Continuation                             	CBOT      
 ZSF17     	Soybeans {Jan 17}                                 	CBOT      
 ZSF18     	Soybeans {Jan 18}                                 	CBOT      
+ZSF19     	Soybeans {Jan 19}                                 	CBOT      
 ZSH17     	Soybeans {Mar 17}                                 	CBOT      
 ZSH18     	Soybeans {Mar 18}                                 	CBOT      
+ZSH19     	Soybeans {Mar 19}                                 	CBOT      
 ZSK17     	Soybeans {May 17}                                 	CBOT      
 ZSK18     	Soybeans {May 18}                                 	CBOT      
-ZSN16     	Soybeans {Jul 16}                                 	CBOT      
+ZSK19     	Soybeans {May 19}                                 	CBOT      
 ZSN17     	Soybeans {Jul 17}                                 	CBOT      
 ZSN18     	Soybeans {Jul 18}                                 	CBOT      
 ZSN19     	Soybeans {Jul 19}                                 	CBOT      
-ZSQ16     	Soybeans {Aug 16}                                 	CBOT      
+ZSN20     	Soybeans {Jul 20}                                 	CBOT      
 ZSQ17     	Soybeans {Aug 17}                                 	CBOT      
 ZSQ18     	Soybeans {Aug 18}                                 	CBOT      
-ZSU16     	Soybeans {Sep 16}                                 	CBOT      
+ZSQ19     	Soybeans {Aug 19}                                 	CBOT      
 ZSU17     	Soybeans {Sep 17}                                 	CBOT      
 ZSU18     	Soybeans {Sep 18}                                 	CBOT      
+ZSU19     	Soybeans {Sep 19}                                 	CBOT      
 ZSX16     	Soybeans {Nov 16}                                 	CBOT      
 ZSX17     	Soybeans {Nov 17}                                 	CBOT      
 ZSX18     	Soybeans {Nov 18}                                 	CBOT      
 ZSX19     	Soybeans {Nov 19}                                 	CBOT      
+ZSX20     	Soybeans {Nov 20}                                 	CBOT      
 ZT        	2-Year T-Note                                     	CBOT      
 ZT.C      	2-Year T-Note Continuation                        	CBOT      
-ZTM16     	2-Year T-Note {Jun 16}                            	CBOT      
-ZTU16     	2-Year T-Note {Sep 16}                            	CBOT      
+ZTH17     	2-Year T-Note {Mar 17}                            	CBOT      
+ZTM17     	2-Year T-Note {Jun 17}                            	CBOT      
 ZTZ16     	2-Year T-Note {Dec 16}                            	CBOT      
 ZW        	Wheat                                             	CBOT      
 ZW.C      	Wheat Continuation                                	CBOT      
 ZWH17     	Wheat {Mar 17}                                    	CBOT      
 ZWH18     	Wheat {Mar 18}                                    	CBOT      
+ZWH19     	Wheat {Mar 19}                                    	CBOT      
 ZWK17     	Wheat {May 17}                                    	CBOT      
 ZWK18     	Wheat {May 18}                                    	CBOT      
-ZWN16     	Wheat {Jul 16}                                    	CBOT      
+ZWK19     	Wheat {May 19}                                    	CBOT      
 ZWN17     	Wheat {Jul 17}                                    	CBOT      
 ZWN18     	Wheat {Jul 18}                                    	CBOT      
-ZWU16     	Wheat {Sep 16}                                    	CBOT      
+ZWN19     	Wheat {Jul 19}                                    	CBOT      
 ZWU17     	Wheat {Sep 17}                                    	CBOT      
+ZWU18     	Wheat {Sep 18}                                    	CBOT      
 ZWZ16     	Wheat {Dec 16}                                    	CBOT      
 ZWZ17     	Wheat {Dec 17}                                    	CBOT      
+ZWZ18     	Wheat {Dec 18}                                    	CBOT      

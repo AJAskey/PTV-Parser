@@ -103,6 +103,7 @@ BJE.IDX   	NYSE Arca Mini-Biotechnology In-                  	INDEX
 BKNIF.IDX 	Bank Nifty                                        	INDEX     
 BKX.IDX   	KBW Bank Index                                    	INDEX     
 BOXR.IDX  	S&P C.S. Ma-Boston Home Price Index               	INDEX     
+BRTI.IDX  	Bitcoin Real Time Index                           	INDEX     
 BSESN.IDX 	BSE 30 - India                                    	INDEX     
 BTK.IDX   	AMEX Biotechnology Index                          	INDEX     
 BTS.IDX   	AMEX Biotechnology Index Final                    	INDEX     
@@ -175,7 +176,6 @@ DMT.IDX   	Dly Mirrow Idx                                    	INDEX
 DNXR.IDX  	S&P C.S. Co-Denver Home Price Index               	INDEX     
 DOI.IDX   	AMEX Defense Index Final Settle                   	INDEX     
 DOWE.IDX  	INDUSTRIALS EU$                                   	INDEX     
-DOWV.IDX  	TREASURIES IDX                                    	INDEX     
 DRCI.IDX  	DJ COMPREIT                                       	INDEX     
 DREI.IDX  	DJ EQUITYREIT                                     	INDEX     
 DRG.IDX   	AMEX Pharmaceutical Index                         	INDEX     
@@ -401,7 +401,6 @@ DZO.IDX   	Dynamic Biotech & Genome Intell                   	INDEX
 DZR.IDX   	DYNAMIC PHARMACEUTICAL INTELLID                   	INDEX     
 ECO.IDX   	Wh Clean Energy                                   	INDEX     
 EED.IDX   	Claymore Bric ETF Iopv                            	INDEX     
-EPX.IDX   	SIG OIL EXPLORATION & PRODUCERS                   	INDEX     
 EVZ.IDX   	CBOE EURO CURR VOL IND                            	INDEX     
 EZB.IDX   	DYNAMIC BS MT INTELLIDEX                          	INDEX     
 EZF.IDX   	DYNAMIC FINCL INTELLIDEX                          	INDEX     
@@ -414,6 +413,8 @@ EZZ.IDX   	DYNAMIC CN DS INTELLIDEX                          	INDEX
 FBV.IDX   	Powershrs Db G10 Fd Iopv                          	INDEX     
 FTSA.IDX  	FTSE 350                                          	INDEX     
 FTSE.IDX  	FTSE 100 Index                                    	INDEX     
+FTSEMIB.IDX	FTSE MIB Index                                    	INDEX     
+FTSEMIBN.IDX	FTSE MIB Net Total Return                         	INDEX     
 FTSM.IDX  	FTSE Mid 250 Index                                	INDEX     
 FVX.IDX   	5-YEAR TREASURY NOTE                              	INDEX     
 GDM.IDX   	AMEX GOLD MINERS                                  	INDEX     
@@ -456,6 +457,12 @@ IPSA.IDX  	IPSA - Chile                                      	INDEX
 IQX.IDX   	S&P 500 EQUAL WEIGHT                              	INDEX     
 IQZ.IDX   	S&P 1000                                          	INDEX     
 IRX.IDX   	13-WEEK TREASURY BILL                             	INDEX     
+ITAIM.IDX 	FTSE AIM Italia Index                             	INDEX     
+ITLMS.IDX 	FTSE Italia All-Share Index                       	INDEX     
+ITLMSC.IDX	FTSE Italia All-Share Capped Index                	INDEX     
+ITMC.IDX  	FTSE Italia Mid Cap Index                         	INDEX     
+ITSC.IDX  	FTSE Italia Small Cap Index                       	INDEX     
+ITSTAR.IDX	FTSE Italia STAR Index                            	INDEX     
 IUX.IDX   	Russell 2000 Stock Index                          	INDEX     
 IVX.IDX   	S&P 500 Value                                     	INDEX     
 IXB.IDX   	Materials Select Sector Index                     	INDEX     
@@ -1014,7 +1021,6 @@ SGAD.IDX  	S&P Global Agribusiness Equity Index [EURO]       	INDEX
 SGCC.IDX  	S&P GSCI Capped Commodity 35/20 Index             	INDEX     
 SGCR.IDX  	S&P GSCI All Metals Capped Index Excess Return    	INDEX     
 SGDO.IDX  	S&P Global Dividend Opportunities Index           	INDEX     
-SGET.IDX  	Goldman Sachs Liquefied Natural Gas Index [EURO]  	INDEX     
 SGIA.IDX  	S&P North American Natural Resources Sector Inde  	INDEX     
 SGIB.IDX  	S&P North American Technology Sector Index        	INDEX     
 SGID.IDX  	S&P North American Technology Software Index      	INDEX     
@@ -1022,7 +1028,6 @@ SGIF.IDX  	S&P North American Technology Multimedia Network  	INDEX
 SGIR.IDX  	S&P GSCI All Metals Index Excess Return           	INDEX     
 SGJ.IDX   	S&P GSCI Energy                                   	INDEX     
 SGK.IDX   	S&P GSCI Agriculture                              	INDEX     
-SGLE.IDX  	Goldman Sachs Liquefied Natural Gas Index [EURO]  	INDEX     
 SGLN.IDX  	SGI Global Security Index [EURO] [TR]             	INDEX     
 SGLS.IDX  	SGI Global Security Index [EURO]                  	INDEX     
 SGMA.IDX  	S&P GSCI All Metals Index                         	INDEX     
@@ -1188,7 +1193,6 @@ SRIC.IDX  	S&P BRIC 40 Index [NetTR]                         	INDEX
 SRIE.IDX  	S&P BRIC 40 Index [EURO] [NetTR]                  	INDEX     
 SRMP.IDX  	Cohen & Steers US Realty Majors Portfolio [TR]    	INDEX     
 SRPR.IDX  	S&P Global REIT [USD]                             	INDEX     
-SRTR.IDX  	S&P 500 Real Estate [TR]                          	INDEX     
 SRUP.IDX  	S&P 500 High Quality Rankings Index               	INDEX     
 SRVA.IDX  	Rogers Energy Producers Index [EURO]              	INDEX     
 SRVB.IDX  	Rogers Metals Producers Index [EURO]              	INDEX     
@@ -1346,7 +1350,6 @@ SUTH.IDX  	S&P Utilities Stocks Above 200-Day Average        	INDEX
 SUTP.IDX  	S&P Select Sector Capped 20% Technology Index Ne  	INDEX     
 SUTW.IDX  	S&P Utilities Stocks Above 20-Day Average         	INDEX     
 SVFI.IDX  	S&P Health Care Stocks Above 50-Day Average       	INDEX     
-SVO.IDX   	PHLX SIG ENERGY MLP INDX                          	INDEX     
 SVOF.IDX  	S&P Health Care Stocks Above 150-Day Average      	INDEX     
 SVOH.IDX  	S&P Health Care Stocks Above 100-Day Average      	INDEX     
 SVTH.IDX  	S&P Health Care Stocks Above 200-Day Average      	INDEX     
@@ -1425,7 +1428,6 @@ TTFS.IDX  	Tsx Financials Capped Index                       	INDEX
 TTGD.IDX  	Tsx Global Gold Index                             	INDEX     
 TTHC.IDX  	Tsx Health Care Capped Index                      	INDEX     
 TTIN.IDX  	Tsx Industrials Capped Index                      	INDEX     
-TTMN.IDX  	Tsx Metals And Mining Capped Index                	INDEX     
 TTMT.IDX  	Tsx Materials Capped Index                        	INDEX     
 TTRE.IDX  	Tsx Real Estate Capped Index                      	INDEX     
 TTTK.IDX  	Tsx Information Tech Capped Index                 	INDEX     
