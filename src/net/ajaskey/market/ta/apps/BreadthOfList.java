@@ -54,6 +54,7 @@ public class BreadthOfList {
 	final private static String	TAB						= "\t";
 
 	private static PrintWriter	pw						= null;
+	private static PrintWriter	pwPercent						= null;
 
 	/**
 	 * net.ajaskey.market.ta.apps.main
@@ -68,6 +69,7 @@ public class BreadthOfList {
 		System.out.println("Processing...");
 
 		pw = new PrintWriter("out\\BreadthOfList.txt");
+		pwPercent = new PrintWriter("out\\BreadthOfListPercent.txt");
 
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 		fullfilenames.add("symbols\\NYSE_SymbolList.txt");
@@ -81,6 +83,9 @@ public class BreadthOfList {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 
 		System.out.println("Ticker\tName\t23dma\t65dma\t130dma\t260dma");
+		pwPercent.println("Name\t23\t65\t130\t260");
+
+		BreadthOfList.processGroup("Stocks", "Stocks over $10");
 
 		BreadthOfList.processGroup("NDX", "Nasdaq 100");
 
@@ -126,6 +131,8 @@ public class BreadthOfList {
 		BreadthOfList.processGroup("PICK", "Metal Miners");
 
 		pw.close();
+		pwPercent.close();
+		
 		System.out.println("Done.");
 
 	}
@@ -146,6 +153,7 @@ public class BreadthOfList {
 		final List<BreadthData> bd = BreadthOfList.processList(tdAll, 0);
 		final List<BreadthData> bd1week = BreadthOfList.processList(tdAll, 6);
 		BreadthOfList.writeData(bd, bd1week, name, indexName);
+		BreadthOfList.writePercentData(bd, name);
 		tdAll.clear();
 		bd.clear();
 	}
@@ -270,6 +278,39 @@ public class BreadthOfList {
 		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
 		pw.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
 		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
+
+	}
+
+	private static void writePercentData(List<BreadthData> bdList, String name) throws FileNotFoundException {
+		final int knt = bdList.size();
+		long over23dma = 0;
+		long over65dma = 0;
+		long over130dma = 0;
+		long over260dma = 0;
+
+
+		for (final BreadthData bd : bdList) {
+			final double p = bd.getPrice();
+			if (p > bd.getDma23()) {
+				over23dma++;
+			}
+			if (p > bd.getDma65()) {
+				over65dma++;
+			}
+			if (p > bd.getDma130()) {
+				over130dma++;
+			}
+			if (p > bd.getDma260()) {
+				over260dma++;
+			}
+		}
+
+		final double per23dma = ((double) over23dma / (double) knt) * 100.0;
+		final double per65dma = ((double) over65dma / (double) knt) * 100.0;
+		final double per130dma = ((double) over130dma / (double) knt) * 100.0;
+		final double per260dma = ((double) over260dma / (double) knt) * 100.0;
+
+		pwPercent.printf("%-6s\t%d\t%d\t%d\t%d%n", name, (long) per23dma, (long) per65dma, (long) per130dma, (long) per260dma);
 
 	}
 

@@ -79,6 +79,7 @@ public class ProcessCOTS {
 	final private static String						VIX_Name				= "VIX FUTURES";
 	final private static String						EM_Name					= "MSCI EMERGING MKTS MINI INDEX";
 	final private static String						USD_Name				= "U.S. DOLLAR INDEX";
+	final private static String						Treasury10_Name	= "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE";
 	final private static String						Commodity_Name	= "BLOOMBERG COMMODITY INDEX";
 	final private static String						Commodity_Name2	= "DOW JONES UBS EXCESS RETURN";
 
@@ -111,10 +112,19 @@ public class ProcessCOTS {
 		process("NDX");
 		process("RUT");
 		process("VIX");
+		process("TREASURY");
 
 		System.out.println("Done.");
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.process
+	 *
+	 * @param str
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 */
 	private static void process(String str) throws FileNotFoundException, ParseException {
 
 		String prefix = "none";
@@ -129,8 +139,10 @@ public class ProcessCOTS {
 			prefix = setDJIA();
 		} else if (str.contains("RUT")) {
 			prefix = setRUT();
-		}else if (str.contains("VIX")) {
+		} else if (str.contains("VIX")) {
 			prefix = setVIX();
+		} else if (str.contains("TREASURY")) {
+			prefix = setTreasury();
 		}
 
 		ProcessCOTS.readAndParse();
@@ -190,7 +202,7 @@ public class ProcessCOTS {
 
 		return "NDX_";
 	}
-	
+
 	private static String setRUT() {
 		validNames.clear();
 
@@ -206,6 +218,14 @@ public class ProcessCOTS {
 		validNames.add(VIX_Name);
 
 		return "VIX_";
+	}
+
+	private static String setTreasury() {
+		validNames.clear();
+
+		validNames.add(Treasury10_Name);
+
+		return "Treasury_";
 	}
 
 	private static String setCommodity() {
@@ -544,6 +564,8 @@ public class ProcessCOTS {
 			st = LongShort.SourceType.USD;
 		} else if ((line.contains(Commodity_Name)) || (line.contains(Commodity_Name2))) {
 			st = LongShort.SourceType.CMDTY;
+		} else if (line.contains(Treasury10_Name)) {
+			st = LongShort.SourceType.T10;
 		}
 		return st;
 	}

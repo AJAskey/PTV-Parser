@@ -125,6 +125,8 @@ public class ConvertOHLCV {
 	 * @throws ParseException
 	 */
 	public static void parseHtmlFile(Path path) throws IOException, ParseException {
+		
+		System.out.println("Processing : " + path.toString());
 
 		OhlcvData.FormType form = OhlcvData.FormType.SHORT;
 		
@@ -227,7 +229,7 @@ public class ConvertOHLCV {
 
 		try (PrintWriter pw = new PrintWriter(shortPath + "/" + fname)) {
 			for (final OhlcvData d : data) {
-				System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
+				// System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
 				pw.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
 			}
 		}

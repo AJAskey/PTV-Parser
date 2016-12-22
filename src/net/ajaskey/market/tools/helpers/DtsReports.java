@@ -773,8 +773,8 @@ public class DtsReports {
 		// TODO Auto-generated method stub
 
 	}
-	
-	private static long getTotal(long [] vals) {
+
+	private static long getTotal(long[] vals) {
 		long tot = 0;
 		for (long i : vals) {
 			tot += i;
@@ -813,7 +813,7 @@ public class DtsReports {
 			pw.println("Date,Change");
 
 			boolean filled = false;
-			
+
 			for (DtsData dts : DtsData.dtsList) {
 				if (type == DTS_TYPE.CORPORATE) {
 					sum[ptr] = dts.getCorp().daily;
@@ -825,7 +825,7 @@ public class DtsReports {
 					sum[ptr] = dts.getCorp().daily + dts.getInd().daily + dts.getWith().daily;
 				}
 				ptr++;
-				if (ptr > range-1) {
+				if (ptr > range - 1) {
 					filled = true;
 					ptr = 0;
 				}

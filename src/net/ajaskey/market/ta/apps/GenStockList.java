@@ -204,7 +204,8 @@ public class GenStockList {
 		Utils.makeDir("lists");
 
 		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%-10s%n", maxTickerLen, maxNameLen);
-		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt")) {
+		try (PrintWriter pw = new PrintWriter("lists\\" + outName + ".txt");
+		    PrintWriter pwStocks = new PrintWriter("lists\\stocks-components.csv")) {
 			pw.println("Ticker      Name                                        Exchange    List");
 			for (final TickerData td : tdStocks) {
 				if (GenStockList.isSP500(td.getTicker())) {
@@ -215,6 +216,7 @@ public class GenStockList {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP600");
 				} else {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "none");
+					pwStocks.println(td.getTicker());
 				}
 			}
 		}

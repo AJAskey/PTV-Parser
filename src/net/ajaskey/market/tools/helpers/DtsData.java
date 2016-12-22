@@ -54,7 +54,7 @@ public class DtsData {
 	 * @param idx
 	 * @return
 	 */
-	private static String cleanString(String str, int idx) {
+	public static String cleanString(String str, int idx) {
 		final String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
 		return s;
 	}
@@ -216,6 +216,7 @@ public class DtsData {
 		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getNumReportsInYear(date);
 		str += "\t" + DtsData.getNumReportsInMonth(date);
+		str += "\t" + DtsData.getTotalReportsInMonth(date);
 		return str;
 	}
 
@@ -236,6 +237,23 @@ public class DtsData {
 					if (d.getDate().get(Calendar.DATE) <= cal.get(Calendar.DATE)) {
 						ret++;
 					}
+				} else if (ret > 0) {
+					break;
+				}
+			}
+		}
+
+		return ret;
+	}
+
+	public static int getTotalReportsInMonth(Calendar cal) {
+		int ret = 0;
+		for (final DtsData d : dtsList) {
+			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+				if (d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH)) {
+					ret++;
+				} else if (ret > 0) {
+					break;
 				}
 			}
 		}

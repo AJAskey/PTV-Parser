@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.tools;
 
+import java.awt.Frame;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,12 +11,26 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+import java.util.Scanner;
+
+import javax.swing.JFormattedTextField.AbstractFormatter;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.helpers.DateLabelFormatter;
 import net.ajaskey.market.tools.helpers.DtsData;
 import net.ajaskey.market.tools.helpers.DtsReports;
 import net.ajaskey.market.tools.helpers.DtsReports.DTS_TYPE;
@@ -54,18 +69,22 @@ import net.ajaskey.market.tools.helpers.WebGet;
  *         </p>
  *
  */
-public class ProcessDTS {
+public class DownloadDTS {
 
-	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
-	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
+	public DownloadDTS() {
+	}
 
-	final static private String		folderPath				= "d:/temp/dts";
-	//final static private String		folderPath				= "d:/temp/dts-lt";
-	final static private Charset	charset						= Charset.forName("UTF-8");
+	final static private String						url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
+	final static private String						urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static public int				webDownloadYear		= 2016;
-	final static public int				webDownloadMonth	= Calendar.DECEMBER;
-	final static public int				webDownloadDay		= 1;
+	final static private String						folderPath				= "d:/temp/dts-lt";
+	final static private Charset					charset						= Charset.forName("UTF-8");
+
+	static public int											webDownloadYear		= 0;
+	static public int											webDownloadMonth	= 0;
+	static public int											webDownloadDay		= 0;
+
+	final private static SimpleDateFormat	sdf								= new SimpleDateFormat("yyyy-MMM-dd");
 
 	/**
 	 *
@@ -85,57 +104,117 @@ public class ProcessDTS {
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
+	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
-		Utils.makeDir("out");
-		Utils.makeDir("out/optuma");
-
-		ProcessDTS.updateDtsFiles();
-
-		ProcessDTS.readAndProcess();
-
-		ProcessDTS.getSPX();
-
-		DtsReports.writeYY(DTS_TYPE.CORPORATE);
-		DtsReports.writeYY(DTS_TYPE.INDIVIDUAL);
-		DtsReports.writeYY(DTS_TYPE.WITHHELD);
-		DtsReports.writeYY(DTS_TYPE.COMBINED);
-
+		String sDate = null;
 		try {
-			DtsReports.dumpRaw("dump", Utils.buildCalendar(2014, Calendar.JANUARY, 1));
+			Date date = null;
+			Calendar cal = Calendar.getInstance();
 
-			DtsReports.writeSumDaily(DTS_TYPE.CORPORATE);
-			DtsReports.writeSumDaily(DTS_TYPE.INDIVIDUAL);
-			DtsReports.writeSumDaily(DTS_TYPE.WITHHELD);
-			DtsReports.writeSumDaily(DTS_TYPE.COMBINED);
+			if (args.length > 0) {
 
-			DtsReports.writeUnemploymentTaxes("unemployment");
-			DtsReports.writeFiscalYear("fy");
-			DtsReports.writeQuarterly("quarterly");
-			DtsReports.writeEomCsv(Utils.buildCalendar(2013, Calendar.OCTOBER, 1));
-			DtsReports.writeOptuma();
-			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
-			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
-			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.SEPTEMBER);
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.OCTOBER);
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.NOVEMBER);
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.DECEMBER);
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
+				if (args[0].toLowerCase().contains("help")) {
+					printHelp();
+					return;
+				} else if (args[0].toLowerCase().contains("recent")) {
+					sDate = getRecentDate(cal);
+				} else {
+					System.out.println(args[0]);
+					sDate = args[0];
+				}
+
+			} else {
+				System.out.println("Enter RECENT or start date in format yyyy-MMM-dd : ");
+				Scanner scan = new Scanner(System.in);
+				sDate = scan.next();
+
+				if (sDate.toLowerCase().contains("recent")) {
+
+					sDate = getRecentDate(cal);
+				}
+			}
+
+			System.out.println(sDate);
+			date = sdf.parse(sDate);
+			cal.setTime(date);
+			webDownloadYear = cal.get(Calendar.YEAR);
+			webDownloadMonth = cal.get(Calendar.MONTH);
+			webDownloadDay = cal.get(Calendar.DATE);
+		} catch (Exception e) {
+			System.out.println("Invalid date format : " + sDate);
+			printHelp();
+			return;
 		}
+
+		System.out.println("Processing DTS from from : " + sDate);
+
+		Utils.makeDir("dts-data");
+
+		System.out.println("Downloading non-existing local files...");
+
+		DownloadDTS.updateDtsFiles();
+
+		System.out.println("Processing data files...");
+
+		DownloadDTS.readAndProcess();
+
+		/*
+		 * System.out.println("Write data files to CSV files...");
+		 * 
+		 * try (PrintWriter pw = new PrintWriter("dts-daily.csv"); PrintWriter pwMtd
+		 * = new PrintWriter("dts-mtd.csv"); PrintWriter pwYtd = new
+		 * PrintWriter("dts-ytd.csv")) {
+		 * 
+		 * pw.printf("Date,Withheld,Individual,Corporate%n");
+		 * pwMtd.printf("Date,Withheld,Individual,Corporate%n");
+		 * pwYtd.printf("Date,Withheld,Individual,Corporate%n");
+		 * 
+		 * for (DtsData d : DtsData.dtsList) {
+		 * 
+		 * String date = sdf.format(d.getDate().getTime());
+		 * pw.printf("%s,%d,%d,%d%n", date, d.getWith().daily, d.getInd().daily,
+		 * d.getCorp().daily); pwMtd.printf("%s,%d,%d,%d%n", date,
+		 * d.getWith().monthly, d.getInd().monthly, d.getCorp().monthly);
+		 * pwYtd.printf("%s,%d,%d,%d%n", date, d.getWith().yearly,
+		 * d.getInd().yearly, d.getCorp().yearly);
+		 * 
+		 * } } catch (FileNotFoundException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 */
+
+		System.out.println("Done.");
 
 	}
 
 	/**
-	 * net.ajaskey.market.tools.getSPX
+	 * net.ajaskey.market.tools.getRecentDate
+	 *
+	 * @return
+	 */
+	private static String getRecentDate(Calendar cal) {
+		String sdate;
+		cal.add(Calendar.MONTH, -1);
+		sdate = sdf.format(cal.getTime());
+		return sdate;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.printHelp
 	 *
 	 */
-	private static void getSPX() {
-		Calendar cal = DtsData.dtsList.get(0).getDate();
-
+	private static void printHelp() {
+		String s = "DownloadDTS program\n";
+		s += "  Options:\n";
+		s += "    Command line : java -jar DownloadDTS.jar yyyy-MMM-dd\n";
+		s += "    At prompt : Enter RECENT to download last month of data.\n";
+		s += "    At prompt : Enter yyyy-MMM-dd.\n\n";
+		s += "  Example: java -jar DownloadDTS.jar RECENT \n";
+		s += "  Example: java -jar DownloadDTS.jar 2015-Mar-10 \n";
+		s += "  Example: java -jar DownloadDTS.jar\n             (and then enter RECENT or yyyy-MMM-dd at prompt)\n";
+		System.out.println(s);
 	}
 
 	/**
@@ -152,18 +231,14 @@ public class ProcessDTS {
 		for (final File file : listOfFiles) {
 			if (file.isFile()) {
 				// System.out.println(file.getName());
-				final Path path = file.toPath();
-				//try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
 				try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsoluteFile()))) {
-
 					String line;
 					final DtsData d = new DtsData(file.getName());
 					// Utils.printCalendar(d.getDate());
 					while ((line = reader.readLine()) != null) {
-				
-					//	System.out.println(line);
 						if (line.length() > 10) {
-							if (line.contains("Withheld Income and Employment Taxes")) {
+							line = DtsData.cleanString(line, 0);
+							if (line.contains("Withheld Income and Employment Taxes   ")) {
 								d.setWith(line);
 								if (d.getDate().get(Calendar.YEAR) > lastYr) {
 									knt = 0;
@@ -179,16 +254,13 @@ public class ProcessDTS {
 								d.setUnEmp(line);
 							}
 
+							DtsData.dtsList.add(d);
 						}
 					}
-
-					DtsData.dtsList.add(d);
-
 				} catch (final IOException e) {
 					System.out.println(file.getName());
 					e.printStackTrace();
 				}
-
 			}
 		}
 
@@ -215,7 +287,7 @@ public class ProcessDTS {
 
 			List<String> resp = new ArrayList<>();
 
-			final String fname = ProcessDTS.getDateName(cal);
+			final String fname = DownloadDTS.getDateName(cal);
 
 			final String fileName = fname + ".txt";
 
