@@ -29,7 +29,6 @@
 500052    	BHANSALI ENG                                      	BSE       
 500055    	BHUSH STEEL                                       	BSE       
 500058    	BIHAR SPONGE                                      	BSE       
-500084    	CESC LTD.                                         	BSE       
 500085    	CHAMBAL FERT                                      	BSE       
 500086    	EXIDE IND.                                        	BSE       
 500087    	CIPLA LTD.                                        	BSE       
@@ -52,7 +51,7 @@
 500114    	TITAN IND.                                        	BSE       
 500116    	IDBI BANK L                                       	BSE       
 500117    	DCW LTD.                                          	BSE       
-500132    	EMPEE SUGARS                                      	BSE       
+500119    	DHAMPUR SUGA                                      	BSE       
 500133    	ESAB INDIA                                        	BSE       
 500135    	ESSEL PROP                                        	BSE       
 500136    	ESTER INDUS.                                      	BSE       
@@ -218,8 +217,8 @@
 500440    	HINDALCO                                          	BSE       
 500444    	WEST COAST                                        	BSE       
 500449    	HIND.ORG.CHM                                      	BSE       
-500450    	MPIL CORP L                                       	BSE       
 500456    	PAS.ACRYLON                                       	BSE       
+500460    	MUKAND LTD.                                       	BSE       
 500463    	AGCNET                                            	BSE       
 500464    	UCAL FUEL                                         	BSE       
 500467    	HARR.MALAYAL                                      	BSE       
@@ -275,6 +274,8 @@
 501150    	CENTRUM CAP                                       	BSE       
 501179    	OSCAR INV.                                        	BSE       
 501242    	TCI FINANCE                                       	BSE       
+501295    	INDUS.INV.TR                                      	BSE       
+501301    	TATA INVEST.                                      	BSE       
 501370    	WALCHAND PF                                       	BSE       
 501391    	W.H.BRADY                                         	BSE       
 501421    	SOLIX TECHNO                                      	BSE       
@@ -289,15 +290,12 @@
 502015    	ASSOC.STONE                                       	BSE       
 502090    	SAGAR CEM.                                        	BSE       
 502137    	DECAN CEMENT                                      	BSE       
-502150    	KALYANPUR CE                                      	BSE       
 502157    	MANGALAM CEM                                      	BSE       
 502165    	OCL INDIA                                         	BSE       
 502168    	N C L IND.                                        	BSE       
 502175    	SAURAS.CEM.                                       	BSE       
 502180    	SRI DIGV CEM                                      	BSE       
 502219    	BOROSIL GLAS                                      	BSE       
-502250    	MARATH.REFRA                                      	BSE       
-502271    	RAASI REFRAC                                      	BSE       
 502281    	TRIVENI GLAS                                      	BSE       
 502330    	ANDHRA PAPER                                      	BSE       
 502355    	BALKRISH IND                                      	BSE       
@@ -312,7 +310,6 @@
 502587    	RAMA PULP                                         	BSE       
 502589    	VAPI PAPER                                        	BSE       
 502742    	SINTEX IND.                                       	BSE       
-502820    	DCM LTD.                                          	BSE       
 502873    	H.P.COTTON                                        	BSE       
 502893    	NEEMTEK ORG                                       	BSE       
 502901    	JAMSHRI RANJ                                      	BSE       
@@ -331,6 +328,7 @@
 503229    	SIMPLEX REAL                                      	BSE       
 503310    	SWAN MILLS                                        	BSE       
 503349    	VICTORIA MIL                                      	BSE       
+503637    	RATNI INV CO                                      	BSE       
 503657    	VEER ENERGY                                       	BSE       
 503675    	AGARWAL HOLD                                      	BSE       
 503691    	SAHARA ONE                                        	BSE       
@@ -372,6 +370,7 @@
 504351    	EMPOWER                                           	BSE       
 504369    	GRANDMA TRAD                                      	BSE       
 504378    	RAVINAY TRAD                                      	BSE       
+504398    	SJ CORP LTD                                       	BSE       
 504605    	UNI ABEX                                          	BSE       
 504614    	SARDA ENMIN                                       	BSE       
 504629    	ANIL SP STEL                                      	BSE       
@@ -380,6 +379,7 @@
 504697    	GALADA TELE.                                      	BSE       
 504701    	GONTER PEIP                                       	BSE       
 504741    	IND.HUME PIP                                      	BSE       
+504810    	INFORMEDTEC                                       	BSE       
 504840    	KAIRA CAN CO                                      	BSE       
 504879    	ORIENT ABRAS                                      	BSE       
 504903    	RATHI ST                                          	BSE       
@@ -411,6 +411,7 @@
 505285    	TULIVE                                            	BSE       
 505299    	KULK-POWER                                        	BSE       
 505302    	LAXMI AUTOLM                                      	BSE       
+505320    	LYNX MACH.                                        	BSE       
 505324    	MANUGRAPH IN                                      	BSE       
 505343    	MONOTYPE IND                                      	BSE       
 505355    	NESCO LTD                                         	BSE       
@@ -433,12 +434,10 @@
 505688    	BHARAT GEARS                                      	BSE       
 505690    	BRADY MORRIS                                      	BSE       
 505700    	ELECON ENG                                        	BSE       
-505703    	DECCAN BEAR.                                      	BSE       
 505711    	GAJRA BEVEL                                       	BSE       
 505712    	GUJ.AUTO GE                                       	BSE       
 505714    	GABRIEL(I)                                        	BSE       
 505720    	HERC.HOISTS                                       	BSE       
-505725    	HIND.EVEREST                                      	BSE       
 505726    	IFB IND.LTD.                                      	BSE       
 505729    	SINGER INDIA                                      	BSE       
 505737    	INTER.COMBUS                                      	BSE       
@@ -459,7 +458,6 @@
 506016    	JRIIIL                                            	BSE       
 506022    	PRAKASH IND.                                      	BSE       
 506027    	BHORUKA ALU.                                      	BSE       
-506041    	MAHESH.AGR.                                       	BSE       
 506074    	ARSHYIA INTL                                      	BSE       
 506076    	GRIND NORTON                                      	BSE       
 506079    	LAKSHMI PREC                                      	BSE       
@@ -497,7 +495,6 @@
 506525    	KANORIA CHEM                                      	BSE       
 506528    	KELTECH EN.                                       	BSE       
 506532    	NITTA GELA                                        	BSE       
-506543    	M.P.AGRO IND                                      	BSE       
 506579    	ORIENT.CARB.                                      	BSE       
 506590    	PHIL.CARBON                                       	BSE       
 506597    	AMAL PRODUCT                                      	BSE       
@@ -545,10 +542,10 @@
 507488    	G.M.BREWERI                                       	BSE       
 507490    	RANA SUGARS                                       	BSE       
 507498    	PICCADILY SU                                      	BSE       
-507506    	GIRDHAR. SUG                                      	BSE       
 507508    	RIGA SUGAR                                        	BSE       
 507514    	SOM DISTILL.                                      	BSE       
 507515    	CJ GELATIN                                        	BSE       
+507522    	MOUNTT SHIV.                                      	BSE       
 507525    	AMRIT CORP                                        	BSE       
 507526    	ASSO.ALCOHOL                                      	BSE       
 507580    	IVP LTD                                           	BSE       
@@ -595,6 +592,7 @@
 508306    	LEDO TEA CO                                       	BSE       
 508486    	HAWKINS COOK                                      	BSE       
 508494    	WARREN TEA                                        	BSE       
+508571    	COCHIN MALA                                       	BSE       
 508664    	BEST E.HOTEL                                      	BSE       
 508670    	NEELAMALAI                                        	BSE       
 508807    	IST LTD.                                          	BSE       
@@ -602,12 +600,12 @@
 508860    	DIAMANT                                           	BSE       
 508869    	APOLLO HOSP.                                      	BSE       
 508875    	NITIN ALLOY                                       	BSE       
+508900    	ZEN CAPITAL                                       	BSE       
 508905    	SMIFS CAPITA                                      	BSE       
 508906    	EVEREST INDS                                      	BSE       
 508918    	GREYCELLS                                         	BSE       
 508922    	REMIDI IPL                                        	BSE       
 508933    	WELSPUN SYNT                                      	BSE       
-508939    	BLUE CIRCLE                                       	BSE       
 508941    	PANASON CAR                                       	BSE       
 508954    	SANJAY LEAS                                       	BSE       
 508956    	HB LEAS.PUB                                       	BSE       
@@ -616,7 +614,6 @@
 508996    	SATPROP LTD                                       	BSE       
 508998    	STERL INTER                                       	BSE       
 509009    	AUSOM ENT                                         	BSE       
-509015    	THAKRAL SER                                       	BSE       
 509020    	RUCHI INFRA.                                      	BSE       
 509026    	ARTHEON                                           	BSE       
 509040    	NETLINK SOLU                                      	BSE       
@@ -628,6 +625,7 @@
 509073    	HATHWAY BHAW                                      	BSE       
 509077    	NUCENT FIN.                                       	BSE       
 509079    	GUFIC BIO SC                                      	BSE       
+509084    	PHOTON CAP                                        	BSE       
 509148    	GOVIND RUBB.                                      	BSE       
 509152    	GUJ.RECLAIM                                       	BSE       
 509162    	INDAG RUBBER                                      	BSE       
@@ -676,24 +674,23 @@
 511116    	QUADRANT                                          	BSE       
 511122    	FIRST CUSTO.                                      	BSE       
 511131    	KAMAN HSG                                         	BSE       
-511138    	KOTHARIFIN                                        	BSE       
 511144    	SAYA HSG.FIN                                      	BSE       
 511147    	WALL ST.FIN.                                      	BSE       
 511153    	RAASI ENT                                         	BSE       
-511176    	PARSHWANA                                         	BSE       
 511187    	MAHAMAYA INV                                      	BSE       
 511196    	CANFIN HOMES                                      	BSE       
+511218    	SHRIRAM TRAN                                      	BSE       
 511243    	CHOLAFIN                                          	BSE       
 511276    	MEFCOM AGRO                                       	BSE       
 511288    	GRUH FINANCE                                      	BSE       
 511333    	VLS FINANCE                                       	BSE       
 511355    	IND CEM CAP                                       	BSE       
 511359    	AD-MANUM FIN                                      	BSE       
+511367    	MEGLON                                            	BSE       
 511377    	MEHTA I.FIN                                       	BSE       
 511389    	VIDEOCON IND                                      	BSE       
 511391    	INTER GLOB F                                      	BSE       
 511393    	DHANDAPANI F                                      	BSE       
-511395    	BALA TEC GL                                       	BSE       
 511401    	MUNOTH INVES                                      	BSE       
 511411    	SHRISTINFRA                                       	BSE       
 511413    	SHARYANS RES                                      	BSE       
@@ -708,6 +705,7 @@
 511523    	NIYATI IND..                                      	BSE       
 511525    	PAN INDIA C                                       	BSE       
 511533    	SAHARA HOUSG                                      	BSE       
+511535    	NDA SECURIT.                                      	BSE       
 511539    	VIJAY GROWTH                                      	BSE       
 511543    	GSB FINANCE                                       	BSE       
 511549    	MORARKA FIN.                                      	BSE       
@@ -739,11 +737,9 @@
 511688    	MATHEW EASOW                                      	BSE       
 511690    	WARNER MULTI                                      	BSE       
 511692    	AJCON GLOBAL                                      	BSE       
-511696    	CHARTERED CA                                      	BSE       
 511698    	BHAGYASHREE                                       	BSE       
 511700    	STD.CAP.MRKT                                      	BSE       
 511702    	PARSHARTI IN                                      	BSE       
-511706    	ACTION FIN.                                       	BSE       
 511710    	CUBICAL FIN.                                      	BSE       
 511712    	RELIC TECHNO                                      	BSE       
 511714    	NIMBSPROJ                                         	BSE       
@@ -761,12 +757,11 @@
 511754    	SHALIB.FINAN                                      	BSE       
 511756    	ABIRAMI FIN.                                      	BSE       
 511758    	MANSI FINANC                                      	BSE       
-511760    	KOSIAN INDUS                                      	BSE       
 511764    	UPASANA FIN.                                      	BSE       
 511766    	MUTHOOT CAP                                       	BSE       
 511768    	MASTER TRUST                                      	BSE       
+512008    	AMANI TRAD                                        	BSE       
 512018    	CNI RES LTD                                       	BSE       
-512047    	NATRAJ FIN                                        	BSE       
 512048    	SMIL                                              	BSE       
 512068    	DECCANGOLD                                        	BSE       
 512070    	UNITED PHOSH                                      	BSE       
@@ -782,10 +777,10 @@
 512169    	CAPRICORN                                         	BSE       
 512175    	VAMA INDS                                         	BSE       
 512179    	SUNTECK REAL                                      	BSE       
+512197    	SILVEROAK                                         	BSE       
 512215    	VORA CONST.                                       	BSE       
 512217    	WOOLITE MERC                                      	BSE       
 512229    	VERITAS                                           	BSE       
-512233    	JAYBHARA TEX                                      	BSE       
 512237    	JAI CORP LTD                                      	BSE       
 512247    	ASHIRWAD CAP                                      	BSE       
 512257    	SVARTCORP                                         	BSE       
@@ -802,10 +797,8 @@
 512359    	ROTAM COMM.                                       	BSE       
 512369    	ENNORE COKE                                       	BSE       
 512379    	CRESSANDA SO                                      	BSE       
-512381    	NIVEDITA MER                                      	BSE       
 512393    	SHARDUL SECU                                      	BSE       
 512405    	I-POWER SOLS                                      	BSE       
-512413    	SPECTACLE                                         	BSE       
 512417    	SHARP TRAD                                        	BSE       
 512425    	NIRAV COMMER                                      	BSE       
 512437    	APOLLO FIN I                                      	BSE       
@@ -815,6 +808,7 @@
 512463    	SHREE GLOBAL                                      	BSE       
 512477    	BETEX INDIA                                       	BSE       
 512481    	POLYTEX(P)                                        	BSE       
+512485    	DHANAL.COTEX                                      	BSE       
 512489    	OASIS SECUR.                                      	BSE       
 512493    	GARNET INTL                                       	BSE       
 512499    	SHALIMAR PRO                                      	BSE       
@@ -859,7 +853,6 @@
 513250    	JYOTI STRUCT                                      	BSE       
 513252    	JAY USHIN                                         	BSE       
 513262    	ST.STR.WHEEL                                      	BSE       
-513265    	MUKESH STEEL                                      	BSE       
 513269    	MAN IND.(I)                                       	BSE       
 513295    	RUCHI STR AL                                      	BSE       
 513303    	MODERN STEEL                                      	BSE       
@@ -873,11 +866,13 @@
 513361    	ISW LTD                                           	BSE       
 513369    	RAJKUMAR FRG                                      	BSE       
 513375    	CARBORUNDUM                                       	BSE       
+513397    	VALLABH STEL                                      	BSE       
 513401    	ASHIANA ISP.                                      	BSE       
 513403    	PM TELELINN                                       	BSE       
 513405    	PENNAR ALUM.                                      	BSE       
 513414    	SUJANA METAL                                      	BSE       
 513418    	SHIMOGA TECH                                      	BSE       
+513422    	BLOOM INDUST                                      	BSE       
 513428    	TRINETRA                                          	BSE       
 513430    	PARTH ALUM.                                       	BSE       
 513434    	TATA METALIK                                      	BSE       
@@ -899,9 +894,7 @@
 513532    	PRADEEP MET.                                      	BSE       
 513534    	VARDHMAN IND                                      	BSE       
 513536    	GNRL                                              	BSE       
-513544    	MARDIA SAMYG                                      	BSE       
 513554    	MAHA STEEL                                        	BSE       
-513558    	REAL STRIPS                                       	BSE       
 513597    	SURANA INDS                                       	BSE       
 513599    	HIND.COPPER                                       	BSE       
 513605    	LANCO INDUS.                                      	BSE       
@@ -911,7 +904,6 @@
 513683    	NEYVELI LIGN                                      	BSE       
 513687    	SPECTRA IND.                                      	BSE       
 513691    	JMT AUTO LTD                                      	BSE       
-513693    	KIC METALIKS                                      	BSE       
 513699    	SOLID STONE                                       	BSE       
 513709    	SHILP GRAVUR                                      	BSE       
 513713    	WHITE DIAMON                                      	BSE       
@@ -940,6 +932,7 @@
 514171    	CEETA IND.                                        	BSE       
 514175    	VARDHMAN POL                                      	BSE       
 514183    	BLA ROS IND                                       	BSE       
+514199    	BALA TEC IND                                      	BSE       
 514211    	SUMEET INDS.                                      	BSE       
 514215    	BINNY LTD.                                        	BSE       
 514221    	KLIFESTYLE                                        	BSE       
@@ -958,6 +951,7 @@
 514324    	OMNITEX IND.                                      	BSE       
 514326    	PATSPIN INDI                                      	BSE       
 514332    	ANUVIN INDUS                                      	BSE       
+514336    	FINE PLAST                                        	BSE       
 514348    	WINSOME YARN                                      	BSE       
 514354    	PREMIER POLY                                      	BSE       
 514358    	EVERLON SYN.                                      	BSE       
@@ -995,7 +989,6 @@
 516020    	AGIO PAPER                                        	BSE       
 516022    	STAR PAPER                                        	BSE       
 516030    	YASH PAPERS                                       	BSE       
-516032    	SARDA PAPERS                                      	BSE       
 516064    	ARROW COATED                                      	BSE       
 516072    	VISHNU CHEM                                       	BSE       
 516078    	JUMBO BAG                                         	BSE       
@@ -1036,7 +1029,6 @@
 517288    	GUJ.POLY-AVX                                      	BSE       
 517296    	HALONIX                                           	BSE       
 517300    	GUJ.IND.POW.                                      	BSE       
-517320    	SAV INFOCOM                                       	BSE       
 517330    	CMI LTD.                                          	BSE       
 517334    	MOTHERSON SS                                      	BSE       
 517344    	MINDTECK (I)                                      	BSE       
@@ -1044,7 +1036,6 @@
 517356    	ACI INFOCOM                                       	BSE       
 517370    	INCAP LTD.                                        	BSE       
 517372    	GUJ.INTRUX                                        	BSE       
-517374    	MUKESH STRIP                                      	BSE       
 517380    	IGARSHI MOT                                       	BSE       
 517385    	SYMPHONY                                          	BSE       
 517393    	VINTRON INF.                                      	BSE       
@@ -1055,7 +1046,6 @@
 517417    	PATEL AIRTEM                                      	BSE       
 517421    	GANDHIM.APPL                                      	BSE       
 517429    	VJIL CONSULT                                      	BSE       
-517433    	INNOV.SOFTW.                                      	BSE       
 517437    	DUTRON POLY.                                      	BSE       
 517447    	R.S.SOFTWARE                                      	BSE       
 517449    	MAGNA ELECTR                                      	BSE       
@@ -1097,12 +1087,10 @@
 519136    	NAHAR INDUST                                      	BSE       
 519152    	VADILAL ENT                                       	BSE       
 519156    	VADILAL IND                                       	BSE       
-519174    	ASHIANA AGRO                                      	BSE       
 519183    	ADF FOODS LT                                      	BSE       
 519214    	WILLIAM.FIN.                                      	BSE       
 519216    	AJANTA SOYA                                       	BSE       
 519224    	WILLIAM.MAGO                                      	BSE       
-519230    	RICHIRICH                                         	BSE       
 519238    	SAPTARISHI A                                      	BSE       
 519248    	JVL AGRO                                          	BSE       
 519260    	SANWARIA AGR                                      	BSE       
@@ -1113,12 +1101,11 @@
 519287    	MODERN DAIRI                                      	BSE       
 519295    	BAMBINO AGRO                                      	BSE       
 519307    	VIKAS WSP                                         	BSE       
-519323    	MURLI INDU                                        	BSE       
+519331    	VSF PROJ                                          	BSE       
 519359    	POONA DAL                                         	BSE       
 519373    	VIMAL OIL FD                                      	BSE       
 519383    	ANIK INDS                                         	BSE       
 519421    	KSE LIMITED                                       	BSE       
-519439    	PIONEER AGRO                                      	BSE       
 519455    	NARBADA                                           	BSE       
 519457    	VIRAT CRANE                                       	BSE       
 519463    	IB INFOTECH                                       	BSE       
@@ -1134,6 +1121,7 @@
 519560    	NEHA INTER.                                       	BSE       
 519566    	SIMRAN FARMS                                      	BSE       
 519570    	LAKSHMI OVER                                      	BSE       
+519586    	WYN AQUA EXP                                      	BSE       
 519588    	DFM FOODS                                         	BSE       
 519600    	CCL PRODUCTS                                      	BSE       
 519602    	VMF SOFTEC                                        	BSE       
@@ -1167,12 +1155,10 @@
 521014    	EUROTEX IND                                       	BSE       
 521016    	INDO COUNT                                        	BSE       
 521018    	MARAL OVERS                                       	BSE       
-521022    	SURYAJYOTI S                                      	BSE       
 521030    	NAKODA                                            	BSE       
 521034    	SOMA TEXTILE                                      	BSE       
 521036    	TIRUMALA SEU                                      	BSE       
 521038    	TAM.JAI.MILL                                      	BSE       
-521048    	ADV LIFESTY                                       	BSE       
 521054    	KAKATIYA TEX                                      	BSE       
 521062    	OCTAVE                                            	BSE       
 521064    	TRIDENT                                           	BSE       
@@ -1194,7 +1180,6 @@
 521176    	GANGOTRI TEX                                      	BSE       
 521178    	SRI RAMK.MIL                                      	BSE       
 521180    	SUPER SPIN.                                       	BSE       
-521182    	SEASONS FUR.                                      	BSE       
 521188    	UNITED TEXT.                                      	BSE       
 521194    	SIL INVEST                                        	BSE       
 521200    	SURYLAK.COTT                                      	BSE       
@@ -1210,6 +1195,7 @@
 521238    	SEQUEL E-ROU                                      	BSE       
 521240    	SAMBANDAM SP                                      	BSE       
 521242    	KANDAGIRI SP                                      	BSE       
+521244    	CHITRA.SPIN.                                      	BSE       
 521246    	PARAS PETRO                                       	BSE       
 521248    	KITEX GARMEN                                      	BSE       
 522001    	CRANEX LTD.                                       	BSE       
@@ -1255,6 +1241,9 @@
 522261    	DOLPHIN OFF.                                      	BSE       
 522263    	JMC PROJECTS                                      	BSE       
 522267    	VEEJAY LAKSH                                      	BSE       
+522273    	AHMED.STEEL                                       	BSE       
+522287    	KALPA.POWER                                       	BSE       
+522292    	CHANDNI TE                                        	BSE       
 522295    	CONTROL PRNT                                      	BSE       
 522650    	BEMCO HYDRAU                                      	BSE       
 523007    	ANSAL BUILD.                                      	BSE       
@@ -1265,7 +1254,6 @@
 523025    	SAFARI IND.                                       	BSE       
 523054    	BIN.TEX.PR(P                                      	BSE       
 523100    	COSMO FERR.                                       	BSE       
-523113    	FUTURA SEC.                                       	BSE       
 523116    	SANCO TRANS                                       	BSE       
 523120    	ADOR MULTI.                                       	BSE       
 523127    	EIH ASSO.HOT                                      	BSE       
@@ -1273,11 +1261,10 @@
 523160    	MORGAN CRU                                        	BSE       
 523204    	ABAN OFFSHO                                       	BSE       
 523207    	CAMLIN LTD.                                       	BSE       
-523209    	NICCO UCO AL                                      	BSE       
 523218    	KILBURN OFFI                                      	BSE       
 523221    	MCS LTD                                           	BSE       
 523229    	BHARAT SEATS                                      	BSE       
-523242    	NB FOOT WEAR                                      	BSE       
+523232    	CONT.PETRO                                        	BSE       
 523248    	MACHINO PLAS                                      	BSE       
 523260    	PEARL POLYME                                      	BSE       
 523261    	VENKEY'S (I)                                      	BSE       
@@ -1318,6 +1305,10 @@
 523539    	PRECISION WR                                      	BSE       
 523550    	KRYPTON IND                                       	BSE       
 523558    	NETWORK LTD.                                      	BSE       
+523566    	MARTIN BURN                                       	BSE       
+523574    	PANTALOON RE                                      	BSE       
+523586    	IND.TONERS                                        	BSE       
+523594    	KUNSTSTOFFE                                       	BSE       
 523598    	SHIPP.CORPN                                       	BSE       
 523606    	SIKA INTER.                                       	BSE       
 523610    	ITI LTD.                                          	BSE       
@@ -1329,7 +1320,6 @@
 523642    	PI INDUS.LTD                                      	BSE       
 523648    	PLASTIBLEND                                       	BSE       
 523650    	REDEX PROTEC                                      	BSE       
-523652    	KAL PLASTIK                                       	BSE       
 523660    	WATERBASE                                         	BSE       
 523672    	FLEX FOODS                                        	BSE       
 523676    	GOLKUNDA DIA                                      	BSE       
@@ -1359,18 +1349,17 @@
 523838    	SIMPLX INFRA                                      	BSE       
 523840    	INN.TECH.PAC                                      	BSE       
 523842    	SUPER TANNER                                      	BSE       
-523844    	INVICTA MED                                       	BSE       
-523846    	SKYPAK SERV.                                      	BSE       
 523850    	AXTEL INDUS.                                      	BSE       
 523862    	DHOOT INDUST                                      	BSE       
+523872    	MAGNA IND.                                        	BSE       
 523874    	PRECI CONTNR                                      	BSE       
 523876    	JYOTI OVER.                                       	BSE       
 523878    	TOTAL EXPORT                                      	BSE       
-523888    	V.R. WOODART                                      	BSE       
 523890    	DS.KULKARNI                                       	BSE       
 524000    	MAGMA FIN                                         	BSE       
 524013    	HIND.FLUROCA                                      	BSE       
 524019    	HYDRO S & S*                                      	BSE       
+524031    	PATIDAR                                           	BSE       
 524037    	RAMA PHOSPH                                       	BSE       
 524038    	VENLON ENTR                                       	BSE       
 524051    	POLYPLEX                                          	BSE       
@@ -1382,7 +1371,6 @@
 524109    	KABRA EXTR                                        	BSE       
 524129    	VINYL CHEM                                        	BSE       
 524136    	PEE CEE COSM                                      	BSE       
-524156    	T C M LTD.                                        	BSE       
 524164    	IOL CHEM PH                                       	BSE       
 524200    	VINATI ORG.                                       	BSE       
 524202    	LACTOSE(I)                                        	BSE       
@@ -1393,7 +1381,6 @@
 524218    	RESONANCE                                         	BSE       
 524226    	GUJ AMB EXP                                       	BSE       
 524230    	RASHTR.CHEM.                                      	BSE       
-524232    	MAHA.POLYBUT                                      	BSE       
 524264    	UNIMER INDIA                                      	BSE       
 524280    	KOPRAN LTD.                                       	BSE       
 524288    	AIMCO PESTI.                                      	BSE       
@@ -1442,16 +1429,15 @@
 524610    	RATHI GRAPH.                                      	BSE       
 524614    	INDIAN EXTR.                                      	BSE       
 524622    	PRINCIP.PHAR                                      	BSE       
-524624    	GAGAN GASES                                       	BSE       
 524628    	PARKER AGRO.                                      	BSE       
 524632    	RELISH PHAR.                                      	BSE       
 524634    	ALU FLUORIDE                                      	BSE       
-524636    	S.S.ORGANICS                                      	BSE       
 524640    	SH.CHOLOCHEM                                      	BSE       
 524648    	INDO AMINES                                       	BSE       
 524652    	IND.SWIFT LT                                      	BSE       
 524654    	NATURAL CAPS                                      	BSE       
 524661    	WELCURE DRUG                                      	BSE       
+524667    	SOTL                                              	BSE       
 524669    	HESTER BISC                                       	BSE       
 524687    	BASANT AGRO                                       	BSE       
 524689    	PARENT.DRUGS                                      	BSE       
@@ -1465,7 +1451,6 @@
 524731    	JENBURKT PH.                                      	BSE       
 524735    	HIKAL LTD.                                        	BSE       
 524742    	CAPLIN POINT                                      	BSE       
-524743    	FISCHER                                           	BSE       
 524748    	LINK PHARMA                                       	BSE       
 524752    	COMBAT DRUGS                                      	BSE       
 524754    	GUJ.MEDITECH                                      	BSE       
@@ -1486,6 +1471,7 @@
 526025    	GLOBUS CON                                        	BSE       
 526027    	CUBEX TUBING                                      	BSE       
 526043    	POLYMECH.MCH                                      	BSE       
+526067    	KOSHA C.CONT                                      	BSE       
 526071    	SELLAIDS PUB                                      	BSE       
 526081    	SHEEL INT.                                        	BSE       
 526093    	SATVAH.ISPAT                                      	BSE       
@@ -1534,6 +1520,7 @@
 526433    	ASM TECHNOLO                                      	BSE       
 526435    	PERFECTPAC                                        	BSE       
 526441    	VISION TECH.                                      	BSE       
+526443    	DATASOFT APP                                      	BSE       
 526445    	INDRAYANI BI                                      	BSE       
 526468    	EURO LEDAR F                                      	BSE       
 526471    	WINSOME BREW                                      	BSE       
@@ -1561,7 +1548,6 @@
 526550    	COUNTRY CLUB                                      	BSE       
 526558    	JAMES HOTELS                                      	BSE       
 526568    	LONGVIEW TEA                                      	BSE       
-526570    	NOVA GRANITE                                      	BSE       
 526574    	ENTERPR.INTE                                      	BSE       
 526576    	NATH SEEDS                                        	BSE       
 526582    	TPL PLAST                                         	BSE       
@@ -1618,12 +1604,10 @@
 526827    	SPICE ISLAND                                      	BSE       
 526829    	CONFI PETRO                                       	BSE       
 526839    	SHELTER                                           	BSE       
-526843    	SEAX GLOBAL                                       	BSE       
 526847    	ASHIRWAD STL                                      	BSE       
 526849    	BANARAS BEAD                                      	BSE       
 526851    	AREX IND.                                         	BSE       
 526853    	BILCARE LTD.                                      	BSE       
-526859    	INTER ST.FIN                                      	BSE       
 526861    	RISHI LASER                                       	BSE       
 526865    	JAINCO PROJ.                                      	BSE       
 526871    	INTEC CAP                                         	BSE       
@@ -1646,6 +1630,7 @@
 526953    	VENUS REMEDI                                      	BSE       
 526957    	UV BOARDS                                         	BSE       
 526965    	GUJ.CRAFT IN                                      	BSE       
+526967    	HEERA ISPAT                                       	BSE       
 526971    	DHOOT I.FIN.                                      	BSE       
 526981    	SHRI BAJRANG                                      	BSE       
 526987    	URJA GLOBAL                                       	BSE       
@@ -1685,7 +1670,6 @@
 530129    	NILE LTD.                                         	BSE       
 530133    	AMCO INDIA L                                      	BSE       
 530135    	AKANKSH CEL                                       	BSE       
-530139    	KREON FIN                                         	BSE       
 530145    	KISAN MOULD.                                      	BSE       
 530151    	VIJAY TEXTIL                                      	BSE       
 530163    	KERALA AYUR                                       	BSE       
@@ -1715,6 +1699,7 @@
 530263    	GLOBAL CAP.                                       	BSE       
 530265    	SAINIK FIN.                                       	BSE       
 530267    	SABOO BROS.                                       	BSE       
+530271    	RICH CAPITAL                                      	BSE       
 530281    	QUANTUM DIG.                                      	BSE       
 530289    	SP CAPITAL                                        	BSE       
 530291    	RAJ AGRO MIL                                      	BSE       
@@ -1727,7 +1712,6 @@
 530331    	PREMCO GLOB.                                      	BSE       
 530341    	MUKESH BABU                                       	BSE       
 530343    	GENUS POWER                                       	BSE       
-530347    	MAGNUM LTD.                                       	BSE       
 530355    	ASIAN OILFIE                                      	BSE       
 530357    	KBS INDIA                                         	BSE       
 530363    	UGAR SUGAR                                        	BSE       
@@ -1752,7 +1736,6 @@
 530443    	KIRAN SYNTEX                                      	BSE       
 530445    	SUMERU IND                                        	BSE       
 530449    	RUNGTA IRRIG                                      	BSE       
-530457    	CINERAD COMM                                      	BSE       
 530459    	VALSON INDUS                                      	BSE       
 530461    	SABOO SODIUM                                      	BSE       
 530469    	GSL SECUR.                                        	BSE       
@@ -1769,6 +1752,7 @@
 530549    	SHILPA MEDIC                                      	BSE       
 530555    	PARAMOUNT CO                                      	BSE       
 530565    	ARCHANA SOFT                                      	BSE       
+530571    	EXPLICIT FIN                                      	BSE       
 530577    	LADDERUP FIN                                      	BSE       
 530579    	GOLDEN SECUR                                      	BSE       
 530585    	SWASTIK INV                                       	BSE       
@@ -1812,8 +1796,8 @@
 530783    	TRANS ASIAC                                       	BSE       
 530789    	CEEJAY FINAN                                      	BSE       
 530795    	SUNCITY SYNT                                      	BSE       
+530799    	ANNA INFRA                                        	BSE       
 530803    	BHAGERIA DYE                                      	BSE       
-530807    	REGA REALTY                                       	BSE       
 530809    	BNR UDYOG                                         	BSE       
 530811    	NETVISTA INF                                      	BSE       
 530813    	KRBL LTD.                                         	BSE       
@@ -1828,7 +1812,6 @@
 530859    	COSBOARD IND                                      	BSE       
 530863    	FIN.EYES(I)                                       	BSE       
 530871    	CHEMBOND CHM                                      	BSE       
-530879    	BHILWARA TEX                                      	BSE       
 530881    	CENTURY PORT                                      	BSE       
 530883    	SUPER CROP.                                       	BSE       
 530885    	AURUM SOFT                                        	BSE       
@@ -1838,8 +1821,6 @@
 530901    	ACIL                                              	BSE       
 530919    	REMSONS IND.                                      	BSE       
 530921    	INTEG.THERMO                                      	BSE       
-530923    	RCL FOODS                                         	BSE       
-530925    	RAMSONS PROJ                                      	BSE       
 530931    	STANPACKS(I)                                      	BSE       
 530943    	SRI ADHIKARI                                      	BSE       
 530945    	GANGOTRI IRO                                      	BSE       
@@ -1850,7 +1831,6 @@
 530961    	VIKAS GLO                                         	BSE       
 530965    	INDIAN OIL                                        	BSE       
 530967    	TCL TECHNOLO                                      	BSE       
-530971    	NIMBUS IND.                                       	BSE       
 530973    	ALFA ICA (I)                                      	BSE       
 530977    	KATWA UDYOG                                       	BSE       
 530979    	INDIA HOME                                        	BSE       
@@ -1858,12 +1838,9 @@
 530991    	ROOPA INDUS                                       	BSE       
 530997    	UNIQUE ORGAN                                      	BSE       
 530999    	BALAJI AMINE                                      	BSE       
-531003    	SWARNA SECUR                                      	BSE       
 531015    	VENMAX                                            	BSE       
-531017    	ARIHANT SEC.                                      	BSE       
 531025    	VISAGAR FIN                                       	BSE       
 531027    	LIBORD SEC                                        	BSE       
-531033    	REGAL ENTERT                                      	BSE       
 531041    	COMPETENT AU                                      	BSE       
 531043    	DHAN JEEVAN                                       	BSE       
 531047    	ADV POWER                                         	BSE       
@@ -1886,7 +1863,6 @@
 531126    	VIRTUALSOFT.                                      	BSE       
 531127    	ENRICH IND.                                       	BSE       
 531129    	INANI MARBLE                                      	BSE       
-531134    	LE WATERINA                                       	BSE       
 531137    	GEMSTONE INV                                      	BSE       
 531146    	MEDICAMEN BI                                      	BSE       
 531147    	ALICON                                            	BSE       
@@ -1906,7 +1882,6 @@
 531178    	BCC FINANCE                                       	BSE       
 531179    	ARMAN FIN                                         	BSE       
 531190    	A.V.COTTEX                                        	BSE       
-531192    	ASSOC.FINLEA                                      	BSE       
 531196    	GAGAN POLYCO                                      	BSE       
 531198    	VEDANT HOTEL                                      	BSE       
 531199    	GLANCE FIN.                                       	BSE       
@@ -1919,11 +1894,11 @@
 531215    	RTS POWER CO                                      	BSE       
 531216    	COMFORT INTE                                      	BSE       
 531217    	WEST.(I)SHIP                                      	BSE       
-531219    	POONAM CORPN                                      	BSE       
 531223    	ANJANI SYNT.                                      	BSE       
 531225    	FRONTIER INF                                      	BSE       
 531233    	RASI ELECTRO                                      	BSE       
 531236    	MEWAR POLYTX                                      	BSE       
+531246    	PRIMA IND.                                        	BSE       
 531252    	FARRY IND.                                        	BSE       
 531253    	INDIA GELAT.                                      	BSE       
 531254    	TRANSPEK FIN                                      	BSE       
@@ -1932,23 +1907,19 @@
 531266    	VST TILLERS                                       	BSE       
 531268    	B2B SOFT.                                         	BSE       
 531270    	DAZZEL CONFI                                      	BSE       
-531272    	NIKKI GLOBAL                                      	BSE       
 531273    	RADHE DEVLOP                                      	BSE       
 531278    	AXIS CAPITAL                                      	BSE       
 531279    	TRISHAKTI EL                                      	BSE       
 531280    	PANKAJ POLY.                                      	BSE       
-531281    	P.G.IND.LTD.                                      	BSE       
-531283    	CINDRELLA FI                                      	BSE       
 531287    	NAT PLASTIC                                       	BSE       
-531288    	LEAD FINANC                                       	BSE       
 531289    	INTERFIT TEC                                      	BSE       
 531297    	ARTEFACT PR                                       	BSE       
 531300    	AMIT INTNL.                                       	BSE       
 531301    	HIGH STREET                                       	BSE       
+531304    	NUTECH GLOBA                                      	BSE       
 531306    	DHP INDIA LT                                      	BSE       
 531307    	SRK INDUS                                         	BSE       
 531310    	AVAILABLE FI                                      	BSE       
-531314    	INTEGRA CAP.                                      	BSE       
 531319    	MARUTI SEC.                                       	BSE       
 531323    	SANTARAM SPN                                      	BSE       
 531324    	ROSELABS FIN                                      	BSE       
@@ -1957,16 +1928,14 @@
 531335    	ZYDUS WELL                                        	BSE       
 531336    	AUROMA COKE                                       	BSE       
 531337    	CHANNEL GUID                                      	BSE       
-531338    	MILE GLOBAL                                       	BSE       
 531339    	JAIHIND PROJ                                      	BSE       
-531340    	BERVIN INV.                                       	BSE       
 531341    	GUJ.INVESTA                                       	BSE       
 531344    	CONTAIN.CORP                                      	BSE       
 531346    	EASTERN TRED                                      	BSE       
 531349    	PANACEA BIOT                                      	BSE       
-531352    	PEETI SECURT                                      	BSE       
 531358    	CHOICE INT.                                       	BSE       
 531359    	SHRIRAM ASSE                                      	BSE       
+531360    	GOLECHA GLOB                                      	BSE       
 531363    	KARUR KCP PK                                      	BSE       
 531364    	ZENU INFOTEC                                      	BSE       
 531367    	DOLLEX IND.                                       	BSE       
@@ -1976,13 +1945,12 @@
 531381    	ARIHANT FOUN                                      	BSE       
 531387    	HASTI FINANC                                      	BSE       
 531390    	UPSURGE INV.                                      	BSE       
-531395    	PADAM COTTON                                      	BSE       
 531396    	WOMEN NETWOR                                      	BSE       
 531397    	POLYCON INT.                                      	BSE       
 531398    	INWINEX PH                                        	BSE       
 531400    	ALMONDZ GLO                                       	BSE       
+531402    	LWS KNITWEAR                                      	BSE       
 531404    	ZICOM ELECTR                                      	BSE       
-531406    	ANS LTD                                           	BSE       
 531409    	ALCH CORP                                         	BSE       
 531410    	GUJ.FOILS                                         	BSE       
 531411    	TUNI TEXTILE                                      	BSE       
@@ -2007,11 +1975,9 @@
 531454    	POLYLINK POL                                      	BSE       
 531456    	MINAXI TEXT.                                      	BSE       
 531460    	CONTI.CONTRL                                      	BSE       
-531465    	NOUVEAU MUL.                                      	BSE       
 531467    	POLYPRO FIB.                                      	BSE       
 531471    	DUKE OFFSHOR                                      	BSE       
 531472    	CYBELE IND                                        	BSE       
-531479    	GLOBAL LAND                                       	BSE       
 531486    	FILMCITY MED                                      	BSE       
 531489    	CG-VAK SOFTW                                      	BSE       
 531494    	NAVKAR BUILD                                      	BSE       
@@ -2042,13 +2008,11 @@
 531552    	RAGHUNATH TO                                      	BSE       
 531556    	CORAL (I)FIN                                      	BSE       
 531557    	AMIT SECUR.                                       	BSE       
-531560    	AROMA ENT                                         	BSE       
 531565    	INDO-PACIFIC                                      	BSE       
 531568    	ASHUTOSH PAP                                      	BSE       
 531569    	SANJIVANI PA                                      	BSE       
 531574    	VAS INFRA                                         	BSE       
 531578    	KMF BUILDERS                                      	BSE       
-531581    	ALKA DIAMOND                                      	BSE       
 531582    	BERYL SECUR.                                      	BSE       
 531583    	RAP MEDIA                                         	BSE       
 531585    	DEVINE IMPE                                       	BSE       
@@ -2070,11 +2034,12 @@
 531624    	COUNTRY COND                                      	BSE       
 531626    	SILVER SMITH                                      	BSE       
 531633    	LINCOLN PHAR                                      	BSE       
+531635    	SILVER OAK                                        	BSE       
 531638    	SURAJ STAINL                                      	BSE       
 531642    	MARICOLTD                                         	BSE       
 531644    	TOKYO FINANC                                      	BSE       
-531648    	CROITRE                                           	BSE       
 531650    	VAX HSG.FIN.                                      	BSE       
+531651    	NATIONAL GEN                                      	BSE       
 531658    	TRIJAL IND.                                       	BSE       
 531661    	HITTCO TOOLS                                      	BSE       
 531663    	INTENSIV AIR                                      	BSE       
@@ -2096,7 +2061,6 @@
 531703    	TRIBHUVAN HS                                      	BSE       
 531712    	RABHA PLASTI                                      	BSE       
 531713    	BLUECHIP STO                                      	BSE       
-531716    	TRICOMFRU                                         	BSE       
 531717    	VIDHI DYESTU                                      	BSE       
 531719    	BHAGIRA.CHEM                                      	BSE       
 531723    	BRILLIANT SE                                      	BSE       
@@ -2114,6 +2078,7 @@
 531762    	UNJHA FORMUL                                      	BSE       
 531768    	POLY MEDICUR                                      	BSE       
 531769    	PFL INFOTECH                                      	BSE       
+531775    	CISTRO TELE.                                      	BSE       
 531778    	KACHCHHMIN                                        	BSE       
 531780    	KAISER PRESS                                      	BSE       
 531781    	SURYADEEP SA                                      	BSE       
@@ -2141,11 +2106,13 @@
 531862    	BHARAT FERTI                                      	BSE       
 531867    	UNITECH INTE                                      	BSE       
 531869    	SACHETA MET.                                      	BSE       
+531870    	POPULAR EST                                       	BSE       
 531878    	ANJANI FINL                                       	BSE       
 531879    	PIONEER DIS.                                      	BSE       
 531881    	GMETCOAL                                          	BSE       
 531882    	KWALITY DAIR                                      	BSE       
 531888    	REXNORD ELE.                                      	BSE       
+531889    	INTEG.TECH.                                       	BSE       
 531892    	KHANDWALA SE                                      	BSE       
 531893    	SAWACA BUSI                                       	BSE       
 531898    	SANGUINE MD                                       	BSE       
@@ -2153,10 +2120,8 @@
 531904    	GLOBUS CORP                                       	BSE       
 531909    	SWAGRUHA                                          	BSE       
 531910    	TOHEAL PHARM                                      	BSE       
-531911    	GALAXY AGRIC                                      	BSE       
 531913    	GOPAL IRON S                                      	BSE       
 531917    	TWINSTAR SOF                                      	BSE       
-531919    	MUDIT FINLEA                                      	BSE       
 531921    	AGAR IND COR                                      	BSE       
 531923    	DHAMPURE SGR                                      	BSE       
 531928    	GOLDEN CARPE                                      	BSE       
@@ -2174,7 +2139,6 @@
 531978    	AMBIKA COTTO                                      	BSE       
 531979    	HIND ALUMIN                                       	BSE       
 531982    	SPECTR FOOD                                       	BSE       
-531989    	DECCAN POLYP                                      	BSE       
 531991    	AMRAWOR AGRI                                      	BSE       
 531996    	ODYSSEY CORP                                      	BSE       
 532001    	INDUCTO STL.                                      	BSE       
@@ -2299,7 +2263,6 @@
 532357    	MUKTA ARTS                                        	BSE       
 532359    	HITKIT GLOB                                       	BSE       
 532362    	NAGPUR POWER                                      	BSE       
-532364    	CYBERSCAPE M                                      	BSE       
 532365    	DYNACONS SYS                                      	BSE       
 532366    	PNB GILTS                                         	BSE       
 532367    	KANIKA INFO.                                      	BSE       
@@ -2616,7 +2579,6 @@
 532873    	HOUSING DEV                                       	BSE       
 532874    	SURYACHAKRA                                       	BSE       
 532875    	ALLIED DIGIT                                      	BSE       
-532876    	EVERONN                                           	BSE       
 532877    	SIMPLEX PROJ                                      	BSE       
 532878    	ALPA LAB                                          	BSE       
 532879    	SIR SHADI LA                                      	BSE       
@@ -2736,9 +2698,7 @@
 533088    	MAH HOLIDAY                                       	BSE       
 533090    	EXCEL INFO                                        	BSE       
 533093    	RAJ OIL                                           	BSE       
-533096    	ADANI POWER                                       	BSE       
 533098    	NHPC                                              	BSE       
-533100    	PREMIER ENER                                      	BSE       
 533101    	SURYAMBA SP                                       	BSE       
 533103    	JINDALCOTEX                                       	BSE       
 533104    	GLOBUS SPR                                        	BSE       
@@ -2797,6 +2757,7 @@
 533216    	TECHNOFAB                                         	BSE       
 533217    	HMVL                                              	BSE       
 533218    	EMAMI INFRA                                       	BSE       
+533219    	ASTERSILI                                         	BSE       
 533221    	ASIAN HTL W                                       	BSE       
 533227    	ASIAN HTL E                                       	BSE       
 533228    	SKS MICRO                                         	BSE       
@@ -2864,6 +2825,7 @@
 533389    	SHILPI CABLE                                      	BSE       
 533393    	TCI DEVELP                                        	BSE       
 533398    	MUTHOOT FIN                                       	BSE       
+533399    	PARAMOUNT PR                                      	BSE       
 533400    	FUTURE VENT                                       	BSE       
 533401    	SERVALAKSHMI                                      	BSE       
 533407    	CIL NOVA                                          	BSE       
@@ -2881,6 +2843,7 @@
 533520    	INDBULL WSL                                       	BSE       
 533525    	RELIGAR TEC                                       	BSE       
 533540    	TREE HOUSE                                        	BSE       
+533543    	BROOKS LABS                                       	BSE       
 533553    	TD POWER                                          	BSE       
 533569    	SRS LIMITED                                       	BSE       
 533570    	AXISGOLD                                          	BSE       
@@ -2901,14 +2864,11 @@
 533758    	APL APOLLO                                        	BSE       
 533761    	GPT INFRA                                         	BSE       
 533790    	KGN ENT                                           	BSE       
-533888    	REL BANK ETF                                      	BSE       
-533891    	REL GOLD ETF                                      	BSE       
 533896    	FERVENTSL                                         	BSE       
 533941    	TSIL                                              	BSE       
 533982    	TERASOFTWARE                                      	BSE       
 534060    	PRITI MERC                                        	BSE       
 534063    	FUT SOL                                           	BSE       
-534064    	AIML                                              	BSE       
 534076    	ORIENT REF                                        	BSE       
 534091    	MCX LTD                                           	BSE       
 534139    	SCHNEIDER                                         	BSE       
@@ -2976,7 +2936,6 @@
 590078    	MAITHAN ALL                                       	BSE       
 590080    	EASTERN GAS                                       	BSE       
 590081    	BRAHMANAND                                        	BSE       
-590082    	LOHIA SECURI                                      	BSE       
 590083    	MAVENS BIO                                        	BSE       
 590084    	KANCO ENTER                                       	BSE       
 590086    	ORISSA MINE                                       	BSE       
@@ -2996,7 +2955,6 @@
 590106    	BANK BEES                                         	BSE       
 590107    	KOTAK PSU BK                                      	BSE       
 590108    	PSUBNK BEES                                       	BSE       
-590109    	SHARIA BEES                                       	BSE       
 590110    	QUANTUM INDX                                      	BSE       
 590111    	VAISHNAVI                                         	BSE       
 590113    	HNGSNG BEES                                       	BSE       
@@ -3005,7 +2963,6 @@
 590122    	ASHIKACR                                          	BSE       
 590124    	RUNEECHA                                          	BSE       
 590126    	GRADIENTE                                         	BSE       
-600300    	GRASIMSL                                          	BSE       
 632218    	SOUTH IND.BK                                      	BSE       
 700085    	JSW 10% CRP                                       	BSE       
 700087    	MUKUND CRPS                                       	BSE       
@@ -3013,9 +2970,6 @@
 934783    	LTFINNCDIII                                       	BSE       
 934784    	LTFINNCDIV                                        	BSE       
 934796    	STF NCD2 RE                                       	BSE       
-934797    	STF NCD2 UR                                       	BSE       
-934802    	STF NCD4 RE                                       	BSE       
-934804    	STF NCD4 OT                                       	BSE       
 934805    	STF NCD5 RE                                       	BSE       
 934843    	1325MFL17                                         	BSE       
 934844    	0MFL17                                            	BSE       
@@ -3030,6 +2984,9 @@
 961695    	IDFC BOND2                                        	BSE       
 961696    	IDFC BOND3                                        	BSE       
 961703    	SBIBIVR                                           	BSE       
+961704    	SBIBIVNR                                          	BSE       
+961715    	PFCBT1S1                                          	BSE       
+961716    	PFCBT1S2                                          	BSE       
 961725    	MFINNCD2C                                         	BSE       
 961726    	MFINNCD2D                                         	BSE       
 961727    	820NHAI22                                         	BSE       
@@ -3043,6 +3000,8 @@
 961743    	793REC22                                          	BSE       
 961744    	821REC27                                          	BSE       
 972390    	NABARD2I2                                         	BSE       
+972490    	NABARD10109                                       	BSE       
+972492    	NABARD10209                                       	BSE       
 972536    	NABARD31039                                       	BSE       
 972608    	IFCI150910A                                       	BSE       
 972609    	IFCI150910B                                       	BSE       
@@ -3054,3 +3013,4 @@
 972661    	IFCI310111B                                       	BSE       
 972662    	IFCI310111C                                       	BSE       
 972688    	IFCI311011A                                       	BSE       
+972689    	IFCI311011B                                       	BSE       

@@ -568,28 +568,28 @@ M6LQ.IDX  	6-Month Lows Nasdaq                               	INDEX
 M6LU.IDX  	6-Month Lows Volume Lt 100K                       	INDEX     
 M6LV.IDX  	6-Month Lows Volume GT 100K                       	INDEX     
 M6LX.IDX  	6-Month Lows Overall                              	INDEX     
-MAHA.IDX  	12-Month Highs AMEX                               	INDEX     
-MAHD.IDX  	12-Month Highs Otcbb                              	INDEX     
-MAHE.IDX  	12-Month Highs ETFS                               	INDEX     
-MAHH.IDX  	12-Month Highs Price GT $10                       	INDEX     
-MAHL.IDX  	12-Month Highs Price Lt $10                       	INDEX     
-MAHN.IDX  	12-Month Highs NYSE                               	INDEX     
-MAHP.IDX  	12-Month Highs Sp500                              	INDEX     
-MAHQ.IDX  	12-Month Highs Nasdaq                             	INDEX     
-MAHU.IDX  	12-Month Highs Volume Lt 100K                     	INDEX     
-MAHV.IDX  	12-Month Highs Volume GT 100K                     	INDEX     
-MAHX.IDX  	12-Month Highs Overall                            	INDEX     
-MALA.IDX  	12-Month Lows AMEX                                	INDEX     
-MALD.IDX  	12-Month Lows Otcbb                               	INDEX     
-MALE.IDX  	12-Month Lows ETFS                                	INDEX     
-MALH.IDX  	12-Month Lows Price GT $10                        	INDEX     
-MALL.IDX  	12-Month Lows Price Lt $10                        	INDEX     
-MALN.IDX  	12-Month Lows NYSE                                	INDEX     
-MALP.IDX  	12-Month Lows Sp500                               	INDEX     
-MALQ.IDX  	12-Month Lows Nasdaq                              	INDEX     
-MALU.IDX  	12-Month Lows Volume Lt 100K                      	INDEX     
-MALV.IDX  	12-Month Lows Volume GT 100K                      	INDEX     
-MALX.IDX  	12-Month Lows Overall                             	INDEX     
+MAHA.IDX  	52-Week Highs AMEX                                	INDEX     
+MAHD.IDX  	52-Week Highs Otcbb                               	INDEX     
+MAHE.IDX  	52-Week Highs ETFS                                	INDEX     
+MAHH.IDX  	52-Week Highs Price GT $10                        	INDEX     
+MAHL.IDX  	52-Week Highs Price Lt $10                        	INDEX     
+MAHN.IDX  	52-Week Highs NYSE                                	INDEX     
+MAHP.IDX  	52-Week Highs Sp500                               	INDEX     
+MAHQ.IDX  	52-Week Highs Nasdaq                              	INDEX     
+MAHU.IDX  	52-Week Highs Volume Lt 100K                      	INDEX     
+MAHV.IDX  	52-Week Highs Volume GT 100K                      	INDEX     
+MAHX.IDX  	52-Week Highs Overall                             	INDEX     
+MALA.IDX  	52-Week Lows AMEX                                 	INDEX     
+MALD.IDX  	52-Week Lows Otcbb                                	INDEX     
+MALE.IDX  	52-Week Lows ETFS                                 	INDEX     
+MALH.IDX  	52-Week Lows Price GT $10                         	INDEX     
+MALL.IDX  	52-Week Lows Price Lt $10                         	INDEX     
+MALN.IDX  	52-Week Lows NYSE                                 	INDEX     
+MALP.IDX  	52-Week Lows Sp500                                	INDEX     
+MALQ.IDX  	52-Week Lows Nasdaq                               	INDEX     
+MALU.IDX  	52-Week Lows Volume Lt 100K                       	INDEX     
+MALV.IDX  	52-Week Lows Volume GT 100K                       	INDEX     
+MALX.IDX  	52-Week Lows Overall                              	INDEX     
 MDO.IDX   	Mid Opn/Cls Avge                                  	INDEX     
 MERV.IDX  	Merval - Argentina                                	INDEX     
 MEV.IDX   	AMEX Mexico Index Settlement                      	INDEX     
@@ -1148,9 +1148,7 @@ SMXT.IDX  	DWS Mega Trends Index [NetTRw/fees]               	INDEX
 SNAC.IDX  	Alpha Shares China All Cap Index                  	INDEX     
 SNCH.IDX  	Next 11 Core 8 Index                              	INDEX     
 SNCT.IDX  	Next 11 Core 8 Index [TR]                         	INDEX     
-SNEI.IDX  	S&P Global Nuclear Energy Index [EURO]            	INDEX     
 SNER.IDX  	S&P GSCI Non-Energy EUR IndexER                   	INDEX     
-SNEU.IDX  	S&P Global Nuclear Energy Index                   	INDEX     
 SNNE.IDX  	S&P Global Infrastructure Index [EURO] [NetTR]    	INDEX     
 SNNT.IDX  	S&P Global Infrastructure Index [NetTR]           	INDEX     
 SNRE.IDX  	S&P Global Natural Resources Index [EURO]         	INDEX     
@@ -1193,7 +1191,7 @@ SRIC.IDX  	S&P BRIC 40 Index [NetTR]                         	INDEX
 SRIE.IDX  	S&P BRIC 40 Index [EURO] [NetTR]                  	INDEX     
 SRMP.IDX  	Cohen & Steers US Realty Majors Portfolio [TR]    	INDEX     
 SRPR.IDX  	S&P Global REIT [USD]                             	INDEX     
-SRUP.IDX  	S&P 500 High Quality Rankings Index               	INDEX     
+SRTR.IDX  	S&P 500 Real Estate [TR]                          	INDEX     
 SRVA.IDX  	Rogers Energy Producers Index [EURO]              	INDEX     
 SRVB.IDX  	Rogers Metals Producers Index [EURO]              	INDEX     
 SRVC.IDX  	Rogers Agricultural Producers Index [EURO]        	INDEX     
@@ -1241,6 +1239,7 @@ SSEW.IDX  	S&P GSCI Select Equal Weight Index Spot           	INDEX
 SSFA.IDX  	Credit Suisse Family Index                        	INDEX     
 SSFB.IDX  	SGI Double Short Bund Index                       	INDEX     
 SSFE.IDX  	Credit Suisse Family Index [EUR] [Price Return]   	INDEX     
+SSFI.IDX  	S&P Real Estate Stocks Above 50-Day Average       	INDEX     
 SSFP.IDX  	Credit Suisse Family Index [USD] [Price Return]   	INDEX     
 SSFT.IDX  	Credit Suisse Family Index [CHF] [Price Return]   	INDEX     
 SSFU.IDX  	Credit Suisse Family Index EUR                    	INDEX     
@@ -1277,6 +1276,8 @@ SSLF.IDX  	S&P Select Frontier Index                         	INDEX
 SSLS.IDX  	S&P Custom/BNP Paribas-SPECTRUM [GRIPTEST]        	INDEX     
 SSMI.IDX  	Swiss Market                                      	INDEX     
 SSNI.IDX  	SGI Global Nanotechnology Index [NetTR]           	INDEX     
+SSOF.IDX  	S&P Real Estate Stocks Above 150-Day Average      	INDEX     
+SSOH.IDX  	S&P Real Estate Stocks Above 100-Day Average      	INDEX     
 SSPA.IDX  	S&P ADR Index                                     	INDEX     
 SSPE.IDX  	S&P EUROPE 350                                    	INDEX     
 SSPF.IDX  	S&P EUROPE 350 - Financials [Sector]              	INDEX     
@@ -1287,8 +1288,10 @@ SSPT.IDX  	S&P EUROPE 350 - Telecommunication Services [Sec  	INDEX
 SSPU.IDX  	S&P EURO                                          	INDEX     
 SSRF.IDX  	S&P Preferred Stock Index                         	INDEX     
 SSRW.IDX  	Revenue Shares Small Cap Fund                     	INDEX     
+SSTH.IDX  	S&P Real Estate Stocks Above 200-Day Average      	INDEX     
 SSTR.IDX  	SPECTRUM-Long/Short 8% Index TR [NEWVA]           	INDEX     
 SSTU.IDX  	S&P 500 EQUAL WEIGHTED Utilities & Telecommunica  	INDEX     
+SSTW.IDX  	S&P Real Estate Stocks Above 20-Day Average       	INDEX     
 SSUC.IDX  	S&P GSCI Capped Component 35/20 Index             	INDEX     
 SSUP.IDX  	S&P GSCI Capped Component 35/20 Index Excess Ret  	INDEX     
 SSUT.IDX  	S&P GSCI Capped Component 35/20 Index Total Retu  	INDEX     
