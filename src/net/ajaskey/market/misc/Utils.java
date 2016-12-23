@@ -1,7 +1,12 @@
 
 package net.ajaskey.market.misc;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,33 +18,26 @@ import java.util.concurrent.TimeUnit;
  *
  * This class contains static utility methods used by this project.
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class Utils {
@@ -63,7 +61,7 @@ public class Utils {
 	private static boolean								initialized	= false;
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.buildCalendar
 	 *
 	 * @param year
@@ -134,7 +132,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.getDayOfWeek
 	 *
 	 * @param cal
@@ -142,38 +140,54 @@ public class Utils {
 	 */
 	public static String getDayName(Calendar cal) {
 		try {
-			init();
-			return findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
-		} catch (Exception e) {
+			Utils.init();
+			return Utils.findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
+		} catch (final Exception e) {
 			return "unknown-day";
 		}
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.getFromUrl
+	 *
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getFromUrl(String url) throws IOException {
+		final StringBuilder sb = new StringBuilder();
+
+		final URL myURL = new URL(url);
+		final URLConnection myURLConnection = myURL.openConnection();
+		myURLConnection.connect();
+		String line;
+		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
+			while ((line = resp.readLine()) != null) {
+				if (line.length() > 0) {
+					sb.append(line + NL);
+				}
+			}
+		}
+		return sb.toString();
+	}
+
 	public static String getMonthName(Calendar cal) {
 		try {
-			init();
-			return findName(mapNames, cal.get(Calendar.MONTH));
-		} catch (Exception e) {
+			Utils.init();
+			return Utils.findName(mapNames, cal.get(Calendar.MONTH));
+		} catch (final Exception e) {
 			return "unknown-month";
 		}
 	}
 
 	public static String getMonthName(int month) {
 		try {
-			init();
-			return findName(mapNames, month);
-		} catch (Exception e) {
+			Utils.init();
+			return Utils.findName(mapNames, month);
+		} catch (final Exception e) {
 			return "unknown-month";
 		}
-	}
-
-	private static String findName(Map<String, Integer> map, Integer key) {
-		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
-			if (entry.getValue() == key) {
-				return entry.getKey();
-			}
-		}
-		return "NotFound";
 	}
 
 	/**
@@ -198,21 +212,6 @@ public class Utils {
 	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
 		Utils.init();
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	private static void init() {
-		if (!initialized) {
-			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
-			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
-			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
-
-			intFmt = NumberFormat.getNumberInstance();
-			initialized = true;
-		}
 	}
 
 	/**
@@ -246,6 +245,18 @@ public class Utils {
 	}
 
 	/**
+	 * net.ajaskey.market.misc.newline
+	 *
+	 */
+	public static void newline() {
+		System.out.println();
+	}
+
+	public static void print(String str) {
+		System.out.println(str);
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.misc.printCalendar
 	 *
@@ -256,11 +267,6 @@ public class Utils {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
 	}
-	
-	public static void print(String str) {
-		System.out.println(str);
-	}
-
 
 	/**
 	 *
@@ -323,7 +329,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.stringDate
 	 *
 	 * @param cal
@@ -337,7 +343,7 @@ public class Utils {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.stringDate2
 	 *
 	 * @param cal
@@ -350,11 +356,28 @@ public class Utils {
 		return "";
 	}
 
-	/** 
-	 * net.ajaskey.market.misc.newline
+	private static String findName(Map<String, Integer> map, Integer key) {
+		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public static void newline() {
-		System.out.println();
+	private static void init() {
+		if (!initialized) {
+			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
+			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
+
+			intFmt = NumberFormat.getNumberInstance();
+			initialized = true;
+		}
 	}
+
 }
