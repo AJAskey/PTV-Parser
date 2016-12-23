@@ -59,7 +59,7 @@ public class DumpPriceSeries {
 	 * @throws ParseException
 	 */
 	public static void main(String[] args) throws FileNotFoundException, ParseException {
-		
+
 		System.out.println("Processing...");
 
 		try (PrintWriter pw = new PrintWriter("out\\SPX-COTS-Prices.csv")) {

@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ import net.ajaskey.market.misc.Utils;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -49,22 +48,22 @@ import net.ajaskey.market.misc.Utils;
  */
 public class SpxLongTermPrices {
 
-	public double													open;
-	public double													high;
-	public double													low;
-	public double													close;
-	public long														volume;
-	public Calendar												date;
-
 	final private static File							filePath	= new File("data/spx-1950.txt");
 	final private static Charset					charset		= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
-
 	static public List<SpxLongTermPrices>	spxList		= null;
+	public double													open;
+	public double													high;
+
+	public double													low;
+	public double													close;
+	public long														volume;
+
+	public Calendar												date;
 
 	/**
 	 * This method serves as a constructor for the class.
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ParseException
 	 *
@@ -82,7 +81,7 @@ public class SpxLongTermPrices {
 			String line = reader.readLine(); // Header
 
 			while ((line = reader.readLine()) != null) {
-				SpxLongTermPrices sp = new SpxLongTermPrices();
+				final SpxLongTermPrices sp = new SpxLongTermPrices();
 				try {
 					sp.date = Calendar.getInstance();
 					final String fld[] = line.trim().split("\t");
@@ -93,14 +92,20 @@ public class SpxLongTermPrices {
 					sp.close = Double.parseDouble(fld[4].trim());
 					System.out.println(Utils.stringDate(sp.date) + " " + sp.close);
 					spxList.add(sp);
-				} catch (Exception e) {
+				} catch (final Exception e) {
 				}
 			}
 		}
 	}
 
+	public static String getClose(Calendar cal) {
+		final SpxLongTermPrices s = SpxLongTermPrices.getData(cal);
+		final String ret = String.format("%s,%s", Utils.stringDate(s.date), s.close);
+		return ret;
+	}
+
 	public static SpxLongTermPrices getData(Calendar cal) {
-		for (SpxLongTermPrices s : spxList) {
+		for (final SpxLongTermPrices s : spxList) {
 			if (Utils.sameDate(cal, s.date)) {
 				return s;
 			} else if (cal.before(s.date)) {
@@ -108,12 +113,6 @@ public class SpxLongTermPrices {
 			}
 		}
 		return null;
-	}
-	
-	public static String getClose(Calendar cal) {
-		SpxLongTermPrices s = getData(cal);
-		String ret = String.format("%s,%s", Utils.stringDate(s.date), s.close);
-		return ret;
 	}
 
 	/**
@@ -124,7 +123,7 @@ public class SpxLongTermPrices {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
-		SpxLongTermPrices run = new SpxLongTermPrices();
+		new SpxLongTermPrices();
 	}
 
 }

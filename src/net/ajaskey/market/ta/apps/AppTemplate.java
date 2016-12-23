@@ -43,7 +43,7 @@ import net.ajaskey.market.ta.input.ParseData;
  */
 public class AppTemplate {
 
-	private static List<String>			filenames	= new ArrayList<String>();
+	private static List<String>			filenames	= new ArrayList<>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
 
 	/**

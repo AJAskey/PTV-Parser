@@ -51,7 +51,7 @@ public class Internals {
 
 	final static double							obosLevel	= 400.0;
 
-	private static List<String>			filenames	= new ArrayList<String>();
+	private static List<String>			filenames	= new ArrayList<>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
 	public static PrintWriter				pwAll			= null;
 	private static final int				MILLION		= 1000000;
@@ -213,7 +213,7 @@ public class Internals {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.apps.printBreath
 	 *
 	 * @param list
@@ -312,7 +312,7 @@ public class Internals {
 
 		Utils.makeDir("out");
 		double cumForce = 0;
-		String desc = "Chg=Total Change of all components        Force=Chg * Volume, summed for each component";
+		final String desc = "Chg=Total Change of all components        Force=Chg * Volume, summed for each component";
 		pwAll.printf("\t%s\t%s%n\tChg\tForce\tUp\tDown\tDiff\tPercent\tVolUp(M)\tVolDown(M)\tvDiff(M)\tVolRatio%n",
 		    listName, desc);
 		for (int i = 0; i < days; i++) {

@@ -69,9 +69,9 @@ public class WeekendReset {
 		 */
 		GenStockList.main(args);
 		System.gc();
-		
+
 		ProcessIshares.main(args);
-		
+
 		ProcessSPDRs.main(args);
 
 		System.out.println("Weekend Reset Complete.");

@@ -63,7 +63,7 @@ public class TickerData {
 
 	private Fundamentals					fundies;
 
-	private final List<DailyData>	data			= new ArrayList<DailyData>();
+	private final List<DailyData>	data			= new ArrayList<>();
 
 	/**
 	 * Derived values
@@ -265,6 +265,19 @@ public class TickerData {
 		}
 	}
 
+	static public DailyData getDailyDate(TickerData td, Calendar cal) {
+
+		for (final DailyData dd : td.getData()) {
+			if (Utils.sameDate(cal, dd.getDate())) {
+				return dd;
+			} else if (dd.getDate().after(cal)) {
+				return dd;
+			}
+		}
+		return null;
+
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.getDataOfDate
@@ -277,7 +290,7 @@ public class TickerData {
 		try {
 			return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
 			    cal.get(Calendar.DAY_OF_MONTH));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 		return null;
 	}
@@ -319,7 +332,7 @@ public class TickerData {
 					return td;
 				}
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 		return null;
 	}
@@ -335,22 +348,9 @@ public class TickerData {
 	static public int getIndexOfDate(TickerData td, Calendar cal) {
 		try {
 			return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0;
 		}
-	}
-
-	static public DailyData getDailyDate(TickerData td, Calendar cal) {
-
-		for (DailyData dd : td.getData()) {
-			if (Utils.sameDate(cal, dd.getDate())) {
-				return dd;
-			} else if (dd.getDate().after(cal)) {
-				return dd;
-			}
-		}
-		return null;
-
 	}
 
 	/**
@@ -427,7 +427,7 @@ public class TickerData {
 					return td.getData().subList(idx, idx + days);
 				}
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 		return null;
 	}
@@ -440,14 +440,14 @@ public class TickerData {
 	 * @param ticker
 	 * @return
 	 */
-	public static TickerData getTickerData(List<TickerData> list, String ticker) {	
+	public static TickerData getTickerData(List<TickerData> list, String ticker) {
 		try {
 			for (final TickerData td : list) {
 				if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
 					return td;
 				}
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 		return null;
 	}
@@ -474,7 +474,7 @@ public class TickerData {
 					ret = ((idx1 - idx2) + 1);
 				}
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			ret = 0;
 		}
 		return ret;
@@ -760,7 +760,7 @@ public class TickerData {
 	}
 
 	public double getClose(int day) {
-		if ((closeData == null) || (closeData.length < day)) {
+		if ((this.closeData == null) || (this.closeData.length < day)) {
 			return 0.0;
 		}
 		return this.closeData[day];
@@ -782,18 +782,19 @@ public class TickerData {
 
 	public String getDailyDataString(int day) {
 		try {
-			if ((dateData == null) || (openData == null) || (highData == null) || (lowData == null) || (closeData == null)
-			    || (volumeData == null) || (oiData == null)) {
+			if ((this.dateData == null) || (this.openData == null) || (this.highData == null) || (this.lowData == null)
+			    || (this.closeData == null) || (this.volumeData == null) || (this.oiData == null)) {
 				return "";
 			}
-			if ((dateData.length < day) || (openData.length < day) || (highData.length < day) || (lowData.length < day)
-			    || (closeData.length < day) || (volumeData.length < day) || (oiData.length < day)) {
+			if ((this.dateData.length < day) || (this.openData.length < day) || (this.highData.length < day)
+			    || (this.lowData.length < day) || (this.closeData.length < day) || (this.volumeData.length < day)
+			    || (this.oiData.length < day)) {
 				return "";
 			}
 			final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
 			    this.closeData[day], this.volumeData[day], this.oiData[day]);
 			return dd.toString();
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return "";
 		}
 	}
@@ -810,11 +811,11 @@ public class TickerData {
 
 	public Calendar getDate(int day) {
 		try {
-			if ((dateData == null) || (dateData.length < day)) {
+			if ((this.dateData == null) || (this.dateData.length < day)) {
 				return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
 			}
 			return this.dateData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
 		}
 	}
@@ -857,11 +858,11 @@ public class TickerData {
 
 	public double getHigh(int day) {
 		try {
-			if ((highData == null) || (highData.length < day)) {
+			if ((this.highData == null) || (this.highData.length < day)) {
 				return 0.0;
 			}
 			return this.highData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}
@@ -882,11 +883,11 @@ public class TickerData {
 
 	public double getLow(int day) {
 		try {
-			if ((lowData == null) || (lowData.length < day)) {
+			if ((this.lowData == null) || (this.lowData.length < day)) {
 				return 0.0;
 			}
 			return this.lowData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}
@@ -963,11 +964,11 @@ public class TickerData {
 
 	public double getOi(int day) {
 		try {
-			if ((oiData == null) || (oiData.length < day)) {
+			if ((this.oiData == null) || (this.oiData.length < day)) {
 				return 0.0;
 			}
 			return this.oiData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}
@@ -981,11 +982,11 @@ public class TickerData {
 
 	public double getOpen(int day) {
 		try {
-			if ((openData == null) || (openData.length < day)) {
+			if ((this.openData == null) || (this.openData.length < day)) {
 				return 0.0;
 			}
 			return this.openData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}
@@ -1174,11 +1175,11 @@ public class TickerData {
 
 	public double getVolume(int day) {
 		try {
-			if ((volumeData == null) || (volumeData.length < day)) {
+			if ((this.volumeData == null) || (this.volumeData.length < day)) {
 				return 0.0;
 			}
 			return this.volumeData[day];
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}

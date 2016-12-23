@@ -76,14 +76,14 @@ public class GenStockList {
 		/**
 		 * DontIgnoreTickers overrides general strings of IgnoreNames
 		 */
-		dontIgnoreTickers = new ArrayList<String>();
+		dontIgnoreTickers = new ArrayList<>();
 		// dontIgnoreTickers.add("QQQ");
 		// dontIgnoreTickers.add("DIA");
 		// dontIgnoreTickers.add("QQEW");
 		// dontIgnoreTickers.add("SPY");
 		// dontIgnoreTickers.add("IWO");
 
-		ignoreNames = new ArrayList<String>();
+		ignoreNames = new ArrayList<>();
 		ignoreNames.add(" ETF");
 		ignoreNames.add("PROSHRES");
 		ignoreNames.add("SHARES");
@@ -181,7 +181,7 @@ public class GenStockList {
 			return;
 		}
 
-		final List<TickerData> tdStocks = new ArrayList<TickerData>();
+		final List<TickerData> tdStocks = new ArrayList<>();
 
 		System.out.println("Tickers found : " + tdAll.size());
 

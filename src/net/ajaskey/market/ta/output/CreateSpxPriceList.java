@@ -2,7 +2,6 @@
 package net.ajaskey.market.ta.output;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,7 +32,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -48,76 +47,76 @@ import net.ajaskey.market.ta.input.TickerFullName;
  */
 public class CreateSpxPriceList {
 
-	private List<String>	filenames			= new ArrayList<>();
-	private List<String>	fullfilenames	= new ArrayList<>();
+	private final List<String>	filenames			= new ArrayList<>();
+	private final List<String>	fullfilenames	= new ArrayList<>();
 
-	private Calendar			currentDate			= null;
-	private Calendar			endDate				= null;
-	private int						increment			= 1;
-	private TickerData		td						= null;
+	private Calendar						currentDate		= null;
+	private Calendar						endDate				= null;
+	private int									increment			= 1;
+	private TickerData					td						= null;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public CreateSpxPriceList(Calendar sDate, Calendar eDate, int inc) {
-		currentDate = Utils.makeCopy(sDate);
-		increment = inc;
-		
-		endDate = eDate;
+		this.currentDate = Utils.makeCopy(sDate);
+		this.increment = inc;
 
-		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
-		TickerFullName.build(fullfilenames);
+		this.endDate = eDate;
+
+		this.fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+		TickerFullName.build(this.fullfilenames);
 		ParseData.setValidTicker("SPX.IDX");
 
 		final String arg = "dataPath";
 		final String dataPath = System.getProperty(arg, "");
-		filenames.add(dataPath + "\\ASCII\\INDEX");
+		this.filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		List<TickerData> tdList;
 		try {
-			tdList = ParseData.parseFiles(filenames, 1700);
-			td = TickerData.getFromList("SPX.IDX", tdList);
+			tdList = ParseData.parseFiles(this.filenames, 1700);
+			this.td = TickerData.getFromList("SPX.IDX", tdList);
 		} catch (FileNotFoundException | ParseException e) {
-			td = null;
+			this.td = null;
 			e.printStackTrace();
 		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.output.getList
 	 *
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
 	public List<String> getList() throws FileNotFoundException, ParseException {
-		
-		List<String> retArr = new ArrayList<>();
 
-		while (currentDate.before(endDate)) {
-			final DailyData dd = TickerData.getDailyDate(td, currentDate);
+		final List<String> retArr = new ArrayList<>();
+
+		while (this.currentDate.before(this.endDate)) {
+			final DailyData dd = TickerData.getDailyDate(this.td, this.currentDate);
 			if (dd != null) {
-				final String str = String.format("%9.2f,%s",  dd.getClose(), Utils.getString(currentDate));
+				final String str = String.format("%9.2f,%s", dd.getClose(), Utils.getString(this.currentDate));
 				retArr.add(str);
 			}
-			currentDate.add(Calendar.DATE, increment);
-			final String day = Utils.getDayName(currentDate);
+			this.currentDate.add(Calendar.DATE, this.increment);
+			final String day = Utils.getDayName(this.currentDate);
 			if (day.contains("SAT")) {
-				currentDate.add(Calendar.DATE, 2);
+				this.currentDate.add(Calendar.DATE, 2);
 			} else if (day.contains("SUN")) {
-				currentDate.add(Calendar.DATE, 1);
+				this.currentDate.add(Calendar.DATE, 1);
 			}
 		}
-		if (Utils.sameDate(currentDate, endDate)) {
-			final DailyData dd = TickerData.getDailyDate(td, currentDate);
+		if (Utils.sameDate(this.currentDate, this.endDate)) {
+			final DailyData dd = TickerData.getDailyDate(this.td, this.currentDate);
 			if (dd != null) {
-				final String str = String.format("%s,%9.2f", Utils.getString(currentDate), dd.getClose());
+				final String str = String.format("%s,%9.2f", Utils.getString(this.currentDate), dd.getClose());
 				retArr.add(str);
 			}
 		}
-		
+
 		return retArr;
 	}
 }

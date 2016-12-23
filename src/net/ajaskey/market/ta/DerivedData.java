@@ -117,41 +117,6 @@ public class DerivedData {
 	}
 
 	/**
-	 * 
-	 * net.ajaskey.market.ta.build
-	 *
-	 * @param td
-	 */
-	public void set(TickerData td) {
-		try {
-			if (td != null) {
-				this.td = td;
-				this.setSma23();
-				this.setSmaPerc23();
-				this.setSma65();
-				this.setSmaPerc65();
-				this.setSma130();
-				this.setSmaPerc130();
-				this.setSma260();
-				this.setSmaPerc260();
-				this.setCurrentPrice();
-				this.setAvgVol20();
-				this.setAvgVol65();
-				this.setChg();
-				this.setChg23();
-				this.setChg65();
-				this.setChg130();
-				this.setChg260();
-				this.setLow260();
-				this.setHigh260();
-				this.setRsRaw();
-				this.setRsStRaw();
-			}
-		} catch (Exception e) {
-		}
-	}
-
-	/**
 	 * @return the atr23
 	 */
 	public double getAtr23() {
@@ -509,6 +474,41 @@ public class DerivedData {
 			this.setSmaPerc65();
 		}
 		return this.smaPerc65;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.build
+	 *
+	 * @param td
+	 */
+	public void set(TickerData td) {
+		try {
+			if (td != null) {
+				this.td = td;
+				this.setSma23();
+				this.setSmaPerc23();
+				this.setSma65();
+				this.setSmaPerc65();
+				this.setSma130();
+				this.setSmaPerc130();
+				this.setSma260();
+				this.setSmaPerc260();
+				this.setCurrentPrice();
+				this.setAvgVol20();
+				this.setAvgVol65();
+				this.setChg();
+				this.setChg23();
+				this.setChg65();
+				this.setChg130();
+				this.setChg260();
+				this.setLow260();
+				this.setHigh260();
+				this.setRsRaw();
+				this.setRsStRaw();
+			}
+		} catch (final Exception e) {
+		}
 	}
 
 	/**

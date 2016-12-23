@@ -47,7 +47,7 @@ import net.ajaskey.market.ta.TickerData;
  */
 public class ParseData {
 
-	private static List<String>	validTickers	= new ArrayList<String>();
+	private static List<String>	validTickers	= new ArrayList<>();
 	private static double				MIN_PRICE			= 0.0;
 	private static int					MIN_VOLUME		= 0;
 	private static int					GET_ALL_DATA	= 999999;
@@ -93,7 +93,7 @@ public class ParseData {
 	 * @throws IOException
 	 */
 	public static List<String> getTickerList(String filename) throws FileNotFoundException, IOException {
-		final List<String> list = new ArrayList<String>();
+		final List<String> list = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
 			String line = "";
@@ -140,7 +140,7 @@ public class ParseData {
 			return null;
 		}
 
-		final List<TickerData> tdList = new ArrayList<TickerData>();
+		final List<TickerData> tdList = new ArrayList<>();
 
 		try {
 
@@ -244,7 +244,7 @@ public class ParseData {
 	public static List<TickerData> parseFiles(List<String> directoryNames, int calendarDays)
 	    throws FileNotFoundException, ParseException {
 
-		final List<TickerData> tdList = new ArrayList<TickerData>();
+		final List<TickerData> tdList = new ArrayList<>();
 
 		final Calendar cal = Calendar.getInstance();
 		// System.out.println(Utils.calendarToString(cal));

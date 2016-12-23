@@ -42,7 +42,7 @@ import net.ajaskey.market.ta.SortTickerFullNames;
  */
 public class TickerFullName {
 
-	static public List<TickerFullName>	tickerNames	= new ArrayList<TickerFullName>();
+	static public List<TickerFullName>	tickerNames	= new ArrayList<>();
 	private String											ticker;
 	private String											name;
 

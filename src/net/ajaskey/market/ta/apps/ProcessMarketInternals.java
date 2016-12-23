@@ -48,7 +48,7 @@ public class ProcessMarketInternals {
 
 	final private static TaMethods	taMethods	= new TaMethods();
 	private static List<TickerData>	tdAll;
-	private static List<String>			filenames	= new ArrayList<String>();
+	private static List<String>			filenames	= new ArrayList<>();
 
 	/**
 	 *
@@ -80,7 +80,7 @@ public class ProcessMarketInternals {
 
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\djus-list.txt"));
 
-		final List<String> fnames = new ArrayList<String>();
+		final List<String> fnames = new ArrayList<>();
 		fnames.add("symbols\\INDEX_SymbolList.txt");
 		fnames.add("symbols\\NASDAQ_SymbolList.txt");
 		fnames.add("symbols\\AMEX_SymbolList.txt");

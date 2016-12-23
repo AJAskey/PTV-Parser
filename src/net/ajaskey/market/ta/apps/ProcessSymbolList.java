@@ -88,7 +88,7 @@ public class ProcessSymbolList {
 
 		for (final File f : list) {
 			final String fpath = f.getAbsolutePath();
-			 System.out.println(fpath);
+			System.out.println(fpath);
 			int idx = fpath.indexOf("ASCII");
 			idx += 6;
 			final int idx2 = fpath.indexOf("SymbolList.xml");

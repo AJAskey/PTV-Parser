@@ -54,7 +54,7 @@ public class BreadthOfList {
 	final private static String	TAB						= "\t";
 
 	private static PrintWriter	pw						= null;
-	private static PrintWriter	pwPercent						= null;
+	private static PrintWriter	pwPercent			= null;
 
 	/**
 	 * net.ajaskey.market.ta.apps.main
@@ -132,7 +132,7 @@ public class BreadthOfList {
 
 		pw.close();
 		pwPercent.close();
-		
+
 		System.out.println("Done.");
 
 	}
@@ -288,7 +288,6 @@ public class BreadthOfList {
 		long over130dma = 0;
 		long over260dma = 0;
 
-
 		for (final BreadthData bd : bdList) {
 			final double p = bd.getPrice();
 			if (p > bd.getDma23()) {
@@ -310,7 +309,8 @@ public class BreadthOfList {
 		final double per130dma = ((double) over130dma / (double) knt) * 100.0;
 		final double per260dma = ((double) over260dma / (double) knt) * 100.0;
 
-		pwPercent.printf("%-6s\t%d\t%d\t%d\t%d%n", name, (long) per23dma, (long) per65dma, (long) per130dma, (long) per260dma);
+		pwPercent.printf("%-6s\t%d\t%d\t%d\t%d%n", name, (long) per23dma, (long) per65dma, (long) per130dma,
+		    (long) per260dma);
 
 	}
 

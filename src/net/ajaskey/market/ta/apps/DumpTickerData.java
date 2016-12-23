@@ -53,7 +53,7 @@ import net.ajaskey.market.ta.input.ParseData;
 public class DumpTickerData {
 
 	private static List<TickerData>	tdAll;
-	private static List<String>			filenames	= new ArrayList<String>();
+	private static List<String>			filenames	= new ArrayList<>();
 
 	/**
 	 *

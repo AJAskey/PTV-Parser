@@ -1,5 +1,5 @@
-package net.ajaskey.market.ta;
 
+package net.ajaskey.market.ta;
 
 /**
  * This class...
@@ -20,7 +20,7 @@ package net.ajaskey.market.ta;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *         
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -34,19 +34,14 @@ package net.ajaskey.market.ta;
  *
  */
 public class Gann {
-	
-	public static enum SwingState {UNKNOWN, UP, DOWN, INSIDE, OUTSIDE}
+
+	public static enum SwingState {
+		UNKNOWN, UP, DOWN, INSIDE, OUTSIDE
+	}
 
 	public static SwingState determineState(double high[], double low[], double close[], int day, int interval) {
-		SwingState state = Gann.SwingState.UNKNOWN;
-		
-		double todayHigh = 0.0;
-		double todayLow = 0.0;
-		double todayClose = 0.0;
-		double prevHigh = 0.0;
-		double prevLow = 0.0;
-		double prevClose = 0.0;
-		
+		final SwingState state = Gann.SwingState.UNKNOWN;
+
 		return state;
 	}
 }
