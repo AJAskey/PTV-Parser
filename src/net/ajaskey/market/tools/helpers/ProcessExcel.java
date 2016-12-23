@@ -132,10 +132,25 @@ public class ProcessExcel {
 				outF.delete();
 			}
 			try (final OutputStream out = new BufferedOutputStream(new FileOutputStream(outF))) {
-				
+
 				wbOut.write(out);
 			}
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.getExtention
+	 *
+	 * @param fName
+	 * @return
+	 */
+	public static String getExtention(String fName) {
+		String ret = null;
+		final int idx = fName.lastIndexOf(".");
+		if (idx > 1) {
+			ret = fName.substring(idx + 1).toLowerCase();
+		}
+		return ret;
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -224,21 +239,6 @@ public class ProcessExcel {
 		base.set(1900, Calendar.JANUARY, 1);
 		base.add(Calendar.DATE, day);
 		return base;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.getExtention
-	 *
-	 * @param fName
-	 * @return
-	 */
-	public static String getExtention(String fName) {
-		String ret = null;
-		final int idx = fName.lastIndexOf(".");
-		if (idx > 1) {
-			ret = fName.substring(idx + 1).toLowerCase();
-		}
-		return ret;
 	}
 
 }

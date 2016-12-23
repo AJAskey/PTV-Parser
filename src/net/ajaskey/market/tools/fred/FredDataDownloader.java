@@ -37,8 +37,6 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class FredDataDownloader {
 
-	private static String path = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/FRED/";
-
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
@@ -47,12 +45,37 @@ public class FredDataDownloader {
 	public static void main(String[] args) {
 
 		final List<String> seriesNames = new ArrayList<>();
-		seriesNames.add("PCE");
-		seriesNames.add("GDPC1");
-		seriesNames.add("CP");
+		seriesNames.add("PCEC96 0.1 false");
+		seriesNames.add("DSPIC96 0.1 false");
+		seriesNames.add("A576RC1 0.1 false");
+		seriesNames.add("PSAVERT 0.1 false");
+		seriesNames.add("TTLCON 0.1 false");
+		seriesNames.add("USSLIND 0.1 false");
+		seriesNames.add("USPHCI 0.1 false");
+		
+		seriesNames.add("SP500 0.0 true");
+		seriesNames.add("WILL5000IND 0.0 true");
 
+		seriesNames.add("GDPC1 0.4");
+		seriesNames.add("CP -0.25");
+		seriesNames.add("CNP16OV 0.1");
+
+		//
 		for (final String s : seriesNames) {
-			FredDataDownloader.process(s, 1.0);
+			String fld[] = s.split(" ");
+			double chg = 0;
+			boolean noZeros = false;
+			if (fld.length == 1) {
+				chg = 0.0;
+				noZeros = false;
+			} else if (fld.length == 2) {
+				chg = Double.parseDouble(fld[1].trim());
+				noZeros = false;
+			} else if (fld.length >= 3) {
+				chg = Double.parseDouble(fld[1].trim());
+				noZeros = Boolean.parseBoolean(fld[2].trim());
+			}
+			FredDataDownloader.process(fld[0].trim(), chg, noZeros);
 		}
 
 	}
@@ -63,36 +86,22 @@ public class FredDataDownloader {
 	 *
 	 * @param series
 	 * @param futureChg
+	 * @param noZeroValues
 	 */
-	private static void process(String series, double futureChg) {
+	private static void process(String series, double futureChg, boolean noZeroValues) {
+
 		final DataSeries ds = new DataSeries(series);
 
 		if (ds.isValid()) {
 
 			ds.setAggType(AggregationMethodType.EOP);
 			ds.setRespType(ResponseType.LIN);
-			final List<DataValues> dvList = ds.getValues(futureChg);
-			FredDataDownloader.writeToOptuma(dvList, ds.getName());
-			System.out.println(ds);
-		}
-	}
 
-	/**
-	 * 
-	 * net.ajaskey.market.tools.fred.writeToOptuma
-	 *
-	 * @param data
-	 * @param seriesName
-	 */
-	private static void writeToOptuma(List<DataValues> data, String seriesName) {
-		try (PrintWriter pw = new PrintWriter(new File(path + seriesName + ".csv"))) {
-			pw.println("Date," + seriesName);
-			for (final DataValues dv : data) {
-				final String date = DataValues.sdf.format(dv.getDate().getTime());
-				pw.println(date + "," + dv.getValue());
-			}
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
+			final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues);
+
+			FredCommon.writeToOptuma(dvList, ds.getName());
+			System.out.println(ds);
+			System.out.println(futureChg);
 		}
 	}
 

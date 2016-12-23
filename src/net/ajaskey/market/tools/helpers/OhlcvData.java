@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.tools.helpers;
 
-import java.text.Format;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
@@ -25,7 +24,7 @@ import net.ajaskey.market.misc.Utils;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- * 
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -40,7 +39,20 @@ import net.ajaskey.market.misc.Utils;
  */
 public class OhlcvData {
 
-	private static final String TAB = "\t";
+	public enum FormType {
+		SHORT, FULL
+	}
+
+	private static final String	TAB	= "\t";
+
+	public Calendar							date;
+
+	public double								open;
+	public double								high;
+	public double								low;
+	public double								close;
+	public long									volume;
+	private FormType						form;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -48,52 +60,27 @@ public class OhlcvData {
 	 */
 	public OhlcvData() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public OhlcvData(Calendar cal, double o, double h, double l, double c, long vol) {
-		date = cal;
-		open = o;
-		high = h;
-		low = l;
-		close = c;
-		volume = vol;
-		if ((o == h) && (h == l) && (l == c)) {
-			form = FormType.SHORT;
-		} else {
-			form = FormType.FULL;
-		}
-	}
-
-	public Calendar	date;
-	public double		open;
-	public double		high;
-	public double		low;
-	public double		close;
-	public long			volume;
-
-	public enum FormType {
-		SHORT, FULL
 	};
 
-	private FormType form;
-
-	@Override
-	public String toString() {
-		String ret = String.format("%s\t%10.2f\t%10.2f\t%10.2f\t%10.2f\t%10d\t%s", Utils.stringDate(date), open, high, low,
-		    close, volume, form);
-		return ret;
-	}
-	
-	public String toShortString() {
-		String ret = String.format("%s\t%10.2f", Utils.stringDate(date), close);
-		return ret;
+	public OhlcvData(Calendar cal, double o, double h, double l, double c, long vol) {
+		this.date = cal;
+		this.open = o;
+		this.high = h;
+		this.low = l;
+		this.close = c;
+		this.volume = vol;
+		if ((o == h) && (h == l) && (l == c)) {
+			this.form = FormType.SHORT;
+		} else {
+			this.form = FormType.FULL;
+		}
 	}
 
 	/**
 	 * @return the form
 	 */
 	public FormType getForm() {
-		return form;
+		return this.form;
 	}
 
 	/**
@@ -102,6 +89,18 @@ public class OhlcvData {
 	 */
 	public void setForm(FormType form) {
 		this.form = form;
+	}
+
+	public String toShortString() {
+		final String ret = String.format("%s\t%10.2f", Utils.stringDate(this.date), this.close);
+		return ret;
+	}
+
+	@Override
+	public String toString() {
+		final String ret = String.format("%s\t%10.2f\t%10.2f\t%10.2f\t%10.2f\t%10d\t%s", Utils.stringDate(this.date),
+		    this.open, this.high, this.low, this.close, this.volume, this.form);
+		return ret;
 	}
 
 }

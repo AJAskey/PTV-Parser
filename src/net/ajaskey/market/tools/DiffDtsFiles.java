@@ -11,33 +11,26 @@ import java.io.PrintWriter;
 /**
  * This class...
  *
- * @author ajask_000
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
- * 
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         included in all copies or substantial portions of the Software. </p>
+ *
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class DiffDtsFiles {
@@ -45,7 +38,7 @@ public class DiffDtsFiles {
 	final static private String	folderPath1	= "d:/temp/dts";
 	final static private String	folderPath2	= "d:/temp/dts-lt";
 
-	static private PrintWriter	pw					= null;
+	static private PrintWriter pw = null;
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -63,12 +56,12 @@ public class DiffDtsFiles {
 		final File allFiles2 = new File(folderPath2);
 		final File[] listOfFiles2 = allFiles2.listFiles();
 
-		for (File file1 : listOfFiles1) {
-			String name = file1.getName();
-			for (File file2 : listOfFiles2) {
+		for (final File file1 : listOfFiles1) {
+			final String name = file1.getName();
+			for (final File file2 : listOfFiles2) {
 				if (name.contentEquals(file2.getName())) {
 					System.out.println(name);
-					diffFiles(file1, file2);
+					DiffDtsFiles.diffFiles(file1, file2);
 					break;
 				}
 			}
@@ -87,7 +80,7 @@ public class DiffDtsFiles {
 	private static void diffFiles(File file1, File file2) {
 
 		int lineknt = 0;
-		String fname = file1.getName();
+		final String fname = file1.getName();
 
 		try (BufferedReader reader1 = new BufferedReader(new FileReader(file1.getAbsoluteFile()));
 		    BufferedReader reader2 = new BufferedReader(new FileReader(file2.getAbsoluteFile()))) {
@@ -96,8 +89,8 @@ public class DiffDtsFiles {
 			String str2 = " ";
 
 			while ((str1 != null) && (str2 != null)) {
-				str1 = readFile(reader1);
-				str2 = readFile(reader2);
+				str1 = DiffDtsFiles.readFile(reader1);
+				str2 = DiffDtsFiles.readFile(reader2);
 
 				if ((str1 != null) && (str2 != null)) {
 					lineknt++;
@@ -108,10 +101,10 @@ public class DiffDtsFiles {
 					}
 				}
 			}
-		} catch (FileNotFoundException e) {
+		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -126,7 +119,8 @@ public class DiffDtsFiles {
 	 * @throws IOException
 	 */
 	private static String readFile(BufferedReader reader) throws IOException {
-		String line = reader.readLine();
+
+		final String line = reader.readLine();
 		return line;
 	}
 

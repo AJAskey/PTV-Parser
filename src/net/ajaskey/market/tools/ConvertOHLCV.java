@@ -1,3 +1,4 @@
+
 package net.ajaskey.market.tools;
 
 import java.io.BufferedReader;
@@ -27,39 +28,33 @@ import net.ajaskey.market.tools.helpers.SortOhlcv;
 /**
  * This class...
  *
- * @author ajask_000
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class ConvertOHLCV {
 
 	final static private Charset					charset		= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
+	final private static SimpleDateFormat	sdfOut		= new SimpleDateFormat("yyyy-MM-dd");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
 	final private static String						shortPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dc";
 	final private static String						fullPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dohlcv";
@@ -94,29 +89,6 @@ public class ConvertOHLCV {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.getFormat
-	 *
-	 * @return
-	 */
-	private static FormType getFormat() {
-		int fullknt = 0;
-		OhlcvData.FormType fmt = OhlcvData.FormType.SHORT;
-
-		for (final OhlcvData d : data) {
-			if (d.getForm() == OhlcvData.FormType.FULL) {
-				fullknt++;
-			}
-		}
-		final int tot = data.size();
-		final double ratio = (double) fullknt / (double) tot;
-		if (ratio > .25) {
-			fmt = OhlcvData.FormType.FULL;
-		}
-
-		return fmt;
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.tools.readFile
 	 *
@@ -125,11 +97,11 @@ public class ConvertOHLCV {
 	 * @throws ParseException
 	 */
 	public static void parseHtmlFile(Path path) throws IOException, ParseException {
-		
+
 		System.out.println("Processing : " + path.toString());
 
 		OhlcvData.FormType form = OhlcvData.FormType.SHORT;
-		
+
 		data.clear();
 
 		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
@@ -185,6 +157,7 @@ public class ConvertOHLCV {
 	 * @throws IOException
 	 */
 	public static void parseXlsFile(String fullFileName) throws IOException {
+
 		final File f = new File(fullFileName);
 		final String fName = f.getName();
 		final List<ProcessExcel> peList = ProcessExcel.parseFred(fullFileName);
@@ -198,18 +171,43 @@ public class ConvertOHLCV {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.getFormat
+	 *
+	 * @return
+	 */
+	private static FormType getFormat() {
+
+		int fullknt = 0;
+		OhlcvData.FormType fmt = OhlcvData.FormType.SHORT;
+
+		for (final OhlcvData d : data) {
+			if (d.getForm() == OhlcvData.FormType.FULL) {
+				fullknt++;
+			}
+		}
+		final int tot = data.size();
+		final double ratio = (double) fullknt / (double) tot;
+		if (ratio > .25) {
+			fmt = OhlcvData.FormType.FULL;
+		}
+
+		return fmt;
+	}
+
+	/**
 	 * net.ajaskey.market.tools.writeFullForm
 	 *
 	 * @param name
 	 * @throws FileNotFoundException
 	 */
 	private static void writeFullForm(String name) throws FileNotFoundException {
+
 		final int idx = name.indexOf(".");
 		final String fname = name.substring(0, idx) + ".csv";
 
 		try (PrintWriter pw = new PrintWriter(fullPath + "/" + fname)) {
 			for (final OhlcvData d : data) {
-				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sdf.format(d.date.getTime()), d.open, d.high, d.low, d.close,
+				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sdfOut.format(d.date.getTime()), d.open, d.high, d.low, d.close,
 				    d.volume);
 			}
 		}
@@ -229,8 +227,9 @@ public class ConvertOHLCV {
 
 		try (PrintWriter pw = new PrintWriter(shortPath + "/" + fname)) {
 			for (final OhlcvData d : data) {
-				// System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
-				pw.printf("%s,%.2f%n", sdf.format(d.date.getTime()), d.close);
+				// System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()),
+				// d.close);
+				pw.printf("%s,%.2f%n", sdfOut.format(d.date.getTime()), d.close);
 			}
 		}
 	}

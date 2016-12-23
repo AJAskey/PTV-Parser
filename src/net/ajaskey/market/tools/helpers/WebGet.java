@@ -1,17 +1,13 @@
 
 package net.ajaskey.market.tools.helpers;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebGet {
+import net.ajaskey.market.misc.Utils;
 
-	private static String NL = System.lineSeparator();
+public class WebGet {
 
 	/**
 	 *
@@ -22,14 +18,14 @@ public class WebGet {
 
 		String response;
 		try {
-			response = WebGet.getFromUrl(url);
+			response = Utils.getFromUrl(url);
 		} catch (final IOException e) {
 			response = null;
 		}
 		boolean found = false;
 		final List<String> ret = new ArrayList<>();
 		if (response != null) {
-			final String[] line = response.split(NL);
+			final String[] line = response.split(Utils.NL);
 
 			for (final String s : line) {
 				final String[] fld = s.split(",");
@@ -60,12 +56,12 @@ public class WebGet {
 
 		String response = null;
 		try {
-			response = WebGet.getFromUrl(url);
+			response = Utils.getFromUrl(url);
 		} catch (final IOException e) {
 			return null;
 		}
 		if (response != null) {
-			final String[] fld = response.split(NL);
+			final String[] fld = response.split(Utils.NL);
 			final List<String> ret = new ArrayList<>();
 
 			for (final String element : fld) {
@@ -74,21 +70,6 @@ public class WebGet {
 			return ret;
 		}
 		return null;
-	}
-
-	private static String getFromUrl(String url) throws IOException {
-		final StringBuilder sb = new StringBuilder();
-
-		final URL myURL = new URL(url);
-		final URLConnection myURLConnection = myURL.openConnection();
-		myURLConnection.connect();
-		String line;
-		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
-			while ((line = resp.readLine()) != null) {
-				sb.append(line + NL);
-			}
-		}
-		return sb.toString();
 	}
 
 }

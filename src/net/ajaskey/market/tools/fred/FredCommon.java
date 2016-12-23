@@ -1,9 +1,9 @@
+package net.ajaskey.market.tools.fred;
 
-package net.ajaskey.market.tools.helpers;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * This class...
@@ -24,7 +24,7 @@ import java.util.Calendar;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *
+ *         
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -37,37 +37,27 @@ import java.util.Calendar;
  *         </p>
  *
  */
-public class PEAnalysisData {
+public class FredCommon {
+	
+	public final static String path = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/FRED/";
 
-	final private static SimpleDateFormat	sdf	= new SimpleDateFormat("d-MMM-yyyy");
-	public Calendar												date;
-
-	public double													price;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public PEAnalysisData() {
-		this.date = Calendar.getInstance();
-		this.price = 0;
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 * @param trim
-	 * @param trim2
-	 * @throws ParseException
-	 */
-	public PEAnalysisData(String sDate, String sPrice) throws ParseException {
-		try {
-			this.date = Calendar.getInstance();
-			this.date.setTime(sdf.parse(sDate));
-			this.price = Double.parseDouble(sPrice);
-			// System.out.println(Utils.getString(date) + " " + price);
-		} catch (final Exception e) {
-			this.price = -1.0;
+	
+  /**
+   * 
+   * net.ajaskey.market.tools.fred.writeToOptuma
+   *
+   * @param data
+   * @param seriesName
+   */
+	public static void writeToOptuma(List<DataValues> data, String seriesName) {
+		try (PrintWriter pw = new PrintWriter(new File(path + seriesName + ".csv"))) {
+			pw.println("Date," + seriesName);
+			for (final DataValues dv : data) {
+				final String date = DataValues.sdf.format(dv.getDate().getTime());
+				pw.println(date + "," + dv.getValue());
+			}
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
 		}
 	}
 

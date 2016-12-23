@@ -1,3 +1,4 @@
+
 package net.ajaskey.market.tools.helpers;
 
 import java.text.ParseException;
@@ -25,7 +26,7 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *         
+ * 
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -40,22 +41,26 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
  */
 public class DateLabelFormatter extends AbstractFormatter {
 
-  private String datePattern = "yyyy-MM-dd";
-  private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+	/**
+	 *
+	 */
+	private static final long				serialVersionUID	= 1L;
+	private final String						datePattern				= "yyyy-MM-dd";
+	private final SimpleDateFormat	dateFormatter			= new SimpleDateFormat(this.datePattern);
 
-  @Override
-  public Object stringToValue(String text) throws ParseException {
-      return dateFormatter.parseObject(text);
-  }
+	@Override
+	public Object stringToValue(String text) throws ParseException {
+		return this.dateFormatter.parseObject(text);
+	}
 
-  @Override
-  public String valueToString(Object value) throws ParseException {
-      if (value != null) {
-          Calendar cal = (Calendar) value;
-          return dateFormatter.format(cal.getTime());
-      }
+	@Override
+	public String valueToString(Object value) throws ParseException {
+		if (value != null) {
+			final Calendar cal = (Calendar) value;
+			return this.dateFormatter.format(cal.getTime());
+		}
 
-      return "";
-  }
+		return "";
+	}
 
 }

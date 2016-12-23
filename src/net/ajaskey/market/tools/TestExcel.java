@@ -18,51 +18,45 @@ import net.ajaskey.market.misc.Utils;
 /**
  * This class...
  *
- * @author ajask_000
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
- * 
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         included in all copies or substantial portions of the Software. </p>
+ *
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class TestExcel {
 
 	public static void main(String[] args) throws IOException {
-		String excelFilePath = "input/fred.xlsx";
-		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
-		Workbook workbook = new XSSFWorkbook(inputStream);
-		Sheet firstSheet = workbook.getSheetAt(0);
-		Iterator<Row> iterator = firstSheet.iterator();
+		final String excelFilePath = "input/fred.xlsx";
+		final FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
+
+		final Workbook workbook = new XSSFWorkbook(inputStream);
+		final Sheet firstSheet = workbook.getSheetAt(0);
+		final Iterator<Row> iterator = firstSheet.iterator();
 
 		while (iterator.hasNext()) {
-			Row nextRow = iterator.next();
-			Iterator<Cell> cellIterator = nextRow.cellIterator();
+			final Row nextRow = iterator.next();
+			final Iterator<Cell> cellIterator = nextRow.cellIterator();
 
 			while (cellIterator.hasNext()) {
-				Cell cell = cellIterator.next();
+				final Cell cell = cellIterator.next();
 
 				switch (cell.getCellType()) {
 					case Cell.CELL_TYPE_STRING:
@@ -72,10 +66,10 @@ public class TestExcel {
 						System.out.print(cell.getBooleanCellValue());
 						break;
 					case Cell.CELL_TYPE_NUMERIC:
-						double day = cell.getNumericCellValue();
+						final double day = cell.getNumericCellValue();
 						System.out.print(day);
 						if (day > 30000.0) {
-							Calendar cal = convertDate((int) day);
+							final Calendar cal = TestExcel.convertDate((int) day);
 							System.out.print("\t" + Utils.stringDate(cal));
 						}
 						break;
@@ -96,7 +90,8 @@ public class TestExcel {
 	 * @return
 	 */
 	private static Calendar convertDate(int day) {
-		Calendar base = Calendar.getInstance();
+
+		final Calendar base = Calendar.getInstance();
 		base.set(1900, Calendar.JANUARY, 1);
 		base.add(Calendar.DATE, day);
 		return base;

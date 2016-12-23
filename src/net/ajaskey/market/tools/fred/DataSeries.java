@@ -59,10 +59,6 @@ public class DataSeries {
 		ASC, DESC
 	}
 
-	public static enum PeriodType {
-		DAY, WEEK, MONTH, QUARTER, YEAR
-	}
-
 	/*
 	lin = Levels (No transformation)
 	chg = Change
@@ -78,22 +74,22 @@ public class DataSeries {
 		LIN, CHG, CH1, PCH, PC1, PCA, CCH, CCA, LOG
 	}
 
-	private String												name;
-	private AggregationMethodType					aggType;
-	private FileType											fileType;
-	private OrderType											order;
-	private ResponseType									respType;
-	private int														limit;
-	private int														offset;
+	private String								name;
+	private AggregationMethodType	aggType;
+	private FileType							fileType;
+	private OrderType							order;
+	private ResponseType					respType;
+	private int										limit;
+	private int										offset;
 
-	private int														respKnt;
-	private PeriodType										period;
+	private int			respKnt;
+	private String	period;
 
 	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private DocumentBuilder								dBuilder	= null;
 
-	private Calendar											cal1;
-	private Calendar											cal2;
+	private Calendar				cal1;
+	private DataSeriesInfo	info;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -109,7 +105,8 @@ public class DataSeries {
 		this.setRespType(ResponseType.LIN);
 		this.setRespKnt("0");
 		this.cal1 = null;
-		this.cal2 = null;
+		//this.cal2 = null;
+		info = new DataSeriesInfo(name);
 		try {
 			this.dBuilder = this.dbFactory.newDocumentBuilder();
 		} catch (final ParserConfigurationException e) {
@@ -124,18 +121,20 @@ public class DataSeries {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final DataSeries ds = new DataSeries("PCE");
+
+		final DataSeries ds = new DataSeries("WILL5000IND");
 
 		if (ds.isValid()) {
-			
+
 			ds.setAggType(AggregationMethodType.EOP);
 			//ds.setOrder(OrderType.DESC);
 			ds.setRespType(ResponseType.LIN);
-			final List<DataValues> dvList = ds.getValues(1.0);
+			final List<DataValues> dvList = ds.getValues(1.0, true);
+
 			//for (final DataValues d : dvList) {
 			//	System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
 			//}
-			
+
 			System.out.println(ds);
 
 		}
@@ -145,6 +144,7 @@ public class DataSeries {
 	 * @return the aggType
 	 */
 	public String getAggType() {
+
 		return "&aggregation_type=" + this.aggType.toString().toLowerCase();
 	}
 
@@ -152,6 +152,7 @@ public class DataSeries {
 	 * @return the type
 	 */
 	public String getFileType() {
+
 		return "&file_type=" + this.fileType.toString().toLowerCase();
 	}
 
@@ -159,6 +160,7 @@ public class DataSeries {
 	 * @return the limit
 	 */
 	public String getLimit() {
+
 		return "&limit=" + this.limit;
 	}
 
@@ -166,6 +168,7 @@ public class DataSeries {
 	 * @return the name
 	 */
 	public String getName() {
+
 		return this.name;
 	}
 
@@ -173,6 +176,7 @@ public class DataSeries {
 	 * @return the offset
 	 */
 	public String getOffset() {
+
 		return "&offset=" + this.offset;
 	}
 
@@ -180,6 +184,7 @@ public class DataSeries {
 	 * @return the order
 	 */
 	public String getOrder() {
+
 		return "&sort_order=" + this.order.toString().toLowerCase();
 
 	}
@@ -187,7 +192,8 @@ public class DataSeries {
 	/**
 	 * @return the period
 	 */
-	public PeriodType getPeriod() {
+	public String getPeriod() {
+
 		return this.period;
 	}
 
@@ -195,6 +201,7 @@ public class DataSeries {
 	 * @return the respKnt
 	 */
 	public int getRespKnt() {
+
 		return this.respKnt;
 	}
 
@@ -202,10 +209,12 @@ public class DataSeries {
 	 * @return the respType
 	 */
 	public String getRespType() {
+
 		return "&units=" + this.respType.toString().toLowerCase();
 	}
 
-	public List<DataValues> getValues(double futureChg) {
+	public List<DataValues> getValues(double futureChg, boolean noZeroValues) {
+
 		final List<DataValues> retList = new ArrayList<>();
 
 		final String url = "https://api.stlouisfed.org/fred/series/observations?series_id=" + this.name + this.getAggType()
@@ -217,7 +226,7 @@ public class DataSeries {
 		String resp;
 		try {
 			resp = Utils.getFromUrl(url);
-			
+
 			//System.out.println(resp + Utils.NL);
 
 			final Document doc = this.dBuilder.parse(new InputSource(new StringReader(resp)));
@@ -230,7 +239,7 @@ public class DataSeries {
 				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
 					final Element eElement = (Element) nodeResp;
 					this.setRespKnt(eElement.getAttribute("count"));
-					
+
 				}
 			}
 
@@ -241,23 +250,38 @@ public class DataSeries {
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					final Element eElement = (Element) nNode;
 					final DataValues dv = new DataValues(eElement.getAttribute("date"), eElement.getAttribute("value"));
-					retList.add(dv);
-					last = dv.getValue();
-					if (this.cal1 == null) {
-						this.cal1 = dv.getDate();
-					} else if (this.cal2 == null) {
-						this.cal2 = dv.getDate();
+					int zeroCheck = (int) (dv.getValue() * 1000.0);
+					if ((noZeroValues) && (zeroCheck == 0)) {
+						respKnt -= 1;
+					} else {
+						retList.add(dv);
+						last = dv.getValue();
+						if (this.cal1 == null) {
+							this.cal1 = dv.getDate();
+						}
 					}
 				}
 			}
 
+			setPeriod(info.getFrequency());
+
 			final Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.MONTH, 1);
+
+			System.out.println(period);
+
+			if (period.contains("daily")) {
+				cal.add(Calendar.DATE, 5);
+			} else if (period.contains("weekly")) {
+				cal.add(Calendar.DATE, 15);
+			} else if (period.contains("monthly")) {
+				cal.add(Calendar.MONTH, 1);
+			} else {
+				cal.add(Calendar.MONTH, 2);
+			}
+
 			final double val = last + (last * (futureChg / 100.0));
 			final DataValues dv = new DataValues(cal, val);
 			retList.add(dv);
-
-			setPeriod();
 
 		} catch (IOException | SAXException e) {
 			e.printStackTrace();
@@ -267,6 +291,7 @@ public class DataSeries {
 	}
 
 	public boolean isValid() {
+
 		return (this.dBuilder != null);
 	}
 
@@ -275,6 +300,7 @@ public class DataSeries {
 	 *          the aggType to set
 	 */
 	public void setAggType(AggregationMethodType aggType) {
+
 		this.aggType = aggType;
 	}
 
@@ -283,6 +309,7 @@ public class DataSeries {
 	 *          the type to set
 	 */
 	public void setFileType(FileType type) {
+
 		this.fileType = type;
 	}
 
@@ -291,6 +318,7 @@ public class DataSeries {
 	 *          the limit to set
 	 */
 	public void setLimit(int limit) {
+
 		this.limit = limit;
 	}
 
@@ -299,6 +327,7 @@ public class DataSeries {
 	 *          the offset to set
 	 */
 	public void setOffset(int offset) {
+
 		this.offset = offset;
 	}
 
@@ -307,6 +336,7 @@ public class DataSeries {
 	 *          the order to set
 	 */
 	public void setOrder(OrderType order) {
+
 		this.order = order;
 	}
 
@@ -314,21 +344,9 @@ public class DataSeries {
 	 * @param period
 	 *          the period to set
 	 */
-	public void setPeriod() {
-		final int d1 = this.cal1.get(Calendar.DAY_OF_YEAR);
-		final int d2 = this.cal2.get(Calendar.DAY_OF_YEAR);
-		final int rng = d2 - d1;
-		if (rng < 5) {
-			this.period = PeriodType.DAY;
-		} else if (rng < 27) {
-			this.period = PeriodType.WEEK;
-		} else if (rng < 40) {
-			this.period = PeriodType.MONTH;
-		} else if (rng < 110) {
-			this.period = PeriodType.QUARTER;
-		} else {
-			this.period = PeriodType.YEAR;
-		}
+	public void setPeriod(String period) {
+
+		this.period = period.toLowerCase();
 	}
 
 	/**
@@ -349,13 +367,15 @@ public class DataSeries {
 	 *          the respType to set
 	 */
 	public void setRespType(ResponseType respType) {
+
 		this.respType = respType;
 	}
 
 	@Override
 	public String toString() {
-		String ret = "Name   : " + name + Utils.NL;
-		ret += "Period : " + period + Utils.NL;
+
+		String ret = info.toString() + Utils.NL;
+		//ret += "Period : " + period + Utils.NL;
 		ret += "Count  : " + respKnt + Utils.NL;
 		ret += "First  : " + Utils.getString(cal1);
 		return ret;
@@ -366,6 +386,7 @@ public class DataSeries {
 	 *          the name to set
 	 */
 	private void setName(String name) {
+
 		this.name = name;
 	}
 

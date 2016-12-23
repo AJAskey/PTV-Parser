@@ -10,55 +10,31 @@ import net.ajaskey.market.tools.helpers.SpxEarningsData;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class SpxEarnings {
 
 	final private static double SpxPrice = 2170.84;
-
-	/**
-	 * net.ajaskey.market.tools.getEarnings
-	 *
-	 * @param d
-	 *
-	 * @return
-	 */
-	private static double getEarnings(SpxEarningsData d) {
-		if (Math.abs(d.eps) > 0.0) {
-			return (d.eps + d.div);
-		} else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
-			return ((d.netIncAfterTax / d.shares) + d.div);
-		}
-
-		return (d.eps1y + d.div);
-	}
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -68,7 +44,7 @@ public class SpxEarnings {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		String dateStr = "29Jul2016";
+		final String dateStr = "29Jul2016";
 		final List<SpxEarningsData> data = SpxEarningsData.readData("SP500-Earnings-" + dateStr + ".txt");
 
 		double totCap = 0;
@@ -90,10 +66,28 @@ public class SpxEarnings {
 				pw.printf("%s\t%9.2f%%\t%9.5f\t%9.2f\t%9.2f\t%9.5f %n", d.ticker, perc, wt, d.div, e, earn);
 			}
 			pw.printf("Earnings : %6.2f%n", totEarn);
-			double pe = SpxPrice / totEarn;
+			final double pe = SpxPrice / totEarn;
 			pw.printf("PE       : %6.2f%n", pe);
 		}
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.getEarnings
+	 *
+	 * @param d
+	 *
+	 * @return
+	 */
+	private static double getEarnings(SpxEarningsData d) {
+
+		if (Math.abs(d.eps) > 0.0) {
+			return (d.eps + d.div);
+		} else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
+			return ((d.netIncAfterTax / d.shares) + d.div);
+		}
+
+		return (d.eps1y + d.div);
 	}
 
 }

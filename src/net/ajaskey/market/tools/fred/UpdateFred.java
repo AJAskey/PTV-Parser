@@ -1,12 +1,9 @@
 
-package net.ajaskey.market.tools;
+package net.ajaskey.market.tools.fred;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * This class...
@@ -33,43 +30,62 @@ import java.io.PrintWriter;
  *         SOFTWARE. </p>
  *
  */
-public class MakeFilesStandard {
+public class UpdateFred {
+
+	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+	public final static File							file	= new File(FredCommon.path);
 
 	/**
-	 * net.ajaskey.market.tools.main
+	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		final String inFolderPath = "dts-data";
-		final String outFolderPath = "dts-data2";
+		final File list[] = file.listFiles();
 
-		final File allFiles = new File(inFolderPath);
-		final File[] listOfFiles = allFiles.listFiles();
+		for (final File f : list) {
 
-		for (final File file : listOfFiles) {
+			final String name = f.getName();
+			final String ext = name.substring(name.length() - 3);
 
-			String line;
-			final String fname = file.getName();
+			if (ext.equalsIgnoreCase("csv")) {
 
-			try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsoluteFile()));
-			    PrintWriter pw = new PrintWriter(outFolderPath + "/" + fname)) {
+				final String series = name.substring(0, name.length() - 4);
 
-				while ((line = reader.readLine()) != null) {
-					pw.println(line);
+				boolean noZeros = noZerosCheck(series);
 
+				final long modTime = f.lastModified();
+				final Calendar cal = Calendar.getInstance();
+				cal.setTimeInMillis(modTime);
+
+				System.out.println(name + "  " + series + "  " + sdf.format(cal.getTime()));
+
+				DataSeriesInfo dsi = new DataSeriesInfo(series);
+				//System.out.println(dsi);
+
+				if (cal.after(dsi.getLastUpdate())) {
+					System.out.println("Local file created After");
+				} else {
+					System.out.println("Local file created Before");
+					DataSeries ds = new DataSeries(series);
+
+					FredCommon.writeToOptuma(ds.getValues(0.0, noZeros), series);
 				}
 
-			} catch (final FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (final IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("");
+
 			}
+
 		}
 
+	}
+
+	private static boolean noZerosCheck(String sname) {
+		if ((sname.equalsIgnoreCase("sp500") || (sname.equalsIgnoreCase("WILL5000IND")))) {
+			return true;
+		}
+		return false;
 	}
 
 }
