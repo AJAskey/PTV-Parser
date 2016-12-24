@@ -51,73 +51,23 @@ public class DataSeriesInfo {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-	private String		name;
-	private String		title;
-	private String		frequency;
-	private String		units;
-	private String		seasonalAdjustment;
+	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
+	private static DocumentBuilder							dBuilder	= null;
+	private String															name;
+	private String															title;
+	private String															frequency;
+	private String															units;
+	private String															seasonalAdjustment;
+
 	private Calendar	lastUpdate;
 	private int				timeOffset;
 
-	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
-	private static DocumentBuilder							dBuilder	= null;
-
-	public static List<DataSeriesInfo> getDataSeriesNames() {
-
-		List<DataSeriesInfo> dList = new ArrayList<>();
-
-		String url = "https://api.stlouisfed.org/fred/series/updates?offset=1000&api_key=fde45f7af492501c0b2200e7f0814540";
-
-		String ret = "";
-		int offset = 0;
-		while (offset < 52000) {
-			
-			url = String.format("%s%d%s",  "https://api.stlouisfed.org/fred/series/updates?offset=",offset,"&api_key=fde45f7af492501c0b2200e7f0814540");
-
-			offset += 1000;
-
-			try {
-				if (dBuilder == null) {
-					dBuilder = dbFactory.newDocumentBuilder();
-				}
-
-				String resp = Utils.getFromUrl(url);
-
-				System.out.println(resp + Utils.NL);
-
-				final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-				doc.getDocumentElement().normalize();
-
-				final NodeList nResp = doc.getElementsByTagName("series");
-
-				for (int knt = 0; knt < nResp.getLength(); knt++) {
-
-					final Node nodeResp = nResp.item(knt);
-
-					if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-						DataSeriesInfo dsi = new DataSeriesInfo();
-
-						final Element eElement = (Element) nodeResp;
-						String series = eElement.getAttribute("id");
-						System.out.println(series);
-
-						dsi.setName(series);
-						dsi.setTitle(eElement.getAttribute("title"));
-						dsi.setFrequency(eElement.getAttribute("frequency"));
-						dsi.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
-						dsi.setUnits(eElement.getAttribute("units"));
-						dsi.setLastUpdate(eElement.getAttribute("last_updated"));
-
-						dList.add(dsi);
-					}
-				}
-			} catch (final Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return dList;
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSeriesInfo() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -164,12 +114,62 @@ public class DataSeriesInfo {
 		}
 	}
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataSeriesInfo() {
-		// TODO Auto-generated constructor stub
+	public static List<DataSeriesInfo> getDataSeriesNames() {
+
+		final List<DataSeriesInfo> dList = new ArrayList<>();
+
+		String url = "https://api.stlouisfed.org/fred/series/updates?offset=1000&api_key=fde45f7af492501c0b2200e7f0814540";
+
+		int offset = 0;
+		while (offset < 52000) {
+
+			url = String.format("%s%d%s", "https://api.stlouisfed.org/fred/series/updates?offset=", offset,
+			    "&api_key=fde45f7af492501c0b2200e7f0814540");
+
+			offset += 1000;
+
+			try {
+				if (dBuilder == null) {
+					dBuilder = dbFactory.newDocumentBuilder();
+				}
+
+				final String resp = Utils.getFromUrl(url);
+
+				System.out.println(resp + Utils.NL);
+
+				final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+				doc.getDocumentElement().normalize();
+
+				final NodeList nResp = doc.getElementsByTagName("series");
+
+				for (int knt = 0; knt < nResp.getLength(); knt++) {
+
+					final Node nodeResp = nResp.item(knt);
+
+					if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+						final DataSeriesInfo dsi = new DataSeriesInfo();
+
+						final Element eElement = (Element) nodeResp;
+						final String series = eElement.getAttribute("id");
+						System.out.println(series);
+
+						dsi.setName(series);
+						dsi.setTitle(eElement.getAttribute("title"));
+						dsi.setFrequency(eElement.getAttribute("frequency"));
+						dsi.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
+						dsi.setUnits(eElement.getAttribute("units"));
+						dsi.setLastUpdate(eElement.getAttribute("last_updated"));
+
+						dList.add(dsi);
+					}
+				}
+			} catch (final Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return dList;
 	}
 
 	/**
@@ -179,14 +179,14 @@ public class DataSeriesInfo {
 	 */
 	public static void main(String[] args) {
 
-		List<DataSeriesInfo> outList = getDataSeriesNames();
+		final List<DataSeriesInfo> outList = DataSeriesInfo.getDataSeriesNames();
 
 		try (PrintWriter pw = new PrintWriter("fred-series.xls")) {
 			pw.println("Series\tTitle\tFrequency\tUnits\tSeasonality\tLastUpdate");
-			for (DataSeriesInfo dsi : outList) {
+			for (final DataSeriesInfo dsi : outList) {
 				pw.println(dsi.toCsvString());
 			}
-		} catch (FileNotFoundException e) {
+		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
@@ -249,6 +249,13 @@ public class DataSeriesInfo {
 		this.seasonalAdjustment = adjustment;
 	}
 
+	public String toCsvString() {
+
+		final String ret = this.name + Utils.TAB + this.title + Utils.TAB + this.frequency + Utils.TAB + this.units
+		    + Utils.TAB + this.seasonalAdjustment + Utils.TAB + sdf.format(this.lastUpdate.getTime());
+		return ret;
+	}
+
 	@Override
 	public String toString() {
 
@@ -258,14 +265,7 @@ public class DataSeriesInfo {
 		ret += "  Frequency   : " + this.frequency + Utils.NL;
 		ret += "  Units       : " + this.units + Utils.NL;
 		ret += "  Adjustment  : " + this.seasonalAdjustment + Utils.NL;
-		ret += "  Last Update : " + sdf.format(this.lastUpdate.getTime()) + "  " + timeOffset;
-		return ret;
-	}
-
-	public String toCsvString() {
-
-		String ret = this.name + Utils.TAB + title + Utils.TAB + frequency + Utils.TAB + units + Utils.TAB
-		    + seasonalAdjustment + Utils.TAB + sdf.format(this.lastUpdate.getTime());
+		ret += "  Last Update : " + sdf.format(this.lastUpdate.getTime()) + "  " + this.timeOffset;
 		return ret;
 	}
 
@@ -285,17 +285,17 @@ public class DataSeriesInfo {
 	 */
 	private void setLastUpdate(String attribute) {
 
-		lastUpdate = Calendar.getInstance();
+		this.lastUpdate = Calendar.getInstance();
 
 		try {
-			int idx = attribute.lastIndexOf("-");
-			String dt = attribute.substring(0, idx);
-			Date d = sdf.parse(dt);
-			lastUpdate.setTime(d);
+			final int idx = attribute.lastIndexOf("-");
+			final String dt = attribute.substring(0, idx);
+			final Date d = sdf.parse(dt);
+			this.lastUpdate.setTime(d);
 
-			String os = attribute.substring(idx + 1);
-			timeOffset = Integer.parseInt(os);
-		} catch (ParseException e) {
+			final String os = attribute.substring(idx + 1);
+			this.timeOffset = Integer.parseInt(os);
+		} catch (final ParseException e) {
 			e.printStackTrace();
 		}
 
@@ -316,7 +316,7 @@ public class DataSeriesInfo {
 	 */
 	private void setTitle(String title) {
 
-		String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
+		final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
 		this.title = filtered.trim();
 	}
 

@@ -33,19 +33,10 @@ import java.util.Date;
  */
 public class DataValues {
 
-	public final static SimpleDateFormat	sdf	= new SimpleDateFormat("yyyy-MM-dd");
+	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-	private Calendar											date;
-	private double												value;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataValues(String date, String val) {
-		this.setDate(date);
-		this.setValue(val);
-	}
+	private Calendar	date;
+	private double		value;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -59,9 +50,19 @@ public class DataValues {
 	}
 
 	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataValues(String date, String val) {
+		this.setDate(date);
+		this.setValue(val);
+	}
+
+	/**
 	 * @return the date
 	 */
 	public Calendar getDate() {
+
 		return this.date;
 	}
 
@@ -69,6 +70,7 @@ public class DataValues {
 	 * @return the value
 	 */
 	public double getValue() {
+
 		return this.value;
 	}
 
@@ -77,6 +79,7 @@ public class DataValues {
 	 *          the date to set
 	 */
 	public void setDate(String dateStr) {
+
 		this.date = Calendar.getInstance();
 		try {
 			final Date d = sdf.parse(dateStr);
@@ -92,13 +95,12 @@ public class DataValues {
 	 *          the value to set
 	 */
 	public void setValue(String val) {
+
 		try {
 			this.value = Double.parseDouble(val);
 		} catch (final Exception e) {
 			this.value = 0.0;
 		}
 	}
-
-
 
 }

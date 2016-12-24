@@ -2,8 +2,12 @@
 package net.ajaskey.market.tools.fred;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -33,7 +37,7 @@ import java.util.Calendar;
 public class UpdateFred {
 
 	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
-	public final static File							file	= new File(FredCommon.path);
+	public final static File							file	= new File(FredCommon.optumaPath);
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -44,44 +48,47 @@ public class UpdateFred {
 
 		final File list[] = file.listFiles();
 
-		for (final File f : list) {
+		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "readme.txt")) {
+			for (final File f : list) {
 
-			final String name = f.getName();
-			final String ext = name.substring(name.length() - 3);
+				final String name = f.getName();
+				final String ext = name.substring(name.length() - 3);
 
-			if (ext.equalsIgnoreCase("csv")) {
+				if (ext.equalsIgnoreCase("csv")) {
 
-				final String series = name.substring(0, name.length() - 4);
+					final String series = name.substring(0, name.length() - 4);
 
-				boolean noZeros = noZerosCheck(series);
+					final long modTime = f.lastModified();
+					final Calendar lastModTime = Calendar.getInstance();
+					lastModTime.setTimeInMillis(modTime);
 
-				final long modTime = f.lastModified();
-				final Calendar cal = Calendar.getInstance();
-				cal.setTimeInMillis(modTime);
+					//System.out.println(name + "  " + series + "  \t" + sdf.format(cal.getTime()));
+					System.out.printf("%-15s %-12s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
-				//System.out.println(name + "  " + series + "  \t" + sdf.format(cal.getTime()));
-				System.out.printf("%-15s %-12s%s%n", name,series,sdf.format(cal.getTime()));
+					final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
-				DataSeriesInfo dsi = new DataSeriesInfo(series);
-				
-				if (cal.after(dsi.getLastUpdate())) {
-					System.out.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()));
-				} else {
-					System.out.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()));
-					DataSeries ds = new DataSeries(series);
+					if (lastModTime.after(dsi.getLastUpdate())) {
+						System.out.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
+					} else {
+						System.out.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
+						final DataSeries ds = new DataSeries(series);
 
-					FredCommon.writeToOptuma(ds.getValues(0.0, noZeros), series);
+						FredCommon.writeToOptuma(ds.getValues(0.0, UpdateFred.noZerosCheck(series)), series);
+					}
+
+					pw.println(dsi);
+
 				}
-
-				System.out.println("");
-
 			}
-
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
 
 	private static boolean noZerosCheck(String sname) {
+
 		if ((sname.equalsIgnoreCase("sp500") || (sname.equalsIgnoreCase("WILL5000IND")))) {
 			return true;
 		}

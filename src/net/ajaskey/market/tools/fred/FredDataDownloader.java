@@ -1,9 +1,6 @@
 
 package net.ajaskey.market.tools.fred;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,13 +49,17 @@ public class FredDataDownloader {
 		//seriesNames.add("TTLCON 0.1 false");
 		//seriesNames.add("USSLIND 0.1 false");
 		//seriesNames.add("USPHCI 0.1 false");
-		
+
 		//seriesNames.add("TOTBUSSMNSA 0.1 false");
 		//seriesNames.add("GFDEBTN 0.1 false");
 		//seriesNames.add("TREAST 0.1 false");
 
-		seriesNames.add("RMFNS -0.1 false");
-		
+		//seriesNames.add("RMFNS -0.1 false");
+		//seriesNames.add("WHLSLRSMNSA 0.1 false");
+		seriesNames.add("BOGMBASE 0.1 false");
+
+		//BOGMBASE
+
 		//seriesNames.add("SP500 0.0 true");
 		//seriesNames.add("WILL5000IND 0.0 true");
 
@@ -68,7 +69,7 @@ public class FredDataDownloader {
 
 		//
 		for (final String s : seriesNames) {
-			String fld[] = s.split(" ");
+			final String fld[] = s.split(" ");
 			double chg = 0;
 			boolean noZeros = false;
 			if (fld.length == 1) {
@@ -87,7 +88,7 @@ public class FredDataDownloader {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.process
 	 *
 	 * @param series

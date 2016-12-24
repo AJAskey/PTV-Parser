@@ -88,8 +88,8 @@ public class DataSeries {
 	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private DocumentBuilder								dBuilder	= null;
 
-	private Calendar				cal1;
-	private DataSeriesInfo	info;
+	private Calendar							cal1;
+	private final DataSeriesInfo	info;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -106,7 +106,7 @@ public class DataSeries {
 		this.setRespKnt("0");
 		this.cal1 = null;
 		//this.cal2 = null;
-		info = new DataSeriesInfo(name);
+		this.info = new DataSeriesInfo(name);
 		try {
 			this.dBuilder = this.dbFactory.newDocumentBuilder();
 		} catch (final ParserConfigurationException e) {
@@ -129,7 +129,7 @@ public class DataSeries {
 			ds.setAggType(AggregationMethodType.EOP);
 			//ds.setOrder(OrderType.DESC);
 			ds.setRespType(ResponseType.LIN);
-			final List<DataValues> dvList = ds.getValues(1.0, true);
+			ds.getValues(1.0, true);
 
 			//for (final DataValues d : dvList) {
 			//	System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
@@ -250,9 +250,9 @@ public class DataSeries {
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					final Element eElement = (Element) nNode;
 					final DataValues dv = new DataValues(eElement.getAttribute("date"), eElement.getAttribute("value"));
-					int zeroCheck = (int) (dv.getValue() * 1000.0);
+					final int zeroCheck = (int) (dv.getValue() * 1000.0);
 					if ((noZeroValues) && (zeroCheck == 0)) {
-						respKnt -= 1;
+						this.respKnt -= 1;
 					} else {
 						retList.add(dv);
 						last = dv.getValue();
@@ -263,17 +263,17 @@ public class DataSeries {
 				}
 			}
 
-			setPeriod(info.getFrequency());
+			this.setPeriod(this.info.getFrequency());
 
 			final Calendar cal = Calendar.getInstance();
 
-			System.out.println(period);
+			System.out.println(this.period);
 
-			if (period.contains("daily")) {
+			if (this.period.contains("daily")) {
 				cal.add(Calendar.DATE, 5);
-			} else if (period.contains("weekly")) {
+			} else if (this.period.contains("weekly")) {
 				cal.add(Calendar.DATE, 15);
-			} else if (period.contains("monthly")) {
+			} else if (this.period.contains("monthly")) {
 				cal.add(Calendar.MONTH, 1);
 			} else {
 				cal.add(Calendar.MONTH, 2);
@@ -374,10 +374,10 @@ public class DataSeries {
 	@Override
 	public String toString() {
 
-		String ret = info.toString() + Utils.NL;
+		String ret = this.info.toString() + Utils.NL;
 		//ret += "Period : " + period + Utils.NL;
-		ret += "Count  : " + respKnt + Utils.NL;
-		ret += "First  : " + Utils.getString(cal1);
+		ret += "Count  : " + this.respKnt + Utils.NL;
+		ret += "First  : " + Utils.getString(this.cal1);
 		return ret;
 	}
 
