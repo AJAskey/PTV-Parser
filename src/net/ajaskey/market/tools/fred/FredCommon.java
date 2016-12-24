@@ -54,7 +54,7 @@ public class FredCommon {
 			pw.println("Date," + seriesName);
 			for (final DataValues dv : data) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
-				pw.println(date + "," + dv.getValue());
+				pw.printf("%s,%.2f%n",date ,dv.getValue());
 			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();

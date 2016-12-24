@@ -1,11 +1,15 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.io.StringReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -45,18 +49,76 @@ import net.ajaskey.market.misc.Utils;
  */
 public class DataSeriesInfo {
 
-	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-	private String												name;
-	private String												title;
-	private String												frequency;
-	private String												units;
-	private String												seasonalAdjustment;
-	private Calendar											lastUpdate;
-	private int														timeOffset;
+	private String		name;
+	private String		title;
+	private String		frequency;
+	private String		units;
+	private String		seasonalAdjustment;
+	private Calendar	lastUpdate;
+	private int				timeOffset;
 
-	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
-	private DocumentBuilder								dBuilder	= null;
+	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
+	private static DocumentBuilder							dBuilder	= null;
+
+	public static List<DataSeriesInfo> getDataSeriesNames() {
+
+		List<DataSeriesInfo> dList = new ArrayList<>();
+
+		String url = "https://api.stlouisfed.org/fred/series/updates?offset=1000&api_key=fde45f7af492501c0b2200e7f0814540";
+
+		String ret = "";
+		int offset = 0;
+		while (offset < 52000) {
+			
+			url = String.format("%s%d%s",  "https://api.stlouisfed.org/fred/series/updates?offset=",offset,"&api_key=fde45f7af492501c0b2200e7f0814540");
+
+			offset += 1000;
+
+			try {
+				if (dBuilder == null) {
+					dBuilder = dbFactory.newDocumentBuilder();
+				}
+
+				String resp = Utils.getFromUrl(url);
+
+				System.out.println(resp + Utils.NL);
+
+				final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+				doc.getDocumentElement().normalize();
+
+				final NodeList nResp = doc.getElementsByTagName("series");
+
+				for (int knt = 0; knt < nResp.getLength(); knt++) {
+
+					final Node nodeResp = nResp.item(knt);
+
+					if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+						DataSeriesInfo dsi = new DataSeriesInfo();
+
+						final Element eElement = (Element) nodeResp;
+						String series = eElement.getAttribute("id");
+						System.out.println(series);
+
+						dsi.setName(series);
+						dsi.setTitle(eElement.getAttribute("title"));
+						dsi.setFrequency(eElement.getAttribute("frequency"));
+						dsi.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
+						dsi.setUnits(eElement.getAttribute("units"));
+						dsi.setLastUpdate(eElement.getAttribute("last_updated"));
+
+						dList.add(dsi);
+					}
+				}
+			} catch (final Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return dList;
+	}
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -70,13 +132,15 @@ public class DataSeriesInfo {
 
 		String resp;
 		try {
-			this.dBuilder = this.dbFactory.newDocumentBuilder();
+			if (dBuilder == null) {
+				dBuilder = dbFactory.newDocumentBuilder();
+			}
 
 			resp = Utils.getFromUrl(url);
 
 			//System.out.println(resp + Utils.NL);
 
-			final Document doc = this.dBuilder.parse(new InputSource(new StringReader(resp)));
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
 			doc.getDocumentElement().normalize();
 
@@ -101,13 +165,30 @@ public class DataSeriesInfo {
 	}
 
 	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSeriesInfo() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final DataSeriesInfo dsi = new DataSeriesInfo("PCE");
-		System.out.println(dsi);
+
+		List<DataSeriesInfo> outList = getDataSeriesNames();
+
+		try (PrintWriter pw = new PrintWriter("fred-series.xls")) {
+			pw.println("Series\tTitle\tFrequency\tUnits\tSeasonality\tLastUpdate");
+			for (DataSeriesInfo dsi : outList) {
+				pw.println(dsi.toCsvString());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -115,6 +196,7 @@ public class DataSeriesInfo {
 	 * @return the frequency
 	 */
 	public String getFrequency() {
+
 		return this.frequency;
 	}
 
@@ -122,6 +204,7 @@ public class DataSeriesInfo {
 	 * @return the lastUpdate
 	 */
 	public Calendar getLastUpdate() {
+
 		return this.lastUpdate;
 	}
 
@@ -129,6 +212,7 @@ public class DataSeriesInfo {
 	 * @return the name
 	 */
 	public String getName() {
+
 		return this.name;
 	}
 
@@ -136,6 +220,7 @@ public class DataSeriesInfo {
 	 * @return the seasonalAdjusted
 	 */
 	public String getSeasonalAdjusted() {
+
 		return this.seasonalAdjustment;
 	}
 
@@ -143,6 +228,7 @@ public class DataSeriesInfo {
 	 * @return the title
 	 */
 	public String getTitle() {
+
 		return this.title;
 	}
 
@@ -150,6 +236,7 @@ public class DataSeriesInfo {
 	 * @return the units
 	 */
 	public String getUnits() {
+
 		return this.units;
 	}
 
@@ -158,11 +245,13 @@ public class DataSeriesInfo {
 	 *          the seasonalAdjusted to set
 	 */
 	public void setSeasonalAdjustment(String adjustment) {
+
 		this.seasonalAdjustment = adjustment;
 	}
 
 	@Override
 	public String toString() {
+
 		String ret = "";
 		ret += "Name          : " + this.name + Utils.NL;
 		ret += "  Title       : " + this.title + Utils.NL;
@@ -173,11 +262,19 @@ public class DataSeriesInfo {
 		return ret;
 	}
 
+	public String toCsvString() {
+
+		String ret = this.name + Utils.TAB + title + Utils.TAB + frequency + Utils.TAB + units + Utils.TAB
+		    + seasonalAdjustment + Utils.TAB + sdf.format(this.lastUpdate.getTime());
+		return ret;
+	}
+
 	/**
 	 * @param frequency
 	 *          the frequency to set
 	 */
 	private void setFrequency(String frequency) {
+
 		this.frequency = frequency;
 	}
 
@@ -209,6 +306,7 @@ public class DataSeriesInfo {
 	 *          the name to set
 	 */
 	private void setName(String name) {
+
 		this.name = name;
 	}
 
@@ -217,6 +315,7 @@ public class DataSeriesInfo {
 	 *          the title to set
 	 */
 	private void setTitle(String title) {
+
 		String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
 		this.title = filtered.trim();
 	}
@@ -226,6 +325,7 @@ public class DataSeriesInfo {
 	 *          the units to set
 	 */
 	private void setUnits(String units) {
+
 		this.units = units;
 	}
 

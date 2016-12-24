@@ -122,7 +122,7 @@ public class DataSeries {
 	 */
 	public static void main(String[] args) {
 
-		final DataSeries ds = new DataSeries("WILL5000IND");
+		final DataSeries ds = new DataSeries("TREAST");
 
 		if (ds.isValid()) {
 

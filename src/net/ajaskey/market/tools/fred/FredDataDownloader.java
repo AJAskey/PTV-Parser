@@ -45,20 +45,26 @@ public class FredDataDownloader {
 	public static void main(String[] args) {
 
 		final List<String> seriesNames = new ArrayList<>();
-		seriesNames.add("PCEC96 0.1 false");
-		seriesNames.add("DSPIC96 0.1 false");
-		seriesNames.add("A576RC1 0.1 false");
-		seriesNames.add("PSAVERT 0.1 false");
-		seriesNames.add("TTLCON 0.1 false");
-		seriesNames.add("USSLIND 0.1 false");
-		seriesNames.add("USPHCI 0.1 false");
+		//seriesNames.add("PCEC96 0.1 false");
+		//seriesNames.add("DSPIC96 0.1 false");
+		//seriesNames.add("A576RC1 0.1 false");
+		//seriesNames.add("PSAVERT 0.1 false");
+		//seriesNames.add("TTLCON 0.1 false");
+		//seriesNames.add("USSLIND 0.1 false");
+		//seriesNames.add("USPHCI 0.1 false");
 		
-		seriesNames.add("SP500 0.0 true");
-		seriesNames.add("WILL5000IND 0.0 true");
+		//seriesNames.add("TOTBUSSMNSA 0.1 false");
+		//seriesNames.add("GFDEBTN 0.1 false");
+		//seriesNames.add("TREAST 0.1 false");
 
-		seriesNames.add("GDPC1 0.4");
-		seriesNames.add("CP -0.25");
-		seriesNames.add("CNP16OV 0.1");
+		seriesNames.add("RMFNS -0.1 false");
+		
+		//seriesNames.add("SP500 0.0 true");
+		//seriesNames.add("WILL5000IND 0.0 true");
+
+		//seriesNames.add("GDPC1 0.4");
+		//seriesNames.add("CP -0.25");
+		//seriesNames.add("CNP16OV 0.1");
 
 		//
 		for (final String s : seriesNames) {

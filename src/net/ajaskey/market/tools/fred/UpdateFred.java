@@ -59,15 +59,15 @@ public class UpdateFred {
 				final Calendar cal = Calendar.getInstance();
 				cal.setTimeInMillis(modTime);
 
-				System.out.println(name + "  " + series + "  " + sdf.format(cal.getTime()));
+				//System.out.println(name + "  " + series + "  \t" + sdf.format(cal.getTime()));
+				System.out.printf("%-15s %-12s%s%n", name,series,sdf.format(cal.getTime()));
 
 				DataSeriesInfo dsi = new DataSeriesInfo(series);
-				//System.out.println(dsi);
-
+				
 				if (cal.after(dsi.getLastUpdate())) {
-					System.out.println("Local file created After");
+					System.out.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()));
 				} else {
-					System.out.println("Local file created Before");
+					System.out.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()));
 					DataSeries ds = new DataSeries(series);
 
 					FredCommon.writeToOptuma(ds.getValues(0.0, noZeros), series);
