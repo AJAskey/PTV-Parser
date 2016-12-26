@@ -122,18 +122,18 @@ public class DataSeries {
 	 */
 	public static void main(String[] args) {
 
-		final DataSeries ds = new DataSeries("TREAST");
+		final DataSeries ds = new DataSeries("AMTMUO");
 
 		if (ds.isValid()) {
 
 			ds.setAggType(AggregationMethodType.EOP);
 			//ds.setOrder(OrderType.DESC);
 			ds.setRespType(ResponseType.LIN);
-			ds.getValues(1.0, true);
+			List<DataValues> dvList = ds.getValues(1.0, true);
 
-			//for (final DataValues d : dvList) {
-			//	System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
-			//}
+			for (final DataValues d : dvList) {
+				System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
+			}
 
 			System.out.println(ds);
 
@@ -263,31 +263,65 @@ public class DataSeries {
 				}
 			}
 
-			this.setPeriod(this.info.getFrequency());
-
-			final Calendar cal = Calendar.getInstance();
-
-			System.out.println(this.period);
-
-			if (this.period.contains("daily")) {
-				cal.add(Calendar.DATE, 5);
-			} else if (this.period.contains("weekly")) {
-				cal.add(Calendar.DATE, 15);
-			} else if (this.period.contains("monthly")) {
-				cal.add(Calendar.MONTH, 1);
-			} else {
-				cal.add(Calendar.MONTH, 2);
-			}
-
-			final double val = last + (last * (futureChg / 100.0));
-			final DataValues dv = new DataValues(cal, val);
-			retList.add(dv);
-
 		} catch (IOException | SAXException e) {
 			e.printStackTrace();
 		}
 
+		appendEstimates(retList, futureChg);
+
 		return retList;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.appendEstimates
+	 *
+	 * @param retList
+	 * @param futureChg
+	 */
+	private void appendEstimates(List<DataValues> retList, double futureChg) {
+
+		this.setPeriod(this.info.getFrequency());
+
+		final Calendar cal = Calendar.getInstance();
+		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+		double last = retList.get(retList.size() - 1).getValue();
+
+		System.out.println(this.period);
+
+		System.out.println(Utils.getString(calLast));
+
+		int periodKnt = 0;
+		int duration = 0;
+		if (this.period.contains("daily")) {
+			periodKnt = 1;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("weekly")) {
+			periodKnt = 7;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("monthly")) {
+			periodKnt = 1;
+			duration = Calendar.MONTH;
+		} else {
+			periodKnt = 3;
+			duration = Calendar.MONTH;
+		}
+
+		calLast.add(duration, periodKnt);
+		System.out.println(Utils.getString(calLast));
+
+		final double val = last + (last * (futureChg / 100.0));
+		final DataValues dv = new DataValues(calLast, val);
+		retList.add(dv);
+
+		Calendar tmp = Utils.buildCalendar(calLast);
+		while (tmp.before(cal)) {
+			Calendar nCal = Utils.buildCalendar(tmp);
+			nCal.add(duration, periodKnt);
+			final DataValues dv1 = new DataValues(nCal, val);
+			retList.add(dv1);
+			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
+		}
+
 	}
 
 	public boolean isValid() {

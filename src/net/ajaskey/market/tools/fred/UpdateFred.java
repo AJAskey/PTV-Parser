@@ -89,7 +89,8 @@ public class UpdateFred {
 
 	private static boolean noZerosCheck(String sname) {
 
-		if ((sname.equalsIgnoreCase("sp500") || (sname.equalsIgnoreCase("WILL5000IND")))) {
+		if (sname.equalsIgnoreCase("sp500") || sname.equalsIgnoreCase("WILL5000IND")
+		    || sname.equalsIgnoreCase("DSG10")  || sname.equalsIgnoreCase("DSG2")  ) {
 			return true;
 		}
 		return false;
