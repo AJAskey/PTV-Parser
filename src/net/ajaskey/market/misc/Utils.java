@@ -74,6 +74,12 @@ public class Utils {
 		cal.set(year, month, day);
 		return cal;
 	}
+	
+	public static Calendar buildCalendar(Calendar inCal) {
+		final Calendar cal = Calendar.getInstance();
+		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE));
+		return cal;
+	}
 
 	/**
 	 * net.ajaskey.market.ta.printCalendar
