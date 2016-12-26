@@ -60,10 +60,10 @@ public class FindCategories {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		//processBanking();
-		//processEmployment();
-		//processNatlAccounts();
-		//processProductionBusiness();
+		processBanking();
+		processEmployment();
+		processNatlAccounts();
+		processProductionBusiness();
 		processPrices();
 
 	}
