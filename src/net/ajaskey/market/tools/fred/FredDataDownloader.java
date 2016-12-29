@@ -42,7 +42,7 @@ public class FredDataDownloader {
 	public static void main(String[] args) {
 
 		final List<String> seriesNames = new ArrayList<>();
-		
+
 		/*
 		seriesNames.add("PCEC96 0.1 false");
 		seriesNames.add("DSPIC96 0.1 false");
@@ -51,33 +51,112 @@ public class FredDataDownloader {
 		seriesNames.add("TTLCON 0.1 false");
 		seriesNames.add("USSLIND 0.1 false");
 		seriesNames.add("USPHCI 0.1 false");
-
+		
 		seriesNames.add("TOTBUSSMNSA 0.1 false");
 		seriesNames.add("GFDEBTN 0.1 false");
 		seriesNames.add("TREAST 0.1 false");
-
+		
 		seriesNames.add("RMFNS -0.1 false");
 		seriesNames.add("WHLSLRSMNSA 0.1 false");
 		seriesNames.add("BOGMBASE 0.1 false");
 		seriesNames.add("RSXFSN 0.1 false");
 		
+		
 		seriesNames.add("UMTUNO 0.0 false");
 		seriesNames.add("UMTUVS 0.0 false");
 		seriesNames.add("UMTUTI 0.0 false");
-		seriesNames.add("AMTMUO 0.0 false");
-
+		seriesNames.add("UMTMUO 0.1 false");
+		
 		//		seriesNames.add(" 0.1 false");
-
+		
 		seriesNames.add("SP500 0.0 true");
 		seriesNames.add("WILL5000IND 0.0 true");
-
+		
 		seriesNames.add("GDPC1 0.4 false");
 		seriesNames.add("CP -0.25 false");
 		seriesNames.add("CNP16OV 0.1 false");
-		*/
+		
+		
+		seriesNames.add("AMTUNO 0.1 false");
+		seriesNames.add("AMTUVS 0.1 false");
+		seriesNames.add("AMTUTI 0.1 false");
+		seriesNames.add("AMTMUO 0.1 false");
 		
 		seriesNames.add("DGS10 0.0 true");
 		seriesNames.add("DGS2 0.0 true");
+		seriesNames.add("DGS1MO 0.0 true");
+		seriesNames.add("DGS3MO 0.0 true");
+		
+		
+		seriesNames.add("ATCGUO 0.0 true");
+		seriesNames.add("A34XUO 0.0 true");
+		seriesNames.add("ACRPUO 0.0 true");
+		seriesNames.add("ACMSUO 0.0 true");
+		seriesNames.add("ACOGUO 0.0 true");
+		seriesNames.add("AMDMUO 0.0 true");
+		seriesNames.add("AITIUO 0.0 true");
+		seriesNames.add("AMVPUO 0.0 true");
+		
+		seriesNames.add("ATCGVS 0.0 true");
+		seriesNames.add("A34XVS 0.0 true");
+		seriesNames.add("ACRPVS 0.0 true");
+		seriesNames.add("ACMSVS 0.0 true");
+		seriesNames.add("ACOGVS 0.0 true");
+		seriesNames.add("AMDMVS 0.0 true");
+		seriesNames.add("AITIVS 0.0 true");
+		seriesNames.add("AMVPVS 0.0 true");
+		seriesNames.add("AMNMVS 0.0 true");
+		*/
+
+		seriesNames.add("JTU2300HIL 0.0 true");
+		seriesNames.add("JTU3000HIL 0.0 true");
+		seriesNames.add("JTU3200HIL 0.0 true");
+		seriesNames.add("JTU3400HIL 0.0 true");
+		seriesNames.add("JTU4000HIL 0.0 true");
+		seriesNames.add("JTU4200HIL 0.0 true");
+		seriesNames.add("JTU4400HIL 0.0 true");
+		seriesNames.add("JTU480099HIL 0.0 true");
+		seriesNames.add("JTU510099HIL 0.0 true");
+		seriesNames.add("JTU5100HIL 0.0 true");
+		seriesNames.add("JTU5200HIL 0.0 true");
+		seriesNames.add("JTU5300HIL 0.0 true");
+		seriesNames.add("JTU540099HIL 0.0 true");
+		seriesNames.add("JTU6000HIL 0.0 true");
+		seriesNames.add("JTU6100HIL 0.0 true");
+		seriesNames.add("JTU6200HIL 0.0 true");
+		seriesNames.add("JTU7000HIL 0.0 true");
+		seriesNames.add("JTU7100HIL 0.0 true");
+		seriesNames.add("JTU7200HIL 0.0 true");
+		seriesNames.add("JTU8100HIL 0.0 true");
+		seriesNames.add("JTU9000HIL 0.0 true");
+		seriesNames.add("JTU9100HIL 0.0 true");
+		seriesNames.add("JTU9200HIL 0.0 true");
+		seriesNames.add("JTUHIL 0.0 true");
+		seriesNames.add("JTU1000QUL 0.0 true");
+		seriesNames.add("JTU110099QUL 0.0 true");
+		seriesNames.add("JTU2300QUL 0.0 true");
+		seriesNames.add("JTU3000QUL 0.0 true");
+		seriesNames.add("JTU3200QUL 0.0 true");
+		seriesNames.add("JTU3400QUL 0.0 true");
+		seriesNames.add("JTU4000QUL 0.0 true");
+		seriesNames.add("JTU4200QUL 0.0 true");
+		seriesNames.add("JTU4400QUL 0.0 true");
+		seriesNames.add("JTU480099QUL 0.0 true");
+		seriesNames.add("JTU510099QUL 0.0 true");
+		seriesNames.add("JTU5100QUL 0.0 true");
+		seriesNames.add("JTU5200QUL 0.0 true");
+		seriesNames.add("JTU5300QUL 0.0 true");
+		seriesNames.add("JTU6000QUL 0.0 true");
+		seriesNames.add("JTU6100QUL 0.0 true");
+		seriesNames.add("JTU6200QUL 0.0 true");
+		seriesNames.add("JTU7000QUL 0.0 true");
+		seriesNames.add("JTU7100QUL 0.0 true");
+		seriesNames.add("JTU7200QUL 0.0 true");
+		seriesNames.add("JTU8100QUL 0.0 true");
+		seriesNames.add("JTU9000QUL 0.0 true");
+		seriesNames.add("JTU9100QUL 0.0 true");
+		seriesNames.add("JTU9200QUL 0.0 true");
+		seriesNames.add("JTUQUL 0.0 true");
 
 		//
 		for (final String s : seriesNames) {

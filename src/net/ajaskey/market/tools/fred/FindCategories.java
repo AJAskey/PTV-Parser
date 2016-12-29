@@ -49,6 +49,7 @@ public class FindCategories {
 	private static final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
 	private static PrintWriter									pw;
+	private static PrintWriter									pwSum;
 
 	private static List<Integer> catList = new ArrayList<>();
 
@@ -60,12 +61,15 @@ public class FindCategories {
 	 */
 	public static void main(String[] args) throws IOException {
 
+		pwSum = new PrintWriter("fred-categories.txt");
+
+		processProductionBusiness();
 		processBanking();
 		processEmployment();
-		processNatlAccounts();
-		processProductionBusiness();
 		processPrices();
+		processNatlAccounts();
 
+		pwSum.close();
 	}
 
 	private static void processBanking() throws FileNotFoundException {
@@ -106,7 +110,7 @@ public class FindCategories {
 		}
 		pw.close();
 	}
-	
+
 	private static void processProductionBusiness() throws FileNotFoundException {
 
 		catList.clear();
@@ -132,10 +136,10 @@ public class FindCategories {
 		}
 		pw.close();
 	}
-	
+
 	private static void processParentCategory(int cat, int indent) {
 
-		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&api_key="
+		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&"+"&api_key="
 		    + ApiKey.get();
 
 		try {
@@ -163,6 +167,7 @@ public class FindCategories {
 					}
 
 					pw.println(Utils.NL + tab + id + " " + name);
+					pwSum.println(tab + id + " " + name);
 
 					processParentCategory(id, indent + 1);
 
@@ -200,6 +205,7 @@ public class FindCategories {
 					id = Integer.parseInt(tmp);
 
 					pw.println(id + " " + name);
+					pwSum.println(Utils.NL + id + " " + name);
 				}
 			}
 
@@ -242,7 +248,8 @@ public class FindCategories {
 						tab += "  ";
 					}
 
-					pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
+					//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
+					pw.println(tab + idStr + "\t" + title + "\t" + freq + " -- " + sa);
 				}
 			}
 

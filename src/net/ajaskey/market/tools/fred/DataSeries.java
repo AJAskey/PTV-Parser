@@ -307,7 +307,7 @@ public class DataSeries {
 		}
 
 		calLast.add(duration, periodKnt);
-		System.out.println(Utils.getString(calLast));
+		System.out.println(Utils.getString(calLast) + Utils.NL);
 
 		final double val = last + (last * (futureChg / 100.0));
 		final DataValues dv = new DataValues(calLast, val);
