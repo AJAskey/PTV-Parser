@@ -41,8 +41,8 @@ public class ConvertOptuma {
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
 
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/ted-spread.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spx-yield.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxearnyield.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxyield.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spx-mcclellan-sum.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spx-mcclellan-osc.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/gaap_spx.html").toPath());
@@ -56,6 +56,7 @@ public class ConvertOptuma {
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rybull.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rybear.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rymm.html").toPath());
-
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfcash.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfpcash.html").toPath());
 	}
 }

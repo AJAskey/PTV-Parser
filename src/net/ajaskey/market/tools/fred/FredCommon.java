@@ -1,10 +1,16 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
+
+import net.ajaskey.market.tools.dts.DtsData;
 
 /**
  * This class...
@@ -53,6 +59,55 @@ public class FredCommon {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.getShortTitle
+	 *
+	 * @param title
+	 * @return
+	 */
+	public static String getShortTitle(String title) {
+
+		String s1 = title.replaceAll("Disposable Personal Income", "DPI")
+		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
+		String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "").replaceAll("  ", " ");
+		String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
+		String s4 = s3.replaceAll("\\s+", "");
+		return s4.trim();
+	}
+
+	/** 
+	 * net.ajaskey.market.tools.fred.readSeriesNames
+	 *
+	 * @param string
+	 * @return
+	 */
+	public static List<String> readSeriesNames(String fname) {
+		
+		List<String> retList = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				String str = line.trim();
+				if (str.length() > 1) {
+					String s = str.substring(0, 1);
+					if (!s.contains("#")) {
+						retList.add(str);
+					}
+				}
+				
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return retList;
 	}
 
 }

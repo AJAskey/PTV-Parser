@@ -43,8 +43,11 @@ public class UpdateFred {
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
+	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		Debug.pwDbg = new PrintWriter("update-fred.dbg");
 
 		final File list[] = file.listFiles();
 
@@ -62,15 +65,14 @@ public class UpdateFred {
 					final Calendar lastModTime = Calendar.getInstance();
 					lastModTime.setTimeInMillis(modTime);
 
-					//System.out.println(name + "  " + series + "  \t" + sdf.format(cal.getTime()));
-					System.out.printf("%-15s %-12s%s%n", name, series, sdf.format(lastModTime.getTime()));
+					Debug.pwDbg.printf("%-15s %-12s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
 					final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
 					if (lastModTime.after(dsi.getLastUpdate())) {
-						System.out.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
+						Debug.pwDbg.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime())+ Utils.TAB + dsi.getTitle() + Utils.NL);
 					} else {
-						System.out.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
+						Debug.pwDbg.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
 						final DataSeries ds = new DataSeries(series);
 
 						FredCommon.writeToOptuma(ds.getValues(0.0, UpdateFred.noZerosCheck(series)), series);
@@ -81,14 +83,16 @@ public class UpdateFred {
 				}
 			}
 		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		Debug.pwDbg.close();
 
 	}
 
 	private static boolean noZerosCheck(String sname) {
 
+		// Usually for Daily updates
 		if (sname.equalsIgnoreCase("sp500") || sname.equalsIgnoreCase("WILL5000IND")
 		    || sname.equalsIgnoreCase("DSG10")  || sname.equalsIgnoreCase("DSG2")  ) {
 			return true;

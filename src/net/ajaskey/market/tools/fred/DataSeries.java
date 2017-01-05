@@ -90,6 +90,10 @@ public class DataSeries {
 
 	private Calendar							cal1;
 	private final DataSeriesInfo	info;
+	
+	public DataSeriesInfo getInfo() {
+		return info;
+	}
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -221,13 +225,11 @@ public class DataSeries {
 		    + this.getFileType() + this.getLimit() + this.getOffset() + this.getOrder() + this.getRespType() + "&api_key="
 		    + ApiKey.get();
 
-		System.out.println(url);
+		Debug.pwDbg.println(url);
 
 		String resp;
 		try {
 			resp = Utils.getFromUrl(url);
-
-			//System.out.println(resp + Utils.NL);
 
 			final Document doc = this.dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -286,9 +288,9 @@ public class DataSeries {
 		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
 		double last = retList.get(retList.size() - 1).getValue();
 
-		System.out.println(this.period);
+		Debug.pwDbg.println(this.period);
 
-		System.out.println(Utils.getString(calLast));
+		Debug.pwDbg.println(Utils.getString(calLast));
 
 		int periodKnt = 0;
 		int duration = 0;
@@ -307,7 +309,7 @@ public class DataSeries {
 		}
 
 		calLast.add(duration, periodKnt);
-		System.out.println(Utils.getString(calLast) + Utils.NL);
+		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
 
 		final double val = last + (last * (futureChg / 100.0));
 		final DataValues dv = new DataValues(calLast, val);

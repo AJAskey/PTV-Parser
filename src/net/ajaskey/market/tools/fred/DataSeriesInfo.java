@@ -62,6 +62,7 @@ public class DataSeriesInfo {
 	private Calendar	lastUpdate;
 	private int				timeOffset;
 
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -87,8 +88,6 @@ public class DataSeriesInfo {
 			}
 
 			resp = Utils.getFromUrl(url);
-
-			//System.out.println(resp + Utils.NL);
 
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -135,7 +134,7 @@ public class DataSeriesInfo {
 
 				final String resp = Utils.getFromUrl(url);
 
-				System.out.println(resp + Utils.NL);
+				Debug.pwDbg.println(resp + Utils.NL);
 
 				final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -152,7 +151,7 @@ public class DataSeriesInfo {
 
 						final Element eElement = (Element) nodeResp;
 						final String series = eElement.getAttribute("id");
-						System.out.println(series);
+						Debug.pwDbg.println(series);
 
 						dsi.setName(series);
 						dsi.setTitle(eElement.getAttribute("title"));
