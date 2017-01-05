@@ -1,0 +1,465 @@
+
+1 Production & Business Activity
+  32262 Business Cycle Expansions & Contractions
+  32436 Construction
+  33490 Finance Companies
+  32216 Health Insurance
+  97 Housing
+    32300 Housing Units Authorized by Building Permits
+    32301 Housing Units Authorized, But Not Yet Started
+    32302 Housing Starts
+    32303 Housing Units Under Construction
+    32304 Housing Units Completed
+    32426 New Residential Sales
+  3 Industrial Production & Capacity Utilization
+  32429 Manufacturing
+    32432 Inventories
+    32431 New Orders
+    32433 Inventory to Shipments
+    32435 Unfilled Orders
+    32434 Unfilled Orders to Shipments
+    32430 Shipments
+  6 Retail Trade
+  33441 Services
+  33492 Technology
+  33202 Transportation
+    32993 Motor Vehicles
+  33203 Wholesale Trade
+
+32991 Money, Banking, & Finance
+  22 Interest Rates
+    33058 Automobile Loan Rates
+    51 Bankers Acceptance Rate
+    121 Certificates of Deposit
+    120 Commercial Paper
+    32348 Corporate Bonds
+    33059 Credit Card Loan Rates
+    32298 Eurodollar Deposits
+    118 FRB Rates - discount, fed funds, primary credit
+    33056 Interest Checking Accounts
+    33446 Interest Rate Spreads
+    32299 Interest Rate Swaps
+    33003 LIBOR Rates
+    32995 Long-Term Securities
+    33055 Money Market Accounts
+    114 Mortgage Rates
+    33057 Personal Loan Rates
+    117 Prime Bank Loan Rate
+    33491 Saving Accounts
+    116 Treasury Bills
+    115 Treasury Constant Maturity
+    82 Treasury Inflation-Indexed Securities
+  15 Exchange Rates
+    94 Daily Rates
+    95 Monthly Rates
+    32219 Annual Rates
+    105 Trade-Weighted Indexes
+    158 By Country
+      287 Australia
+      286 Austria
+      285 Belgium
+      284 Brazil
+      283 Canada
+      282 China
+      281 Denmark
+      280 Euro
+      279 Finland
+      278 France
+      277 Germany
+      274 Greece
+      273 Hong Kong
+      272 India
+      271 Ireland
+      276 Italy
+      275 Japan
+      270 Malaysia
+      269 Mexico
+      268 Netherlands
+      266 New Zealand
+      265 Norway
+      264 Portugal
+      263 Singapore
+      262 South Africa
+      261 South Korea
+      260 Spain
+      259 Sri Lanka
+      258 Sweden
+      257 Switzerland
+      267 Taiwan
+      254 Thailand
+      191 United Kingdom
+      192 Venezuela
+  24 Monetary Data
+    124 Monetary Base
+    123 Reserves
+    25 M1 and Components
+    29 M2 and Components
+    96 M2 Minus Small Time Deposits
+    28 M3 and Components
+    30 MZM
+    26 Memorandum Items
+    32242 Money Velocity
+    122 Borrowings
+    32215 Factors Affecting Reserve Balances
+    32218 Securities, Loans, & Other Assets & Liabilities Held by Fed
+  46 Financial Indicators
+    32414 Bond Market Indexes
+      32413 BofA Merrill Lynch Total Bond Return Index Values
+    33119 Consumer Financial Condition Indexes
+    32457 Financial Activity Measures
+    32255 Stock Market Indexes
+    32425 Volatility Indexes
+  23 Banking
+    100 Commercial Banking
+      33078 All Commercial Banks
+      33079 Domestically Chartered Commercial Banks
+      33080 Foreign-Related Institutions
+      33081 Large Domestically Chartered Commercial Banks
+      33082 Small Domestically Chartered Commercial Banks
+    83 Condition of Banks
+      93 United States
+      84 New England Census Division
+      85 Middle Atlantic Census Division
+      86 East North Central Census Division
+      87 West North Central Census Division
+      88 South Atlantic Census Division
+      89 East South Central Census Division
+      90 West South Central Census Division
+      91 Mountain Census Division
+      92 Pacific Census Division
+    101 Consumer Credit
+    32440 Delinquencies and Delinquency Rates
+    33121 Failures and Assistance Transactions
+    64 8th District Banking Performance
+      72 8th District
+      65 Arkansas
+      66 Illinois
+      67 Indiana
+      68 Kentucky
+      69 Mississippi
+      70 Missouri
+      71 Tennessee
+    33445 Mortgage Debt Outstanding
+    32439 Net Charge-Offs and Charge-Off Rates
+    99 Securities & Investments
+    32239 Senior Loan Officer Survey
+  32360 Business Lending
+    32996 Commercial Paper
+    32406 Commercial and Industrial Loans by Time that Pricing Terms Were Set and by Commitment
+      32407 All Commercial Banks
+      32408 Domestic Banks
+      32409 Foreign Banks
+      32410 Large Domestic Banks
+      32411 Small Domestic Banks
+      32412 Summary Statistics
+    33439 Commercial and Industrial Loans Backed by Small Business Association
+    32361 Commercial and Industrial Loans Made by All Commercial Banks
+      32362 All Commercial and Industrial Loans
+      32369 Base Rate of Loans
+      32364 Daily Repricing/Maturity Interval
+      32367 More Than 365 Days Repricing/Maturity Interval
+      32368 Size of Loans
+      32366 31 to 365 Days Repricing/Maturity Interval
+      32365 2 to 30 Days Repricing/Maturity Interval
+      32363 Zero Repricing/Maturity Interval
+    32370 Commercial and Industrial Loans Made by Domestic Banks
+      32371 All Commercial and Industrial Loans
+      32375 Base Rate of Loans
+      32372 Daily Repricing/Maturity Interval
+      32373 More Than 365 Days Repricing/Maturity Interval
+      32374 Size of Loans
+      32376 31 to 365 Days Repricing/Maturity Interval
+      32377 2 to 30 Days Repricing/Maturity Interval
+      32378 Zero Repricing/Maturity Interval
+    32379 Commercial and Industrial Loans Made by Large Domestic Banks
+      32380 All Commercial and Industrial Loans
+      32381 Base Rate of Loans
+      32382 Daily Repricing/Maturity Interval
+      32383 More Than 365 Days Repricing/Maturity Interval
+      32384 Size of Loans
+      32385 31 to 365 Days Repricing/Maturity Interval
+      32386 2 to 30 Days Repricing/Maturity Interval
+      32387 Zero Repricing/Maturity Interval
+    32388 Commercial and Industrial Loans Made by Small Domestic Banks
+      32389 All Commercial and Industrial Loans
+      32390 Base Rate of Loans
+      32391 Daily Repricing/Maturity Interval
+      32392 More Than 365 Days Repricing/Maturity Interval
+      32393 Size of Loans
+      32394 31 to 365 Days Repricing/Maturity Interval
+      32395 2 to 30 Days Repricing/Maturity Interval
+      32396 Zero Repricing/Maturity Interval
+    32397 Commercial and Industrial Loans Made by U.S. Branches and Agencies of Foreign Banks
+      32398 All Commercial and Industrial Loans
+      32399 Base Rate of Loans
+      32400 Daily Repricing/Maturity Interval
+      32401 More Than 365 Days Repricing/Maturity Interval
+      32402 Size of Loans
+      32403 31 to 365 Days Repricing/Maturity Interval
+      32404 2 to 30 Days Repricing/Maturity Interval
+      32405 Zero Repricing/Maturity Interval
+    33440 Commercial and Industrial Loans Made Under Participation or Syndication
+  32145 Foreign Exchange Intervention
+
+10 Population, Employment, & Labor Markets
+  12 Current Population Survey (Household Survey)
+    32442 Civilian Labor Force
+    32443 Civilian Labor Force Participation Rate
+    32444 Employment
+    32445 Employment Population Ratio
+    32446 Unemployment Level
+    32447 Unemployment Rate
+    32448 Not in Labor Force
+    32449 Labor Force Participation Rate
+    32450 Multiple Jobholders
+    32451 Duration of Unemployment
+    32452 Losers and Leavers
+    33501 Earnings
+    32453 Entrants and Reentrants
+    33502 Labor Force Status Flows
+  11 Current Employment Statistics (Establishment Survey)
+    32305 Total Nonfarm
+    32306 Total Private
+    32307 Goods-Producing
+    32326 Service-Providing
+    32308 Private Service-Providing
+    32309 Mining and Logging
+    32310 Construction
+    32311 Manufacturing
+    32312 Durable Goods
+    32313 Nondurable Goods
+    32314 Trade, Transportation, and Utilities
+    32315 Wholesale Trade
+    32316 Retail Trade
+    32317 Transportation and Warehousing
+    32318 Utilities
+    32319 Information
+    32320 Financial Activities
+    32321 Professional and Business Services
+    32322 Education and Health Services
+    32323 Leisure and Hospitality
+    32324 Other Services
+    32325 Government
+  32250 ADP Employment
+  33500 Education
+  33001 Income Distribution
+  32241 Job Openings and Labor Turnover (JOLTS)
+    32243 Job Openings (Levels and Rates)
+    32245 Hires (Levels and Rates)
+    32246 Total Separations (Levels and Rates)
+    32247 Quits (Levels and Rates)
+    32248 Layoffs and Discharges (Levels and Rates)
+    32249 Other Separations (Levels and Rates)
+  33509 Labor Market Conditions Indexes
+  104 Population
+    33735 Poverty Measures
+    33514 Supplemental Nutrition Assistance Program
+  2 Productivity & Costs
+    32349 Manufacturing
+      32352 Durable Goods
+      32353 Nondurable Goods
+    32350 Business
+    32351 Nonfarm Business
+    32354 Nonfinancial Corporations
+  33831 Minimum Wage
+  32240 Weekly Initial Claims
+  33731 Tax Data
+
+32455 Prices
+  32217 Commodities
+  9 Consumer Price Indexes (CPI and PCE)
+    32415 Food and Beverages
+    32416 Housing
+    32417 Apparel
+    32418 Transportation
+    32419 Medical Care
+    32420 Recreation
+    32421 Education and Communication
+    32422 Other Goods and Services
+    32423 Commodity and Services Groups
+    32424 Special Indexes
+  4 Employment Cost Index
+  33717 Health Care Indexes
+  32261 House Price Indexes
+  31 Producer Price Indexes (PPI)
+    33583 Commodity Based
+      33564 Accommodation Services
+      33548 Advertising Space and Time Sales
+      33533 Chemicals and Allied Products
+      33560 Cleaning and Building Maintenance Services
+      33573 Construction
+      33572 Contract Work on Textile Products, Apparel, and Leather
+      33551 Credit Intermediation Services
+      33550 Data Processing and Related Services
+      33574 Durability of Product
+      33563 Educational Services
+      33557 Employment Services
+      33567 Entertainment Services
+      33528 Farm Products
+      33575 Final Demand
+      33565 Food and Beverage for Immediate Consumption Services
+      33532 Fuels and Related Products and Power
+      33539 Furniture and Household Durables
+      33561 Health Care Services
+      33531 Hides, Skins, Leather, and Related Products
+      33582 Inputs to Industries
+      33553 Insurance and Annuities
+      33577 Intermediate Demand By Commodity Type
+      33576 Intermediate Demand By Production Flow
+      33552 Investment Services
+      33535 Lumber and Wood Products
+      33538 Machinery and Equipment
+      33570 Metal Treatment Services
+      33537 Metals and Metal Products
+      33571 Mining Services
+      33542 Miscellaneous Products
+      33547 Network Compensation from Broadcast and Cable Television and Radio
+      33540 Nonmetallic Mineral Products
+      33529 Processed Foods and Feeds
+      33556 Professional Services
+      33545 Publishing Sales, Excluding Software
+      33536 Pulp, Paper, and Allied Products
+      33554 Real Estate Services
+      33555 Rental and Leasing of Goods
+      33566 Repair and Maintenance Services
+      33569 Retail Trade Services
+      33534 Rubber and Plastic Products
+      33559 Selected Security Services
+      33546 Software Publishing
+      33580 Special Indexes
+      33581 Stage of Processing
+      33549 Telecommunication, Cable, and Internet User Services
+      33530 Textile Products and Apparel
+      33541 Transportation Equipment
+      33543 Transportation Services
+      33558 Travel Arrangement Services
+      33544 Warehousing, Storage, and Related Services
+      33562 Waste Collection and Remediation Services
+      33568 Wholesale Trade Services
+    33584 Industry Based
+      33586 Accommodation and Food Services
+      33588 Administrative and Support and Waste Management and Remediation Services
+      33585 Agriculture, Forestry, Fishing and Hunting
+      33587 Arts, Entertainment, and Recreation
+      33589 Construction
+      33591 Educational Services
+      33590 Finance and Insurance
+      33593 Health Care and Social Assistance
+      33592 Information
+      33597 Manufacturing
+      33596 Mining, Quarrying, and Oil and Gas Extraction
+      33594 Other Services (except Public Administration)
+      33599 Professional, Scientific, and Technical Services
+      33595 Public Administration
+      33598 Real Estate and Rental and Leasing
+      33600 Retail Trade
+      33601 Transportation and Warehousing
+      33602 Utilities
+      33603 Wholesale Trade
+  32220 Trade Indexes
+    32221 Import Price Indexes
+      32223 End Use Classification System
+      32226 By NAICS
+      32229 By Harmonized System
+      32230 By Locality of Origin
+    32224 Export Price Indexes
+      32225 End Use Classification System
+      32227 By NAICS
+      32228 By Harmonized System
+    32231 Services Price Indexes
+
+32992 National Accounts
+  18 National Income & Product Accounts
+    112 Domestic Capital Account (Saving & Investment)
+      33042 Capital Transfers Paid
+      33043 Capital Transfers Received
+      33040 Consumptions of Fixed Capital
+      33041 Corporate Capital Consumption
+      33037 Domestic Investments
+      33038 Inventories
+      33044 Noncorporate Business
+      33039 Private Fixed Investments
+    108 Foreign Transactions
+      33018 Exports
+      33019 Imports
+    33697 Fixed Assets
+      33699 Net Stocks
+      33701 Depreciation
+      33703 Fixed Investment
+    33122 Gross Domestic Income
+    106 GDP/GNP
+      33020 Shares of GDP
+    107 Gov't Receipts, Expenditures & Investment
+      33022 Gov't Consumption Expenditures
+      33024 Gov't Current Expenditures
+      33025 Gov't Current Transfer Receipts
+      33027 Gov't Fixed Investment
+      33023 Gov't Investment
+      33026 Gov't Social Benefits
+    33719 Health Care Spending
+    33054 Imputations
+    33045 Industry
+      33883 Administrative and Waste Management Services
+      33859 Agriculture, Forestry, Fishing, and Hunting
+      33887 Arts, Entertainment, Recreation, Accommodation, and Food Services
+      33046 Auto Output
+      33865 Construction
+      33885 Educational Services, Health Care, and Social Assistance
+      33047 Farm Output
+      33877 Finance, Insurance, Real Estate, Rental, and Leasing
+      33050 Full-time Equivalent Employees
+      33049 Full-time & Part-time Employees
+      33889 Government
+      33048 Households
+      33053 Imputed Interest
+      33875 Information
+      33881 Management Of Companies and Enterprises
+      33867 Manufacturing
+      33861 Mining
+      33052 Persons Engaged in Production
+      33879 Professional and Business Services
+      33871 Retail Trade
+      33051 Self-employed Persons
+      33873 Transportation and Warehousing
+      33863 Utilities
+      33869 Wholesale Trade
+    110 Personal Income & Outlays
+      33029 Compensation of Employees
+      33031 Employer Contributions
+      33028 Personal Consumption Expenditures
+      33032 Personal Current Taxes
+      33030 Wage and Salary Accruals
+    21 Price Indexes & Deflators
+    109 Private Enterprise Income
+      33035 Corporate Dividends
+      33033 Corporate Profits
+      33036 Proprietorship
+      33034 Taxes on Corporate Income
+    33021 Quantity Indexes
+    33401 Effect of ARRA on Selected NIPA Estimates
+  5 Federal Government Debt
+  32251 Flow of Funds
+    32258 B.101 Balance Sheet of Households and Nonprofit Organizations
+    32259 B.103 Balance Sheet of Nonfinancial Corporate Business
+    32260 B.104 Balance Sheet of Nonfinancial Noncorporate Business
+    32256 D.3 Credit Market Debt Outstanding by Sector
+    32257 L.1 Credit Market Debt Outstanding
+    33722 L.203 Net Interbank Transactions
+    33726 L.208 Debt Securities
+    33729 L.214 Loans
+    33204 S.1 Total Economy - Current Account
+    33205 S.2 Selected Aggregates for Total Economy and Sectors
+    33240 S.3 Households and Nonprofit Institutions Serving Households
+    33241 S.4 Nonfinancial Noncorporate Business
+    33242 S.5 Nonfinancial Corporate Business
+    33243 S.6 Financial Business
+    33244 S.7 Federal Government
+    33245 S.8 State and Local Governments
+    33246 S.9 Rest of the World
+  13 U.S. Trade & International Transactions
+    16 Exports
+    17 Imports
+    3000 Income Payments & Receipts
+    33705 International Investment Position
+    125 Trade Balance
+    127 U.S. International Finance
