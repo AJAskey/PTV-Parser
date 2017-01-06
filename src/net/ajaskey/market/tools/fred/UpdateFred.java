@@ -58,6 +58,8 @@ public class UpdateFred {
 				final String ext = name.substring(name.length() - 3);
 
 				if (ext.equalsIgnoreCase("csv")) {
+					
+					System.out.println(name);
 
 					final String series = name.substring(0, name.length() - 4);
 
@@ -87,6 +89,8 @@ public class UpdateFred {
 		}
 		
 		Debug.pwDbg.close();
+		
+		System.out.println("Done.");
 
 	}
 
