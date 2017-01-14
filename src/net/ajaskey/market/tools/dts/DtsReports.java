@@ -176,8 +176,8 @@ public class DtsReports {
 
 			// Last Day of Month
 			pw.println(Utils.NL + Utils.NL + "Last day of month comparison.");
-			final DtsData dRecent = DtsData.findLastOfMonthData(month, 2016);
-			final DtsData dPast = DtsData.findLastOfMonthData(month, 2015);
+			final DtsData dRecent = DtsData.findLastOfMonthData(month, yearRecent);
+			final DtsData dPast = DtsData.findLastOfMonthData(month, yearRecent-1);
 			pw.println(DtsReports.genDiffReport(dPast, dRecent));
 
 		} catch (final FileNotFoundException e) {

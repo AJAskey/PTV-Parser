@@ -90,8 +90,9 @@ public class DataSeries {
 
 	private Calendar							cal1;
 	private final DataSeriesInfo	info;
-	
+
 	public DataSeriesInfo getInfo() {
+
 		return info;
 	}
 
@@ -133,7 +134,7 @@ public class DataSeries {
 			ds.setAggType(AggregationMethodType.EOP);
 			//ds.setOrder(OrderType.DESC);
 			ds.setRespType(ResponseType.LIN);
-			List<DataValues> dvList = ds.getValues(1.0, true);
+			List<DataValues> dvList = ds.getValues(1.0, true, false);
 
 			for (final DataValues d : dvList) {
 				System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
@@ -217,7 +218,7 @@ public class DataSeries {
 		return "&units=" + this.respType.toString().toLowerCase();
 	}
 
-	public List<DataValues> getValues(double futureChg, boolean noZeroValues) {
+	public List<DataValues> getValues(double futureChg, boolean noZeroValues, boolean estimateData) {
 
 		final List<DataValues> retList = new ArrayList<>();
 
@@ -269,7 +270,9 @@ public class DataSeries {
 			e.printStackTrace();
 		}
 
-		appendEstimates(retList, futureChg);
+		if (estimateData) {
+			appendEstimates(retList, futureChg);
+		}
 
 		return retList;
 	}

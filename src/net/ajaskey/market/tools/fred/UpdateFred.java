@@ -5,9 +5,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.dts.DtsData;
+import net.ajaskey.market.tools.dts.DtsSorter;
 
 /**
  * This class...
@@ -39,14 +44,16 @@ public class UpdateFred {
 	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
 	public final static File							file	= new File(FredCommon.optumaPath);
 
+	private static List<DataSeriesInfo> dsList = new ArrayList<>();
+
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
-		
+
 		Debug.pwDbg = new PrintWriter("update-fred.dbg");
 
 		final File list[] = file.listFiles();
@@ -58,7 +65,7 @@ public class UpdateFred {
 				final String ext = name.substring(name.length() - 3);
 
 				if (ext.equalsIgnoreCase("csv")) {
-					
+
 					System.out.println(name);
 
 					final String series = name.substring(0, name.length() - 4);
@@ -71,13 +78,17 @@ public class UpdateFred {
 
 					final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
+					dsList.add(dsi);
+
 					if (lastModTime.after(dsi.getLastUpdate())) {
-						Debug.pwDbg.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime())+ Utils.TAB + dsi.getTitle() + Utils.NL);
+						Debug.pwDbg.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
+						    + dsi.getTitle() + Utils.NL);
 					} else {
-						Debug.pwDbg.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.NL);
+						Debug.pwDbg.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
+						    + dsi.getTitle() + Utils.NL);
 						final DataSeries ds = new DataSeries(series);
 
-						FredCommon.writeToOptuma(ds.getValues(0.0, UpdateFred.noZerosCheck(series)), series);
+						FredCommon.writeToOptuma(ds.getValues(0.0, UpdateFred.noZerosCheck(series),false), series);
 					}
 
 					pw.println(dsi);
@@ -87,9 +98,18 @@ public class UpdateFred {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		Debug.pwDbg.close();
-		
+
+		Collections.sort(dsList, new DsiSorter());
+
+		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "last-update.txt")) {
+			for (DataSeriesInfo ds : dsList) {
+				pw.printf("%-28s %-25s %20s    %s%n", ds.getName(), ds.getFrequency(), sdf.format(ds.getLastUpdate().getTime()),
+				    ds.getTitle());
+			}
+		}
+
 		System.out.println("Done.");
 
 	}
@@ -97,8 +117,8 @@ public class UpdateFred {
 	private static boolean noZerosCheck(String sname) {
 
 		// Usually for Daily updates
-		if (sname.equalsIgnoreCase("sp500") || sname.equalsIgnoreCase("WILL5000IND")
-		    || sname.equalsIgnoreCase("DSG10")  || sname.equalsIgnoreCase("DSG2")  ) {
+		if (sname.equalsIgnoreCase("sp500") || sname.equalsIgnoreCase("WILL5000IND") || sname.equalsIgnoreCase("DSG10")
+		    || sname.equalsIgnoreCase("DSG2")) {
 			return true;
 		}
 		return false;

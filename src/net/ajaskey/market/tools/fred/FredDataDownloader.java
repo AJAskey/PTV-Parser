@@ -51,23 +51,28 @@ public class FredDataDownloader {
 
 		//
 		for (final String s : seriesNames) {
-			final String fld[] = s.split(" ");
+			final String fld[] = s.split("\\s+");
 			double chg = 0;
-			boolean noZeros = false;
+			boolean noZeros = true;
+			boolean estimateData = false;
 			if (fld.length == 1) {
 				chg = 0.0;
-				noZeros = false;
 			} else if (fld.length == 2) {
 				chg = Double.parseDouble(fld[1].trim());
-				noZeros = false;
-			} else if (fld.length >= 3) {
+			} else if (fld.length == 3) {
 				chg = Double.parseDouble(fld[1].trim());
 				noZeros = Boolean.parseBoolean(fld[2].trim());
+			} else if (fld.length >= 4) {
+				chg = Double.parseDouble(fld[1].trim());
+				noZeros = Boolean.parseBoolean(fld[2].trim());
+				estimateData = Boolean.parseBoolean(fld[3].trim());
 			}
-			FredDataDownloader.process(fld[0].trim(), chg, noZeros);
+			FredDataDownloader.process(fld[0].trim(), chg, noZeros, estimateData);
 		}
 
 		Debug.pwDbg.close();
+		
+		System.out.println("Done.");
 	}
 
 	/**
@@ -77,10 +82,11 @@ public class FredDataDownloader {
 	 * @param series
 	 * @param futureChg
 	 * @param noZeroValues
+	 * @param estimateData
 	 */
-	private static void process(String series, double futureChg, boolean noZeroValues) {
-		
-		String fname = FredCommon.optumaPath+series + ".csv";
+	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData) {
+
+		String fname = FredCommon.optumaPath + series + ".csv";
 		if (new File(fname).exists()) {
 			return;
 		}
@@ -92,7 +98,7 @@ public class FredDataDownloader {
 			ds.setAggType(AggregationMethodType.EOP);
 			ds.setRespType(ResponseType.LIN);
 
-			final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues);
+			final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
 			FredCommon.writeToOptuma(dvList, ds.getName());
 			Debug.pwDbg.println(ds);

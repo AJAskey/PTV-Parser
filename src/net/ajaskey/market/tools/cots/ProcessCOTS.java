@@ -238,7 +238,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
-		// ProcessCOTS.readDaily();
+		//ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
 
