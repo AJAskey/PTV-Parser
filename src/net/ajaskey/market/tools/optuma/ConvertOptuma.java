@@ -1,9 +1,11 @@
 
-package net.ajaskey.market.tools;
+package net.ajaskey.market.tools.optuma;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+
+import net.ajaskey.market.tools.ConvertOHLCV;
 
 /**
  * This class...
@@ -58,5 +60,8 @@ public class ConvertOptuma {
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rymm.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfcash.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfpcash.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/crb.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxupvol.html").toPath());
+		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxdownvol.html").toPath());
 	}
 }

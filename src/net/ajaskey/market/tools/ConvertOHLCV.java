@@ -140,6 +140,9 @@ public class ConvertOHLCV {
 		}
 
 		form = ConvertOHLCV.getFormat();
+		
+		//quick fix
+		//form = OhlcvData.FormType.SHORT;
 
 		Collections.sort(data, new SortOhlcv());
 		if (form == OhlcvData.FormType.SHORT) {

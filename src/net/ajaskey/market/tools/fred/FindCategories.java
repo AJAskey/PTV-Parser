@@ -139,7 +139,7 @@ public class FindCategories {
 
 	private static void processParentCategory(int cat, int indent) {
 
-		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&"+"&api_key="
+		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key="
 		    + ApiKey.get();
 
 		try {
@@ -160,18 +160,20 @@ public class FindCategories {
 					final Element eElement = (Element) nodeResp;
 					final String tmp = eElement.getAttribute("id");
 					final String name = eElement.getAttribute("name");
-					id = Integer.parseInt(tmp);
-					String tab = "";
-					for (int i = 0; i < indent; i++) {
-						tab += "  ";
+					if (!name.contains("DISCONTINUED")) {
+						id = Integer.parseInt(tmp);
+						String tab = "";
+						for (int i = 0; i < indent; i++) {
+							tab += "  ";
+						}
+
+						pw.println(Utils.NL + tab + id + " " + name);
+						pwSum.println(tab + id + " " + name);
+
+						processParentCategory(id, indent + 1);
+
+						FindCategories.getSeries(id, indent + 2);
 					}
-
-					pw.println(Utils.NL + tab + id + " " + name);
-					pwSum.println(tab + id + " " + name);
-
-					processParentCategory(id, indent + 1);
-
-					FindCategories.getSeries(id, indent + 2);
 				}
 			}
 
@@ -202,10 +204,13 @@ public class FindCategories {
 					final Element eElement = (Element) nodeResp;
 					final String tmp = eElement.getAttribute("id");
 					final String name = eElement.getAttribute("name");
-					id = Integer.parseInt(tmp);
 
-					pw.println(id + " " + name);
-					pwSum.println(Utils.NL + id + " " + name);
+					if (!name.contains("DISCONTINUED")) {
+						id = Integer.parseInt(tmp);
+
+						pw.println(id + " " + name);
+						pwSum.println(Utils.NL + id + " " + name);
+					}
 				}
 			}
 
@@ -243,13 +248,16 @@ public class FindCategories {
 					final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
 					title = filtered.trim();
 
-					String tab = "";
-					for (int i = 0; i < indent; i++) {
-						tab += "  ";
-					}
+					if (!title.contains("DISCONTINUED")) {
 
-					//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
-					pw.println(tab + idStr + "\t" + title + "\t" + freq + " -- " + sa);
+						String tab = "";
+						for (int i = 0; i < indent; i++) {
+							tab += "  ";
+						}
+
+						//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
+						pw.println(tab + idStr + "\t" + title + "\t" + freq + " -- " + sa);
+					}
 				}
 			}
 

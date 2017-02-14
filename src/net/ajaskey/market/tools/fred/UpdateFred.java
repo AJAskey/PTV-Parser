@@ -46,6 +46,8 @@ public class UpdateFred {
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
 
+	private static List<InputRecord> records = new ArrayList<>();
+
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
@@ -55,6 +57,13 @@ public class UpdateFred {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		Debug.pwDbg = new PrintWriter("update-fred.dbg");
+
+		final List<String> seriesNames = FredCommon.readSeriesNames("fred-series.dat");
+		for (final String s : seriesNames) {
+			InputRecord ir = new InputRecord(s);
+			//System.out.println(ir);
+			records.add(ir);
+		}
 
 		final File list[] = file.listFiles();
 
@@ -66,32 +75,39 @@ public class UpdateFred {
 
 				if (ext.equalsIgnoreCase("csv")) {
 
-					System.out.println(name);
-
 					final String series = name.substring(0, name.length() - 4);
 
-					final long modTime = f.lastModified();
-					final Calendar lastModTime = Calendar.getInstance();
-					lastModTime.setTimeInMillis(modTime);
+					InputRecord ir = findInputRecord(series);
+					
+					//System.out.println(ir);
 
-					Debug.pwDbg.printf("%-15s %-12s%s%n", name, series, sdf.format(lastModTime.getTime()));
+					if ((ir != null) && (ir.series.length() > 0)) {
 
-					final DataSeriesInfo dsi = new DataSeriesInfo(series);
+						System.out.println(series);
 
-					dsList.add(dsi);
+						final long modTime = f.lastModified();
+						final Calendar lastModTime = Calendar.getInstance();
+						lastModTime.setTimeInMillis(modTime);
 
-					if (lastModTime.after(dsi.getLastUpdate())) {
-						Debug.pwDbg.println("Local file created After    " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
-						    + dsi.getTitle() + Utils.NL);
-					} else {
-						Debug.pwDbg.println("Local file created Before   " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
-						    + dsi.getTitle() + Utils.NL);
-						final DataSeries ds = new DataSeries(series);
+						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
-						FredCommon.writeToOptuma(ds.getValues(0.0, UpdateFred.noZerosCheck(series),false), series);
+						final DataSeriesInfo dsi = new DataSeriesInfo(series);
+
+						dsList.add(dsi);
+
+						if (lastModTime.after(dsi.getLastUpdate())) {
+							Debug.pwDbg.println("Local file created After                               " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
+							    + dsi.getTitle() + Utils.NL);
+						} else {
+							Debug.pwDbg.println("Local file created Before                              " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
+							    + dsi.getTitle() + Utils.NL);
+							final DataSeries ds = new DataSeries(series);
+
+							FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
+						}
+
+						pw.println(dsi);
 					}
-
-					pw.println(dsi);
 
 				}
 			}
@@ -114,14 +130,19 @@ public class UpdateFred {
 
 	}
 
-	private static boolean noZerosCheck(String sname) {
+	/**
+	 * net.ajaskey.market.tools.fred.findInputRecord
+	 *
+	 * @param series
+	 * @return
+	 */
+	private static InputRecord findInputRecord(String series) {
 
-		// Usually for Daily updates
-		if (sname.equalsIgnoreCase("sp500") || sname.equalsIgnoreCase("WILL5000IND") || sname.equalsIgnoreCase("DSG10")
-		    || sname.equalsIgnoreCase("DSG2")) {
-			return true;
+		for (InputRecord ir : records) {
+			if (ir.series.equalsIgnoreCase(series)) {
+				return ir;
+			}
 		}
-		return false;
+		return null;
 	}
-
 }
