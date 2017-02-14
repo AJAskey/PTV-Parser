@@ -1,5 +1,17 @@
 package net.ajaskey.market.tools.optuma;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.input.ParseData;
+import net.ajaskey.market.ta.input.TickerFullName;
 
 /**
  * This class...
@@ -39,10 +51,50 @@ public class WriteStockData {
 	 * net.ajaskey.market.tools.optuma.main
 	 *
 	 * @param args
+	 * @throws ParseException 
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws ParseException, IOException {
+		
+		final List<String> filenames = new ArrayList<>();
+		final List<String> fullfilenames = new ArrayList<>();
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
+		fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
+		fullfilenames.add("symbols\\NYSE_SymbolList.txt");
+		TickerFullName.build(fullfilenames);
+
+		final String arg = "dataPath";
+		final String dataPath = System.getProperty(arg, "");
+		filenames.add(dataPath + "\\ASCII\\AMEX");
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		filenames.add(dataPath + "\\ASCII\\NYSE");
+		filenames.add(dataPath + "\\ASCII\\INDEX");
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList("lists\\stockdata-list.txt"));
+
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
+
+		for (final TickerData td : tdAll) {
+			// if (ValidateData.validate(td)) {
+			td.generateDerived(false);
+			try (PrintWriter pw = new PrintWriter("C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\StockData\\" + td.getTicker() + ".csv")) {
+				System.out.println(td.getTicker());
+				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
+					final String d = sdf.format(td.getDate(i).getTime());
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
+					   (int) td.getVolume(i));
+					// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
+					// td.getOpen(i), td.getHigh(i), td.getLow(i),
+					// td.getClose(i), (int) td.getVolume(i));
+				}
+			}
+			// }
+		}
+		System.out.println("Done.");
 	}
 
 }
