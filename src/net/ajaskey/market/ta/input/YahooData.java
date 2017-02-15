@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import net.ajaskey.market.misc.Utils;
 
@@ -40,6 +41,7 @@ import net.ajaskey.market.misc.Utils;
 public class YahooData {
 
 	public static List<String> get(List<String> tickers, String command) {
+
 		String tkrs = "";
 		for (final String t : tickers) {
 			tkrs += t + "+";
@@ -73,6 +75,7 @@ public class YahooData {
 	 * @return
 	 */
 	public static String get(String tickers, String command) {
+
 		String response = null;
 		final String url = "http://download.finance.yahoo.com/d/quotes.csv?s=" + tickers + "&f=" + command;
 		try {
@@ -83,6 +86,29 @@ public class YahooData {
 		return response;
 	}
 
+	public static List<String> getHistoric(String ticker) {
+
+		List<String> retData = new ArrayList<>();
+
+		String response = null;
+		final String url = "http://chart.finance.yahoo.com/table.csv?s=" + ticker
+		    + "&a=0&b=3&c=1900&d=1&e=15&f=2017&g=d&ignore=.csv";
+		try {
+			response = YahooData.getFromUrl(url);
+			try (Scanner scanner = new Scanner(response)) {
+				while (scanner.hasNextLine()) {
+					String line = scanner.nextLine();
+					retData.add(line);
+				}
+			} catch (Exception e1) {
+				retData.clear();
+			}
+		} catch (final IOException e) {
+			response = null;
+		}
+		return retData;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.getBusinessSummary
@@ -91,6 +117,7 @@ public class YahooData {
 	 * @return
 	 */
 	public static String getBusinessSummary(String tkr) {
+
 		final String url = "http://finance.yahoo.com/q/pr?s=" + tkr + "+Profile";
 		String retResp = "N/A";
 		try {
@@ -115,6 +142,7 @@ public class YahooData {
 	 * @return
 	 */
 	public static String[] getSectorIndustry(String tkr) {
+
 		final String url = "http://finance.yahoo.com/q/in?s=" + tkr + "+Industry";
 		final String retResp[] = { "N/A", "N/A" };
 		try {
@@ -159,13 +187,15 @@ public class YahooData {
 	 */
 	public static void main(String[] args) {
 
-		YahooData.testit();
+		//YahooData.testit();
 
 		final String str = "1234" + Utils.NL;
 		str.trim();
 
-		final String resp = YahooData.get("EFOI", "f6n4");
-		System.out.println(resp);
+		final List<String> resp = YahooData.getHistoric("AAPL");
+		for (String s : resp) {
+			System.out.println(s);
+		}
 
 		final List<String> tickers = new ArrayList<>();
 		tickers.add("MSFT");
@@ -186,6 +216,7 @@ public class YahooData {
 	 * @throws IOException
 	 */
 	private static String getFromUrl(String url) throws IOException {
+
 		final StringBuilder sb = new StringBuilder();
 
 		final URL yahooURL = new URL(url);
@@ -207,6 +238,7 @@ public class YahooData {
 	 *
 	 */
 	private static void testit() {
+
 		final String tkr = "rcii";
 		final String[] secind = YahooData.getSectorIndustry(tkr);
 		for (final String str : secind) {

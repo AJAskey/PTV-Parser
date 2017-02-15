@@ -93,10 +93,13 @@ public class ConvertOHLCV {
 	 * net.ajaskey.market.tools.readFile
 	 *
 	 * @param path
+	 * @return 
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void parseHtmlFile(Path path) throws IOException, ParseException {
+	public static String parseHtmlFile(Path path) throws IOException, ParseException {
+		
+		String retStr = "";
 
 		System.out.println("Processing : " + path.toString());
 
@@ -133,6 +136,8 @@ public class ConvertOHLCV {
 					final double l = Double.parseDouble(fld[4].trim());
 					final long v = Long.parseLong(fld[6].trim());
 					final OhlcvData d = new OhlcvData(cal, o, h, l, c, v);
+					
+					retStr += d.toShortString()+ "\n";
 
 					data.add(d);
 				}
@@ -151,6 +156,7 @@ public class ConvertOHLCV {
 			ConvertOHLCV.writeFullForm(path.toFile().getName());
 		}
 
+		return retStr;
 	}
 
 	/**
