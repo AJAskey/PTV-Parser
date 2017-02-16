@@ -1,8 +1,14 @@
 
-package net.ajaskey.market.tools;
+package net.ajaskey.market.tools.optuma;
 
-import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.io.StringReader;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -10,19 +16,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.fred.DataSeries;
-import net.ajaskey.market.tools.fred.DataValues;
-import net.ajaskey.market.tools.fred.Debug;
-import net.ajaskey.market.tools.fred.FredCommon;
-import net.ajaskey.market.tools.fred.DataSeries.AggregationMethodType;
-import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
+import net.ajaskey.market.tools.ConvertOHLCV;
+import net.ajaskey.market.tools.helpers.OhlcvData;
 
 /**
  * This class...
@@ -51,6 +51,12 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class ProcessEIA {
 
+	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyyMMdd");
+	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+
+	private static DocumentBuilderFactory	dbFactory	= null;
+	private static DocumentBuilder				dBuilder	= null;
+
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -61,16 +67,45 @@ public class ProcessEIA {
 
 		String apiKey = "5083132038aeb07288f19e6313b85532";
 
-		String outName = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/EIA/.csv";
+		//String outName = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/EIA/.csv";
 		String gasURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WGFUPUS2.W&out=xml";
+		String keroURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WKJUPUS2.W&out=xml";
 
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		dbFactory = DocumentBuilderFactory.newInstance();
+
+		List<OhlcvData> gas = getData(gasURL);
+		writeList(gas, "gasoline_demand");
+
+		List<OhlcvData> kero = getData(keroURL);
+		writeList(kero, "kerosene_demand");
+
+	}
+
+	private static void writeList(List<OhlcvData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
+			for (final OhlcvData price : list) {
+
+				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static List<OhlcvData> getData(String url) {
+
+		List<OhlcvData> ret = new ArrayList<>();
 
 		String resp;
 		try {
-			resp = Utils.getFromUrl(gasURL);
-			System.out.println(resp);
+			dBuilder = dbFactory.newDocumentBuilder();
+
+			resp = Utils.getFromUrl(url);
+			//System.out.println(resp);
 
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -81,24 +116,38 @@ public class ProcessEIA {
 				final Node nodeResp = nResp.item(knt);
 				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
 					NodeList nrList = nodeResp.getChildNodes();
+					Calendar cal = null;
 					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
 						Node nr = nrList.item(cnt);
 						if (nr.getNodeType() == Node.ELEMENT_NODE) {
 							String s = nr.getNodeName();
 							if (s.contains("date")) {
-								System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-							} else if (s.contains("value")) {
-								System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-							}
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								final Date date = sdf.parse(nr.getTextContent().trim());
+								cal = Calendar.getInstance();
+								cal.setTime(date);
 
+							} else if (s.contains("value")) {
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								if (cal != null) {
+									double c = Double.parseDouble(nr.getTextContent().trim());
+									OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
+									cal = null;
+									ret.add(d);
+									System.out.println(d.toShortString());
+								}
+							}
 						}
 					}
 				}
 			}
 
 		} catch (Exception e) {
+			ret.clear();
 			e.printStackTrace();
 		}
+
+		return ret;
 	}
 
 }

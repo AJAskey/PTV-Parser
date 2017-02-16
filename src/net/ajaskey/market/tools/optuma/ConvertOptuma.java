@@ -3,14 +3,17 @@ package net.ajaskey.market.tools.optuma;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.input.YahooData;
 import net.ajaskey.market.tools.ConvertOHLCV;
 import net.ajaskey.market.tools.helpers.OhlcvData;
@@ -42,6 +45,9 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  */
 public class ConvertOptuma {
 
+	private static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
+	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -70,51 +76,96 @@ public class ConvertOptuma {
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/crb.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxupvol.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxdownvol.html").toPath());
-		
-		List<OhlcvData> eps = getGaapEps();
-		for(OhlcvData e : eps) {
-			System.out.println(e.toShortString());
+
+		final List<OhlcvData> eps = ConvertOptuma.getGaapEps();
+
+		final List<OhlcvData> spx = ConvertOptuma.BoundGaapToSpx(eps);
+
+		double MAX_PE = 37.0;
+		Collections.reverse(spx);
+		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\gaap_spx_bound.csv")) {
+			for (final OhlcvData price : spx) {
+				if (price.open > 0.0) {
+					double pe = price.close / price.open;
+					if (pe > MAX_PE) {
+						pe = MAX_PE;
+					}
+					pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), pe);
+				}
+			}
 		}
-		BoundGaapToSpx();
 	}
-	
-	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("dd-MMM-yyyy");
+
+	/**
+	 * net.ajaskey.market.tools.optuma.BoundGaapToSpx
+	 *
+	 * @param epsList
+	 * @throws ParseException
+	 *
+	 */
+	private static List<OhlcvData> BoundGaapToSpx(List<OhlcvData> epsList) throws ParseException {
+
+		final List<String> data = YahooData.getHistoric("^GSPC");
+		final List<OhlcvData> spx = new ArrayList<>();
+		for (final String s : data) {
+			//System.out.println(s);
+			final String fld[] = s.split(",");
+			try {
+				final Date date = sdfOptuma.parse(fld[0]);
+				final Calendar cal = Calendar.getInstance();
+				cal.setTime(date);
+				final double c = Double.parseDouble(fld[4]);
+				final OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
+				d.open = 0.0;
+				spx.add(d);
+				//System.out.println("gaap  "+d.toShortString());
+			} catch (final Exception e) {
+			}
+		}
+
+		for (final OhlcvData price : spx) {
+			for (final OhlcvData eps : epsList) {
+				if (Utils.sameDate(price.date, eps.date)) {
+					price.open = eps.close;
+					break;
+				} else if (eps.date.before(price.date)) {
+					price.open = eps.close;
+					break;
+				}
+			}
+		}
+
+		return spx;
+
+	}
 
 	private static List<OhlcvData> getGaapEps() {
-		List<OhlcvData> data = new ArrayList<>(); 
+
+		final List<OhlcvData> data = new ArrayList<>();
 		try {
-			String gaapEps = ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/gaap_spx.html").toPath());
+			final String gaapEps = ConvertOHLCV
+			    .parseHtmlFile(new File("C:/Users/ajask_000/Downloads/gaap_spx.html").toPath());
 			try (Scanner scanner = new Scanner(gaapEps)) {
 				while (scanner.hasNextLine()) {
-					String line = scanner.nextLine();
-					System.out.println(line);
-					String fld[] = line.split("\\s+");
-					Date date = sdf.parse(fld[0]);
-					Calendar cal = Calendar.getInstance();
+					final String line = scanner.nextLine();
+					//System.out.println(line);
+					final String fld[] = line.split("\\s+");
+					final Date date = sdf.parse(fld[0]);
+					final Calendar cal = Calendar.getInstance();
 					cal.setTime(date);
-					double c = Double.parseDouble(fld[1]);
-					OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
+					final double c = Double.parseDouble(fld[1]);
+					final OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
 					data.add(d);
 				}
-			} catch (Exception e1) {
+			} catch (final Exception e1) {
 			}
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (final ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return data;
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.optuma.BoundGaapToSpx
-	 *
-	 */
-	private static void BoundGaapToSpx() {
-
-		List<String> data = YahooData.getHistoric("^GSPC");
-		
 	}
 }

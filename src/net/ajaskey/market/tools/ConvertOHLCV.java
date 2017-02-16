@@ -56,8 +56,8 @@ public class ConvertOHLCV {
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
 	final private static SimpleDateFormat	sdfOut		= new SimpleDateFormat("yyyy-MM-dd");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
-	final private static String						shortPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dc";
-	final private static String						fullPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dohlcv";
+	final public static String						shortPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dc";
+	final public static String						fullPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dohlcv";
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -93,12 +93,12 @@ public class ConvertOHLCV {
 	 * net.ajaskey.market.tools.readFile
 	 *
 	 * @param path
-	 * @return 
+	 * @return
 	 * @throws IOException
 	 * @throws ParseException
 	 */
 	public static String parseHtmlFile(Path path) throws IOException, ParseException {
-		
+
 		String retStr = "";
 
 		System.out.println("Processing : " + path.toString());
@@ -136,8 +136,8 @@ public class ConvertOHLCV {
 					final double l = Double.parseDouble(fld[4].trim());
 					final long v = Long.parseLong(fld[6].trim());
 					final OhlcvData d = new OhlcvData(cal, o, h, l, c, v);
-					
-					retStr += d.toShortString()+ "\n";
+
+					retStr += d.toShortString() + "\n";
 
 					data.add(d);
 				}
@@ -145,7 +145,7 @@ public class ConvertOHLCV {
 		}
 
 		form = ConvertOHLCV.getFormat();
-		
+
 		//quick fix
 		//form = OhlcvData.FormType.SHORT;
 

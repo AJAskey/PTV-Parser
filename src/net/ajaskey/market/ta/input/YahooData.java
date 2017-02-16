@@ -92,7 +92,7 @@ public class YahooData {
 
 		String response = null;
 		final String url = "http://chart.finance.yahoo.com/table.csv?s=" + ticker
-		    + "&a=0&b=3&c=1900&d=1&e=15&f=2017&g=d&ignore=.csv";
+		    + "&a=0&b=3&c=1990&d=1&e=15&f=2050&g=d&ignore=.csv";
 		try {
 			response = YahooData.getFromUrl(url);
 			try (Scanner scanner = new Scanner(response)) {
