@@ -9,33 +9,26 @@ import java.util.List;
  * This class provides a method to store other information beyond price and
  * volume data.
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class IndustryData {
@@ -113,6 +106,7 @@ public class IndustryData {
 	 * @return the avgVol
 	 */
 	public double getAvgVol() {
+
 		return this.avgVol;
 	}
 
@@ -120,6 +114,7 @@ public class IndustryData {
 	 * @return the chg260
 	 */
 	public double getChg260() {
+
 		return this.chg260;
 	}
 
@@ -127,6 +122,7 @@ public class IndustryData {
 	 * @return the exch
 	 */
 	public String getExch() {
+
 		return this.exch;
 	}
 
@@ -134,6 +130,7 @@ public class IndustryData {
 	 * @return the fShares
 	 */
 	public long getfShares() {
+
 		return this.fShares;
 	}
 
@@ -141,6 +138,7 @@ public class IndustryData {
 	 * @return the marketCap
 	 */
 	public String getMarketCap() {
+
 		return this.marketCap;
 	}
 
@@ -148,6 +146,7 @@ public class IndustryData {
 	 * @return the industry
 	 */
 	public String getName() {
+
 		return this.industry;
 	}
 
@@ -155,10 +154,12 @@ public class IndustryData {
 	 * @return the priceInRange260
 	 */
 	public double getPriceInRange260() {
+
 		return this.priceInRange260;
 	}
 
 	public List<Integer> getRank() {
+
 		return this.rank;
 	}
 
@@ -166,10 +167,12 @@ public class IndustryData {
 	 * @return the rank
 	 */
 	public int getRank(int pos) {
+
 		return this.rank.get(pos);
 	}
 
 	public String getRanks() {
+
 		String ranks = "";
 		for (final Integer i : this.rank) {
 			ranks += String.format("%3d  ", (i + 1));
@@ -181,6 +184,7 @@ public class IndustryData {
 	 * @return the rawRs
 	 */
 	public double getRawRs() {
+
 		return this.rawRs;
 	}
 
@@ -188,6 +192,7 @@ public class IndustryData {
 	 * @return the rawRsSt
 	 */
 	public double getRawRsSt() {
+
 		return this.rawRsSt;
 	}
 
@@ -195,6 +200,7 @@ public class IndustryData {
 	 * @return the sector
 	 */
 	public String getSector() {
+
 		return this.sector;
 	}
 
@@ -202,6 +208,7 @@ public class IndustryData {
 	 * @return the shares
 	 */
 	public long getShares() {
+
 		return this.outShares;
 	}
 
@@ -209,6 +216,7 @@ public class IndustryData {
 	 * @return the slope
 	 */
 	public double getSlope(int pos) {
+
 		return this.slope.get(pos);
 	}
 
@@ -216,6 +224,7 @@ public class IndustryData {
 	 * @return the ticker
 	 */
 	public String getTicker() {
+
 		return this.ticker;
 	}
 
@@ -224,6 +233,7 @@ public class IndustryData {
 	 *          the avgVol to set
 	 */
 	public void setAvgVol(double avgVol) {
+
 		this.avgVol = avgVol;
 	}
 
@@ -232,6 +242,7 @@ public class IndustryData {
 	 *          the chg260 to set
 	 */
 	public void setChg260(double chg260) {
+
 		this.chg260 = chg260;
 	}
 
@@ -240,6 +251,7 @@ public class IndustryData {
 	 *          the exch to set
 	 */
 	public void setExch(String exch) {
+
 		this.exch = exch;
 	}
 
@@ -248,6 +260,7 @@ public class IndustryData {
 	 *          the marketCap to set
 	 */
 	public void setMarketCap(String marketCap) {
+
 		this.marketCap = marketCap;
 	}
 
@@ -256,6 +269,7 @@ public class IndustryData {
 	 *          the industry to set
 	 */
 	public void setName(String name) {
+
 		this.industry = name;
 	}
 
@@ -264,6 +278,7 @@ public class IndustryData {
 	 *          the priceInRange260 to set
 	 */
 	public void setPriceInRange260(double priceInRange260) {
+
 		this.priceInRange260 = priceInRange260;
 	}
 
@@ -272,6 +287,7 @@ public class IndustryData {
 	 *          the rank to set
 	 */
 	public void setRank(int rank) {
+
 		this.rank.add(rank);
 	}
 
@@ -280,6 +296,7 @@ public class IndustryData {
 	 *          the rawRs to set
 	 */
 	public void setRawRs(double rawRs) {
+
 		this.rawRs = rawRs;
 	}
 
@@ -288,6 +305,7 @@ public class IndustryData {
 	 *          the rawRsSt to set
 	 */
 	public void setRawRsSt(double rawRsSt) {
+
 		this.rawRsSt = rawRsSt;
 	}
 
@@ -296,6 +314,7 @@ public class IndustryData {
 	 *          the sector to set
 	 */
 	public void setSector(String sector) {
+
 		this.sector = sector;
 	}
 
@@ -304,6 +323,7 @@ public class IndustryData {
 	 *          the shares to set
 	 */
 	public void setShares(long shares) {
+
 		this.outShares = shares;
 	}
 
@@ -312,6 +332,7 @@ public class IndustryData {
 	 *          the slope to set
 	 */
 	public void setSlope(double slope) {
+
 		this.slope.add(slope);
 	}
 
@@ -320,6 +341,7 @@ public class IndustryData {
 	 *          the ticker to set
 	 */
 	public void setTicker(String ticker) {
+
 		this.ticker = ticker;
 	}
 

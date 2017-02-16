@@ -18,50 +18,43 @@ import net.ajaskey.market.ta.methods.UtilMethods;
 /**
  * This application generates market breadth data.
  *
- * @author
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
+ *         </p> <p> Permission is hereby granted, free of charge, to any person
+ *         obtaining a copy of this software and associated documentation files
+ *         (the "Software"), to deal in the Software without restriction,
+ *         including without limitation the rights to use, copy, modify, merge,
+ *         publish, distribute, sublicense, and/or sell copies of the Software,
+ *         and to permit persons to whom the Software is furnished to do so,
+ *         subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class Internals {
 
-	final static double							obosLevel	= 400.0;
+	final static double obosLevel = 400.0;
 
 	private static List<String>			filenames	= new ArrayList<>();
 	private static List<TickerData>	tdList		= new ArrayList<>();
 	public static PrintWriter				pwAll			= null;
 	private static final int				MILLION		= 1000000;
 
-	private static double						ndxClose;
-	private static double						spxClose;
-	private static double						smlClose;
-	private static double						ndxClosePast;
-	private static double						spxClosePast;
-	private static double						smlClosePast;
+	private static double	ndxClose;
+	private static double	spxClose;
+	private static double	smlClose;
+	private static double	ndxClosePast;
+	private static double	spxClosePast;
+	private static double	smlClosePast;
 
 	/**
 	 *
@@ -160,6 +153,7 @@ public class Internals {
 	 */
 	@SuppressWarnings("unused")
 	private static double getSum(double[] val, double[] signVal, int days) {
+
 		double sum = 0.0;
 		for (int i = 0; i < days; i++) {
 			// System.out.println(val[i]);
@@ -181,6 +175,7 @@ public class Internals {
 	 * @return
 	 */
 	private static double getSum(double[] val, int days) {
+
 		double sum = 0;
 		for (int i = 0; i < days; i++) {
 			// System.out.println(val[i]);
@@ -197,6 +192,7 @@ public class Internals {
 	 * @return
 	 */
 	private static boolean isOverBought(double avg) {
+
 		// System.out.println(avg);
 		return (avg > obosLevel);
 	}
@@ -209,6 +205,7 @@ public class Internals {
 	 * @return
 	 */
 	private static boolean isOverSold(double avg) {
+
 		return (avg < ((-1.0) * obosLevel));
 	}
 

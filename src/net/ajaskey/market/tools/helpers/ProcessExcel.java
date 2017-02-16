@@ -27,33 +27,26 @@ import net.ajaskey.market.misc.Utils;
 /**
  * This class...
  *
- * @author ajask_000
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class ProcessExcel {
@@ -69,6 +62,7 @@ public class ProcessExcel {
 	 * @throws IOException
 	 */
 	public static void convertXlsToXlsx(String fname) throws IOException {
+
 		final String outFn = fname + "x";
 
 		try (InputStream in = new BufferedInputStream(new FileInputStream(fname));
@@ -145,6 +139,7 @@ public class ProcessExcel {
 	 * @return
 	 */
 	public static String getExtention(String fName) {
+
 		String ret = null;
 		final int idx = fName.lastIndexOf(".");
 		if (idx > 1) {
@@ -235,6 +230,7 @@ public class ProcessExcel {
 	 * @return
 	 */
 	private static Calendar convertDate(int day) {
+
 		final Calendar base = Calendar.getInstance();
 		base.set(1900, Calendar.JANUARY, 1);
 		base.add(Calendar.DATE, day);

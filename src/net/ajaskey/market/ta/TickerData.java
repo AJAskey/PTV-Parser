@@ -22,107 +22,100 @@ import net.ajaskey.market.ta.methods.UtilMethods;
  * specific ticker symbol. A collection of market data is stored in a list of
  * TickerData objects.
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class TickerData {
 
-	final static private String		TAB				= "\t";
-	final static private String		NL				= System.lineSeparator();
-	private String								ticker;
+	final static private String	TAB	= "\t";
+	final static private String	NL	= System.lineSeparator();
+	private String							ticker;
 
-	private String								tickerName;
+	private String tickerName;
 
-	private String								tickerExchange;
+	private String tickerExchange;
 
-	private Fundamentals					fundies;
+	private Fundamentals fundies;
 
-	private final List<DailyData>	data			= new ArrayList<>();
+	private final List<DailyData> data = new ArrayList<>();
 
 	/**
 	 * Derived values
 	 */
-	private Integer								daysOfData;
-	private DerivedData						derived;
-	private Double								sma23;
-	private Double								smaPerc23;
-	private TrendType							sma23Trend;
-	private Double								sma65;
-	private Double								smaPerc65;
-	private TrendType							sma65Trend;
-	private Double								sma130;
-	private Double								smaPerc130;
-	private TrendType							sma130Trend;
-	private Double								sma260;
-	private Double								smaPerc260;
-	private TrendType							sma260Trend;
-	private double[]							openData;
-	private double[]							highData;
-	private double[]							lowData;
-	private double[]							closeData;
-	private double[]							volumeData;
-	private double[]							oiData;
-	private double[]							trueHighData;
-	private double[]							trueLowData;
-	private double[]							typicalPriceData;
-	private Calendar[]						dateData;
-	private double								currentPrice;
-	private double								avgVol65;
-	private double								avgVol20;
-	private double								chg;
-	private double								chg23;
-	private double								chg65;
-	private double								chg130;
-	private double								chg260;
-	private double								low260;
-	private double								high260;
-	private double								rsRaw;
-	private double								rsStRaw;
-	private double								atr23;
-	private double								adx;
-	private double								diPlus;
-	private double								diMinus;
-	private double								atrPercent23;
-	private double								mfi23;
-	private double								mfi65;
-	private double								mfi130;
-	private double								mfi14;
-	private double								priceInRng260;
-	private double								priceOffHigh260;
-	private double								priceOffLow260;
-	private double								lr260;
-	private double								lrAngle260;
-	private double								lrInt260;
-	private double								lrSlope260;
+	private Integer			daysOfData;
+	private DerivedData	derived;
+	private Double			sma23;
+	private Double			smaPerc23;
+	private TrendType		sma23Trend;
+	private Double			sma65;
+	private Double			smaPerc65;
+	private TrendType		sma65Trend;
+	private Double			sma130;
+	private Double			smaPerc130;
+	private TrendType		sma130Trend;
+	private Double			sma260;
+	private Double			smaPerc260;
+	private TrendType		sma260Trend;
+	private double[]		openData;
+	private double[]		highData;
+	private double[]		lowData;
+	private double[]		closeData;
+	private double[]		volumeData;
+	private double[]		oiData;
+	private double[]		trueHighData;
+	private double[]		trueLowData;
+	private double[]		typicalPriceData;
+	private Calendar[]	dateData;
+	private double			currentPrice;
+	private double			avgVol65;
+	private double			avgVol20;
+	private double			chg;
+	private double			chg23;
+	private double			chg65;
+	private double			chg130;
+	private double			chg260;
+	private double			low260;
+	private double			high260;
+	private double			rsRaw;
+	private double			rsStRaw;
+	private double			atr23;
+	private double			adx;
+	private double			diPlus;
+	private double			diMinus;
+	private double			atrPercent23;
+	private double			mfi23;
+	private double			mfi65;
+	private double			mfi130;
+	private double			mfi14;
+	private double			priceInRng260;
+	private double			priceOffHigh260;
+	private double			priceOffLow260;
+	private double			lr260;
+	private double			lrAngle260;
+	private double			lrInt260;
+	private double			lrSlope260;
 
-	private double								rsi14;
-	private final TaMethods				taMethods	= new TaMethods();
+	private double					rsi14;
+	private final TaMethods	taMethods	= new TaMethods();
 
 	/**
 	 *
@@ -235,6 +228,7 @@ public class TickerData {
 	 * @param tdList
 	 */
 	public static void clearTickerData(List<TickerData> tdList) {
+
 		if (tdList != null) {
 			for (final TickerData td : tdList) {
 				TickerData.clearTickerData(td);
@@ -250,6 +244,7 @@ public class TickerData {
 	 * @param td
 	 */
 	public static void clearTickerData(TickerData td) {
+
 		if (td != null) {
 			td.data.clear();
 			td.openData = null;
@@ -287,6 +282,7 @@ public class TickerData {
 	 * @return
 	 */
 	static public DailyData getDataOfDate(TickerData td, Calendar cal) {
+
 		try {
 			return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
 			    cal.get(Calendar.DAY_OF_MONTH));
@@ -306,6 +302,7 @@ public class TickerData {
 	 * @return
 	 */
 	static public DailyData getDataOfDate(TickerData td, int year, int month, int day) {
+
 		DailyData dd = null;
 		final int idx = TickerData.getIndexOfDate(td, year, month, day);
 		if ((idx >= 0) && (idx < td.getDaysOfData())) {
@@ -326,6 +323,7 @@ public class TickerData {
 	 * @return
 	 */
 	public static TickerData getFromList(String ticker, List<TickerData> tdList) {
+
 		try {
 			for (final TickerData td : tdList) {
 				if (td.getTicker().equalsIgnoreCase(ticker)) {
@@ -346,6 +344,7 @@ public class TickerData {
 	 * @return
 	 */
 	static public int getIndexOfDate(TickerData td, Calendar cal) {
+
 		try {
 			return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
 		} catch (final Exception e) {
@@ -415,6 +414,7 @@ public class TickerData {
 	 * @return
 	 */
 	static public List<DailyData> getSlice(TickerData td, Calendar start, int days) {
+
 		try {
 			if ((td != null) && (start != null) && (days >= 0)) {
 				if (days > td.getDaysOfData()) {
@@ -441,6 +441,7 @@ public class TickerData {
 	 * @return
 	 */
 	public static TickerData getTickerData(List<TickerData> list, String ticker) {
+
 		try {
 			for (final TickerData td : list) {
 				if (td.getTicker().compareTo(ticker.toUpperCase()) == 0) {
@@ -481,6 +482,7 @@ public class TickerData {
 	}
 
 	public static void mergeData(TickerData td, TickerData tdNew) {
+
 		td.getData().addAll(tdNew.getData());
 	}
 
@@ -492,6 +494,7 @@ public class TickerData {
 	 * @param sortReverse
 	 */
 	public static void sortDailyData(TickerData td, boolean sortReverse) {
+
 		if (sortReverse) {
 			Collections.sort(td.data, new SortDailyDataReverse());
 		} else {
@@ -507,10 +510,12 @@ public class TickerData {
 	 * @param dd
 	 */
 	public void addData(DailyData dd) {
+
 		this.data.add(dd);
 	}
 
 	public String DailyDataString(int day) {
+
 		return this.data.get(day).toString();
 	}
 
@@ -560,6 +565,7 @@ public class TickerData {
 	 *
 	 */
 	public void generateDerived(boolean isReverse) {
+
 		this.generateDerived(0, isReverse);
 	}
 
@@ -693,6 +699,7 @@ public class TickerData {
 	 * @return the adx
 	 */
 	public double getAdx() {
+
 		return this.adx;
 	}
 
@@ -700,6 +707,7 @@ public class TickerData {
 	 * @return the atr23
 	 */
 	public double getAtr23() {
+
 		return this.atr23;
 	}
 
@@ -707,6 +715,7 @@ public class TickerData {
 	 * @return the atrPercent23
 	 */
 	public double getAtrPercent23() {
+
 		return this.atrPercent23;
 	}
 
@@ -714,6 +723,7 @@ public class TickerData {
 	 * @return the avgVol20
 	 */
 	public double getAvgVol20() {
+
 		return this.avgVol20;
 	}
 
@@ -721,6 +731,7 @@ public class TickerData {
 	 * @return the avgVol65
 	 */
 	public double getAvgVol65() {
+
 		return this.avgVol65;
 	}
 
@@ -728,6 +739,7 @@ public class TickerData {
 	 * @return the chg
 	 */
 	public double getChg() {
+
 		return this.chg;
 	}
 
@@ -735,6 +747,7 @@ public class TickerData {
 	 * @return the chg130
 	 */
 	public double getChg130() {
+
 		return this.chg130;
 	}
 
@@ -742,6 +755,7 @@ public class TickerData {
 	 * @return the chg23
 	 */
 	public double getChg23() {
+
 		return this.chg23;
 	}
 
@@ -749,6 +763,7 @@ public class TickerData {
 	 * @return the chg260
 	 */
 	public double getChg260() {
+
 		return this.chg260;
 	}
 
@@ -756,10 +771,12 @@ public class TickerData {
 	 * @return the chg65
 	 */
 	public double getChg65() {
+
 		return this.chg65;
 	}
 
 	public double getClose(int day) {
+
 		if ((this.closeData == null) || (this.closeData.length < day)) {
 			return 0.0;
 		}
@@ -770,6 +787,7 @@ public class TickerData {
 	 * @return the closeData
 	 */
 	public double[] getCloseData() {
+
 		return this.closeData;
 	}
 
@@ -777,10 +795,12 @@ public class TickerData {
 	 * @return the currentPrice
 	 */
 	public double getCurrentPrice() {
+
 		return this.currentPrice;
 	}
 
 	public String getDailyDataString(int day) {
+
 		try {
 			if ((this.dateData == null) || (this.openData == null) || (this.highData == null) || (this.lowData == null)
 			    || (this.closeData == null) || (this.volumeData == null) || (this.oiData == null)) {
@@ -806,10 +826,12 @@ public class TickerData {
 	 * @return
 	 */
 	public int getDataCount() {
+
 		return this.data.size();
 	}
 
 	public Calendar getDate(int day) {
+
 		try {
 			if ((this.dateData == null) || (this.dateData.length < day)) {
 				return Utils.buildCalendar(1900, Calendar.DECEMBER, 25);
@@ -824,6 +846,7 @@ public class TickerData {
 	 * @return the closeData
 	 */
 	public Calendar[] getDateData() {
+
 		return this.dateData;
 	}
 
@@ -832,6 +855,7 @@ public class TickerData {
 	 * @return
 	 */
 	public Integer getDaysOfData() {
+
 		return this.daysOfData;
 	}
 
@@ -839,6 +863,7 @@ public class TickerData {
 	 * @return the diMinus
 	 */
 	public double getDiMinus() {
+
 		return this.diMinus;
 	}
 
@@ -846,6 +871,7 @@ public class TickerData {
 	 * @return the diPlus
 	 */
 	public double getDiPlus() {
+
 		return this.diPlus;
 	}
 
@@ -853,10 +879,12 @@ public class TickerData {
 	 * @return the fundies
 	 */
 	public Fundamentals getFundies() {
+
 		return this.fundies;
 	}
 
 	public double getHigh(int day) {
+
 		try {
 			if ((this.highData == null) || (this.highData.length < day)) {
 				return 0.0;
@@ -871,6 +899,7 @@ public class TickerData {
 	 * @return the high260
 	 */
 	public double getHigh260() {
+
 		return this.high260;
 	}
 
@@ -878,10 +907,12 @@ public class TickerData {
 	 * @return the highData
 	 */
 	public double[] getHighData() {
+
 		return this.highData;
 	}
 
 	public double getLow(int day) {
+
 		try {
 			if ((this.lowData == null) || (this.lowData.length < day)) {
 				return 0.0;
@@ -896,6 +927,7 @@ public class TickerData {
 	 * @return the low260
 	 */
 	public double getLow260() {
+
 		return this.low260;
 	}
 
@@ -903,6 +935,7 @@ public class TickerData {
 	 * @return the lowData
 	 */
 	public double[] getLowData() {
+
 		return this.lowData;
 	}
 
@@ -910,6 +943,7 @@ public class TickerData {
 	 * @return the lr260
 	 */
 	public double getLr260() {
+
 		return this.lr260;
 	}
 
@@ -917,6 +951,7 @@ public class TickerData {
 	 * @return the lrAngle260
 	 */
 	public double getLrAngle260() {
+
 		return this.lrAngle260;
 	}
 
@@ -924,6 +959,7 @@ public class TickerData {
 	 * @return the lrInt260
 	 */
 	public double getLrInt260() {
+
 		return this.lrInt260;
 	}
 
@@ -931,6 +967,7 @@ public class TickerData {
 	 * @return the lrSlope260
 	 */
 	public double getLrSlope260() {
+
 		return this.lrSlope260;
 	}
 
@@ -938,6 +975,7 @@ public class TickerData {
 	 * @return the mfi130
 	 */
 	public double getMfi130() {
+
 		return this.mfi130;
 	}
 
@@ -945,6 +983,7 @@ public class TickerData {
 	 * @return the mfi14
 	 */
 	public double getMfi14() {
+
 		return this.mfi14;
 	}
 
@@ -952,6 +991,7 @@ public class TickerData {
 	 * @return the mfi23
 	 */
 	public double getMfi23() {
+
 		return this.mfi23;
 	}
 
@@ -959,10 +999,12 @@ public class TickerData {
 	 * @return the mfi65
 	 */
 	public double getMfi65() {
+
 		return this.mfi65;
 	}
 
 	public double getOi(int day) {
+
 		try {
 			if ((this.oiData == null) || (this.oiData.length < day)) {
 				return 0.0;
@@ -977,10 +1019,12 @@ public class TickerData {
 	 * @return the openData
 	 */
 	public double[] getOiData() {
+
 		return this.oiData;
 	}
 
 	public double getOpen(int day) {
+
 		try {
 			if ((this.openData == null) || (this.openData.length < day)) {
 				return 0.0;
@@ -995,6 +1039,7 @@ public class TickerData {
 	 * @return the openData
 	 */
 	public double[] getOpenData() {
+
 		return this.openData;
 	}
 
@@ -1002,6 +1047,7 @@ public class TickerData {
 	 * @return the priceInRng260
 	 */
 	public double getPriceInRng260() {
+
 		return this.priceInRng260;
 	}
 
@@ -1009,6 +1055,7 @@ public class TickerData {
 	 * @return the priceOffHigh260
 	 */
 	public double getPriceOffHigh260() {
+
 		return this.priceOffHigh260;
 	}
 
@@ -1016,6 +1063,7 @@ public class TickerData {
 	 * @return the priceOffLow260
 	 */
 	public double getPriceOffLow260() {
+
 		return this.priceOffLow260;
 	}
 
@@ -1023,6 +1071,7 @@ public class TickerData {
 	 * @return the rsi14
 	 */
 	public double getRsi14() {
+
 		return this.rsi14;
 	}
 
@@ -1030,6 +1079,7 @@ public class TickerData {
 	 * @return the rsRaw
 	 */
 	public double getRsRaw() {
+
 		return this.rsRaw;
 	}
 
@@ -1037,6 +1087,7 @@ public class TickerData {
 	 * @return the rsStRaw
 	 */
 	public double getRsStRaw() {
+
 		return this.rsStRaw;
 	}
 
@@ -1044,6 +1095,7 @@ public class TickerData {
 	 * @return the sma130
 	 */
 	public Double getSma130() {
+
 		return this.sma130;
 	}
 
@@ -1051,6 +1103,7 @@ public class TickerData {
 	 * @return the sma130Trend
 	 */
 	public TrendType getSma130Trend() {
+
 		return this.sma130Trend;
 	}
 
@@ -1058,6 +1111,7 @@ public class TickerData {
 	 * @return the sma23
 	 */
 	public Double getSma23() {
+
 		return this.sma23;
 	}
 
@@ -1065,6 +1119,7 @@ public class TickerData {
 	 * @return the sma23Trend
 	 */
 	public TrendType getSma23Trend() {
+
 		return this.sma23Trend;
 	}
 
@@ -1072,6 +1127,7 @@ public class TickerData {
 	 * @return the sma260
 	 */
 	public Double getSma260() {
+
 		return this.sma260;
 	}
 
@@ -1079,6 +1135,7 @@ public class TickerData {
 	 * @return the sma260Trend
 	 */
 	public TrendType getSma260Trend() {
+
 		return this.sma260Trend;
 	}
 
@@ -1086,6 +1143,7 @@ public class TickerData {
 	 * @return the sma65
 	 */
 	public Double getSma65() {
+
 		return this.sma65;
 	}
 
@@ -1093,6 +1151,7 @@ public class TickerData {
 	 * @return the sma65Trend
 	 */
 	public TrendType getSma65Trend() {
+
 		return this.sma65Trend;
 	}
 
@@ -1100,6 +1159,7 @@ public class TickerData {
 	 * @return the smaPerc130
 	 */
 	public Double getSmaPerc130() {
+
 		return this.smaPerc130;
 	}
 
@@ -1107,6 +1167,7 @@ public class TickerData {
 	 * @return the smaPerc23
 	 */
 	public Double getSmaPerc23() {
+
 		return this.smaPerc23;
 	}
 
@@ -1114,6 +1175,7 @@ public class TickerData {
 	 * @return the smaPerc260
 	 */
 	public Double getSmaPerc260() {
+
 		return this.smaPerc260;
 	}
 
@@ -1121,6 +1183,7 @@ public class TickerData {
 	 * @return the smaPerc65
 	 */
 	public Double getSmaPerc65() {
+
 		return this.smaPerc65;
 	}
 
@@ -1128,6 +1191,7 @@ public class TickerData {
 	 * @return the taMethods
 	 */
 	public TaMethods getTaMethods() {
+
 		return this.taMethods;
 	}
 
@@ -1135,6 +1199,7 @@ public class TickerData {
 	 * @return the ticker
 	 */
 	public String getTicker() {
+
 		return this.ticker;
 	}
 
@@ -1142,6 +1207,7 @@ public class TickerData {
 	 * @return the tickerExchange
 	 */
 	public String getTickerExchange() {
+
 		return this.tickerExchange;
 	}
 
@@ -1149,6 +1215,7 @@ public class TickerData {
 	 * @return the tickerName
 	 */
 	public String getTickerName() {
+
 		return this.tickerName;
 	}
 
@@ -1156,6 +1223,7 @@ public class TickerData {
 	 * @return the trueHighData
 	 */
 	public double[] getTrueHighData() {
+
 		return this.trueHighData;
 	}
 
@@ -1163,6 +1231,7 @@ public class TickerData {
 	 * @return the trueLowData
 	 */
 	public double[] getTrueLowData() {
+
 		return this.trueLowData;
 	}
 
@@ -1170,10 +1239,12 @@ public class TickerData {
 	 * @return the typicalPriceData
 	 */
 	public double[] getTypicalPriceData() {
+
 		return this.typicalPriceData;
 	}
 
 	public double getVolume(int day) {
+
 		try {
 			if ((this.volumeData == null) || (this.volumeData.length < day)) {
 				return 0.0;
@@ -1188,6 +1259,7 @@ public class TickerData {
 	 * @return the volumeData
 	 */
 	public double[] getVolumeData() {
+
 		return this.volumeData;
 	}
 
@@ -1197,6 +1269,7 @@ public class TickerData {
 	 *
 	 */
 	public void rSort() {
+
 		Collections.sort(this.data, new SortDailyDataReverse());
 		this.fillDataArrays(0, true);
 	}
@@ -1206,6 +1279,7 @@ public class TickerData {
 	 *          the ticker to set
 	 */
 	public void setTicker(String tickerIn) {
+
 		if (tickerIn != null) {
 			this.ticker = tickerIn.trim().toUpperCase();
 		} else {
@@ -1218,11 +1292,13 @@ public class TickerData {
 	 *          the tickerExchange to set
 	 */
 	public void setTickerExchange(String tickerExchange) {
+
 		this.tickerExchange = tickerExchange;
 	}
 
 	@Override
 	public String toString() {
+
 		String str = this.ticker + TAB + this.tickerName + TAB + this.tickerExchange + NL;
 		for (final DailyData dd : this.data) {
 			str += TAB + dd.toString() + NL;
@@ -1242,6 +1318,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double calcPriceChange(int days) {
+
 		double ret = 0.0;
 		if (this.daysOfData > days) {
 			if (this.closeData[days] > 0.0) {
@@ -1258,6 +1335,7 @@ public class TickerData {
 	 * @return
 	 */
 	private List<DailyData> getData() {
+
 		return this.data;
 	}
 
@@ -1269,6 +1347,7 @@ public class TickerData {
 	 *
 	 */
 	private void normalizeZeroVolume() {
+
 		for (int i = 0; i < this.data.size(); i++) {
 
 			if ((int) (double) this.data.get(i).getVolume() < 1) {
@@ -1318,6 +1397,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawRS() {
+
 		// System.out.println(getTicker() + "\t" + getChg260() + "\t" + getChg130()
 		// + "\t" + getChg65() + "\t" + getChg23());
 		// return (0.50 * this.getChg260()) + (0.25 * this.getChg130()) + (0.1675 *
@@ -1333,6 +1413,7 @@ public class TickerData {
 	 * @return
 	 */
 	private double setRawStRS() {
+
 		return ((0.33 * this.getChg65()) + (0.67 * this.getChg23()));
 	}
 
@@ -1345,6 +1426,7 @@ public class TickerData {
 	 *
 	 */
 	private void setRs() {
+
 		this.chg23 = this.calcPriceChange(23);
 		this.chg65 = this.calcPriceChange(65);
 		this.chg130 = this.calcPriceChange(130);

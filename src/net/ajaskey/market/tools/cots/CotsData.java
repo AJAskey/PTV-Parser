@@ -12,24 +12,24 @@ public class CotsData {
 	public static List<LongShort>	dataPoints	= new ArrayList<>();
 	public static List<CotsData>	cotsList		= new ArrayList<>();
 
-	private static final String		TAB					= "\t";
-	private static final String		NL					= System.getProperty("line.separator");
+	private static final String	TAB	= "\t";
+	private static final String	NL	= System.getProperty("line.separator");
 
-	public Calendar								date				= null;
+	public Calendar date = null;
 
-	public long										oi					= 0;
+	public long oi = 0;
 
-	public long										totalLong		= 0;
+	public long totalLong = 0;
 
-	public long										totalShort	= 0;
-	public long										totalSpread	= 0;
+	public long	totalShort	= 0;
+	public long	totalSpread	= 0;
 
-	public LongShort							dealer			= null;
-	public LongShort							pm					= null;
-	public LongShort							levered			= null;
+	public LongShort	dealer	= null;
+	public LongShort	pm			= null;
+	public LongShort	levered	= null;
 
-	public LongShort							other				= null;
-	public LongShort							nonrpt			= null;
+	public LongShort	other		= null;
+	public LongShort	nonrpt	= null;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -44,6 +44,7 @@ public class CotsData {
 	 *
 	 */
 	public static void clear() {
+
 		dataPoints.clear();
 		cotsList.clear();
 	}
@@ -56,6 +57,7 @@ public class CotsData {
 	 * @return
 	 */
 	public static CotsData findDate(Calendar date) {
+
 		for (final CotsData cd : CotsData.cotsList) {
 			if (Utils.sameDate(cd.date, date)) {
 				return cd;
@@ -141,6 +143,7 @@ public class CotsData {
 	 * @param ls
 	 */
 	public void setData(LongShort ls) {
+
 		if (ls == null) {
 			return;
 		}
@@ -199,6 +202,7 @@ public class CotsData {
 
 	@Override
 	public String toString() {
+
 		String ret = Utils.stringDate(this.date) + TAB + this.oi + NL;
 		ret += TAB + this.dealer + NL;
 		ret += TAB + this.pm + NL;
@@ -215,6 +219,7 @@ public class CotsData {
 	 *
 	 */
 	public void update() {
+
 		if (this.dealer != null) {
 			this.dealer.update();
 		}

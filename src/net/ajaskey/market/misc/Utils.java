@@ -42,23 +42,30 @@ import java.util.concurrent.TimeUnit;
  */
 public class Utils {
 
-	private final static Calendar					baseDate		= Calendar.getInstance();
-	public final static SimpleDateFormat	sdf					= new SimpleDateFormat("dd-MMM-yyyy");
-	public final static SimpleDateFormat	sdf2				= new SimpleDateFormat("E dd-MMM-yyyy");
+	private final static Calendar					baseDate	= Calendar.getInstance();
+	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
+	public final static SimpleDateFormat	sdf2			= new SimpleDateFormat("E dd-MMM-yyyy");
 
 	// public static String[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU",
 	// "FRI", "SAT" };
 
-	public static String									NL					= System.lineSeparator();
-	public static String									TAB					= "\t";
+	public static String	NL	= System.lineSeparator();
+	public static String	TAB	= "\t";
 
-	private static NumberFormat						intFmt			= null;
+	private static NumberFormat intFmt = null;
 
-	static public Map<String, Integer>		mapNames		= null;
-	static public Map<String, Integer>		mapDays			= null;
-	final static public Locale						locale			= Locale.getDefault();
+	static public Map<String, Integer>	mapNames	= null;
+	static public Map<String, Integer>	mapDays		= null;
+	final static public Locale					locale		= Locale.getDefault();
 
-	private static boolean								initialized	= false;
+	private static boolean initialized = false;
+
+	public static Calendar buildCalendar(Calendar inCal) {
+
+		final Calendar cal = Calendar.getInstance();
+		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE));
+		return cal;
+	}
 
 	/**
 	 *
@@ -70,14 +77,9 @@ public class Utils {
 	 * @return
 	 */
 	public static Calendar buildCalendar(int year, int month, int day) {
+
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day);
-		return cal;
-	}
-	
-	public static Calendar buildCalendar(Calendar inCal) {
-		final Calendar cal = Calendar.getInstance();
-		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE));
 		return cal;
 	}
 
@@ -87,6 +89,7 @@ public class Utils {
 	 * @param cal
 	 */
 	public static String calendarToLongString(Calendar cal) {
+
 		String ret = cal.toString() + "\n";
 		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
 		ret += "  Month        : " + cal.get(Calendar.MONTH) + "\n";
@@ -105,6 +108,7 @@ public class Utils {
 	 * @return
 	 */
 	public static String formatInt(int i) {
+
 		return (Utils.formatInt((long) i));
 	}
 
@@ -116,6 +120,7 @@ public class Utils {
 	 * @return
 	 */
 	public static String formatInt(long i) {
+
 		String ret = "";
 		Utils.init();
 		try {
@@ -133,6 +138,7 @@ public class Utils {
 	 * @return baseDate
 	 */
 	public static Calendar getBaseDate() {
+
 		Utils.init();
 		return baseDate;
 	}
@@ -145,6 +151,7 @@ public class Utils {
 	 * @return
 	 */
 	public static String getDayName(Calendar cal) {
+
 		try {
 			Utils.init();
 			return Utils.findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
@@ -162,6 +169,7 @@ public class Utils {
 	 * @throws IOException
 	 */
 	public static String getFromUrl(String url) throws IOException {
+
 		final StringBuilder sb = new StringBuilder();
 
 		final URL myURL = new URL(url);
@@ -179,6 +187,7 @@ public class Utils {
 	}
 
 	public static String getMonthName(Calendar cal) {
+
 		try {
 			Utils.init();
 			return Utils.findName(mapNames, cal.get(Calendar.MONTH));
@@ -188,6 +197,7 @@ public class Utils {
 	}
 
 	public static String getMonthName(int month) {
+
 		try {
 			Utils.init();
 			return Utils.findName(mapNames, month);
@@ -204,6 +214,7 @@ public class Utils {
 	 * @return
 	 */
 	static public String getString(Calendar cal) {
+
 		return sdf.format(cal.getTime());
 	}
 
@@ -216,6 +227,7 @@ public class Utils {
 	 * @return
 	 */
 	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
+
 		Utils.init();
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
 	}
@@ -228,6 +240,7 @@ public class Utils {
 	 * @return
 	 */
 	public static Calendar makeCopy(Calendar cal) {
+
 		Calendar newCal = null;
 		if (cal == null) {
 			newCal = Calendar.getInstance();
@@ -244,6 +257,7 @@ public class Utils {
 	 * @param dir
 	 */
 	static public void makeDir(String dir) {
+
 		final File theDir = new File(dir);
 		if (!theDir.exists()) {
 			theDir.mkdir();
@@ -255,10 +269,12 @@ public class Utils {
 	 *
 	 */
 	public static void newline() {
+
 		System.out.println();
 	}
 
 	public static void print(String str) {
+
 		System.out.println(str);
 	}
 
@@ -269,6 +285,7 @@ public class Utils {
 	 * @param cal
 	 */
 	public static void printCalendar(Calendar cal) {
+
 		if (cal != null) {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
@@ -283,6 +300,7 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean sameDate(Calendar cal1, Calendar cal2) {
+
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
 		}
@@ -305,6 +323,7 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean sameMonth(Calendar cal1, Calendar cal2) {
+
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
 		}
@@ -325,6 +344,7 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean sameYear(Calendar cal1, Calendar cal2) {
+
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
 		}
@@ -342,6 +362,7 @@ public class Utils {
 	 * @return
 	 */
 	public static String stringDate(Calendar cal) {
+
 		if (cal != null) {
 			return sdf.format(cal.getTime());
 		}
@@ -356,6 +377,7 @@ public class Utils {
 	 * @return
 	 */
 	public static String stringDate2(Calendar cal) {
+
 		if (cal != null) {
 			return sdf2.format(cal.getTime());
 		}
@@ -363,6 +385,7 @@ public class Utils {
 	}
 
 	private static String findName(Map<String, Integer> map, Integer key) {
+
 		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
 			if (entry.getValue() == key) {
 				return entry.getKey();
@@ -376,6 +399,7 @@ public class Utils {
 	 *
 	 */
 	private static void init() {
+
 		if (!initialized) {
 			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
 			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);

@@ -4,33 +4,26 @@ package net.ajaskey.market.ta;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class InterdayData {
@@ -128,6 +121,7 @@ public class InterdayData {
 	 * @return the dayClose
 	 */
 	public double getDayClose() {
+
 		return this.dayClose;
 	}
 
@@ -135,6 +129,7 @@ public class InterdayData {
 	 * @return the dayHigh
 	 */
 	public double getDayHigh() {
+
 		return this.dayHigh;
 	}
 
@@ -142,6 +137,7 @@ public class InterdayData {
 	 * @return the dayLow
 	 */
 	public double getDayLow() {
+
 		return this.dayLow;
 	}
 
@@ -149,6 +145,7 @@ public class InterdayData {
 	 * @return the dayOpen
 	 */
 	public double getDayOpen() {
+
 		return this.dayOpen;
 	}
 
@@ -156,6 +153,7 @@ public class InterdayData {
 	 * @return the forceDiff
 	 */
 	public long getForceDiff() {
+
 		return this.forceDiff;
 	}
 
@@ -163,6 +161,7 @@ public class InterdayData {
 	 * @return the forceVolume
 	 */
 	public double getForceVolume() {
+
 		return this.forceVolume;
 	}
 
@@ -170,6 +169,7 @@ public class InterdayData {
 	 * @return the priceRange
 	 */
 	public double getPriceRange() {
+
 		return this.priceRange;
 	}
 
@@ -177,6 +177,7 @@ public class InterdayData {
 	 * @return the rangePercent
 	 */
 	public double getRangePercent() {
+
 		return this.rangePercent;
 	}
 
@@ -184,6 +185,7 @@ public class InterdayData {
 	 * @return the sumDown
 	 */
 	public int getSumDown() {
+
 		return this.sumDown;
 	}
 
@@ -191,6 +193,7 @@ public class InterdayData {
 	 * @return the sumForceDown
 	 */
 	public double getSumForceDown() {
+
 		return this.sumForceDown;
 	}
 
@@ -198,6 +201,7 @@ public class InterdayData {
 	 * @return the sumForceUp
 	 */
 	public double getSumForceUp() {
+
 		return this.sumForceUp;
 	}
 
@@ -205,6 +209,7 @@ public class InterdayData {
 	 * @return the sumUp
 	 */
 	public int getSumUp() {
+
 		return this.sumUp;
 	}
 
@@ -212,6 +217,7 @@ public class InterdayData {
 	 * @return the sumVol
 	 */
 	public long getSumVol() {
+
 		return this.sumVol;
 	}
 
@@ -219,6 +225,7 @@ public class InterdayData {
 	 * @return the td
 	 */
 	public TickerData getTd() {
+
 		return this.td;
 	}
 
@@ -226,6 +233,7 @@ public class InterdayData {
 	 * @return the ticker
 	 */
 	public String getTicker() {
+
 		return this.ticker;
 	}
 
@@ -233,6 +241,7 @@ public class InterdayData {
 	 * @return the updates
 	 */
 	public int getUpdates() {
+
 		return this.updates;
 	}
 
@@ -240,6 +249,7 @@ public class InterdayData {
 	 * @return the upDownDiff
 	 */
 	public int getUpDownDiff() {
+
 		return this.upDownDiff;
 	}
 
@@ -248,6 +258,7 @@ public class InterdayData {
 	 *          the sumForceDown to set
 	 */
 	public void setSumForceDown(double sumForceDown) {
+
 		this.sumForceDown = sumForceDown;
 	}
 
@@ -256,6 +267,7 @@ public class InterdayData {
 	 *          the sumForceUp to set
 	 */
 	public void setSumForceUp(double sumForceUp) {
+
 		this.sumForceUp = sumForceUp;
 	}
 
@@ -264,6 +276,7 @@ public class InterdayData {
 	 *          the td to set
 	 */
 	public void setTd(TickerData td) {
+
 		this.td = td;
 	}
 
@@ -272,6 +285,7 @@ public class InterdayData {
 	 *          the ticker to set
 	 */
 	public void setTicker(String ticker) {
+
 		this.ticker = ticker;
 	}
 

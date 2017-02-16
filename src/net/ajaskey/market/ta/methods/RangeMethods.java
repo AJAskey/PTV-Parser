@@ -47,6 +47,7 @@ public class RangeMethods {
 	 * @return
 	 */
 	static public double avgTrueRange(double[] high, double[] low, double[] close, int days) {
+
 		double atrVal = 0.0;
 
 		if (Methods.checkParams(close, days * 2, 0,
@@ -89,6 +90,7 @@ public class RangeMethods {
 	 * @return
 	 */
 	static public double avgTrueRangePercent(double[] high, double[] low, double[] close, int days) {
+
 		double atrVal = 0.0;
 		double atrPercent = 0.0;
 		atrVal = RangeMethods.avgTrueRange(high, low, close, days);
@@ -109,6 +111,7 @@ public class RangeMethods {
 	 * @return
 	 */
 	static public double trueRange(double high, double low, double pClose) {
+
 		double tr = 0.0;
 		final double h = Math.max(high, pClose);
 		final double l = Math.min(low, pClose);

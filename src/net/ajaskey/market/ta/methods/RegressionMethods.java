@@ -18,33 +18,26 @@ import net.ajaskey.market.misc.Utils;
  * methods of the parent class are available for use. Methods provide by this
  * class are for convenience.
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class RegressionMethods extends SimpleRegression {
@@ -83,6 +76,7 @@ public class RegressionMethods extends SimpleRegression {
 
 		@Override
 		public int compare(DataPoint d1, DataPoint d2) {
+
 			int retval = 0;
 			if (d1.daDays > d2.daDays) {
 				retval = 1;
@@ -96,14 +90,14 @@ public class RegressionMethods extends SimpleRegression {
 	/**
 	 *
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
-	List<DataPoint>						points						= new ArrayList<>();
-	private Calendar					baseCal						= null;
-	private int								dataCount;
+	List<DataPoint>		points	= new ArrayList<>();
+	private Calendar	baseCal	= null;
+	private int				dataCount;
 
-	private Calendar					minDate						= null;
-	private Calendar					maxDate						= null;
+	private Calendar	minDate	= null;
+	private Calendar	maxDate	= null;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -157,6 +151,7 @@ public class RegressionMethods extends SimpleRegression {
 	 * @return
 	 */
 	public double findX(Calendar cal) {
+
 		double ret = 0;
 		try {
 			ret = Utils.getTimeSpan(cal, this.baseCal);
@@ -174,6 +169,7 @@ public class RegressionMethods extends SimpleRegression {
 	 * @return
 	 */
 	public RegressionOutput getOutput(Calendar cal) {
+
 		try {
 			if (this.dataCount > 0) {
 				final RegressionOutput output = new RegressionOutput(this, Utils.getTimeSpan(cal, this.baseCal));

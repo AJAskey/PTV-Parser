@@ -30,6 +30,7 @@ package net.ajaskey.market.ta.methods;
 public class MoneyFlowMethods {
 
 	static public double mfi(double[] typicalPrice, double[] volume, int days) {
+
 		double mfiVal = 0.0;
 
 		if (Methods.checkParams(typicalPrice, days + 1, 0,

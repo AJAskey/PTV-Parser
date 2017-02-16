@@ -86,29 +86,6 @@ public class YahooData {
 		return response;
 	}
 
-	public static List<String> getHistoric(String ticker) {
-
-		List<String> retData = new ArrayList<>();
-
-		String response = null;
-		final String url = "http://chart.finance.yahoo.com/table.csv?s=" + ticker
-		    + "&a=0&b=3&c=1990&d=1&e=15&f=2050&g=d&ignore=.csv";
-		try {
-			response = YahooData.getFromUrl(url);
-			try (Scanner scanner = new Scanner(response)) {
-				while (scanner.hasNextLine()) {
-					String line = scanner.nextLine();
-					retData.add(line);
-				}
-			} catch (Exception e1) {
-				retData.clear();
-			}
-		} catch (final IOException e) {
-			response = null;
-		}
-		return retData;
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.ta.input.getBusinessSummary
@@ -132,6 +109,29 @@ public class YahooData {
 			retResp = "N/A";
 		}
 		return retResp;
+	}
+
+	public static List<String> getHistoric(String ticker) {
+
+		final List<String> retData = new ArrayList<>();
+
+		String response = null;
+		final String url = "http://chart.finance.yahoo.com/table.csv?s=" + ticker
+		    + "&a=0&b=3&c=1990&d=1&e=15&f=2050&g=d&ignore=.csv";
+		try {
+			response = YahooData.getFromUrl(url);
+			try (Scanner scanner = new Scanner(response)) {
+				while (scanner.hasNextLine()) {
+					final String line = scanner.nextLine();
+					retData.add(line);
+				}
+			} catch (final Exception e1) {
+				retData.clear();
+			}
+		} catch (final IOException e) {
+			response = null;
+		}
+		return retData;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class YahooData {
 		str.trim();
 
 		final List<String> resp = YahooData.getHistoric("AAPL");
-		for (String s : resp) {
+		for (final String s : resp) {
 			System.out.println(s);
 		}
 

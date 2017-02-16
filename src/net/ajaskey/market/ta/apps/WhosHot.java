@@ -52,7 +52,7 @@ public class WhosHot {
 	private static List<String>		fullfilenames	= new ArrayList<>();
 	private static DecimalFormat	vFmt					= new DecimalFormat("###,###,###.00");
 
-	private static boolean				init					= false;
+	private static boolean init = false;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -111,6 +111,7 @@ public class WhosHot {
 
 	@SuppressWarnings("unused")
 	private static IndustryData find(String name, IndustryData[] ind) {
+
 		for (final IndustryData id : ind) {
 			if (id.getName().equalsIgnoreCase(name)) {
 				return id;

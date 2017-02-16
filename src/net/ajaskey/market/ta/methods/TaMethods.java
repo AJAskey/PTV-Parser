@@ -34,6 +34,7 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public int calcAdvDecl(double[] close, int days) {
+
 		int retVal = 0;
 		// System.out.println("\n\n\n" + td.getTicker());
 		if ((days + 1) < close.length) {
@@ -51,6 +52,7 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public double calcAdx(double[] high, double[] low, double[] close, int days) {
+
 		final double retVal = 0.0;
 		final int len = close.length;
 		final int daysPlus = days * 3;
@@ -61,12 +63,14 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public double calcATR(double[] high, double[] low, double[] close, int days) {
+
 		final double retVal = RangeMethods.avgTrueRange(high, low, close, days);
 		return retVal;
 	}
 
 	@Override
 	public double calcDiMinus(double[] high, double[] low, double[] close, int days) {
+
 		final double retVal = 0.0;
 		final int daysPlus = days * 2;
 		if (daysPlus < close.length) {
@@ -77,6 +81,7 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public double calcDiPlus(double[] high, double[] low, double[] close, int days) {
+
 		final double retVal = 0.0;
 		final int daysPlus = days * 2;
 		if (daysPlus < close.length) {
@@ -97,6 +102,7 @@ public class TaMethods implements TaMethodsIF {
 	@Override
 	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
 	    int days) {
+
 		double retVal = 0.0;
 		for (int i = 0; i < days; i++) {
 			double delta = Math.abs(close[i] - close[i + 1]);
@@ -116,6 +122,7 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public double calcMFI(double[] typicalPrice, double[] volume, int days) {
+
 		return MoneyFlowMethods.mfi(typicalPrice, volume, days);
 	}
 
@@ -130,6 +137,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public double calcPercentChange(double p1, double p2) {
+
 		double ret = 0.0;
 		if (p2 != 0.0) {
 			ret = (p1 - p2) / p2;
@@ -139,10 +147,12 @@ public class TaMethods implements TaMethodsIF {
 
 	@Override
 	public double calcRsi(double[] close, int days) {
+
 		return RsiMethods.calcRSI(close, days);
 	}
 
 	public double calcSma(double[] data, int days) {
+
 		double retVal = 0;
 		retVal = UtilMethods.sma(data, days);
 		return retVal;
@@ -157,6 +167,7 @@ public class TaMethods implements TaMethodsIF {
 	 */
 	@Override
 	public TrendType calcSmaTrend(double[] data, int days, int span) {
+
 		TrendType trend = TrendType.FLAT;
 		final double val1 = UtilMethods.sma(data, days);
 		final double val2 = UtilMethods.sma(data, days, span);

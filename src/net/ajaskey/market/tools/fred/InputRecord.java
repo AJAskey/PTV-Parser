@@ -15,7 +15,7 @@ package net.ajaskey.market.tools.fred;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -41,31 +41,31 @@ public class InputRecord {
 
 		try {
 			final String fld[] = input.split("\\s+");
-			change = 0;
-			noZeros = true;
-			estimateData = false;
-			series = fld[0].trim();
-			
+			this.change = 0;
+			this.noZeros = true;
+			this.estimateData = false;
+			this.series = fld[0].trim();
+
 			if (fld.length == 2) {
-				change = Double.parseDouble(fld[1].trim());
+				this.change = Double.parseDouble(fld[1].trim());
 			} else if (fld.length == 3) {
-				change = Double.parseDouble(fld[1].trim());
-				noZeros = Boolean.parseBoolean(fld[2].trim());
+				this.change = Double.parseDouble(fld[1].trim());
+				this.noZeros = Boolean.parseBoolean(fld[2].trim());
 			} else if (fld.length >= 4) {
-				change = Double.parseDouble(fld[1].trim());
-				noZeros = Boolean.parseBoolean(fld[2].trim());
-				estimateData = Boolean.parseBoolean(fld[3].trim());
+				this.change = Double.parseDouble(fld[1].trim());
+				this.noZeros = Boolean.parseBoolean(fld[2].trim());
+				this.estimateData = Boolean.parseBoolean(fld[3].trim());
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
-			series = "";
+			this.series = "";
 		}
 	}
 
 	@Override
 	public String toString() {
 
-		return String.format("%-25s %9.1f  %5s  %5s", series, change, noZeros, estimateData);
+		return String.format("%-25s %9.1f  %5s  %5s", this.series, this.change, this.noZeros, this.estimateData);
 	}
 
 }

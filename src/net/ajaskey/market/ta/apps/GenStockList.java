@@ -48,11 +48,11 @@ public class GenStockList {
 	private static boolean			init					= false;
 	private static List<String>	ignoreNames;
 
-	private static List<String>	dontIgnoreTickers;
+	private static List<String> dontIgnoreTickers;
 
-	private static List<String>	sp500List			= null;
-	private static List<String>	sp600List			= null;
-	private static List<String>	ndxList				= null;
+	private static List<String>	sp500List	= null;
+	private static List<String>	sp600List	= null;
+	private static List<String>	ndxList		= null;
 
 	private GenStockList() throws ParseException, IOException {
 
@@ -223,6 +223,7 @@ public class GenStockList {
 	}
 
 	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
+
 		if (ndxList == null) {
 			ndxList = ParseData.getTickerList("lists\\ndx-components.csv");
 		}
@@ -244,6 +245,7 @@ public class GenStockList {
 	 * @throws IOException
 	 */
 	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
+
 		if (sp500List == null) {
 			sp500List = ParseData.getTickerList("lists\\ivv-components.csv");
 		}
@@ -265,6 +267,7 @@ public class GenStockList {
 	 * @throws IOException
 	 */
 	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
+
 		if (sp600List == null) {
 			sp600List = ParseData.getTickerList("lists\\ijr-components.csv");
 		}

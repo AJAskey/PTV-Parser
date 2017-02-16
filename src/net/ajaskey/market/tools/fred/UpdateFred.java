@@ -58,7 +58,7 @@ public class UpdateFred {
 
 		final List<String> seriesNames = FredCommon.readSeriesNames("fred-series.dat");
 		for (final String s : seriesNames) {
-			InputRecord ir = new InputRecord(s);
+			final InputRecord ir = new InputRecord(s);
 			//System.out.println(ir);
 			records.add(ir);
 		}
@@ -75,8 +75,8 @@ public class UpdateFred {
 
 					final String series = name.substring(0, name.length() - 4);
 
-					InputRecord ir = findInputRecord(series);
-					
+					final InputRecord ir = UpdateFred.findInputRecord(series);
+
 					//System.out.println(ir);
 
 					if ((ir != null) && (ir.series.length() > 0)) {
@@ -94,11 +94,11 @@ public class UpdateFred {
 						dsList.add(dsi);
 
 						if (lastModTime.after(dsi.getLastUpdate())) {
-							Debug.pwDbg.println("Local file created After                               " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
-							    + dsi.getTitle() + Utils.NL);
+							Debug.pwDbg.println("Local file created After                               "
+							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 						} else {
-							Debug.pwDbg.println("Local file created Before                              " + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB
-							    + dsi.getTitle() + Utils.NL);
+							Debug.pwDbg.println("Local file created Before                              "
+							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 							final DataSeries ds = new DataSeries(series);
 
 							FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
@@ -118,7 +118,7 @@ public class UpdateFred {
 		Collections.sort(dsList, new DsiSorter());
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "last-update.txt")) {
-			for (DataSeriesInfo ds : dsList) {
+			for (final DataSeriesInfo ds : dsList) {
 				pw.printf("%-28s %-25s %20s    %s%n", ds.getName(), ds.getFrequency(), sdf.format(ds.getLastUpdate().getTime()),
 				    ds.getTitle());
 			}
@@ -136,7 +136,7 @@ public class UpdateFred {
 	 */
 	private static InputRecord findInputRecord(String series) {
 
-		for (InputRecord ir : records) {
+		for (final InputRecord ir : records) {
 			if (ir.series.equalsIgnoreCase(series)) {
 				return ir;
 			}

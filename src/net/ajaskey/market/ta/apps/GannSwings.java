@@ -42,9 +42,9 @@ public class GannSwings {
 	static private DailyData	ddStart;
 	static private DailyData	ddStop;
 
-	private static int				rangeCal;
-	private static int				rangeTd;
-	private static double			priceRng;
+	private static int		rangeCal;
+	private static int		rangeTd;
+	private static double	priceRng;
 
 	/**
 	 * net.ajaskey.market.ta.apps.main
@@ -101,6 +101,7 @@ public class GannSwings {
 	 * @param i
 	 */
 	private static Calendar getCalendarDate(Calendar cal, int i) {
+
 		final Calendar c = (Calendar) cal.clone();
 		c.add(Calendar.DAY_OF_YEAR, i);
 		return c;
@@ -115,6 +116,7 @@ public class GannSwings {
 	 * @return
 	 */
 	static private Calendar getTradingDate(Calendar cal, int knt) {
+
 		final int tradingDays = (int) Math.round((knt * 7.0) / 5.0);
 		return GannSwings.getCalendarDate(cal, tradingDays);
 	}

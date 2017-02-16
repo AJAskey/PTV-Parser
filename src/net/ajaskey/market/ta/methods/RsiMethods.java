@@ -46,6 +46,7 @@ public class RsiMethods {
 	 * @return
 	 */
 	static public double calcAvgGain(double[] val, int days) {
+
 		double avgGain = 0.0;
 		final int len = Math.min(val.length, 250);
 		final int start = len - days - 1;
@@ -79,6 +80,7 @@ public class RsiMethods {
 	 * @return
 	 */
 	static public double calcAvgLoss(double[] val, int days) {
+
 		double avgLoss = 0.0;
 		final int len = Math.min(val.length, 250);
 		final int start = len - days - 1;
@@ -115,6 +117,7 @@ public class RsiMethods {
 	 * @return
 	 */
 	static public double calcRS(double[] val, int days) {
+
 		double rs = 0.0;
 		final double ag = RsiMethods.calcAvgGain(val, days);
 		final double al = RsiMethods.calcAvgLoss(val, days);
@@ -133,6 +136,7 @@ public class RsiMethods {
 	 * @return
 	 */
 	static public double calcRSI(double[] val, int days) {
+
 		double rsi = 0.0;
 		if (Methods.checkParams(val, ((days * 2) + 2), 0, "RsiMethods.calcSI(double[] val, int days)")) {
 			final double rs = RsiMethods.calcRS(val, days);

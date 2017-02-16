@@ -10,57 +10,50 @@ import net.ajaskey.market.ta.methods.UtilMethods;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class DailyBreadthData {
 
-	private static int		newLowsTotal	= 0;
-	private static int		newHighsTotal	= 0;
+	private static int	newLowsTotal	= 0;
+	private static int	newHighsTotal	= 0;
 
-	private int						adv;
-	private int						dec;
-	private int						adDiff10dma;
+	private int	adv;
+	private int	dec;
+	private int	adDiff10dma;
 
-	private long					advVol;
-	private long					decVol;
-	private long					adVolDiff10dma;
-	private long					totVol;
-	private double				percentVolume;
+	private long		advVol;
+	private long		decVol;
+	private long		adVolDiff10dma;
+	private long		totVol;
+	private double	percentVolume;
 
-	private double				percentAdvancing;
-	private double				percentAdvancingVol;
+	private double	percentAdvancing;
+	private double	percentAdvancingVol;
 
-	private int						newLows;
-	private int						newHighs;
+	private int	newLows;
+	private int	newHighs;
 
-	final private String	TAB						= "\t";
+	final private String TAB = "\t";
 
 	/**
 	 *
@@ -216,6 +209,7 @@ public class DailyBreadthData {
 	 * @return the newHighsTotal
 	 */
 	public static int getNewHighsTotal() {
+
 		return newHighsTotal;
 	}
 
@@ -223,6 +217,7 @@ public class DailyBreadthData {
 	 * @return the newLowsTotal
 	 */
 	public static int getNewLowsTotal() {
+
 		return newLowsTotal;
 	}
 
@@ -230,6 +225,7 @@ public class DailyBreadthData {
 	 * @return the adDiff10dma
 	 */
 	public int getAdDiff10dma() {
+
 		return this.adDiff10dma;
 	}
 
@@ -237,6 +233,7 @@ public class DailyBreadthData {
 	 * @return the adv
 	 */
 	public int getAdv() {
+
 		return this.adv;
 	}
 
@@ -244,6 +241,7 @@ public class DailyBreadthData {
 	 * @return the adv
 	 */
 	public long getAdvancing() {
+
 		return this.adv;
 	}
 
@@ -251,6 +249,7 @@ public class DailyBreadthData {
 	 * @return the adVolDiff10dma
 	 */
 	public long getAdVolDiff10dma() {
+
 		return this.adVolDiff10dma;
 	}
 
@@ -258,6 +257,7 @@ public class DailyBreadthData {
 	 * @return the advVol
 	 */
 	public long getAdvVol() {
+
 		return this.advVol;
 	}
 
@@ -265,6 +265,7 @@ public class DailyBreadthData {
 	 * @return the dec
 	 */
 	public int getDec() {
+
 		return this.dec;
 	}
 
@@ -272,6 +273,7 @@ public class DailyBreadthData {
 	 * @return the dec
 	 */
 	public long getDeclining() {
+
 		return this.dec;
 	}
 
@@ -279,6 +281,7 @@ public class DailyBreadthData {
 	 * @return the decVol
 	 */
 	public long getDecVol() {
+
 		return this.decVol;
 	}
 
@@ -286,6 +289,7 @@ public class DailyBreadthData {
 	 * @return the newHigh52
 	 */
 	public int getNewHighs() {
+
 		return this.newHighs;
 	}
 
@@ -293,6 +297,7 @@ public class DailyBreadthData {
 	 * @return the newLow52
 	 */
 	public int getNewLows() {
+
 		return this.newLows;
 	}
 
@@ -300,6 +305,7 @@ public class DailyBreadthData {
 	 * @return the percentAD
 	 */
 	public double getPercentAD() {
+
 		return this.percentAdvancing;
 	}
 
@@ -307,6 +313,7 @@ public class DailyBreadthData {
 	 * @return the percentADV
 	 */
 	public double getPercentADV() {
+
 		return this.percentAdvancingVol;
 	}
 
@@ -314,6 +321,7 @@ public class DailyBreadthData {
 	 * @return the percentAdvancing
 	 */
 	public double getPercentAdvancing() {
+
 		return this.percentAdvancing;
 	}
 
@@ -321,6 +329,7 @@ public class DailyBreadthData {
 	 * @return the percentAdvancingVol
 	 */
 	public double getPercentAdvancingVol() {
+
 		return this.percentAdvancingVol;
 	}
 
@@ -328,6 +337,7 @@ public class DailyBreadthData {
 	 * @return the percentVolume
 	 */
 	public double getPercentVolume() {
+
 		return this.percentVolume;
 	}
 
@@ -335,6 +345,7 @@ public class DailyBreadthData {
 	 * @return the tAB
 	 */
 	public String getTAB() {
+
 		return this.TAB;
 	}
 
@@ -342,6 +353,7 @@ public class DailyBreadthData {
 	 * @return the totVol
 	 */
 	public long getTotVol() {
+
 		return this.totVol;
 	}
 
@@ -350,6 +362,7 @@ public class DailyBreadthData {
 	 *          the newHighs to set
 	 */
 	public void setNewHighs() {
+
 		this.newHighs = newHighsTotal;
 	}
 
@@ -358,11 +371,13 @@ public class DailyBreadthData {
 	 *          the newLows to set
 	 */
 	public void setNewLows() {
+
 		this.newLows = newLowsTotal;
 	}
 
 	@Override
 	public String toString() {
+
 		String nhStr = "-";
 		String nlStr = "-";
 		String diffStr = "-";
@@ -388,6 +403,7 @@ public class DailyBreadthData {
 	}
 
 	private void init() {
+
 		this.adv = 0;
 		this.dec = 0;
 		this.adDiff10dma = 0;

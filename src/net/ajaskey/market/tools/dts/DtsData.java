@@ -11,52 +11,45 @@ import net.ajaskey.market.misc.Utils;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class DtsData {
 
-	final static public SimpleDateFormat	sdf			= new SimpleDateFormat("yyMMdd");
+	final static public SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
 
-	public static final List<DtsData>			dtsList	= new ArrayList<>();
+	public static final List<DtsData> dtsList = new ArrayList<>();
 
-	private final DtsDataTally						with;
+	private final DtsDataTally with;
 
-	private final DtsDataTally						ind;
+	private final DtsDataTally ind;
 
-	private final DtsDataTally						corp;
+	private final DtsDataTally corp;
 
-	private final DtsDataTally						unEmp;
+	private final DtsDataTally unEmp;
 
-	private Calendar											date;
+	private Calendar date;
 
-	private int														rptKnt	= 0;
+	private int rptKnt = 0;
 
 	/**
 	 *
@@ -95,6 +88,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static String cleanString(String str, int idx) {
+
 		final String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
 		return s;
 	}
@@ -107,6 +101,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static DtsData findData(Calendar cal) {
+
 		if (cal != null) {
 			// Utils.printCalendar(cal);
 			for (final DtsData d : DtsData.dtsList) {
@@ -129,6 +124,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static DtsData findData(int rptOfYear, int year) {
+
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == year) {
@@ -151,6 +147,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static DtsData findData(int rptOfMonth, int month, int year) {
+
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == year) {
@@ -174,6 +171,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static DtsData findLastOfMonthData(int month, int year) {
+
 		boolean monthFound = false;
 		DtsData lastDayData = null;
 		for (final DtsData d : DtsData.dtsList) {
@@ -198,6 +196,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static DtsData findLastReportOfMonth(int month, int year) {
+
 		boolean found = false;
 		DtsData previous = null;
 		for (final DtsData d : DtsData.dtsList) {
@@ -224,6 +223,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static double findMonthlyChangeTotal(DtsData older, DtsData newer) {
+
 		final double newTot = newer.getWith().monthly + newer.getInd().monthly + newer.getCorp().monthly;
 		final double oldTot = older.getWith().monthly + older.getInd().monthly + older.getCorp().monthly;
 		final double chg = (newTot - oldTot) / oldTot;
@@ -239,6 +239,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static double findYearlyChangeTotal(DtsData older, DtsData newer) {
+
 		final double newTot = newer.getWith().yearly + newer.getInd().yearly + newer.getCorp().yearly;
 		final double oldTot = older.getWith().yearly + older.getInd().yearly + older.getCorp().yearly;
 		final double chg = (newTot - oldTot) / oldTot;
@@ -253,6 +254,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static String formatDate(Calendar date) {
+
 		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getNumReportsInYear(date);
 		str += "\t" + DtsData.getNumReportsInMonth(date);
@@ -270,6 +272,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static int getNumReportsInMonth(Calendar cal) {
+
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
@@ -294,6 +297,7 @@ public class DtsData {
 	 * @return
 	 */
 	public static int getNumReportsInYear(Calendar cal) {
+
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
@@ -312,6 +316,7 @@ public class DtsData {
 	}
 
 	public static int getTotalReportsInMonth(Calendar cal) {
+
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
@@ -333,6 +338,7 @@ public class DtsData {
 	 * @return
 	 */
 	public DtsDataTally getCorp() {
+
 		return this.corp;
 	}
 
@@ -343,6 +349,7 @@ public class DtsData {
 	 * @return
 	 */
 	public Calendar getDate() {
+
 		return this.date;
 	}
 
@@ -353,6 +360,7 @@ public class DtsData {
 	 * @return
 	 */
 	public String getDatePlus() {
+
 		String str = Utils.stringDate2(this.date) + "\t" + this.date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getNumReportsInYear(this.date);
 		str += "\t" + DtsData.getNumReportsInMonth(this.date);
@@ -366,6 +374,7 @@ public class DtsData {
 	 * @return
 	 */
 	public DtsDataTally getInd() {
+
 		return this.ind;
 	}
 
@@ -376,10 +385,12 @@ public class DtsData {
 	 * @return
 	 */
 	public int getRptKnt() {
+
 		return this.rptKnt;
 	}
 
 	public DtsDataTally getUnEmp() {
+
 		return this.unEmp;
 	}
 
@@ -390,6 +401,7 @@ public class DtsData {
 	 * @return
 	 */
 	public DtsDataTally getWith() {
+
 		return this.with;
 	}
 
@@ -481,6 +493,7 @@ public class DtsData {
 	 *
 	 */
 	public void setRptKnt(int knt) {
+
 		this.rptKnt = knt;
 	}
 
@@ -534,6 +547,7 @@ public class DtsData {
 
 	@Override
 	public String toString() {
+
 		String str = DtsData.formatDate(this.date); // + " " + this.rptKnt;
 
 		final long dtot = this.getWith().daily + this.getInd().daily + this.getCorp().daily;
@@ -552,6 +566,7 @@ public class DtsData {
 	 * @return
 	 */
 	public String toWithheldString() {
+
 		String str = this.getDatePlus();
 		str += String.format("%n\tWithheld   ==> %s%n", this.with);
 		return str;

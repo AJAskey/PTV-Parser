@@ -63,159 +63,13 @@ public class FindCategories {
 
 		pwSum = new PrintWriter("fred-categories.txt");
 
-		processProductionBusiness();
-		processBanking();
-		processEmployment();
-		processPrices();
-		processNatlAccounts();
+		FindCategories.processProductionBusiness();
+		FindCategories.processBanking();
+		FindCategories.processEmployment();
+		FindCategories.processPrices();
+		FindCategories.processNatlAccounts();
 
 		pwSum.close();
-	}
-
-	private static void processBanking() throws FileNotFoundException {
-
-		catList.clear();
-		catList.add(32991);
-
-		pw = new PrintWriter("fred-banking-categories.txt");
-		for (int cat : catList) {
-			processCategory(cat);
-			processParentCategory(cat, 1);
-		}
-		pw.close();
-	}
-
-	private static void processEmployment() throws FileNotFoundException {
-
-		catList.clear();
-		catList.add(10);
-
-		pw = new PrintWriter("employment-categories.txt");
-		for (int cat : catList) {
-			processCategory(cat);
-			processParentCategory(cat, 1);
-		}
-		pw.close();
-	}
-
-	private static void processNatlAccounts() throws FileNotFoundException {
-
-		catList.clear();
-		catList.add(32992);
-
-		pw = new PrintWriter("national-account-categories.txt");
-		for (int cat : catList) {
-			processCategory(cat);
-			processParentCategory(cat, 1);
-		}
-		pw.close();
-	}
-
-	private static void processProductionBusiness() throws FileNotFoundException {
-
-		catList.clear();
-		catList.add(1);
-
-		pw = new PrintWriter("production-business-categories.txt");
-		for (int cat : catList) {
-			processCategory(cat);
-			processParentCategory(cat, 1);
-		}
-		pw.close();
-	}
-
-	private static void processPrices() throws FileNotFoundException {
-
-		catList.clear();
-		catList.add(32455);
-
-		pw = new PrintWriter("price-categories.txt");
-		for (int cat : catList) {
-			processCategory(cat);
-			processParentCategory(cat, 1);
-		}
-		pw.close();
-	}
-
-	private static void processParentCategory(int cat, int indent) {
-
-		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key="
-		    + ApiKey.get();
-
-		try {
-			final String resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
-
-			dBuilder = dbFactory.newDocumentBuilder();
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			int id = 0;
-			final NodeList nResp = doc.getElementsByTagName("category");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					final String tmp = eElement.getAttribute("id");
-					final String name = eElement.getAttribute("name");
-					if (!name.contains("DISCONTINUED")) {
-						id = Integer.parseInt(tmp);
-						String tab = "";
-						for (int i = 0; i < indent; i++) {
-							tab += "  ";
-						}
-
-						pw.println(Utils.NL + tab + id + " " + name);
-						pwSum.println(tab + id + " " + name);
-
-						processParentCategory(id, indent + 1);
-
-						FindCategories.getSeries(id, indent + 2);
-					}
-				}
-			}
-
-		} catch (final Exception e) {
-		}
-
-	}
-
-	private static void processCategory(int cat) {
-
-		final String url = "https://api.stlouisfed.org/fred/category?category_id=" + cat + "&api_key=" + ApiKey.get();
-
-		try {
-			final String resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
-
-			dBuilder = dbFactory.newDocumentBuilder();
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			int id = 0;
-			final NodeList nResp = doc.getElementsByTagName("category");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					final String tmp = eElement.getAttribute("id");
-					final String name = eElement.getAttribute("name");
-
-					if (!name.contains("DISCONTINUED")) {
-						id = Integer.parseInt(tmp);
-
-						pw.println(id + " " + name);
-						pwSum.println(Utils.NL + id + " " + name);
-					}
-				}
-			}
-
-		} catch (final Exception e) {
-		}
 	}
 
 	/**
@@ -263,6 +117,152 @@ public class FindCategories {
 
 		} catch (final Exception e) {
 		}
+	}
+
+	private static void processBanking() throws FileNotFoundException {
+
+		catList.clear();
+		catList.add(32991);
+
+		pw = new PrintWriter("fred-banking-categories.txt");
+		for (final int cat : catList) {
+			FindCategories.processCategory(cat);
+			FindCategories.processParentCategory(cat, 1);
+		}
+		pw.close();
+	}
+
+	private static void processCategory(int cat) {
+
+		final String url = "https://api.stlouisfed.org/fred/category?category_id=" + cat + "&api_key=" + ApiKey.get();
+
+		try {
+			final String resp = Utils.getFromUrl(url);
+			//System.out.println(resp);
+
+			dBuilder = dbFactory.newDocumentBuilder();
+
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+			doc.getDocumentElement().normalize();
+
+			int id = 0;
+			final NodeList nResp = doc.getElementsByTagName("category");
+			for (int knt = 0; knt < nResp.getLength(); knt++) {
+				final Node nodeResp = nResp.item(knt);
+				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+					final Element eElement = (Element) nodeResp;
+					final String tmp = eElement.getAttribute("id");
+					final String name = eElement.getAttribute("name");
+
+					if (!name.contains("DISCONTINUED")) {
+						id = Integer.parseInt(tmp);
+
+						pw.println(id + " " + name);
+						pwSum.println(Utils.NL + id + " " + name);
+					}
+				}
+			}
+
+		} catch (final Exception e) {
+		}
+	}
+
+	private static void processEmployment() throws FileNotFoundException {
+
+		catList.clear();
+		catList.add(10);
+
+		pw = new PrintWriter("employment-categories.txt");
+		for (final int cat : catList) {
+			FindCategories.processCategory(cat);
+			FindCategories.processParentCategory(cat, 1);
+		}
+		pw.close();
+	}
+
+	private static void processNatlAccounts() throws FileNotFoundException {
+
+		catList.clear();
+		catList.add(32992);
+
+		pw = new PrintWriter("national-account-categories.txt");
+		for (final int cat : catList) {
+			FindCategories.processCategory(cat);
+			FindCategories.processParentCategory(cat, 1);
+		}
+		pw.close();
+	}
+
+	private static void processParentCategory(int cat, int indent) {
+
+		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key="
+		    + ApiKey.get();
+
+		try {
+			final String resp = Utils.getFromUrl(url);
+			//System.out.println(resp);
+
+			dBuilder = dbFactory.newDocumentBuilder();
+
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+			doc.getDocumentElement().normalize();
+
+			int id = 0;
+			final NodeList nResp = doc.getElementsByTagName("category");
+			for (int knt = 0; knt < nResp.getLength(); knt++) {
+				final Node nodeResp = nResp.item(knt);
+				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+					final Element eElement = (Element) nodeResp;
+					final String tmp = eElement.getAttribute("id");
+					final String name = eElement.getAttribute("name");
+					if (!name.contains("DISCONTINUED")) {
+						id = Integer.parseInt(tmp);
+						String tab = "";
+						for (int i = 0; i < indent; i++) {
+							tab += "  ";
+						}
+
+						pw.println(Utils.NL + tab + id + " " + name);
+						pwSum.println(tab + id + " " + name);
+
+						FindCategories.processParentCategory(id, indent + 1);
+
+						FindCategories.getSeries(id, indent + 2);
+					}
+				}
+			}
+
+		} catch (final Exception e) {
+		}
+
+	}
+
+	private static void processPrices() throws FileNotFoundException {
+
+		catList.clear();
+		catList.add(32455);
+
+		pw = new PrintWriter("price-categories.txt");
+		for (final int cat : catList) {
+			FindCategories.processCategory(cat);
+			FindCategories.processParentCategory(cat, 1);
+		}
+		pw.close();
+	}
+
+	private static void processProductionBusiness() throws FileNotFoundException {
+
+		catList.clear();
+		catList.add(1);
+
+		pw = new PrintWriter("production-business-categories.txt");
+		for (final int cat : catList) {
+			FindCategories.processCategory(cat);
+			FindCategories.processParentCategory(cat, 1);
+		}
+		pw.close();
 	}
 
 }

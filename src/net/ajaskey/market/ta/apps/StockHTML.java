@@ -199,6 +199,7 @@ public class StockHTML {
 	 * @return the htmlStr
 	 */
 	public String getHtmlStr() {
+
 		return this.htmlStr;
 	}
 
@@ -207,6 +208,7 @@ public class StockHTML {
 	 *          the htmlStr to set
 	 */
 	private void setHtmlStr(String htmlStr) {
+
 		this.htmlStr = htmlStr;
 	}
 

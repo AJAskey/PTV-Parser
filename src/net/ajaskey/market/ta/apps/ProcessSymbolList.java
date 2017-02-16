@@ -185,6 +185,7 @@ public class ProcessSymbolList {
 	 *
 	 */
 	private static void buildOexList() throws IOException {
+
 		System.out.println("in OexList");
 
 		final String iFile = "symbols\\OPRA_SymbolList.txt";

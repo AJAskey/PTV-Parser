@@ -10,8 +10,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.ajaskey.market.tools.dts.DtsData;
-
 /**
  * This class...
  *
@@ -26,7 +24,7 @@ import net.ajaskey.market.tools.dts.DtsData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -42,7 +40,57 @@ public class FredCommon {
 	public final static String optumaPath = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/FRED/";
 
 	/**
-	 * 
+	 * net.ajaskey.market.tools.fred.getShortTitle
+	 *
+	 * @param title
+	 * @return
+	 */
+	public static String getShortTitle(String title) {
+
+		final String s1 = title.replaceAll("Disposable Personal Income", "DPI")
+		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
+		final String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "")
+		    .replaceAll("  ", " ");
+		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
+		final String s4 = s3.replaceAll("\\s+", "");
+		return s4.trim();
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.readSeriesNames
+	 *
+	 * @param string
+	 * @return
+	 */
+	public static List<String> readSeriesNames(String fname) {
+
+		final List<String> retList = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					final String s = str.substring(0, 1);
+					if (!s.contains("#")) {
+						retList.add(str);
+					}
+				}
+
+			}
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (final IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return retList;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.fred.writeToOptuma
 	 *
 	 * @param data
@@ -59,55 +107,6 @@ public class FredCommon {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.getShortTitle
-	 *
-	 * @param title
-	 * @return
-	 */
-	public static String getShortTitle(String title) {
-
-		String s1 = title.replaceAll("Disposable Personal Income", "DPI")
-		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
-		String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "").replaceAll("  ", " ");
-		String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
-		String s4 = s3.replaceAll("\\s+", "");
-		return s4.trim();
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.fred.readSeriesNames
-	 *
-	 * @param string
-	 * @return
-	 */
-	public static List<String> readSeriesNames(String fname) {
-		
-		List<String> retList = new ArrayList<>();
-
-		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
-
-			String line;
-			// Utils.printCalendar(d.getDate());
-			while ((line = reader.readLine()) != null) {
-				String str = line.trim();
-				if (str.length() > 1) {
-					String s = str.substring(0, 1);
-					if (!s.contains("#")) {
-						retList.add(str);
-					}
-				}
-				
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return retList;
 	}
 
 }

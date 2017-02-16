@@ -24,63 +24,56 @@ import net.ajaskey.market.tools.helpers.WebGet;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class ProcessCOTS {
 
-	final private static String						outputPath			= "d:/dev/ta/working/out/optuma";
-	final private static String						folderPath			= "d:/temp/cots";
-	final private static Charset					charset					= Charset.forName("UTF-8");
-	final private static SimpleDateFormat	sdf							= new SimpleDateFormat("yyMMdd");
-	final private static SimpleDateFormat	sdf2						= new SimpleDateFormat("MMMM dd, yyyy");
-	final private static String						TAB							= "\t";
+	final private static String						outputPath	= "d:/dev/ta/working/out/optuma";
+	final private static String						folderPath	= "d:/temp/cots";
+	final private static Charset					charset			= Charset.forName("UTF-8");
+	final private static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
+	final private static SimpleDateFormat	sdf2				= new SimpleDateFormat("MMMM dd, yyyy");
+	final private static String						TAB					= "\t";
 
-	final private static String						DJIA_C_Name			= "DJIA Consolidated";
-	final private static String						DJIA_Name				= "DOW JONES INDUSTRIAL AVG";
-	final private static String						SPX_C_Name			= "S&P 500 Consolidated";
-	final private static String						SPX_Name				= "S&P 500 STOCK INDEX";
-	final private static String						NDX_C_Name			= "NASDAQ-100 Consolidated";
-	final private static String						NDX_Name				= "NASDAQ-100 STOCK INDEX (MINI)";
-	final private static String						EMINI500_Name		= "E-MINI S&P 500 STOCK INDEX";
-	final private static String						EMINI400_Name		= "E-MINI S&P 400 STOCK INDEX";
-	final private static String						RUT_Name				= "RUSSELL 2000 MINI";
-	final private static String						VIX_Name				= "VIX FUTURES";
-	final private static String						EM_Name					= "MSCI EMERGING MKTS MINI INDEX";
-	final private static String						USD_Name				= "U.S. DOLLAR INDEX";
-	final private static String						Treasury10_Name	= "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE";
-	final private static String						Commodity_Name	= "BLOOMBERG COMMODITY INDEX";
-	final private static String						Commodity_Name2	= "DOW JONES UBS EXCESS RETURN";
+	final private static String	DJIA_C_Name			= "DJIA Consolidated";
+	final private static String	DJIA_Name				= "DOW JONES INDUSTRIAL AVG";
+	final private static String	SPX_C_Name			= "S&P 500 Consolidated";
+	final private static String	SPX_Name				= "S&P 500 STOCK INDEX";
+	final private static String	NDX_C_Name			= "NASDAQ-100 Consolidated";
+	final private static String	NDX_Name				= "NASDAQ-100 STOCK INDEX (MINI)";
+	final private static String	EMINI500_Name		= "E-MINI S&P 500 STOCK INDEX";
+	final private static String	EMINI400_Name		= "E-MINI S&P 400 STOCK INDEX";
+	final private static String	RUT_Name				= "RUSSELL 2000 MINI";
+	final private static String	VIX_Name				= "VIX FUTURES";
+	final private static String	EM_Name					= "MSCI EMERGING MKTS MINI INDEX";
+	final private static String	USD_Name				= "U.S. DOLLAR INDEX";
+	final private static String	Treasury10_Name	= "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE";
+	final private static String	Commodity_Name	= "BLOOMBERG COMMODITY INDEX";
+	final private static String	Commodity_Name2	= "DOW JONES UBS EXCESS RETURN";
 
-	private static List<String>						validNames			= new ArrayList<>();
+	private static List<String> validNames = new ArrayList<>();
 
-	private static SpxLongTermPrices			spxData;
+	private static SpxLongTermPrices spxData;
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -138,6 +131,7 @@ public class ProcessCOTS {
 	}
 
 	public static void runSpxCombo(String prefix) throws ParseException {
+
 		validNames.clear();
 
 		validNames.add(SPX_C_Name);
@@ -162,6 +156,7 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static void getLatestCots() {
+
 		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
 		List<String> resp = new ArrayList<>();
 
@@ -238,6 +233,7 @@ public class ProcessCOTS {
 	}
 
 	private static void readAndParse() throws ParseException {
+
 		//ProcessCOTS.readDaily();
 		ProcessCOTS.readAndProcess(null);
 		ProcessCOTS.parseData();
@@ -448,6 +444,7 @@ public class ProcessCOTS {
 	 *
 	 */
 	private static String setAllIndex() {
+
 		validNames.clear();
 
 		validNames.add(SPX_C_Name);
@@ -464,6 +461,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setCommodity() {
+
 		validNames.clear();
 
 		validNames.add(Commodity_Name);
@@ -473,6 +471,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setDJIA() {
+
 		validNames.clear();
 
 		validNames.add(DJIA_Name);
@@ -482,6 +481,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setNDX() {
+
 		validNames.clear();
 
 		validNames.add(NDX_Name);
@@ -491,6 +491,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setRUT() {
+
 		validNames.clear();
 
 		validNames.add(RUT_Name);
@@ -506,6 +507,7 @@ public class ProcessCOTS {
 	 * @return
 	 */
 	private static SourceType setSourceType(String line) {
+
 		LongShort.SourceType st = null;
 		if (line.contains(DJIA_C_Name)) {
 			st = LongShort.SourceType.DJIA_C;
@@ -540,6 +542,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setSPX() {
+
 		validNames.clear();
 
 		validNames.add(SPX_C_Name);
@@ -550,6 +553,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setTreasury() {
+
 		validNames.clear();
 
 		validNames.add(Treasury10_Name);
@@ -558,6 +562,7 @@ public class ProcessCOTS {
 	}
 
 	private static String setVIX() {
+
 		validNames.clear();
 
 		validNames.add(VIX_Name);
@@ -572,6 +577,7 @@ public class ProcessCOTS {
 	 * @return
 	 */
 	private static boolean validName(String name) {
+
 		// System.out.println(name);
 		for (final String s : validNames) {
 			if (name.contains(s)) {

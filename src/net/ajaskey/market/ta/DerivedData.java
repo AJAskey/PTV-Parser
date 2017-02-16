@@ -6,77 +6,70 @@ import net.ajaskey.market.ta.methods.UtilMethods;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class DerivedData {
 
-	private Double				sma23;
-	private Double				smaPerc23;
-	private Double				sma65;
-	private Double				smaPerc65;
-	private Double				sma130;
-	private Double				smaPerc130;
-	private Double				sma260;
-	private Double				smaPerc260;
-	private double				currentPrice;
-	private double				avgVol65;
-	private double				avgVol20;
-	private double				chg;
-	private double				chg23;
-	private double				chg65;
-	private double				chg130;
-	private double				chg260;
-	private double				low260;
-	private double				high260;
-	private double				rsRaw;
-	private double				rsStRaw;
-	private double				atr23;
-	private double				diPlus;
-	private double				diMinus;
-	private double				atrPercent23;
-	private double				mfi23;
-	private double				mfi65;
-	private double				mfi130;
-	private double				mfi14;
-	private double				priceInRng260;
-	private double				priceOffHigh260;
-	private double				priceOffLow260;
-	private double				lr260;
-	private double				lrAngle260;
-	private double				lrInt260;
-	private double				lrSlope260;
-	private double				rsi14;
+	private Double	sma23;
+	private Double	smaPerc23;
+	private Double	sma65;
+	private Double	smaPerc65;
+	private Double	sma130;
+	private Double	smaPerc130;
+	private Double	sma260;
+	private Double	smaPerc260;
+	private double	currentPrice;
+	private double	avgVol65;
+	private double	avgVol20;
+	private double	chg;
+	private double	chg23;
+	private double	chg65;
+	private double	chg130;
+	private double	chg260;
+	private double	low260;
+	private double	high260;
+	private double	rsRaw;
+	private double	rsStRaw;
+	private double	atr23;
+	private double	diPlus;
+	private double	diMinus;
+	private double	atrPercent23;
+	private double	mfi23;
+	private double	mfi65;
+	private double	mfi130;
+	private double	mfi14;
+	private double	priceInRng260;
+	private double	priceOffHigh260;
+	private double	priceOffLow260;
+	private double	lr260;
+	private double	lrAngle260;
+	private double	lrInt260;
+	private double	lrSlope260;
+	private double	rsi14;
 
-	private TickerData		td;
+	private TickerData td;
 
-	final private double	INITVAL	= -98765432.1;
+	final private double INITVAL = -98765432.1;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -120,6 +113,7 @@ public class DerivedData {
 	 * @return the atr23
 	 */
 	public double getAtr23() {
+
 		if (this.atr23 == this.INITVAL) {
 			this.setAtr23();
 		}
@@ -130,6 +124,7 @@ public class DerivedData {
 	 * @return the atrPercent23
 	 */
 	public double getAtrPercent23() {
+
 		if (this.atrPercent23 == this.INITVAL) {
 			this.setAtrPercent23();
 		}
@@ -140,6 +135,7 @@ public class DerivedData {
 	 * @return the avgVol20
 	 */
 	public double getAvgVol20() {
+
 		if (this.avgVol20 == this.INITVAL) {
 			this.setAvgVol20();
 		}
@@ -150,6 +146,7 @@ public class DerivedData {
 	 * @return the avgVol65
 	 */
 	public double getAvgVol65() {
+
 		if (this.avgVol65 == this.INITVAL) {
 			this.setAvgVol65();
 		}
@@ -160,6 +157,7 @@ public class DerivedData {
 	 * @return the chg
 	 */
 	public double getChg() {
+
 		if (this.chg == this.INITVAL) {
 			this.setChg();
 		}
@@ -170,6 +168,7 @@ public class DerivedData {
 	 * @return the chg130
 	 */
 	public double getChg130() {
+
 		if (this.chg130 == this.INITVAL) {
 			this.setChg130();
 		}
@@ -180,6 +179,7 @@ public class DerivedData {
 	 * @return the chg23
 	 */
 	public double getChg23() {
+
 		if (this.chg23 == this.INITVAL) {
 			this.setChg23();
 		}
@@ -190,6 +190,7 @@ public class DerivedData {
 	 * @return the chg260
 	 */
 	public double getChg260() {
+
 		if (this.chg260 == this.INITVAL) {
 			this.setChg260();
 		}
@@ -200,6 +201,7 @@ public class DerivedData {
 	 * @return the chg65
 	 */
 	public double getChg65() {
+
 		if (this.chg65 == this.INITVAL) {
 			this.setChg65();
 		}
@@ -210,6 +212,7 @@ public class DerivedData {
 	 * @return the currentPrice
 	 */
 	public double getCurrentPrice() {
+
 		if (this.currentPrice == this.INITVAL) {
 			this.setCurrentPrice();
 		}
@@ -220,6 +223,7 @@ public class DerivedData {
 	 * @return the diMinus
 	 */
 	public double getDiMinus() {
+
 		if (this.diMinus == this.INITVAL) {
 			this.setDiMinus();
 		}
@@ -230,6 +234,7 @@ public class DerivedData {
 	 * @return the diPlus
 	 */
 	public double getDiPlus() {
+
 		if (this.diPlus == this.INITVAL) {
 			this.setDiPlus();
 		}
@@ -240,6 +245,7 @@ public class DerivedData {
 	 * @return the high260
 	 */
 	public double getHigh260() {
+
 		if (this.high260 == this.INITVAL) {
 			this.setHigh260();
 		}
@@ -250,6 +256,7 @@ public class DerivedData {
 	 * @return the low260
 	 */
 	public double getLow260() {
+
 		if (this.low260 == this.INITVAL) {
 			this.setLow260();
 		}
@@ -260,6 +267,7 @@ public class DerivedData {
 	 * @return the lr260
 	 */
 	public double getLr260() {
+
 		if (this.lr260 == this.INITVAL) {
 			this.setLr260();
 		}
@@ -270,6 +278,7 @@ public class DerivedData {
 	 * @return the lrAngle260
 	 */
 	public double getLrAngle260() {
+
 		if (this.lrAngle260 == this.INITVAL) {
 			this.setLrAngle260();
 		}
@@ -280,6 +289,7 @@ public class DerivedData {
 	 * @return the lrInt260
 	 */
 	public double getLrInt260() {
+
 		if (this.lrInt260 == this.INITVAL) {
 			this.setLrInt260();
 		}
@@ -290,6 +300,7 @@ public class DerivedData {
 	 * @return the lrSlope260
 	 */
 	public double getLrSlope260() {
+
 		if (this.lrSlope260 == this.INITVAL) {
 			this.setLrSlope260();
 		}
@@ -300,6 +311,7 @@ public class DerivedData {
 	 * @return the mfi130
 	 */
 	public double getMfi130() {
+
 		if (this.mfi130 == this.INITVAL) {
 			this.setMfi130();
 		}
@@ -310,6 +322,7 @@ public class DerivedData {
 	 * @return the mfi14
 	 */
 	public double getMfi14() {
+
 		if (this.mfi14 == this.INITVAL) {
 			this.setMfi14();
 		}
@@ -320,6 +333,7 @@ public class DerivedData {
 	 * @return the mfi23
 	 */
 	public double getMfi23() {
+
 		if (this.mfi23 == this.INITVAL) {
 			this.setMfi23();
 		}
@@ -330,6 +344,7 @@ public class DerivedData {
 	 * @return the mfi65
 	 */
 	public double getMfi65() {
+
 		if (this.mfi65 == this.INITVAL) {
 			this.setMfi65();
 		}
@@ -340,6 +355,7 @@ public class DerivedData {
 	 * @return the priceInRng260
 	 */
 	public double getPriceInRng260() {
+
 		if (this.priceInRng260 == this.INITVAL) {
 			this.setPriceInRng260();
 		}
@@ -350,6 +366,7 @@ public class DerivedData {
 	 * @return the priceOffHigh260
 	 */
 	public double getPriceOffHigh260() {
+
 		if (this.priceOffHigh260 == this.INITVAL) {
 			this.setPriceOffHigh260();
 		}
@@ -360,6 +377,7 @@ public class DerivedData {
 	 * @return the priceOffLow260
 	 */
 	public double getPriceOffLow260() {
+
 		if (this.priceOffLow260 == this.INITVAL) {
 			this.setPriceOffLow260();
 		}
@@ -370,6 +388,7 @@ public class DerivedData {
 	 * @return the rsi14
 	 */
 	public double getRsi14() {
+
 		if (this.rsi14 == this.INITVAL) {
 			this.setRsi14();
 		}
@@ -380,6 +399,7 @@ public class DerivedData {
 	 * @return the rsRaw
 	 */
 	public double getRsRaw() {
+
 		if (this.rsRaw == this.INITVAL) {
 			this.setRsRaw();
 		}
@@ -390,6 +410,7 @@ public class DerivedData {
 	 * @return the rsStRaw
 	 */
 	public double getRsStRaw() {
+
 		if (this.rsStRaw == this.INITVAL) {
 			this.setRsStRaw();
 		}
@@ -400,6 +421,7 @@ public class DerivedData {
 	 * @return the sma130
 	 */
 	public Double getSma130() {
+
 		if (this.sma130 == this.INITVAL) {
 			this.setSma130();
 		}
@@ -410,6 +432,7 @@ public class DerivedData {
 	 * @return the sma23
 	 */
 	public Double getSma23() {
+
 		if (this.sma23 == this.INITVAL) {
 			this.setSma23();
 		}
@@ -420,6 +443,7 @@ public class DerivedData {
 	 * @return the sma260
 	 */
 	public Double getSma260() {
+
 		if (this.sma260 == this.INITVAL) {
 			this.setSma260();
 		}
@@ -430,6 +454,7 @@ public class DerivedData {
 	 * @return the sma65
 	 */
 	public Double getSma65() {
+
 		if (this.sma65 == this.INITVAL) {
 			this.setSma65();
 		}
@@ -440,6 +465,7 @@ public class DerivedData {
 	 * @return the smaPerc130
 	 */
 	public Double getSmaPerc130() {
+
 		if (this.smaPerc130 == this.INITVAL) {
 			this.setSmaPerc130();
 		}
@@ -450,6 +476,7 @@ public class DerivedData {
 	 * @return the smaPerc23
 	 */
 	public Double getSmaPerc23() {
+
 		if (this.smaPerc23 == this.INITVAL) {
 			this.setSmaPerc23();
 		}
@@ -460,6 +487,7 @@ public class DerivedData {
 	 * @return the smaPerc260
 	 */
 	public Double getSmaPerc260() {
+
 		if (this.smaPerc260 == this.INITVAL) {
 			this.setSmaPerc260();
 		}
@@ -470,6 +498,7 @@ public class DerivedData {
 	 * @return the smaPerc65
 	 */
 	public Double getSmaPerc65() {
+
 		if (this.smaPerc65 == this.INITVAL) {
 			this.setSmaPerc65();
 		}
@@ -483,6 +512,7 @@ public class DerivedData {
 	 * @param td
 	 */
 	public void set(TickerData td) {
+
 		try {
 			if (td != null) {
 				this.td = td;
@@ -514,6 +544,7 @@ public class DerivedData {
 	/**
 	 */
 	private void setAtr23() {
+
 		double val = 0;
 		try {
 			val = 0;
@@ -526,6 +557,7 @@ public class DerivedData {
 	/**
 	 */
 	private void setAtrPercent23() {
+
 		double val = 0;
 		try {
 			val = 0.0;
@@ -540,6 +572,7 @@ public class DerivedData {
 	 *          the avgVol20 to set
 	 */
 	private void setAvgVol20() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getVolumeData(), 20);
 			this.avgVol20 = sma;
@@ -553,6 +586,7 @@ public class DerivedData {
 	 *          the avgVol65 to set
 	 */
 	private void setAvgVol65() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getVolumeData(), 65);
 			this.avgVol65 = sma;
@@ -567,6 +601,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setChg() {
+
 		try {
 			final double chg = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(1));
 			this.chg = chg;
@@ -581,6 +616,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setChg130() {
+
 		try {
 			final double chg = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(130));
 			this.chg130 = chg;
@@ -595,6 +631,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setChg23() {
+
 		try {
 			final double chg = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(23));
 			this.chg23 = chg;
@@ -609,6 +646,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setChg260() {
+
 		try {
 			final double chg = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(260));
 			this.chg260 = chg;
@@ -623,6 +661,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setChg65() {
+
 		try {
 			final double chg = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(65));
 			this.chg65 = chg;
@@ -636,6 +675,7 @@ public class DerivedData {
 	 *          the currentPrice to set
 	 */
 	private void setCurrentPrice() {
+
 		try {
 			this.currentPrice = this.td.getClose(0);
 		} catch (final Exception e) {
@@ -646,12 +686,14 @@ public class DerivedData {
 	/**
 	 */
 	private void setDiMinus() {
+
 		this.diMinus = 0;
 	}
 
 	/**
 	 */
 	private void setDiPlus() {
+
 		this.diPlus = 0;
 	}
 
@@ -661,6 +703,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setHigh260() {
+
 		try {
 			final double high = UtilMethods.max(this.td.getCloseData(), 260);
 			this.high260 = high;
@@ -674,6 +717,7 @@ public class DerivedData {
 	 *          the low260 to set
 	 */
 	private void setLow260() {
+
 		try {
 			final double low = UtilMethods.min(this.td.getCloseData(), 260);
 			this.low260 = low;
@@ -685,60 +729,70 @@ public class DerivedData {
 	/**
 	 */
 	private void setLr260() {
+
 		this.lr260 = 0;
 	}
 
 	/**
 	 */
 	private void setLrAngle260() {
+
 		this.lrAngle260 = 0;
 	}
 
 	/**
 	 */
 	private void setLrInt260() {
+
 		this.lrInt260 = 0;
 	}
 
 	/**
 	 */
 	private void setLrSlope260() {
+
 		this.lrSlope260 = 0;
 	}
 
 	/**
 	 */
 	private void setMfi130() {
+
 		this.mfi130 = 0;
 	}
 
 	/**
 	 */
 	private void setMfi14() {
+
 		this.mfi14 = 0;
 	}
 
 	/**
 	 */
 	private void setMfi23() {
+
 		this.mfi23 = 0;
 	}
 
 	/**
 	 */
 	private void setMfi65() {
+
 		this.mfi65 = 0;
 	}
 
 	/**
 	 */
 	private void setPriceInRng260() {
+
 		this.priceInRng260 = 0;
 	}
 
 	/**
 	 */
 	private void setPriceOffHigh260() {
+
 		this.priceOffHigh260 = 0;
 	}
 
@@ -747,12 +801,14 @@ public class DerivedData {
 	 *          the priceOffLow260 to set
 	 */
 	private void setPriceOffLow260() {
+
 		this.priceOffLow260 = 0;
 	}
 
 	/**
 	 */
 	private void setRsi14() {
+
 		this.rsi14 = 0;
 	}
 
@@ -761,6 +817,7 @@ public class DerivedData {
 	 *          the rsRaw to set
 	 */
 	private void setRsRaw() {
+
 		try {
 			final double raw = (0.67 * this.getChg260()) + (0.33 * this.getChg130());
 			this.rsRaw = raw;
@@ -775,6 +832,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setRsStRaw() {
+
 		try {
 			final double raw = (0.67 * this.getChg65()) + (0.33 * this.getChg23());
 			this.rsStRaw = raw;
@@ -788,6 +846,7 @@ public class DerivedData {
 	 *          the sma130 to set
 	 */
 	private void setSma130() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getCloseData(), 130);
 			this.sma130 = sma;
@@ -801,6 +860,7 @@ public class DerivedData {
 	 *          the sma23 to set
 	 */
 	private void setSma23() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getCloseData(), 23);
 			this.sma23 = sma;
@@ -814,6 +874,7 @@ public class DerivedData {
 	 *          the sma260 to set
 	 */
 	private void setSma260() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getCloseData(), 260);
 			this.sma260 = sma;
@@ -828,6 +889,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setSma65() {
+
 		try {
 			final double sma = UtilMethods.sma(this.td.getCloseData(), 65);
 			this.sma65 = sma;
@@ -842,6 +904,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setSmaPerc130() {
+
 		try {
 			this.smaPerc130 = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(130));
 		} catch (final Exception e) {
@@ -855,6 +918,7 @@ public class DerivedData {
 	 *
 	 */
 	private void setSmaPerc23() {
+
 		try {
 			this.smaPerc23 = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(23));
 		} catch (final Exception e) {
@@ -867,6 +931,7 @@ public class DerivedData {
 	 *          the smaPerc260 to set
 	 */
 	private void setSmaPerc260() {
+
 		try {
 			this.smaPerc260 = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(260));
 		} catch (final Exception e) {
@@ -881,6 +946,7 @@ public class DerivedData {
 	 * @param smaPerc65
 	 */
 	private void setSmaPerc65() {
+
 		try {
 			this.smaPerc65 = UtilMethods.calcPercentChange(this.td.getClose(0), this.td.getClose(65));
 		} catch (final Exception e) {

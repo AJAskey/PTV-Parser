@@ -66,6 +66,7 @@ public class ParseData {
 	 * Procedure clearValidTickers. ;
 	 */
 	public static void clearValidTickers() {
+
 		validTickers.clear();
 	}
 
@@ -73,6 +74,7 @@ public class ParseData {
 	 * @return the mIN_PRICE
 	 */
 	public static double getMIN_PRICE() {
+
 		return MIN_PRICE;
 	}
 
@@ -80,6 +82,7 @@ public class ParseData {
 	 * @return the mIN_VOLUME
 	 */
 	public static int getMIN_VOLUME() {
+
 		return MIN_VOLUME;
 	}
 
@@ -93,6 +96,7 @@ public class ParseData {
 	 * @throws IOException
 	 */
 	public static List<String> getTickerList(String filename) throws FileNotFoundException, IOException {
+
 		final List<String> list = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
@@ -115,6 +119,7 @@ public class ParseData {
 	}
 
 	static public int getValidTickerCount() {
+
 		return validTickers.size();
 	}
 
@@ -124,6 +129,7 @@ public class ParseData {
 	 * @return
 	 */
 	static public boolean isTickerValid(String ticker) {
+
 		return TickerFullName.isValid(ticker.trim());
 	}
 
@@ -375,6 +381,7 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 */
 	static public TickerData parseOneFile(String fname) throws ParseException, FileNotFoundException {
+
 		return ParseData.parseOneFile(fname, GET_ALL_DATA);
 	}
 
@@ -456,6 +463,7 @@ public class ParseData {
 	 * @return
 	 */
 	public static List<TickerData> parsePTVData(String dirStr) {
+
 		return ParseData.parsePTVData(dirStr, GET_ALL_DATA);
 	}
 
@@ -499,6 +507,7 @@ public class ParseData {
 	 *          the mIN_PRICE to set
 	 */
 	public static void setMIN_PRICE(double mIN_PRICE) {
+
 		MIN_PRICE = mIN_PRICE;
 	}
 
@@ -507,6 +516,7 @@ public class ParseData {
 	 *          the mIN_VOLUME to set
 	 */
 	public static void setMIN_VOLUME(int mIN_VOLUME) {
+
 		MIN_VOLUME = mIN_VOLUME;
 	}
 
@@ -515,6 +525,7 @@ public class ParseData {
 	 * @param ticker
 	 */
 	public static void setValidTicker(String ticker) {
+
 		if (ticker != null) {
 			validTickers.add(ticker.trim().toUpperCase());
 		}
@@ -525,6 +536,7 @@ public class ParseData {
 	 * @param tickers
 	 */
 	public static void setValidTickers(List<String> tickers) {
+
 		for (final String t : tickers) {
 			ParseData.setValidTicker(t);
 		}
@@ -538,6 +550,7 @@ public class ParseData {
 	 */
 	@SuppressWarnings("unused")
 	private static boolean isCurrent(File f) {
+
 		boolean current = false;
 		if (f.exists()) {
 			final long modtime = f.lastModified();
@@ -561,6 +574,7 @@ public class ParseData {
 	 * @param newList
 	 */
 	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
+
 		for (final TickerData tdNew : newList) {
 			boolean found = false;
 			for (final TickerData tdMain : mainList) {
@@ -585,6 +599,7 @@ public class ParseData {
 	 * @return
 	 */
 	private static Double toDouble(String str) {
+
 		String dStr;
 		try {
 			final int idx = str.indexOf(".");

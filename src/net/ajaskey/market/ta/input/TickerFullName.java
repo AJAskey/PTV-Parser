@@ -68,6 +68,7 @@ public class TickerFullName {
 	 * @param fname
 	 */
 	static public void build(String fname) {
+
 		try (BufferedReader br = new BufferedReader(new FileReader(fname))) {
 
 			String line = br.readLine();
@@ -99,6 +100,7 @@ public class TickerFullName {
 	 * @throws FileNotFoundException
 	 */
 	static public void debug(String fname) throws FileNotFoundException {
+
 		try (PrintWriter pw = new PrintWriter(new File(fname))) {
 			for (final TickerFullName tfn : tickerNames) {
 				pw.println(tfn.ticker + "\t" + tfn.name);
@@ -107,6 +109,7 @@ public class TickerFullName {
 	}
 
 	static public void dumpTickers() {
+
 		for (final TickerFullName tkr : tickerNames) {
 			System.out.println(tkr.ticker + "\t" + tkr.name);
 		}
@@ -121,6 +124,7 @@ public class TickerFullName {
 	 * @return ticker name or null
 	 */
 	static public String getName(String ticker) {
+
 		for (final TickerFullName t : tickerNames) {
 			// System.out.println(ticker + "\t" + t.ticker);
 			if (t.ticker.equalsIgnoreCase(ticker)) {
@@ -138,6 +142,7 @@ public class TickerFullName {
 	 * @return
 	 */
 	static public boolean isValid(String ticker) {
+
 		boolean status = false;
 		for (final TickerFullName tkr : tickerNames) {
 			if (tkr.ticker.equalsIgnoreCase(ticker)) {
@@ -149,10 +154,12 @@ public class TickerFullName {
 	}
 
 	public String getName() {
+
 		return this.name;
 	}
 
 	public String getTicker() {
+
 		return this.ticker;
 	}
 

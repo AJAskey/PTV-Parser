@@ -38,7 +38,7 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -65,44 +65,31 @@ public class ProcessEIA {
 	 */
 	public static void main(String[] args) throws ParserConfigurationException {
 
-		String apiKey = "5083132038aeb07288f19e6313b85532";
+		final String apiKey = "5083132038aeb07288f19e6313b85532";
 
 		//String outName = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/EIA/.csv";
-		String gasURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WGFUPUS2.W&out=xml";
-		String keroURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WKJUPUS2.W&out=xml";
+		final String gasURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WGFUPUS2.W&out=xml";
+		final String keroURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WKJUPUS2.W&out=xml";
 
 		dbFactory = DocumentBuilderFactory.newInstance();
 
-		List<OhlcvData> gas = getData(gasURL);
-		writeList(gas, "gasoline_demand");
+		final List<OhlcvData> gas = ProcessEIA.getData(gasURL);
+		ProcessEIA.writeList(gas, "gasoline_demand");
 
-		List<OhlcvData> kero = getData(keroURL);
-		writeList(kero, "kerosene_demand");
+		final List<OhlcvData> kero = ProcessEIA.getData(keroURL);
+		ProcessEIA.writeList(kero, "kerosene_demand");
 
-	}
-
-	private static void writeList(List<OhlcvData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
-			for (final OhlcvData price : list) {
-
-				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	private static List<OhlcvData> getData(String url) {
 
-		List<OhlcvData> ret = new ArrayList<>();
+		final List<OhlcvData> ret = new ArrayList<>();
 
 		String resp;
 		try {
 			dBuilder = dbFactory.newDocumentBuilder();
+
+			System.out.println("Processing : " + url);
 
 			resp = Utils.getFromUrl(url);
 			//System.out.println(resp);
@@ -115,12 +102,12 @@ public class ProcessEIA {
 			for (int knt = 0; knt < nResp.getLength(); knt++) {
 				final Node nodeResp = nResp.item(knt);
 				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					NodeList nrList = nodeResp.getChildNodes();
+					final NodeList nrList = nodeResp.getChildNodes();
 					Calendar cal = null;
 					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
-						Node nr = nrList.item(cnt);
+						final Node nr = nrList.item(cnt);
 						if (nr.getNodeType() == Node.ELEMENT_NODE) {
-							String s = nr.getNodeName();
+							final String s = nr.getNodeName();
 							if (s.contains("date")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								final Date date = sdf.parse(nr.getTextContent().trim());
@@ -130,11 +117,11 @@ public class ProcessEIA {
 							} else if (s.contains("value")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								if (cal != null) {
-									double c = Double.parseDouble(nr.getTextContent().trim());
-									OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
+									final double c = Double.parseDouble(nr.getTextContent().trim());
+									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
 									cal = null;
 									ret.add(d);
-									System.out.println(d.toShortString());
+									//System.out.println(d.toShortString());
 								}
 							}
 						}
@@ -142,12 +129,27 @@ public class ProcessEIA {
 				}
 			}
 
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			ret.clear();
 			e.printStackTrace();
 		}
 
 		return ret;
+	}
+
+	private static void writeList(List<OhlcvData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
+			for (final OhlcvData price : list) {
+
+				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+			}
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

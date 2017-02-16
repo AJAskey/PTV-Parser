@@ -47,6 +47,7 @@ public class MovingAverageMethods {
 	 * @return
 	 */
 	static public double ema(double[] val, int days) {
+
 		double retVal = 0.0;
 		if (Methods.checkParams(val, days * 2, 0, "MovingAverageMethods.ema(double[] val, int days)")) {
 			final double smooth = 2.0 / (days + 1);

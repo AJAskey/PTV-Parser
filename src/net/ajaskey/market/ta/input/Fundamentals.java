@@ -85,6 +85,7 @@ public class Fundamentals {
 	 * @return the industry
 	 */
 	public static List<Fundamentals> getWithIndusty(String ind) {
+
 		final List<Fundamentals> fun = new ArrayList<>();
 		for (final Fundamentals f : fundieList) {
 			if (f.industry.equalsIgnoreCase(ind)) {
@@ -98,6 +99,7 @@ public class Fundamentals {
 	 * @return the sector
 	 */
 	public static List<Fundamentals> getWithSector(String sec) {
+
 		final List<Fundamentals> sect = new ArrayList<>();
 		for (final Fundamentals f : fundieList) {
 			if (f.sector.equalsIgnoreCase(sec)) {
@@ -111,6 +113,7 @@ public class Fundamentals {
 	 * @return the ticker
 	 */
 	public static Fundamentals getWithTicker(String tkr) {
+
 		for (final Fundamentals f : fundieList) {
 			if (f.ticker.equalsIgnoreCase(tkr)) {
 				return f;
@@ -140,6 +143,7 @@ public class Fundamentals {
 	 * @return the industry
 	 */
 	public String getIndustry() {
+
 		return this.industry;
 	}
 
@@ -147,6 +151,7 @@ public class Fundamentals {
 	 * @return the marketCap
 	 */
 	public String getMarketCap() {
+
 		return this.marketCap;
 	}
 
@@ -154,6 +159,7 @@ public class Fundamentals {
 	 * @return the sector
 	 */
 	public String getSector() {
+
 		return this.sector;
 	}
 
@@ -161,6 +167,7 @@ public class Fundamentals {
 	 * @return the shares
 	 */
 	public long getShares() {
+
 		return this.shares;
 	}
 
@@ -168,11 +175,13 @@ public class Fundamentals {
 	 * @return the ticker
 	 */
 	public String getTicker() {
+
 		return this.ticker;
 	}
 
 	@Override
 	public String toString() {
+
 		final String s = String.format(fmt, this.ticker, this.sector, this.industry, this.shares);
 		return s;
 	}

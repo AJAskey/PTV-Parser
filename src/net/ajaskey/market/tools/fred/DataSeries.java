@@ -91,11 +91,6 @@ public class DataSeries {
 	private Calendar							cal1;
 	private final DataSeriesInfo	info;
 
-	public DataSeriesInfo getInfo() {
-
-		return info;
-	}
-
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -134,7 +129,7 @@ public class DataSeries {
 			ds.setAggType(AggregationMethodType.EOP);
 			//ds.setOrder(OrderType.DESC);
 			ds.setRespType(ResponseType.LIN);
-			List<DataValues> dvList = ds.getValues(1.0, true, false);
+			final List<DataValues> dvList = ds.getValues(1.0, true, false);
 
 			for (final DataValues d : dvList) {
 				System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
@@ -159,6 +154,11 @@ public class DataSeries {
 	public String getFileType() {
 
 		return "&file_type=" + this.fileType.toString().toLowerCase();
+	}
+
+	public DataSeriesInfo getInfo() {
+
+		return this.info;
 	}
 
 	/**
@@ -246,7 +246,6 @@ public class DataSeries {
 				}
 			}
 
-			double last = 0.0;
 			final NodeList nList = doc.getElementsByTagName("observation");
 			for (int ptr = 0; ptr < nList.getLength(); ptr++) {
 				final Node nNode = nList.item(ptr);
@@ -258,7 +257,7 @@ public class DataSeries {
 						this.respKnt -= 1;
 					} else {
 						retList.add(dv);
-						last = dv.getValue();
+						dv.getValue();
 						if (this.cal1 == null) {
 							this.cal1 = dv.getDate();
 						}
@@ -271,62 +270,10 @@ public class DataSeries {
 		}
 
 		if (estimateData) {
-			appendEstimates(retList, futureChg);
+			this.appendEstimates(retList, futureChg);
 		}
 
 		return retList;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.appendEstimates
-	 *
-	 * @param retList
-	 * @param futureChg
-	 */
-	private void appendEstimates(List<DataValues> retList, double futureChg) {
-
-		this.setPeriod(this.info.getFrequency());
-
-		final Calendar cal = Calendar.getInstance();
-		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
-		double last = retList.get(retList.size() - 1).getValue();
-
-		Debug.pwDbg.println(this.period);
-
-		Debug.pwDbg.println(Utils.getString(calLast));
-
-		int periodKnt = 0;
-		int duration = 0;
-		if (this.period.contains("daily")) {
-			periodKnt = 1;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("weekly")) {
-			periodKnt = 7;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("monthly")) {
-			periodKnt = 1;
-			duration = Calendar.MONTH;
-		} else {
-			periodKnt = 3;
-			duration = Calendar.MONTH;
-		}
-
-		calLast.add(duration, periodKnt);
-		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
-
-		final double val = last + (last * (futureChg / 100.0));
-		final DataValues dv = new DataValues(calLast, val);
-		retList.add(dv);
-
-		Calendar tmp = Utils.buildCalendar(calLast);
-		while (tmp.before(cal)) {
-			Calendar nCal = Utils.buildCalendar(tmp);
-			nCal.add(duration, periodKnt);
-			final DataValues dv1 = new DataValues(nCal, val);
-			retList.add(dv1);
-			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
-		}
-
 	}
 
 	public boolean isValid() {
@@ -418,6 +365,58 @@ public class DataSeries {
 		ret += "Count  : " + this.respKnt + Utils.NL;
 		ret += "First  : " + Utils.getString(this.cal1);
 		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.appendEstimates
+	 *
+	 * @param retList
+	 * @param futureChg
+	 */
+	private void appendEstimates(List<DataValues> retList, double futureChg) {
+
+		this.setPeriod(this.info.getFrequency());
+
+		final Calendar cal = Calendar.getInstance();
+		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+		final double last = retList.get(retList.size() - 1).getValue();
+
+		Debug.pwDbg.println(this.period);
+
+		Debug.pwDbg.println(Utils.getString(calLast));
+
+		int periodKnt = 0;
+		int duration = 0;
+		if (this.period.contains("daily")) {
+			periodKnt = 1;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("weekly")) {
+			periodKnt = 7;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("monthly")) {
+			periodKnt = 1;
+			duration = Calendar.MONTH;
+		} else {
+			periodKnt = 3;
+			duration = Calendar.MONTH;
+		}
+
+		calLast.add(duration, periodKnt);
+		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
+
+		final double val = last + (last * (futureChg / 100.0));
+		final DataValues dv = new DataValues(calLast, val);
+		retList.add(dv);
+
+		final Calendar tmp = Utils.buildCalendar(calLast);
+		while (tmp.before(cal)) {
+			final Calendar nCal = Utils.buildCalendar(tmp);
+			nCal.add(duration, periodKnt);
+			final DataValues dv1 = new DataValues(nCal, val);
+			retList.add(dv1);
+			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
+		}
+
 	}
 
 	/**

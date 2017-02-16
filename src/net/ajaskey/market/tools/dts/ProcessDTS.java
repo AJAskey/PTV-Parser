@@ -20,47 +20,40 @@ import net.ajaskey.market.tools.helpers.WebGet;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2016, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2016, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class ProcessDTS {
 
-	final static private String		url								= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
-	final static private String		urlA							= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
+	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
+	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String		folderPath				= "d:/temp/dts";
+	final static private String folderPath = "d:/temp/dts";
 	// final static private String folderPath = "d:/temp/dts-lt";
-	final static private Charset	charset						= Charset.forName("UTF-8");
+	final static private Charset charset = Charset.forName("UTF-8");
 
-	final static public int				webDownloadYear		= 2016;
-	final static public int				webDownloadMonth	= Calendar.DECEMBER;
-	final static public int				webDownloadDay		= 1;
+	final static public int	webDownloadYear		= 2016;
+	final static public int	webDownloadMonth	= Calendar.DECEMBER;
+	final static public int	webDownloadDay		= 1;
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -120,6 +113,7 @@ public class ProcessDTS {
 	 * @return
 	 */
 	private static String getDateName(Calendar c) {
+
 		if (c != null) {
 			return DtsData.sdf.format(c.getTime()) + "00";
 		}
@@ -131,6 +125,7 @@ public class ProcessDTS {
 	 *
 	 */
 	private static void getSPX() {
+
 		DtsData.dtsList.get(0).getDate();
 
 	}
@@ -141,6 +136,7 @@ public class ProcessDTS {
 	 *
 	 */
 	private static void readAndProcess() {
+
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
 
@@ -200,6 +196,7 @@ public class ProcessDTS {
 	 *
 	 */
 	private static void updateDtsFiles() {
+
 		Utils.makeDir(folderPath);
 
 		final Calendar tommorrow = Calendar.getInstance();

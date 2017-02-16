@@ -81,7 +81,7 @@ public class ConvertOptuma {
 
 		final List<OhlcvData> spx = ConvertOptuma.BoundGaapToSpx(eps);
 
-		double MAX_PE = 37.0;
+		final double MAX_PE = 37.0;
 		Collections.reverse(spx);
 		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\gaap_spx_bound.csv")) {
 			for (final OhlcvData price : spx) {

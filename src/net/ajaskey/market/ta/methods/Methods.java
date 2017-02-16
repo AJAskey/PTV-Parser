@@ -77,6 +77,7 @@ public class Methods {
 	 * @return
 	 */
 	static public boolean checkParams(double[] val, int days, int start, String method) {
+
 		boolean status = true;
 		if (val == null) {
 			System.out.printf("Warning - array is null in \"%s\"%n", method);
@@ -102,6 +103,7 @@ public class Methods {
 	 * @return
 	 */
 	static public boolean checkParams(TickerData td, int days, int start, String method) {
+
 		boolean status = true;
 		if ((td == null) || (td.getCloseData() == null)) {
 			System.out.printf("Warning - array is null in \"%s\"%n", method);

@@ -62,7 +62,6 @@ public class DataSeriesInfo {
 	private Calendar	lastUpdate;
 	private int				timeOffset;
 
-
 	/**
 	 * This method serves as a constructor for the class.
 	 *

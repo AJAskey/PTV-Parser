@@ -50,7 +50,7 @@ public class FredDataDownloader {
 
 		//
 		for (final String s : seriesNames) {
-			InputRecord ir = new InputRecord(s);
+			final InputRecord ir = new InputRecord(s);
 			if (ir.series.length() > 0) {
 				System.out.println(ir);
 				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData);
@@ -73,7 +73,7 @@ public class FredDataDownloader {
 	 */
 	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData) {
 
-		String fname = FredCommon.optumaPath + series + ".csv";
+		final String fname = FredCommon.optumaPath + series + ".csv";
 		if (new File(fname).exists()) {
 			return;
 		}
@@ -91,7 +91,7 @@ public class FredDataDownloader {
 			Debug.pwDbg.println(ds);
 			Debug.pwDbg.println(futureChg);
 
-			String title = FredCommon.getShortTitle(ds.getInfo().getTitle());
+			final String title = FredCommon.getShortTitle(ds.getInfo().getTitle());
 
 			System.out.println(ds.getName() + "," + ds.getName() + "," + title);
 		}

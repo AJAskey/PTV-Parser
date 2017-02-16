@@ -14,33 +14,26 @@ import net.ajaskey.market.ta.methods.EmaContinuousSeries;
 /**
  * This class...
  *
- * @author Andy Askey
- *         <p>
- *         PTV-Parser Copyright (c) 2015, Andy Askey. All rights reserved.
- *         </p>
- *         <p>
- *         Permission is hereby granted, free of charge, to any person obtaining
- *         a copy of this software and associated documentation files (the
- *         "Software"), to deal in the Software without restriction, including
- *         without limitation the rights to use, copy, modify, merge, publish,
- *         distribute, sublicense, and/or sell copies of the Software, and to
- *         permit persons to whom the Software is furnished to do so, subject to
- *         the following conditions:
+ * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved. </p> <p> Permission is hereby granted, free of charge, to
+ *         any person obtaining a copy of this software and associated
+ *         documentation files (the "Software"), to deal in the Software without
+ *         restriction, including without limitation the rights to use, copy,
+ *         modify, merge, publish, distribute, sublicense, and/or sell copies of
+ *         the Software, and to permit persons to whom the Software is furnished
+ *         to do so, subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
- *         included in all copies or substantial portions of the Software.
- *         </p>
+ *         included in all copies or substantial portions of the Software. </p>
  *
- *         <p>
- *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANUtils.TABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *         NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
  *         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  *         ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  *         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *         SOFTWARE.
- *         </p>
+ *         SOFTWARE. </p>
  *
  */
 public class DtsReports {
@@ -53,9 +46,9 @@ public class DtsReports {
 		DAY, MONTH, YEAR
 	}
 
-	final static private String	COMMA		= ",";
+	final static private String COMMA = ",";
 
-	final static private String	COMMA2	= ",,";
+	final static private String COMMA2 = ",,";
 
 	/**
 	 *
@@ -67,6 +60,7 @@ public class DtsReports {
 	 * @return
 	 */
 	public static String dtsToDate(int day, int month, int year) {
+
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, 0, 0);
 		String str = "DTS as of ==> " + Utils.stringDate2(cal) + Utils.NL;
@@ -177,7 +171,7 @@ public class DtsReports {
 			// Last Day of Month
 			pw.println(Utils.NL + Utils.NL + "Last day of month comparison.");
 			final DtsData dRecent = DtsData.findLastOfMonthData(month, yearRecent);
-			final DtsData dPast = DtsData.findLastOfMonthData(month, yearRecent-1);
+			final DtsData dPast = DtsData.findLastOfMonthData(month, yearRecent - 1);
 			pw.println(DtsReports.genDiffReport(dPast, dRecent));
 
 		} catch (final FileNotFoundException e) {
@@ -230,6 +224,7 @@ public class DtsReports {
 	}
 
 	public static String genCsvData(DtsData d) {
+
 		String ret = Utils.stringDate(d.getDate());
 		ret += COMMA2 + d.getWith().monthly + COMMA2 + d.getWith().yearly;
 		ret += COMMA2 + d.getInd().monthly + COMMA2 + d.getInd().yearly;
@@ -508,6 +503,7 @@ public class DtsReports {
 	 * @throws FileNotFoundException
 	 */
 	public static void writeSumDaily(DTS_TYPE type) throws FileNotFoundException {
+
 		final int range = 250;
 		final long sum[] = new long[range];
 		int ptr = 0;
@@ -704,6 +700,7 @@ public class DtsReports {
 	 * @return
 	 */
 	private static double getChg(int dVal, int pVal) {
+
 		double chg = 0.0;
 		if (pVal > 0.0) {
 			chg = (double) (dVal - pVal) / (double) pVal;
@@ -730,6 +727,7 @@ public class DtsReports {
 	}
 
 	private static long getTotal(long[] vals) {
+
 		long tot = 0;
 		for (final long i : vals) {
 			tot += i;
@@ -916,6 +914,7 @@ public class DtsReports {
 	 * @param q2015
 	 */
 	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
+
 		pw.println(y1.toCombinedString(y2));
 	}
 
