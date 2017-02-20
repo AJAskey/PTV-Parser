@@ -3,22 +3,15 @@
   22 Interest Rates
 
     33058 Automobile Loan Rates
-        TERMAFCNCNSA	New Car Average Finance Rate at Auto Finance Companies (DISCONTINUED)	Monthly -- NSA
         TERMCBAUTO48NS	Finance Rate on Consumer Installment Loans at Commercial Banks, New Autos 48 Month Loan	Monthly -- NSA
 
     51 Bankers Acceptance Rate
-        BA3M	3-Month Bankers Acceptance Rate (DISCONTINUED)	Monthly -- NSA
-        BA6M	6-Month Bankers Acceptance Rate (DISCONTINUED)	Monthly -- NSA
-        DBKAC	3-Month Bankers Acceptance Rate (DISCONTINUED)	Daily -- NSA
-        WBA3M	3-Month Bankers Acceptance Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WBA6M	6-Month Bankers Acceptance Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
 
     121 Certificates of Deposit
         CD12NRJD	National Rate on Jumbo Deposits (greater or equal to $100,000): 12 Month CD	Weekly, As of Monday -- NSA
         CD12NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 12 Month CD	Weekly, As of Monday -- NSA
         CD12RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 12 Month CD	Weekly, As of Monday -- NSA
         CD12RCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): 12 Month CD	Weekly, As of Monday -- NSA
-        CD1M	1-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Monthly -- NSA
         CD1NRJD	National Rate on Jumbo Deposits (greater or equal to $100,000): 1 Month CD	Weekly, As of Monday -- NSA
         CD1NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 1 Month CD	Weekly, As of Monday -- NSA
         CD1RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 1 Month CD	Weekly, As of Monday -- NSA
@@ -31,7 +24,6 @@
         CD36NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 36 Month CD	Weekly, As of Monday -- NSA
         CD36RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 36 Month CD	Weekly, As of Monday -- NSA
         CD36RCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): 36 Month CD	Weekly, As of Monday -- NSA
-        CD3M	3-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Monthly -- NSA
         CD3NRJD	National Rate on Jumbo Deposits (greater or equal to $100,000): 3 Month CD	Weekly, As of Monday -- NSA
         CD3NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 3 Month CD	Weekly, As of Monday -- NSA
         CD3RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 3 Month CD	Weekly, As of Monday -- NSA
@@ -44,29 +36,18 @@
         CD60NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 60 Month CD	Weekly, As of Monday -- NSA
         CD60RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 60 Month CD	Weekly, As of Monday -- NSA
         CD60RCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): 60 Month CD	Weekly, As of Monday -- NSA
-        CD6M	6-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Monthly -- NSA
         CD6NRJD	National Rate on Jumbo Deposits (greater or equal to $100,000): 6 Month CD	Weekly, As of Monday -- NSA
         CD6NRNJ	National Rate on Non-Jumbo Deposits (less than $100,000): 6 Month CD	Weekly, As of Monday -- NSA
         CD6RCJD	Rate Cap on Jumbo Deposits (greater or equal to $100,000): 6 Month CD	Weekly, As of Monday -- NSA
         CD6RCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): 6 Month CD	Weekly, As of Monday -- NSA
-        DCD1M	1-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Daily -- NSA
-        DCD6M	6-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Daily -- NSA
-        DCD90	3-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Daily -- NSA
-        WCD1M	1-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WCD3M	3-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WCD6M	6-Month Certificate of Deposit: Secondary Market Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
 
     120 Commercial Paper
-        CP1M	1-Month Commercial Paper Rate (DISCONTINUED)	Monthly -- NSA
-        CP3M	3-Month Commercial Paper Rate (DISCONTINUED)	Monthly -- NSA
-        CP6M	6-Month Commercial Paper Rate (DISCONTINUED)	Monthly -- NSA
         CPF1M	1-Month AA Financial Commercial Paper Rate	Monthly -- NSA
         CPF2M	2-Month AA Financial Commercial Paper Rate	Monthly -- NSA
         CPF3M	3-Month AA Financial Commercial Paper Rate	Monthly -- NSA
         CPN1M	1-Month AA Nonfinancial Commercial Paper Rate	Monthly -- NSA
         CPN2M	2-Month AA Nonfinancial Commercial Paper Rate	Monthly -- NSA
         CPN3M	3-Month AA Nonfinancial Commercial Paper Rate	Monthly -- NSA
-        DCP30	1-Month Commercial Paper Rate (DISCONTINUED)	Daily -- NSA
         DCPF1M	1-Month AA Financial Commercial Paper Rate	Daily -- NSA
         DCPF2M	2-Month AA Financial Commercial Paper Rate	Daily -- NSA
         DCPF3M	3-Month AA Financial Commercial Paper Rate	Daily -- NSA
@@ -97,9 +78,6 @@
         RIFSPPNAAD30NB	30-Day AA Nonfinancial Commercial Paper Interest Rate	Daily -- NSA
         RIFSPPNAAD60NB	60-Day AA Nonfinancial Commercial Paper Interest Rate	Daily -- NSA
         RIFSPPNAAD90NB	90-Day AA Nonfinancial Commercial Paper Interest Rate	Daily -- NSA
-        WCP1M	1-Month Commercial Paper Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WCP3M	3-Month Commercial Paper Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WCP6M	6-Month Commercial Paper Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
         WCPF1M	1-Month AA Financial Commercial Paper Rate	Weekly, Ending Friday -- NSA
         WCPF2M	2-Month AA Financial Commercial Paper Rate	Weekly, Ending Friday -- NSA
         WCPF3M	3-Month AA Financial Commercial Paper Rate	Weekly, Ending Friday -- NSA
@@ -108,8 +86,6 @@
         WCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	Weekly, Ending Friday -- NSA
 
     32348 Corporate Bonds
-        AAA	Moody's Seasoned Aaa Corporate Bond Yield   (DISCONTINUED)	Monthly -- NSA
-        BAA	Moody's Seasoned Baa Corporate Bond Yield   (DISCONTINUED)	Monthly -- NSA
         BAMLC0A0CM	BofA Merrill Lynch US Corporate Master Option-Adjusted Spread	Daily, Close -- NSA
         BAMLC0A0CMEY	BofA Merrill Lynch US Corporate Master Effective Yield	Daily, Close -- NSA
         BAMLC0A0CMSYTW	BofA Merrill Lynch US Corporate Master Semi-Annual Yield to Worst	Daily, Close -- NSA
@@ -254,44 +230,227 @@
         BAMLHE00EHYIEY	BofA Merrill Lynch Euro High Yield Index Effective Yield	Daily, Close -- NSA
         BAMLHE00EHYIOAS	BofA Merrill Lynch Euro High Yield Index Option-Adjusted Spread	Daily, Close -- NSA
         BAMLHE00EHYISYTW	BofA Merrill Lynch Euro High Yield Index Semi-Annual Yield to Worst	Daily, Close -- NSA
-        DAAA	Moody's Seasoned Aaa Corporate Bond Yield   (DISCONTINUED)	Daily -- NSA
-        DBAA	Moody's Seasoned Baa Corporate Bond Yield   (DISCONTINUED)	Daily -- NSA
-        WAAA	Moody's Seasoned Aaa Corporate Bond Yield   (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WBAA	Moody's Seasoned Baa Corporate Bond Yield   (DISCONTINUED)	Weekly, Ending Friday -- NSA
+        HQMCB100YR	100-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB10Y6M	10.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB10YR	10-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB10YRP	10-Year High Quality Market (HQM) Corporate Bond Par Yield	Monthly -- NSA
+        HQMCB11Y6M	11.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB11YR	11-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB12Y6M	12.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB12YR	12-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB13Y6M	13.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB13YR	13-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB14Y6M	14.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB14YR	14-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB15Y6M	15.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB15YR	15-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB16Y6M	16.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB16YR	16-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB17Y6M	17.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB17YR	17-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB18Y6M	18.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB18YR	18-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB19Y6M	19.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB19YR	19-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB1Y6M	1.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB1YR	1-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB20Y6M	20.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB20YR	20-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB21Y6M	21.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB21YR	21-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB22Y6M	22.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB22YR	22-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB23Y6M	23.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB23YR	23-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB24Y6M	24.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB24YR	24-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB25Y6M	25.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB25YR	25-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB26Y6M	26.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB26YR	26-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB27Y6M	27.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB27YR	27-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB28Y6M	28.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB28YR	28-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB29Y6M	29.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB29YR	29-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB2Y6M	2.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB2YR	2-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB2YRP	2-Year High Quality Market (HQM) Corporate Bond Par Yield	Monthly -- NSA
+        HQMCB30Y6M	30.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB30YR	30-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB30YRP	30-Year High Quality Market (HQM) Corporate Bond Par Yield	Monthly -- NSA
+        HQMCB31Y6M	31.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB31YR	31-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB32Y6M	32.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB32YR	32-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB33Y6M	33.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB33YR	33-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB34Y6M	34.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB34YR	34-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB35Y6M	35.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB35YR	35-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB36Y6M	36.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB36YR	36-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB37Y6M	37.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB37YR	37-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB38Y6M	38.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB38YR	38-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB39Y6M	39.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB39YR	39-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB3Y6M	3.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB3YR	3-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB40Y6M	40.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB40YR	40-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB41Y6M	41.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB41YR	41-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB42Y6M	42.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB42YR	42-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB43Y6M	43.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB43YR	43-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB44Y6M	44.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB44YR	44-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB45Y6M	45.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB45YR	45-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB46Y6M	46.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB46YR	46-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB47Y6M	47.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB47YR	47-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB48Y6M	48.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB48YR	48-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB49Y6M	49.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB49YR	49-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB4Y6M	4.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB4YR	4-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB50Y6M	50.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB50YR	50-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB51Y6M	51.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB51YR	51-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB52Y6M	52.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB52YR	52-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB53Y6M	53.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB53YR	53-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB54Y6M	54.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB54YR	54-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB55Y6M	55.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB55YR	55-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB56Y6M	56.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB56YR	56-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB57Y6M	57.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB57YR	57-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB58Y6M	58.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB58YR	58-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB59Y6M	59.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB59YR	59-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB5Y6M	5.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB5YR	5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB5YRP	5-Year High Quality Market (HQM) Corporate Bond Par Yield	Monthly -- NSA
+        HQMCB60Y6M	60.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB60YR	60-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB61Y6M	61.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB61YR	61-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB62Y6M	62.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB62YR	62-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB63Y6M	63.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB63YR	63-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB64Y6M	64.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB64YR	64-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB65Y6M	65.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB65YR	65-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB66Y6M	66.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB66YR	66-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB67Y6M	67.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB67YR	67-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB68Y6M	68.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB68YR	68-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB69Y6M	69.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB69YR	69-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB6MT	6 -Month High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB6Y6M	6.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB6YR	6-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB70Y6M	70.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB70YR	70-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB71Y6M	71.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB71YR	71-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB72Y6M	72.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB72YR	72-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB73Y6M	73.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB73YR	73-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB74Y6M	74.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB74YR	74-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB75Y6M	75.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB75YR	75-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB76Y6M	76.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB76YR	76-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB77Y6M	77.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB77YR	77-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB78Y6M	78.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB78YR	78-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB79Y6M	79.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB79YR	79-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB7Y6M	7.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB7YR	7-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB80Y6M	80.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB80YR	80-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB81Y6M	81.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB81YR	81-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB82Y6M	82.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB82YR	82-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB83Y6M	83.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB83YR	83-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB84Y6M	84.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB84YR	84-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB85Y6M	85.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB85YR	85-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB86Y6M	86.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB86YR	86-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB87Y6M	87.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB87YR	87-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB88Y6M	88.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB88YR	88-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB89Y6M	89.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB89YR	89-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB8Y6M	8.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB8YR	8-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB90Y6M	90.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB90YR	90-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB91Y6M	91.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB91YR	91-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB92Y6M	92.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB92YR	92-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB93Y6M	93.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB93YR	93-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB94Y6M	94.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB94YR	94-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB95Y6M	95.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB95YR	95-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB96Y6M	96.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB96YR	96-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB97Y6M	97.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB97YR	97-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB98Y6M	98.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB98YR	98-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB99Y6M	99.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB99YR	99-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB9Y6M	9.5-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
+        HQMCB9YR	9-Year High Quality Market (HQM) Corporate Bond Spot Rate	Monthly -- NSA
 
     33059 Credit Card Loan Rates
         TERMCBCCALLNS	Commercial Bank Interest Rate on Credit Card Plans, All Accounts	Monthly -- NSA
         TERMCBCCINTNS	Commercial Bank Interest Rate on Credit Card Plans, Accounts Assessed Interest	Monthly -- NSA
 
     32298 Eurodollar Deposits
-        DED1	1-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Daily -- NSA
-        DED3	3-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Daily -- NSA
-        DED6	6-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Daily -- NSA
-        MED1	1-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Monthly -- NSA
-        MED3	3-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Monthly -- NSA
-        MED6	6-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Monthly -- NSA
-        WED1	1-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WED3	3-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WED6	6-Month Eurodollar Deposit Rate (London) (DISCONTINUED)	Weekly, Ending Friday -- NSA
 
     118 FRB Rates - discount, fed funds, primary credit
-        CDC	Rate for Credit Under the Century Date Change Special Liquidity Facility (DISCONTINUED)	Not Applicable -- NSA
-        DDISCRT	Discount Rate (DISCONTINUED)	Daily -- NSA
-        DFEDTAR	Federal Funds Target Rate (DISCONTINUED)	Daily, 7-Day -- NSA
         DFEDTARL	Federal Funds Target Range - Lower Limit	Daily, 7-Day -- NSA
         DFEDTARU	Federal Funds Target Range - Upper Limit	Daily, 7-Day -- NSA
         DFF	Effective Federal Funds Rate	Daily, 7-Day -- NSA
-        DISCNTD8	Federal Reserve Bank of St. Louis Basic Discount Rate (DISCONTINUED)	Not Applicable -- NSA
-        DISCOUNT	Discount Rate Changes: Historical Dates of Changes and Rates (DISCONTINUED)	Not Applicable -- NSA
         DPCREDIT	Primary Credit Rate	Daily -- NSA
         EFFR	Effective Federal Funds Rate	Daily -- NSA
         EFFR1	Effective Federal Funds Rate: 1st Percentile	Daily -- NSA
         EFFR25	Effective Federal Funds Rate: 25th Percentile	Daily -- NSA
         EFFR75	Effective Federal Funds Rate: 75th Percentile	Daily -- NSA
         EFFR99	Effective Federal Funds Rate: 99th Percentile	Daily -- NSA
-        EFFRH	Effective Federal Funds Rate: Intraday High (DISCONTINUED)	Daily -- NSA
-        EFFRL	Effective Federal Funds Rate: Intraday Low (DISCONTINUED)	Daily -- NSA
-        EFFRSD	Effective Federal Funds Rate: Standard Deviation (DISCONTINUED)	Daily -- NSA
         EFFRVOL	Effective Federal Funds Volume	Daily -- NSA
         FEDFUNDS	Effective Federal Funds Rate	Monthly -- NSA
         FEDTARCTH	FOMC Summary of Economic Projections for the Fed Funds Rate, Central Tendency, High	Annual -- NSA
@@ -310,15 +469,8 @@
         FEDTARRMLR	Longer Run FOMC Summary of Economic Projections for the Fed Funds Rate, Range, Midpoint	Not Applicable -- NSA
         FF	Effective Federal Funds Rate	Weekly, Ending Wednesday -- NSA
         FLEXSC	Eighth District Flexible Rate on Seasonal Credit	Biweekly, Beg. of Period -- NSA
-        INTEXC1	Interest Rate Paid on Excess Reserve Balances (Institutions with 1-Week Maintenance Period) (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        INTEXC2	Interest Rate Paid on Excess Reserve Balances (Institutions with 2-Week Maintenance Period) (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
-        INTREQ1	Interest Rate Paid on Required Reserve Balances (Institutions with 1-Week Maintenance Period) (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        INTREQ2	Interest Rate Paid on Required Reserve Balances (Institutions with 2-Week Maintenance Period) (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
-        INTRESEXCW	Interest Rate Paid on Balances Maintained That Exceed the Top of the Penalty-Free Band (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        INTRESREQW	Interest Rate Paid on Balances Maintained To Satisfy Reserve Balance Requirements (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         IOER	Interest Rate on Excess Reserves	Daily, 7-Day -- NSA
         IORR	Interest Rate on Required Reserves	Daily, 7-Day -- NSA
-        MDISCRT	Discount Rate (DISCONTINUED)	Monthly -- NSA
         MPCREDIT	Primary Credit Rate	Monthly -- NSA
         OBFR	Overnight Bank Funding Rate	Daily -- NSA
         OBFR1	Overnight Bank Funding Rate: 1st Percentile	Daily -- NSA
@@ -327,7 +479,6 @@
         OBFR99	Overnight Bank Funding Rate: 99th Percentile	Daily -- NSA
         OBFRVOL	Overnight Bank Funding Volume	Daily -- NSA
         PCREDIT8	Primary Credit Rate for the Eighth District - Historical Dates of Changes and Rates	Not Applicable -- NSA
-        WDISCRT	Discount Rate (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WPCREDIT	Primary Credit Rate	Weekly, Ending Wednesday -- NSA
 
     33056 Interest Checking Accounts
@@ -335,14 +486,6 @@
         ICRCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): Interest Checking	Weekly, As of Monday -- NSA
 
     33446 Interest Rate Spreads
-        AAA10Y	Moody's Seasoned Aaa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity (DISCONTINUED)	Daily -- NSA
-        AAA10YM	Moody's Seasoned Aaa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity (DISCONTINUED)	Monthly -- NSA
-        AAAFF	Moody's Seasoned Aaa Corporate Bond Minus Federal Funds Rate (DISCONTINUED)	Daily -- NSA
-        AAAFFM	Moody's Seasoned Aaa Corporate Bond Minus Federal Funds Rate (DISCONTINUED)	Monthly -- NSA
-        BAA10Y	Moody's Seasoned Baa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity (DISCONTINUED)	Daily -- NSA
-        BAA10YM	Moody's Seasoned Baa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity (DISCONTINUED)	Monthly -- NSA
-        BAAFF	Moody's Seasoned Baa Corporate Bond Minus Federal Funds Rate (DISCONTINUED)	Daily -- NSA
-        BAAFFM	Moody's Seasoned Baa Corporate Bond Minus Federal Funds Rate (DISCONTINUED)	Monthly -- NSA
         CPFF	3-Month Commercial Paper Minus Federal Funds Rate	Daily -- NSA
         CPFFM	3-Month Commercial Paper Minus Federal Funds Rate	Monthly -- NSA
         T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	Daily -- NSA
@@ -373,190 +516,45 @@
         TEDRATE	TED Spread	Daily -- NSA
 
     32299 Interest Rate Swaps
-        DSWP1	1-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP10	10-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP2	2-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP3	3-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP30	30-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP4	4-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP5	5-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        DSWP7	7-Year Swap Rate (DISCONTINUED)	Daily -- NSA
-        MSWP1	1-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP10	10-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP2	2-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP3	3-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP30	30-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP4	4-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP5	5-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        MSWP7	7-Year Swap Rate (DISCONTINUED)	Monthly -- NSA
-        WSWP1	1-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP10	10-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP2	2-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP3	3-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP30	30-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP4	4-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP5	5-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WSWP7	7-Year Swap Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
 
     33003 LIBOR Rates
-        AUD10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUD9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        AUDONTD156N	Spot Next London Interbank Offered Rate (LIBOR), based on Australian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CAD9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CADONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on Canadian Dollar (DISCONTINUED)	Daily -- NSA
-        CHF10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
-        CHF11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
         CHF12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
         CHF1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
         CHF1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
         CHF2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
-        CHF2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
         CHF3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
-        CHF4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
-        CHF5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
         CHF6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
-        CHF7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
-        CHF8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
-        CHF9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc (DISCONTINUED)	Daily -- NSA
         CHFONTD156N	Spot Next London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily -- NSA
-        DKK10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKK9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        DKKONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on Danish Krone (DISCONTINUED)	Daily -- NSA
-        EUR10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
-        EUR11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
         EUR12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
         EUR1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
         EUR1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
         EUR2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
-        EUR2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
         EUR3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
-        EUR4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
-        EUR5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
         EUR6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
-        EUR7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
-        EUR8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
-        EUR9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Euro (DISCONTINUED)	Daily -- NSA
         EURONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on Euro	Daily -- NSA
-        GBP10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
-        GBP11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
         GBP12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
         GBP1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
         GBP1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
         GBP2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
-        GBP2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
         GBP3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
-        GBP4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
-        GBP5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
         GBP6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
-        GBP7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
-        GBP8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
-        GBP9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on British Pound (DISCONTINUED)	Daily -- NSA
         GBPONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on British Pound	Daily -- NSA
-        JPY10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
-        JPY11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
         JPY12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
         JPY1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
         JPY1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
         JPY2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
-        JPY2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
         JPY3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
-        JPY4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
-        JPY5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
         JPY6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
-        JPY7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
-        JPY8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
-        JPY9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Japanese Yen (DISCONTINUED)	Daily -- NSA
         JPYONTD156N	Spot Next London Interbank Offered Rate (LIBOR), based on Japanese Yen	Daily -- NSA
-        NZD10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZD9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        NZDONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on New Zealand Dollar (DISCONTINUED)	Daily -- NSA
-        SEK10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEK9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        SEKONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on Swedish Krona (DISCONTINUED)	Daily -- NSA
-        USD10MD156N	10-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
-        USD11MD156N	11-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
         USD12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
         USD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
         USD1WKD156N	1-Week London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
         USD2MTD156N	2-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
-        USD2WKD156N	2-Week London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
         USD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
-        USD4MTD156N	4-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
-        USD5MTD156N	5-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
         USD6MTD156N	6-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
-        USD7MTD156N	7-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
-        USD8MTD156N	8-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
-        USD9MTD156N	9-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar (DISCONTINUED)	Daily -- NSA
         USDONTD156N	Overnight London Interbank Offered Rate (LIBOR), based on U.S. Dollar	Daily -- NSA
 
     32995 Long-Term Securities
-        DLTBOARD	Long-Term Composite Rate of U.S. Treasury Securities Over 10 years (DISCONTINUED)	Daily -- NSA
-        LTBOARD	Long-Term Composite Rate of U.S. Treasury Securities Over 10 years (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        LTGOVTBD	Long-Term U.S. Government Securities (DISCONTINUED)	Monthly -- NSA
-        LTGS	Long-Term U.S. Treasury Securities - Market Yield (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        MSLB20	State and Local Bonds - Bond Buyer Go 20-Bond Municipal Bond Index (DISCONTINUED)	Monthly -- NSA
-        WSLB20	State and Local Bonds - Bond Buyer Go 20-Bond Municipal Bond Index (DISCONTINUED)	Weekly, As of Thursday -- NSA
 
     33055 Money Market Accounts
         MMNRJD	National Rate on Jumbo Deposits (greater or equal to $100,000): Money Market	Weekly, As of Monday -- NSA
@@ -565,20 +563,13 @@
         MMRCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): Money Market	Weekly, As of Monday -- NSA
 
     114 Mortgage Rates
-        FHA30	30-Year FHA Mortgage Rate: Secondary Market (DISCONTINUED)	Monthly -- NSA
-        MORTG	30-Year Conventional Mortgage Rate   (DISCONTINUED)	Monthly -- NSA
         MORTGAGE15US	15-Year Fixed Rate Mortgage Average in the United States	Weekly, Ending Thursday -- NSA
-        MORTGAGE1US	1-Year Adjustable Rate Mortgage Average in the United States   (DISCONTINUED)	Weekly, Ending Thursday -- NSA
         MORTGAGE30US	30-Year Fixed Rate Mortgage Average in the United States	Weekly, Ending Thursday -- NSA
         MORTGAGE5US	5/1-Year Adjustable Rate Mortgage Average in the United States	Weekly, Ending Thursday -- NSA
-        MORTMRGN1US	Margin for 1-Year Adjustable Rate Mortgage in the United States   (DISCONTINUED)	Weekly, Ending Thursday -- NSA
         MORTMRGN5US	Margin for 5/1-Year Adjustable Rate Mortgage in the United States	Weekly, Ending Thursday -- NSA
         MORTPTS15US	Origination Fees and Discount Points for 15-Year Fixed Rate Mortgage in the United States	Weekly, Ending Thursday -- NSA
-        MORTPTS1US	Origination Fees and Discount Points for 1-Year Adjustable Rate Mortgage in the United States   (DISCONTINUED)	Weekly, Ending Thursday -- NSA
         MORTPTS30US	Origination Fees and Discount Points for 30-Year Fixed Rate Mortgage in the United States	Weekly, Ending Thursday -- NSA
         MORTPTS5US	Origination Fees and Discount Points for 5/1-Year Adjustable Rate Mortgage in the United States	Weekly, Ending Thursday -- NSA
-        WMORTG	30-Year Conventional Mortgage Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WRMORTG	30-Year Conventional Mortgage Rate   (DISCONTINUED)	Weekly, Ending Thursday -- NSA
 
     33057 Personal Loan Rates
         TERMCBPER24NS	Finance Rate on Personal Loans at Commercial Banks, 24 Month Loan	Monthly -- NSA
@@ -594,26 +585,17 @@
         SAVRCNJ	Rate Cap on Non-Jumbo Deposits (less than $100,000): Savings	Weekly, As of Monday -- NSA
 
     116 Treasury Bills
-        DTB1	1-Year Treasury Bill: Secondary Market Rate (DISCONTINUED)	Daily -- NSA
         DTB1YR	1-Year Treasury Bill: Secondary Market Rate	Daily -- NSA
         DTB3	3-Month Treasury Bill: Secondary Market Rate	Daily -- NSA
         DTB4WK	4-Week Treasury Bill: Secondary Market Rate	Daily -- NSA
         DTB6	6-Month Treasury Bill: Secondary Market Rate	Daily -- NSA
-        TB1YA	1-Year Treasury Bill Rate: Auction Average (DISCONTINUED)	Monthly -- NSA
         TB1YR	1-Year Treasury Bill: Secondary Market Rate	Monthly -- NSA
-        TB1YS	1-Year Treasury Bill: Secondary Market Rate (DISCONTINUED)	Monthly -- NSA
-        TB3MA	3-Month Treasury Bill Rate: Auction Average (DISCONTINUED)	Monthly -- NSA
         TB3MS	3-Month Treasury Bill: Secondary Market Rate	Monthly -- NSA
         TB4WK	4-Week Treasury Bill: Secondary Market Rate	Monthly -- NSA
-        TB6MA	6-Month Treasury Bill Rate: Auction Average (DISCONTINUED)	Monthly -- NSA
         TB6MS	6-Month Treasury Bill: Secondary Market Rate	Monthly -- NSA
-        WTB1YA	1-Year Treasury Bill Rate: Auction Average (DISCONTINUED)	Weekly, Ending Friday -- NSA
         WTB1YR	1-Year Treasury Bill: Secondary Market Rate	Weekly, Ending Friday -- NSA
-        WTB1YS	1-Year Treasury Bill: Secondary Market Rate (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTB3MA	3-Month Treasury Bill Rate: Auction Average (DISCONTINUED)	Weekly, Ending Friday -- NSA
         WTB3MS	3-Month Treasury Bill: Secondary Market Rate	Weekly, Ending Friday -- NSA
         WTB4WK	4-Week Treasury Bill: Secondary Market Rate	Weekly, Ending Friday -- NSA
-        WTB6MA	6-Month Treasury Bill Rate: Auction Average (DISCONTINUED)	Weekly, Ending Friday -- NSA
         WTB6MS	6-Month Treasury Bill: Secondary Market Rate	Weekly, Ending Friday -- NSA
 
     115 Treasury Constant Maturity
@@ -672,18 +654,7 @@
         DFII30	30-Year Treasury Inflation-Indexed Security, Constant Maturity	Daily -- NSA
         DFII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Daily -- NSA
         DFII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Daily -- NSA
-        DLTA	Treasury Long-Term Average (25 years and above) (DISCONTINUED)	Daily -- NSA
         DLTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Daily -- NSA
-        DTP10J07	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2007 (DISCONTINUED)	Daily -- NSA
-        DTP10J08	10-Year 3-5/8% Treasury Inflation-Indexed Note, Due 1/15/2008 (DISCONTINUED)	Daily -- NSA
-        DTP10J09	10-Year 3-7/8% Treasury Inflation-Indexed Note, Due 1/15/2009 (DISCONTINUED)	Daily -- NSA
-        DTP10J10	10-Year 4-1/4% Treasury Inflation-Indexed Note, Due 1/15/2010 (DISCONTINUED)	Daily -- NSA
-        DTP10J11	10-Year 3-1/2% Treasury Inflation-Indexed Note, Due 1/15/2011 (DISCONTINUED)	Daily -- NSA
-        DTP10J12	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2012 (DISCONTINUED)	Daily -- NSA
-        DTP10J14	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2014 (DISCONTINUED)	Daily -- NSA
-        DTP10J15	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2015 (DISCONTINUED)	Daily -- NSA
-        DTP10J16	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2016   (DISCONTINUED)	Daily -- NSA
-        DTP10J17	10-Year 2-3/8% Treasury Inflation-Indexed Note, Due 1/15/2017	Daily -- NSA
         DTP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Daily -- NSA
         DTP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Daily -- NSA
         DTP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Daily -- NSA
@@ -693,11 +664,6 @@
         DTP10J24	10-Year 0-5/8% Treasury Inflation-Indexed Note, Due 1/15/2024	Daily -- NSA
         DTP10J25	10-Year 0-1/4% Treasury Inflation-Indexed Note, Due 1/15/2025	Daily -- NSA
         DTP10J26	10-Year 0.625% Treasury Inflation-Indexed Note, Due 1/15/2026	Daily -- NSA
-        DTP10L12	10-Year 3% Treasury Inflation-Indexed Note, Due 7/15/2012 (DISCONTINUED)	Daily -- NSA
-        DTP10L13	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2013 (DISCONTINUED)	Daily -- NSA
-        DTP10L14	10-Year 2% Treasury Inflation-Indexed Note, Due 7/15/2014 (DISCONTINUED)	Daily -- NSA
-        DTP10L15	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2015 (DISCONTINUED)	Daily -- NSA
-        DTP10L16	10-Year 2-1/2% Treasury Inflation-Indexed Note, Due 7/15/2016 (DISCONTINUED)	Daily -- NSA
         DTP10L17	10-Year 2-5/8% Treasury Inflation-Indexed Note, Due 7/15/2017	Daily -- NSA
         DTP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Daily -- NSA
         DTP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Daily -- NSA
@@ -722,45 +688,21 @@
         DTP30F45	30-Year 0-3/4% Treasury Inflation-Indexed Bond, Due 2/15/2045	Daily -- NSA
         DTP30F46	30-Year 1.0% Treasury Inflation-Indexed Bond, Due 2/15/2046	Daily -- NSA
         DTP3HA32	30-1/2-Year 3-3/8% Treasury Inflation-Indexed Bond, Due 4/15/2032	Daily -- NSA
-        DTP5A10	5-Year Treasury Inflation-Indexed Note, Due 4/15/2010 (DISCONTINUED)	Daily -- NSA
-        DTP5A11	5-Year 2-3/8% Treasury Inflation-Indexed Note, Due 4/15/2011 (DISCONTINUED)	Daily -- NSA
-        DTP5A12	5-Year 2% Treasury Inflation-Indexed Note, Due 4/15/2012 (DISCONTINUED)	Daily -- NSA
-        DTP5A13	5-Year 5/8% Treasury Inflation-Indexed Note, Due 4/15/2013 (DISCONTINUED)	Daily -- NSA
-        DTP5A14	5-Year 1-1/4% Treasury Inflation-Indexed Note, Due 4/15/2014 (DISCONTINUED)	Daily -- NSA
-        DTP5A15	5-Year 0-1/2% Treasury Inflation-Indexed Note, Due 4/15/2015 (DISCONTINUED)	Daily -- NSA
-        DTP5A16	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2016 (DISCONTINUED)	Daily -- NSA
         DTP5A17	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2017	Daily -- NSA
         DTP5A18	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2018	Daily -- NSA
         DTP5A19	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2019	Daily -- NSA
         DTP5A20	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2020	Daily -- NSA
         DTP5A21	5-Year Treasury Inflation-Indexed Note, Due 4/15/2021	Daily -- NSA
-        DTP5L02	5-Year Treasury Inflation-Indexed Note, Due 7/15/2002 (DISCONTINUED)	Daily -- NSA
         FII10	10-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly -- NSA
         FII20	20-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly -- NSA
         FII30	30-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly -- NSA
         FII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly -- NSA
         FII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly -- NSA
-        LTA	Treasury Long-Term Average (25 years and above) (DISCONTINUED)	Monthly -- NSA
         LTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Monthly -- NSA
-        TP10J07	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2007 (DISCONTINUED)	Monthly -- NSA
-        TP10J08	10-Year 3-5/8% Treasury Inflation-Indexed Note, Due 1/15/2008 (DISCONTINUED)	Monthly -- NSA
-        TP10J09	10-Year 3-7/8% Treasury Inflation-Indexed Note, Due 1/15/2009 (DISCONTINUED)	Monthly -- NSA
-        TP10J10	10-Year 4-1/4% Treasury Inflation-Indexed Note, Due 1/15/2010 (DISCONTINUED)	Monthly -- NSA
-        TP10J11	10-Year 3-1/2% Treasury Inflation-Indexed Note, Due 1/15/2011 (DISCONTINUED)	Monthly -- NSA
-        TP10J12	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2012 (DISCONTINUED)	Monthly -- NSA
-        TP10J14	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2014 (DISCONTINUED)	Monthly -- NSA
-        TP10J15	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2015	Monthly -- NSA
-        TP10J16	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2016   (DISCONTINUED)	Monthly -- NSA
-        TP10J17	10-Year 2-3/8% Treasury Inflation-Indexed Note, Due 1/15/2017	Monthly -- NSA
         TP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Monthly -- NSA
         TP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Monthly -- NSA
         TP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Monthly -- NSA
         TP10J21	10-Year 1-1/8% Treasury Inflation-Indexed Note, Due 1/15/2021	Monthly -- NSA
-        TP10L12	10-Year 3% Treasury Inflation-Indexed Note, Due 7/15/2012 (DISCONTINUED)	Monthly -- NSA
-        TP10L13	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2013 (DISCONTINUED)	Monthly -- NSA
-        TP10L14	10-Year 2% Treasury Inflation-Indexed Note, Due 7/15/2014   (DISCONTINUED)	Monthly -- NSA
-        TP10L15	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2015 (DISCONTINUED)	Monthly -- NSA
-        TP10L16	10-Year 2-1/2% Treasury Inflation-Indexed Note, Due 7/15/2016	Monthly -- NSA
         TP10L17	10-Year 2-5/8% Treasury Inflation-Indexed Note, Due 7/15/2017	Monthly -- NSA
         TP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Monthly -- NSA
         TP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Monthly -- NSA
@@ -769,35 +711,16 @@
         TP30A29	30-Year 3-7/8% Treasury Inflation-Indexed Bond, Due 4/15/2029	Monthly -- NSA
         TP30F41	30-Year 2-1/8% Treasury Inflation-Indexed Bond, Due 2/15/2041	Monthly -- NSA
         TP3HA32	30-1/2-Year 3-3/8% Treasury Inflation-Indexed Bond, Due 4/15/2032	Monthly -- NSA
-        TP5A10	5-Year Treasury Inflation-Indexed Note, Due 4/15/2010 (DISCONTINUED)	Monthly -- NSA
-        TP5A11	5-Year 2-3/8% Treasury Inflation-Indexed Note, Due 4/15/2011 (DISCONTINUED)	Monthly -- NSA
-        TP5L02	5-Year Treasury Inflation-Indexed Note, Due 7/15/2002 (DISCONTINUED)	Monthly -- NSA
         WFII10	10-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday -- NSA
         WFII20	20-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday -- NSA
         WFII30	30-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday -- NSA
         WFII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday -- NSA
         WFII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday -- NSA
-        WLTA	Treasury Long-Term Average (25 years and above) (DISCONTINUED)	Weekly, Ending Friday -- NSA
         WLTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Weekly, Ending Friday -- NSA
-        WTP10J07	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2007 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J08	10-Year 3-5/8% Treasury Inflation-Indexed Note, Due 1/15/2008 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J09	10-Year 3-7/8% Treasury Inflation-Indexed Note, Due 1/15/2009 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J10	10-Year 4-1/4% Treasury Inflation-Indexed Note, Due 1/15/2010 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J11	10-Year 3-1/2% Treasury Inflation-Indexed Note, Due 1/15/2011 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J12	10-Year 3-3/8% Treasury Inflation-Indexed Note, Due 1/15/2012 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J14	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2014 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J15	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2015 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J16	10-Year 2% Treasury Inflation-Indexed Note, Due 1/15/2016   (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10J17	10-Year 2-3/8% Treasury Inflation-Indexed Note, Due 1/15/2017	Weekly, Ending Friday -- NSA
         WTP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Weekly, Ending Friday -- NSA
         WTP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Weekly, Ending Friday -- NSA
         WTP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Weekly, Ending Friday -- NSA
         WTP10J21	10-Year 1-1/8% Treasury Inflation-Indexed Note, Due 1/15/2021	Weekly, Ending Friday -- NSA
-        WTP10L12	10-Year 3% Treasury Inflation-Indexed Note, Due 7/15/2012 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10L13	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2013 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10L14	10-Year 2% Treasury Inflation-Indexed Note, Due 7/15/2014 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10L15	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2015 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP10L16	10-Year 2-1/2% Treasury Inflation-Indexed Note, Due 7/15/2016	Weekly, Ending Friday -- NSA
         WTP10L17	10-Year 2-5/8% Treasury Inflation-Indexed Note, Due 7/15/2017	Weekly, Ending Friday -- NSA
         WTP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Weekly, Ending Friday -- NSA
         WTP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Weekly, Ending Friday -- NSA
@@ -812,14 +735,6 @@
         WTP30F40	30-Year 2-1/8% Treasury Inflation-Indexed Bond, Due 2/15/2040	Weekly, Ending Friday -- NSA
         WTP30F41	30-Year 2-1/8% Treasury Inflation-Indexed Bond, Due 2/15/2041	Weekly, Ending Friday -- NSA
         WTP3HA32	30-1/2-Year 3-3/8% Treasury Inflation-Indexed Bond, Due 4/15/2032	Weekly, Ending Friday -- NSA
-        WTP5A10	5-Year Treasury Inflation-Indexed Note, Due 4/15/2010 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A11	5-Year 2-3/8% Treasury Inflation-Indexed Note, Due 4/15/2011 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A12	5-Year 2% Treasury Inflation-Indexed Note, Due 4/15/2012 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A13	5-Year 5/8% Treasury Inflation-Indexed Note, Due 4/15/2013 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A14	5-Year 1-1/4% Treasury Inflation-Indexed Note, Due 4/15/2014 (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A15	5-Year 0-1/2% Treasury Inflation-Indexed Note, Due 4/15/2015   (DISCONTINUED)	Weekly, Ending Friday -- NSA
-        WTP5A16	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2016	Weekly, Ending Friday -- NSA
-        WTP5L02	5-Year Treasury Inflation-Indexed Note, Due 7/15/2002 (DISCONTINUED)	Weekly, Ending Friday -- NSA
 
   15 Exchange Rates
 
@@ -852,44 +767,31 @@
         DTWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Daily -- NSA
 
     95 Monthly Rates
-        EXAUUS	Austria / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
-        EXBEUS	Belgium / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXBZUS	Brazil / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXCAUS	Canada / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXCHUS	China / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXDNUS	Denmark / U.S. Foreign Exchange Rate	Monthly -- NSA
-        EXFNUS	Finland / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
-        EXFRUS	France / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
-        EXGEUS	Germany / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
-        EXGRUS	Greece / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXHKUS	Hong Kong / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXINUS	India / U.S. Foreign Exchange Rate	Monthly -- NSA
-        EXITUS	Italy / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXJPUS	Japan / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXKOUS	South Korea / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXMAUS	Malaysia / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXMXUS	Mexico / U.S. Foreign Exchange Rate	Monthly -- NSA
-        EXNEUS	Netherlands / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXNOUS	Norway / U.S. Foreign Exchange Rate	Monthly -- NSA
-        EXPOUS	Portugal / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXSDUS	Sweden / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXSFUS	South Africa / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXSIUS	Singapore / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXSLUS	Sri Lanka / U.S. Foreign Exchange Rate	Monthly -- NSA
-        EXSPUS	Spain / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXSZUS	Switzerland / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXTAUS	Taiwan / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXTHUS	Thailand / U.S. Foreign Exchange Rate	Monthly -- NSA
         EXUSAL	U.S. / Australia Foreign Exchange Rate	Monthly -- NSA
-        EXUSEC	Foreign Exchange Rate: Euro Community (DISCONTINUED)	Monthly -- NSA
         EXUSEU	U.S. / Euro Foreign Exchange Rate	Monthly -- NSA
-        EXUSIR	U.S. / Ireland Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
         EXUSNZ	U.S. / New Zealand Foreign Exchange Rate	Monthly -- NSA
         EXUSUK	U.S. / U.K. Foreign Exchange Rate	Monthly -- NSA
         EXVZUS	Venezuela / U.S. Foreign Exchange Rate	Monthly -- NSA
         TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad	Monthly -- NSA
         TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies	Monthly -- NSA
-        TWEXMTHY	Trade-Weighted Exchange Value of U.S. Dollar vs G-10 Countries (DISCONTINUED)	Monthly -- NSA
         TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Monthly -- NSA
 
     32219 Annual Rates
@@ -974,7 +876,6 @@
         RTWVDWI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wisconsin	Monthly -- NSA
         RTWVDWV684NMFRBDAL	Real Trade-Weighted Value of the dollar for West Virginia	Monthly -- NSA
         RTWVDWY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wyoming	Monthly -- NSA
-        TWEX	Dollar's Trade Weighted Exchange Index (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         TWEXB	Trade Weighted U.S. Dollar Index: Broad	Weekly, Ending Wednesday -- NSA
         TWEXBANL	Trade Weighted U.S. Dollar Index: Broad	Annual -- NSA
         TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad	Monthly -- NSA
@@ -983,7 +884,6 @@
         TWEXMANL	Trade Weighted U.S. Dollar Index: Major Currencies	Annual -- NSA
         TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies	Monthly -- NSA
         TWEXMPA	Real Trade Weighted U.S. Dollar Index: Major Currencies	Monthly -- NSA
-        TWEXMTHY	Trade-Weighted Exchange Value of U.S. Dollar vs G-10 Countries (DISCONTINUED)	Monthly -- NSA
         TWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Weekly, Ending Wednesday -- NSA
         TWEXOANL	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Annual -- NSA
         TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Monthly -- NSA
@@ -997,10 +897,8 @@
           EXUSAL	U.S. / Australia Foreign Exchange Rate	Monthly -- NSA
 
       286 Austria
-          EXAUUS	Austria / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       285 Belgium
-          EXBEUS	Belgium / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       284 Brazil
           AEXBZUS	Brazil / U.S. Foreign Exchange Rate	Annual -- NSA
@@ -1025,20 +923,15 @@
       280 Euro
           AEXUSEU	U.S. / Euro Foreign Exchange Rate	Annual -- NSA
           DEXUSEU	U.S. / Euro Foreign Exchange Rate	Daily -- NSA
-          EXUSEC	Foreign Exchange Rate: Euro Community (DISCONTINUED)	Monthly -- NSA
           EXUSEU	U.S. / Euro Foreign Exchange Rate	Monthly -- NSA
 
       279 Finland
-          EXFNUS	Finland / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       278 France
-          EXFRUS	France / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       277 Germany
-          EXGEUS	Germany / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       274 Greece
-          EXGRUS	Greece / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       273 Hong Kong
           AEXHKUS	Hong Kong / U.S. Foreign Exchange Rate	Annual -- NSA
@@ -1051,10 +944,8 @@
           EXINUS	India / U.S. Foreign Exchange Rate	Monthly -- NSA
 
       271 Ireland
-          EXUSIR	U.S. / Ireland Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       276 Italy
-          EXITUS	Italy / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       275 Japan
           AEXJPUS	Japan / U.S. Foreign Exchange Rate	Annual -- NSA
@@ -1072,7 +963,6 @@
           EXMXUS	Mexico / U.S. Foreign Exchange Rate	Monthly -- NSA
 
       268 Netherlands
-          EXNEUS	Netherlands / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       266 New Zealand
           AEXUSNZ	U.S. / New Zealand Foreign Exchange Rate	Annual -- NSA
@@ -1085,7 +975,6 @@
           EXNOUS	Norway / U.S. Foreign Exchange Rate	Monthly -- NSA
 
       264 Portugal
-          EXPOUS	Portugal / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       263 Singapore
           AEXSIUS	Singapore / U.S. Foreign Exchange Rate	Annual -- NSA
@@ -1103,7 +992,6 @@
           EXKOUS	South Korea / U.S. Foreign Exchange Rate	Monthly -- NSA
 
       260 Spain
-          EXSPUS	Spain / U.S. Foreign Exchange Rate (DISCONTINUED)	Monthly -- NSA
 
       259 Sri Lanka
           AEXSLUS	Sri Lanka / U.S. Foreign Exchange Rate	Annual -- NSA
@@ -1150,20 +1038,10 @@
         AMBSLREAL	Real St. Louis Adjusted Monetary Base	Monthly -- SA
         BASE	St. Louis Adjusted Monetary Base	Biweekly, Ending Wednesday -- SA
         BASENS	St. Louis Adjusted Monetary Base	Biweekly, Ending Wednesday -- NSA
-        BOGAMBNS	Board of Governors Monetary Base, Adjusted for Changes in Reserve Requirements (DISCONTINUED)	Monthly -- NSA
-        BOGAMBSL	Board of Governors Monetary Base, Adjusted for Changes in Reserve Requirements (DISCONTINUED)	Monthly -- SA
         BOGMBASE	Monetary Base; Total	Monthly -- NSA
         BOGMBASEW	Monetary Base; Total	Weekly, Ending Wednesday -- NSA
         BOGMBBM	Monetary Base; Total Balances Maintained	Monthly -- NSA
         BOGMBBMW	Monetary Base; Total Balances Maintained	Weekly, Ending Wednesday -- NSA
-        BOGUMBNS	Board of Governors Monetary Base, Not Adjusted for Changes in Reserve Requirements (DISCONTINUED)	Monthly -- NSA
-        DISAMBNS	St. Louis Adjusted Monetary Base (DISCONTINUED)	Monthly -- NSA
-        DISAMBSL	St. Louis Adjusted Monetary Base (DISCONTINUED)	Monthly -- SA
-        DISBASE	St. Louis Adjusted Monetary Base (DISCONTINUED)	Biweekly, Ending Wednesday -- SA
-        DISBWRAM	Reserve Adjustment Magnitude (RAM) (DISCONTINUED)	Not Applicable -- NSA
-        DISRAM	Reserve Adjustment Magnitude (DISCONTINUED)	Monthly -- NSA
-        DSBASEN	St. Louis Source Base (DISCONTINUED)	Monthly -- NSA
-        DSBASENS	St. Louis Adjusted Monetary Base (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
         MBCURRCIR	Monetary Base; Currency in Circulation	Monthly -- NSA
         MBCURRCIRW	Monetary Base; Currency in Circulation	Weekly, Ending Wednesday -- NSA
         RAM	Reserve Adjustment Magnitude (RAM)	Monthly -- NSA
@@ -1176,22 +1054,10 @@
         ADJRESN	St. Louis Adjusted Reserves	Biweekly, Ending Wednesday -- NSA
         ADJRESNS	St. Louis Adjusted Reserves	Monthly -- NSA
         ADJRESSL	St. Louis Adjusted Reserves	Monthly -- SA
-        BOGNONBR	Non-Borrowed Reserves of Depository Institutions (DISCONTINUED)	Monthly -- SA
-        DADJRESN	St. Louis Adjusted Reserves (DISCONTINUED)	Monthly -- NSA
-        DADJRESS	St. Louis Adjusted Reserves (DISCONTINUED)	Monthly -- SA
-        DSADJREN	St. Louis Adjusted Reserves (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
-        DSADJRES	St. Louis Adjusted Reserves (DISCONTINUED)	Biweekly, Ending Wednesday -- SA
-        EXCRESNS	Excess Reserves of Depository Institutions (DISCONTINUED)	Monthly -- NSA
         EXCSRESNS	Excess Reserves of Depository Institutions	Monthly -- NSA
         EXCSRESNW	Excess Reserves of Depository Institutions	Weekly, Ending Wednesday -- NSA
-        INTEXC1	Interest Rate Paid on Excess Reserve Balances (Institutions with 1-Week Maintenance Period) (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        INTEXC2	Interest Rate Paid on Excess Reserve Balances (Institutions with 2-Week Maintenance Period) (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
-        INTREQ1	Interest Rate Paid on Required Reserve Balances (Institutions with 1-Week Maintenance Period) (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        INTREQ2	Interest Rate Paid on Required Reserve Balances (Institutions with 2-Week Maintenance Period) (DISCONTINUED)	Biweekly, Ending Wednesday -- NSA
-        NFORBRES	Net Free or Borrowed Reserves of Depository Institutions (DISCONTINUED)	Monthly -- NSA
         NONBORRES	Reserves of Depository Institutions, Nonborrowed	Monthly -- NSA
         NONBORRESW	Reserves of Depository Institutions, Nonborrowed	Weekly, Ending Wednesday -- NSA
-        NONBORTAF	Non-Borrowed Reserves of Depository Institutions Plus Term Auction Credit (DISCONTINUED)	Monthly -- SA
         RBMTETPFB	Reserve Balances Maintained; Balances Maintained That Exceed the Top of the Penalty-Free Band	Monthly -- NSA
         RBMTETPFBW	Reserve Balances Maintained; Balances Maintained That Exceed the Top of the Penalty-Free Band	Weekly, Ending Wednesday -- NSA
         RBMTSRBR	Reserve Balances Maintained; Balances Maintained To Satisfy Reserve Balance Requirements	Monthly -- NSA
@@ -1210,13 +1076,11 @@
         TLVAULTW	Vault Cash, Total	Weekly, Ending Wednesday -- NSA
         TOTRESNS	Total Reserves of Depository Institutions	Monthly -- NSA
         TOTRESNSW	Reserves of Depository Institutions, Total	Weekly, Ending Wednesday -- NSA
-        TRARR	Board of Governors Total Reserves, Adjusted for Changes in Reserve Requirements (DISCONTINUED)	Monthly -- SA
         VAULT	Vault Cash Used to Satisfy Required Reserves	Monthly -- NSA
         VAULTSUR	Vault Cash, Surplus	Monthly -- NSA
         VAULTSURW	Vault Cash, Surplus	Weekly, Ending Wednesday -- NSA
         VAULTW	Vault Cash, Used To Satisfy Required Reserves	Weekly, Ending Wednesday -- NSA
         WRESBAL	Reserve Balances with Federal Reserve Banks	Weekly, Ending Wednesday -- NSA
-        XRCB	Excess Reserves Plus Required Clearing Balance Contracts of Depository Institutions (DISCONTINUED)	Monthly -- NSA
 
     25 M1 and Components
         CASHEXP	Federal Reserve Expenses for Cash Operations	Annual -- NSA
@@ -1249,10 +1113,8 @@
         CURRVOLALL	Volume of Currency in Circulation: Total	Annual, End of Period -- NSA
         DEMDEPNS	Demand Deposits: Total	Monthly -- NSA
         DEMDEPSL	Demand Deposits: Total	Monthly -- SA
-        DISMULT	M1 Money Multiplier (DISCONTINUED)	Biweekly, Ending Monday -- SA
         M1	M1 Money Stock	Weekly, Ending Monday -- SA
         M1ADJ	M1 Adjusted for Retail Sweeps	Monthly -- SA
-        M1ASL	M1A Money Supply (Currency plus Demand Deposits) (DISCONTINUED)	Monthly -- SA
         M1NS	M1 Money Stock	Monthly -- NSA
         M1REAL	Real M1 Money Stock	Monthly -- SA
         M1SL	M1 Money Stock	Monthly -- SA
@@ -1291,15 +1153,12 @@
     29 M2 and Components
         ALLMON	M2 Plus Institutional Type Money Market Mutual Funds	Monthly -- SA
         M2	M2 Money Stock	Weekly, Ending Monday -- SA
-        M2ASL	M2A Money Supply (M1ASL plus Time Deposits at Commercial Banks other than Large CDs) (DISCONTINUED)	Monthly -- SA
         M2NS	M2 Money Stock	Monthly -- NSA
         M2OWN	M2 Own Rate	Monthly -- NSA
         M2REAL	Real M2 Money Stock	Monthly -- SA
         M2SL	M2 Money Stock	Monthly -- SA
-        M2TDASL	Time Deposits Adjusted at all Commercial Banks (DISCONTINUED)	Monthly -- SA
         MSIM2	Monetary Services Index: M2 (preferred)	Monthly -- SA
         MSIM2A	Monetary Services Index: M2 (alternative)	Monthly -- SA
-        MSIM2DS	Monetary Services Index: M2 (DISCONTINUED)	Monthly -- SA
         NOM1M2	Non-M1 Components of M2	Monthly -- SA
         NOM1M2N	Non-M1 Components of M2	Monthly -- NSA
         NONM1	Non-M1 Components of M2	Weekly, Ending Monday -- SA
@@ -1350,39 +1209,14 @@
         OCM2MP	Real User Cost Index of MSI-M2M (preferred)	Monthly -- NSA
 
     28 M3 and Components
-        EURONS	Overnight and Term Eurodollars (DISCONTINUED)	Monthly -- NSA
         IMFNS	Institutional Money Funds	Monthly -- NSA
         IMFSL	Institutional Money Funds	Monthly -- SA
-        LGTDCBNS	Large Time Deposits at Commercial Banks (DISCONTINUED)	Monthly -- NSA
-        LGTDCBSL	Large Time Deposits at Commercial Banks (DISCONTINUED)	Monthly -- SA
-        LGTDTI	Large Time Deposits at Thrift Institutions (DISCONTINUED)	Monthly -- SA
-        LQDASSNS	Liquid Assets (DISCONTINUED)	Monthly -- NSA
-        LQDASSSL	Liquid Assets (DISCONTINUED)	Monthly -- SA
-        LTDNS	Large Time Deposits - Total (DISCONTINUED)	Monthly -- NSA
-        LTDSL	Large Time Deposits - Total (DISCONTINUED)	Monthly -- SA
-        M3	M3 Money Stock (DISCONTINUED)	Weekly, Ending Monday -- SA
-        M3NS	M3 Money Stock (DISCONTINUED)	Monthly -- NSA
-        M3SL	M3 Money Stock (DISCONTINUED)	Monthly -- SA
         MSIALLA	Monetary Services Index: ALL Assets (alternative)	Monthly -- SA
         MSIALLP	Monetary Services Index: ALL Assets (preferred)	Monthly -- SA
-        MSIM3A	Monetary Services Index: M3 (alternative) (DISCONTINUED)	Monthly -- SA
-        MSIM3P	Monetary Services Index: M3 (preferred) (DISCONTINUED)	Monthly -- SA
         OCALLA	Real User Cost Index of MSI-ALL Assets (alternative)	Monthly -- NSA
         OCALLP	Real User Cost Index of MSI-ALL Assets (preferred)	Monthly -- NSA
-        OCM3A	Real User Cost Index of MSI-M3 (alternative) (DISCONTINUED)	Monthly -- NSA
-        OCM3P	Real User Cost Index of MSI-M3 (preferred) (DISCONTINUED)	Monthly -- NSA
-        RPNS	Overnight and Term RPs (DISCONTINUED)	Monthly -- NSA
-        TOTTCBNS	Total Time and Savings Deposits at Commercial Banks (DISCONTINUED)	Monthly -- NSA
-        TOTTCBSL	Total Time and Savings Deposits at Commercial Banks (DISCONTINUED)	Monthly -- SA
-        TOTTDP	Total Time and Savings Deposits at All Depository Institutions (DISCONTINUED)	Monthly -- SA
-        TOTTDPNS	Total Time and Savings Deposits at all Depository Institutions (DISCONTINUED)	Monthly -- NSA
-        TOTTIME	Total Time and Savings Deposits at All Depository Institutions (DISCONTINUED)	Weekly, Ending Monday -- SA
         WIMFNS	Institutional Money Funds	Weekly, Ending Monday -- NSA
         WIMFSL	Institutional Money Funds	Weekly, Ending Monday -- SA
-        WLGTIME	Large Time Deposits - Total (DISCONTINUED)	Weekly, Ending Monday -- SA
-        WLGTMNS	Large Time Deposits - Total (DISCONTINUED)	Weekly, Ending Monday -- NSA
-        WM3NS	M3 Money Stock (DISCONTINUED)	Weekly, Ending Monday -- NSA
-        WTOTTMNS	Total Time and Savings Deposits at all Depository Institutions (DISCONTINUED)	Weekly, Ending Monday -- NSA
 
     30 MZM
         MSIMZMA	Monetary Services Index: MZM (alternative)	Monthly -- SA
@@ -1420,12 +1254,9 @@
         MZMV	Velocity of MZM Money Stock	Quarterly -- SA
 
     122 Borrowings
-        ADJBORNS	Adjustment Plus Seasonal Borrowings of Depository Institutions from the Federal Reserve (DISCONTINUED)	Monthly -- NSA
-        ASBORR	Adjustment Plus Seasonal Borrowings of Depository Institutions from the Federal Reserve (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         BORROW	Total Borrowings of Depository Institutions from the Federal Reserve	Monthly -- NSA
         BORROWW	Total Borrowings from the Federal Reserve	Weekly, Ending Wednesday -- NSA
         DISCBORR	Discount Window Borrowings of Depository Institutions from the Federal Reserve	Monthly -- NSA
-        EXTENDNS	Extended Credit Borrowings of Depository Institutions from the Federal Reserve (DISCONTINUED)	Monthly -- NSA
         OTHBORR	Borrowings from the Federal Reserve, Other Credit Extensions	Monthly -- NSA
         OTHBORRW	Borrowings from the Federal Reserve, Other Credit Extensions	Weekly, Ending Wednesday -- NSA
         PRIMBORR	Borrowings from the Federal Reserve, Primary	Monthly -- NSA
@@ -1436,7 +1267,6 @@
         SECBORRW	Borrowings from the Federal Reserve, Secondary	Weekly, Ending Wednesday -- NSA
         TABSLFBORR	Borrowings from the Federal Reserve, Term Asset-Backed Securities Loan Facility	Monthly -- NSA
         TABSLFBORRW	Borrowings from the Federal Reserve, Term Asset-Backed Securities Loan Facility	Weekly, Ending Wednesday -- NSA
-        TERMAUC	Term Auction Credit (DISCONTINUED)	Monthly -- NSA
         TOTBORR	Total Borrowings of Depository Institutions from the Federal Reserve	Weekly, Ending Wednesday -- NSA
 
     32215 Factors Affecting Reserve Balances
@@ -1472,15 +1302,10 @@
         SNBSECRPORT	Securities Portfolio of Swiss National Bank	Monthly -- NSA
         TOTBORR	Total Borrowings of Depository Institutions from the Federal Reserve	Weekly, Ending Wednesday -- NSA
         TREASURY	Treasury Deposits with Federal Reserve Banks	Monthly -- NSA
-        WABCMMF	Reserve Bank Credit: Asset-Backed Commercial Paper Money Market Mutual Fund Liquidity Facility (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WABPL	Assets: Bank Premises	Weekly, As of Wednesday -- NSA
         WACBS	Assets: Central Bank Liquidity Swaps	Weekly, As of Wednesday -- NSA
         WACL	Assets: Coin	Weekly, As of Wednesday -- NSA
-        WACPFFL	Assets: Net Portfolio Holdings of Commercial Paper Funding Facility LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WAIAL	Assets: Preferred Interests in AIA Aurora LLC and ALICO Holdings LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WAIG	Credit Extended to American International Group, Inc., Net (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WALCL	All Federal Reserve Banks: Total Assets	Weekly, As of Wednesday -- NSA
-        WALICO	Preferred Interests in AIA Aurora LLC and ALICO Holdings LLC (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WALL	All Federal Reserve Banks: Total Assets, Eliminations From Consolidation	Weekly, As of Wednesday -- NSA
         WALLNL	Assets: Loans	Weekly, As of Wednesday -- NSA
         WAML1L	Assets: Net Portfolio Holdings of Maiden Lane LLC	Weekly, As of Wednesday -- NSA
@@ -1489,49 +1314,33 @@
         WAOAL	Assets: Other Assets	Weekly, As of Wednesday -- NSA
         WARAL	Assets: Repurchase Agreements	Weekly, As of Wednesday -- NSA
         WASDRAL	Assets: Special Drawing Rights Certificate Account	Weekly, As of Wednesday -- NSA
-        WATALFL	Assets: Net Portfolio Holdings of TALF LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WCBLSA	Factors Supplying Reserve Balances: Central Bank Liquidity Swaps	Weekly, Ending Wednesday -- NSA
         WCICL	Factors Absorbing Reserve Funds: Currency in Circulation	Weekly, As of Wednesday -- NSA
         WCPCA	Capital: Other Capital Accounts	Weekly, As of Wednesday -- NSA
-        WCPFF	Net Portfolio Holdings of Commercial Paper Funding Facility LLC (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WCPIL	Capital: Capital Paid In	Weekly, As of Wednesday -- NSA
         WCSL	Capital: Surplus	Weekly, As of Wednesday -- NSA
         WCTCL	Capital: Total Capital	Weekly, As of Wednesday -- NSA
         WCURCIR	Currency in Circulation	Weekly, Ending Wednesday -- NSA
         WDFOA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Foreign Official	Weekly, Ending Wednesday -- NSA
         WDFOL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Foreign Official	Weekly, As of Wednesday -- NSA
-        WDSFAL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: U.S. Treasury, Supplementary Financing Account (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WDTGAL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: U.S. Treasury, General Account	Weekly, As of Wednesday -- NSA
-        WFASEC	Memorandum Item: Marketable Securities Held in Custody for Foreign Official and International Accounts: Federal Agency Securities (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WFASEC1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Federal Agency Debt and Mortgage-Backed Securities	Weekly, Ending Wednesday -- NSA
-        WFASECL	Memorandum Item: Marketable Securities Held in Custody for Foreign Official and International Accounts: Federal Agency Securities (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WFASECL1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Federal Agency Debt and Mortgage-Backed Securities	Weekly, As of Wednesday -- NSA
         WFCDA	Assets: Foreign Currency Denominated Assets	Weekly, As of Wednesday -- NSA
         WFEDSEC	Reserve Bank Credit: Securities Held Outright: Federal Agency Debt Securities	Weekly, Ending Wednesday -- NSA
         WGCAL	Assets: Gold Certificate Account	Weekly, As of Wednesday -- NSA
-        WHTALF	Net Portfolio Holdings of TALF LLC (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WLAD	Liabilities: Other Liabilities and Accrued Dividends (Plus Interest on Federal Reserve Notes Due to U.S. Treasury)	Weekly, As of Wednesday -- NSA
-        WLAIGADA	Factors Absorbing Reserve Funds: Funds From American International Group, Inc. Asset Dispositions, Held as Agent (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WLAIGADL	Factors Absorbing Reserve Funds: Funds From American International Group, Inc. Asset Dispositions, Held as Agent (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WLCFAIGL	Factors Supplying Reserve Balances: Loans: Credit Extended to American International Group, Inc., Net (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WLCFCPFFL	Factors Supplying Reserve Balances: Net Portfolio Holdings of Commercial Paper Funding Facility LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WLCFLL	Factors Supplying Reserve Balances: Loans	Weekly, As of Wednesday -- NSA
         WLCFLPCL	Factors Supplying Reserve Balances: Loans to Depository Institutions: Primary Credit	Weekly, As of Wednesday -- NSA
         WLCFLSCL	Factors Supplying Reserve Balances: Loans to Depository Institutions: Secondary Credit	Weekly, As of Wednesday -- NSA
         WLCFLSECL	Factors Supplying Reserve Balances: Loans to Depository Institutions: Seasonal Credit	Weekly, As of Wednesday -- NSA
         WLCFOCEL	Factors Supplying Reserve Balances: Loans: Other Credit Extensions	Weekly, As of Wednesday -- NSA
-        WLCFTALFL	Factors Supplying Reserve Balances: Loans: Term Asset-Backed Securities Loan Facility (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WLDACL	Liabilities: Deferred Availability Cash Items, Eliminations From Consolidation	Weekly, As of Wednesday -- NSA
         WLDACLC	Liabilities: Deferred Availability Cash Items (Less Eliminations From Consolidation)	Weekly, As of Wednesday -- NSA
         WLDBTDL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, As of Wednesday -- NSA
         WLDECL	Liabilities: Deposits, Eliminations From Consolidation	Weekly, As of Wednesday -- NSA
         WLDLCL	Liabilities: Deposits (Less Eliminations From Consolidation)	Weekly, As of Wednesday -- NSA
         WLDOL	Liabilities: Deposits: Other	Weekly, As of Wednesday -- NSA
-        WLDSRACFA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Service-Related: Adjustments to Compensate for Float (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WLDSRACFL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Service-Related: Adjustments to Compensate for Float (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WLDSRL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Service-Related Balances and Adjustments (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        WLDSRRCBA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Service-Related: Required Clearing Balances (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WLDSRRCBL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Service-Related: Required Clearing Balances (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WLFN	Liabilities: Federal Reserve Notes, Net of F.R. Bank Holdings	Weekly, As of Wednesday -- NSA
         WLFOL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: Foreign Official	Weekly, As of Wednesday -- NSA
         WLIQSWP	Reserve Bank Credit: Central Bank Liquidity Swaps	Weekly, As of Wednesday -- NSA
@@ -1543,25 +1352,18 @@
         WLRRAFOIAL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements: Foreign Official and International Accounts	Weekly, As of Wednesday -- NSA
         WLRRAL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements	Weekly, As of Wednesday -- NSA
         WLRRAOL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements: Others	Weekly, As of Wednesday -- NSA
-        WLSFAL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: U.S. Treasury, Supplementary Financing Account (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WLTDHDIA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, Ending Wednesday -- NSA
         WLTDHDIL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, As of Wednesday -- NSA
         WLTEC	Liabilities: Total Liabilities, Eliminations From Consolidation	Weekly, As of Wednesday -- NSA
         WLTGAL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: U.S. Treasury, General Account	Weekly, As of Wednesday -- NSA
         WLTLECL	Liabilities: Total Liabilities (Less Eliminations From Consolidation)	Weekly, As of Wednesday -- NSA
         WMAIDEN1	Net Portfolio Holdings of Maiden Lane LLC	Weekly, Ending Wednesday -- NSA
-        WMAIDEN2	Net Portfolio Holdings of Maiden Lane II LLC (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WMAIDEN3	Net Portfolio Holdings of Maiden Lane III LLC (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WMBSEC	Reserve Bank Credit: Securities Held Outright: Mortgage-Backed Securities	Weekly, Ending Wednesday -- NSA
-        WMMIFF	Net Portfolio Holdings of LLCs funded through the Money Market Investor Funding Facility (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WMTSEC	Memorandum Item: Marketable Securities Held in Custody for Foreign Official and International Accounts: U.S. Treasury Securities (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WMTSEC1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, Ending Wednesday -- NSA
-        WMTSECL	Memorandum Item: Marketable Securities Held in Custody for Foreign Official and International Accounts: U.S. Treasury Securities (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WMTSECL1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, As of Wednesday -- NSA
         WNPHML1L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane LLC	Weekly, As of Wednesday -- NSA
         WNPHML2L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane II LLC	Weekly, As of Wednesday -- NSA
         WNPHML3L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane III LLC	Weekly, As of Wednesday -- NSA
-        WNPHTALFL	Factors Supplying Reserve Balances: Net Portfolio Holdings of TALF LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WOCE	Reserve Bank Credit: Other Credit Extensions	Weekly, Ending Wednesday -- NSA
         WOFDRBORBA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, Ending Wednesday -- NSA
         WOFDRBORBL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, As of Wednesday -- NSA
@@ -1583,8 +1385,6 @@
         WPC	Reserve Bank Credit: Loans to Depository Institutions: Primary Credit	Weekly, Ending Wednesday -- NSA
         WPCL	Assets: Items in Process of Collection, Eliminations From Consolidation	Weekly, As of Wednesday -- NSA
         WPCLC	Assets: Items in Process of Collection (Less Eliminations From Consolidation)	Weekly, As of Wednesday -- NSA
-        WPDF	Reserve Bank Credit: Primary Dealer and Other Broker-Dealer Credit (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WPIAALICOL	Factors Supplying Reserve Balances: Preferred Interests in AIA Aurora LLC and ALICO Holdings LLC (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WRBWFRBL	Reserve Balances with Federal Reserve Banks	Weekly, As of Wednesday -- NSA
         WREPO	Reserve Bank Credit: Repurchase Agreements	Weekly, Ending Wednesday -- NSA
         WREPODEL	Factors Affecting Reserve Balances of Depository Institutions: Reverse Repurchase Agreements: Others	Weekly, Ending Wednesday -- NSA
@@ -1604,9 +1404,7 @@
         WSECOUT	Reserve Bank Credit: Securities Held Outright	Weekly, Ending Wednesday -- NSA
         WSEFINO	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Other Securities	Weekly, Ending Wednesday -- NSA
         WSEFINOL	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Other Securities	Weekly, As of Wednesday -- NSA
-        WSEFINT	Memorandum item: Marketable Securities Held in Custody for Foreign Official and International Accounts (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WSEFINT1	Memorandum item: Securities Held in Custody for Foreign Official and International Accounts	Weekly, Ending Wednesday -- NSA
-        WSEFINTL	Memorandum item: Marketable Securities Held in Custody for Foreign Official and International Accounts (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         WSEFINTL1	Memorandum item: Securities Held in Custody for Foreign Official and International Accounts	Weekly, As of Wednesday -- NSA
         WSHOB	Assets: Securities Held Outright: U.S. Treasury Securities: Bills	Weekly, As of Wednesday -- NSA
         WSHOBA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Bills	Weekly, Ending Wednesday -- NSA
@@ -1630,33 +1428,17 @@
         WSHOTSA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities	Weekly, Ending Wednesday -- NSA
         WSHOTSL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities	Weekly, As of Wednesday -- NSA
         WSRLL	Assets: Securities, Unamortized Premiums and Discounts, Repurchase Agreements, and Loans	Weekly, As of Wednesday -- NSA
-        WSVCBAL	Service-Related Balances and Adjustments (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WTALF	Term Asset-Backed Securities Loan Facility (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WTCOA	Factors Supplying Reserve Balances: Treasury Currency Outstanding	Weekly, Ending Wednesday -- NSA
         WTCOL	Factors Supplying Reserve Balances: Treasury Currency Outstanding	Weekly, As of Wednesday -- NSA
-        WTERAUC	Reserve Bank Credit: Term Auction Credit (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-        WTERMFAC	Securities Lent to Dealers: Term Facility (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WTFORBAFA	Factors Absorbing Reserve Funds: Total Factors, Other Than Reserve Balances, Absorbing Reserve Funds	Weekly, Ending Wednesday -- NSA
         WTFORBAFL	Factors Absorbing Reserve Funds: Total Factors, Other Than Reserve Balances, Absorbing Reserve Funds	Weekly, As of Wednesday -- NSA
         WTFSRFA	Factors Supplying Reserve Balances: Total Factors Supplying Reserve Funds	Weekly, Ending Wednesday -- NSA
         WTFSRFL	Factors Supplying Reserve Balances: Total Factors Supplying Reserve Funds	Weekly, As of Wednesday -- NSA
         WTREGEN	Deposits with Federal Reserve Banks, other than Reserve Balances: U.S. Treasury, General Account	Weekly, Ending Wednesday -- NSA
-        WTRESUP	Deposits with Federal Reserve Banks, other than Reserve Balances: U.S. Treasury, Supplementary Financing Account (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
         WUDSHO	Assets: Unamortized Discounts on Securities Held Outright	Weekly, As of Wednesday -- NSA
         WUPSHO	Assets: Unamortized Premiums on Securities Held Outright	Weekly, As of Wednesday -- NSA
 
     32218 Securities, Loans, & Other Assets & Liabilities Held by Fed
-        ABS10Y	Asset-backed securities held by TALF LLC (Face value): Maturing in over 10 years (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABS15	Asset-backed securities held by TALF LLC (Face value): within 15 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABS1690	Asset-backed securities held by TALF LLC (Face value): within 16 to 90 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABS1T5	Asset-backed securities held by TALF LLC (Face value): Maturing in over 1 year to 5 years (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABS5T10	Asset-backed securities held by TALF LLC (Face value): Maturing in over 5 years to 10 years (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABS911Y	Asset-backed securities held by TALF LLC holdings (Face value): Maturing in 91 days to 1 year (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        ABST	Asset-backed securities held by TALF LLC (Face value): All Maturities (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        CPFAC15	Commercial paper held by Commercial Paper Funding Facility LLC, within 15 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        CPFAC1690	Commercial paper held by Commercial Paper Funding Facility LLC, Maturing in 16 days to 90 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        CPFAC911Y	Commercial paper held by Commercial Paper Funding Facility LLC, Maturing in 91 days to 1 year (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        CPFACT	Commercial paper holdings, face value: All Maturities (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         FEDD10Y	Federal agency debt securities held by the Federal Reserve: Maturing in over 10 years	Weekly, As of Wednesday -- NSA
         FEDD15	Federal agency debt securities held by the Federal Reserve: Maturing within 15 days	Weekly, As of Wednesday -- NSA
         FEDD1690	Federal agency debt securities held by the Federal Reserve: Maturing in 16 days to 90 days	Weekly, As of Wednesday -- NSA
@@ -1690,9 +1472,6 @@
         SWP5T10	Central Bank Liquidity Swaps held by the Federal Reserve: Maturing in over 5 years to 10 years	Weekly, As of Wednesday -- NSA
         SWP911Y	Central Bank Liquidity Swaps held by the Federal Reserve: Maturing in 91 days to 1 year	Weekly, As of Wednesday -- NSA
         SWPT	Central Bank Liquidity Swaps held by the Federal Reserve: All Maturities	Weekly, As of Wednesday -- NSA
-        TERAUC15	Term auction credit held by the Federal Reserve: Maturing within 15 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        TERAUC1690	Term auction credit held by the Federal Reserve: Maturing in 16 days to 90 days (DISCONTINUED)	Weekly, As of Wednesday -- NSA
-        TERAUCT	Term auction credit held by the Federal Reserve: All Maturities (DISCONTINUED)	Weekly, As of Wednesday -- NSA
         TERM15	Deposits with F.R. Banks, Term Deposits Held by Depository Institutions: Maturing Within 15 Days	Weekly, As of Wednesday -- NSA
         TERM1690	Deposits with F.R. Banks, Term deposits held by depository institutions: Maturing in 16 days to 90 days	Weekly, As of Wednesday -- NSA
         TERM911Y	Deposits with F.R. Banks, Term deposits held by depository institutions: Maturing in 91 days to 1 year	Weekly, As of Wednesday -- NSA
@@ -1760,154 +1539,13 @@
           BAMLHYH0A3CMTRIV	BofA Merrill Lynch US High Yield CCC or Below Total Return Index Value	Daily, Close -- NSA
 
     33119 Consumer Financial Condition Indexes
-        CCDICRQ156N	CredAbility Consumer Distress Index for Credit (DISCONTINUED)	Quarterly -- NSA
-        CCDIEMQ156N	CredAbility Consumer Distress Index for Employment (DISCONTINUED)	Quarterly -- NSA
-        CCDIHBQ156N	CredAbility Consumer Distress Index for Household Budget (DISCONTINUED)	Quarterly -- NSA
-        CCDIHSQ156N	CredAbility Consumer Distress Index for Housing (DISCONTINUED)	Quarterly -- NSA
-        CCDINWQ156N	CredAbility Consumer Distress Index for Net Worth (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA10420Q156N	CredAbility Consumer Distress Index for Akron, OH (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA10580Q156N	CredAbility Consumer Distress Index for Albany-Schenectady-Troy, NY (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA10740Q156N	CredAbility Consumer Distress Index for Albuquerque, NM (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA10900Q156N	CredAbility Consumer Distress Index for Allentown-Bethlehem-Easton, PA-NJ (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA12060Q156N	CredAbility Consumer Distress Index for Atlanta-Sandy Springs-Marietta, GA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA12420Q156N	CredAbility Consumer Distress Index for Austin-Round Rock-San Marcos, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA12540Q156N	CredAbility Consumer Distress Index for Bakersfield-Delano, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA12580Q156N	CredAbility Consumer Distress Index for Baltimore-Towson, MD (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA12940Q156N	CredAbility Consumer Distress Index for Baton Rouge, LA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA13820Q156N	CredAbility Consumer Distress Index for Birmingham-Hoover, AL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA14460Q156N	CredAbility Consumer Distress Index for Boston-Cambridge-Quincy, MA-NH (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA14860Q156N	CredAbility Consumer Distress Index for Bridgeport-Stamford-Norwalk, CT (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA15380Q156N	CredAbility Consumer Distress Index for Buffalo-Niagara Falls, NY (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA16740Q156N	CredAbility Consumer Distress Index for Charlotte-Gastonia-Rock Hill, NC-SC (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA16980Q156N	CredAbility Consumer Distress Index for Chicago-Joliet-Naperville, IL Metropolitan Division (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA17140Q156N	CredAbility Consumer Distress Index for Cincinnati-Middletown, OH-KY-IN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA17460Q156N	CredAbility Consumer Distress Index for Cleveland-Elyria-Mentor, OH (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA17860Q156N	CredAbility Consumer Distress Index for Columbia, MO (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA17980Q156N	CredAbility Consumer Distress Index for Columbus, GA-AL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA19100Q156N	CredAbility Consumer Distress Index for Dallas-Fort Worth-Arlington, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA19380Q156N	CredAbility Consumer Distress Index for Dayton, OH (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA19740Q156N	CredAbility Consumer Distress Index for Denver-Aurora-Broomfield, CO (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA19820Q156N	CredAbility Consumer Distress Index for Detroit-Warren-Livonia, MI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA21340Q156N	CredAbility Consumer Distress Index for El Paso, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA23420Q156N	CredAbility Consumer Distress Index for Fresno, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA24340Q156N	CredAbility Consumer Distress Index for Grand Rapids-Wyoming, MI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA24660Q156N	CredAbility Consumer Distress Index for Greensboro-High Point, NC (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA24860Q156N	CredAbility Consumer Distress Index for Greenville-Mauldin-Easley, SC (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA25540Q156N	CredAbility Consumer Distress Index for Hartford-West Hartford-East Hartford, CT (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA26180Q156N	CredAbility Consumer Distress Index for Honolulu, HI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA26420Q156N	CredAbility Consumer Distress Index for Houston-Sugar Land-Baytown, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA26900Q156N	CredAbility Consumer Distress Index for Indianapolis-Carmel, IN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA27100Q156N	CredAbility Consumer Distress Index for Jackson, MI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA27260Q156N	CredAbility Consumer Distress Index for Jacksonville, FL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA28140Q156N	CredAbility Consumer Distress Index for Kansas City, MO-KS (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA28940Q156N	CredAbility Consumer Distress Index for Knoxville, TN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA29820Q156N	CredAbility Consumer Distress Index for Las Vegas-Paradise, NV (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA30780Q156N	CredAbility Consumer Distress Index for Little Rock-North Little Rock-Conway, AR (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA31100Q156N	CredAbility Consumer Distress Index for Los Angeles-Long Beach-Santa Ana, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA31140Q156N	CredAbility Consumer Distress Index for Louisville/Jefferson County, KY-IN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA32580Q156N	CredAbility Consumer Distress Index for McAllen-Edinburg-Mission, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA32820Q156N	CredAbility Consumer Distress Index for Memphis, TN-MS-AR (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA33100Q156N	CredAbility Consumer Distress Index for Miami-Fort Lauderdale-Pompano Beach, FL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA33340Q156N	CredAbility Consumer Distress Index for Milwaukee-Waukesha-West Allis, WI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA33460Q156N	CredAbility Consumer Distress Index for Minneapolis-St. Paul-Bloomington, MN-WI (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA34980Q156N	CredAbility Consumer Distress Index for Nashville-Davidson--Murfreesboro--Franklin, TN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA35300Q156N	CredAbility Consumer Distress Index for New Haven-Milford, CT (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA35380Q156N	CredAbility Consumer Distress Index for New Orleans-Metairie-Kenner, LA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA35620Q156N	CredAbility Consumer Distress Index for New York-Northern New Jersey-Long Island, NY-NJ-PA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA35840Q156N	CredAbility Consumer Distress Index for North Port-Bradenton-Sarasota, FL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA36420Q156N	CredAbility Consumer Distress Index for Oklahoma City, OK (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA36540Q156N	CredAbility Consumer Distress Index for Omaha-Council Bluffs, NE-IA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA36740Q156N	CredAbility Consumer Distress Index for Orlando-Kissimmee-Sanford, FL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA37100Q156N	CredAbility Consumer Distress Index for Oxnard-Thousand Oaks-Ventura, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA37980Q156N	CredAbility Consumer Distress Index for Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA38060Q156N	CredAbility Consumer Distress Index for Phoenix-Mesa-Glendale, AZ (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA38300Q156N	CredAbility Consumer Distress Index for Pittsburgh, PA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA38900Q156N	CredAbility Consumer Distress Index for Portland-Vancouver-Hillsboro, OR-WA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA39300Q156N	CredAbility Consumer Distress Index for Providence-New Bedford-Fall River, RI-MA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA39580Q156N	CredAbility Consumer Distress Index for Raleigh-Cary, NC (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA40060Q156N	CredAbility Consumer Distress Index for Richmond, VA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA40140Q156N	CredAbility Consumer Distress Index for Riverside-San Bernardino-Ontario, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA40340Q156N	CredAbility Consumer Distress Index for Rochester, MN (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA40900Q156N	CredAbility Consumer Distress Index for Sacramento--Arden-Arcade--Roseville, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41180Q156N	CredAbility Consumer Distress Index for St. Louis, MO-IL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41620Q156N	CredAbility Consumer Distress Index for Salt Lake City, UT (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41700Q156N	CredAbility Consumer Distress Index for San Antonio-New Braunfels, TX (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41740Q156N	CredAbility Consumer Distress Index for San Diego-Carlsbad-San Marcos, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41860Q156N	CredAbility Consumer Distress Index for San Francisco-Oakland-Fremont, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA41940Q156N	CredAbility Consumer Distress Index for San Jose-Sunnyvale-Santa Clara, CA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA42660Q156N	CredAbility Consumer Distress Index for Seattle-Tacoma-Bellevue, WA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA45300Q156N	CredAbility Consumer Distress Index for Tampa-St. Petersburg-Clearwater, FL (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA46060Q156N	CredAbility Consumer Distress Index for Tucson, AZ (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA46140Q156N	CredAbility Consumer Distress Index for Tulsa, OK (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA47260Q156N	CredAbility Consumer Distress Index for Virginia Beach-Norfolk-Newport News, VA-NC (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA47900Q156N	CredAbility Consumer Distress Index for Washington-Arlington-Alexandria, DC-VA-MD-WV Metropolitan Division (DISCONTINUED)	Quarterly -- NSA
-        CCDIOA49340Q156N	CredAbility Consumer Distress Index for Worcester, MA (MSA) (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAAKQ156N	CredAbility Consumer Distress Index for Alaska (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAALQ156N	CredAbility Consumer Distress Index for Alabama (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAARQ156N	CredAbility Consumer Distress Index for Arkansas (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAAZQ156N	CredAbility Consumer Distress Index for Arizona (DISCONTINUED)	Quarterly -- NSA
-        CCDIOACAQ156N	CredAbility Consumer Distress Index for California (DISCONTINUED)	Quarterly -- NSA
-        CCDIOACOQ156N	CredAbility Consumer Distress Index for Colorado (DISCONTINUED)	Quarterly -- NSA
-        CCDIOACTQ156N	CredAbility Consumer Distress Index for Connecticut (DISCONTINUED)	Quarterly -- NSA
-        CCDIOADCQ156N	CredAbility Consumer Distress Index for District of Columbia (DISCONTINUED)	Quarterly -- NSA
-        CCDIOADEQ156N	CredAbility Consumer Distress Index for Delaware (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAFLQ156N	CredAbility Consumer Distress Index for Florida (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAGAQ156N	CredAbility Consumer Distress Index for Georgia (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAHIQ156N	CredAbility Consumer Distress Index for Hawaii (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAIAQ156N	CredAbility Consumer Distress Index for Iowa (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAIDQ156N	CredAbility Consumer Distress Index for Idaho (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAILQ156N	CredAbility Consumer Distress Index for Illinois (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAINQ156N	CredAbility Consumer Distress Index for Indiana (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAKSQ156N	CredAbility Consumer Distress Index for Kansas (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAKYQ156N	CredAbility Consumer Distress Index for Kentucky (DISCONTINUED)	Quarterly -- NSA
-        CCDIOALAQ156N	CredAbility Consumer Distress Index for Louisiana (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMAQ156N	CredAbility Consumer Distress Index for Massachusetts (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMDQ156N	CredAbility Consumer Distress Index for Maryland (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMEQ156N	CredAbility Consumer Distress Index for Maine (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMIQ156N	CredAbility Consumer Distress Index for Michigan (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMNQ156N	CredAbility Consumer Distress Index for Minnesota (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMOQ156N	CredAbility Consumer Distress Index for Missouri (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMSQ156N	CredAbility Consumer Distress Index for Mississippi (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAMTQ156N	CredAbility Consumer Distress Index for Montana (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANCQ156N	CredAbility Consumer Distress Index for North Carolina (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANDQ156N	CredAbility Consumer Distress Index for North Dakota (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANEQ156N	CredAbility Consumer Distress Index for Nebraska (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANHQ156N	CredAbility Consumer Distress Index for New Hampshire (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANJQ156N	CredAbility Consumer Distress Index for New Jersey (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANMQ156N	CredAbility Consumer Distress Index for New Mexico (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANVQ156N	CredAbility Consumer Distress Index for Nevada (DISCONTINUED)	Quarterly -- NSA
-        CCDIOANYQ156N	CredAbility Consumer Distress Index for New York (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAOHQ156N	CredAbility Consumer Distress Index for Ohio (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAOKQ156N	CredAbility Consumer Distress Index for Oklahoma (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAORQ156N	CredAbility Consumer Distress Index for Oregon (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAPAQ156N	CredAbility Consumer Distress Index for Pennsylvania (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAQ156N	CredAbility Consumer Distress Index (DISCONTINUED)	Quarterly -- NSA
-        CCDIOARIQ156N	CredAbility Consumer Distress Index for Rhode Island (DISCONTINUED)	Quarterly -- NSA
-        CCDIOASCQ156N	CredAbility Consumer Distress Index for South Carolina (DISCONTINUED)	Quarterly -- NSA
-        CCDIOASDQ156N	CredAbility Consumer Distress Index for South Dakota (DISCONTINUED)	Quarterly -- NSA
-        CCDIOATNQ156N	CredAbility Consumer Distress Index for Tennessee (DISCONTINUED)	Quarterly -- NSA
-        CCDIOATXQ156N	CredAbility Consumer Distress Index for Texas (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAUTQ156N	CredAbility Consumer Distress Index for Utah (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAVAQ156N	CredAbility Consumer Distress Index for Virginia (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAVTQ156N	CredAbility Consumer Distress Index for Vermont (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAWAQ156N	CredAbility Consumer Distress Index for Washington (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAWIQ156N	CredAbility Consumer Distress Index for Wisconsin (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAWVQ156N	CredAbility Consumer Distress Index for West Virginia (DISCONTINUED)	Quarterly -- NSA
-        CCDIOAWYQ156N	CredAbility Consumer Distress Index for Wyoming (DISCONTINUED)	Quarterly -- NSA
 
     32457 Financial Activity Measures
-        ABSSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Asset-Backed Security Spread (DISCONTINUED)	Daily -- NSA
         ANFCI	Chicago Fed Adjusted National Financial Conditions Index	Weekly, Ending Friday -- NSA
-        BBSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Bank Bond Spread (DISCONTINUED)	Daily -- NSA
         CANDH	Chicago Fed National Activity Index: Personal Consumption and Housing	Monthly -- NSA
-        CBSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Corporate Bond Spread (DISCONTINUED)	Daily -- NSA
         CFNAI	Chicago Fed National Activity Index	Monthly -- NSA
         CFNAIDIFF	Chicago Fed National Activity Index: Diffusion Index	Monthly -- NSA
         CFNAIMA3	Chicago Fed National Activity Index: Three Month Moving Average	Monthly -- NSA
-        CFSI	Cleveland Financial Stress Index (DISCONTINUED)	Daily, 7-Day -- NSA
-        CISD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Covered Interest Spread (DISCONTINUED)	Daily -- NSA
-        CMBSSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Commercial Mortgage-Backed Security Spread (DISCONTINUED)	Daily -- NSA
-        CMRKTSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Credit Markets (DISCONTINUED)	Daily -- NSA
         CONSTIAM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Iowa Contribution: Construction Sector	Monthly -- SA
         CONSTILM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Illinois Contribution: Construction Sector	Monthly -- SA
         CONSTINM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Indiana Contribution: Construction Sector	Monthly -- SA
@@ -1922,20 +1560,11 @@
         CONSUMIM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Michigan Contribution: Consumer Spending Sector	Monthly -- SA
         CONSURM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Midwest Region Contribution: Consumer Spending Sector	Monthly -- SA
         CONSUWIM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Wisconsin Contribution: Consumer Spending Sector	Monthly -- SA
-        CPTBSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Commercial Paper minus T-Bill Spread (DISCONTINUED)	Daily -- NSA
-        CRESD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Commercial Real Estate Spread (DISCONTINUED)	Daily -- NSA
-        EQMRKTSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Equity Markets (DISCONTINUED)	Daily -- NSA
         EUANDH	Chicago Fed National Activity Index: Employment, Unemployment and Hours	Monthly -- NSA
-        FEMRKTSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Foreign Exchange Markets (DISCONTINUED)	Daily -- NSA
-        FINBETAD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Financial Beta (DISCONTINUED)	Daily -- NSA
         IAINDEXM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Iowa Contribution	Monthly -- SA
-        IBCOBD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Interbank Cost of Borrowing (DISCONTINUED)	Daily -- NSA
-        IBLSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Interbank Liquidity Spread (DISCONTINUED)	Daily -- NSA
-        IBMRKTSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Interbank or Funding Markets (DISCONTINUED)	Daily -- NSA
         ILINDEXM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Illinois Contribution	Monthly -- SA
         ININDEXM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Indiana Contribution	Monthly -- SA
         KCFSI	Kansas City Financial Stress Index	Monthly -- NSA
-        LQTYSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Liquidity Spread (DISCONTINUED)	Daily -- NSA
         MANUFACTURINGM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Manufacturing Contribution	Monthly -- SA
         MANUIAM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Iowa Contribution: Manufacturing Sector	Monthly -- SA
         MANUILM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Illinois Contribution: Manufacturing Sector	Monthly -- SA
@@ -1966,7 +1595,6 @@
         RCONSURM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Midwest Region Contribution: Consumer Spending Sector	Monthly -- SA
         RCONSUWIM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Wisconsin Contribution: Consumer Spending Sector	Monthly -- SA
         REGIONALM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Midwest Region Contribution	Monthly -- SA
-        REMRKTD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Real Estate Market (DISCONTINUED)	Daily -- NSA
         RIAINDEXM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Iowa Contribution	Monthly -- SA
         RILINDEXM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Illinois Contribution	Monthly -- SA
         RININDEXM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Indiana Contribution	Monthly -- SA
@@ -1977,11 +1605,9 @@
         RMANUMIM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Michigan Contribution: Manufacturing Sector	Monthly -- SA
         RMANURM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Midwest Region Contribution: Manufacturing Sector	Monthly -- SA
         RMANUWIM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Wisconsin Contribution: Manufacturing Sector	Monthly -- SA
-        RMBSSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Residential Mortgage-Backed Security Spread (DISCONTINUED)	Daily -- NSA
         RMEIM683SFRBCHI	Chicago Fed Relative Midwest Economy Index	Monthly -- SA
         RMIINDEXM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Michigan Contribution	Monthly -- SA
         RREGIONALM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Midwest Region Contribution	Monthly -- SA
-        RRESD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Residential Real Estate Spread (DISCONTINUED)	Daily -- NSA
         RSERVIAM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Iowa Contribution: Services Sector	Monthly -- SA
         RSERVICESM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Services Contribution	Monthly -- SA
         RSERVILM683SFRBCHI	Contributions to the Chicago Fed Relative Midwest Economy Index: Illinois Contribution: Services Sector	Monthly -- SA
@@ -1997,15 +1623,10 @@
         SERVMIM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Michigan Contribution: Services Sector	Monthly -- SA
         SERVRM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Midwest Region Contribution: Services Sector	Monthly -- SA
         SERVWIM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Wisconsin Contribution: Services Sector	Monthly -- SA
-        SMCD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Stock Market Crashes (DISCONTINUED)	Daily -- NSA
-        SMRKTD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Securitization Market (DISCONTINUED)	Daily -- NSA
         SOANDI	Chicago Fed National Activity Index: Sales, Orders and Inventories	Monthly -- NSA
         STLFSI	St. Louis Fed Financial Stress Index	Weekly, Ending Friday -- NSA
-        TYCSD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Treasury Yield Curve Spread (DISCONTINUED)	Daily -- NSA
         UMCSENT	University of Michigan: Consumer Sentiment	Monthly -- NSA
-        UMCSENT1	University of Michigan: Consumer Sentiment (DISCONTINUED)	Not Applicable -- NSA
         USSLIND	Leading Index for the United States	Monthly -- SA
-        WDCD678FRBCLE	Contributions to the Cleveland Financial Stress Index: Weighted Dollar Crashes (DISCONTINUED)	Daily -- NSA
         WIINDEXM683SFRBCHI	Contributions to the Chicago Fed Midwest Economy Index: Wisconsin Contribution	Monthly -- SA
 
     32255 Stock Market Indexes
@@ -2083,14 +1704,11 @@
         WILLRESIND	Wilshire US Real Estate Securities Total Market Index (Wilshire US RESI)	Daily, Close -- NSA
         WILLRESIPR	Wilshire US Real Estate Securities Price Index (Wilshire US RESI)	Daily, Close -- NSA
         WILLSMLCAP	Wilshire US Small-Cap Total Market Index	Daily -- NSA
-        WILLSMLCAP250	Wilshire Small Cap 250 Total Market Index (DISCONTINUED)	Daily -- NSA
-        WILLSMLCAP250PR	Wilshire Small Cap 250 Price Index (DISCONTINUED)	Daily -- NSA
         WILLSMLCAPGR	Wilshire US Small-Cap Growth Total Market Index	Daily -- NSA
         WILLSMLCAPGRPR	Wilshire US Small-Cap Growth Price Index	Daily -- NSA
         WILLSMLCAPPR	Wilshire US Small-Cap Price Index	Daily -- NSA
         WILLSMLCAPVAL	Wilshire US Small-Cap Value Total Market Index	Daily -- NSA
         WILLSMLCAPVALPR	Wilshire US Small-Cap Value Price Index	Daily -- NSA
-        WILLWWW	Wilshire Internet Total Market Index (DISCONTINUED)	Daily -- NSA
 
     32425 Volatility Indexes
         EVZCLS	CBOE EuroCurrency ETF Volatility Index	Daily, Close -- NSA
@@ -2209,14 +1827,6 @@
           CRLACBQ158SBOG	Real Estate Loans: Closed-End Residential Loans, All Commercial Banks	Quarterly -- SA
           CRLACBW027NBOG	Real Estate Loans: Closed-End Residential Loans, All Commercial Banks	Weekly, Ending Wednesday -- NSA
           CRLACBW027SBOG	Real Estate Loans: Closed-End Residential Loans, All Commercial Banks	Weekly, Ending Wednesday -- SA
-          DFVACBM027NBOG	Derivatives with a Positive Fair Value, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DFVACBM027SBOG	Derivatives with a Positive Fair Value, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DFVACBW027NBOG	Derivatives with a Positive Fair Value, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DFVACBW027SBOG	Derivatives with a Positive Fair Value, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          DNVACBM027NBOG	Derivatives with a Negative Fair Value, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DNVACBM027SBOG	Derivatives with a Negative Fair Value, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DNVACBW027NBOG	Derivatives with a Negative Fair Value, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DNVACBW027SBOG	Derivatives with a Negative Fair Value, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           DPSACBM027NBOG	Deposits, All Commercial Banks	Monthly -- NSA
           DPSACBM027SBOG	Deposits, All Commercial Banks	Monthly -- SA
           DPSACBQ158SBOG	Deposits, All Commercial Banks	Quarterly -- SA
@@ -2311,23 +1921,11 @@
           ONMACBM027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), All Commercial Banks	Monthly -- SA
           ONMACBW027NBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), All Commercial Banks	Weekly, Ending Wednesday -- NSA
           ONMACBW027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), All Commercial Banks	Weekly, Ending Wednesday -- SA
-          OSCACBM027NBOG	Other Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OSCACBM027SBOG	Other Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OSCACBW027NBOG	Other Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OSCACBW027SBOG	Other Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OSEACBQ158SBOG	Other Securities, All Commercial Banks	Quarterly -- SA
           OSEACBW027NBOG	Other Securities, All Commercial Banks	Weekly, Ending Wednesday -- NSA
           OSEACBW027SBOG	Other Securities, All Commercial Banks	Weekly, Ending Wednesday -- SA
-          OTAACBM027NBOG	Other Trading Assets, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTAACBM027SBOG	Other Trading Assets, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTAACBW027NBOG	Other Trading Assets, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTAACBW027SBOG	Other Trading Assets, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OTHSEC	Other Securities at All Commercial Banks	Monthly -- SA
           OTHSECNSA	Other Securities, All Commercial Banks	Monthly -- NSA
-          OTLACBM027NBOG	Other Trading Liabilities, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTLACBM027SBOG	Other Trading Liabilities, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTLACBW027NBOG	Other Trading Liabilities, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTLACBW027SBOG	Other Trading Liabilities, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           RALACBM027NBOG	Residual (Assets Less Liabilities), All Commercial Banks	Monthly -- NSA
           RALACBM027SBOG	Residual (Assets Less Liabilities), All Commercial Banks	Monthly -- SA
           RALACBW027NBOG	Residual (Assets Less Liabilities), All Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -2354,14 +1952,6 @@
           SBFACBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, All Commercial Banks	Monthly -- SA
           SBFACBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, All Commercial Banks	Weekly -- NSA
           SBFACBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, All Commercial Banks	Weekly -- SA
-          SCCACBM027NBOG	Securitized Credit Cards and Other Revolving Plans, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCCACBM027SBOG	Securitized Credit Cards and Other Revolving Plans, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCCACBW027NBOG	Securitized Credit Cards and Other Revolving Plans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCCACBW027SBOG	Securitized Credit Cards and Other Revolving Plans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          SCLACBM027NBOG	Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCLACBM027SBOG	Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCLACBW027NBOG	Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCLACBW027SBOG	Securitized Consumer Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           SMPACBM027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, All Commercial Banks	Monthly -- NSA
           SMPACBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, All Commercial Banks	Monthly -- SA
           SMPACBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, All Commercial Banks	Weekly -- NSA
@@ -2370,10 +1960,6 @@
           SNFACBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, All Commercial Banks	Monthly -- SA
           SNFACBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, All Commercial Banks	Weekly -- NSA
           SNFACBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, All Commercial Banks	Weekly -- SA
-          SREACBM027NBOG	Securitized Real Estate Loans, All Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SREACBM027SBOG	Securitized Real Estate Loans, All Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SREACBW027NBOG	Securitized Real Estate Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SREACBW027SBOG	Securitized Real Estate Loans, All Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           TAIEALLGACBEP	Total Assets Interest-Earning, All Loans and Leases, Gross, All Commercial Banks	Quarterly, End of Period -- NSA
           TAIEALLGCLCRACBEP	Total Assets Interest-Earning, All Loans and Leases, Gross, Consumer Loans, Credit Cards, All Commercial Banks	Quarterly, End of Period -- NSA
           TAIEALLGLFRACBEP	Total Assets Interest-Earning, All Loans and Leases, Gross, Lease Financing Receivables, All Commercial Banks	Quarterly, End of Period -- NSA
@@ -2424,7 +2010,6 @@
           USALLL	Allowance for Loan and Lease Losses for Commercial Banks in United States	Quarterly -- NSA
           USATRR	Allocated Transfer Risk Reserves for Commercial Banks in United States	Quarterly -- NSA
           USCOALLL	Charge-offs on Allowance for Loan and Lease Losses for Commercial Banks in United States	Quarterly -- NSA
-          USFFSSP	Federal Funds Sold and Securities Purchased Under Agreements to Resell in Domestic Offices of the Bank and of Its Edge and Agreement Subsidiaries, and in International Banking Facilities (IBFs) for Commercial Banks in United States (DISCONTINUED)	Quarterly -- NSA
           USGSEC	Treasury and Agency Securities at All Commercial Banks	Monthly -- SA
           USGSECNSA	Treasury and Agency Securities, All Commercial Banks	Monthly -- NSA
           USIBB	Interest-Bearing Balances for Commercial Banks in United States	Quarterly -- NSA
@@ -2439,11 +2024,9 @@
           USQWATLLNUI	Quarterly Weighted Average of Total Loans and Leases, Net of Unearned Income for Commercial Banks in United States	Quarterly -- NSA
           USRALLL	Recoveries on Allowance for Loan and Lease Losses for Commercial Banks in United States	Quarterly -- NSA
           USTACAFSS	Total Amortized Cost of Available-For-Sale Securities for Commercial Banks in United States	Quarterly -- NSA
-          USTAHTA	Total Assets Held in Trading Accounts for Commercial Banks in United States (DISCONTINUED)	Quarterly -- NSA
           USTAST	Total Assets for Commercial Banks in United States	Quarterly -- NSA
           USTEQC	Total Equity Capital for Commercial Banks in United States	Quarterly -- NSA
           USTHTMS	Total Held-to-Maturity Securities for Commercial Banks in United States	Quarterly -- NSA
-          USTISBV	Total Investment Securities at Book Value for Commercial Banks in United States (DISCONTINUED)	Quarterly -- NSA
           USTLLFRN	Total Loan and Lease Finance Receivables, Nonaccrual for Commercial Banks in United States	Quarterly -- NSA
           USTLLFRPD90	Total Loan and Lease Finance Receivables, Past Due 90 Days or More and Still Accruing for Commercial Banks in United States	Quarterly -- NSA
           USTLLNUI	Total Loans and Leases, Net of Unearned Income for Commercial Banks in United States	Quarterly -- NSA
@@ -2515,14 +2098,6 @@
           CRLDCBM027SBOG	Real Estate Loans: Closed-End Residential Loans, Domestically Chartered Commercial Banks	Monthly -- SA
           CRLDCBW027NBOG	Real Estate Loans: Closed-End Residential Loans, Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           CRLDCBW027SBOG	Real Estate Loans: Closed-End Residential Loans, Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          DFVDCBM027NBOG	Derivatives with a Positive Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DFVDCBM027SBOG	Derivatives with a Positive Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DFVDCBW027NBOG	Derivatives with a Positive Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DFVDCBW027SBOG	Derivatives with a Positive Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          DNVDCBM027NBOG	Derivatives with a Negative Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DNVDCBM027SBOG	Derivatives with a Negative Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DNVDCBW027NBOG	Derivatives with a Negative Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DNVDCBW027SBOG	Derivatives with a Negative Fair Value, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           DPSDCBM027NBOG	Deposits, Domestically Chartered Commercial Banks	Monthly -- NSA
           DPSDCBM027SBOG	Deposits, Domestically Chartered Commercial Banks	Monthly -- SA
           DPSDCBW027NBOG	Deposits, Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -2603,22 +2178,10 @@
           ONMDCBM027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Domestically Chartered Commercial Banks	Monthly -- SA
           ONMDCBW027NBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           ONMDCBW027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OSCDCBM027NBOG	Other Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OSCDCBM027SBOG	Other Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OSCDCBW027NBOG	Other Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OSCDCBW027SBOG	Other Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OSEDCBM027NBOG	Other Securities, Domestically Chartered Commercial Banks	Monthly -- NSA
           OSEDCBM027SBOG	Other Securities, Domestically Chartered Commercial Banks	Monthly -- SA
           OSEDCBW027NBOG	Other Securities, Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           OSEDCBW027SBOG	Other Securities, Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OTADCBM027NBOG	Other Trading Assets, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTADCBM027SBOG	Other Trading Assets, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTADCBW027NBOG	Other Trading Assets, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTADCBW027SBOG	Other Trading Assets, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          OTLDCBM027NBOG	Other Trading Liabilities, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTLDCBM027SBOG	Other Trading Liabilities, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTLDCBW027NBOG	Other Trading Liabilities, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTLDCBW027SBOG	Other Trading Liabilities, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           RALDCBM027NBOG	Residual (Assets Less Liabilities), Domestically Chartered Commercial Banks	Monthly -- NSA
           RALDCBM027SBOG	Residual (Assets Less Liabilities), Domestically Chartered Commercial Banks	Monthly -- SA
           RALDCBW027NBOG	Residual (Assets Less Liabilities), Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -2643,14 +2206,6 @@
           SBFDCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Domestically Chartered Commercial Banks	Monthly -- SA
           SBFDCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Domestically Chartered Commercial Banks	Weekly -- NSA
           SBFDCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Domestically Chartered Commercial Banks	Weekly -- SA
-          SCCDCBM027NBOG	Securitized Credit Cards and Other Revolving Plans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCCDCBM027SBOG	Securitized Credit Cards and Other Revolving Plans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCCDCBW027NBOG	Securitized Credit Cards and Other Revolving Plans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCCDCBW027SBOG	Securitized Credit Cards and Other Revolving Plans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          SCLDCBM027NBOG	Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCLDCBM027SBOG	Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCLDCBW027NBOG	Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCLDCBW027SBOG	Securitized Consumer Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           SMPDCBM027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Domestically Chartered Commercial Banks	Monthly -- NSA
           SMPDCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Domestically Chartered Commercial Banks	Monthly -- SA
           SMPDCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -2659,10 +2214,6 @@
           SNFDCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Domestically Chartered Commercial Banks	Monthly -- SA
           SNFDCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Domestically Chartered Commercial Banks	Weekly -- NSA
           SNFDCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Domestically Chartered Commercial Banks	Weekly -- SA
-          SREDCBM027NBOG	Securitized Real Estate Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SREDCBM027SBOG	Securitized Real Estate Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SREDCBW027NBOG	Securitized Real Estate Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SREDCBW027SBOG	Securitized Real Estate Loans, Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           TAMDCBM027NBOG	U.S. Treasury and Agency Securities, MBS, Domestically Chartered Commercial Banks	Monthly -- NSA
           TAMDCBM027SBOG	U.S. Treasury and Agency Securities, MBS, Domestically Chartered Commercial Banks	Monthly -- SA
           TAMDCBW027NBOG	U.S. Treasury and Agency Securities, MBS, Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -2761,14 +2312,6 @@
           CRLFRIM027SBOG	Real Estate Loans: Closed-End Residential Loans, Foreign-Related Institutions	Monthly -- SA
           CRLFRIW027NBOG	Real Estate Loans: Closed-End Residential Loans, Foreign-Related Institutions	Weekly, Ending Wednesday -- NSA
           CRLFRIW027SBOG	Real Estate Loans: Closed-End Residential Loans, Foreign-Related Institutions	Weekly, Ending Wednesday -- SA
-          DFVFRIM027NBOG	Derivatives with a Positive Fair Value, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          DFVFRIM027SBOG	Derivatives with a Positive Fair Value, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          DFVFRIW027NBOG	Derivatives with a Positive Fair Value, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DFVFRIW027SBOG	Derivatives with a Positive Fair Value, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          DNVFRIM027NBOG	Derivatives with a Negative Fair Value, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          DNVFRIM027SBOG	Derivatives with a Negative Fair Value, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          DNVFRIW027NBOG	Derivatives with a Negative Fair Value, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DNVFRIW027SBOG	Derivatives with a Negative Fair Value, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           DPSFRIM027NBOG	Deposits, Foreign-Related Institutions	Monthly -- NSA
           DPSFRIM027SBOG	Deposits, Foreign-Related Institutions	Monthly -- SA
           DPSFRIW027NBOG	Deposits, Foreign-Related Institutions	Weekly, Ending Wednesday -- NSA
@@ -2849,22 +2392,10 @@
           ONMFRIM027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Foreign-Related Institutions	Monthly -- SA
           ONMFRIW027NBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Foreign-Related Institutions	Weekly, Ending Wednesday -- NSA
           ONMFRIW027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Foreign-Related Institutions	Weekly, Ending Wednesday -- SA
-          OSCFRIM027NBOG	Other Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          OSCFRIM027SBOG	Other Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          OSCFRIW027NBOG	Other Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OSCFRIW027SBOG	Other Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OSEFRIM027NBOG	Other Securities, Foreign-Related Institutions	Monthly -- NSA
           OSEFRIM027SBOG	Other Securities, Foreign-Related Institutions	Monthly -- SA
           OSEFRIW027NBOG	Other Securities, Foreign-Related Institutions	Weekly, Ending Wednesday -- NSA
           OSEFRIW027SBOG	Other Securities, Foreign-Related Institutions	Weekly, Ending Wednesday -- SA
-          OTAFRIM027NBOG	Other Trading Assets, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          OTAFRIM027SBOG	Other Trading Assets, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          OTAFRIW027NBOG	Other Trading Assets, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTAFRIW027SBOG	Other Trading Assets, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          OTLFRIM027NBOG	Other Trading Liabilities, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          OTLFRIM027SBOG	Other Trading Liabilities, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          OTLFRIW027NBOG	Other Trading Liabilities, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTLFRIW027SBOG	Other Trading Liabilities, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           RALFRIM027NBOG	Residual (Assets Less Liabilities), Foreign-Related Institutions	Monthly -- NSA
           RALFRIM027SBOG	Residual (Assets Less Liabilities), Foreign-Related Institutions	Monthly -- SA
           RALFRIW027NBOG	Residual (Assets Less Liabilities), Foreign-Related Institutions	Weekly, Ending Wednesday -- NSA
@@ -2889,14 +2420,6 @@
           SBFFRIM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Foreign-Related Institutions	Monthly -- SA
           SBFFRIW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Foreign-Related Institutions	Weekly -- NSA
           SBFFRIW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Foreign-Related Institutions	Weekly -- SA
-          SCCFRIM027NBOG	Securitized Credit Cards and Other Revolving Plans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          SCCFRIM027SBOG	Securitized Credit Cards and Other Revolving Plans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          SCCFRIW027NBOG	Securitized Credit Cards and Other Revolving Plans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCCFRIW027SBOG	Securitized Credit Cards and Other Revolving Plans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          SCLFRIM027NBOG	Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          SCLFRIM027SBOG	Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          SCLFRIW027NBOG	Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCLFRIW027SBOG	Securitized Consumer Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           SMPFRIM027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Foreign-Related Institutions	Monthly -- NSA
           SMPFRIM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Foreign-Related Institutions	Monthly -- SA
           SMPFRIW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Foreign-Related Institutions	Weekly -- NSA
@@ -2905,10 +2428,6 @@
           SNFFRIM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Foreign-Related Institutions	Monthly -- SA
           SNFFRIW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Foreign-Related Institutions	Weekly -- NSA
           SNFFRIW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Foreign-Related Institutions	Weekly -- SA
-          SREFRIM027NBOG	Securitized Real Estate Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- NSA
-          SREFRIM027SBOG	Securitized Real Estate Loans, Foreign-Related Institutions (DISCONTINUED)	Monthly -- SA
-          SREFRIW027NBOG	Securitized Real Estate Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SREFRIW027SBOG	Securitized Real Estate Loans, Foreign-Related Institutions (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           TAMFRIM027NBOG	U.S. Treasury and Agency Securities, MBS, Foreign-Related Institutions	Monthly -- NSA
           TAMFRIM027SBOG	U.S. Treasury and Agency Securities, MBS, Foreign-Related Institutions	Monthly -- SA
           TAMFRIW027NBOG	U.S. Treasury and Agency Securities, MBS, Foreign-Related Institutions	Weekly -- NSA
@@ -3007,14 +2526,6 @@
           CRLLCBM027SBOG	Real Estate Loans: Closed-End Residential Loans, Large Domestically Chartered Commercial Banks	Monthly -- SA
           CRLLCBW027NBOG	Real Estate Loans: Closed-End Residential Loans, Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           CRLLCBW027SBOG	Real Estate Loans: Closed-End Residential Loans, Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          DFVLCBM027NBOG	Derivatives with a Positive Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DFVLCBM027SBOG	Derivatives with a Positive Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DFVLCBW027NBOG	Derivatives with a Positive Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DFVLCBW027SBOG	Derivatives with a Positive Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          DNVLCBM027NBOG	Derivatives with a Negative Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DNVLCBM027SBOG	Derivatives with a Negative Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DNVLCBW027NBOG	Derivatives with a Negative Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DNVLCBW027SBOG	Derivatives with a Negative Fair Value, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           DPSLCBM027NBOG	Deposits, Large Domestically Chartered Commercial Banks	Monthly -- NSA
           DPSLCBM027SBOG	Deposits, Large Domestically Chartered Commercial Banks	Monthly -- SA
           DPSLCBW027NBOG	Deposits, Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -3095,22 +2606,10 @@
           ONMLCBM027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Large Domestically Chartered Commercial Banks	Monthly -- SA
           ONMLCBW027NBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           ONMLCBW027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OSCLCBM027NBOG	Other Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OSCLCBM027SBOG	Other Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OSCLCBW027NBOG	Other Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OSCLCBW027SBOG	Other Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OSELCBM027NBOG	Other Securities, Large Domestically Chartered Commercial Banks	Monthly -- NSA
           OSELCBM027SBOG	Other Securities, Large Domestically Chartered Commercial Banks	Monthly -- SA
           OSELCBW027NBOG	Other Securities, Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           OSELCBW027SBOG	Other Securities, Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OTALCBM027NBOG	Other Trading Assets, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTALCBM027SBOG	Other Trading Assets, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTALCBW027NBOG	Other Trading Assets, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTALCBW027SBOG	Other Trading Assets, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          OTLLCBM027NBOG	Other Trading Liabilities, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTLLCBM027SBOG	Other Trading Liabilities, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTLLCBW027NBOG	Other Trading Liabilities, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTLLCBW027SBOG	Other Trading Liabilities, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           RALLCBM027NBOG	Residual (Assets Less Liabilities), Large Domestically Chartered Commercial Banks	Monthly -- NSA
           RALLCBM027SBOG	Residual (Assets Less Liabilities), Large Domestically Chartered Commercial Banks	Monthly -- SA
           RALLCBW027NBOG	Residual (Assets Less Liabilities), Large Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -3135,14 +2634,6 @@
           SBFLCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Large Domestically Chartered Commercial Banks	Monthly -- SA
           SBFLCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Large Domestically Chartered Commercial Banks	Weekly -- NSA
           SBFLCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Large Domestically Chartered Commercial Banks	Weekly -- SA
-          SCCLCBM027NBOG	Securitized Credit Cards and Other Revolving Plans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCCLCBM027SBOG	Securitized Credit Cards and Other Revolving Plans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCCLCBW027NBOG	Securitized Credit Cards and Other Revolving Plans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCCLCBW027SBOG	Securitized Credit Cards and Other Revolving Plans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          SCLLCBM027NBOG	Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCLLCBM027SBOG	Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCLLCBW027NBOG	Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCLLCBW027SBOG	Securitized Consumer Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           SMPLCBM027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Large Domestically Chartered Commercial Banks	Monthly -- NSA
           SMPLCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Large Domestically Chartered Commercial Banks	Monthly -- SA
           SMPLCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Large Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -3151,10 +2642,6 @@
           SNFLCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Large Domestically Chartered Commercial Banks	Monthly -- SA
           SNFLCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Large Domestically Chartered Commercial Banks	Weekly -- NSA
           SNFLCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Large Domestically Chartered Commercial Banks	Weekly -- SA
-          SRELCBM027NBOG	Securitized Real Estate Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SRELCBM027SBOG	Securitized Real Estate Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SRELCBW027NBOG	Securitized Real Estate Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SRELCBW027SBOG	Securitized Real Estate Loans, Large Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           TAMLCBM027NBOG	U.S. Treasury and Agency Securities, MBS, Large Domestically Chartered Commercial Banks	Monthly -- NSA
           TAMLCBM027SBOG	U.S. Treasury and Agency Securities, MBS, Large Domestically Chartered Commercial Banks	Monthly -- SA
           TAMLCBW027NBOG	U.S. Treasury and Agency Securities, MBS, Large Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -3253,14 +2740,6 @@
           CRLSCBM027SBOG	Real Estate Loans: Closed-End Residential Loans, Small Domestically Chartered Commercial Banks	Monthly -- SA
           CRLSCBW027NBOG	Real Estate Loans: Closed-End Residential Loans, Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           CRLSCBW027SBOG	Real Estate Loans: Closed-End Residential Loans, Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          DFVSCBM027NBOG	Derivatives with a Positive Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DFVSCBM027SBOG	Derivatives with a Positive Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DFVSCBW027NBOG	Derivatives with a Positive Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DFVSCBW027SBOG	Derivatives with a Positive Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          DNVSCBM027NBOG	Derivatives with a Negative Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          DNVSCBM027SBOG	Derivatives with a Negative Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          DNVSCBW027NBOG	Derivatives with a Negative Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          DNVSCBW027SBOG	Derivatives with a Negative Fair Value, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           DPSSCBM027NBOG	Deposits, Small Domestically Chartered Commercial Banks	Monthly -- NSA
           DPSSCBM027SBOG	Deposits, Small Domestically Chartered Commercial Banks	Monthly -- SA
           DPSSCBW027NBOG	Deposits, Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -3341,22 +2820,10 @@
           ONMSCBM027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Small Domestically Chartered Commercial Banks	Monthly -- SA
           ONMSCBW027NBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           ONMSCBW027SBOG	Other Securities: Non-Mortgage-Backed Securities (Non-MBS), Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OSCSCBM027NBOG	Other Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OSCSCBM027SBOG	Other Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OSCSCBW027NBOG	Other Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OSCSCBW027SBOG	Other Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           OSESCBM027NBOG	Other Securities, Small Domestically Chartered Commercial Banks	Monthly -- NSA
           OSESCBM027SBOG	Other Securities, Small Domestically Chartered Commercial Banks	Monthly -- SA
           OSESCBW027NBOG	Other Securities, Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
           OSESCBW027SBOG	Other Securities, Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- SA
-          OTASCBM027NBOG	Other Trading Assets, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTASCBM027SBOG	Other Trading Assets, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTASCBW027NBOG	Other Trading Assets, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTASCBW027SBOG	Other Trading Assets, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          OTLSCBM027NBOG	Other Trading Liabilities, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          OTLSCBM027SBOG	Other Trading Liabilities, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          OTLSCBW027NBOG	Other Trading Liabilities, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          OTLSCBW027SBOG	Other Trading Liabilities, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           RALSCBM027NBOG	Residual (Assets Less Liabilities), Small Domestically Chartered Commercial Banks	Monthly -- NSA
           RALSCBM027SBOG	Residual (Assets Less Liabilities), Small Domestically Chartered Commercial Banks	Monthly -- SA
           RALSCBW027NBOG	Residual (Assets Less Liabilities), Small Domestically Chartered Commercial Banks	Weekly, Ending Wednesday -- NSA
@@ -3381,14 +2848,6 @@
           SBFSCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Small Domestically Chartered Commercial Banks	Monthly -- SA
           SBFSCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Small Domestically Chartered Commercial Banks	Weekly -- NSA
           SBFSCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Farmland, Small Domestically Chartered Commercial Banks	Weekly -- SA
-          SCCSCBM027NBOG	Securitized Credit Cards and Other Revolving Plans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCCSCBM027SBOG	Securitized Credit Cards and Other Revolving Plans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCCSCBW027NBOG	Securitized Credit Cards and Other Revolving Plans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCCSCBW027SBOG	Securitized Credit Cards and Other Revolving Plans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
-          SCLSCBM027NBOG	Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SCLSCBM027SBOG	Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SCLSCBW027NBOG	Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SCLSCBW027SBOG	Securitized Consumer Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           SMPSCBM027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Small Domestically Chartered Commercial Banks	Monthly -- NSA
           SMPSCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Small Domestically Chartered Commercial Banks	Monthly -- SA
           SMPSCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Multifamily Properties, Small Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -3397,10 +2856,6 @@
           SNFSCBM027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Small Domestically Chartered Commercial Banks	Monthly -- SA
           SNFSCBW027NBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Small Domestically Chartered Commercial Banks	Weekly -- NSA
           SNFSCBW027SBOG	Real Estate Loans: Commercial Real Estate Loans: Secured by Nonfarm Nonresidential Properties, Small Domestically Chartered Commercial Banks	Weekly -- SA
-          SRESCBM027NBOG	Securitized Real Estate Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- NSA
-          SRESCBM027SBOG	Securitized Real Estate Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Monthly -- SA
-          SRESCBW027NBOG	Securitized Real Estate Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- NSA
-          SRESCBW027SBOG	Securitized Real Estate Loans, Small Domestically Chartered Commercial Banks (DISCONTINUED)	Weekly, Ending Wednesday -- SA
           TAMSCBM027NBOG	U.S. Treasury and Agency Securities, MBS, Small Domestically Chartered Commercial Banks	Monthly -- NSA
           TAMSCBM027SBOG	U.S. Treasury and Agency Securities, MBS, Small Domestically Chartered Commercial Banks	Monthly -- SA
           TAMSCBW027NBOG	U.S. Treasury and Agency Securities, MBS, Small Domestically Chartered Commercial Banks	Weekly -- NSA
@@ -3776,16 +3231,12 @@
           NPTLTL39	Nonperforming Total Loans (past due 90+ days plus nonaccrual) to Total Loans, Banks with Total Assets from $1B to $10B, Pacific Census Division	Quarterly, End of Period -- NSA
 
     101 Consumer Credit
-        AUTONS	Total Automobile Credit Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
-        AUTOSL	Total Automobile Credit Outstanding (DISCONTINUED)	Monthly, End of Period -- SA
         FLMVLOAS	Motor Vehicle Loans Owned and Securitized, Flow	Quarterly, End of Period -- NSA
         FLMVLOASA	Motor Vehicle Loans Owned and Securitized, Flow	Quarterly, End of Period -- NSA
         FLNONREVNS	Nonrevolving Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
         FLNONREVNSA	Nonrevolving Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
         FLNONREVSL	Nonrevolving Consumer Credit Owned and Securitized, Flow	Monthly -- SA
         FLNONREVSLA	Nonrevolving Consumer Credit Owned and Securitized, Flow	Monthly -- SA
-        FLNREVNCB	Nonrevolving Consumer Loans Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
-        FLNREVNCBA	Nonrevolving Consumer Loans Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
         FLNREVNCU	Nonrevolving Consumer Loans Owned by Credit Unions, Flow	Monthly -- NSA
         FLNREVNCUA	Nonrevolving Consumer Loans Owned by Credit Unions, Flow	Monthly -- NSA
         FLNREVNDI	Nonrevolving Consumer Loans Owned by Depository Institutions, Flow	Monthly -- NSA
@@ -3798,12 +3249,8 @@
         FLNREVNGOVA	Nonrevolving Consumer Loans Owned by Federal Government, Flow	Monthly -- NSA
         FLNREVNNFC	Nonrevolving Consumer Loans Owned by Nonfinancial Business, Flow	Monthly -- NSA
         FLNREVNNFCA	Nonrevolving Consumer Loans Owned by Nonfinancial Business, Flow	Monthly -- NSA
-        FLNREVNSAV	Nonrevolving Consumer Loans Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
-        FLNREVNSAVA	Nonrevolving Consumer Loans Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
         FLNREVNSEC	Securitized Consumer Nonrevolving Credit, Flow	Monthly -- NSA
         FLNREVNSECA	Securitized Consumer Nonrevolving Credit, Flow	Monthly -- NSA
-        FLREVOLNCB	Consumer Revolving Credit Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
-        FLREVOLNCBA	Consumer Revolving Credit Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
         FLREVOLNCU	Consumer Revolving Credit Owned by Credit Unions, Flow	Monthly -- NSA
         FLREVOLNCUA	Consumer Revolving Credit Owned by Credit Unions, Flow	Monthly -- NSA
         FLREVOLNDI	Consumer Revolving Credit Owned by Depository Institutions, Flow	Monthly -- NSA
@@ -3814,16 +3261,12 @@
         FLREVOLNNFCA	Consumer Revolving Credit Owned by Nonfinancial Business, Flow	Monthly -- NSA
         FLREVOLNS	Revolving Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
         FLREVOLNSA	Revolving Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
-        FLREVOLNSAV	Consumer Revolving Credit Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
-        FLREVOLNSAVA	Consumer Revolving Credit Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
         FLREVOLNSEC	Securitized Consumer Revolving Credit, Flow	Monthly -- NSA
         FLREVOLNSECA	Securitized Consumer Revolving Credit, Flow	Monthly -- NSA
         FLREVOLSL	Revolving Consumer Credit Owned and Securitized, Flow	Monthly -- SA
         FLREVOLSLA	Revolving Consumer Credit Owned and Securitized, Flow	Monthly -- SA
         FLSLOAS	Student Loans Owned and Securitized, Flow	Quarterly, End of Period -- NSA
         FLSLOASA	Student Loans Owned and Securitized, Flow	Quarterly, End of Period -- NSA
-        FLTOTALCB	Total Consumer Loans Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
-        FLTOTALCBA	Total Consumer Loans Owned by Commercial Banks, Flow (DISCONTINUED)	Monthly -- NSA
         FLTOTALDI	Total Consumer Loans Owned by Depository Institutions, Flow	Monthly -- NSA
         FLTOTALDIA	Total Consumer Loans Owned by Depository Institutions, Flow	Monthly -- NSA
         FLTOTALFC	Total Consumer Loans Owned by Finance Companies, Flow	Monthly -- NSA
@@ -3836,8 +3279,6 @@
         FLTOTALNFCA	Total Consumer Loans Owned by Nonfinancial Business, Flow	Monthly -- NSA
         FLTOTALNS	Total Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
         FLTOTALNSA	Total Consumer Credit Owned and Securitized, Flow	Monthly -- NSA
-        FLTOTALSAV	Total Consumer Loans Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
-        FLTOTALSAVA	Total Consumer Loans Owned by Savings Institutions, Flow (DISCONTINUED)	Monthly -- NSA
         FLTOTALSEC	Securitized Total Consumer Loans, Flow	Monthly -- NSA
         FLTOTALSECA	Securitized Total Consumer Loans, Flow	Monthly -- NSA
         FLTOTALSL	Total Consumer Credit Owned and Securitized, Flow	Monthly -- SA
@@ -3848,44 +3289,32 @@
         NONREVNS	Total Nonrevolving Credit Owned and Securitized, Outstanding	Monthly, End of Period -- NSA
         NONREVSL	Total Nonrevolving Credit Owned and Securitized, Outstanding	Monthly, End of Period -- SA
         NONREVSLAR	Total Nonrevolving Consumer Credit Owned and Securitized	Monthly -- SAAR
-        NREVNCB	Nonrevolving Consumer Loans Owned by Commercial Banks, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         NREVNCU	Nonrevolving Consumer Loans Owned by Credit Unions, Outstanding	Monthly, End of Period -- NSA
         NREVNDI	Nonrevolving Consumer Loans Owned by Depository Institutions, Outstanding	Monthly -- NSA
         NREVNEI	Nonrevolving Consumer Loans Owned by Nonprofit and Educational Institutions, Outstanding	Monthly -- NSA
         NREVNFC	Nonrevolving Consumer Loans Owned by Finance Companies, Outstanding	Monthly, End of Period -- NSA
         NREVNGOV	Nonrevolving Consumer Loans Owned by the Federal Government, Outstanding	Monthly, End of Period -- NSA
         NREVNNFC	Nonrevolving Consumer Loans Owned by Nonfinancial Businesses, Outstanding	Monthly, End of Period -- NSA
-        NREVNSAV	Nonrevolving Consumer Loans Owned by Savings Institutions, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         NREVNSEC	Securitized Consumer Nonrevolving Credit, Outstanding	Monthly, End of Period -- NSA
-        OTHERNS	Total Other Credit Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
-        OTHERSL	Total Other Credit Outstanding (DISCONTINUED)	Monthly, End of Period -- SA
-        REVOLNCB	Consumer Revolving Credit Owned by Commercial Banks, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         REVOLNCU	Consumer Revolving Credit Owned by Credit Unions, Outstanding	Monthly, End of Period -- NSA
         REVOLNDI	Consumer Revolving Credit Owned by Depository Institutions, Outstanding	Monthly -- NSA
         REVOLNFC	Consumer Revolving Credit Owned by Finance Companies, Outstanding	Monthly, End of Period -- NSA
         REVOLNNFC	Consumer Revolving Credit Owned by Nonfinancial Businesses, Outstanding	Monthly, End of Period -- NSA
         REVOLNS	Total Revolving Credit Owned and Securitized, Outstanding	Monthly, End of Period -- NSA
-        REVOLNSAV	Consumer Revolving Credit Owned by Savings Institutions, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         REVOLNSEC	Securitized Consumer Revolving Credit, Outstanding	Monthly, End of Period -- NSA
         REVOLSL	Total Revolving Credit Owned and Securitized, Outstanding	Monthly, End of Period -- SA
         REVOLSLAR	Total Revolving Consumer Credit Owned and Securitized	Monthly -- SAAR
         SLOAS	Student Loans Owned and Securitized, Outstanding	Quarterly, End of Period -- NSA
-        TERMAFCNCNSA	New Car Average Finance Rate at Auto Finance Companies (DISCONTINUED)	Monthly -- NSA
         TERMCBAUTO48NS	Finance Rate on Consumer Installment Loans at Commercial Banks, New Autos 48 Month Loan	Monthly -- NSA
         TERMCBCCALLNS	Commercial Bank Interest Rate on Credit Card Plans, All Accounts	Monthly -- NSA
         TERMCBCCINTNS	Commercial Bank Interest Rate on Credit Card Plans, Accounts Assessed Interest	Monthly -- NSA
         TERMCBPER24NS	Finance Rate on Personal Loans at Commercial Banks, 24 Month Loan	Monthly -- NSA
-        TERMFCAAFNCNS	Average Amount Financed for New Car Loans at Auto Finance Companies (DISCONTINUED)	Monthly -- NSA
-        TERMFCLVRNCNS	Loan-To-Value Ratio of New Car Loans at Auto Finance Companies (DISCONTINUED)	Monthly -- NSA
-        TERMFCWAMNCLNS	Weighted-Average Maturity of New Car Loans at Auto Finance Companies (DISCONTINUED)	Monthly -- NSA
-        TOTALCB	Total Consumer Loans Owned by Commercial Banks, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         TOTALDI	Total Consumer Loans Owned by Depository Institutions, Outstanding	Monthly -- NSA
         TOTALFC	Total Consumer Loans Owned by Finance Companies, Outstanding	Monthly, End of Period -- NSA
         TOTALGOV	Total Consumer Loans Owned by Federal Government, Outstanding	Monthly, End of Period -- NSA
         TOTALNEI	Total Consumer Loans Owned by Nonprofit and Educational Institutions	Monthly -- NSA
         TOTALNFC	Total Consumer Loans Owned by Nonfinancial Businesses, Outstanding	Monthly, End of Period -- NSA
         TOTALNS	Total Consumer Credit Owned and Securitized, Outstanding	Monthly, End of Period -- NSA
-        TOTALSAV	Total Consumer Loans Owned by Savings Institutions, Outstanding (DISCONTINUED)	Monthly, End of Period -- NSA
         TOTALSEC	Securitized Total Consumer Loans, Outstanding	Monthly, End of Period -- NSA
         TOTALSL	Total Consumer Credit Owned and Securitized, Outstanding	Monthly, End of Period -- SA
         TOTALSLAR	Total Consumer Credit Owned and Securitized	Monthly -- SAAR
@@ -4183,11 +3612,6 @@
         MDOTHIOHTPMFR	Mortgage Debt Outstanding by Type of Holder and Property: Individuals and Other Holders for Multifamily Residences	Quarterly, End of Period -- NSA
         MDOTHIOHTPNNRP	Mortgage Debt Outstanding by Type of Holder and Property: Individuals and Other Holders for Nonfarm and Nonresidential Properties	Quarterly, End of Period -- NSA
         MDOTHMFI	Mortgage Debt Outstanding by Type of Holder: Major Financial Institutions	Quarterly, End of Period -- NSA
-        MDOTHMFICB	Mortgage Debt Outstanding by Type of Holder: Major Financial Institutions: Commercial Banks (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFICBTP1T4FR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Commercial Banks for One- to Four-Family Residences (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFICBTPFP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Commercial Banks for Farm Properties (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFICBTPMFR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Commercial Banks for Multifamily Residences (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFICBTPNNRP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Commercial Banks for Nonfarm and Nonresidential Properties (DISCONTINUED)	Quarterly, End of Period -- NSA
         MDOTHMFIDI	Mortgage Debt Outstanding by Type of Holder: Major Financial Institutions: Depository Institutions	Quarterly, End of Period -- NSA
         MDOTHMFIDITP1T4FR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Depository Institutions for One- to Four-Family Residences	Quarterly, End of Period -- NSA
         MDOTHMFIDITPFP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Depository Institutions for Farm Properties	Quarterly, End of Period -- NSA
@@ -4198,11 +3622,6 @@
         MDOTHMFILICTPFP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Life Insurance Companies for Farm Properties	Quarterly, End of Period -- NSA
         MDOTHMFILICTPMFR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Life Insurance Companies for Multifamily Residences	Quarterly, End of Period -- NSA
         MDOTHMFILICTPNNRP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Life Insurance Companies for Nonfarm and Nonresidential Properties	Quarterly, End of Period -- NSA
-        MDOTHMFISI	Mortgage Debt Outstanding by Type of Holder: Major Financial Institutions: Savings Institutions (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFISITP1T4FR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Savings Institutions for One- to Four-Family Residences (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFISITPFP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Savings Institutions for Farm Properties (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFISITPMFR	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Savings Institutions for Multifamily Residences (DISCONTINUED)	Quarterly, End of Period -- NSA
-        MDOTHMFISITPNNRP	Mortgage Debt Outstanding by Type of Holder and Property: Major Financial Institutions: Savings Institutions for Nonfarm and Nonresidential Properties (DISCONTINUED)	Quarterly, End of Period -- NSA
         MDOTHMPT	Mortgage Debt Outstanding by Type of Holder: Mortgage Pools or Trust	Quarterly, End of Period -- NSA
         MDOTHMPTFAMC	Mortgage Debt Outstanding by Type of Holder: Mortgage Pools or Trust: Federal Agricultural Mortgage Corporation	Quarterly, End of Period -- NSA
         MDOTHMPTFAMCTPFP	Mortgage Debt Outstanding by Type of Holder and Property: Mortgage Pools or Trust: Federal Agricultural Mortgage Corporation for Farm Properties	Quarterly, End of Period -- NSA
@@ -4485,28 +3904,13 @@
         DRIWCIL	Net Percentage of Domestic Banks Reporting Increased Willingness to Make Consumer Installment Loans	Quarterly, End of Period -- NSA
         DRSDCILM	Net Percentage of Domestic Banks Reporting Stronger Demand for Commercial and Industrial Loans from Large and Middle-Market Firms	Quarterly, End of Period -- NSA
         DRSDCIS	Net Percentage of Domestic Banks Reporting Stronger Demand for Commercial and Industrial Loans from Small Firms	Quarterly, End of Period -- NSA
-        DRSDCL	Net Percentage of Domestic Respondents Reporting Stronger Demand for Consumer Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRSDCREL	Net Percentage of Domestic Banks Reporting Stronger Demand for Commercial Real Estate Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRSDNT	Net Percentage of Domestic Banks Reporting Stronger Demand for Nontraditional Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRSDPM	Net Percentage of Domestic Banks Reporting Stronger Demand for Prime Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
         DRSDSP	Net Percentage of Domestic Banks Reporting Stronger Demand for Subprime Mortgage Loans	Quarterly, End of Period -- NSA
         DRTSCILM	Net Percentage of Domestic Banks Tightening Standards for Commercial and Industrial Loans to Large and Middle-Market Firms	Quarterly, End of Period -- NSA
         DRTSCIS	Net Percentage of Domestic Banks Tightening Standards for Commercial and Industrial Loans to Small Firms	Quarterly, End of Period -- NSA
         DRTSCLCC	Net Percentage of Domestic Banks Tightening Standards on Consumer Loans, Credit Cards	Quarterly, End of Period -- NSA
-        DRTSCOCL	Net Percentage of Domestic Banks Tightening Standards for Consumer Loans Excluding Credit Card (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRTSCREL	Net Percentage of Domestic Banks Tightening Standards for Commercial Real Estate Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRTSNT	Net Percentage of Domestic Banks Tightening Standards for Nontraditional Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        DRTSPM	Net Percentage of Domestic Banks Tightening Standards for Prime Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
         DRTSSP	Net Percentage of Domestic Banks Tightening Standards for Subprime Mortgage Loans	Quarterly, End of Period -- NSA
-        H0SUBLPDHMDNQ	Net Percentage of Banks Reporting Stronger Demand for Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        H0SUBLPDHMSNQ	Net Percentage of Banks Tightening Standards for Mortgage Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
         STDSAUTO	Net Percentage of Domestic Banks Tightening Standards for Auto Loans	Quarterly -- NSA
         STDSOTHCONS	Net Percentage of Domestic Banks Tightening Standards for Consumer Loans Excluding Credit Card and Auto Loans	Quarterly -- NSA
-        SUBLPDCLOSNQ	Net Percentage of Domestic Banks Tightening Standards for Consumer Loans Excluding Credit Card Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        SUBLPDCLOTDNQ	Net Percentage of Domestic Banks Increasing the Minimum Required Down Payments for Consumer Loans Excluding Credit Card Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        SUBLPDCLOTENQ	Net Percentage of Domestic Banks Tightening Policies on Consumer Loans Excluding Credit Card Loans for Customers That Do Not Meet Credit Scoring Thresholds (DISCONTINUED)	Quarterly, End of Period -- NSA
-        SUBLPDCLOTMNQ	Net Percentage of Domestic Banks Reducing the Maximum Maturity for Consumer Loans Excluding Credit Card Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
-        SUBLPDCLOTRNQ	Net Percentage of Domestic Banks Increasing the Minimum Required Credit Score for Consumer Loans Excluding Credit Card Loans (DISCONTINUED)	Quarterly, End of Period -- NSA
         SUBLPDHMDENQ	Net Percentage of Domestic Banks Reporting Stronger Demand for GSE-Eligible Mortgage Loans	Quarterly -- NSA
         SUBLPDHMDGNQ	Net Percentage of Domestic Banks Reporting Stronger Demand for Government Mortgage Loans	Quarterly -- NSA
         SUBLPDHMDJNQ	Net Percentage of Domestic Banks Reporting Stronger Demand for Qualified Mortgage Jumbo Mortgage Loans	Quarterly -- NSA
@@ -7220,9 +6624,6 @@
       CHINTDCHFUSD	Swiss Intervention: Swiss National Bank Purchases of USD against CHF (Millions of USD)	Daily, 7-Day -- NSA
       CHINTDUSDDM	Swiss Intervention: Swiss National Bank Purchases of USD against DEM (Millions of USD)	Daily, 7-Day -- NSA
       CHINTDUSDJPY	Swiss Intervention: Swiss National Bank Purchases of USD against JPY (Millions of USD)	Daily, 7-Day -- NSA
-      DEINTDEMS	German Intervention: Bundesbank Purchases in EMS Markets (Millions of DEM) (DISCONTINUED)	Daily, 7-Day -- NSA
-      DEINTDUSDDM	German Intervention: Bundesbank Purchases on the Dollar/D-Mark (Millions of DEM) (DISCONTINUED)	Daily, 7-Day -- NSA
-      ITINTDRES	Italian Intervention: Banca d'Italia Purchases of Foreign Exchange (Millions of ECU's, Euros after 1999) (DISCONTINUED)	Daily, 7-Day -- NSA
       JPINTDDMEJPY	Japan Intervention: Japanese Bank purchases of DM/Euro against JPY	Daily, 7-Day -- NSA
       JPINTDEXR	Japan Intervention: Japanese Bank purchases of USD against DM	Daily, 7-Day -- NSA
       JPINTDUSDJPY	Japan Intervention: Japanese Bank purchases of USD against JPY	Daily, 7-Day -- NSA

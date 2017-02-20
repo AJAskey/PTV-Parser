@@ -4971,7 +4971,6 @@
         CES3200000035	Indexes of Aggregate Weekly Payrolls of Production and Nonsupervisory Employees: Nondurable Goods	Monthly -- SA
         CES3200000039	Women Employees-To-All Employees Ratio: Nondurable Goods	Monthly -- SA
         CES3231100001	All Employees: Nondurable Goods: Food Manufacturing	Monthly -- SA
-        CES3231200001	All Employees: Nondurable Goods: Beverages and Tobacco Products (DISCONTINUED)	Monthly -- SA
         CES3231300001	All Employees: Nondurable Goods: Textile Mills	Monthly -- SA
         CES3231400001	All Employees: Nondurable Goods: Textile Product Mills	Monthly -- SA
         CES3231500001	All Employees: Nondurable Goods: Apparel	Monthly -- SA
@@ -4998,7 +4997,6 @@
         CEU3200000034	Indexes of Aggregate Weekly Hours of Production and Nonsupervisory Employees: Nondurable Goods	Monthly -- NSA
         CEU3200000035	Indexes of Aggregate Weekly Payrolls of Production and Nonsupervisory Employees: Nondurable Goods	Monthly -- NSA
         CEU3231100001	All Employees: Nondurable Goods: Food Manufacturing	Monthly -- NSA
-        CEU3231200001	All Employees: Nondurable Goods: Beverages and Tobacco Products (DISCONTINUED)	Monthly -- NSA
         CEU3231300001	All Employees: Nondurable Goods: Textile Mills	Monthly -- NSA
         CEU3231400001	All Employees: Nondurable Goods: Textile Product Mills	Monthly -- NSA
         CEU3231500001	All Employees: Nondurable Goods: Apparel	Monthly -- NSA
@@ -5272,7 +5270,6 @@
         CES5552211001	All Employees: Financial Activities: Commercial Banking	Monthly -- SA
         CES5552300001	All Employees: Financial Activities: Securities, Commodity Contracts, Investments	Monthly -- SA
         CES5552400001	All Employees: Financial Activities: Insurance Carriers and Related Activities	Monthly -- SA
-        CES5552500001	All Employees: Financial Activities: Funds, Trusts, and Other Financial Vehicles (DISCONTINUED)	Monthly -- SA
         CES5553000001	All Employees: Financial Activities: Real Estate and Rental and Leasing	Monthly -- SA
         CES5553100001	All Employees: Financial Activities: Real Estate	Monthly -- SA
         CES5553200001	All Employees: Financial Activities: Rental and Leasing Services	Monthly -- SA
@@ -5297,7 +5294,6 @@
         CEU5552211001	All Employees: Financial Activities: Commercial Banking	Monthly -- NSA
         CEU5552300001	All Employees: Financial Activities: Securities, Commodity Contracts, Investments	Monthly -- NSA
         CEU5552400001	All Employees: Financial Activities: Insurance Carriers and Related Activities	Monthly -- NSA
-        CEU5552500001	All Employees: Financial Activities: Funds, Trusts, and Other Financial Vehicles (DISCONTINUED)	Monthly -- NSA
         CEU5553000001	All Employees: Financial Activities: Real Estate and Rental and Leasing	Monthly -- NSA
         CEU5553100001	All Employees: Financial Activities: Real Estate	Monthly -- NSA
         CEU5553200001	All Employees: Financial Activities: Rental and Leasing Services	Monthly -- NSA
@@ -6561,19 +6557,12 @@
       GINIBAH	Income Gini Ratio for Households by Race of Householder, Black Alone	Annual -- NSA
       GINIBAOICF	Income Gini Ratio of Families by Race of Householder, Black Alone or in Combination	Annual -- NSA
       GINIBAOICH	Income Gini Ratio for Households by Race of Householder, Black Alone or in Combination	Annual -- NSA
-      GINIBF	Income Gini Ratio of Families by Race of Householder, Black (DISCONTINUED)	Annual -- NSA
-      GINIBH	Income Gini Ratio for Households by Race of Householder, Black (DISCONTINUED)	Annual -- NSA
       GINIHARF	Income Gini Ratio of Families by Race of Householder, Hispanic Origin (Any Race)	Annual -- NSA
       GINIHARH	Income Gini Ratio for Households by Race of Householder, Hispanic Origin (Any Race)	Annual -- NSA
       GINIWAF	Income Gini Ratio of Families by Race of Householder, White Alone	Annual -- NSA
       GINIWAH	Income Gini Ratio for Households by Race of Householder, White Alone	Annual -- NSA
       GINIWANHF	Income Gini Ratio of Families by Race of Householder, White Alone Not Hispanic	Annual -- NSA
       GINIWANHH	Income Gini Ratio for Households by Race of Householder, White Alone Not Hispanic	Annual -- NSA
-      GINIWAOICH	Income Gini Ratio for Households by Race of Householder, White Alone or in Combination (DISCONTINUED)	Annual -- NSA
-      GINIWF	Income Gini Ratio of Families by Race of Householder, White (DISCONTINUED)	Annual -- NSA
-      GINIWH	Income Gini Ratio for Households by Race of Householder, White (DISCONTINUED)	Annual -- NSA
-      GINIWNHF	Income Gini Ratio of Families by Race of Householder, White Not Hispanic (DISCONTINUED)	Annual -- NSA
-      GINIWNHH	Income Gini Ratio for Households by Race of Householder, White Not Hispanic (DISCONTINUED)	Annual -- NSA
       MAFAINUSA646N	Mean Family Income in the United States	Annual -- NSA
       MAFAINUSA672N	Real Mean Family Income in the United States	Annual -- NSA
       MAFAINUSMWA646N	Mean Family Income in Midwest Census Region	Annual -- NSA
@@ -7102,230 +7091,128 @@
   104 Population
 
     33735 Poverty Measures
-        MHIAK02201A052NCEN	Estimate of Median Household Income for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHIAK02232A052NCEN	Estimate of Median Household Income for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHIAK02280A052NCEN	Estimate of Median Household Income for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHICILBAK02201A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHICILBAK02232A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHICILBAK02280A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         MHICILBDC11000A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for District of Columbia	Annual -- NSA
         MHICILBDC11001A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for District of Columbia	Annual -- NSA
-        MHICILBFL12025A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Dade County, FL (DISCONTINUED)	Annual -- NSA
         MHICILBMT30113A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Yellowstone National Park, MT	Annual -- NSA
         MHICILBUS00000A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for United States	Annual -- NSA
         MHICILBVA51560A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Clifton Forge City, VA	Annual -- NSA
         MHICILBVA51780A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for South Boston City, VA	Annual -- NSA
-        MHICIUBAK02201A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHICIUBAK02232A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        MHICIUBAK02280A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         MHICIUBDC11000A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for District of Columbia	Annual -- NSA
         MHICIUBDC11001A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for District of Columbia	Annual -- NSA
-        MHICIUBFL12025A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Dade County, FL (DISCONTINUED)	Annual -- NSA
         MHICIUBMT30113A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Yellowstone National Park, MT	Annual -- NSA
         MHICIUBUS00000A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for United States	Annual -- NSA
         MHICIUBVA51560A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Clifton Forge City, VA	Annual -- NSA
         MHICIUBVA51780A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for South Boston City, VA	Annual -- NSA
         MHIDC11000A052NCEN	Estimate of Median Household Income for District of Columbia	Annual -- NSA
         MHIDC11001A052NCEN	Estimate of Median Household Income for District of Columbia	Annual -- NSA
-        MHIFL12025A052NCEN	Estimate of Median Household Income for Dade County, FL (DISCONTINUED)	Annual -- NSA
         MHIMT30113A052NCEN	Estimate of Median Household Income for Yellowstone National Park, MT	Annual -- NSA
         MHIUS00000A052NCEN	Estimate of Median Household Income for United States	Annual -- NSA
         MHIVA51560A052NCEN	Estimate of Median Household Income for Clifton Forge City, VA	Annual -- NSA
         MHIVA51780A052NCEN	Estimate of Median Household Income for South Boston City, VA	Annual -- NSA
         PE0T4DC11000A647NCEN	Estimate of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PE0T4US00000A647NCEN	Estimate of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PE5T17AK02201A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PE5T17AK02231A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PE5T17AK02232A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PE5T17AK02280A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PE5T17DC11000A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PE5T17DC11001A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PE5T17FL12025A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PE5T17MT30113A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PE5T17US00000A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PE5T17VA51560A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PE5T17VA51780A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PEAAAK02201A647NCEN	Estimate of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEAAAK02231A647NCEN	Estimate of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEAAAK02232A647NCEN	Estimate of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEAAAK02280A647NCEN	Estimate of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PEAADC11000A647NCEN	Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PEAADC11001A647NCEN	Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PEAAFL12025A647NCEN	Estimate of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PEAAMT30113A647NCEN	Estimate of People of All Ages in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PEAAUS00000A647NCEN	Estimate of People of All Ages in Poverty for United States	Annual -- NSA
         PEAAVA51560A647NCEN	Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PEAAVA51780A647NCEN	Estimate of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
         PECILB0T4DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PECILB0T4US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PECILB5T17AK02201A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILB5T17AK02231A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILB5T17AK02232A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILB5T17AK02280A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECILB5T17DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PECILB5T17DC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PECILB5T17FL12025A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECILB5T17US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PECILB5T17VA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECILB5T17VA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PECILBAAAK02201A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBAAAK02231A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBAAAK02232A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBAAAK02280A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECILBAADC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PECILBAADC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PECILBAAFL12025A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECILBAAUS00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for United States	Annual -- NSA
         PECILBAAVA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECILBAAVA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
-        PECILBU18AK02201A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBU18AK02231A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBU18AK02232A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECILBU18AK02280A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECILBU18DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PECILBU18DC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PECILBU18FL12025A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECILBU18US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for United States	Annual -- NSA
         PECILBU18VA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECILBU18VA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual -- NSA
         PECIUB0T4DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PECIUB0T4US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PECIUB5T17AK02201A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUB5T17AK02231A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUB5T17AK02232A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUB5T17AK02280A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECIUB5T17DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PECIUB5T17DC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PECIUB5T17FL12025A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECIUB5T17US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PECIUB5T17VA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECIUB5T17VA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PECIUBAAAK02201A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBAAAK02231A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBAAAK02232A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBAAAK02280A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECIUBAADC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PECIUBAADC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PECIUBAAFL12025A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECIUBAAUS00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for United States	Annual -- NSA
         PECIUBAAVA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECIUBAAVA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
-        PECIUBU18AK02201A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBU18AK02231A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBU18AK02232A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PECIUBU18AK02280A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PECIUBU18DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PECIUBU18DC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PECIUBU18FL12025A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PECIUBU18US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for United States	Annual -- NSA
         PECIUBU18VA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
         PECIUBU18VA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual -- NSA
-        PEU18AK02201A647NCEN	Estimate of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEU18AK02231A647NCEN	Estimate of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEU18AK02232A647NCEN	Estimate of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PEU18AK02280A647NCEN	Estimate of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PEU18DC11000A647NCEN	Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PEU18DC11001A647NCEN	Estimate of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PEU18FL12025A647NCEN	Estimate of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PEU18MT30113A647NCEN	Estimate of People Age 0-17 in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PEU18US00000A647NCEN	Estimate of People Age 0-17 in Poverty for United States	Annual -- NSA
         PEU18VA51560A647NCEN	Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
         PEU18VA51780A647NCEN	Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual -- NSA
         PP0T4DC11000A156NCEN	Estimated Percent of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PP0T4US00000A156NCEN	Estimated Percent of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PP5T17AK02201A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PP5T17AK02231A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PP5T17AK02232A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PP5T17AK02280A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PP5T17DC11000A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PP5T17DC11001A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PP5T17FL12025A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PP5T17MT30113A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PP5T17US00000A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PP5T17VA51560A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PP5T17VA51780A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PPAAAK02201A156NCEN	Estimated Percent of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPAAAK02231A156NCEN	Estimated Percent of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPAAAK02232A156NCEN	Estimated Percent of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPAAAK02280A156NCEN	Estimated Percent of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPAADC11000A156NCEN	Estimated Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PPAADC11001A156NCEN	Estimated Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PPAAFL12025A156NCEN	Estimated Percent of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPAAMT30113A156NCEN	Estimated Percent of People of All Ages in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PPAAUS00000A156NCEN	Estimated Percent of People of All Ages in Poverty for United States	Annual -- NSA
         PPAAVA51560A156NCEN	Estimated Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPAAVA51780A156NCEN	Estimated Percent of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
         PPCILB0T4DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PPCILB0T4US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PPCILB5T17AK02201A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILB5T17AK02231A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILB5T17AK02232A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILB5T17AK02280A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCILB5T17DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PPCILB5T17DC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PPCILB5T17FL12025A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCILB5T17US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PPCILB5T17VA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCILB5T17VA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PPCILBAAAK02201A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBAAAK02231A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBAAAK02232A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBAAAK02280A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCILBAADC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PPCILBAADC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PPCILBAAFL12025A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCILBAAUS00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for United States	Annual -- NSA
         PPCILBAAVA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCILBAAVA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
-        PPCILBU18AK02201A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBU18AK02231A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBU18AK02232A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCILBU18AK02280A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCILBU18DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PPCILBU18DC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PPCILBU18FL12025A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCILBU18US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for United States	Annual -- NSA
         PPCILBU18VA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCILBU18VA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for South Boston City, VA	Annual -- NSA
         PPCIUB0T4DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Under Age 5 in Poverty for District of Columbia	Annual -- NSA
         PPCIUB0T4US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Under Age 5 in Poverty for United States	Annual -- NSA
-        PPCIUB5T17AK02201A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUB5T17AK02231A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUB5T17AK02232A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUB5T17AK02280A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCIUB5T17DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
         PPCIUB5T17DC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual -- NSA
-        PPCIUB5T17FL12025A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCIUB5T17US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual -- NSA
         PPCIUB5T17VA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCIUB5T17VA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual -- NSA
-        PPCIUBAAAK02201A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBAAAK02231A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBAAAK02232A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBAAAK02280A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCIUBAADC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
         PPCIUBAADC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual -- NSA
-        PPCIUBAAFL12025A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCIUBAAUS00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for United States	Annual -- NSA
         PPCIUBAAVA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCIUBAAVA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for South Boston City, VA	Annual -- NSA
-        PPCIUBU18AK02201A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBU18AK02231A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBU18AK02232A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPCIUBU18AK02280A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPCIUBU18DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PPCIUBU18DC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PPCIUBU18FL12025A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPCIUBU18US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for United States	Annual -- NSA
         PPCIUBU18VA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
         PPCIUBU18VA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for South Boston City, VA	Annual -- NSA
-        PPU18AK02201A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPU18AK02231A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPU18AK02232A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        PPU18AK02280A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PPU18DC11000A156NCEN	Estimated Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
         PPU18DC11001A156NCEN	Estimated Percent of People Age 0-17 in Poverty for District of Columbia	Annual -- NSA
-        PPU18FL12025A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Dade County, FL (DISCONTINUED)	Annual -- NSA
         PPU18MT30113A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Yellowstone National Park, MT	Annual -- NSA
         PPU18US00000A156NCEN	Estimated Percent of People Age 0-17 in Poverty for United States	Annual -- NSA
         PPU18VA51560A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual -- NSA
@@ -7352,15 +7239,12 @@
         PUA0T17AK02188A647NCEN	Poverty Universe, Age 0-17 for Northwest Arctic Borough, AK	Annual -- NSA
         PUA0T17AK02195A647NCEN	Poverty Universe, Age 0-17 for Petersburg Census Area, AK	Annual -- NSA
         PUA0T17AK02198A647NCEN	Poverty Universe, Age 0-17 for Prince of Wales-Hyder Census Area, AK	Annual -- NSA
-        PUA0T17AK02201A647NCEN	Poverty Universe, Age 0-17 for Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
         PUA0T17AK02220A647NCEN	Poverty Universe, Age 0-17 for Sitka Borough/City, AK	Annual -- NSA
         PUA0T17AK02230A647NCEN	Poverty Universe, Age 0-17 for Skagway Municipality, AK	Annual -- NSA
-        PUA0T17AK02232A647NCEN	Poverty Universe, Age 0-17 for Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
         PUA0T17AK02240A647NCEN	Poverty Universe, Age 0-17 for Southeast Fairbanks Census Area, AK	Annual -- NSA
         PUA0T17AK02261A647NCEN	Poverty Universe, Age 0-17 for Valdez-Cordova Census Area, AK	Annual -- NSA
         PUA0T17AK02270A647NCEN	Poverty Universe, Age 0-17 for Wade Hampton Census Area, AK	Annual -- NSA
         PUA0T17AK02275A647NCEN	Poverty Universe, Age 0-17 for Wrangell Borough/City, AK	Annual -- NSA
-        PUA0T17AK02280A647NCEN	Poverty Universe, Age 0-17 for Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         PUA0T17AK02282A647NCEN	Poverty Universe, Age 0-17 for Yakutat City and Borough, AK	Annual -- NSA
         PUA0T17AK02290A647NCEN	Poverty Universe, Age 0-17 for Yukon-Koyukuk Census Area, AK	Annual -- NSA
         PUA0T17AL01000A647NCEN	Poverty Universe, Age 0-17 for Alabama	Annual -- NSA
@@ -8294,16 +8178,12 @@
         CBR02188AKA647NCEN	SNAP Benefits Recipients in Northwest Arctic Borough, AK	Annual -- NSA
         CBR02195AKA647NCEN	SNAP Benefits Recipients in Petersburg Census Area, AK	Annual -- NSA
         CBR02198AKA647NCEN	SNAP Benefits Recipients in Prince of Wales-Hyder Census Area, AK	Annual -- NSA
-        CBR02201AKA647NCEN	SNAP Benefits Recipients in Prince of Wales-Outer Ketchikan Census Area, AK (DISCONTINUED)	Annual -- NSA
         CBR02220AKA647NCEN	SNAP Benefits Recipients in Sitka Borough/City, AK	Annual -- NSA
         CBR02230AKA647NCEN	SNAP Benefits Recipients in Skagway Municipality, AK	Annual -- NSA
-        CBR02231AKA647NCEN	SNAP Benefits Recipients in Skagway-Yakutat-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
-        CBR02232AKA647NCEN	SNAP Benefits Recipients in Skagway-Hoonah-Angoon Census Area, AK (DISCONTINUED)	Annual -- NSA
         CBR02240AKA647NCEN	SNAP Benefits Recipients in Southeast Fairbanks Census Area, AK	Annual -- NSA
         CBR02261AKA647NCEN	SNAP Benefits Recipients in Valdez-Cordova Census Area, AK	Annual -- NSA
         CBR02270AKA647NCEN	SNAP Benefits Recipients in Wade Hampton Census Area, AK	Annual -- NSA
         CBR02275AKA647NCEN	SNAP Benefits Recipients in Wrangell Borough/City, AK	Annual -- NSA
-        CBR02280AKA647NCEN	SNAP Benefits Recipients in Wrangell-Petersburg Census Area, AK (DISCONTINUED)	Annual -- NSA
         CBR02282AKA647NCEN	SNAP Benefits Recipients in Yakutat City and Borough, AK	Annual -- NSA
         CBR02290AKA647NCEN	SNAP Benefits Recipients in Yukon-Koyukuk Census Area, AK	Annual -- NSA
         CBR04001AZA647NCEN	SNAP Benefits Recipients in Apache County, AZ	Annual -- NSA
@@ -8542,7 +8422,6 @@
         CBR12019FLA647NCEN	SNAP Benefits Recipients in Clay County, FL	Annual -- NSA
         CBR12021FLA647NCEN	SNAP Benefits Recipients in Collier County, FL	Annual -- NSA
         CBR12023FLA647NCEN	SNAP Benefits Recipients in Columbia County, FL	Annual -- NSA
-        CBR12025FLA647NCEN	SNAP Benefits Recipients in Dade County, FL (DISCONTINUED)	Annual -- NSA
         CBR12027FLA647NCEN	SNAP Benefits Recipients in DeSoto County, FL	Annual -- NSA
         CBR12029FLA647NCEN	SNAP Benefits Recipients in Dixie County, FL	Annual -- NSA
         CBR12031FLA647NCEN	SNAP Benefits Recipients in Duval County, FL	Annual -- NSA

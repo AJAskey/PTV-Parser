@@ -584,11 +584,6 @@
       STFTFXDFBANQ	Domestic Finance Companies, Total Liabilities and Equity Capital, Flow	Quarterly -- NSA
 
   32216 Health Insurance
-      USHICCOVER	Health Insurance Coverage: People Covered in the United States (DISCONTINUED)	Annual -- NSA
-      USHICCOVPCT	Health Insurance Coverage: Coverage Rate in the United States (DISCONTINUED)	Annual -- NSA
-      USHICNCPCT	Health Insurance Coverage: Uncovered Rate in the United States (DISCONTINUED)	Annual -- NSA
-      USHICNOTCOV	Health Insurance Coverage: People Not Covered in the United States (DISCONTINUED)	Annual -- NSA
-      USHICTOTAL	Health Insurance Coverage: Total Number of People in the United States (DISCONTINUED)	Annual -- NSA
 
   97 Housing
 
@@ -747,7 +742,6 @@
       HOSINVUSM495N	Existing Home Sales: Housing Inventory	Monthly -- NSA
       HOSMEDUSM052N	Median Sales Price of Existing Homes	Monthly -- NSA
       HOSSUPUSM673N	Existing Home Sales: Months Supply	Monthly -- NSA
-      HOUSTNF	Nonfarm Housing Starts (DISCONTINUED)	Monthly -- SAAR
       HPIPONM226N	Purchase Only House Price Index for the United States	Monthly -- NSA
       HPIPONM226S	Purchase Only House Price Index for the United States	Monthly -- SA
       HSFAVGUSM052N	Mean Sales Price of Existing Single-Family Homes	Monthly -- NSA
@@ -842,8 +836,6 @@
       CAPG3341SQ	Industrial Capacity: Computer and peripheral equipment	Quarterly -- SA
       CAPG3342S	Industrial Capacity: Communications equipment	Monthly -- SA
       CAPG3342SQ	Industrial Capacity: Communications equipment	Quarterly -- SA
-      CAPG33441A1S	Industrial Capacity: Semiconductors and related equipment (DISCONTINUED)	Monthly -- SA
-      CAPG33441A1SQ	Industrial Capacity: Semiconductors and related equipment (DISCONTINUED)	Quarterly -- SA
       CAPG334S	Industrial Capacity: Durable Manufacturing: Computer and electronic product	Monthly -- SA
       CAPG334SQ	Industrial Capacity: Durable Manufacturing: Computer and electronic product	Quarterly -- SA
       CAPG335S	Industrial Capacity: Durable Manufacturing: Electrical equipment, appliance, and component	Monthly -- SA
@@ -948,8 +940,6 @@
       CAPUTLG3341SQ	Capacity Utilization: Computer and peripheral equipment	Quarterly -- SA
       CAPUTLG3342S	Capacity Utilization: Communications equipment	Monthly -- SA
       CAPUTLG3342SQ	Capacity Utilization: Communications equipment	Quarterly -- SA
-      CAPUTLG33441A1S	Capacity Utilization: Semiconductors and related equipment (DISCONTINUED)	Monthly -- SA
-      CAPUTLG33441A1SQ	Capacity Utilization: Semiconductors and related equipment (DISCONTINUED)	Quarterly -- SA
       CAPUTLG334S	Capacity Utilization: Durable Manufacturing: Computer and electronic product	Monthly -- SA
       CAPUTLG334SQ	Capacity Utilization: Durable Manufacturing: Computer and electronic product	Quarterly -- SA
       CAPUTLG335S	Capacity Utilization: Durable Manufacturing: Electrical equipment, appliance, and component	Monthly -- SA
@@ -1533,18 +1523,6 @@
       IPG32513NQ	Industrial Production: Nondurable Goods: Synthetic dye and pigment	Quarterly -- NSA
       IPG32513S	Industrial Production: Nondurable Goods: Synthetic dye and pigment	Monthly -- SA
       IPG32513SQ	Industrial Production: Nondurable Goods: Synthetic dye and pigment	Quarterly -- SA
-      IPG325188AN	Industrial Production: Nondurable Goods: Acids, phosphates, and sulfates (DISCONTINUED)	Monthly -- NSA
-      IPG325188ANQ	Industrial Production: Nondurable Goods: Acids, phosphates, and sulfates (DISCONTINUED)	Quarterly -- NSA
-      IPG325188AS	Industrial Production: Nondurable Goods: Acids, phosphates, and sulfates (DISCONTINUED)	Monthly -- SA
-      IPG325188ASQ	Industrial Production: Nondurable Goods: Acids, phosphates, and sulfates (DISCONTINUED)	Quarterly -- SA
-      IPG325188N	Industrial Production: Nondurable Goods: All other basic inorganic chemical (DISCONTINUED)	Monthly -- NSA
-      IPG325188NQ	Industrial Production: Nondurable Goods: All other basic inorganic chemical (DISCONTINUED)	Quarterly -- NSA
-      IPG325188S	Industrial Production: Nondurable Goods: All other basic inorganic chemical (DISCONTINUED)	Monthly -- SA
-      IPG325188SQ	Industrial Production: Nondurable Goods: All other basic inorganic chemical (DISCONTINUED)	Quarterly -- SA
-      IPG325188ZN	Industrial Production: Nondurable Goods: Other inorganic chemicals (DISCONTINUED)	Monthly -- NSA
-      IPG325188ZNQ	Industrial Production: Nondurable Goods: Other inorganic chemicals (DISCONTINUED)	Quarterly -- NSA
-      IPG325188ZS	Industrial Production: Nondurable Goods: Other inorganic chemicals (DISCONTINUED)	Monthly -- SA
-      IPG325188ZSQ	Industrial Production: Nondurable Goods: Other inorganic chemicals (DISCONTINUED)	Quarterly -- SA
       IPG32518N	Industrial Production: Nondurable Goods: Other basic inorganic chemical	Monthly -- NSA
       IPG32518NQ	Industrial Production: Nondurable Goods: Other basic inorganic chemical	Quarterly -- NSA
       IPG32518S	Industrial Production: Nondurable Goods: Other basic inorganic chemical	Monthly -- SA
@@ -1669,10 +1647,6 @@
       IPG3313NQ	Industrial Production: Durable Goods: Alumina and aluminum production and processing	Quarterly -- NSA
       IPG3313S	Industrial Production: Durable Goods: Alumina and aluminum production and processing	Monthly -- SA
       IPG3313SQ	Industrial Production: Durable Goods: Alumina and aluminum production and processing	Quarterly -- SA
-      IPG331411N	Industrial Production: Durable Goods: Primary smelting and refining of copper (DISCONTINUED)	Monthly -- NSA
-      IPG331411NQ	Industrial Production: Durable Goods: Primary smelting and refining of copper (DISCONTINUED)	Quarterly -- NSA
-      IPG331411S	Industrial Production: Durable Goods: Primary smelting and refining of copper (DISCONTINUED)	Monthly -- SA
-      IPG331411SQ	Industrial Production: Durable Goods: Primary smelting and refining of copper (DISCONTINUED)	Quarterly -- SA
       IPG33141N	Industrial Production: Durable Goods: Nonferrous metal	Monthly -- NSA
       IPG33141NQ	Industrial Production: Durable Goods: Nonferrous metal	Quarterly -- NSA
       IPG33141S	Industrial Production: Durable Goods: Nonferrous metal	Monthly -- SA
@@ -1765,9 +1739,6 @@
       IPG3343NQ	Industrial Production: Durable Goods: Audio and video equipment	Quarterly -- NSA
       IPG3343S	Industrial Production: Durable Goods: Audio and video equipment	Monthly -- SA
       IPG3343SQ	Industrial Production: Durable Goods: Audio and video equipment	Quarterly -- SA
-      IPG33441A1N	Industrial Production: Semiconductors and related equipment (DISCONTINUED)	Monthly -- NSA
-      IPG33441A1NQ	Industrial Production: Semiconductors and related equipment (DISCONTINUED)	Quarterly -- NSA
-      IPG33441A1S	Industrial Production: Semiconductors and related equipment (DISCONTINUED)	Monthly -- SA
 
   32429 Manufacturing
 
@@ -3271,7 +3242,6 @@
       ECOMSA	E-Commerce Retail Sales	Quarterly -- SA
       HMRMT	Real Manufacturing and Trade Industries Sales	Monthly -- SA
       HQRMT	Real Manufacturing and Trade Industries Sales	Quarterly -- SA
-      RETAIL	Retail Sales (DISCONTINUED)	Monthly -- SA
       RETAILIMNSA	Retailers Inventories	Monthly -- NSA
       RETAILIMSA	Retailers Inventories	Monthly -- SA
       RETAILIRNSA	Retailers: Inventories to Sales Ratio	Monthly -- NSA
@@ -3280,13 +3250,11 @@
       RETAILMPCIMSA	Retailers Inventories	Monthly -- SA
       RETAILMPCSMNSA	Retailers Sales	Monthly -- NSA
       RETAILMPCSMSA	Retailers Sales	Monthly -- SA
-      RETAILNS	Retail Sales (DISCONTINUED)	Monthly -- NSA
       RETAILSMNSA	Retailers Sales	Monthly -- NSA
       RETAILSMSA	Retailers Sales	Monthly -- SA
       RRSFS	Real Retail and Food Services Sales	Monthly -- SA
       RSAFS	Retail and Food Services Sales	Monthly -- SA
       RSAFSNA	Retail and Food Services Sales	Monthly -- NSA
-      RSALES	Real Retail Sales (DISCONTINUED)	Monthly -- SA
       RSAOMV	Retail Trade: Auto and Other Motor Vehicles	Monthly -- SA
       RSAOMVN	Retail Trade: Auto and Other Motor Vehicles	Monthly -- NSA
       RSBMGESD	Retail Trade: Building Materials, Garden Equipment and Supplies Dealers	Monthly -- SA
@@ -3467,8 +3435,6 @@
       ECREF486ALLEST	E-Commerce Revenue for Pipeline transportation, All Establishments, Employer Firms	Annual -- NSA
       ECREF487ALLEST	E-Commerce Revenue for Scenic and Sightseeing Transportation, All Establishments, Employer Firms	Annual -- NSA
       ECREF488ALLEST	E-Commerce Revenue for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
-      ECREF492ALLEST	E-Commerce Revenue for Couriers and Messengers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      ECREF493ALLEST	E-Commerce Revenue for Warehousing and Storage, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       ECREF511ALLEST	E-Commerce Revenue for Publishing Industries (except Internet), All Establishments, Employer Firms	Annual -- NSA
       ECREF512ALLEST	E-Commerce Revenue for Motion Picture and Sound Recording Industries , All Establishments , Employer Firms	Annual -- NSA
       ECREF515ALLEST	E-Commerce Revenue for Broadcasting (except Internet) , All Establishments , Employer Firms	Annual -- NSA
@@ -3643,8 +3609,6 @@
       EXPACSEF5171ALLEST	Access Charges for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPACSEF5172ALLEST	Access Charges for Wireless Telecommunications Carriers excluding Satellite, All Establishments, Employer Firms	Annual -- NSA
       EXPACSEF5174ALLEST	Access Charges for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPACSEF517911ALLEST	Access Charges for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPACSEF517919ALLEST	Access Charges for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPACSEF5179ALLEST	Access Charges for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPAOO6212ALLESTEF	All other operating expenses for Offices of Dentists, All Establishments, Employer Firms	Annual -- NSA
       EXPAOO6213ALLESTEF	All other operating expenses for Offices of Other Health Practitioners, All Establishments, Employer Firms	Annual -- NSA
@@ -3660,43 +3624,21 @@
       EXPAOOEF488ALLEST	All Other Operating Expenses for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF492ALLEST	All Other Operating Expenses for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF493ALLEST	All Other Operating Expenses for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF51111ALLEST	All Other Operating Expenses for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51112ALLEST	All Other Operating Expenses for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51113ALLEST	All Other Operating Expenses for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51114ALLEST	All Other Operating Expenses for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF511191ALLEST	All Other Operating Expenses for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51119ALLEST	All Other Operating Expenses for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF5111ALLEST	All Other Operating Expenses for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPAOOEF5112ALLEST	All Other Operating Expenses for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF51213ALLEST	All Other Operating Expenses for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51219ALLEST	All Other Operating Expenses for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF5121ALLEST	All Other Operating Expenses for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPAOOEF5121XALLEST	All Other Operating Expenses for Motion Picture and Video Production and Distribution,All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51222ALLEST	All Other Operating Expenses for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51223ALLEST	All Other Operating Expenses for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51224ALLEST	All Other Operating Expenses for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF5122ALLEST	All Other Operating Expenses for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF515111ALLEST	All Other Operating Expenses for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF515112ALLEST	All Other Operating Expenses for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51512ALLEST	All Other Operating Expenses for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF5151ALLEST	All Other Operating Expenses for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPAOOEF5152ALLEST	All Other Operating Expenses for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF5171ALLEST	All Other Operating Expenses for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF5172ALLEST	All Other Operating Expenses for Wireless Telecommunications Carriers excluding Satellite, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF5174ALLEST	All Other Operating Expenses for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF517911ALLEST	All Other Operating Expenses for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF517919ALLEST	All Other Operating Expenses for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF5179ALLEST	All Other Operating Expenses for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPAOOEF518ALLEST	All Other Operating Expenses for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF51911ALLEST	All Other Operating Expenses for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51912ALLEST	All Other Operating Expenses for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51913ALLEST	All Other Operating Expenses for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF51919ALLEST	All Other Operating Expenses for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF519ALLEST	All Other Operating Expenses for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPAOOEF521ALLEST	All Other Operating Expenses for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF522ALLEST	All Other Operating Expenses for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF523ALLEST	All Other Operating Expenses for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF523XALLEST	All Other Operating Expenses for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF524ALLEST	All Other Operating Expenses for Insurance Carriers and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF531ALLEST	All Other Operating Expenses for Real Estate, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF532ALLEST	All Other Operating Expenses for Rental and Leasing Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3711,15 +3653,10 @@
       EXPAOOEF5418ALLEST	All Other Operating Expenses for Advertising, Public Relations, and Related Services, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF5419ALLEST	All Other Operating Expenses for Other Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF54ALLEST	All Other Operating Expenses for Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF54HISTALLEST	All Other Operating Expenses for Professional, Scientific, and Technical Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF561ALLEST	All Other Operating Expenses for Administrative and Support Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF561HISTALLEST	All Other Operating Expenses for Administrative and Support Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF562ALLEST	All Other Operating Expenses for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF61ALLEST	All Other Operating Expenses for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF6211ALLEST	All Other Operating Expenses for offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF62142ALLEST	All Other Operating Expenses for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF621492ALLEST	All Other Operating Expenses for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPAOOEF621493ALLEST	All Other Operating Expenses for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPAOOEF6214ALLEST	All Other Operating Expenses for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF6216ALLEST	All Other Operating Expenses for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF621ALLEST	All Other Operating Expenses for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3731,10 +3668,6 @@
       EXPAOOEF712ALLEST	All Other Operating Expenses for Museums, Historical Sites, and Similar Institutions, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF713ALLEST	All Other Operating Expenses for Amusement, Gambling, and Recreation Industries, All Establishments, Employer Firms	Annual -- NSA
       EXPAOOEF81ALLEST	All Other Operating Expenses for Other Services excluding Public Administration, All Establishments, Employer Firms	Annual -- NSA
-      EXPAOOEF81HISTALLEST	All Other Operating Expenses for Other Services excluding Public Administration, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBMLEF515111ALLEST	Broadcast Rights and Music License Fees for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBMLEF515112ALLEST	Broadcast Rights and Music License Fees for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBMLEF51512ALLEST	Broadcast Rights and Music License Fees for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBMLEF5151ALLEST	Broadcast Rights and Music License Fees for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPBSO6212ALLESTEF	Purchased repairs and maintenance to buildings, structures, and offices for Offices of Dentists, All Establishments, Employer Firms	Annual -- NSA
       EXPBSO6213ALLESTEF	Purchased repairs and maintenance to buildings, structures, and offices for Offices of Other Health Practitioners, All Establishments, Employer Firms	Annual -- NSA
@@ -3750,37 +3683,17 @@
       EXPBSOEF488ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF492ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF493ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF51111ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51112ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51113ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51114ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF511191ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51119ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF5111ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPBSOEF5112ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF51213ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51219ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF5121ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPBSOEF51222ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51223ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51224ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF5122ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF515111ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF515112ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51512ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF5151ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPBSOEF5152ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF5171ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF5172ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Wireless Telecommunications Carriers (except Satellite), All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF5174ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF517911ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF517919ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF5179ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPBSOEF518ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF51911ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51912ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51913ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF51919ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF519ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPBSOEF521ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF522ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
@@ -3803,9 +3716,6 @@
       EXPBSOEF562ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF61ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF6211ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPBSOEF62142ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF621492ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPBSOEF621493ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPBSOEF6214ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF6216ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF621ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3818,7 +3728,6 @@
       EXPBSOEF713ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Amusement, Gambling, and Recreation Industries, All Establishments, Employer Firms	Annual -- NSA
       EXPBSOEF81ALLEST	Purchased Repairs and Maintenance to Buildings, Structures, and Offices for Other Services (except Public Administration), All Establishments, Employer Firms	Annual -- NSA
       EXPCGGEF81ALLEST	Contributions, Gifts, and Grants Paid for Other Services excluding Public Administration, All Establishments, Employer Firms	Annual -- NSA
-      EXPCGGEF81HISTALLEST	Contributions, Gifts, and Grants Paid for Other Services excluding Public Administration, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPCOIEF481ALLEST	Cost of Insurance for Air Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPCOIEF483ALLEST	Cost of Insurance for Water Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPCOIEF484ALLEST	Cost of Insurance for Truck Transportation, All Establishments, Employer Firms	Annual -- NSA
@@ -3840,43 +3749,21 @@
       EXPDACEF488ALLEST	Depreciation and Amortization Charges for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF492ALLEST	Depreciation and Amortization Charges for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF493ALLEST	Depreciation and Amortization Charges for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF51111ALLEST	Depreciation and Amortization Charges for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51112ALLEST	Depreciation and Amortization Charges for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51113ALLEST	Depreciation and Amortization Charges for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51114ALLEST	Depreciation and Amortization Charges for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF511191ALLEST	Depreciation and Amortization Charges for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51119ALLEST	Depreciation and Amortization Charges for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF5111ALLEST	Depreciation and Amortization Charges for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPDACEF5112ALLEST	Depreciation and Amortization Charges for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF51213ALLEST	Depreciation and Amortization Charges for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51219ALLEST	Depreciation and Amortization Charges for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF5121ALLEST	Depreciation and Amortization Charges for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPDACEF5121XALLEST	Depreciation and Amortization Charges for Motion Picture and Video Production and Distribution,All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51222ALLEST	Depreciation and Amortization Charges for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51223ALLEST	Depreciation and Amortization Charges for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51224ALLEST	Depreciation and Amortization Charges for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF5122ALLEST	Depreciation and Amortization Charges for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF515111ALLEST	Depreciation and Amortization Charges for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF515112ALLEST	Depreciation and Amortization Charges for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51512ALLEST	Depreciation and Amortization Charges for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF5151ALLEST	Depreciation and Amortization Charges for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPDACEF5152ALLEST	Depreciation and Amortization Charges for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF5171ALLEST	Depreciation and Amortization Charges for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF5172ALLEST	Depreciation and Amortization Charges for Wireless Telecommunications Carriers excluding Satellite, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF5174ALLEST	Depreciation and Amortization Charges for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF517911ALLEST	Depreciation and Amortization Charges for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF517919ALLEST	Depreciation and Amortization Charges for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF5179ALLEST	Depreciation and Amortization Charges for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPDACEF518ALLEST	Depreciation and Amortization Charges for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF51911ALLEST	Depreciation and Amortization Charges for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51912ALLEST	Depreciation and Amortization Charges for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51913ALLEST	Depreciation and Amortization Charges for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF51919ALLEST	Depreciation and Amortization Charges for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF519ALLEST	Depreciation and Amortization Charges for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPDACEF521ALLEST	Depreciation and Amortization Charges for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF522ALLEST	Depreciation and Amortization Charges for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF523ALLEST	Depreciation and Amortization Charges for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF523XALLEST	Depreciation and Amortization Charges for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF524ALLEST	Depreciation and Amortization Charges for Insurance Carriers and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF531ALLEST	Depreciation and Amortization Charges for Real Estate, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF532ALLEST	Depreciation and Amortization Charges for Rental and Leasing Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3891,15 +3778,10 @@
       EXPDACEF5418ALLEST	Depreciation and Amortization Charges for Advertising, Public Relations, and Related Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF5419ALLEST	Depreciation and Amortization Charges for Other Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF54ALLEST	Depreciation and Amortization Charges for Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF54HISTALLEST	Depreciation and Amortization Charges for Professional, Scientific, and Technical Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF561ALLEST	Depreciation and Amortization Charges for Administrative and Support Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF561HISTALLEST	Depreciation and Amortization Charges for Administrative and Support Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF562ALLEST	Depreciation and Amortization Charges for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF61ALLEST	Depreciation and Amortization Charges for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF6211ALLEST	Depreciation and Amortization Charges for offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF62142ALLEST	Depreciation and Amortization Charges for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF621492ALLEST	Depreciation and Amortization Charges for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDACEF621493ALLEST	Depreciation and Amortization Charges for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDACEF6214ALLEST	Depreciation and Amortization Charges for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF6216ALLEST	Depreciation and Amortization Charges for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF621ALLEST	Depreciation and Amortization Charges for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3911,7 +3793,6 @@
       EXPDACEF712ALLEST	Depreciation and Amortization Charges for Museums, Historical Sites, and Similar Institutions, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF713ALLEST	Depreciation and Amortization Charges for Amusement, Gambling, and Recreation Industries, All Establishments, Employer Firms	Annual -- NSA
       EXPDACEF81ALLEST	Depreciation and Amortization Charges for Other Services excluding Public Administration, All Establishments, Employer Firms	Annual -- NSA
-      EXPDACEF81HISTALLEST	Depreciation and Amortization Charges for Other Services excluding Public Administration, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBP6212ALLESTEF	Defined benefit pension plans for Offices of Dentists, All Establishments, Employer Firms	Annual -- NSA
       EXPDBP6213ALLESTEF	Defined benefit pension plans for Offices of Other Health Practitioners, All Establishments, Employer Firms	Annual -- NSA
       EXPDBP6219ALLESTEF	Defined benefit pension plans for Other Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -3926,33 +3807,17 @@
       EXPDBPEF488ALLEST	Defined Benefit Pension Plans for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF492ALLEST	Defined Benefit Pension Plans for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF493ALLEST	Defined Benefit Pension Plans for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF51111ALLEST	Defined Benefit Pension Plans for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51112ALLEST	Defined Benefit Pension Plans for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51113ALLEST	Defined Benefit Pension Plans for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51119ALLEST	Defined Benefit Pension Plans for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF5111ALLEST	Defined Benefit Pension Plans for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPDBPEF5112ALLEST	Defined Benefit Pension Plans for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF51213ALLEST	Defined Benefit Pension Plans for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51219ALLEST	Defined Benefit Pension Plans for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF5121ALLEST	Defined Benefit Pension Plans for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPDBPEF51222ALLEST	Defined Benefit Pension Plans for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51223ALLEST	Defined Benefit Pension Plans for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51224ALLEST	Defined Benefit Pension Plans for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF5122ALLEST	Defined Benefit Pension Plans for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF515111ALLEST	Defined Benefit Pension Plans for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF515112ALLEST	Defined Benefit Pension Plans for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51512ALLEST	Defined Benefit Pension Plans for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF5151ALLEST	Defined Benefit Pension Plans for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPDBPEF5152ALLEST	Defined Benefit Pension Plans for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF5171ALLEST	Defined Benefit Pension Plans for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF5172ALLEST	Defined Benefit Pension Plans for Wireless Telecommunications Carriers (except Satellite), All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF5174ALLEST	Defined Benefit Pension Plans for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF517911ALLEST	Defined Benefit Pension Plans for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF5179ALLEST	Defined Benefit Pension Plans for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPDBPEF518ALLEST	Defined Benefit Pension Plans for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF51911ALLEST	Defined Benefit Pension Plans for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51912ALLEST	Defined Benefit Pension Plans for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF51913ALLEST	Defined Benefit Pension Plans for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF519ALLEST	Defined Benefit Pension Plans for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPDBPEF521ALLEST	Defined Benefit Pension Plans for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF522ALLEST	Defined Benefit Pension Plans for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
@@ -3974,9 +3839,6 @@
       EXPDBPEF562ALLEST	Defined Benefit Pension Plans for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF61ALLEST	Defined Benefit Pension Plans for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF6211ALLEST	Defined Benefit Pension Plans for Offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPDBPEF62142ALLEST	Defined Benefit Pension Plans for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF621492ALLEST	Defined Benefit Pension Plans for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDBPEF621493ALLEST	Defined Benefit Pension Plans for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDBPEF6214ALLEST	Defined Benefit Pension Plans for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF6216ALLEST	Defined Benefit Pension Plans for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDBPEF621ALLEST	Defined Benefit Pension Plans for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4002,36 +3864,17 @@
       EXPDCPEF488ALLEST	Defined Contribution Plans for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF492ALLEST	Defined Contribution Plans for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF493ALLEST	Defined Contribution Plans for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF51111ALLEST	Defined Contribution Plans for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51112ALLEST	Defined Contribution Plans for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51113ALLEST	Defined Contribution Plans for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51114ALLEST	Defined Contribution Plans for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF511191ALLEST	Defined Contribution Plans for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51119ALLEST	Defined Contribution Plans for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF5111ALLEST	Defined Contribution Plans for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPDCPEF5112ALLEST	Defined Contribution Plans for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF51213ALLEST	Defined Contribution Plans for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51219ALLEST	Defined Contribution Plans for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF5121ALLEST	Defined Contribution Plans for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPDCPEF51222ALLEST	Defined Contribution Plans for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51223ALLEST	Defined Contribution Plans for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51224ALLEST	Defined Contribution Plans for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF5122ALLEST	Defined Contribution Plans for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF515111ALLEST	Defined Contribution Plans for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF515112ALLEST	Defined Contribution Plans for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51512ALLEST	Defined Contribution Plans for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF5151ALLEST	Defined Contribution Plans for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPDCPEF5152ALLEST	Defined Contribution Plans for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF5171ALLEST	Defined Contribution Plans for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF5172ALLEST	Defined Contribution Plans for Wireless Telecommunications Carriers (except Satellite), All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF5174ALLEST	Defined Contribution Plans for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF517911ALLEST	Defined Contribution Plans for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF517919ALLEST	Defined Contribution Plans for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF5179ALLEST	Defined Contribution Plans for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPDCPEF518ALLEST	Defined Contribution Plans for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF51911ALLEST	Defined Contribution Plans for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51912ALLEST	Defined Contribution Plans for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF51913ALLEST	Defined Contribution Plans for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF519ALLEST	Defined Contribution Plans for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPDCPEF521ALLEST	Defined Contribution Plans for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF522ALLEST	Defined Contribution Plans for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
@@ -4054,9 +3897,6 @@
       EXPDCPEF562ALLEST	Defined Contribution Plans for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF61ALLEST	Defined Contribution Plans for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF6211ALLEST	Defined Contribution Plans for Offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPDCPEF62142ALLEST	Defined Contribution Plans for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF621492ALLEST	Defined Contribution Plans for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDCPEF621493ALLEST	Defined Contribution Plans for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDCPEF6214ALLEST	Defined Contribution Plans for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF6216ALLEST	Defined Contribution Plans for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDCPEF621ALLEST	Defined Contribution Plans for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4082,35 +3922,17 @@
       EXPDPSEF488ALLEST	Data Processing and Other Purchased Computer Services for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF492ALLEST	Data Processing and Other Purchased Computer Services for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF493ALLEST	Data Processing and Other Purchased Computer Services for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF51111ALLEST	Data Processing and Other Purchased Computer Services for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51112ALLEST	Data Processing and Other Purchased Computer Services for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51113ALLEST	Data Processing and Other Purchased Computer Services for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51114ALLEST	Data Processing and Other Purchased Computer Services for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF511191ALLEST	Data Processing and Other Purchased Computer Services for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51119ALLEST	Data Processing and Other Purchased Computer Services for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF5111ALLEST	Data Processing and Other Purchased Computer Services for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPDPSEF5112ALLEST	Data Processing and Other Purchased Computer Services for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF51213ALLEST	Data Processing and Other Purchased Computer Services for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51219ALLEST	Data Processing and Other Purchased Computer Services for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF5121ALLEST	Data Processing and Other Purchased Computer Services for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPDPSEF51222ALLEST	Data Processing and Other Purchased Computer Services for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51223ALLEST	Data Processing and Other Purchased Computer Services for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51224ALLEST	Data Processing and Other Purchased Computer Services for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF5122ALLEST	Data Processing and Other Purchased Computer Services for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF515111ALLEST	Data Processing and Other Purchased Computer Services for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF515112ALLEST	Data Processing and Other Purchased Computer Services for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51512ALLEST	Data Processing and Other Purchased Computer Services for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF5151ALLEST	Data Processing and Other Purchased Computer Services for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPDPSEF5152ALLEST	Data Processing and Other Purchased Computer Services for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF5171ALLEST	Data Processing and Other Purchased Computer Services for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF5172ALLEST	Data Processing and Other Purchased Computer Services for Wireless Telecommunications Carriers (except Satellite), All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF5174ALLEST	Data Processing and Other Purchased Computer Services for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF517911ALLEST	Data Processing and Other Purchased Computer Services for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF5179ALLEST	Data Processing and Other Purchased Computer Services for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPDPSEF518ALLEST	Data Processing and Other Purchased Computer Services for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF51911ALLEST	Data Processing and Other Purchased Computer Services for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51913ALLEST	Data Processing and Other Purchased Computer Services for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF51919ALLEST	Data Processing and Other Purchased Computer Services for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF519ALLEST	Data Processing and Other Purchased Computer Services for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPDPSEF521ALLEST	Data Processing and Other Purchased Computer Services for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF522ALLEST	Data Processing and Other Purchased Computer Services for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
@@ -4133,9 +3955,6 @@
       EXPDPSEF562ALLEST	Data Processing and Other Purchased Computer Services for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF61ALLEST	Data Processing and Other Purchased Computer Services for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF6211ALLEST	Data Processing and Other Purchased Computer Services for Offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPDPSEF62142ALLEST	Data Processing and Other Purchased Computer Services for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF621492ALLEST	Data Processing and Other Purchased Computer Services for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPDPSEF621493ALLEST	Data Processing and Other Purchased Computer Services for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPDPSEF6214ALLEST	Data Processing and Other Purchased Computer Services for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF6216ALLEST	Data Processing and Other Purchased Computer Services for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPDPSEF621ALLEST	Data Processing and Other Purchased Computer Services for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4161,43 +3980,21 @@
       EXPECFEF488ALLEST	Employer's Cost for Fringe Benefits for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF492ALLEST	Employer's Cost for Fringe Benefits for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF493ALLEST	Employer's Cost for Fringe Benefits for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF51111ALLEST	Employer's Cost for Fringe Benefits for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51112ALLEST	Employer's Cost for Fringe Benefits for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51113ALLEST	Employer's Cost for Fringe Benefits for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51114ALLEST	Employer's Cost for Fringe Benefits for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF511191ALLEST	Employer's Cost for Fringe Benefits for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51119ALLEST	Employer's Cost for Fringe Benefits for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF5111ALLEST	Employer's Cost for Fringe Benefits for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPECFEF5112ALLEST	Employer's Cost for Fringe Benefits for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF51213ALLEST	Employer's Cost for Fringe Benefits for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51219ALLEST	Employer's Cost for Fringe Benefits for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF5121ALLEST	Employer's Cost for Fringe Benefits for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPECFEF5121XALLEST	Employer's Cost for Fringe Benefits for Motion Picture and Video Production and Distribution,All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51222ALLEST	Employer's Cost for Fringe Benefits for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51223ALLEST	Employer's Cost for Fringe Benefits for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51224ALLEST	Employer's Cost for Fringe Benefits for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF5122ALLEST	Employer's Cost for Fringe Benefits for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF515111ALLEST	Employer's Cost for Fringe Benefits for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF515112ALLEST	Employer's Cost for Fringe Benefits for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51512ALLEST	Employer's Cost for Fringe Benefits for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF5151ALLEST	Employer's Cost for Fringe Benefits for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPECFEF5152ALLEST	Employer's Cost for Fringe Benefits for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF5171ALLEST	Employer's Cost for Fringe Benefits for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF5172ALLEST	Employer's Cost for Fringe Benefits for Wireless Telecommunications Carriers excluding Satellite, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF5174ALLEST	Employer's Cost for Fringe Benefits for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF517911ALLEST	Employer's Cost for Fringe Benefits for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF517919ALLEST	Employer's Cost for Fringe Benefits for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF5179ALLEST	Employer's Cost for Fringe Benefits for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPECFEF518ALLEST	Employer's Cost for Fringe Benefits for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF51911ALLEST	Employer's Cost for Fringe Benefits for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51912ALLEST	Employer's Cost for Fringe Benefits for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51913ALLEST	Employer's Cost for Fringe Benefits for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF51919ALLEST	Employer's Cost for Fringe Benefits for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF519ALLEST	Employer's Cost for Fringe Benefits for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPECFEF521ALLEST	Employer's Cost for Fringe Benefits for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF522ALLEST	Employer's Cost for Fringe Benefits for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF523ALLEST	Employer's Cost for Fringe Benefits for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF523XALLEST	Employer's Cost for Fringe Benefits for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF524ALLEST	Employer's Cost for Fringe Benefits for Insurance Carriers and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF531ALLEST	Employer's Cost for Fringe Benefits for Real Estate, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF532ALLEST	Employer's Cost for Fringe Benefits for Rental and Leasing Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4212,15 +4009,10 @@
       EXPECFEF5418ALLEST	Employer's Cost for Fringe Benefits for Advertising, Public Relations, and Related Services, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF5419ALLEST	Employer's Cost for Fringe Benefits for Other Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF54ALLEST	Employer's Cost for Fringe Benefits for Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF54HISTALLEST	Employer's Cost for Fringe Benefits for Professional, Scientific, and Technical Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF561ALLEST	Employer's Cost for Fringe Benefits for Administrative and Support Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF561HISTALLEST	Employer's Cost for Fringe Benefits for Administrative and Support Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF562ALLEST	Employer's Cost for Fringe Benefits for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF61ALLEST	Employer's Cost for Fringe Benefits for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF6211ALLEST	Employer's Cost for Fringe Benefits for offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF62142ALLEST	Employer's Cost for Fringe Benefits for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF621492ALLEST	Employer's Cost for Fringe Benefits for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPECFEF621493ALLEST	Employer's Cost for Fringe Benefits for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPECFEF6214ALLEST	Employer's Cost for Fringe Benefits for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF6216ALLEST	Employer's Cost for Fringe Benefits for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF621ALLEST	Employer's Cost for Fringe Benefits for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4232,7 +4024,6 @@
       EXPECFEF712ALLEST	Employer's Cost for Fringe Benefits for Museums, Historical Sites, and Similar Institutions, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF713ALLEST	Employer's Cost for Fringe Benefits for Amusement, Gambling, and Recreation Industries, All Establishments, Employer Firms	Annual -- NSA
       EXPECFEF81ALLEST	Employer's Cost for Fringe Benefits for Other Services excluding Public Administration, All Establishments, Employer Firms	Annual -- NSA
-      EXPECFEF81HISTALLEST	Employer's Cost for Fringe Benefits for Other Services excluding Public Administration, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQ6212ALLESTEF	Expensed equipment for Offices of Dentists, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQ6213ALLESTEF	Expensed equipment for Offices of Other Health Practitioners, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQ6219ALLESTEF	Expensed equipment for Other Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4247,43 +4038,21 @@
       EXPEEQEF488ALLEST	Expensed Equipment for Support Activities for Transportation, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF492ALLEST	Expensed Equipment for Couriers and Messengers, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF493ALLEST	Expensed Equipment for Warehousing and Storage, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF51111ALLEST	Expensed Equipment for Newspaper Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51112ALLEST	Expensed Equipment for Periodical Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51113ALLEST	Expensed Equipment for Book Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51114ALLEST	Expensed Equipment for Directory and Mailing List Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF511191ALLEST	Expensed Equipment for Greeting Card Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51119ALLEST	Expensed Equipment for Other Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF5111ALLEST	Expensed Equipment for Newspaper, Periodical, Book, and Directory Publishers , All Establishments , Employer Firms	Annual -- NSA
       EXPEEQEF5112ALLEST	Expensed Equipment for Software Publishers, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF51213ALLEST	Expensed Equipment for Motion Picture and Video Exhibition, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51219ALLEST	Expensed Equipment for Postproduction Services and Other Motion Picture and Video Industries, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF5121ALLEST	Expensed Equipment for Motion Picture and Video Industries , All Establishments , Employer Firms	Annual -- NSA
-      EXPEEQEF5121XALLEST	Expensed Equipment for Motion Picture and Video Production and Distribution,All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51222ALLEST	Expensed Equipment for Integrated Record Production/Distribution, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51223ALLEST	Expensed Equipment for Music Publishers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51224ALLEST	Expensed Equipment for Sound Recording Studios, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF5122ALLEST	Expensed Equipment for Sound Recording Industries, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF515111ALLEST	Expensed Equipment for Radio Networks, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF515112ALLEST	Expensed Equipment for Radio Stations, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51512ALLEST	Expensed Equipment for Television Broadcasting, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF5151ALLEST	Expensed Equipment for Radio and Television Broadcasting , All Establishments , Employer Firms	Annual -- NSA
       EXPEEQEF5152ALLEST	Expensed Equipment for Cable and Other Subscription Programming, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF5171ALLEST	Expensed Equipment for Wired Telecommunications Carriers, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF5172ALLEST	Expensed Equipment for Wireless Telecommunications Carriers excluding Satellite, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF5174ALLEST	Expensed Equipment for Satellite Telecommunications, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF517911ALLEST	Expensed Equipment for Telecommunication Resellers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF517919ALLEST	Expensed Equipment for All Other Telecommunications, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF5179ALLEST	Expensed Equipment for Other Telecommunications, All Establishments , Employer Firms	Annual -- NSA
       EXPEEQEF518ALLEST	Expensed Equipment for Data Processing, Hosting, and Related Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF51911ALLEST	Expensed Equipment for News Syndicates, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51912ALLEST	Expensed Equipment for Libraries and Archives, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51913ALLEST	Expensed Equipment for Internet Publishing and Broadcasting and Web Search Portals, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF51919ALLEST	Expensed Equipment for All Other Information Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF519ALLEST	Expensed Equipment for Other Information Services , All Establishments , Employer Firms	Annual -- NSA
       EXPEEQEF521ALLEST	Expensed Equipment for Monetary Authorities-Central Bank, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF522ALLEST	Expensed Equipment for Credit Intermediation and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF523ALLEST	Expensed Equipment for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF523XALLEST	Expensed Equipment for Securities, Commodity Contracts, and Other Financial Investments and Related Activities, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF524ALLEST	Expensed Equipment for Insurance Carriers and Related Activities, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF531ALLEST	Expensed Equipment for Real Estate, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF532ALLEST	Expensed Equipment for Rental and Leasing Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4298,15 +4067,10 @@
       EXPEEQEF5418ALLEST	Expensed Equipment for Advertising, Public Relations, and Related Services, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF5419ALLEST	Expensed Equipment for Other Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF54ALLEST	Expensed Equipment for Professional, Scientific, and Technical Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF54HISTALLEST	Expensed Equipment for Professional, Scientific, and Technical Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF561ALLEST	Expensed Equipment for Administrative and Support Services, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF561HISTALLEST	Expensed Equipment for Administrative and Support Services, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF562ALLEST	Expensed Equipment for Waste Management and Remediation Services, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF61ALLEST	Expensed Equipment for Educational Services, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF6211ALLEST	Expensed Equipment for offices of Physicians, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF62142ALLEST	Expensed Equipment for Outpatient Mental Health and Substance Abuse Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF621492ALLEST	Expensed Equipment for Kidney Dialysis Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
-      EXPEEQEF621493ALLEST	Expensed Equipment for Freestanding Ambulatory Surgical and Emergency Centers, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEEQEF6214ALLEST	Expensed Equipment for Outpatient Care Centers, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF6216ALLEST	Expensed Equipment for Home Health Care Services, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF621ALLEST	Expensed Equipment for Ambulatory Health Care Services, All Establishments, Employer Firms	Annual -- NSA
@@ -4318,7 +4082,6 @@
       EXPEEQEF712ALLEST	Expensed Equipment for Museums, Historical Sites, and Similar Institutions, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF713ALLEST	Expensed Equipment for Amusement, Gambling, and Recreation Industries, All Establishments, Employer Firms	Annual -- NSA
       EXPEEQEF81ALLEST	Expensed Equipment for Other Services excluding Public Administration, All Establishments, Employer Firms	Annual -- NSA
-      EXPEEQEF81HISTALLEST	Expensed Equipment for Other Services excluding Public Administration, All Establishments, Employer Firms (DISCONTINUED)	Annual -- NSA
       EXPEF2211ALLEST	Total Expense for Electric Power Generation, Transmission, and Distribution, All Establishments, Employer Firms	Annual -- NSA
       EXPEF2211TAXABL	Total Expense for Electric Power Generation, Transmission, and Distribution, Establishments Subject To Federal Income Tax, Employer Firms	Annual -- NSA
       EXPEF2212ALLEST	Total Expense for Natural Gas Distribution, All Establishments, Employer Firms	Annual -- NSA
