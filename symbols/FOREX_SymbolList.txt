@@ -661,6 +661,7 @@ MYRZAR    	Malaysian Ringgit / South African Rand            	FOREX
 NGNGBP    	Naira / Pound Sterling                            	FOREX     
 NGNJPY    	Naira / Japanese Yen                              	FOREX     
 NIOGBP    	Cordoba Oro / Pound Sterling                      	FOREX     
+NOKCAD    	Norwegian Krone / Canadian Dollar                 	FOREX     
 NOKCHF    	Norwegian Krone / Swiss Franc                     	FOREX     
 NOKCNH    	Norwegian Krone / Renminbi (Offshore)             	FOREX     
 NOKDKK    	Norwegian Krone / Danish Krone                    	FOREX     
@@ -992,7 +993,6 @@ XAGCAD    	Silver / Canadian Dollar                          	FOREX
 XAGCNY    	Silver / Yuan Renminbi                            	FOREX     
 XAGEUR    	Silver / Euro Dollar                              	FOREX     
 XAGGBP    	Silver / Pound Sterling                           	FOREX     
-XAGHKD    	Silver / Hong Kong Dollar                         	FOREX     
 XAGIDR    	Silver / Indonesian Rupiah                        	FOREX     
 XAGINR    	Silver / Indian Rupee                             	FOREX     
 XAGJPY    	Silver / Japanese Yen                             	FOREX     
@@ -1009,7 +1009,6 @@ XAUCAD    	Gold / Canadian Dollar                            	FOREX
 XAUCNY    	Gold / Yuan Renminbi                              	FOREX     
 XAUEUR    	Gold / Euro Dollar                                	FOREX     
 XAUGBP    	Gold / Pound Sterling                             	FOREX     
-XAUHKD    	Gold / Hong Kong Dollar                           	FOREX     
 XAUIDR    	Gold / Indonesian Rupiah                          	FOREX     
 XAUINR    	Gold / Indian Rupee                               	FOREX     
 XAUJPY    	Gold / Japanese Yen                               	FOREX     
@@ -1018,8 +1017,6 @@ XAUMXN    	Gold / Mexican Peso                               	FOREX
 XAUPLN    	Gold / Polish Zloty                               	FOREX     
 XAURUB    	Gold / Russian Ruble                              	FOREX     
 XAUSAR    	Gold / Saudi Riyal                                	FOREX     
-XAUTHB    	Gold / Thai Baht                                  	FOREX     
-XAUTRY    	Gold / Turkish Lira                               	FOREX     
 XAUUSD    	Gold / US Dollar                                  	FOREX     
 XAUZAR    	Gold / South African Rand                         	FOREX     
 XCDGBP    	East Caribbean Dollar / Pound Sterling            	FOREX     

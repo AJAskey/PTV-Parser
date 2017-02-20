@@ -103,7 +103,6 @@ BJE.IDX   	NYSE Arca Mini-Biotechnology In-                  	INDEX
 BKNIF.IDX 	Bank Nifty                                        	INDEX     
 BKX.IDX   	KBW Bank Index                                    	INDEX     
 BOXR.IDX  	S&P C.S. Ma-Boston Home Price Index               	INDEX     
-BRTI.IDX  	Bitcoin Real Time Index                           	INDEX     
 BSESN.IDX 	BSE 30 - India                                    	INDEX     
 BTK.IDX   	AMEX Biotechnology Index                          	INDEX     
 BTS.IDX   	AMEX Biotechnology Index Final                    	INDEX     
@@ -134,6 +133,7 @@ CYM.IDX   	Claymore Yield ETF Iopv                           	INDEX
 CZH.IDX   	AMEX CHINA INDX                                   	INDEX     
 DAX.IDX   	Frankfurt Dax                                     	INDEX     
 DAXR.IDX  	S&P C.S. Tx-Dallas Home Price Index               	INDEX     
+DCFD.IDX  	DOW Comp Stocks Above 5-Day Average               	INDEX     
 DCFI.IDX  	DOW Comp Stocks Above 50-Day Average              	INDEX     
 DCOF.IDX  	DOW Comp Stocks Above 150-Day Average             	INDEX     
 DCOH.IDX  	DOW Comp Stocks Above 100-Day Average             	INDEX     
@@ -158,6 +158,7 @@ DFI.IDX   	AMEX Defense Index                                	INDEX
 DGE.IDX   	AMEX Equal Weighted Pharma Index                  	INDEX     
 DHC.IDX   	DYNAMIC HLTHCARE INTELL                           	INDEX     
 DHD.IDX   	DYNAMIC BANKING INTELL                            	INDEX     
+DIFD.IDX  	DOW Indu Stocks Above 5-Day Average               	INDEX     
 DIFI.IDX  	DOW Indu Stocks Above 50-Day Average              	INDEX     
 DIOF.IDX  	DOW Indu Stocks Above 150-Day Average             	INDEX     
 DIOH.IDX  	DOW Indu Stocks Above 100-Day Average             	INDEX     
@@ -341,6 +342,7 @@ DSWC.IDX  	DJ US MOBTELECOM                                  	INDEX
 DSWU.IDX  	DJ US WATER                                       	INDEX     
 DTCI.IDX  	DJ COMPREIT TR                                    	INDEX     
 DTEI.IDX  	DJ EQUITYREIT TR                                  	INDEX     
+DTFD.IDX  	DOW Tran Stocks Above 5-Day Average               	INDEX     
 DTFI.IDX  	DOW Tran Stocks Above 50-Day Average              	INDEX     
 DTFX.IDX  	CME FX Index                                      	INDEX     
 DTOF.IDX  	DOW Tran Stocks Above 150-Day Average             	INDEX     
@@ -352,6 +354,7 @@ DTWI.IDX  	DJ INDUS AVG TR                                   	INDEX
 DTWT.IDX  	DJ TRANSAVGTR                                     	INDEX     
 DTWU.IDX  	DJ UTILITYAVGTR                                   	INDEX     
 DUBS.IDX  	DJ UBS COMMODITY INDEX                            	INDEX     
+DUFD.IDX  	DOW Util Stocks Above 5-Day Average               	INDEX     
 DUFI.IDX  	DOW Util Stocks Above 50-Day Average              	INDEX     
 DUOF.IDX  	DOW Util Stocks Above 150-Day Average             	INDEX     
 DUOH.IDX  	DOW Util Stocks Above 100-Day Average             	INDEX     
@@ -502,98 +505,399 @@ LOWS.IDX  	TSX New Lows                                      	INDEX
 LOWV.IDX  	Tsxv New Lows                                     	INDEX     
 LVXR.IDX  	S&P C.S. Nv-Las Vegas Home Price Index            	INDEX     
 LXXR.IDX  	S&P C.S. Ca-Los Angeles Home Price Index          	INDEX     
+M1DA.IDX  	1-Month Hi-Lo AMEX                                	INDEX     
+M1DB.IDX  	1-Month Hi-Lo S&P 500 Materials                   	INDEX     
+M1DC.IDX  	1-Month Hi-Lo Russell 2000                        	INDEX     
+M1DD.IDX  	1-Month Hi-Lo Otcbb                               	INDEX     
+M1DE.IDX  	1-Month Hi-Lo ETFS                                	INDEX     
+M1DF.IDX  	1-Month Hi-Lo S&P 500 Financials                  	INDEX     
+M1DG.IDX  	1-Month Hi-Lo Russell 1000                        	INDEX     
+M1DH.IDX  	1-Month Hi-Lo Price GT $10                        	INDEX     
+M1DI.IDX  	1-Month Hi-Lo S&P 500 Industrials                 	INDEX     
+M1DJ.IDX  	1-Month Hi-Lo S&P 500 Utilities                   	INDEX     
+M1DK.IDX  	1-Month Hi-Lo S&P 500 Info Tech                   	INDEX     
+M1DL.IDX  	1-Month Hi-Lo Price Lt $10                        	INDEX     
+M1DM.IDX  	1-Month Hi-Lo S&P 500 Consumer Staples            	INDEX     
+M1DN.IDX  	1-Month Hi-Lo NYSE                                	INDEX     
+M1DO.IDX  	1-Month Hi-Lo S&P 100                             	INDEX     
+M1DP.IDX  	1-Month Hi-Lo S&P 500                             	INDEX     
+M1DQ.IDX  	1-Month Hi-Lo Nasdaq                              	INDEX     
+M1DR.IDX  	1-Month Hi-Lo S&P 500 Real Estate                 	INDEX     
+M1DS.IDX  	1-Month Hi-Lo S&P 500 Health Care                 	INDEX     
+M1DT.IDX  	1-Month Hi-Lo S&P 500 Energies                    	INDEX     
+M1DU.IDX  	1-Month Hi-Lo Volume Lt 100K                      	INDEX     
+M1DV.IDX  	1-Month Hi-Lo Volume GT 100K                      	INDEX     
+M1DW.IDX  	1-Month Hi-Lo S&P 500 Telcomm                     	INDEX     
+M1DX.IDX  	1-Month Hi-Lo Overall                             	INDEX     
+M1DY.IDX  	1-Month Hi-Lo S&P 500 Consumer Disc               	INDEX     
+M1DZ.IDX  	1-Month Hi-Lo Russell 3000                        	INDEX     
 M1HA.IDX  	1-Month Highs AMEX                                	INDEX     
+M1HB.IDX  	1-Month Highs S&P 500 Materials                   	INDEX     
+M1HC.IDX  	1-Month Highs Russell 2000                        	INDEX     
 M1HD.IDX  	1-Month Highs Otcbb                               	INDEX     
 M1HE.IDX  	1-Month Highs ETFS                                	INDEX     
+M1HF.IDX  	1-Month Highs S&P 500 Financials                  	INDEX     
+M1HG.IDX  	1-Month Highs Russell 1000                        	INDEX     
 M1HH.IDX  	1-Month Highs Price GT $10                        	INDEX     
+M1HI.IDX  	1-Month Highs S&P 500 Industrials                 	INDEX     
+M1HJ.IDX  	1-Month Highs S&P 500 Utilities                   	INDEX     
+M1HK.IDX  	1-Month Highs S&P 500 Info Tech                   	INDEX     
 M1HL.IDX  	1-Month Highs Price Lt $10                        	INDEX     
+M1HM.IDX  	1-Month Highs S&P 500 Consumer Staples            	INDEX     
 M1HN.IDX  	1-Month Highs NYSE                                	INDEX     
-M1HP.IDX  	1-Month Highs Sp500                               	INDEX     
+M1HO.IDX  	1-Month Highs S&P 100                             	INDEX     
+M1HP.IDX  	1-Month Highs S&P 500                             	INDEX     
 M1HQ.IDX  	1-Month Highs Nasdaq                              	INDEX     
+M1HR.IDX  	1-Month Highs S&P 500 Real Estate                 	INDEX     
+M1HS.IDX  	1-Month Highs S&P 500 Health Care                 	INDEX     
+M1HT.IDX  	1-Month Highs S&P 500 Energies                    	INDEX     
 M1HU.IDX  	1-Month Highs Volume Lt 100K                      	INDEX     
 M1HV.IDX  	1-Month Highs Volume GT 100K                      	INDEX     
+M1HW.IDX  	1-Month Highs S&P 500 Telcomm                     	INDEX     
 M1HX.IDX  	1-Month Highs Overall                             	INDEX     
+M1HY.IDX  	1-Month Highs S&P 500 Consumer Disc               	INDEX     
+M1HZ.IDX  	1-Month Highs Russell 3000                        	INDEX     
 M1LA.IDX  	1-Month Lows AMEX                                 	INDEX     
+M1LB.IDX  	1-Month Lows S&P 500 Materials                    	INDEX     
+M1LC.IDX  	1-Month Lows Russell 2000                         	INDEX     
 M1LD.IDX  	1-Month Lows Otcbb                                	INDEX     
 M1LE.IDX  	1-Month Lows ETFS                                 	INDEX     
+M1LF.IDX  	1-Month Lows S&P 500 Financials                   	INDEX     
+M1LG.IDX  	1-Month Lows Russell 1000                         	INDEX     
 M1LH.IDX  	1-Month Lows Price GT $10                         	INDEX     
+M1LI.IDX  	1-Month Lows S&P 500 Industrials                  	INDEX     
+M1LJ.IDX  	1-Month Lows S&P 500 Utilities                    	INDEX     
+M1LK.IDX  	1-Month Lows S&P 500 Info Tech                    	INDEX     
 M1LL.IDX  	1-Month Lows Price Lt $10                         	INDEX     
+M1LM.IDX  	1-Month Lows S&P 500 Consumer Staples             	INDEX     
 M1LN.IDX  	1-Month Lows NYSE                                 	INDEX     
-M1LP.IDX  	1-Month Lows Sp500                                	INDEX     
+M1LO.IDX  	1-Month Lows S&P 100                              	INDEX     
+M1LP.IDX  	1-Month Lows S&P 500                              	INDEX     
 M1LQ.IDX  	1-Month Lows Nasdaq                               	INDEX     
+M1LR.IDX  	1-Month Lows S&P 500 Real Estate                  	INDEX     
+M1LS.IDX  	1-Month Lows S&P 500 Health Care                  	INDEX     
+M1LT.IDX  	1-Month Lows S&P 500 Energies                     	INDEX     
 M1LU.IDX  	1-Month Lows Volume Lt 100K                       	INDEX     
 M1LV.IDX  	1-Month Lows Volume GT 100K                       	INDEX     
+M1LW.IDX  	1-Month Lows S&P 500 Telcomm                      	INDEX     
 M1LX.IDX  	1-Month Lows Overall                              	INDEX     
+M1LY.IDX  	1-Month Lows S&P 500 Consumer Disc                	INDEX     
+M1LZ.IDX  	1-Month Lows Russell 3000                         	INDEX     
+M3DA.IDX  	3-Month Hi-Lo AMEX                                	INDEX     
+M3DB.IDX  	3-Month Hi-Lo S&P 500 Materials                   	INDEX     
+M3DC.IDX  	3-Month Hi-Lo Russell 2000                        	INDEX     
+M3DD.IDX  	3-Month Hi-Lo Otcbb                               	INDEX     
+M3DE.IDX  	3-Month Hi-Lo ETFS                                	INDEX     
+M3DF.IDX  	3-Month Hi-Lo S&P 500 Financials                  	INDEX     
+M3DG.IDX  	3-Month Hi-Lo Russell 1000                        	INDEX     
+M3DH.IDX  	3-Month Hi-Lo Price GT $10                        	INDEX     
+M3DI.IDX  	3-Month Hi-Lo S&P 500 Industrials                 	INDEX     
+M3DJ.IDX  	3-Month Hi-Lo S&P 500 Utilities                   	INDEX     
+M3DK.IDX  	3-Month Hi-Lo S&P 500 Info Tech                   	INDEX     
+M3DL.IDX  	3-Month Hi-Lo Price Lt $10                        	INDEX     
+M3DM.IDX  	3-Month Hi-Lo S&P 500 Consumer Staples            	INDEX     
+M3DN.IDX  	3-Month Hi-Lo NYSE                                	INDEX     
+M3DO.IDX  	3-Month Hi-Lo S&P 100                             	INDEX     
+M3DP.IDX  	3-Month Hi-Lo S&P 500                             	INDEX     
+M3DQ.IDX  	3-Month Hi-Lo Nasdaq                              	INDEX     
+M3DR.IDX  	3-Month Hi-Lo S&P 500 Real Estate                 	INDEX     
+M3DS.IDX  	3-Month Hi-Lo S&P 500 Health Care                 	INDEX     
+M3DT.IDX  	3-Month Hi-Lo S&P 500 Energies                    	INDEX     
+M3DU.IDX  	3-Month Hi-Lo Volume Lt 100K                      	INDEX     
+M3DV.IDX  	3-Month Hi-Lo Volume GT 100K                      	INDEX     
+M3DW.IDX  	3-Month Hi-Lo S&P 500 Telcomm                     	INDEX     
+M3DX.IDX  	3-Month Hi-Lo Overall                             	INDEX     
+M3DY.IDX  	3-Month Hi-Lo S&P 500 Consumer Disc               	INDEX     
+M3DZ.IDX  	3-Month Hi-Lo Russell 3000                        	INDEX     
 M3HA.IDX  	3-Month Highs AMEX                                	INDEX     
+M3HB.IDX  	3-Month Highs S&P 500 Materials                   	INDEX     
+M3HC.IDX  	3-Month Highs Russell 2000                        	INDEX     
 M3HD.IDX  	3-Month Highs Otcbb                               	INDEX     
 M3HE.IDX  	3-Month Highs ETFS                                	INDEX     
+M3HF.IDX  	3-Month Highs S&P 500 Financials                  	INDEX     
+M3HG.IDX  	3-Month Highs Russell 1000                        	INDEX     
 M3HH.IDX  	3-Month Highs Price GT $10                        	INDEX     
+M3HI.IDX  	3-Month Highs S&P 500 Industrials                 	INDEX     
+M3HJ.IDX  	3-Month Highs S&P 500 Utilities                   	INDEX     
+M3HK.IDX  	3-Month Highs S&P 500 Info Tech                   	INDEX     
 M3HL.IDX  	3-Month Highs Price Lt $10                        	INDEX     
+M3HM.IDX  	3-Month Highs S&P 500 Consumer Staples            	INDEX     
 M3HN.IDX  	3-Month Highs NYSE                                	INDEX     
-M3HP.IDX  	3-Month Highs Sp500                               	INDEX     
+M3HO.IDX  	3-Month Highs S&P 100                             	INDEX     
+M3HP.IDX  	3-Month Highs S&P 500                             	INDEX     
 M3HQ.IDX  	3-Month Highs Nasdaq                              	INDEX     
+M3HR.IDX  	3-Month Highs S&P 500 Real Estate                 	INDEX     
+M3HS.IDX  	3-Month Highs S&P 500 Health Care                 	INDEX     
+M3HT.IDX  	3-Month Highs S&P 500 Energies                    	INDEX     
 M3HU.IDX  	3-Month Highs Volume Lt 100K                      	INDEX     
 M3HV.IDX  	3-Month Highs Volume GT 100K                      	INDEX     
+M3HW.IDX  	3-Month Highs S&P 500 Telcomm                     	INDEX     
 M3HX.IDX  	3-Month Highs Overall                             	INDEX     
+M3HY.IDX  	3-Month Highs S&P 500 Consumer Disc               	INDEX     
+M3HZ.IDX  	3-Month Highs Russell 3000                        	INDEX     
 M3LA.IDX  	3-Month Lows AMEX                                 	INDEX     
+M3LB.IDX  	3-Month Lows S&P 500 Materials                    	INDEX     
+M3LC.IDX  	3-Month Lows Russell 2000                         	INDEX     
 M3LD.IDX  	3-Month Lows Otcbb                                	INDEX     
 M3LE.IDX  	3-Month Lows ETFS                                 	INDEX     
+M3LF.IDX  	3-Month Lows S&P 500 Financials                   	INDEX     
+M3LG.IDX  	3-Month Lows Russell 1000                         	INDEX     
 M3LH.IDX  	3-Month Lows Price GT $10                         	INDEX     
+M3LI.IDX  	3-Month Lows S&P 500 Industrials                  	INDEX     
+M3LJ.IDX  	3-Month Lows S&P 500 Utilities                    	INDEX     
+M3LK.IDX  	3-Month Lows S&P 500 Info Tech                    	INDEX     
 M3LL.IDX  	3-Month Lows Price Lt $10                         	INDEX     
+M3LM.IDX  	3-Month Lows S&P 500 Consumer Staples             	INDEX     
 M3LN.IDX  	3-Month Lows NYSE                                 	INDEX     
-M3LP.IDX  	3-Month Lows Sp500                                	INDEX     
+M3LO.IDX  	3-Month Lows S&P 100                              	INDEX     
+M3LP.IDX  	3-Month Lows S&P 500                              	INDEX     
 M3LQ.IDX  	3-Month Lows Nasdaq                               	INDEX     
+M3LR.IDX  	3-Month Lows S&P 500 Real Estate                  	INDEX     
+M3LS.IDX  	3-Month Lows S&P 500 Health Care                  	INDEX     
+M3LT.IDX  	3-Month Lows S&P 500 Energies                     	INDEX     
 M3LU.IDX  	3-Month Lows Volume Lt 100K                       	INDEX     
 M3LV.IDX  	3-Month Lows Volume GT 100K                       	INDEX     
+M3LW.IDX  	3-Month Lows S&P 500 Telcomm                      	INDEX     
 M3LX.IDX  	3-Month Lows Overall                              	INDEX     
+M3LY.IDX  	3-Month Lows S&P 500 Consumer Disc                	INDEX     
+M3LZ.IDX  	3-Month Lows Russell 3000                         	INDEX     
+M5DA.IDX  	5-Day Hi-Lo AMEX                                  	INDEX     
+M5DB.IDX  	5-Day Hi-Lo S&P 500 Materials                     	INDEX     
+M5DC.IDX  	5-Day Hi-Lo Russell 2000                          	INDEX     
+M5DD.IDX  	5-Day Hi-Lo Otcbb                                 	INDEX     
+M5DE.IDX  	5-Day Hi-Lo ETFS                                  	INDEX     
+M5DF.IDX  	5-Day Hi-Lo S&P 500 Financials                    	INDEX     
+M5DG.IDX  	5-Day Hi-Lo Russell 1000                          	INDEX     
+M5DH.IDX  	5-Day Hi-Lo Price GT $10                          	INDEX     
+M5DI.IDX  	5-Day Hi-Lo S&P 500 Industrials                   	INDEX     
+M5DJ.IDX  	5-Day Hi-Lo S&P 500 Utilities                     	INDEX     
+M5DK.IDX  	5-Day Hi-Lo S&P 500 Info Tech                     	INDEX     
+M5DL.IDX  	5-Day Hi-Lo Price Lt $10                          	INDEX     
+M5DM.IDX  	5-Day Hi-Lo S&P 500 Consumer Staples              	INDEX     
+M5DN.IDX  	5-Day Hi-Lo NYSE                                  	INDEX     
+M5DO.IDX  	5-Day Hi-Lo S&P 100                               	INDEX     
+M5DP.IDX  	5-Day Hi-Lo S&P 500                               	INDEX     
+M5DQ.IDX  	5-Day Hi-Lo Nasdaq                                	INDEX     
+M5DR.IDX  	5-Day Hi-Lo S&P 500 Real Estate                   	INDEX     
+M5DS.IDX  	5-Day Hi-Lo S&P 500 Health Care                   	INDEX     
+M5DT.IDX  	5-Day Hi-Lo S&P 500 Energies                      	INDEX     
+M5DU.IDX  	5-Day Hi-Lo Volume Lt 100K                        	INDEX     
+M5DV.IDX  	5-Day Hi-Lo Volume GT 100K                        	INDEX     
+M5DW.IDX  	5-Day Hi-Lo S&P 500 Telcomm                       	INDEX     
+M5DX.IDX  	5-Day Hi-Lo Overall                               	INDEX     
+M5DY.IDX  	5-Day Hi-Lo S&P 500 Consumer Disc                 	INDEX     
+M5DZ.IDX  	5-Day Hi-Lo Russell 3000                          	INDEX     
+M5HA.IDX  	5-Day Highs AMEX                                  	INDEX     
+M5HB.IDX  	5-Day Highs S&P 500 Materials                     	INDEX     
+M5HC.IDX  	5-Day Highs Russell 2000                          	INDEX     
+M5HD.IDX  	5-Day Highs Otcbb                                 	INDEX     
+M5HE.IDX  	5-Day Highs ETFS                                  	INDEX     
+M5HF.IDX  	5-Day Highs S&P 500 Financials                    	INDEX     
+M5HG.IDX  	5-Day Highs Russell 1000                          	INDEX     
+M5HH.IDX  	5-Day Highs Price GT $10                          	INDEX     
+M5HI.IDX  	5-Day Highs S&P 500 Industrials                   	INDEX     
+M5HJ.IDX  	5-Day Highs S&P 500 Utilities                     	INDEX     
+M5HK.IDX  	5-Day Highs S&P 500 Info Tech                     	INDEX     
+M5HL.IDX  	5-Day Highs Price Lt $10                          	INDEX     
+M5HM.IDX  	5-Day Highs S&P 500 Consumer Staples              	INDEX     
+M5HN.IDX  	5-Day Highs NYSE                                  	INDEX     
+M5HO.IDX  	5-Day Highs S&P 100                               	INDEX     
+M5HP.IDX  	5-Day Highs S&P 500                               	INDEX     
+M5HQ.IDX  	5-Day Highs Nasdaq                                	INDEX     
+M5HR.IDX  	5-Day Highs S&P 500 Real Estate                   	INDEX     
+M5HS.IDX  	5-Day Highs S&P 500 Health Care                   	INDEX     
+M5HT.IDX  	5-Day Highs S&P 500 Energies                      	INDEX     
+M5HU.IDX  	5-Day Highs Volume Lt 100K                        	INDEX     
+M5HV.IDX  	5-Day Highs Volume GT 100K                        	INDEX     
+M5HW.IDX  	5-Day Highs S&P 500 Telcomm                       	INDEX     
+M5HX.IDX  	5-Day Highs Overall                               	INDEX     
+M5HY.IDX  	5-Day Highs S&P 500 Consumer Disc                 	INDEX     
+M5HZ.IDX  	5-Day Highs Russell 3000                          	INDEX     
+M5LA.IDX  	5-Day Lows AMEX                                   	INDEX     
+M5LB.IDX  	5-Day Lows S&P 500 Materials                      	INDEX     
+M5LC.IDX  	5-Day Lows Russell 2000                           	INDEX     
+M5LD.IDX  	5-Day Lows Otcbb                                  	INDEX     
+M5LE.IDX  	5-Day Lows ETFS                                   	INDEX     
+M5LF.IDX  	5-Day Lows S&P 500 Financials                     	INDEX     
+M5LG.IDX  	5-Day Lows Russell 1000                           	INDEX     
+M5LH.IDX  	5-Day Lows Price GT $10                           	INDEX     
+M5LI.IDX  	5-Day Lows S&P 500 Industrials                    	INDEX     
+M5LJ.IDX  	5-Day Lows S&P 500 Utilities                      	INDEX     
+M5LK.IDX  	5-Day Lows S&P 500 Info Tech                      	INDEX     
+M5LL.IDX  	5-Day Lows Price Lt $10                           	INDEX     
+M5LM.IDX  	5-Day Lows S&P 500 Consumer Staples               	INDEX     
+M5LN.IDX  	5-Day Lows NYSE                                   	INDEX     
+M5LO.IDX  	5-Day Lows S&P 100                                	INDEX     
+M5LP.IDX  	5-Day Lows S&P 500                                	INDEX     
+M5LQ.IDX  	5-Day Lows Nasdaq                                 	INDEX     
+M5LR.IDX  	5-Day Lows S&P 500 Real Estate                    	INDEX     
+M5LS.IDX  	5-Day Lows S&P 500 Health Care                    	INDEX     
+M5LT.IDX  	5-Day Lows S&P 500 Energies                       	INDEX     
+M5LU.IDX  	5-Day Lows Volume Lt 100K                         	INDEX     
+M5LV.IDX  	5-Day Lows Volume GT 100K                         	INDEX     
+M5LW.IDX  	5-Day Lows S&P 500 Telcomm                        	INDEX     
+M5LX.IDX  	5-Day Lows Overall                                	INDEX     
+M5LY.IDX  	5-Day Lows S&P 500 Consumer Disc                  	INDEX     
+M5LZ.IDX  	5-Day Lows Russell 3000                           	INDEX     
+M6DA.IDX  	6-Month Hi-Lo AMEX                                	INDEX     
+M6DB.IDX  	6-Month Hi-Lo S&P 500 Materials                   	INDEX     
+M6DC.IDX  	6-Month Hi-Lo Russell 2000                        	INDEX     
+M6DD.IDX  	6-Month Hi-Lo Otcbb                               	INDEX     
+M6DE.IDX  	6-Month Hi-Lo ETFS                                	INDEX     
+M6DF.IDX  	6-Month Hi-Lo S&P 500 Financials                  	INDEX     
+M6DG.IDX  	6-Month Hi-Lo Russell 1000                        	INDEX     
+M6DH.IDX  	6-Month Hi-Lo Price GT $10                        	INDEX     
+M6DI.IDX  	6-Month Hi-Lo S&P 500 Industrials                 	INDEX     
+M6DJ.IDX  	6-Month Hi-Lo S&P 500 Utilities                   	INDEX     
+M6DK.IDX  	6-Month Hi-Lo S&P 500 Info Tech                   	INDEX     
+M6DL.IDX  	6-Month Hi-Lo Price Lt $10                        	INDEX     
+M6DM.IDX  	6-Month Hi-Lo S&P 500 Consumer Staples            	INDEX     
+M6DN.IDX  	6-Month Hi-Lo NYSE                                	INDEX     
+M6DO.IDX  	6-Month Hi-Lo S&P 100                             	INDEX     
+M6DP.IDX  	6-Month Hi-Lo S&P 500                             	INDEX     
+M6DQ.IDX  	6-Month Hi-Lo Nasdaq                              	INDEX     
+M6DR.IDX  	6-Month Hi-Lo S&P 500 Real Estate                 	INDEX     
+M6DS.IDX  	6-Month Hi-Lo S&P 500 Health Care                 	INDEX     
+M6DT.IDX  	6-Month Hi-Lo S&P 500 Energies                    	INDEX     
+M6DU.IDX  	6-Month Hi-Lo Volume Lt 100K                      	INDEX     
+M6DV.IDX  	6-Month Hi-Lo Volume GT 100K                      	INDEX     
+M6DW.IDX  	6-Month Hi-Lo S&P 500 Telcomm                     	INDEX     
+M6DX.IDX  	6-Month Hi-Lo Overall                             	INDEX     
+M6DY.IDX  	6-Month Hi-Lo S&P 500 Consumer Disc               	INDEX     
+M6DZ.IDX  	6-Month Hi-Lo Russell 3000                        	INDEX     
 M6HA.IDX  	6-Month Highs AMEX                                	INDEX     
+M6HB.IDX  	6-Month Highs S&P 500 Materials                   	INDEX     
+M6HC.IDX  	6-Month Highs Russell 2000                        	INDEX     
 M6HD.IDX  	6-Month Highs Otcbb                               	INDEX     
 M6HE.IDX  	6-Month Highs ETFS                                	INDEX     
+M6HF.IDX  	6-Month Highs S&P 500 Financials                  	INDEX     
+M6HG.IDX  	6-Month Highs Russell 1000                        	INDEX     
 M6HH.IDX  	6-Month Highs Price GT $10                        	INDEX     
+M6HI.IDX  	6-Month Highs S&P 500 Industrials                 	INDEX     
+M6HJ.IDX  	6-Month Highs S&P 500 Utilities                   	INDEX     
+M6HK.IDX  	6-Month Highs S&P 500 Info Tech                   	INDEX     
 M6HL.IDX  	6-Month Highs Price Lt $10                        	INDEX     
+M6HM.IDX  	6-Month Highs S&P 500 Consumer Staples            	INDEX     
 M6HN.IDX  	6-Month Highs NYSE                                	INDEX     
-M6HP.IDX  	6-Month Highs Sp500                               	INDEX     
+M6HO.IDX  	6-Month Highs S&P 100                             	INDEX     
+M6HP.IDX  	6-Month Highs S&P 500                             	INDEX     
 M6HQ.IDX  	6-Month Highs Nasdaq                              	INDEX     
+M6HR.IDX  	6-Month Highs S&P 500 Real Estate                 	INDEX     
+M6HS.IDX  	6-Month Highs S&P 500 Health Care                 	INDEX     
+M6HT.IDX  	6-Month Highs S&P 500 Energies                    	INDEX     
 M6HU.IDX  	6-Month Highs Volume Lt 100K                      	INDEX     
 M6HV.IDX  	6-Month Highs Volume GT 100K                      	INDEX     
+M6HW.IDX  	6-Month Highs S&P 500 Telcomm                     	INDEX     
 M6HX.IDX  	6-Month Highs Overall                             	INDEX     
+M6HY.IDX  	6-Month Highs S&P 500 Consumer Disc               	INDEX     
+M6HZ.IDX  	6-Month Highs Russell 3000                        	INDEX     
 M6LA.IDX  	6-Month Lows AMEX                                 	INDEX     
+M6LB.IDX  	6-Month Lows S&P 500 Materials                    	INDEX     
+M6LC.IDX  	6-Month Lows Russell 2000                         	INDEX     
 M6LD.IDX  	6-Month Lows Otcbb                                	INDEX     
 M6LE.IDX  	6-Month Lows ETFS                                 	INDEX     
+M6LF.IDX  	6-Month Lows S&P 500 Financials                   	INDEX     
+M6LG.IDX  	6-Month Lows Russell 1000                         	INDEX     
 M6LH.IDX  	6-Month Lows Price GT $10                         	INDEX     
+M6LI.IDX  	6-Month Lows S&P 500 Industrials                  	INDEX     
+M6LJ.IDX  	6-Month Lows S&P 500 Utilities                    	INDEX     
+M6LK.IDX  	6-Month Lows S&P 500 Info Tech                    	INDEX     
 M6LL.IDX  	6-Month Lows Price Lt $10                         	INDEX     
+M6LM.IDX  	6-Month Lows S&P 500 Consumer Staples             	INDEX     
 M6LN.IDX  	6-Month Lows NYSE                                 	INDEX     
-M6LP.IDX  	6-Month Lows Sp500                                	INDEX     
+M6LO.IDX  	6-Month Lows S&P 100                              	INDEX     
+M6LP.IDX  	6-Month Lows S&P 500                              	INDEX     
 M6LQ.IDX  	6-Month Lows Nasdaq                               	INDEX     
+M6LR.IDX  	6-Month Lows S&P 500 Real Estate                  	INDEX     
+M6LS.IDX  	6-Month Lows S&P 500 Health Care                  	INDEX     
+M6LT.IDX  	6-Month Lows S&P 500 Energies                     	INDEX     
 M6LU.IDX  	6-Month Lows Volume Lt 100K                       	INDEX     
 M6LV.IDX  	6-Month Lows Volume GT 100K                       	INDEX     
+M6LW.IDX  	6-Month Lows S&P 500 Telcomm                      	INDEX     
 M6LX.IDX  	6-Month Lows Overall                              	INDEX     
+M6LY.IDX  	6-Month Lows S&P 500 Consumer Disc                	INDEX     
+M6LZ.IDX  	6-Month Lows Russell 3000                         	INDEX     
+MADA.IDX  	52-Week Hi-Lo AMEX                                	INDEX     
+MADB.IDX  	52-Week Hi-Lo S&P 500 Materials                   	INDEX     
+MADC.IDX  	52-Week Hi-Lo Russell 2000                        	INDEX     
+MADD.IDX  	52-Week Hi-Lo Otcbb                               	INDEX     
+MADE.IDX  	52-Week Hi-Lo ETFS                                	INDEX     
+MADF.IDX  	52-Week Hi-Lo S&P 500 Financials                  	INDEX     
+MADG.IDX  	52-Week Hi-Lo Russell 1000                        	INDEX     
+MADH.IDX  	52-Week Hi-Lo Price GT $10                        	INDEX     
+MADI.IDX  	52-Week Hi-Lo S&P 500 Industrials                 	INDEX     
+MADJ.IDX  	52-Week Hi-Lo S&P 500 Utilities                   	INDEX     
+MADK.IDX  	52-Week Hi-Lo S&P 500 Info Tech                   	INDEX     
+MADL.IDX  	52-Week Hi-Lo Price Lt $10                        	INDEX     
+MADM.IDX  	52-Week Hi-Lo S&P 500 Consumer Staples            	INDEX     
+MADN.IDX  	52-Week Hi-Lo NYSE                                	INDEX     
+MADO.IDX  	52-Week Hi-Lo S&P 100                             	INDEX     
+MADP.IDX  	52-Week Hi-Lo S&P 500                             	INDEX     
+MADQ.IDX  	52-Week Hi-Lo Nasdaq                              	INDEX     
+MADR.IDX  	52-Week Hi-Lo S&P 500 Real Estate                 	INDEX     
+MADS.IDX  	52-Week Hi-Lo S&P 500 Health Care                 	INDEX     
+MADT.IDX  	52-Week Hi-Lo S&P 500 Energies                    	INDEX     
+MADU.IDX  	52-Week Hi-Lo Volume Lt 100K                      	INDEX     
+MADV.IDX  	52-Week Hi-Lo Volume GT 100K                      	INDEX     
+MADW.IDX  	52-Week Hi-Lo S&P 500 Telcomm                     	INDEX     
+MADX.IDX  	52-Week Hi-Lo Overall                             	INDEX     
+MADY.IDX  	52-Week Hi-Lo S&P 500 Consumer Disc               	INDEX     
+MADZ.IDX  	52-Week Hi-Lo Russell 3000                        	INDEX     
 MAHA.IDX  	52-Week Highs AMEX                                	INDEX     
+MAHB.IDX  	52-Week Highs S&P 500 Materials                   	INDEX     
+MAHC.IDX  	52-Week Highs Russell 2000                        	INDEX     
 MAHD.IDX  	52-Week Highs Otcbb                               	INDEX     
 MAHE.IDX  	52-Week Highs ETFS                                	INDEX     
+MAHF.IDX  	52-Week Highs S&P 500 Financials                  	INDEX     
+MAHG.IDX  	52-Week Highs Russell 1000                        	INDEX     
 MAHH.IDX  	52-Week Highs Price GT $10                        	INDEX     
+MAHI.IDX  	52-Week Highs S&P 500 Industrials                 	INDEX     
+MAHJ.IDX  	52-Week Highs S&P 500 Utilities                   	INDEX     
+MAHK.IDX  	52-Week Highs S&P 500 Info Tech                   	INDEX     
 MAHL.IDX  	52-Week Highs Price Lt $10                        	INDEX     
+MAHM.IDX  	52-Week Highs S&P 500 Consumer Staples            	INDEX     
 MAHN.IDX  	52-Week Highs NYSE                                	INDEX     
-MAHP.IDX  	52-Week Highs Sp500                               	INDEX     
+MAHO.IDX  	52-Week Highs S&P 100                             	INDEX     
+MAHP.IDX  	52-Week Highs S&P 500                             	INDEX     
 MAHQ.IDX  	52-Week Highs Nasdaq                              	INDEX     
+MAHR.IDX  	52-Week Highs S&P 500 Real Estate                 	INDEX     
+MAHS.IDX  	52-Week Highs S&P 500 Health Care                 	INDEX     
+MAHT.IDX  	52-Week Highs S&P 500 Energies                    	INDEX     
 MAHU.IDX  	52-Week Highs Volume Lt 100K                      	INDEX     
 MAHV.IDX  	52-Week Highs Volume GT 100K                      	INDEX     
+MAHW.IDX  	52-Week Highs S&P 500 Telcomm                     	INDEX     
 MAHX.IDX  	52-Week Highs Overall                             	INDEX     
+MAHY.IDX  	52-Week Highs S&P 500 Consumer Disc               	INDEX     
+MAHZ.IDX  	52-Week Highs Russell 3000                        	INDEX     
 MALA.IDX  	52-Week Lows AMEX                                 	INDEX     
+MALB.IDX  	52-Week Lows S&P 500 Materials                    	INDEX     
+MALC.IDX  	52-Week Lows Russell 2000                         	INDEX     
 MALD.IDX  	52-Week Lows Otcbb                                	INDEX     
 MALE.IDX  	52-Week Lows ETFS                                 	INDEX     
+MALF.IDX  	52-Week Lows S&P 500 Financials                   	INDEX     
+MALG.IDX  	52-Week Lows Russell 1000                         	INDEX     
 MALH.IDX  	52-Week Lows Price GT $10                         	INDEX     
+MALI.IDX  	52-Week Lows S&P 500 Industrials                  	INDEX     
+MALJ.IDX  	52-Week Lows S&P 500 Utilities                    	INDEX     
+MALK.IDX  	52-Week Lows S&P 500 Info Tech                    	INDEX     
 MALL.IDX  	52-Week Lows Price Lt $10                         	INDEX     
+MALM.IDX  	52-Week Lows S&P 500 Consumer Staples             	INDEX     
 MALN.IDX  	52-Week Lows NYSE                                 	INDEX     
-MALP.IDX  	52-Week Lows Sp500                                	INDEX     
+MALO.IDX  	52-Week Lows S&P 100                              	INDEX     
+MALP.IDX  	52-Week Lows S&P 500                              	INDEX     
 MALQ.IDX  	52-Week Lows Nasdaq                               	INDEX     
+MALR.IDX  	52-Week Lows S&P 500 Real Estate                  	INDEX     
+MALS.IDX  	52-Week Lows S&P 500 Health Care                  	INDEX     
+MALT.IDX  	52-Week Lows S&P 500 Energies                     	INDEX     
 MALU.IDX  	52-Week Lows Volume Lt 100K                       	INDEX     
 MALV.IDX  	52-Week Lows Volume GT 100K                       	INDEX     
+MALW.IDX  	52-Week Lows S&P 500 Telcomm                      	INDEX     
 MALX.IDX  	52-Week Lows Overall                              	INDEX     
+MALY.IDX  	52-Week Lows S&P 500 Consumer Disc                	INDEX     
+MALZ.IDX  	52-Week Lows Russell 3000                         	INDEX     
 MDO.IDX   	Mid Opn/Cls Avge                                  	INDEX     
 MERV.IDX  	Merval - Argentina                                	INDEX     
 MEV.IDX   	AMEX Mexico Index Settlement                      	INDEX     
-MFX.IDX   	KBW Mortgage Finance Index                        	INDEX     
 MGD.IDX   	Midcp 400Barra                                    	INDEX     
 MIA.IDX   	Mid O/C/H/L Avg                                   	INDEX     
 MID.IDX   	Midcap 400 Idx                                    	INDEX     
@@ -601,11 +905,13 @@ MIH.IDX   	Mid Hi/Lo Avge                                    	INDEX
 MIV.IDX   	Mid-Cap Settle                                    	INDEX     
 MIXR.IDX  	S&P C.S. Fl-Miami Home Price Index                	INDEX     
 MLO.IDX   	AMEX Merrill Lynch Tech 100                       	INDEX     
+MMFD.IDX  	Percent of Stocks Above 5-Day Average             	INDEX     
 MMFI.IDX  	Percent of Stocks Above 50-Day Average            	INDEX     
 MMOF.IDX  	Percent of Stocks Above 150-Day Average           	INDEX     
 MMOH.IDX  	Percent of Stocks Above 100-Day Average           	INDEX     
 MMTH.IDX  	Percent of Stocks Above 200-Day Average           	INDEX     
 MMTW.IDX  	Percent of Stocks Above 20-Day Average            	INDEX     
+MNFD.IDX  	Percent Above 5-Day Average Yesterday             	INDEX     
 MNFI.IDX  	Percent Above 50-Day Average Yesterday            	INDEX     
 MNG.IDX   	AMEX MINI-NATURAL GAS INDEX                       	INDEX     
 MNOF.IDX  	Percent Above 150-Day Average Yesterday           	INDEX     
@@ -613,34 +919,40 @@ MNOH.IDX  	Percent Above 100-Day Average Yesterday           	INDEX
 MNTH.IDX  	Percent Above 200-Day Average Yesterday           	INDEX     
 MNTW.IDX  	Percent Above 20-Day Average Yesterday            	INDEX     
 MNXR.IDX  	S&P C.S. Mn-Minneapolis Home Price Index          	INDEX     
+MOFD.IDX  	Percent Above 5-Day Average Last Week             	INDEX     
 MOFI.IDX  	Percent Above 50-Day Average Last Week            	INDEX     
 MOOF.IDX  	Percent Above 150-Day Average Last Week           	INDEX     
 MOOH.IDX  	Percent Above 100-Day Average Last Week           	INDEX     
 MOTH.IDX  	Percent Above 200-Day Average Last Week           	INDEX     
 MOTW.IDX  	Percent Above 20-Day Average Last Week            	INDEX     
+MPFD.IDX  	Percent Above 5-Day Average Last Month            	INDEX     
 MPFI.IDX  	Percent Above 50-Day Average Last Month           	INDEX     
 MPOF.IDX  	Percent Above 150-Day Average Last Month          	INDEX     
 MPOH.IDX  	Percent Above 100-Day Average Last Month          	INDEX     
 MPTH.IDX  	Percent Above 200-Day Average Last Month          	INDEX     
 MPTW.IDX  	Percent Above 20-Day Average Last Month           	INDEX     
 MSH.IDX   	AMEX Morgan Stanley Hi Tech 35                    	INDEX     
+MTFD.IDX  	TSX Percent of Stocks Above 5-Day Average         	INDEX     
 MTFI.IDX  	TSX Percent of Stocks Above 50-Day Average        	INDEX     
 MTOF.IDX  	TSX Percent of Stocks Above 150-Day Average       	INDEX     
 MTOH.IDX  	TSX Percent of Stocks Above 100-Day Average       	INDEX     
 MTTH.IDX  	TSX Percent of Stocks Above 200-Day Average       	INDEX     
 MTTW.IDX  	TSX Percent of Stocks Above 20-Day Average        	INDEX     
+MUFD.IDX  	TSX Percent Above 5-Day Average Yesterday         	INDEX     
 MUFI.IDX  	TSX Percent Above 50-Day Average Yesterday        	INDEX     
 MUOF.IDX  	TSX Percent Above 150-Day Average Yesterday       	INDEX     
 MUOH.IDX  	TSX Percent Above 100-Day Average Yesterday       	INDEX     
 MUTH.IDX  	TSX Percent Above 200-Day Average Yesterday       	INDEX     
 MUTW.IDX  	TSX Percent Above 20-Day Average Yesterday        	INDEX     
 MUV.IDX   	Mdcp 400Bar Val                                   	INDEX     
+MVFD.IDX  	TSX Percent Above 5-Day Average Last Week         	INDEX     
 MVFI.IDX  	TSX Percent Above 50-Day Average Last Week        	INDEX     
 MVH.IDX   	Morgan Stanley High-Technology                    	INDEX     
 MVOF.IDX  	TSX Percent Above 150-Day Average Last Week       	INDEX     
 MVOH.IDX  	TSX Percent Above 100-Day Average Last Week       	INDEX     
 MVTH.IDX  	TSX Percent Above 200-Day Average Last Week       	INDEX     
 MVTW.IDX  	TSX Percent Above 20-Day Average Last Week        	INDEX     
+MWFD.IDX  	TSX Percent Above 5-Day Average Last Month        	INDEX     
 MWFI.IDX  	TSX Percent Above 50-Day Average Last Month       	INDEX     
 MWOF.IDX  	TSX Percent Above 150-Day Average Last Month      	INDEX     
 MWOH.IDX  	TSX Percent Above 100-Day Average Last Month      	INDEX     
@@ -648,31 +960,193 @@ MWTH.IDX  	TSX Percent Above 200-Day Average Last Month      	INDEX
 MWTW.IDX  	TSX Percent Above 20-Day Average Last Month       	INDEX     
 MXX.IDX   	Mexico IPC                                        	INDEX     
 MXY.IDX   	AMEX Mexico Index                                 	INDEX     
+MYDA.IDX  	YTD Hi-Lo AMEX                                    	INDEX     
+MYDB.IDX  	YTD Hi-Lo S&P 500 Materials                       	INDEX     
+MYDC.IDX  	YTD Hi-Lo Russell 2000                            	INDEX     
+MYDD.IDX  	YTD Hi-Lo Otcbb                                   	INDEX     
+MYDE.IDX  	YTD Hi-Lo ETFS                                    	INDEX     
+MYDF.IDX  	YTD Hi-Lo S&P 500 Financials                      	INDEX     
+MYDG.IDX  	YTD Hi-Lo Russell 1000                            	INDEX     
+MYDH.IDX  	YTD Hi-Lo Price GT $10                            	INDEX     
+MYDI.IDX  	YTD Hi-Lo S&P 500 Industrials                     	INDEX     
+MYDJ.IDX  	YTD Hi-Lo S&P 500 Utilities                       	INDEX     
+MYDK.IDX  	YTD Hi-Lo S&P 500 Info Tech                       	INDEX     
+MYDL.IDX  	YTD Hi-Lo Price Lt $10                            	INDEX     
+MYDM.IDX  	YTD Hi-Lo S&P 500 Consumer Staples                	INDEX     
+MYDN.IDX  	YTD Hi-Lo NYSE                                    	INDEX     
+MYDO.IDX  	YTD Hi-Lo S&P 100                                 	INDEX     
+MYDP.IDX  	YTD Hi-Lo S&P 500                                 	INDEX     
+MYDQ.IDX  	YTD Hi-Lo Nasdaq                                  	INDEX     
+MYDR.IDX  	YTD Hi-Lo S&P 500 Real Estate                     	INDEX     
+MYDS.IDX  	YTD Hi-Lo S&P 500 Health Care                     	INDEX     
+MYDT.IDX  	YTD Hi-Lo S&P 500 Energies                        	INDEX     
+MYDU.IDX  	YTD Hi-Lo Volume Lt 100K                          	INDEX     
+MYDV.IDX  	YTD Hi-Lo Volume GT 100K                          	INDEX     
+MYDW.IDX  	YTD Hi-Lo S&P 500 Telcomm                         	INDEX     
+MYDX.IDX  	YTD Hi-Lo Overall                                 	INDEX     
+MYDY.IDX  	YTD Hi-Lo S&P 500 Consumer Disc                   	INDEX     
+MYDZ.IDX  	YTD Hi-Lo Russell 3000                            	INDEX     
 MYHA.IDX  	YTD Highs AMEX                                    	INDEX     
+MYHB.IDX  	YTD Highs S&P 500 Materials                       	INDEX     
+MYHC.IDX  	YTD Highs Russell 2000                            	INDEX     
 MYHD.IDX  	YTD Highs Otcbb                                   	INDEX     
 MYHE.IDX  	YTD Highs ETFS                                    	INDEX     
+MYHF.IDX  	YTD Highs S&P 500 Financials                      	INDEX     
+MYHG.IDX  	YTD Highs Russell 1000                            	INDEX     
 MYHH.IDX  	YTD Highs Price GT $10                            	INDEX     
+MYHI.IDX  	YTD Highs S&P 500 Industrials                     	INDEX     
+MYHJ.IDX  	YTD Highs S&P 500 Utilities                       	INDEX     
+MYHK.IDX  	YTD Highs S&P 500 Info Tech                       	INDEX     
 MYHL.IDX  	YTD Highs Price Lt $10                            	INDEX     
+MYHM.IDX  	YTD Highs S&P 500 Consumer Staples                	INDEX     
 MYHN.IDX  	YTD Highs NYSE                                    	INDEX     
-MYHP.IDX  	YTD Highs Sp500                                   	INDEX     
+MYHO.IDX  	YTD Highs S&P 100                                 	INDEX     
+MYHP.IDX  	YTD Highs S&P 500                                 	INDEX     
 MYHQ.IDX  	YTD Highs Nasdaq                                  	INDEX     
+MYHR.IDX  	YTD Highs S&P 500 Real Estate                     	INDEX     
+MYHS.IDX  	YTD Highs S&P 500 Health Care                     	INDEX     
+MYHT.IDX  	YTD Highs S&P 500 Energies                        	INDEX     
 MYHU.IDX  	YTD Highs Volume Lt 100K                          	INDEX     
 MYHV.IDX  	YTD Highs Volume GT 100K                          	INDEX     
+MYHW.IDX  	YTD Highs S&P 500 Telcomm                         	INDEX     
 MYHX.IDX  	YTD Highs Overall                                 	INDEX     
+MYHY.IDX  	YTD Highs S&P 500 Consumer Disc                   	INDEX     
+MYHZ.IDX  	YTD Highs Russell 3000                            	INDEX     
 MYLA.IDX  	YTD Lows AMEX                                     	INDEX     
+MYLB.IDX  	YTD Lows S&P 500 Materials                        	INDEX     
+MYLC.IDX  	YTD Lows Russell 2000                             	INDEX     
 MYLD.IDX  	YTD Lows Otcbb                                    	INDEX     
 MYLE.IDX  	YTD Lows ETFS                                     	INDEX     
+MYLF.IDX  	YTD Lows S&P 500 Financials                       	INDEX     
+MYLG.IDX  	YTD Lows Russell 1000                             	INDEX     
 MYLH.IDX  	YTD Lows Price GT $10                             	INDEX     
+MYLI.IDX  	YTD Lows S&P 500 Industrials                      	INDEX     
+MYLJ.IDX  	YTD Lows S&P 500 Utilities                        	INDEX     
+MYLK.IDX  	YTD Lows S&P 500 Info Tech                        	INDEX     
 MYLL.IDX  	YTD Lows Price Lt $10                             	INDEX     
+MYLM.IDX  	YTD Lows S&P 500 Consumer Staples                 	INDEX     
 MYLN.IDX  	YTD Lows NYSE                                     	INDEX     
-MYLP.IDX  	YTD Lows Sp500                                    	INDEX     
+MYLO.IDX  	YTD Lows S&P 100                                  	INDEX     
+MYLP.IDX  	YTD Lows S&P 500                                  	INDEX     
 MYLQ.IDX  	YTD Lows Nasdaq                                   	INDEX     
+MYLR.IDX  	YTD Lows S&P 500 Real Estate                      	INDEX     
+MYLS.IDX  	YTD Lows S&P 500 Health Care                      	INDEX     
+MYLT.IDX  	YTD Lows S&P 500 Energies                         	INDEX     
 MYLU.IDX  	YTD Lows Volume Lt 100K                           	INDEX     
 MYLV.IDX  	YTD Lows Volume GT 100K                           	INDEX     
+MYLW.IDX  	YTD Lows S&P 500 Telcomm                          	INDEX     
 MYLX.IDX  	YTD Lows Overall                                  	INDEX     
+MYLY.IDX  	YTD Lows S&P 500 Consumer Disc                    	INDEX     
+MYLZ.IDX  	YTD Lows Russell 3000                             	INDEX     
+N1DA.IDX  	1-Month Hi-Lo S&P 600                             	INDEX     
+N1DB.IDX  	1-Month Hi-Lo S&P 400                             	INDEX     
+N1DC.IDX  	1-Month Hi-Lo Nasdaq 100                          	INDEX     
+N1DD.IDX  	1-Month Hi-Lo DOW Indu                            	INDEX     
+N1DE.IDX  	1-Month Hi-Lo DOW Comp                            	INDEX     
+N1DF.IDX  	1-Month Hi-Lo DOW Tran                            	INDEX     
+N1DG.IDX  	1-Month Hi-Lo DOW Util                            	INDEX     
+N1HA.IDX  	1-Month Highs S&P 600                             	INDEX     
+N1HB.IDX  	1-Month Highs S&P 400                             	INDEX     
+N1HC.IDX  	1-Month Highs Nasdaq 100                          	INDEX     
+N1HD.IDX  	1-Month Highs DOW Indu                            	INDEX     
+N1HE.IDX  	1-Month Highs DOW Comp                            	INDEX     
+N1HF.IDX  	1-Month Highs DOW Tran                            	INDEX     
+N1HG.IDX  	1-Month Highs DOW Util                            	INDEX     
+N1LA.IDX  	1-Month Lows S&P 600                              	INDEX     
+N1LB.IDX  	1-Month Lows S&P 400                              	INDEX     
+N1LC.IDX  	1-Month Lows Nasdaq 100                           	INDEX     
+N1LD.IDX  	1-Month Lows DOW Indu                             	INDEX     
+N1LE.IDX  	1-Month Lows DOW Comp                             	INDEX     
+N1LF.IDX  	1-Month Lows DOW Tran                             	INDEX     
+N1LG.IDX  	1-Month Lows DOW Util                             	INDEX     
+N3DA.IDX  	3-Month Hi-Lo S&P 600                             	INDEX     
+N3DB.IDX  	3-Month Hi-Lo S&P 400                             	INDEX     
+N3DC.IDX  	3-Month Hi-Lo Nasdaq 100                          	INDEX     
+N3DD.IDX  	3-Month Hi-Lo DOW Indu                            	INDEX     
+N3DE.IDX  	3-Month Hi-Lo DOW Comp                            	INDEX     
+N3DF.IDX  	3-Month Hi-Lo DOW Tran                            	INDEX     
+N3DG.IDX  	3-Month Hi-Lo DOW Util                            	INDEX     
+N3HA.IDX  	3-Month Highs S&P 600                             	INDEX     
+N3HB.IDX  	3-Month Highs S&P 400                             	INDEX     
+N3HC.IDX  	3-Month Highs Nasdaq 100                          	INDEX     
+N3HD.IDX  	3-Month Highs DOW Indu                            	INDEX     
+N3HE.IDX  	3-Month Highs DOW Comp                            	INDEX     
+N3HF.IDX  	3-Month Highs DOW Tran                            	INDEX     
+N3HG.IDX  	3-Month Highs DOW Util                            	INDEX     
+N3LA.IDX  	3-Month Lows S&P 600                              	INDEX     
+N3LB.IDX  	3-Month Lows S&P 400                              	INDEX     
+N3LC.IDX  	3-Month Lows Nasdaq 100                           	INDEX     
+N3LD.IDX  	3-Month Lows DOW Indu                             	INDEX     
+N3LE.IDX  	3-Month Lows DOW Comp                             	INDEX     
+N3LF.IDX  	3-Month Lows DOW Tran                             	INDEX     
+N3LG.IDX  	3-Month Lows DOW Util                             	INDEX     
+N5DA.IDX  	5-Day Hi-Lo S&P 600                               	INDEX     
+N5DB.IDX  	5-Day Hi-Lo S&P 400                               	INDEX     
+N5DC.IDX  	5-Day Hi-Lo Nasdaq 100                            	INDEX     
+N5DD.IDX  	5-Day Hi-Lo DOW Indu                              	INDEX     
+N5DE.IDX  	5-Day Hi-Lo DOW Comp                              	INDEX     
+N5DF.IDX  	5-Day Hi-Lo DOW Tran                              	INDEX     
+N5DG.IDX  	5-Day Hi-Lo DOW Util                              	INDEX     
+N5HA.IDX  	5-Day Highs S&P 600                               	INDEX     
+N5HB.IDX  	5-Day Highs S&P 400                               	INDEX     
+N5HC.IDX  	5-Day Highs Nasdaq 100                            	INDEX     
+N5HD.IDX  	5-Day Highs DOW Indu                              	INDEX     
+N5HE.IDX  	5-Day Highs DOW Comp                              	INDEX     
+N5HF.IDX  	5-Day Highs DOW Tran                              	INDEX     
+N5HG.IDX  	5-Day Highs DOW Util                              	INDEX     
+N5LA.IDX  	5-Day Lows S&P 600                                	INDEX     
+N5LB.IDX  	5-Day Lows S&P 400                                	INDEX     
+N5LC.IDX  	5-Day Lows Nasdaq 100                             	INDEX     
+N5LD.IDX  	5-Day Lows DOW Indu                               	INDEX     
+N5LE.IDX  	5-Day Lows DOW Comp                               	INDEX     
+N5LF.IDX  	5-Day Lows DOW Tran                               	INDEX     
+N5LG.IDX  	5-Day Lows DOW Util                               	INDEX     
+N6DA.IDX  	6-Month Hi-Lo S&P 600                             	INDEX     
+N6DB.IDX  	6-Month Hi-Lo S&P 400                             	INDEX     
+N6DC.IDX  	6-Month Hi-Lo Nasdaq 100                          	INDEX     
+N6DD.IDX  	6-Month Hi-Lo DOW Indu                            	INDEX     
+N6DE.IDX  	6-Month Hi-Lo DOW Comp                            	INDEX     
+N6DF.IDX  	6-Month Hi-Lo DOW Tran                            	INDEX     
+N6DG.IDX  	6-Month Hi-Lo DOW Util                            	INDEX     
+N6HA.IDX  	6-Month Highs S&P 600                             	INDEX     
+N6HB.IDX  	6-Month Highs S&P 400                             	INDEX     
+N6HC.IDX  	6-Month Highs Nasdaq 100                          	INDEX     
+N6HD.IDX  	6-Month Highs DOW Indu                            	INDEX     
+N6HE.IDX  	6-Month Highs DOW Comp                            	INDEX     
+N6HF.IDX  	6-Month Highs DOW Tran                            	INDEX     
+N6HG.IDX  	6-Month Highs DOW Util                            	INDEX     
+N6LA.IDX  	6-Month Lows S&P 600                              	INDEX     
+N6LB.IDX  	6-Month Lows S&P 400                              	INDEX     
+N6LC.IDX  	6-Month Lows Nasdaq 100                           	INDEX     
+N6LD.IDX  	6-Month Lows DOW Indu                             	INDEX     
+N6LE.IDX  	6-Month Lows DOW Comp                             	INDEX     
+N6LF.IDX  	6-Month Lows DOW Tran                             	INDEX     
+N6LG.IDX  	6-Month Lows DOW Util                             	INDEX     
+NADA.IDX  	52-Week Hi-Lo S&P 600                             	INDEX     
+NADB.IDX  	52-Week Hi-Lo S&P 400                             	INDEX     
+NADC.IDX  	52-Week Hi-Lo Nasdaq 100                          	INDEX     
+NADD.IDX  	52-Week Hi-Lo DOW Indu                            	INDEX     
+NADE.IDX  	52-Week Hi-Lo DOW Comp                            	INDEX     
+NADF.IDX  	52-Week Hi-Lo DOW Tran                            	INDEX     
+NADG.IDX  	52-Week Hi-Lo DOW Util                            	INDEX     
+NAHA.IDX  	52-Week Highs S&P 600                             	INDEX     
+NAHB.IDX  	52-Week Highs S&P 400                             	INDEX     
+NAHC.IDX  	52-Week Highs Nasdaq 100                          	INDEX     
+NAHD.IDX  	52-Week Highs DOW Indu                            	INDEX     
+NAHE.IDX  	52-Week Highs DOW Comp                            	INDEX     
+NAHF.IDX  	52-Week Highs DOW Tran                            	INDEX     
+NAHG.IDX  	52-Week Highs DOW Util                            	INDEX     
+NALA.IDX  	52-Week Lows S&P 600                              	INDEX     
+NALB.IDX  	52-Week Lows S&P 400                              	INDEX     
+NALC.IDX  	52-Week Lows Nasdaq 100                           	INDEX     
+NALD.IDX  	52-Week Lows DOW Indu                             	INDEX     
+NALE.IDX  	52-Week Lows DOW Comp                             	INDEX     
+NALF.IDX  	52-Week Lows DOW Tran                             	INDEX     
+NALG.IDX  	52-Week Lows DOW Util                             	INDEX     
 NAST.IDX  	NASDAQ Transportation Index                       	INDEX     
 NBI.IDX   	Nasdaq Biotechnology                              	INDEX     
 NBZ.IDX   	Nasdaq Biotech Index Final Set                    	INDEX     
+NDFD.IDX  	Nasdaq 100 Stocks Above 5-Day Average             	INDEX     
 NDFI.IDX  	Nasdaq 100 Stocks Above 50-Day Average            	INDEX     
 NDOF.IDX  	Nasdaq 100 Stocks Above 150-Day Average           	INDEX     
 NDOH.IDX  	Nasdaq 100 Stocks Above 100-Day Average           	INDEX     
@@ -709,8 +1183,29 @@ NWV.IDX   	AMEX Networking Index Settlemen                   	INDEX
 NWX.IDX   	AMEX Networking Index                             	INDEX     
 NXTQ.IDX  	NASDAQ Q-50 Index                                 	INDEX     
 NYA.IDX   	NYSE Composite                                    	INDEX     
+NYDA.IDX  	YTD Hi-Lo S&P 600                                 	INDEX     
+NYDB.IDX  	YTD Hi-Lo S&P 400                                 	INDEX     
+NYDC.IDX  	YTD Hi-Lo Nasdaq 100                              	INDEX     
+NYDD.IDX  	YTD Hi-Lo DOW Indu                                	INDEX     
+NYDE.IDX  	YTD Hi-Lo DOW Comp                                	INDEX     
+NYDF.IDX  	YTD Hi-Lo DOW Tran                                	INDEX     
+NYDG.IDX  	YTD Hi-Lo DOW Util                                	INDEX     
+NYHA.IDX  	YTD Highs S&P 600                                 	INDEX     
+NYHB.IDX  	YTD Highs S&P 400                                 	INDEX     
+NYHC.IDX  	YTD Highs Nasdaq 100                              	INDEX     
+NYHD.IDX  	YTD Highs DOW Indu                                	INDEX     
+NYHE.IDX  	YTD Highs DOW Comp                                	INDEX     
+NYHF.IDX  	YTD Highs DOW Tran                                	INDEX     
+NYHG.IDX  	YTD Highs DOW Util                                	INDEX     
 NYI.IDX   	NYSE International 100 Index                      	INDEX     
 NYL.IDX   	NYSE World Leaders Index                          	INDEX     
+NYLA.IDX  	YTD Lows S&P 600                                  	INDEX     
+NYLB.IDX  	YTD Lows S&P 400                                  	INDEX     
+NYLC.IDX  	YTD Lows Nasdaq 100                               	INDEX     
+NYLD.IDX  	YTD Lows DOW Indu                                 	INDEX     
+NYLE.IDX  	YTD Lows DOW Comp                                 	INDEX     
+NYLF.IDX  	YTD Lows DOW Tran                                 	INDEX     
+NYLG.IDX  	YTD Lows DOW Util                                 	INDEX     
 NYXR.IDX  	S&P C.S. Ny-New York Home Price Index             	INDEX     
 NZ50.IDX  	NZSX 50 Index                                     	INDEX     
 OEX.IDX   	S&P 100 Index                                     	INDEX     
@@ -738,16 +1233,19 @@ QVLD.IDX  	NASD Declining Volume                             	INDEX
 QVLF.IDX  	NASD Advance Decline Volume Difference            	INDEX     
 QVLR.IDX  	NASD Advance Decline Vol Ratio                    	INDEX     
 QVLU.IDX  	NASD Advancing Volume                             	INDEX     
+R1FD.IDX  	Russell 1000 Stocks Above 5-Day Average           	INDEX     
 R1FI.IDX  	Russell 1000 Stocks Above 50-Day Average          	INDEX     
 R1OF.IDX  	Russell 1000 Stocks Above 150-Day Average         	INDEX     
 R1OH.IDX  	Russell 1000 Stocks Above 100-Day Average         	INDEX     
 R1TH.IDX  	Russell 1000 Stocks Above 200-Day Average         	INDEX     
 R1TW.IDX  	Russell 1000 Stocks Above 20-Day Average          	INDEX     
+R2FD.IDX  	Russell 2000 Stocks Above 5-Day Average           	INDEX     
 R2FI.IDX  	Russell 2000 Stocks Above 50-Day Average          	INDEX     
 R2OF.IDX  	Russell 2000 Stocks Above 150-Day Average         	INDEX     
 R2OH.IDX  	Russell 2000 Stocks Above 100-Day Average         	INDEX     
 R2TH.IDX  	Russell 2000 Stocks Above 200-Day Average         	INDEX     
 R2TW.IDX  	Russell 2000 Stocks Above 20-Day Average          	INDEX     
+R3FD.IDX  	Russell 3000 Stocks Above 5-Day Average           	INDEX     
 R3FI.IDX  	Russell 3000 Stocks Above 50-Day Average          	INDEX     
 R3OF.IDX  	Russell 3000 Stocks Above 150-Day Average         	INDEX     
 R3OH.IDX  	Russell 3000 Stocks Above 100-Day Average         	INDEX     
@@ -783,6 +1281,7 @@ RVX.IDX   	CBOE RUSSELL 2000 VOLATILITY IN                   	INDEX
 RWG.IDX   	Russell Top 200 Growth                            	INDEX     
 RWI.IDX   	Russell Top 200 Index                             	INDEX     
 RWV.IDX   	Russell Top 200 Value                             	INDEX     
+S1FD.IDX  	S&P 100 Stocks Above 5-Day Average                	INDEX     
 S1FI.IDX  	S&P 100 Stocks Above 50-Day Average               	INDEX     
 S1OF.IDX  	S&P 100 Stocks Above 150-Day Average              	INDEX     
 S1OH.IDX  	S&P 100 Stocks Above 100-Day Average              	INDEX     
@@ -791,12 +1290,14 @@ S1TR.IDX  	S&P 500 Automobiles & Components [TR]             	INDEX
 S1TW.IDX  	S&P 100 Stocks Above 20-Day Average               	INDEX     
 S2TR.IDX  	S&P 500 Banks [TR]                                	INDEX     
 S3TR.IDX  	S&P 500 Capital Goods [TR]                        	INDEX     
+S4FD.IDX  	S&P 400 Stocks Above 5-Day Average                	INDEX     
 S4FI.IDX  	S&P 400 Stocks Above 50-Day Average               	INDEX     
 S4OF.IDX  	S&P 400 Stocks Above 150-Day Average              	INDEX     
 S4OH.IDX  	S&P 400 Stocks Above 100-Day Average              	INDEX     
 S4TH.IDX  	S&P 400 Stocks Above 200-Day Average              	INDEX     
 S4TR.IDX  	S&P 500 -Commercial & Professional Services [TR]  	INDEX     
 S4TW.IDX  	S&P 400 Stocks Above 20-Day Average               	INDEX     
+S5FD.IDX  	S&P 500 Stocks Above 5-Day Average                	INDEX     
 S5FI.IDX  	S&P 500 Stocks Above 50-Day Average               	INDEX     
 S5OF.IDX  	S&P 500 Stocks Above 150-Day Average              	INDEX     
 S5OH.IDX  	S&P 500 Stocks Above 100-Day Average              	INDEX     
@@ -806,6 +1307,7 @@ S5TW.IDX  	S&P 500 Stocks Above 20-Day Average               	INDEX
 S6CD.IDX  	S&P SmallCap600 Capped Consumer Discretionary [s  	INDEX     
 S6CS.IDX  	S&P SmallCap600 Capped Consumer Staples [sector]  	INDEX     
 S6EP.IDX  	S&P SmallCap600 Capped Energy [sector]Index       	INDEX     
+S6FD.IDX  	S&P 600 Stocks Above 5-Day Average                	INDEX     
 S6FI.IDX  	S&P 600 Stocks Above 50-Day Average               	INDEX     
 S6FP.IDX  	S&P SmallCap600 Capped Financials [sector]Index   	INDEX     
 S6HC.IDX  	S&P SmallCap600 Capped HealthCare [sector]Index   	INDEX     
@@ -824,9 +1326,7 @@ S9TR.IDX  	S&P 500 Food & Staples Retailing [TR]             	INDEX
 SAAB.IDX  	S&P Asia Infrastructure Index                     	INDEX     
 SACC.IDX  	Alpha Shares China Small Cap Index                	INDEX     
 SACN.IDX  	Alpha Shares China Technology Index               	INDEX     
-SAEI.IDX  	S&P Global Alternative Energy Index [EURO]        	INDEX     
 SAER.IDX  	S&P GSCI Agriculture Capped Component 35/20 EUR   	INDEX     
-SAEU.IDX  	S&P Global Alternative Energy Index               	INDEX     
 SAIE.IDX  	S&P Africa 40 Index [EURO]                        	INDEX     
 SAIU.IDX  	S&P Africa 40 Index                               	INDEX     
 SAJR.IDX  	MSCI WISE ASIA Ex-Japan Top [Net TR]              	INDEX     
@@ -842,6 +1342,7 @@ SAUE.IDX  	S&P GSCI Agriculture Capped Component 35/20 EUR   	INDEX
 SBAI.IDX  	S&P Brazil ADR Index                              	INDEX     
 SBER.IDX  	S&P GSCI Biofuel Index Excess Return              	INDEX     
 SBES.IDX  	BLO M Emerging Shariah Index [NetTR]              	INDEX     
+SBFD.IDX  	S&P Materials Stocks Above 5-Day Average          	INDEX     
 SBFI.IDX  	S&P Materials Stocks Above 50-Day Average         	INDEX     
 SBIX.IDX  	S&P 500 Banks non-TR                              	INDEX     
 SBNP.IDX  	S&P Custom/BNP Paribas SPECTRUMUS Sect or Moment  	INDEX     
@@ -895,6 +1396,7 @@ SEBI.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX
 SECA.IDX  	S&P GSCI Enhanced Commodity Index                 	INDEX     
 SECB.IDX  	S&P GSCI Enhanced Commodity Index Excess Return   	INDEX     
 SECC.IDX  	S&P GSCI Enhanced Commodity Index Total Return    	INDEX     
+SEFD.IDX  	S&P Energies Stocks Above 5-Day Average           	INDEX     
 SEFI.IDX  	S&P Energies Stocks Above 50-Day Average          	INDEX     
 SEIB.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX     
 SEIE.IDX  	S&P Global Eco Index [EURO]                       	INDEX     
@@ -905,9 +1407,11 @@ SEMT.IDX  	Brics Nifty 50 Emerging Market Tradable Index Tr  	INDEX
 SENSEX.IDX	BSE SENSEX                                        	INDEX     
 SEOF.IDX  	S&P Energies Stocks Above 150-Day Average         	INDEX     
 SEOH.IDX  	S&P Energies Stocks Above 100-Day Average         	INDEX     
+SET.IDX   	Thailand SET                                      	INDEX     
 SETH.IDX  	S&P Energies Stocks Above 200-Day Average         	INDEX     
 SETW.IDX  	S&P Energies Stocks Above 20-Day Average          	INDEX     
 SEXR.IDX  	S&P C.S. Wa-Seattle Home Price Index              	INDEX     
+SFFD.IDX  	S&P Financials Stocks Above 5-Day Average         	INDEX     
 SFFI.IDX  	S&P Financials Stocks Above 50-Day Average        	INDEX     
 SFOF.IDX  	S&P Financials Stocks Above 150-Day Average       	INDEX     
 SFOH.IDX  	S&P Financials Stocks Above 100-Day Average       	INDEX     
@@ -1090,6 +1594,7 @@ SHEU.IDX  	HS60 Europe Index                                 	INDEX
 SHTR.IDX  	S&P 500 HealthCare Equipment & Services [TR]      	INDEX     
 SHUS.IDX  	HS60 US Index                                     	INDEX     
 SIDO.IDX  	S&P International Dividend Opportunities Index    	INDEX     
+SIFD.IDX  	S&P Industrials Stocks Above 5-Day Average        	INDEX     
 SIFI.IDX  	S&P Industrials Stocks Above 50-Day Average       	INDEX     
 SIII.IDX  	Indus India Index                                 	INDEX     
 SIIP.IDX  	S&P DFFI Index Excess Return                      	INDEX     
@@ -1114,6 +1619,7 @@ SJPD.IDX  	S&P TOPIX YEN                                     	INDEX
 SJPE.IDX  	S&P JES100                                        	INDEX     
 SJRI.IDX  	S&P Japan Regional Index-Tokai                    	INDEX     
 SJTR.IDX  	S&P 500 Semiconductors & Semiconductor Equipment  	INDEX     
+SKFD.IDX  	S&P Info Tech Stocks Above 5-Day Average          	INDEX     
 SKFI.IDX  	S&P Info Tech Stocks Above 50-Day Average         	INDEX     
 SKOF.IDX  	S&P Info Tech Stocks Above 150-Day Average        	INDEX     
 SKOH.IDX  	S&P Info Tech Stocks Above 100-Day Average        	INDEX     
@@ -1127,6 +1633,7 @@ SLCU.IDX  	S&P U.S. Carbon Efficient Index [NetTR]           	INDEX
 SLEE.IDX  	S&P GSCI Light Energy EUR Index                   	INDEX     
 SLER.IDX  	S&P GSCI Light Energy EUR Index ER                	INDEX     
 SLEW.IDX  	S&P 600 Smallcap Equal Weighted Index             	INDEX     
+SLFD.IDX  	S&P Telcomm Stocks Above 5-Day Average            	INDEX     
 SLFI.IDX  	S&P Telcomm Stocks Above 50-Day Average           	INDEX     
 SLOF.IDX  	S&P Telcomm Stocks Above 150-Day Average          	INDEX     
 SLOH.IDX  	S&P Telcomm Stocks Above 100-Day Average          	INDEX     
@@ -1169,6 +1676,7 @@ SPAD.IDX  	S&P GSCI Palladium Index                          	INDEX
 SPEE.IDX  	S&P Listed Private Equity Index [EURO]            	INDEX     
 SPER.IDX  	S&P GSCI Palladium Index Excess Return            	INDEX     
 SPEY.IDX  	S&P Listed Private Equity Index                   	INDEX     
+SPFD.IDX  	S&P Con Staples Stocks Above 5-Day Average        	INDEX     
 SPFI.IDX  	S&P Con Staples Stocks Above 50-Day Average       	INDEX     
 SPIN.IDX  	S&P GSCI Platinum Index                           	INDEX     
 SPIR.IDX  	S&P GSCI Platinum Index Excess Return             	INDEX     
@@ -1187,6 +1695,7 @@ SPXT.IDX  	S&P 500 [TR]                                      	INDEX
 SQTR.IDX  	S&P 500 Software & Services [TR]                  	INDEX     
 SRER.IDX  	S&P Indian Rupee Price Return Index               	INDEX     
 SRFF.IDX  	SGI Fed Funds Index                               	INDEX     
+SRFI.IDX  	S&P 500 Financials [Sector]                       	INDEX     
 SRIC.IDX  	S&P BRIC 40 Index [NetTR]                         	INDEX     
 SRIE.IDX  	S&P BRIC 40 Index [EURO] [NetTR]                  	INDEX     
 SRMP.IDX  	Cohen & Steers US Realty Majors Portfolio [TR]    	INDEX     
@@ -1238,6 +1747,7 @@ SSER.IDX  	SPECTRUM-Long/Short 8% Index ER [NEWVA]           	INDEX
 SSEW.IDX  	S&P GSCI Select Equal Weight Index Spot           	INDEX     
 SSFA.IDX  	Credit Suisse Family Index                        	INDEX     
 SSFB.IDX  	SGI Double Short Bund Index                       	INDEX     
+SSFD.IDX  	S&P Real Estate Stocks Above 5-Day Average        	INDEX     
 SSFE.IDX  	Credit Suisse Family Index [EUR] [Price Return]   	INDEX     
 SSFI.IDX  	S&P Real Estate Stocks Above 50-Day Average       	INDEX     
 SSFP.IDX  	Credit Suisse Family Index [USD] [Price Return]   	INDEX     
@@ -1336,6 +1846,7 @@ STTR.IDX  	S&P 500 Technology Hardware & Equipment [TR]      	INDEX
 SUCD.IDX  	S&P Select Sector Capped 20% Consumer Discretion  	INDEX     
 SUCS.IDX  	S&P Select Sector Capped 20% Consumer Staples In  	INDEX     
 SUEP.IDX  	S&P Select Sector Capped 20% Energy Index Net TR  	INDEX     
+SUFD.IDX  	S&P Utilities Stocks Above 5-Day Average          	INDEX     
 SUFI.IDX  	S&P Utilities Stocks Above 50-Day Average         	INDEX     
 SUFP.IDX  	S&P Select Sector Capped 20% Financials Index Ne  	INDEX     
 SUHC.IDX  	S&P Select Sector Capped 20% HealthCare Index Ne  	INDEX     
@@ -1352,6 +1863,7 @@ SURI.IDX  	S&P /Citigroup BMI REIT SUS Index                 	INDEX
 SUTH.IDX  	S&P Utilities Stocks Above 200-Day Average        	INDEX     
 SUTP.IDX  	S&P Select Sector Capped 20% Technology Index Ne  	INDEX     
 SUTW.IDX  	S&P Utilities Stocks Above 20-Day Average         	INDEX     
+SVFD.IDX  	S&P Health Care Stocks Above 5-Day Average        	INDEX     
 SVFI.IDX  	S&P Health Care Stocks Above 50-Day Average       	INDEX     
 SVOF.IDX  	S&P Health Care Stocks Above 150-Day Average      	INDEX     
 SVOH.IDX  	S&P Health Care Stocks Above 100-Day Average      	INDEX     
@@ -1386,6 +1898,7 @@ SWUB.IDX  	SGI Wise US Bottom                                	INDEX
 SWUL.IDX  	SGI Wise US Long/Short [NEWVA]                    	INDEX     
 SWUT.IDX  	SGI WISE US Top                                   	INDEX     
 SXTR.IDX  	S&P 500 Utilities [Industry Group] [TR]           	INDEX     
+SYFD.IDX  	S&P Con Discret Stocks Above 5-Day Average        	INDEX     
 SYFI.IDX  	S&P Con Discret Stocks Above 50-Day Average       	INDEX     
 SYOF.IDX  	S&P Con Discret Stocks Above 150-Day Average      	INDEX     
 SYOH.IDX  	S&P Con Discret Stocks Above 100-Day Average      	INDEX     
@@ -1398,6 +1911,7 @@ TACK.IDX  	AMEX Tick                                         	INDEX
 TACX.IDX  	AMEX Tick                                         	INDEX     
 TASI.IDX  	Tadawul All Shares Index                          	INDEX     
 TBO.IDX   	AMEX Tobacco Index Settlement                     	INDEX     
+TCFD.IDX  	TSX Comp Stocks Above 5-Day Average               	INDEX     
 TCFI.IDX  	TSX Comp Stocks Above 50-Day Average              	INDEX     
 TCOF.IDX  	TSX Comp Stocks Above 150-Day Average             	INDEX     
 TCOH.IDX  	TSX Comp Stocks Above 100-Day Average             	INDEX     
@@ -1405,8 +1919,6 @@ TCTH.IDX  	TSX Comp Stocks Above 200-Day Average             	INDEX
 TCTW.IDX  	TSX Comp Stocks Above 20-Day Average              	INDEX     
 TICK.IDX  	NYSE Tick                                         	INDEX     
 TICX.IDX  	NYSE Tick                                         	INDEX     
-TIKI.IDX  	DOW Tick                                          	INDEX     
-TIKX.IDX  	DOW Tick                                          	INDEX     
 TNX.IDX   	10-YEAR TREASURY NOTE                             	INDEX     
 TOB.IDX   	AMEX Tobacco Index                                	INDEX     
 TOOC.IDX  	Tsx Capped Composite Index                        	INDEX     
@@ -1418,6 +1930,7 @@ TRCCI.IDX 	CRB Commodity Continuous Index                    	INDEX
 TRIA.IDX  	AMEX Trin                                         	INDEX     
 TRIN.IDX  	NYSE Trin                                         	INDEX     
 TRIQ.IDX  	NASD Trin                                         	INDEX     
+TSFD.IDX  	TSX 60 Stocks Above 5-Day Average                 	INDEX     
 TSFI.IDX  	TSX 60 Stocks Above 50-Day Average                	INDEX     
 TSOF.IDX  	TSX 60 Stocks Above 150-Day Average               	INDEX     
 TSOH.IDX  	TSX 60 Stocks Above 100-Day Average               	INDEX     
@@ -1436,6 +1949,7 @@ TTRE.IDX  	Tsx Real Estate Capped Index                      	INDEX
 TTTK.IDX  	Tsx Information Tech Capped Index                 	INDEX     
 TTTS.IDX  	Tsx Telecom Services Capped Index                 	INDEX     
 TTUT.IDX  	Tsx Utilities Capped Index                        	INDEX     
+TVFD.IDX  	TSX Venture Stocks Above 5-Day Average            	INDEX     
 TVFI.IDX  	TSX Venture Stocks Above 50-Day Average           	INDEX     
 TVOF.IDX  	TSX Venture Stocks Above 150-Day Average          	INDEX     
 TVOH.IDX  	TSX Venture Stocks Above 100-Day Average          	INDEX     
@@ -1513,6 +2027,7 @@ XBD.IDX   	AMEX Securities Broker Dealer                     	INDEX
 XBEL.IDX  	Brussels BEL 20                                   	INDEX     
 XBS.IDX   	AMEX Securities Broker/Dealer I                   	INDEX     
 XCI.IDX   	AMEX Computers Index                              	INDEX     
+XDS.IDX   	PHLX SWISS FRANC                                  	INDEX     
 XEO.IDX   	S& P 100 INDEX[EUROPEAN    STYLE                  	INDEX     
 XFI.IDX   	Financial Ndx                                     	INDEX     
 XHL.IDX   	Healthcare Ndx                                    	INDEX     
@@ -1531,4 +2046,3 @@ XTC.IDX   	AMEX North Ameican Telecom Index                  	INDEX
 XTV.IDX   	North American Telecommunicatio                   	INDEX     
 XU100.IDX 	Borsa Istanbul 100 Index                          	INDEX     
 ZAX.IDX   	ZACKS MICRO CAP INDEX                             	INDEX     
-ZOC.IDX   	CBOE TECHNOLOGY INDEX REDUCED L                   	INDEX     
