@@ -28,10 +28,11 @@ package net.ajaskey.market.tools.fred;
  */
 public class InputRecord {
 
-	public String		series;
-	public double		change;
-	public boolean	noZeros;
-	public boolean	estimateData;
+	public String										series;
+	public double										change;
+	public boolean									noZeros;
+	public boolean									estimateData;
+	public DataSeries.ResponseType	units;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -45,16 +46,22 @@ public class InputRecord {
 			this.noZeros = true;
 			this.estimateData = false;
 			this.series = fld[0].trim();
+			this.units = DataSeries.ResponseType.LIN;
 
 			if (fld.length == 2) {
 				this.change = Double.parseDouble(fld[1].trim());
 			} else if (fld.length == 3) {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
-			} else if (fld.length >= 4) {
+			} else if (fld.length == 4) {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
 				this.estimateData = Boolean.parseBoolean(fld[3].trim());
+			} else if (fld.length > 4) {
+				this.change = Double.parseDouble(fld[1].trim());
+				this.noZeros = Boolean.parseBoolean(fld[2].trim());
+				this.estimateData = Boolean.parseBoolean(fld[3].trim());
+				this.units = DataSeries.ResponseType.valueOf(fld[4].trim());
 			}
 		} catch (final Exception e) {
 			e.printStackTrace();
@@ -65,7 +72,7 @@ public class InputRecord {
 	@Override
 	public String toString() {
 
-		return String.format("%-25s %9.1f  %5s  %5s", this.series, this.change, this.noZeros, this.estimateData);
+		return String.format("%-25s %9.1f  %5s  %5s  %s", this.series, this.change, this.noZeros, this.estimateData, this.units);
 	}
 
 }

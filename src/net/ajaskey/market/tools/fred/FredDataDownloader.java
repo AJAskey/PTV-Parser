@@ -53,7 +53,7 @@ public class FredDataDownloader {
 			final InputRecord ir = new InputRecord(s);
 			if (ir.series.length() > 0) {
 				System.out.println(ir);
-				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData);
+				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData, ir.units);
 			}
 		}
 
@@ -71,7 +71,7 @@ public class FredDataDownloader {
 	 * @param noZeroValues
 	 * @param estimateData
 	 */
-	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData) {
+	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData, DataSeries.ResponseType unit) {
 
 		final String fname = FredCommon.optumaPath + series + ".csv";
 		if (new File(fname).exists()) {
@@ -83,7 +83,7 @@ public class FredDataDownloader {
 		if (ds.isValid()) {
 
 			ds.setAggType(AggregationMethodType.EOP);
-			ds.setRespType(ResponseType.LIN);
+			ds.setRespType(unit);
 
 			final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 

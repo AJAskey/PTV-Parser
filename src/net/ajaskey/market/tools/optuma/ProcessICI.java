@@ -14,6 +14,8 @@ import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.ConvertOHLCV;
+import net.ajaskey.market.tools.helpers.IciCombinedFlowData;
+import net.ajaskey.market.tools.helpers.IciMoneyFlowData;
 
 /**
  * This class...
@@ -42,30 +44,15 @@ import net.ajaskey.market.tools.ConvertOHLCV;
  */
 public class ProcessICI {
 
-	public Calendar	date;
-	public long			equityDomestic;
-	public long			equityWorld;
-	public long			bondTaxable;
-	public long			bondMuni;
-	public long			commodity;
-	public boolean	valid;
+	public static List<IciCombinedFlowData>	data		= new ArrayList<>();
+	public static List<IciMoneyFlowData>		mfList	= new ArrayList<>();
 
-	public static List<ProcessICI> data = new ArrayList<>();
+	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
-	private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM/dd/yyyy");
-	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+	public static void main(String[] args) {
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public ProcessICI() {
-		this.valid = false;
-		equityDomestic = 0;
-		equityWorld = 0;
-		bondTaxable = 0;
-		bondMuni = 0;
-		commodity = 0;
+		processMoneyFlow();
+		processEtfFlow();
 	}
 
 	/**
@@ -73,7 +60,78 @@ public class ProcessICI {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void processMoneyFlow() {
+
+		String line;
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/flows_data_2017.txt"))) {
+
+			Calendar lastCal = null;
+			while ((line = reader.readLine()) != null) {
+				if (line.toLowerCase().contains("estimated weekly net new cash flow")) {
+					lastCal = Utils.buildCalendar(mfList.get(mfList.size() - 1).date);
+					lastCal.add(Calendar.MONTH, 1);
+					break;
+				}
+				IciMoneyFlowData d = new IciMoneyFlowData();
+				d.build(line);
+				if (d.valid) {
+					mfList.add(d);
+				} else {
+					d = null;
+				}
+			}
+
+			System.out.println(Utils.stringDate(lastCal));
+			IciMoneyFlowData weekly = new IciMoneyFlowData();
+			weekly.date = lastCal;
+			while ((line = reader.readLine()) != null) {
+				IciMoneyFlowData d = new IciMoneyFlowData();
+				d.build(line);
+				if (d.valid) {
+					weekly.total += d.total;
+					weekly.equity += d.equity;
+					weekly.domestic += d.domestic;
+					weekly.lcap += d.lcap;
+					weekly.mcap += d.mcap;
+					weekly.scap += d.scap;
+				}
+			}
+			weekly.valid = true;
+			mfList.add(weekly);
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (final IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try (PrintWriter pwt = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_total_mf.csv");
+		    PrintWriter pwe = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_equity_mf.csv");
+		    PrintWriter pwd = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_domestic_mf.csv");
+		    PrintWriter pwlc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_lcap_mf.csv");
+		    PrintWriter pwmc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_mcap_mf.csv");
+		    PrintWriter pwsc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_scap_mf.csv")) {
+
+			for (IciMoneyFlowData p : mfList) {
+				if (p.valid) {
+					System.out.println(p);
+					String dat = sdfOptuma.format(p.date.getTime());
+					pwt.println(dat + "," + p.total);
+					pwe.println(dat + "," + p.equity);
+					pwd.println(dat + "," + p.domestic);
+					pwlc.println(dat + "," + p.lcap);
+					pwmc.println(dat + "," + p.mcap);
+					pwsc.println(dat + "," + p.scap);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void processEtfFlow() {
 
 		String line;
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/combined_flows_data_2017.txt"))) {
@@ -85,17 +143,21 @@ public class ProcessICI {
 					lastCal.add(Calendar.MONTH, 1);
 					break;
 				}
-				ProcessICI d = ProcessICI.build(line);
+				IciCombinedFlowData d = new IciCombinedFlowData();
+				d.build(line);
 				if (d.valid) {
 					data.add(d);
+				} else {
+					d = null;
 				}
 			}
 
 			System.out.println(Utils.stringDate(lastCal));
-			ProcessICI weekly = new ProcessICI();
+			IciCombinedFlowData weekly = new IciCombinedFlowData();
 			weekly.date = lastCal;
 			while ((line = reader.readLine()) != null) {
-				ProcessICI d = ProcessICI.build(line);
+				IciCombinedFlowData d = new IciCombinedFlowData();
+				d.build(line);
 				if (d.valid) {
 					weekly.equityDomestic += d.equityDomestic;
 					weekly.equityWorld += d.equityWorld;
@@ -121,7 +183,7 @@ public class ProcessICI {
 		    PrintWriter pwbm = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_bond_municipal.csv");
 		    PrintWriter pwc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_commodity.csv")) {
 
-			for (ProcessICI p : data) {
+			for (IciCombinedFlowData p : data) {
 				if (p.valid) {
 					System.out.println(p);
 					String dat = sdfOptuma.format(p.date.getTime());
@@ -136,41 +198,6 @@ public class ProcessICI {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	private static ProcessICI build(String line) {
-
-		final ProcessICI ret = new ProcessICI();
-		try {
-			String str = line.replaceAll(",", "").replaceAll("\"", "").trim();
-			String fld[] = str.split("\\s+");
-			final Date date = sdf.parse(fld[0].trim());
-			ret.date = Calendar.getInstance();
-			ret.date.setTime(date);
-			ret.equityDomestic = Long.parseLong(fld[3].trim());
-			ret.equityWorld = Long.parseLong(fld[4].trim());
-			ret.bondTaxable = Long.parseLong(fld[7].trim());
-			ret.bondMuni = Long.parseLong(fld[8].trim());
-			ret.commodity = Long.parseLong(fld[9].trim());
-			ret.valid = true;
-		} catch (Exception e) {
-		}
-		return ret;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-
-		String ret = sdfOptuma.format(date.getTime());
-		ret += Utils.TAB + equityDomestic;
-		ret += Utils.TAB + equityWorld;
-		ret += Utils.TAB + bondTaxable;
-		ret += Utils.TAB + bondMuni;
-		ret += Utils.TAB + commodity;
-		return ret;
 	}
 
 }

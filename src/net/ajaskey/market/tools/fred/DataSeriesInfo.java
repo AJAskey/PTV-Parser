@@ -50,6 +50,7 @@ import net.ajaskey.market.misc.Utils;
 public class DataSeriesInfo {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public final static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
 
 	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
@@ -60,6 +61,7 @@ public class DataSeriesInfo {
 	private String															seasonalAdjustment;
 
 	private Calendar	lastUpdate;
+	private Calendar	lastObservation;
 	private int				timeOffset;
 
 	/**
@@ -88,6 +90,8 @@ public class DataSeriesInfo {
 
 			resp = Utils.getFromUrl(url);
 
+			Debug.pwDbg.println(resp + Utils.NL);
+
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
 			doc.getDocumentElement().normalize();
@@ -103,7 +107,8 @@ public class DataSeriesInfo {
 					this.setUnits(eElement.getAttribute("units"));
 					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 					this.setLastUpdate(eElement.getAttribute("last_updated"));
-
+					this.setLastObservation(eElement.getAttribute("observation_end"));
+					Debug.pwDbg.print(this);
 				}
 			}
 		} catch (final Exception e) {
@@ -158,6 +163,7 @@ public class DataSeriesInfo {
 						dsi.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 						dsi.setUnits(eElement.getAttribute("units"));
 						dsi.setLastUpdate(eElement.getAttribute("last_updated"));
+						dsi.setLastObservation(eElement.getAttribute("observation_end"));
 
 						dList.add(dsi);
 					}
@@ -196,6 +202,14 @@ public class DataSeriesInfo {
 	public String getFrequency() {
 
 		return this.frequency;
+	}
+
+	/**
+	 * @return the lastObservation
+	 */
+	public Calendar getLastObservation() {
+
+		return this.lastObservation;
 	}
 
 	/**
@@ -239,6 +253,24 @@ public class DataSeriesInfo {
 	}
 
 	/**
+	 * @param lastObservation
+	 *          the lastObservation to set
+	 */
+	public void setLastObservation(String attribute) {
+
+		this.lastObservation = Calendar.getInstance();
+
+		try {
+			//final int idx = attribute.lastIndexOf("-");
+			//final String dt = attribute.substring(0, idx);
+			final Date d = sdf2.parse(attribute);
+			this.lastObservation.setTime(d);
+
+		} catch (final ParseException e) {
+			e.printStackTrace();
+		}	}
+
+	/**
 	 * @param seasonalAdjusted
 	 *          the seasonalAdjusted to set
 	 */
@@ -258,12 +290,13 @@ public class DataSeriesInfo {
 	public String toString() {
 
 		String ret = "";
-		ret += "Name          : " + this.name + Utils.NL;
-		ret += "  Title       : " + this.title + Utils.NL;
-		ret += "  Frequency   : " + this.frequency + Utils.NL;
-		ret += "  Units       : " + this.units + Utils.NL;
-		ret += "  Adjustment  : " + this.seasonalAdjustment + Utils.NL;
-		ret += "  Last Update : " + sdf.format(this.lastUpdate.getTime()) + "  " + this.timeOffset;
+		ret += "Name               : " + this.name + Utils.NL;
+		ret += "  Title            : " + this.title + Utils.NL;
+		ret += "  Frequency        : " + this.frequency + Utils.NL;
+		ret += "  Units            : " + this.units + Utils.NL;
+		ret += "  Adjustment       : " + this.seasonalAdjustment + Utils.NL;
+		ret += "  Last Update      : " + sdf.format(this.lastUpdate.getTime()) + "  " + this.timeOffset + Utils.NL;
+		ret += "  Last Observation : " + sdf2.format(this.lastObservation.getTime()) + Utils.NL;;
 		return ret;
 	}
 
@@ -322,7 +355,7 @@ public class DataSeriesInfo {
 	 * @param units
 	 *          the units to set
 	 */
-	private void setUnits(String units) {
+	public void setUnits(String units) {
 
 		this.units = units;
 	}

@@ -40,6 +40,7 @@ import net.ajaskey.market.misc.Utils;
 public class UpdateFred {
 
 	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+	public final static SimpleDateFormat	sdf2		= new SimpleDateFormat("yyyy-MMM-dd");
 	public final static File							file	= new File(FredCommon.optumaPath);
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
@@ -89,7 +90,8 @@ public class UpdateFred {
 
 						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
-						final DataSeriesInfo dsi = new DataSeriesInfo(series);
+						DataSeriesInfo dsi = new DataSeriesInfo(series);
+						dsi.setUnits(ir.units.toString());
 
 						dsList.add(dsi);
 
@@ -119,7 +121,7 @@ public class UpdateFred {
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {
-				pw.printf("%-28s %-25s %20s    %s%n", ds.getName(), ds.getFrequency(), sdf.format(ds.getLastUpdate().getTime()),
+				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(), sdf.format(ds.getLastUpdate().getTime()), sdf2.format(ds.getLastObservation().getTime()),
 				    ds.getTitle());
 			}
 		}
