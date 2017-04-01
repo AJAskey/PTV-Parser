@@ -9,14 +9,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.ConvertOHLCV;
-import net.ajaskey.market.tools.helpers.OhlcvData;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -32,7 +27,7 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -45,13 +40,24 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  */
 public class SipData {
 
-	private static final int MAX_FIELDS = 19;
-
+	public static List<DataSet>	sales					= new ArrayList<>();
 	public static List<DataSet>	grossIncome		= new ArrayList<>();
 	public static List<DataSet>	unusualIncome	= new ArrayList<>();
+	public static List<DataSet>	income				= new ArrayList<>();
+	public static List<DataSet>	cash					= new ArrayList<>();
+	public static List<DataSet>	inventory			= new ArrayList<>();
+	public static List<DataSet>	goodwill			= new ArrayList<>();
+	public static List<DataSet>	assets				= new ArrayList<>();
+	public static List<DataSet>	liabilities		= new ArrayList<>();
 
 	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyyMMdd");
 	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+
+		SipData.read("data/SP500-SIP.csv");
+
+	}
 
 	/**
 	 * net.ajaskey.market.tools.sipro.main
@@ -64,49 +70,104 @@ public class SipData {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
-			line = br.readLine(); // read header
+
+			//line = br.readLine(); // read header
 
 			while (line != null) {
 				line = br.readLine();
-				if (line != null && line.length() > 0) {
+				if ((line != null) && (line.length() > 0)) {
 
 					final String fld[] = line.split(",");
-					if (fld.length == MAX_FIELDS) {
-						
-						String[] s = Arrays.copyOfRange(fld, 0, 10);
 
-						DataSet gi = new DataSet(s);
-						// gi = new DataSet(fld[0], fld[1], fld[2], fld[3], fld[4], fld[5], fld[6], fld[7], fld[8], fld[9]);
-						System.out.println(gi);
-						grossIncome.add(gi);
+					final DataSet sale = new DataSet(fld[0], fld, 0);
+					sales.add(sale);
 
-						s = Arrays.copyOfRange(fld, 10, 20);
-						DataSet ui = new DataSet(s);
-						System.out.println(ui);
-						unusualIncome.add(ui);
-					}
+					final DataSet gi = new DataSet(fld[0], fld, 8);
+					System.out.println(gi);
+					grossIncome.add(gi);
+
+					final DataSet ui = new DataSet(fld[0], fld, 16);
+					System.out.println(ui);
+					unusualIncome.add(ui);
+
+					final DataSet inc = new DataSet(fld[0], fld, 24);
+					System.out.println(inc);
+					income.add(inc);
+
+					final DataSet dollar = new DataSet(fld[0], fld, 32);
+					System.out.println(dollar);
+					cash.add(dollar);
+
+					final DataSet inv = new DataSet(fld[0], fld, 40);
+					System.out.println(inv);
+					inventory.add(inv);
+
+					final DataSet gwill = new DataSet(fld[0], fld, 48);
+					System.out.println(gwill);
+					goodwill.add(gwill);
+					
+					final DataSet asset = new DataSet(fld[0], fld, 56);
+					System.out.println(asset);
+					assets.add(asset);
+					
+					final DataSet liab = new DataSet(fld[0], fld, 64);
+					System.out.println(liab);
+					liabilities.add(liab);
+
 				}
 			}
 		}
-		DataSet totGI = DataSet.sum(grossIncome);
+		final DataSet totSales = DataSet.sum(sales);
+
+		final DataSet totGI = DataSet.sum(grossIncome);
 		System.out.println("GI : \n" + totGI);
-		DataSet totUI = DataSet.sum(unusualIncome);
+
+		final DataSet totUI = DataSet.sum(unusualIncome);
 		System.out.println("UI : \n" + totUI);
 
-		DataSet net = DataSet.sub(totGI, totUI);
+		final DataSet net = DataSet.sub(totGI, totUI);
 		System.out.println("Net : \n" + net);
-		
-		writeData(totGI, "tmp");
+
+		final DataSet totInc = DataSet.sum(income);
+		System.out.println("Income : \n" + totInc);
+
+		final DataSet totCash = DataSet.sum(cash);
+		System.out.println("Cash : \n" + totCash);
+
+		final DataSet totInventory = DataSet.sum(inventory);
+		System.out.println("Inventory : \n" + totInventory);
+
+		final DataSet totGoodwill = DataSet.sum(goodwill);
+		System.out.println("Goodwill : \n" + totGoodwill);
+
+		final DataSet totAssets = DataSet.sum(assets);
+		System.out.println("Assets : \n" + totAssets);
+
+		final DataSet totAssGW = DataSet.sub(totAssets, totGoodwill);
+		System.out.println("Assets : \n" + totAssets);
+
+		final DataSet totLiab = DataSet.sum(liabilities);
+		System.out.println("Liabilities : \n" + totLiab);
+
+		SipData.writeData(totSales, "SPX Sales");
+		SipData.writeData(totGI, "SPX Gross Income");
+		SipData.writeData(net, "SPX GrossIncome Minus Unusual Income");
+		SipData.writeData(totInc, "SPX Income for EPS");
+		SipData.writeData(totCash, "SPX Cash");
+		SipData.writeData(totInventory, "SPX Inventory");
+		SipData.writeData(totGoodwill, "SPX Goodwill");
+		SipData.writeData(totAssets, "SPX Assets");
+		SipData.writeData(totAssGW, "SPX Assets Minus Goodwill");
+		SipData.writeData(totLiab, "SPX Liabilities");
 
 	}
 
 	private static void writeData(DataSet ds, String fname) {
 
-		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 
-			DateSet dates = new DateSet();
+			final DateSet dates = new DateSet();
 
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y8.getTime()), ds.y8);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y7.getTime()), ds.y7);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y6.getTime()), ds.y6);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y5.getTime()), ds.y5);
@@ -117,15 +178,8 @@ public class SipData {
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ds.ttm);
 
 		} catch (final Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-
-		read("data/data.csv");
-
 	}
 
 }

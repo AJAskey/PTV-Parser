@@ -18,7 +18,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -31,72 +31,8 @@ import java.util.List;
  */
 public class DataSet {
 
-	public String	ticker;
-	public double	y8;
-	public double	y7;
-	public double	y6;
-	public double	y5;
-	public double	y4;
-	public double	y3;
-	public double	y2;
-	public double	y1;
-	public double	ttm;
-
 	/**
-	 * This method serves as a constructor for the class.
 	 *
-	 */
-	public DataSet(String symbol, String sy8, String sy7, String sy6, String sy5, String sy4, String sy3, String sy2,
-	    String sy1, String sttm) {
-		ticker = symbol.trim();
-		y8 = getDouble(sy8);
-		y7 = getDouble(sy7);
-		y6 = getDouble(sy6);
-		y5 = getDouble(sy5);
-		y4 = getDouble(sy4);
-		y3 = getDouble(sy3);
-		y2 = getDouble(sy2);
-		y1 = getDouble(sy1);
-		ttm = getDouble(sttm);
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataSet() {
-		ticker = "";
-		y8 = 0;
-		y7 = 0;
-		y6 = 0;
-		y5 = 0;
-		y4 = 0;
-		y3 = 0;
-		y2 = 0;
-		y1 = 0;
-		ttm = 0;
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 * @param s
-	 */
-	public DataSet(String[] s) {
-		ticker = s[0].trim();
-		y8 = getDouble(s[1]);
-		y7 = getDouble(s[2]);
-		y6 = getDouble(s[3]);
-		y5 = getDouble(s[4]);
-		y4 = getDouble(s[5]);
-		y3 = getDouble(s[6]);
-		y2 = getDouble(s[7]);
-		y1 = getDouble(s[8]);
-		ttm = getDouble(s[9]);
-	}
-
-	/**
-	 * 
 	 * net.ajaskey.market.tools.sipro.add
 	 *
 	 * @param set1
@@ -105,9 +41,8 @@ public class DataSet {
 	 */
 	public static DataSet add(DataSet set1, DataSet set2) {
 
-		DataSet ds = new DataSet();
+		final DataSet ds = new DataSet();
 		ds.ticker = "MERGED_TICKERS";
-		ds.y8 = set1.y8 + set2.y8;
 		ds.y7 = set1.y7 + set2.y7;
 		ds.y6 = set1.y6 + set2.y6;
 		ds.y5 = set1.y5 + set2.y5;
@@ -121,9 +56,8 @@ public class DataSet {
 
 	public static DataSet sub(DataSet set1, DataSet set2) {
 
-		DataSet ds = new DataSet();
+		final DataSet ds = new DataSet();
 		ds.ticker = "MERGED_TICKERS";
-		ds.y8 = set1.y8 - set2.y8;
 		ds.y7 = set1.y7 - set2.y7;
 		ds.y6 = set1.y6 - set2.y6;
 		ds.y5 = set1.y5 - set2.y5;
@@ -136,7 +70,7 @@ public class DataSet {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.sipro.sum
 	 *
 	 * @param data
@@ -144,11 +78,10 @@ public class DataSet {
 	 */
 	public static DataSet sum(List<DataSet> data) {
 
-		DataSet ret = new DataSet();
+		final DataSet ret = new DataSet();
 		if (data.size() > 0) {
 			ret.ticker = "SUMMATION";
-			for (DataSet ds : data) {
-				ret.y8 += ds.y8;
+			for (final DataSet ds : data) {
 				ret.y7 += ds.y7;
 				ret.y6 += ds.y6;
 				ret.y5 += ds.y5;
@@ -163,13 +96,62 @@ public class DataSet {
 
 	}
 
-	public double getDouble(String s) {
+	public String	ticker;
+	public double	y7;
+	public double	y6;
+	public double	y5;
+	public double	y4;
+	public double	y3;
+	public double	y2;
+	public double	y1;
+	public double	ttm;
 
-		double d = 0;
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSet() {
+		this.ticker = "";
+		this.y7 = 0;
+		this.y6 = 0;
+		this.y5 = 0;
+		this.y4 = 0;
+		this.y3 = 0;
+		this.y2 = 0;
+		this.y1 = 0;
+		this.ttm = 0;
+	}
+
+	public DataSet(String code, String[] s, int ptr) {
+		this.ticker = code.trim();
+		this.y7 = this.getDouble(s[ptr + 1].trim());
+		this.y6 = this.getDouble(s[ptr + 2].trim());
+		this.y5 = this.getDouble(s[ptr + 3].trim());
+		this.y4 = this.getDouble(s[ptr + 4].trim());
+		this.y3 = this.getDouble(s[ptr + 5].trim());
+		this.y2 = this.getDouble(s[ptr + 6].trim());
+		this.y1 = this.getDouble(s[ptr + 7].trim());
+		this.ttm = this.getDouble(s[ptr + 8].trim());
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.getDouble
+	 *
+	 * @param s
+	 * @return
+	 */
+	private double getDouble(String s) {
+
+		double d = 0.0;
 		try {
 			d = Double.parseDouble(s.trim());
-		} catch (Exception e) {
-			d = 0;
+			if (d < -99999999.0) {
+				//System.out.println(d);
+				d = 0.0;
+			}
+		} catch (final Exception e) {
+			d = 0.0;
 		}
 		return d;
 	}

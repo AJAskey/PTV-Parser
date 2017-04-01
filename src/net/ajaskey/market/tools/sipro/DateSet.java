@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.tools.sipro;
 
-import java.lang.reflect.Field;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
@@ -20,7 +19,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -33,7 +32,18 @@ import net.ajaskey.market.misc.Utils;
  */
 public class DateSet {
 
-	public Calendar	y8;
+	/**
+	 * net.ajaskey.market.tools.sipro.main
+	 *
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		final DateSet ds = new DateSet();
+		System.out.println(ds);
+
+	}
+
 	public Calendar	y7;
 	public Calendar	y6;
 	public Calendar	y5;
@@ -45,67 +55,56 @@ public class DateSet {
 
 	public DateSet() {
 
-		ttm = Calendar.getInstance();
-		Calendar tmp = Calendar.getInstance();
+		this.ttm = Calendar.getInstance();
+		for (int i = 0; i < 7; i++) {
+			ttm.add(Calendar.DATE, -1);
+			if (ttm.get(Calendar.DATE) == Calendar.FRIDAY) {
+				break;
+			}
+		}
+
+		final Calendar tmp = Calendar.getInstance();
 		for (int i = 1; i < 4; i++) {
 			tmp.add(Calendar.MONTH, -1);
 			if (tmp.get(Calendar.MONTH) == Calendar.DECEMBER) {
 
-				int lday = tmp.getActualMaximum(Calendar.DAY_OF_MONTH);
+				final int lday = tmp.getActualMaximum(Calendar.DAY_OF_MONTH);
 				tmp.set(Calendar.DAY_OF_MONTH, lday);
-				y1 = Utils.buildCalendar(tmp);
+				this.y1 = Utils.buildCalendar(tmp);
 				break;
 			}
 		}
 
 		tmp.add(Calendar.YEAR, -1);
-		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
-		tmp.set(Calendar.DAY_OF_MONTH, 31);
-		y2 = Utils.buildCalendar(tmp);
+		this.y2 = Utils.buildCalendar(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		y3 = Utils.buildCalendar(tmp);
+		this.y3 = Utils.buildCalendar(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		y4 = Utils.buildCalendar(tmp);
+		this.y4 = Utils.buildCalendar(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		y5 = Utils.buildCalendar(tmp);
+		this.y5 = Utils.buildCalendar(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		y6 = Utils.buildCalendar(tmp);
+		this.y6 = Utils.buildCalendar(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		y7 = Utils.buildCalendar(tmp);
-
-		tmp.add(Calendar.YEAR, -1);
-		y8 = Utils.buildCalendar(tmp);
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		DateSet ds = new DateSet();
-		System.out.println(ds);
-
+		this.y7 = Utils.buildCalendar(tmp);
 	}
 
 	@Override
 	public String toString() {
 
-		String ret = "TTM : " + Utils.stringDate(ttm);
-		ret += "\nY1  : " + Utils.stringDate(y1);
-		ret += "\nY2  : " + Utils.stringDate(y2);
-		ret += "\nY3  : " + Utils.stringDate(y3);
-		ret += "\nY4  : " + Utils.stringDate(y4);
-		ret += "\nY5  : " + Utils.stringDate(y5);
-		ret += "\nY6  : " + Utils.stringDate(y6);
-		ret += "\nY7  : " + Utils.stringDate(y7);
-		ret += "\nY8  : " + Utils.stringDate(y8);
+		String ret = "TTM : " + Utils.stringDate(this.ttm);
+		ret += "\nY1  : " + Utils.stringDate(this.y1);
+		ret += "\nY2  : " + Utils.stringDate(this.y2);
+		ret += "\nY3  : " + Utils.stringDate(this.y3);
+		ret += "\nY4  : " + Utils.stringDate(this.y4);
+		ret += "\nY5  : " + Utils.stringDate(this.y5);
+		ret += "\nY6  : " + Utils.stringDate(this.y6);
+		ret += "\nY7  : " + Utils.stringDate(this.y7);
 		return ret;
 	}
 
