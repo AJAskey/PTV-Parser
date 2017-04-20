@@ -59,8 +59,7 @@ public class OexOptions {
 		TickerFullName.build(fullfilenames);
 		// TickerFullName.dumpTickers();
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\OPRA");
 
 		TickerData.clearTickerData(tdList);

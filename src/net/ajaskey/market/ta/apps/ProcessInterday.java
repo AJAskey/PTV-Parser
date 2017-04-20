@@ -55,8 +55,7 @@ public class ProcessInterday {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		String arg = "InterdayDataPath";
-		final String idDataPath = System.getProperty(arg, "");
+		final String idDataPath = Utils.getDataPath();
 
 		final File nazFile = new File(idDataPath + "\\NASDAQ_20151201.csv");
 		final List<InterdayData> idList = ParseData.parseInterdayFile(nazFile);
@@ -64,8 +63,7 @@ public class ProcessInterday {
 
 		final List<String> filenames = new ArrayList<>();
 
-		arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		// filenames.add(dataPath + "\\ASCII\\NYSE");
 		ParseData.clearValidTickers();

@@ -62,8 +62,7 @@ public class CreateSpxPriceList {
 		TickerFullName.build(this.fullfilenames);
 		ParseData.setValidTicker("SPX.IDX");
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		this.filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		List<TickerData> tdList;

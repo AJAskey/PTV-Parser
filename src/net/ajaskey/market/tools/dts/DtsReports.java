@@ -10,6 +10,7 @@ import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.methods.EmaContinuousSeries;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -49,6 +50,8 @@ public class DtsReports {
 	final static private String COMMA = ",";
 
 	final static private String COMMA2 = ",,";
+	
+	final static private String DtsPath = OptumaCommon.optumaPath + "DTS/";
 
 	/**
 	 *
@@ -418,37 +421,35 @@ public class DtsReports {
 
 		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		final String path = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS";
-
-		try (PrintWriter pwWith = new PrintWriter(path + "\\dts-withheld-optuma.csv")) {
+		try (PrintWriter pwWith = new PrintWriter(DtsPath + "\\dts-withheld-optuma.csv")) {
 			pwWith.println("Date,Withheld");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwWith.printf("%s,%d%n", theDate, d.getWith().yearly);
 			}
 		}
-		try (PrintWriter pwInd = new PrintWriter(path + "\\dts-individual-optuma.csv")) {
+		try (PrintWriter pwInd = new PrintWriter(DtsPath + "\\dts-individual-optuma.csv")) {
 			pwInd.println("Date,Individual");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwInd.printf("%s,%d%n", theDate, d.getInd().yearly);
 			}
 		}
-		try (PrintWriter pwCorp = new PrintWriter(path + "\\dts-corporate-optuma.csv")) {
+		try (PrintWriter pwCorp = new PrintWriter(DtsPath + "\\dts-corporate-optuma.csv")) {
 			pwCorp.println("Date,Corporate");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwCorp.printf("%s,%d%n", theDate, d.getCorp().yearly);
 			}
 		}
-		try (PrintWriter pwTotal = new PrintWriter(path + "\\dts-total-optuma.csv")) {
+		try (PrintWriter pwTotal = new PrintWriter(DtsPath + "\\dts-total-optuma.csv")) {
 			pwTotal.println("Date,Total");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwTotal.printf("%s,%d%n", theDate, d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly);
 			}
 		}
-		try (PrintWriter pwUnemp = new PrintWriter(path + "\\dts-unemp-optuma.csv")) {
+		try (PrintWriter pwUnemp = new PrintWriter(DtsPath + "\\dts-unemp-optuma.csv")) {
 			pwUnemp.println("Date,Unemployment");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
@@ -456,21 +457,21 @@ public class DtsReports {
 			}
 		}
 
-		try (PrintWriter pwWith = new PrintWriter(path + "\\dts-withheld-daily.csv")) {
+		try (PrintWriter pwWith = new PrintWriter(DtsPath + "\\dts-withheld-daily.csv")) {
 			pwWith.println("Date,Withheld");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwWith.printf("%s,%d%n", theDate, d.getWith().daily);
 			}
 		}
-		try (PrintWriter pwInd = new PrintWriter(path + "\\dts-individual-daily.csv")) {
+		try (PrintWriter pwInd = new PrintWriter(DtsPath + "\\dts-individual-daily.csv")) {
 			pwInd.println("Date,Individual");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
 				pwInd.printf("%s,%d%n", theDate, d.getInd().daily);
 			}
 		}
-		try (PrintWriter pwCorp = new PrintWriter(path + "\\dts-corporate-daily.csv")) {
+		try (PrintWriter pwCorp = new PrintWriter(DtsPath + "\\dts-corporate-daily.csv")) {
 			pwCorp.println("Date,Corporate");
 			for (final DtsData d : DtsData.dtsList) {
 				final String theDate = sdf.format(d.getDate().getTime());
@@ -487,10 +488,12 @@ public class DtsReports {
 			final DtsQuarterly q2014 = new DtsQuarterly(2014);
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
 			final DtsQuarterly q2016 = new DtsQuarterly(2016);
+			final DtsQuarterly q2017 = new DtsQuarterly(2017);
 
 			DtsReports.printQuarterly(pw, q2013, q2014);
 			DtsReports.printQuarterly(pw, q2014, q2015);
 			DtsReports.printQuarterly(pw, q2015, q2016);
+			DtsReports.printQuarterly(pw, q2016, q2017);
 
 		}
 	}
@@ -510,7 +513,7 @@ public class DtsReports {
 
 		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		String fname = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS\\";
+		String fname = DtsPath;
 
 		if (type == DTS_TYPE.CORPORATE) {
 			fname += "dts-sum-corporate.csv";
@@ -628,7 +631,7 @@ public class DtsReports {
 
 		final List<Integer> ytd = new ArrayList<>();
 		final List<Calendar> date = new ArrayList<>();
-		String fname = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\DTS\\";
+		String fname = DtsPath;
 
 		if (type == DTS_TYPE.CORPORATE) {
 			fname += "dts-yy-corporate.csv";

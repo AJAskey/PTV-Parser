@@ -107,8 +107,7 @@ public class Internals {
 		ParseData.setValidTicker("SML.IDX");
 
 		filenames.clear();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		TickerData.clearTickerData(tdList);
@@ -227,8 +226,7 @@ public class Internals {
 		ParseData.setValidTickers(ParseData.getTickerList(list));
 
 		filenames.clear();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		filenames.add(dataPath + "\\ASCII\\AMEX");
@@ -429,8 +427,7 @@ public class Internals {
 		ParseData.setValidTicker("ADDT.IDX");
 
 		filenames.clear();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		TickerData.clearTickerData(tdList);
@@ -471,8 +468,7 @@ public class Internals {
 		ParseData.setValidTickers(ParseData.getTickerList(list));
 
 		filenames.clear();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 

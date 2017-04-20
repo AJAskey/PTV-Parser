@@ -61,8 +61,7 @@ public class DumpPriceSeries {
 			TickerFullName.build(fullfilenames);
 			ParseData.setValidTicker("SPX.IDX");
 
-			final String arg = "dataPath";
-			final String dataPath = System.getProperty(arg, "");
+			final String dataPath = Utils.getDataPath();
 			filenames.add(dataPath + "\\ASCII\\INDEX");
 
 			final Calendar cal = Utils.buildCalendar(2012, Calendar.JANUARY, 3);

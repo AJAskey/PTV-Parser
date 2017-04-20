@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.tools.optuma.OptumaCommon;
+
 /**
  * This class...
  *
@@ -37,7 +39,7 @@ import java.util.List;
  */
 public class FredCommon {
 
-	public final static String optumaPath = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/FRED/";
+	public final static String fredPath = OptumaCommon.optumaPath + "FRED/";
 
 	/**
 	 * net.ajaskey.market.tools.fred.getShortTitle
@@ -98,7 +100,7 @@ public class FredCommon {
 	 */
 	public static void writeToOptuma(List<DataValues> data, String seriesName) {
 
-		try (PrintWriter pw = new PrintWriter(new File(optumaPath + seriesName + ".csv"))) {
+		try (PrintWriter pw = new PrintWriter(new File(fredPath + seriesName + ".csv"))) {
 			pw.println("Date," + seriesName);
 			for (final DataValues dv : data) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());

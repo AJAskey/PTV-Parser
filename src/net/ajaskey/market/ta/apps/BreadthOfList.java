@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.apps.helpers.BreadthData;
 import net.ajaskey.market.ta.input.ParseData;
@@ -69,8 +70,7 @@ public class BreadthOfList {
 		fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 		TickerFullName.build(fullfilenames);
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\AMEX");
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");

@@ -124,9 +124,6 @@ public class Fundamentals {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		final String arg = "dataPath";
-		System.getProperty(arg, "");
-
 		Fundamentals.build("lists\\stock-fundie-list.txt");
 		// Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
 		// Fundamentals.build(dataPath + "\\ASCII\\NYSE_fundies.txt");

@@ -71,8 +71,7 @@ public class WhosHot {
 			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
 			TickerFullName.build(fullfilenames);
 
-			final String arg = "dataPath";
-			final String dataPath = System.getProperty(arg, "");
+			final String dataPath = Utils.getDataPath();
 			// filenames.add(dataPath + "\\ASCII\\AMEX");
 			filenames.add(dataPath + "\\ASCII\\NYSE");
 			filenames.add(dataPath + "\\ASCII\\NASDAQ");

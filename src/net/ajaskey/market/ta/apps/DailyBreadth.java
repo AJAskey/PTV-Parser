@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.apps.helpers.DailyBreadthData;
 import net.ajaskey.market.ta.input.ParseData;
@@ -49,8 +50,7 @@ public class DailyBreadth {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		final List<String> filenames = new ArrayList<>();
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		ParseData.clearValidTickers();

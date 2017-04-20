@@ -73,7 +73,7 @@ public class FredDataDownloader {
 	 */
 	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData, DataSeries.ResponseType unit) {
 
-		final String fname = FredCommon.optumaPath + series + ".csv";
+		final String fname = FredCommon.fredPath + series + ".csv";
 		if (new File(fname).exists()) {
 			return;
 		}

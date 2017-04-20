@@ -67,8 +67,7 @@ public class ProcessSymbolList {
 		Utils.makeDir("symbols");
 		Utils.makeDir("lists");
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		final String filePath = dataPath + "\\ASCII";
 		System.out.println(filePath);
 		ProcessSymbolList.findLists(new File(filePath));

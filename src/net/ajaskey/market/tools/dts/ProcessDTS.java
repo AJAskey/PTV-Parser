@@ -47,12 +47,12 @@ public class ProcessDTS {
 	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String folderPath = "d:/temp/dts";
+	final static private String folderPath = "c:/data/dts";
 	// final static private String folderPath = "d:/temp/dts-lt";
 	final static private Charset charset = Charset.forName("UTF-8");
 
 	final static public int	webDownloadYear		= 2017;
-	final static public int	webDownloadMonth	= Calendar.MARCH;
+	final static public int	webDownloadMonth	= Calendar.APRIL;
 	final static public int	webDownloadDay		= 1;
 
 	/**
@@ -93,13 +93,12 @@ public class ProcessDTS {
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.SEPTEMBER);
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.OCTOBER);
 			DtsReports.dumpCompareMonths(2016, 2015, Calendar.NOVEMBER);
 			DtsReports.dumpCompareMonths(2016, 2015, Calendar.DECEMBER);
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JANUARY);
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.FEBRUARY);
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.MARCH);
+			DtsReports.dumpCompareMonths(2017, 2016, Calendar.APRIL);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

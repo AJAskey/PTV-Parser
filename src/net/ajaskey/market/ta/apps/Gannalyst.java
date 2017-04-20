@@ -62,8 +62,7 @@ public class Gannalyst {
 		fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 		TickerFullName.build(fullfilenames);
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\AMEX");
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\INDEX");

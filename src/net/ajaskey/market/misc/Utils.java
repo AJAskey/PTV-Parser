@@ -59,6 +59,11 @@ public class Utils {
 	final static public Locale					locale		= Locale.getDefault();
 
 	private static boolean initialized = false;
+	
+	public static String getDataPath() {
+		String path = System.getProperty("dataPath", "C:\\Users\\ajask_000\\Documents\\EODData\\DataClient");
+		return path;
+	}
 
 	public static Calendar buildCalendar(Calendar inCal) {
 

@@ -61,35 +61,35 @@ public class SpxLongTermPrices {
 	 * @throws ParseException
 	 *
 	 */
-	public SpxLongTermPrices() throws IOException, ParseException {
-
-		// Singleton
-		if (spxList != null) {
-			return;
-		}
-
-		spxList = new ArrayList<>();
-
-		try (BufferedReader reader = Files.newBufferedReader(filePath.toPath(), charset)) {
-			String line = reader.readLine(); // Header
-
-			while ((line = reader.readLine()) != null) {
-				final SpxLongTermPrices sp = new SpxLongTermPrices();
-				try {
-					sp.date = Calendar.getInstance();
-					final String fld[] = line.trim().split("\t");
-					sp.date.setTime(sdf.parse(fld[0].trim()));
-					sp.open = Double.parseDouble(fld[1].trim());
-					sp.high = Double.parseDouble(fld[2].trim());
-					sp.low = Double.parseDouble(fld[3].trim());
-					sp.close = Double.parseDouble(fld[4].trim());
-					System.out.println(Utils.stringDate(sp.date) + " " + sp.close);
-					spxList.add(sp);
-				} catch (final Exception e) {
-				}
-			}
-		}
-	}
+//	public SpxLongTermPrices() throws IOException, ParseException {
+//
+//		// Singleton
+//		if (spxList != null) {
+//			return;
+//		}
+//
+//		spxList = new ArrayList<>();
+//
+//		try (BufferedReader reader = Files.newBufferedReader(filePath.toPath(), charset)) {
+//			String line = reader.readLine(); // Header
+//
+//			while ((line = reader.readLine()) != null) {
+//				final SpxLongTermPrices sp = new SpxLongTermPrices();
+//				try {
+//					sp.date = Calendar.getInstance();
+//					final String fld[] = line.trim().split("\t");
+//					sp.date.setTime(sdf.parse(fld[0].trim()));
+//					sp.open = Double.parseDouble(fld[1].trim());
+//					sp.high = Double.parseDouble(fld[2].trim());
+//					sp.low = Double.parseDouble(fld[3].trim());
+//					sp.close = Double.parseDouble(fld[4].trim());
+//					System.out.println(Utils.stringDate(sp.date) + " " + sp.close);
+//					spxList.add(sp);
+//				} catch (final Exception e) {
+//				}
+//			}
+//		}
+//	}
 
 	public static String getClose(Calendar cal) {
 

@@ -100,8 +100,7 @@ public class DumpTickerData {
 	 */
 	private static void processList(String list) throws FileNotFoundException, ParseException {
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 
 		filenames.clear();
 		filenames.add(dataPath + list);

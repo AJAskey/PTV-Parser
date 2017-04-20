@@ -20,6 +20,7 @@ import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.input.SpxLongTermPrices;
 import net.ajaskey.market.tools.cots.LongShort.SourceType;
 import net.ajaskey.market.tools.helpers.WebGet;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -48,8 +49,8 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessCOTS {
 
-	final private static String						outputPath	= "d:/dev/ta/working/out/optuma";
-	final private static String						folderPath	= "d:/temp/cots";
+	final private static String						outputPath	= "out/optuma";
+	final private static String						folderPath	= "c:/data/cots";
 	final private static Charset					charset			= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2				= new SimpleDateFormat("MMMM dd, yyyy");
@@ -228,7 +229,7 @@ public class ProcessCOTS {
 
 		// CotsReports.writeCsv(prefix, outputPath);
 
-		CotsReports.writeOptuma(prefix, "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\COTS");
+		CotsReports.writeOptuma(prefix, OptumaCommon.optumaPath + "/COTS");
 
 	}
 

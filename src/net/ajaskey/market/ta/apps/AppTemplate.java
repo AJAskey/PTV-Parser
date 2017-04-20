@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.input.ParseData;
 
@@ -57,8 +58,7 @@ public class AppTemplate {
 		 *
 		 */
 		filenames.clear();
-		final String prop = "dataPath";
-		final String dataPath = System.getProperty(prop, "");
+		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\NASDAQ");
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 

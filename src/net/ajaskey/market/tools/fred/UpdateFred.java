@@ -40,12 +40,28 @@ import net.ajaskey.market.misc.Utils;
 public class UpdateFred {
 
 	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
-	public final static SimpleDateFormat	sdf2		= new SimpleDateFormat("yyyy-MMM-dd");
-	public final static File							file	= new File(FredCommon.optumaPath);
+	public final static SimpleDateFormat	sdf2	= new SimpleDateFormat("yyyy-MMM-dd");
+	public final static File							file	= new File(FredCommon.fredPath);
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
 
 	private static List<InputRecord> records = new ArrayList<>();
+
+	/**
+	 * net.ajaskey.market.tools.fred.findInputRecord
+	 *
+	 * @param series
+	 * @return
+	 */
+	private static InputRecord findInputRecord(String series) {
+
+		for (final InputRecord ir : records) {
+			if (ir.series.equalsIgnoreCase(series)) {
+				return ir;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -66,7 +82,7 @@ public class UpdateFred {
 
 		final File list[] = file.listFiles();
 
-		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "readme.txt")) {
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "readme.txt")) {
 			for (final File f : list) {
 
 				final String name = f.getName();
@@ -90,7 +106,7 @@ public class UpdateFred {
 
 						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
-						DataSeriesInfo dsi = new DataSeriesInfo(series);
+						final DataSeriesInfo dsi = new DataSeriesInfo(series);
 						dsi.setUnits(ir.units.toString());
 
 						dsList.add(dsi);
@@ -119,30 +135,14 @@ public class UpdateFred {
 
 		Collections.sort(dsList, new DsiSorter());
 
-		try (PrintWriter pw = new PrintWriter(FredCommon.optumaPath + "last-update.txt")) {
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {
-				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(), sdf.format(ds.getLastUpdate().getTime()), sdf2.format(ds.getLastObservation().getTime()),
-				    ds.getTitle());
+				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
+				    sdf.format(ds.getLastUpdate().getTime()), sdf2.format(ds.getLastObservation().getTime()), ds.getTitle());
 			}
 		}
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.findInputRecord
-	 *
-	 * @param series
-	 * @return
-	 */
-	private static InputRecord findInputRecord(String series) {
-
-		for (final InputRecord ir : records) {
-			if (ir.series.equalsIgnoreCase(series)) {
-				return ir;
-			}
-		}
-		return null;
 	}
 }
