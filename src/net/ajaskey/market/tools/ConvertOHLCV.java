@@ -22,6 +22,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 import net.ajaskey.market.tools.helpers.OhlcvData.FormType;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 import net.ajaskey.market.tools.helpers.ProcessExcel;
 import net.ajaskey.market.tools.helpers.SortOhlcv;
 
@@ -56,8 +57,8 @@ public class ConvertOHLCV {
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
 	final private static SimpleDateFormat	sdfOut		= new SimpleDateFormat("yyyy-MM-dd");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
-	final public static String						shortPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dc";
-	final public static String						fullPath	= "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/Dohlcv";
+	final public static String						shortPath	= OptumaCommon.optumaPath + "/Dc";
+	final public static String						fullPath	= OptumaCommon.optumaPath + "/Dohlcv";
 
 	/**
 	 * net.ajaskey.market.tools.main
