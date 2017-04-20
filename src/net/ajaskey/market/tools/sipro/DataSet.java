@@ -68,6 +68,21 @@ public class DataSet {
 		ds.ttm = set1.ttm - set2.ttm;
 		return ds;
 	}
+	
+	public static DataSet mult(DataSet set1, DataSet set2) {
+
+		final DataSet ds = new DataSet();
+		ds.ticker = "MERGED_TICKERS";
+		ds.y7 = set1.y7 * set2.y7;
+		ds.y6 = set1.y6 * set2.y6;
+		ds.y5 = set1.y5 * set2.y5;
+		ds.y4 = set1.y4 * set2.y4;
+		ds.y3 = set1.y3 * set2.y3;
+		ds.y2 = set1.y2 * set2.y2;
+		ds.y1 = set1.y1 * set2.y1;
+		ds.ttm = set1.ttm * set2.ttm;
+		return ds;
+	}
 
 	/**
 	 *
@@ -120,6 +135,18 @@ public class DataSet {
 		this.y2 = 0;
 		this.y1 = 0;
 		this.ttm = 0;
+	}
+	
+	public DataSet(double scaler) {
+		this.ticker = "";
+		this.y7 = scaler;
+		this.y6 = scaler;
+		this.y5 = scaler;
+		this.y4 = scaler;
+		this.y3 = scaler;
+		this.y2 = scaler;
+		this.y1 = scaler;
+		this.ttm = scaler;
 	}
 
 	public DataSet(String code, String[] s, int ptr) {

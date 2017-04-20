@@ -32,6 +32,57 @@ import net.ajaskey.market.misc.Utils;
  */
 public class DateSet {
 
+	public class Quarter {
+
+		public Calendar	q4;
+		public Calendar	q3;
+		public Calendar	q2;
+		public Calendar	q1;
+
+		/**
+		 * This method serves as a constructor for the class.
+		 *
+		 */
+		public Quarter(Calendar base) {
+			this.q4 = Utils.buildCalendar(base);
+
+			base.add(Calendar.MONTH, -3);
+			int lday = base.getActualMaximum(Calendar.DAY_OF_MONTH);
+			base.set(Calendar.DAY_OF_MONTH, lday);
+			this.q3 = Utils.buildCalendar(base);
+
+			base.add(Calendar.MONTH, -3);
+			lday = base.getActualMaximum(Calendar.DAY_OF_MONTH);
+			base.set(Calendar.DAY_OF_MONTH, lday);
+			this.q2 = Utils.buildCalendar(base);
+
+			base.add(Calendar.MONTH, -3);
+			lday = base.getActualMaximum(Calendar.DAY_OF_MONTH);
+			base.set(Calendar.DAY_OF_MONTH, lday);
+			this.q1 = Utils.buildCalendar(base);
+		}
+
+		@Override
+		public String toString() {
+
+			String ret = "  Q1 : " + Utils.stringDate(this.q1);
+			ret += "\n  Q2 : " + Utils.stringDate(this.q2);
+			ret += "\n  Q3 : " + Utils.stringDate(this.q3);
+			ret += "\n  Q4 : " + Utils.stringDate(this.q4);
+
+			return ret;
+		}
+	}
+
+	public Quarter	y7;
+	public Quarter	y6;
+	public Quarter	y5;
+	public Quarter	y4;
+	public Quarter	y3;
+	public Quarter	y2;
+	public Quarter	y1;
+	public Calendar	ttm;
+
 	/**
 	 * net.ajaskey.market.tools.sipro.main
 	 *
@@ -44,67 +95,65 @@ public class DateSet {
 
 	}
 
-	public Calendar	y7;
-	public Calendar	y6;
-	public Calendar	y5;
-	public Calendar	y4;
-	public Calendar	y3;
-	public Calendar	y2;
-	public Calendar	y1;
-	public Calendar	ttm;
-
 	public DateSet() {
 
 		this.ttm = Calendar.getInstance();
 		for (int i = 0; i < 7; i++) {
-			ttm.add(Calendar.DATE, -1);
-			if (ttm.get(Calendar.DATE) == Calendar.FRIDAY) {
+			this.ttm.add(Calendar.DATE, -1);
+			if (this.ttm.get(Calendar.DATE) == Calendar.FRIDAY) {
 				break;
 			}
 		}
 
 		final Calendar tmp = Calendar.getInstance();
-		for (int i = 1; i < 4; i++) {
-			tmp.add(Calendar.MONTH, -1);
-			if (tmp.get(Calendar.MONTH) == Calendar.DECEMBER) {
-
-				final int lday = tmp.getActualMaximum(Calendar.DAY_OF_MONTH);
-				tmp.set(Calendar.DAY_OF_MONTH, lday);
-				this.y1 = Utils.buildCalendar(tmp);
-				break;
-			}
-		}
+		tmp.add(Calendar.YEAR, -1);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y1 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y2 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y2 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y3 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y3 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y4 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y4 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y5 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y5 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y6 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y6 = new Quarter(tmp);
 
 		tmp.add(Calendar.YEAR, -1);
-		this.y7 = Utils.buildCalendar(tmp);
+		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
+		tmp.set(Calendar.DATE, 31);
+		this.y7 = new Quarter(tmp);
 	}
 
 	@Override
 	public String toString() {
 
-		String ret = "TTM : " + Utils.stringDate(this.ttm);
-		ret += "\nY1  : " + Utils.stringDate(this.y1);
-		ret += "\nY2  : " + Utils.stringDate(this.y2);
-		ret += "\nY3  : " + Utils.stringDate(this.y3);
-		ret += "\nY4  : " + Utils.stringDate(this.y4);
-		ret += "\nY5  : " + Utils.stringDate(this.y5);
-		ret += "\nY6  : " + Utils.stringDate(this.y6);
-		ret += "\nY7  : " + Utils.stringDate(this.y7);
+		String ret = "";
+		ret += "Y7\n" + this.y7;
+		ret += "\nY6\n" + this.y6;
+		ret += "\nY5\n" + this.y5;
+		ret += "\nY4\n" + this.y4;
+		ret += "\nY3\n" + this.y3;
+		ret += "\nY2\n" + this.y2;
+		ret += "\nY1\n" + this.y1;
+		ret += "\nTTM  : " + Utils.stringDate(this.ttm);
 		return ret;
 	}
 

@@ -49,13 +49,33 @@ public class SipData {
 	public static List<DataSet>	goodwill			= new ArrayList<>();
 	public static List<DataSet>	assets				= new ArrayList<>();
 	public static List<DataSet>	liabilities		= new ArrayList<>();
+	public static List<DataSet>	cashfromops		= new ArrayList<>();
+	public static List<DataSet>	shares				= new ArrayList<>();
+	public static List<DataSet>	dividends			= new ArrayList<>();
+	public static List<DataSet>	bookvalue			= new ArrayList<>();
+	public static List<DataSet>	cashfromfin		= new ArrayList<>();
+	public static List<DataSet>	equity				= new ArrayList<>();
+	public static List<DataSet>	tax						= new ArrayList<>();
+	public static List<DataSet>	interest			= new ArrayList<>();
+	public static List<DataSet>	accRx			= new ArrayList<>();
+	public static List<DataSet>	accPay			= new ArrayList<>();
+	public static List<DataSet>	capExpend			= new ArrayList<>();
 
 	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyyMMdd");
 	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.sipro.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		SipData.read("data/SP500-SIP.csv");
+		SipData.read("data/SP500-SIP.csv", "SPX");
+		//SipData.read("data/NDX-SIP.csv", "NDX");
 
 	}
 
@@ -66,7 +86,7 @@ public class SipData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void read(String filename) throws FileNotFoundException, IOException {
+	public static void read(String filename, String src) throws FileNotFoundException, IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
@@ -105,14 +125,58 @@ public class SipData {
 					final DataSet gwill = new DataSet(fld[0], fld, 48);
 					System.out.println(gwill);
 					goodwill.add(gwill);
-					
+
 					final DataSet asset = new DataSet(fld[0], fld, 56);
 					System.out.println(asset);
 					assets.add(asset);
-					
+
 					final DataSet liab = new DataSet(fld[0], fld, 64);
 					System.out.println(liab);
 					liabilities.add(liab);
+
+					final DataSet cfops = new DataSet(fld[0], fld, 72);
+					System.out.println(cfops);
+					cashfromops.add(cfops);
+
+					final DataSet share = new DataSet(fld[0], fld, 80);
+					System.out.println(share);
+					shares.add(share);
+
+					final DataSet div = new DataSet(fld[0], fld, 88);
+					System.out.println(div);
+					dividends.add(div);
+
+					final DataSet bv = new DataSet(fld[0], fld, 96);
+					System.out.println(bv);
+					bookvalue.add(bv);
+
+					final DataSet cashfin = new DataSet(fld[0], fld, 104);
+					System.out.println(cashfin);
+					cashfromfin.add(cashfin);
+
+					final DataSet eq = new DataSet(fld[0], fld, 112);
+					System.out.println(eq);
+					equity.add(eq);
+					
+					final DataSet tx = new DataSet(fld[0], fld, 120);
+					System.out.println(tx);
+					tax.add(tx);
+					
+					final DataSet intr = new DataSet(fld[0], fld, 128);
+					System.out.println(intr);
+					interest.add(intr);
+					
+					final DataSet arx = new DataSet(fld[0], fld, 136);
+					System.out.println(arx);
+					accRx.add(arx);
+					
+					final DataSet apay = new DataSet(fld[0], fld, 144);
+					System.out.println(apay);
+					accPay.add(apay);
+					
+					final DataSet capE = new DataSet(fld[0], fld, 152);
+					System.out.println(capE);
+					capExpend.add(capE);
 
 				}
 			}
@@ -149,17 +213,88 @@ public class SipData {
 		final DataSet totLiab = DataSet.sum(liabilities);
 		System.out.println("Liabilities : \n" + totLiab);
 
-		SipData.writeData(totSales, "SPX Sales");
-		SipData.writeData(totGI, "SPX Gross Income");
-		SipData.writeData(net, "SPX GrossIncome Minus Unusual Income");
-		SipData.writeData(totInc, "SPX Income for EPS");
-		SipData.writeData(totCash, "SPX Cash");
-		SipData.writeData(totInventory, "SPX Inventory");
-		SipData.writeData(totGoodwill, "SPX Goodwill");
-		SipData.writeData(totAssets, "SPX Assets");
-		SipData.writeData(totAssGW, "SPX Assets Minus Goodwill");
-		SipData.writeData(totLiab, "SPX Liabilities");
+		final DataSet totcfops = DataSet.sum(cashfromops);
+		System.out.println("Cash from OPS : \n" + totcfops);
 
+		final DataSet totShares = DataSet.sum(shares);
+		System.out.println("Shares : \n" + totShares);
+
+		final DataSet totDiv = DataSet.sum(dividends);
+		System.out.println("Dividends : \n" + totDiv);
+		DataSet divDollar = DataSet.mult(totDiv, totShares);
+
+		final DataSet totBv = DataSet.sum(bookvalue);
+		System.out.println("Book Value : \n" + totBv);
+		DataSet bvDollar = DataSet.mult(totBv, totShares);
+		DataSet bvMod = DataSet.sub(bvDollar, totGoodwill);
+		DataSet bvScaler = new DataSet(1.0 / 100.0);
+		DataSet bvScaled = DataSet.mult(bvMod, bvScaler);
+
+		final DataSet totcffin = DataSet.sum(cashfromfin);
+		System.out.println("Cash from Financing : \n" + totcffin);
+
+		final DataSet totEq = DataSet.sum(equity);
+		System.out.println("Equity : \n" + totEq);
+
+		final DataSet totTax = DataSet.sum(tax);
+		System.out.println("Taxes : \n" + totTax);
+		
+		final DataSet totInt = DataSet.sum(interest);
+		System.out.println("Interest : \n" + totInt);		
+		
+		final DataSet totAR = DataSet.sum(accRx);
+		System.out.println("Accounts Receivable : \n" + totAR);		
+		
+		final DataSet totAP = DataSet.sum(accPay);
+		System.out.println("Accounts Payable : \n" + totAP);		
+		
+		final DataSet totCE = DataSet.sum(capExpend);
+		System.out.println("Cap Expend : \n" + totCE);
+		
+		if (src.equalsIgnoreCase("SPX")) {
+			SipData.writeData(totSales, "SPX Sales");
+			SipData.writeData(totGI, "SPX Gross Income");
+			SipData.writeData(net, "SPX GrossIncome Minus Unusual Income");
+			SipData.writeData(totInc, "SPX Income for EPS");
+			SipData.writeData(totCash, "SPX Cash");
+			SipData.writeData(totInventory, "SPX Inventory");
+			SipData.writeData(totGoodwill, "SPX Goodwill");
+			SipData.writeData(totAssets, "SPX Assets");
+			SipData.writeData(totAssGW, "SPX Assets Minus Goodwill");
+			SipData.writeData(totLiab, "SPX Liabilities");
+			SipData.writeData(totcfops, "SPX Cash From Operations");
+			SipData.writeData(totShares, "SPX Shares");
+			SipData.writeData(divDollar, "SPX Dividends");
+			SipData.writeData(bvScaled, "SPX Book Value");
+			SipData.writeData(totcffin, "SPX Cash From Financing");
+			SipData.writeData(totEq, "SPX Common Equity");
+			SipData.writeData(totTax, "SPX Income Tax Paid");
+			SipData.writeData(totInt, "SPX Interest Paid");
+			SipData.writeData(totAR, "SPX Accounts Receivable");
+			SipData.writeData(totAP, "SPX Accounts Payable");
+			SipData.writeData(totCE, "SPX Capital Expenditures");
+		} else {
+			SipData.writeData(totSales, "NDX Sales");
+			SipData.writeData(totGI, "NDX Gross Income");
+			SipData.writeData(net, "NDX GrossIncome Minus Unusual Income");
+			SipData.writeData(totInc, "NDX Income for EPS");
+			SipData.writeData(totCash, "NDX Cash");
+			SipData.writeData(totInventory, "NDX Inventory");
+			SipData.writeData(totGoodwill, "NDX Goodwill");
+			SipData.writeData(totAssets, "NDX Assets");
+			SipData.writeData(totAssGW, "NDX Assets Minus Goodwill");
+			SipData.writeData(totLiab, "NDX Liabilities");
+			SipData.writeData(totcfops, "NDX Cash From Operations");
+			SipData.writeData(totShares, "NDX Shares");
+		}
+	}
+
+	private static void write(PrintWriter pw, DateSet.Quarter q, double val) {
+
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q3.getTime()), val);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
 
 	private static void writeData(DataSet ds, String fname) {
@@ -168,13 +303,13 @@ public class SipData {
 
 			final DateSet dates = new DateSet();
 
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y7.getTime()), ds.y7);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y6.getTime()), ds.y6);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y5.getTime()), ds.y5);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y4.getTime()), ds.y4);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y3.getTime()), ds.y3);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y2.getTime()), ds.y2);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.y1.getTime()), ds.y1);
+			write(pw, dates.y7, ds.y7);
+			write(pw, dates.y6, ds.y6);
+			write(pw, dates.y5, ds.y5);
+			write(pw, dates.y4, ds.y4);
+			write(pw, dates.y3, ds.y3);
+			write(pw, dates.y2, ds.y2);
+			write(pw, dates.y1, ds.y1);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ds.ttm);
 
 		} catch (final Exception e) {
