@@ -57,22 +57,18 @@ public class ConvertOptuma {
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
 
-		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxearnyield.html").toPath());
-		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxyield.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spx-mcclellan-sum.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spx-mcclellan-osc.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpci.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpce.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-call-v.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-put-v.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/oex-call-v.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/oex-put-v.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-call-v.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-put-v.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/oex-call-v.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/oex-put-v.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rybull.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rybear.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rymm.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfcash.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfpcash.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfcash.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfpcash.html").toPath());
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/crb.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxupvol.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxdownvol.html").toPath());
