@@ -23,6 +23,7 @@ import org.xml.sax.InputSource;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.ConvertOHLCV;
 import net.ajaskey.market.tools.helpers.OhlcvData;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -57,7 +58,7 @@ public class ProcessQuandl {
 	private static DocumentBuilderFactory	dbFactory	= null;
 	private static DocumentBuilder				dBuilder	= null;
 
-	final public static String outpath = "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\quandl";
+	final public static String outpath = OptumaCommon.optumaPath + "/quandl";
 
 	/**
 	 * net.ajaskey.market.tools.quandl.main
@@ -75,6 +76,8 @@ public class ProcessQuandl {
 		String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
 		    + QuandlApi.key;
 		String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key=" + QuandlApi.key;
+		
+		String epcURL ="https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key="  + QuandlApi.key;
 
 
 		List<OhlcvData> earn = getData(sp500EarnURL);
@@ -92,7 +95,82 @@ public class ProcessQuandl {
 		List<OhlcvData> sales = getData(sp500SalesURL);
 		writeList(sales, "SP500_Sales");
 
+		List<OhlcvData> epc = getPutCallData(epcURL);
+		
 	}
+	
+	
+
+	/** 
+	 * net.ajaskey.market.tools.quandl.getPutCallData
+	 *
+	 * @param epcURL
+	 * @return
+	 */
+	private static List<OhlcvData> getPutCallData(String url) {
+
+		final List<OhlcvData> ret = new ArrayList<>();
+
+		String resp;
+		try {
+			dBuilder = dbFactory.newDocumentBuilder();
+
+			System.out.println("Processing : " + url);
+
+			resp = Utils.getFromUrl(url);
+			System.out.println(resp);
+
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+			doc.getDocumentElement().normalize();
+
+			final NodeList nResp = doc.getElementsByTagName("datum");
+			for (int knt = 0; knt < nResp.getLength(); knt++) {
+				final Node nodeResp = nResp.item(knt);
+				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+					final NodeList nrList = nodeResp.getChildNodes();
+					Calendar cal = null;
+					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
+						final Node nr = nrList.item(cnt);
+						if (nr.getNodeType() == Node.ELEMENT_NODE) {
+							//final Element eElement = (Element) nodeResp;
+							System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+
+							Element eElement = (Element) nr;
+							System.out.println("type: " + eElement.getAttribute("type"));
+							String s = eElement.getAttribute("type");
+
+							if (s.contains("date")) {
+								System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								final Date date = sdf.parse(nr.getTextContent().trim());
+								cal = Calendar.getInstance();
+								cal.setTime(date);
+
+							} else if (s.contains("float")) {
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								if (cal != null) {
+									final double c = Double.parseDouble(nr.getTextContent().trim());
+									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
+									cal = null;
+									ret.add(d);
+									System.out.println("Adding - " + d.toShortString());
+									//System.out.println(d.toShortString());
+								}
+							}
+						}
+					}
+				}
+			}
+
+		} catch (final Exception e) {
+			ret.clear();
+			e.printStackTrace();
+		}
+
+		return ret;
+	}
+
+
 
 	private static List<OhlcvData> getData(String url) {
 
