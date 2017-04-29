@@ -68,7 +68,7 @@ public class DataSet {
 		ds.ttm = set1.ttm - set2.ttm;
 		return ds;
 	}
-	
+
 	public static DataSet mult(DataSet set1, DataSet set2) {
 
 		final DataSet ds = new DataSet();
@@ -120,12 +120,21 @@ public class DataSet {
 	public double	y2;
 	public double	y1;
 	public double	ttm;
+	public String	name;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet() {
+	private DataSet() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSet(String n) {
 		this.ticker = "";
 		this.y7 = 0;
 		this.y6 = 0;
@@ -135,8 +144,9 @@ public class DataSet {
 		this.y2 = 0;
 		this.y1 = 0;
 		this.ttm = 0;
+		this.name = n;
 	}
-	
+
 	public DataSet(double scaler) {
 		this.ticker = "";
 		this.y7 = scaler;
@@ -149,7 +159,7 @@ public class DataSet {
 		this.ttm = scaler;
 	}
 
-	public DataSet(String code, String[] s, int ptr) {
+	public DataSet(String name, String code, String[] s, int ptr) {
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
@@ -159,6 +169,10 @@ public class DataSet {
 		this.y2 = this.getDouble(s[ptr + 6].trim());
 		this.y1 = this.getDouble(s[ptr + 7].trim());
 		this.ttm = this.getDouble(s[ptr + 8].trim());
+		if (this.ttm == 0.0) {
+			this.ttm = this.y1;
+		} 
+		this.name = name.trim();
 	}
 
 	/**

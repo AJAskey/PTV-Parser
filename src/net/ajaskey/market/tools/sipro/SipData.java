@@ -40,29 +40,33 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  */
 public class SipData {
 
-	public static List<DataSet>	sales					= new ArrayList<>();
-	public static List<DataSet>	grossIncome		= new ArrayList<>();
-	public static List<DataSet>	unusualIncome	= new ArrayList<>();
-	public static List<DataSet>	income				= new ArrayList<>();
-	public static List<DataSet>	cash					= new ArrayList<>();
-	public static List<DataSet>	inventory			= new ArrayList<>();
-	public static List<DataSet>	goodwill			= new ArrayList<>();
-	public static List<DataSet>	assets				= new ArrayList<>();
-	public static List<DataSet>	liabilities		= new ArrayList<>();
-	public static List<DataSet>	cashfromops		= new ArrayList<>();
-	public static List<DataSet>	shares				= new ArrayList<>();
-	public static List<DataSet>	dividends			= new ArrayList<>();
-	public static List<DataSet>	bookvalue			= new ArrayList<>();
-	public static List<DataSet>	cashfromfin		= new ArrayList<>();
-	public static List<DataSet>	equity				= new ArrayList<>();
-	public static List<DataSet>	tax						= new ArrayList<>();
-	public static List<DataSet>	interest			= new ArrayList<>();
-	public static List<DataSet>	accRx			= new ArrayList<>();
-	public static List<DataSet>	accPay			= new ArrayList<>();
-	public static List<DataSet>	capExpend			= new ArrayList<>();
+	public static List<DataSet>	sales						= new ArrayList<>();
+	public static List<DataSet>	grossIncome			= new ArrayList<>();
+	public static List<DataSet>	unusualIncome		= new ArrayList<>();
+	public static List<DataSet>	income					= new ArrayList<>();
+	public static List<DataSet>	cash						= new ArrayList<>();
+	public static List<DataSet>	inventory				= new ArrayList<>();
+	public static List<DataSet>	goodwill				= new ArrayList<>();
+	public static List<DataSet>	assets					= new ArrayList<>();
+	public static List<DataSet>	liabilities			= new ArrayList<>();
+	public static List<DataSet>	cashfromops			= new ArrayList<>();
+	public static List<DataSet>	shares					= new ArrayList<>();
+	public static List<DataSet>	dividends				= new ArrayList<>();
+	public static List<DataSet>	bookvalue				= new ArrayList<>();
+	public static List<DataSet>	cashfromfin			= new ArrayList<>();
+	public static List<DataSet>	equity					= new ArrayList<>();
+	public static List<DataSet>	tax							= new ArrayList<>();
+	public static List<DataSet>	interest				= new ArrayList<>();
+	public static List<DataSet>	accRx						= new ArrayList<>();
+	public static List<DataSet>	accPay					= new ArrayList<>();
+	public static List<DataSet>	capExpend				= new ArrayList<>();
+	public static List<DataSet>	ebit						= new ArrayList<>();
+	public static List<DataSet>	prices					= new ArrayList<>();
+	public static List<DataSet>	cashfrominvest	= new ArrayList<>();
+	public static List<DataSet>	ltdebt					= new ArrayList<>();
 
-	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyyMMdd");
-	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+	//private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyyMMdd");
+	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
 	/**
 	 * 
@@ -88,6 +92,8 @@ public class SipData {
 	 */
 	public static void read(String filename, String src) throws FileNotFoundException, IOException {
 
+		int knt = 0;
+
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
 
@@ -97,86 +103,104 @@ public class SipData {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
 
+					knt++;
+
 					final String fld[] = line.split(",");
 
-					final DataSet sale = new DataSet(fld[0], fld, 0);
+					final DataSet sale = new DataSet("sales", fld[0], fld, 0);
 					sales.add(sale);
+					System.out.println(sale);
 
-					final DataSet gi = new DataSet(fld[0], fld, 8);
+					final DataSet gi = new DataSet("grossIncome", fld[0], fld, 8);
 					System.out.println(gi);
 					grossIncome.add(gi);
 
-					final DataSet ui = new DataSet(fld[0], fld, 16);
+					final DataSet ui = new DataSet("unusualIncome", fld[0], fld, 16);
 					System.out.println(ui);
 					unusualIncome.add(ui);
 
-					final DataSet inc = new DataSet(fld[0], fld, 24);
+					final DataSet inc = new DataSet("income", fld[0], fld, 24);
 					System.out.println(inc);
 					income.add(inc);
 
-					final DataSet dollar = new DataSet(fld[0], fld, 32);
+					final DataSet dollar = new DataSet("cash", fld[0], fld, 32);
 					System.out.println(dollar);
 					cash.add(dollar);
 
-					final DataSet inv = new DataSet(fld[0], fld, 40);
+					final DataSet inv = new DataSet("inventory", fld[0], fld, 40);
 					System.out.println(inv);
 					inventory.add(inv);
 
-					final DataSet gwill = new DataSet(fld[0], fld, 48);
+					final DataSet gwill = new DataSet("goodwill", fld[0], fld, 48);
 					System.out.println(gwill);
 					goodwill.add(gwill);
 
-					final DataSet asset = new DataSet(fld[0], fld, 56);
+					final DataSet asset = new DataSet("assets", fld[0], fld, 56);
 					System.out.println(asset);
 					assets.add(asset);
 
-					final DataSet liab = new DataSet(fld[0], fld, 64);
+					final DataSet liab = new DataSet("liabilities", fld[0], fld, 64);
 					System.out.println(liab);
 					liabilities.add(liab);
 
-					final DataSet cfops = new DataSet(fld[0], fld, 72);
+					final DataSet cfops = new DataSet("cfops", fld[0], fld, 72);
 					System.out.println(cfops);
 					cashfromops.add(cfops);
 
-					final DataSet share = new DataSet(fld[0], fld, 80);
+					final DataSet share = new DataSet("shares", fld[0], fld, 80);
 					System.out.println(share);
 					shares.add(share);
 
-					final DataSet div = new DataSet(fld[0], fld, 88);
+					final DataSet div = new DataSet("dividends", fld[0], fld, 88);
 					System.out.println(div);
 					dividends.add(div);
 
-					final DataSet bv = new DataSet(fld[0], fld, 96);
+					final DataSet bv = new DataSet("bookvalue", fld[0], fld, 96);
 					System.out.println(bv);
 					bookvalue.add(bv);
 
-					final DataSet cashfin = new DataSet(fld[0], fld, 104);
+					final DataSet cashfin = new DataSet("cashfromfin", fld[0], fld, 104);
 					System.out.println(cashfin);
 					cashfromfin.add(cashfin);
 
-					final DataSet eq = new DataSet(fld[0], fld, 112);
+					final DataSet eq = new DataSet("equity", fld[0], fld, 112);
 					System.out.println(eq);
 					equity.add(eq);
-					
-					final DataSet tx = new DataSet(fld[0], fld, 120);
+
+					final DataSet tx = new DataSet("taxes", fld[0], fld, 120);
 					System.out.println(tx);
 					tax.add(tx);
-					
-					final DataSet intr = new DataSet(fld[0], fld, 128);
+
+					final DataSet intr = new DataSet("interest", fld[0], fld, 128);
 					System.out.println(intr);
 					interest.add(intr);
-					
-					final DataSet arx = new DataSet(fld[0], fld, 136);
-					System.out.println(arx);
-					accRx.add(arx);
-					
-					final DataSet apay = new DataSet(fld[0], fld, 144);
+
+					final DataSet apay = new DataSet("accPay", fld[0], fld, 136);
 					System.out.println(apay);
 					accPay.add(apay);
-					
-					final DataSet capE = new DataSet(fld[0], fld, 152);
+					final DataSet arx = new DataSet("accRx", fld[0], fld, 144);
+					System.out.println(arx);
+					accRx.add(arx);
+
+					final DataSet capE = new DataSet("CapEx", fld[0], fld, 152);
 					System.out.println(capE);
 					capExpend.add(capE);
+
+					final DataSet eb = new DataSet("ebit", fld[0], fld, 160);
+					System.out.println(eb);
+					ebit.add(eb);
+
+					final DataSet pr = new DataSet("price", fld[0], fld, 168);
+					System.out.println(pr);
+					prices.add(pr);
+
+					final DataSet cashinv = new DataSet("cashfrominvest", fld[0], fld, 176);
+					System.out.println(cashinv);
+					cashfrominvest.add(cashinv);
+					
+					final DataSet ltd = new DataSet("longtermdevt", fld[0], fld, 184);
+					System.out.println(ltd);
+					ltdebt.add(ltd);
 
 				}
 			}
@@ -216,6 +240,15 @@ public class SipData {
 		final DataSet totcfops = DataSet.sum(cashfromops);
 		System.out.println("Cash from OPS : \n" + totcfops);
 
+		final DataSet totcffin = DataSet.sum(cashfromfin);
+		System.out.println("Cash from Financing : \n" + totcffin);
+
+		final DataSet totcfinv = DataSet.sum(cashfrominvest);
+		System.out.println("Cash from Investing : \n" + totcfinv);
+		
+		final DataSet totDebt = DataSet.sum(ltdebt);
+		System.out.println("LT Debt : \n" + totDebt);
+
 		final DataSet totShares = DataSet.sum(shares);
 		System.out.println("Shares : \n" + totShares);
 
@@ -230,27 +263,34 @@ public class SipData {
 		DataSet bvScaler = new DataSet(1.0 / 100.0);
 		DataSet bvScaled = DataSet.mult(bvMod, bvScaler);
 
-		final DataSet totcffin = DataSet.sum(cashfromfin);
-		System.out.println("Cash from Financing : \n" + totcffin);
-
 		final DataSet totEq = DataSet.sum(equity);
 		System.out.println("Equity : \n" + totEq);
 
 		final DataSet totTax = DataSet.sum(tax);
 		System.out.println("Taxes : \n" + totTax);
-		
+
 		final DataSet totInt = DataSet.sum(interest);
-		System.out.println("Interest : \n" + totInt);		
-		
+		System.out.println("Interest : \n" + totInt);
+
 		final DataSet totAR = DataSet.sum(accRx);
-		System.out.println("Accounts Receivable : \n" + totAR);		
-		
+		System.out.println("Accounts Receivable : \n" + totAR);
+
 		final DataSet totAP = DataSet.sum(accPay);
-		System.out.println("Accounts Payable : \n" + totAP);		
-		
+		System.out.println("Accounts Payable : \n" + totAP);
+
 		final DataSet totCE = DataSet.sum(capExpend);
 		System.out.println("Cap Expend : \n" + totCE);
-		
+
+		final DataSet totEbit = DataSet.sum(ebit);
+		System.out.println("EBIT : \n" + totEbit);
+
+		double cpyKnt = 1.0 / (double) knt;
+		final DataSet totPrice = DataSet.sum(prices);
+		DataSet companies = new DataSet(cpyKnt);
+		DataSet totAvgPr = DataSet.mult(totPrice, companies);
+
+		System.out.println("Price : \n" + totPrice);
+
 		if (src.equalsIgnoreCase("SPX")) {
 			SipData.writeData(totSales, "SPX Sales");
 			SipData.writeData(totGI, "SPX Gross Income");
@@ -263,16 +303,20 @@ public class SipData {
 			SipData.writeData(totAssGW, "SPX Assets Minus Goodwill");
 			SipData.writeData(totLiab, "SPX Liabilities");
 			SipData.writeData(totcfops, "SPX Cash From Operations");
+			SipData.writeData(totcffin, "SPX Cash From Financing");
+			SipData.writeData(totcfinv, "SPX Cash From Investing");
+			SipData.writeData(totDebt, "SPX Long Term Debt");
 			SipData.writeData(totShares, "SPX Shares");
 			SipData.writeData(divDollar, "SPX Dividends");
 			SipData.writeData(bvScaled, "SPX Book Value");
-			SipData.writeData(totcffin, "SPX Cash From Financing");
 			SipData.writeData(totEq, "SPX Common Equity");
 			SipData.writeData(totTax, "SPX Income Tax Paid");
 			SipData.writeData(totInt, "SPX Interest Paid");
 			SipData.writeData(totAR, "SPX Accounts Receivable");
 			SipData.writeData(totAP, "SPX Accounts Payable");
 			SipData.writeData(totCE, "SPX Capital Expenditures");
+			SipData.writeData(totEbit, "SPX EBIT");
+			SipData.writeData(totAvgPr, "SPX Price");
 		} else {
 			SipData.writeData(totSales, "NDX Sales");
 			SipData.writeData(totGI, "NDX Gross Income");
