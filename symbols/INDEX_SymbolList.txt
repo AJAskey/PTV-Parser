@@ -203,7 +203,6 @@ DSBT.IDX  	DJ US BIOTECHNO                                   	INDEX
 DSBV.IDX  	DJ US BEVERAGES                                   	INDEX     
 DSCA.IDX  	DJ US GAMBLING                                    	INDEX     
 DSCC.IDX  	DJ US COMMCHEM                                    	INDEX     
-DSCE.IDX  	DJ US CONSELECT                                   	INDEX     
 DSCF.IDX  	DJ US CLOTHACCSS                                  	INDEX     
 DSCG.IDX  	DJ US TRAVLEIS                                    	INDEX     
 DSCH.IDX  	DJ US CHEMICALS                                   	INDEX     
@@ -1374,23 +1373,16 @@ SCWI.IDX  	CAT China Water [TR]                              	INDEX
 SCWP.IDX  	S&P Developed Ex-U.S.Property [USDollar]          	INDEX     
 SCYE.IDX  	S&P Chinese Renminbi Price Return Index           	INDEX     
 SCYI.IDX  	S&P Chinese Renminbi Total Return                 	INDEX     
-SDCG.IDX  	Defined MultiCap Growth Index                     	INDEX     
-SDCV.IDX  	Defined MultiCap Value Index                      	INDEX     
 SDDE.IDX  	Wisdom Tree Domestic Dividends Index ex Financia  	INDEX     
 SDEW.IDX  	S&P 400 Midcap Equal Weighted Index               	INDEX     
-SDGO.IDX  	Defined Large Cap Growth Opportunities Index      	INDEX     
 SDIP.IDX  	S&P DCFI Index Excess Return                      	INDEX     
 SDIS.IDX  	S&P DCFIIndex                                     	INDEX     
 SDIT.IDX  	S&P DCFI Index Total Return                       	INDEX     
-SDLC.IDX  	Defined Large Cap Core Index                      	INDEX     
-SDMC.IDX  	Defined Mid Cap Core Index                        	INDEX     
 SDPI.IDX  	Goldman Sachs BRICs Nifty 50 Developed Markets I  	INDEX     
-SDSC.IDX  	Defined Small Cap Core Index                      	INDEX     
 SDTI.IDX  	Goldman Sachs BRICs Nifty 50 Developed Markets I  	INDEX     
 SDTR.IDX  	S&P 500 Food Beverage & Tobacco [TR]              	INDEX     
 SDTS.IDX  	S&P Diversified Trends Indicator                  	INDEX     
 SDTT.IDX  	S&P Diversified Trends Total Return Indicator Le  	INDEX     
-SDVO.IDX  	Defined Large Cap Value Opportunities Index       	INDEX     
 SEAN.IDX  	S&P Southeast Asia 40 Index [NetTR]               	INDEX     
 SEBI.IDX  	S-Network Emerging Infrastructure Builders Index  	INDEX     
 SECA.IDX  	S&P GSCI Enhanced Commodity Index                 	INDEX     
@@ -1701,16 +1693,6 @@ SRIE.IDX  	S&P BRIC 40 Index [EURO] [NetTR]                  	INDEX
 SRMP.IDX  	Cohen & Steers US Realty Majors Portfolio [TR]    	INDEX     
 SRPR.IDX  	S&P Global REIT [USD]                             	INDEX     
 SRTR.IDX  	S&P 500 Real Estate [TR]                          	INDEX     
-SRVA.IDX  	Rogers Energy Producers Index [EURO]              	INDEX     
-SRVB.IDX  	Rogers Metals Producers Index [EURO]              	INDEX     
-SRVC.IDX  	Rogers Agricultural Producers Index [EURO]        	INDEX     
-SRVD.IDX  	Rogers Energy Producers Index                     	INDEX     
-SRVE.IDX  	Rogers Metals Producers Index                     	INDEX     
-SRVF.IDX  	Rogers Agricultural Producers Index               	INDEX     
-SRVG.IDX  	Rogers Producers Index                            	INDEX     
-SRVH.IDX  	Rogers Producers US Extra Liquid Index            	INDEX     
-SRVI.IDX  	Rogers Producers Index [EURO]                     	INDEX     
-SRVJ.IDX  	Rogers Producers US Extra Liquid Index [EURO]     	INDEX     
 SRWI.IDX  	Revenue Shares Large Cap Fund                     	INDEX     
 SS1E.IDX  	S&P 500 EQUAL WEIGHTED Materials [Sector]         	INDEX     
 SS1J.IDX  	S&P 500 EQUAL WEIGHTED Energy [Sector]            	INDEX     
@@ -2018,7 +2000,6 @@ VXV.IDX   	CBOE S&P 500 3M VOLATILITY INDEX                  	INDEX
 WDXR.IDX  	S&P C.S. Dc-Washington Home Price Index           	INDEX     
 WIV.IDX   	Cboe/Cbot Wheat Volatility Index                  	INDEX     
 WIX.IDX   	Cboe/Cbot Wheat Volatility Index                  	INDEX     
-WMX.IDX   	ISE Walmart Suplr Index                           	INDEX     
 XAL.IDX   	AMEX Airline Index                                	INDEX     
 XAO.IDX   	XAO All Ordinaries                                	INDEX     
 XAU.IDX   	Phlx Gold Silver Index                            	INDEX     

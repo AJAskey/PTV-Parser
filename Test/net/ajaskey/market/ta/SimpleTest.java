@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.apps.StockHTML;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
@@ -43,8 +44,7 @@ public class SimpleTest {
 
 	public static void main(String[] args) throws ParseException, IOException {
 
-		final String arg = "dataPath";
-		final String dataPath = System.getProperty(arg, "");
+		final String dataPath = Utils.getDataPath();
 		final String filePath = dataPath + "\\ASCII";
 		System.out.println(filePath);
 

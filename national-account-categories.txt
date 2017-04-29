@@ -3160,6 +3160,7 @@
         PE0000091Q156NBEA	Real Average of GDP and GDI	Quarterly -- SAAR
         SB0000081A027NBEA	Statistical discrepancy as a percentage of GDP	Annual -- NSA
         SB0000081Q027SBEA	Gross domestic product : Statistical discrepancy as a percentage of GDP	Quarterly -- SAAR
+        STLENI	St. Louis Fed Economic News Index: Real GDP Nowcast	Quarterly -- SAAR
         USNGSP	U.S. Total Gross Domestic Product by State	Annual -- NSA
         USRGSP	U.S. Real Total Gross Domestic Product by State	Annual -- NSA
         W256RC1A027NBEA	Net domestic income	Annual -- NSA
@@ -14072,7 +14073,6 @@
         PCICTCMAHDFS	Property-Casualty Insurance Companies; Debt Securities and Loans; Asset, Level	Quarterly, End of Period -- NSA
         PPFTCMAHDFS	Private Pension Funds; Debt Securities and Loans; Asset, Level	Quarterly, End of Period -- NSA
         TCMAHDFS	Financial Business; Debt Securities and Loans; Asset, Level	Quarterly, End of Period -- NSA
-        TCMDO	All Sectors; Debt Securities and Loans; Liability, Level	Quarterly, End of Period -- NSA
         TCMDODFS	Financial Business; Credit Market Instruments; Liability, Level	Quarterly, End of Period -- NSA
         TCMDODNS	Domestic Nonfinancial Sectors; Credit Market Instruments; Liability, Level	Quarterly, End of Period -- NSA
         WCMITCMFODNS	Rest of the World; Credit Market Instruments; Liability, Level	Quarterly, End of Period -- NSA

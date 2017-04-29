@@ -24,8 +24,14 @@
       DHHNGSP	Henry Hub Natural Gas Spot Price	Daily -- NSA
       DHOILNYH	No. 2 Heating Oil Prices: New York Harbor	Daily -- NSA
       DJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	Daily -- NSA
+      DNVCOGBV	Book Value of U.S. Mint Held Gold Deep Storage: Denver, CO	Monthly -- NSA
       DPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	Daily -- NSA
       DRGASLA	Reformulated Gasoline Blendstock for Oxygenate Blending (RBOB) Prices: Regular Gasoline: Los Angeles	Daily -- NSA
+      FKKYGBV	Book Value of U.S. Mint Held Gold Deep Storage: Fort Knox, KY	Monthly -- NSA
+      FRDGBSV	Book Value of Federal Reserve Bank Held Gold Bullion: On Display	Monthly -- NSA
+      FRDGCSV	Book Value of Federal Reserve Bank Held Gold Coins On Display	Monthly -- NSA
+      FRVGBSV	Book Value of Federal Reserve Bank Held Gold Bullion: NY Vault	Monthly -- NSA
+      FRVGCSV	Book Value of Federal Reserve Bank Held Gold Coins: NY Vault	Monthly -- NSA
       GASALLA	US All Grades All Formulations Gas Price	Annual -- NSA
       GASALLCOVA	US All Grades Conventional Gas Price	Annual -- NSA
       GASALLCOVECA	PADD I (East Coast District) All Grades Conventional Gas Price	Annual -- NSA
@@ -281,6 +287,7 @@
       MGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	Monthly -- NSA
       MHHNGSP	Henry Hub Natural Gas Spot Price	Monthly -- NSA
       MHOILNYH	No. 2 Heating Oil Prices: New York Harbor	Monthly -- NSA
+      MHTGWSALV	Book Value of U.S. Mint Held Treasury Gold Working Stock: All Locations: Coins, Blanks, Miscellaneous	Monthly -- NSA
       MJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	Monthly -- NSA
       MNGLCP	U.S. Natural Gas Liquid Composite Price	Monthly -- NSA
       MPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	Monthly -- NSA
@@ -484,6 +491,7 @@
       WHHNGSP	Henry Hub Natural Gas Spot Price	Weekly -- NSA
       WHOILNYH	No. 2 Heating Oil Prices: New York Harbor	Weekly, Ending Friday -- NSA
       WJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	Weekly, Ending Friday -- NSA
+      WPNYGBV	Book Value of U.S. Mint Held Gold Deep Storage: West Point, NY	Monthly -- NSA
       WPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	Weekly, Ending Friday -- NSA
       WRGASLA	Reformulated Gasoline Blendstock for Oxygenate Blending (RBOB) Prices: Regular Gasoline: Los Angeles	Weekly, Ending Friday -- NSA
       WTISPLC	Spot Crude Oil Price: West Texas Intermediate (WTI)	Monthly -- NSA
@@ -2330,6 +2338,8 @@
       33533 Chemicals and Allied Products
           WPS061	Producer Price Index by Commodity for Chemicals and Allied Products: Industrial Chemicals	Monthly -- SA
           WPS062103	Producer Price Index by Commodity for Chemicals and Allied Products: Special Purpose Coatings, Including Marine, Industrial and Construction Coatings	Monthly -- SA
+          WPS0623	Producer Price Index by Commodity for Chemicals and Allied Products: Allied and Miscellaneous Paint Products	Monthly -- SA
+          WPS062301	Producer Price Index by Commodity for Chemicals and Allied Products: Allied and Miscellaneous Paint Products	Monthly -- SA
           WPS063	Producer Price Index by Commodity for Chemicals and Allied Products: Drugs and Pharmaceuticals	Monthly -- SA
           WPS0638	Producer Price Index by Commodity for Chemicals and Allied Products: Pharmaceutical Preparations	Monthly -- SA
           WPS063801	Producer Price Index by Commodity for Chemicals and Allied Products: Pharmaceuticals Affecting Neoplasms, the Endocrine System, and Metabolic Diseases	Monthly -- SA
@@ -2340,6 +2350,8 @@
           WPS064	Producer Price Index by Commodity for Chemicals and Allied Products: Fats and Oils, Inedible	Monthly -- SA
           WPS0641	Producer Price Index by Commodity for Chemicals and Allied Products: Fats and Oils, Inedible	Monthly -- SA
           WPS064101	Producer Price Index by Commodity for Chemicals and Allied Products: Fats and Oils, Inedible	Monthly -- SA
+          WPS0651	Producer Price Index by Commodity for Chemicals and Allied Products: Mixed Fertilizers	Monthly -- SA
+          WPS065105	Producer Price Index by Commodity for Chemicals and Allied Products: Mixed Fertilizers	Monthly -- SA
           WPS065201	Producer Price Index by Commodity for Chemicals and Allied Products: Nitrogenates	Monthly -- SA
           WPS066	Producer Price Index by Commodity for Chemicals and Allied Products: Plastic Resins and Materials	Monthly -- SA
           WPS0662	Producer Price Index by Commodity for Chemicals and Allied Products: Thermoplastic Resins and Plastics Materials	Monthly -- SA
@@ -2732,10 +2744,14 @@
           WPS0111	Producer Price Index by Commodity for Farm Products: Fresh Fruits and Melons	Monthly -- SA
           WPS011101	Producer Price Index by Commodity for Farm Products: Citrus Fruits	Monthly -- SA
           WPS011102	Producer Price Index by Commodity for Farm Products: Other Fruits and Berries	Monthly -- SA
+          WPS011301	Producer Price Index by Commodity for Farm Products: Dry Vegetables	Monthly -- SA
           WPS011303	Producer Price Index by Commodity for Farm Products: Sweet Potatoes	Monthly -- SA
           WPS012	Producer Price Index by Commodity for Farm Products: Grains	Monthly -- SA
           WPS0122	Producer Price Index by Commodity for Farm Products: Other Grains	Monthly -- SA
           WPS012202	Producer Price Index by Commodity for Farm Products: Corn	Monthly -- SA
+          WPS013	Producer Price Index by Commodity for Farm Products: Slaughter Livestock	Monthly -- SA
+          WPS0131	Producer Price Index by Commodity for Farm Products: Slaughter Cattle	Monthly -- SA
+          WPS013101	Producer Price Index by Commodity for Farm Products: Slaughter Steers and Heifers	Monthly -- SA
           WPS013102	Producer Price Index by Commodity for Farm Products: Slaughter Cows and Bulls	Monthly -- SA
           WPS0132	Producer Price Index by Commodity for Farm Products: Slaughter Hogs	Monthly -- SA
           WPS013201	Producer Price Index by Commodity for Farm Products: Slaughter Barrows and Gilts	Monthly -- SA
@@ -3160,6 +3176,8 @@
           WPS055	Producer Price Index by Commodity for Fuels and Related Products and Power: Utility Natural Gas	Monthly -- SA
           WPS0551	Producer Price Index by Commodity for Fuels and Related Products and Power: Residential Natural Gas	Monthly -- SA
           WPS055121	Producer Price Index by Commodity for Fuels and Related Products and Power: Residential Natural Gas	Monthly -- SA
+          WPS0552	Producer Price Index by Commodity for Fuels and Related Products and Power: Commercial Natural Gas	Monthly -- SA
+          WPS055221	Producer Price Index by Commodity for Fuels and Related Products and Power: Commercial Natural Gas	Monthly -- SA
           WPS0553	Producer Price Index by Commodity for Fuels and Related Products and Power: Industrial Natural Gas	Monthly -- SA
           WPS055321	Producer Price Index by Commodity for Fuels and Related Products and Power: Industrial Natural Gas	Monthly -- SA
           WPS0554	Producer Price Index by Commodity for Fuels and Related Products and Power: Natural Gas to Electric Power	Monthly -- SA
@@ -3360,6 +3378,7 @@
           WPU1231	Producer Price Index by Commodity for Furniture and Household Durables: Carpets and Rugs	Monthly -- NSA
           WPU123101	Producer Price Index by Commodity for Furniture and Household Durables: Carpets and Rugs	Monthly -- NSA
           WPU12310101	Producer Price Index by Commodity for Furniture and Household Durables: Carpets and Rugs	Monthly -- NSA
+          WPU1232	Producer Price Index by Commodity for Furniture and Household Durables: Resilient Floor Coverings	Monthly -- NSA
           WPU124	Producer Price Index by Commodity for Furniture and Household Durables: Household Appliances	Monthly -- NSA
           WPU1241	Producer Price Index by Commodity for Furniture and Household Durables: Major Appliances	Monthly -- NSA
           WPU124101	Producer Price Index by Commodity for Furniture and Household Durables: Household Cooking Appliances	Monthly -- NSA
@@ -4265,6 +4284,8 @@
           WPS082101	Producer Price Index by Commodity for Lumber and Wood Products: General Millwork	Monthly -- SA
           WPS0841	Producer Price Index by Commodity for Lumber and Wood Products: Wood Pallets and Pallet Containers, Wood and Metal Combination	Monthly -- SA
           WPS084101	Producer Price Index by Commodity for Lumber and Wood Products: Wood Pallets and Pallet Containers, Wood and Metal Combination	Monthly -- SA
+          WPS085	Producer Price Index by Commodity for Lumber and Wood Products: Logs, Bolts, Timber, Pulpwood and Wood Chips	Monthly -- SA
+          WPS0851	Producer Price Index by Commodity for Lumber and Wood Products: Logs, Bolts, Timber, Pulpwood and Wood Chips	Monthly -- SA
           WPS086	Producer Price Index by Commodity for Lumber and Wood Products: Prefabricated Wood Buildings and Components	Monthly -- SA
           WPS0861	Producer Price Index by Commodity for Lumber and Wood Products: Prefabricated Wood Buildings and Components	Monthly -- SA
           WPS086101	Producer Price Index by Commodity for Lumber and Wood Products: Prefabricated Wood Buildings and Components	Monthly -- SA
@@ -4379,25 +4400,35 @@
           WPS112D02	Producer Price Index by Commodity for Machinery and Equipment: Off-Highway Trucks, Haulers, Truck-Type Tractor Chassis, Trailers, Etc. (Excluding Parts)	Monthly -- SA
           WPS112J03	Producer Price Index by Commodity for Machinery and Equipment: Other Construction Machinery and Equipment (Excluding Parts)	Monthly -- SA
           WPS113	Producer Price Index by Commodity for Machinery and Equipment: Metalworking Machinery and Equipment	Monthly -- SA
+          WPS1133	Producer Price Index by Commodity for Machinery and Equipment: Welding Machines and Equipment	Monthly -- SA
+          WPS113301	Producer Price Index by Commodity for Machinery and Equipment: Arc Welding Machines, Components, and Accessories (Excluding Electrodes and Stud Welding Equipment)	Monthly -- SA
           WPS113407	Producer Price Index by Commodity for Machinery and Equipment: Industrial Process Furnaces and Ovens, Except Parts and Attachments	Monthly -- SA
           WPS1136	Producer Price Index by Commodity for Machinery and Equipment: Abrasive Products	Monthly -- SA
           WPS113603	Producer Price Index by Commodity for Machinery and Equipment: Nonmetallic Abrasive Products (Including Diamond Abrasives)	Monthly -- SA
           WPS113605	Producer Price Index by Commodity for Machinery and Equipment: Nonmetallic Coated Abrasive Products and Buffing Wheels, Polishing Wheels, and Laps	Monthly -- SA
+          WPS114	Producer Price Index by Commodity for Machinery and Equipment: General Purpose Machinery and Equipment	Monthly -- SA
           WPS1141	Producer Price Index by Commodity for Machinery and Equipment: Pumps, Compressors, and Equipment	Monthly -- SA
           WPS114108	Producer Price Index by Commodity for Machinery and Equipment: Industrial Spraying Equipment	Monthly -- SA
+          WPS114112	Producer Price Index by Commodity for Machinery and Equipment: Other Pumps, Including Parts	Monthly -- SA
           WPS114113	Producer Price Index by Commodity for Machinery and Equipment: Domestic Water Systems	Monthly -- SA
           WPS114115	Producer Price Index by Commodity for Machinery and Equipment: Air and Gas Compressors and Vacuum Pumps	Monthly -- SA
           WPS114305	Producer Price Index by Commodity for Machinery and Equipment: Parts for Fluid Power Valves	Monthly -- SA
+          WPS1144	Producer Price Index by Commodity for Machinery and Equipment: Industrial Material Handling Equipment	Monthly -- SA
           WPS1146	Producer Price Index by Commodity for Machinery and Equipment: Scales and Balances	Monthly -- SA
+          WPS1147	Producer Price Index by Commodity for Machinery and Equipment: Air Purification Equipment and Industrial and Commercial Fans and Blowers	Monthly -- SA
+          WPS114701	Producer Price Index by Commodity for Machinery and Equipment: Air Purification Equipment and Industrial and Commercial Fans and Blowers	Monthly -- SA
+          WPS114803	Producer Price Index by Commodity for Machinery and Equipment: Commercial Refrigeration Equipment	Monthly -- SA
           WPS114902	Producer Price Index by Commodity for Machinery and Equipment: Metal Valves, Except Fluid Power	Monthly -- SA
           WPS114905	Producer Price Index by Commodity for Machinery and Equipment: Ball and Roller Bearings	Monthly -- SA
           WPS114908	Producer Price Index by Commodity for Machinery and Equipment: Filters and Strainers	Monthly -- SA
           WPS116	Producer Price Index by Commodity for Machinery and Equipment: Special Industry Machinery and Equipment	Monthly -- SA
           WPS1161	Producer Price Index by Commodity for Machinery and Equipment: Food Products Machinery	Monthly -- SA
           WPS116104	Producer Price Index by Commodity for Machinery and Equipment: Commercial Food Products Machinery (Except Packaging and Cooking Equipment)	Monthly -- SA
+          WPS116105	Producer Price Index by Commodity for Machinery and Equipment: Industrial Food Products Machinery for Processing Foods, Beverages, and Animal and Fowl Feed	Monthly -- SA
           WPS1166	Producer Price Index by Commodity for Machinery and Equipment: Other Special Industry Machinery	Monthly -- SA
           WPS116606	Producer Price Index by Commodity for Machinery and Equipment: Miscellaneous Special Industry Machinery	Monthly -- SA
           WPS117	Producer Price Index by Commodity for Machinery and Equipment: Electrical Machinery and Equipment	Monthly -- SA
+          WPS117303	Producer Price Index by Commodity for Machinery and Equipment: Fractional Horsepower Motors and Generators	Monthly -- SA
           WPS117311	Producer Price Index by Commodity for Machinery and Equipment: Other Motors and Generators	Monthly -- SA
           WPS1176	Producer Price Index by Commodity for Machinery and Equipment: Communications and Related Equipment and Miscellaneous Electronic Systems and Equipment	Monthly -- SA
           WPS1178	Producer Price Index by Commodity for Machinery and Equipment: Electronic Components and Accessories	Monthly -- SA
@@ -4406,6 +4437,7 @@
           WPS118201	Producer Price Index by Commodity for Machinery and Equipment: Industrial Process Control Instruments	Monthly -- SA
           WPS1184	Producer Price Index by Commodity for Machinery and Equipment: Fluid Meters and Counting Devices	Monthly -- SA
           WPS118401	Producer Price Index by Commodity for Machinery and Equipment: Fluid Meters and Counting Devices	Monthly -- SA
+          WPS118601	Producer Price Index by Commodity for Machinery and Equipment: Sighting, Tracking, and Fire-Control Equipment, Optical Type	Monthly -- SA
           WPS1189	Producer Price Index by Commodity for Machinery and Equipment: Measuring and Controlling Devices, Not Elsewhere Classified	Monthly -- SA
           WPS118904	Producer Price Index by Commodity for Machinery and Equipment: Nuclear Radiation Detection and Monitoring Instruments	Monthly -- SA
           WPS119	Producer Price Index by Commodity for Machinery and Equipment: Miscellaneous Machinery	Monthly -- SA
@@ -4953,6 +4985,7 @@
           WPS102	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Metals	Monthly -- SA
           WPS1023	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Scrap	Monthly -- SA
           WPS102302	Producer Price Index by Commodity for Metals and Metal Products: Aluminum Base Scrap	Monthly -- SA
+          WPS102802	Producer Price Index by Commodity for Metals and Metal Products: Castings, Aluminum and Aluminum-Base Alloy	Monthly -- SA
           WPS1032	Producer Price Index by Commodity for Metals and Metal Products: Barrels, Drums, Pails and Other Metal Containers	Monthly -- SA
           WPS103201	Producer Price Index by Commodity for Metals and Metal Products: Barrels, Drums, Pails and Other Metal Containers	Monthly -- SA
           WPS1041	Producer Price Index by Commodity for Metals and Metal Products: Hardware, Not Elsewhere Classified	Monthly -- SA
@@ -4965,6 +4998,7 @@
           WPS107	Producer Price Index by Commodity for Metals and Metal Products: Fabricated Structural Metal Products	Monthly -- SA
           WPS1073	Producer Price Index by Commodity for Metals and Metal Products: Sheet Metal Products	Monthly -- SA
           WPS107301	Producer Price Index by Commodity for Metals and Metal Products: Sheet Metal Products	Monthly -- SA
+          WPS1074	Producer Price Index by Commodity for Metals and Metal Products: Structural, Architectural, and Pre-Engineered Metal Products	Monthly -- SA
           WPS107405	Producer Price Index by Commodity for Metals and Metal Products: Fabricated Structural Metal	Monthly -- SA
           WPS1077	Producer Price Index by Commodity for Metals and Metal Products: Stationary and Marine Power Boilers	Monthly -- SA
           WPS107701	Producer Price Index by Commodity for Metals and Metal Products: Stationary and Marine Power Boilers	Monthly -- SA
@@ -5524,6 +5558,8 @@
           WPS132	Producer Price Index by Commodity for Nonmetallic Mineral Products: Concrete Ingredients and Related Products	Monthly -- SA
           WPS1321	Producer Price Index by Commodity for Nonmetallic Mineral Products: Construction Sand, Gravel, and Crushed Stone	Monthly -- SA
           WPS132101	Producer Price Index by Commodity for Nonmetallic Mineral Products: Construction Sand, Gravel, and Crushed Stone	Monthly -- SA
+          WPS1322	Producer Price Index by Commodity for Nonmetallic Mineral Products: Cement, Hydraulic	Monthly -- SA
+          WPS132201	Producer Price Index by Commodity for Nonmetallic Mineral Products: Cement, Hydraulic	Monthly -- SA
           WPS133	Producer Price Index by Commodity for Nonmetallic Mineral Products: Concrete Products	Monthly -- SA
           WPS1333	Producer Price Index by Commodity for Nonmetallic Mineral Products: Ready-Mix Concrete	Monthly -- SA
           WPS133301	Producer Price Index by Commodity for Nonmetallic Mineral Products: Ready-Mix Concrete	Monthly -- SA
@@ -5535,9 +5571,13 @@
           WPS136	Producer Price Index by Commodity for Nonmetallic Mineral Products: Asphalt Felts and Coatings	Monthly -- SA
           WPS1361	Producer Price Index by Commodity for Nonmetallic Mineral Products: Prepared Asphalt and Tar Roofing and Siding Products	Monthly -- SA
           WPS136101	Producer Price Index by Commodity for Nonmetallic Mineral Products: Prepared Asphalt and Tar Roofing and Siding Products	Monthly -- SA
+          WPS137	Producer Price Index by Commodity for Nonmetallic Mineral Products: Gypsum Products	Monthly -- SA
+          WPS137101	Producer Price Index by Commodity for Nonmetallic Mineral Products: Gypsum Products	Monthly -- SA
           WPS138	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly -- SA
           WPS1381	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly -- SA
           WPS138101	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly -- SA
+          WPS1392	Producer Price Index by Commodity for Nonmetallic Mineral Products: Insulation Materials	Monthly -- SA
+          WPS139201	Producer Price Index by Commodity for Nonmetallic Mineral Products: Mineral Wool for Thermal and Acoustical Envelope Insulation	Monthly -- SA
           WPS1398	Producer Price Index by Commodity for Nonmetallic Mineral Products: Gaskets, Packing, and Sealing Devices	Monthly -- SA
           WPS139801	Producer Price Index by Commodity for Nonmetallic Mineral Products: Gaskets and Gasketing Material	Monthly -- SA
           WPS1399	Producer Price Index by Commodity for Nonmetallic Mineral Products: Nonmetallic Minerals and Products, Not Elsewhere Classified	Monthly -- SA
@@ -6120,6 +6160,7 @@
           WPU45610101	Producer Price Index by Commodity for Professional Services: Information Technology (IT) Technical Support and Consulting Services (Partial)	Monthly -- NSA
 
       33545 Publishing Sales, Excluding Software
+          WPS331101	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales of Textbooks	Monthly -- SA
           WPS331102	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales of Technical, Scientific, and Professional Books	Monthly -- SA
           WPU33	Producer Price Index by Commodity for Publishing Sales, Excluding Software	Monthly -- NSA
           WPU331	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Book, Periodical, and Newspaper Publishing Sales and Subscriptions	Monthly -- NSA
@@ -6214,6 +6255,7 @@
           WPU091501234	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Disposable Sanitary Products, Purchased Sanitary Paper Stock and Wadding	Monthly -- NSA
           WPU091501235	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Sanitary Tissue Paper Products, made from Purchased Materials	Monthly -- NSA
           WPU091502	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Paper, Plastic, and Foil Bags	Monthly -- NSA
+          WPU09150214	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Uncoated Single-Web Paper Grocers' Bags and Sacks and Variety and Shopping Bags	Monthly -- NSA
           WPU09150216	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Specialty Bags, Pouches and Liners	Monthly -- NSA
           WPU091502161	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Plastics, Foil, and Coated Paper Bags	Monthly -- NSA
           WPU0915021611	Producer Price Index by Commodity for Pulp, Paper, and Allied Products: Specialty Bags, Pouches, and Liners, Coated and Single-Web Paper	Monthly -- NSA
@@ -6502,6 +6544,8 @@
           WPU58I10101	Producer Price Index by Commodity for Retail Trade Services: Other Merchandise Retailing (Partial)	Monthly -- NSA
 
       33534 Rubber and Plastic Products
+          WPS0721	Producer Price Index by Commodity for Rubber and Plastic Products: Plastic Construction Products	Monthly -- SA
+          WPS072106	Producer Price Index by Commodity for Rubber and Plastic Products: Plastic Construction Products	Monthly -- SA
           WPS072603	Producer Price Index by Commodity for Rubber and Plastic Products: Foam Components for Furniture	Monthly -- SA
           WPU07	Producer Price Index by Commodity for Rubber and Plastic Products	Monthly -- NSA
           WPU071	Producer Price Index by Commodity for Rubber and Plastic Products: Rubber and Rubber Products	Monthly -- NSA
@@ -9956,6 +10000,7 @@
           IP28	Import Price Index (Harmonized System): Inorganic chemicals	Monthly -- NSA
           IP29	Import Price Index (Harmonized System): Organic chemicals	Monthly -- NSA
           IP2905	Import Price Index (Harmonized System): Acyclic alcohols and their derivatives	Monthly -- NSA
+          IP2933	Import Price Index (Harmonized System): Heterocyclic compounds with nitrogen hetero-atoms only	Monthly -- NSA
           IP2934	Import Price Index (Harmonized System): Nucleic acids and their salts, other heterocyclic compounds"	Monthly -- NSA
           IP30	Import Price Index (Harmonized System): Pharmaceutical products	Monthly -- NSA
           IP3004	Import Price Index (Harmonized System): Medicaments (except vaccines, band., pharmaceuticals)"	Monthly -- NSA
@@ -10118,6 +10163,7 @@
           IQ00330	Export Price Index (End Use): Vegetables and vegetable preparations and juices	Monthly -- NSA
           IQ00360	Export Price Index (End Use): Other foods and food preparations (lard,soft bev, spices), not elsewhere specified"	Monthly -- NSA
           IQ01	Export Price Index (End Use): Nonagricultural foods (fish, distilled beverages)"	Monthly -- NSA
+          IQ01000	Export Price Index (End Use): Fish and shellfish	Monthly -- NSA
           IQ1	Export Price Index (End Use): Industrial supplies and materials	Monthly -- NSA
           IQ10	Export Price Index (End Use): Agricultural industrial supplies and materials	Monthly -- NSA
           IQ100	Export Price Index (End Use): Cotton, including linters-raw"	Monthly -- NSA
@@ -10254,6 +10300,7 @@
           IY3251	Export Price Index (NAICS): Basic chemical manufacturing	Monthly -- NSA
           IY3252	Export Price Index (NAICS): Resin, synthetic rubber, and artificial synthetic fibers and filaments"	Monthly -- NSA
           IY3253	Export Price Index (NAICS): Pesticide, fertilizer, and other agricultural chemical manufacturing	Monthly -- NSA
+          IY32531	Export Price Index (NAICS): Fertilizer manufacturing	Monthly -- NSA
           IY3254	Export Price Index (NAICS): Pharmaceutical and medicine manufacturing	Monthly -- NSA
           IY3255	Export Price Index (NAICS): Paint, coating, and adhesive manufacturing	Monthly -- NSA
           IY3256	Export Price Index (NAICS): Soap, cleaning compound, and toilet preparation manufacturing"	Monthly -- NSA
@@ -10324,6 +10371,7 @@
           ID02	Export Price Index (Harmonized System): Meat and edible meat offal	Monthly -- NSA
           ID0203	Export Price Index (Harmonized System): Meat of swine (pork), fresh, chilled or frozen"	Monthly -- NSA
           ID0207	Export Price Index (Harmonized System): Meat and edible offal of poultry, fresh, chilled, or frozen"	Monthly -- NSA
+          ID03	Export Price Index (Harmonized System): Fish and crustaceans, molluscs and other aquatic invertebrates	Monthly -- NSA
           ID08	Export Price Index (Harmonized System): Edible fruit and nuts; peel of citrus fruit or melons	Monthly -- NSA
           ID10	Export Price Index (Harmonized System): Cereals	Monthly -- NSA
           ID1001	Export Price Index (Harmonized System): Wheat and meslin	Monthly -- NSA
@@ -10374,6 +10422,7 @@
           ID8471	Export Price Index (Harmonized System): Computer equipment	Monthly -- NSA
           ID8479	Export Price Index (Harmonized System): Machines and appliances having individual functions, not elsewhere specified or included; parts thereof"	Monthly -- NSA
           ID8481	Export Price Index (Harmonized System): Taps, cocks, valves and similar appliances; parts thereof"	Monthly -- NSA
+          ID8483	Export Price Index (Harmonized System): Parts for transmitting power	Monthly -- NSA
           ID85	Export Price Index (Harmonized System): Electrical machinery and equipment and parts and accessories thereof	Monthly -- NSA
           ID8517	Export Price Index (Harmonized System): Electrical apparatus for line telephony or line telegraphy; videophones; parts	Monthly -- NSA
           ID8536	Export Price Index (Harmonized System): Electrical circuit switching, protecting or connection app not > 1000 volt"	Monthly -- NSA

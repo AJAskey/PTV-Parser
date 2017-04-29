@@ -1054,8 +1054,22 @@
         ADJRESN	St. Louis Adjusted Reserves	Biweekly, Ending Wednesday -- NSA
         ADJRESNS	St. Louis Adjusted Reserves	Monthly -- NSA
         ADJRESSL	St. Louis Adjusted Reserves	Monthly -- SA
+        DNVCOGBV	Book Value of U.S. Mint Held Gold Deep Storage: Denver, CO	Monthly -- NSA
+        DNVCOGTA	U.S. Mint Held Gold Deep Storage: Denver, CO	Monthly -- NSA
         EXCSRESNS	Excess Reserves of Depository Institutions	Monthly -- NSA
         EXCSRESNW	Excess Reserves of Depository Institutions	Weekly, Ending Wednesday -- NSA
+        FKKYGBV	Book Value of U.S. Mint Held Gold Deep Storage: Fort Knox, KY	Monthly -- NSA
+        FKKYGTA	U.S. Mint Held Gold Deep Storage: Fort Knox, KY	Monthly -- NSA
+        FRDGBSAM	Federal Reserve Bank Held Gold Bullion: On Display	Monthly -- NSA
+        FRDGBSV	Book Value of Federal Reserve Bank Held Gold Bullion: On Display	Monthly -- NSA
+        FRDGCSAM	Federal Reserve Bank Held Gold Coins On Display	Monthly -- NSA
+        FRDGCSV	Book Value of Federal Reserve Bank Held Gold Coins On Display	Monthly -- NSA
+        FRVGBSAM	Federal Reserve Bank Held Gold Bullion: NY Vault	Monthly -- NSA
+        FRVGBSV	Book Value of Federal Reserve Bank Held Gold Bullion: NY Vault	Monthly -- NSA
+        FRVGCSAM	Federal Reserve Bank Held Gold Coins: NY Vault	Monthly -- NSA
+        FRVGCSV	Book Value of Federal Reserve Bank Held Gold Coins: NY Vault	Monthly -- NSA
+        MHTGWSALQ	U.S. Mint Held Treasury Gold Working Stock: All Locations: Coins, Blanks, Miscellaneous	Monthly -- NSA
+        MHTGWSALV	Book Value of U.S. Mint Held Treasury Gold Working Stock: All Locations: Coins, Blanks, Miscellaneous	Monthly -- NSA
         NONBORRES	Reserves of Depository Institutions, Nonborrowed	Monthly -- NSA
         NONBORRESW	Reserves of Depository Institutions, Nonborrowed	Weekly, Ending Wednesday -- NSA
         RBMTETPFB	Reserve Balances Maintained; Balances Maintained That Exceed the Top of the Penalty-Free Band	Monthly -- NSA
@@ -1080,6 +1094,8 @@
         VAULTSUR	Vault Cash, Surplus	Monthly -- NSA
         VAULTSURW	Vault Cash, Surplus	Weekly, Ending Wednesday -- NSA
         VAULTW	Vault Cash, Used To Satisfy Required Reserves	Weekly, Ending Wednesday -- NSA
+        WPNYGBV	Book Value of U.S. Mint Held Gold Deep Storage: West Point, NY	Monthly -- NSA
+        WPNYGTA	U.S. Mint Held Gold Deep Storage: West Point, NY	Monthly -- NSA
         WRESBAL	Reserve Balances with Federal Reserve Banks	Weekly, Ending Wednesday -- NSA
 
     25 M1 and Components
@@ -1362,8 +1378,6 @@
         WMTSEC1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, Ending Wednesday -- NSA
         WMTSECL1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, As of Wednesday -- NSA
         WNPHML1L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane LLC	Weekly, As of Wednesday -- NSA
-        WNPHML2L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane II LLC	Weekly, As of Wednesday -- NSA
-        WNPHML3L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane III LLC	Weekly, As of Wednesday -- NSA
         WOCE	Reserve Bank Credit: Other Credit Extensions	Weekly, Ending Wednesday -- NSA
         WOFDRBORBA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, Ending Wednesday -- NSA
         WOFDRBORBL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, As of Wednesday -- NSA
