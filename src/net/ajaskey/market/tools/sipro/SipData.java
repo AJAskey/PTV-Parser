@@ -52,6 +52,7 @@ public class SipData {
 	public static List<DataSet>	cashfromops			= new ArrayList<>();
 	public static List<DataSet>	shares					= new ArrayList<>();
 	public static List<DataSet>	dividends				= new ArrayList<>();
+	public static List<DataSet>	divDollar				= new ArrayList<>();
 	public static List<DataSet>	bookvalue				= new ArrayList<>();
 	public static List<DataSet>	cashfromfin			= new ArrayList<>();
 	public static List<DataSet>	equity					= new ArrayList<>();
@@ -197,7 +198,7 @@ public class SipData {
 					final DataSet cashinv = new DataSet("cashfrominvest", fld[0], fld, 176);
 					System.out.println(cashinv);
 					cashfrominvest.add(cashinv);
-					
+
 					final DataSet ltd = new DataSet("longtermdevt", fld[0], fld, 184);
 					System.out.println(ltd);
 					ltdebt.add(ltd);
@@ -245,16 +246,19 @@ public class SipData {
 
 		final DataSet totcfinv = DataSet.sum(cashfrominvest);
 		System.out.println("Cash from Investing : \n" + totcfinv);
-		
+
 		final DataSet totDebt = DataSet.sum(ltdebt);
 		System.out.println("LT Debt : \n" + totDebt);
 
 		final DataSet totShares = DataSet.sum(shares);
 		System.out.println("Shares : \n" + totShares);
 
-		final DataSet totDiv = DataSet.sum(dividends);
+		for (int i = 0; i < dividends.size(); i++) {
+			DataSet ds = DataSet.mult(dividends.get(i), shares.get(i));
+			divDollar.add(ds);
+		}
+		final DataSet totDiv = DataSet.sum(divDollar);
 		System.out.println("Dividends : \n" + totDiv);
-		DataSet divDollar = DataSet.mult(totDiv, totShares);
 
 		final DataSet totBv = DataSet.sum(bookvalue);
 		System.out.println("Book Value : \n" + totBv);
@@ -307,7 +311,7 @@ public class SipData {
 			SipData.writeData(totcfinv, "SPX Cash From Investing");
 			SipData.writeData(totDebt, "SPX Long Term Debt");
 			SipData.writeData(totShares, "SPX Shares");
-			SipData.writeData(divDollar, "SPX Dividends");
+			SipData.writeData(totDiv, "SPX Dividends");
 			SipData.writeData(bvScaled, "SPX Book Value");
 			SipData.writeData(totEq, "SPX Common Equity");
 			SipData.writeData(totTax, "SPX Income Tax Paid");

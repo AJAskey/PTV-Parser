@@ -31,6 +31,26 @@ import java.util.List;
  */
 public class DataSet {
 
+	public String ticker;
+
+	public double y7;
+
+	public double y6;
+
+	public double y5;
+
+	public double	y4;
+	public double	y3;
+	public double	q8;
+	public double	q7;
+	public double	q6;
+	public double	q5;
+	public double	q4;
+	public double	q3;
+	public double	q2;
+	public double	q1;
+	public String	name;
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.sipro.add
@@ -48,39 +68,50 @@ public class DataSet {
 		ds.y5 = set1.y5 + set2.y5;
 		ds.y4 = set1.y4 + set2.y4;
 		ds.y3 = set1.y3 + set2.y3;
-		ds.y2 = set1.y2 + set2.y2;
-		ds.y1 = set1.y1 + set2.y1;
-		ds.ttm = set1.ttm + set2.ttm;
+		ds.q8 = set1.q8 + set2.q8;
+		ds.q7 = set1.q7 + set2.q7;
+		ds.q6 = set1.q6 + set2.q6;
+		ds.q5 = set1.q5 + set2.q5;
+		ds.q4 = set1.q4 + set2.q4;
+		ds.q3 = set1.q3 + set2.q3;
+		ds.q2 = set1.q2 + set2.q2;
+		ds.q1 = set1.q1 + set2.q1;
+
+		return ds;
+	}
+
+	public static DataSet mult(DataSet set1, DataSet set2) {
+
+		final DataSet ds = new DataSet("MULTIPLY");
+		ds.ticker = "MERGED_TICKERS";
+		ds.q8 = set1.q8 * set2.q8;
+		ds.q7 = set1.q7 * set2.q7;
+		ds.q6 = set1.q6 * set2.q6;
+		ds.q5 = set1.q5 * set2.q5;
+		ds.q4 = set1.q4 * set2.q4;
+		ds.q3 = set1.q3 * set2.q3;
+		ds.q2 = set1.q2 * set2.q2;
+		ds.q1 = set1.q1 * set2.q1;
 		return ds;
 	}
 
 	public static DataSet sub(DataSet set1, DataSet set2) {
 
-		final DataSet ds = new DataSet();
+		final DataSet ds = new DataSet("SUBTRACT");
 		ds.ticker = "MERGED_TICKERS";
 		ds.y7 = set1.y7 - set2.y7;
 		ds.y6 = set1.y6 - set2.y6;
 		ds.y5 = set1.y5 - set2.y5;
 		ds.y4 = set1.y4 - set2.y4;
 		ds.y3 = set1.y3 - set2.y3;
-		ds.y2 = set1.y2 - set2.y2;
-		ds.y1 = set1.y1 - set2.y1;
-		ds.ttm = set1.ttm - set2.ttm;
-		return ds;
-	}
-
-	public static DataSet mult(DataSet set1, DataSet set2) {
-
-		final DataSet ds = new DataSet();
-		ds.ticker = "MERGED_TICKERS";
-		ds.y7 = set1.y7 * set2.y7;
-		ds.y6 = set1.y6 * set2.y6;
-		ds.y5 = set1.y5 * set2.y5;
-		ds.y4 = set1.y4 * set2.y4;
-		ds.y3 = set1.y3 * set2.y3;
-		ds.y2 = set1.y2 * set2.y2;
-		ds.y1 = set1.y1 * set2.y1;
-		ds.ttm = set1.ttm * set2.ttm;
+		ds.q8 = set1.q8 - set2.q8;
+		ds.q7 = set1.q7 - set2.q7;
+		ds.q6 = set1.q6 - set2.q6;
+		ds.q5 = set1.q5 - set2.q5;
+		ds.q4 = set1.q4 - set2.q4;
+		ds.q3 = set1.q3 - set2.q3;
+		ds.q2 = set1.q2 - set2.q2;
+		ds.q1 = set1.q1 - set2.q1;
 		return ds;
 	}
 
@@ -93,41 +124,27 @@ public class DataSet {
 	 */
 	public static DataSet sum(List<DataSet> data) {
 
-		final DataSet ret = new DataSet();
+		final DataSet ret = new DataSet("SUMMATION");
 		if (data.size() > 0) {
-			ret.ticker = "SUMMATION";
+			ret.ticker = "MERGED_TICKERS";
 			for (final DataSet ds : data) {
 				ret.y7 += ds.y7;
 				ret.y6 += ds.y6;
 				ret.y5 += ds.y5;
 				ret.y4 += ds.y4;
 				ret.y3 += ds.y3;
-				ret.y2 += ds.y2;
-				ret.y1 += ds.y1;
-				ret.ttm += ds.ttm;
+				ret.q8 += ds.q8;
+				ret.q7 += ds.q7;
+				ret.q6 += ds.q6;
+				ret.q5 += ds.q5;
+				ret.q4 += ds.q4;
+				ret.q3 += ds.q3;
+				ret.q2 += ds.q2;
+				ret.q1 += ds.q1;
 			}
 		}
 		return ret;
 
-	}
-
-	public String	ticker;
-	public double	y7;
-	public double	y6;
-	public double	y5;
-	public double	y4;
-	public double	y3;
-	public double	y2;
-	public double	y1;
-	public double	ttm;
-	public String	name;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	private DataSet() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -141,22 +158,15 @@ public class DataSet {
 		this.y5 = 0;
 		this.y4 = 0;
 		this.y3 = 0;
-		this.y2 = 0;
-		this.y1 = 0;
-		this.ttm = 0;
+		this.q8 = 0;
+		this.q7 = 0;
+		this.q6 = 0;
+		this.q5 = 0;
+		this.q4 = 0;
+		this.q3 = 0;
+		this.q2 = 0;
+		this.q1 = 0;
 		this.name = n;
-	}
-
-	public DataSet(double scaler) {
-		this.ticker = "";
-		this.y7 = scaler;
-		this.y6 = scaler;
-		this.y5 = scaler;
-		this.y4 = scaler;
-		this.y3 = scaler;
-		this.y2 = scaler;
-		this.y1 = scaler;
-		this.ttm = scaler;
 	}
 
 	public DataSet(String name, String code, String[] s, int ptr) {
@@ -166,35 +176,47 @@ public class DataSet {
 		this.y5 = this.getDouble(s[ptr + 3].trim());
 		this.y4 = this.getDouble(s[ptr + 4].trim());
 		this.y3 = this.getDouble(s[ptr + 5].trim());
-		this.y2 = this.getDouble(s[ptr + 6].trim());
-		this.y1 = this.getDouble(s[ptr + 7].trim());
-		this.ttm = this.getDouble(s[ptr + 8].trim());
-		if (this.ttm == 0.0) {
-			this.ttm = this.y1;
-		} 
+		this.q8 = this.getDouble(s[ptr + 6].trim());
+		this.q7 = this.getDouble(s[ptr + 7].trim());
+		this.q6 = this.getDouble(s[ptr + 8].trim());
+		this.q5 = this.getDouble(s[ptr + 9].trim());
+		this.q4 = this.getDouble(s[ptr + 10].trim());
+		this.q3 = this.getDouble(s[ptr + 11].trim());
+		this.q2 = this.getDouble(s[ptr + 12].trim());
+		this.q1 = this.getDouble(s[ptr + 13].trim());
+		// Handle no value for most recent quarter
+		if (this.q1 == 0.0) {
+			this.q1 = this.q5;
+		}
 		this.name = name.trim();
 	}
 
 	/**
+	 * This constructor should not be called to ensure proper initialization.
 	 *
-	 * net.ajaskey.market.tools.sipro.getDouble
-	 *
-	 * @param s
-	 * @return
 	 */
-	private double getDouble(String s) {
+	private DataSet() {
+		System.out.println("ERROR ... Don't call this constructor!");
+	}
 
-		double d = 0.0;
-		try {
-			d = Double.parseDouble(s.trim());
-			if (d < -99999999.0) {
-				//System.out.println(d);
-				d = 0.0;
-			}
-		} catch (final Exception e) {
-			d = 0.0;
-		}
-		return d;
+	public DataSet scale(double scaler) {
+
+		final DataSet ret = new DataSet("SCALE");
+		ret.ticker = "SCALED";
+		ret.y7 = scaler;
+		ret.y6 = scaler;
+		ret.y5 = scaler;
+		ret.y4 = scaler;
+		ret.y3 = scaler;
+		ret.q8 = scaler;
+		ret.q7 = scaler;
+		ret.q6 = scaler;
+		ret.q5 = scaler;
+		ret.q4 = scaler;
+		ret.q3 = scaler;
+		ret.q2 = scaler;
+		ret.q1 = scaler;
+		return ret;
 	}
 
 	@Override
@@ -224,6 +246,28 @@ public class DataSet {
 		result.append("}");
 
 		return result.toString();
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.getDouble
+	 *
+	 * @param s
+	 * @return
+	 */
+	private double getDouble(String s) {
+
+		double d = 0.0;
+		try {
+			d = Double.parseDouble(s.trim());
+			if (d < -99999999.0) {
+				//System.out.println(d);
+				d = 0.0;
+			}
+		} catch (final Exception e) {
+			d = 0.0;
+		}
+		return d;
 	}
 
 }
