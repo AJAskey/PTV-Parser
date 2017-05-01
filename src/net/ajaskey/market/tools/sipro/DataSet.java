@@ -127,7 +127,16 @@ public class DataSet {
 	 *
 	 */
 	private DataSet() {
-		// TODO Auto-generated constructor stub
+		this.ticker = "";
+		this.y7 = 0;
+		this.y6 = 0;
+		this.y5 = 0;
+		this.y4 = 0;
+		this.y3 = 0;
+		this.y2 = 0;
+		this.y1 = 0;
+		this.ttm = 0;
+		this.name = "";
 	}
 
 	/**
@@ -172,6 +181,31 @@ public class DataSet {
 		if (this.ttm == 0.0) {
 			this.ttm = this.y1;
 		} 
+		this.name = name.trim();
+	}
+	
+	public DataSet(String name, String code, String[] s, int ptr, String mode) {
+		this.ticker = code.trim();
+		this.y7 = this.getDouble(s[ptr + 1].trim());
+		this.y6 = this.getDouble(s[ptr + 2].trim());
+		this.y5 = this.getDouble(s[ptr + 3].trim());
+		this.y4 = this.getDouble(s[ptr + 4].trim());
+		this.y3 = this.getDouble(s[ptr + 5].trim());
+		this.y2 = this.getDouble(s[ptr + 6].trim());
+		double q8 = this.getDouble(s[ptr + 7].trim());
+		double q7 = this.getDouble(s[ptr + 8].trim());
+		double q6 = this.getDouble(s[ptr + 9].trim());
+		double q5 = this.getDouble(s[ptr + 10].trim());
+		double q4 = this.getDouble(s[ptr + 11].trim());
+		double q3 = this.getDouble(s[ptr + 12].trim());
+		double q2 = this.getDouble(s[ptr + 13].trim());
+		double q1 = this.getDouble(s[ptr + 14].trim());
+
+		this.y1 = q8+q7+q6+q5;
+		if (q1 == 0.0) {
+			q1 = q5;
+		}
+		this.ttm = q4+q3+q2+q1;
 		this.name = name.trim();
 	}
 
