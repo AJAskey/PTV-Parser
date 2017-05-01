@@ -30,11 +30,13 @@ import java.util.List;
  *
  */
 public class DataSet3 {
+	
+	public enum dMode {NONE, ACCUMULATION, SEQUENTIAL }
 
-	public String ticker;
-	public double y7;
-	public double y6;
-	public double y5;
+	public String	ticker;
+	public double	y7;
+	public double	y6;
+	public double	y5;
 	public double	y4;
 	public double	y3;
 	public double	y2;
@@ -47,6 +49,7 @@ public class DataSet3 {
 	public double	q2;
 	public double	q1;
 	public String	name;
+	public dMode mode;
 
 	/**
 	 *
@@ -74,6 +77,7 @@ public class DataSet3 {
 		ds.q3 = set1.q3 + set2.q3;
 		ds.q2 = set1.q2 + set2.q2;
 		ds.q1 = set1.q1 + set2.q1;
+		ds.mode = set1.mode;
 
 		return ds;
 	}
@@ -96,6 +100,7 @@ public class DataSet3 {
 		ds.q3 = set1.q3 * set2.q3;
 		ds.q2 = set1.q2 * set2.q2;
 		ds.q1 = set1.q1 * set2.q1;
+		ds.mode = set1.mode;
 		return ds;
 	}
 
@@ -117,6 +122,8 @@ public class DataSet3 {
 		ds.q3 = set1.q3 - set2.q3;
 		ds.q2 = set1.q2 - set2.q2;
 		ds.q1 = set1.q1 - set2.q1;
+		ds.mode = set1.mode;
+
 		return ds;
 	}
 
@@ -147,6 +154,7 @@ public class DataSet3 {
 				ret.q3 += ds.q3;
 				ret.q2 += ds.q2;
 				ret.q1 += ds.q1;
+				ret.mode = ds.mode;
 			}
 		}
 		return ret;
@@ -158,25 +166,12 @@ public class DataSet3 {
 	 *
 	 */
 	public DataSet3(String n) {
-		this.ticker = "";
-		this.y7 = 0;
-		this.y6 = 0;
-		this.y5 = 0;
-		this.y4 = 0;
-		this.y3 = 0;
-		this.y2 = 0;
-		this.q8 = 0;
-		this.q7 = 0;
-		this.q6 = 0;
-		this.q5 = 0;
-		this.q4 = 0;
-		this.q3 = 0;
-		this.q2 = 0;
-		this.q1 = 0;
+		init();
 		this.name = n;
 	}
 
-	public DataSet3(String name, String code, String[] s, int ptr) {
+	public DataSet3(String name, String code, String[] s, int ptr, dMode mode) {
+		init();
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
@@ -192,11 +187,39 @@ public class DataSet3 {
 		this.q3 = this.getDouble(s[ptr + 12].trim());
 		this.q2 = this.getDouble(s[ptr + 13].trim());
 		this.q1 = this.getDouble(s[ptr + 14].trim());
+		this.mode = mode;
+		
 		// Handle no value for most recent quarter
-		if (this.q1 == 0.0) {
-			this.q1 = this.q5;
+		if (mode == dMode.ACCUMULATION) {
+			if (this.q1 == 0.0) {
+				this.q1 = this.q5;
+			}
+		} else if (mode == dMode.SEQUENTIAL)  {
+			if (this.q1 == 0.0) {
+				this.q1 = this.q2;
+			}
 		}
 		this.name = name.trim();
+	}
+	
+	private void init() {
+		this.ticker = "";
+		this.y7 = 0;
+		this.y6 = 0;
+		this.y5 = 0;
+		this.y4 = 0;
+		this.y3 = 0;
+		this.y2 = 0;
+		this.q8 = 0;
+		this.q7 = 0;
+		this.q6 = 0;
+		this.q5 = 0;
+		this.q4 = 0;
+		this.q3 = 0;
+		this.q2 = 0;
+		this.q1 = 0;
+		this.name = "";
+		this.mode = dMode.NONE;
 	}
 
 	/**
@@ -204,7 +227,7 @@ public class DataSet3 {
 	 *
 	 */
 	private DataSet3() {
-		System.out.println("ERROR ... Don't call this constructor!");
+		init();
 	}
 
 	public DataSet3 scale(double scaler) {

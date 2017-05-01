@@ -1,7 +1,7 @@
 
 package net.ajaskey.market.tools.sipro;
 
-import java.io.BufferedReader; 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -62,9 +62,20 @@ public class SipData3 {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		SipData3.read("data/SP500-SIP2.csv", "SPX");
+		SipData3.read("data/SP500-SIP3.csv", "SPX");
 		//SipData.read("data/NDX-SIP.csv", "NDX");
 
+	}
+
+	private static int	ptr	= 0;
+	final static int		INC	= 14;
+
+	private static DataSet3 getData(String name, String[] fld, DataSet3.dMode mode) {
+
+		final DataSet3 dsRet = new DataSet3(name, fld[0], fld, ptr, mode);
+		//System.out.println(dsRet);
+		ptr += INC;
+		return dsRet;
 	}
 
 	/**
@@ -83,8 +94,6 @@ public class SipData3 {
 
 			//line = br.readLine(); // read header
 
-			final int INC = 14;
-			
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
@@ -93,24 +102,44 @@ public class SipData3 {
 
 					knt++;
 					System.out.println(knt + " : " + fld[0]);
-					
-					int ptr = 0;
 
-					final DataSet3 sale = new DataSet3("sales", fld[0], fld, ptr);
-					sales.add(sale);
-					System.out.println(sale);
+					ptr = 0;
 
-					ptr += INC;
+					sales.add(getData("sales", fld, DataSet3.dMode.ACCUMULATION));
+					ebit.add(getData("ebit", fld, DataSet3.dMode.ACCUMULATION));
+					taxes.add(getData("taxes", fld, DataSet3.dMode.ACCUMULATION));
+					incomeEps.add(getData("incomeEps", fld, DataSet3.dMode.ACCUMULATION));
+					cashOps.add(getData("cashOps", fld, DataSet3.dMode.ACCUMULATION));
+					cashInv.add(getData("cashInv", fld, DataSet3.dMode.ACCUMULATION));
+					cashFin.add(getData("cashFin", fld, DataSet3.dMode.ACCUMULATION));
+					dividend.add(getData("dividend", fld, DataSet3.dMode.ACCUMULATION));
+
+					shares.add(getData("shares", fld, DataSet3.dMode.SEQUENTIAL));
 
 				}
 			}
 		}
-		
-		final DataSet3 totSales = DataSet3.sum(sales);
 
+		final DataSet3 totSales = DataSet3.sum(sales);
+		final DataSet3 totEbit = DataSet3.sum(ebit);
+		final DataSet3 totTax = DataSet3.sum(taxes);
+		final DataSet3 totIncome = DataSet3.sum(incomeEps);
+		final DataSet3 totCops = DataSet3.sum(cashOps);
+		final DataSet3 totCfin = DataSet3.sum(cashFin);
+		final DataSet3 totCinv = DataSet3.sum(cashInv);
+		final DataSet3 totDiv = DataSet3.sum(dividend);
+		final DataSet3 totShr = DataSet3.sum(shares);
 
 		if (src.equalsIgnoreCase("SPX")) {
-			SipData3.writeData(totSales, "SPX Sales v3");
+			SipData3.write(totSales, "SPX Sales v3");
+			SipData3.write(totEbit, "SPX EBIT v3");
+			SipData3.write(totTax, "SPX Taxes v3");
+			SipData3.write(totIncome, "SPX Income for EPS v3");
+			SipData3.write(totCops, "SPX Cash from Operations v3");
+			SipData3.write(totCfin, "SPX Cash from Financing v3");
+			SipData3.write(totCinv, "SPX Cash from Investing v3");
+			SipData3.write(totDiv, "SPX Dividends v3");
+			SipData3.write(totShr, "SPX Shares v3");
 		}
 	}
 
@@ -121,13 +150,44 @@ public class SipData3 {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q3.getTime()), val);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
-	
+
 	private static void write(PrintWriter pw, DateSet.Quarter q, Double val[]) {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val[0]);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val[1]);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q3.getTime()), val[2]);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val[3]);
+	}
+
+	private static void write(DataSet3 ds, String fname) throws FileNotFoundException {
+
+		if (ds.mode == DataSet3.dMode.SEQUENTIAL) {
+			writeDataSequential(ds, fname);
+		} else {
+			writeData(ds, fname);
+		}
+	}
+
+	private static void writeDataSequential(DataSet3 ds, String fname) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
+
+			final DateSet dates = new DateSet();
+
+			write(pw, dates.y7, ds.y7);
+			write(pw, dates.y6, ds.y6);
+			write(pw, dates.y5, ds.y5);
+			write(pw, dates.y4, ds.y4);
+			write(pw, dates.y3, ds.y3);
+			write(pw, dates.y2, ds.y2);
+			write(pw, dates.y1, ds.q5);
+			double y = ds.q1;
+			if (y == 0.0) {
+				y = ds.q2;
+			}
+			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), y);
+
+		}
 	}
 
 	private static void writeData(DataSet3 ds, String fname) {
@@ -148,7 +208,7 @@ public class SipData3 {
 			qtrly[2] = ds.q6 + ds.q5 + ds.q4 + ds.q3;
 			qtrly[3] = ds.q5 + ds.q4 + ds.q3 + ds.q2;
 			write(pw, dates.y1, qtrly);
-			double ttm = + ds.q4 + ds.q3 + ds.q2 + ds.q1;
+			double ttm = +ds.q4 + ds.q3 + ds.q2 + ds.q1;
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ttm);
 
 		} catch (final Exception e) {
