@@ -1,7 +1,7 @@
 
 package net.ajaskey.market.tools.sipro;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -40,16 +40,15 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  */
 public class SipData3 {
 
-	public static List<DataSet>	sales			= new ArrayList<>();
-	public static List<DataSet>	ebit			= new ArrayList<>();
-	public static List<DataSet>	taxes			= new ArrayList<>();
-	public static List<DataSet>	incomeEps	= new ArrayList<>();
-	public static List<DataSet>	cashOps		= new ArrayList<>();
-	public static List<DataSet>	cashFin		= new ArrayList<>();
-	public static List<DataSet>	cashInv		= new ArrayList<>();
-	public static List<DataSet>	dividend	= new ArrayList<>();
-	public static List<DataSet>	divDollar	= new ArrayList<>();
-	public static List<DataSet>	shares		= new ArrayList<>();
+	public static List<DataSet3>	sales			= new ArrayList<>();
+	public static List<DataSet3>	ebit			= new ArrayList<>();
+	public static List<DataSet3>	taxes			= new ArrayList<>();
+	public static List<DataSet3>	incomeEps	= new ArrayList<>();
+	public static List<DataSet3>	cashOps		= new ArrayList<>();
+	public static List<DataSet3>	cashFin		= new ArrayList<>();
+	public static List<DataSet3>	cashInv		= new ArrayList<>();
+	public static List<DataSet3>	dividend	= new ArrayList<>();
+	public static List<DataSet3>	shares		= new ArrayList<>();
 
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -84,6 +83,8 @@ public class SipData3 {
 
 			//line = br.readLine(); // read header
 
+			final int INC = 14;
+			
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
@@ -92,72 +93,24 @@ public class SipData3 {
 
 					knt++;
 					System.out.println(knt + " : " + fld[0]);
+					
+					int ptr = 0;
 
-					final DataSet sale = new DataSet("sales", fld[0], fld, 0, "quarter");
+					final DataSet3 sale = new DataSet3("sales", fld[0], fld, ptr);
 					sales.add(sale);
-					//System.out.println(sale);
+					System.out.println(sale);
 
-					final DataSet eb = new DataSet("ebit", fld[0], fld, 14, "quarter");
-					ebit.add(eb);
-					//System.out.println(ebit);
+					ptr += INC;
 
-					final DataSet tx = new DataSet("taxes", fld[0], fld, 28, "quarter");
-					taxes.add(tx);
-					//System.out.println(tx);
-
-					final DataSet incEps = new DataSet("Income for EPS", fld[0], fld, 42, "quarter");
-					incomeEps.add(incEps);
-					//System.out.println(incEps);
-
-					final DataSet ops = new DataSet("Cash From Operations", fld[0], fld, 56, "quarter");
-					cashOps.add(ops);
-					//System.out.println(cashOps);
-
-					final DataSet inv = new DataSet("Cash From Investing", fld[0], fld, 70, "quarter");
-					cashInv.add(inv);
-					//System.out.println(cashInv);
-
-					final DataSet fin = new DataSet("Cash From Financing", fld[0], fld, 84, "quarter");
-					cashFin.add(fin);
-					//System.out.println(cashFin);
-
-					final DataSet div = new DataSet("Dividend", fld[0], fld, 98, "quarter");
-					dividend.add(div);
-					//System.out.println(dividend);
-
-					final DataSet shr = new DataSet("Shares", fld[0], fld, 112);
-					shares.add(shr);
-					//System.out.println(shares);
-
-					double cpyKnt = 1.0 / (double) knt;
-					DataSet companies = new DataSet(cpyKnt);
-					for (int i = 0; i < dividend.size(); i++) {
-						DataSet ds = DataSet.mult(dividend.get(i), shares.get(i));
-						DataSet ds1 = DataSet.mult(ds, companies);
-						divDollar.add(ds1);
-					}
 				}
 			}
 		}
 		
-		final DataSet totSales = DataSet.sum(sales);
-		final DataSet totEbit = DataSet.sum(ebit);
-		final DataSet totTaxes = DataSet.sum(taxes);
-		final DataSet totIncomeEps = DataSet.sum(incomeEps);
-		final DataSet totCashOps = DataSet.sum(cashOps);
-		final DataSet totCashFin = DataSet.sum(cashFin);
-		final DataSet totCashInv = DataSet.sum(cashInv);
-		final DataSet totDiv = DataSet.sum(divDollar);
+		final DataSet3 totSales = DataSet3.sum(sales);
+
 
 		if (src.equalsIgnoreCase("SPX")) {
-			SipData3.writeData(totSales, "SPX Sales v2");
-			SipData3.writeData(totEbit, "SPX EBIT v2");
-			SipData3.writeData(totTaxes, "SPX Taxes v2");
-			SipData3.writeData(totIncomeEps, "SPX Income for EPS v2");
-			SipData3.writeData(totCashOps, "SPX Cash From Operations v2");
-			SipData3.writeData(totCashFin, "SPX Cash From Financing v2");
-			SipData3.writeData(totCashInv, "SPX Cash From Investing v2");
-			SipData3.writeData(totDiv, "SPX Dividends v2");
+			SipData3.writeData(totSales, "SPX Sales v3");
 		}
 	}
 
@@ -168,8 +121,16 @@ public class SipData3 {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q3.getTime()), val);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
+	
+	private static void write(PrintWriter pw, DateSet.Quarter q, Double val[]) {
 
-	private static void writeData(DataSet ds, String fname) {
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val[0]);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val[1]);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q3.getTime()), val[2]);
+		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val[3]);
+	}
+
+	private static void writeData(DataSet3 ds, String fname) {
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 
@@ -181,8 +142,14 @@ public class SipData3 {
 			write(pw, dates.y4, ds.y4);
 			write(pw, dates.y3, ds.y3);
 			write(pw, dates.y2, ds.y2);
-			write(pw, dates.y1, ds.y1);
-			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ds.ttm);
+			Double[] qtrly = new Double[4];
+			qtrly[0] = ds.q8 + ds.q7 + ds.q6 + ds.q5;
+			qtrly[1] = ds.q7 + ds.q6 + ds.q5 + ds.q4;
+			qtrly[2] = ds.q6 + ds.q5 + ds.q4 + ds.q3;
+			qtrly[3] = ds.q5 + ds.q4 + ds.q3 + ds.q2;
+			write(pw, dates.y1, qtrly);
+			double ttm = + ds.q4 + ds.q3 + ds.q2 + ds.q1;
+			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ttm);
 
 		} catch (final Exception e) {
 			e.printStackTrace();
