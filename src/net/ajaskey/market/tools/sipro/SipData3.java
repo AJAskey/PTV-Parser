@@ -61,8 +61,12 @@ public class SipData3 {
 	public static List<DataSet3>	interest		= new ArrayList<>();
 	public static List<DataSet3>	resDev			= new ArrayList<>();
 	public static List<DataSet3>	bookValue		= new ArrayList<>();
+	public static List<DataSet3>	prices		= new ArrayList<>();
 
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
+	
+	public static List<ClosingPrices>	lastPrice		= new ArrayList<>();
+
 
 	private static int					ptr					= 0;
 	private static int					companyKnt	= 0;
@@ -77,6 +81,8 @@ public class SipData3 {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
+		readClosingPrices("data/closing_price.txt");
 
 		SipData3.readDataFile_1("data/SP500-SIP3.csv");
 		SipData3.readDataFile_2("data/SP500-SIP3b.csv");
@@ -84,6 +90,31 @@ public class SipData3 {
 
 		//SipData.read("data/NDX-SIP.csv", "NDX");
 
+	}
+
+	/** 
+	 * net.ajaskey.market.tools.sipro.readClosingPrices
+	 *
+	 * @param string
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
+	 */
+	private static void readClosingPrices(String filename) throws FileNotFoundException, IOException {
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+			String line = "";
+
+			while (line != null) {
+				line = br.readLine();
+				String fld[] = line.split("\t");
+				new ClosingPrices(fld[0].trim(), fld[1].trim());
+			}
+		}
+		
+		for (ClosingPrices cp : ClosingPrices.priceList) {
+			System.out.println(cp);
+		}
+		
 	}
 
 	/**
@@ -163,7 +194,10 @@ public class SipData3 {
 
 					interest.add(SipData3.getData("interest", fld, DataSet3.dMode.ACCUMULATION, MILLION));
 					resDev.add(SipData3.getData("R and D", fld, DataSet3.dMode.ACCUMULATION, MILLION));
+					
+					
 					bookValue.add(SipData3.getData("Book Value per Share", fld, DataSet3.dMode.SEQUENTIAL, 1.0));
+					prices.add(SipData3.getData("Prices", fld, DataSet3.dMode.SEQUENTIAL, 1.0));
 
 				}
 			}
@@ -191,6 +225,7 @@ public class SipData3 {
 		final DataSet3 totEquity = DataSet3.sum(equity);
 		final DataSet3 totInterest = DataSet3.sum(interest);
 		final DataSet3 totResDev = DataSet3.sum(resDev);
+		final DataSet3 totPrices = DataSet3.sum(prices);
 
 		List<DataSet3> divDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
@@ -205,6 +240,13 @@ public class SipData3 {
 			bvDollar.add(ds);
 		}
 		final DataSet3 totBvDollar = DataSet3.sum(bvDollar);
+		
+		List<DataSet3> mcap = new ArrayList<>();
+		for (int i = 0; i < companyKnt; i++) {
+			DataSet3 ds = DataSet3.mult(prices.get(i), shares.get(i));
+			mcap.add(ds);
+		}
+		final DataSet3 totMktCap = DataSet3.sum(mcap);
 
 		if (src.equalsIgnoreCase("SPX")) {
 			SipData3.write(totSales, "SPX Sales v3");
@@ -228,6 +270,7 @@ public class SipData3 {
 			SipData3.write(totInterest, "SPX Interest Paid v3");
 			SipData3.write(totResDev, "SPX Research and Development v3");
 			SipData3.write(totBvDollar, "SPX Book Value v3");
+			SipData3.write(totMktCap, "SPX Market Cap v3");
 		}
 	}
 

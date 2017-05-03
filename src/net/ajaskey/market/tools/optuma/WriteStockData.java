@@ -1,6 +1,7 @@
 
 package net.ajaskey.market.tools.optuma;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -40,6 +41,10 @@ import net.ajaskey.market.ta.input.TickerFullName;
  */
 public class WriteStockData {
 
+	private final static List<String>			filenames			= new ArrayList<>();
+	private final static List<String>			fullfilenames	= new ArrayList<>();
+	private final static SimpleDateFormat	sdf						= new SimpleDateFormat("yyyy-MM-dd");
+
 	/**
 	 * net.ajaskey.market.tools.optuma.main
 	 *
@@ -48,10 +53,6 @@ public class WriteStockData {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
-
-		final List<String> filenames = new ArrayList<>();
-		final List<String> fullfilenames = new ArrayList<>();
-		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
@@ -65,8 +66,14 @@ public class WriteStockData {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
+		processList("lists\\stockdata-list.txt");
+		processLastPrice("lists\\ivv.csv");
+	}
+
+	private static void processList(String listName) throws FileNotFoundException, IOException, ParseException {
+
 		ParseData.clearValidTickers();
-		ParseData.setValidTickers(ParseData.getTickerList("lists\\stockdata-list.txt"));
+		ParseData.setValidTickers(ParseData.getTickerList(listName));
 
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
 
@@ -79,10 +86,26 @@ public class WriteStockData {
 					final String d = sdf.format(td.getDate(i).getTime());
 					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
 					    (int) td.getVolume(i));
-					// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
-					// td.getOpen(i), td.getHigh(i), td.getLow(i),
-					// td.getClose(i), (int) td.getVolume(i));
 				}
+			}
+		}
+		System.out.println("Done.");
+	}
+
+	private static void processLastPrice(String listName) throws ParseException, IOException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(listName));
+
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 10);
+
+		try (PrintWriter pw = new PrintWriter("data/closing_price.txt")) {
+
+			for (final TickerData td : tdAll) {
+				//td.generateDerived(false);
+				int i = td.getDaysOfData() - 2;
+				System.out.println(td.getTicker());
+				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
 			}
 		}
 		System.out.println("Done.");
