@@ -104,103 +104,105 @@ public class SipData {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
 
-					knt++;
-
 					final String fld[] = line.split(",");
+
+					knt++;
+					System.out.println(knt + " : " + fld[0]);
 
 					final DataSet sale = new DataSet("sales", fld[0], fld, 0);
 					sales.add(sale);
-					System.out.println(sale);
+					//System.out.println(sale);
 
 					final DataSet gi = new DataSet("grossIncome", fld[0], fld, 8);
-					System.out.println(gi);
+					//System.out.println(gi);
 					grossIncome.add(gi);
 
 					final DataSet ui = new DataSet("unusualIncome", fld[0], fld, 16);
-					System.out.println(ui);
+					//System.out.println(ui);
 					unusualIncome.add(ui);
 
 					final DataSet inc = new DataSet("income", fld[0], fld, 24);
-					System.out.println(inc);
+					//System.out.println(inc);
 					income.add(inc);
 
 					final DataSet dollar = new DataSet("cash", fld[0], fld, 32);
-					System.out.println(dollar);
+					//System.out.println(dollar);
 					cash.add(dollar);
 
 					final DataSet inv = new DataSet("inventory", fld[0], fld, 40);
-					System.out.println(inv);
+					//System.out.println(inv);
 					inventory.add(inv);
 
 					final DataSet gwill = new DataSet("goodwill", fld[0], fld, 48);
-					System.out.println(gwill);
+					//System.out.println(gwill);
 					goodwill.add(gwill);
 
 					final DataSet asset = new DataSet("assets", fld[0], fld, 56);
-					System.out.println(asset);
+					//System.out.println(asset);
 					assets.add(asset);
 
 					final DataSet liab = new DataSet("liabilities", fld[0], fld, 64);
-					System.out.println(liab);
+					//System.out.println(liab);
 					liabilities.add(liab);
 
 					final DataSet cfops = new DataSet("cfops", fld[0], fld, 72);
-					System.out.println(cfops);
+					//System.out.println(cfops);
 					cashfromops.add(cfops);
 
 					final DataSet share = new DataSet("shares", fld[0], fld, 80);
-					System.out.println(share);
+					//System.out.println(share);
 					shares.add(share);
 
 					final DataSet div = new DataSet("dividends", fld[0], fld, 88);
-					System.out.println(div);
+					//System.out.println(div);
 					dividends.add(div);
 
 					final DataSet bv = new DataSet("bookvalue", fld[0], fld, 96);
-					System.out.println(bv);
+					//System.out.println(bv);
 					bookvalue.add(bv);
 
 					final DataSet cashfin = new DataSet("cashfromfin", fld[0], fld, 104);
-					System.out.println(cashfin);
+					//System.out.println(cashfin);
 					cashfromfin.add(cashfin);
 
 					final DataSet eq = new DataSet("equity", fld[0], fld, 112);
-					System.out.println(eq);
+					//System.out.println(eq);
 					equity.add(eq);
 
 					final DataSet tx = new DataSet("taxes", fld[0], fld, 120);
-					System.out.println(tx);
+					//System.out.println(tx);
 					tax.add(tx);
 
 					final DataSet intr = new DataSet("interest", fld[0], fld, 128);
-					System.out.println(intr);
+					//System.out.println(intr);
 					interest.add(intr);
 
 					final DataSet apay = new DataSet("accPay", fld[0], fld, 136);
-					System.out.println(apay);
+					//System.out.println(apay);
 					accPay.add(apay);
+					
 					final DataSet arx = new DataSet("accRx", fld[0], fld, 144);
-					System.out.println(arx);
+					//System.out.println(arx);
 					accRx.add(arx);
 
 					final DataSet capE = new DataSet("CapEx", fld[0], fld, 152);
-					System.out.println(capE);
+					//System.out.println(capE);
 					capExpend.add(capE);
 
 					final DataSet eb = new DataSet("ebit", fld[0], fld, 160);
-					System.out.println(eb);
+					//System.out.println(eb);
 					ebit.add(eb);
 
 					final DataSet pr = new DataSet("price", fld[0], fld, 168);
-					System.out.println(pr);
+					//System.out.println(pr);
 					prices.add(pr);
 
 					final DataSet cashinv = new DataSet("cashfrominvest", fld[0], fld, 176);
-					System.out.println(cashinv);
+					//System.out.println(cashinv);
 					cashfrominvest.add(cashinv);
 
 					final DataSet ltd = new DataSet("longtermdevt", fld[0], fld, 184);
-					System.out.println(ltd);
+					//System.out.println(ltd);
 					ltdebt.add(ltd);
 
 				}
@@ -209,91 +211,91 @@ public class SipData {
 		final DataSet totSales = DataSet.sum(sales);
 
 		final DataSet totGI = DataSet.sum(grossIncome);
-		System.out.println("GI : \n" + totGI);
+		//System.out.println("GI : \n" + totGI);
 
 		final DataSet totUI = DataSet.sum(unusualIncome);
-		System.out.println("UI : \n" + totUI);
+		//System.out.println("UI : \n" + totUI);
 
 		final DataSet net = DataSet.sub(totGI, totUI);
-		System.out.println("Net : \n" + net);
+		//System.out.println("Net : \n" + net);
 
 		final DataSet totInc = DataSet.sum(income);
-		System.out.println("Income : \n" + totInc);
+		//System.out.println("Income : \n" + totInc);
 
 		final DataSet totCash = DataSet.sum(cash);
-		System.out.println("Cash : \n" + totCash);
+		//System.out.println("Cash : \n" + totCash);
 
 		final DataSet totInventory = DataSet.sum(inventory);
-		System.out.println("Inventory : \n" + totInventory);
+		//System.out.println("Inventory : \n" + totInventory);
 
 		final DataSet totGoodwill = DataSet.sum(goodwill);
-		System.out.println("Goodwill : \n" + totGoodwill);
+		//System.out.println("Goodwill : \n" + totGoodwill);
 
 		final DataSet totAssets = DataSet.sum(assets);
-		System.out.println("Assets : \n" + totAssets);
+		//System.out.println("Assets : \n" + totAssets);
 
 		final DataSet totAssGW = DataSet.sub(totAssets, totGoodwill);
-		System.out.println("Assets : \n" + totAssets);
+		//System.out.println("Assets : \n" + totAssets);
 
 		final DataSet totLiab = DataSet.sum(liabilities);
-		System.out.println("Liabilities : \n" + totLiab);
+		//System.out.println("Liabilities : \n" + totLiab);
 
 		final DataSet totcfops = DataSet.sum(cashfromops);
-		System.out.println("Cash from OPS : \n" + totcfops);
+		//System.out.println("Cash from OPS : \n" + totcfops);
 
 		final DataSet totcffin = DataSet.sum(cashfromfin);
-		System.out.println("Cash from Financing : \n" + totcffin);
+		//System.out.println("Cash from Financing : \n" + totcffin);
 
 		final DataSet totcfinv = DataSet.sum(cashfrominvest);
-		System.out.println("Cash from Investing : \n" + totcfinv);
+		//System.out.println("Cash from Investing : \n" + totcfinv);
 
 		final DataSet totDebt = DataSet.sum(ltdebt);
-		System.out.println("LT Debt : \n" + totDebt);
+		//System.out.println("LT Debt : \n" + totDebt);
 
 		final DataSet totShares = DataSet.sum(shares);
-		System.out.println("Shares : \n" + totShares);
+		//System.out.println("Shares : \n" + totShares);
 
 		for (int i = 0; i < dividends.size(); i++) {
 			DataSet ds = DataSet.mult(dividends.get(i), shares.get(i));
 			divDollar.add(ds);
 		}
 		final DataSet totDiv = DataSet.sum(divDollar);
-		System.out.println("Dividends : \n" + totDiv);
+		//System.out.println("Dividends : \n" + totDiv);
 
 		final DataSet totBv = DataSet.sum(bookvalue);
-		System.out.println("Book Value : \n" + totBv);
+		//System.out.println("Book Value : \n" + totBv);
 		DataSet bvDollar = DataSet.mult(totBv, totShares);
 		DataSet bvMod = DataSet.sub(bvDollar, totGoodwill);
 		DataSet bvScaler = new DataSet(1.0 / 100.0);
 		DataSet bvScaled = DataSet.mult(bvMod, bvScaler);
 
 		final DataSet totEq = DataSet.sum(equity);
-		System.out.println("Equity : \n" + totEq);
+		//System.out.println("Equity : \n" + totEq);
 
 		final DataSet totTax = DataSet.sum(tax);
-		System.out.println("Taxes : \n" + totTax);
+		//System.out.println("Taxes : \n" + totTax);
 
 		final DataSet totInt = DataSet.sum(interest);
-		System.out.println("Interest : \n" + totInt);
+		//System.out.println("Interest : \n" + totInt);
 
 		final DataSet totAR = DataSet.sum(accRx);
-		System.out.println("Accounts Receivable : \n" + totAR);
+		//System.out.println("Accounts Receivable : \n" + totAR);
 
 		final DataSet totAP = DataSet.sum(accPay);
-		System.out.println("Accounts Payable : \n" + totAP);
+		//System.out.println("Accounts Payable : \n" + totAP);
 
 		final DataSet totCE = DataSet.sum(capExpend);
-		System.out.println("Cap Expend : \n" + totCE);
+		//System.out.println("Cap Expend : \n" + totCE);
 
 		final DataSet totEbit = DataSet.sum(ebit);
-		System.out.println("EBIT : \n" + totEbit);
+		//System.out.println("EBIT : \n" + totEbit);
 
 		double cpyKnt = 1.0 / (double) knt;
 		final DataSet totPrice = DataSet.sum(prices);
 		DataSet companies = new DataSet(cpyKnt);
 		DataSet totAvgPr = DataSet.mult(totPrice, companies);
 
-		System.out.println("Price : \n" + totPrice);
+		//System.out.println("Price : \n" + totPrice);
 
 		if (src.equalsIgnoreCase("SPX")) {
 			SipData.writeData(totSales, "SPX Sales");

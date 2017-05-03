@@ -30,8 +30,10 @@ import java.util.List;
  *
  */
 public class DataSet3 {
-	
-	public enum dMode {NONE, ACCUMULATION, SEQUENTIAL }
+
+	public enum dMode {
+		NONE, ACCUMULATION, SEQUENTIAL
+	}
 
 	public String	ticker;
 	public double	y7;
@@ -49,7 +51,7 @@ public class DataSet3 {
 	public double	q2;
 	public double	q1;
 	public String	name;
-	public dMode mode;
+	public dMode	mode;
 
 	/**
 	 *
@@ -188,21 +190,22 @@ public class DataSet3 {
 		this.q2 = this.getDouble(s[ptr + 13].trim());
 		this.q1 = this.getDouble(s[ptr + 14].trim());
 		this.mode = mode;
-		
+
 		// Handle no value for most recent quarter
 		if (mode == dMode.ACCUMULATION) {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q5;
 			}
-		} else if (mode == dMode.SEQUENTIAL)  {
+		} else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q2;
 			}
 		}
 		this.name = name.trim();
 	}
-	
+
 	private void init() {
+
 		this.ticker = "";
 		this.y7 = 0;
 		this.y6 = 0;
@@ -230,7 +233,7 @@ public class DataSet3 {
 		init();
 	}
 
-	public DataSet3 scale(double scaler) {
+	public static DataSet3 scaleSet(double scaler) {
 
 		final DataSet3 ret = new DataSet3("SCALE");
 		ret.ticker = "SCALED";
@@ -300,6 +303,19 @@ public class DataSet3 {
 			d = 0.0;
 		}
 		return d;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.scale
+	 *
+	 * @param shr
+	 * @param d
+	 * @return
+	 */
+	public static DataSet3 scale(DataSet3 shr, double d) {
+
+		DataSet3 ds = scaleSet(d);
+		return mult(shr, ds);
 	}
 
 }

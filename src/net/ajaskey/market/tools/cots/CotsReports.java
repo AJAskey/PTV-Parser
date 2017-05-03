@@ -133,7 +133,7 @@ public class CotsReports {
 		final String header = "Date,Long,Short,Net";
 		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		try (PrintWriter pwDealer = new PrintWriter(outputPath + "\\" + prefix + "dealer-optuma.csv");
+		try (PrintWriter pwDealer = new PrintWriter(outputPath + "\\" + prefix + "dealer_optuma.csv");
 		    PrintWriter pwPM = new PrintWriter(outputPath + "\\" + prefix + "pm-optuma.csv");
 		    PrintWriter pwLevered = new PrintWriter(outputPath + "\\" + prefix + "levered-optuma.csv");
 		    PrintWriter pwNonrpt = new PrintWriter(outputPath + "\\" + prefix + "nonrpt-optuma.csv");
