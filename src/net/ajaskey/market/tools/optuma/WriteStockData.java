@@ -66,8 +66,8 @@ public class WriteStockData {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
-		processList("lists\\stockdata-list.txt");
-		processLastPrice("lists\\ivv.csv");
+		processList("lists/stockdata-list.txt");
+		processLastPrice("data/SP500-SIP-TICKERS.CSV");
 	}
 
 	private static void processList(String listName) throws FileNotFoundException, IOException, ParseException {
@@ -102,8 +102,8 @@ public class WriteStockData {
 		try (PrintWriter pw = new PrintWriter("data/closing_price.txt")) {
 
 			for (final TickerData td : tdAll) {
-				//td.generateDerived(false);
-				int i = td.getDaysOfData() - 2;
+				td.fillDataArrays(0, false);
+				int i = td.getDaysOfData()-1;
 				System.out.println(td.getTicker());
 				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
 			}

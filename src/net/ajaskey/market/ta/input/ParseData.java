@@ -108,7 +108,7 @@ public class ParseData {
 					if (!sline.contains("ticker") && !sline.contains("symbol")) {
 						final String fld[] = line.trim().split("\\s+");
 						if (fld[0].trim().length() > 0) {
-							list.add(fld[0].trim());
+							list.add(fld[0].trim().replaceAll("\"", ""));
 							// System.out.println(fld[0]);
 						}
 					}
