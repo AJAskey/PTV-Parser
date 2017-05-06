@@ -243,7 +243,10 @@ public class SipData3 {
 
 		List<DataSet3> mcap = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
-			DataSet3 ds = DataSet3.mult(prices.get(i), shares.get(i));
+			double pr = ClosingPrices.getPrice(prices.get(i).ticker);
+			DataSet3 price = prices.get(i);
+			price.q1 = pr;
+			DataSet3 ds = DataSet3.mult(price, shares.get(i));
 			mcap.add(ds);
 		}
 		final DataSet3 totMktCap = DataSet3.sum(mcap);
