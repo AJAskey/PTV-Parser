@@ -57,7 +57,7 @@ public class ClosingPrices {
 		priceList.add(this);
 	}
 
-	public double getPrice(String ticker) {
+	public static double getPrice(String ticker) {
 
 		double ret = 0.0;
 		for (ClosingPrices cp : priceList) {
