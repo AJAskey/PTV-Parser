@@ -100,15 +100,49 @@ public class FredCommon {
 	 */
 	public static void writeToOptuma(List<DataValues> data, String seriesName) {
 
+		double scaler = getScaler(seriesName);
+
 		try (PrintWriter pw = new PrintWriter(new File(fredPath + seriesName + ".csv"))) {
 			pw.println("Date," + seriesName);
 			for (final DataValues dv : data) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
-				pw.printf("%s,%.2f%n", date, dv.getValue());
+				double d = dv.getValue() * scaler;
+				pw.printf("%s,%.2f%n", date, d);
 			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+
+	final private static double	BILLION		= 1000000000.0;
+	final private static double	MILLION		= 1000000.0;
+	final private static double	THOUSAND	= 1000.0;
+
+	/**
+	 * net.ajaskey.market.tools.fred.getScaler
+	 *
+	 * @param seriesName
+	 * @return
+	 */
+	private static double getScaler(String seriesName) {
+
+		double ret = 1.0;
+		if (seriesName.equalsIgnoreCase("gdpc1")) {
+			ret = BILLION;
+		} else if (seriesName.equalsIgnoreCase("gdp")) {
+			ret = BILLION;
+		} else if (seriesName.contains("JTS")) {
+			ret = THOUSAND;
+		} else if (seriesName.contains("JTU")) {
+			ret = THOUSAND;
+		} else if (seriesName.equalsIgnoreCase("BOGMBASE")) {
+			ret = MILLION;
+		} else if (seriesName.equalsIgnoreCase("GFDEBTN")) {
+			ret = MILLION;
+		} else if (seriesName.equalsIgnoreCase("TREAST")) {
+			ret = MILLION;
+		}
+		return ret;
 	}
 
 }

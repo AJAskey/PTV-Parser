@@ -83,12 +83,19 @@ public class SipData3 {
 
 		readClosingPrices("data/closing_price.txt");
 
-		SipData3.readDataFile_1("data/SP500-SIP3.csv");
-		SipData3.readDataFile_2("data/SP500-SIP3b.csv");
-		processData("SPX");
+		final String group = "SPX";
 
-		//SipData.read("data/NDX-SIP.csv", "NDX");
+		if (group.contains("SPX")) {
+			SipData3.readDataFile_1("data/SP500-SIP3.csv");
+			SipData3.readDataFile_2("data/SP500-SIP3b.csv");
+		} else if (group.contains("SML")) {
+			SipData3.readDataFile_1("data/SP600-SIP3.csv");
+			SipData3.readDataFile_2("data/SP600-SIP3b.csv");
+		} else {
+			return;
+		}
 
+		processData(group);
 	}
 
 	/**
@@ -153,9 +160,10 @@ public class SipData3 {
 					cashOps.add(SipData3.getData("cashOps", fld, DataSet3.dMode.ACCUMULATION, MILLION));
 					cashInv.add(SipData3.getData("cashInv", fld, DataSet3.dMode.ACCUMULATION, MILLION));
 					cashFin.add(SipData3.getData("cashFin", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					dividend.add(SipData3.getData("dividend", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					capEx.add(SipData3.getData("capEx", fld, DataSet3.dMode.ACCUMULATION, MILLION));
 
+					dividend.add(SipData3.getData("dividend", fld, DataSet3.dMode.ACCUMULATION, 1.0));
+
+					capEx.add(SipData3.getData("capEx", fld, DataSet3.dMode.ACCUMULATION, MILLION));
 					DataSet3 s = SipData3.getData("shares", fld, DataSet3.dMode.SEQUENTIAL, MILLION);
 					shares.add(s);
 
@@ -241,6 +249,8 @@ public class SipData3 {
 		}
 		final DataSet3 totBvDollar = DataSet3.sum(bvDollar);
 
+		final DataSet3 totBVminusGW = DataSet3.sub(totBvDollar, totGoodwill);
+
 		List<DataSet3> mcap = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
 			double pr = ClosingPrices.getPrice(prices.get(i).ticker);
@@ -273,7 +283,24 @@ public class SipData3 {
 			SipData3.write(totInterest, "SPX Interest Paid v3");
 			SipData3.write(totResDev, "SPX Research and Development v3");
 			SipData3.write(totBvDollar, "SPX Book Value v3");
+			SipData3.write(totBVminusGW, "SPX Book Value less Goodwill v3");
 			SipData3.write(totMktCap, "SPX Market Cap v3");
+		} else if (src.equalsIgnoreCase("SML")) {
+			SipData3.write(totSales, "SP600 Sales");
+			SipData3.write(totTax, "SP600 Taxes");
+			SipData3.write(totIncome, "SP600 Income for EPS");
+			SipData3.write(totCops, "SP600 Cash from Operations");
+			SipData3.write(totCfin, "SP600 Cash from Financing");
+			SipData3.write(totCinv, "SP600 Cash from Investing");
+			SipData3.write(totShr, "SP600 Shares");
+			SipData3.write(totCash, "SP600 Cash");
+			SipData3.write(totAccRx, "SP600 Accounts Receivable");
+			SipData3.write(totAccTx, "SP600 Accounts Payable");
+			SipData3.write(totLtDebt, "SP600 LT Debt");
+			SipData3.write(totEquity, "SP600 Common Equity");
+			SipData3.write(totInterest, "SP600 Interest Paid");
+			SipData3.write(totBvDollar, "SP600 Book Value");
+			SipData3.write(totMktCap, "SP600 Market Cap");
 		}
 	}
 
