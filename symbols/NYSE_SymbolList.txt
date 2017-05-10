@@ -162,6 +162,7 @@ AMH-B     	American Homes 4 Rent 5% Series                   	NYSE
 AMH-C     	American Homes                                    	NYSE      
 AMH-D     	American Homes 4 Rent                             	NYSE      
 AMH-E     	American Homes 4 Rent 6.35% Ser                   	NYSE      
+AMH-F     	American Homes 4 Rent Cum Red Perp Pfd Shs        	NYSE      
 AMID      	American Midstreampartners LP                     	NYSE      
 AMN       	Amn Healthcare Services Inc                       	NYSE      
 AMOV      	America Movil A Ads                               	NYSE      
@@ -287,6 +288,7 @@ AYX       	Alteryx Inc.                                      	NYSE
 AZN       	Astrazeneca Plc                                   	NYSE      
 AZO       	Autozone                                          	NYSE      
 AZRE      	Azure Power Global Ltd                            	NYSE      
+AZUL      	Azul S.A. American Depositary Shares [Each Repre  	NYSE      
 AZZ       	Azz Inc                                           	NYSE      
 B         	Barnes Group                                      	NYSE      
 BA        	Boeing Company                                    	NYSE      
@@ -498,6 +500,7 @@ CAA       	Calatlantic Group Inc                             	NYSE
 CAB       	Cabela's Inc                                      	NYSE      
 CABO      	Cable One Inc                                     	NYSE      
 CACI      	Caci International                                	NYSE      
+CADE      	Cadence Bancorporation Class A                    	NYSE      
 CAE       	Cae Inc                                           	NYSE      
 CAF       	Morgan Stanley China A Share Fund Inc             	NYSE      
 CAG       	Conagra Brands Inc                                	NYSE      
@@ -608,6 +611,7 @@ CL        	Colgate-Palmolive Company                         	NYSE
 CLA       	Capitala Finance Corp                             	NYSE      
 CLB       	Core Laboratories N.V.                            	NYSE      
 CLD       	Cloud Peak Energy Inc                             	NYSE      
+CLDR      	                                                  	NYSE      
 CLDT      	Chatham Lodging Trust [Reit]                      	NYSE      
 CLF       	Cliffs Natural Resources Inc                      	NYSE      
 CLGX      	Corelogic                                         	NYSE      
@@ -710,7 +714,6 @@ CRS       	Carpenter Technology Corp                         	NYSE
 CRT       	Cross Timbers Royalty Trust                       	NYSE      
 CRY       	Cryolife                                          	NYSE      
 CS        	Credit Suisse Group                               	NYSE      
-CSC       	Computer Sciences Corp                            	NYSE      
 CSL       	Carlisle Companies Inc                            	NYSE      
 CSLT      	Castlight Health Inc                              	NYSE      
 CSRA      	Csra Inc                                          	NYSE      
@@ -776,10 +779,8 @@ DAN       	Dana Inc                                          	NYSE
 DAR       	Darling International Inc                         	NYSE      
 DATA      	Tableau Software Inc Class A                      	NYSE      
 DB        	Deutsche Bank Ag                                  	NYSE      
-DB.P      	Deutsche Bank AG Rights expirin                   	NYSE      
 DBD       	Diebold Nixdorf Inc                               	NYSE      
 DBL       	Doubleline Opportunistic Credi                    	NYSE      
-DCA       	Dca Total Return Fund                             	NYSE      
 DCI       	Donaldson Company                                 	NYSE      
 DCM       	Ntt Docomo Inc                                    	NYSE      
 DCO       	Ducommun Inc                                      	NYSE      
@@ -899,7 +900,6 @@ DX-A      	Dynex Capital Inc                                 	NYSE
 DX-B      	Dynex Capital Inc                                 	NYSE      
 DXB       	Deutsche Bk Contingent Cap TR I                   	NYSE      
 DXC       	Dxc Technology Company                            	NYSE      
-DXC.P     	Dxc Technology Warrant                            	NYSE      
 DY        	Dycom Industries                                  	NYSE      
 DYN       	Dynegy Inc                                        	NYSE      
 DYN-A     	Dynegy Inc                                        	NYSE      
@@ -963,6 +963,7 @@ ELP       	Companhia Paranaense De Energia                   	NYSE
 ELS       	Equity Lifestyle Properties                       	NYSE      
 ELS-C     	Eqty Lifestyle Properties Inc                     	NYSE      
 ELU       	Entergy Louisiana Llc First M                     	NYSE      
+ELVT      	Elevate Credit Inc.                               	NYSE      
 ELY       	Callaway Golf Company                             	NYSE      
 EMD       	Western Asset Emerging Market Debt Fund Inc       	NYSE      
 EME       	Emcor Group                                       	NYSE      
@@ -974,7 +975,6 @@ EMP       	Entergy Mississippi Inc. 4.9% Bonds               	NYSE
 EMR       	Emerson Electric Company                          	NYSE      
 ENB       	Enbridge Inc                                      	NYSE      
 ENBL      	Enable Midstream Partners LP                      	NYSE      
-ENH       	Endurance Specialty Holdings Ltd                  	NYSE      
 ENH-C     	Endurance Specialty Holdings L                    	NYSE      
 ENIA      	Enersis Americas S.A. American                    	NYSE      
 ENIC      	Enersis Chile S.A. American Dep                   	NYSE      
@@ -1134,6 +1134,7 @@ FMY       	First Trust/Fidac Mortgage Income Fund            	NYSE
 FN        	Fabrinet                                          	NYSE      
 FNB       	F.N.B. Corp                                       	NYSE      
 FNB-E     	F.N.B. Corporation Representin                    	NYSE      
+FND       	                                                  	NYSE      
 FNF       	Fidelity National Financial                       	NYSE      
 FNFV      	Fnfv Group of Fidelity National                   	NYSE      
 FNV       	Franco Nev Corp                                   	NYSE      
@@ -1332,9 +1333,8 @@ HBI       	Hanesbrands Inc                                   	NYSE
 HBM       	Hudbay Minerals Inc                               	NYSE      
 HBM.W     	Hudbay Minerals Inc                               	NYSE      
 HCA       	Hca Holdings Inc                                  	NYSE      
-HCC       	Hcc Insurance Holdings                            	NYSE      
+HCC       	Warrior Met Coal Inc.                             	NYSE      
 HCI       	Homeowners Choice                                 	NYSE      
-HCJ       	Homeowners Choice Inc                             	NYSE      
 HCLP      	Hi-Crush Partners LP                              	NYSE      
 HCN       	Welltower Inc                                     	NYSE      
 HCN-I     	Health Care REIT Inc                              	NYSE      
@@ -1392,7 +1392,6 @@ HOS       	Hornbeck Offshore Services                        	NYSE
 HOV       	Hovnanian Enterprises Inc                         	NYSE      
 HP        	Helmerich & Payne                                 	NYSE      
 HPE       	Hewlett Packard Enterprise Comp                   	NYSE      
-HPE.P     	Hewlett Packard Enterprise Warrant                	NYSE      
 HPF       	John Hancock Pfd II                               	NYSE      
 HPI       	John Hancock Preferred                            	NYSE      
 HPP       	Hudson Pacific Properties                         	NYSE      
@@ -1655,7 +1654,6 @@ KOS       	Kosmos Energy Ltd                                 	NYSE
 KR        	Kroger Company                                    	NYSE      
 KRA       	Kraton Performance Polymers Inc                   	NYSE      
 KRC       	Kilroy Realty Corp                                	NYSE      
-KRC-G     	Kilroy Realty Corp                                	NYSE      
 KRC-H     	Kilroy Realty Corp                                	NYSE      
 KRG       	Kite Realty Group Trust                           	NYSE      
 KRO       	Kronos Worldwide Inc                              	NYSE      
@@ -1996,6 +1994,7 @@ NEE-R     	Nextera Energy Inc                                	NYSE
 NEFF      	Neff Corp                                         	NYSE      
 NEM       	Newmont Mining Corp                               	NYSE      
 NEP       	Nextera Energy Partners LP                        	NYSE      
+NETS      	Netshoes [Cayman] Limited                         	NYSE      
 NEU       	Newmarket Corp                                    	NYSE      
 NEV       	Nuveen Enhanced Muni Value Fund                   	NYSE      
 NEWM      	New Media Investment Group Inc                    	NYSE      
@@ -2088,7 +2087,6 @@ NTC       	Nuveen Connecticut Premium Fund                   	NYSE
 NTG       	Tortoise MLP Fund                                 	NYSE      
 NTL       	Nortel Inversora Sa ADR                           	NYSE      
 NTP       	Nam Tai Electronics                               	NYSE      
-NTT       	Nippon Telegraph and Telephone Corp               	NYSE      
 NTX       	Nuveen Texas Quality                              	NYSE      
 NTZ       	Natuzzi S.P.A                                     	NYSE      
 NUE       	Nucor Corp                                        	NYSE      
@@ -2512,6 +2510,7 @@ SB        	Safe Bulkers Inc                                  	NYSE
 SB-B      	Safe Bulkers Inc                                  	NYSE      
 SB-C      	Safe Bulkers Inc                                  	NYSE      
 SB-D      	Safe Bulkers Inc                                  	NYSE      
+SBBC      	Scorpio Tankers Inc. 8.25% Senior Notes Due 2019  	NYSE      
 SBGL      	Sibanye Gold Limited American D                   	NYSE      
 SBH       	Sally Beauty Holdings                             	NYSE      
 SBNA      	Scorpio Tankers Inc                               	NYSE      
@@ -2535,7 +2534,6 @@ SCHW      	The Charles Schwab Corp                           	NYSE
 SCI       	Service Corporation International                 	NYSE      
 SCL       	Stepan Company                                    	NYSE      
 SCM       	Stellus Capital Investment Cor                    	NYSE      
-SCNB      	Suffolk Bancorp                                   	NYSE      
 SCQ       	Stellus Capital Investment Cor                    	NYSE      
 SCS       	Steelcase Inc                                     	NYSE      
 SCX       	L.S. Starrett Company                             	NYSE      
@@ -2602,6 +2600,7 @@ SMP       	Standard Motor Products                           	NYSE
 SN        	Sanchez Energy Corp                               	NYSE      
 SNA       	Snap-On Inc                                       	NYSE      
 SNAP      	Snap Inc                                          	NYSE      
+SNDR      	Schneider National Inc.                           	NYSE      
 SNE       	Sony Corp                                         	NYSE      
 SNN       	Smith & Nephew Snats                              	NYSE      
 SNOW      	Intrawest Resorts Holdings Inc                    	NYSE      
@@ -3051,6 +3050,7 @@ WFC-T     	Wells Fargo & Company Series T                    	NYSE
 WFC-V     	Wells Fargo & Company Depositar                   	NYSE      
 WFC-W     	Wells Fargo & Company                             	NYSE      
 WFC-X     	Wells Fargo & Company                             	NYSE      
+WFC-Y     	Wells Fargo & Co. Dep Shs Repstg 1/1000Th Int No  	NYSE      
 WFC.W     	Wells Fargo and Co                                	NYSE      
 WFE-A     	Wells Fargo Real Estate Invest                    	NYSE      
 WFT       	Weatherford International Ltd                     	NYSE      
@@ -3106,6 +3106,7 @@ WTI       	W&T Offshore                                      	NYSE
 WTM       	White Mountains Insurance Group                   	NYSE      
 WTR       	Aqua America                                      	NYSE      
 WTS       	Watts Water Technologies                          	NYSE      
+WTTR      	Select Energy Services Inc.                       	NYSE      
 WTW       	Weight Watchers International Inc                 	NYSE      
 WU        	Western Union Company                             	NYSE      
 WUBA      	58.Com Inc                                        	NYSE      
@@ -3133,6 +3134,7 @@ XTLY      	Xactly Corp                                       	NYSE
 XYL       	Xylem Inc                                         	NYSE      
 Y         	Alleghany Corp                                    	NYSE      
 YELP      	Yelp Inc                                          	NYSE      
+YEXT      	Yext Inc.                                         	NYSE      
 YGE       	Yingli Green Energy Holding Company               	NYSE      
 YPF       	Ypf Sociedad Anonima                              	NYSE      
 YRD       	Yirendai Ltd                                      	NYSE      

@@ -5,6 +5,7 @@ A7K17     	MSCI EMI {May 17}                                 	LIFFE
 A7M17     	MSCI EMI {Jun 17}                                 	LIFFE     
 A7M18     	MSCI EMI {Jun 18}                                 	LIFFE     
 A7N17     	MSCI EMI {Jul 17}                                 	LIFFE     
+A7Q17     	MSCI EMI {Aug 17}                                 	LIFFE     
 A7U17     	MSCI EMI {Sep 17}                                 	LIFFE     
 A7U18     	MSCI EMI {Sep 18}                                 	LIFFE     
 A7Z17     	MSCI EMI {Dec 17}                                 	LIFFE     
@@ -16,6 +17,7 @@ A8K17     	MSCI Far East ex-Japan {May 17}                   	LIFFE
 A8M17     	MSCI Far East ex-Japan {Jun 17}                   	LIFFE     
 A8M18     	MSCI Far East ex-Japan {Jun 18}                   	LIFFE     
 A8N17     	MSCI Far East ex-Japan {Jul 17}                   	LIFFE     
+A8Q17     	MSCI Far East ex-Japan {Aug 17}                   	LIFFE     
 A8U17     	MSCI Far East ex-Japan {Sep 17}                   	LIFFE     
 A8U18     	MSCI Far East ex-Japan {Sep 18}                   	LIFFE     
 A8Z17     	MSCI Far East ex-Japan {Dec 17}                   	LIFFE     
@@ -84,7 +86,6 @@ FZ18      	3-Month Euroswiss {Dec 18}                        	LIFFE
 FZ19      	3-Month Euroswiss {Dec 19}                        	LIFFE     
 FZ20      	3-Month Euroswiss {Dec 20}                        	LIFFE     
 G.C       	10-Year Gilt Continuation                         	LIFFE     
-GH17      	10-Year Gilt {Mar 17}                             	LIFFE     
 GM17      	10-Year Gilt {Jun 17}                             	LIFFE     
 GU17      	10-Year Gilt {Sep 17}                             	LIFFE     
 GZ17      	10-Year Gilt {Dec 17}                             	LIFFE     
@@ -99,7 +100,6 @@ IBZ23     	FTSE 100 Dividend Index {Dec 23}                  	LIFFE
 IJ.C      	1-Month EONIA Continuation                        	LIFFE     
 IJF18     	1-Month EONIA {Jan 18}                            	LIFFE     
 IJG18     	1-Month EONIA {Feb 18}                            	LIFFE     
-IJH17     	1-Month EONIA {Mar 17}                            	LIFFE     
 IJH18     	1-Month EONIA {Mar 18}                            	LIFFE     
 IJJ17     	1-Month EONIA {Apr 17}                            	LIFFE     
 IJK17     	1-Month EONIA {May 17}                            	LIFFE     
@@ -133,6 +133,7 @@ IMU19     	3-Month EuriBor {Sep 19}                          	LIFFE
 IMU20     	3-Month EuriBor {Sep 20}                          	LIFFE     
 IMU21     	3-Month EuriBor {Sep 21}                          	LIFFE     
 IMU22     	3-Month EuriBor {Sep 22}                          	LIFFE     
+IMV17     	3-Month EuriBor {Oct 17}                          	LIFFE     
 IMZ17     	3-Month EuriBor {Dec 17}                          	LIFFE     
 IMZ18     	3-Month EuriBor {Dec 18}                          	LIFFE     
 IMZ19     	3-Month EuriBor {Dec 19}                          	LIFFE     
@@ -144,7 +145,6 @@ JHF18     	U.S Treasury Repo {Jan 18}                        	LIFFE
 JHF19     	U.S Treasury Repo {Jan 19}                        	LIFFE     
 JHG18     	U.S Treasury Repo {Feb 18}                        	LIFFE     
 JHG19     	U.S Treasury Repo {Feb 19}                        	LIFFE     
-JHH17     	U.S Treasury Repo {Mar 17}                        	LIFFE     
 JHH18     	U.S Treasury Repo {Mar 18}                        	LIFFE     
 JHH19     	U.S Treasury Repo {Mar 19}                        	LIFFE     
 JHJ17     	U.S Treasury Repo {Apr 17}                        	LIFFE     
@@ -168,9 +168,9 @@ JHZ18     	U.S Treasury Repo {Dec 18}                        	LIFFE
 JR.C      	Mortgage-Backed Repo Continuation                 	LIFFE     
 JRF18     	Mortgage-Backed Repo {Jan 18}                     	LIFFE     
 JRG18     	Mortgage-Backed Repo {Feb 18}                     	LIFFE     
-JRH17     	Mortgage-Backed Repo {Mar 17}                     	LIFFE     
 JRH18     	Mortgage-Backed Repo {Mar 18}                     	LIFFE     
 JRJ17     	Mortgage-Backed Repo {Apr 17}                     	LIFFE     
+JRJ18     	Mortgage-Backed Repo {Apr 18}                     	LIFFE     
 JRK17     	Mortgage-Backed Repo {May 17}                     	LIFFE     
 JRM17     	Mortgage-Backed Repo {Jun 17}                     	LIFFE     
 JRN17     	Mortgage-Backed Repo {Jul 17}                     	LIFFE     
@@ -200,6 +200,7 @@ LM19      	3-Month Sterling {Jun 19}                         	LIFFE
 LM20      	3-Month Sterling {Jun 20}                         	LIFFE     
 LM21      	3-Month Sterling {Jun 21}                         	LIFFE     
 LM22      	3-Month Sterling {Jun 22}                         	LIFFE     
+LN17      	3-Month Sterling {Jul 17}                         	LIFFE     
 LU17      	3-Month Sterling {Sep 17}                         	LIFFE     
 LU18      	3-Month Sterling {Sep 18}                         	LIFFE     
 LU19      	3-Month Sterling {Sep 19}                         	LIFFE     
@@ -236,21 +237,15 @@ N7M18     	UK Peak Electricity {Jun 18}                      	LIFFE
 N7U17     	UK Peak Electricity {Sep 17}                      	LIFFE     
 N7Z17     	UK Peak Electricity {Dec 17}                      	LIFFE     
 QB.C      	Ultra Gilt Continuation                           	LIFFE     
-QBH17     	Ultra Gilt {Mar 17}                               	LIFFE     
 QBM17     	Ultra Gilt {Jun 17}                               	LIFFE     
 QBU17     	Ultra Gilt {Sep 17}                               	LIFFE     
 QBZ17     	Ultra Gilt {Dec 17}                               	LIFFE     
-QD.C      	5-Year Gilt Continuation                          	LIFFE     
-QDH17     	5-Year Gilt {Mar 17}                              	LIFFE     
 QDM17     	5-Year Gilt {Jun 17}                              	LIFFE     
 QDU17     	5-Year Gilt {Sep 17}                              	LIFFE     
-QE.C      	2-Year Gilt Continuation                          	LIFFE     
-QEH17     	2-Year Gilt {Mar 17}                              	LIFFE     
 QEM17     	2-Year Gilt {Jun 17}                              	LIFFE     
 QEU17     	2-Year Gilt {Sep 17}                              	LIFFE     
 RM.C      	Robusta Coffee 10-T Continuation                  	LIFFE     
 RMF18     	Robusta Coffee 10-T {Jan 18}                      	LIFFE     
-RMH17     	Robusta Coffee 10-T {Mar 17}                      	LIFFE     
 RMH18     	Robusta Coffee 10-T {Mar 18}                      	LIFFE     
 RMK17     	Robusta Coffee 10-T {May 17}                      	LIFFE     
 RMK18     	Robusta Coffee 10-T {May 18}                      	LIFFE     

@@ -11,11 +11,12 @@
 1C3       	Samurai 2k Aerosol Limited                        	SGX       
 1C4W      	Abundance Internationalw210130                    	SGX       
 1C5       	Pacific Star Development Ltd                      	SGX       
-1C8R      	Sincap Group Limited R                            	SGX       
 1C9W      	Asiaphos Limited W200323                          	SGX       
 1D0       	Kimly Limited                                     	SGX       
 1D1       	Unusual Limited                                   	SGX       
+1D2R      	Ley Choon Group Hldg Limited R                    	SGX       
 1D3       	Lifebrandz Ltd.                                   	SGX       
+1D4       	Aoxin Q & M Dental Grp Limited                    	SGX       
 3UIS      	Nx09100w 190601                                   	SGX       
 3UJS      	Ny09100h 240901                                   	SGX       
 40B       	Smj International Holdingsltd.                    	SGX       
@@ -511,7 +512,6 @@ C09       	City Developments Limited                         	SGX
 C13       	Ch Offshore Ltd                                   	SGX       
 C14       	Cwt Limited                                       	SGX       
 c29       	Chip Eng Seng Corporation Ltd                     	SGX       
-C2J       	Sunmart Holdings Limited                          	SGX       
 C2PU      	Parkwaylife Reit                                  	SGX       
 C31       	Capitaland Limited                                	SGX       
 C33       	Chuan Hup Holdings Limited                        	SGX       
@@ -534,10 +534,8 @@ CABW      	Dbs Mb Epw170605                                  	SGX
 CAIW      	Dbs Mb Ecw170612                                  	SGX       
 CAJW      	Dbs Mb Epw170612                                  	SGX       
 CAMW      	Grp Ltd W171129                                   	SGX       
-CARW      	Hsi 22400 Ub Ecw170330                            	SGX       
 CASW      	Hsi 23600 Ub Ecw170427                            	SGX       
 CATW      	Hsi 24800 Ub Ecw170529                            	SGX       
-CAUW      	Hsi 20800 Ub Epw170330                            	SGX       
 CAVW      	Hscei 10000 Ub Ecw170529                          	SGX       
 CBAW      	Singtel Mb Ecw171002                              	SGX       
 CBBW      	Singtel Mb Epw171002                              	SGX       
@@ -566,21 +564,14 @@ CCAW      	Kepcorp Mb Ecw170703                              	SGX
 CCBW      	Kepcorp Mb Epw170703                              	SGX       
 CCCW      	Wilmar Mb Ecw170710                               	SGX       
 CCDW      	Wilmar Mb Epw170710                               	SGX       
-CCEW      	Hsi 23000 Mb Ecw170330                            	SGX       
-CCFW      	Hsi 23800 Mb Ecw170330                            	SGX       
-CCGW      	Hsi 21600 Mb Epw170330                            	SGX       
-CCHW      	Hsi 22400 Mb Epw170330                            	SGX       
 CCKW      	Nikkei225 21000 Mb Ecw170609                      	SGX       
 CCLW      	Nikkei225 19000 Mb Ecw170609                      	SGX       
 CCMW      	Nikkei225 18000 Mb Epw170609                      	SGX       
 CCNW      	Nikkei225 16000 Mb Epw170609                      	SGX       
 CCOW      	Nikkei225 14000 Mb Epw170609                      	SGX       
 CCPW      	Nikkei225 20000 Mb Epw170609                      	SGX       
-CCSW      	Hsi 22200 Mb Ecw170330                            	SGX       
-CCTW      	Hsi 20600 Mb Epw170330                            	SGX       
 CCUW      	Hsi 24200 Mb Ecw170427                            	SGX       
 CCVW      	Hsi 21200 Mb Epw170427                            	SGX       
-CDCW      	Hsi 23200 Jp Ecw170330                            	SGX       
 CDDW      	S&p500 2500 Mb Ecw170915                          	SGX       
 CDGW      	S&p500 2000 Mb Epw170915                          	SGX       
 CDHW      	S&p500 2100 Mb Epw170616                          	SGX       
@@ -590,10 +581,6 @@ CDKW      	Sti 3050 Mb Ecw170630                             	SGX
 CDMW      	Sti 2900 Mb Epw170630                             	SGX       
 CDNW      	Capitaland Mb Ecw170703                           	SGX       
 CDOW      	Capitaland Mb Epw170703                           	SGX       
-CDRW      	Hsi 21600 Vt Ecw170330                            	SGX       
-CDSW      	Hsi 22800 Vt Ecw170330                            	SGX       
-CDTW      	Hsi 21000 Vt Epw170330                            	SGX       
-CDUW      	Hsi 22000 Vt Epw170330                            	SGX       
 CDVZ      	Krisenergy S$139.464mz240131                      	SGX       
 CDWW      	Second Chance Prop W200123                        	SGX       
 CDXW      	Krisenergy Ltd. W240131                           	SGX       
@@ -609,9 +596,7 @@ CEGW      	Upp Holdings Limited W200212                      	SGX
 CEHW      	Capitaland Mb Ecw171002                           	SGX       
 CEIW      	Capitaland Mb Epw171002                           	SGX       
 CELW      	Singapore Exchangembecw170904                     	SGX       
-CEMW      	Hsi 24600 Mb Ecw170330                            	SGX       
 CENW      	Hsi 22800 Mb Epw170427                            	SGX       
-CEOW      	Hsi 23200 Mb Epw170330                            	SGX       
 CERW      	Hsi 24600 Jp Ecw170629                            	SGX       
 CESW      	Hsi 23600 Mb Epw170427                            	SGX       
 CETW      	Hsi 25400 Ub Ecw170629                            	SGX       
@@ -620,13 +605,12 @@ CEVW      	Hsi 23200 Ub Epw170629                            	SGX
 CEWW      	Hscei 11200 Ub Ecw170629                          	SGX       
 CEXW      	Hscei 10000 Ub Epw170629                          	SGX       
 CFA       	Nikkoam-stc Asia_xj Reit Etf                      	SGX       
+CFBW      	S&p500 2200 Mb Epw170915                          	SGX       
 CFDW      	Kepcorp Mb Epw171002                              	SGX       
 CFEW      	Kepcorp Mb Ecw171002                              	SGX       
 CFFW      	Hsi 24600 Mb Ecw170529                            	SGX       
 CFGW      	Hsi 23800 Mb Ecw170529                            	SGX       
 CFHW      	Hsi 22400 Mb Epw170529                            	SGX       
-CFIR      	Ascott Residence Trust R                          	SGX       
-CFJR      	Ascott Residence Trust R1                         	SGX       
 CFKW      	Capitaland Mb Ecw171101                           	SGX       
 CFLW      	Hsi 23400 Mb Ecw170427                            	SGX       
 CFN       	Onestoxxasean Fund                                	SGX       
@@ -643,10 +627,12 @@ CFZW      	Nikkei225 20000 Mb Ecw170908                      	SGX
 CGAW      	Nikkei225 22000 Mb Ecw170908                      	SGX       
 CGDW      	Nikkei225 19000 Mb Epw170908                      	SGX       
 CGER      	Global Tech (hldgs) Limited R                     	SGX       
+CGGR      	Ta Corporation Ltd R                              	SGX       
 CGIW      	Hsi 25200 Mb Ecw170629                            	SGX       
 CGJW      	Hsi 24400 Mb Ecw170629                            	SGX       
 CGKW      	Hsi 23800 Mb Epw170629                            	SGX       
 CGLW      	Hsi 23000 Mb Epw170629                            	SGX       
+CGMW      	Ocbc Bk Mb Ecw171113                              	SGX       
 CH8       	China Sunsine Chem Hldgs Ltd.                     	SGX       
 CY6U      	Ascendas India Trust                              	SGX       
 CZ4       	Dutech Holdings Limited                           	SGX       

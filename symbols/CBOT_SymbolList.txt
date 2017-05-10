@@ -111,7 +111,6 @@ DHU17     	DJ Real Estate Index {Sep 17}                     	CBOT
 DHZ17     	DJ Real Estate Index {Dec 17}                     	CBOT      
 DJ        	DJIA                                              	CBOT      
 F0.C      	Urea FOB Egypt Swap Continuation                  	CBOT      
-F0H17     	Urea FOB Egypt Swap {Mar 17}                      	CBOT      
 F0J17     	Urea FOB Egypt Swap {Apr 17}                      	CBOT      
 F0K17     	Urea FOB Egypt Swap {May 17}                      	CBOT      
 F0M17     	Urea FOB Egypt Swap {Jun 17}                      	CBOT      
@@ -124,7 +123,6 @@ F0Z17     	Urea FOB Egypt Swap {Dec 17}                      	CBOT
 F5.C      	Urea FOB NOLA Swap Continuation                   	CBOT      
 F5F18     	Urea FOB NOLA Swap {Jan 18}                       	CBOT      
 F5G18     	Urea FOB NOLA Swap {Feb 18}                       	CBOT      
-F5H17     	Urea FOB NOLA Swap {Mar 17}                       	CBOT      
 F5H18     	Urea FOB NOLA Swap {Mar 18}                       	CBOT      
 F5J17     	Urea FOB NOLA Swap {Apr 17}                       	CBOT      
 F5J18     	Urea FOB NOLA Swap {Apr 18}                       	CBOT      
@@ -142,7 +140,6 @@ F5V17     	Urea FOB NOLA Swap {Oct 17}                       	CBOT
 F5X17     	Urea FOB NOLA Swap {Nov 17}                       	CBOT      
 F5Z17     	Urea FOB NOLA Swap {Dec 17}                       	CBOT      
 F7.C      	UAN FOB NOLA Swap Continuation                    	CBOT      
-F7H17     	UAN FOB NOLA Swap {Mar 17}                        	CBOT      
 F7J17     	UAN FOB NOLA Swap {Apr 17}                        	CBOT      
 F7K17     	UAN FOB NOLA Swap {May 17}                        	CBOT      
 F7M17     	UAN FOB NOLA Swap {Jun 17}                        	CBOT      
@@ -153,7 +150,6 @@ F7V17     	UAN FOB NOLA Swap {Oct 17}                        	CBOT
 F7X17     	UAN FOB NOLA Swap {Nov 17}                        	CBOT      
 F7Z17     	UAN FOB NOLA Swap {Dec 17}                        	CBOT      
 F8.C      	DAP FOB NOLA Swap Continuation                    	CBOT      
-F8H17     	DAP FOB NOLA Swap {Mar 17}                        	CBOT      
 F8J17     	DAP FOB NOLA Swap {Apr 17}                        	CBOT      
 F8K17     	DAP FOB NOLA Swap {May 17}                        	CBOT      
 F8M17     	DAP FOB NOLA Swap {Jun 17}                        	CBOT      
@@ -164,7 +160,6 @@ F8V17     	DAP FOB NOLA Swap {Oct 17}                        	CBOT
 F8X17     	DAP FOB NOLA Swap {Nov 17}                        	CBOT      
 F8Z17     	DAP FOB NOLA Swap {Dec 17}                        	CBOT      
 F9.C      	Urea FOB Yuzhny Swap Continuation                 	CBOT      
-F9H17     	Urea FOB Yuzhny Swap {Mar 17}                     	CBOT      
 F9J17     	Urea FOB Yuzhny Swap {Apr 17}                     	CBOT      
 F9K17     	Urea FOB Yuzhny Swap {May 17}                     	CBOT      
 F9M17     	Urea FOB Yuzhny Swap {Jun 17}                     	CBOT      
@@ -172,7 +167,6 @@ F9N17     	Urea FOB Yuzhny Swap {Jul 17}                     	CBOT
 F9Q17     	Urea FOB Yuzhny Swap {Aug 17}                     	CBOT      
 F9U17     	Urea FOB Yuzhny Swap {Sep 17}                     	CBOT      
 FD.C      	DAP FOB Tampa Swap Continuation                   	CBOT      
-FDH17     	DAP FOB Tampa Swap {Mar 17}                       	CBOT      
 FDJ17     	DAP FOB Tampa Swap {Apr 17}                       	CBOT      
 FDK17     	DAP FOB Tampa Swap {May 17}                       	CBOT      
 FDM17     	DAP FOB Tampa Swap {Jun 17}                       	CBOT      
@@ -190,13 +184,13 @@ FFF20     	30-Day Fed Funds(Pit {Jan 20}                     	CBOT
 FFG18     	30-Day Fed Funds(Pit {Feb 18}                     	CBOT      
 FFG19     	30-Day Fed Funds(Pit {Feb 19}                     	CBOT      
 FFG20     	30-Day Fed Funds(Pit {Feb 20}                     	CBOT      
-FFH17     	30-Day Fed Funds(Pit {Mar 17}                     	CBOT      
 FFH18     	30-Day Fed Funds(Pit {Mar 18}                     	CBOT      
 FFH19     	30-Day Fed Funds(Pit {Mar 19}                     	CBOT      
 FFH20     	30-Day Fed Funds(Pit {Mar 20}                     	CBOT      
 FFJ17     	30-Day Fed Funds(Pit {Apr 17}                     	CBOT      
 FFJ18     	30-Day Fed Funds(Pit {Apr 18}                     	CBOT      
 FFJ19     	30-Day Fed Funds(Pit {Apr 19}                     	CBOT      
+FFJ20     	30-Day Fed Funds(Pit {Apr 20}                     	CBOT      
 FFK17     	30-Day Fed Funds(Pit {May 17}                     	CBOT      
 FFK18     	30-Day Fed Funds(Pit {May 18}                     	CBOT      
 FFK19     	30-Day Fed Funds(Pit {May 19}                     	CBOT      
@@ -222,7 +216,6 @@ FFZ17     	30-Day Fed Funds(Pit {Dec 17}                     	CBOT
 FFZ18     	30-Day Fed Funds(Pit {Dec 18}                     	CBOT      
 FFZ19     	30-Day Fed Funds(Pit {Dec 19}                     	CBOT      
 FV.C      	5-Year T-Note (Pit) Continuation                  	CBOT      
-FVH17     	5-Year T-Note (Pit) {Mar 17}                      	CBOT      
 FVM17     	5-Year T-Note (Pit) {Jun 17}                      	CBOT      
 FVU17     	5-Year T-Note (Pit) {Sep 17}                      	CBOT      
 FVZ17     	5-Year T-Note (Pit) {Dec 17}                      	CBOT      
@@ -233,7 +226,6 @@ FZF20     	Ethanol Forward {Jan 20}                          	CBOT
 FZG18     	Ethanol Forward {Feb 18}                          	CBOT      
 FZG19     	Ethanol Forward {Feb 19}                          	CBOT      
 FZG20     	Ethanol Forward {Feb 20}                          	CBOT      
-FZH17     	Ethanol Forward {Mar 17}                          	CBOT      
 FZH18     	Ethanol Forward {Mar 18}                          	CBOT      
 FZH19     	Ethanol Forward {Mar 19}                          	CBOT      
 FZH20     	Ethanol Forward {Mar 20}                          	CBOT      
@@ -379,7 +371,6 @@ SX18      	Soybeans (Pit) {Nov 18}                           	CBOT
 SX19      	Soybeans (Pit) {Nov 19}                           	CBOT      
 SX20      	Soybeans (Pit) {Nov 20}                           	CBOT      
 TF.C      	3-Year T-Note (Pit) Continuation                  	CBOT      
-TFH17     	3-Year T-Note (Pit) {Mar 17}                      	CBOT      
 TFM17     	3-Year T-Note (Pit) {Jun 17}                      	CBOT      
 TFU17     	3-Year T-Note (Pit) {Sep 17}                      	CBOT      
 TFZ17     	3-Year T-Note (Pit) {Dec 17}                      	CBOT      
@@ -388,7 +379,6 @@ TNM17     	Ultra 10-Year T-Note {Jun 17}                     	CBOT
 TNU17     	Ultra 10-Year T-Note {Sep 17}                     	CBOT      
 TNZ17     	Ultra 10-Year T-Note {Dec 17}                     	CBOT      
 TU.C      	2-Year T-Note (Pit) Continuation                  	CBOT      
-TUH17     	2-Year T-Note (Pit) {Mar 17}                      	CBOT      
 TUM17     	2-Year T-Note (Pit) {Jun 17}                      	CBOT      
 TUU17     	2-Year T-Note (Pit) {Sep 17}                      	CBOT      
 TUZ17     	2-Year T-Note (Pit) {Dec 17}                      	CBOT      
@@ -560,13 +550,11 @@ ZCZ17     	Corn {Dec 17}                                     	CBOT
 ZCZ18     	Corn {Dec 18}                                     	CBOT      
 ZCZ19     	Corn {Dec 19}                                     	CBOT      
 ZE.C      	3-Year T-Note Continuation                        	CBOT      
-ZEH17     	3-Year T-Note {Mar 17}                            	CBOT      
 ZEM17     	3-Year T-Note {Jun 17}                            	CBOT      
 ZEU17     	3-Year T-Note {Sep 17}                            	CBOT      
 ZEZ17     	3-Year T-Note {Dec 17}                            	CBOT      
 ZF        	5-Year T-Note                                     	CBOT      
 ZF.C      	5-Year T-Note Continuation                        	CBOT      
-ZFH17     	5-Year T-Note {Mar 17}                            	CBOT      
 ZFM17     	5-Year T-Note {Jun 17}                            	CBOT      
 ZFU17     	5-Year T-Note {Sep 17}                            	CBOT      
 ZFZ17     	5-Year T-Note {Dec 17}                            	CBOT      
@@ -689,13 +677,13 @@ ZQF20     	30-Day Fed Funds {Jan 20}                         	CBOT
 ZQG18     	30-Day Fed Funds {Feb 18}                         	CBOT      
 ZQG19     	30-Day Fed Funds {Feb 19}                         	CBOT      
 ZQG20     	30-Day Fed Funds {Feb 20}                         	CBOT      
-ZQH17     	30-Day Fed Funds {Mar 17}                         	CBOT      
 ZQH18     	30-Day Fed Funds {Mar 18}                         	CBOT      
 ZQH19     	30-Day Fed Funds {Mar 19}                         	CBOT      
 ZQH20     	30-Day Fed Funds {Mar 20}                         	CBOT      
 ZQJ17     	30-Day Fed Funds {Apr 17}                         	CBOT      
 ZQJ18     	30-Day Fed Funds {Apr 18}                         	CBOT      
 ZQJ19     	30-Day Fed Funds {Apr 19}                         	CBOT      
+ZQJ20     	30-Day Fed Funds {Apr 20}                         	CBOT      
 ZQK17     	30-Day Fed Funds {May 17}                         	CBOT      
 ZQK18     	30-Day Fed Funds {May 18}                         	CBOT      
 ZQK19     	30-Day Fed Funds {May 19}                         	CBOT      
@@ -753,7 +741,6 @@ ZSX19     	Soybeans {Nov 19}                                 	CBOT
 ZSX20     	Soybeans {Nov 20}                                 	CBOT      
 ZT        	2-Year T-Note                                     	CBOT      
 ZT.C      	2-Year T-Note Continuation                        	CBOT      
-ZTH17     	2-Year T-Note {Mar 17}                            	CBOT      
 ZTM17     	2-Year T-Note {Jun 17}                            	CBOT      
 ZTU17     	2-Year T-Note {Sep 17}                            	CBOT      
 ZTZ17     	2-Year T-Note {Dec 17}                            	CBOT      

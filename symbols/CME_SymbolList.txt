@@ -195,7 +195,6 @@ BRH19     	Brazilian Real (Pit) {Mar 19}                     	CME
 BRH20     	Brazilian Real (Pit) {Mar 20}                     	CME       
 BRH21     	Brazilian Real (Pit) {Mar 21}                     	CME       
 BRH22     	Brazilian Real (Pit) {Mar 22}                     	CME       
-BRJ17     	Brazilian Real (Pit) {Apr 17}                     	CME       
 BRJ18     	Brazilian Real (Pit) {Apr 18}                     	CME       
 BRJ19     	Brazilian Real (Pit) {Apr 19}                     	CME       
 BRJ20     	Brazilian Real (Pit) {Apr 20}                     	CME       
@@ -291,7 +290,6 @@ CUG19     	Crude Palm Oil {Feb 19}                           	CME
 CUG20     	Crude Palm Oil {Feb 20}                           	CME       
 CUG21     	Crude Palm Oil {Feb 21}                           	CME       
 CUG22     	Crude Palm Oil {Feb 22}                           	CME       
-CUH17     	Crude Palm Oil {Mar 17}                           	CME       
 CUH18     	Crude Palm Oil {Mar 18}                           	CME       
 CUH19     	Crude Palm Oil {Mar 19}                           	CME       
 CUH20     	Crude Palm Oil {Mar 20}                           	CME       
@@ -665,9 +663,9 @@ EWZ17     	S&P Midcap E-Mini {Dec 17}                        	CME
 FC        	Feeder Cattle (Pit)                               	CME       
 FC.C      	Feeder Cattle (Pit) Continuation                  	CME       
 FCF18     	Feeder Cattle (Pit) {Jan 18}                      	CME       
-FCH17     	Feeder Cattle (Pit) {Mar 17}                      	CME       
 FCH18     	Feeder Cattle (Pit) {Mar 18}                      	CME       
 FCJ17     	Feeder Cattle (Pit) {Apr 17}                      	CME       
+FCJ18     	Feeder Cattle (Pit) {Apr 18}                      	CME       
 FCK17     	Feeder Cattle (Pit) {May 17}                      	CME       
 FCQ17     	Feeder Cattle (Pit) {Aug 17}                      	CME       
 FCU17     	Feeder Cattle (Pit) {Sep 17}                      	CME       
@@ -731,7 +729,6 @@ FIG19     	Palm Oil MY Swaps {Feb 19}                        	CME
 FIG20     	Palm Oil MY Swaps {Feb 20}                        	CME       
 FIG21     	Palm Oil MY Swaps {Feb 21}                        	CME       
 FIG22     	Palm Oil MY Swaps {Feb 22}                        	CME       
-FIH17     	Palm Oil MY Swaps {Mar 17}                        	CME       
 FIH18     	Palm Oil MY Swaps {Mar 18}                        	CME       
 FIH19     	Palm Oil MY Swaps {Mar 19}                        	CME       
 FIH20     	Palm Oil MY Swaps {Mar 20}                        	CME       
@@ -787,7 +784,6 @@ FWF18     	Palm Olein MY Swaps {Jan 18}                      	CME
 FWF19     	Palm Olein MY Swaps {Jan 19}                      	CME       
 FWG18     	Palm Olein MY Swaps {Feb 18}                      	CME       
 FWG19     	Palm Olein MY Swaps {Feb 19}                      	CME       
-FWH17     	Palm Olein MY Swaps {Mar 17}                      	CME       
 FWH18     	Palm Olein MY Swaps {Mar 18}                      	CME       
 FWJ17     	Palm Olein MY Swaps {Apr 17}                      	CME       
 FWJ18     	Palm Olein MY Swaps {Apr 18}                      	CME       
@@ -870,9 +866,9 @@ GEZ26     	Eurodollar {Dec 26}                               	CME
 GF        	Feeder Cattle                                     	CME       
 GF.C      	Feeder Cattle Continuation                        	CME       
 GFF18     	Feeder Cattle {Jan 18}                            	CME       
-GFH17     	Feeder Cattle {Mar 17}                            	CME       
 GFH18     	Feeder Cattle {Mar 18}                            	CME       
 GFJ17     	Feeder Cattle {Apr 17}                            	CME       
+GFJ18     	Feeder Cattle {Apr 18}                            	CME       
 GFK17     	Feeder Cattle {May 17}                            	CME       
 GFQ17     	Feeder Cattle {Aug 17}                            	CME       
 GFU17     	Feeder Cattle {Sep 17}                            	CME       
@@ -901,7 +897,6 @@ GIN17     	S&P GSCI (Pit) {Jul 17}                           	CME
 H3.C      	Indian Rupee Continuation                         	CME       
 H3F18     	Indian Rupee {Jan 18}                             	CME       
 H3G18     	Indian Rupee {Feb 18}                             	CME       
-H3H17     	Indian Rupee {Mar 17}                             	CME       
 H3H18     	Indian Rupee {Mar 18}                             	CME       
 H3H19     	Indian Rupee {Mar 19}                             	CME       
 H3J17     	Indian Rupee {Apr 17}                             	CME       
@@ -920,7 +915,6 @@ H3Z18     	Indian Rupee {Dec 18}                             	CME
 H4.C      	E-Micro INR/USD Continuation                      	CME       
 H4F18     	E-Micro INR/USD {Jan 18}                          	CME       
 H4G18     	E-Micro INR/USD {Feb 18}                          	CME       
-H4H17     	E-Micro INR/USD {Mar 17}                          	CME       
 H4H18     	E-Micro INR/USD {Mar 18}                          	CME       
 H4J17     	E-Micro INR/USD {Apr 17}                          	CME       
 H4K17     	E-Micro INR/USD {May 17}                          	CME       
@@ -1274,7 +1268,6 @@ L6H19     	Brazilian Real {Mar 19}                           	CME
 L6H20     	Brazilian Real {Mar 20}                           	CME       
 L6H21     	Brazilian Real {Mar 21}                           	CME       
 L6H22     	Brazilian Real {Mar 22}                           	CME       
-L6J17     	Brazilian Real {Apr 17}                           	CME       
 L6J18     	Brazilian Real {Apr 18}                           	CME       
 L6J19     	Brazilian Real {Apr 19}                           	CME       
 L6J20     	Brazilian Real {Apr 20}                           	CME       
@@ -1433,7 +1426,6 @@ N0F18     	Chilean Peso/USD {Jan 18}                         	CME
 N0G18     	Chilean Peso/USD {Feb 18}                         	CME       
 N0H18     	Chilean Peso/USD {Mar 18}                         	CME       
 N0H19     	Chilean Peso/USD {Mar 19}                         	CME       
-N0J17     	Chilean Peso/USD {Apr 17}                         	CME       
 N0J18     	Chilean Peso/USD {Apr 18}                         	CME       
 N0K17     	Chilean Peso/USD {May 17}                         	CME       
 N0K18     	Chilean Peso/USD {May 18}                         	CME       
@@ -1453,7 +1445,6 @@ N5F18     	Chilean Peso {Jan 18}                             	CME
 N5G18     	Chilean Peso {Feb 18}                             	CME       
 N5H18     	Chilean Peso {Mar 18}                             	CME       
 N5H19     	Chilean Peso {Mar 19}                             	CME       
-N5J17     	Chilean Peso {Apr 17}                             	CME       
 N5J18     	Chilean Peso {Apr 18}                             	CME       
 N5K17     	Chilean Peso {May 17}                             	CME       
 N5K18     	Chilean Peso {May 18}                             	CME       
@@ -1516,11 +1507,11 @@ NLZ17     	Nikkei 225 Yen {Dec 17}                           	CME
 NLZ18     	Nikkei 225 Yen {Dec 18}                           	CME       
 NLZ19     	Nikkei 225 Yen {Dec 19}                           	CME       
 NM.C      	E-Mini Nifty 50 Continuation                      	CME       
-NMH17     	E-Mini Nifty 50 {Mar 17}                          	CME       
 NMH18     	E-Mini Nifty 50 {Mar 18}                          	CME       
 NMJ17     	E-Mini Nifty 50 {Apr 17}                          	CME       
 NMK17     	E-Mini Nifty 50 {May 17}                          	CME       
 NMM17     	E-Mini Nifty 50 {Jun 17}                          	CME       
+NMN17     	E-Mini Nifty 50 {Jul 17}                          	CME       
 NMU17     	E-Mini Nifty 50 {Sep 17}                          	CME       
 NMZ17     	E-Mini Nifty 50 {Dec 17}                          	CME       
 NQ        	Nasdaq 100 E-Mini                                 	CME       
@@ -2007,6 +1998,7 @@ WHM18     	Hungarian Forint {Jun 18}                         	CME
 WHU17     	Hungarian Forint {Sep 17}                         	CME       
 WHU18     	Hungarian Forint {Sep 18}                         	CME       
 WHZ17     	Hungarian Forint {Dec 17}                         	CME       
+WK.C      	E-Micro CAD/USD Continuation                      	CME       
 WKM17     	E-Micro CAD/USD {Jun 17}                          	CME       
 WKU17     	E-Micro CAD/USD {Sep 17}                          	CME       
 WM.C      	E-Micro JPY/USD Continuation                      	CME       

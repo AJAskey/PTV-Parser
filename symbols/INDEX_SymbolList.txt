@@ -1044,6 +1044,9 @@ N1DD.IDX  	1-Month Hi-Lo DOW Indu                            	INDEX
 N1DE.IDX  	1-Month Hi-Lo DOW Comp                            	INDEX     
 N1DF.IDX  	1-Month Hi-Lo DOW Tran                            	INDEX     
 N1DG.IDX  	1-Month Hi-Lo DOW Util                            	INDEX     
+N1DH.IDX  	1-Month Hi-Lo TSX Comp                            	INDEX     
+N1DI.IDX  	1-Month Hi-Lo TSX 60                              	INDEX     
+N1DJ.IDX  	1-Month Hi-Lo TSX Venture                         	INDEX     
 N1HA.IDX  	1-Month Highs S&P 600                             	INDEX     
 N1HB.IDX  	1-Month Highs S&P 400                             	INDEX     
 N1HC.IDX  	1-Month Highs Nasdaq 100                          	INDEX     
@@ -1051,6 +1054,9 @@ N1HD.IDX  	1-Month Highs DOW Indu                            	INDEX
 N1HE.IDX  	1-Month Highs DOW Comp                            	INDEX     
 N1HF.IDX  	1-Month Highs DOW Tran                            	INDEX     
 N1HG.IDX  	1-Month Highs DOW Util                            	INDEX     
+N1HH.IDX  	1-Month Highs TSX Comp                            	INDEX     
+N1HI.IDX  	1-Month Highs TSX 60                              	INDEX     
+N1HJ.IDX  	1-Month Highs TSX Venture                         	INDEX     
 N1LA.IDX  	1-Month Lows S&P 600                              	INDEX     
 N1LB.IDX  	1-Month Lows S&P 400                              	INDEX     
 N1LC.IDX  	1-Month Lows Nasdaq 100                           	INDEX     
@@ -1058,6 +1064,9 @@ N1LD.IDX  	1-Month Lows DOW Indu                             	INDEX
 N1LE.IDX  	1-Month Lows DOW Comp                             	INDEX     
 N1LF.IDX  	1-Month Lows DOW Tran                             	INDEX     
 N1LG.IDX  	1-Month Lows DOW Util                             	INDEX     
+N1LH.IDX  	1-Month Lows TSX Comp                             	INDEX     
+N1LI.IDX  	1-Month Lows TSX 60                               	INDEX     
+N1LJ.IDX  	1-Month Lows TSX Venture                          	INDEX     
 N3DA.IDX  	3-Month Hi-Lo S&P 600                             	INDEX     
 N3DB.IDX  	3-Month Hi-Lo S&P 400                             	INDEX     
 N3DC.IDX  	3-Month Hi-Lo Nasdaq 100                          	INDEX     
@@ -1065,6 +1074,9 @@ N3DD.IDX  	3-Month Hi-Lo DOW Indu                            	INDEX
 N3DE.IDX  	3-Month Hi-Lo DOW Comp                            	INDEX     
 N3DF.IDX  	3-Month Hi-Lo DOW Tran                            	INDEX     
 N3DG.IDX  	3-Month Hi-Lo DOW Util                            	INDEX     
+N3DH.IDX  	3-Month Hi-Lo TSX Comp                            	INDEX     
+N3DI.IDX  	3-Month Hi-Lo TSX 60                              	INDEX     
+N3DJ.IDX  	3-Month Hi-Lo TSX Venture                         	INDEX     
 N3HA.IDX  	3-Month Highs S&P 600                             	INDEX     
 N3HB.IDX  	3-Month Highs S&P 400                             	INDEX     
 N3HC.IDX  	3-Month Highs Nasdaq 100                          	INDEX     
@@ -1072,6 +1084,9 @@ N3HD.IDX  	3-Month Highs DOW Indu                            	INDEX
 N3HE.IDX  	3-Month Highs DOW Comp                            	INDEX     
 N3HF.IDX  	3-Month Highs DOW Tran                            	INDEX     
 N3HG.IDX  	3-Month Highs DOW Util                            	INDEX     
+N3HH.IDX  	3-Month Highs TSX Comp                            	INDEX     
+N3HI.IDX  	3-Month Highs TSX 60                              	INDEX     
+N3HJ.IDX  	3-Month Highs TSX Venture                         	INDEX     
 N3LA.IDX  	3-Month Lows S&P 600                              	INDEX     
 N3LB.IDX  	3-Month Lows S&P 400                              	INDEX     
 N3LC.IDX  	3-Month Lows Nasdaq 100                           	INDEX     
@@ -1079,6 +1094,9 @@ N3LD.IDX  	3-Month Lows DOW Indu                             	INDEX
 N3LE.IDX  	3-Month Lows DOW Comp                             	INDEX     
 N3LF.IDX  	3-Month Lows DOW Tran                             	INDEX     
 N3LG.IDX  	3-Month Lows DOW Util                             	INDEX     
+N3LH.IDX  	3-Month Lows TSX Comp                             	INDEX     
+N3LI.IDX  	3-Month Lows TSX 60                               	INDEX     
+N3LJ.IDX  	3-Month Lows TSX Venture                          	INDEX     
 N5DA.IDX  	5-Day Hi-Lo S&P 600                               	INDEX     
 N5DB.IDX  	5-Day Hi-Lo S&P 400                               	INDEX     
 N5DC.IDX  	5-Day Hi-Lo Nasdaq 100                            	INDEX     
@@ -1086,6 +1104,9 @@ N5DD.IDX  	5-Day Hi-Lo DOW Indu                              	INDEX
 N5DE.IDX  	5-Day Hi-Lo DOW Comp                              	INDEX     
 N5DF.IDX  	5-Day Hi-Lo DOW Tran                              	INDEX     
 N5DG.IDX  	5-Day Hi-Lo DOW Util                              	INDEX     
+N5DH.IDX  	5-Day Hi-Lo TSX Comp                              	INDEX     
+N5DI.IDX  	5-Day Hi-Lo TSX 60                                	INDEX     
+N5DJ.IDX  	5-Day Hi-Lo TSX Venture                           	INDEX     
 N5HA.IDX  	5-Day Highs S&P 600                               	INDEX     
 N5HB.IDX  	5-Day Highs S&P 400                               	INDEX     
 N5HC.IDX  	5-Day Highs Nasdaq 100                            	INDEX     
@@ -1093,6 +1114,9 @@ N5HD.IDX  	5-Day Highs DOW Indu                              	INDEX
 N5HE.IDX  	5-Day Highs DOW Comp                              	INDEX     
 N5HF.IDX  	5-Day Highs DOW Tran                              	INDEX     
 N5HG.IDX  	5-Day Highs DOW Util                              	INDEX     
+N5HH.IDX  	5-Day Highs TSX Comp                              	INDEX     
+N5HI.IDX  	5-Day Highs TSX 60                                	INDEX     
+N5HJ.IDX  	5-Day Highs TSX Venture                           	INDEX     
 N5LA.IDX  	5-Day Lows S&P 600                                	INDEX     
 N5LB.IDX  	5-Day Lows S&P 400                                	INDEX     
 N5LC.IDX  	5-Day Lows Nasdaq 100                             	INDEX     
@@ -1100,6 +1124,9 @@ N5LD.IDX  	5-Day Lows DOW Indu                               	INDEX
 N5LE.IDX  	5-Day Lows DOW Comp                               	INDEX     
 N5LF.IDX  	5-Day Lows DOW Tran                               	INDEX     
 N5LG.IDX  	5-Day Lows DOW Util                               	INDEX     
+N5LH.IDX  	5-Day Lows TSX Comp                               	INDEX     
+N5LI.IDX  	5-Day Lows TSX 60                                 	INDEX     
+N5LJ.IDX  	5-Day Lows TSX Venture                            	INDEX     
 N6DA.IDX  	6-Month Hi-Lo S&P 600                             	INDEX     
 N6DB.IDX  	6-Month Hi-Lo S&P 400                             	INDEX     
 N6DC.IDX  	6-Month Hi-Lo Nasdaq 100                          	INDEX     
@@ -1107,6 +1134,9 @@ N6DD.IDX  	6-Month Hi-Lo DOW Indu                            	INDEX
 N6DE.IDX  	6-Month Hi-Lo DOW Comp                            	INDEX     
 N6DF.IDX  	6-Month Hi-Lo DOW Tran                            	INDEX     
 N6DG.IDX  	6-Month Hi-Lo DOW Util                            	INDEX     
+N6DH.IDX  	6-Month Hi-Lo TSX Comp                            	INDEX     
+N6DI.IDX  	6-Month Hi-Lo TSX 60                              	INDEX     
+N6DJ.IDX  	6-Month Hi-Lo TSX Venture                         	INDEX     
 N6HA.IDX  	6-Month Highs S&P 600                             	INDEX     
 N6HB.IDX  	6-Month Highs S&P 400                             	INDEX     
 N6HC.IDX  	6-Month Highs Nasdaq 100                          	INDEX     
@@ -1114,6 +1144,9 @@ N6HD.IDX  	6-Month Highs DOW Indu                            	INDEX
 N6HE.IDX  	6-Month Highs DOW Comp                            	INDEX     
 N6HF.IDX  	6-Month Highs DOW Tran                            	INDEX     
 N6HG.IDX  	6-Month Highs DOW Util                            	INDEX     
+N6HH.IDX  	6-Month Highs TSX Comp                            	INDEX     
+N6HI.IDX  	6-Month Highs TSX 60                              	INDEX     
+N6HJ.IDX  	6-Month Highs TSX Venture                         	INDEX     
 N6LA.IDX  	6-Month Lows S&P 600                              	INDEX     
 N6LB.IDX  	6-Month Lows S&P 400                              	INDEX     
 N6LC.IDX  	6-Month Lows Nasdaq 100                           	INDEX     
@@ -1121,6 +1154,9 @@ N6LD.IDX  	6-Month Lows DOW Indu                             	INDEX
 N6LE.IDX  	6-Month Lows DOW Comp                             	INDEX     
 N6LF.IDX  	6-Month Lows DOW Tran                             	INDEX     
 N6LG.IDX  	6-Month Lows DOW Util                             	INDEX     
+N6LH.IDX  	6-Month Lows TSX Comp                             	INDEX     
+N6LI.IDX  	6-Month Lows TSX 60                               	INDEX     
+N6LJ.IDX  	6-Month Lows TSX Venture                          	INDEX     
 NADA.IDX  	52-Week Hi-Lo S&P 600                             	INDEX     
 NADB.IDX  	52-Week Hi-Lo S&P 400                             	INDEX     
 NADC.IDX  	52-Week Hi-Lo Nasdaq 100                          	INDEX     
@@ -1128,6 +1164,9 @@ NADD.IDX  	52-Week Hi-Lo DOW Indu                            	INDEX
 NADE.IDX  	52-Week Hi-Lo DOW Comp                            	INDEX     
 NADF.IDX  	52-Week Hi-Lo DOW Tran                            	INDEX     
 NADG.IDX  	52-Week Hi-Lo DOW Util                            	INDEX     
+NADH.IDX  	52-Week Hi-Lo TSX Comp                            	INDEX     
+NADI.IDX  	52-Week Hi-Lo TSX 60                              	INDEX     
+NADJ.IDX  	52-Week Hi-Lo TSX Venture                         	INDEX     
 NAHA.IDX  	52-Week Highs S&P 600                             	INDEX     
 NAHB.IDX  	52-Week Highs S&P 400                             	INDEX     
 NAHC.IDX  	52-Week Highs Nasdaq 100                          	INDEX     
@@ -1135,6 +1174,9 @@ NAHD.IDX  	52-Week Highs DOW Indu                            	INDEX
 NAHE.IDX  	52-Week Highs DOW Comp                            	INDEX     
 NAHF.IDX  	52-Week Highs DOW Tran                            	INDEX     
 NAHG.IDX  	52-Week Highs DOW Util                            	INDEX     
+NAHH.IDX  	52-Week Highs TSX Comp                            	INDEX     
+NAHI.IDX  	52-Week Highs TSX 60                              	INDEX     
+NAHJ.IDX  	52-Week Highs TSX Venture                         	INDEX     
 NALA.IDX  	52-Week Lows S&P 600                              	INDEX     
 NALB.IDX  	52-Week Lows S&P 400                              	INDEX     
 NALC.IDX  	52-Week Lows Nasdaq 100                           	INDEX     
@@ -1142,6 +1184,9 @@ NALD.IDX  	52-Week Lows DOW Indu                             	INDEX
 NALE.IDX  	52-Week Lows DOW Comp                             	INDEX     
 NALF.IDX  	52-Week Lows DOW Tran                             	INDEX     
 NALG.IDX  	52-Week Lows DOW Util                             	INDEX     
+NALH.IDX  	52-Week Lows TSX Comp                             	INDEX     
+NALI.IDX  	52-Week Lows TSX 60                               	INDEX     
+NALJ.IDX  	52-Week Lows TSX Venture                          	INDEX     
 NAST.IDX  	NASDAQ Transportation Index                       	INDEX     
 NBI.IDX   	Nasdaq Biotechnology                              	INDEX     
 NBZ.IDX   	Nasdaq Biotech Index Final Set                    	INDEX     
@@ -1189,6 +1234,9 @@ NYDD.IDX  	YTD Hi-Lo DOW Indu                                	INDEX
 NYDE.IDX  	YTD Hi-Lo DOW Comp                                	INDEX     
 NYDF.IDX  	YTD Hi-Lo DOW Tran                                	INDEX     
 NYDG.IDX  	YTD Hi-Lo DOW Util                                	INDEX     
+NYDH.IDX  	YTD Hi-Lo TSX Comp                                	INDEX     
+NYDI.IDX  	YTD Hi-Lo TSX 60                                  	INDEX     
+NYDJ.IDX  	YTD Hi-Lo TSX Venture                             	INDEX     
 NYHA.IDX  	YTD Highs S&P 600                                 	INDEX     
 NYHB.IDX  	YTD Highs S&P 400                                 	INDEX     
 NYHC.IDX  	YTD Highs Nasdaq 100                              	INDEX     
@@ -1196,6 +1244,9 @@ NYHD.IDX  	YTD Highs DOW Indu                                	INDEX
 NYHE.IDX  	YTD Highs DOW Comp                                	INDEX     
 NYHF.IDX  	YTD Highs DOW Tran                                	INDEX     
 NYHG.IDX  	YTD Highs DOW Util                                	INDEX     
+NYHH.IDX  	YTD Highs TSX Comp                                	INDEX     
+NYHI.IDX  	YTD Highs TSX 60                                  	INDEX     
+NYHJ.IDX  	YTD Highs TSX Venture                             	INDEX     
 NYI.IDX   	NYSE International 100 Index                      	INDEX     
 NYL.IDX   	NYSE World Leaders Index                          	INDEX     
 NYLA.IDX  	YTD Lows S&P 600                                  	INDEX     
@@ -1205,6 +1256,9 @@ NYLD.IDX  	YTD Lows DOW Indu                                 	INDEX
 NYLE.IDX  	YTD Lows DOW Comp                                 	INDEX     
 NYLF.IDX  	YTD Lows DOW Tran                                 	INDEX     
 NYLG.IDX  	YTD Lows DOW Util                                 	INDEX     
+NYLH.IDX  	YTD Lows TSX Comp                                 	INDEX     
+NYLI.IDX  	YTD Lows TSX 60                                   	INDEX     
+NYLJ.IDX  	YTD Lows TSX Venture                              	INDEX     
 NYXR.IDX  	S&P C.S. Ny-New York Home Price Index             	INDEX     
 NZ50.IDX  	NZSX 50 Index                                     	INDEX     
 OEX.IDX   	S&P 100 Index                                     	INDEX     
@@ -1788,7 +1842,6 @@ SSUC.IDX  	S&P GSCI Capped Component 35/20 Index             	INDEX
 SSUP.IDX  	S&P GSCI Capped Component 35/20 Index Excess Ret  	INDEX     
 SSUT.IDX  	S&P GSCI Capped Component 35/20 Index Total Retu  	INDEX     
 SSWP.IDX  	S&P GSCI Select Equal Weight Index Er             	INDEX     
-SSXT.IDX  	DWS Swi X Index [NetTRw/fees]                     	INDEX     
 STCE.IDX  	S&P Global Clean Energy Index [EURO]              	INDEX     
 STCL.IDX  	S&P Global Clean Energy Index                     	INDEX     
 STDA.IDX  	S&P Target Date Retirement Income Index           	INDEX     
@@ -2026,4 +2079,250 @@ XSV.IDX   	AMEX Institutional Index Open S                   	INDEX
 XTC.IDX   	AMEX North Ameican Telecom Index                  	INDEX     
 XTV.IDX   	North American Telecommunicatio                   	INDEX     
 XU100.IDX 	Borsa Istanbul 100 Index                          	INDEX     
+Y0FD.IDX  	TSX Venture Stocks Above 5-Day Average            	INDEX     
+Y0FI.IDX  	TSX Venture Stocks Above 50-Day Average           	INDEX     
+Y0OF.IDX  	TSX Venture Stocks Above 150-Day Average          	INDEX     
+Y0OH.IDX  	TSX Venture Stocks Above 100-Day Average          	INDEX     
+Y0TH.IDX  	TSX Venture Stocks Above 200-Day Average          	INDEX     
+Y0TW.IDX  	TSX Venture Stocks Above 20-Day Average           	INDEX     
+Y1FD.IDX  	TSX Income Trust Stocks Above 5-Day Average       	INDEX     
+Y1FI.IDX  	TSX Income Trust Stocks Above 50-Day Average      	INDEX     
+Y1OF.IDX  	TSX Income Trust Stocks Above 150-Day Average     	INDEX     
+Y1OH.IDX  	TSX Income Trust Stocks Above 100-Day Average     	INDEX     
+Y1TH.IDX  	TSX Income Trust Stocks Above 200-Day Average     	INDEX     
+Y1TW.IDX  	TSX Income Trust Stocks Above 20-Day Average      	INDEX     
+Y2FD.IDX  	TSX REIT Capped Stocks Above 5-Day Average        	INDEX     
+Y2FI.IDX  	TSX REIT Capped Stocks Above 50-Day Average       	INDEX     
+Y2OF.IDX  	TSX REIT Capped Stocks Above 150-Day Average      	INDEX     
+Y2OH.IDX  	TSX REIT Capped Stocks Above 100-Day Average      	INDEX     
+Y2TH.IDX  	TSX REIT Capped Stocks Above 200-Day Average      	INDEX     
+Y2TW.IDX  	TSX REIT Capped Stocks Above 20-Day Average       	INDEX     
+Y3FD.IDX  	TSX American Pref Stocks Above 5-Day Average      	INDEX     
+Y3FI.IDX  	TSX American Pref Stocks Above 50-Day Average     	INDEX     
+Y3OF.IDX  	TSX American Pref Stocks Above 150-Day Average    	INDEX     
+Y3OH.IDX  	TSX American Pref Stocks Above 100-Day Average    	INDEX     
+Y3TH.IDX  	TSX American Pref Stocks Above 200-Day Average    	INDEX     
+Y3TW.IDX  	TSX American Pref Stocks Above 20-Day Average     	INDEX     
+Y5FD.IDX  	TSX Capped Comp Stocks Above 5-Day Average        	INDEX     
+Y5FI.IDX  	TSX Capped Comp Stocks Above 50-Day Average       	INDEX     
+Y5OF.IDX  	TSX Capped Comp Stocks Above 150-Day Average      	INDEX     
+Y5OH.IDX  	TSX Capped Comp Stocks Above 100-Day Average      	INDEX     
+Y5TH.IDX  	TSX Capped Comp Stocks Above 200-Day Average      	INDEX     
+Y5TW.IDX  	TSX Capped Comp Stocks Above 20-Day Average       	INDEX     
+Y6FD.IDX  	TSX Con Disc Stocks Above 5-Day Average           	INDEX     
+Y6FI.IDX  	TSX Con Disc Stocks Above 50-Day Average          	INDEX     
+Y6OF.IDX  	TSX Con Disc Stocks Above 150-Day Average         	INDEX     
+Y6OH.IDX  	TSX Con Disc Stocks Above 100-Day Average         	INDEX     
+Y6TH.IDX  	TSX Con Disc Stocks Above 200-Day Average         	INDEX     
+Y6TW.IDX  	TSX Con Disc Stocks Above 20-Day Average          	INDEX     
+Y7FD.IDX  	TSX Con Staples Stocks Above 5-Day Average        	INDEX     
+Y7FI.IDX  	TSX Con Staples Stocks Above 50-Day Average       	INDEX     
+Y7OF.IDX  	TSX Con Staples Stocks Above 150-Day Average      	INDEX     
+Y7OH.IDX  	TSX Con Staples Stocks Above 100-Day Average      	INDEX     
+Y7TH.IDX  	TSX Con Staples Stocks Above 200-Day Average      	INDEX     
+Y7TW.IDX  	TSX Con Staples Stocks Above 20-Day Average       	INDEX     
+Y8FD.IDX  	TSX Energy Stocks Above 5-Day Average             	INDEX     
+Y8FI.IDX  	TSX Energy Stocks Above 50-Day Average            	INDEX     
+Y8OF.IDX  	TSX Energy Stocks Above 150-Day Average           	INDEX     
+Y8OH.IDX  	TSX Energy Stocks Above 100-Day Average           	INDEX     
+Y8TH.IDX  	TSX Energy Stocks Above 200-Day Average           	INDEX     
+Y8TW.IDX  	TSX Energy Stocks Above 20-Day Average            	INDEX     
+Y9FD.IDX  	TSX Financials Stocks Above 5-Day Average         	INDEX     
+Y9FI.IDX  	TSX Financials Stocks Above 50-Day Average        	INDEX     
+Y9OF.IDX  	TSX Financials Stocks Above 150-Day Average       	INDEX     
+Y9OH.IDX  	TSX Financials Stocks Above 100-Day Average       	INDEX     
+Y9TH.IDX  	TSX Financials Stocks Above 200-Day Average       	INDEX     
+Y9TW.IDX  	TSX Financials Stocks Above 20-Day Average        	INDEX     
+YAFD.IDX  	TSX Global Gold Stocks Above 5-Day Average        	INDEX     
+YAFI.IDX  	TSX Global Gold Stocks Above 50-Day Average       	INDEX     
+YAOF.IDX  	TSX Global Gold Stocks Above 150-Day Average      	INDEX     
+YAOH.IDX  	TSX Global Gold Stocks Above 100-Day Average      	INDEX     
+YATH.IDX  	TSX Global Gold Stocks Above 200-Day Average      	INDEX     
+YATW.IDX  	TSX Global Gold Stocks Above 20-Day Average       	INDEX     
+YBFD.IDX  	TSX Health Care Stocks Above 5-Day Average        	INDEX     
+YBFI.IDX  	TSX Health Care Stocks Above 50-Day Average       	INDEX     
+YBOF.IDX  	TSX Health Care Stocks Above 150-Day Average      	INDEX     
+YBOH.IDX  	TSX Health Care Stocks Above 100-Day Average      	INDEX     
+YBTH.IDX  	TSX Health Care Stocks Above 200-Day Average      	INDEX     
+YBTW.IDX  	TSX Health Care Stocks Above 20-Day Average       	INDEX     
+YCFD.IDX  	TSX Industrials Stocks Above 5-Day Average        	INDEX     
+YCFI.IDX  	TSX Industrials Stocks Above 50-Day Average       	INDEX     
+YCOF.IDX  	TSX Industrials Stocks Above 150-Day Average      	INDEX     
+YCOH.IDX  	TSX Industrials Stocks Above 100-Day Average      	INDEX     
+YCTH.IDX  	TSX Industrials Stocks Above 200-Day Average      	INDEX     
+YCTW.IDX  	TSX Industrials Stocks Above 20-Day Average       	INDEX     
+YDFD.IDX  	TSX Materials Stocks Above 5-Day Average          	INDEX     
+YDFI.IDX  	TSX Materials Stocks Above 50-Day Average         	INDEX     
+YDOF.IDX  	TSX Materials Stocks Above 150-Day Average        	INDEX     
+YDOH.IDX  	TSX Materials Stocks Above 100-Day Average        	INDEX     
+YDTH.IDX  	TSX Materials Stocks Above 200-Day Average        	INDEX     
+YDTW.IDX  	TSX Materials Stocks Above 20-Day Average         	INDEX     
+YEFD.IDX  	TSX Real Estate Stocks Above 5-Day Average        	INDEX     
+YEFI.IDX  	TSX Real Estate Stocks Above 50-Day Average       	INDEX     
+YEOF.IDX  	TSX Real Estate Stocks Above 150-Day Average      	INDEX     
+YEOH.IDX  	TSX Real Estate Stocks Above 100-Day Average      	INDEX     
+YETH.IDX  	TSX Real Estate Stocks Above 200-Day Average      	INDEX     
+YETW.IDX  	TSX Real Estate Stocks Above 20-Day Average       	INDEX     
+YFFD.IDX  	TSX Info Tech Stocks Above 5-Day Average          	INDEX     
+YFFI.IDX  	TSX Info Tech Stocks Above 50-Day Average         	INDEX     
+YFOF.IDX  	TSX Info Tech Stocks Above 150-Day Average        	INDEX     
+YFOH.IDX  	TSX Info Tech Stocks Above 100-Day Average        	INDEX     
+YFTH.IDX  	TSX Info Tech Stocks Above 200-Day Average        	INDEX     
+YFTW.IDX  	TSX Info Tech Stocks Above 20-Day Average         	INDEX     
+YGFD.IDX  	TSX Telecom Srvs Stocks Above 5-Day Average       	INDEX     
+YGFI.IDX  	TSX Telecom Srvs Stocks Above 50-Day Average      	INDEX     
+YGOF.IDX  	TSX Telecom Srvs Stocks Above 150-Day Average     	INDEX     
+YGOH.IDX  	TSX Telecom Srvs Stocks Above 100-Day Average     	INDEX     
+YGTH.IDX  	TSX Telecom Srvs Stocks Above 200-Day Average     	INDEX     
+YGTW.IDX  	TSX Telecom Srvs Stocks Above 20-Day Average      	INDEX     
+YHFD.IDX  	TSX Utilities Stocks Above 5-Day Average          	INDEX     
+YHFI.IDX  	TSX Utilities Stocks Above 50-Day Average         	INDEX     
+YHOF.IDX  	TSX Utilities Stocks Above 150-Day Average        	INDEX     
+YHOH.IDX  	TSX Utilities Stocks Above 100-Day Average        	INDEX     
+YHTH.IDX  	TSX Utilities Stocks Above 200-Day Average        	INDEX     
+YHTW.IDX  	TSX Utilities Stocks Above 20-Day Average         	INDEX     
+YIFD.IDX  	TSX Buyback Stocks Above 5-Day Average            	INDEX     
+YIFI.IDX  	TSX Buyback Stocks Above 50-Day Average           	INDEX     
+YIOF.IDX  	TSX Buyback Stocks Above 150-Day Average          	INDEX     
+YIOH.IDX  	TSX Buyback Stocks Above 100-Day Average          	INDEX     
+YITH.IDX  	TSX Buyback Stocks Above 200-Day Average          	INDEX     
+YITW.IDX  	TSX Buyback Stocks Above 20-Day Average           	INDEX     
+YJFD.IDX  	TSX G.B. Metals EW Stocks Above 5-Day Average     	INDEX     
+YJFI.IDX  	TSX G.B. Metals EW Stocks Above 50-Day Average    	INDEX     
+YJOF.IDX  	TSX G.B. Metals EW Stocks Above 150-Day Average   	INDEX     
+YJOH.IDX  	TSX G.B. Metals EW Stocks Above 100-Day Average   	INDEX     
+YJTH.IDX  	TSX G.B. Metals EW Stocks Above 200-Day Average   	INDEX     
+YJTW.IDX  	TSX G.B. Metals EW Stocks Above 20-Day Average    	INDEX     
+YKFD.IDX  	TSX G.B. Metals Stocks Above 5-Day Average        	INDEX     
+YKFI.IDX  	TSX G.B. Metals Stocks Above 50-Day Average       	INDEX     
+YKOF.IDX  	TSX G.B. Metals Stocks Above 150-Day Average      	INDEX     
+YKOH.IDX  	TSX G.B. Metals Stocks Above 100-Day Average      	INDEX     
+YKTH.IDX  	TSX G.B. Metals Stocks Above 200-Day Average      	INDEX     
+YKTW.IDX  	TSX G.B. Metals Stocks Above 20-Day Average       	INDEX     
+YLFD.IDX  	TSX Composite EW Stocks Above 5-Day Average       	INDEX     
+YLFI.IDX  	TSX Composite EW Stocks Above 50-Day Average      	INDEX     
+YLOF.IDX  	TSX Composite EW Stocks Above 150-Day Average     	INDEX     
+YLOH.IDX  	TSX Composite EW Stocks Above 100-Day Average     	INDEX     
+YLTH.IDX  	TSX Composite EW Stocks Above 200-Day Average     	INDEX     
+YLTW.IDX  	TSX Composite EW Stocks Above 20-Day Average      	INDEX     
+YMFD.IDX  	TSX Renew & Clean Stocks Above 5-Day Average      	INDEX     
+YMFI.IDX  	TSX Renew & Clean Stocks Above 50-Day Average     	INDEX     
+YMOF.IDX  	TSX Renew & Clean Stocks Above 150-Day Average    	INDEX     
+YMOH.IDX  	TSX Renew & Clean Stocks Above 100-Day Average    	INDEX     
+YMTH.IDX  	TSX Renew & Clean Stocks Above 200-Day Average    	INDEX     
+YMTW.IDX  	TSX Renew & Clean Stocks Above 20-Day Average     	INDEX     
+YNFD.IDX  	TSX Composite Stocks Above 5-Day Average          	INDEX     
+YNFI.IDX  	TSX Composite Stocks Above 50-Day Average         	INDEX     
+YNOF.IDX  	TSX Composite Stocks Above 150-Day Average        	INDEX     
+YNOH.IDX  	TSX Composite Stocks Above 100-Day Average        	INDEX     
+YNTH.IDX  	TSX Composite Stocks Above 200-Day Average        	INDEX     
+YNTW.IDX  	TSX Composite Stocks Above 20-Day Average         	INDEX     
+YOFD.IDX  	TSX Composite Divd Stocks Above 5-Day Average     	INDEX     
+YOFI.IDX  	TSX Composite Divd Stocks Above 50-Day Average    	INDEX     
+YOOF.IDX  	TSX Composite Divd Stocks Above 150-Day Average   	INDEX     
+YOOH.IDX  	TSX Composite Divd Stocks Above 100-Day Average   	INDEX     
+YOTH.IDX  	TSX Composite Divd Stocks Above 200-Day Average   	INDEX     
+YOTW.IDX  	TSX Composite Divd Stocks Above 20-Day Average    	INDEX     
+YPFD.IDX  	TSX Diver Banks EW Stocks Above 5-Day Average     	INDEX     
+YPFI.IDX  	TSX Diver Banks EW Stocks Above 50-Day Average    	INDEX     
+YPOF.IDX  	TSX Diver Banks EW Stocks Above 150-Day Average   	INDEX     
+YPOH.IDX  	TSX Diver Banks EW Stocks Above 100-Day Average   	INDEX     
+YPTH.IDX  	TSX Diver Banks EW Stocks Above 200-Day Average   	INDEX     
+YPTW.IDX  	TSX Diver Banks EW Stocks Above 20-Day Average    	INDEX     
+YQFD.IDX  	TSX Divd Aristocrats Stocks Above 5-Day Average   	INDEX     
+YQFI.IDX  	TSX Divd Aristocrats Stocks Above 50-Day Average  	INDEX     
+YQOF.IDX  	TSX Divd Aristocrats Stocks Above 150-Day Averag  	INDEX     
+YQOH.IDX  	TSX Divd Aristocrats Stocks Above 100-Day Averag  	INDEX     
+YQTH.IDX  	TSX Divd Aristocrats Stocks Above 200-Day Averag  	INDEX     
+YQTW.IDX  	TSX Divd Aristocrats Stocks Above 20-Day Average  	INDEX     
+YRFD.IDX  	TSX Comp Hi Div Stocks Above 5-Day Average        	INDEX     
+YRFI.IDX  	TSX Comp Hi Div Stocks Above 50-Day Average       	INDEX     
+YROF.IDX  	TSX Comp Hi Div Stocks Above 150-Day Average      	INDEX     
+YROH.IDX  	TSX Comp Hi Div Stocks Above 100-Day Average      	INDEX     
+YRTH.IDX  	TSX Comp Hi Div Stocks Above 200-Day Average      	INDEX     
+YRTW.IDX  	TSX Comp Hi Div Stocks Above 20-Day Average       	INDEX     
+YSFD.IDX  	TSX 60 EW Stocks Above 5-Day Average              	INDEX     
+YSFI.IDX  	TSX 60 EW Stocks Above 50-Day Average             	INDEX     
+YSOF.IDX  	TSX 60 EW Stocks Above 150-Day Average            	INDEX     
+YSOH.IDX  	TSX 60 EW Stocks Above 100-Day Average            	INDEX     
+YSTH.IDX  	TSX 60 EW Stocks Above 200-Day Average            	INDEX     
+YSTW.IDX  	TSX 60 EW Stocks Above 20-Day Average             	INDEX     
+YTFD.IDX  	TSX Completion Stocks Above 5-Day Average         	INDEX     
+YTFI.IDX  	TSX Completion Stocks Above 50-Day Average        	INDEX     
+YTOF.IDX  	TSX Completion Stocks Above 150-Day Average       	INDEX     
+YTOH.IDX  	TSX Completion Stocks Above 100-Day Average       	INDEX     
+YTTH.IDX  	TSX Completion Stocks Above 200-Day Average       	INDEX     
+YTTW.IDX  	TSX Completion Stocks Above 20-Day Average        	INDEX     
+YUFD.IDX  	TSX Global Gold EW Stocks Above 5-Day Average     	INDEX     
+YUFI.IDX  	TSX Global Gold EW Stocks Above 50-Day Average    	INDEX     
+YUOF.IDX  	TSX Global Gold EW Stocks Above 150-Day Average   	INDEX     
+YUOH.IDX  	TSX Global Gold EW Stocks Above 100-Day Average   	INDEX     
+YUTH.IDX  	TSX Global Gold EW Stocks Above 200-Day Average   	INDEX     
+YUTW.IDX  	TSX Global Gold EW Stocks Above 20-Day Average    	INDEX     
+YVFD.IDX  	TSX Global Mining Stocks Above 5-Day Average      	INDEX     
+YVFI.IDX  	TSX Global Mining Stocks Above 50-Day Average     	INDEX     
+YVOF.IDX  	TSX Global Mining Stocks Above 150-Day Average    	INDEX     
+YVOH.IDX  	TSX Global Mining Stocks Above 100-Day Average    	INDEX     
+YVTH.IDX  	TSX Global Mining Stocks Above 200-Day Average    	INDEX     
+YVTW.IDX  	TSX Global Mining Stocks Above 20-Day Average     	INDEX     
+YWFD.IDX  	TSX Comp Hi Beta Stocks Above 5-Day Average       	INDEX     
+YWFI.IDX  	TSX Comp Hi Beta Stocks Above 50-Day Average      	INDEX     
+YWOF.IDX  	TSX Comp Hi Beta Stocks Above 150-Day Average     	INDEX     
+YWOH.IDX  	TSX Comp Hi Beta Stocks Above 100-Day Average     	INDEX     
+YWTH.IDX  	TSX Comp Hi Beta Stocks Above 200-Day Average     	INDEX     
+YWTW.IDX  	TSX Comp Hi Beta Stocks Above 20-Day Average      	INDEX     
+YXFD.IDX  	TSX Hi Inc Energy Stocks Above 5-Day Average      	INDEX     
+YXFI.IDX  	TSX Hi Inc Energy Stocks Above 50-Day Average     	INDEX     
+YXOF.IDX  	TSX Hi Inc Energy Stocks Above 150-Day Average    	INDEX     
+YXOH.IDX  	TSX Hi Inc Energy Stocks Above 100-Day Average    	INDEX     
+YXTH.IDX  	TSX Hi Inc Energy Stocks Above 200-Day Average    	INDEX     
+YXTW.IDX  	TSX Hi Inc Energy Stocks Above 20-Day Average     	INDEX     
+YYFD.IDX  	TSX Industrials EW Stocks Above 5-Day Average     	INDEX     
+YYFI.IDX  	TSX Industrials EW Stocks Above 50-Day Average    	INDEX     
+YYOF.IDX  	TSX Industrials EW Stocks Above 150-Day Average   	INDEX     
+YYOH.IDX  	TSX Industrials EW Stocks Above 100-Day Average   	INDEX     
+YYTH.IDX  	TSX Industrials EW Stocks Above 200-Day Average   	INDEX     
+YYTW.IDX  	TSX Industrials EW Stocks Above 20-Day Average    	INDEX     
+YZFD.IDX  	TSX Comp Low Vol Stocks Above 5-Day Average       	INDEX     
+YZFI.IDX  	TSX Comp Low Vol Stocks Above 50-Day Average      	INDEX     
+YZOF.IDX  	TSX Comp Low Vol Stocks Above 150-Day Average     	INDEX     
+YZOH.IDX  	TSX Comp Low Vol Stocks Above 100-Day Average     	INDEX     
+YZTH.IDX  	TSX Comp Low Vol Stocks Above 200-Day Average     	INDEX     
+YZTW.IDX  	TSX Comp Low Vol Stocks Above 20-Day Average      	INDEX     
+Z0FD.IDX  	TSX Oil & Gas EW Stocks Above 5-Day Average       	INDEX     
+Z0FI.IDX  	TSX Oil & Gas EW Stocks Above 50-Day Average      	INDEX     
+Z0OF.IDX  	TSX Oil & Gas EW Stocks Above 150-Day Average     	INDEX     
+Z0OH.IDX  	TSX Oil & Gas EW Stocks Above 100-Day Average     	INDEX     
+Z0TH.IDX  	TSX Oil & Gas EW Stocks Above 200-Day Average     	INDEX     
+Z0TW.IDX  	TSX Oil & Gas EW Stocks Above 20-Day Average      	INDEX     
+Z1FD.IDX  	TSX Pref Share Stocks Above 5-Day Average         	INDEX     
+Z1FI.IDX  	TSX Pref Share Stocks Above 50-Day Average        	INDEX     
+Z1OF.IDX  	TSX Pref Share Stocks Above 150-Day Average       	INDEX     
+Z1OH.IDX  	TSX Pref Share Stocks Above 100-Day Average       	INDEX     
+Z1TH.IDX  	TSX Pref Share Stocks Above 200-Day Average       	INDEX     
+Z1TW.IDX  	TSX Pref Share Stocks Above 20-Day Average        	INDEX     
+Z2FD.IDX  	TSX 60 Capped Stocks Above 5-Day Average          	INDEX     
+Z2FI.IDX  	TSX 60 Capped Stocks Above 50-Day Average         	INDEX     
+Z2OF.IDX  	TSX 60 Capped Stocks Above 150-Day Average        	INDEX     
+Z2OH.IDX  	TSX 60 Capped Stocks Above 100-Day Average        	INDEX     
+Z2TH.IDX  	TSX 60 Capped Stocks Above 200-Day Average        	INDEX     
+Z2TW.IDX  	TSX 60 Capped Stocks Above 20-Day Average         	INDEX     
+Z3FD.IDX  	TSX 60 Index Stocks Above 5-Day Average           	INDEX     
+Z3FI.IDX  	TSX 60 Index Stocks Above 50-Day Average          	INDEX     
+Z3OF.IDX  	TSX 60 Index Stocks Above 150-Day Average         	INDEX     
+Z3OH.IDX  	TSX 60 Index Stocks Above 100-Day Average         	INDEX     
+Z3TH.IDX  	TSX 60 Index Stocks Above 200-Day Average         	INDEX     
+Z3TW.IDX  	TSX 60 Index Stocks Above 20-Day Average          	INDEX     
+Z4FD.IDX  	TSX Comp Share Yld Stocks Above 5-Day Average     	INDEX     
+Z4FI.IDX  	TSX Comp Share Yld Stocks Above 50-Day Average    	INDEX     
+Z4OF.IDX  	TSX Comp Share Yld Stocks Above 150-Day Average   	INDEX     
+Z4OH.IDX  	TSX Comp Share Yld Stocks Above 100-Day Average   	INDEX     
+Z4TH.IDX  	TSX Comp Share Yld Stocks Above 200-Day Average   	INDEX     
+Z4TW.IDX  	TSX Comp Share Yld Stocks Above 20-Day Average    	INDEX     
+Z5FD.IDX  	TSX Smallcap Stocks Above 5-Day Average           	INDEX     
+Z5FI.IDX  	TSX Smallcap Stocks Above 50-Day Average          	INDEX     
+Z5OF.IDX  	TSX Smallcap Stocks Above 150-Day Average         	INDEX     
+Z5OH.IDX  	TSX Smallcap Stocks Above 100-Day Average         	INDEX     
+Z5TH.IDX  	TSX Smallcap Stocks Above 200-Day Average         	INDEX     
+Z5TW.IDX  	TSX Smallcap Stocks Above 20-Day Average          	INDEX     
 ZAX.IDX   	ZACKS MICRO CAP INDEX                             	INDEX     
