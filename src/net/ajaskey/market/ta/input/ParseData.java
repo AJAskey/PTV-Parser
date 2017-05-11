@@ -106,7 +106,7 @@ public class ParseData {
 				if ((line != null) && (line.length() > 0)) {
 					final String sline = line.trim().substring(0, Math.min(10, line.length())).toLowerCase();
 					if (!sline.contains("ticker") && !sline.contains("symbol")) {
-						final String fld[] = line.trim().split("\\s+");
+						final String fld[] = line.trim().split("[,\\s+]");
 						if (fld[0].trim().length() > 0) {
 							list.add(fld[0].trim().replaceAll("\"", ""));
 							// System.out.println(fld[0]);
@@ -613,6 +613,18 @@ public class ParseData {
 		}
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
+	}
+	
+	public static void main(String[] args) {
+		try {
+			List<String> l = ParseData.getTickerList("data/SP500-SIP3.CSV");
+			for (String s : l) {
+				System.out.println(s);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
