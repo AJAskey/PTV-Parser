@@ -74,6 +74,7 @@ public class TickerNames {
 				if (line != null) {
 					String fld[] = line.split("[,\\s+]");
 					String s = fld[0].replace("\n", "").replaceAll("\"", "");
+					System.out.println(s);
 					if (knt == 0) {
 						ret += s.trim();
 						knt++;
