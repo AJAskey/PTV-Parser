@@ -97,6 +97,7 @@ public class FindCategories {
 					final String idStr = eElement.getAttribute("id");
 					String title = eElement.getAttribute("title");
 					final String freq = eElement.getAttribute("frequency");
+					final String units = eElement.getAttribute("units");
 					final String sa = eElement.getAttribute("seasonal_adjustment_short");
 
 					final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
@@ -110,7 +111,7 @@ public class FindCategories {
 						}
 
 						//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
-						pw.println(tab + idStr + "\t" + title + "\t" + freq + " -- " + sa);
+						pw.println(tab + idStr + "\t" + title + "\t" + freq + "\t" + units + " -- " + sa);
 					}
 				}
 			}
