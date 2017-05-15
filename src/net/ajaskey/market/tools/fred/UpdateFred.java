@@ -107,7 +107,7 @@ public class UpdateFred {
 						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
-						dsi.setUnits(ir.units.toString());
+						//dsi.setUnits(ir.type.toString());
 
 						dsList.add(dsi);
 
@@ -139,6 +139,17 @@ public class UpdateFred {
 			for (final DataSeriesInfo ds : dsList) {
 				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
 				    sdf.format(ds.getLastUpdate().getTime()), sdf2.format(ds.getLastObservation().getTime()), ds.getTitle());
+			}
+		}
+
+		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			pw.println("Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation");
+			for (final DataSeriesInfo ds : dsList) {
+				ds.setType(DataSeries.ResponseType.LIN);
+				System.out.println(ds);
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), " ", ds.getFrequency(),
+				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+				    sdf2.format(ds.getLastObservation().getTime()));
 			}
 		}
 

@@ -1,7 +1,10 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.text.ParseException;
@@ -49,8 +52,8 @@ import net.ajaskey.market.misc.Utils;
  */
 public class DataSeriesInfo {
 
-	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	public final static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public final static SimpleDateFormat	sdf2	= new SimpleDateFormat("yyyy-MM-dd");
 
 	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
@@ -59,63 +62,14 @@ public class DataSeriesInfo {
 	private String															frequency;
 	private String															units;
 	private String															seasonalAdjustment;
+	private DataSeries.ResponseType							type;
 
-	private Calendar	lastUpdate;
-	private Calendar	lastObservation;
-	private int				timeOffset;
+	private Calendar lastUpdate;
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataSeriesInfo() {
-		// TODO Auto-generated constructor stub
-	}
+	private Calendar lastObservation;
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataSeriesInfo(String seriesName) {
-
-		this.setName(seriesName);
-
-		final String url = "https://api.stlouisfed.org/fred/series?series_id=" + this.name + "&api_key=" + ApiKey.get();
-
-		String resp;
-		try {
-			if (dBuilder == null) {
-				dBuilder = dbFactory.newDocumentBuilder();
-			}
-
-			resp = Utils.getFromUrl(url);
-
-			Debug.pwDbg.println(resp + Utils.NL);
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			final NodeList nResp = doc.getElementsByTagName("series");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-
-					this.setTitle(eElement.getAttribute("title"));
-					this.setFrequency(eElement.getAttribute("frequency"));
-					this.setUnits(eElement.getAttribute("units"));
-					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
-					this.setLastUpdate(eElement.getAttribute("last_updated"));
-					this.setLastObservation(eElement.getAttribute("observation_end"));
-					Debug.pwDbg.print(this);
-				}
-			}
-		} catch (final Exception e) {
-			this.setName("");
-			e.printStackTrace();
-		}
-	}
+	private int			timeOffset;
+	private String	refChart;
 
 	public static List<DataSeriesInfo> getDataSeriesNames() {
 
@@ -138,7 +92,7 @@ public class DataSeriesInfo {
 
 				final String resp = Utils.getFromUrl(url);
 
-				Debug.pwDbg.println(resp + Utils.NL);
+				//Debug.pwDbg.println(resp + Utils.NL);
 
 				final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -180,20 +134,119 @@ public class DataSeriesInfo {
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
+	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
-		final List<DataSeriesInfo> outList = DataSeriesInfo.getDataSeriesNames();
+		Debug.pwDbg = new PrintWriter("out/dsi.dbg");
 
-		try (PrintWriter pw = new PrintWriter("fred-series.xls")) {
+		final DataSeriesInfo dsi = new DataSeriesInfo("GDPC1");
+
+		try (PrintWriter pw = new PrintWriter("out/fred-series.txt")) {
 			pw.println("Series\tTitle\tFrequency\tUnits\tSeasonality\tLastUpdate");
-			for (final DataSeriesInfo dsi : outList) {
-				pw.println(dsi.toCsvString());
-			}
+			pw.println(dsi.toCsvString());
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
+		Debug.pwDbg.close();
+
+	}
+
+	public static List<DataSeriesInfo> readSeriesInfo() {
+
+		final List<DataSeriesInfo> dList = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/fred-series-info.txt"))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					final String s = str.substring(0, 1);
+					if (!s.contains("#")) {
+						final String fld[] = str.split("\t");
+						final DataSeriesInfo dsi = new DataSeriesInfo();
+						dsi.name = fld[0].trim().toUpperCase();
+						dsi.title = fld[1].trim();
+						dsi.refChart = fld[2].trim();
+						dsi.units = fld[4].trim();
+						dsi.type = DataSeries.ResponseType.valueOf(fld[5].trim());
+						dList.add(dsi);
+					}
+				}
+
+			}
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
+
+		return dList;
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSeriesInfo() {
+		this.name = "";
+		this.title = "";
+		this.frequency = "";
+		this.units = "";
+		this.seasonalAdjustment = "";
+		this.lastObservation = null;
+		this.lastUpdate = null;
+		this.timeOffset = 0;
+		this.refChart = "";
+		this.type = DataSeries.ResponseType.LIN;
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSeriesInfo(String seriesName) {
+
+		this.setName(seriesName);
+
+		final String url = "https://api.stlouisfed.org/fred/series?series_id=" + this.name + "&api_key=" + ApiKey.get();
+
+		String resp;
+		try {
+			if (dBuilder == null) {
+				dBuilder = dbFactory.newDocumentBuilder();
+			}
+
+			resp = Utils.getFromUrl(url);
+
+			//Debug.pwDbg.println(resp + Utils.NL);
+
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+			doc.getDocumentElement().normalize();
+
+			this.refChart = "";
+
+			final NodeList nResp = doc.getElementsByTagName("series");
+			for (int knt = 0; knt < nResp.getLength(); knt++) {
+				final Node nodeResp = nResp.item(knt);
+				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+					final Element eElement = (Element) nodeResp;
+
+					this.setTitle(eElement.getAttribute("title"));
+					this.setFrequency(eElement.getAttribute("frequency"));
+					this.setUnits(eElement.getAttribute("units"));
+					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
+					this.setLastUpdate(eElement.getAttribute("last_updated"));
+					this.setLastObservation(eElement.getAttribute("observation_end"));
+					Debug.pwDbg.print(this);
+				}
+			}
+		} catch (final Exception e) {
+			this.setName("");
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -228,6 +281,11 @@ public class DataSeriesInfo {
 		return this.name;
 	}
 
+	public String getRefChart() {
+
+		return this.refChart;
+	}
+
 	/**
 	 * @return the seasonalAdjusted
 	 */
@@ -242,6 +300,14 @@ public class DataSeriesInfo {
 	public String getTitle() {
 
 		return this.title;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public DataSeries.ResponseType getType() {
+
+		return this.type;
 	}
 
 	/**
@@ -268,7 +334,13 @@ public class DataSeriesInfo {
 
 		} catch (final ParseException e) {
 			e.printStackTrace();
-		}	}
+		}
+	}
+
+	public void setRefChart(String chart) {
+
+		this.refChart = chart;
+	}
 
 	/**
 	 * @param seasonalAdjusted
@@ -277,6 +349,24 @@ public class DataSeriesInfo {
 	public void setSeasonalAdjustment(String adjustment) {
 
 		this.seasonalAdjustment = adjustment;
+	}
+
+	/**
+	 * @param type
+	 *          the type to set
+	 */
+	public void setType(DataSeries.ResponseType type) {
+
+		this.type = type;
+	}
+
+	/**
+	 * @param units
+	 *          the units to set
+	 */
+	public void setUnits(String units) {
+
+		this.units = units;
 	}
 
 	public String toCsvString() {
@@ -295,8 +385,14 @@ public class DataSeriesInfo {
 		ret += "  Frequency        : " + this.frequency + Utils.NL;
 		ret += "  Units            : " + this.units + Utils.NL;
 		ret += "  Adjustment       : " + this.seasonalAdjustment + Utils.NL;
-		ret += "  Last Update      : " + sdf.format(this.lastUpdate.getTime()) + "  " + this.timeOffset + Utils.NL;
-		ret += "  Last Observation : " + sdf2.format(this.lastObservation.getTime()) + Utils.NL;;
+		ret += "  Type             : " + this.type + Utils.NL;
+		if (this.lastUpdate != null) {
+			ret += "  Last Update      : " + sdf.format(this.lastUpdate.getTime()) + "  " + this.timeOffset + Utils.NL;
+		}
+		if (this.lastObservation != null) {
+			ret += "  Last Observation : " + sdf2.format(this.lastObservation.getTime()) + Utils.NL;
+		}
+		ret += "  Reference Chart  : " + this.refChart;
 		return ret;
 	}
 
@@ -349,15 +445,6 @@ public class DataSeriesInfo {
 
 		final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
 		this.title = filtered.trim();
-	}
-
-	/**
-	 * @param units
-	 *          the units to set
-	 */
-	public void setUnits(String units) {
-
-		this.units = units;
 	}
 
 }

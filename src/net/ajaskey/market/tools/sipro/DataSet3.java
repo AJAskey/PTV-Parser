@@ -174,6 +174,10 @@ public class DataSet3 {
 
 	public DataSet3(String name, String code, String[] s, int ptr, dMode mode) {
 		init();
+//		System.out.println(name);
+//		System.out.println(code);
+//		System.out.println(s.length);
+//		System.out.println(ptr);
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());

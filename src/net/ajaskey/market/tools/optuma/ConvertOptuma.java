@@ -69,27 +69,29 @@ public class ConvertOptuma {
 		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/rymm.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfcash.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/mfpcash.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/crb.html").toPath());
+		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/crb.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxupvol.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/spxdownvol.html").toPath());
 
-		final List<OhlcvData> eps = ConvertOptuma.getGaapEps();
+		//final List<OhlcvData> eps = ConvertOptuma.getGaapEps();
 
-		final List<OhlcvData> spx = ConvertOptuma.BoundGaapToSpx(eps);
+		//final List<OhlcvData> spx = ConvertOptuma.BoundGaapToSpx(eps);
 
-		final double MAX_PE = 37.0;
-		Collections.reverse(spx);
-		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\gaap_spx_bound.csv")) {
-			for (final OhlcvData price : spx) {
-				if (price.open > 0.0) {
-					double pe = price.close / price.open;
-					if (pe > MAX_PE) {
-						pe = MAX_PE;
-					}
-					pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), pe);
-				}
-			}
-		}
+//		final double MAX_PE = 37.0;
+//		Collections.reverse(spx);
+//		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\gaap_spx_bound.csv")) {
+//			for (final OhlcvData price : spx) {
+//				if (price.open > 0.0) {
+//					double pe = price.close / price.open;
+//					if (pe > MAX_PE) {
+//						pe = MAX_PE;
+//					}
+//					pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), pe);
+//				}
+//			}
+//		}
+		
+		System.out.println("Done.");
 	}
 
 	/**

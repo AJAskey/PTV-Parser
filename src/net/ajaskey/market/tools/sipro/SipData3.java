@@ -67,9 +67,7 @@ public class SipData3 {
 
 	public static List<ClosingPrices> lastPrice = new ArrayList<>();
 
-	private static int					ptr					= 0;
 	private static int					companyKnt	= 0;
-	private final static double	MILLION			= 1000000.0;
 
 	/**
 	 *
@@ -83,14 +81,14 @@ public class SipData3 {
 
 		readClosingPrices("data/closing_price.txt");
 
-		final String group = "SPX";
+		final String group = "SML";
 
 		if (group.contains("SPX")) {
-			SipData3.readDataFile_1("data/SP500-SIP3.csv");
-			SipData3.readDataFile_2("data/SP500-SIP3b.csv");
+			SipData3.readDataFile_1("data/SP500-SIP3.txt");
+			SipData3.readDataFile_2("data/SP500-SIP3b.txt");
 		} else if (group.contains("SML")) {
-			SipData3.readDataFile_1("data/SP600-SIP3.csv");
-			SipData3.readDataFile_2("data/SP600-SIP3b.csv");
+			SipData3.readDataFile_1("data/SP600-SIP3.txt");
+			SipData3.readDataFile_2("data/SP600-SIP3b.txt");
 		} else {
 			return;
 		}
@@ -141,40 +139,40 @@ public class SipData3 {
 			String line = "";
 
 			//line = br.readLine(); // read header
+			SipCommon sc = new SipCommon("\t", 14);
 
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
 
-					final String fld[] = line.split(",");
+//					final String fld[] = line.split("\t");
+//					System.out.println(knt + " : " + fld[0]);
 
 					knt++;
-					System.out.println(knt + " : " + fld[0]);
+					sc.reset();
 
-					ptr = 0;
+					sales.add(sc.getData("sales", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					ebit.add(sc.getData("ebit", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					taxes.add(sc.getData("taxes", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					incomeEps.add(sc.getData("incomeEps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashOps.add(sc.getData("cashOps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashInv.add(sc.getData("cashInv", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashFin.add(sc.getData("cashFin", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
 
-					sales.add(SipData3.getData("sales", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					ebit.add(SipData3.getData("ebit", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					taxes.add(SipData3.getData("taxes", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					incomeEps.add(SipData3.getData("incomeEps", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					cashOps.add(SipData3.getData("cashOps", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					cashInv.add(SipData3.getData("cashInv", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					cashFin.add(SipData3.getData("cashFin", fld, DataSet3.dMode.ACCUMULATION, MILLION));
+					dividend.add(sc.getData("dividend", line, DataSet3.dMode.ACCUMULATION, 1.0));
 
-					dividend.add(SipData3.getData("dividend", fld, DataSet3.dMode.ACCUMULATION, 1.0));
-
-					capEx.add(SipData3.getData("capEx", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					DataSet3 s = SipData3.getData("shares", fld, DataSet3.dMode.SEQUENTIAL, MILLION);
+					capEx.add(sc.getData("capEx", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					DataSet3 s = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
 					shares.add(s);
 
-					cash.add(SipData3.getData("cash", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					assets.add(SipData3.getData("assets", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					liabilities.add(SipData3.getData("liabilities", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					accRx.add(SipData3.getData("Accounts Receivable", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					accTx.add(SipData3.getData("Accounts Payable", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					goodwill.add(SipData3.getData("Goodwill", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					ltDebt.add(SipData3.getData("LT Debt", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
-					equity.add(SipData3.getData("Common Equity", fld, DataSet3.dMode.SEQUENTIAL, MILLION));
+					cash.add(sc.getData("cash", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					assets.add(sc.getData("assets", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					liabilities.add(sc.getData("liabilities", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					accRx.add(sc.getData("Accounts Receivable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					accTx.add(sc.getData("Accounts Payable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					goodwill.add(sc.getData("Goodwill", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					ltDebt.add(sc.getData("LT Debt", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					equity.add(sc.getData("Common Equity", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
 
 				}
 			}
@@ -191,22 +189,21 @@ public class SipData3 {
 
 			//line = br.readLine(); // read header
 
+			SipCommon sc = new SipCommon("\t", 14);
+
 			while (line != null) {
 				line = br.readLine();
 				if ((line != null) && (line.length() > 0)) {
 
-					final String fld[] = line.split(",");
+					sc.reset();
 
 					knt++;
-					System.out.println(knt + " : " + fld[0]);
 
-					ptr = 0;
+					interest.add(sc.getData("interest", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					resDev.add(sc.getData("R and D", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
 
-					interest.add(SipData3.getData("interest", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-					resDev.add(SipData3.getData("R and D", fld, DataSet3.dMode.ACCUMULATION, MILLION));
-
-					bookValue.add(SipData3.getData("Book Value per Share", fld, DataSet3.dMode.SEQUENTIAL, 1.0));
-					prices.add(SipData3.getData("Prices", fld, DataSet3.dMode.SEQUENTIAL, 1.0));
+					bookValue.add(sc.getData("Book Value per Share", line, DataSet3.dMode.SEQUENTIAL, 1.0));
+					prices.add(sc.getData("Prices", line, DataSet3.dMode.SEQUENTIAL, 1.0));
 
 				}
 			}
@@ -304,18 +301,18 @@ public class SipData3 {
 		}
 	}
 
-	private static DataSet3 getData(String name, String[] fld, DataSet3.dMode mode, double scaler) {
+//	private static DataSet3 getData(String name, String[] fld, DataSet3.dMode mode, double scaler) {
+//
+//		final int INC = 14;
+//
+//		final DataSet3 ds = new DataSet3(name, fld[0].trim(), fld, ptr, mode);
+//		DataSet3 dsRet = DataSet3.scale(ds, scaler);
+//		//System.out.println(dsRet);
+//		ptr += INC;
+//		return dsRet;
+//	}
 
-		final int INC = 14;
-
-		final DataSet3 ds = new DataSet3(name, fld[0].trim(), fld, ptr, mode);
-		DataSet3 dsRet = DataSet3.scale(ds, scaler);
-		//System.out.println(dsRet);
-		ptr += INC;
-		return dsRet;
-	}
-
-	private static void write(DataSet3 ds, String fname) throws FileNotFoundException {
+	public static void write(DataSet3 ds, String fname) throws FileNotFoundException {
 
 		if (ds.mode == DataSet3.dMode.SEQUENTIAL) {
 			SipData3.writeDataSequential(ds, fname);

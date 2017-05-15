@@ -32,8 +32,8 @@ public class InputRecord {
 	public double										change;
 	public boolean									noZeros;
 	public boolean									estimateData;
-	public DataSeries.ResponseType	units;
-
+	public DataSeries.ResponseType	type;
+	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -46,7 +46,7 @@ public class InputRecord {
 			this.noZeros = true;
 			this.estimateData = false;
 			this.series = fld[0].trim();
-			this.units = DataSeries.ResponseType.LIN;
+			this.type = DataSeries.ResponseType.LIN;
 
 			if (fld.length == 2) {
 				this.change = Double.parseDouble(fld[1].trim());
@@ -61,7 +61,7 @@ public class InputRecord {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
 				this.estimateData = Boolean.parseBoolean(fld[3].trim());
-				this.units = DataSeries.ResponseType.valueOf(fld[4].trim());
+				this.type = DataSeries.ResponseType.valueOf(fld[4].trim());
 			}
 		} catch (final Exception e) {
 			e.printStackTrace();
@@ -72,7 +72,8 @@ public class InputRecord {
 	@Override
 	public String toString() {
 
-		return String.format("%-25s %9.1f  %5s  %5s  %s", this.series, this.change, this.noZeros, this.estimateData, this.units);
+		return String.format("%-25s %9.1f  %5s  %5s  %s", this.series, this.change, this.noZeros, this.estimateData,
+		    this.type);
 	}
 
 }

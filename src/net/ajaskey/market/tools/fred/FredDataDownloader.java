@@ -53,7 +53,7 @@ public class FredDataDownloader {
 			final InputRecord ir = new InputRecord(s);
 			if (ir.series.length() > 0) {
 				System.out.println(ir);
-				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData, ir.units);
+				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData, ir.type);
 			}
 		}
 
