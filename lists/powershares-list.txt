@@ -1,33 +1,33 @@
-ADZ       	DB Agriculture Short ETN Powershares              	AMEX      
-AGA       	DB Agriculture Dble Short ETN Powershares         	AMEX      
-AGF       	DB Agriculture Long ETN Powershares               	AMEX      
+ADZ       	DB Agriculture -1X ETN Powershares                	AMEX      
+AGA       	DB Agriculture -2X ETN Powershares                	AMEX      
+AGF       	DB Agriculture ETN Powershares                    	AMEX      
 BAB       	Build America Bond Powershares                    	AMEX      
-BDD       	DB Base Metals Dble Long ETN Powershares          	AMEX      
+BDD       	DB Base Metals 2X ETN Powershares                 	AMEX      
 BKLN      	Senior Loan Portfolio Powershares                 	AMEX      
-BOM       	DB Base Metals Dble Short ETN Powershares         	AMEX      
-BOS       	DB Base Metals Short ETN Powershares              	AMEX      
-DAG       	DB Agriculture Dble Long ETN Powershares          	AMEX      
-DBB       	DB Base Metals Powershares                        	AMEX      
-DBC       	DB Commodity Index Tracking Powershares           	AMEX      
+BOM       	DB Base Metals -2X ETN Powershares                	AMEX      
+BOS       	DB Base Metals -1X ETN Powershares                	AMEX      
+DAG       	DB Agriculture 2X ETN Powershares                 	AMEX      
+DBB       	DB Base Metals ETN Powershares                    	AMEX      
+DBC       	DB Commodity Index Powershares                    	AMEX      
 DBE       	DB Energy Powershares                             	AMEX      
 DBO       	DB Oil Powershares                                	AMEX      
 DBP       	DB Precious Metals Powershares                    	AMEX      
 DBS       	DB Silver Powershares                             	AMEX      
 DBV       	DB G10 Currency Harvest Powershares               	AMEX      
-DDP       	DB Commodity Short ETN Powershares                	AMEX      
-DEE       	DB Commodity Dble Short ETN Powershares           	AMEX      
+DDP       	DB Commodity -1X ETN Powershares                  	AMEX      
+DEE       	DB Commodity -2X ETN Powershares                  	AMEX      
 DGL       	DB Gold Powershares                               	AMEX      
-DGP       	DB Gold Double Long ETN Powershares               	AMEX      
-DGZ       	DB Gold Short ETN Powershares                     	AMEX      
+DGP       	DB Gold 2X ETN Powershares                        	AMEX      
+DGZ       	DB Gold -1X ETN Powershares                       	AMEX      
 DSUM      	Chinese Yuan Dim Sum Bond Powershares             	AMEX      
-DTO       	DB Crude Oil Dble Short ETN Powershares           	AMEX      
-DYY       	DB Commodity Dble Long ETN Powershares            	AMEX      
-DZZ       	DB Gold Double Short ETN Powershares              	AMEX      
-EELV      	S&P Emrg Mkts Low Volatily Powershares            	AMEX      
-IDHQ      	S&P Intl Dev High Quality Powershares             	AMEX      
+DTO       	DB Crude Oil -2X ETN Powershares                  	AMEX      
+DYY       	DB Commodity 2X ETN Powershares                   	AMEX      
+DZZ       	DB Gold -2X ETN Powershares                       	AMEX      
+EELV      	S&P EM Low Vol Powershares                        	AMEX      
+IDHQ      	S&P Intl Dev High Qlty Powershares                	AMEX      
 IDLV      	S&P Intl Dev Low Volatility Powershares           	AMEX      
-OLO       	DB Crude Oil Long ETN Powershares                 	AMEX      
-PAF       	FTSE Rafi Asia Pacific Ex-Jp Powershares          	AMEX      
+OLO       	DB Crude Oil ETN Powershares                      	AMEX      
+PAF       	FTSE RAFI Asia Pacific Ex-Jp Powershares          	AMEX      
 PBD       	Global Clean Energy Powershares                   	AMEX      
 PBE       	Dynamic Biotech & Genome Powershares              	AMEX      
 PBJ       	Dynamic Food & Beverage Powershares               	AMEX      
@@ -36,32 +36,32 @@ PBS       	Dynamic Media Powershares                         	AMEX
 PBW       	Wilderhill Clean Energy Powershares               	AMEX      
 PCEF      	CEF Income Composite Powershares                  	AMEX      
 PCY       	Emrg Mkts Sovereign Debt Powershares              	AMEX      
-PDN       	FTSE Rafi Dev Mkts Ex-US S/M Powershares          	AMEX      
+PDN       	FTSE RAFI Dev Mkts Ex-US S/M Powershares          	AMEX      
 PEJ       	Dynamic Leisure & Entertain Powershares           	AMEX      
 PFIG      	Fundamental Inv Gr Corp Bond Powershares          	AMEX      
 PGF       	Financial Preferred Powershares                   	AMEX      
 PGX       	Preferred Portfolio Powershares                   	AMEX      
-PHB       	Fundamental High Yld Corp Bd Powershares          	AMEX      
+PHB       	Fundamental High Yld Corp Bond Powershares        	AMEX      
 PICB      	Intl Corporate Bond Powershares                   	AMEX      
 PIN       	India Powershares                                 	AMEX      
 PJP       	Dynamic Pharmaceuticals Powershares               	AMEX      
 PKB       	Dynamic Building & Construct Powershares          	AMEX      
 PMR       	Dynamic Retail Powershares                        	AMEX      
 PPA       	Aerospace & Defense Powershares                   	AMEX      
-PRF       	FTSE Rafi US 1000 Powershares                     	AMEX      
+PRF       	FTSE RAFI US 1000 Powershares                     	AMEX      
 PSI       	Dynamic Semiconductors Powershares                	AMEX      
 PSJ       	Dynamic Software Powershares                      	AMEX      
 PSP       	Global Listed Private Eq Powershares              	AMEX      
-PSR       	Active U.S. Real Estate Powershares               	AMEX      
-PUW       	Wilderhill Progrsv Energy Powershares             	AMEX      
+PSR       	Active US Real Estate Powershares                 	AMEX      
+PUW       	Wilderhill Progressive Energy Powershares         	AMEX      
 PVI       	Vrdo Tax-Free Weekly Powershares                  	AMEX      
 PWB       	Dynamic Largecap Growth Powershares               	AMEX      
 PWC       	Dynamic Market Powershares                        	AMEX      
 PWV       	Dynamic Largecap Value Powershares                	AMEX      
-PWZ       	Insured California Muni Bond Powershares          	AMEX      
+PWZ       	Insured Cali Muni Bond Powershares                	AMEX      
 PXE       	Dynamic Energy Explor & Prod Powershares          	AMEX      
-PXF       	FTSE Rafi Dev Mkts Ex-US Powershares              	AMEX      
-PXH       	FTSE Rafi Emrg Mkts Powershares                   	AMEX      
+PXF       	FTSE RAFI Dev Mkts Ex-US Powershares              	AMEX      
+PXH       	FTSE RAFI Emrg Mkts Powershares                   	AMEX      
 PXJ       	Dynamic Oil & Gas Services Powershares            	AMEX      
 PXLG      	Fundamental Pure Large Grow Powershares           	AMEX      
 PXLV      	Fundamental Pure Large Value Powershares          	AMEX      
@@ -74,24 +74,24 @@ PXSV      	Fundamental Pure Small Value Powershares          	AMEX
 PZA       	Insured National Muni Bond Powershares            	AMEX      
 PZD       	Cleantech Powershares                             	AMEX      
 PZI       	Zacks Micro Cap Powershares                       	AMEX      
-PZT       	Insured New York Muni Bond Powershares            	AMEX      
+PZT       	Insured NY Muni Bond Powershares                  	AMEX      
 SPHB      	S&P 500 High Beta Powershares                     	AMEX      
-SPHQ      	S&P 500 High Quality Powershares                  	AMEX      
-SPLV      	S&P 500 Low Volatility Powershares                	AMEX      
-SZO       	DB Crude Oil Short ETN Powershares                	AMEX      
-UDN       	DB US Dollar Index Bearish Powershares            	AMEX      
-UUP       	DB US Dollar Index Bullish Powershares            	AMEX      
+SPHQ      	S&P 500 High Qlty Powershares                     	AMEX      
+SPLV      	S&P 500 Low Vol Powershares                       	AMEX      
+SZO       	DB Crude Oil -1X ETN Powershares                  	AMEX      
+UDN       	DB US Dollar Bearish Powershares                  	AMEX      
+UUP       	DB US Dollar Bullish Powershares                  	AMEX      
 DWAQ      	Dynamic OTC Powershares                           	NASDAQ    
 KBWB      	KBW Bank Powershares                              	NASDAQ    
-KBWD      	KBW High Div Yield Financial Powershares          	NASDAQ    
+KBWD      	KBW High Div Yld Financial Powershares            	NASDAQ    
 KBWP      	KBW Prop & Casuality Insur Powershares            	NASDAQ    
 KBWR      	KBW Regional Banking Powershares                  	NASDAQ    
-KBWY      	KBW Prem Yield Equity REIT Powershares            	NASDAQ    
-PEY       	High-Yield Eq Div Achievers Powershares           	NASDAQ    
+KBWY      	KBW Prem Yld Equity REIT Powershares              	NASDAQ    
+PEY       	High Yld Eqty Div Achievers Powershares           	NASDAQ    
 PEZ       	Dynamic Consumer Disc Powershares                 	NASDAQ    
 PFI       	Dynamic Financials Powershares                    	NASDAQ    
 PFM       	Dividend Achievers Powershares                    	NASDAQ    
-PGJ       	Golden Dragon China Powershares                   	NASDAQ    
+PGJ       	Golden Dragon China Powershares ETF               	NASDAQ    
 PHO       	Water Resources Powershares                       	NASDAQ    
 PID       	Intl Dividend Achievers Powershares               	NASDAQ    
 PIO       	Global Water Powershares                          	NASDAQ    
