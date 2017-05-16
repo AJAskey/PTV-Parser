@@ -116,6 +116,7 @@ public class DataSeriesInfo {
 						dsi.setFrequency(eElement.getAttribute("frequency"));
 						dsi.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 						dsi.setUnits(eElement.getAttribute("units"));
+						dsi.setType("LIN");
 						dsi.setLastUpdate(eElement.getAttribute("last_updated"));
 						dsi.setLastObservation(eElement.getAttribute("observation_end"));
 
@@ -202,6 +203,19 @@ public class DataSeriesInfo {
 		this.type = DataSeries.ResponseType.LIN;
 	}
 
+	public DataSeriesInfo(String fld[]) {
+		this.name = fld[0].trim();
+		this.title = fld[1].trim();
+		this.refChart = fld[2].trim();
+		this.frequency = fld[3].trim();
+		this.units = fld[4].trim();
+		this.setType(fld[5].trim());
+		this.lastObservation = null;
+		this.lastUpdate = null;
+		this.seasonalAdjustment = "";
+		this.timeOffset = 0;
+	}
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -220,7 +234,7 @@ public class DataSeriesInfo {
 
 			resp = Utils.getFromUrl(url);
 
-			//Debug.pwDbg.println(resp + Utils.NL);
+			Debug.pwDbg.println(resp + Utils.NL);
 
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -237,6 +251,7 @@ public class DataSeriesInfo {
 					this.setTitle(eElement.getAttribute("title"));
 					this.setFrequency(eElement.getAttribute("frequency"));
 					this.setUnits(eElement.getAttribute("units"));
+					this.setType("LIN");
 					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 					this.setLastUpdate(eElement.getAttribute("last_updated"));
 					this.setLastObservation(eElement.getAttribute("observation_end"));
@@ -355,9 +370,9 @@ public class DataSeriesInfo {
 	 * @param type
 	 *          the type to set
 	 */
-	public void setType(DataSeries.ResponseType type) {
+	public void setType(String type) {
 
-		this.type = type;
+		this.type = DataSeries.ResponseType.valueOf(type);
 	}
 
 	/**

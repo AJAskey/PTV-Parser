@@ -50,6 +50,12 @@ public class SipSectors {
 		processGroup("ConsumerNonCyclical");
 		processGroup("Energy");
 		processGroup("Financial");
+		processGroup("Healthcare");
+		processGroup("Service");
+		processGroup("Technology");
+		processGroup("Transportation");
+		
+		System.out.println("Done.");
 
 	}
 
@@ -62,6 +68,7 @@ public class SipSectors {
 	 */
 	private static void processGroup(String sector) throws FileNotFoundException, IOException {
 
+		System.out.println("Processing " + sector);
 		readDataFile(sector);
 
 	}

@@ -41,6 +41,12 @@ public class FredCommon {
 
 	public final static String fredPath = OptumaCommon.optumaPath + "FRED/";
 
+	final private static double BILLION = 1E9;
+
+	final private static double MILLION = 1E6;
+
+	final private static double THOUSAND = 1E3;
+
 	/**
 	 * net.ajaskey.market.tools.fred.getShortTitle
 	 *
@@ -56,6 +62,31 @@ public class FredCommon {
 		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
 		final String s4 = s3.replaceAll("\\s+", "");
 		return s4.trim();
+	}
+
+	public static List<DataSeriesInfo> readSeriesInfo(String fname) throws FileNotFoundException, IOException {
+
+		final List<DataSeriesInfo> retList = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line = reader.readLine(); //header line
+
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					final String s = str.substring(0, 1);
+					if (!s.contains("#")) {
+						final String fld[] = str.split("\t");
+						final DataSeriesInfo dsi = new DataSeriesInfo(fld);
+						retList.add(dsi);
+					}
+				}
+
+			}
+		}
+		return retList;
 	}
 
 	/**
@@ -100,23 +131,19 @@ public class FredCommon {
 	 */
 	public static void writeToOptuma(List<DataValues> data, String seriesName) {
 
-		double scaler = getScaler(seriesName);
+		final double scaler = FredCommon.getScaler(seriesName);
 
 		try (PrintWriter pw = new PrintWriter(new File(fredPath + seriesName + ".csv"))) {
 			pw.println("Date," + seriesName);
 			for (final DataValues dv : data) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
-				double d = dv.getValue() * scaler;
+				final double d = dv.getValue() * scaler;
 				pw.printf("%s,%.2f%n", date, d);
 			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-
-	final private static double	BILLION		= 1000000000.0;
-	final private static double	MILLION		= 1000000.0;
-	final private static double	THOUSAND	= 1000.0;
 
 	/**
 	 * net.ajaskey.market.tools.fred.getScaler

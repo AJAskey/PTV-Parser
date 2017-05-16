@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import net.ajaskey.market.tools.fred.DataSeries.AggregationMethodType;
-import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
 
 /**
  * This class...
@@ -71,7 +70,8 @@ public class FredDataDownloader {
 	 * @param noZeroValues
 	 * @param estimateData
 	 */
-	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData, DataSeries.ResponseType unit) {
+	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData,
+	    DataSeries.ResponseType unit) {
 
 		final String fname = FredCommon.fredPath + series + ".csv";
 		if (new File(fname).exists()) {

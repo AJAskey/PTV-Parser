@@ -33,7 +33,7 @@ public class InputRecord {
 	public boolean									noZeros;
 	public boolean									estimateData;
 	public DataSeries.ResponseType	type;
-	
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *

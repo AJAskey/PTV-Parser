@@ -3,6 +3,7 @@ package net.ajaskey.market.tools.fred;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,33 +44,17 @@ public class UpdateFred {
 	public final static SimpleDateFormat	sdf2	= new SimpleDateFormat("yyyy-MMM-dd");
 	public final static File							file	= new File(FredCommon.fredPath);
 
-	private static List<DataSeriesInfo> dsList = new ArrayList<>();
-
-	private static List<InputRecord> records = new ArrayList<>();
-
-	/**
-	 * net.ajaskey.market.tools.fred.findInputRecord
-	 *
-	 * @param series
-	 * @return
-	 */
-	private static InputRecord findInputRecord(String series) {
-
-		for (final InputRecord ir : records) {
-			if (ir.series.equalsIgnoreCase(series)) {
-				return ir;
-			}
-		}
-		return null;
-	}
+	private static List<DataSeriesInfo>	dsList		= new ArrayList<>();
+	private static List<InputRecord>		records		= new ArrayList<>();
+	private static List<DataSeriesInfo>	legacyDsi	= null;
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
-	 * @throws FileNotFoundException
+	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 
 		Debug.pwDbg = new PrintWriter("update-fred.dbg");
 
@@ -80,9 +65,15 @@ public class UpdateFred {
 			records.add(ir);
 		}
 
+		legacyDsi = FredCommon.readSeriesInfo("data/fred-series-info.txt");
+		//		for (DataSeriesInfo d : legacyDsi) {
+		//			System.out.println(d);
+		//		}
+
 		final File list[] = file.listFiles();
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "readme.txt")) {
+
 			for (final File f : list) {
 
 				final String name = f.getName();
@@ -93,6 +84,7 @@ public class UpdateFred {
 					final String series = name.substring(0, name.length() - 4);
 
 					final InputRecord ir = UpdateFred.findInputRecord(series);
+					final DataSeriesInfo ldsi = UpdateFred.findDsi(series);
 
 					//System.out.println(ir);
 
@@ -107,7 +99,8 @@ public class UpdateFred {
 						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
-						//dsi.setUnits(ir.type.toString());
+						dsi.setType(ldsi.getType().toString());
+						dsi.setRefChart(ldsi.getRefChart());
 
 						dsList.add(dsi);
 
@@ -119,7 +112,8 @@ public class UpdateFred {
 							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 							final DataSeries ds = new DataSeries(series);
 
-							FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
+							//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
+							FredCommon.writeToOptuma(ds.getValues(0.0, true, false), series);
 						}
 
 						pw.println(dsi);
@@ -145,9 +139,8 @@ public class UpdateFred {
 		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
 			pw.println("Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation");
 			for (final DataSeriesInfo ds : dsList) {
-				ds.setType(DataSeries.ResponseType.LIN);
 				System.out.println(ds);
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), " ", ds.getFrequency(),
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
 				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
 				    sdf2.format(ds.getLastObservation().getTime()));
 			}
@@ -155,5 +148,37 @@ public class UpdateFred {
 
 		System.out.println("Done.");
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.findDsi
+	 *
+	 * @param series
+	 * @return
+	 */
+	private static DataSeriesInfo findDsi(String series) {
+
+		for (final DataSeriesInfo dsi : legacyDsi) {
+			if (dsi.getName().trim().equalsIgnoreCase(series)) {
+				return dsi;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.findInputRecord
+	 *
+	 * @param series
+	 * @return
+	 */
+	private static InputRecord findInputRecord(String series) {
+
+		for (final InputRecord ir : records) {
+			if (ir.series.equalsIgnoreCase(series)) {
+				return ir;
+			}
+		}
+		return null;
 	}
 }

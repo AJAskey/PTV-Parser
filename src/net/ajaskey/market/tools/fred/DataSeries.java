@@ -92,30 +92,6 @@ public class DataSeries {
 	private final DataSeriesInfo	info;
 
 	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataSeries(String name) {
-		this.setName(name);
-		this.setAggType(AggregationMethodType.AVG);
-		this.setFileType(FileType.XML);
-		this.setLimit(100000);
-		this.setOffset(0);
-		this.setOrder(OrderType.ASC);
-		this.setRespType(ResponseType.LIN);
-		this.setRespKnt("0");
-		this.cal1 = null;
-		//this.cal2 = null;
-		this.info = new DataSeriesInfo(name);
-		try {
-			this.dBuilder = this.dbFactory.newDocumentBuilder();
-		} catch (final ParserConfigurationException e) {
-			this.dBuilder = null;
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
@@ -137,6 +113,30 @@ public class DataSeries {
 
 			System.out.println(ds);
 
+		}
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataSeries(String name) {
+		this.setName(name);
+		this.setAggType(AggregationMethodType.AVG);
+		this.setFileType(FileType.XML);
+		this.setLimit(100000);
+		this.setOffset(0);
+		this.setOrder(OrderType.ASC);
+		this.setRespType(ResponseType.LIN);
+		this.setRespKnt("0");
+		this.cal1 = null;
+		//this.cal2 = null;
+		this.info = new DataSeriesInfo(name);
+		try {
+			this.dBuilder = this.dbFactory.newDocumentBuilder();
+		} catch (final ParserConfigurationException e) {
+			this.dBuilder = null;
+			e.printStackTrace();
 		}
 	}
 
