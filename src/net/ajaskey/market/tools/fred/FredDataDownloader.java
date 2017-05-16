@@ -3,6 +3,7 @@ package net.ajaskey.market.tools.fred;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -39,21 +40,18 @@ public class FredDataDownloader {
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
-	 * @throws FileNotFoundException
+	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 
 		Debug.pwDbg = new PrintWriter("download-fred.dbg");
 
-		final List<String> seriesNames = FredCommon.readSeriesNames("fred-series.dat");
+		FredCommon.legacyDsi = FredCommon.readSeriesInfo("data/fred-series-info.txt");
 
-		//
-		for (final String s : seriesNames) {
-			final InputRecord ir = new InputRecord(s);
-			if (ir.series.length() > 0) {
-				System.out.println(ir);
-				FredDataDownloader.process(ir.series, ir.change, ir.noZeros, ir.estimateData, ir.type);
-			}
+		for (final DataSeriesInfo dsi : FredCommon.legacyDsi) {
+			String s = dsi.getName().trim();
+			System.out.println(dsi);
+			FredDataDownloader.process(s, 0.0, true, false, dsi.getType());
 		}
 
 		Debug.pwDbg.close();

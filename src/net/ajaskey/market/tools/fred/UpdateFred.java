@@ -45,8 +45,7 @@ public class UpdateFred {
 	public final static File							file	= new File(FredCommon.fredPath);
 
 	private static List<DataSeriesInfo>	dsList		= new ArrayList<>();
-	private static List<InputRecord>		records		= new ArrayList<>();
-	private static List<DataSeriesInfo>	legacyDsi	= null;
+	//private static List<InputRecord>		records		= new ArrayList<>();
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -58,14 +57,14 @@ public class UpdateFred {
 
 		Debug.pwDbg = new PrintWriter("update-fred.dbg");
 
-		final List<String> seriesNames = FredCommon.readSeriesNames("fred-series.dat");
-		for (final String s : seriesNames) {
-			final InputRecord ir = new InputRecord(s);
-			//System.out.println(ir);
-			records.add(ir);
-		}
+//		final List<String> seriesNames = FredCommon.readSeriesNames("data/fred-series-info.txt");
+//		for (final String s : seriesNames) {
+//			final InputRecord ir = new InputRecord(s);
+//			//System.out.println(ir);
+//			records.add(ir);
+//		}
 
-		legacyDsi = FredCommon.readSeriesInfo("data/fred-series-info.txt");
+		FredCommon.legacyDsi = FredCommon.readSeriesInfo("data/fred-series-info.txt");
 		//		for (DataSeriesInfo d : legacyDsi) {
 		//			System.out.println(d);
 		//		}
@@ -83,12 +82,12 @@ public class UpdateFred {
 
 					final String series = name.substring(0, name.length() - 4);
 
-					final InputRecord ir = UpdateFred.findInputRecord(series);
-					final DataSeriesInfo ldsi = UpdateFred.findDsi(series);
+					//final InputRecord ir = UpdateFred.findInputRecord(series);
+					final DataSeriesInfo ldsi = FredCommon.findDsi(series);
 
 					//System.out.println(ir);
 
-					if ((ir != null) && (ir.series.length() > 0)) {
+					if ((ldsi != null) && (ldsi.getName().length() > 0)) {
 
 						System.out.println(series);
 
@@ -156,15 +155,16 @@ public class UpdateFred {
 	 * @param series
 	 * @return
 	 */
-	private static DataSeriesInfo findDsi(String series) {
-
-		for (final DataSeriesInfo dsi : legacyDsi) {
-			if (dsi.getName().trim().equalsIgnoreCase(series)) {
-				return dsi;
-			}
-		}
-		return null;
-	}
+//	private static DataSeriesInfo findDsi(String series) {
+//
+//		String s = series.trim();
+//		for (final DataSeriesInfo dsi : legacyDsi) {
+//			if (dsi.getName().trim().equalsIgnoreCase(s)) {
+//				return dsi;
+//			}
+//		}
+//		return null;
+//	}
 
 	/**
 	 * net.ajaskey.market.tools.fred.findInputRecord
@@ -172,13 +172,13 @@ public class UpdateFred {
 	 * @param series
 	 * @return
 	 */
-	private static InputRecord findInputRecord(String series) {
-
-		for (final InputRecord ir : records) {
-			if (ir.series.equalsIgnoreCase(series)) {
-				return ir;
-			}
-		}
-		return null;
-	}
+//	private static InputRecord findInputRecord(String series) {
+//
+//		for (final InputRecord ir : records) {
+//			if (ir.series.equalsIgnoreCase(series)) {
+//				return ir;
+//			}
+//		}
+//		return null;
+//	}
 }

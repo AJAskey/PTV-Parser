@@ -108,7 +108,8 @@ public class FredCommon {
 				if (str.length() > 1) {
 					final String s = str.substring(0, 1);
 					if (!s.contains("#")) {
-						retList.add(str);
+						String fld[] = str.split("\t");
+						retList.add(fld[0].trim());
 					}
 				}
 
@@ -170,6 +171,20 @@ public class FredCommon {
 			ret = MILLION;
 		}
 		return ret;
+	}
+	
+	public static List<DataSeriesInfo>	legacyDsi	= null;
+
+	
+	public static DataSeriesInfo findDsi(String series) {
+
+		String s = series.trim();
+		for (final DataSeriesInfo dsi : legacyDsi) {
+			if (dsi.getName().trim().equalsIgnoreCase(s)) {
+				return dsi;
+			}
+		}
+		return null;
 	}
 
 }
