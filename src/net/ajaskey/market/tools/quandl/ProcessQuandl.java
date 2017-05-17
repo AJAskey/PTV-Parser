@@ -75,10 +75,14 @@ public class ProcessQuandl {
 		String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key=" + QuandlApi.key;
 		String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
 		    + QuandlApi.key;
-		String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key=" + QuandlApi.key;
-		
-		String epcURL ="https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key="  + QuandlApi.key;
+		String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key="
+		    + QuandlApi.key;
 
+		String epcURL = "https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key=" + QuandlApi.key;
+		String ipcURL = "https://www.quandl.com/api/v3/datasets/CBOE/INDEX_PC.xml?api_key=" + QuandlApi.key;
+		String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
+		String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
+		String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 
 		List<OhlcvData> earn = getData(sp500EarnURL);
 		writeList(earn, "SP500_Earnings");
@@ -91,23 +95,68 @@ public class ProcessQuandl {
 
 		List<OhlcvData> sPE = getData(shillerPeURL);
 		writeList(sPE, "Shiller_PE");
-		
+
 		List<OhlcvData> sales = getData(sp500SalesURL);
 		writeList(sales, "SP500_Sales");
 
-		List<OhlcvData> epc = getPutCallData(epcURL);
-		
-	}
-	
-	
+		List<OhlcvData> epc = getPutCallData(epcURL, 0, 1, 2, 3);
+		writePcList(epc, "EquityPC");
 
-	/** 
+		List<OhlcvData> ipc = getPutCallData(ipcURL, 0, 1, 2, 3);
+		writePcList(ipc, "IndexPC");
+
+		List<OhlcvData> tpc = getPutCallData(tpcURL, 0, 1, 2, 3);
+		writePcList(tpc, "TotalPC");
+
+		List<OhlcvData> spxpc = getPutCallData(spxpcURL, 1, 2, 3, 0);
+		writePcList(spxpc, "SPX PC");
+
+		List<OhlcvData> vixpc = getPutCallData(vixpcURL, 1, 2, 3, 0);
+		writePcList(vixpc, "VIX PC");
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writePcList
+	 *
+	 * @param epc
+	 * @param string
+	 */
+	private static void writePcList(List<OhlcvData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pwCall = new PrintWriter(outpath + "\\" + fname + "-CallVol.csv");
+		    PrintWriter pwPut = new PrintWriter(outpath + "\\" + fname + "-PutVol.csv");
+		    PrintWriter pwTot = new PrintWriter(outpath + "\\" + fname + "-TotalVol.csv");
+		    PrintWriter pwDiff = new PrintWriter(outpath + "\\" + fname + "-DiffVol.csv");
+		    PrintWriter pwRatio = new PrintWriter(outpath + "\\" + fname + "-Ratio.csv")) {
+
+			for (final OhlcvData price : list) {
+
+				pwCall.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.open);
+				pwPut.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.high);
+				pwTot.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.low);
+				pwRatio.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+
+				int diff = (int) (price.open - price.high);
+				pwDiff.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), diff);
+
+			}
+			System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
 	 * net.ajaskey.market.tools.quandl.getPutCallData
 	 *
 	 * @param epcURL
 	 * @return
 	 */
-	private static List<OhlcvData> getPutCallData(String url) {
+	private static List<OhlcvData> getPutCallData(String url, int callIdx, int putIdx, int totIdx, int ratioIdx) {
 
 		final List<OhlcvData> ret = new ArrayList<>();
 
@@ -118,7 +167,7 @@ public class ProcessQuandl {
 			System.out.println("Processing : " + url);
 
 			resp = Utils.getFromUrl(url);
-			System.out.println(resp);
+			//System.out.println(resp);
 
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -129,32 +178,35 @@ public class ProcessQuandl {
 				final Node nodeResp = nResp.item(knt);
 				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
 					final NodeList nrList = nodeResp.getChildNodes();
-					Calendar cal = null;
+					Calendar cal = Calendar.getInstance();
+					int dReads = 0;
+					Double[] dd = new Double[4];
 					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
 						final Node nr = nrList.item(cnt);
 						if (nr.getNodeType() == Node.ELEMENT_NODE) {
 							//final Element eElement = (Element) nodeResp;
-							System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+							//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 
 							Element eElement = (Element) nr;
-							System.out.println("type: " + eElement.getAttribute("type"));
+							//System.out.println("type: " + eElement.getAttribute("type"));
 							String s = eElement.getAttribute("type");
 
 							if (s.contains("date")) {
-								System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								final Date date = sdf.parse(nr.getTextContent().trim());
-								cal = Calendar.getInstance();
 								cal.setTime(date);
 
 							} else if (s.contains("float")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								if (cal != null) {
-									final double c = Double.parseDouble(nr.getTextContent().trim());
-									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
-									cal = null;
+								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
+								if (dReads == 4) {
+
+									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), dd[callIdx], dd[putIdx], dd[totIdx],
+									    dd[ratioIdx], 0);
 									ret.add(d);
-									System.out.println("Adding - " + d.toShortString());
+									System.out.println("Adding - " + d.toString());
 									//System.out.println(d.toShortString());
+									dReads = 0;
 								}
 							}
 						}
@@ -170,7 +222,20 @@ public class ProcessQuandl {
 		return ret;
 	}
 
+	private static void writeList(List<OhlcvData> list, String fname) {
 
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(outpath + "\\" + fname + ".csv")) {
+			for (final OhlcvData price : list) {
+
+				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+			}
+			System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private static List<OhlcvData> getData(String url) {
 
@@ -233,21 +298,5 @@ public class ProcessQuandl {
 		}
 
 		return ret;
-	}
-
-	private static void writeList(List<OhlcvData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(outpath + "\\" + fname + ".csv")) {
-			for (final OhlcvData price : list) {
-
-				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
-			}
-			System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }
