@@ -316,9 +316,9 @@ public class DataSet3 {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet3 scale(DataSet3 shr, double d) {
+	public static DataSet3 scale(DataSet3 shr, double scaler) {
 
-		DataSet3 ds = scaleSet(d);
+		DataSet3 ds = scaleSet(scaler);
 		return mult(shr, ds);
 	}
 

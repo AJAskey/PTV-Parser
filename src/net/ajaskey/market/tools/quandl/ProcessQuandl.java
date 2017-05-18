@@ -84,6 +84,8 @@ public class ProcessQuandl {
 		String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 
+		String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
+
 		List<OhlcvData> earn = getData(sp500EarnURL);
 		writeList(earn, "SP500_Earnings");
 
@@ -114,6 +116,102 @@ public class ProcessQuandl {
 		List<OhlcvData> vixpc = getPutCallData(vixpcURL, 1, 2, 3, 0);
 		writePcList(vixpc, "VIX PC");
 
+		List<MtsData> mts = getMtsData(mtsURL);
+		writeMtsList(mts, "MTS");
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writeMtsList
+	 *
+	 * @param mts
+	 * @param string
+	 */
+	private static void writeMtsList(List<MtsData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(outpath + "\\" + fname + ".csv")) {
+			for (final MtsData item : list) {
+
+				pw.printf("%s,%d%n", sdfOptuma.format(item.date.getTime()), (int) item.receipts);
+			}
+			System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getMtsData
+	 *
+	 * @param mtsURL
+	 * @return
+	 */
+	private static List<MtsData> getMtsData(String url) {
+
+		final List<MtsData> ret = new ArrayList<>();
+
+		String resp;
+		try {
+			dBuilder = dbFactory.newDocumentBuilder();
+
+			System.out.println("Processing : " + url);
+
+			resp = Utils.getFromUrl(url);
+			//System.out.println(resp);
+
+			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+			doc.getDocumentElement().normalize();
+
+			final NodeList nResp = doc.getElementsByTagName("datum");
+			for (int knt = 0; knt < nResp.getLength(); knt++) {
+				final Node nodeResp = nResp.item(knt);
+				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+					final NodeList nrList = nodeResp.getChildNodes();
+					Calendar cal = Calendar.getInstance();
+					int dReads = 0;
+					Double[] dd = new Double[6];
+					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
+						final Node nr = nrList.item(cnt);
+						if (nr.getNodeType() == Node.ELEMENT_NODE) {
+							//final Element eElement = (Element) nodeResp;
+							//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+
+							Element eElement = (Element) nr;
+							//System.out.println("type: " + eElement.getAttribute("type"));
+							String s = eElement.getAttribute("type");
+
+							if (s.contains("date")) {
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								final Date date = sdf.parse(nr.getTextContent().trim());
+								cal.setTime(date);
+
+							} else if (s.contains("float")) {
+								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
+								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
+								if (dReads == 6) {
+
+									final MtsData d = new MtsData(Utils.buildCalendar(cal), dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]);
+									ret.add(d);
+									System.out.println("Adding - " + d.toString());
+									//System.out.println(d.toShortString());
+									dReads = 0;
+								}
+							}
+						}
+					}
+				}
+			}
+
+		} catch (final Exception e) {
+			ret.clear();
+			e.printStackTrace();
+		}
+
+		return ret;
 	}
 
 	/**
