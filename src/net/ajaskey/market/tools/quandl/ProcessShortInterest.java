@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.StringReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,14 +15,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.Common;
@@ -56,11 +51,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  */
 public class ProcessShortInterest {
 
-	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyy-MM-dd");
-	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
-
-	private static DocumentBuilderFactory	dbFactory	= null;
-	private static DocumentBuilder				dBuilder	= null;
+	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
 	final public static String outpath = OptumaCommon.optumaPath + "/quandl";
 
@@ -74,9 +65,9 @@ public class ProcessShortInterest {
 
 		final List<String> retry = new ArrayList<>();
 
-		dbFactory = DocumentBuilderFactory.newInstance();
+		final String outfile = "data/si-data.txt";
 
-		try (PrintWriter pwout = new PrintWriter("data/si-data.txt")) {
+		try (PrintWriter pwout = new PrintWriter(outfile)) {
 
 			for (final String ticker : tickers) {
 				Common.delay(250);
@@ -86,7 +77,7 @@ public class ProcessShortInterest {
 				if ((siList != null) && (siList.size() > 1)) {
 					//ShortInterestList.bigList.add(new ShortInterestList(ticker, siList));
 					for (final ShortInterestData si : siList) {
-						final String dt = sdf.format(si.date.getTime());
+						final String dt = Qcommon.sdf.format(si.date.getTime());
 						final String s = String.format("%s\t%s\t%d\t%.2f\t%.2f\t%d", ticker, dt, (long) si.si, si.dtc, si.modDtc,
 						    (long) si.avgVol);
 						pwout.println(s);
@@ -114,12 +105,13 @@ public class ProcessShortInterest {
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
 
-		ProcessShortInterest.processFile("data/si-data.txt");
+		//		ProcessShortInterest.processFile("data/si-data.txt");
 
-		//		final Date date = sdf.parse("2017-04-14");
-		//		Calendar staleDate = Calendar.getInstance();
-		//		staleDate.setTime(date);
-		//		getQuandl("data/SP500-SIP3B.txt", staleDate);
+		final Date date = Qcommon.sdf.parse("2017-04-14");
+		final Calendar staleDate = Calendar.getInstance();
+		staleDate.setTime(date);
+		ProcessShortInterest.getQuandl("data/one-ticker.txt", staleDate);
+		//				getQuandl("data/SP500-SIP3B.txt", staleDate);
 
 	}
 
@@ -185,9 +177,9 @@ public class ProcessShortInterest {
 	private static List<ShortInterestData> combined() {
 
 		List<ShortInterestData> retSil = new ArrayList<>();
-		
+
 		ShortInterestList maxPeriods = new ShortInterestList();
-		for (ShortInterestList sil : bigList) {
+		for (final ShortInterestList sil : bigList) {
 			if (maxPeriods.dateKnt < sil.dateKnt) {
 				maxPeriods = sil;
 			}
@@ -218,34 +210,12 @@ public class ProcessShortInterest {
 
 		final List<ShortInterestData> ret = new ArrayList<>();
 
-		String resp;
 		try {
-			dBuilder = dbFactory.newDocumentBuilder();
 
 			final String nurl = url.replace("xxxxx", ticker);
+			final Document doc = Qcommon.getDocument(nurl, false);
 
-			System.out.println("Processing : " + nurl);
-
-			resp = Utils.getFromUrl(nurl);
-			//System.out.println(resp);
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			final Calendar latest = Calendar.getInstance();
-
-			final NodeList nDate = doc.getElementsByTagName("newest-available-date");
-			for (int knt = 0; knt < nDate.getLength(); knt++) {
-				final Node nodeResp = nDate.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					System.out.println(eElement.getNodeName() + " " + eElement.getTextContent());
-					final Date date = sdf.parse(eElement.getTextContent().trim());
-					latest.setTime(date);
-					break;
-				}
-			}
+			final Calendar latest = Qcommon.getLatestTime(doc);
 
 			if (latest.before(staleDate)) {
 				// Add a dummy record so not added to retry ticker list
@@ -273,7 +243,7 @@ public class ProcessShortInterest {
 
 							if (s.contains("date")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								final Date date = sdf.parse(nr.getTextContent().trim());
+								final Date date = Qcommon.sdf.parse(nr.getTextContent().trim());
 								cal.setTime(date);
 
 							} else if (s.contains("float")) {
@@ -293,9 +263,6 @@ public class ProcessShortInterest {
 				}
 			}
 
-		} catch (final IOException fnf) {
-			System.out.println("  Not found : " + ticker);
-			return null;
 		} catch (final Exception e) {
 			e.printStackTrace();
 			return null;

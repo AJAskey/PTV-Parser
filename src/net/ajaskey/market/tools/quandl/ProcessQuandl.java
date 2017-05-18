@@ -3,27 +3,11 @@ package net.ajaskey.market.tools.quandl;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.io.StringReader;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-
-import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.ConvertOHLCV;
 import net.ajaskey.market.tools.helpers.OhlcvData;
-import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -39,7 +23,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -52,14 +36,6 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  */
 public class ProcessQuandl {
 
-	private static SimpleDateFormat	sdf				= new SimpleDateFormat("yyyy-MM-dd");
-	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
-
-	private static DocumentBuilderFactory	dbFactory	= null;
-	private static DocumentBuilder				dBuilder	= null;
-
-	final public static String outpath = OptumaCommon.optumaPath + "/quandl";
-
 	/**
 	 * net.ajaskey.market.tools.quandl.main
 	 *
@@ -67,79 +43,75 @@ public class ProcessQuandl {
 	 */
 	public static void main(String[] args) {
 
-		dbFactory = DocumentBuilderFactory.newInstance();
-
-		String sp500EarnURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_MONTH.xml?api_key="
+		final String sp500EarnURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_MONTH.xml?api_key="
 		    + QuandlApi.key;
-		String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key=" + QuandlApi.key;
-		String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key=" + QuandlApi.key;
-		String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
+		final String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key="
 		    + QuandlApi.key;
-		String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key="
+		final String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key="
+		    + QuandlApi.key;
+		final String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
+		    + QuandlApi.key;
+		final String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key="
 		    + QuandlApi.key;
 
-		String epcURL = "https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key=" + QuandlApi.key;
-		String ipcURL = "https://www.quandl.com/api/v3/datasets/CBOE/INDEX_PC.xml?api_key=" + QuandlApi.key;
-		String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
-		String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
-		String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
+		final String epcURL = "https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key=" + QuandlApi.key;
+		final String ipcURL = "https://www.quandl.com/api/v3/datasets/CBOE/INDEX_PC.xml?api_key=" + QuandlApi.key;
+		final String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
+		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
+		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 
-		String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
+		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
 
-		List<OhlcvData> earn = getData(sp500EarnURL);
-		writeList(earn, "SP500_Earnings");
+		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
 
-		List<OhlcvData> div = getData(sp500DivURL);
-		writeList(div, "SP500_Dividend");
+		final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
+		ProcessQuandl.writeMtsList(mts, "MTS");
 
-		List<OhlcvData> bv = getData(bookValueURL);
-		writeList(bv, "SP500_BookValuePS");
+		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
-		List<OhlcvData> sPE = getData(shillerPeURL);
-		writeList(sPE, "Shiller_PE");
+		final List<OhlcvData> earn = ProcessQuandl.getOneDataPoint(sp500EarnURL);
+		ProcessQuandl.writeList(earn, "SP500_Earnings");
 
-		List<OhlcvData> sales = getData(sp500SalesURL);
-		writeList(sales, "SP500_Sales");
+		final List<OhlcvData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
+		ProcessQuandl.writeList(div, "SP500_Dividend");
 
-		List<OhlcvData> epc = getPutCallData(epcURL, 0, 1, 2, 3);
-		writePcList(epc, "EquityPC");
+		final List<OhlcvData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
+		ProcessQuandl.writeList(bv, "SP500_BookValuePS");
 
-		List<OhlcvData> ipc = getPutCallData(ipcURL, 0, 1, 2, 3);
-		writePcList(ipc, "IndexPC");
+		final List<OhlcvData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
+		ProcessQuandl.writeList(sPE, "Shiller_PE");
 
-		List<OhlcvData> tpc = getPutCallData(tpcURL, 0, 1, 2, 3);
-		writePcList(tpc, "TotalPC");
+		final List<OhlcvData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
+		ProcessQuandl.writeList(sales, "SP500_Sales");
 
-		List<OhlcvData> spxpc = getPutCallData(spxpcURL, 1, 2, 3, 0);
-		writePcList(spxpc, "SPX PC");
+		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(epc, "EquityPC");
 
-		List<OhlcvData> vixpc = getPutCallData(vixpcURL, 1, 2, 3, 0);
-		writePcList(vixpc, "VIX PC");
+		final List<OhlcvData> ipc = ProcessQuandl.getPutCallData(ipcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(ipc, "IndexPC");
 
-		List<MtsData> mts = getMtsData(mtsURL);
-		writeMtsList(mts, "MTS");
+		final List<OhlcvData> tpc = ProcessQuandl.getPutCallData(tpcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(tpc, "TotalPC");
+
+		final List<OhlcvData> spxpc = ProcessQuandl.getPutCallData(spxpcURL, 1, 2, 3, 0);
+		ProcessQuandl.writePcList(spxpc, "SPX PC");
+
+		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
+		ProcessQuandl.writePcList(vixpc, "VIX PC");
 
 	}
 
-	/**
-	 * net.ajaskey.market.tools.quandl.writeMtsList
-	 *
-	 * @param mts
-	 * @param string
-	 */
-	private static void writeMtsList(List<MtsData> list, String fname) {
+	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
 
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(outpath + "\\" + fname + ".csv")) {
-			for (final MtsData item : list) {
-
-				pw.printf("%s,%d%n", sdfOptuma.format(item.date.getTime()), (int) item.receipts);
-			}
-			System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
+		final List<LeadingIndicatorData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 2);
+		for (final CommonQuandlData cqd : ddList) {
+			final LeadingIndicatorData li = new LeadingIndicatorData(cqd.date, cqd.dd[0], cqd.dd[1]);
+			ret.add(li);
 		}
+
+		return ret;
 
 	}
 
@@ -153,99 +125,25 @@ public class ProcessQuandl {
 
 		final List<MtsData> ret = new ArrayList<>();
 
-		String resp;
-		try {
-			dBuilder = dbFactory.newDocumentBuilder();
-
-			System.out.println("Processing : " + url);
-
-			resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			final NodeList nResp = doc.getElementsByTagName("datum");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final NodeList nrList = nodeResp.getChildNodes();
-					Calendar cal = Calendar.getInstance();
-					int dReads = 0;
-					Double[] dd = new Double[6];
-					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
-						final Node nr = nrList.item(cnt);
-						if (nr.getNodeType() == Node.ELEMENT_NODE) {
-							//final Element eElement = (Element) nodeResp;
-							//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-
-							Element eElement = (Element) nr;
-							//System.out.println("type: " + eElement.getAttribute("type"));
-							String s = eElement.getAttribute("type");
-
-							if (s.contains("date")) {
-								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								final Date date = sdf.parse(nr.getTextContent().trim());
-								cal.setTime(date);
-
-							} else if (s.contains("float")) {
-								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
-								if (dReads == 6) {
-
-									final MtsData d = new MtsData(Utils.buildCalendar(cal), dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]);
-									ret.add(d);
-									System.out.println("Adding - " + d.toString());
-									//System.out.println(d.toShortString());
-									dReads = 0;
-								}
-							}
-						}
-					}
-				}
-			}
-
-		} catch (final Exception e) {
-			ret.clear();
-			e.printStackTrace();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 6);
+		for (final CommonQuandlData cqd : ddList) {
+			final MtsData md = new MtsData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5]);
+			ret.add(md);
 		}
 
 		return ret;
 	}
 
-	/**
-	 * net.ajaskey.market.tools.quandl.writePcList
-	 *
-	 * @param epc
-	 * @param string
-	 */
-	private static void writePcList(List<OhlcvData> list, String fname) {
+	private static List<OhlcvData> getOneDataPoint(String url) {
 
-		Collections.reverse(list);
-		try (PrintWriter pwCall = new PrintWriter(outpath + "\\" + fname + "-CallVol.csv");
-		    PrintWriter pwPut = new PrintWriter(outpath + "\\" + fname + "-PutVol.csv");
-		    PrintWriter pwTot = new PrintWriter(outpath + "\\" + fname + "-TotalVol.csv");
-		    PrintWriter pwDiff = new PrintWriter(outpath + "\\" + fname + "-DiffVol.csv");
-		    PrintWriter pwRatio = new PrintWriter(outpath + "\\" + fname + "-Ratio.csv")) {
-
-			for (final OhlcvData price : list) {
-
-				pwCall.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.open);
-				pwPut.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.high);
-				pwTot.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), (int) price.low);
-				pwRatio.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
-
-				int diff = (int) (price.open - price.high);
-				pwDiff.printf("%s,%d%n", sdfOptuma.format(price.date.getTime()), diff);
-
-			}
-			System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
+		final List<OhlcvData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 1);
+		for (final CommonQuandlData cqd : ddList) {
+			final OhlcvData dp = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[0], cqd.dd[0], cqd.dd[0], 0);
+			ret.add(dp);
 		}
 
+		return ret;
 	}
 
 	/**
@@ -258,143 +156,105 @@ public class ProcessQuandl {
 
 		final List<OhlcvData> ret = new ArrayList<>();
 
-		String resp;
-		try {
-			dBuilder = dbFactory.newDocumentBuilder();
-
-			System.out.println("Processing : " + url);
-
-			resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			final NodeList nResp = doc.getElementsByTagName("datum");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final NodeList nrList = nodeResp.getChildNodes();
-					Calendar cal = Calendar.getInstance();
-					int dReads = 0;
-					Double[] dd = new Double[4];
-					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
-						final Node nr = nrList.item(cnt);
-						if (nr.getNodeType() == Node.ELEMENT_NODE) {
-							//final Element eElement = (Element) nodeResp;
-							//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-
-							Element eElement = (Element) nr;
-							//System.out.println("type: " + eElement.getAttribute("type"));
-							String s = eElement.getAttribute("type");
-
-							if (s.contains("date")) {
-								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								final Date date = sdf.parse(nr.getTextContent().trim());
-								cal.setTime(date);
-
-							} else if (s.contains("float")) {
-								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
-								if (dReads == 4) {
-
-									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), dd[callIdx], dd[putIdx], dd[totIdx],
-									    dd[ratioIdx], 0);
-									ret.add(d);
-									System.out.println("Adding - " + d.toString());
-									//System.out.println(d.toShortString());
-									dReads = 0;
-								}
-							}
-						}
-					}
-				}
-			}
-
-		} catch (final Exception e) {
-			ret.clear();
-			e.printStackTrace();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 4);
+		for (final CommonQuandlData cqd : ddList) {
+			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], 0);
+			ret.add(pc);
 		}
 
 		return ret;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.quandl.writeLiList
+	 *
+	 * @param li
+	 * @param string
+	 */
+	private static void writeLiList(List<LeadingIndicatorData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+			for (final LeadingIndicatorData item : list) {
+
+				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.index);
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	private static void writeList(List<OhlcvData> list, String fname) {
 
 		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(outpath + "\\" + fname + ".csv")) {
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
 			for (final OhlcvData price : list) {
 
-				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+				pw.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
 			}
-			System.out.println(Utils.getString(list.get(list.size() - 1).date));
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private static List<OhlcvData> getData(String url) {
+	/**
+	 * net.ajaskey.market.tools.quandl.writeMtsList
+	 *
+	 * @param mts
+	 * @param string
+	 */
+	private static void writeMtsList(List<MtsData> list, String fname) {
 
-		final List<OhlcvData> ret = new ArrayList<>();
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+			for (final MtsData item : list) {
 
-		String resp;
-		try {
-			dBuilder = dbFactory.newDocumentBuilder();
-
-			System.out.println("Processing : " + url);
-
-			resp = Utils.getFromUrl(url);
-			System.out.println(resp);
-
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
-
-			doc.getDocumentElement().normalize();
-
-			final NodeList nResp = doc.getElementsByTagName("datum");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final NodeList nrList = nodeResp.getChildNodes();
-					Calendar cal = null;
-					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
-						final Node nr = nrList.item(cnt);
-						if (nr.getNodeType() == Node.ELEMENT_NODE) {
-							//final Element eElement = (Element) nodeResp;
-							System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-
-							Element eElement = (Element) nr;
-							System.out.println("type: " + eElement.getAttribute("type"));
-							String s = eElement.getAttribute("type");
-
-							if (s.contains("date")) {
-								System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								final Date date = sdf.parse(nr.getTextContent().trim());
-								cal = Calendar.getInstance();
-								cal.setTime(date);
-
-							} else if (s.contains("float")) {
-								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								if (cal != null) {
-									final double c = Double.parseDouble(nr.getTextContent().trim());
-									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
-									cal = null;
-									ret.add(d);
-									System.out.println("Adding - " + d.toShortString());
-									//System.out.println(d.toShortString());
-								}
-							}
-						}
-					}
-				}
+				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.receipts);
 			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
-		} catch (final Exception e) {
-			ret.clear();
+		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writePcList
+	 *
+	 * @param epc
+	 * @param string
+	 */
+	private static void writePcList(List<OhlcvData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pwCall = new PrintWriter(Qcommon.outpath + "\\" + fname + "-CallVol.csv");
+		    PrintWriter pwPut = new PrintWriter(Qcommon.outpath + "\\" + fname + "-PutVol.csv");
+		    PrintWriter pwTot = new PrintWriter(Qcommon.outpath + "\\" + fname + "-TotalVol.csv");
+		    PrintWriter pwDiff = new PrintWriter(Qcommon.outpath + "\\" + fname + "-DiffVol.csv");
+		    PrintWriter pwRatio = new PrintWriter(Qcommon.outpath + "\\" + fname + "-Ratio.csv")) {
+
+			for (final OhlcvData price : list) {
+
+				pwCall.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.open);
+				pwPut.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.high);
+				pwTot.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.low);
+				pwRatio.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
+
+				final int diff = (int) (price.open - price.high);
+				pwDiff.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), diff);
+
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 }

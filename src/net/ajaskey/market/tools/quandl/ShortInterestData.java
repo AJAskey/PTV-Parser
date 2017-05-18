@@ -4,7 +4,6 @@ package net.ajaskey.market.tools.quandl;
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import net.ajaskey.market.misc.Utils;
 
@@ -22,7 +21,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -44,21 +43,35 @@ public class ShortInterestData {
 	public double		dtc;
 	public double		modDtc;
 
-	public Calendar latest;
-	public int knt;
+	public Calendar	latest;
+	public int			knt;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public ShortInterestData() {
+		this.ticker = "";
+		this.knt = 0;
+		this.date = Calendar.getInstance();
+		this.si = 0;
+		this.dtc = 0;
+		this.modDtc = 0;
+		this.avgVol = 0;
+	}
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public ShortInterestData(Calendar cal, double s, double v, double d) {
-		date = Utils.buildCalendar(cal);
-		si = s;
-		avgVol = v;
-		dtc = d;
-		modDtc = si / (avgVol / 3.0);
-		ticker = "";
-		knt = 1;
+		this.date = Utils.buildCalendar(cal);
+		this.si = s;
+		this.avgVol = v;
+		this.dtc = d;
+		this.modDtc = this.si / (this.avgVol / 3.0);
+		this.ticker = "";
+		this.knt = 1;
 	}
 
 	/**
@@ -67,39 +80,25 @@ public class ShortInterestData {
 	 * @param trim
 	 */
 	public ShortInterestData(String line) {
-		knt = 1;
+		this.knt = 1;
 		if (line == null) {
 			this.date = null;
 		} else {
 			try {
-				String fld[] = line.trim().split("[\\s+,]");
-				ticker = fld[0].trim();
-				date = Calendar.getInstance();
-				date.setTime(sdf.parse(fld[1].trim()));
+				final String fld[] = line.trim().split("[\\s+,]");
+				this.ticker = fld[0].trim();
+				this.date = Calendar.getInstance();
+				this.date.setTime(sdf.parse(fld[1].trim()));
 				long tmp = Long.parseLong(fld[2].trim());
-				si = (double) tmp;
-				dtc = Double.parseDouble(fld[3].trim());
-				modDtc = Double.parseDouble(fld[4].trim());
+				this.si = tmp;
+				this.dtc = Double.parseDouble(fld[3].trim());
+				this.modDtc = Double.parseDouble(fld[4].trim());
 				tmp = Long.parseLong(fld[5].trim());
-				avgVol = (double) tmp;
-			} catch (Exception e) {
+				this.avgVol = tmp;
+			} catch (final Exception e) {
 				this.date = null;
 			}
 		}
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public ShortInterestData() {
-		ticker = "";
-		knt = 0;
-		date = Calendar.getInstance();
-		si = 0;
-		dtc = 0;
-		modDtc = 0;
-		avgVol = 0;
 	}
 
 	@Override
@@ -122,7 +121,7 @@ public class ShortInterestData {
 
 				//System.out.println(field.getType());
 
-				String ft = field.getType().toString();
+				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
 				} else {

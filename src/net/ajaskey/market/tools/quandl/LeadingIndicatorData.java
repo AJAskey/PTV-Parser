@@ -31,30 +31,20 @@ import net.ajaskey.market.misc.Utils;
  *         SOFTWARE. </p>
  *
  */
-public class MtsData {
+public class LeadingIndicatorData {
 
-	public Calendar date;
-
-	public double	receipts;
-	public double	outlays;
-	public double	deficit;
-	public double	borrowing;
-	public double	redOpsCash;
-	public double	other;
+	public Calendar	date;
+	public double		index;
+	public double		growth;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public MtsData(Calendar cal, double r, double o, double d, double b, double red, double other) {
+	public LeadingIndicatorData(Calendar cal, double i, double g) {
 		this.date = Utils.buildCalendar(cal);
-		this.receipts = r;
-		this.outlays = o;
-		this.deficit = d;
-		this.borrowing = b;
-		this.redOpsCash = red;
-		this.other = other;
-
+		this.index = i;
+		this.growth = g;
 	}
 
 	@Override
@@ -93,4 +83,5 @@ public class MtsData {
 
 		return result.toString();
 	}
+
 }

@@ -22,7 +22,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -39,14 +39,13 @@ public class ShortInterestList {
 	public Calendar					latest;
 	public int							dateKnt;
 	List<ShortInterestData>	list	= null;
-	
-	
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public ShortInterestList() {
-		dateKnt = 0;
+		this.dateKnt = 0;
 	}
 
 	/**
@@ -55,10 +54,10 @@ public class ShortInterestList {
 	 */
 	public ShortInterestList(String name) {
 		this.name = name;
-		latest = Calendar.getInstance();
-		latest.add(Calendar.YEAR, -10);
-		dateKnt = 0;
-		list = new ArrayList<>();
+		this.latest = Calendar.getInstance();
+		this.latest.add(Calendar.YEAR, -10);
+		this.dateKnt = 0;
+		this.list = new ArrayList<>();
 	}
 
 	@Override
@@ -81,7 +80,7 @@ public class ShortInterestList {
 
 				//System.out.println(field.getType());
 
-				String ft = field.getType().toString();
+				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
 				} else {
