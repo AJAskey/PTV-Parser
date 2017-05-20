@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,8 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
 public class FredCommon {
 
 	public final static String fredPath = OptumaCommon.optumaPath + "FRED/";
+
+	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
 
 	final private static double BILLION = 1E9;
 
@@ -78,7 +81,7 @@ public class FredCommon {
 				if (str.length() > 1) {
 					final String s = str.substring(0, 1);
 					if (!s.contains("#")) {
-						final String fld[] = str.split("\t");
+						final String fld[] = str.split("[\\s+,]");
 						final DataSeriesInfo dsi = new DataSeriesInfo(fld);
 						retList.add(dsi);
 					}
@@ -114,11 +117,8 @@ public class FredCommon {
 				}
 
 			}
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (final IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			retList.clear();
 		}
 		return retList;
 	}
@@ -172,10 +172,9 @@ public class FredCommon {
 		}
 		return ret;
 	}
-	
-	public static List<DataSeriesInfo>	legacyDsi	= null;
 
-	
+	public static List<DataSeriesInfo> legacyDsi = null;
+
 	public static DataSeriesInfo findDsi(String series) {
 
 		String s = series.trim();
@@ -185,6 +184,59 @@ public class FredCommon {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.addSeries
+	 *
+	 * @param new_names
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static void addSeries(List<String> newSeries) throws FileNotFoundException, IOException {
+
+		List<String> data = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/fred-series-info.txt"))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				if (line != null) {
+					data.add(line.trim());
+				}
+			}
+		}
+
+		final String dum = "DUMMY";
+		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			for (String str : data) {
+				pw.println(str);
+			}
+			for (String str : newSeries) {
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", str, dum, dum, dum, dum, "LIN", dum, dum);
+			}
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.writeSeriesInfo
+	 *
+	 * @param dsList
+	 * @throws FileNotFoundException
+	 */
+	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			pw.println("Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation");
+			for (final DataSeriesInfo ds : dsList) {
+				//System.out.println(ds);
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
+				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+				    sdf.format(ds.getLastObservation().getTime()));
+			}
+		}
 	}
 
 }

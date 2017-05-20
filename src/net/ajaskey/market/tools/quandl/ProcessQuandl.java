@@ -59,31 +59,38 @@ public class ProcessQuandl {
 		final String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
-
 		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
-
 		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
+		final String balDryURL = "https://www.quandl.com/api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
+		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
+
+		final List<NaaimData> naaim = ProcessQuandl.getNaaimData(naaimURL);
+		ProcessQuandl.writeNaaimList(naaim, "NAAIM");
+
+		final List<OneValueData> balDry = ProcessQuandl.getOneDataPoint(balDryURL);
+		ProcessQuandl.writeOneList(balDry, "Baltic_Dry_Index");
 
 		final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
 		ProcessQuandl.writeMtsList(mts, "MTS");
 
-		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
-		ProcessQuandl.writeLiList(li, "Leading_Indicator");
+		//Manual update from blog post
+		//final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
-		final List<OhlcvData> earn = ProcessQuandl.getOneDataPoint(sp500EarnURL);
-		ProcessQuandl.writeList(earn, "SP500_Earnings");
+		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnURL);
+		ProcessQuandl.writeOneList(earn, "SP500_Earnings");
 
-		final List<OhlcvData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
-		ProcessQuandl.writeList(div, "SP500_Dividend");
+		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
+		ProcessQuandl.writeOneList(div, "SP500_Dividend");
 
-		final List<OhlcvData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
-		ProcessQuandl.writeList(bv, "SP500_BookValuePS");
+		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
+		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
-		final List<OhlcvData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
-		ProcessQuandl.writeList(sPE, "Shiller_PE");
+		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
+		ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
-		final List<OhlcvData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
-		ProcessQuandl.writeList(sales, "SP500_Sales");
+		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
+		ProcessQuandl.writeOneList(sales, "SP500_Sales");
 
 		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
 		ProcessQuandl.writePcList(epc, "EquityPC");
@@ -100,6 +107,85 @@ public class ProcessQuandl {
 		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
 		ProcessQuandl.writePcList(vixpc, "VIX PC");
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getNaaimData
+	 *
+	 * @param naaimURL
+	 * @return
+	 */
+	private static List<NaaimData> getNaaimData(String url) {
+
+		final List<NaaimData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 9);
+		for (final CommonQuandlData cqd : ddList) {
+			final NaaimData na = new NaaimData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5],
+			    cqd.dd[6], cqd.dd[7], cqd.dd[8]);
+			ret.add(na);
+			//System.out.println(na);
+		}
+
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writeNaaimList
+	 *
+	 * @param naaim
+	 * @param string
+	 */
+	private static void writeNaaimList(List<NaaimData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pwMean = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Mean.csv");
+		    PrintWriter pwBear = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Bear.csv");
+		    PrintWriter pwq1 = new PrintWriter(Qcommon.outpath + "\\" + fname + "_q1.csv");
+		    PrintWriter pwMed = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Median.csv");
+		    PrintWriter pwq3 = new PrintWriter(Qcommon.outpath + "\\" + fname + "_q3.csv");
+		    PrintWriter pwBull = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Bull.csv");
+		    PrintWriter pwStddev = new PrintWriter(Qcommon.outpath + "\\" + fname + "_StdDev.csv");
+		    PrintWriter pwbbdiff = new PrintWriter(Qcommon.outpath + "\\" + fname + "_BullBear.csv");
+		    PrintWriter pwsp500 = new PrintWriter(Qcommon.outpath + "\\" + fname + "_SP500.csv")) {
+			for (final NaaimData naaim : list) {
+
+				pwMean.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mean);
+				pwBear.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mostBearish);
+				pwq1.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.q1);
+				pwMed.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.median);
+				pwq3.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.q3);
+				pwBull.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mostBullish);
+				pwStddev.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.stdDev);
+				pwsp500.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.sp500);
+				pwbbdiff.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.bbDiff);
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writeBalticDryList
+	 *
+	 * @param balDry
+	 * @param string
+	 */
+	private static void writeOneList(List<OneValueData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+			for (final OneValueData one : list) {
+
+				pw.printf("%s,%.2f%n", Qcommon.sdf.format(one.date.getTime()), one.value);
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
@@ -134,12 +220,12 @@ public class ProcessQuandl {
 		return ret;
 	}
 
-	private static List<OhlcvData> getOneDataPoint(String url) {
+	private static List<OneValueData> getOneDataPoint(String url) {
 
-		final List<OhlcvData> ret = new ArrayList<>();
+		final List<OneValueData> ret = new ArrayList<>();
 		final List<CommonQuandlData> ddList = Qcommon.getData(url, 1);
 		for (final CommonQuandlData cqd : ddList) {
-			final OhlcvData dp = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[0], cqd.dd[0], cqd.dd[0], 0);
+			final OneValueData dp = new OneValueData(cqd.date, cqd.dd[0]);
 			ret.add(dp);
 		}
 
@@ -177,7 +263,7 @@ public class ProcessQuandl {
 		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
 			for (final LeadingIndicatorData item : list) {
 
-				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.index);
+				pw.printf("%s,%.1f%n", Qcommon.sdf.format(item.date.getTime()), item.index);
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
@@ -187,20 +273,20 @@ public class ProcessQuandl {
 
 	}
 
-	private static void writeList(List<OhlcvData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final OhlcvData price : list) {
-
-				pw.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+//	private static void writeList(List<OhlcvData> list, String fname) {
+//
+//		Collections.reverse(list);
+//		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+//			for (final OhlcvData price : list) {
+//
+//				pw.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
+//			}
+//			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+//
+//		} catch (final FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	/**
 	 * net.ajaskey.market.tools.quandl.writeMtsList

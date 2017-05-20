@@ -20,7 +20,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -31,29 +31,61 @@ import net.ajaskey.market.misc.Utils;
  *         SOFTWARE. </p>
  *
  */
-public class MtsData {
+public class NaaimData {
 
-	public Calendar date;
+	/*
+	 <column-name>Date</column-name>
+	<column-name>Mean/Average</column-name>
+	<column-name>Most Bearish Response</column-name>
+	<column-name>Quart 1 (25% at/below)</column-name>
+	<column-name>Quart 2 (median)</column-name>
+	<column-name>Quart 3 (25% at/above)</column-name>
+	<column-name>Most Bullish Response</column-name>
+	<column-name>Standard Deviation</column-name>
+	<column-name>NAAIM Number</column-name>
+	<column-name>S&P 500</column-name>
+	 */
 
-	public double	receipts;
-	public double	outlays;
-	public double	deficit;
-	public double	borrowing;
-	public double	redOpsCash;
-	public double	other;
+	public Calendar	date;
+	public double		mean;
+	public double		mostBearish;
+	public double		q1;
+	public double		median;
+	public double		q3;
+	public double		mostBullish;
+	public double		stdDev;
+	public double		number;
+	public double		sp500;
+
+	public double bbDiff;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public MtsData(Calendar cal, double r, double o, double d, double b, double red, double other) {
-		this.date = Utils.buildCalendar(cal);
-		this.receipts = r;
-		this.outlays = o;
-		this.deficit = d;
-		this.borrowing = b;
-		this.redOpsCash = red;
-		this.other = other;
+	public NaaimData(Calendar cal, double mn, double mbear, double qq1, double med, double qq3, double mbull, double s,
+	    double n, double sp) {
+		date = Utils.buildCalendar(cal);
+		mean = mn;
+		mostBearish = mbear;
+		if (mbear == 0.0) {
+			mostBearish = 0.01;
+		}
+		q1 = qq1;
+		median = med;
+		q3 = qq3;
+		mostBullish = mbull;
+		if (mostBullish == 0.0) {
+			mostBullish = 0.01;
+		}
+		bbDiff = mbull + mbear;
+		if (bbDiff == 0.0) {
+			bbDiff = 0.01;
+		}
+
+		stdDev = s;
+		number = n;
+		sp500 = sp;
 
 	}
 
@@ -85,4 +117,5 @@ public class MtsData {
 		result.append("}");
 		return result.toString();
 	}
+
 }

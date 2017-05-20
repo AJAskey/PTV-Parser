@@ -41,7 +41,6 @@ import net.ajaskey.market.misc.Utils;
 public class UpdateFred {
 
 	public final static SimpleDateFormat	sdf		= new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
-	public final static SimpleDateFormat	sdf2	= new SimpleDateFormat("yyyy-MMM-dd");
 	public final static File							file	= new File(FredCommon.fredPath);
 
 	private static List<DataSeriesInfo>	dsList		= new ArrayList<>();
@@ -131,19 +130,11 @@ public class UpdateFred {
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {
 				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
-				    sdf.format(ds.getLastUpdate().getTime()), sdf2.format(ds.getLastObservation().getTime()), ds.getTitle());
+				    sdf.format(ds.getLastUpdate().getTime()), FredCommon.sdf.format(ds.getLastObservation().getTime()), ds.getTitle());
 			}
 		}
-
-		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
-			pw.println("Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation");
-			for (final DataSeriesInfo ds : dsList) {
-				System.out.println(ds);
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
-				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
-				    sdf2.format(ds.getLastObservation().getTime()));
-			}
-		}
+		
+		FredCommon.writeSeriesInfo(dsList);
 
 		System.out.println("Done.");
 

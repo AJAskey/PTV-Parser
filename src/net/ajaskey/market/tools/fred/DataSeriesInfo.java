@@ -372,7 +372,11 @@ public class DataSeriesInfo {
 	 */
 	public void setType(String type) {
 
+		try {
 		this.type = DataSeries.ResponseType.valueOf(type);
+		} catch (Exception e) {
+			this.type = DataSeries.ResponseType.LIN;
+		}
 	}
 
 	/**
