@@ -57,9 +57,9 @@ public class ConvertOptuma {
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
 
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpci.html").toPath());
-		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpce.html").toPath());
+//		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc.html").toPath());
+//		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpci.html").toPath());
+//		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpce.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-call-v.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc-put-v.html").toPath());
 		//ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/oex-call-v.html").toPath());

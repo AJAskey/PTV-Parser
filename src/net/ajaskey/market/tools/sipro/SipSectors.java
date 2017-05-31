@@ -42,20 +42,56 @@ public class SipSectors {
 	public static List<DataSet3>	cashOps	= new ArrayList<>();
 	public static List<DataSet3>	ltDebt	= new ArrayList<>();
 
+	public static List<DataSet3> basicMaterials = new ArrayList<>();
+
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		processGroup("BasicMaterials");
-		processGroup("CapitalGoods");
-		processGroup("ConsumerCyclical");
-		processGroup("ConsumerNonCyclical");
-		processGroup("Energy");
-		processGroup("Financial");
-		processGroup("Healthcare");
-		processGroup("Service");
-		processGroup("Technology");
-		processGroup("Transportation");
-		
+		readBigFile("SIP-SECTORS.TXT");
+
+		//		processGroup("BasicMaterials");
+		//		processGroup("CapitalGoods");
+		//		processGroup("ConsumerCyclical");
+		//		processGroup("ConsumerNonCyclical");
+		//		processGroup("Energy");
+		//		processGroup("Financial");
+		//		processGroup("Healthcare");
+		//		processGroup("Service");
+		//		processGroup("Technology");
+		//		processGroup("Transportation");
+
 		System.out.println("Done.");
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.readBigFile
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void readBigFile(String fname) throws FileNotFoundException, IOException {
+
+		SipCommon sc = new SipCommon("\t", 14);
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/" + fname)))) {
+			String line = "";
+
+			//line = br.readLine(); // read header
+
+			while (line != null) {
+				line = br.readLine();
+				if ((line != null) && (line.length() > 0)) {
+
+					sc.reset();
+
+					DataSet3 ds = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+					if (ds.sector.equalsIgnoreCase("01  - Basic Materials")) {
+						basicMaterials.add(ds);
+					}
+				}
+			}
+		}
 
 	}
 

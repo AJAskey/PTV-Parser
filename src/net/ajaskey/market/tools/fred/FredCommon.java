@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.tools.optuma.OptumaCommon;
@@ -43,6 +44,8 @@ public class FredCommon {
 	public final static String fredPath = OptumaCommon.optumaPath + "FRED/";
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
+
+	final static String infoHeader = "Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation";
 
 	final private static double BILLION = 1E9;
 
@@ -81,7 +84,7 @@ public class FredCommon {
 				if (str.length() > 1) {
 					final String s = str.substring(0, 1);
 					if (!s.contains("#")) {
-						final String fld[] = str.split("[\\s+,]");
+						final String fld[] = str.split("\t");
 						final DataSeriesInfo dsi = new DataSeriesInfo(fld);
 						retList.add(dsi);
 					}
@@ -203,13 +206,18 @@ public class FredCommon {
 			// Utils.printCalendar(d.getDate());
 			while ((line = reader.readLine()) != null) {
 				if (line != null) {
-					data.add(line.trim());
+					if (!line.equalsIgnoreCase(infoHeader)) {
+						data.add(line.trim());
+					}
 				}
 			}
 		}
 
+		Collections.sort(data);
+
 		final String dum = "DUMMY";
 		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			pw.println(infoHeader);
 			for (String str : data) {
 				pw.println(str);
 			}
@@ -229,7 +237,7 @@ public class FredCommon {
 	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
-			pw.println("Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation");
+			pw.println(infoHeader);
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
 				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),

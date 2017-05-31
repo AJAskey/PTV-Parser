@@ -35,26 +35,27 @@ public class SipCommon {
 	private int			ptr;
 	private int			INC;
 	private String	splitChar;
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public SipCommon(String ch, int inc) {
-		ptr = 0;
+		this.reset();
 		INC = inc;
 		splitChar = ch;
 	}
 
 	public void reset() {
 
-		ptr = 0;
+		ptr = 1;
 	}
 
 	public DataSet3 getData(String name, String line, DataSet3.dMode mode, double scaler) {
 
 		String fld[] = line.replace("\"", "").split(splitChar);
 
-		final DataSet3 ds = new DataSet3(name, fld[0].trim(), fld, ptr, mode);
+		final DataSet3 ds = new DataSet3(name, fld[0], fld[1], fld, ptr, mode);
 		DataSet3 dsRet = DataSet3.scale(ds, scaler);
 		//System.out.println(dsRet);
 		ptr += INC;

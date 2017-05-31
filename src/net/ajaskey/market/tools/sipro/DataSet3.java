@@ -36,6 +36,7 @@ public class DataSet3 {
 	}
 
 	public String	ticker;
+	public String	sector;
 	public double	y7;
 	public double	y6;
 	public double	y5;
@@ -87,7 +88,11 @@ public class DataSet3 {
 	public static DataSet3 mult(DataSet3 set1, DataSet3 set2) {
 
 		final DataSet3 ds = new DataSet3("MULTIPLY");
-		ds.ticker = "MERGED_TICKERS";
+		if (set2.ticker.equals("SCALED")) {
+			ds.ticker = set1.ticker;
+		} else {
+			ds.ticker = "MERGED_TICKERS";
+		}
 		ds.y7 = set1.y7 * set2.y7;
 		ds.y6 = set1.y6 * set2.y6;
 		ds.y5 = set1.y5 * set2.y5;
@@ -102,6 +107,7 @@ public class DataSet3 {
 		ds.q3 = set1.q3 * set2.q3;
 		ds.q2 = set1.q2 * set2.q2;
 		ds.q1 = set1.q1 * set2.q1;
+		ds.sector = set1.sector;
 		ds.mode = set1.mode;
 		return ds;
 	}
@@ -124,6 +130,7 @@ public class DataSet3 {
 		ds.q3 = set1.q3 - set2.q3;
 		ds.q2 = set1.q2 - set2.q2;
 		ds.q1 = set1.q1 - set2.q1;
+		ds.sector = set1.sector;
 		ds.mode = set1.mode;
 
 		return ds;
@@ -156,6 +163,7 @@ public class DataSet3 {
 				ret.q3 += ds.q3;
 				ret.q2 += ds.q2;
 				ret.q1 += ds.q1;
+				ret.sector = ds.sector;
 				ret.mode = ds.mode;
 			}
 		}
@@ -172,13 +180,14 @@ public class DataSet3 {
 		this.name = n;
 	}
 
-	public DataSet3(String name, String code, String[] s, int ptr, dMode mode) {
+	public DataSet3(String name, String code, String sector, String[] s, int ptr, dMode mode) {
 		init();
-//		System.out.println(name);
-//		System.out.println(code);
-//		System.out.println(s.length);
-//		System.out.println(ptr);
+		//		System.out.println(name);
+		//		System.out.println(code);
+		//		System.out.println(s.length);
+		//		System.out.println(ptr);
 		this.ticker = code.trim();
+		this.sector = sector.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
 		this.y5 = this.getDouble(s[ptr + 3].trim());
@@ -226,6 +235,7 @@ public class DataSet3 {
 		this.q2 = 0;
 		this.q1 = 0;
 		this.name = "";
+		this.sector = "";
 		this.mode = dMode.NONE;
 	}
 
