@@ -1,6 +1,5 @@
 A7.C      	MSCI EMI Continuation                             	LIFFE     
 A7H18     	MSCI EMI {Mar 18}                                 	LIFFE     
-A7J17     	MSCI EMI {Apr 17}                                 	LIFFE     
 A7K17     	MSCI EMI {May 17}                                 	LIFFE     
 A7M17     	MSCI EMI {Jun 17}                                 	LIFFE     
 A7M18     	MSCI EMI {Jun 18}                                 	LIFFE     
@@ -12,7 +11,6 @@ A7Z17     	MSCI EMI {Dec 17}                                 	LIFFE
 A7Z18     	MSCI EMI {Dec 18}                                 	LIFFE     
 A8.C      	MSCI Far East ex-Japan Continuation               	LIFFE     
 A8H18     	MSCI Far East ex-Japan {Mar 18}                   	LIFFE     
-A8J17     	MSCI Far East ex-Japan {Apr 17}                   	LIFFE     
 A8K17     	MSCI Far East ex-Japan {May 17}                   	LIFFE     
 A8M17     	MSCI Far East ex-Japan {Jun 17}                   	LIFFE     
 A8M18     	MSCI Far East ex-Japan {Jun 18}                   	LIFFE     
@@ -28,6 +26,7 @@ CAH18     	No. 7 Cocoa {Mar 18}                              	LIFFE
 CAH19     	No. 7 Cocoa {Mar 19}                              	LIFFE     
 CAK17     	No. 7 Cocoa {May 17}                              	LIFFE     
 CAK18     	No. 7 Cocoa {May 18}                              	LIFFE     
+CAK19     	No. 7 Cocoa {May 19}                              	LIFFE     
 CAN17     	No. 7 Cocoa {Jul 17}                              	LIFFE     
 CAN18     	No. 7 Cocoa {Jul 18}                              	LIFFE     
 CAU17     	No. 7 Cocoa {Sep 17}                              	LIFFE     
@@ -40,7 +39,6 @@ EGH19     	EuroDollar {Mar 19}                               	LIFFE
 EGH20     	EuroDollar {Mar 20}                               	LIFFE     
 EGH21     	EuroDollar {Mar 21}                               	LIFFE     
 EGH22     	EuroDollar {Mar 22}                               	LIFFE     
-EGJ17     	EuroDollar {Apr 17}                               	LIFFE     
 EGK17     	EuroDollar {May 17}                               	LIFFE     
 EGM17     	EuroDollar {Jun 17}                               	LIFFE     
 EGM18     	EuroDollar {Jun 18}                               	LIFFE     
@@ -49,6 +47,7 @@ EGM20     	EuroDollar {Jun 20}                               	LIFFE
 EGM21     	EuroDollar {Jun 21}                               	LIFFE     
 EGM22     	EuroDollar {Jun 22}                               	LIFFE     
 EGN17     	EuroDollar {Jul 17}                               	LIFFE     
+EGQ17     	EuroDollar {Aug 17}                               	LIFFE     
 EGU17     	EuroDollar {Sep 17}                               	LIFFE     
 EGU18     	EuroDollar {Sep 18}                               	LIFFE     
 EGU19     	EuroDollar {Sep 19}                               	LIFFE     
@@ -102,6 +101,7 @@ IJF18     	1-Month EONIA {Jan 18}                            	LIFFE
 IJG18     	1-Month EONIA {Feb 18}                            	LIFFE     
 IJH18     	1-Month EONIA {Mar 18}                            	LIFFE     
 IJJ17     	1-Month EONIA {Apr 17}                            	LIFFE     
+IJJ18     	1-Month EONIA {Apr 18}                            	LIFFE     
 IJK17     	1-Month EONIA {May 17}                            	LIFFE     
 IJM17     	1-Month EONIA {Jun 17}                            	LIFFE     
 IJN17     	1-Month EONIA {Jul 17}                            	LIFFE     
@@ -117,7 +117,6 @@ IMH20     	3-Month EuriBor {Mar 20}                          	LIFFE
 IMH21     	3-Month EuriBor {Mar 21}                          	LIFFE     
 IMH22     	3-Month EuriBor {Mar 22}                          	LIFFE     
 IMH23     	3-Month EuriBor {Mar 23}                          	LIFFE     
-IMJ17     	3-Month EuriBor {Apr 17}                          	LIFFE     
 IMK17     	3-Month EuriBor {May 17}                          	LIFFE     
 IMM17     	3-Month EuriBor {Jun 17}                          	LIFFE     
 IMM18     	3-Month EuriBor {Jun 18}                          	LIFFE     
@@ -134,6 +133,7 @@ IMU20     	3-Month EuriBor {Sep 20}                          	LIFFE
 IMU21     	3-Month EuriBor {Sep 21}                          	LIFFE     
 IMU22     	3-Month EuriBor {Sep 22}                          	LIFFE     
 IMV17     	3-Month EuriBor {Oct 17}                          	LIFFE     
+IMX17     	3-Month EuriBor {Nov 17}                          	LIFFE     
 IMZ17     	3-Month EuriBor {Dec 17}                          	LIFFE     
 IMZ18     	3-Month EuriBor {Dec 18}                          	LIFFE     
 IMZ19     	3-Month EuriBor {Dec 19}                          	LIFFE     
@@ -149,6 +149,7 @@ JHH18     	U.S Treasury Repo {Mar 18}                        	LIFFE
 JHH19     	U.S Treasury Repo {Mar 19}                        	LIFFE     
 JHJ17     	U.S Treasury Repo {Apr 17}                        	LIFFE     
 JHJ18     	U.S Treasury Repo {Apr 18}                        	LIFFE     
+JHJ19     	U.S Treasury Repo {Apr 19}                        	LIFFE     
 JHK17     	U.S Treasury Repo {May 17}                        	LIFFE     
 JHK18     	U.S Treasury Repo {May 18}                        	LIFFE     
 JHM17     	U.S Treasury Repo {Jun 17}                        	LIFFE     
@@ -192,7 +193,6 @@ LH20      	3-Month Sterling {Mar 20}                         	LIFFE
 LH21      	3-Month Sterling {Mar 21}                         	LIFFE     
 LH22      	3-Month Sterling {Mar 22}                         	LIFFE     
 LH23      	3-Month Sterling {Mar 23}                         	LIFFE     
-LJ17      	3-Month Sterling {Apr 17}                         	LIFFE     
 LK17      	3-Month Sterling {May 17}                         	LIFFE     
 LM17      	3-Month Sterling {Jun 17}                         	LIFFE     
 LM18      	3-Month Sterling {Jun 18}                         	LIFFE     
@@ -201,6 +201,7 @@ LM20      	3-Month Sterling {Jun 20}                         	LIFFE
 LM21      	3-Month Sterling {Jun 21}                         	LIFFE     
 LM22      	3-Month Sterling {Jun 22}                         	LIFFE     
 LN17      	3-Month Sterling {Jul 17}                         	LIFFE     
+LQ17      	3-Month Sterling {Aug 17}                         	LIFFE     
 LU17      	3-Month Sterling {Sep 17}                         	LIFFE     
 LU18      	3-Month Sterling {Sep 18}                         	LIFFE     
 LU19      	3-Month Sterling {Sep 19}                         	LIFFE     
@@ -240,8 +241,10 @@ QB.C      	Ultra Gilt Continuation                           	LIFFE
 QBM17     	Ultra Gilt {Jun 17}                               	LIFFE     
 QBU17     	Ultra Gilt {Sep 17}                               	LIFFE     
 QBZ17     	Ultra Gilt {Dec 17}                               	LIFFE     
+QD.C      	5-Year Gilt Continuation                          	LIFFE     
 QDM17     	5-Year Gilt {Jun 17}                              	LIFFE     
 QDU17     	5-Year Gilt {Sep 17}                              	LIFFE     
+QE.C      	2-Year Gilt Continuation                          	LIFFE     
 QEM17     	2-Year Gilt {Jun 17}                              	LIFFE     
 QEU17     	2-Year Gilt {Sep 17}                              	LIFFE     
 RM.C      	Robusta Coffee 10-T Continuation                  	LIFFE     
@@ -257,7 +260,6 @@ RMX17     	Robusta Coffee 10-T {Nov 17}                      	LIFFE
 RMX18     	Robusta Coffee 10-T {Nov 18}                      	LIFFE     
 SW.C      	No. 5 White Sugar Continuation                    	LIFFE     
 SWH18     	No. 5 White Sugar {Mar 18}                        	LIFFE     
-SWK17     	No. 5 White Sugar {May 17}                        	LIFFE     
 SWK18     	No. 5 White Sugar {May 18}                        	LIFFE     
 SWQ17     	No. 5 White Sugar {Aug 17}                        	LIFFE     
 SWQ18     	No. 5 White Sugar {Aug 18}                        	LIFFE     
@@ -265,16 +267,22 @@ SWV17     	No. 5 White Sugar {Oct 17}                        	LIFFE
 SWV18     	No. 5 White Sugar {Oct 18}                        	LIFFE     
 SWZ17     	No. 5 White Sugar {Dec 17}                        	LIFFE     
 SWZ18     	No. 5 White Sugar {Dec 18}                        	LIFFE     
+VF.C      	5-Yr Euro Swapnote Continuation                   	LIFFE     
 VFM17     	5-Yr Euro Swapnote {Jun 17}                       	LIFFE     
 VFU17     	5-Yr Euro Swapnote {Sep 17}                       	LIFFE     
+VT.C      	10-Yr Euro Swapnote Continuation                  	LIFFE     
 VTM17     	10-Yr Euro Swapnote {Jun 17}                      	LIFFE     
 VTU17     	10-Yr Euro Swapnote {Sep 17}                      	LIFFE     
+VW.C      	2-Yr Euro Swapnote Continuation                   	LIFFE     
 VWM17     	2-Yr Euro Swapnote {Jun 17}                       	LIFFE     
 VWU17     	2-Yr Euro Swapnote {Sep 17}                       	LIFFE     
+VX.C      	2-Yr Dollar Swapnote Continuation                 	LIFFE     
 VXM17     	2-Yr Dollar Swapnote {Jun 17}                     	LIFFE     
 VXU17     	2-Yr Dollar Swapnote {Sep 17}                     	LIFFE     
+VY.C      	5-Yr Dollar Swapnote Continuation                 	LIFFE     
 VYM17     	5-Yr Dollar Swapnote {Jun 17}                     	LIFFE     
 VYU17     	5-Yr Dollar Swapnote {Sep 17}                     	LIFFE     
+VZ.C      	10Yr Dollar Swapnote Continuation                 	LIFFE     
 VZM17     	10Yr Dollar Swapnote {Jun 17}                     	LIFFE     
 VZU17     	10Yr Dollar Swapnote {Sep 17}                     	LIFFE     
 X         	FTSE 100                                          	LIFFE     
@@ -284,5 +292,6 @@ XM17      	FTSE 100 {Jun 17}                                 	LIFFE
 XU17      	FTSE 100 {Sep 17}                                 	LIFFE     
 XZ17      	FTSE 100 {Dec 17}                                 	LIFFE     
 Y         	FTSE 250                                          	LIFFE     
+Y.C       	FTSE 250 Continuation                             	LIFFE     
 YM17      	FTSE 250 {Jun 17}                                 	LIFFE     
 YU17      	FTSE 250 {Sep 17}                                 	LIFFE     

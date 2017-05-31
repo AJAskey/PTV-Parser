@@ -19,13 +19,13 @@ AKG20     	Ethanol Futures (Pit {Feb 20}                     	CBOT
 AKH18     	Ethanol Futures (Pit {Mar 18}                     	CBOT      
 AKH19     	Ethanol Futures (Pit {Mar 19}                     	CBOT      
 AKH20     	Ethanol Futures (Pit {Mar 20}                     	CBOT      
-AKJ17     	Ethanol Futures (Pit {Apr 17}                     	CBOT      
 AKJ18     	Ethanol Futures (Pit {Apr 18}                     	CBOT      
 AKJ19     	Ethanol Futures (Pit {Apr 19}                     	CBOT      
 AKJ20     	Ethanol Futures (Pit {Apr 20}                     	CBOT      
 AKK17     	Ethanol Futures (Pit {May 17}                     	CBOT      
 AKK18     	Ethanol Futures (Pit {May 18}                     	CBOT      
 AKK19     	Ethanol Futures (Pit {May 19}                     	CBOT      
+AKK20     	Ethanol Futures (Pit {May 20}                     	CBOT      
 AKM17     	Ethanol Futures (Pit {Jun 17}                     	CBOT      
 AKM18     	Ethanol Futures (Pit {Jun 18}                     	CBOT      
 AKM19     	Ethanol Futures (Pit {Jun 19}                     	CBOT      
@@ -94,6 +94,7 @@ CSN18     	Soybean Crush {Jul 18}                            	CBOT
 CSQ17     	Soybean Crush {Aug 17}                            	CBOT      
 CSQ18     	Soybean Crush {Aug 18}                            	CBOT      
 CSU17     	Soybean Crush {Sep 17}                            	CBOT      
+CSU18     	Soybean Crush {Sep 18}                            	CBOT      
 CSV17     	Soybean Crush {Oct 17}                            	CBOT      
 CSZ17     	Soybean Crush {Dec 17}                            	CBOT      
 CU17      	Corn (Pit) {Sep 17}                               	CBOT      
@@ -166,6 +167,7 @@ F9M17     	Urea FOB Yuzhny Swap {Jun 17}                     	CBOT
 F9N17     	Urea FOB Yuzhny Swap {Jul 17}                     	CBOT      
 F9Q17     	Urea FOB Yuzhny Swap {Aug 17}                     	CBOT      
 F9U17     	Urea FOB Yuzhny Swap {Sep 17}                     	CBOT      
+F9V17     	Urea FOB Yuzhny Swap {Oct 17}                     	CBOT      
 FD.C      	DAP FOB Tampa Swap Continuation                   	CBOT      
 FDJ17     	DAP FOB Tampa Swap {Apr 17}                       	CBOT      
 FDK17     	DAP FOB Tampa Swap {May 17}                       	CBOT      
@@ -232,6 +234,7 @@ FZH20     	Ethanol Forward {Mar 20}                          	CBOT
 FZJ17     	Ethanol Forward {Apr 17}                          	CBOT      
 FZJ18     	Ethanol Forward {Apr 18}                          	CBOT      
 FZJ19     	Ethanol Forward {Apr 19}                          	CBOT      
+FZJ20     	Ethanol Forward {Apr 20}                          	CBOT      
 FZK17     	Ethanol Forward {May 17}                          	CBOT      
 FZK18     	Ethanol Forward {May 18}                          	CBOT      
 FZK19     	Ethanol Forward {May 19}                          	CBOT      
@@ -285,6 +288,7 @@ OH18      	Oats (Pit) {Mar 18}                               	CBOT
 OH19      	Oats (Pit) {Mar 19}                               	CBOT      
 OK17      	Oats (Pit) {May 17}                               	CBOT      
 OK18      	Oats (Pit) {May 18}                               	CBOT      
+OK19      	Oats (Pit) {May 19}                               	CBOT      
 ON17      	Oats (Pit) {Jul 17}                               	CBOT      
 ON18      	Oats (Pit) {Jul 18}                               	CBOT      
 ON19      	Oats (Pit) {Jul 19}                               	CBOT      
@@ -309,6 +313,7 @@ RRH18     	Rough Rice (Pit) {Mar 18}                         	CBOT
 RRK17     	Rough Rice (Pit) {May 17}                         	CBOT      
 RRK18     	Rough Rice (Pit) {May 18}                         	CBOT      
 RRN17     	Rough Rice (Pit) {Jul 17}                         	CBOT      
+RRN18     	Rough Rice (Pit) {Jul 18}                         	CBOT      
 RRU17     	Rough Rice (Pit) {Sep 17}                         	CBOT      
 RRX17     	Rough Rice (Pit) {Nov 17}                         	CBOT      
 RW.C      	30-Year USD I/R Swap Continuation                 	CBOT      
@@ -411,6 +416,7 @@ WLH18     	EU Wheat {Mar 18}                                 	CBOT
 WLH19     	EU Wheat {Mar 19}                                 	CBOT      
 WLK17     	EU Wheat {May 17}                                 	CBOT      
 WLK18     	EU Wheat {May 18}                                 	CBOT      
+WLK19     	EU Wheat {May 19}                                 	CBOT      
 WLU17     	EU Wheat {Sep 17}                                 	CBOT      
 WLU18     	EU Wheat {Sep 18}                                 	CBOT      
 WLZ17     	EU Wheat {Dec 17}                                 	CBOT      
@@ -569,13 +575,13 @@ ZKG20     	Ethanol Futures {Feb 20}                          	CBOT
 ZKH18     	Ethanol Futures {Mar 18}                          	CBOT      
 ZKH19     	Ethanol Futures {Mar 19}                          	CBOT      
 ZKH20     	Ethanol Futures {Mar 20}                          	CBOT      
-ZKJ17     	Ethanol Futures {Apr 17}                          	CBOT      
 ZKJ18     	Ethanol Futures {Apr 18}                          	CBOT      
 ZKJ19     	Ethanol Futures {Apr 19}                          	CBOT      
 ZKJ20     	Ethanol Futures {Apr 20}                          	CBOT      
 ZKK17     	Ethanol Futures {May 17}                          	CBOT      
 ZKK18     	Ethanol Futures {May 18}                          	CBOT      
 ZKK19     	Ethanol Futures {May 19}                          	CBOT      
+ZKK20     	Ethanol Futures {May 20}                          	CBOT      
 ZKM17     	Ethanol Futures {Jun 17}                          	CBOT      
 ZKM18     	Ethanol Futures {Jun 18}                          	CBOT      
 ZKM19     	Ethanol Futures {Jun 19}                          	CBOT      
@@ -661,6 +667,7 @@ ZOH18     	Oats {Mar 18}                                     	CBOT
 ZOH19     	Oats {Mar 19}                                     	CBOT      
 ZOK17     	Oats {May 17}                                     	CBOT      
 ZOK18     	Oats {May 18}                                     	CBOT      
+ZOK19     	Oats {May 19}                                     	CBOT      
 ZON17     	Oats {Jul 17}                                     	CBOT      
 ZON18     	Oats {Jul 18}                                     	CBOT      
 ZON19     	Oats {Jul 19}                                     	CBOT      
@@ -714,6 +721,7 @@ ZRH18     	Rough Rice {Mar 18}                               	CBOT
 ZRK17     	Rough Rice {May 17}                               	CBOT      
 ZRK18     	Rough Rice {May 18}                               	CBOT      
 ZRN17     	Rough Rice {Jul 17}                               	CBOT      
+ZRN18     	Rough Rice {Jul 18}                               	CBOT      
 ZRU17     	Rough Rice {Sep 17}                               	CBOT      
 ZRX17     	Rough Rice {Nov 17}                               	CBOT      
 ZS        	Soybeans                                          	CBOT      

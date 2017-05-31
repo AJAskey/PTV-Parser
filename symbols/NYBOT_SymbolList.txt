@@ -146,7 +146,7 @@ H0        	Indian Rupee                                      	NYBOT
 H0F18     	Indian Rupee {Jan 18}                             	NYBOT     
 H0G18     	Indian Rupee {Feb 18}                             	NYBOT     
 H0H18     	Indian Rupee {Mar 18}                             	NYBOT     
-H0J17     	Indian Rupee {Apr 17}                             	NYBOT     
+H0J18     	Indian Rupee {Apr 18}                             	NYBOT     
 H0K17     	Indian Rupee {May 17}                             	NYBOT     
 H0M17     	Indian Rupee {Jun 17}                             	NYBOT     
 H0N17     	Indian Rupee {Jul 17}                             	NYBOT     
@@ -181,6 +181,7 @@ H8K18     	Brazilian Real {May 18}                           	NYBOT
 H8K19     	Brazilian Real {May 19}                           	NYBOT     
 H8K20     	Brazilian Real {May 20}                           	NYBOT     
 H8K21     	Brazilian Real {May 21}                           	NYBOT     
+H8K22     	Brazilian Real {May 22}                           	NYBOT     
 H8M17     	Brazilian Real {Jun 17}                           	NYBOT     
 H8M18     	Brazilian Real {Jun 18}                           	NYBOT     
 H8M19     	Brazilian Real {Jun 19}                           	NYBOT     
@@ -541,7 +542,6 @@ SDF18     	Sugar #16 {Jan 18}                                	NYBOT
 SDF19     	Sugar #16 {Jan 19}                                	NYBOT     
 SDH18     	Sugar #16 {Mar 18}                                	NYBOT     
 SDH19     	Sugar #16 {Mar 19}                                	NYBOT     
-SDK17     	Sugar #16 {May 17}                                	NYBOT     
 SDK18     	Sugar #16 {May 18}                                	NYBOT     
 SDN17     	Sugar #16 {Jul 17}                                	NYBOT     
 SDN18     	Sugar #16 {Jul 18}                                	NYBOT     
@@ -585,6 +585,7 @@ VVU17     	Russell 1000 Value {Sep 17}                       	NYBOT
 VVZ17     	Russell 1000 Value {Dec 17}                       	NYBOT     
 WVH18     	Cotton World {Mar 18}                             	NYBOT     
 WVK17     	Cotton World {May 17}                             	NYBOT     
+WVK18     	Cotton World {May 18}                             	NYBOT     
 WVN17     	Cotton World {Jul 17}                             	NYBOT     
 WVV17     	Cotton World {Oct 17}                             	NYBOT     
 WVZ17     	Cotton World {Dec 17}                             	NYBOT     
@@ -595,7 +596,6 @@ YAU17     	Aussie/Yen {Sep 17}                               	NYBOT
 YAZ17     	Aussie/Yen {Dec 17}                               	NYBOT     
 YGG18     	Gold mini-sized {Feb 18}                          	NYBOT     
 YGG19     	Gold mini-sized {Feb 19}                          	NYBOT     
-YGJ17     	Gold mini-sized {Apr 17}                          	NYBOT     
 YGJ18     	Gold mini-sized {Apr 18}                          	NYBOT     
 YGK17     	Gold mini-sized {May 17}                          	NYBOT     
 YGM17     	Gold mini-sized {Jun 17}                          	NYBOT     
@@ -603,6 +603,7 @@ YGM18     	Gold mini-sized {Jun 18}                          	NYBOT
 YGM19     	Gold mini-sized {Jun 19}                          	NYBOT     
 YGM20     	Gold mini-sized {Jun 20}                          	NYBOT     
 YGM21     	Gold mini-sized {Jun 21}                          	NYBOT     
+YGN17     	Gold mini-sized {Jul 17}                          	NYBOT     
 YGQ17     	Gold mini-sized {Aug 17}                          	NYBOT     
 YGQ18     	Gold mini-sized {Aug 18}                          	NYBOT     
 YGV17     	Gold mini-sized {Oct 17}                          	NYBOT     
@@ -615,7 +616,7 @@ YGZ21     	Gold mini-sized {Dec 21}                          	NYBOT
 YIF18     	Silver mini-sized {Jan 18}                        	NYBOT     
 YIF19     	Silver mini-sized {Jan 19}                        	NYBOT     
 YIH18     	Silver mini-sized {Mar 18}                        	NYBOT     
-YIJ17     	Silver mini-sized {Apr 17}                        	NYBOT     
+YIH19     	Silver mini-sized {Mar 19}                        	NYBOT     
 YIK17     	Silver mini-sized {May 17}                        	NYBOT     
 YIK18     	Silver mini-sized {May 18}                        	NYBOT     
 YIM17     	Silver mini-sized {Jun 17}                        	NYBOT     
@@ -648,7 +649,6 @@ YPZ17     	Pound/Dollar {Dec 17}                             	NYBOT
 YV        	NYSE Composite                                    	NYBOT     
 ZGG18     	ICE Gold 100-oz {Feb 18}                          	NYBOT     
 ZGG19     	ICE Gold 100-oz {Feb 19}                          	NYBOT     
-ZGJ17     	ICE Gold 100-oz {Apr 17}                          	NYBOT     
 ZGJ18     	ICE Gold 100-oz {Apr 18}                          	NYBOT     
 ZGK17     	ICE Gold 100-oz {May 17}                          	NYBOT     
 ZGM17     	ICE Gold 100-oz {Jun 17}                          	NYBOT     
@@ -656,6 +656,7 @@ ZGM18     	ICE Gold 100-oz {Jun 18}                          	NYBOT
 ZGM19     	ICE Gold 100-oz {Jun 19}                          	NYBOT     
 ZGM20     	ICE Gold 100-oz {Jun 20}                          	NYBOT     
 ZGM21     	ICE Gold 100-oz {Jun 21}                          	NYBOT     
+ZGN17     	ICE Gold 100-oz {Jul 17}                          	NYBOT     
 ZGQ17     	ICE Gold 100-oz {Aug 17}                          	NYBOT     
 ZGQ18     	ICE Gold 100-oz {Aug 18}                          	NYBOT     
 ZGV17     	ICE Gold 100-oz {Oct 17}                          	NYBOT     
@@ -668,7 +669,7 @@ ZGZ21     	ICE Gold 100-oz {Dec 21}                          	NYBOT
 ZIF18     	ICE Silver 5000-oz {Jan 18}                       	NYBOT     
 ZIF19     	ICE Silver 5000-oz {Jan 19}                       	NYBOT     
 ZIH18     	ICE Silver 5000-oz {Mar 18}                       	NYBOT     
-ZIJ17     	ICE Silver 5000-oz {Apr 17}                       	NYBOT     
+ZIH19     	ICE Silver 5000-oz {Mar 19}                       	NYBOT     
 ZIK17     	ICE Silver 5000-oz {May 17}                       	NYBOT     
 ZIK18     	ICE Silver 5000-oz {May 18}                       	NYBOT     
 ZIM17     	ICE Silver 5000-oz {Jun 17}                       	NYBOT     
