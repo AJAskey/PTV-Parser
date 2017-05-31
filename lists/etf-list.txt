@@ -205,7 +205,6 @@ QFN       	Betashares S&p/asx 200 Financials Sector Etf (synthetic)	ASX
 QRE       	Betashares S&p/asx 200 Resources Sector Etf (synthetic)	ASX       
 VN        	Gold ETF VIX                                      	CFE       
 W1        	Crude Oil ETF VIX                                 	CFE       
-AUGA      	UBS (Irl) ETF Plc                                 	LSE       
 CASE      	Go Ucits ETF Solutions P                          	LSE       
 CASH      	Go Ucits ETF Solutions P                          	LSE       
 CEMA      	CS ETF [Ie] Plc                                   	LSE       
@@ -249,9 +248,7 @@ DXGYEIV   	Wisdomtree Germany Equity Ucits ETF - EU          	LSE
 DXJFEIV   	Wisdomtree Japan Equity Ucits ETF - EUR           	LSE       
 DXJZEIV   	Wisdomtree Japan Equity Ucits ETF - Jpy           	LSE       
 FWEC      	Go Ucits ETF Solutions P                          	LSE       
-FWEG      	Go Ucits ETF Solutions P                          	LSE       
 HEDFEIV   	Wisdomtree Europe Equity Ucits ETF - EUR          	LSE       
-INDM      	Lam Zyfin Global Markets Ucits ETF Plc            	LSE       
 ISPY      	Go Ucits ETF Solutions Plc                        	LSE       
 LOCE      	Go Ucits ETF Solutions P                          	LSE       
 LOCG      	Go Ucits ETF Solutions P                          	LSE       
@@ -266,8 +263,8 @@ ROBO      	Go Ucits ETF Solutions P                          	LSE
 SUK2      	Go Ucits ETF Solutions P                          	LSE       
 TURK      	Lam Zyfin Global Markets Ucits ETF Plc            	LSE       
 UC03      	UBS (Irl) ETF Plc                                 	LSE       
-UC04      	UBS (Irl) ETF Plc                                 	LSE       
 UC07      	UBS (Irl) ETF Plc                                 	LSE       
+UC13      	UBS (Irl) ETF Plc                                 	LSE       
 UC73      	UBS (Irl) ETF Plc                                 	LSE       
 UC74      	UBS (Irl) ETF Plc                                 	LSE       
 UKSR      	UBS (Irl) ETF Plc                                 	LSE       
@@ -288,6 +285,7 @@ ZILS      	BMO Ucits ETF Icav                                	LSE
 ZISG      	BMO Ucits ETF Icav                                	LSE       
 AIRR      	Rba American Industrial Renaissance ETF FT        	NASDAQ    
 BNDX      	Total Intl Bond ETF Vanguard                      	NASDAQ    
+CACG      	Legg Mason ETF Investment Trust Clearbridge All   	NASDAQ    
 CFA       	Victory US 500 Vol ETF ETF                        	NASDAQ    
 CIBR      	Nasdaq Cybersecurity ETF FT                       	NASDAQ    
 DWFI      	DW Fixed Income Allocation ETF SPDR               	NASDAQ    
@@ -332,8 +330,8 @@ VXUS      	Total Intl Stock ETF Vanguard                     	NASDAQ
 VYMI      	Intl High Divd Yld ETF Vanguard                   	NASDAQ    
 BSLGOLDETF	BIRLA SL GOLD ETF - GO                            	NSE       
 BMDLF     	BMO Covered Call Canadian Banks ETF Unit          	OTCBB     
+BMMPF     	BMO S& P/Tsx Equal Wei   Ght Banks Index ETF Uni  	OTCBB     
 CSTNL     	CS ETF Ie On S&P 500                              	OTCBB     
-HEPZF     	Horizons Enhanced Income Gold Producers ETF Unit  	OTCBB     
 LYXIF     	Lyxor Ucits ETF Daily Double Short Bund           	OTCBB     
 VNGDF     	Vanguard S&P 500 Ucits ETF USD                    	OTCBB     
 WSDMF     	Wisdomtree Europe Equity Ucits ETF - USD Hedged   	OTCBB     
@@ -394,15 +392,17 @@ P2Q       	Lyxor Etf Indonesia 10                            	SGX
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 DGR.B     	Wisdomtree US Qlty Div Gwth Idx ETF Nh            	TSX       
 FAI.A     	Fa Active Utility Infrastructure ETF AC           	TSX       
+FAO.V     	First Asset Active Credit ETF USD AC              	TSX       
+FCY.B     	First Asset Cambridge Core US Eq ETF Uh           	TSX       
 FST.A     	First Trust CDN Capital Strength ETF AC           	TSX       
 HAU.U     	Horizons Active US Dividend ETF USD               	TSX       
 HBF.U     	Brand Leaders Plus Income ETF USD                 	TSX       
 HID.B     	Wisdomtree US High Div Idx ETF Nh                 	TSX       
 HPF.U     	Energy Leaders Plus Income ETF USD                	TSX       
-HUF.V     	Horizons Active US Float Rate Bd ETF AC           	TSX       
 HUL.U     	US Buyback Leaders ETF USD                        	TSX       
 HXQ.U     	Horizons Nasdaq 100 Index ETF USD                 	TSX       
 IQD.B     	Wisdomtree Intl Qlty Div Gwth Idx ETF Nh          	TSX       
+PXS.U     	Pwrshr FTSE RAFI US Fdamntl ETF USD               	TSX       
 RIG.U     	RBC Quant Global Infras Leaders ETF USD           	TSX       
 RIT.A     	Fa Canadian REIT ETF Adv Cls                      	TSX       
 SBT.B     	Silver Bullion Trust CAD ETF Non Cur              	TSX       

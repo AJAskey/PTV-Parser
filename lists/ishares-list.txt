@@ -191,6 +191,7 @@ IPFF      	S&P Intl Preferred Stock Ishares                  	AMEX
 IQLT      	Ishares Intl Quality Factor ETF                   	AMEX      
 ISCF      	Ishares Intl Smallcap Multifactor ETF             	AMEX      
 ISTB      	Core Short-Term US Bond Ishares                   	AMEX      
+ISZE      	Ishares Intl Size Factor ETF                      	AMEX      
 ITA       	DJ US Aerospace & Defense Ishares                 	AMEX      
 ITB       	DJ US Home Construction Ishares                   	AMEX      
 ITOT      	S&P 1500 Ishares                                  	AMEX      
@@ -402,6 +403,7 @@ EUCF      	Ishares Vi Plc (The Comp                          	LSE
 EUE       	Ishares II Plc                                    	LSE       
 EULC      	Ishares IV Plc                                    	LSE       
 EUMC      	Ishares IV Plc                                    	LSE       
+EUMD      	Ishares Vi Plc                                    	LSE       
 EUN       	Ishares II Plc                                    	LSE       
 EUXS      	Ishares Plc                                       	LSE       
 EXFN      	Ishares II Plc                                    	LSE       
@@ -438,6 +440,7 @@ IBTL      	Ishares IV Plc                                    	LSE
 IBTM      	Ishares II Plc                                    	LSE       
 IBTS      	Ishares Plc                                       	LSE       
 IBZL      	Ishares Plc                                       	LSE       
+ICBU      	Ishares III Plc                                   	LSE       
 ICDU      	Ishares V Public Limited Company                  	LSE       
 ICOV      	Ishares III Plc                                   	LSE       
 ICSU      	Ishares V Public Limited Company                  	LSE       
@@ -512,7 +515,6 @@ IEVL      	Ishares IV Plc                                    	LSE
 IEX5      	Ishares III Plc                                   	LSE       
 IEXF      	Ishares III Plc                                   	LSE       
 IFFF      	Ishares Plc                                       	LSE       
-IFIN      	Ishares V Public Limited Company                  	LSE       
 IFRB      	Ishares V Public Limited Company                  	LSE       
 IFRE      	Ishares IV Plc                                    	LSE       
 IFSE      	Ishares IV Plc                                    	LSE       
@@ -536,6 +538,7 @@ IHCU      	Ishares V Public Limited Company                  	LSE
 IHYA      	Ishares II Plc                                    	LSE       
 IHYG      	Ishares Plc                                       	LSE       
 IHYU      	Ishares II Plc                                    	LSE       
+IISU      	Ishares V Public Limited Company                  	LSE       
 IITB      	Ishares V Public Limited Company                  	LSE       
 IITU      	Ishares V Public Limited Company                  	LSE       
 IJPA      	Ishares III Plc                                   	LSE       
@@ -545,6 +548,7 @@ IJPH      	Ishares V Public Limited Company                  	LSE
 IJPN      	Ishares Plc                                       	LSE       
 IJPU      	Ishares Plc                                       	LSE       
 IKOR      	Ishares Plc                                       	LSE       
+IMBA      	Ishares IV Plc                                    	LSE       
 IMBS      	Ishares IV Plc                                    	LSE       
 IMEA      	Ishares III Plc                                   	LSE       
 IMEU      	Ishares II Plc                                    	LSE       
@@ -618,6 +622,7 @@ IUVF      	Ishares IV Plc                                    	LSE
 IUVL      	Ishares IV Plc                                    	LSE       
 IWDA      	Ishares III Plc                                   	LSE       
 IWDE      	Ishares V Public Limited Company                  	LSE       
+IWDG      	Ishares III Plc                                   	LSE       
 IWDP      	Ishares II Plc                                    	LSE       
 IWFM      	Ishares IV Plc                                    	LSE       
 IWFQ      	Ishares IV Plc                                    	LSE       
@@ -649,11 +654,11 @@ RISE      	Ishares IV Plc                                    	LSE
 SAAA      	Ishares Vi Plc (The Comp                          	LSE       
 SAUS      	Ishares III Plc                                   	LSE       
 SAUT      	Ishares V Public Limited Company                  	LSE       
-SBEL      	Ishares V Public Limited Company                  	LSE       
 SCOV      	Ishares III Plc                                   	LSE       
 SDEU      	Ishares V Public Limited Company                  	LSE       
 SDHG      	Ishares IV Plc                                    	LSE       
 SDHY      	Ishares IV Plc                                    	LSE       
+SDIA      	Ishares IV Plc                                    	LSE       
 SDIG      	Ishares IV Plc                                    	LSE       
 SE15      	Ishares III Plc                                   	LSE       
 SEAG      	Ishares III Plc                                   	LSE       
@@ -664,15 +669,14 @@ SEMB      	Ishares II Plc                                    	LSE
 SEML      	Ishares III Plc                                   	LSE       
 SEMS      	Ishares III Plc                                   	LSE       
 SESP      	Ishares V Public Limited Company                  	LSE       
-SFIN      	Ishares V Public Limited Company                  	LSE       
 SFRB      	Ishares V Public Limited Company                  	LSE       
-SGCC      	Ishares III Plc                                   	LSE       
 SGEA      	Ishares III Plc                                   	LSE       
 SGIL      	Ishares III Plc                                   	LSE       
 SGLN      	Ishares Physical Metals Plc                       	LSE       
 SGLO      	Ishares III Plc                                   	LSE       
 SHYG      	Ishares Plc                                       	LSE       
 SHYU      	Ishares II Plc                                    	LSE       
+SITB      	Ishares V Public Limited Company                  	LSE       
 SJPA      	Ishares III Plc                                   	LSE       
 SLXX      	Ishares Plc                                       	LSE       
 SMBS      	Ishares IV Plc                                    	LSE       
@@ -706,7 +710,6 @@ TASE      	Ishares IV Plc                                    	LSE
 TIP5      	Ishares II Plc                                    	LSE       
 UI18      	Ishares IV Plc                                    	LSE       
 UIFS      	Ishares V Public Limited Company                  	LSE       
-UKPR      	Ishares III Plc                                   	LSE       
 UKRE      	Ishares III Plc                                   	LSE       
 USPR      	Ishares III Plc                                   	LSE       
 USRE      	Ishares III Plc                                   	LSE       
@@ -748,22 +751,24 @@ SOXX      	Ishares PHLX Semiconductor ETF                    	NASDAQ
 TLT       	20 Year Bond Ishares                              	NASDAQ    
 UAE       	Ishares UAE Capped ETF                            	NASDAQ    
 WOOD      	Ishares Global Timber & Forestry ETF              	NASDAQ    
-CLAYF     	Ishares 1-5 Year Laddered Corporate Bond Index E  	OTCBB     
 CLFMF     	Ishares 1-5 Year Laddered Government Bond Index   	OTCBB     
-CLYLF     	Ishares S&P/Tsx Canadian Dividend Aristocrats In  	OTCBB     
-CYMEF     	Ishares BRIC Index Fund Unit Com                  	OTCBB     
+CLYAF     	Ishares Global Agric                              	OTCBB     
 CYSXF     	Ishares S&P/Tsx Canadian Preferred Share Index E  	OTCBB     
+DJXXF     	Ishares Stoxx Europe 600 Ucits ETF [De]           	OTCBB     
 IHHFF     	Ishares US Aggregate Bond Ucits ETF               	OTCBB     
-IHHSF     	Ishares MSCI Pacific Ex-Japan Ucits ETF           	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
+IHPXF     	Ishares MSCI Euro Ex-Uk                           	OTCBB     
 IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
 IHSEF     	Ishares Plc                                       	OTCBB     
 IHSFF     	Ishares II Plc                                    	OTCBB     
 IHSRF     	Ishares Edge S&P 500 Minimum Volatility Ucits Et  	OTCBB     
 IHSXF     	Ishares Plc - Ishare                              	OTCBB     
-INITF     	Ishares Dex Short Term Bond Index Fund            	OTCBB     
+IHSZF     	Ishares II Plc                                    	OTCBB     
+IIREF     	Ishares MSCI World                                	OTCBB     
 IPYYF     	Ishares Physical Metals Plc - Ishares Physical G  	OTCBB     
+IREMF     	Ishares                                           	OTCBB     
+IRRRF     	Ishares Core MSCI World Ucits ETF USD [Acc]       	OTCBB     
 ISAPF     	Ishares Plc Accum Ptg Shs ETF USD                 	OTCBB     
 ISDJF     	Ishares DOW Jones CD                              	OTCBB     
 ISDXF     	Ishares Can Corp                                  	OTCBB     
@@ -778,14 +783,14 @@ ISRUF     	Ishares V Plc MSCI World Financials USD           	OTCBB
 ISRVF     	Ishares V Plc Accum Ordinary Sh                   	OTCBB     
 ISRWF     	Ishares II Plc                                    	OTCBB     
 ISRZF     	Ishares II Plc                                    	OTCBB     
-ISSGF     	Ishares 1-10 Year Laddered Government Bond Index  	OTCBB     
-ISSPF     	Ishares Global Government Bond Ucits ETF          	OTCBB     
-ISTMF     	Ishares Trust Mexico Shs Latixx Mexico Cetetrac   	OTCBB     
+ISSHF     	Ishares $ Treasury Bond 7-10Yr Ucits ETF          	OTCBB     
+ISSRF     	Ishares Vi Plc Shs USD MSCI Emerging Mkts Min Vo  	OTCBB     
 ISUPF     	Ishares US Property Yield Ucits ETF               	OTCBB     
+ISVFF     	Ishares V Plc MSCI World Health Care USD          	OTCBB     
+ISVPF     	Ishares MSCI EMU USD Hedged Ucits ETF [Acc]       	OTCBB     
 ISXIF     	Ishares Bse Sensex                                	OTCBB     
 ISXPF     	Ishares Plc Ptg Shs ETF USD                       	OTCBB     
 ITBFF     	Ishares $ Treasury Bond 1-3Yr Ucits ETF           	OTCBB     
-IUNSF     	Ishares S&P/Tsx Capp                              	OTCBB     
 IUNTF     	Ishares MSCI EAFE In                              	OTCBB     
 IVVVF     	Ishares $ Short Duration Hi Yld Corp Bd Ucits Et  	OTCBB     
 IZIZF     	Ishares III Plc                                   	OTCBB     
@@ -809,7 +814,6 @@ CEW.A     	Ishares Equal Weight Ban                          	TSX
 CGL       	Ishares Gold Bullion ETF                          	TSX       
 CGL.C     	Ishares Gold Bullion ETF                          	TSX       
 CGR       	Ishares Global Real Esta                          	TSX       
-CGR.A     	Ishares Global Real Esta                          	TSX       
 CHB       	Ishares US HY Fixed Inco                          	TSX       
 CHB.A     	Ishares US HY Fixed Inco                          	TSX       
 CIF       	Ishares Global Infrastru                          	TSX       
@@ -870,7 +874,7 @@ XFC       	Ishares Factorselect MSCI C                       	TSX
 XFF       	Ishares Factorselect MSCI EAFE                    	TSX       
 XFH       	Ishares Core MSCI EAFE I                          	TSX       
 XFI       	Ishares Factorselect MSCI EAFE Idx ETF            	TSX       
-XFN       	Ishares SP TSX Capped Fi                          	TSX       
+XFN       	Ishares SP TSX Capped FI                          	TSX       
 XFR       	Ishares Floating Rate In                          	TSX       
 XFS       	Ishares Factorselect MSCI USA Idx ETF             	TSX       
 XGB       	Ishares Canadian Govt Bo                          	TSX       
@@ -932,10 +936,10 @@ BVEAX     	Blackrock Ishares Equity Appreciation V.I. Fund   	USMF
 CIETX     	Ishares Russell 2000 ETF 529 Port A               	USMF      
 CIEUX     	Ishares Russell 3000 ETF 529 Port A               	USMF      
 CIRPX     	Ishares Russell 1000 ETF 529 Port A               	USMF      
-CITPX     	Ishares Barclays Tips Bond ETF 529 Port A         	USMF      
-IBTAX     	Ishares Tips Bond ETF 529 Portfolio Cl A          	USMF      
-IBTCX     	Ishares Tips Bond ETF 529 Portfolio Cl C          	USMF      
-IBTEX     	Ishares Tips Bond ETF 529 Portfolio Cl Z          	USMF      
+CITPX     	Ishares Barclays TIPS Bond ETF 529 Port A         	USMF      
+IBTAX     	Ishares TIPS Bond ETF 529 Portfolio Cl A          	USMF      
+IBTCX     	Ishares TIPS Bond ETF 529 Portfolio Cl C          	USMF      
+IBTEX     	Ishares TIPS Bond ETF 529 Portfolio Cl Z          	USMF      
 IRDAX     	Ishares Russell 3000 ETF 529 Portfolio Cl A       	USMF      
 IRDCX     	Ishares Russell 3000 ETF 529 Portfolio Cl C       	USMF      
 IRDEX     	Ishares Russell 3000 ETF 529 Portfolio Cl Z       	USMF      
