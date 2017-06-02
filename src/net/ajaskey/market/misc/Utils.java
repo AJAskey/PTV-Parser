@@ -59,11 +59,6 @@ public class Utils {
 	final static public Locale					locale		= Locale.getDefault();
 
 	private static boolean initialized = false;
-	
-	public static String getDataPath() {
-		String path = System.getProperty("dataPath", "C:\\Users\\ajask_000\\Documents\\EODData\\DataClient");
-		return path;
-	}
 
 	public static Calendar buildCalendar(Calendar inCal) {
 
@@ -103,6 +98,16 @@ public class Utils {
 		ret += "  Week of Year : " + cal.get(Calendar.WEEK_OF_YEAR) + "\n";
 		return ret;
 
+	}
+
+	private static String findName(Map<String, Integer> map, Integer key) {
+
+		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == key) {
+				return entry.getKey();
+			}
+		}
+		return "NotFound";
 	}
 
 	/**
@@ -146,6 +151,12 @@ public class Utils {
 
 		Utils.init();
 		return baseDate;
+	}
+
+	public static String getDataPath() {
+
+		final String path = System.getProperty("dataPath", "C:\\Users\\ajask_000\\Documents\\EODData\\DataClient");
+		return path;
 	}
 
 	/**
@@ -235,6 +246,22 @@ public class Utils {
 
 		Utils.init();
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	private static void init() {
+
+		if (!initialized) {
+			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
+			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
+			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
+
+			intFmt = NumberFormat.getNumberInstance();
+			initialized = true;
+		}
 	}
 
 	/**
@@ -387,32 +414,6 @@ public class Utils {
 			return sdf2.format(cal.getTime());
 		}
 		return "";
-	}
-
-	private static String findName(Map<String, Integer> map, Integer key) {
-
-		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
-			if (entry.getValue() == key) {
-				return entry.getKey();
-			}
-		}
-		return "NotFound";
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	private static void init() {
-
-		if (!initialized) {
-			Utils.baseDate.set(1900, Calendar.JANUARY, 1, 0, 0, 1);
-			mapNames = baseDate.getDisplayNames(Calendar.MONTH, Calendar.LONG, locale);
-			mapDays = baseDate.getDisplayNames(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
-
-			intFmt = NumberFormat.getNumberInstance();
-			initialized = true;
-		}
 	}
 
 }
