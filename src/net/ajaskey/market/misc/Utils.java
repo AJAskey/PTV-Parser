@@ -9,7 +9,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -414,6 +416,69 @@ public class Utils {
 			return sdf2.format(cal.getTime());
 		}
 		return "";
+	}
+
+	//////////////////////////////////////////////////////////////////////
+
+	/**
+	 * 
+	 * net.ajaskey.market.misc.getFileExt
+	 *
+	 * @param f
+	 * @return
+	 */
+	public static String getFileExt(File f) {
+
+		String fname = f.getName().trim();
+		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0))
+		  return fname.substring(fname.lastIndexOf(".") + 1).trim();
+		else
+			return "";
+	}
+	
+	public static String removeFileExt(File f) {
+
+		String fname = f.getName();
+		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0))
+		  return fname.substring(0, fname.lastIndexOf("."));
+		else
+			return "";
+	}
+
+	public static boolean isInExtList(File f, List<String> ext) {
+
+		String fext = "." + getFileExt(f).trim().toLowerCase();
+		if (fext.length() > 1) {
+			for (String s : ext) {
+				if (s.toLowerCase().contains(fext)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	public static List<File> getDirTree(File top, List<String> ext) {
+
+		List<File> retFiles = new ArrayList<>();
+		updateDirTree(retFiles, top, ext);
+		return retFiles;
+
+	}
+
+	private static void updateDirTree(List<File> list, File top, List<String> ext) {
+
+		if ((top.exists()) && top.isDirectory()) {
+			for (final File aFile : top.listFiles()) {
+				if (aFile.isDirectory()) {
+					updateDirTree(list, aFile, ext);
+				} else {
+					if (isInExtList(aFile, ext)) {
+						list.add(aFile);
+					}
+				}
+			}
+		}
 	}
 
 }

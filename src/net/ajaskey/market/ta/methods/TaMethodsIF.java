@@ -36,39 +36,6 @@ import net.ajaskey.market.ta.TrendType;
 public interface TaMethodsIF {
 
 	/**
-	 *
-	 * @param adv
-	 * @param decl
-	 * @param advVol
-	 * @param declVol
-	 * @param days
-	 * @return
-	 */
-	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
-	    int days);
-
-	/**
-	 * Calculate the percentage change from p2 to p1
-	 *
-	 * @param p1
-	 *          most recent data point
-	 * @param p2
-	 *          historic data point
-	 * @return percentage change
-	 */
-	public double calcPercentChange(double p1, double p2);
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.methods.calcRsi
-	 *
-	 * @param close
-	 * @param days
-	 * @return
-	 */
-	public double calcRsi(double[] close, int days);
-
-	/**
 	 * net.ajaskey.market.ta.methods.calcAdvDecl
 	 *
 	 * @param close
@@ -122,6 +89,18 @@ public interface TaMethodsIF {
 	double calcDiPlus(double[] high, double[] low, double[] close, int days);
 
 	/**
+	 *
+	 * @param adv
+	 * @param decl
+	 * @param advVol
+	 * @param declVol
+	 * @param days
+	 * @return
+	 */
+	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
+	    int days);
+
+	/**
 	 * net.ajaskey.market.ta.methods.calcMFI
 	 *
 	 * @param typicalPrice
@@ -130,6 +109,27 @@ public interface TaMethodsIF {
 	 * @return
 	 */
 	double calcMFI(double[] typicalPrice, double[] volume, int days);
+
+	/**
+	 * Calculate the percentage change from p2 to p1
+	 *
+	 * @param p1
+	 *          most recent data point
+	 * @param p2
+	 *          historic data point
+	 * @return percentage change
+	 */
+	public double calcPercentChange(double p1, double p2);
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.calcRsi
+	 *
+	 * @param close
+	 * @param days
+	 * @return
+	 */
+	public double calcRsi(double[] close, int days);
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcSmaTrend

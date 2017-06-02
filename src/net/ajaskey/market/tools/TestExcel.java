@@ -42,6 +42,20 @@ import net.ajaskey.market.misc.Utils;
  */
 public class TestExcel {
 
+	/**
+	 * net.ajaskey.market.tools.convertDate
+	 *
+	 * @param day
+	 * @return
+	 */
+	private static Calendar convertDate(int day) {
+
+		final Calendar base = Calendar.getInstance();
+		base.set(1900, Calendar.JANUARY, 1);
+		base.add(Calendar.DATE, day);
+		return base;
+	}
+
 	public static void main(String[] args) throws IOException {
 
 		final String excelFilePath = "input/fred.xlsx";
@@ -81,20 +95,6 @@ public class TestExcel {
 
 		workbook.close();
 		inputStream.close();
-	}
-
-	/**
-	 * net.ajaskey.market.tools.convertDate
-	 *
-	 * @param day
-	 * @return
-	 */
-	private static Calendar convertDate(int day) {
-
-		final Calendar base = Calendar.getInstance();
-		base.set(1900, Calendar.JANUARY, 1);
-		base.add(Calendar.DATE, day);
-		return base;
 	}
 
 }

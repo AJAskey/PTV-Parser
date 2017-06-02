@@ -41,37 +41,6 @@ public class DiffDtsFiles {
 	static private PrintWriter pw = null;
 
 	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) throws FileNotFoundException {
-
-		pw = new PrintWriter("dts-diffs.txt");
-
-		final File allFiles1 = new File(folderPath1);
-		final File[] listOfFiles1 = allFiles1.listFiles();
-
-		final File allFiles2 = new File(folderPath2);
-		final File[] listOfFiles2 = allFiles2.listFiles();
-
-		for (final File file1 : listOfFiles1) {
-			final String name = file1.getName();
-			for (final File file2 : listOfFiles2) {
-				if (name.contentEquals(file2.getName())) {
-					System.out.println(name);
-					DiffDtsFiles.diffFiles(file1, file2);
-					break;
-				}
-			}
-		}
-
-		pw.close();
-
-	}
-
-	/**
 	 * net.ajaskey.market.tools.diffFiles
 	 *
 	 * @param file1
@@ -108,6 +77,37 @@ public class DiffDtsFiles {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+
+		pw = new PrintWriter("dts-diffs.txt");
+
+		final File allFiles1 = new File(folderPath1);
+		final File[] listOfFiles1 = allFiles1.listFiles();
+
+		final File allFiles2 = new File(folderPath2);
+		final File[] listOfFiles2 = allFiles2.listFiles();
+
+		for (final File file1 : listOfFiles1) {
+			final String name = file1.getName();
+			for (final File file2 : listOfFiles2) {
+				if (name.contentEquals(file2.getName())) {
+					System.out.println(name);
+					DiffDtsFiles.diffFiles(file1, file2);
+					break;
+				}
+			}
+		}
+
+		pw.close();
 
 	}
 

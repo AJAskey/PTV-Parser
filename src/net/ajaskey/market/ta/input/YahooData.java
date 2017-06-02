@@ -111,6 +111,30 @@ public class YahooData {
 		return retResp;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getFromUrl
+	 *
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	private static String getFromUrl(String url) throws IOException {
+
+		final StringBuilder sb = new StringBuilder();
+
+		final URL yahooURL = new URL(url);
+		final URLConnection yahooURLConnection = yahooURL.openConnection();
+		yahooURLConnection.connect();
+		String line;
+		try (BufferedReader resp = new BufferedReader(new InputStreamReader(yahooURLConnection.getInputStream()))) {
+			while ((line = resp.readLine()) != null) {
+				sb.append(line + Utils.NL);
+			}
+		}
+		return sb.toString();
+	}
+
 	public static List<String> getHistoric(String ticker) {
 
 		final List<String> retData = new ArrayList<>();
@@ -205,30 +229,6 @@ public class YahooData {
 		for (final String s : YahooData.get(tickers, "f6")) {
 			System.out.println(s);
 		}
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.input.getFromUrl
-	 *
-	 * @param url
-	 * @return
-	 * @throws IOException
-	 */
-	private static String getFromUrl(String url) throws IOException {
-
-		final StringBuilder sb = new StringBuilder();
-
-		final URL yahooURL = new URL(url);
-		final URLConnection yahooURLConnection = yahooURL.openConnection();
-		yahooURLConnection.connect();
-		String line;
-		try (BufferedReader resp = new BufferedReader(new InputStreamReader(yahooURLConnection.getInputStream()))) {
-			while ((line = resp.readLine()) != null) {
-				sb.append(line + Utils.NL);
-			}
-		}
-		return sb.toString();
 	}
 
 	/**

@@ -66,9 +66,9 @@ public class WeekendReset {
 		ProcessIshares.main(args);
 
 		ProcessSPDRs.main(args);
-		
+
 		Internals.main(args);
-		
+
 		BreadthOfList.main(args);
 
 		System.out.println("Weekend Reset Complete.");

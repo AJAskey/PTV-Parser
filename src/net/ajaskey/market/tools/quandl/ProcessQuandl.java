@@ -36,6 +36,89 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  */
 public class ProcessQuandl {
 
+	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
+
+		final List<LeadingIndicatorData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 2);
+		for (final CommonQuandlData cqd : ddList) {
+			final LeadingIndicatorData li = new LeadingIndicatorData(cqd.date, cqd.dd[0], cqd.dd[1]);
+			ret.add(li);
+		}
+
+		return ret;
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getMtsData
+	 *
+	 * @param mtsURL
+	 * @return
+	 */
+	private static List<MtsData> getMtsData(String url) {
+
+		final List<MtsData> ret = new ArrayList<>();
+
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 6);
+		for (final CommonQuandlData cqd : ddList) {
+			final MtsData md = new MtsData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5]);
+			ret.add(md);
+		}
+
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getNaaimData
+	 *
+	 * @param naaimURL
+	 * @return
+	 */
+	private static List<NaaimData> getNaaimData(String url) {
+
+		final List<NaaimData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 9);
+		for (final CommonQuandlData cqd : ddList) {
+			final NaaimData na = new NaaimData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5],
+			    cqd.dd[6], cqd.dd[7], cqd.dd[8]);
+			ret.add(na);
+			//System.out.println(na);
+		}
+
+		return ret;
+	}
+
+	private static List<OneValueData> getOneDataPoint(String url) {
+
+		final List<OneValueData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 1);
+		for (final CommonQuandlData cqd : ddList) {
+			final OneValueData dp = new OneValueData(cqd.date, cqd.dd[0]);
+			ret.add(dp);
+		}
+
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getPutCallData
+	 *
+	 * @param epcURL
+	 * @return
+	 */
+	private static List<OhlcvData> getPutCallData(String url, int callIdx, int putIdx, int totIdx, int ratioIdx) {
+
+		final List<OhlcvData> ret = new ArrayList<>();
+
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 4);
+		for (final CommonQuandlData cqd : ddList) {
+			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], 0);
+			ret.add(pc);
+		}
+
+		return ret;
+	}
+
 	/**
 	 * net.ajaskey.market.tools.quandl.main
 	 *
@@ -60,7 +143,6 @@ public class ProcessQuandl {
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
-		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
 		final String balDryURL = "https://www.quandl.com/api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
 
@@ -110,23 +192,47 @@ public class ProcessQuandl {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.quandl.getNaaimData
+	 * net.ajaskey.market.tools.quandl.writeLiList
 	 *
-	 * @param naaimURL
-	 * @return
+	 * @param li
+	 * @param string
 	 */
-	private static List<NaaimData> getNaaimData(String url) {
+	private static void writeLiList(List<LeadingIndicatorData> list, String fname) {
 
-		final List<NaaimData> ret = new ArrayList<>();
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 9);
-		for (final CommonQuandlData cqd : ddList) {
-			final NaaimData na = new NaaimData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5],
-			    cqd.dd[6], cqd.dd[7], cqd.dd[8]);
-			ret.add(na);
-			//System.out.println(na);
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+			for (final LeadingIndicatorData item : list) {
+
+				pw.printf("%s,%.1f%n", Qcommon.sdf.format(item.date.getTime()), item.index);
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
 		}
 
-		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.writeMtsList
+	 *
+	 * @param mts
+	 * @param string
+	 */
+	private static void writeMtsList(List<MtsData> list, String fname) {
+
+		Collections.reverse(list);
+		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+			for (final MtsData item : list) {
+
+				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.receipts);
+			}
+			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
@@ -167,6 +273,21 @@ public class ProcessQuandl {
 
 	}
 
+	//	private static void writeList(List<OhlcvData> list, String fname) {
+	//
+	//		Collections.reverse(list);
+	//		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
+	//			for (final OhlcvData price : list) {
+	//
+	//				pw.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
+	//			}
+	//			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
+	//
+	//		} catch (final FileNotFoundException e) {
+	//			e.printStackTrace();
+	//		}
+	//	}
+
 	/**
 	 * net.ajaskey.market.tools.quandl.writeBalticDryList
 	 *
@@ -186,128 +307,6 @@ public class ProcessQuandl {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
-
-		final List<LeadingIndicatorData> ret = new ArrayList<>();
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 2);
-		for (final CommonQuandlData cqd : ddList) {
-			final LeadingIndicatorData li = new LeadingIndicatorData(cqd.date, cqd.dd[0], cqd.dd[1]);
-			ret.add(li);
-		}
-
-		return ret;
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.getMtsData
-	 *
-	 * @param mtsURL
-	 * @return
-	 */
-	private static List<MtsData> getMtsData(String url) {
-
-		final List<MtsData> ret = new ArrayList<>();
-
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 6);
-		for (final CommonQuandlData cqd : ddList) {
-			final MtsData md = new MtsData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5]);
-			ret.add(md);
-		}
-
-		return ret;
-	}
-
-	private static List<OneValueData> getOneDataPoint(String url) {
-
-		final List<OneValueData> ret = new ArrayList<>();
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 1);
-		for (final CommonQuandlData cqd : ddList) {
-			final OneValueData dp = new OneValueData(cqd.date, cqd.dd[0]);
-			ret.add(dp);
-		}
-
-		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.getPutCallData
-	 *
-	 * @param epcURL
-	 * @return
-	 */
-	private static List<OhlcvData> getPutCallData(String url, int callIdx, int putIdx, int totIdx, int ratioIdx) {
-
-		final List<OhlcvData> ret = new ArrayList<>();
-
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 4);
-		for (final CommonQuandlData cqd : ddList) {
-			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], 0);
-			ret.add(pc);
-		}
-
-		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.writeLiList
-	 *
-	 * @param li
-	 * @param string
-	 */
-	private static void writeLiList(List<LeadingIndicatorData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final LeadingIndicatorData item : list) {
-
-				pw.printf("%s,%.1f%n", Qcommon.sdf.format(item.date.getTime()), item.index);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-//	private static void writeList(List<OhlcvData> list, String fname) {
-//
-//		Collections.reverse(list);
-//		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-//			for (final OhlcvData price : list) {
-//
-//				pw.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
-//			}
-//			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-//
-//		} catch (final FileNotFoundException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.writeMtsList
-	 *
-	 * @param mts
-	 * @param string
-	 */
-	private static void writeMtsList(List<MtsData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final MtsData item : list) {
-
-				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.receipts);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	/**

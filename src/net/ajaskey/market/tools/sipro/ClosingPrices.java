@@ -4,8 +4,6 @@ package net.ajaskey.market.tools.sipro;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
-
 /**
  * This class...
  *
@@ -20,7 +18,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -35,32 +33,10 @@ public class ClosingPrices {
 
 	public static List<ClosingPrices> priceList = new ArrayList<>();
 
-	private String	ticker;
-	private double	price;
-
-	
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public ClosingPrices() {
-		// Not to be called
-	}
-	
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public ClosingPrices(String t, String p) {
-		ticker = t;
-		price = Double.parseDouble(p);
-		priceList.add(this);
-	}
-
 	public static double getPrice(String ticker) {
 
 		double ret = 0.0;
-		for (ClosingPrices cp : priceList) {
+		for (final ClosingPrices cp : priceList) {
 			if (cp.ticker.equalsIgnoreCase(ticker)) {
 				ret = cp.price;
 				break;
@@ -68,7 +44,29 @@ public class ClosingPrices {
 		}
 		return ret;
 	}
-	
+
+	private String ticker;
+
+	private double price;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public ClosingPrices() {
+		// Not to be called
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public ClosingPrices(String t, String p) {
+		this.ticker = t;
+		this.price = Double.parseDouble(p);
+		priceList.add(this);
+	}
+
 	@Override
 	public String toString() {
 

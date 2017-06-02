@@ -87,6 +87,23 @@ public class ProcessIshares {
 
 	/**
 	 *
+	 * net.ajaskey.market.tools.isNumber
+	 *
+	 * @param s
+	 * @return
+	 */
+	private static boolean isNumber(String s) {
+
+		try {
+			Long.parseLong(s);
+			return true;
+		} catch (final Exception e) {
+			return false;
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.isValid
 	 *
 	 * @param s
@@ -158,23 +175,6 @@ public class ProcessIshares {
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.isNumber
-	 *
-	 * @param s
-	 * @return
-	 */
-	private static boolean isNumber(String s) {
-
-		try {
-			Long.parseLong(s);
-			return true;
-		} catch (final Exception e) {
-			return false;
-		}
 	}
 
 	/**

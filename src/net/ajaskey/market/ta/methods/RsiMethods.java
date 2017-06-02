@@ -30,14 +30,6 @@ package net.ajaskey.market.ta.methods;
 public class RsiMethods {
 
 	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private RsiMethods() {
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.methods.calcAvgGain
 	 *
@@ -147,6 +139,14 @@ public class RsiMethods {
 			}
 		}
 		return rsi;
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private RsiMethods() {
 	}
 
 }

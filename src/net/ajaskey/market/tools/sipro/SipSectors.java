@@ -23,7 +23,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -46,7 +46,7 @@ public class SipSectors {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		readBigFile("SIP-SECTORS.TXT");
+		SipSectors.readBigFile("SIP-SECTORS.TXT");
 
 		//		processGroup("BasicMaterials");
 		//		processGroup("CapitalGoods");
@@ -64,6 +64,20 @@ public class SipSectors {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.sipro.processGroup
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void processGroup(String sector) throws FileNotFoundException, IOException {
+
+		System.out.println("Processing " + sector);
+		SipSectors.readDataFile(sector);
+
+	}
+
+	/**
 	 * net.ajaskey.market.tools.sipro.readBigFile
 	 *
 	 * @param string
@@ -72,7 +86,7 @@ public class SipSectors {
 	 */
 	private static void readBigFile(String fname) throws FileNotFoundException, IOException {
 
-		SipCommon sc = new SipCommon("\t", 14);
+		final SipCommon sc = new SipCommon("\t", 14);
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/" + fname)))) {
 			String line = "";
@@ -85,27 +99,13 @@ public class SipSectors {
 
 					sc.reset();
 
-					DataSet3 ds = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+					final DataSet3 ds = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
 					if (ds.sector.equalsIgnoreCase("01  - Basic Materials")) {
 						basicMaterials.add(ds);
 					}
 				}
 			}
 		}
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.processGroup
-	 *
-	 * @param string
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	private static void processGroup(String sector) throws FileNotFoundException, IOException {
-
-		System.out.println("Processing " + sector);
-		readDataFile(sector);
 
 	}
 
@@ -118,7 +118,7 @@ public class SipSectors {
 	 */
 	private static void readDataFile(String sector) throws FileNotFoundException, IOException {
 
-		SipCommon sc = new SipCommon("\t", 14);
+		final SipCommon sc = new SipCommon("\t", 14);
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/SIP-" + sector + ".txt")))) {
 			String line = "";

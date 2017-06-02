@@ -48,6 +48,32 @@ public class PEAnalysis {
 	public static List<PEAnalysisData>	Spx			= new ArrayList<>();
 
 	/**
+	 * net.ajaskey.market.tools.getSPX
+	 *
+	 * @param date
+	 * @return
+	 */
+	private static PEAnalysisData getSPX(Calendar date) {
+
+		for (final PEAnalysisData pe : Spx) {
+			if (Utils.sameDate(date, pe.date)) {
+				return pe;
+			}
+		}
+		return null;
+	}
+
+	private static PEAnalysisData getVIX(Calendar date) {
+
+		for (final PEAnalysisData pe : Vix) {
+			if (Utils.sameDate(date, pe.date)) {
+				return pe;
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
@@ -129,32 +155,6 @@ public class PEAnalysis {
 			}
 		}
 
-	}
-
-	/**
-	 * net.ajaskey.market.tools.getSPX
-	 *
-	 * @param date
-	 * @return
-	 */
-	private static PEAnalysisData getSPX(Calendar date) {
-
-		for (final PEAnalysisData pe : Spx) {
-			if (Utils.sameDate(date, pe.date)) {
-				return pe;
-			}
-		}
-		return null;
-	}
-
-	private static PEAnalysisData getVIX(Calendar date) {
-
-		for (final PEAnalysisData pe : Vix) {
-			if (Utils.sameDate(date, pe.date)) {
-				return pe;
-			}
-		}
-		return null;
 	}
 
 }

@@ -258,6 +258,14 @@ public class DailyData {
 	}
 
 	/**
+	 * Set calendar days since the base of 1900.
+	 */
+	private void setDaysSinceBase() {
+
+		this.daysSinceBase = Utils.getTimeSpan(this.date, Utils.getBaseDate());
+	}
+
+	/**
 	 *
 	 * Sets the high of the daily daily and the close from price passed in.
 	 *
@@ -303,14 +311,6 @@ public class DailyData {
 		    this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi), this.close * this.volume,
 		    this.close * this.oi);
 		return ret.trim();
-	}
-
-	/**
-	 * Set calendar days since the base of 1900.
-	 */
-	private void setDaysSinceBase() {
-
-		this.daysSinceBase = Utils.getTimeSpan(this.date, Utils.getBaseDate());
 	}
 
 }

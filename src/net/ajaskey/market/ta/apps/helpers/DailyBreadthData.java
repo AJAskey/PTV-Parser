@@ -37,21 +37,39 @@ public class DailyBreadthData {
 	private static int	newLowsTotal	= 0;
 	private static int	newHighsTotal	= 0;
 
-	private int	adv;
-	private int	dec;
-	private int	adDiff10dma;
+	/**
+	 * @return the newHighsTotal
+	 */
+	public static int getNewHighsTotal() {
 
-	private long		advVol;
-	private long		decVol;
-	private long		adVolDiff10dma;
+		return newHighsTotal;
+	}
+
+	/**
+	 * @return the newLowsTotal
+	 */
+	public static int getNewLowsTotal() {
+
+		return newLowsTotal;
+	}
+
+	private int adv;
+
+	private int		dec;
+	private int		adDiff10dma;
+	private long	advVol;
+	private long	decVol;
+	private long	adVolDiff10dma;
+
 	private long		totVol;
 	private double	percentVolume;
 
 	private double	percentAdvancing;
 	private double	percentAdvancingVol;
 
-	private int	newLows;
-	private int	newHighs;
+	private int newLows;
+
+	private int newHighs;
 
 	final private String TAB = "\t";
 
@@ -206,22 +224,6 @@ public class DailyBreadthData {
 	}
 
 	/**
-	 * @return the newHighsTotal
-	 */
-	public static int getNewHighsTotal() {
-
-		return newHighsTotal;
-	}
-
-	/**
-	 * @return the newLowsTotal
-	 */
-	public static int getNewLowsTotal() {
-
-		return newLowsTotal;
-	}
-
-	/**
 	 * @return the adDiff10dma
 	 */
 	public int getAdDiff10dma() {
@@ -357,6 +359,22 @@ public class DailyBreadthData {
 		return this.totVol;
 	}
 
+	private void init() {
+
+		this.adv = 0;
+		this.dec = 0;
+		this.adDiff10dma = 0;
+		this.advVol = 0;
+		this.decVol = 0;
+		this.adVolDiff10dma = 0;
+		this.totVol = 0;
+		this.percentAdvancing = 0;
+		this.percentVolume = 0;
+		this.percentAdvancingVol = 0;
+		this.newHighs = -1;
+		this.newLows = -1;
+	}
+
 	/**
 	 * @param newHighs
 	 *          the newHighs to set
@@ -400,22 +418,6 @@ public class DailyBreadthData {
 		    + diffStr + this.TAB + this.advVol + this.TAB + this.decVol + this.TAB + (int) this.percentAdvancingVol + "%"
 		    + this.TAB + diffVolStr + this.TAB + (int) this.percentVolume + "%" + this.TAB + nhStr + this.TAB + nlStr;
 		return str;
-	}
-
-	private void init() {
-
-		this.adv = 0;
-		this.dec = 0;
-		this.adDiff10dma = 0;
-		this.advVol = 0;
-		this.decVol = 0;
-		this.adVolDiff10dma = 0;
-		this.totVol = 0;
-		this.percentAdvancing = 0;
-		this.percentVolume = 0;
-		this.percentAdvancingVol = 0;
-		this.newHighs = -1;
-		this.newLows = -1;
 	}
 
 }

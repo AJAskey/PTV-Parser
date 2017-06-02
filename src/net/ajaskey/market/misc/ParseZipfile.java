@@ -1,8 +1,7 @@
+
 package net.ajaskey.market.misc;
 
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +27,7 @@ import java.util.zip.ZipEntry;
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software.
  *         </p>
- *         
+ *
  *         <p>
  *         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -46,58 +45,52 @@ import java.util.zip.ZipInputStream;
 
 public class ParseZipfile {
 
-	/** 
+	/**
 	 * net.ajaskey.market.misc.main
 	 *
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		InputStream theFile = new FileInputStream("test.zip");
-    ZipInputStream stream = new ZipInputStream(theFile);
-    
-    byte[] buffer = new byte[2048];
-    
-    try
-    {
 
-        // now iterate through each item in the stream. The get next
-        // entry call will return a ZipEntry for each file in the
-        // stream
-        ZipEntry entry;
-        while((entry = stream.getNextEntry())!=null)
-        {
-            String s = String.format("Entry: %s len %d added %TD",
-                            entry.getName(), entry.getSize(),
-                            new Date(entry.getTime()));
-            System.out.println(s);
+		final InputStream theFile = new FileInputStream("test.zip");
+		final ZipInputStream stream = new ZipInputStream(theFile);
 
-            // Once we get the entry from the stream, the stream is
-            // positioned read to read the raw data, and we keep
-            // reading until read returns 0 or less.
-            String outpath = "out/" + entry.getName();
-            FileOutputStream output = null;
-            try
-            {
-                output = new FileOutputStream(outpath);
-                int len = 0;
-                while ((len = stream.read(buffer)) > 0)
-                {
-                    output.write(buffer, 0, len);
-                }
-            }
-            finally
-            {
-                // we must always close the output file
-                if(output!=null) output.close();
-            }
-        }
-    }
-    finally
-    {
-        // we must always close the zip file.
-        stream.close();
-    }
+		final byte[] buffer = new byte[2048];
+
+		try {
+
+			// now iterate through each item in the stream. The get next
+			// entry call will return a ZipEntry for each file in the
+			// stream
+			ZipEntry entry;
+			while ((entry = stream.getNextEntry()) != null) {
+				final String s = String.format("Entry: %s len %d added %TD", entry.getName(), entry.getSize(),
+				    new Date(entry.getTime()));
+				System.out.println(s);
+
+				// Once we get the entry from the stream, the stream is
+				// positioned read to read the raw data, and we keep
+				// reading until read returns 0 or less.
+				final String outpath = "out/" + entry.getName();
+				FileOutputStream output = null;
+				try {
+					output = new FileOutputStream(outpath);
+					int len = 0;
+					while ((len = stream.read(buffer)) > 0) {
+						output.write(buffer, 0, len);
+					}
+				} finally {
+					// we must always close the output file
+					if (output != null) {
+						output.close();
+					}
+				}
+			}
+		} finally {
+			// we must always close the zip file.
+			stream.close();
+		}
 
 	}
 

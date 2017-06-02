@@ -52,6 +52,64 @@ public class ProcessSymbolList {
 	private static List<File> list = new ArrayList<>();
 
 	/**
+	 *
+	 * net.ajaskey.market.ta.apps.buildOexList
+	 *
+	 * @throws IOException
+	 *
+	 */
+	private static void buildOexList() throws IOException {
+
+		System.out.println("in OexList");
+
+		final String iFile = "symbols\\OPRA_SymbolList.txt";
+		final File file = new File(iFile);
+		if (file.exists()) {
+
+			final PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
+
+			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
+
+				String line = br.readLine();
+
+				while (line != null) {
+
+					if (line.contains("OEX.X")) {
+						final String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
+						    .replaceAll("Call_", "Call") + "\tOPRA";
+						oFile.println(str);
+					}
+					line = br.readLine();
+				}
+			}
+			oFile.close();
+
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.findLists
+	 *
+	 * @param dir
+	 */
+	private static void findLists(File dir) {
+
+		final File[] files = dir.listFiles();
+
+		for (final File f : files) {
+			if (f.isDirectory()) {
+				ProcessSymbolList.findLists(f);
+			} else if (f.isFile()) {
+				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
+					list.add(f);
+				}
+			}
+		}
+	}
+
+	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
 	 * @param args
@@ -174,64 +232,6 @@ public class ProcessSymbolList {
 		ProcessSymbolList.buildOexList();
 
 		System.out.println("ProcessSymbolList Done.");
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.buildOexList
-	 *
-	 * @throws IOException
-	 *
-	 */
-	private static void buildOexList() throws IOException {
-
-		System.out.println("in OexList");
-
-		final String iFile = "symbols\\OPRA_SymbolList.txt";
-		final File file = new File(iFile);
-		if (file.exists()) {
-
-			final PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
-
-			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
-
-				String line = br.readLine();
-
-				while (line != null) {
-
-					if (line.contains("OEX.X")) {
-						final String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
-						    .replaceAll("Call_", "Call") + "\tOPRA";
-						oFile.println(str);
-					}
-					line = br.readLine();
-				}
-			}
-			oFile.close();
-
-		}
-
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.findLists
-	 *
-	 * @param dir
-	 */
-	private static void findLists(File dir) {
-
-		final File[] files = dir.listFiles();
-
-		for (final File f : files) {
-			if (f.isDirectory()) {
-				ProcessSymbolList.findLists(f);
-			} else if (f.isFile()) {
-				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
-					list.add(f);
-				}
-			}
-		}
 	}
 
 }

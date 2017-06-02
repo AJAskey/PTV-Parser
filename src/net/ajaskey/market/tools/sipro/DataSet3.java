@@ -35,25 +35,6 @@ public class DataSet3 {
 		NONE, ACCUMULATION, SEQUENTIAL
 	}
 
-	public String	ticker;
-	public String	sector;
-	public double	y7;
-	public double	y6;
-	public double	y5;
-	public double	y4;
-	public double	y3;
-	public double	y2;
-	public double	q8;
-	public double	q7;
-	public double	q6;
-	public double	q5;
-	public double	q4;
-	public double	q3;
-	public double	q2;
-	public double	q1;
-	public String	name;
-	public dMode	mode;
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.sipro.add
@@ -110,6 +91,40 @@ public class DataSet3 {
 		ds.sector = set1.sector;
 		ds.mode = set1.mode;
 		return ds;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.scale
+	 *
+	 * @param shr
+	 * @param d
+	 * @return
+	 */
+	public static DataSet3 scale(DataSet3 shr, double scaler) {
+
+		final DataSet3 ds = DataSet3.scaleSet(scaler);
+		return DataSet3.mult(shr, ds);
+	}
+
+	public static DataSet3 scaleSet(double scaler) {
+
+		final DataSet3 ret = new DataSet3("SCALE");
+		ret.ticker = "SCALED";
+		ret.y7 = scaler;
+		ret.y6 = scaler;
+		ret.y5 = scaler;
+		ret.y4 = scaler;
+		ret.y3 = scaler;
+		ret.y2 = scaler;
+		ret.q8 = scaler;
+		ret.q7 = scaler;
+		ret.q6 = scaler;
+		ret.q5 = scaler;
+		ret.q4 = scaler;
+		ret.q3 = scaler;
+		ret.q2 = scaler;
+		ret.q1 = scaler;
+		return ret;
 	}
 
 	public static DataSet3 sub(DataSet3 set1, DataSet3 set2) {
@@ -171,17 +186,50 @@ public class DataSet3 {
 
 	}
 
+	public String	ticker;
+	public String	sector;
+	public double	y7;
+	public double	y6;
+	public double	y5;
+	public double	y4;
+	public double	y3;
+	public double	y2;
+	public double	q8;
+	public double	q7;
+	public double	q6;
+	public double	q5;
+
+	public double q4;
+
+	public double q3;
+
+	public double q2;
+
+	public double q1;
+
+	public String name;
+
+	public dMode mode;
+
+	/**
+	 * This constructor should not be called to ensure proper initialization.
+	 *
+	 */
+	private DataSet3() {
+		this.init();
+	}
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public DataSet3(String n) {
-		init();
+		this.init();
 		this.name = n;
 	}
 
 	public DataSet3(String name, String code, String sector, String[] s, int ptr, dMode mode) {
-		init();
+		this.init();
 		//		System.out.println(name);
 		//		System.out.println(code);
 		//		System.out.println(s.length);
@@ -217,6 +265,28 @@ public class DataSet3 {
 		this.name = name.trim();
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.getDouble
+	 *
+	 * @param s
+	 * @return
+	 */
+	private double getDouble(String s) {
+
+		double d = 0.0;
+		try {
+			d = Double.parseDouble(s.trim());
+			if (d < -99999999.0) {
+				//System.out.println(d);
+				d = 0.0;
+			}
+		} catch (final Exception e) {
+			d = 0.0;
+		}
+		return d;
+	}
+
 	private void init() {
 
 		this.ticker = "";
@@ -237,35 +307,6 @@ public class DataSet3 {
 		this.name = "";
 		this.sector = "";
 		this.mode = dMode.NONE;
-	}
-
-	/**
-	 * This constructor should not be called to ensure proper initialization.
-	 *
-	 */
-	private DataSet3() {
-		init();
-	}
-
-	public static DataSet3 scaleSet(double scaler) {
-
-		final DataSet3 ret = new DataSet3("SCALE");
-		ret.ticker = "SCALED";
-		ret.y7 = scaler;
-		ret.y6 = scaler;
-		ret.y5 = scaler;
-		ret.y4 = scaler;
-		ret.y3 = scaler;
-		ret.y2 = scaler;
-		ret.q8 = scaler;
-		ret.q7 = scaler;
-		ret.q6 = scaler;
-		ret.q5 = scaler;
-		ret.q4 = scaler;
-		ret.q3 = scaler;
-		ret.q2 = scaler;
-		ret.q1 = scaler;
-		return ret;
 	}
 
 	@Override
@@ -295,41 +336,6 @@ public class DataSet3 {
 		result.append("}");
 
 		return result.toString();
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.sipro.getDouble
-	 *
-	 * @param s
-	 * @return
-	 */
-	private double getDouble(String s) {
-
-		double d = 0.0;
-		try {
-			d = Double.parseDouble(s.trim());
-			if (d < -99999999.0) {
-				//System.out.println(d);
-				d = 0.0;
-			}
-		} catch (final Exception e) {
-			d = 0.0;
-		}
-		return d;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.scale
-	 *
-	 * @param shr
-	 * @param d
-	 * @return
-	 */
-	public static DataSet3 scale(DataSet3 shr, double scaler) {
-
-		DataSet3 ds = scaleSet(scaler);
-		return mult(shr, ds);
 	}
 
 }

@@ -41,19 +41,18 @@ public class GenerateFundies {
 
 	static List<GenerateFundies>	fundieList	= new ArrayList<>();
 	static List<String>						tickers			= null;
-	private String								marketCap;
-	private String								ticker;
-	private String								sector;
-	private String								industry;
-	private long									shares;
 
 	/**
-	 * This method serves as a constructor for the class.
 	 *
+	 * net.ajaskey.market.ta.input.getTickers
+	 *
+	 * @throws FileNotFoundException
+	 * @throws IOException
 	 */
-	public GenerateFundies() {
-		this.marketCap = "N/A";
-		this.shares = 0;
+	private static void build() throws FileNotFoundException, IOException {
+
+		tickers = ParseData.getTickerList("lists\\stock-list.txt");
+		GenerateFundies.setYahoo();
 	}
 
 	/**
@@ -99,19 +98,6 @@ public class GenerateFundies {
 
 	/**
 	 *
-	 * net.ajaskey.market.ta.input.getTickers
-	 *
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	private static void build() throws FileNotFoundException, IOException {
-
-		tickers = ParseData.getTickerList("lists\\stock-list.txt");
-		GenerateFundies.setYahoo();
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.ta.input.setYahoo
 	 *
 	 */
@@ -147,6 +133,25 @@ public class GenerateFundies {
 				}
 			}
 		}
+	}
+
+	private String marketCap;
+
+	private String ticker;
+
+	private String sector;
+
+	private String industry;
+
+	private long shares;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public GenerateFundies() {
+		this.marketCap = "N/A";
+		this.shares = 0;
 	}
 
 }

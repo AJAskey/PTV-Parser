@@ -6,7 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.optuma.ProcessICI;
 
 /**
  * This class...
@@ -22,7 +21,7 @@ import net.ajaskey.market.tools.optuma.ProcessICI;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -35,16 +34,16 @@ import net.ajaskey.market.tools.optuma.ProcessICI;
  */
 public class IciCombinedFlowData {
 
-	public Calendar	date;
-	public long			equityDomestic;
-	public long			equityWorld;
-	public long			bondTaxable;
-	public long			bondMuni;
-	public long			commodity;
-	public boolean	valid;
-
 	private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM/dd/yyyy");
 	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+	public Calendar									date;
+	public long											equityDomestic;
+	public long											equityWorld;
+	public long											bondTaxable;
+	public long											bondMuni;
+
+	public long			commodity;
+	public boolean	valid;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -52,19 +51,19 @@ public class IciCombinedFlowData {
 	 */
 	public IciCombinedFlowData() {
 		this.valid = false;
-		equityDomestic = 0;
-		equityWorld = 0;
-		bondTaxable = 0;
-		bondMuni = 0;
-		commodity = 0;
+		this.equityDomestic = 0;
+		this.equityWorld = 0;
+		this.bondTaxable = 0;
+		this.bondMuni = 0;
+		this.commodity = 0;
 	}
 
 	public void build(String line) {
 
-		IciCombinedFlowData ret = new IciCombinedFlowData();
+		new IciCombinedFlowData();
 		try {
-			String str = line.replaceAll(",", "").replaceAll("\"", "").trim();
-			String fld[] = str.split("\\s+");
+			final String str = line.replaceAll(",", "").replaceAll("\"", "").trim();
+			final String fld[] = str.split("\\s+");
 			final Date date = sdf.parse(fld[0].trim());
 			this.date = Calendar.getInstance();
 			this.date.setTime(date);
@@ -74,7 +73,7 @@ public class IciCombinedFlowData {
 			this.bondMuni = Long.parseLong(fld[8].trim());
 			this.commodity = Long.parseLong(fld[9].trim());
 			this.valid = true;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 	}
 
@@ -84,12 +83,12 @@ public class IciCombinedFlowData {
 	@Override
 	public String toString() {
 
-		String ret = sdfOptuma.format(date.getTime());
-		ret += Utils.TAB + equityDomestic;
-		ret += Utils.TAB + equityWorld;
-		ret += Utils.TAB + bondTaxable;
-		ret += Utils.TAB + bondMuni;
-		ret += Utils.TAB + commodity;
+		String ret = sdfOptuma.format(this.date.getTime());
+		ret += Utils.TAB + this.equityDomestic;
+		ret += Utils.TAB + this.equityWorld;
+		ret += Utils.TAB + this.bondTaxable;
+		ret += Utils.TAB + this.bondMuni;
+		ret += Utils.TAB + this.commodity;
 		return ret;
 	}
 

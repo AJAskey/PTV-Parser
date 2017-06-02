@@ -66,8 +66,27 @@ public class WriteStockData {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
-		processList("lists/stockdata-list.txt");
-		processLastPrice("data/SP500-SIP-TICKERS.CSV");
+		WriteStockData.processList("lists/stockdata-list.txt");
+		WriteStockData.processLastPrice("data/SP500-SIP-TICKERS.CSV");
+	}
+
+	private static void processLastPrice(String listName) throws ParseException, IOException {
+
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(listName));
+
+		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 10);
+
+		try (PrintWriter pw = new PrintWriter("data/closing_price.txt")) {
+
+			for (final TickerData td : tdAll) {
+				td.fillDataArrays(0, false);
+				final int i = td.getDaysOfData() - 1;
+				System.out.println(td.getTicker());
+				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
+			}
+		}
+		System.out.println("Done.");
 	}
 
 	private static void processList(String listName) throws FileNotFoundException, IOException, ParseException {
@@ -87,25 +106,6 @@ public class WriteStockData {
 					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
 					    (int) td.getVolume(i));
 				}
-			}
-		}
-		System.out.println("Done.");
-	}
-
-	private static void processLastPrice(String listName) throws ParseException, IOException {
-
-		ParseData.clearValidTickers();
-		ParseData.setValidTickers(ParseData.getTickerList(listName));
-
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 10);
-
-		try (PrintWriter pw = new PrintWriter("data/closing_price.txt")) {
-
-			for (final TickerData td : tdAll) {
-				td.fillDataArrays(0, false);
-				int i = td.getDaysOfData()-1;
-				System.out.println(td.getTicker());
-				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
 			}
 		}
 		System.out.println("Done.");

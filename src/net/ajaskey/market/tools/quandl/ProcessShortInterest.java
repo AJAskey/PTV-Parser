@@ -59,89 +59,6 @@ public class ProcessShortInterest {
 
 	public static List<ShortInterestList> bigList = new ArrayList<>();
 
-	public static void getQuandl(String filename, Calendar staleDate) throws FileNotFoundException, IOException {
-
-		final List<String> tickers = Common.getTickersFromFile(filename);
-
-		final List<String> retry = new ArrayList<>();
-
-		final String outfile = "data/si-data.txt";
-
-		try (PrintWriter pwout = new PrintWriter(outfile)) {
-
-			for (final String ticker : tickers) {
-				Common.delay(250);
-
-				final List<ShortInterestData> siList = ProcessShortInterest.getShortInterestData(siURL, ticker, staleDate);
-
-				if ((siList != null) && (siList.size() > 1)) {
-					//ShortInterestList.bigList.add(new ShortInterestList(ticker, siList));
-					for (final ShortInterestData si : siList) {
-						final String dt = Qcommon.sdf.format(si.date.getTime());
-						final String s = String.format("%s\t%s\t%d\t%.2f\t%.2f\t%d", ticker, dt, (long) si.si, si.dtc, si.modDtc,
-						    (long) si.avgVol);
-						pwout.println(s);
-					}
-				} else if ((siList != null) && (siList.size() == 1)) {
-					//ignore stale data
-				} else {
-					retry.add(ticker);
-				}
-			}
-		}
-
-		for (final String s : retry) {
-			System.out.println("Not found : " + s);
-		}
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.main
-	 *
-	 * @param args
-	 * @throws IOException
-	 * @throws ParseException
-	 */
-	public static void main(String[] args) throws IOException, ParseException {
-
-		//		ProcessShortInterest.processFile("data/si-data.txt");
-
-		final Date date = Qcommon.sdf.parse("2017-04-14");
-		final Calendar staleDate = Calendar.getInstance();
-		staleDate.setTime(date);
-		ProcessShortInterest.getQuandl("data/one-ticker.txt", staleDate);
-		//				getQuandl("data/SP500-SIP3B.txt", staleDate);
-
-	}
-
-	public static void processFile(String filename) throws IOException {
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
-
-			String line = "";
-
-			while (line != null) {
-				line = br.readLine();
-				final ShortInterestData sid = new ShortInterestData(line);
-				if (sid.date != null) {
-					//System.out.println(sid);
-					ProcessShortInterest.addToBigList(sid);
-				}
-			}
-		}
-
-		final List<ShortInterestData> cSid = ProcessShortInterest.combined();
-
-		for (final ShortInterestList sil : bigList) {
-			System.out.println(sil.name + "  " + sil.dateKnt);
-		}
-		System.out.println("Total Tickers : " + bigList.size());
-
-		ProcessShortInterest.writeList(cSid, "Combined");
-
-	}
-
 	/**
 	 * net.ajaskey.market.tools.quandl.addToBigList
 	 *
@@ -204,6 +121,43 @@ public class ProcessShortInterest {
 		}
 
 		return retSil;
+	}
+
+	public static void getQuandl(String filename, Calendar staleDate) throws FileNotFoundException, IOException {
+
+		final List<String> tickers = Common.getTickersFromFile(filename);
+
+		final List<String> retry = new ArrayList<>();
+
+		final String outfile = "data/si-data.txt";
+
+		try (PrintWriter pwout = new PrintWriter(outfile)) {
+
+			for (final String ticker : tickers) {
+				Common.delay(250);
+
+				final List<ShortInterestData> siList = ProcessShortInterest.getShortInterestData(siURL, ticker, staleDate);
+
+				if ((siList != null) && (siList.size() > 1)) {
+					//ShortInterestList.bigList.add(new ShortInterestList(ticker, siList));
+					for (final ShortInterestData si : siList) {
+						final String dt = Qcommon.sdf.format(si.date.getTime());
+						final String s = String.format("%s\t%s\t%d\t%.2f\t%.2f\t%d", ticker, dt, (long) si.si, si.dtc, si.modDtc,
+						    (long) si.avgVol);
+						pwout.println(s);
+					}
+				} else if ((siList != null) && (siList.size() == 1)) {
+					//ignore stale data
+				} else {
+					retry.add(ticker);
+				}
+			}
+		}
+
+		for (final String s : retry) {
+			System.out.println("Not found : " + s);
+		}
+
 	}
 
 	private static List<ShortInterestData> getShortInterestData(String url, String ticker, Calendar staleDate) {
@@ -282,6 +236,52 @@ public class ProcessShortInterest {
 		}
 
 		return retSid;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.main
+	 *
+	 * @param args
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public static void main(String[] args) throws IOException, ParseException {
+
+		//		ProcessShortInterest.processFile("data/si-data.txt");
+
+		final Date date = Qcommon.sdf.parse("2017-04-14");
+		final Calendar staleDate = Calendar.getInstance();
+		staleDate.setTime(date);
+		ProcessShortInterest.getQuandl("data/one-ticker.txt", staleDate);
+		//				getQuandl("data/SP500-SIP3B.txt", staleDate);
+
+	}
+
+	public static void processFile(String filename) throws IOException {
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+
+			String line = "";
+
+			while (line != null) {
+				line = br.readLine();
+				final ShortInterestData sid = new ShortInterestData(line);
+				if (sid.date != null) {
+					//System.out.println(sid);
+					ProcessShortInterest.addToBigList(sid);
+				}
+			}
+		}
+
+		final List<ShortInterestData> cSid = ProcessShortInterest.combined();
+
+		for (final ShortInterestList sil : bigList) {
+			System.out.println(sil.name + "  " + sil.dateKnt);
+		}
+		System.out.println("Total Tickers : " + bigList.size());
+
+		ProcessShortInterest.writeList(cSid, "Combined");
+
 	}
 
 	private static void write(ShortInterestData data, PrintWriter pw) throws FileNotFoundException {

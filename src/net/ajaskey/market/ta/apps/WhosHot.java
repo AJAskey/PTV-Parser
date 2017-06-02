@@ -54,37 +54,15 @@ public class WhosHot {
 
 	private static boolean init = false;
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 * @throws ParseException
-	 * @throws IOException
-	 *
-	 */
-	private WhosHot(String list) throws ParseException, IOException {
+	@SuppressWarnings("unused")
+	private static IndustryData find(String name, IndustryData[] ind) {
 
-		if (!init) {
-
-			fullfilenames.add("symbols\\INDEX_SymbolList.txt");
-			// fullfilenames.add("symbols\\AMEX_SymbolList.txt");
-			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
-			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
-			TickerFullName.build(fullfilenames);
-
-			final String dataPath = Utils.getDataPath();
-			// filenames.add(dataPath + "\\ASCII\\AMEX");
-			filenames.add(dataPath + "\\ASCII\\NYSE");
-			filenames.add(dataPath + "\\ASCII\\NASDAQ");
-			filenames.add(dataPath + "\\ASCII\\INDEX");
-			// filenames.add(dataPath + "\\ASCII\\USMF");
-
-			Fundamentals.build("lists\\stock-fundie-list.txt");
-
-			init = true;
+		for (final IndustryData id : ind) {
+			if (id.getName().equalsIgnoreCase(name)) {
+				return id;
+			}
 		}
-		ParseData.clearValidTickers();
-		ParseData.setValidTickers(ParseData.getTickerList(list));
-
+		return null;
 	}
 
 	/**
@@ -106,17 +84,6 @@ public class WhosHot {
 		WhosHot.processList("lists\\stock-list.txt", "stocks", 0, 750000);
 
 		System.out.println("Done.");
-	}
-
-	@SuppressWarnings("unused")
-	private static IndustryData find(String name, IndustryData[] ind) {
-
-		for (final IndustryData id : ind) {
-			if (id.getName().equalsIgnoreCase(name)) {
-				return id;
-			}
-		}
-		return null;
 	}
 
 	/**
@@ -239,6 +206,39 @@ public class WhosHot {
 			}
 		}
 		TickerData.clearTickerData(tdAll);
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 * @throws ParseException
+	 * @throws IOException
+	 *
+	 */
+	private WhosHot(String list) throws ParseException, IOException {
+
+		if (!init) {
+
+			fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+			// fullfilenames.add("symbols\\AMEX_SymbolList.txt");
+			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
+			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
+			TickerFullName.build(fullfilenames);
+
+			final String dataPath = Utils.getDataPath();
+			// filenames.add(dataPath + "\\ASCII\\AMEX");
+			filenames.add(dataPath + "\\ASCII\\NYSE");
+			filenames.add(dataPath + "\\ASCII\\NASDAQ");
+			filenames.add(dataPath + "\\ASCII\\INDEX");
+			// filenames.add(dataPath + "\\ASCII\\USMF");
+
+			Fundamentals.build("lists\\stock-fundie-list.txt");
+
+			init = true;
+		}
+		ParseData.clearValidTickers();
+		ParseData.setValidTickers(ParseData.getTickerList(list));
+
 	}
 
 }

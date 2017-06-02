@@ -53,6 +53,85 @@ public class FredCommon {
 
 	final private static double THOUSAND = 1E3;
 
+	public static List<DataSeriesInfo> legacyDsi = null;
+
+	/**
+	 * net.ajaskey.market.tools.fred.addSeries
+	 *
+	 * @param new_names
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static void addSeries(List<String> newSeries) throws FileNotFoundException, IOException {
+
+		final List<String> data = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/fred-series-info.txt"))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				if (line != null) {
+					if (!line.equalsIgnoreCase(infoHeader)) {
+						data.add(line.trim());
+					}
+				}
+			}
+		}
+
+		Collections.sort(data);
+
+		final String dum = "DUMMY";
+		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			pw.println(infoHeader);
+			for (final String str : data) {
+				pw.println(str);
+			}
+			for (final String str : newSeries) {
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", str, dum, dum, dum, dum, "LIN", dum, dum);
+			}
+		}
+
+	}
+
+	public static DataSeriesInfo findDsi(String series) {
+
+		final String s = series.trim();
+		for (final DataSeriesInfo dsi : legacyDsi) {
+			if (dsi.getName().trim().equalsIgnoreCase(s)) {
+				return dsi;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.getScaler
+	 *
+	 * @param seriesName
+	 * @return
+	 */
+	private static double getScaler(String seriesName) {
+
+		double ret = 1.0;
+		if (seriesName.equalsIgnoreCase("gdpc1")) {
+			ret = BILLION;
+		} else if (seriesName.equalsIgnoreCase("gdp")) {
+			ret = BILLION;
+		} else if (seriesName.contains("JTS")) {
+			ret = THOUSAND;
+		} else if (seriesName.contains("JTU")) {
+			ret = THOUSAND;
+		} else if (seriesName.equalsIgnoreCase("BOGMBASE")) {
+			ret = MILLION;
+		} else if (seriesName.equalsIgnoreCase("GFDEBTN")) {
+			ret = MILLION;
+		} else if (seriesName.equalsIgnoreCase("TREAST")) {
+			ret = MILLION;
+		}
+		return ret;
+	}
+
 	/**
 	 * net.ajaskey.market.tools.fred.getShortTitle
 	 *
@@ -114,7 +193,7 @@ public class FredCommon {
 				if (str.length() > 1) {
 					final String s = str.substring(0, 1);
 					if (!s.contains("#")) {
-						String fld[] = str.split("\t");
+						final String fld[] = str.split("\t");
 						retList.add(fld[0].trim());
 					}
 				}
@@ -124,6 +203,25 @@ public class FredCommon {
 			retList.clear();
 		}
 		return retList;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.writeSeriesInfo
+	 *
+	 * @param dsList
+	 * @throws FileNotFoundException
+	 */
+	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+			pw.println(infoHeader);
+			for (final DataSeriesInfo ds : dsList) {
+				//System.out.println(ds);
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
+				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+				    sdf.format(ds.getLastObservation().getTime()));
+			}
+		}
 	}
 
 	/**
@@ -146,104 +244,6 @@ public class FredCommon {
 			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.getScaler
-	 *
-	 * @param seriesName
-	 * @return
-	 */
-	private static double getScaler(String seriesName) {
-
-		double ret = 1.0;
-		if (seriesName.equalsIgnoreCase("gdpc1")) {
-			ret = BILLION;
-		} else if (seriesName.equalsIgnoreCase("gdp")) {
-			ret = BILLION;
-		} else if (seriesName.contains("JTS")) {
-			ret = THOUSAND;
-		} else if (seriesName.contains("JTU")) {
-			ret = THOUSAND;
-		} else if (seriesName.equalsIgnoreCase("BOGMBASE")) {
-			ret = MILLION;
-		} else if (seriesName.equalsIgnoreCase("GFDEBTN")) {
-			ret = MILLION;
-		} else if (seriesName.equalsIgnoreCase("TREAST")) {
-			ret = MILLION;
-		}
-		return ret;
-	}
-
-	public static List<DataSeriesInfo> legacyDsi = null;
-
-	public static DataSeriesInfo findDsi(String series) {
-
-		String s = series.trim();
-		for (final DataSeriesInfo dsi : legacyDsi) {
-			if (dsi.getName().trim().equalsIgnoreCase(s)) {
-				return dsi;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.addSeries
-	 *
-	 * @param new_names
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public static void addSeries(List<String> newSeries) throws FileNotFoundException, IOException {
-
-		List<String> data = new ArrayList<>();
-
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/fred-series-info.txt"))) {
-
-			String line;
-			// Utils.printCalendar(d.getDate());
-			while ((line = reader.readLine()) != null) {
-				if (line != null) {
-					if (!line.equalsIgnoreCase(infoHeader)) {
-						data.add(line.trim());
-					}
-				}
-			}
-		}
-
-		Collections.sort(data);
-
-		final String dum = "DUMMY";
-		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
-			pw.println(infoHeader);
-			for (String str : data) {
-				pw.println(str);
-			}
-			for (String str : newSeries) {
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", str, dum, dum, dum, dum, "LIN", dum, dum);
-			}
-		}
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.writeSeriesInfo
-	 *
-	 * @param dsList
-	 * @throws FileNotFoundException
-	 */
-	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
-
-		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
-			pw.println(infoHeader);
-			for (final DataSeriesInfo ds : dsList) {
-				//System.out.println(ds);
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
-				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
-				    sdf.format(ds.getLastObservation().getTime()));
-			}
 		}
 	}
 

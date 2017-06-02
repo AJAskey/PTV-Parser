@@ -20,7 +20,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -65,27 +65,27 @@ public class NaaimData {
 	 */
 	public NaaimData(Calendar cal, double mn, double mbear, double qq1, double med, double qq3, double mbull, double s,
 	    double n, double sp) {
-		date = Utils.buildCalendar(cal);
-		mean = mn;
-		mostBearish = mbear;
+		this.date = Utils.buildCalendar(cal);
+		this.mean = mn;
+		this.mostBearish = mbear;
 		if (mbear == 0.0) {
-			mostBearish = 0.01;
+			this.mostBearish = 0.01;
 		}
-		q1 = qq1;
-		median = med;
-		q3 = qq3;
-		mostBullish = mbull;
-		if (mostBullish == 0.0) {
-			mostBullish = 0.01;
+		this.q1 = qq1;
+		this.median = med;
+		this.q3 = qq3;
+		this.mostBullish = mbull;
+		if (this.mostBullish == 0.0) {
+			this.mostBullish = 0.01;
 		}
-		bbDiff = mbull + mbear;
-		if (bbDiff == 0.0) {
-			bbDiff = 0.01;
+		this.bbDiff = mbull + mbear;
+		if (this.bbDiff == 0.0) {
+			this.bbDiff = 0.01;
 		}
 
-		stdDev = s;
-		number = n;
-		sp500 = sp;
+		this.stdDev = s;
+		this.number = n;
+		this.sp500 = sp;
 
 	}
 

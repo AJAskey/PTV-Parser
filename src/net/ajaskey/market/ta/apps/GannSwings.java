@@ -47,6 +47,33 @@ public class GannSwings {
 	private static double	priceRng;
 
 	/**
+	 * net.ajaskey.market.ta.apps.addCalendarDays
+	 *
+	 * @param stop
+	 * @param i
+	 */
+	private static Calendar getCalendarDate(Calendar cal, int i) {
+
+		final Calendar c = (Calendar) cal.clone();
+		c.add(Calendar.DAY_OF_YEAR, i);
+		return c;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.getTradingDays
+	 *
+	 * @param cal
+	 * @param knt
+	 * @return
+	 */
+	static private Calendar getTradingDate(Calendar cal, int knt) {
+
+		final int tradingDays = (int) Math.round((knt * 7.0) / 5.0);
+		return GannSwings.getCalendarDate(cal, tradingDays);
+	}
+
+	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
 	 * @param args
@@ -92,33 +119,6 @@ public class GannSwings {
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 * net.ajaskey.market.ta.apps.addCalendarDays
-	 *
-	 * @param stop
-	 * @param i
-	 */
-	private static Calendar getCalendarDate(Calendar cal, int i) {
-
-		final Calendar c = (Calendar) cal.clone();
-		c.add(Calendar.DAY_OF_YEAR, i);
-		return c;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.getTradingDays
-	 *
-	 * @param cal
-	 * @param knt
-	 * @return
-	 */
-	static private Calendar getTradingDate(Calendar cal, int knt) {
-
-		final int tradingDays = (int) Math.round((knt * 7.0) / 5.0);
-		return GannSwings.getCalendarDate(cal, tradingDays);
 	}
 
 	static private void setBounds(TickerData td, Calendar start, Calendar stop) {

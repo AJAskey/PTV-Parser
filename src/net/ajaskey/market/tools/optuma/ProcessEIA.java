@@ -57,30 +57,6 @@ public class ProcessEIA {
 	private static DocumentBuilderFactory	dbFactory	= null;
 	private static DocumentBuilder				dBuilder	= null;
 
-	/**
-	 * net.ajaskey.market.tools.main
-	 *
-	 * @param args
-	 * @throws ParserConfigurationException
-	 */
-	public static void main(String[] args) throws ParserConfigurationException {
-
-		final String apiKey = "5083132038aeb07288f19e6313b85532";
-
-		//String outName = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/EIA/.csv";
-		final String gasURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WGFUPUS2.W&out=xml";
-		final String keroURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WKJUPUS2.W&out=xml";
-
-		dbFactory = DocumentBuilderFactory.newInstance();
-
-		final List<OhlcvData> gas = ProcessEIA.getData(gasURL);
-		ProcessEIA.writeList(gas, "gasoline_demand");
-
-		final List<OhlcvData> kero = ProcessEIA.getData(keroURL);
-		ProcessEIA.writeList(kero, "kerosene_demand");
-
-	}
-
 	private static List<OhlcvData> getData(String url) {
 
 		final List<OhlcvData> ret = new ArrayList<>();
@@ -137,6 +113,30 @@ public class ProcessEIA {
 		return ret;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.main
+	 *
+	 * @param args
+	 * @throws ParserConfigurationException
+	 */
+	public static void main(String[] args) throws ParserConfigurationException {
+
+		final String apiKey = "5083132038aeb07288f19e6313b85532";
+
+		//String outName = "C:/Users/ajask_000/Documents/Market Analyst 8/CSV Data/EIA/.csv";
+		final String gasURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WGFUPUS2.W&out=xml";
+		final String keroURL = "http://api.eia.gov/series/?api_key=" + apiKey + "&series_id=PET.WKJUPUS2.W&out=xml";
+
+		dbFactory = DocumentBuilderFactory.newInstance();
+
+		final List<OhlcvData> gas = ProcessEIA.getData(gasURL);
+		ProcessEIA.writeList(gas, "gasoline_demand");
+
+		final List<OhlcvData> kero = ProcessEIA.getData(keroURL);
+		ProcessEIA.writeList(kero, "kerosene_demand");
+
+	}
+
 	private static void writeList(List<OhlcvData> list, String fname) {
 
 		Collections.reverse(list);
@@ -145,7 +145,7 @@ public class ProcessEIA {
 
 				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
 			}
-			System.out.println(Utils.getString(list.get(list.size()-1).date));
+			System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
 		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block

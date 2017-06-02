@@ -48,150 +48,6 @@ public class TickerData {
 
 	final static private String	TAB	= "\t";
 	final static private String	NL	= System.lineSeparator();
-	private String							ticker;
-
-	private String tickerName;
-
-	private String tickerExchange;
-
-	private Fundamentals fundies;
-
-	private final List<DailyData> data = new ArrayList<>();
-
-	/**
-	 * Derived values
-	 */
-	private Integer			daysOfData;
-	private DerivedData	derived;
-	private Double			sma23;
-	private Double			smaPerc23;
-	private TrendType		sma23Trend;
-	private Double			sma65;
-	private Double			smaPerc65;
-	private TrendType		sma65Trend;
-	private Double			sma130;
-	private Double			smaPerc130;
-	private TrendType		sma130Trend;
-	private Double			sma260;
-	private Double			smaPerc260;
-	private TrendType		sma260Trend;
-	private double[]		openData;
-	private double[]		highData;
-	private double[]		lowData;
-	private double[]		closeData;
-	private double[]		volumeData;
-	private double[]		oiData;
-	private double[]		trueHighData;
-	private double[]		trueLowData;
-	private double[]		typicalPriceData;
-	private Calendar[]	dateData;
-	private double			currentPrice;
-	private double			avgVol65;
-	private double			avgVol20;
-	private double			chg;
-	private double			chg23;
-	private double			chg65;
-	private double			chg130;
-	private double			chg260;
-	private double			low260;
-	private double			high260;
-	private double			rsRaw;
-	private double			rsStRaw;
-	private double			atr23;
-	private double			adx;
-	private double			diPlus;
-	private double			diMinus;
-	private double			atrPercent23;
-	private double			mfi23;
-	private double			mfi65;
-	private double			mfi130;
-	private double			mfi14;
-	private double			priceInRng260;
-	private double			priceOffHigh260;
-	private double			priceOffLow260;
-	private double			lr260;
-	private double			lrAngle260;
-	private double			lrInt260;
-	private double			lrSlope260;
-
-	private double					rsi14;
-	private final TaMethods	taMethods	= new TaMethods();
-
-	/**
-	 *
-	 * This methods serves as a constructor for the class.
-	 *
-	 */
-	public TickerData() {
-	}
-
-	/**
-	 *
-	 * This methods serves as a constructor for the class.
-	 *
-	 * @param t
-	 *          Ticker symbol name
-	 * @param d
-	 *          Data of DailyData
-	 * @param o
-	 *          Opening price.
-	 * @param h
-	 *          High daily price.
-	 * @param l
-	 *          Low daily price.
-	 * @param c
-	 *          Closing price.
-	 * @param v
-	 *          Volume traded.
-	 */
-	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v, double oi) {
-		final DailyData dd = new DailyData(d, o, h, l, c, v, oi);
-		this.setTicker(t);
-		this.tickerName = TickerFullName.getName(t);
-		this.tickerExchange = "Unknown";
-		this.fundies = Fundamentals.getWithTicker(this.ticker);
-		this.data.add(dd);
-		this.daysOfData = 0;
-
-		this.derived = null;
-
-		this.sma23 = 0.0;
-		this.sma65 = 0.0;
-		this.sma130 = 0.0;
-		this.sma260 = 0.0;
-		this.smaPerc23 = 0.0;
-		this.smaPerc65 = 0.0;
-		this.smaPerc130 = 0.0;
-		this.smaPerc260 = 0.0;
-		this.sma23Trend = TrendType.FLAT;
-		this.sma65Trend = TrendType.FLAT;
-		this.sma130Trend = TrendType.FLAT;
-		this.sma260Trend = TrendType.FLAT;
-		this.avgVol65 = 0.0;
-		this.chg = 0.0;
-		this.chg23 = 0.0;
-		this.chg65 = 0.0;
-		this.chg130 = 0.0;
-		this.chg260 = 0.0;
-		this.rsRaw = 0.0;
-		this.rsStRaw = 0.0;
-		this.atr23 = 0.0;
-		this.atrPercent23 = 0.0;
-		this.adx = 0.0;
-		this.diPlus = 0.0;
-		this.diMinus = 0.0;
-		this.mfi23 = 0.0;
-		this.mfi65 = 0.0;
-		this.mfi130 = 0.0;
-		this.mfi14 = 0.0;
-		this.currentPrice = 0.0;
-		this.lr260 = 0.0;
-		this.lrAngle260 = 0.0;
-		this.lrInt260 = 0.0;
-		this.lrSlope260 = 0.0;
-		this.rsi14 = 0.0;
-		this.closeData = null;
-	}
 
 	/**
 	 * Parses a list file names containing ticker data.
@@ -503,6 +359,160 @@ public class TickerData {
 
 	}
 
+	private String								ticker;
+	private String								tickerName;
+	private String								tickerExchange;
+	private Fundamentals					fundies;
+	private final List<DailyData>	data	= new ArrayList<>();
+	/**
+	 * Derived values
+	 */
+	private Integer								daysOfData;
+	private DerivedData						derived;
+	private Double								sma23;
+	private Double								smaPerc23;
+	private TrendType							sma23Trend;
+	private Double								sma65;
+	private Double								smaPerc65;
+	private TrendType							sma65Trend;
+	private Double								sma130;
+	private Double								smaPerc130;
+	private TrendType							sma130Trend;
+	private Double								sma260;
+	private Double								smaPerc260;
+	private TrendType							sma260Trend;
+	private double[]							openData;
+	private double[]							highData;
+	private double[]							lowData;
+	private double[]							closeData;
+	private double[]							volumeData;
+	private double[]							oiData;
+	private double[]							trueHighData;
+	private double[]							trueLowData;
+	private double[]							typicalPriceData;
+	private Calendar[]						dateData;
+	private double								currentPrice;
+	private double								avgVol65;
+	private double								avgVol20;
+	private double								chg;
+	private double								chg23;
+	private double								chg65;
+	private double								chg130;
+	private double								chg260;
+	private double								low260;
+	private double								high260;
+	private double								rsRaw;
+	private double								rsStRaw;
+	private double								atr23;
+	private double								adx;
+
+	private double	diPlus;
+	private double	diMinus;
+
+	private double atrPercent23;
+
+	private double mfi23;
+
+	private double mfi65;
+
+	private double mfi130;
+
+	private double mfi14;
+
+	private double priceInRng260;
+
+	private double priceOffHigh260;
+
+	private double priceOffLow260;
+
+	private double lr260;
+
+	private double lrAngle260;
+
+	private double lrInt260;
+
+	private double lrSlope260;
+
+	private double rsi14;
+
+	private final TaMethods taMethods = new TaMethods();
+
+	/**
+	 *
+	 * This methods serves as a constructor for the class.
+	 *
+	 */
+	public TickerData() {
+	}
+
+	/**
+	 *
+	 * This methods serves as a constructor for the class.
+	 *
+	 * @param t
+	 *          Ticker symbol name
+	 * @param d
+	 *          Data of DailyData
+	 * @param o
+	 *          Opening price.
+	 * @param h
+	 *          High daily price.
+	 * @param l
+	 *          Low daily price.
+	 * @param c
+	 *          Closing price.
+	 * @param v
+	 *          Volume traded.
+	 */
+	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v, double oi) {
+		final DailyData dd = new DailyData(d, o, h, l, c, v, oi);
+		this.setTicker(t);
+		this.tickerName = TickerFullName.getName(t);
+		this.tickerExchange = "Unknown";
+		this.fundies = Fundamentals.getWithTicker(this.ticker);
+		this.data.add(dd);
+		this.daysOfData = 0;
+
+		this.derived = null;
+
+		this.sma23 = 0.0;
+		this.sma65 = 0.0;
+		this.sma130 = 0.0;
+		this.sma260 = 0.0;
+		this.smaPerc23 = 0.0;
+		this.smaPerc65 = 0.0;
+		this.smaPerc130 = 0.0;
+		this.smaPerc260 = 0.0;
+		this.sma23Trend = TrendType.FLAT;
+		this.sma65Trend = TrendType.FLAT;
+		this.sma130Trend = TrendType.FLAT;
+		this.sma260Trend = TrendType.FLAT;
+		this.avgVol65 = 0.0;
+		this.chg = 0.0;
+		this.chg23 = 0.0;
+		this.chg65 = 0.0;
+		this.chg130 = 0.0;
+		this.chg260 = 0.0;
+		this.rsRaw = 0.0;
+		this.rsStRaw = 0.0;
+		this.atr23 = 0.0;
+		this.atrPercent23 = 0.0;
+		this.adx = 0.0;
+		this.diPlus = 0.0;
+		this.diMinus = 0.0;
+		this.mfi23 = 0.0;
+		this.mfi65 = 0.0;
+		this.mfi130 = 0.0;
+		this.mfi14 = 0.0;
+		this.currentPrice = 0.0;
+		this.lr260 = 0.0;
+		this.lrAngle260 = 0.0;
+		this.lrInt260 = 0.0;
+		this.lrSlope260 = 0.0;
+		this.rsi14 = 0.0;
+		this.closeData = null;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.addData
@@ -512,6 +522,26 @@ public class TickerData {
 	public void addData(DailyData dd) {
 
 		this.data.add(dd);
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.calcPriceChange
+	 *
+	 * Calculate the closing price change from n days previous
+	 *
+	 * @param days
+	 * @return
+	 */
+	private double calcPriceChange(int days) {
+
+		double ret = 0.0;
+		if (this.daysOfData > days) {
+			if (this.closeData[days] > 0.0) {
+				ret = this.taMethods.calcPercentChange(this.closeData[0], this.closeData[days]);
+			}
+		}
+		return ret;
 	}
 
 	public String DailyDataString(int day) {
@@ -817,6 +847,17 @@ public class TickerData {
 		} catch (final Exception e) {
 			return "";
 		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.getData
+	 *
+	 * @return
+	 */
+	private List<DailyData> getData() {
+
+		return this.data;
 	}
 
 	/**
@@ -1264,82 +1305,6 @@ public class TickerData {
 	}
 
 	/**
-	 *
-	 * net.ajaskey.market.ta.rSort
-	 *
-	 */
-	public void rSort() {
-
-		Collections.sort(this.data, new SortDailyDataReverse());
-		this.fillDataArrays(0, true);
-	}
-
-	/**
-	 * @param ticker
-	 *          the ticker to set
-	 */
-	public void setTicker(String tickerIn) {
-
-		if (tickerIn != null) {
-			this.ticker = tickerIn.trim().toUpperCase();
-		} else {
-			this.ticker = "UNKNOWN";
-		}
-	}
-
-	/**
-	 * @param tickerExchange
-	 *          the tickerExchange to set
-	 */
-	public void setTickerExchange(String tickerExchange) {
-
-		this.tickerExchange = tickerExchange;
-	}
-
-	@Override
-	public String toString() {
-
-		String str = this.ticker + TAB + this.tickerName + TAB + this.tickerExchange + NL;
-		for (final DailyData dd : this.data) {
-			str += TAB + dd.toString() + NL;
-		}
-
-		return str;
-
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.calcPriceChange
-	 *
-	 * Calculate the closing price change from n days previous
-	 *
-	 * @param days
-	 * @return
-	 */
-	private double calcPriceChange(int days) {
-
-		double ret = 0.0;
-		if (this.daysOfData > days) {
-			if (this.closeData[days] > 0.0) {
-				ret = this.taMethods.calcPercentChange(this.closeData[0], this.closeData[days]);
-			}
-		}
-		return ret;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.getData
-	 *
-	 * @return
-	 */
-	private List<DailyData> getData() {
-
-		return this.data;
-	}
-
-	/**
 	 * Data from www.eoddata.com occasionally has volumes of zero. Set these to
 	 * the average volume of 5 days before and 5 days after.
 	 *
@@ -1392,6 +1357,17 @@ public class TickerData {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.rSort
+	 *
+	 */
+	public void rSort() {
+
+		Collections.sort(this.data, new SortDailyDataReverse());
+		this.fillDataArrays(0, true);
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.ta.setRawRS
 	 *
 	 * @return
@@ -1437,5 +1413,39 @@ public class TickerData {
 		if (this.daysOfData > 65) {
 			this.rsStRaw = this.setRawStRS();
 		}
+	}
+
+	/**
+	 * @param ticker
+	 *          the ticker to set
+	 */
+	public void setTicker(String tickerIn) {
+
+		if (tickerIn != null) {
+			this.ticker = tickerIn.trim().toUpperCase();
+		} else {
+			this.ticker = "UNKNOWN";
+		}
+	}
+
+	/**
+	 * @param tickerExchange
+	 *          the tickerExchange to set
+	 */
+	public void setTickerExchange(String tickerExchange) {
+
+		this.tickerExchange = tickerExchange;
+	}
+
+	@Override
+	public String toString() {
+
+		String str = this.ticker + TAB + this.tickerName + TAB + this.tickerExchange + NL;
+		for (final DailyData dd : this.data) {
+			str += TAB + dd.toString() + NL;
+		}
+
+		return str;
+
 	}
 }

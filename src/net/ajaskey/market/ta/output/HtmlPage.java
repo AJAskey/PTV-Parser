@@ -156,6 +156,33 @@ public class HtmlPage implements java.io.Closeable {
 
 	/**
 	 *
+	 * net.ajaskey.market.ta.output.init
+	 *
+	 * @param preInfo
+	 * @param headInfo
+	 */
+	private void init(List<String> preInfo, List<String> headInfo) {
+
+		final StringBuilder sb = new StringBuilder();
+		if (preInfo != null) {
+			for (final String pre : preInfo) {
+				sb.append(pre);
+			}
+		}
+		sb.append("<html>");
+		sb.append("<head>");
+		if (headInfo != null) {
+			for (final String h : headInfo) {
+				sb.append(h);
+			}
+		}
+		sb.append("</head>");
+		this.head = sb;
+
+	}
+
+	/**
+	 *
 	 * Placeholder. Figure this out later.
 	 *
 	 * @return
@@ -189,33 +216,6 @@ public class HtmlPage implements java.io.Closeable {
 	public void setValidate(boolean validateIt) {
 
 		this.validate = validateIt;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.output.init
-	 *
-	 * @param preInfo
-	 * @param headInfo
-	 */
-	private void init(List<String> preInfo, List<String> headInfo) {
-
-		final StringBuilder sb = new StringBuilder();
-		if (preInfo != null) {
-			for (final String pre : preInfo) {
-				sb.append(pre);
-			}
-		}
-		sb.append("<html>");
-		sb.append("<head>");
-		if (headInfo != null) {
-			for (final String h : headInfo) {
-				sb.append(h);
-			}
-		}
-		sb.append("</head>");
-		this.head = sb;
-
 	}
 
 }

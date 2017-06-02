@@ -54,21 +54,6 @@ public class DataSet {
 		return ds;
 	}
 
-	public static DataSet sub(DataSet set1, DataSet set2) {
-
-		final DataSet ds = new DataSet();
-		ds.ticker = "MERGED_TICKERS";
-		ds.y7 = set1.y7 - set2.y7;
-		ds.y6 = set1.y6 - set2.y6;
-		ds.y5 = set1.y5 - set2.y5;
-		ds.y4 = set1.y4 - set2.y4;
-		ds.y3 = set1.y3 - set2.y3;
-		ds.y2 = set1.y2 - set2.y2;
-		ds.y1 = set1.y1 - set2.y1;
-		ds.ttm = set1.ttm - set2.ttm;
-		return ds;
-	}
-
 	public static DataSet mult(DataSet set1, DataSet set2) {
 
 		final DataSet ds = new DataSet();
@@ -81,6 +66,21 @@ public class DataSet {
 		ds.y2 = set1.y2 * set2.y2;
 		ds.y1 = set1.y1 * set2.y1;
 		ds.ttm = set1.ttm * set2.ttm;
+		return ds;
+	}
+
+	public static DataSet sub(DataSet set1, DataSet set2) {
+
+		final DataSet ds = new DataSet();
+		ds.ticker = "MERGED_TICKERS";
+		ds.y7 = set1.y7 - set2.y7;
+		ds.y6 = set1.y6 - set2.y6;
+		ds.y5 = set1.y5 - set2.y5;
+		ds.y4 = set1.y4 - set2.y4;
+		ds.y3 = set1.y3 - set2.y3;
+		ds.y2 = set1.y2 - set2.y2;
+		ds.y1 = set1.y1 - set2.y1;
+		ds.ttm = set1.ttm - set2.ttm;
 		return ds;
 	}
 
@@ -139,6 +139,18 @@ public class DataSet {
 		this.name = "";
 	}
 
+	public DataSet(double scaler) {
+		this.ticker = "";
+		this.y7 = scaler;
+		this.y6 = scaler;
+		this.y5 = scaler;
+		this.y4 = scaler;
+		this.y3 = scaler;
+		this.y2 = scaler;
+		this.y1 = scaler;
+		this.ttm = scaler;
+	}
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -156,18 +168,6 @@ public class DataSet {
 		this.name = n;
 	}
 
-	public DataSet(double scaler) {
-		this.ticker = "";
-		this.y7 = scaler;
-		this.y6 = scaler;
-		this.y5 = scaler;
-		this.y4 = scaler;
-		this.y3 = scaler;
-		this.y2 = scaler;
-		this.y1 = scaler;
-		this.ttm = scaler;
-	}
-
 	public DataSet(String name, String code, String[] s, int ptr) {
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
@@ -180,10 +180,10 @@ public class DataSet {
 		this.ttm = this.getDouble(s[ptr + 8].trim());
 		if (this.ttm == 0.0) {
 			this.ttm = this.y1;
-		} 
+		}
 		this.name = name.trim();
 	}
-	
+
 	public DataSet(String name, String code, String[] s, int ptr, String mode) {
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
@@ -192,20 +192,20 @@ public class DataSet {
 		this.y4 = this.getDouble(s[ptr + 4].trim());
 		this.y3 = this.getDouble(s[ptr + 5].trim());
 		this.y2 = this.getDouble(s[ptr + 6].trim());
-		double q8 = this.getDouble(s[ptr + 7].trim());
-		double q7 = this.getDouble(s[ptr + 8].trim());
-		double q6 = this.getDouble(s[ptr + 9].trim());
-		double q5 = this.getDouble(s[ptr + 10].trim());
-		double q4 = this.getDouble(s[ptr + 11].trim());
-		double q3 = this.getDouble(s[ptr + 12].trim());
-		double q2 = this.getDouble(s[ptr + 13].trim());
+		final double q8 = this.getDouble(s[ptr + 7].trim());
+		final double q7 = this.getDouble(s[ptr + 8].trim());
+		final double q6 = this.getDouble(s[ptr + 9].trim());
+		final double q5 = this.getDouble(s[ptr + 10].trim());
+		final double q4 = this.getDouble(s[ptr + 11].trim());
+		final double q3 = this.getDouble(s[ptr + 12].trim());
+		final double q2 = this.getDouble(s[ptr + 13].trim());
 		double q1 = this.getDouble(s[ptr + 14].trim());
 
-		this.y1 = q8+q7+q6+q5;
+		this.y1 = q8 + q7 + q6 + q5;
 		if (q1 == 0.0) {
 			q1 = q5;
 		}
-		this.ttm = q4+q3+q2+q1;
+		this.ttm = q4 + q3 + q2 + q1;
 		this.name = name.trim();
 	}
 

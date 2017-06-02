@@ -67,7 +67,7 @@ public class SipData3 {
 
 	public static List<ClosingPrices> lastPrice = new ArrayList<>();
 
-	private static int					companyKnt	= 0;
+	private static int companyKnt = 0;
 
 	/**
 	 *
@@ -79,7 +79,7 @@ public class SipData3 {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		readClosingPrices("data/closing_price.txt");
+		SipData3.readClosingPrices("data/closing_price.txt");
 
 		final String group = "SPX";
 
@@ -93,121 +93,7 @@ public class SipData3 {
 			return;
 		}
 
-		processData(group);
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.readClosingPrices
-	 *
-	 * @param string
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	private static void readClosingPrices(String filename) throws FileNotFoundException, IOException {
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
-			String line = "";
-
-			while (line != null) {
-				line = br.readLine();
-				try {
-					String fld[] = line.split("\t");
-					new ClosingPrices(fld[0].trim(), fld[1].trim());
-				} catch (Exception e) {
-				}
-			}
-		}
-
-		for (ClosingPrices cp : ClosingPrices.priceList) {
-			System.out.println(cp);
-		}
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.main
-	 *
-	 * @param args
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public static void readDataFile_1(String filename) throws FileNotFoundException, IOException {
-
-		int knt = 0;
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
-			String line = "";
-
-			//line = br.readLine(); // read header
-			SipCommon sc = new SipCommon("\t", 14);
-
-			while (line != null) {
-				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
-
-//					final String fld[] = line.split("\t");
-//					System.out.println(knt + " : " + fld[0]);
-
-					knt++;
-					sc.reset();
-
-					sales.add(sc.getData("sales", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					ebit.add(sc.getData("ebit", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					taxes.add(sc.getData("taxes", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					incomeEps.add(sc.getData("incomeEps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					cashOps.add(sc.getData("cashOps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					cashInv.add(sc.getData("cashInv", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					cashFin.add(sc.getData("cashFin", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-
-					dividend.add(sc.getData("dividend", line, DataSet3.dMode.ACCUMULATION, 1.0));
-
-					capEx.add(sc.getData("capEx", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					DataSet3 s = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-					shares.add(s);
-
-					cash.add(sc.getData("cash", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					assets.add(sc.getData("assets", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					liabilities.add(sc.getData("liabilities", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					accRx.add(sc.getData("Accounts Receivable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					accTx.add(sc.getData("Accounts Payable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					goodwill.add(sc.getData("Goodwill", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					ltDebt.add(sc.getData("LT Debt", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-					equity.add(sc.getData("Common Equity", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
-
-				}
-			}
-		}
-		companyKnt = knt;
-	}
-
-	public static void readDataFile_2(String filename) throws FileNotFoundException, IOException {
-
-		int knt = 0;
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
-			String line = "";
-
-			//line = br.readLine(); // read header
-
-			SipCommon sc = new SipCommon("\t", 14);
-
-			while (line != null) {
-				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
-
-					sc.reset();
-
-					knt++;
-
-					interest.add(sc.getData("interest", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-					resDev.add(sc.getData("R and D", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
-
-					bookValue.add(sc.getData("Book Value per Share", line, DataSet3.dMode.SEQUENTIAL, 1.0));
-					prices.add(sc.getData("Prices", line, DataSet3.dMode.SEQUENTIAL, 1.0));
-
-				}
-			}
-		}
+		SipData3.processData(group);
 	}
 
 	public static void processData(String src) throws FileNotFoundException, IOException {
@@ -232,28 +118,28 @@ public class SipData3 {
 		final DataSet3 totInterest = DataSet3.sum(interest);
 		final DataSet3 totResDev = DataSet3.sum(resDev);
 
-		List<DataSet3> divDollar = new ArrayList<>();
+		final List<DataSet3> divDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
-			DataSet3 ds = DataSet3.mult(dividend.get(i), shares.get(i));
+			final DataSet3 ds = DataSet3.mult(dividend.get(i), shares.get(i));
 			divDollar.add(ds);
 		}
 		final DataSet3 totDivDollar = DataSet3.sum(divDollar);
 
-		List<DataSet3> bvDollar = new ArrayList<>();
+		final List<DataSet3> bvDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
-			DataSet3 ds = DataSet3.mult(bookValue.get(i), shares.get(i));
+			final DataSet3 ds = DataSet3.mult(bookValue.get(i), shares.get(i));
 			bvDollar.add(ds);
 		}
 		final DataSet3 totBvDollar = DataSet3.sum(bvDollar);
 
 		final DataSet3 totBVminusGW = DataSet3.sub(totBvDollar, totGoodwill);
 
-		List<DataSet3> mcap = new ArrayList<>();
+		final List<DataSet3> mcap = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
-			double pr = ClosingPrices.getPrice(prices.get(i).ticker);
-			DataSet3 price = prices.get(i);
+			final double pr = ClosingPrices.getPrice(prices.get(i).ticker);
+			final DataSet3 price = prices.get(i);
 			price.q1 = pr;
-			DataSet3 ds = DataSet3.mult(price, shares.get(i));
+			final DataSet3 ds = DataSet3.mult(price, shares.get(i));
 			mcap.add(ds);
 		}
 		final DataSet3 totMktCap = DataSet3.sum(mcap);
@@ -301,16 +187,126 @@ public class SipData3 {
 		}
 	}
 
-//	private static DataSet3 getData(String name, String[] fld, DataSet3.dMode mode, double scaler) {
-//
-//		final int INC = 14;
-//
-//		final DataSet3 ds = new DataSet3(name, fld[0].trim(), fld, ptr, mode);
-//		DataSet3 dsRet = DataSet3.scale(ds, scaler);
-//		//System.out.println(dsRet);
-//		ptr += INC;
-//		return dsRet;
-//	}
+	/**
+	 * net.ajaskey.market.tools.sipro.readClosingPrices
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void readClosingPrices(String filename) throws FileNotFoundException, IOException {
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+			String line = "";
+
+			while (line != null) {
+				line = br.readLine();
+				try {
+					final String fld[] = line.split("\t");
+					new ClosingPrices(fld[0].trim(), fld[1].trim());
+				} catch (final Exception e) {
+				}
+			}
+		}
+
+		for (final ClosingPrices cp : ClosingPrices.priceList) {
+			System.out.println(cp);
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.main
+	 *
+	 * @param args
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static void readDataFile_1(String filename) throws FileNotFoundException, IOException {
+
+		int knt = 0;
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+			String line = "";
+
+			//line = br.readLine(); // read header
+			final SipCommon sc = new SipCommon("\t", 14);
+
+			while (line != null) {
+				line = br.readLine();
+				if ((line != null) && (line.length() > 0)) {
+
+					//					final String fld[] = line.split("\t");
+					//					System.out.println(knt + " : " + fld[0]);
+
+					knt++;
+					sc.reset();
+
+					sales.add(sc.getData("sales", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					ebit.add(sc.getData("ebit", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					taxes.add(sc.getData("taxes", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					incomeEps.add(sc.getData("incomeEps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashOps.add(sc.getData("cashOps", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashInv.add(sc.getData("cashInv", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					cashFin.add(sc.getData("cashFin", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+
+					dividend.add(sc.getData("dividend", line, DataSet3.dMode.ACCUMULATION, 1.0));
+
+					capEx.add(sc.getData("capEx", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					final DataSet3 s = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+					shares.add(s);
+
+					cash.add(sc.getData("cash", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					assets.add(sc.getData("assets", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					liabilities.add(sc.getData("liabilities", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					accRx.add(sc.getData("Accounts Receivable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					accTx.add(sc.getData("Accounts Payable", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					goodwill.add(sc.getData("Goodwill", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					ltDebt.add(sc.getData("LT Debt", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+					equity.add(sc.getData("Common Equity", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION));
+
+				}
+			}
+		}
+		companyKnt = knt;
+	}
+
+	public static void readDataFile_2(String filename) throws FileNotFoundException, IOException {
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+			String line = "";
+
+			//line = br.readLine(); // read header
+
+			final SipCommon sc = new SipCommon("\t", 14);
+
+			while (line != null) {
+				line = br.readLine();
+				if ((line != null) && (line.length() > 0)) {
+
+					sc.reset();
+
+					interest.add(sc.getData("interest", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+					resDev.add(sc.getData("R and D", line, DataSet3.dMode.ACCUMULATION, SipCommon.MILLION));
+
+					bookValue.add(sc.getData("Book Value per Share", line, DataSet3.dMode.SEQUENTIAL, 1.0));
+					prices.add(sc.getData("Prices", line, DataSet3.dMode.SEQUENTIAL, 1.0));
+
+				}
+			}
+		}
+	}
+
+	//	private static DataSet3 getData(String name, String[] fld, DataSet3.dMode mode, double scaler) {
+	//
+	//		final int INC = 14;
+	//
+	//		final DataSet3 ds = new DataSet3(name, fld[0].trim(), fld, ptr, mode);
+	//		DataSet3 dsRet = DataSet3.scale(ds, scaler);
+	//		//System.out.println(dsRet);
+	//		ptr += INC;
+	//		return dsRet;
+	//	}
 
 	public static void write(DataSet3 ds, String fname) throws FileNotFoundException {
 

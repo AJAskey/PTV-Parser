@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import net.ajaskey.market.tools.sipro.ClosingPrices;
-
 /**
  * This class...
  *
@@ -23,7 +21,7 @@ import net.ajaskey.market.tools.sipro.ClosingPrices;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -36,16 +34,6 @@ import net.ajaskey.market.tools.sipro.ClosingPrices;
  */
 public class TickerNames {
 
-	private String listName;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public TickerNames(String list) {
-		listName = list;
-	}
-
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -56,10 +44,20 @@ public class TickerNames {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		//TickerNames tn = new TickerNames("lists/ivv-components.csv");
-		TickerNames tn = new TickerNames("data/SP500-SIP3.csv");
-		String s = tn.get();
+		final TickerNames tn = new TickerNames("data/SP500-SIP3.csv");
+		final String s = tn.get();
 		System.out.println(s);
 
+	}
+
+	private final String listName;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public TickerNames(String list) {
+		this.listName = list;
 	}
 
 	public String get() throws FileNotFoundException, IOException {
@@ -72,8 +70,8 @@ public class TickerNames {
 			while (line != null) {
 				line = br.readLine();
 				if (line != null) {
-					String fld[] = line.split("[,\\s+]");
-					String s = fld[0].replace("\n", "").replaceAll("\"", "");
+					final String fld[] = line.split("[,\\s+]");
+					final String s = fld[0].replace("\n", "").replaceAll("\"", "");
 					System.out.println(s);
 					if (knt == 0) {
 						ret += s.trim();

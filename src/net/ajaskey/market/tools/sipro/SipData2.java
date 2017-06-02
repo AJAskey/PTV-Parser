@@ -54,7 +54,7 @@ public class SipData2 {
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.sipro.main
 	 *
 	 * @param args
@@ -129,17 +129,17 @@ public class SipData2 {
 					shares.add(shr);
 					//System.out.println(shares);
 
-					double cpyKnt = 1.0 / (double) knt;
-					DataSet companies = new DataSet(cpyKnt);
+					final double cpyKnt = 1.0 / knt;
+					final DataSet companies = new DataSet(cpyKnt);
 					for (int i = 0; i < dividend.size(); i++) {
-						DataSet ds = DataSet.mult(dividend.get(i), shares.get(i));
-						DataSet ds1 = DataSet.mult(ds, companies);
+						final DataSet ds = DataSet.mult(dividend.get(i), shares.get(i));
+						final DataSet ds1 = DataSet.mult(ds, companies);
 						divDollar.add(ds1);
 					}
 				}
 			}
 		}
-		
+
 		final DataSet totSales = DataSet.sum(sales);
 		final DataSet totEbit = DataSet.sum(ebit);
 		final DataSet totTaxes = DataSet.sum(taxes);
@@ -175,13 +175,13 @@ public class SipData2 {
 
 			final DateSet dates = new DateSet();
 
-			write(pw, dates.y7, ds.y7);
-			write(pw, dates.y6, ds.y6);
-			write(pw, dates.y5, ds.y5);
-			write(pw, dates.y4, ds.y4);
-			write(pw, dates.y3, ds.y3);
-			write(pw, dates.y2, ds.y2);
-			write(pw, dates.y1, ds.y1);
+			SipData2.write(pw, dates.y7, ds.y7);
+			SipData2.write(pw, dates.y6, ds.y6);
+			SipData2.write(pw, dates.y5, ds.y5);
+			SipData2.write(pw, dates.y4, ds.y4);
+			SipData2.write(pw, dates.y3, ds.y3);
+			SipData2.write(pw, dates.y2, ds.y2);
+			SipData2.write(pw, dates.y1, ds.y1);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ds.ttm);
 
 		} catch (final Exception e) {

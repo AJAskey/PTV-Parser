@@ -54,75 +54,6 @@ public class GenStockList {
 	private static List<String>	sp600List	= null;
 	private static List<String>	ndxList		= null;
 
-	private GenStockList() throws ParseException, IOException {
-
-		if (!init) {
-
-			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
-			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
-			fullfilenames.add("symbols\\AMEX_SymbolList.txt");
-			TickerFullName.build(fullfilenames);
-
-			final String dataPath = Utils.getDataPath();
-			filenames.add(dataPath + "\\ASCII\\NASDAQ");
-			filenames.add(dataPath + "\\ASCII\\NYSE");
-			filenames.add(dataPath + "\\ASCII\\AMEX");
-			init = true;
-		}
-		ParseData.clearValidTickers();
-		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
-
-		/**
-		 * DontIgnoreTickers overrides general strings of IgnoreNames
-		 */
-		dontIgnoreTickers = new ArrayList<>();
-		// dontIgnoreTickers.add("QQQ");
-		// dontIgnoreTickers.add("DIA");
-		// dontIgnoreTickers.add("QQEW");
-		// dontIgnoreTickers.add("SPY");
-		// dontIgnoreTickers.add("IWO");
-
-		ignoreNames = new ArrayList<>();
-		ignoreNames.add(" ETF");
-		ignoreNames.add("PROSHRES");
-		ignoreNames.add("SHARES");
-		ignoreNames.add(" BULL");
-		ignoreNames.add(" BEAR");
-		ignoreNames.add(" INDEX");
-		ignoreNames.add("SPDR");
-		ignoreNames.add("DIREXION");
-		ignoreNames.add(" SECTOR");
-		ignoreNames.add(" FUTURES");
-		ignoreNames.add(" HEDGED");
-		ignoreNames.add(" TRUST");
-		ignoreNames.add(" FUND");
-		ignoreNames.add(" ETN");
-		ignoreNames.add("VANGUARD TOTAL");
-		ignoreNames.add("PCG-");
-		ignoreNames.add("DB-XT");
-		ignoreNames.add("WISDOMTREE");
-		ignoreNames.add(" EATON VANCE");
-		ignoreNames.add(" SCHWAB");
-		ignoreNames.add("LIBERTY GLOBAL");
-	}
-
-	/**
-	 * net.ajaskey.market.ta.main
-	 *
-	 * @param args
-	 * @throws IOException
-	 * @throws ParseException
-	 */
-	public static void main(String[] args) throws ParseException, IOException {
-
-		System.out.println("GenStockList Processing...");
-
-		GenStockList.findStocks("stock-list", 500000, 10.0);
-
-		System.out.println("GenStockList Done.");
-
-	}
-
 	/**
 	 * net.ajaskey.market.ta.checkName
 	 *
@@ -276,6 +207,75 @@ public class GenStockList {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * net.ajaskey.market.ta.main
+	 *
+	 * @param args
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public static void main(String[] args) throws ParseException, IOException {
+
+		System.out.println("GenStockList Processing...");
+
+		GenStockList.findStocks("stock-list", 500000, 10.0);
+
+		System.out.println("GenStockList Done.");
+
+	}
+
+	private GenStockList() throws ParseException, IOException {
+
+		if (!init) {
+
+			fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
+			fullfilenames.add("symbols\\NYSE_SymbolList.txt");
+			fullfilenames.add("symbols\\AMEX_SymbolList.txt");
+			TickerFullName.build(fullfilenames);
+
+			final String dataPath = Utils.getDataPath();
+			filenames.add(dataPath + "\\ASCII\\NASDAQ");
+			filenames.add(dataPath + "\\ASCII\\NYSE");
+			filenames.add(dataPath + "\\ASCII\\AMEX");
+			init = true;
+		}
+		ParseData.clearValidTickers();
+		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
+
+		/**
+		 * DontIgnoreTickers overrides general strings of IgnoreNames
+		 */
+		dontIgnoreTickers = new ArrayList<>();
+		// dontIgnoreTickers.add("QQQ");
+		// dontIgnoreTickers.add("DIA");
+		// dontIgnoreTickers.add("QQEW");
+		// dontIgnoreTickers.add("SPY");
+		// dontIgnoreTickers.add("IWO");
+
+		ignoreNames = new ArrayList<>();
+		ignoreNames.add(" ETF");
+		ignoreNames.add("PROSHRES");
+		ignoreNames.add("SHARES");
+		ignoreNames.add(" BULL");
+		ignoreNames.add(" BEAR");
+		ignoreNames.add(" INDEX");
+		ignoreNames.add("SPDR");
+		ignoreNames.add("DIREXION");
+		ignoreNames.add(" SECTOR");
+		ignoreNames.add(" FUTURES");
+		ignoreNames.add(" HEDGED");
+		ignoreNames.add(" TRUST");
+		ignoreNames.add(" FUND");
+		ignoreNames.add(" ETN");
+		ignoreNames.add("VANGUARD TOTAL");
+		ignoreNames.add("PCG-");
+		ignoreNames.add("DB-XT");
+		ignoreNames.add("WISDOMTREE");
+		ignoreNames.add(" EATON VANCE");
+		ignoreNames.add(" SCHWAB");
+		ignoreNames.add("LIBERTY GLOBAL");
 	}
 
 }

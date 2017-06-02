@@ -15,7 +15,7 @@ package net.ajaskey.market.misc;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,8 +28,8 @@ package net.ajaskey.market.misc;
  */
 public class PtvPaths {
 
-	public static final String	drive		= "c:";
-	public static final String	data		= "\\data";
+	public static final String	drive			= "c:";
+	public static final String	data			= "\\data";
 	public static final String	stockData	= "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\StockData\\";
 
 }

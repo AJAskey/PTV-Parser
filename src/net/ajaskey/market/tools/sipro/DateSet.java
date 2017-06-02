@@ -74,15 +74,6 @@ public class DateSet {
 		}
 	}
 
-	public Quarter	y7;
-	public Quarter	y6;
-	public Quarter	y5;
-	public Quarter	y4;
-	public Quarter	y3;
-	public Quarter	y2;
-	public Quarter	y1;
-	public Calendar	ttm;
-
 	/**
 	 * net.ajaskey.market.tools.sipro.main
 	 *
@@ -94,6 +85,16 @@ public class DateSet {
 		System.out.println(ds);
 
 	}
+
+	public Quarter	y7;
+	public Quarter	y6;
+	public Quarter	y5;
+	public Quarter	y4;
+	public Quarter	y3;
+	public Quarter	y2;
+	public Quarter	y1;
+
+	public Calendar ttm;
 
 	public DateSet() {
 

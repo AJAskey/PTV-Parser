@@ -77,6 +77,30 @@ public class ProcessCOTS {
 	private static SpxLongTermPrices spxData;
 
 	/**
+	 *
+	 * net.ajaskey.market.tools.getLatestCots
+	 *
+	 */
+	private static void getLatestCots() {
+
+		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
+		List<String> resp = new ArrayList<>();
+
+		resp = WebGet.getSPDR(url);
+
+		if (resp != null) {
+
+			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
+				for (final String s : resp) {
+					pw.println(s);
+				}
+			} catch (final FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
@@ -104,75 +128,6 @@ public class ProcessCOTS {
 		ProcessCOTS.process("TREASURY");
 
 		System.out.println("Done.");
-	}
-
-	public static void runAllCombo(String prefix) throws ParseException {
-
-		validNames.clear();
-		validNames.add(DJIA_C_Name);
-		validNames.add(DJIA_Name);
-		validNames.add(NDX_C_Name);
-		validNames.add(NDX_Name);
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
-		validNames.add(EMINI400_Name);
-		validNames.add(RUT_Name);
-
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
-
-		try {
-
-			CotsReports.writeCsv("ALL_", outputPath);
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void runSpxCombo(String prefix) throws ParseException {
-
-		validNames.clear();
-
-		validNames.add(SPX_C_Name);
-		validNames.add(SPX_Name);
-		validNames.add(EMINI500_Name);
-
-		ProcessCOTS.readDaily();
-		ProcessCOTS.readAndProcess(null);
-
-		try {
-
-			CotsReports.writeCsv("All_", outputPath);
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.getLatestCots
-	 *
-	 */
-	private static void getLatestCots() {
-
-		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
-		List<String> resp = new ArrayList<>();
-
-		resp = WebGet.getSPDR(url);
-
-		if (resp != null) {
-
-			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
-				for (final String s : resp) {
-					pw.println(s);
-				}
-			} catch (final FileNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 
 	/**
@@ -438,6 +393,51 @@ public class ProcessCOTS {
 			}
 		}
 
+	}
+
+	public static void runAllCombo(String prefix) throws ParseException {
+
+		validNames.clear();
+		validNames.add(DJIA_C_Name);
+		validNames.add(DJIA_Name);
+		validNames.add(NDX_C_Name);
+		validNames.add(NDX_Name);
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+		validNames.add(EMINI400_Name);
+		validNames.add(RUT_Name);
+
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsv("ALL_", outputPath);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void runSpxCombo(String prefix) throws ParseException {
+
+		validNames.clear();
+
+		validNames.add(SPX_C_Name);
+		validNames.add(SPX_Name);
+		validNames.add(EMINI500_Name);
+
+		ProcessCOTS.readDaily();
+		ProcessCOTS.readAndProcess(null);
+
+		try {
+
+			CotsReports.writeCsv("All_", outputPath);
+
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**

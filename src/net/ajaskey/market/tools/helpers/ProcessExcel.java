@@ -51,8 +51,19 @@ import net.ajaskey.market.misc.Utils;
  */
 public class ProcessExcel {
 
-	public Calendar	date;
-	public double		value;
+	/**
+	 * net.ajaskey.market.tools.convertDate
+	 *
+	 * @param day
+	 * @return
+	 */
+	private static Calendar convertDate(int day) {
+
+		final Calendar base = Calendar.getInstance();
+		base.set(1900, Calendar.JANUARY, 1);
+		base.add(Calendar.DATE, day);
+		return base;
+	}
 
 	/**
 	 *
@@ -223,18 +234,8 @@ public class ProcessExcel {
 		return retList;
 	}
 
-	/**
-	 * net.ajaskey.market.tools.convertDate
-	 *
-	 * @param day
-	 * @return
-	 */
-	private static Calendar convertDate(int day) {
+	public Calendar date;
 
-		final Calendar base = Calendar.getInstance();
-		base.set(1900, Calendar.JANUARY, 1);
-		base.add(Calendar.DATE, day);
-		return base;
-	}
+	public double value;
 
 }

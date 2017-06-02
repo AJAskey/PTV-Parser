@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.ajaskey.market.tools.sipro.ClosingPrices;
-
 /**
  * This class...
  *
@@ -25,7 +23,7 @@ import net.ajaskey.market.tools.sipro.ClosingPrices;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -38,9 +36,17 @@ import net.ajaskey.market.tools.sipro.ClosingPrices;
  */
 public class Common {
 
+	public static void delay(long ms) {
+
+		try {
+			Thread.sleep(ms);
+		} catch (final InterruptedException e) {
+		}
+	}
+
 	public static List<String> getTickersFromFile(String filename) throws FileNotFoundException, IOException {
 
-		List<String> ret = new ArrayList<>();
+		final List<String> ret = new ArrayList<>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
@@ -49,26 +55,19 @@ public class Common {
 			while (line != null) {
 				line = br.readLine();
 				try {
-					String fld[] = line.split("[\\s+,]");
-					String s = fld[0].trim().replace("\"", "");
+					final String fld[] = line.split("[\\s+,]");
+					final String s = fld[0].trim().replace("\"", "");
 					if (s.length() > 0) {
 						if (!s.substring(0, 1).equals("#")) {
 							ret.add(s);
 						}
 					}
-				} catch (Exception e) {
+				} catch (final Exception e) {
 					// handle errors in data but continue processing
 				}
 			}
 		}
 		return ret;
-	}
-	
-	public static void delay(long ms) {
-		try {
-			Thread.sleep(ms);
-		} catch (InterruptedException e) {
-		}
 	}
 
 	/**

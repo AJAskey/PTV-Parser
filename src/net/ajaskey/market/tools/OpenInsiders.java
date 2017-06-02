@@ -44,16 +44,15 @@ public class OpenInsiders {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		Calendar cal = Calendar.getInstance();
+		final Calendar cal = Calendar.getInstance();
 
-		int d = cal.get(Calendar.DAY_OF_YEAR) + 1;
+		final int d = cal.get(Calendar.DAY_OF_YEAR) + 1;
 
 		final int days = d;
 		final int minDollar = 10;
 		final int page = 1;
 
-		final OpenInsiders oi = new OpenInsiders("data/SP500-SIP3.csv", days, minDollar, page, "out/1.html");
-		//oi.getNextPage("out/2.html");
+		new OpenInsiders("data/SP500-SIP3.csv", days, minDollar, page, "out/1.html");
 
 	}
 

@@ -54,25 +54,6 @@ public class FindCategories {
 	private static List<Integer> catList = new ArrayList<>();
 
 	/**
-	 * net.ajaskey.market.tools.fred.main
-	 *
-	 * @param args
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException {
-
-		pwSum = new PrintWriter("fred-categories.txt");
-
-		FindCategories.processProductionBusiness();
-		FindCategories.processBanking();
-		FindCategories.processEmployment();
-		FindCategories.processPrices();
-		FindCategories.processNatlAccounts();
-
-		pwSum.close();
-	}
-
-	/**
 	 * net.ajaskey.market.tools.fred.getSeries
 	 *
 	 * @param id
@@ -118,6 +99,25 @@ public class FindCategories {
 
 		} catch (final Exception e) {
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.main
+	 *
+	 * @param args
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws IOException {
+
+		pwSum = new PrintWriter("fred-categories.txt");
+
+		FindCategories.processProductionBusiness();
+		FindCategories.processBanking();
+		FindCategories.processEmployment();
+		FindCategories.processPrices();
+		FindCategories.processNatlAccounts();
+
+		pwSum.close();
 	}
 
 	private static void processBanking() throws FileNotFoundException {

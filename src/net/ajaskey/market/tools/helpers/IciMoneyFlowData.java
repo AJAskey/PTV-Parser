@@ -6,7 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.optuma.ProcessICI;
 
 /**
  * This class...
@@ -22,7 +21,7 @@ import net.ajaskey.market.tools.optuma.ProcessICI;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -35,17 +34,17 @@ import net.ajaskey.market.tools.optuma.ProcessICI;
  */
 public class IciMoneyFlowData {
 
-	public Calendar	date;
-	public long			total;
-	public long     equity;
-	public long     domestic;
-	public long     lcap;
-	public long     mcap;
-	public long     scap;
-	public boolean	valid;
-
 	private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM/dd/yyyy");
 	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+	public Calendar									date;
+	public long											total;
+	public long											equity;
+	public long											domestic;
+	public long											lcap;
+	public long											mcap;
+
+	public long			scap;
+	public boolean	valid;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -53,15 +52,15 @@ public class IciMoneyFlowData {
 	 */
 	public IciMoneyFlowData() {
 		this.valid = false;
-		total = 0;
+		this.total = 0;
 	}
 
 	public void build(String line) {
 
-		IciMoneyFlowData ret = new IciMoneyFlowData();
+		new IciMoneyFlowData();
 		try {
-			String str = line.replaceAll(",", "").replaceAll("\"", "").trim();
-			String fld[] = str.split("\\s+");
+			final String str = line.replaceAll(",", "").replaceAll("\"", "").trim();
+			final String fld[] = str.split("\\s+");
 			final Date date = sdf.parse(fld[0].trim());
 			this.date = Calendar.getInstance();
 			this.date.setTime(date);
@@ -72,7 +71,7 @@ public class IciMoneyFlowData {
 			this.mcap = Long.parseLong(fld[5].trim());
 			this.scap = Long.parseLong(fld[6].trim());
 			this.valid = true;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 		}
 	}
 
@@ -82,13 +81,13 @@ public class IciMoneyFlowData {
 	@Override
 	public String toString() {
 
-		String ret = sdfOptuma.format(date.getTime());
-		ret += Utils.TAB + total;
-		ret += Utils.TAB + equity;
-		ret += Utils.TAB + domestic;
-		ret += Utils.TAB + lcap;
-		ret += Utils.TAB + mcap;
-		ret += Utils.TAB + scap;
+		String ret = sdfOptuma.format(this.date.getTime());
+		ret += Utils.TAB + this.total;
+		ret += Utils.TAB + this.equity;
+		ret += Utils.TAB + this.domestic;
+		ret += Utils.TAB + this.lcap;
+		ret += Utils.TAB + this.mcap;
+		ret += Utils.TAB + this.scap;
 		return ret;
 	}
 

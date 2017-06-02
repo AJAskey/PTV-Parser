@@ -50,8 +50,77 @@ public class ProcessICI {
 
 	public static void main(String[] args) {
 
-		processMoneyFlow();
-		processEtfFlow();
+		ProcessICI.processMoneyFlow();
+		ProcessICI.processEtfFlow();
+	}
+
+	public static void processEtfFlow() {
+
+		String line;
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/combined_flows_data_2017.txt"))) {
+
+			Calendar lastCal = null;
+			while ((line = reader.readLine()) != null) {
+				if (line.toLowerCase().contains("estimated weekly fund flows")) {
+					lastCal = Utils.buildCalendar(data.get(data.size() - 1).date);
+					lastCal.add(Calendar.MONTH, 1);
+					break;
+				}
+				IciCombinedFlowData d = new IciCombinedFlowData();
+				d.build(line);
+				if (d.valid) {
+					data.add(d);
+				} else {
+					d = null;
+				}
+			}
+
+			System.out.println(Utils.stringDate(lastCal));
+			final IciCombinedFlowData weekly = new IciCombinedFlowData();
+			weekly.date = lastCal;
+			while ((line = reader.readLine()) != null) {
+				final IciCombinedFlowData d = new IciCombinedFlowData();
+				d.build(line);
+				if (d.valid) {
+					weekly.equityDomestic += d.equityDomestic;
+					weekly.equityWorld += d.equityWorld;
+					weekly.bondTaxable += d.bondTaxable;
+					weekly.bondMuni += d.bondMuni;
+					weekly.commodity += d.commodity;
+				}
+			}
+			weekly.valid = true;
+			data.add(weekly);
+
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (final IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try (PrintWriter pwed = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_equity_dom.csv");
+		    PrintWriter pwew = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_world_dom.csv");
+		    PrintWriter pwbt = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_bond_taxable.csv");
+		    PrintWriter pwbm = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_bond_municipal.csv");
+		    PrintWriter pwc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_commodity.csv")) {
+
+			for (final IciCombinedFlowData p : data) {
+				if (p.valid) {
+					System.out.println(p);
+					final String dat = sdfOptuma.format(p.date.getTime());
+					pwed.println(dat + "," + p.equityDomestic);
+					pwew.println(dat + "," + p.equityWorld);
+					pwbt.println(dat + "," + p.bondTaxable);
+					pwbm.println(dat + "," + p.bondMuni);
+					pwc.println(dat + "," + p.commodity);
+				}
+			}
+		} catch (final FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -81,10 +150,10 @@ public class ProcessICI {
 			}
 
 			System.out.println(Utils.stringDate(lastCal));
-			IciMoneyFlowData weekly = new IciMoneyFlowData();
+			final IciMoneyFlowData weekly = new IciMoneyFlowData();
 			weekly.date = lastCal;
 			while ((line = reader.readLine()) != null) {
-				IciMoneyFlowData d = new IciMoneyFlowData();
+				final IciMoneyFlowData d = new IciMoneyFlowData();
 				d.build(line);
 				if (d.valid) {
 					weekly.total += d.total;
@@ -113,10 +182,10 @@ public class ProcessICI {
 		    PrintWriter pwmc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_mcap_mf.csv");
 		    PrintWriter pwsc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_eq_scap_mf.csv")) {
 
-			for (IciMoneyFlowData p : mfList) {
+			for (final IciMoneyFlowData p : mfList) {
 				if (p.valid) {
 					System.out.println(p);
-					String dat = sdfOptuma.format(p.date.getTime());
+					final String dat = sdfOptuma.format(p.date.getTime());
 					pwt.println(dat + "," + p.total);
 					pwe.println(dat + "," + p.equity);
 					pwd.println(dat + "," + p.domestic);
@@ -125,76 +194,7 @@ public class ProcessICI {
 					pwsc.println(dat + "," + p.scap);
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void processEtfFlow() {
-
-		String line;
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/combined_flows_data_2017.txt"))) {
-
-			Calendar lastCal = null;
-			while ((line = reader.readLine()) != null) {
-				if (line.toLowerCase().contains("estimated weekly fund flows")) {
-					lastCal = Utils.buildCalendar(data.get(data.size() - 1).date);
-					lastCal.add(Calendar.MONTH, 1);
-					break;
-				}
-				IciCombinedFlowData d = new IciCombinedFlowData();
-				d.build(line);
-				if (d.valid) {
-					data.add(d);
-				} else {
-					d = null;
-				}
-			}
-
-			System.out.println(Utils.stringDate(lastCal));
-			IciCombinedFlowData weekly = new IciCombinedFlowData();
-			weekly.date = lastCal;
-			while ((line = reader.readLine()) != null) {
-				IciCombinedFlowData d = new IciCombinedFlowData();
-				d.build(line);
-				if (d.valid) {
-					weekly.equityDomestic += d.equityDomestic;
-					weekly.equityWorld += d.equityWorld;
-					weekly.bondTaxable += d.bondTaxable;
-					weekly.bondMuni += d.bondMuni;
-					weekly.commodity += d.commodity;
-				}
-			}
-			weekly.valid = true;
-			data.add(weekly);
-
-		} catch (final FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (final IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		try (PrintWriter pwed = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_equity_dom.csv");
-		    PrintWriter pwew = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_world_dom.csv");
-		    PrintWriter pwbt = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_bond_taxable.csv");
-		    PrintWriter pwbm = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_bond_municipal.csv");
-		    PrintWriter pwc = new PrintWriter(ConvertOHLCV.shortPath + "\\ici_commodity.csv")) {
-
-			for (IciCombinedFlowData p : data) {
-				if (p.valid) {
-					System.out.println(p);
-					String dat = sdfOptuma.format(p.date.getTime());
-					pwed.println(dat + "," + p.equityDomestic);
-					pwew.println(dat + "," + p.equityWorld);
-					pwbt.println(dat + "," + p.bondTaxable);
-					pwbm.println(dat + "," + p.bondMuni);
-					pwc.println(dat + "," + p.commodity);
-				}
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}

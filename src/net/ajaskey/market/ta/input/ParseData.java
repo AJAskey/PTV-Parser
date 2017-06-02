@@ -53,14 +53,6 @@ public class ParseData {
 	private static int					GET_ALL_DATA	= 999999;
 
 	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private ParseData() {
-	}
-
-	/**
 	 *
 	 *
 	 * Procedure clearValidTickers. ;
@@ -124,6 +116,30 @@ public class ParseData {
 	}
 
 	/**
+	 * net.ajaskey.market.ta.input.isCurrent
+	 *
+	 * @param f
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	private static boolean isCurrent(File f) {
+
+		boolean current = false;
+		if (f.exists()) {
+			final long modtime = f.lastModified();
+			final Calendar calFile = Calendar.getInstance();
+			calFile.setTimeInMillis(modtime);
+			final int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
+
+			final Calendar cal = Calendar.getInstance();
+			final int doy = cal.get(Calendar.DAY_OF_YEAR);
+
+			current = (fileDoy != doy);
+		}
+		return current;
+	}
+
+	/**
 	 *
 	 * @param ticker
 	 * @return
@@ -131,6 +147,44 @@ public class ParseData {
 	static public boolean isTickerValid(String ticker) {
 
 		return TickerFullName.isValid(ticker.trim());
+	}
+
+	public static void main(String[] args) {
+
+		try {
+			final List<String> l = ParseData.getTickerList("data/SP500-SIP3.CSV");
+			for (final String s : l) {
+				System.out.println(s);
+			}
+		} catch (final IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.mergeLists
+	 *
+	 * @param mainList
+	 * @param newList
+	 */
+	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
+
+		for (final TickerData tdNew : newList) {
+			boolean found = false;
+			for (final TickerData tdMain : mainList) {
+				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
+					// tdMain.getData().addAll(tdNew.getData());
+					TickerData.mergeData(tdMain, tdNew);
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				mainList.add(tdNew);
+			}
+		}
 	}
 
 	/**
@@ -543,55 +597,6 @@ public class ParseData {
 	}
 
 	/**
-	 * net.ajaskey.market.ta.input.isCurrent
-	 *
-	 * @param f
-	 * @return
-	 */
-	@SuppressWarnings("unused")
-	private static boolean isCurrent(File f) {
-
-		boolean current = false;
-		if (f.exists()) {
-			final long modtime = f.lastModified();
-			final Calendar calFile = Calendar.getInstance();
-			calFile.setTimeInMillis(modtime);
-			final int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
-
-			final Calendar cal = Calendar.getInstance();
-			final int doy = cal.get(Calendar.DAY_OF_YEAR);
-
-			current = (fileDoy != doy);
-		}
-		return current;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.input.mergeLists
-	 *
-	 * @param mainList
-	 * @param newList
-	 */
-	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
-
-		for (final TickerData tdNew : newList) {
-			boolean found = false;
-			for (final TickerData tdMain : mainList) {
-				if (tdNew.getTicker().equalsIgnoreCase(tdMain.getTicker())) {
-					// tdMain.getData().addAll(tdNew.getData());
-					TickerData.mergeData(tdMain, tdNew);
-					found = true;
-					break;
-				}
-			}
-			if (!found) {
-				mainList.add(tdNew);
-			}
-		}
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.input.toDouble
 	 *
@@ -614,17 +619,13 @@ public class ParseData {
 		// System.out.println(str + "\t" + dStr);
 		return Double.parseDouble(dStr);
 	}
-	
-	public static void main(String[] args) {
-		try {
-			List<String> l = ParseData.getTickerList("data/SP500-SIP3.CSV");
-			for (String s : l) {
-				System.out.println(s);
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private ParseData() {
 	}
 
 }

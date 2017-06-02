@@ -59,14 +59,6 @@ import net.ajaskey.market.ta.TickerData;
 public class Methods {
 
 	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private Methods() {
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.methods.checkParams
 	 *
@@ -118,6 +110,14 @@ public class Methods {
 			status = false;
 		}
 		return status;
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private Methods() {
 	}
 
 }

@@ -28,13 +28,27 @@ package net.ajaskey.market.ta.methods;
  */
 public class SmaContinuousSeries {
 
-	private int knt;
+	/**
+	 *
+	 * net.ajaskey.market.ta.methods.main
+	 *
+	 * @param args
+	 */
+	public static void main(String[] args) {
 
+		final SmaContinuousSeries sma = new SmaContinuousSeries(9);
+		for (int i = 1; i < 31; i++) {
+			System.out.println(i + "\t" + sma.addValue(i));
+		}
+	}
+
+	private int				knt;
 	private int				ptr;
 	private double		sma;
 	private double		smaTot;
 	private final int	smaWindow;
-	private double[]	values	= null;
+
+	private double[] values = null;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -49,20 +63,6 @@ public class SmaContinuousSeries {
 		this.values = new double[smaWin];
 		for (int i = 0; i < smaWin; i++) {
 			this.values[i] = 0.0;
-		}
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.ta.methods.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		final SmaContinuousSeries sma = new SmaContinuousSeries(9);
-		for (int i = 1; i < 31; i++) {
-			System.out.println(i + "\t" + sma.addValue(i));
 		}
 	}
 

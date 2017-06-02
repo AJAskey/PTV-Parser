@@ -1,14 +1,11 @@
 
 package net.ajaskey.market.ta.input;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -45,14 +42,6 @@ public class SpxLongTermPrices {
 	final private static Charset					charset		= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
 	static public List<SpxLongTermPrices>	spxList		= null;
-	public double													open;
-	public double													high;
-
-	public double	low;
-	public double	close;
-	public long		volume;
-
-	public Calendar date;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -61,35 +50,35 @@ public class SpxLongTermPrices {
 	 * @throws ParseException
 	 *
 	 */
-//	public SpxLongTermPrices() throws IOException, ParseException {
-//
-//		// Singleton
-//		if (spxList != null) {
-//			return;
-//		}
-//
-//		spxList = new ArrayList<>();
-//
-//		try (BufferedReader reader = Files.newBufferedReader(filePath.toPath(), charset)) {
-//			String line = reader.readLine(); // Header
-//
-//			while ((line = reader.readLine()) != null) {
-//				final SpxLongTermPrices sp = new SpxLongTermPrices();
-//				try {
-//					sp.date = Calendar.getInstance();
-//					final String fld[] = line.trim().split("\t");
-//					sp.date.setTime(sdf.parse(fld[0].trim()));
-//					sp.open = Double.parseDouble(fld[1].trim());
-//					sp.high = Double.parseDouble(fld[2].trim());
-//					sp.low = Double.parseDouble(fld[3].trim());
-//					sp.close = Double.parseDouble(fld[4].trim());
-//					System.out.println(Utils.stringDate(sp.date) + " " + sp.close);
-//					spxList.add(sp);
-//				} catch (final Exception e) {
-//				}
-//			}
-//		}
-//	}
+	//	public SpxLongTermPrices() throws IOException, ParseException {
+	//
+	//		// Singleton
+	//		if (spxList != null) {
+	//			return;
+	//		}
+	//
+	//		spxList = new ArrayList<>();
+	//
+	//		try (BufferedReader reader = Files.newBufferedReader(filePath.toPath(), charset)) {
+	//			String line = reader.readLine(); // Header
+	//
+	//			while ((line = reader.readLine()) != null) {
+	//				final SpxLongTermPrices sp = new SpxLongTermPrices();
+	//				try {
+	//					sp.date = Calendar.getInstance();
+	//					final String fld[] = line.trim().split("\t");
+	//					sp.date.setTime(sdf.parse(fld[0].trim()));
+	//					sp.open = Double.parseDouble(fld[1].trim());
+	//					sp.high = Double.parseDouble(fld[2].trim());
+	//					sp.low = Double.parseDouble(fld[3].trim());
+	//					sp.close = Double.parseDouble(fld[4].trim());
+	//					System.out.println(Utils.stringDate(sp.date) + " " + sp.close);
+	//					spxList.add(sp);
+	//				} catch (final Exception e) {
+	//				}
+	//			}
+	//		}
+	//	}
 
 	public static String getClose(Calendar cal) {
 
@@ -121,5 +110,16 @@ public class SpxLongTermPrices {
 
 		new SpxLongTermPrices();
 	}
+
+	public double	open;
+	public double	high;
+
+	public double low;
+
+	public double close;
+
+	public long volume;
+
+	public Calendar date;
 
 }

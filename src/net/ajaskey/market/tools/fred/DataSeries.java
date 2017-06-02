@@ -74,23 +74,6 @@ public class DataSeries {
 		LIN, CHG, CH1, PCH, PC1, PCA, CCH, CCA, LOG
 	}
 
-	private String								name;
-	private AggregationMethodType	aggType;
-	private FileType							fileType;
-	private OrderType							order;
-	private ResponseType					respType;
-	private int										limit;
-	private int										offset;
-
-	private int			respKnt;
-	private String	period;
-
-	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
-	private DocumentBuilder								dBuilder	= null;
-
-	private Calendar							cal1;
-	private final DataSeriesInfo	info;
-
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
@@ -116,6 +99,24 @@ public class DataSeries {
 		}
 	}
 
+	private String								name;
+	private AggregationMethodType	aggType;
+	private FileType							fileType;
+	private OrderType							order;
+	private ResponseType					respType;
+	private int										limit;
+
+	private int	offset;
+	private int	respKnt;
+
+	private String												period;
+	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
+
+	private DocumentBuilder	dBuilder	= null;
+	private Calendar				cal1;
+
+	private final DataSeriesInfo info;
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -138,6 +139,58 @@ public class DataSeries {
 			this.dBuilder = null;
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.appendEstimates
+	 *
+	 * @param retList
+	 * @param futureChg
+	 */
+	private void appendEstimates(List<DataValues> retList, double futureChg) {
+
+		this.setPeriod(this.info.getFrequency());
+
+		final Calendar cal = Calendar.getInstance();
+		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+		final double last = retList.get(retList.size() - 1).getValue();
+
+		Debug.pwDbg.println(this.period);
+
+		Debug.pwDbg.println(Utils.getString(calLast));
+
+		int periodKnt = 0;
+		int duration = 0;
+		if (this.period.contains("daily")) {
+			periodKnt = 1;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("weekly")) {
+			periodKnt = 7;
+			duration = Calendar.DATE;
+		} else if (this.period.contains("monthly")) {
+			periodKnt = 1;
+			duration = Calendar.MONTH;
+		} else {
+			periodKnt = 3;
+			duration = Calendar.MONTH;
+		}
+
+		calLast.add(duration, periodKnt);
+		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
+
+		final double val = last + (last * (futureChg / 100.0));
+		final DataValues dv = new DataValues(calLast, val);
+		retList.add(dv);
+
+		final Calendar tmp = Utils.buildCalendar(calLast);
+		while (tmp.before(cal)) {
+			final Calendar nCal = Utils.buildCalendar(tmp);
+			nCal.add(duration, periodKnt);
+			final DataValues dv1 = new DataValues(nCal, val);
+			retList.add(dv1);
+			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
+		}
+
 	}
 
 	/**
@@ -309,6 +362,15 @@ public class DataSeries {
 	}
 
 	/**
+	 * @param name
+	 *          the name to set
+	 */
+	private void setName(String name) {
+
+		this.name = name;
+	}
+
+	/**
 	 * @param offset
 	 *          the offset to set
 	 */
@@ -365,67 +427,6 @@ public class DataSeries {
 		ret += "Count  : " + this.respKnt + Utils.NL;
 		ret += "First  : " + Utils.getString(this.cal1);
 		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.appendEstimates
-	 *
-	 * @param retList
-	 * @param futureChg
-	 */
-	private void appendEstimates(List<DataValues> retList, double futureChg) {
-
-		this.setPeriod(this.info.getFrequency());
-
-		final Calendar cal = Calendar.getInstance();
-		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
-		final double last = retList.get(retList.size() - 1).getValue();
-
-		Debug.pwDbg.println(this.period);
-
-		Debug.pwDbg.println(Utils.getString(calLast));
-
-		int periodKnt = 0;
-		int duration = 0;
-		if (this.period.contains("daily")) {
-			periodKnt = 1;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("weekly")) {
-			periodKnt = 7;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("monthly")) {
-			periodKnt = 1;
-			duration = Calendar.MONTH;
-		} else {
-			periodKnt = 3;
-			duration = Calendar.MONTH;
-		}
-
-		calLast.add(duration, periodKnt);
-		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
-
-		final double val = last + (last * (futureChg / 100.0));
-		final DataValues dv = new DataValues(calLast, val);
-		retList.add(dv);
-
-		final Calendar tmp = Utils.buildCalendar(calLast);
-		while (tmp.before(cal)) {
-			final Calendar nCal = Utils.buildCalendar(tmp);
-			nCal.add(duration, periodKnt);
-			final DataValues dv1 = new DataValues(nCal, val);
-			retList.add(dv1);
-			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
-		}
-
-	}
-
-	/**
-	 * @param name
-	 *          the name to set
-	 */
-	private void setName(String name) {
-
-		this.name = name;
 	}
 
 }

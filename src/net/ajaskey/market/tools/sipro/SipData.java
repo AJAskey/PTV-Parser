@@ -70,7 +70,7 @@ public class SipData {
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.sipro.main
 	 *
 	 * @param args
@@ -180,7 +180,7 @@ public class SipData {
 					final DataSet apay = new DataSet("accPay", fld[0], fld, 136);
 					//System.out.println(apay);
 					accPay.add(apay);
-					
+
 					final DataSet arx = new DataSet("accRx", fld[0], fld, 144);
 					//System.out.println(arx);
 					accRx.add(arx);
@@ -256,7 +256,7 @@ public class SipData {
 		//System.out.println("Shares : \n" + totShares);
 
 		for (int i = 0; i < dividends.size(); i++) {
-			DataSet ds = DataSet.mult(dividends.get(i), shares.get(i));
+			final DataSet ds = DataSet.mult(dividends.get(i), shares.get(i));
 			divDollar.add(ds);
 		}
 		final DataSet totDiv = DataSet.sum(divDollar);
@@ -264,10 +264,10 @@ public class SipData {
 
 		final DataSet totBv = DataSet.sum(bookvalue);
 		//System.out.println("Book Value : \n" + totBv);
-		DataSet bvDollar = DataSet.mult(totBv, totShares);
-		DataSet bvMod = DataSet.sub(bvDollar, totGoodwill);
-		DataSet bvScaler = new DataSet(1.0 / 100.0);
-		DataSet bvScaled = DataSet.mult(bvMod, bvScaler);
+		final DataSet bvDollar = DataSet.mult(totBv, totShares);
+		final DataSet bvMod = DataSet.sub(bvDollar, totGoodwill);
+		final DataSet bvScaler = new DataSet(1.0 / 100.0);
+		final DataSet bvScaled = DataSet.mult(bvMod, bvScaler);
 
 		final DataSet totEq = DataSet.sum(equity);
 		//System.out.println("Equity : \n" + totEq);
@@ -290,10 +290,10 @@ public class SipData {
 		final DataSet totEbit = DataSet.sum(ebit);
 		//System.out.println("EBIT : \n" + totEbit);
 
-		double cpyKnt = 1.0 / (double) knt;
+		final double cpyKnt = 1.0 / knt;
 		final DataSet totPrice = DataSet.sum(prices);
-		DataSet companies = new DataSet(cpyKnt);
-		DataSet totAvgPr = DataSet.mult(totPrice, companies);
+		final DataSet companies = new DataSet(cpyKnt);
+		final DataSet totAvgPr = DataSet.mult(totPrice, companies);
 
 		//System.out.println("Price : \n" + totPrice);
 
@@ -353,13 +353,13 @@ public class SipData {
 
 			final DateSet dates = new DateSet();
 
-			write(pw, dates.y7, ds.y7);
-			write(pw, dates.y6, ds.y6);
-			write(pw, dates.y5, ds.y5);
-			write(pw, dates.y4, ds.y4);
-			write(pw, dates.y3, ds.y3);
-			write(pw, dates.y2, ds.y2);
-			write(pw, dates.y1, ds.y1);
+			SipData.write(pw, dates.y7, ds.y7);
+			SipData.write(pw, dates.y6, ds.y6);
+			SipData.write(pw, dates.y5, ds.y5);
+			SipData.write(pw, dates.y4, ds.y4);
+			SipData.write(pw, dates.y3, ds.y3);
+			SipData.write(pw, dates.y2, ds.y2);
+			SipData.write(pw, dates.y1, ds.y1);
 			pw.printf("%s,%.2f%n", sdfOptuma.format(dates.ttm.getTime()), ds.ttm);
 
 		} catch (final Exception e) {

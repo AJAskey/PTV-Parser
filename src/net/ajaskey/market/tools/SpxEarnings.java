@@ -37,6 +37,24 @@ public class SpxEarnings {
 	final private static double SpxPrice = 2170.84;
 
 	/**
+	 * net.ajaskey.market.tools.getEarnings
+	 *
+	 * @param d
+	 *
+	 * @return
+	 */
+	private static double getEarnings(SpxEarningsData d) {
+
+		if (Math.abs(d.eps) > 0.0) {
+			return (d.eps + d.div);
+		} else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
+			return ((d.netIncAfterTax / d.shares) + d.div);
+		}
+
+		return (d.eps1y + d.div);
+	}
+
+	/**
 	 * net.ajaskey.market.tools.main
 	 *
 	 * @param args
@@ -70,24 +88,6 @@ public class SpxEarnings {
 			pw.printf("PE       : %6.2f%n", pe);
 		}
 
-	}
-
-	/**
-	 * net.ajaskey.market.tools.getEarnings
-	 *
-	 * @param d
-	 *
-	 * @return
-	 */
-	private static double getEarnings(SpxEarningsData d) {
-
-		if (Math.abs(d.eps) > 0.0) {
-			return (d.eps + d.div);
-		} else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
-			return ((d.netIncAfterTax / d.shares) + d.div);
-		}
-
-		return (d.eps1y + d.div);
 	}
 
 }

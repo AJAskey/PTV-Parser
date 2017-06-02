@@ -39,28 +39,6 @@ public class SpxEarningsData {
 
 	private static final double NA_VALUE = -99999999.99;
 
-	public String	ticker;
-	public double	mktcap;
-	public double	shares;
-	public double	netIncAfterTax;
-	public double	eps;
-	public double	eps1y;
-	public double	div;
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public SpxEarningsData() {
-		this.ticker = null;
-		this.mktcap = 0;
-		this.shares = 0;
-		this.netIncAfterTax = 0;
-		this.eps = 0;
-		this.eps1y = 0;
-		this.div = 0;
-	}
-
 	public static List<SpxEarningsData> readData(String fname) throws IOException {
 
 		final List<SpxEarningsData> data = new ArrayList<>();
@@ -136,6 +114,29 @@ public class SpxEarningsData {
 		}
 
 		return data;
+	}
+
+	public String	ticker;
+	public double	mktcap;
+	public double	shares;
+	public double	netIncAfterTax;
+	public double	eps;
+	public double	eps1y;
+
+	public double div;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public SpxEarningsData() {
+		this.ticker = null;
+		this.mktcap = 0;
+		this.shares = 0;
+		this.netIncAfterTax = 0;
+		this.eps = 0;
+		this.eps1y = 0;
+		this.div = 0;
 	}
 
 	@Override

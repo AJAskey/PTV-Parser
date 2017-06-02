@@ -61,7 +61,32 @@ public class DownloadDTS {
 	static public int											webDownloadDay		= 0;
 	final private static SimpleDateFormat	sdf								= new SimpleDateFormat("yyyy-MMM-dd");
 
-	public DownloadDTS() {
+	/**
+	 *
+	 * net.ajaskey.market.tools.getDateName
+	 *
+	 * @param c
+	 * @return
+	 */
+	private static String getDateName(Calendar c) {
+
+		if (c != null) {
+			return DtsData.sdf.format(c.getTime()) + "00";
+		}
+		return "";
+	}
+
+	/**
+	 * net.ajaskey.market.tools.getRecentDate
+	 *
+	 * @return
+	 */
+	private static String getRecentDate(Calendar cal) {
+
+		String sdate;
+		cal.add(Calendar.MONTH, -1);
+		sdate = sdf.format(cal.getTime());
+		return sdate;
 	}
 
 	/**
@@ -92,12 +117,13 @@ public class DownloadDTS {
 
 			} else {
 				System.out.println("Enter RECENT or start date in format yyyy-MMM-dd : ");
-				final Scanner scan = new Scanner(System.in);
-				sDate = scan.next();
+				try (final Scanner scan = new Scanner(System.in)) {
+					sDate = scan.next();
 
-				if (sDate.toLowerCase().contains("recent")) {
+					if (sDate.toLowerCase().contains("recent")) {
 
-					sDate = DownloadDTS.getRecentDate(cal);
+						sDate = DownloadDTS.getRecentDate(cal);
+					}
 				}
 			}
 
@@ -151,34 +177,6 @@ public class DownloadDTS {
 
 		System.out.println("Done.");
 
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.getDateName
-	 *
-	 * @param c
-	 * @return
-	 */
-	private static String getDateName(Calendar c) {
-
-		if (c != null) {
-			return DtsData.sdf.format(c.getTime()) + "00";
-		}
-		return "";
-	}
-
-	/**
-	 * net.ajaskey.market.tools.getRecentDate
-	 *
-	 * @return
-	 */
-	private static String getRecentDate(Calendar cal) {
-
-		String sdate;
-		cal.add(Calendar.MONTH, -1);
-		sdate = sdf.format(cal.getTime());
-		return sdate;
 	}
 
 	/**
@@ -303,6 +301,9 @@ public class DownloadDTS {
 				cal.add(Calendar.DATE, 1);
 			}
 		}
+	}
+
+	public DownloadDTS() {
 	}
 
 }

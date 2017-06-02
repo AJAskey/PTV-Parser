@@ -50,7 +50,7 @@ public class DtsReports {
 	final static private String COMMA = ",";
 
 	final static private String COMMA2 = ",,";
-	
+
 	final static private String DtsPath = OptumaCommon.optumaPath + "DTS/";
 
 	/**
@@ -362,6 +362,245 @@ public class DtsReports {
 		ret += s;
 
 		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.getChg
+	 *
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	private static double getChg(int dVal, int pVal) {
+
+		double chg = 0.0;
+		if (pVal > 0.0) {
+			chg = (double) (dVal - pVal) / (double) pVal;
+		}
+		return chg;
+	}
+
+	private static int getIndex(List<Calendar> date, int idx) {
+
+		final Calendar cal = Utils.buildCalendar(date.get(idx).get(Calendar.YEAR), date.get(idx).get(Calendar.MONTH),
+		    date.get(idx).get(Calendar.DATE));
+		cal.add(Calendar.YEAR, 1);
+
+		int index = -1;
+		for (final Calendar c : date) {
+			index++;
+			if (Utils.sameDate(cal, c)) {
+				break;
+			} else if (c.after(cal)) {
+				break;
+			}
+		}
+		return index;
+	}
+
+	private static long getTotal(long[] vals) {
+
+		long tot = 0;
+		for (final long i : vals) {
+			tot += i;
+		}
+		return tot;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printDailyCompare
+	 *
+	 * @param string
+	 * @throws FileNotFoundException
+	 */
+	private static void printDailyCompare(String fname) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		final EmaContinuousSeries wEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries iEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries cEma = new EmaContinuousSeries(7);
+		final EmaContinuousSeries tEma = new EmaContinuousSeries(7);
+
+		try (PrintWriter pw = new PrintWriter(fname)) {
+
+			pw.println(Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Date" + Utils.TAB + Utils.TAB
+			    + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Withheld" + Utils.TAB + Utils.TAB + Utils.TAB
+			    + Utils.TAB + "Individual" + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Corporate" + Utils.TAB
+			    + Utils.TAB + Utils.TAB + Utils.TAB + "Total");
+
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+			// Utils.printCalendar(cal);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+			// Utils.printCalendar(tomorrow);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+
+					if (p != null) {
+
+						final double withChg = DtsReports.getChg(d.getWith().yearly, p.getWith().yearly);
+						final double indChg = DtsReports.getChg(d.getInd().yearly, p.getInd().yearly);
+						final double corpChg = DtsReports.getChg(d.getCorp().yearly, p.getCorp().yearly);
+
+						final int totD = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
+						final int totP = p.getWith().yearly + p.getInd().yearly + p.getCorp().yearly;
+						final double totChg = DtsReports.getChg(totD, totP);
+
+						final double withEma = wEma.addValue(withChg);
+						final double indEma = iEma.addValue(indChg);
+						final double corpEma = cEma.addValue(corpChg);
+						final double totEma = tEma.addValue(totChg);
+
+						String d1 = p.getDatePlus();
+						d1 = d1.replaceAll(" ", "\t");
+						String d2 = d.getDatePlus();
+						d2 = d2.replaceAll(" ", "\t");
+
+						final String str = String.format(
+						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%7.4f\t%7.4f\t%10d\t%10d\t%7.4f\t%7.4f%n",
+						    d1, d2, p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly,
+						    indChg, indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma, totP, totD, totChg, totEma);
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.printFiscalYear
+	 *
+	 * @param fname
+	 * @param type
+	 * @throws FileNotFoundException
+	 */
+	private static void printFiscalYear(String fname, DTS_TYPE type) throws FileNotFoundException {
+
+		if (fname.length() < 1) {
+			return;
+		}
+
+		try (PrintWriter pw = new PrintWriter(fname)) {
+			final Calendar cal = Calendar.getInstance();
+			final int yr = cal.get(Calendar.YEAR) - 2;
+			cal.set(yr, Calendar.OCTOBER, 1);
+			// Utils.printCalendar(cal);
+
+			final Calendar tomorrow = Calendar.getInstance();
+			tomorrow.add(Calendar.DATE, 1);
+			// Utils.printCalendar(tomorrow);
+
+			final EmaContinuousSeries ema = new EmaContinuousSeries(7);
+
+			while (cal.before(tomorrow)) {
+
+				final DtsData d = DtsData.findData(cal);
+
+				if (d != null) {
+
+					final Calendar pCal = Utils.makeCopy(cal);
+					pCal.add(Calendar.YEAR, -1);
+					final DtsData p = DtsData.findData(pCal);
+					if (p != null) {
+						long pVal = 0;
+						long dVal = 0;
+
+						switch (type) {
+							case COMBINED:
+								pVal = p.getCorp().yearly + p.getWith().yearly + p.getInd().yearly;
+								dVal = d.getCorp().yearly + d.getWith().yearly + d.getInd().yearly;
+								break;
+							case CORPORATE:
+								pVal = p.getCorp().yearly;
+								dVal = d.getCorp().yearly;
+								break;
+							case INDIVIDUAL:
+								pVal = p.getInd().yearly;
+								dVal = d.getInd().yearly;
+								break;
+							case WITHHELD:
+								pVal = p.getWith().yearly;
+								dVal = d.getWith().yearly;
+								break;
+						}
+
+						double chg = 0;
+						if (pVal > 0.0) {
+							chg = (double) (dVal - pVal) / (double) pVal;
+						}
+						ema.addValue(chg);
+
+						final String d1 = p.getDatePlus();
+						final String d2 = d.getDatePlus();
+
+						final String str = String.format("%s\t%s\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2, pVal, dVal, chg,
+						    ema.getEma());
+
+						pw.printf("%s", str);
+
+						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
+					}
+				}
+				cal.add(Calendar.DATE, 1);
+				final String day = Utils.getDayName(cal);
+				if (day.contains("SAT")) {
+					cal.add(Calendar.DATE, 2);
+				} else if (day.contains("SUN")) {
+					cal.add(Calendar.DATE, 1);
+				}
+			}
+		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printQuarterly
+	 *
+	 * @param pw
+	 * @param q2014
+	 * @param q2015
+	 */
+	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
+
+		pw.println(y1.toCombinedString(y2));
+	}
+
+	/**
+	 * net.ajaskey.market.tools.helpers.printQuarterlyEst
+	 *
+	 * @param pw
+	 * @param q2015
+	 * @param q2016
+	 * @param i
+	 */
+	private static void printQuarterlyEst(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2, int qtr) {
+		// TODO Auto-generated method stub
+
 	}
 
 	/**
@@ -693,245 +932,6 @@ public class DtsReports {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.getChg
-	 *
-	 * @param i
-	 * @param j
-	 * @return
-	 */
-	private static double getChg(int dVal, int pVal) {
-
-		double chg = 0.0;
-		if (pVal > 0.0) {
-			chg = (double) (dVal - pVal) / (double) pVal;
-		}
-		return chg;
-	}
-
-	private static int getIndex(List<Calendar> date, int idx) {
-
-		final Calendar cal = Utils.buildCalendar(date.get(idx).get(Calendar.YEAR), date.get(idx).get(Calendar.MONTH),
-		    date.get(idx).get(Calendar.DATE));
-		cal.add(Calendar.YEAR, 1);
-
-		int index = -1;
-		for (final Calendar c : date) {
-			index++;
-			if (Utils.sameDate(cal, c)) {
-				break;
-			} else if (c.after(cal)) {
-				break;
-			}
-		}
-		return index;
-	}
-
-	private static long getTotal(long[] vals) {
-
-		long tot = 0;
-		for (final long i : vals) {
-			tot += i;
-		}
-		return tot;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.printDailyCompare
-	 *
-	 * @param string
-	 * @throws FileNotFoundException
-	 */
-	private static void printDailyCompare(String fname) throws FileNotFoundException {
-
-		if (fname.length() < 1) {
-			return;
-		}
-
-		final EmaContinuousSeries wEma = new EmaContinuousSeries(7);
-		final EmaContinuousSeries iEma = new EmaContinuousSeries(7);
-		final EmaContinuousSeries cEma = new EmaContinuousSeries(7);
-		final EmaContinuousSeries tEma = new EmaContinuousSeries(7);
-
-		try (PrintWriter pw = new PrintWriter(fname)) {
-
-			pw.println(Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Date" + Utils.TAB + Utils.TAB
-			    + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Withheld" + Utils.TAB + Utils.TAB + Utils.TAB
-			    + Utils.TAB + "Individual" + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Corporate" + Utils.TAB
-			    + Utils.TAB + Utils.TAB + Utils.TAB + "Total");
-
-			final Calendar cal = Calendar.getInstance();
-			final int yr = cal.get(Calendar.YEAR) - 2;
-			cal.set(yr, Calendar.OCTOBER, 1);
-			// Utils.printCalendar(cal);
-
-			final Calendar tomorrow = Calendar.getInstance();
-			tomorrow.add(Calendar.DATE, 1);
-			// Utils.printCalendar(tomorrow);
-
-			while (cal.before(tomorrow)) {
-
-				final DtsData d = DtsData.findData(cal);
-
-				if (d != null) {
-
-					final Calendar pCal = Utils.makeCopy(cal);
-					pCal.add(Calendar.YEAR, -1);
-					final DtsData p = DtsData.findData(pCal);
-
-					if (p != null) {
-
-						final double withChg = DtsReports.getChg(d.getWith().yearly, p.getWith().yearly);
-						final double indChg = DtsReports.getChg(d.getInd().yearly, p.getInd().yearly);
-						final double corpChg = DtsReports.getChg(d.getCorp().yearly, p.getCorp().yearly);
-
-						final int totD = d.getWith().yearly + d.getInd().yearly + d.getCorp().yearly;
-						final int totP = p.getWith().yearly + p.getInd().yearly + p.getCorp().yearly;
-						final double totChg = DtsReports.getChg(totD, totP);
-
-						final double withEma = wEma.addValue(withChg);
-						final double indEma = iEma.addValue(indChg);
-						final double corpEma = cEma.addValue(corpChg);
-						final double totEma = tEma.addValue(totChg);
-
-						String d1 = p.getDatePlus();
-						d1 = d1.replaceAll(" ", "\t");
-						String d2 = d.getDatePlus();
-						d2 = d2.replaceAll(" ", "\t");
-
-						final String str = String.format(
-						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%7.4f\t%7.4f\t%10d\t%10d\t%7.4f\t%7.4f%n",
-						    d1, d2, p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly,
-						    indChg, indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma, totP, totD, totChg, totEma);
-
-						pw.printf("%s", str);
-
-						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
-					}
-				}
-				cal.add(Calendar.DATE, 1);
-				final String day = Utils.getDayName(cal);
-				if (day.contains("SAT")) {
-					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
-					cal.add(Calendar.DATE, 1);
-				}
-			}
-		}
-
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.printFiscalYear
-	 *
-	 * @param fname
-	 * @param type
-	 * @throws FileNotFoundException
-	 */
-	private static void printFiscalYear(String fname, DTS_TYPE type) throws FileNotFoundException {
-
-		if (fname.length() < 1) {
-			return;
-		}
-
-		try (PrintWriter pw = new PrintWriter(fname)) {
-			final Calendar cal = Calendar.getInstance();
-			final int yr = cal.get(Calendar.YEAR) - 2;
-			cal.set(yr, Calendar.OCTOBER, 1);
-			// Utils.printCalendar(cal);
-
-			final Calendar tomorrow = Calendar.getInstance();
-			tomorrow.add(Calendar.DATE, 1);
-			// Utils.printCalendar(tomorrow);
-
-			final EmaContinuousSeries ema = new EmaContinuousSeries(7);
-
-			while (cal.before(tomorrow)) {
-
-				final DtsData d = DtsData.findData(cal);
-
-				if (d != null) {
-
-					final Calendar pCal = Utils.makeCopy(cal);
-					pCal.add(Calendar.YEAR, -1);
-					final DtsData p = DtsData.findData(pCal);
-					if (p != null) {
-						long pVal = 0;
-						long dVal = 0;
-
-						switch (type) {
-							case COMBINED:
-								pVal = p.getCorp().yearly + p.getWith().yearly + p.getInd().yearly;
-								dVal = d.getCorp().yearly + d.getWith().yearly + d.getInd().yearly;
-								break;
-							case CORPORATE:
-								pVal = p.getCorp().yearly;
-								dVal = d.getCorp().yearly;
-								break;
-							case INDIVIDUAL:
-								pVal = p.getInd().yearly;
-								dVal = d.getInd().yearly;
-								break;
-							case WITHHELD:
-								pVal = p.getWith().yearly;
-								dVal = d.getWith().yearly;
-								break;
-						}
-
-						double chg = 0;
-						if (pVal > 0.0) {
-							chg = (double) (dVal - pVal) / (double) pVal;
-						}
-						ema.addValue(chg);
-
-						final String d1 = p.getDatePlus();
-						final String d2 = d.getDatePlus();
-
-						final String str = String.format("%s\t%s\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2, pVal, dVal, chg,
-						    ema.getEma());
-
-						pw.printf("%s", str);
-
-						cal.set(d.getDate().get(Calendar.YEAR), d.getDate().get(Calendar.MONTH), d.getDate().get(Calendar.DATE));
-					}
-				}
-				cal.add(Calendar.DATE, 1);
-				final String day = Utils.getDayName(cal);
-				if (day.contains("SAT")) {
-					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
-					cal.add(Calendar.DATE, 1);
-				}
-			}
-		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.printQuarterly
-	 *
-	 * @param pw
-	 * @param q2014
-	 * @param q2015
-	 */
-	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
-
-		pw.println(y1.toCombinedString(y2));
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.printQuarterlyEst
-	 *
-	 * @param pw
-	 * @param q2015
-	 * @param q2016
-	 * @param i
-	 */
-	private static void printQuarterlyEst(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2, int qtr) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

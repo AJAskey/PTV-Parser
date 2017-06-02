@@ -57,19 +57,6 @@ public class DataSeriesInfo {
 
 	private final static DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
-	private String															name;
-	private String															title;
-	private String															frequency;
-	private String															units;
-	private String															seasonalAdjustment;
-	private DataSeries.ResponseType							type;
-
-	private Calendar lastUpdate;
-
-	private Calendar lastObservation;
-
-	private int			timeOffset;
-	private String	refChart;
 
 	public static List<DataSeriesInfo> getDataSeriesNames() {
 
@@ -185,6 +172,23 @@ public class DataSeriesInfo {
 
 		return dList;
 	}
+
+	private String	name;
+	private String	title;
+	private String	frequency;
+
+	private String units;
+
+	private String seasonalAdjustment;
+
+	private DataSeries.ResponseType	type;
+	private Calendar								lastUpdate;
+
+	private Calendar lastObservation;
+
+	private int timeOffset;
+
+	private String refChart;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -334,6 +338,15 @@ public class DataSeriesInfo {
 	}
 
 	/**
+	 * @param frequency
+	 *          the frequency to set
+	 */
+	private void setFrequency(String frequency) {
+
+		this.frequency = frequency;
+	}
+
+	/**
 	 * @param lastObservation
 	 *          the lastObservation to set
 	 */
@@ -352,6 +365,38 @@ public class DataSeriesInfo {
 		}
 	}
 
+	/**
+	 * net.ajaskey.market.tools.fred.setLastUpdate
+	 *
+	 * @param attribute
+	 */
+	private void setLastUpdate(String attribute) {
+
+		this.lastUpdate = Calendar.getInstance();
+
+		try {
+			final int idx = attribute.lastIndexOf("-");
+			final String dt = attribute.substring(0, idx);
+			final Date d = sdf.parse(dt);
+			this.lastUpdate.setTime(d);
+
+			final String os = attribute.substring(idx + 1);
+			this.timeOffset = Integer.parseInt(os);
+		} catch (final ParseException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * @param name
+	 *          the name to set
+	 */
+	private void setName(String name) {
+
+		this.name = name;
+	}
+
 	public void setRefChart(String chart) {
 
 		this.refChart = chart;
@@ -367,14 +412,24 @@ public class DataSeriesInfo {
 	}
 
 	/**
+	 * @param title
+	 *          the title to set
+	 */
+	private void setTitle(String title) {
+
+		final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
+		this.title = filtered.trim();
+	}
+
+	/**
 	 * @param type
 	 *          the type to set
 	 */
 	public void setType(String type) {
 
 		try {
-		this.type = DataSeries.ResponseType.valueOf(type);
-		} catch (Exception e) {
+			this.type = DataSeries.ResponseType.valueOf(type);
+		} catch (final Exception e) {
 			this.type = DataSeries.ResponseType.LIN;
 		}
 	}
@@ -413,57 +468,6 @@ public class DataSeriesInfo {
 		}
 		ret += "  Reference Chart  : " + this.refChart;
 		return ret;
-	}
-
-	/**
-	 * @param frequency
-	 *          the frequency to set
-	 */
-	private void setFrequency(String frequency) {
-
-		this.frequency = frequency;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.setLastUpdate
-	 *
-	 * @param attribute
-	 */
-	private void setLastUpdate(String attribute) {
-
-		this.lastUpdate = Calendar.getInstance();
-
-		try {
-			final int idx = attribute.lastIndexOf("-");
-			final String dt = attribute.substring(0, idx);
-			final Date d = sdf.parse(dt);
-			this.lastUpdate.setTime(d);
-
-			final String os = attribute.substring(idx + 1);
-			this.timeOffset = Integer.parseInt(os);
-		} catch (final ParseException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	/**
-	 * @param name
-	 *          the name to set
-	 */
-	private void setName(String name) {
-
-		this.name = name;
-	}
-
-	/**
-	 * @param title
-	 *          the title to set
-	 */
-	private void setTitle(String title) {
-
-		final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
-		this.title = filtered.trim();
 	}
 
 }

@@ -56,49 +56,6 @@ public class Internals {
 	private static double	spxClosePast;
 	private static double	smlClosePast;
 
-	/**
-	 *
-	 * net.ajaskey.market.ta.apps.main
-	 *
-	 * @param args
-	 * @throws ParseException
-	 * @throws IOException
-	 */
-	public static void main(String[] args) {
-
-		System.out.println("Processing...");
-
-		try {
-			final int days = 10;
-			Internals.getClosingPrices(days);
-
-			Utils.makeDir("out");
-
-			pwAll = new PrintWriter("out\\breadth.txt");
-
-			Internals.processIndex();
-
-			// double val = Internals.processListPercent("lists\\ivv-components.csv",
-			// days);
-			// System.out.printf("SPX days to recover %.2f%n", val);
-			// val = Internals.processListPercent("lists\\ndx-components.csv", days);
-			// System.out.printf("NDX days to recover %.2f%n", val);
-
-			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
-			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
-			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
-			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
-			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
-
-		} catch (IOException | ParseException e) {
-			e.printStackTrace();
-		}
-
-		pwAll.close();
-		System.out.println("Internals Done.");
-
-	}
-
 	private static void getClosingPrices(int days) throws FileNotFoundException, ParseException {
 
 		ParseData.clearValidTickers();
@@ -206,6 +163,49 @@ public class Internals {
 	private static boolean isOverSold(double avg) {
 
 		return (avg < ((-1.0) * obosLevel));
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.apps.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws IOException
+	 */
+	public static void main(String[] args) {
+
+		System.out.println("Processing...");
+
+		try {
+			final int days = 10;
+			Internals.getClosingPrices(days);
+
+			Utils.makeDir("out");
+
+			pwAll = new PrintWriter("out\\breadth.txt");
+
+			Internals.processIndex();
+
+			// double val = Internals.processListPercent("lists\\ivv-components.csv",
+			// days);
+			// System.out.printf("SPX days to recover %.2f%n", val);
+			// val = Internals.processListPercent("lists\\ndx-components.csv", days);
+			// System.out.printf("NDX days to recover %.2f%n", val);
+
+			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
+			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
+			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
+			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
+
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+
+		pwAll.close();
+		System.out.println("Internals Done.");
+
 	}
 
 	/**

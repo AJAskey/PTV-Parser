@@ -46,47 +46,6 @@ public class ProcessInterday {
 	private static List<TickerData> tdList = new ArrayList<>();
 
 	/**
-	 * net.ajaskey.market.ta.apps.main
-	 *
-	 * @param args
-	 * @throws ParseException
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
-
-		final String idDataPath = Utils.getDataPath();
-
-		final File nazFile = new File(idDataPath + "\\NASDAQ_20151201.csv");
-		final List<InterdayData> idList = ParseData.parseInterdayFile(nazFile);
-		System.out.println("Total Tickers : " + idList.size());
-
-		final List<String> filenames = new ArrayList<>();
-
-		final String dataPath = Utils.getDataPath();
-		filenames.add(dataPath + "\\ASCII\\NASDAQ");
-		// filenames.add(dataPath + "\\ASCII\\NYSE");
-		ParseData.clearValidTickers();
-		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
-		tdList = ParseData.parseFiles(filenames, 60);
-
-		Utils.makeDir("out");
-
-		InterdaySumData sd = ProcessInterday.setSumData(idList);
-		ProcessInterday.printList(idList, sd, "out\\all-interday.txt");
-
-		List<InterdayData> filteredList = ProcessInterday.filterList(idList, 0.99, 50000, 200, 0.01);
-		sd = ProcessInterday.setSumData(filteredList);
-		ProcessInterday.printList(filteredList, sd, "out\\most-interday.txt");
-
-		filteredList.clear();
-		filteredList = ProcessInterday.filterList(idList, 4.99, 500000, 290, 0.10);
-		sd = ProcessInterday.setSumData(filteredList);
-		ProcessInterday.printList(filteredList, sd, "out\\filtered-interday.txt");
-
-	}
-
-	/**
 	 * Creates a sublist of InterdayData based on filter criteria.
 	 *
 	 * @param idList
@@ -138,6 +97,47 @@ public class ProcessInterday {
 
 		}
 		return filterList;
+	}
+
+	/**
+	 * net.ajaskey.market.ta.apps.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+
+		final String idDataPath = Utils.getDataPath();
+
+		final File nazFile = new File(idDataPath + "\\NASDAQ_20151201.csv");
+		final List<InterdayData> idList = ParseData.parseInterdayFile(nazFile);
+		System.out.println("Total Tickers : " + idList.size());
+
+		final List<String> filenames = new ArrayList<>();
+
+		final String dataPath = Utils.getDataPath();
+		filenames.add(dataPath + "\\ASCII\\NASDAQ");
+		// filenames.add(dataPath + "\\ASCII\\NYSE");
+		ParseData.clearValidTickers();
+		ParseData.setValidTicker("PROCESS_ALL_TICKERS");
+		tdList = ParseData.parseFiles(filenames, 60);
+
+		Utils.makeDir("out");
+
+		InterdaySumData sd = ProcessInterday.setSumData(idList);
+		ProcessInterday.printList(idList, sd, "out\\all-interday.txt");
+
+		List<InterdayData> filteredList = ProcessInterday.filterList(idList, 0.99, 50000, 200, 0.01);
+		sd = ProcessInterday.setSumData(filteredList);
+		ProcessInterday.printList(filteredList, sd, "out\\most-interday.txt");
+
+		filteredList.clear();
+		filteredList = ProcessInterday.filterList(idList, 4.99, 500000, 290, 0.10);
+		sd = ProcessInterday.setSumData(filteredList);
+		ProcessInterday.printList(filteredList, sd, "out\\filtered-interday.txt");
+
 	}
 
 	/**

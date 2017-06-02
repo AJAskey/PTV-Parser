@@ -22,9 +22,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 import net.ajaskey.market.tools.helpers.OhlcvData.FormType;
-import net.ajaskey.market.tools.optuma.OptumaCommon;
 import net.ajaskey.market.tools.helpers.ProcessExcel;
 import net.ajaskey.market.tools.helpers.SortOhlcv;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -59,6 +59,30 @@ public class ConvertOHLCV {
 	static private List<OhlcvData>				data			= new ArrayList<>();;
 	final public static String						shortPath	= OptumaCommon.optumaPath + "/Dc";
 	final public static String						fullPath	= OptumaCommon.optumaPath + "/Dohlcv";
+
+	/**
+	 * net.ajaskey.market.tools.getFormat
+	 *
+	 * @return
+	 */
+	private static FormType getFormat() {
+
+		int fullknt = 0;
+		OhlcvData.FormType fmt = OhlcvData.FormType.SHORT;
+
+		for (final OhlcvData d : data) {
+			if (d.getForm() == OhlcvData.FormType.FULL) {
+				fullknt++;
+			}
+		}
+		final int tot = data.size();
+		final double ratio = (double) fullknt / (double) tot;
+		if (ratio > .25) {
+			fmt = OhlcvData.FormType.FULL;
+		}
+
+		return fmt;
+	}
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -178,30 +202,6 @@ public class ConvertOHLCV {
 		}
 		Collections.sort(data, new SortOhlcv());
 		ConvertOHLCV.writeShortForm(fName);
-	}
-
-	/**
-	 * net.ajaskey.market.tools.getFormat
-	 *
-	 * @return
-	 */
-	private static FormType getFormat() {
-
-		int fullknt = 0;
-		OhlcvData.FormType fmt = OhlcvData.FormType.SHORT;
-
-		for (final OhlcvData d : data) {
-			if (d.getForm() == OhlcvData.FormType.FULL) {
-				fullknt++;
-			}
-		}
-		final int tot = data.size();
-		final double ratio = (double) fullknt / (double) tot;
-		if (ratio > .25) {
-			fmt = OhlcvData.FormType.FULL;
-		}
-
-		return fmt;
 	}
 
 	/**

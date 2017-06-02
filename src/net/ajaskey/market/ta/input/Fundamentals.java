@@ -41,11 +41,6 @@ public class Fundamentals {
 	private static int								maxSectorLen		= 0;
 	private static int								maxIndustryLen	= 0;
 	private static String							fmt;
-	private String										ticker;
-	private String										industry;
-	private String										sector;
-	private long											shares;
-	private String										marketCap;
 
 	public static void build(String dataFile) throws FileNotFoundException, IOException {
 
@@ -135,6 +130,16 @@ public class Fundamentals {
 		System.out.println("Done.");
 
 	}
+
+	private String ticker;
+
+	private String industry;
+
+	private String sector;
+
+	private long shares;
+
+	private String marketCap;
 
 	/**
 	 * @return the industry

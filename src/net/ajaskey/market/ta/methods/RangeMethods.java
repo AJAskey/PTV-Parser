@@ -31,14 +31,6 @@ package net.ajaskey.market.ta.methods;
 public class RangeMethods {
 
 	/**
-	 * This method serves as a constructor for the class. Because all methods are
-	 * static this constructor is not to be called.
-	 *
-	 */
-	private RangeMethods() {
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.methods.atr
 	 *
@@ -119,6 +111,14 @@ public class RangeMethods {
 		// System.out.printf("%.2f %.2f %.2f %.2f %.2f %.2f%n", high, low, pClose,
 		// h, l, tr);
 		return tr;
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Because all methods are
+	 * static this constructor is not to be called.
+	 *
+	 */
+	private RangeMethods() {
 	}
 
 }

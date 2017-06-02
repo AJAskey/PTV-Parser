@@ -58,10 +58,54 @@ public class DtsQuarterly {
 		this.set(year);
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.helpers.combineQuarterly
+	 *
+	 * @param d1
+	 * @param d2
+	 * @param d3
+	 * @return
+	 */
+	private DtsData combineQuarterly(DtsData d1, DtsData d2, DtsData d3) {
+
+		final DtsData dc = new DtsData(d3.getDate());
+		dc.getCorp().monthly = d1.getCorp().monthly + d2.getCorp().monthly + d3.getCorp().monthly;
+		dc.getInd().monthly = d1.getInd().monthly + d2.getInd().monthly + d3.getInd().monthly;
+		dc.getWith().monthly = d1.getWith().monthly + d2.getWith().monthly + d3.getWith().monthly;
+		dc.getUnEmp().monthly = d1.getUnEmp().monthly + d2.getUnEmp().monthly + d3.getUnEmp().monthly;
+
+		return dc;
+	}
+
 	public double getChg(long y1, long y2) {
 
 		final double chg = (double) (y2 - y1) / (double) y1;
 		return chg;
+	}
+
+	private String qToString(String str, DtsData d1, DtsData d2) {
+
+		String ret = "";
+		double chg = 0;
+		if ((d1 != null) && (d2 != null)) {
+			ret += String.format(this.fmtDate, str, Utils.getString(d1.getDate()), Utils.getString(d2.getDate()));
+
+			chg = this.getChg(d1.getWith().monthly, d2.getWith().monthly) * 100.0;
+			ret += String.format(this.fmtStr, "Withheld", d1.getWith().monthly, d2.getWith().monthly, chg);
+
+			chg = this.getChg(d1.getInd().monthly, d2.getInd().monthly) * 100.0;
+			ret += String.format(this.fmtStr, "Individual", d1.getInd().monthly, d2.getInd().monthly, chg);
+
+			chg = this.getChg(d1.getCorp().monthly, d2.getCorp().monthly) * 100.0;
+			ret += String.format(this.fmtStr, "Corporate", d1.getCorp().monthly, d2.getCorp().monthly, chg);
+
+			final long tot1 = d1.getWith().monthly + d1.getInd().monthly + d1.getCorp().monthly;
+			final long tot2 = d2.getWith().monthly + d2.getInd().monthly + d2.getCorp().monthly;
+			chg = this.getChg(tot1, tot2) * 100.0;
+			ret += String.format(this.fmtStr, "Total", tot1, tot2, chg);
+		}
+		return ret;
 	}
 
 	/**
@@ -167,50 +211,6 @@ public class DtsQuarterly {
 			ret += String.format("\tCorporate  : %9d%n", this.q4.getCorp().monthly);
 			final long tot = this.q4.getWith().monthly + this.q4.getInd().monthly + this.q4.getCorp().monthly;
 			ret += String.format("\tTotal      : %9d%n", tot);
-		}
-		return ret;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.helpers.combineQuarterly
-	 *
-	 * @param d1
-	 * @param d2
-	 * @param d3
-	 * @return
-	 */
-	private DtsData combineQuarterly(DtsData d1, DtsData d2, DtsData d3) {
-
-		final DtsData dc = new DtsData(d3.getDate());
-		dc.getCorp().monthly = d1.getCorp().monthly + d2.getCorp().monthly + d3.getCorp().monthly;
-		dc.getInd().monthly = d1.getInd().monthly + d2.getInd().monthly + d3.getInd().monthly;
-		dc.getWith().monthly = d1.getWith().monthly + d2.getWith().monthly + d3.getWith().monthly;
-		dc.getUnEmp().monthly = d1.getUnEmp().monthly + d2.getUnEmp().monthly + d3.getUnEmp().monthly;
-
-		return dc;
-	}
-
-	private String qToString(String str, DtsData d1, DtsData d2) {
-
-		String ret = "";
-		double chg = 0;
-		if ((d1 != null) && (d2 != null)) {
-			ret += String.format(this.fmtDate, str, Utils.getString(d1.getDate()), Utils.getString(d2.getDate()));
-
-			chg = this.getChg(d1.getWith().monthly, d2.getWith().monthly) * 100.0;
-			ret += String.format(this.fmtStr, "Withheld", d1.getWith().monthly, d2.getWith().monthly, chg);
-
-			chg = this.getChg(d1.getInd().monthly, d2.getInd().monthly) * 100.0;
-			ret += String.format(this.fmtStr, "Individual", d1.getInd().monthly, d2.getInd().monthly, chg);
-
-			chg = this.getChg(d1.getCorp().monthly, d2.getCorp().monthly) * 100.0;
-			ret += String.format(this.fmtStr, "Corporate", d1.getCorp().monthly, d2.getCorp().monthly, chg);
-
-			final long tot1 = d1.getWith().monthly + d1.getInd().monthly + d1.getCorp().monthly;
-			final long tot2 = d2.getWith().monthly + d2.getInd().monthly + d2.getCorp().monthly;
-			chg = this.getChg(tot1, tot2) * 100.0;
-			ret += String.format(this.fmtStr, "Total", tot1, tot2, chg);
 		}
 		return ret;
 	}

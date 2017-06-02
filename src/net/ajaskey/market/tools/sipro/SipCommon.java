@@ -15,7 +15,7 @@ package net.ajaskey.market.tools.sipro;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -32,9 +32,9 @@ public class SipCommon {
 	public final static double	MILLION		= 1e6;
 	public final static double	BILLION		= 1e9;
 
-	private int			ptr;
-	private int			INC;
-	private String	splitChar;
+	private int						ptr;
+	private final int			INC;
+	private final String	splitChar;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -42,24 +42,24 @@ public class SipCommon {
 	 */
 	public SipCommon(String ch, int inc) {
 		this.reset();
-		INC = inc;
-		splitChar = ch;
-	}
-
-	public void reset() {
-
-		ptr = 1;
+		this.INC = inc;
+		this.splitChar = ch;
 	}
 
 	public DataSet3 getData(String name, String line, DataSet3.dMode mode, double scaler) {
 
-		String fld[] = line.replace("\"", "").split(splitChar);
+		final String fld[] = line.replace("\"", "").split(this.splitChar);
 
-		final DataSet3 ds = new DataSet3(name, fld[0], fld[1], fld, ptr, mode);
-		DataSet3 dsRet = DataSet3.scale(ds, scaler);
+		final DataSet3 ds = new DataSet3(name, fld[0], fld[1], fld, this.ptr, mode);
+		final DataSet3 dsRet = DataSet3.scale(ds, scaler);
 		//System.out.println(dsRet);
-		ptr += INC;
+		this.ptr += this.INC;
 		return dsRet;
+	}
+
+	public void reset() {
+
+		this.ptr = 1;
 	}
 
 }
