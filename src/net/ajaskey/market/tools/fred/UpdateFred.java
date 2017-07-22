@@ -56,17 +56,10 @@ public class UpdateFred {
 
 		Debug.pwDbg = new PrintWriter("update-fred.dbg");
 
-		//		final List<String> seriesNames = FredCommon.readSeriesNames("data/fred-series-info.txt");
-		//		for (final String s : seriesNames) {
-		//			final InputRecord ir = new InputRecord(s);
-		//			//System.out.println(ir);
-		//			records.add(ir);
-		//		}
+		Utils.makeDir(FredCommon.fredPath);
 
-		FredCommon.legacyDsi = FredCommon.readSeriesInfo("data/fred-series-info.txt");
-		//		for (DataSeriesInfo d : legacyDsi) {
-		//			System.out.println(d);
-		//		}
+		FredCommon.legacyDsi = FredCommon.readSeriesInfo(FredCommon.fredPath + "/fred-series-info.txt");
+
 
 		final File list[] = file.listFiles();
 
@@ -135,6 +128,7 @@ public class UpdateFred {
 			}
 		}
 
+		Collections.sort(dsList, new DsiAbcSorter());
 		FredCommon.writeSeriesInfo(dsList);
 
 		System.out.println("Done.");

@@ -28,6 +28,6 @@ package net.ajaskey.market.tools.optuma;
  */
 public class OptumaCommon {
 
-	public final static String optumaPath = "d:/data/MA/CSV Data/";
+	public final static String optumaPath = "g:/data/MA/CSV Data/";
 
 }

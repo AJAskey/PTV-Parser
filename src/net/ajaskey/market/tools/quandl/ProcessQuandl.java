@@ -4,9 +4,11 @@ package net.ajaskey.market.tools.quandl;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 
 /**
@@ -55,6 +57,7 @@ public class ProcessQuandl {
 	 * @param mtsURL
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private static List<MtsData> getMtsData(String url) {
 
 		final List<MtsData> ret = new ArrayList<>();
@@ -112,7 +115,8 @@ public class ProcessQuandl {
 
 		final List<CommonQuandlData> ddList = Qcommon.getData(url, 4);
 		for (final CommonQuandlData cqd : ddList) {
-			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], 0);
+			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[callIdx], cqd.dd[putIdx], cqd.dd[totIdx], cqd.dd[ratioIdx],
+			    0);
 			ret.add(pc);
 		}
 
@@ -126,7 +130,9 @@ public class ProcessQuandl {
 	 */
 	public static void main(String[] args) {
 
-		final String sp500EarnURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_MONTH.xml?api_key="
+		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
+		    + QuandlApi.key;
+		final String sp500EarnURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key"
 		    + QuandlApi.key;
 		final String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -145,6 +151,7 @@ public class ProcessQuandl {
 		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
 		final String balDryURL = "https://www.quandl.com/api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
+		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
 
 		final List<NaaimData> naaim = ProcessQuandl.getNaaimData(naaimURL);
 		ProcessQuandl.writeNaaimList(naaim, "NAAIM");
@@ -152,15 +159,18 @@ public class ProcessQuandl {
 		final List<OneValueData> balDry = ProcessQuandl.getOneDataPoint(balDryURL);
 		ProcessQuandl.writeOneList(balDry, "Baltic_Dry_Index");
 
-		final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
-		ProcessQuandl.writeMtsList(mts, "MTS");
+		//Manual update from Treasury website
+		//final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
+		//ProcessQuandl.writeMtsList(mts, "MTS");
 
-		//Manual update from blog post
 		//final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		//processEcri(li, 143.9, 143.9);
 		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
+		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
 		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnURL);
-		ProcessQuandl.writeOneList(earn, "SP500_Earnings");
+		List<OneValueData> searn = scaleEarnings(earn, price);
+		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
 
 		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
 		ProcessQuandl.writeOneList(div, "SP500_Dividend");
@@ -168,8 +178,8 @@ public class ProcessQuandl {
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
 		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
-		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
-		ProcessQuandl.writeOneList(sPE, "Shiller_PE");
+		//final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
+		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
 		ProcessQuandl.writeOneList(sales, "SP500_Sales");
@@ -189,6 +199,45 @@ public class ProcessQuandl {
 		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
 		ProcessQuandl.writePcList(vixpc, "VIX PC");
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.processEcri
+	 *
+	 * @param li
+	 * @param d
+	 * @param e
+	 */
+	private static void processEcri(List<LeadingIndicatorData> li, double wk2, double wk1) {
+
+		Calendar cal2 = Utils.buildCalendar(li.get(0).date);
+		cal2.add(Calendar.DATE, 7);
+		LeadingIndicatorData d2 = new LeadingIndicatorData(cal2, wk2, 0.0);
+		li.add(0, d2);
+
+		Calendar cal1 = Utils.buildCalendar(cal2);
+		cal1.add(Calendar.DATE, 7);
+		LeadingIndicatorData d1 = new LeadingIndicatorData(cal1, wk1, 0.0);
+		li.add(0, d1);
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.scaleEarnings
+	 *
+	 * @param earn
+	 * @param d
+	 * @return
+	 */
+	private static List<OneValueData> scaleEarnings(List<OneValueData> earn, List<OneValueData> price) {
+
+		List<OneValueData> ret = new ArrayList<>();
+		int knt = 0;
+		for (OneValueData data : earn) {
+			OneValueData nd = new OneValueData(data.date, data.value * price.get(knt++).value / 100.0);
+			ret.add(nd);
+		}
+		return ret;
 	}
 
 	/**
@@ -219,6 +268,7 @@ public class ProcessQuandl {
 	 * @param mts
 	 * @param string
 	 */
+	@SuppressWarnings("unused")
 	private static void writeMtsList(List<MtsData> list, String fname) {
 
 		Collections.reverse(list);

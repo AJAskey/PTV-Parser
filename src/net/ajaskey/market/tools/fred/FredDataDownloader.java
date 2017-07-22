@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.fred.DataSeries.AggregationMethodType;
 import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
 
@@ -40,6 +41,7 @@ public class FredDataDownloader {
 	private static boolean isNew(List<String> names, String name) {
 
 		for (final String n : names) {
+			System.out.println(n + " " + name);
 			if (n.equalsIgnoreCase(name)) {
 				return false;
 			}
@@ -57,11 +59,14 @@ public class FredDataDownloader {
 
 		Debug.pwDbg = new PrintWriter("download-fred.dbg");
 
-		final List<String> new_names = FredCommon.readSeriesNames("data/fred-series-new-names.txt");
-		final List<String> names = FredCommon.readSeriesNames("data/fred-series-info.txt");
+		Utils.makeDir(FredCommon.fredPath);
+
+		final List<String> new_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
+		final List<String> names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
 
 		final List<String> newNames = new ArrayList<>();
 		for (final String name : new_names) {
+			//System.out.println(name);
 			if (FredDataDownloader.isNew(names, name)) {
 				names.add(name);
 				newNames.add(name);
@@ -71,7 +76,7 @@ public class FredDataDownloader {
 		for (final String name : names) {
 			final String s = name.trim();
 			if (!s.equalsIgnoreCase("name")) {
-				System.out.println(s);
+				//System.out.println(s);
 				FredDataDownloader.process(s, 0.0, true, false, ResponseType.LIN);
 			}
 		}

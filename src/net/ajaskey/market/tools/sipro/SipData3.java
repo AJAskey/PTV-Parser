@@ -83,9 +83,12 @@ public class SipData3 {
 
 		final String group = "SPX";
 
-		if (group.contains("SPX")) {
+		if (group.equals("SPX")) {
 			SipData3.readDataFile_1("data/SP500-SIP3.txt");
 			SipData3.readDataFile_2("data/SP500-SIP3b.txt");
+		} else if (group.contains("SPXxEnergy")) {
+			SipData3.readDataFile_1("data/SP500-SIP3-EXENERGY.txt");
+			SipData3.readDataFile_2("data/SP500-SIP3b-EXENERGY.txt");
 		} else if (group.contains("SML")) {
 			SipData3.readDataFile_1("data/SP600-SIP3.txt");
 			SipData3.readDataFile_2("data/SP600-SIP3b.txt");
@@ -168,6 +171,30 @@ public class SipData3 {
 			SipData3.write(totBvDollar, "SPX Book Value v3");
 			SipData3.write(totBVminusGW, "SPX Book Value less Goodwill v3");
 			SipData3.write(totMktCap, "SPX Market Cap v3");
+		} else if (src.equalsIgnoreCase("SPXxEnergy")) {
+			SipData3.write(totSales, "SPXxEnergy Sales v3");
+			SipData3.write(totEbit, "SPXxEnergy EBIT v3");
+			SipData3.write(totTax, "SPXxEnergy Taxes v3");
+			SipData3.write(totIncome, "SPXxEnergy Income for EPS v3");
+			SipData3.write(totCops, "SPXxEnergy Cash from Operations v3");
+			SipData3.write(totCfin, "SPXxEnergy Cash from Financing v3");
+			SipData3.write(totCinv, "SPXxEnergy Cash from Investing v3");
+			SipData3.write(totDivDollar, "SPXxEnergy Dividends v3");
+			SipData3.write(totShr, "SPXxEnergy Shares v3");
+			SipData3.write(totCash, "SPXxEnergy Cash v3");
+			SipData3.write(totAssets, "SPXxEnergy Assets v3");
+			SipData3.write(totLiab, "SPXxEnergy Liabilities v3");
+			SipData3.write(totAccRx, "SPXxEnergy Accounts Receivable v3");
+			SipData3.write(totAccTx, "SPXxEnergy Accounts Payable v3");
+			SipData3.write(totGoodwill, "SPXxEnergy Goodwill v3");
+			SipData3.write(totLtDebt, "SPXxEnergy LT Debt v3");
+			SipData3.write(totCapEx, "SPXxEnergy CapEx v3");
+			SipData3.write(totEquity, "SPXxEnergy Common Equity v3");
+			SipData3.write(totInterest, "SPXxEnergy Interest Paid v3");
+			SipData3.write(totResDev, "SPXxEnergy Research and Development v3");
+			SipData3.write(totBvDollar, "SPXxEnergy Book Value v3");
+			SipData3.write(totBVminusGW, "SPXxEnergy Book Value less Goodwill v3");
+			SipData3.write(totMktCap, "SPXxEnergy Market Cap v3");
 		} else if (src.equalsIgnoreCase("SML")) {
 			SipData3.write(totSales, "SP600 Sales");
 			SipData3.write(totTax, "SP600 Taxes");
@@ -209,9 +236,9 @@ public class SipData3 {
 			}
 		}
 
-		for (final ClosingPrices cp : ClosingPrices.priceList) {
-			System.out.println(cp);
-		}
+		//for (final ClosingPrices cp : ClosingPrices.priceList) {
+		//	System.out.println(cp);
+		//}
 
 	}
 
@@ -227,6 +254,9 @@ public class SipData3 {
 		int knt = 0;
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
+
+			System.out.println("Reading file : " + filename);
+
 			String line = "";
 
 			//line = br.readLine(); // read header

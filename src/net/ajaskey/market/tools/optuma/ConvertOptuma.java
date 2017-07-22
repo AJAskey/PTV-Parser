@@ -53,6 +53,7 @@ public class ConvertOptuma {
 	 * @throws ParseException
 	 *
 	 */
+	@SuppressWarnings("unused")
 	private static List<OhlcvData> BoundGaapToSpx(List<OhlcvData> epsList) throws ParseException {
 
 		final List<String> data = YahooData.getHistoric("^GSPC");

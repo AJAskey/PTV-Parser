@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -41,7 +42,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  */
 public class FredCommon {
 
-	public final static String fredPath = OptumaCommon.optumaPath + "FRED/";
+	public final static String fredPath = OptumaCommon.optumaPath + "FRED-Download/";
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
 
@@ -66,7 +67,7 @@ public class FredCommon {
 
 		final List<String> data = new ArrayList<>();
 
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/fred-series-info.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(FredCommon.fredPath + "/fred-series-info.txt"))) {
 
 			String line;
 			// Utils.printCalendar(d.getDate());
@@ -82,7 +83,7 @@ public class FredCommon {
 		Collections.sort(data);
 
 		final String dum = "DUMMY";
-		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
 			pw.println(infoHeader);
 			for (final String str : data) {
 				pw.println(str);
@@ -212,8 +213,8 @@ public class FredCommon {
 	 * @throws FileNotFoundException
 	 */
 	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
-
-		try (PrintWriter pw = new PrintWriter("data/fred-series-info.txt")) {
+		
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
 			pw.println(infoHeader);
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);

@@ -52,8 +52,8 @@ public class ProcessDTS {
 	final static private Charset charset = Charset.forName("UTF-8");
 
 	final static public int	webDownloadYear		= 2017;
-	final static public int	webDownloadMonth	= Calendar.MAY;
-	final static public int	webDownloadDay		= 1;
+	final static public int	webDownloadMonth	= Calendar.JULY;
+	final static public int	webDownloadDay		= 10;
 
 	/**
 	 *
@@ -125,6 +125,7 @@ public class ProcessDTS {
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.MARCH);
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.APRIL);
 			DtsReports.dumpCompareMonths(2017, 2016, Calendar.MAY);
+			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JUNE);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

@@ -60,14 +60,22 @@ public class Qcommon {
 
 	private static DocumentBuilder dBuilder = null;
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.quandl.getData
+	 *
+	 * @param url
+	 * @param num
+	 * @return
+	 */
 	public static List<CommonQuandlData> getData(String url, int num) {
 
 		final List<CommonQuandlData> ret = new ArrayList<>();
-		;
 
 		try {
 			final Document doc = Qcommon.getDocument(url, false);
-			Qcommon.getLatestTime(doc);
+
+			Calendar lastUpdate = Qcommon.getLatestTime(doc);
 
 			final NodeList nResp = doc.getElementsByTagName("datum");
 			for (int knt = 0; knt < nResp.getLength(); knt++) {

@@ -44,7 +44,7 @@ public class TickerNames {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		//TickerNames tn = new TickerNames("lists/ivv-components.csv");
-		final TickerNames tn = new TickerNames("data/SP500-SIP3.csv");
+		final TickerNames tn = new TickerNames("data/SP500-SIP3.txt");
 		final String s = tn.get();
 		System.out.println(s);
 
