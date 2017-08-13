@@ -163,8 +163,8 @@ public class ProcessQuandl {
 		//final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
 		//ProcessQuandl.writeMtsList(mts, "MTS");
 
-		//final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
-		//processEcri(li, 143.9, 143.9);
+		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		processEcri(li, 144.6, 144.2);
 		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
@@ -178,8 +178,8 @@ public class ProcessQuandl {
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
 		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
-		//final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
-		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");
+		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
+		ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
 		ProcessQuandl.writeOneList(sales, "SP500_Sales");

@@ -60,10 +60,11 @@ public class UpdateFred {
 
 		FredCommon.legacyDsi = FredCommon.readSeriesInfo(FredCommon.fredPath + "/fred-series-info.txt");
 
-
 		final File list[] = file.listFiles();
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "readme.txt")) {
+
+			int knt = 0;
 
 			for (final File f : list) {
 
@@ -81,7 +82,7 @@ public class UpdateFred {
 
 					if ((ldsi != null) && (ldsi.getName().length() > 0)) {
 
-						System.out.println(series);
+						//System.out.println(series);
 
 						final long modTime = f.lastModified();
 						final Calendar lastModTime = Calendar.getInstance();
@@ -98,10 +99,23 @@ public class UpdateFred {
 						if (lastModTime.after(dsi.getLastUpdate())) {
 							Debug.pwDbg.println("Local file created After                               "
 							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+							if (knt < 100) {
+								System.out.print(".");
+								knt++;
+							} else {
+								System.out.println(".");
+								knt = 0;
+							}
 						} else {
 							Debug.pwDbg.println("Local file created Before                              "
 							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 							final DataSeries ds = new DataSeries(series);
+
+							if (knt > 0) {
+								System.out.print("\n");
+							}
+							System.out.println(series);
+							knt = 0;
 
 							//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
 							FredCommon.writeToOptuma(ds.getValues(0.0, true, false), series);
@@ -112,6 +126,7 @@ public class UpdateFred {
 
 				}
 			}
+			System.out.println("");
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

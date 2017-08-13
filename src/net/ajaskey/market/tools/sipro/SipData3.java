@@ -81,7 +81,8 @@ public class SipData3 {
 
 		SipData3.readClosingPrices("data/closing_price.txt");
 
-		final String group = "SPX";
+		//final String group = "SPX";
+		final String group = "SPXxEnergy";
 
 		if (group.equals("SPX")) {
 			SipData3.readDataFile_1("data/SP500-SIP3.txt");

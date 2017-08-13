@@ -68,7 +68,7 @@ public class DataSet3 {
 
 	public static DataSet3 mult(DataSet3 set1, DataSet3 set2) {
 
-		final DataSet3 ds = new DataSet3("MULTIPLY");
+		final DataSet3 ds = new DataSet3(set1.name);
 		if (set2.ticker.equals("SCALED")) {
 			ds.ticker = set1.ticker;
 		} else {
@@ -160,29 +160,33 @@ public class DataSet3 {
 	 */
 	public static DataSet3 sum(List<DataSet3> data) {
 
-		final DataSet3 ret = new DataSet3("SUMMATION");
 		if (data.size() > 0) {
-			ret.ticker = "MERGED_TICKERS";
-			for (final DataSet3 ds : data) {
-				ret.y7 += ds.y7;
-				ret.y6 += ds.y6;
-				ret.y5 += ds.y5;
-				ret.y4 += ds.y4;
-				ret.y3 += ds.y3;
-				ret.y2 += ds.y2;
-				ret.q8 += ds.q8;
-				ret.q7 += ds.q7;
-				ret.q6 += ds.q6;
-				ret.q5 += ds.q5;
-				ret.q4 += ds.q4;
-				ret.q3 += ds.q3;
-				ret.q2 += ds.q2;
-				ret.q1 += ds.q1;
-				ret.sector = ds.sector;
-				ret.mode = ds.mode;
+			final DataSet3 ret = new DataSet3(data.get(0).name);
+			if (data.size() > 0) {
+				ret.ticker = "MERGED_TICKERS";
+				for (final DataSet3 ds : data) {
+					ret.y7 += ds.y7;
+					ret.y6 += ds.y6;
+					ret.y5 += ds.y5;
+					ret.y4 += ds.y4;
+					ret.y3 += ds.y3;
+					ret.y2 += ds.y2;
+					ret.q8 += ds.q8;
+					ret.q7 += ds.q7;
+					ret.q6 += ds.q6;
+					ret.q5 += ds.q5;
+					ret.q4 += ds.q4;
+					ret.q3 += ds.q3;
+					ret.q2 += ds.q2;
+					ret.q1 += ds.q1;
+					ret.sector = ds.sector;
+					ret.mode = ds.mode;
+				}
 			}
+			return ret;
+		} else {
+			return null;
 		}
-		return ret;
 
 	}
 
@@ -216,7 +220,7 @@ public class DataSet3 {
 	 *
 	 */
 	private DataSet3() {
-		this.init();
+		this.init("");
 	}
 
 	/**
@@ -224,16 +228,11 @@ public class DataSet3 {
 	 *
 	 */
 	public DataSet3(String n) {
-		this.init();
-		this.name = n;
+		this.init(n);
 	}
 
 	public DataSet3(String name, String code, String sector, String[] s, int ptr, dMode mode) {
-		this.init();
-		//		System.out.println(name);
-		//		System.out.println(code);
-		//		System.out.println(s.length);
-		//		System.out.println(ptr);
+		this.init(name);
 		this.ticker = code.trim();
 		this.sector = sector.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
@@ -262,7 +261,7 @@ public class DataSet3 {
 				this.q1 = this.q2;
 			}
 		}
-		this.name = name.trim();
+		//this.name = name.trim();
 	}
 
 	/**
@@ -287,7 +286,7 @@ public class DataSet3 {
 		return d;
 	}
 
-	private void init() {
+	private void init(String n) {
 
 		this.ticker = "";
 		this.y7 = 0;
@@ -304,7 +303,7 @@ public class DataSet3 {
 		this.q3 = 0;
 		this.q2 = 0;
 		this.q1 = 0;
-		this.name = "";
+		this.name = n;
 		this.sector = "";
 		this.mode = dMode.NONE;
 	}
