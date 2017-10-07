@@ -81,8 +81,8 @@ public class SipData3 {
 
 		SipData3.readClosingPrices("data/closing_price.txt");
 
-		//final String group = "SPX";
-		final String group = "SPXxEnergy";
+		final String group = "SPX";
+		//final String group = "SPXxEnergy";
 
 		if (group.equals("SPX")) {
 			SipData3.readDataFile_1("data/SP500-SIP3.txt");
@@ -261,7 +261,7 @@ public class SipData3 {
 			String line = "";
 
 			//line = br.readLine(); // read header
-			final SipCommon sc = new SipCommon("\t", 14);
+			final SipCommon sc = new SipCommon("\t", 14, 3);
 
 			while (line != null) {
 				line = br.readLine();
@@ -309,7 +309,7 @@ public class SipData3 {
 
 			//line = br.readLine(); // read header
 
-			final SipCommon sc = new SipCommon("\t", 14);
+			final SipCommon sc = new SipCommon("\t", 14, 3);
 
 			while (line != null) {
 				line = br.readLine();

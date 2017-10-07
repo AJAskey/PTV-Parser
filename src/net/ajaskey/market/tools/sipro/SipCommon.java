@@ -35,12 +35,14 @@ public class SipCommon {
 	private int						ptr;
 	private final int			INC;
 	private final String	splitChar;
+	private int						version;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SipCommon(String ch, int inc) {
+	public SipCommon(String ch, int inc, int ver) {
+		this.version = ver;
 		this.reset();
 		this.INC = inc;
 		this.splitChar = ch;
@@ -52,6 +54,17 @@ public class SipCommon {
 
 		final DataSet3 ds = new DataSet3(name, fld[0], fld[1], fld, this.ptr, mode);
 		final DataSet3 dsRet = DataSet3.scale(ds, scaler);
+		//System.out.println(dsRet);
+		this.ptr += this.INC;
+		return dsRet;
+	}
+
+	public DataSet4 getData4(String name, String line, DataSet4.dMode mode, double scaler) {
+
+		final String fld[] = line.replace("\"", "").split(this.splitChar);
+
+		final DataSet4 ds = new DataSet4(fld[1], name, fld[0], fld, this.ptr, mode);
+		final DataSet4 dsRet = DataSet4.scale(ds, scaler);
 		//System.out.println(dsRet);
 		this.ptr += this.INC;
 		return dsRet;

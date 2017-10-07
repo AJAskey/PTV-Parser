@@ -186,7 +186,7 @@ public class SipSectors {
 	private static List<SipSectorData> readBigFile(String fname, String sector)
 	    throws FileNotFoundException, IOException {
 
-		final SipCommon sc = new SipCommon("\t", 14);
+		final SipCommon sc = new SipCommon("\t", 14, 3);
 
 		List<SipSectorData> dsRet = new ArrayList<>();
 		List<String> sectorStr = new ArrayList<>();
