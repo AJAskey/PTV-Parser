@@ -4,8 +4,6 @@ package net.ajaskey.market.tools.sipro;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import net.ajaskey.market.tools.sipro.DataSet4.dMode;
-
 /**
  * This class...
  *
@@ -76,6 +74,7 @@ public class DataSet4 {
 		} else {
 			ds.ticker = "MERGED_TICKERS";
 		}
+		ds.index = set1.index;
 		ds.y7 = set1.y7 * set2.y7;
 		ds.y6 = set1.y6 * set2.y6;
 		ds.y5 = set1.y5 * set2.y5;
@@ -111,6 +110,7 @@ public class DataSet4 {
 
 		final DataSet4 ret = new DataSet4("SCALE");
 		ret.ticker = "SCALED";
+		ret.index = "";
 		ret.y7 = scaler;
 		ret.y6 = scaler;
 		ret.y5 = scaler;
@@ -156,30 +156,33 @@ public class DataSet4 {
 	 * net.ajaskey.market.tools.sipro.sum
 	 *
 	 * @param data
+	 * @param index
 	 * @return
 	 */
-	public static DataSet4 sum(List<DataSet4> data) {
+	public static DataSet4 sum(List<DataSet4> data, String index) {
 
 		if (data.size() > 0) {
 			final DataSet4 ret = new DataSet4(data.get(0).name);
 			if (data.size() > 0) {
 				ret.ticker = "MERGED_TICKERS";
 				for (final DataSet4 ds : data) {
-					ret.y7 += ds.y7;
-					ret.y6 += ds.y6;
-					ret.y5 += ds.y5;
-					ret.y4 += ds.y4;
-					ret.y3 += ds.y3;
-					ret.y2 += ds.y2;
-					ret.q8 += ds.q8;
-					ret.q7 += ds.q7;
-					ret.q6 += ds.q6;
-					ret.q5 += ds.q5;
-					ret.q4 += ds.q4;
-					ret.q3 += ds.q3;
-					ret.q2 += ds.q2;
-					ret.q1 += ds.q1;
-					ret.mode = ds.mode;
+					if (ds.index.equalsIgnoreCase(index)) {
+						ret.y7 += ds.y7;
+						ret.y6 += ds.y6;
+						ret.y5 += ds.y5;
+						ret.y4 += ds.y4;
+						ret.y3 += ds.y3;
+						ret.y2 += ds.y2;
+						ret.q8 += ds.q8;
+						ret.q7 += ds.q7;
+						ret.q6 += ds.q6;
+						ret.q5 += ds.q5;
+						ret.q4 += ds.q4;
+						ret.q3 += ds.q3;
+						ret.q2 += ds.q2;
+						ret.q1 += ds.q1;
+						ret.mode = ds.mode;
+					}
 				}
 			}
 			return ret;
@@ -190,7 +193,7 @@ public class DataSet4 {
 	}
 
 	public String	ticker;
-	public String index;
+	public String	index;
 	public double	y7;
 	public double	y6;
 	public double	y5;
@@ -274,6 +277,7 @@ public class DataSet4 {
 	 * @param mode2
 	 */
 	public void DataSet41(String name, String code, String sector, String[] s, int ptr, dMode mode) {
+
 		this.init(name);
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());

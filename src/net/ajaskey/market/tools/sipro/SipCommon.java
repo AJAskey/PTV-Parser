@@ -35,14 +35,12 @@ public class SipCommon {
 	private int						ptr;
 	private final int			INC;
 	private final String	splitChar;
-	private int						version;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public SipCommon(String ch, int inc, int ver) {
-		this.version = ver;
 		this.reset();
 		this.INC = inc;
 		this.splitChar = ch;

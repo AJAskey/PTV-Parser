@@ -157,7 +157,7 @@ public class Utils {
 
 	public static String getDataPath() {
 
-		final String path = System.getProperty("dataPath", "C:\\Users\\ajask_000\\Documents\\EODData\\DataClient");
+		final String path = System.getProperty("dataPath", "D:\\Data\\EODData\\DataClient");
 		return path;
 	}
 

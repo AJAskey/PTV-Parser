@@ -81,54 +81,58 @@ public class SipData4 {
 
 		SipData4.readClosingPrices("data/closing_price.txt");
 
-		SipData4.readDataFile_1("data/SP-STOCKS.txt", "500");
-		SipData4.readDataFile_2("data/SP-STOCKS-B.txt", "500");
+		SipData4.readDataFile_1("data/SP-STOCKS.txt");
+		SipData4.readDataFile_2("data/SP-STOCKS-B.txt");
 
-		SipData4.processData();
+		SipData4.processData("500");
+		SipData4.processData("MidCap 400");
+		SipData4.processData("SmallCap 600");
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.sipro.processData
+	 * 
+	 * @param index
 	 *
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void processData() throws FileNotFoundException, IOException {
+	public static void processData(String index) throws FileNotFoundException, IOException {
 
-		final DataSet4 totSales = DataSet4.sum(sales);
-		final DataSet4 totEbit = DataSet4.sum(ebit);
-		final DataSet4 totTax = DataSet4.sum(taxes);
-		final DataSet4 totIncome = DataSet4.sum(incomeEps);
-		final DataSet4 totCops = DataSet4.sum(cashOps);
-		final DataSet4 totCfin = DataSet4.sum(cashFin);
-		final DataSet4 totCinv = DataSet4.sum(cashInv);
-		final DataSet4 totShr = DataSet4.sum(shares);
-		final DataSet4 totCash = DataSet4.sum(cash);
-		final DataSet4 totAssets = DataSet4.sum(assets);
-		final DataSet4 totLiab = DataSet4.sum(liabilities);
-		final DataSet4 totAccRx = DataSet4.sum(accRx);
-		final DataSet4 totAccTx = DataSet4.sum(accTx);
-		final DataSet4 totGoodwill = DataSet4.sum(goodwill);
-		final DataSet4 totLtDebt = DataSet4.sum(ltDebt);
-		final DataSet4 totCapEx = DataSet4.sum(capEx);
-		final DataSet4 totEquity = DataSet4.sum(equity);
-		final DataSet4 totInterest = DataSet4.sum(interest);
-		final DataSet4 totResDev = DataSet4.sum(resDev);
+		final DataSet4 totSales = DataSet4.sum(sales, index);
+		final DataSet4 totEbit = DataSet4.sum(ebit, index);
+		final DataSet4 totTax = DataSet4.sum(taxes, index);
+		final DataSet4 totIncome = DataSet4.sum(incomeEps, index);
+		final DataSet4 totCops = DataSet4.sum(cashOps, index);
+		final DataSet4 totCfin = DataSet4.sum(cashFin, index);
+		final DataSet4 totCinv = DataSet4.sum(cashInv, index);
+		final DataSet4 totShr = DataSet4.sum(shares, index);
+		final DataSet4 totCash = DataSet4.sum(cash, index);
+		final DataSet4 totAssets = DataSet4.sum(assets, index);
+		final DataSet4 totLiab = DataSet4.sum(liabilities, index);
+		final DataSet4 totAccRx = DataSet4.sum(accRx, index);
+		final DataSet4 totAccTx = DataSet4.sum(accTx, index);
+		final DataSet4 totGoodwill = DataSet4.sum(goodwill, index);
+		final DataSet4 totLtDebt = DataSet4.sum(ltDebt, index);
+		final DataSet4 totCapEx = DataSet4.sum(capEx, index);
+		final DataSet4 totEquity = DataSet4.sum(equity, index);
+		final DataSet4 totInterest = DataSet4.sum(interest, index);
+		final DataSet4 totResDev = DataSet4.sum(resDev, index);
 
 		final List<DataSet4> divDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
 			final DataSet4 ds = DataSet4.mult(dividend.get(i), shares.get(i));
 			divDollar.add(ds);
 		}
-		final DataSet4 totDivDollar = DataSet4.sum(divDollar);
+		final DataSet4 totDivDollar = DataSet4.sum(divDollar, index);
 
 		final List<DataSet4> bvDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
 			final DataSet4 ds = DataSet4.mult(bookValue.get(i), shares.get(i));
 			bvDollar.add(ds);
 		}
-		final DataSet4 totBvDollar = DataSet4.sum(bvDollar);
+		final DataSet4 totBvDollar = DataSet4.sum(bvDollar, index);
 
 		final DataSet4 totBVminusGW = DataSet4.sub(totBvDollar, totGoodwill);
 
@@ -140,31 +144,40 @@ public class SipData4 {
 			final DataSet4 ds = DataSet4.mult(price, shares.get(i));
 			mcap.add(ds);
 		}
-		final DataSet4 totMktCap = DataSet4.sum(mcap);
+		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
 
-		SipData4.write(totSales, "SPX Sales v4");
-		SipData4.write(totEbit, "SPX EBIT v4");
-		SipData4.write(totTax, "SPX Taxes v4");
-		SipData4.write(totIncome, "SPX Income for EPS v4");
-		SipData4.write(totCops, "SPX Cash from Operations v4");
-		SipData4.write(totCfin, "SPX Cash from Financing v4");
-		SipData4.write(totCinv, "SPX Cash from Investing v4");
-		SipData4.write(totDivDollar, "SPX Dividends v4");
-		SipData4.write(totShr, "SPX Shares v4");
-		SipData4.write(totCash, "SPX Cash v4");
-		SipData4.write(totAssets, "SPX Assets v4");
-		SipData4.write(totLiab, "SPX Liabilities v4");
-		SipData4.write(totAccRx, "SPX Accounts Receivable v4");
-		SipData4.write(totAccTx, "SPX Accounts Payable v4");
-		SipData4.write(totGoodwill, "SPX Goodwill v4");
-		SipData4.write(totLtDebt, "SPX LT Debt v4");
-		SipData4.write(totCapEx, "SPX CapEx v4");
-		SipData4.write(totEquity, "SPX Common Equity v4");
-		SipData4.write(totInterest, "SPX Interest Paid v4");
-		SipData4.write(totResDev, "SPX Research and Development v4");
-		SipData4.write(totBvDollar, "SPX Book Value v4");
-		SipData4.write(totBVminusGW, "SPX Book Value less Goodwill v4");
-		SipData4.write(totMktCap, "SPX Market Cap v4");
+		String prefix = "";
+		if (index.equalsIgnoreCase("500")) {
+			prefix = "SPX";
+		} else if (index.equalsIgnoreCase("MidCap 400")) {
+			prefix = "SP400";
+		} else if (index.equalsIgnoreCase("SmallCap 600")) {
+			prefix = "SP600";
+		}
+
+		SipData4.write(totSales, prefix + " Sales v4");
+		SipData4.write(totEbit, prefix + " EBIT v4");
+		SipData4.write(totTax, prefix + " Taxes v4");
+		SipData4.write(totIncome, prefix + " Income for EPS v4");
+		SipData4.write(totCops, prefix + " Cash from Operations v4");
+		SipData4.write(totCfin, prefix + " Cash from Financing v4");
+		SipData4.write(totCinv, prefix + " Cash from Investing v4");
+		SipData4.write(totDivDollar, prefix + " Dividends v4");
+		SipData4.write(totShr, prefix + " Shares v4");
+		SipData4.write(totCash, prefix + " Cash v4");
+		SipData4.write(totAssets, prefix + " Assets v4");
+		SipData4.write(totLiab, prefix + " Liabilities v4");
+		SipData4.write(totAccRx, prefix + " Accounts Receivable v4");
+		SipData4.write(totAccTx, prefix + " Accounts Payable v4");
+		SipData4.write(totGoodwill, prefix + " Goodwill v4");
+		SipData4.write(totLtDebt, prefix + " LT Debt v4");
+		SipData4.write(totCapEx, prefix + " CapEx v4");
+		SipData4.write(totEquity, prefix + " Common Equity v4");
+		SipData4.write(totInterest, prefix + " Interest Paid v4");
+		SipData4.write(totResDev, prefix + " Research and Development v4");
+		SipData4.write(totBvDollar, prefix + " Book Value v4");
+		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4");
+		SipData4.write(totMktCap, prefix + " Market Cap v4");
 
 	}
 
@@ -203,7 +216,7 @@ public class SipData4 {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void readDataFile_1(String filename, String index) throws FileNotFoundException, IOException {
+	public static void readDataFile_1(String filename) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 
@@ -251,7 +264,7 @@ public class SipData4 {
 		companyKnt = knt;
 	}
 
-	public static void readDataFile_2(String filename, String index) throws FileNotFoundException, IOException {
+	public static void readDataFile_2(String filename) throws FileNotFoundException, IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";

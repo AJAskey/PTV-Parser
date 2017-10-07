@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +56,7 @@ public class SipSectors {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		String dataFile = "SP500-SECTORS.TXT";
+		final String dataFile = "SP500-SECTORS.TXT";
 
 		technology = SipSectors.readBigFile(dataFile, SipSectorData.technologyStr);
 		transportation = SipSectors.readBigFile(dataFile, SipSectorData.transportationStr);
@@ -73,57 +72,67 @@ public class SipSectors {
 
 		//System.out.println(healthcare);
 		//System.out.println(healthcare.size());
-		write(SipSectorData.technologyStr, technology);
-		write(SipSectorData.transportationStr, transportation);
-		write(SipSectorData.servicesStr, services);
-		write(SipSectorData.basicMaterialsStr, basicMaterials);
-		write(SipSectorData.capitalGoodsStr, capitalGoods);
-		write(SipSectorData.consumerCyclicalStr, cyclical);
-		write(SipSectorData.consumerNonCyclicalStr, noncyclical);
-		write(SipSectorData.financialStr, financial);
-		write(SipSectorData.utilitiesStr, utilities);
-		write(SipSectorData.energyStr, energy);
-		write(SipSectorData.healthcareStr, healthcare);
+		SipSectors.write(SipSectorData.technologyStr, technology);
+		SipSectors.write(SipSectorData.transportationStr, transportation);
+		SipSectors.write(SipSectorData.servicesStr, services);
+		SipSectors.write(SipSectorData.basicMaterialsStr, basicMaterials);
+		SipSectors.write(SipSectorData.capitalGoodsStr, capitalGoods);
+		SipSectors.write(SipSectorData.consumerCyclicalStr, cyclical);
+		SipSectors.write(SipSectorData.consumerNonCyclicalStr, noncyclical);
+		SipSectors.write(SipSectorData.financialStr, financial);
+		SipSectors.write(SipSectorData.utilitiesStr, utilities);
+		SipSectors.write(SipSectorData.energyStr, energy);
+		SipSectors.write(SipSectorData.healthcareStr, healthcare);
 
 		System.out.println("Done.");
 
 	}
 
 	/**
-	 * net.ajaskey.market.tools.sipro.write
+	 * net.ajaskey.market.tools.sipro.readBigFile
 	 *
-	 * @param technologystr
-	 * @param technology2
+	 * @param sector
+	 *
+	 * @param string
+	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	private static void write(String technologystr, List<SipSectorData> sector) throws FileNotFoundException {
+	private static List<SipSectorData> readBigFile(String fname, String sector)
+	    throws FileNotFoundException, IOException {
 
-		List<DataSet3> shares = new ArrayList<>();
-		List<DataSet3> sales = new ArrayList<>();
-		List<DataSet3> income = new ArrayList<>();
-		List<DataSet3> cashOps = new ArrayList<>();
-		List<DataSet3> ltDebt = new ArrayList<>();
+		final SipCommon sc = new SipCommon("\t", 14, 3);
 
-		for (SipSectorData ssd : sector) {
-			shares.add(ssd.shares);
-			sales.add(ssd.sales);
-			income.add(ssd.income);
-			cashOps.add(ssd.cashOps);
-			ltDebt.add(ssd.ltDebt);
+		final List<SipSectorData> dsRet = new ArrayList<>();
+		final List<String> sectorStr = new ArrayList<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/" + fname)))) {
+			String line = "";
+
+			//line = br.readLine(); // read header
+
+			while (line != null) {
+				line = br.readLine();
+				if ((line != null) && (line.length() > 0)) {
+
+					if (line.contains(sector)) {
+						sectorStr.add(line);
+
+						final SipSectorData ssd = new SipSectorData();
+
+						sc.reset();
+
+						ssd.shares = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+						ssd.sales = sc.getData("sales", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+						ssd.income = sc.getData("income", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+						ssd.cashOps = sc.getData("cashOps", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+						ssd.ltDebt = sc.getData("ltDebt", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
+						dsRet.add(ssd);
+						//System.out.println(ssd);
+					}
+				}
+			}
 		}
-
-		final DataSet3 totShares = DataSet3.sum(shares);
-		final DataSet3 totSales = DataSet3.sum(sales);
-		final DataSet3 totIncome = DataSet3.sum(income);
-		final DataSet3 totCashOps = DataSet3.sum(cashOps);
-		final DataSet3 totLtDebt = DataSet3.sum(ltDebt);
-
-		SipData3.write(totShares, setOutfilename(totShares));
-		SipData3.write(totSales, setOutfilename(totSales));
-		SipData3.write(totIncome, setOutfilename(totIncome));
-		SipData3.write(totCashOps, setOutfilename(totCashOps));
-		SipData3.write(totLtDebt, setOutfilename(totLtDebt));
-
+		return dsRet;
 	}
 
 	/**
@@ -134,7 +143,7 @@ public class SipSectors {
 	 */
 	private static String setOutfilename(DataSet3 ds) {
 
-		/*			
+		/*
 		public static final String	basicMaterialsStr			= "01  - Basic Materials";
 		public static final String	capitalGoodsStr				= "02  - Capital Goods";
 		public static final String	consumerCyclicalStr		= "04  - Consumer Cyclical";
@@ -175,50 +184,40 @@ public class SipSectors {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.sipro.readBigFile
-	 * 
-	 * @param sector
+	 * net.ajaskey.market.tools.sipro.write
 	 *
-	 * @param string
-	 * @throws IOException
+	 * @param technologystr
+	 * @param technology2
 	 * @throws FileNotFoundException
 	 */
-	private static List<SipSectorData> readBigFile(String fname, String sector)
-	    throws FileNotFoundException, IOException {
+	private static void write(String technologystr, List<SipSectorData> sector) throws FileNotFoundException {
 
-		final SipCommon sc = new SipCommon("\t", 14, 3);
+		final List<DataSet3> shares = new ArrayList<>();
+		final List<DataSet3> sales = new ArrayList<>();
+		final List<DataSet3> income = new ArrayList<>();
+		final List<DataSet3> cashOps = new ArrayList<>();
+		final List<DataSet3> ltDebt = new ArrayList<>();
 
-		List<SipSectorData> dsRet = new ArrayList<>();
-		List<String> sectorStr = new ArrayList<>();
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/" + fname)))) {
-			String line = "";
-
-			//line = br.readLine(); // read header
-
-			while (line != null) {
-				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
-
-					if (line.contains(sector)) {
-						sectorStr.add(line);
-
-						SipSectorData ssd = new SipSectorData();
-
-						sc.reset();
-
-						ssd.shares = sc.getData("shares", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-						ssd.sales = sc.getData("sales", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-						ssd.income = sc.getData("income", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-						ssd.cashOps = sc.getData("cashOps", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-						ssd.ltDebt = sc.getData("ltDebt", line, DataSet3.dMode.SEQUENTIAL, SipCommon.MILLION);
-						dsRet.add(ssd);
-						//System.out.println(ssd);
-					}
-				}
-			}
+		for (final SipSectorData ssd : sector) {
+			shares.add(ssd.shares);
+			sales.add(ssd.sales);
+			income.add(ssd.income);
+			cashOps.add(ssd.cashOps);
+			ltDebt.add(ssd.ltDebt);
 		}
-		return dsRet;
+
+		final DataSet3 totShares = DataSet3.sum(shares);
+		final DataSet3 totSales = DataSet3.sum(sales);
+		final DataSet3 totIncome = DataSet3.sum(income);
+		final DataSet3 totCashOps = DataSet3.sum(cashOps);
+		final DataSet3 totLtDebt = DataSet3.sum(ltDebt);
+
+		SipData3.write(totShares, SipSectors.setOutfilename(totShares));
+		SipData3.write(totSales, SipSectors.setOutfilename(totSales));
+		SipData3.write(totIncome, SipSectors.setOutfilename(totIncome));
+		SipData3.write(totCashOps, SipSectors.setOutfilename(totCashOps));
+		SipData3.write(totLtDebt, SipSectors.setOutfilename(totLtDebt));
+
 	}
 
 }

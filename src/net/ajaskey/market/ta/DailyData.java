@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  *
@@ -310,6 +311,21 @@ public class DailyData {
 		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %5d %5d %9.2f %9.2f%n", sDate, this.open, this.high,
 		    this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi), this.close * this.volume,
 		    this.close * this.oi);
+		return ret.trim();
+	}
+
+	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+
+	/** 
+	 * net.ajaskey.market.ta.toOputma
+	 *
+	 * @return
+	 */
+	public String toOputma() {
+
+		final String sDate = sdfOptuma.format(this.date.getTime());
+		final String ret = String.format("%s,%.2f,%.2f,%.2f,%.2f,%d", sDate, this.open, this.high,
+		    this.low, this.close, (int) (double) (this.volume));
 		return ret.trim();
 	}
 

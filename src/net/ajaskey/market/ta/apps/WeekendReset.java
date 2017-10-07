@@ -10,6 +10,7 @@ import org.xml.sax.SAXException;
 
 import net.ajaskey.market.tools.ProcessIshares;
 import net.ajaskey.market.tools.ProcessSPDRs;
+import net.ajaskey.market.tools.optuma.WriteStockData;
 
 /**
  * This application runs the other applications to reset the stock lists to
@@ -70,6 +71,8 @@ public class WeekendReset {
 		Internals.main(args);
 
 		BreadthOfList.main(args);
+		
+		WriteStockData.main(args);
 
 		System.out.println("Weekend Reset Complete.");
 

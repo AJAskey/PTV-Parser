@@ -34,6 +34,9 @@ import java.io.IOException;
  */
 public class TickerNames {
 
+	final static String	p1	= "openinsider.com/screener?s=";
+	final static String	p2	= "&o=&pl=&ph=&ll=&lh=&fd=0&fdr=&td=7&tdr=&fdlyl=&fdlyh=&daysago=&xp=1&xs=1&excludeDerivRelated=1&vl=&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&isofficer=1&iscob=1&isceo=1&ispres=1&iscoo=1&iscfo=1&isgc=1&isvp=1&isdirector=1&grp=0&nfl=&nfh=&nil=&nih=&nol=&noh=&v2l=&v2h=&oc2l=&oc2h=&sortcol=8&cnt=100&page=1";
+
 	/**
 	 * net.ajaskey.market.tools.main
 	 *
@@ -46,7 +49,7 @@ public class TickerNames {
 		//TickerNames tn = new TickerNames("lists/ivv-components.csv");
 		final TickerNames tn = new TickerNames("data/SP500-SIP3.txt");
 		final String s = tn.get();
-		System.out.println(s);
+		System.out.println(p1 + s + p2);
 
 	}
 

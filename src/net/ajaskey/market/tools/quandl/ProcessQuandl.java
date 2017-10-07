@@ -1,4 +1,3 @@
-
 package net.ajaskey.market.tools.quandl;
 
 import java.io.FileNotFoundException;
@@ -149,7 +148,7 @@ public class ProcessQuandl {
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
-		final String balDryURL = "https://www.quandl.com/api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
+		final String balDryURL = "https://www.quandl.com/" + "api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
 		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
 
@@ -163,8 +162,8 @@ public class ProcessQuandl {
 		//final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
 		//ProcessQuandl.writeMtsList(mts, "MTS");
 
-		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
-		processEcri(li, 144.6, 144.2);
+		//final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		//processEcri(li, 0.0, 0.0);
 		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
@@ -210,16 +209,19 @@ public class ProcessQuandl {
 	 */
 	private static void processEcri(List<LeadingIndicatorData> li, double wk2, double wk1) {
 
-		Calendar cal2 = Utils.buildCalendar(li.get(0).date);
-		cal2.add(Calendar.DATE, 7);
-		LeadingIndicatorData d2 = new LeadingIndicatorData(cal2, wk2, 0.0);
-		li.add(0, d2);
-
-		Calendar cal1 = Utils.buildCalendar(cal2);
-		cal1.add(Calendar.DATE, 7);
-		LeadingIndicatorData d1 = new LeadingIndicatorData(cal1, wk1, 0.0);
-		li.add(0, d1);
-
+		Calendar cal2 = null;
+		if (wk2 > 0.0) {
+			cal2 = Utils.buildCalendar(li.get(0).date);
+			cal2.add(Calendar.DATE, 7);
+			LeadingIndicatorData d2 = new LeadingIndicatorData(cal2, wk2, 0.0);
+			li.add(0, d2);
+			if (wk1 > 0.0) {
+				Calendar cal1 = Utils.buildCalendar(cal2);
+				cal1.add(Calendar.DATE, 7);
+				LeadingIndicatorData d1 = new LeadingIndicatorData(cal1, wk1, 0.0);
+				li.add(0, d1);
+			}
+		}
 	}
 
 	/**

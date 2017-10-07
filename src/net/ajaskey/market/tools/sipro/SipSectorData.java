@@ -2,8 +2,6 @@
 package net.ajaskey.market.tools.sipro;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class...
@@ -19,7 +17,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -32,27 +30,27 @@ import java.util.List;
  */
 public class SipSectorData {
 
-	public DataSet3	shares	= new DataSet3("shares");
-	public DataSet3	sales		= new DataSet3("sales");
-	public DataSet3	income	= new DataSet3("income");
-	public DataSet3	cashOps	= new DataSet3("cashOps");
-	public DataSet3	ltDebt	= new DataSet3("ltDebt");
-
-	public static final String	basicMaterialsStr			= "01  - Basic Materials";
-	public static final String	capitalGoodsStr				= "02  - Capital Goods";
-	public static final String	consumerCyclicalStr		= "04  - Consumer Cyclical";
+	public static final String	basicMaterialsStr				= "01  - Basic Materials";
+	public static final String	capitalGoodsStr					= "02  - Capital Goods";
+	public static final String	consumerCyclicalStr			= "04  - Consumer Cyclical";
 	public static final String	consumerNonCyclicalStr	= "05  - Consumer Non-Cyclical";
-	public static final String	energyStr						= "06  - Energy";
-	public static final String	financialStr					= "07  - Financial";
-	public static final String	healthcareStr					= "08  - Health Care";
-	public static final String	servicesStr						= "09  - Services";
-	public static final String	technologyStr					= "10  - Technology";
-	public static final String	transportationStr			= "11  - Transportation";
-	public static final String	utilitiesStr					= "12  - Utilities";
+	public static final String	energyStr								= "06  - Energy";
 
-	//	public void add(List<SipSectorData> list, DataSet3 ds) {	
+	public static final String	financialStr			= "07  - Financial";
+	public static final String	healthcareStr			= "08  - Health Care";
+	public static final String	servicesStr				= "09  - Services";
+	public static final String	technologyStr			= "10  - Technology";
+	public static final String	transportationStr	= "11  - Transportation";
+	public static final String	utilitiesStr			= "12  - Utilities";
+	public DataSet3							shares						= new DataSet3("shares");
+	public DataSet3							sales							= new DataSet3("sales");
+	public DataSet3							income						= new DataSet3("income");
+	public DataSet3							cashOps						= new DataSet3("cashOps");
+	public DataSet3							ltDebt						= new DataSet3("ltDebt");
+
+	//	public void add(List<SipSectorData> list, DataSet3 ds) {
 	//		list.shares.add(ds);
-	//		
+	//
 	//		if (sector.equalsIgnoreCase("01  - Basic Materials")) {
 	//			basicMaterials.
 	//		} else if (sector.equalsIgnoreCase("02  - Capital Goods")) {
@@ -75,7 +73,7 @@ public class SipSectorData {
 	//			transportation.add(ds);
 	//		} else if (sector.equalsIgnoreCase("12  - Utilities")) {
 	//			utilities.add(ds);
-	//		} 
+	//		}
 	//	}
 
 	@Override

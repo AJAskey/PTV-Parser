@@ -193,11 +193,11 @@ public class Internals {
 			// val = Internals.processListPercent("lists\\ndx-components.csv", days);
 			// System.out.printf("NDX days to recover %.2f%n", val);
 
-			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
-			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
-			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
-			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
-			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
+//			Internals.printBreath("lists\\ivv-components.csv", "SPX", days);
+//			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
+//			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
+//			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
+//			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();

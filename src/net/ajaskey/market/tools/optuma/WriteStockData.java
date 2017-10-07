@@ -66,14 +66,17 @@ public class WriteStockData {
 		filenames.add(dataPath + "\\ASCII\\NYSE");
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
-		WriteStockData.processList("lists/stockdata-list.txt");
-		WriteStockData.processLastPrice("data/SP500-SIP-TICKERS.CSV");
+		//WriteStockData.processList("lists/stockdata-list.txt");
+		WriteStockData.processLastPrice("data/SP500-SIP3.TXT");
 	}
 
 	private static void processLastPrice(String listName) throws ParseException, IOException {
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList(listName));
+		ParseData.setValidTicker("SPX.IDX");
+		ParseData.setValidTicker("IDX.IDX");
+		ParseData.setValidTicker("SML.IDX");
 
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 10);
 
@@ -81,9 +84,11 @@ public class WriteStockData {
 
 			for (final TickerData td : tdAll) {
 				td.fillDataArrays(0, false);
-				final int i = td.getDaysOfData() - 1;
+				final int i = 0; // td.getDaysOfData() - 1;
 				System.out.println(td.getTicker());
-				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
+				//if (td.getTicker().contains("SPX")) {
+					pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
+				//}
 			}
 		}
 		System.out.println("Done.");

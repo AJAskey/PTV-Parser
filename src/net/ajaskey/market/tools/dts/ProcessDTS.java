@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -49,11 +48,11 @@ public class ProcessDTS {
 
 	final static private String folderPath = "d:/data/dts";
 	// final static private String folderPath = "d:/temp/dts-lt";
-	final static private Charset charset = Charset.forName("UTF-8");
+	//final static private Charset charset = Charset.forName("UTF-8");
 
 	final static public int	webDownloadYear		= 2017;
-	final static public int	webDownloadMonth	= Calendar.AUGUST;
-	final static public int	webDownloadDay		= 1;
+	final static public int	webDownloadMonth	= Calendar.SEPTEMBER;
+	final static public int	webDownloadDay		= 23;
 
 	/**
 	 *
@@ -118,14 +117,10 @@ public class ProcessDTS {
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.YEAR));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.NOVEMBER);
-			DtsReports.dumpCompareMonths(2016, 2015, Calendar.DECEMBER);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JANUARY);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.FEBRUARY);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.MARCH);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.APRIL);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.MAY);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JUNE);
+
+			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JULY);
+			DtsReports.dumpCompareMonths(2017, 2016, Calendar.AUGUST);
+			DtsReports.dumpCompareMonths(2017, 2016, Calendar.SEPTEMBER);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

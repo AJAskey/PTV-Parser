@@ -2,7 +2,9 @@
 package net.ajaskey.market.ta;
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -1447,5 +1449,18 @@ public class TickerData {
 
 		return str;
 
+	}
+	
+
+	/**
+	 * net.ajaskey.market.ta.printOptuma
+	 *
+	 * @param pw
+	 */
+	public void printOptuma(PrintWriter pw) {
+
+		for (final DailyData dd : this.data) {
+			pw.println(dd.toOputma());
+		}
 	}
 }
