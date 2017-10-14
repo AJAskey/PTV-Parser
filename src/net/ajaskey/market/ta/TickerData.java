@@ -857,7 +857,7 @@ public class TickerData {
 	 *
 	 * @return
 	 */
-	private List<DailyData> getData() {
+	public List<DailyData> getData() {
 
 		return this.data;
 	}

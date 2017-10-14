@@ -7,10 +7,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.ajaskey.market.ta.input.LongTermOHLCV;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -62,10 +64,14 @@ public class SipData4 {
 	public static List<DataSet4>	resDev			= new ArrayList<>();
 	public static List<DataSet4>	bookValue		= new ArrayList<>();
 	public static List<DataSet4>	prices			= new ArrayList<>();
+	
+	public static List<DataSet4>	eps			= new ArrayList<>();
+
 
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
-	public static List<ClosingPrices> lastPrice = new ArrayList<>();
+	public static List<LongTermOHLCV> indexPrices = null;
+	//public static List<ClosingPrices> lastPrice = new ArrayList<>();
 
 	private static int companyKnt = 0;
 
@@ -76,8 +82,9 @@ public class SipData4 {
 	 * @param args
 	 * @throws FileNotFoundException
 	 * @throws IOException
+	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		SipData4.readClosingPrices("data/closing_price.txt");
 
@@ -97,8 +104,9 @@ public class SipData4 {
 	 *
 	 * @throws FileNotFoundException
 	 * @throws IOException
+	 * @throws ParseException
 	 */
-	public static void processData(String index) throws FileNotFoundException, IOException {
+	public static void processData(String index) throws FileNotFoundException, IOException, ParseException {
 
 		final DataSet4 totSales = DataSet4.sum(sales, index);
 		final DataSet4 totEbit = DataSet4.sum(ebit, index);
@@ -119,6 +127,24 @@ public class SipData4 {
 		final DataSet4 totEquity = DataSet4.sum(equity, index);
 		final DataSet4 totInterest = DataSet4.sum(interest, index);
 		final DataSet4 totResDev = DataSet4.sum(resDev, index);
+		
+		String prefix = "";
+
+		if (index.equalsIgnoreCase("500")) {
+			indexPrices = LongTermOHLCV.getData("SP500");
+			prefix = "SPX";
+		} else if (index.equalsIgnoreCase("MidCap 400")) {
+			indexPrices = LongTermOHLCV.getData("SP400");
+			prefix = "SP400";
+		} else if (index.equalsIgnoreCase("SmallCap 600")) {
+			indexPrices = LongTermOHLCV.getData("SP600");
+			prefix = "SP600";
+		} else {
+			return;
+		}
+		
+		DataSet4 totEps = DataSet4.scale(DataSet4.div(totIncome, totShr), 10.0);
+		DataSet4 totPE = DataSet4.scale(DataSet4.div(DataSet4.scaleSet(indexPrices.get(0).close), totEps), 1.0);
 
 		final List<DataSet4> divDollar = new ArrayList<>();
 		for (int i = 0; i < companyKnt; i++) {
@@ -146,14 +172,7 @@ public class SipData4 {
 		}
 		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
 
-		String prefix = "";
-		if (index.equalsIgnoreCase("500")) {
-			prefix = "SPX";
-		} else if (index.equalsIgnoreCase("MidCap 400")) {
-			prefix = "SP400";
-		} else if (index.equalsIgnoreCase("SmallCap 600")) {
-			prefix = "SP600";
-		}
+
 
 		SipData4.write(totSales, prefix + " Sales v4");
 		SipData4.write(totEbit, prefix + " EBIT v4");
@@ -178,6 +197,9 @@ public class SipData4 {
 		SipData4.write(totBvDollar, prefix + " Book Value v4");
 		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4");
 		SipData4.write(totMktCap, prefix + " Market Cap v4");
+	
+		SipData4.write(totEps, prefix + " EPS v4");
+		SipData4.write(totPE, prefix + " PE v4");
 
 	}
 

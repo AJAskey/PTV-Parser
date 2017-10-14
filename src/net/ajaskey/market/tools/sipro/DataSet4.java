@@ -93,6 +93,44 @@ public class DataSet4 {
 		return ds;
 	}
 
+	private static double divide(double num, double div) {
+
+		double ret = 0;
+		try {
+			ret = num / div;
+		} catch (Exception e) {
+			ret = 0.0;
+		}
+		return ret;
+	}
+
+	public static DataSet4 div(DataSet4 num, DataSet4 div) {
+
+		final DataSet4 ds = new DataSet4(num.name);
+		if (div.ticker.equals("SCALED")) {
+			ds.ticker = num.ticker;
+		} else {
+			ds.ticker = "MERGED_TICKERS";
+		}
+		ds.index = num.index;
+		ds.y7 = divide(num.y7, div.y7);
+		ds.y6 = divide(num.y6, div.y6);
+		ds.y5 = divide(num.y5, div.y5);
+		ds.y4 = divide(num.y4, div.y4);
+		ds.y3 = divide(num.y3, div.y3);
+		ds.y2 = divide(num.y2, div.y2);
+		ds.q8 = divide(num.q8, div.q8);
+		ds.q7 = divide(num.q7, div.q7);
+		ds.q6 = divide(num.q6, div.q6);
+		ds.q5 = divide(num.q5, div.q5);
+		ds.q4 = divide(num.q4, div.q4);
+		ds.q3 = divide(num.q3, div.q3);
+		ds.q2 = divide(num.q2, div.q2);
+		ds.q1 = divide(num.q1, div.q1);
+		ds.mode = num.mode;
+		return ds;
+	}
+
 	/**
 	 * net.ajaskey.market.tools.sipro.scale
 	 *
@@ -100,10 +138,10 @@ public class DataSet4 {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet4 scale(DataSet4 shr, double scaler) {
+	public static DataSet4 scale(DataSet4 val, double scaler) {
 
 		final DataSet4 ds = DataSet4.scaleSet(scaler);
-		return DataSet4.mult(shr, ds);
+		return DataSet4.mult(val, ds);
 	}
 
 	public static DataSet4 scaleSet(double scaler) {
