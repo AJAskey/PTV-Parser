@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.tools.sipro;
+package net.ajaskey.market.tools.sipro.v4;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -203,6 +203,7 @@ public class DataSet4 {
 			final DataSet4 ret = new DataSet4(data.get(0).name);
 			if (data.size() > 0) {
 				ret.ticker = "MERGED_TICKERS";
+				ret.index = index;
 				for (final DataSet4 ds : data) {
 					if (ds.index.equalsIgnoreCase(index)) {
 						ret.y7 += ds.y7;

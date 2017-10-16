@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.tools.sipro;
+package net.ajaskey.market.tools.sipro.v4;
 
 import java.io.IOException;
 import java.text.ParseException;

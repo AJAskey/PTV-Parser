@@ -86,6 +86,22 @@ public class LongTermOHLCV {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.ta.input.getLatestPrice
+	 *
+	 * @param list
+	 * @return
+	 */
+	public static double getLatestPrice(List<LongTermOHLCV> list) {
+
+		try {
+			return list.get(list.size() - 1).close;
+		} catch (Exception e) {
+			return 0.0;
+		}
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.input.getFilename
 	 *
@@ -114,19 +130,8 @@ public class LongTermOHLCV {
 	 */
 	public static void main(String[] args) throws IOException, ParseException {
 
-		//List<LongTermOHLCV> data = getData("SP600");
-		//Calendar c = Calendar.getInstance();
-		//c.setTime(sdf.parse("2017-10-13"));
-		//		for (LongTermOHLCV lt : data) {
-		//			System.out.println(lt);
-		//		}
-
 		LongTermOHLCV.update("SP400");
-		//for (LongTermOHLCV lt : data) {
-		//	System.out.println(lt);
-		//}
-		//LongTermOHLCV dd = queryDate(c, data);
-		//System.out.println(dd);
+
 	}
 
 	/**

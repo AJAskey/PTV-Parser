@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.tools.sipro;
+package net.ajaskey.market.tools.sipro.v4;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -71,8 +71,6 @@ public class SipData4 {
 
 	public static List<LongTermOHLCV> indexPrices = null;
 
-	//public static List<ClosingPrices> lastPrice = new ArrayList<>();
-
 	private static int companyKnt = 0;
 
 	/**
@@ -86,9 +84,7 @@ public class SipData4 {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		//SipData4.readClosingPrices("data/closing_price.txt");
-
-		SipData4.readDataFile_1("data/SP-STOCKS.txt");
+ 		SipData4.readDataFile_1("data/SP-STOCKS.txt");
 		SipData4.readDataFile_2("data/SP-STOCKS-B.txt");
 
 		SipData4.processData("500");
@@ -175,15 +171,15 @@ public class SipData4 {
 
 		final DataSet4 totBVminusGW = DataSet4.sub(totBvDollar, totGoodwill);
 
-		final List<DataSet4> mcap = new ArrayList<>();
-		for (int i = 0; i < companyKnt; i++) {
-			final double pr = ClosingPrices.getPrice(prices.get(i).ticker);
-			final DataSet4 price = prices.get(i);
-			price.q1 = pr;
-			final DataSet4 ds = DataSet4.mult(price, shares.get(i));
-			mcap.add(ds);
-		}
-		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
+		//		final List<DataSet4> mcap = new ArrayList<>();
+		//		for (int i = 0; i < companyKnt; i++) {
+		//			final double pr = ClosingPrices.getPrice(prices.get(i).ticker);
+		//			final DataSet4 price = prices.get(i);
+		//			price.q1 = pr;
+		//			final DataSet4 ds = DataSet4.mult(price, shares.get(i));
+		//			mcap.add(ds);
+		//		}
+		//		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
 
 		SipData4.write(totSales, prefix + " Sales v4", dates);
 		SipData4.write(totEbit, prefix + " EBIT v4", dates);
@@ -207,7 +203,7 @@ public class SipData4 {
 		SipData4.write(totResDev, prefix + " Research and Development v4", dates);
 		SipData4.write(totBvDollar, prefix + " Book Value v4", dates);
 		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates);
-		SipData4.write(totMktCap, prefix + " Market Cap v4", dates);
+		//SipData4.write(totMktCap, prefix + " Market Cap v4", dates);
 
 		SipData4.write(totEps, prefix + " EPS v4", dates);
 		SipData4.write(totPE, prefix + " PE v4", dates);
