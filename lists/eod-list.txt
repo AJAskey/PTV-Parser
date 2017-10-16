@@ -1,3 +1,13 @@
+NADA.IDX  	52-Week Hi-Lo S&P 600                             	INDEX     
+NADB.IDX  	52-Week Hi-Lo S&P 400                             	INDEX     
+NADC.IDX  	52-Week Hi-Lo Nasdaq 100                          	INDEX     
+NADD.IDX  	52-Week Hi-Lo DOW Indu                            	INDEX     
+NADE.IDX  	52-Week Hi-Lo DOW Comp                            	INDEX     
+NADF.IDX  	52-Week Hi-Lo DOW Tran                            	INDEX     
+NADG.IDX  	52-Week Hi-Lo DOW Util                            	INDEX  
+TRIA.IDX  	AMEX Trin                                         	INDEX     
+TRIN.IDX  	NYSE Trin                                         	INDEX     
+TRIQ.IDX  	NASD Trin                                         	INDEX   
 ATXR.IDX  	S&P C.S. Ga-Atlanta Home Price Index              	INDEX     
 BOXR.IDX  	S&P C.S. Ma-Boston Home Price Index               	INDEX     
 CEXR.IDX  	S&P C.S. Oh-Cleveland Home Price Index            	INDEX     
@@ -19,4 +29,8 @@ SEXR.IDX  	S&P C.S. Wa-Seattle Home Price Index              	INDEX
 SFXR.IDX  	S&P C.S. Ca-San Francisco Home Price Index        	INDEX     
 SNXR.IDX  	S&P C.S. Ca-San Diego Home Price Index            	INDEX     
 TPXR.IDX  	S&P C.S. Fl-Tampa Home Price Index                	INDEX     
-WDXR.IDX  	S&P C.S. Dc-Washington Home Price Index           	INDEX     
+WDXR.IDX  	S&P C.S. Dc-Washington Home Price Index           	INDEX
+TNX.IDX   	10-YEAR TREASURY NOTE                             	INDEX
+TYX.IDX   	30-YEAR TREASURY BOND                             	INDEX
+IRX.IDX   	13-WEEK TREASURY BILL                             	INDEX
+FVX.IDX   	5-YEAR TREASURY NOTE                              	INDEX
