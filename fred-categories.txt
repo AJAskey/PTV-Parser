@@ -250,7 +250,7 @@
     32247 Quits (Levels and Rates)
     32248 Layoffs and Discharges (Levels and Rates)
     32249 Other Separations (Levels and Rates)
-  33509 Labor Market Conditions Indexes
+  33509 Labor Market Conditions
   104 Population
     33735 Poverty Measures
     33514 Supplemental Nutrition Assistance Program
@@ -359,13 +359,15 @@
   32220 Trade Indexes
     32221 Import Price Indexes
       32223 End Use Classification System
-      32226 By NAICS
       32229 By Harmonized System
+      32226 By NAICS
       32230 By Locality of Origin
+      33907 Standard International Trade Classification
     32224 Export Price Indexes
       32225 End Use Classification System
       32227 By NAICS
       32228 By Harmonized System
+      33905 Standard International Trade Classification
     32231 Services Price Indexes
 
 32992 National Accounts
