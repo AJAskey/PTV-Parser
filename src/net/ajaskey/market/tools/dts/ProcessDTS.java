@@ -42,7 +42,7 @@ import net.ajaskey.market.tools.helpers.WebGet;
  *
  */
 public class ProcessDTS {
-
+ 
 	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 

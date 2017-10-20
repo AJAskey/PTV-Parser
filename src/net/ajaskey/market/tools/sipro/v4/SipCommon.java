@@ -28,10 +28,6 @@ package net.ajaskey.market.tools.sipro.v4;
  */
 public class SipCommon {
 
-	public final static double	THOUSAND	= 1e3;
-	public final static double	MILLION		= 1e6;
-	public final static double	BILLION		= 1e9;
-
 	private int						ptr;
 	private final int			INC;
 	private final String	splitChar;
@@ -46,7 +42,9 @@ public class SipCommon {
 		this.splitChar = ch;
 	}
 
-
+	public final static double	THOUSAND	= 1e3;
+	public final static double	MILLION		= 1e6;
+	public final static double	BILLION		= 1e9;
 
 	public DataSet4 getData4(String name, String line, DataSet4.dMode mode, double scaler) {
 

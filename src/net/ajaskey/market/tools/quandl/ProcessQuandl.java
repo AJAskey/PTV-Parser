@@ -131,7 +131,7 @@ public class ProcessQuandl {
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
-		final String sp500EarnURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key"
+		final String sp500EarnYldURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key"
 		    + QuandlApi.key;
 		final String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -167,9 +167,10 @@ public class ProcessQuandl {
 		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
-		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnURL);
+		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
 		List<OneValueData> searn = scaleEarnings(earn, price);
 		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
+		ProcessQuandl.writeOneList(earn, "SP500_EarningsYield");
 
 		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
 		ProcessQuandl.writeOneList(div, "SP500_Dividend");
@@ -181,7 +182,7 @@ public class ProcessQuandl {
 		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
-		ProcessQuandl.writeOneList(sales, "SP500_Sales");
+		//ProcessQuandl.writeOneList(sales, "SP500_Sales");
 
 		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
 		ProcessQuandl.writePcList(epc, "EquityPC");
