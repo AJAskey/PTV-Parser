@@ -218,9 +218,122 @@ public class SipData4 {
 		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
 		SipData4.write(totMktCap, prefix + " Market Cap v4", dates, false);
 
+		//-----------------------------------------
+
+		final DataSet4 totMktCapShr = DataSet4.ratio(totMktCap, totShr);
+		SipData4.write(totMktCapShr, prefix + " Market Cap to Shares v4", dates, false);
+
+		final DataSet4 totMargin = DataSet4.scale(DataSet4.ratio(totIncome, totSales), 100.0);
+		SipData4.write(totMargin, prefix + " Margin v4", dates, false);
+
+		final DataSet4 totROE = DataSet4.scale(DataSet4.ratio(totIncome, totEquity), 100.0);
+		SipData4.write(totROE, prefix + " ROE v4", dates, false);
+
+		final DataSet4 totTaxMargin = DataSet4.scale(DataSet4.ratio(totTax, totSales), 100.0);
+		SipData4.write(totTaxMargin, prefix + " Tax Margin v4", dates, false);
+
+		final DataSet4 totBVtoCap = DataSet4.scale(DataSet4.ratio(totBvDollar, totMktCap), 100.0);
+		SipData4.write(totBVtoCap, prefix + " BV over Market Cap v4", dates, false);
+
+		final DataSet4 totBVmGWtoCap = DataSet4.scale(DataSet4.ratio(totBVminusGW, totMktCap), 100.0);
+		SipData4.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap v4", dates, false);
+
+		final DataSet4 totGWtoAsset = DataSet4.scale(DataSet4.ratio(totGoodwill, totAssets), 100.0);
+		SipData4.write(totGWtoAsset, prefix + " Goodwill over Assets v4", dates, false);
+
 		SipData4.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates,
 		    dsPrices);
 
+		writePriceToDate(dates, totSales, prefix + " Price to Sales v4", 100000000000.0);
+		writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
+		writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
+		writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.v4.writePriceToDate
+	 *
+	 * @param dates
+	 * @param scaler
+	 * @param totSales
+	 * @throws FileNotFoundException
+	 */
+	private static void writePriceToDate(DateSet dates, DataSet4 ds, String fname, double scaler)
+	    throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter(SipData4.path + fname + ".csv")) {
+
+			SipData4.write(pw, dates.y7, dates.y7.q4.value / ds.y7 * scaler, 1.0);
+			SipData4.write(pw, dates.y6, dates.y6.q4.value / ds.y6 * scaler, 1.0);
+			SipData4.write(pw, dates.y5, dates.y5.q4.value / ds.y5 * scaler, 1.0);
+			SipData4.write(pw, dates.y4, dates.y4.q4.value / ds.y4 * scaler, 1.0);
+			SipData4.write(pw, dates.y3, dates.y3.q4.value / ds.y3 * scaler, 1.0);
+			SipData4.write(pw, dates.y2, dates.y2.q4.value / ds.y2 * scaler, 1.0);
+			double q[] = sumQuarters(ds);
+			System.out.println(ds.y7);
+			System.out.println(ds.y6);
+			System.out.println(ds.y5);
+			System.out.println(ds.y4);
+			System.out.println(ds.y3);
+			System.out.println(ds.y2);
+			System.out.println(ds.y1);
+			System.out.println(ds.y0 + "\n");
+			System.out.println(q[7]);
+			System.out.println(q[6]);
+			System.out.println(q[5]);
+			System.out.println(q[4]);
+			System.out.println(q[3]);
+			System.out.println(q[2]);
+			System.out.println(q[1]);
+			System.out.println(q[0]);
+			double d1 = dates.y1.q1.value / q[7];
+			double d2 = dates.y1.q1.value / q[7] * scaler;
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q1.date.getTime()), dates.y1.q1.value / q[7] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q2.date.getTime()), dates.y1.q2.value / q[6] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q3.date.getTime()), dates.y1.q3.value / q[5] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q4.date.getTime()), dates.y1.q4.value / q[4] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q1.date.getTime()), dates.y0.q1.value / q[3] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q2.date.getTime()), dates.y0.q2.value / q[2] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q3.date.getTime()), dates.y0.q3.value / q[1] * scaler);
+			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q4.date.getTime()), dates.y0.q4.value / q[0] * scaler);
+
+			//      SipData4.write(pw, dates.y1, dates.y1.q1.value / q[7] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y1, dates.y1.q2.value / q[6] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y1, dates.y1.q3.value / q[5] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y1, dates.y1.q4.value / q[4] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y0, dates.y0.q1.value / q[3] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y0, dates.y0.q2.value / q[2] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y0, dates.y0.q3.value / q[1] * scaler, 1.0);
+			//			SipData4.write(pw, dates.y0, dates.y0.q4.value / q[0] * scaler, 1.0);
+		}
+	}
+
+	private static double[] sumQuarters(DataSet4 ds) {
+
+		double ret[] = new double[8];
+
+		if (ds.mode == DataSet4.dMode.SEQUENTIAL) {
+			ret[7] = ds.q8;
+			ret[6] = ds.q7;
+			ret[5] = ds.q6;
+			ret[4] = ds.q5;
+			ret[3] = ds.q4;
+			ret[2] = ds.q3;
+			ret[1] = ds.q2;
+			ret[0] = ds.q1;
+		} else {
+			ret[7] = ds.q8 * 4.0;
+			ret[6] = ds.q8 * 3.0 + ds.q7;
+			ret[5] = ds.q8 * 2.0 + ds.q7 + ds.q6;
+			ret[4] = ds.q8 + ds.q7 + ds.q6 + ds.q5;
+			ret[3] = ds.q7 + ds.q6 + ds.q5 + ds.q4;
+			ret[2] = ds.q6 + ds.q5 + ds.q4 + ds.q3;
+			ret[1] = ds.q5 + ds.q4 + ds.q3 + ds.q2;
+			ret[0] = ds.q4 + ds.q3 + ds.q2 + ds.q1;
+		}
+
+		return ret;
 	}
 
 	/**

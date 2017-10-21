@@ -140,11 +140,11 @@ public class DataSet4 {
 		this.q1 = getDouble(s[ptr + 14].trim());
 		this.mode = mode;
 
-//		System.out.print(name + " - " + ptr + " :");
-//		for (int i = ptr + 1; i < ptr + 15; i++) {
-//			System.out.print("  " + s[i]);
-//		}
-//		System.out.println("\n" + this);
+		//		System.out.print(name + " - " + ptr + " :");
+		//		for (int i = ptr + 1; i < ptr + 15; i++) {
+		//			System.out.print("  " + s[i]);
+		//		}
+		//		System.out.println("\n" + this);
 
 		// Handle no value for most recent quarter
 		if (mode == dMode.ACCUMULATION) {
@@ -452,6 +452,42 @@ public class DataSet4 {
 		this.q1 = val;
 		this.name = n;
 		this.mode = dMode.NONE;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.v4.ratio
+	 *
+	 * @param totIncome
+	 * @param totEquity
+	 * @return
+	 */
+	public static DataSet4 ratio(DataSet4 num, DataSet4 div) {
+
+		final DataSet4 ds = new DataSet4(num.name, 0);
+		if (div.ticker.equals("SCALED")) {
+			ds.ticker = num.ticker;
+		} else {
+			ds.ticker = "MERGED_TICKERS";
+		}
+		ds.index = num.index;
+		ds.y7 = DataSet4.divide(num.y7, div.y7);
+		ds.y6 = DataSet4.divide(num.y6, div.y6);
+		ds.y5 = DataSet4.divide(num.y5, div.y5);
+		ds.y4 = DataSet4.divide(num.y4, div.y4);
+		ds.y3 = DataSet4.divide(num.y3, div.y3);
+		ds.y2 = DataSet4.divide(num.y2, div.y2);
+		ds.y1 = DataSet4.divide(num.y1, div.y1);
+		ds.y0 = DataSet4.divide(num.y0, div.y0);
+		ds.q8 = ds.y1;
+		ds.q7 = ds.y1;
+		ds.q6 = ds.y1;
+		ds.q5 = ds.y1;
+		ds.q4 = ds.y0;
+		ds.q3 = ds.y0;
+		ds.q2 = ds.y0;
+		ds.q1 = ds.y0;
+		ds.mode = DataSet4.dMode.SEQUENTIAL;
+		return ds;
 	}
 
 }
