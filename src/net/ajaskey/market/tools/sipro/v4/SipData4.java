@@ -10,10 +10,14 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.input.LongTermOHLCV;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
+import net.ajaskey.market.tools.sipro.v4.DateSet.Quarters;
+import net.ajaskey.market.misc.Zip;
 
 /**
  * This class...
@@ -73,8 +77,7 @@ public class SipData4 {
 
 	private static int companyKnt = 0;
 
-	//static String path = "output\\SIP\\";
-	static String path = OptumaCommon.optumaPath+"\\SIP\\";
+	static String path = OptumaCommon.optumaPath + "SIP/";
 
 	/**
 	 *
@@ -88,11 +91,33 @@ public class SipData4 {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		SipData4.readDataFile_1("data/SP-STOCKS.txt");
-		SipData4.readDataFile_2("data/SP-STOCKS-B.txt");
+		Calendar latest = SipData4.readDataFile_2("data/SP-STOCKS-B.txt");
+
+		System.out.println(Utils.stringDate(latest));
 
 		SipData4.processData("500");
 		//SipData4.processData("MidCap 400");
 		//SipData4.processData("SmallCap 600");
+
+		archiveData(latest);
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.v4.archiveData
+	 *
+	 */
+	private static void archiveData(Calendar latest) {
+
+		List<String> dir = new ArrayList<>();
+		dir.add(path);
+		List<String> fil = new ArrayList<>();
+		fil.add("data\\SP-Stocks.txt");
+		fil.add("data\\SP-Stocks-B.txt");
+
+		String fname = "SIP-" + Utils.stringDate(latest) + "_" + Utils.stringDate(Calendar.getInstance()) + ".zip";
+		Zip.create(dir, fil, "archive", fname);
+
 	}
 
 	/**
@@ -161,39 +186,37 @@ public class SipData4 {
 
 		final DataSet4 totBVminusGW = DataSet4.sub(totBvDollar, totGoodwill);
 
-		//		final List<DataSet4> mcap = new ArrayList<>();
-		//		for (int i = 0; i < companyKnt; i++) {
-		//			final double pr = ClosingPrices.getPrice(prices.get(i).ticker);
-		//			final DataSet4 value = prices.get(i);
-		//			value.q1 = pr;
-		//			final DataSet4 ds = DataSet4.mult(value, shares.get(i));
-		//			mcap.add(ds);
-		//		}
-		//		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
+		final List<DataSet4> mcap = new ArrayList<>();
+		for (int i = 0; i < SipData4.companyKnt; i++) {
+			final DataSet4 ds = DataSet4.mult(SipData4.prices.get(i), SipData4.shares.get(i));
+			mcap.add(ds);
+		}
+		final DataSet4 totMktCap = DataSet4.sum(mcap, index);
+		totMktCap.mode = DataSet4.dMode.SEQUENTIAL;
 
-		SipData4.write(totSales, prefix + " Sales v4", dates);
-		SipData4.write(totEbit, prefix + " EBIT v4", dates);
-		SipData4.write(totTax, prefix + " Taxes v4", dates);
-		SipData4.write(totIncome, prefix + " Income for EPS v4", dates);
-		SipData4.write(totCops, prefix + " Cash from Operations v4", dates);
-		SipData4.write(totCfin, prefix + " Cash from Financing v4", dates);
-		SipData4.write(totCinv, prefix + " Cash from Investing v4", dates);
-		SipData4.write(totDivDollar, prefix + " Dividends v4", dates);
-		SipData4.write(totShr, prefix + " Shares v4", dates);
-		SipData4.write(totCash, prefix + " Cash v4", dates);
-		SipData4.write(totAssets, prefix + " Assets v4", dates);
-		SipData4.write(totLiab, prefix + " Liabilities v4", dates);
-		SipData4.write(totAccRx, prefix + " Accounts Receivable v4", dates);
-		SipData4.write(totAccTx, prefix + " Accounts Payable v4", dates);
-		SipData4.write(totGoodwill, prefix + " Goodwill v4", dates);
-		SipData4.write(totLtDebt, prefix + " LT Debt v4", dates);
-		SipData4.write(totCapEx, prefix + " CapEx v4", dates);
-		SipData4.write(totEquity, prefix + " Common Equity v4", dates);
-		SipData4.write(totInterest, prefix + " Interest Paid v4", dates);
-		SipData4.write(totResDev, prefix + " Research and Development v4", dates);
-		SipData4.write(totBvDollar, prefix + " Book Value v4", dates);
-		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates);
-		//SipData4.write(totMktCap, prefix + " Market Cap v4", dates);
+		SipData4.write(totSales, prefix + " Sales v4", dates, false);
+		SipData4.write(totEbit, prefix + " EBIT v4", dates, false);
+		SipData4.write(totTax, prefix + " Taxes v4", dates, false);
+		SipData4.write(totIncome, prefix + " Income for EPS v4", dates, false);
+		SipData4.write(totCops, prefix + " Cash from Operations v4", dates, false);
+		SipData4.write(totCfin, prefix + " Cash from Financing v4", dates, false);
+		SipData4.write(totCinv, prefix + " Cash from Investing v4", dates, false);
+		SipData4.write(totDivDollar, prefix + " Dividends v4", dates, false);
+		SipData4.write(totShr, prefix + " Shares v4", dates, false);
+		SipData4.write(totCash, prefix + " Cash v4", dates, false);
+		SipData4.write(totAssets, prefix + " Assets v4", dates, false);
+		SipData4.write(totLiab, prefix + " Liabilities v4", dates, false);
+		SipData4.write(totAccRx, prefix + " Accounts Receivable v4", dates, false);
+		SipData4.write(totAccTx, prefix + " Accounts Payable v4", dates, false);
+		SipData4.write(totGoodwill, prefix + " Goodwill v4", dates, false);
+		SipData4.write(totLtDebt, prefix + " LT Debt v4", dates, false);
+		SipData4.write(totCapEx, prefix + " CapEx v4", dates, false);
+		SipData4.write(totEquity, prefix + " Common Equity v4", dates, false);
+		SipData4.write(totInterest, prefix + " Interest Paid v4", dates, false);
+		SipData4.write(totResDev, prefix + " Research and Development v4", dates, false);
+		SipData4.write(totBvDollar, prefix + " Book Value v4", dates, false);
+		SipData4.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
+		SipData4.write(totMktCap, prefix + " Market Cap v4", dates, false);
 
 		SipData4.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates,
 		    dsPrices);
@@ -215,14 +238,14 @@ public class SipData4 {
 	    DateSet dates, DataSet4 dsPrices) throws FileNotFoundException {
 
 		final DataSet4 totEps = DataSet4.scale(DataSet4.div(totIncome, totShr), 36.0);
-		SipData4.write(totEps, epsStr, dates);
+		SipData4.write(totEps, epsStr, dates, false);
 
 		totEps.mode = DataSet4.dMode.SEQUENTIAL;
-		SipData4.write(totEps, epsannualStr, dates);
+		SipData4.write(totEps, epsannualStr, dates, false);
 
 		final DataSet4 totPE = DataSet4.scale(DataSet4.div(dsPrices, totEps), 1.0);
 		totPE.mode = DataSet4.dMode.SEQUENTIAL;
-		SipData4.write(totPE, peStr, dates);
+		SipData4.write(totPE, peStr, dates, false);
 
 	}
 
@@ -281,7 +304,19 @@ public class SipData4 {
 		SipData4.companyKnt = knt;
 	}
 
-	public static void readDataFile_2(String filename) throws FileNotFoundException, IOException {
+	/**
+	 * 
+	 * net.ajaskey.market.tools.sipro.v4.readDataFile_2
+	 *
+	 * @param filename
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static Calendar readDataFile_2(String filename) throws FileNotFoundException, IOException {
+
+		Calendar latestDate = Calendar.getInstance();
+		latestDate.add(Calendar.YEAR, -5);
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
@@ -301,9 +336,20 @@ public class SipData4 {
 
 					SipData4.bookValue.add(sc.getData4("Book Value per Share", line, DataSet4.dMode.SEQUENTIAL, 1.0));
 					SipData4.prices.add(sc.getData4("Prices", line, DataSet4.dMode.SEQUENTIAL, 1.0));
+
+					try {
+						Calendar date = sc.getDate(line);
+						if (date.after(latestDate)) {
+							latestDate.setTime(date.getTime());
+						}
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}
+		return latestDate;
 	}
 
 	/**
@@ -314,10 +360,10 @@ public class SipData4 {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	public static void write(DataSet4 ds, String fname, DateSet dates) throws FileNotFoundException {
+	public static void write(DataSet4 ds, String fname, DateSet dates, boolean printAnnual) throws FileNotFoundException {
 
 		if (ds.mode == DataSet4.dMode.SEQUENTIAL) {
-			SipData4.writeDataSequential(ds, fname, dates);
+			SipData4.writeDataSequential(ds, fname, dates, printAnnual);
 		} else {
 			SipData4.writeDataAccumulate(ds, fname, dates);
 		}
@@ -334,28 +380,27 @@ public class SipData4 {
 	private static void writeAvgQtr(PrintWriter pw, DateSet.Quarters y1, DateSet.Quarters y0, double q8, double q7,
 	    double q6, double q5, double q4, double q3, double q2, double q1) {
 
-		double tmp = q8 * 4.0;
-		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q1.date.getTime()), tmp);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q1.date.getTime()), q8);
 
-		tmp = q8 * 3.0 + q7;
+		double tmp = (q8 * 3.0 + q7) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q2.date.getTime()), tmp);
 
-		tmp = q8 * 2.0 + q7 + q6;
+		tmp = (q8 * 2.0 + q7 + q6) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q3.date.getTime()), tmp);
 
-		tmp = q8 + q7 + q6 + q5;
+		tmp = (q8 + q7 + q6 + q5) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q4.date.getTime()), tmp);
 
-		tmp = q7 + q6 + q5 + q4;
+		tmp = (q7 + q6 + q5 + q4) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q1.date.getTime()), tmp);
 
-		tmp = q6 + q5 + q4 + q3;
+		tmp = (q6 + q5 + q4 + q3) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q2.date.getTime()), tmp);
 
-		tmp = q5 + q4 + q3 + q2;
+		tmp = (q5 + q4 + q3 + q2) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q3.date.getTime()), tmp);
 
-		tmp = q4 + q3 + q2 + q1;
+		tmp = (q4 + q3 + q2 + q1) / 4.0;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q4.date.getTime()), tmp);
 	}
 
@@ -367,9 +412,9 @@ public class SipData4 {
 	 * @param q
 	 * @param val
 	 */
-	private static void write(PrintWriter pw, DateSet.Quarters q, double val) {
+	private static void write(PrintWriter pw, DateSet.Quarters q, double val, double divisor) {
 
-		final double qval = val / 4.0;
+		final double qval = val / divisor;
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(q.q1.date.getTime()), qval);
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(q.q2.date.getTime()), qval);
 		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(q.q3.date.getTime()), qval);
@@ -387,12 +432,12 @@ public class SipData4 {
 
 		try (PrintWriter pw = new PrintWriter(SipData4.path + fname + ".csv")) {
 
-			SipData4.write(pw, dates.y7, ds.y7);
-			SipData4.write(pw, dates.y6, ds.y6);
-			SipData4.write(pw, dates.y5, ds.y5);
-			SipData4.write(pw, dates.y4, ds.y4);
-			SipData4.write(pw, dates.y3, ds.y3);
-			SipData4.write(pw, dates.y2, ds.y3);
+			SipData4.write(pw, dates.y7, ds.y7, 4.0);
+			SipData4.write(pw, dates.y6, ds.y6, 4.0);
+			SipData4.write(pw, dates.y5, ds.y5, 4.0);
+			SipData4.write(pw, dates.y4, ds.y4, 4.0);
+			SipData4.write(pw, dates.y3, ds.y3, 4.0);
+			SipData4.write(pw, dates.y2, ds.y2, 4.0);
 			SipData4.writeAvgQtr(pw, dates.y1, dates.y0, ds.q8, ds.q7, ds.q6, ds.q5, ds.q4, ds.q3, ds.q2, ds.q1);
 			//write(pw, dates.y0, ds.y0);
 
@@ -409,31 +454,65 @@ public class SipData4 {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	private static void writeDataSequential(DataSet4 ds, String fname, DateSet dates) throws FileNotFoundException {
+	private static void writeDataSequential(DataSet4 ds, String fname, DateSet dates, boolean printAnnual)
+	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(SipData4.path + fname + ".csv")) {
 
 			//SipData4.write(pw, dates.y1, dates.y0, ds.q8, ds.q7, ds.q6, ds.q5, ds.q4, ds.q3, ds.q2, ds.q1);
 
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y7.q4.date.getTime()), ds.y7);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y6.q4.date.getTime()), ds.y6);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y5.q4.date.getTime()), ds.y5);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y4.q4.date.getTime()), ds.y4);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y3.q4.date.getTime()), ds.y3);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y2.q4.date.getTime()), ds.y2);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q4.date.getTime()), ds.y1);
-			pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q4.date.getTime()), ds.y0);
+			if (printAnnual) {
 
-			//			SipData4.write(pw, dates.y7, ds.y7);
-			//			SipData4.write(pw, dates.y6, ds.y6);
-			//			SipData4.write(pw, dates.y5, ds.y5);
-			//			SipData4.write(pw, dates.y4, ds.y4);
-			//			SipData4.write(pw, dates.y3, ds.y3);
-			//			SipData4.write(pw, dates.y2, ds.y2);
-			//			SipData4.write(pw, dates.y1, ds.y1);
-			//			SipData4.write(pw, dates.y0, ds.y0);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y7.q4.date.getTime()), ds.y7);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y6.q4.date.getTime()), ds.y6);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y5.q4.date.getTime()), ds.y5);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y4.q4.date.getTime()), ds.y4);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y3.q4.date.getTime()), ds.y3);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y2.q4.date.getTime()), ds.y2);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y1.q4.date.getTime()), ds.y1);
+				pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(dates.y0.q4.date.getTime()), ds.y0);
+			} else {
 
+				SipData4.write(pw, dates.y7, ds.y7, 1.0);
+				SipData4.write(pw, dates.y6, ds.y6, 1.0);
+				SipData4.write(pw, dates.y5, ds.y5, 1.0);
+				SipData4.write(pw, dates.y4, ds.y4, 1.0);
+				SipData4.write(pw, dates.y3, ds.y3, 1.0);
+				SipData4.write(pw, dates.y2, ds.y2, 1.0);
+				//SipData4.write(pw, dates.y2, ds.y1, 1.0);
+				//SipData4.write(pw, dates.y2, ds.y0, 1.0);
+				SipData4.writeAvgQtr(pw, dates.y1, dates.y0, ds.q8, ds.q7, ds.q6, ds.q5, ds.q4, ds.q3, ds.q2, ds.q1);
+			}
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.sipro.v4.writeQtr
+	 *
+	 * @param pw
+	 * @param y1
+	 * @param y0
+	 * @param q8
+	 * @param q7
+	 * @param q6
+	 * @param q5
+	 * @param q4
+	 * @param q3
+	 * @param q2
+	 * @param q1
+	 */
+	private static void writeQtr(PrintWriter pw, Quarters y1, Quarters y0, double q8, double q7, double q6, double q5,
+	    double q4, double q3, double q2, double q1) {
+
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q1.date.getTime()), q8);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q2.date.getTime()), q7);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q3.date.getTime()), q6);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y1.q4.date.getTime()), q5);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q1.date.getTime()), q4);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q2.date.getTime()), q3);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q3.date.getTime()), q2);
+		pw.printf("%s,%.2f%n", SipData4.sdfOptuma.format(y0.q4.date.getTime()), q1);
+
 	}
 
 }

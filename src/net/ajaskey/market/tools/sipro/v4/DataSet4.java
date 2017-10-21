@@ -442,14 +442,14 @@ public class DataSet4 {
 		this.y2 = val;
 		this.y1 = val;
 		this.y0 = val;
-		this.q8 = val / 4.0;
-		this.q7 = val / 4.0;
-		this.q6 = val / 4.0;
-		this.q5 = val / 4.0;
-		this.q4 = val / 4.0;
-		this.q3 = val / 4.0;
-		this.q2 = val / 4.0;
-		this.q1 = val / 4.0;
+		this.q8 = val;
+		this.q7 = val;
+		this.q6 = val;
+		this.q5 = val;
+		this.q4 = val;
+		this.q3 = val;
+		this.q2 = val;
+		this.q1 = val;
 		this.name = n;
 		this.mode = dMode.NONE;
 	}

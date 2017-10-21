@@ -1,6 +1,11 @@
 
 package net.ajaskey.market.tools.sipro.v4;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * This class...
  *
@@ -60,6 +65,25 @@ public class SipCommon {
 	public void reset() {
 
 		this.ptr = 1;
+	}
+
+	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+	/**
+	 * net.ajaskey.market.tools.sipro.v4.getDate
+	 *
+	 * @return
+	 * @throws ParseException 
+	 */
+	public Calendar getDate(String line) throws ParseException {
+
+		final String fld[] = line.replace("\"", "").split(this.splitChar);
+		int len = fld.length - 1;
+		String sdate = fld[len].trim();
+		Date d = sdf.parse(sdate);
+		Calendar ret = Calendar.getInstance();
+		ret.setTime(d);
+		return ret;
 	}
 
 }
