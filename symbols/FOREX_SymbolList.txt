@@ -120,14 +120,12 @@ CADSGD    	Canadian Dollar / Singapore Dollar                	FOREX
 CADTHB    	Canadian Dollar / Thai Baht                       	FOREX     
 CADTRY    	Canadian Dollar / Turkish Lira                    	FOREX     
 CADTWD    	Canadian Dollar / New Taiwan Dollar               	FOREX     
-CADUAH    	Canadian Dollar / Hryvnia                         	FOREX     
 CADUSD    	Canadian Dollar / US Dollar                       	FOREX     
 CADZAR    	Canadian Dollar / South African Rand              	FOREX     
 CDFUSD    	Franc Congolais / US Dollar                       	FOREX     
 CHFAED    	Swiss Franc / UAE Dirham                          	FOREX     
 CHFARS    	Swiss Franc / Argentine Peso                      	FOREX     
 CHFAUD    	Swiss Franc / Australian Dollar                   	FOREX     
-CHFBGN    	Swiss Franc / Bulgarian Lev                       	FOREX     
 CHFBRL    	Swiss Franc / Brazilian Real                      	FOREX     
 CHFBWP    	Swiss Franc / Pula                                	FOREX     
 CHFCAD    	Swiss Franc / Canadian Dollar                     	FOREX     
@@ -145,7 +143,6 @@ CHFINR    	Swiss Franc / Indian Rupee                        	FOREX
 CHFISK    	Swiss Franc / Iceland Krona                       	FOREX     
 CHFJPY    	Swiss Franc / Japanese Yen                        	FOREX     
 CHFKRW    	Swiss Franc / Korean Won                          	FOREX     
-CHFLVL    	Swiss Franc / Latvian Lats                        	FOREX     
 CHFMXN    	Swiss Franc / Mexican Peso                        	FOREX     
 CHFMYR    	Swiss Franc / Malaysian Ringgit                   	FOREX     
 CHFNOK    	Swiss Franc / Norwegian Krone                     	FOREX     
@@ -184,7 +181,6 @@ CNYGBP    	Yuan Renminbi / Pound Sterling                    	FOREX
 CNYHKD    	Yuan Renminbi / Hong Kong Dollar                  	FOREX     
 CNYJPY    	Yuan Renminbi / Japanese Yen                      	FOREX     
 CNYKRW    	Yuan Renminbi / Korean Won                        	FOREX     
-CNYMYR    	Yuan Renminbi / Malaysian Ringgit                 	FOREX     
 CNYNZD    	Yuan Renminbi / New Zealand Dollar                	FOREX     
 CNYPLN    	Yuan Renminbi / Polish Zloty                      	FOREX     
 CNYUSD    	Yuan Renminbi / US Dollar                         	FOREX     
@@ -218,7 +214,6 @@ DKKHUF    	Danish Krone / Hungarian Forint                   	FOREX
 DKKINR    	Danish Krone / Indian Rupee                       	FOREX     
 DKKISK    	Danish Krone / Iceland Krona                      	FOREX     
 DKKJPY    	Danish Krone / Japanese Yen                       	FOREX     
-DKKLVL    	Danish Krone / Latvian Lats                       	FOREX     
 DKKMXN    	Danish Krone / Mexican Peso                       	FOREX     
 DKKMYR    	Danish Krone / Malaysian Ringgit                  	FOREX     
 DKKNOK    	Danish Krone / Norwegian Krone                    	FOREX     
@@ -259,7 +254,6 @@ EURBOB    	Euro Dollar / Boliviano                           	FOREX
 EURBRL    	Euro Dollar / Brazilian Real                      	FOREX     
 EURBSD    	Euro Dollar / Bahamian Dollar                     	FOREX     
 EURBWP    	Euro Dollar / Pula                                	FOREX     
-EURBYR    	Euro Dollar / Belarussian Ruble                   	FOREX     
 EURBZD    	Euro Dollar / Belize Dollar                       	FOREX     
 EURCAD    	Euro Dollar / Canadian Dollar                     	FOREX     
 EURCHF    	Euro Dollar / Swiss Franc                         	FOREX     
@@ -305,8 +299,6 @@ EURLAK    	Euro Dollar / Kip                                 	FOREX
 EURLBP    	Euro Dollar / Lebanese Pound                      	FOREX     
 EURLKR    	Euro Dollar / Sri Lanka Rupee                     	FOREX     
 EURLSL    	Euro Dollar / Loti                                	FOREX     
-EURLTL    	Euro Dollar / Lithuanian Litas                    	FOREX     
-EURLVL    	Euro Dollar / Latvian Lats                        	FOREX     
 EURLYD    	Euro Dollar / Lybian Dinar                        	FOREX     
 EURMAD    	Euro Dollar / Moroccan Dirham                     	FOREX     
 EURMDL    	Euro Dollar / Moldovan Leu                        	FOREX     
@@ -415,8 +407,6 @@ GBPKWD    	Pound Sterling / Kuwaiti Dinar                    	FOREX
 GBPKZT    	Pound Sterling / Tenge                            	FOREX     
 GBPLBP    	Pound Sterling / Lebanese Pound                   	FOREX     
 GBPLKR    	Pound Sterling / Sri Lanka Rupee                  	FOREX     
-GBPLTL    	Pound Sterling / Lithuanian Litas                 	FOREX     
-GBPLVL    	Pound Sterling / Latvian Lats                     	FOREX     
 GBPMAD    	Pound Sterling / Moroccan Dirham                  	FOREX     
 GBPMUR    	Pound Sterling / Mauritius Rupee                  	FOREX     
 GBPMVR    	Pound Sterling / Rufiyaa                          	FOREX     
@@ -544,7 +534,6 @@ ISKNOK    	Iceland Krona / Norwegian Krone                   	FOREX
 ISKSEK    	Iceland Krona / Swedish Krona                     	FOREX     
 JMDGBP    	Jamaican Dollar / Pound Sterling                  	FOREX     
 JODAED    	Jordanian Dinar / UAE Dirham                      	FOREX     
-JODEUR    	Jordanian Dinar / Euro Dollar                     	FOREX     
 JODILS    	Jordanian Dinar / New Israeli Sheqel              	FOREX     
 JODUSD    	Jordanian Dinar / US Dollar                       	FOREX     
 JPYAED    	Japanese Yen / UAE Dirham                         	FOREX     
@@ -565,7 +554,6 @@ JPYILS    	Japanese Yen / New Israeli Sheqel                 	FOREX
 JPYINR    	Japanese Yen / Indian Rupee                       	FOREX     
 JPYISK    	Japanese Yen / Iceland Krona                      	FOREX     
 JPYKRW    	Japanese Yen / Korean Won                         	FOREX     
-JPYLVL    	Japanese Yen / Latvian Lats                       	FOREX     
 JPYMXN    	Japanese Yen / Mexican Peso                       	FOREX     
 JPYMYR    	Japanese Yen / Malaysian Ringgit                  	FOREX     
 JPYNOK    	Japanese Yen / Norwegian Krone                    	FOREX     
@@ -610,10 +598,7 @@ KZTGBP    	Tenge / Pound Sterling                            	FOREX
 LBPUSD    	Lebanese Pound / US Dollar                        	FOREX     
 LKRUSD    	Sri Lanka Rupee / US Dollar                       	FOREX     
 LRDUSD    	Liberian Dollar / US Dollar                       	FOREX     
-LTLEUR    	Lithuanian Litas / Euro Dollar                    	FOREX     
-LTLLVL    	Lithuanian Litas / Latvian Lats                   	FOREX     
 LTLPLN    	Lithuanian Litas / Polish Zloty                   	FOREX     
-LTLUSD    	Lithuanian Litas / US Dollar                      	FOREX     
 MADGBP    	Moroccan Dirham / Pound Sterling                  	FOREX     
 MADUSD    	Moroccan Dirham / US Dollar                       	FOREX     
 MDLEUR    	Moldovan Leu / Euro Dollar                        	FOREX     
@@ -671,7 +656,6 @@ NOKGBP    	Norwegian Krone / Pound Sterling                  	FOREX
 NOKINR    	Norwegian Krone / Indian Rupee                    	FOREX     
 NOKISK    	Norwegian Krone / Iceland Krona                   	FOREX     
 NOKJPY    	Norwegian Krone / Japanese Yen                    	FOREX     
-NOKLVL    	Norwegian Krone / Latvian Lats                    	FOREX     
 NOKPLN    	Norwegian Krone / Polish Zloty                    	FOREX     
 NOKSEK    	Norwegian Krone / Swedish Krona                   	FOREX     
 NOKUSD    	Norwegian Krone / US Dollar                       	FOREX     
@@ -748,7 +732,6 @@ RUBCHF    	Russian Ruble / Swiss Franc                       	FOREX
 RUBGBP    	Russian Ruble / Pound Sterling                    	FOREX     
 RUBJPY    	Russian Ruble / Japanese Yen                      	FOREX     
 RUBKRW    	Russian Ruble / Korean Won                        	FOREX     
-RUBLVL    	Russian Ruble / Latvian Lats                      	FOREX     
 RUBPLN    	Russian Ruble / Polish Zloty                      	FOREX     
 RUBUSD    	Russian Ruble / US Dollar                         	FOREX     
 SAREUR    	Saudi Riyal / Euro Dollar                         	FOREX     
@@ -768,7 +751,6 @@ SEKILS    	Swedish Krona / New Israeli Sheqel                	FOREX
 SEKINR    	Swedish Krona / Indian Rupee                      	FOREX     
 SEKISK    	Swedish Krona / Iceland Krona                     	FOREX     
 SEKJPY    	Swedish Krona / Japanese Yen                      	FOREX     
-SEKLVL    	Swedish Krona / Latvian Lats                      	FOREX     
 SEKNOK    	Swedish Krona / Norwegian Krone                   	FOREX     
 SEKPLN    	Swedish Krona / Polish Zloty                      	FOREX     
 SEKUSD    	Swedish Krona / US Dollar                         	FOREX     
@@ -907,7 +889,6 @@ USDIDR    	US Dollar / Indian Rupiah                         	FOREX
 USDILS    	US Dollar / New Israeli Sheqel                    	FOREX     
 USDINR    	US Dollar / Indian Rupee                          	FOREX     
 USDIQD    	US Dollar / Iraqi Dinar                           	FOREX     
-USDIRR    	US Dollar / Iranian Rial                          	FOREX     
 USDISK    	US Dollar / Iceland Krona                         	FOREX     
 USDJOD    	US Dollar / Jordanian Dinar                       	FOREX     
 USDJPY    	US Dollar / Japanese Yen                          	FOREX     
@@ -958,13 +939,10 @@ USDSCR    	US Dollar / Seychelles Rupee                      	FOREX
 USDSDD    	US Dollar / Sudanese Dinar                        	FOREX     
 USDSEK    	US Dollar / Swedish Krona                         	FOREX     
 USDSGD    	US Dollar / Singapore Dollar                      	FOREX     
-USDSHP    	US Dollar / Saint Helena Pound                    	FOREX     
-USDSKK    	US Dollar / Slovak Koruna                         	FOREX     
 USDSLL    	US Dollar / Leone                                 	FOREX     
 USDSOS    	US Dollar / Somali Shilling                       	FOREX     
 USDSTD    	US Dollar / Dobra                                 	FOREX     
 USDSVC    	US Dollar / El Salvador Colon                     	FOREX     
-USDSYP    	US Dollar / Syrian Pound                          	FOREX     
 USDSZL    	US Dollar / Lilangeni                             	FOREX     
 USDTHB    	US Dollar / Thai Baht                             	FOREX     
 USDTND    	US Dollar / Tunisian Dinar                        	FOREX     
@@ -1070,4 +1048,3 @@ ZARTHB    	South African Rand / Thai Baht                    	FOREX
 ZARTRY    	South African Rand / Turkish Lira                 	FOREX     
 ZARTWD    	South African Rand / New Taiwan Dollar            	FOREX     
 ZARUSD    	South African Rand / US Dollar                    	FOREX     
-ZMKZAR    	Kwacha / South African Rand                       	FOREX     

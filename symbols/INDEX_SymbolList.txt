@@ -26,13 +26,11 @@ ADVS.IDX  	TSX Advancing Stocks                              	INDEX
 ADVT.IDX  	Total Advancing Stocks                            	INDEX     
 ADVV.IDX  	Tsxv Advancing Stocks                             	INDEX     
 ADVX.IDX  	CAD Total Advancing Stocks                        	INDEX     
-AEX.IDX   	AEX General - Netherlands                         	INDEX     
 AMZ.IDX   	Alerian Mlp Index                                 	INDEX     
 ASHD.IDX  	AMEX Declining Stocks                             	INDEX     
 ASHF.IDX  	AMEX Advances - Declines                          	INDEX     
 ASHR.IDX  	AMEX Advance Decline Ratio                        	INDEX     
 ASHU.IDX  	AMEX Advancing Stocks                             	INDEX     
-ATX.IDX   	ATX - Austria                                     	INDEX     
 ATXR.IDX  	S&P C.S. Ga-Atlanta Home Price Index              	INDEX     
 AVDA.IDX  	AMEX Advances Declines Volume Difference          	INDEX     
 AVDD.IDX  	OTC Advance Decline Volume Difference             	INDEX     
@@ -90,7 +88,6 @@ BFMF.IDX  	Barchart TSX Market Momentum Declines Last Week   	INDEX
 BFMG.IDX  	Barchart TSX Market Momentum Unch Last Week       	INDEX     
 BFMM.IDX  	Barchart Market Momentum Last Week                	INDEX     
 BFMU.IDX  	Barchart Market Momentum Unch Last Week           	INDEX     
-BFX.IDX   	BEL 20 - Belgium                                  	INDEX     
 BGMA.IDX  	Barchart Market Momentum Advances Last Month      	INDEX     
 BGMC.IDX  	Barchart TSX Market Momentum Last Month           	INDEX     
 BGMD.IDX  	Barchart Market Momentum Declines Last Month      	INDEX     
@@ -100,13 +97,10 @@ BGMG.IDX  	Barchart TSX Market Momentum Unch Last Month      	INDEX
 BGMM.IDX  	Barchart Market Momentum Last Month               	INDEX     
 BGMU.IDX  	Barchart Market Momentum Unch Last Month          	INDEX     
 BJE.IDX   	NYSE Arca Mini-Biotechnology In-                  	INDEX     
-BKNIF.IDX 	Bank Nifty                                        	INDEX     
 BKX.IDX   	KBW Bank Index                                    	INDEX     
 BOXR.IDX  	S&P C.S. Ma-Boston Home Price Index               	INDEX     
-BSESN.IDX 	BSE 30 - India                                    	INDEX     
 BTK.IDX   	AMEX Biotechnology Index                          	INDEX     
 BTS.IDX   	AMEX Biotechnology Index Final                    	INDEX     
-BVSP.IDX  	Bovespa - Brazil                                  	INDEX     
 BWH.IDX   	POWERSHARES WILDERHILL CLEAN EN                   	INDEX     
 BXD.IDX   	CBOE DJIA BUYWRITE INDEX                          	INDEX     
 BXM.IDX   	CBOE BUYWRITE MONTHLY INDEX                       	INDEX     
@@ -114,10 +108,6 @@ BXN.IDX   	CBOE BUYWRITE MONTHLY INDEX                       	INDEX
 BXR.IDX   	CBOE RUSSELL 2000 BUYWRITE INDE                   	INDEX     
 BXY.IDX   	CBOE S& P 500 BUYWRITE    INDEX                   	INDEX     
 BZJ.IDX   	NYSE Arca Mini-Oil Index                          	INDEX     
-CAC40.IDX 	Paris CAC 40                                      	INDEX     
-CASE.IDX  	Egyptian EGX30                                    	INDEX     
-CASH.IDX  	Cash $1                                           	INDEX     
-CELS.IDX  	NASDAQ Clean Edge Green Energy                    	INDEX     
 CEX.IDX   	S& P Chemicals Index                              	INDEX     
 CEXR.IDX  	S&P C.S. Oh-Cleveland Home Price Index            	INDEX     
 CHXR.IDX  	S&P C.S. Il-Chicago Home Price Index              	INDEX     
@@ -132,7 +122,6 @@ CSXR.IDX  	S&P C.S. 10-City Composite Home Price Index       	INDEX
 CVK.IDX   	Smcp 600Barr Val                                  	INDEX     
 CYM.IDX   	Claymore Yield ETF Iopv                           	INDEX     
 CZH.IDX   	AMEX CHINA INDX                                   	INDEX     
-DAX.IDX   	Frankfurt Dax                                     	INDEX     
 DAXR.IDX  	S&P C.S. Tx-Dallas Home Price Index               	INDEX     
 DCFD.IDX  	DOW Comp Stocks Above 5-Day Average               	INDEX     
 DCFI.IDX  	DOW Comp Stocks Above 50-Day Average              	INDEX     
@@ -371,7 +360,6 @@ DVCT.IDX  	Total Declining Volume                            	INDEX
 DVCV.IDX  	Tsxv Declining Volume                             	INDEX     
 DVCX.IDX  	CAD Total Declining Volume                        	INDEX     
 DVS.IDX   	S&P 500 DIVIDEND INDEX - 10X                      	INDEX     
-DWC.IDX   	DJ Wilshire 5000 Index (Full Cap)                 	INDEX     
 DWCB.IDX  	DJ US BANKS TOTAL INDEX                           	INDEX     
 DWE.IDX   	DYNAMIC ENERGY EXPLORATION & PR                   	INDEX     
 DWJ.IDX   	DYNAMIC IURANCE INTELLIDEX                        	INDEX     
@@ -406,11 +394,6 @@ EZV.IDX   	DYNAMIC TECHN INTELLIDEX                          	INDEX
 EZX.IDX   	DYNAMIC HLTHC INTELLIDEX                          	INDEX     
 EZZ.IDX   	DYNAMIC CN DS INTELLIDEX                          	INDEX     
 FBV.IDX   	Powershrs Db G10 Fd Iopv                          	INDEX     
-FTSA.IDX  	FTSE 350                                          	INDEX     
-FTSE.IDX  	FTSE 100 Index                                    	INDEX     
-FTSEMIB.IDX	FTSE MIB Index                                    	INDEX     
-FTSEMIBN.IDX	FTSE MIB Net Total Return                         	INDEX     
-FTSM.IDX  	FTSE Mid 250 Index                                	INDEX     
 FVX.IDX   	5-YEAR TREASURY NOTE                              	INDEX     
 GDM.IDX   	AMEX GOLD MINERS                                  	INDEX     
 GLD.IDX   	Gold Index                                        	INDEX     
@@ -427,13 +410,11 @@ HIGS.IDX  	TSX New Highs                                     	INDEX
 HIGV.IDX  	Tsxv New Highs                                    	INDEX     
 HKO.IDX   	AMEX Hong Kong Opt Flt Rt Index                   	INDEX     
 HKX.IDX   	AMEX Hong Kong 30 Index                           	INDEX     
-HSI.IDX   	Hang Seng Index                                   	INDEX     
 HUI.IDX   	AMEX Gold Bugs Index                              	INDEX     
 HUV.IDX   	AMEX Gold Bugs Index Final Sett                   	INDEX     
 HVX.IDX   	Mkt Vector Env Serv Iopv                          	INDEX     
 HWI.IDX   	AMEX Computer Hardware Index                      	INDEX     
 HWO.IDX   	Computer Hardware Index Fnl Set                   	INDEX     
-ICK.IDX   	ISE Chindia Index                                 	INDEX     
 IDX.IDX   	S&P 400 Midcap Index                              	INDEX     
 IEB.IDX   	DYNAMIC LARGE CAP INTELL                          	INDEX     
 IEK.IDX   	DYNAMIC MID CAP INTELL                            	INDEX     
@@ -448,17 +429,9 @@ ILW.IDX   	Dynamic Lg Cp Valu Intellidex                     	INDEX
 ILZ.IDX   	Dynamic Sml Cp Valu Intellidex                    	INDEX     
 INDS.IDX  	Nasdaq Industrial                                 	INDEX     
 INSR.IDX  	Nasdaq Inurance                                   	INDEX     
-IPSA.IDX  	IPSA - Chile                                      	INDEX     
 IQX.IDX   	S&P 500 EQUAL WEIGHT                              	INDEX     
 IQZ.IDX   	S&P 1000                                          	INDEX     
 IRX.IDX   	13-WEEK TREASURY BILL                             	INDEX     
-ITAIM.IDX 	FTSE AIM Italia Index                             	INDEX     
-ITLMS.IDX 	FTSE Italia All-Share Index                       	INDEX     
-ITLMSC.IDX	FTSE Italia All-Share Capped Index                	INDEX     
-ITMC.IDX  	FTSE Italia Mid Cap Index                         	INDEX     
-ITSC.IDX  	FTSE Italia Small Cap Index                       	INDEX     
-ITSTAR.IDX	FTSE Italia STAR Index                            	INDEX     
-IUX.IDX   	Russell 2000 Stock Index                          	INDEX     
 IVX.IDX   	S&P 500 Value                                     	INDEX     
 IXB.IDX   	Materials Select Sector Index                     	INDEX     
 IXCO.IDX  	Nasdaq Computer                                   	INDEX     
@@ -474,7 +447,6 @@ IXU.IDX   	Utilities Select Sector Index                     	INDEX
 IXV.IDX   	Healthcare Select Sector Index                    	INDEX     
 IXY.IDX   	Consumer Discretionary Select Sector Index        	INDEX     
 JBV.IDX   	NYSE Arca Mini-Broker/Dealer  I-                  	INDEX     
-JKSE.IDX  	Jakarta Composite Index                           	INDEX     
 JPN.IDX   	AMEX Japan Index                                  	INDEX     
 JPV.IDX   	AMEX Japan Index Final Settleme                   	INDEX     
 JX.IDX    	Tsx Venture Composite Index                       	INDEX     
@@ -482,11 +454,9 @@ KBK.IDX   	NYSE Arca Mini-Pharmaceutical I-                  	INDEX
 KDX.IDX   	KBW Finsec Dividend Yield Index                   	INDEX     
 KDY.IDX   	AMEX Hong Kong Index Float Rate                   	INDEX     
 KIX.IDX   	KBW Insurance Index                               	INDEX     
-KLCI.IDX  	Kuala Lumpur Composite                            	INDEX     
 KLX.IDX   	Mkt Vectors Steel Iopv                            	INDEX     
 KPX.IDX   	KBW Property & Casualty Index                     	INDEX     
 KRX.IDX   	KBW Regional Banking Index                        	INDEX     
-KS11.IDX  	Seoul Composite                                   	INDEX     
 KSX.IDX   	KBW Capital Markets Index                         	INDEX     
 KYX.IDX   	KBW Premium Yield Equity REIT Index               	INDEX     
 LOWA.IDX  	AMEX New Lows                                     	INDEX     
@@ -888,7 +858,6 @@ MALX.IDX  	52-Week Lows Overall                              	INDEX
 MALY.IDX  	52-Week Lows S&P 500 Consumer Disc                	INDEX     
 MALZ.IDX  	52-Week Lows Russell 3000                         	INDEX     
 MDO.IDX   	Mid Opn/Cls Avge                                  	INDEX     
-MERV.IDX  	Merval - Argentina                                	INDEX     
 MEV.IDX   	AMEX Mexico Index Settlement                      	INDEX     
 MGD.IDX   	Midcp 400Barra                                    	INDEX     
 MIA.IDX   	Mid O/C/H/L Avg                                   	INDEX     
@@ -896,7 +865,6 @@ MID.IDX   	Midcap 400 Idx                                    	INDEX
 MIH.IDX   	Mid Hi/Lo Avge                                    	INDEX     
 MIV.IDX   	Mid-Cap Settle                                    	INDEX     
 MIXR.IDX  	S&P C.S. Fl-Miami Home Price Index                	INDEX     
-MLO.IDX   	AMEX Merrill Lynch Tech 100                       	INDEX     
 MMFD.IDX  	Percent of Stocks Above 5-Day Average             	INDEX     
 MMFI.IDX  	Percent of Stocks Above 50-Day Average            	INDEX     
 MMOF.IDX  	Percent of Stocks Above 150-Day Average           	INDEX     
@@ -923,7 +891,6 @@ MPOF.IDX  	Percent Above 150-Day Average Last Month          	INDEX
 MPOH.IDX  	Percent Above 100-Day Average Last Month          	INDEX     
 MPTH.IDX  	Percent Above 200-Day Average Last Month          	INDEX     
 MPTW.IDX  	Percent Above 20-Day Average Last Month           	INDEX     
-MSH.IDX   	AMEX Morgan Stanley Hi Tech 35                    	INDEX     
 MTFD.IDX  	TSX Percent of Stocks Above 5-Day Average         	INDEX     
 MTFI.IDX  	TSX Percent of Stocks Above 50-Day Average        	INDEX     
 MTOF.IDX  	TSX Percent of Stocks Above 150-Day Average       	INDEX     
@@ -950,7 +917,6 @@ MWOF.IDX  	TSX Percent Above 150-Day Average Last Month      	INDEX
 MWOH.IDX  	TSX Percent Above 100-Day Average Last Month      	INDEX     
 MWTH.IDX  	TSX Percent Above 200-Day Average Last Month      	INDEX     
 MWTW.IDX  	TSX Percent Above 20-Day Average Last Month       	INDEX     
-MXX.IDX   	Mexico IPC                                        	INDEX     
 MXY.IDX   	AMEX Mexico Index                                 	INDEX     
 MYDA.IDX  	YTD Hi-Lo AMEX                                    	INDEX     
 MYDB.IDX  	YTD Hi-Lo S&P 500 Materials                       	INDEX     
@@ -1189,24 +1155,14 @@ NDOF.IDX  	Nasdaq 100 Stocks Above 150-Day Average           	INDEX
 NDOH.IDX  	Nasdaq 100 Stocks Above 100-Day Average           	INDEX     
 NDTH.IDX  	Nasdaq 100 Stocks Above 200-Day Average           	INDEX     
 NDTW.IDX  	Nasdaq 100 Stocks Above 20-Day Average            	INDEX     
-NDX.IDX   	NASDAQ 100 INDEX                                  	INDEX     
 NDXT.IDX  	NASDAQ 100 TECHNOLOGY                             	INDEX     
 NDXX.IDX  	NASDAQ-100 Ex-Tech Sector Index                   	INDEX     
 NDY.IDX   	Nasdaq 100                                        	INDEX     
 NEX.IDX   	Wilderhill New Energy Global In                   	INDEX     
 NFA.IDX   	Cts Feed Fa                                       	INDEX     
 NGV.IDX   	AMEX Natural Gas Index Final Se                   	INDEX     
-NI225.IDX 	Nikkei 225                                        	INDEX     
-NNY.IDX   	US 100                                            	INDEX     
-NNYE.IDX  	ENERGY IDX                                        	INDEX     
-NNYI.IDX  	INTERNATIONAL 100                                 	INDEX     
-NNYK.IDX  	FINANCIAL                                         	INDEX     
-NNYL.IDX  	WORLD LEADERS                                     	INDEX     
-NNYP.IDX  	HEALTH CARE                                       	INDEX     
-NNYY.IDX  	TMT IDX                                           	INDEX     
 NQGM.IDX  	Ndaq Global Market Composite                      	INDEX     
 NQGS.IDX  	NASDAQ Global Select Market Composite Index       	INDEX     
-NSEI.IDX  	CNX Nifty                                         	INDEX     
 NSHD.IDX  	NYSE Declining Stocks                             	INDEX     
 NSHF.IDX  	NYSE Advances - Declines                          	INDEX     
 NSHR.IDX  	NYSE Advance Decline Ratio                        	INDEX     
@@ -1215,7 +1171,6 @@ NVLD.IDX  	NYSE Declining Volume                             	INDEX
 NVLF.IDX  	NYSE Advance Decline Volume Difference            	INDEX     
 NVLR.IDX  	NYSE Advance Decline Vol Ratio                    	INDEX     
 NVLU.IDX  	NYSE Advancing Volume                             	INDEX     
-NVOT.IDX  	NYSE Total Volume                                 	INDEX     
 NWV.IDX   	AMEX Networking Index Settlemen                   	INDEX     
 NWX.IDX   	AMEX Networking Index                             	INDEX     
 NXTQ.IDX  	NASDAQ Q-50 Index                                 	INDEX     
@@ -1240,8 +1195,6 @@ NYHG.IDX  	YTD Highs DOW Util                                	INDEX
 NYHH.IDX  	YTD Highs TSX Comp                                	INDEX     
 NYHI.IDX  	YTD Highs TSX 60                                  	INDEX     
 NYHJ.IDX  	YTD Highs TSX Venture                             	INDEX     
-NYI.IDX   	NYSE International 100 Index                      	INDEX     
-NYL.IDX   	NYSE World Leaders Index                          	INDEX     
 NYLA.IDX  	YTD Lows S&P 600                                  	INDEX     
 NYLB.IDX  	YTD Lows S&P 400                                  	INDEX     
 NYLC.IDX  	YTD Lows Nasdaq 100                               	INDEX     
@@ -1253,13 +1206,11 @@ NYLH.IDX  	YTD Lows TSX Comp                                 	INDEX
 NYLI.IDX  	YTD Lows TSX 60                                   	INDEX     
 NYLJ.IDX  	YTD Lows TSX Venture                              	INDEX     
 NYXR.IDX  	S&P C.S. Ny-New York Home Price Index             	INDEX     
-NZ50.IDX  	NZSX 50 Index                                     	INDEX     
 OEX.IDX   	S&P 100 Index                                     	INDEX     
 OFIN.IDX  	Nasdaq Other Financial Index                      	INDEX     
 OILBR.IDX 	Crude Oil Brent NYMEX                             	INDEX     
 OILSW.IDX 	Crude Oil Light Sweet NYMEX                       	INDEX     
 OIV.IDX   	CBOE/NYMEX WTI Volatility Index                   	INDEX     
-OMX.IDX   	OMX Stockholm 30 Index                            	INDEX     
 ONE.IDX   	S&P 100 Index                                     	INDEX     
 OOI.IDX   	S&P Gl 100 Id                                     	INDEX     
 OSX.IDX   	Phlx Euro Style Oil Svc Index                     	INDEX     
@@ -1270,7 +1221,6 @@ PLD.IDX   	Palladium Index                                   	INDEX
 PLT.IDX   	Platinum Index                                    	INDEX     
 POQ.IDX   	CBOE POWERPACKS TELCOM INDEX                      	INDEX     
 POXR.IDX  	S&P C.S. Or-Portland Home Price Index             	INDEX     
-PSEI.IDX  	Philippines Stock Exchange PSEi Index             	INDEX     
 QSHD.IDX  	NASD Declining Stocks                             	INDEX     
 QSHF.IDX  	NASD Advances - Declines                          	INDEX     
 QSHR.IDX  	NASD Advance Decline Ratio                        	INDEX     
@@ -1297,36 +1247,12 @@ R3OF.IDX  	Russell 3000 Stocks Above 150-Day Average         	INDEX
 R3OH.IDX  	Russell 3000 Stocks Above 100-Day Average         	INDEX     
 R3TH.IDX  	Russell 3000 Stocks Above 200-Day Average         	INDEX     
 R3TW.IDX  	Russell 3000 Stocks Above 20-Day Average          	INDEX     
-RAG.IDX   	Cboe Russell 3000 Growth Index                    	INDEX     
-RAV.IDX   	Cboe Russell 3000 Value Index                     	INDEX     
-RDG.IDX   	Cboe Russell Midcap Growth Index                  	INDEX     
 RJY.IDX   	S.V. FOR AMEX MINI-NATURAL GAS                    	INDEX     
-RLG.IDX   	Cboe 1000 Growth Index                            	INDEX     
-RLX.IDX   	S& P Retail Index                                 	INDEX     
-RMC.IDX   	Cboe Russell Midcap Index                         	INDEX     
-RMV.IDX   	Cboe Russell Midcap Value Index                   	INDEX     
 RMZ.IDX   	THE MSCI REIT INDEX                               	INDEX     
 RPE.IDX   	AMEX Elec Pwr&Nat Gas Infrastr                    	INDEX     
-RSC.IDX   	Russell SmallCap Index                            	INDEX     
-RSG.IDX   	Russell SmallCap Growth                           	INDEX     
-RSV.IDX   	Russell SmallCap Value                            	INDEX     
 RTCM.IDX  	Tsx Income Trust Index                            	INDEX     
-RTF.IDX   	RUSSELL TOP 50 INDEX                              	INDEX     
-RTG.IDX   	Russell 2500 Growth                               	INDEX     
-RTI.IDX   	Russell 2500 Index                                	INDEX     
-RTM.IDX   	Russell Microcap Index                            	INDEX     
 RTRE.IDX  	Tsx Reit Capped Index                             	INDEX     
-RTV.IDX   	Russell 2500 Value                                	INDEX     
-RUA.IDX   	Russell 3000 Index                                	INDEX     
-RUF.IDX   	ISE Homebuilders Index                            	INDEX     
-RUI.IDX   	Russell 1000 Index                                	INDEX     
-RUJ.IDX   	Cboe Russell Value Index                          	INDEX     
-RUO.IDX   	Cboe Russell 2000 Growth Index                    	INDEX     
-RUT.IDX   	Russell 2000 Index                                	INDEX     
 RVX.IDX   	CBOE RUSSELL 2000 VOLATILITY IN                   	INDEX     
-RWG.IDX   	Russell Top 200 Growth                            	INDEX     
-RWI.IDX   	Russell Top 200 Index                             	INDEX     
-RWV.IDX   	Russell Top 200 Value                             	INDEX     
 S1FD.IDX  	S&P 100 Stocks Above 5-Day Average                	INDEX     
 S1FI.IDX  	S&P 100 Stocks Above 50-Day Average               	INDEX     
 S1OF.IDX  	S&P 100 Stocks Above 150-Day Average              	INDEX     
@@ -1440,10 +1366,8 @@ SEIE.IDX  	S&P Global Eco Index [EURO]                       	INDEX
 SEIT.IDX  	S&P Global REIT [AUD]                             	INDEX     
 SEIU.IDX  	S&P Global Eco Index                              	INDEX     
 SEMT.IDX  	Brics Nifty 50 Emerging Market Tradable Index Tr  	INDEX     
-SENSEX.IDX	BSE SENSEX                                        	INDEX     
 SEOF.IDX  	S&P Energies Stocks Above 150-Day Average         	INDEX     
 SEOH.IDX  	S&P Energies Stocks Above 100-Day Average         	INDEX     
-SET.IDX   	Thailand SET                                      	INDEX     
 SETH.IDX  	S&P Energies Stocks Above 200-Day Average         	INDEX     
 SETW.IDX  	S&P Energies Stocks Above 20-Day Average          	INDEX     
 SEXR.IDX  	S&P C.S. Wa-Seattle Home Price Index              	INDEX     
@@ -1634,7 +1558,6 @@ SIII.IDX  	Indus India Index                                 	INDEX
 SIIP.IDX  	S&P DFFI Index Excess Return                      	INDEX     
 SIIS.IDX  	S&P DFFI Index                                    	INDEX     
 SIIT.IDX  	S&P DFFI Index Total Return                       	INDEX     
-SIN.IDX   	ISE Sindex Index                                  	INDEX     
 SIOF.IDX  	S&P Industrials Stocks Above 150-Day Average      	INDEX     
 SIOH.IDX  	S&P Industrials Stocks Above 100-Day Average      	INDEX     
 SIPR.IDX  	Brics Nifty 50 Emerging Market Tradable Index Pr  	INDEX     
@@ -1700,7 +1623,6 @@ SNXR.IDX  	S&P C.S. Ca-San Diego Home Price Index            	INDEX
 SOBC.IDX  	SGI-Orbeo Carbon Credit Index [EUR-TotalReturn]   	INDEX     
 SOCC.IDX  	SGI-Orbeo Carbon Credit Index [USD-TotalReturn]   	INDEX     
 SOTR.IDX  	S&P 500 Media [TR]                                	INDEX     
-SOX.IDX   	PHLX Semiconductor                                	INDEX     
 SP500.IDX 	S&P 500                                           	INDEX     
 SPAA.IDX  	SGI Pan Africa Index [NetTR] Panri Indexet        	INDEX     
 SPAB.IDX  	SGI Pan Africa Index [EURO] [NetTR]               	INDEX     
@@ -1719,7 +1641,6 @@ SPOH.IDX  	S&P Con Staples Stocks Above 100-Day Average      	INDEX
 SPPR.IDX  	S&P International Preferred Stock Index           	INDEX     
 SPRL.IDX  	SGI Premium List [NetTR]                          	INDEX     
 SPRT.IDX  	S&P GSCI Palladium Index Total Return             	INDEX     
-SPSU.IDX  	S&P COMPOSITE 1500 INDEX                          	INDEX     
 SPTH.IDX  	S&P Con Staples Stocks Above 200-Day Average      	INDEX     
 SPTW.IDX  	S&P Con Staples Stocks Above 20-Day Average       	INDEX     
 SPUS.IDX  	S&P  Global Ex-U.S. Property [US Dollar]          	INDEX     
@@ -1764,7 +1685,6 @@ SSCS.IDX  	S&P Developed Ex US Under USD 2 Billion [USDolla  	INDEX
 SSCU.IDX  	S&P /Citigroup BMI Europe Index                   	INDEX     
 SSCW.IDX  	S&P Developed Ex-U.S.BMI [USDollar]               	INDEX     
 SSDI.IDX  	S&P 500 Dividend Index                            	INDEX     
-SSEC.IDX  	Shanghai Composite                                	INDEX     
 SSEN.IDX  	SGI Global Senior [NetTR]                         	INDEX     
 SSER.IDX  	SPECTRUM-Long/Short 8% Index ER [NEWVA]           	INDEX     
 SSEW.IDX  	S&P GSCI Select Equal Weight Index Spot           	INDEX     
@@ -1807,7 +1727,6 @@ SSIS.IDX  	S&P DFI Index                                     	INDEX
 SSIT.IDX  	S&P DFI Index Total Return                        	INDEX     
 SSLF.IDX  	S&P Select Frontier Index                         	INDEX     
 SSLS.IDX  	S&P Custom/BNP Paribas-SPECTRUM [GRIPTEST]        	INDEX     
-SSMI.IDX  	Swiss Market                                      	INDEX     
 SSNI.IDX  	SGI Global Nanotechnology Index [NetTR]           	INDEX     
 SSOF.IDX  	S&P Real Estate Stocks Above 150-Day Average      	INDEX     
 SSOH.IDX  	S&P Real Estate Stocks Above 100-Day Average      	INDEX     
@@ -1833,7 +1752,6 @@ STCE.IDX  	S&P Global Clean Energy Index [EURO]              	INDEX
 STCL.IDX  	S&P Global Clean Energy Index                     	INDEX     
 STFE.IDX  	S&P Global Timber and Forestry Index [EURO]       	INDEX     
 STFU.IDX  	S&P Global Timber and Forestry Index              	INDEX     
-STI.IDX   	STI Index                                         	INDEX     
 STIC.IDX  	S&P CTI Total Return USD                          	INDEX     
 STIF.IDX  	S&P Global Infrastructure Index [EURO]            	INDEX     
 STIL.IDX  	SGI Smart WTI Long Invest Index [NEWVA]           	INDEX     
@@ -1842,7 +1760,6 @@ STIS.IDX  	S&P Commodity Trends Indicator                    	INDEX
 STMP.IDX  	Tortoise MLP Index                                	INDEX     
 STNC.IDX  	Tsx American Preferred Stock Index                	INDEX     
 STNU.IDX  	S&P/Tsx North American Pref Stock Index           	INDEX     
-STOXX.IDX 	DJ Stoxx 50 Index Euro                            	INDEX     
 STRA.IDX  	S&P Target Risk Aggressive Index                  	INDEX     
 STRB.IDX  	S&P Target Risk Moderate Index                    	INDEX     
 STRC.IDX  	S&P Target Risk Growth Index                      	INDEX     
@@ -1928,11 +1845,9 @@ TOOC.IDX  	Tsx Capped Composite Index                        	INDEX
 TPXR.IDX  	S&P C.S. Fl-Tampa Home Price Index                	INDEX     
 TQCK.IDX  	NASD Tick                                         	INDEX     
 TQCX.IDX  	NASD Tick                                         	INDEX     
-TRCCI.IDX 	CRB Commodity Continuous Index                    	INDEX     
 TRIA.IDX  	AMEX Trin                                         	INDEX     
 TRIN.IDX  	NYSE Trin                                         	INDEX     
 TRIQ.IDX  	NASD Trin                                         	INDEX     
-TSX.IDX   	TSX COMPOSITE INDEX                               	INDEX     
 TTCD.IDX  	Tsx Consumer Discretionary Capped Index           	INDEX     
 TTCS.IDX  	Tsx Consumer Staples Capped Index                 	INDEX     
 TTEN.IDX  	Tsx Capped Energy Index                           	INDEX     
@@ -1945,10 +1860,10 @@ TTRE.IDX  	Tsx Real Estate Capped Index                      	INDEX
 TTTK.IDX  	Tsx Information Tech Capped Index                 	INDEX     
 TTTS.IDX  	Tsx Telecom Services Capped Index                 	INDEX     
 TTUT.IDX  	Tsx Utilities Capped Index                        	INDEX     
-TWII.IDX  	Taiwan Weighted Index                             	INDEX     
 TXBE.IDX  	Tsx Global Base Metals Ew Index                   	INDEX     
 TXBM.IDX  	Tsx Global Base Metals Index                      	INDEX     
 TXCT.IDX  	Tsx Clean Technology Index                        	INDEX     
+TXCX.IDX  	TSX Composite Index                               	INDEX     
 TXDC.IDX  	Tsx Composite Dividend Index                      	INDEX     
 TXDE.IDX  	Tsx Diversified Banks Ew Index                    	INDEX     
 TXDV.IDX  	Tsx Canadian Dividend Aristocrats Index           	INDEX     
@@ -1983,7 +1898,6 @@ UVCS.IDX  	TSX Unchanged Volume                              	INDEX
 UVCT.IDX  	Total Unchanged Volume                            	INDEX     
 UVCV.IDX  	Tsxv Unchanged Volume                             	INDEX     
 UVCX.IDX  	CAD Total Unchanged Volume                        	INDEX     
-VFTSE.IDX 	FTSE Volatility Index                             	INDEX     
 VFWA.IDX  	VOL Index First Forward Implied Volatility        	INDEX     
 VFWB.IDX  	VOL Index Second Forward Implied Volatility       	INDEX     
 VFY.IDX   	Mini Biotechnology Index                          	INDEX     
@@ -1991,8 +1905,6 @@ VGH.IDX   	Mini Pharmaceutical Index                         	INDEX
 VIO.IDX   	CBOE OIL INDEX REDUCED LEAP 199                   	INDEX     
 VIX.IDX   	CBOE Volatility Index                             	INDEX     
 VJW.IDX   	Mini Securities Broker Dealer In                  	INDEX     
-VLA.IDX   	Value Line Index                                  	INDEX     
-VLG.IDX   	Value Line Geometric                              	INDEX     
 VVOL.IDX  	VOL Index Average Forward Implied Volatility      	INDEX     
 VWA.IDX   	CBOE MARKET VOLATILITY -SPX ASK                   	INDEX     
 VWB.IDX   	CBOE MARKET VOLATILITY -SPX BID                   	INDEX     
@@ -2009,22 +1921,18 @@ WDXR.IDX  	S&P C.S. Dc-Washington Home Price Index           	INDEX
 WIV.IDX   	Cboe/Cbot Wheat Volatility Index                  	INDEX     
 WIX.IDX   	Cboe/Cbot Wheat Volatility Index                  	INDEX     
 XAL.IDX   	AMEX Airline Index                                	INDEX     
-XAO.IDX   	XAO All Ordinaries                                	INDEX     
 XAU.IDX   	Phlx Gold Silver Index                            	INDEX     
 XAX.IDX   	AMEX Composite Index                              	INDEX     
 XBD.IDX   	AMEX Securities Broker Dealer                     	INDEX     
-XBEL.IDX  	Brussels BEL 20                                   	INDEX     
 XBS.IDX   	AMEX Securities Broker/Dealer I                   	INDEX     
 XCI.IDX   	AMEX Computers Index                              	INDEX     
 XDS.IDX   	PHLX SWISS FRANC                                  	INDEX     
 XEO.IDX   	S& P 100 INDEX[EUROPEAN    STYLE                  	INDEX     
 XFI.IDX   	Financial Ndx                                     	INDEX     
 XHL.IDX   	Healthcare Ndx                                    	INDEX     
-XIBX.IDX  	IBEX 35                                           	INDEX     
 XID.IDX   	Industrial Ndx                                    	INDEX     
 XII.IDX   	AMEX Institutional Index                          	INDEX     
 XIT.IDX   	Info Tech Ndx                                     	INDEX     
-XJO.IDX   	S&P/ASX 200                                       	INDEX     
 XMI.IDX   	Major Market Index                                	INDEX     
 XNA.IDX   	Nat Resource Ndx                                  	INDEX     
 XNG.IDX   	AMEX Natural Gas Index                            	INDEX     
@@ -2033,7 +1941,6 @@ XSP.IDX   	S& P 500 MINI-SPX OPTIO    IND                    	INDEX
 XSV.IDX   	AMEX Institutional Index Open S                   	INDEX     
 XTC.IDX   	AMEX North Ameican Telecom Index                  	INDEX     
 XTV.IDX   	North American Telecommunicatio                   	INDEX     
-XU100.IDX 	Borsa Istanbul 100 Index                          	INDEX     
 Y0FD.IDX  	TSX Venture Stocks Above 5-Day Average            	INDEX     
 Y0FI.IDX  	TSX Venture Stocks Above 50-Day Average           	INDEX     
 Y0OF.IDX  	TSX Venture Stocks Above 150-Day Average          	INDEX     

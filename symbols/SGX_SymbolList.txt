@@ -28,6 +28,13 @@
 1F2       	Union Gas Holdings Limited                        	SGX       
 1F3       	Aspen (group) Holdings Limited                    	SGX       
 1F4       	Vashion Group Ltd.                                	SGX       
+1F9W      	Koh Brothers Eco Engg W211112                     	SGX       
+1G0R      	Cwx Global Limited R                              	SGX       
+1G1       	Re&s Holdings Limited                             	SGX       
+1G3R      	Cfm Holdings Limited R                            	SGX       
+1G4R      	Cfm Holdings Limited R1                           	SGX       
+1G6       	No Signboard Holdings Ltd.                        	SGX       
+1H3       	Clearbridge Health Limited                        	SGX       
 3UIS      	Nx09100w 190601                                   	SGX       
 3UJS      	Ny09100h 240901                                   	SGX       
 40B       	Smj International Holdingsltd.                    	SGX       
@@ -56,7 +63,6 @@
 42G       	Soo Kee Group Ltd.                                	SGX       
 42H       	Lereno Bio-chem Ltd.                              	SGX       
 42L       	Tlv Holdings Limited                              	SGX       
-42MW      	Metech International W171005                      	SGX       
 42N       	Ips Securex Holdings Limited                      	SGX       
 42O       	Ems Energy Limited                                	SGX       
 42QW      	Asia-pacific Strategic W201119                    	SGX       
@@ -73,7 +79,6 @@
 43E       	Anchor Resources Limited                          	SGX       
 43F       	Acromec Limited                                   	SGX       
 43IW      	China Star Food Group W180417                     	SGX       
-43J       	Vashion Group Ltd.                                	SGX       
 43MW      	Starburst Holdings Ltd W210614                    	SGX       
 43P       	United Global Limited                             	SGX       
 43Q       	Advancer Global Limited                           	SGX       
@@ -251,8 +256,6 @@
 5UL       	Atlantic Navigation Hldg(s)ltd                    	SGX       
 5UN       	Sincap Group Limited                              	SGX       
 5UO       	Sysma Holdings Limited                            	SGX       
-5UQW      	Metal Component Engg W170908                      	SGX       
-5UV       	P99 Holdings Limited                              	SGX       
 5UX       	Oxley Holdings Limited                            	SGX       
 5UZ       	Declout Limited                                   	SGX       
 5VC       	Kori Holdings Limited                             	SGX       
@@ -310,8 +313,6 @@ ADQU      	Accordia Golf Trust                               	SGX
 AFC       	Yuuzoo Corporation                                	SGX       
 AFUS      	Nx15100z 250601                                   	SGX       
 AFVS      	N515100s 200701                                   	SGX       
-AFWS      	N215100f 171001                                   	SGX       
-AGAW      	Innopac Holdings W171110                          	SGX       
 AGS       	The Hour Glass Limited                            	SGX       
 AIY       	Ifast Corporation Ltd.                            	SGX       
 AJ2       	Ouhua Energy Holdings Limited                     	SGX       
@@ -340,7 +341,6 @@ AWX       	Aem Holdings Ltd                                  	SGX
 AWZ       	Multi-chem Limited                                	SGX       
 AXB       	Yongnam Holdings Limited                          	SGX       
 AXL       	China Fibretech Ltd.                              	SGX       
-AXV       	Changtian Plastic & Chem Ltd                      	SGX       
 AXXZ      	Fcl Trea S$500m3.65%b220522                       	SGX       
 AYB       	Lafe Corporation Limited                          	SGX       
 AYD       	Plastoform Holdings Limited                       	SGX       
@@ -379,7 +379,6 @@ BBP       	Hor Kew Corporation Limited                       	SGX
 BBW       	Azeus Systems Holdings Ltd.                       	SGX       
 BCD       	China Yuanbang Prop Hldgs Ltd                     	SGX       
 BCV       	Qian Hu Corporation Limited                       	SGX       
-BCX       	China Flexible Pack Hldg Ltd                      	SGX       
 BCY       	Powermatic Data Systems Ltd                       	SGX       
 BCZ       	Travelite Holdings Ltd.                           	SGX       
 BDA       	Pne Industries Ltd                                	SGX       
@@ -387,7 +386,6 @@ BDF       	Excelpoint Technology Ltd                         	SGX
 BDN       	Ryobi Kiso Holdings Ltd.                          	SGX       
 BDR       	Willas-array Elec (hldgs) Ltd                     	SGX       
 BDU       	Federal Int(2000) Ltd                             	SGX       
-BDV       	Fischer Tech Ltd                                  	SGX       
 BDX       	Gsh Corporation Limited                           	SGX       
 BEC       	Brc Asia Limited                                  	SGX       
 BEH       	China International Hldgs Ltd                     	SGX       
@@ -494,6 +492,7 @@ BXE       	Cdw Holding Limited                               	SGX
 BXLW      	Ramba Energy Limited W190918                      	SGX       
 BYI       	Phillip Sgx Apac Div Reit Etf                     	SGX       
 BYJ       	Phillip Sgx Apacdiv Reit Etfs$                    	SGX       
+BZKS      	N517100f 220401                                   	SGX       
 C04       	Casa Holdings Limited                             	SGX       
 C05       	Chemical Industries (f.e.) Ltd                    	SGX       
 C06       	Csc Holdings Ltd                                  	SGX       
@@ -520,55 +519,21 @@ C8R       	Jiutian Chemical Group Limited                    	SGX
 C92       	China Haida Ltd.                                  	SGX       
 C9Q       	Sinostar Pec Holdings Limited                     	SGX       
 CAMW      	Grp Ltd W171129                                   	SGX       
-CBAW      	Singtel Mb Ecw171002                              	SGX       
-CBBW      	Singtel Mb Epw171002                              	SGX       
-CBCW      	China Flexible Pack W191205                       	SGX       
-CBHW      	Ocbc Bk Mb Ecw171002                              	SGX       
-CBIW      	Ocbc Bk Mb Epw171002                              	SGX       
-CBKW      	Dbs Mb Ecw171002                                  	SGX       
-CBLW      	Dbs Mb Ecw171030                                  	SGX       
-CBMW      	Dbs Mb Ecw171101                                  	SGX       
-CBNW      	Dbs Mb Epw171002                                  	SGX       
-CBOW      	Dbs Mb Epw171030                                  	SGX       
-CBQW      	Uob Mb Epw171002                                  	SGX       
-CBRW      	Uob Mb Ecw171101                                  	SGX       
-CBSW      	Uob Mb Ecw171030                                  	SGX       
 CC3       	Starhub Ltd                                       	SGX       
-CDDW      	S&p500 2500 Mb Ecw170915                          	SGX       
-CDGW      	S&p500 2000 Mb Epw170915                          	SGX       
 CDVZ      	Krisenergy S$139.464mz240131                      	SGX       
 CDWW      	Second Chance Prop W200123                        	SGX       
 CDXW      	Krisenergy Ltd. W240131                           	SGX       
 CEDU      	Dasin Retail Trust                                	SGX       
 CEE       	Citic Envirotech Ltd.                             	SGX       
-CEFW      	Wilmar Mb Ecw170925                               	SGX       
 CEGW      	Upp Holdings Limited W200212                      	SGX       
-CEHW      	Capitaland Mb Ecw171002                           	SGX       
-CEIW      	Capitaland Mb Epw171002                           	SGX       
 CFA       	Nikkoam-stc Asia_xj Reit Etf                      	SGX       
-CFBW      	S&p500 2200 Mb Epw170915                          	SGX       
-CFDW      	Kepcorp Mb Epw171002                              	SGX       
-CFEW      	Kepcorp Mb Ecw171002                              	SGX       
-CFKW      	Capitaland Mb Ecw171101                           	SGX       
 CFN       	Onestoxxasean Fund                                	SGX       
-CFZW      	Nikkei225 20000 Mb Ecw170908                      	SGX       
-CGAW      	Nikkei225 22000 Mb Ecw170908                      	SGX       
-CGBW      	Nikkei225 17000 Mb Epw170908                      	SGX       
-CGDW      	Nikkei225 19000 Mb Epw170908                      	SGX       
-CGMW      	Ocbc Bk Mb Ecw171113                              	SGX       
 CGN       	Best World International Ltd                      	SGX       
 CGOW      	Ta Corporation Ltd W220520                        	SGX       
 CGP       	Noble Group Limited                               	SGX       
-CGQW      	Dbs Mb Ecw171016                                  	SGX       
-CGUW      	Uob Mb Epw171016                                  	SGX       
-CGVW      	Uob Mb Ecw171016                                  	SGX       
-CGWW      	Ocbc Bk Mb Epw171113                              	SGX       
-CGXW      	Dbs Mb Epw171016                                  	SGX       
 CH8       	China Sunsine Chem Hldgs Ltd.                     	SGX       
 CHBW      	Duty Free Internationalw220513                    	SGX       
 CHJ       	Uni-asia Group Limited                            	SGX       
-CHNW      	Hsi 26400 Jp Ecw170928                            	SGX       
-CHOW      	S&p500 2300 Mb Epw170915                          	SGX       
 CHRW      	Ocbc Bk Mb Ecw171201                              	SGX       
 CHSW      	Hsi 23000 Ub Epw171228                            	SGX       
 CHTW      	Hsi 24600 Ub Epw171228                            	SGX       
@@ -577,11 +542,6 @@ CHWW      	Hsi 26200 Ub Ecw171228                            	SGX
 CHXW      	Hscei 11100 Ub Ecw171228                          	SGX       
 CHYW      	Hscei 9800 Ub Epw171228                           	SGX       
 CHZ       	Hrnetgroup Limited                                	SGX       
-CIAW      	Hsi 27200 Jp Ecw170928                            	SGX       
-CIBW      	Hsi 24800 Jp Epw170928                            	SGX       
-CICW      	Uob Mb Epw171106                                  	SGX       
-CIJW      	Sti 3200 Mb Ecw171031                             	SGX       
-CIKW      	Sti 3150 Mb Epw171031                             	SGX       
 CIN       	Courage Marine Group Limited                      	SGX       
 CIOW      	Dlc Socgen5xlongmsg 200714                        	SGX       
 CIPW      	Dlc Socgen5xshorthsc 200714                       	SGX       
@@ -603,50 +563,27 @@ CJFW      	S&p500 2600 Mb Ecw171215                          	SGX
 CJGW      	S&p500 2400 Mb Ecw171215                          	SGX       
 CJHW      	S&p500 2450 Mb Epw171215                          	SGX       
 CJIW      	S&p500 2250 Mb Epw171215                          	SGX       
-CJJW      	Hsi 26600 Mb Ecw170928                            	SGX       
-CJKW      	Hsi 24600 Mb Epw170928                            	SGX       
 CJLU      	Netlink Nbn Trust                                 	SGX       
 CJMW      	Singtel Mb Ecw180129                              	SGX       
 CJN       	British & Malayan Hldg Limited                    	SGX       
-CJPW      	Hsi 27400 Mb Ecw170928                            	SGX       
-CJRW      	Hsi 25988 Vt Ecw170928                            	SGX       
-CJSW      	Hsi 24688 Vt Epw170928                            	SGX       
 CJTW      	Dbs Mb Epw171204                                  	SGX       
-CJUW      	Hsi 26200 Mb Epw170928                            	SGX       
-CJWW      	Sti 3400 Mb Ecw171031                             	SGX       
 CJXW      	Dbs Mb Ecw180115                                  	SGX       
 CJYW      	Ocbc Bk Mb Ecw180301                              	SGX       
 CJZW      	Uob Mb Ecw180115                                  	SGX       
 CKAW      	Uob Mb Epw180115                                  	SGX       
 CKBW      	Ocbc Bk Mb Epw180301                              	SGX       
-CKCW      	Sti 3350 Mb Epw171031                             	SGX       
-CKDW      	Hsi 26388 Vt Epw170928                            	SGX       
-CKEW      	Hsi 27600 Vt Ecw170928                            	SGX       
-CKFW      	Hsi 28000 Jp Ecw171030                            	SGX       
-CKGW      	Hsi 25800 Jp Epw171030                            	SGX       
-CKHW      	Hsi 28200 Mb Ecw170928                            	SGX       
-CKIW      	Hsi 27000 Mb Epw170928                            	SGX       
-CKJW      	Hsi 27800 Mb Ecw171030                            	SGX       
-CKKW      	Hsi 26600 Mb Epw171030                            	SGX       
 CKLW      	Sti 3250 Mb Epw171229                             	SGX       
 CKMW      	Sti 3300 Mb Ecw171229                             	SGX       
 CKNW      	Hsi 27000 Mb Epw171228                            	SGX       
 CKOW      	Hsi 28200 Mb Ecw171228                            	SGX       
-CKPW      	Hsi 27400 Mb Epw171030                            	SGX       
-CKQW      	Hsi 28600 Mb Ecw171030                            	SGX       
 CKRW      	Dbs Mb Epw180115                                  	SGX       
 CKSW      	Dbs Mb Ecw180226                                  	SGX       
 CKTW      	Ocbc Bk Mb Ecw180226                              	SGX       
-CKUR      	Cache Logistics Trust R                           	SGX       
-CKVR      	Cache Logistics Trust R1                          	SGX       
 CKXW      	Hsi 26988 Vt Ecw171228                            	SGX       
 CKYW      	Hsi 28888 Vt Ecw171228                            	SGX       
 CKZW      	Hsi 26688 Vt Epw171228                            	SGX       
 CLAW      	Hsi 28188 Vt Epw171228                            	SGX       
 CLDW      	Hsi 29200 Mb Ecw171228                            	SGX       
-CLEW      	Hsi 28200 Mb Epw171030                            	SGX       
-CLFR      	Manulife Us Reit R                                	SGX       
-CLGR      	Manulife Us Reit R1                               	SGX       
 CLHW      	Uob Mb Ecw180226                                  	SGX       
 CLIW      	Uob Mb Epw180226                                  	SGX       
 CLJW      	Singtel Mb Ecw180402                              	SGX       
@@ -654,8 +591,54 @@ CLKW      	Hsi 28200 Mb Ecw171129                            	SGX
 CLLW      	Hsi 27400 Mb Ecw171129                            	SGX       
 CLMW      	Hsi 27000 Mb Epw171129                            	SGX       
 CLN       	Apac Realty Limited                               	SGX       
-CLOR      	Capitaland Commercial Trust R                     	SGX       
-CLPR      	Capitaland Commercial Trust R1                    	SGX       
+CLR       	Lion-phillip S-reit Etf                           	SGX       
+CLSW      	Hsi 27800 Mb Epw171129                            	SGX       
+CLTW      	Hsi 29000 Mb Ecw171129                            	SGX       
+CLVW      	Hsi 30000 Jp Ecw180328                            	SGX       
+CLWW      	Hsi 27000 Jp Epw180328                            	SGX       
+CLXW      	Hsi 28600 Mb Epw171129                            	SGX       
+CLYW      	Hsi 28000 Mb Epw171228                            	SGX       
+CLZW      	Dbs Mb Epw180402                                  	SGX       
+CMAW      	Uob Mb Epw180402                                  	SGX       
+CMBW      	Sti 3500 Mb Ecw171229                             	SGX       
+CMCW      	Uob Mb Ecw180410                                  	SGX       
+CMDW      	Dbs Mb Ecw180410                                  	SGX       
+CMFW      	S&p500 2400 Mb Epw180618                          	SGX       
+CMKW      	Nikkei225 24000 Mb Ecw180608                      	SGX       
+CMLW      	Nikkei225 19000 Mb Epw180608                      	SGX       
+CMMW      	Nikkei225 21000 Mb Epw180608                      	SGX       
+CMOU      	Keppel-kbs Us Reit                                	SGX       
+CMPW      	Hsi 30688 Vt Ecw180227                            	SGX       
+CMQW      	Hsi 29388 Vt Epw180227                            	SGX       
+CMRW      	Sti 3600 Mb Ecw180329                             	SGX       
+CMSW      	Sti 3350 Mb Epw180329                             	SGX       
+CMTW      	Dbs Mb Ecw180412                                  	SGX       
+CMUW      	Dbs Mb Epw180412                                  	SGX       
+CMVW      	Capitaland Mb Ecw180410                           	SGX       
+CMWW      	Singapore Post Mb Ecw180604                       	SGX       
+CMXW      	Yangzijiang Mb Ecw180702                          	SGX       
+CMYW      	Hsi 28800 Mb Ecw180130                            	SGX       
+CMZW      	Hsi 29600 Mb Ecw180130                            	SGX       
+CNAW      	Hsi 28400 Mb Epw180130                            	SGX       
+CNBW      	Uob Mb Ecw180412                                  	SGX       
+CNCW      	Uob Mb Epw180412                                  	SGX       
+CNDW      	Hsi 28800 Mb Epw171228                            	SGX       
+CNE       	Mindchamps Preschool Limited                      	SGX       
+CNFW      	Hsi 30400 Mb Ecw180130                            	SGX       
+CNGW      	Genting Sin Mb Ecw180702                          	SGX       
+CNHW      	Hsi 30000 Mb Ecw171228                            	SGX       
+CNIW      	Hsi 29200 Mb Epw180130                            	SGX       
+CNJW      	Dbs Mb Epw180416                                  	SGX       
+CNKW      	Dbs Mb Ecw180416                                  	SGX       
+CNLW      	Ocbc Bk Mb Epw180702                              	SGX       
+CNMW      	Ocbc Bk Mb Ecw180702                              	SGX       
+CNNU      	Cromwell European Reit                            	SGX       
+CNPW      	Hsi28400 Mb Epw180130                             	SGX       
+CNQW      	Hsi 29600 Mb Epw180227                            	SGX       
+CNRW      	Hsi 30800 Mb Ecw180227                            	SGX       
+CNSW      	Hsi 32188 Vt Ecw180427                            	SGX       
+COCR      	Nutryfarm International Ltd R                     	SGX       
+CODR      	Nutryfarm International Ltd R1                    	SGX       
 CY6U      	Ascendas India Trust                              	SGX       
 CZ4       	Dutech Holdings Limited                           	SGX       
 D01       	Dairy Farm Int'l Holdings Ltd                     	SGX       
@@ -666,7 +649,6 @@ D11       	Design Studio Furniture Mfrltd                    	SGX
 D2U       	Cacola Furniture Intl Limited                     	SGX       
 D50       	China Great Land Holdings Ltd.                    	SGX       
 D5IU      	Lippo Malls Indo Retail Trust                     	SGX       
-D5N       	Z-obee Holdings Limited                           	SGX       
 D6U       	Dynamic Colours Limited                           	SGX       
 D79       	C&g Env Protect Hldgs Ltd                         	SGX       
 D8DU      	First Ship Lease Trust                            	SGX       
@@ -919,7 +901,6 @@ P7VU      	Hutchison Port Hldgs Trust S$                     	SGX
 P8A       	Cordlife Group Limited                            	SGX       
 P8Z       	Bumitama Agri Ltd.                                	SGX       
 P9D       	Civmec Limited                                    	SGX       
-P9GZ      	Genting Sps$500m5.125% Perpsec                    	SGX       
 PA3       	Ta Corporation Ltd                                	SGX       
 PH0       	Hatten Land                                       	SGX       
 PH1S      	Na12100n 420202                                   	SGX       
@@ -976,7 +957,6 @@ S61       	Sbs Transit Ltd                                   	SGX
 S63       	Singapore Tech Engineering Ltd                    	SGX       
 S68       	Singapore Exchange Limited                        	SGX       
 S69       	Serial System Ltd                                 	SGX       
-S6NU      	Croesus Retail Trust                              	SGX       
 S71       	Sunright Ltd                                      	SGX       
 S7OU      	Asian Pay Television Trust                        	SGX       
 S7P       	Soilbuild Construction Grp Ltd                    	SGX       
@@ -1004,12 +984,10 @@ T4B       	Sino Grandness Food Ind Gp Ltd                    	SGX
 T4E       	Compact Metal Industries Ltd                      	SGX       
 T55       	Transpac Industrial Hldgs Ltd                     	SGX       
 T6I       	Valuemax Group Limited                            	SGX       
-T7UW      	Centurion Corporation W171027                     	SGX       
 T82U      	Suntec Real Estate Inv Trust                      	SGX       
 T8B       	Viva Industrial Trust                             	SGX       
 T8FS      	Ny14100e 290701                                   	SGX       
 T8GS      	N514100h 191001                                   	SGX       
-T8JU      	Saizen Real Estate Inv Trust                      	SGX       
 T8UW      	Isdn Holdings Limited W181110                     	SGX       
 T8V       	Pacific Radiance Ltd.                             	SGX       
 TQ5       	Frasers Centrepoint Limited                       	SGX       
@@ -1029,7 +1007,6 @@ U96       	Sembcorp Industries Ltd                           	SGX
 U9E       	Hankore Environment Tec Grpltd                    	SGX       
 UD1U      	Ireit Global                                      	SGX       
 UD2       	Japfa Ltd.                                        	SGX       
-UE3W      	Mun Siong Engineering W170908                     	SGX       
 UQ4       	Emas Offshore Limited                             	SGX       
 UQ7       	Blue Sky Power Holdingslimited                    	SGX       
 UV1       	Hisaka Holdings Ltd.                              	SGX       
