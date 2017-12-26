@@ -38,12 +38,14 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class FredDataDownloader {
 
+	final private static boolean UpdateAll = true;
+
 	private static boolean isNew(List<String> names, String name) {
 
 		for (final String n : names) {
 			System.out.println(n + " " + name);
 			if (n.equalsIgnoreCase(name)) {
-				return false;
+				return UpdateAll;
 			}
 		}
 		return true;
@@ -101,8 +103,11 @@ public class FredDataDownloader {
 	    DataSeries.ResponseType unit) {
 
 		final String fname = FredCommon.fredPath + series + ".csv";
-		if (new File(fname).exists()) {
-			return;
+
+		if (!UpdateAll) {
+			if (new File(fname).exists()) {
+				return;
+			}
 		}
 
 		final DataSeries ds = new DataSeries(series);

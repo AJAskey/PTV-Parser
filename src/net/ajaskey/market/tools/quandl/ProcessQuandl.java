@@ -162,14 +162,14 @@ public class ProcessQuandl {
 		//final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
 		//ProcessQuandl.writeMtsList(mts, "MTS");
 
-	  //final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
-		//processEcri(li, 0.0, 0.0);
-		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
+	  final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		processEcri(li, 0.0, 0.0);
+		ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
 		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
 		List<OneValueData> searn = scaleEarnings(earn, price);
-		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
+		//ProcessQuandl.writeOneList(searn, "SP500_Earnings");
 		ProcessQuandl.writeOneList(earn, "SP500_EarningsYield");
 
 		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);

@@ -131,7 +131,7 @@ public class DataSeries {
 		this.setRespType(ResponseType.LIN);
 		this.setRespKnt("0");
 		this.cal1 = null;
-		//this.cal2 = null;
+
 		this.info = new DataSeriesInfo(name);
 		try {
 			this.dBuilder = this.dbFactory.newDocumentBuilder();
@@ -142,6 +142,32 @@ public class DataSeries {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.duplicateLastValue
+	 *
+	 * @param retList
+	 */
+	private void duplicateLastValue(List<DataValues> retList) {
+
+		String f = this.info.getFrequency().toLowerCase();
+		if ((f.contains("daily")) || (f.contains("weekly")) || (f.contains("month"))) {
+			return;
+		}
+
+		final Calendar cal = Calendar.getInstance();
+		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+		long mNow = cal.get(Calendar.MONTH);
+		long mThen = calLast.get(Calendar.MONTH) + 1;
+
+		if (mNow > mThen) {
+			final double val = retList.get(retList.size() - 1).getValue();
+			final DataValues dv = new DataValues(cal, val);
+			retList.add(dv);
+		}
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.fred.appendEstimates
 	 *
 	 * @param retList
@@ -324,6 +350,8 @@ public class DataSeries {
 
 		if (estimateData) {
 			this.appendEstimates(retList, futureChg);
+		} else {
+			duplicateLastValue(retList);
 		}
 
 		return retList;

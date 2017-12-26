@@ -229,7 +229,7 @@ public class ProcessSymbolList {
 		pwUSMF.close();
 		pwOPRA.close();
 
-		ProcessSymbolList.buildOexList();
+		//ProcessSymbolList.buildOexList();
 
 		System.out.println("ProcessSymbolList Done.");
 	}

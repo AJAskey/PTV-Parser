@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.TickerData;
+import net.ajaskey.market.ta.input.LongTermOHLCV;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 
@@ -57,6 +58,8 @@ public class WriteIndexEOD {
 		WriteIndexEOD.processIndex();
 		
 		WriteStockData.main(args);
+		
+		LongTermOHLCV.main(args);
 	}
 
 	private static void processIndex() throws ParseException, IOException {
@@ -71,13 +74,21 @@ public class WriteIndexEOD {
 		ParseData.setValidTicker("TQCX.IDX");
 		ParseData.setValidTicker("TICK.IDX");
 		ParseData.setValidTicker("TICX.IDX");
+		
+		ParseData.setValidTicker("ADDN.IDX");
+		ParseData.setValidTicker("ADDQ.IDX");		
+		ParseData.setValidTicker("AVDN.IDX");
+		ParseData.setValidTicker("AVDQ.IDX");
+		ParseData.setValidTicker("AVVN.IDX");
+		ParseData.setValidTicker("AVVN.IDX");
+		ParseData.setValidTicker("DVCN.IDX");
 
 		ParseData.setValidTicker("HIGN.IDX");
 		ParseData.setValidTicker("HIGQ.IDX");
 		ParseData.setValidTicker("LOWN.IDX");
 		ParseData.setValidTicker("LOWQ.IDX");
 
-		ParseData.setValidTicker("MMTW.IDX");
+		ParseData.setValidTicker("MMTW.IDX"); 
 		ParseData.setValidTicker("MMFI.IDX");
 		ParseData.setValidTicker("MMOH.IDX");
 		ParseData.setValidTicker("MMTH.IDX");

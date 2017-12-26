@@ -46,29 +46,31 @@ import net.ajaskey.market.tools.sipro.v5.DateSet;
  */
 public class SipData5 {
 
-	public static List<DataSet5>	sales				= new ArrayList<>();
-	public static List<DataSet5>	ebit				= new ArrayList<>();
-	public static List<DataSet5>	taxes				= new ArrayList<>();
-	public static List<DataSet5>	incomeEps		= new ArrayList<>();
-	public static List<DataSet5>	cashOps			= new ArrayList<>();
-	public static List<DataSet5>	cashFin			= new ArrayList<>();
-	public static List<DataSet5>	cashInv			= new ArrayList<>();
-	public static List<DataSet5>	dividend		= new ArrayList<>();
-	public static List<DataSet5>	shares			= new ArrayList<>();
-	public static List<DataSet5>	cash				= new ArrayList<>();
-	public static List<DataSet5>	assets			= new ArrayList<>();
-	public static List<DataSet5>	liabilities	= new ArrayList<>();
-	public static List<DataSet5>	accTx				= new ArrayList<>();
-	public static List<DataSet5>	accRx				= new ArrayList<>();
-	public static List<DataSet5>	goodwill		= new ArrayList<>();
-	public static List<DataSet5>	ltDebt			= new ArrayList<>();
-	public static List<DataSet5>	capEx				= new ArrayList<>();
-	public static List<DataSet5>	equity			= new ArrayList<>();
-	public static List<DataSet5>	interest		= new ArrayList<>();
-	public static List<DataSet5>	resDev			= new ArrayList<>();
-	public static List<DataSet5>	bookValue		= new ArrayList<>();
-	public static List<DataSet5>	inventoryValue		= new ArrayList<>();
-	public static List<DataSet5>	prices			= new ArrayList<>();
+	public static List<DataSet5>	sales						= new ArrayList<>();
+	public static List<DataSet5>	ebit						= new ArrayList<>();
+	public static List<DataSet5>	taxes						= new ArrayList<>();
+	public static List<DataSet5>	incomeEps				= new ArrayList<>();
+	public static List<DataSet5>	cashOps					= new ArrayList<>();
+	public static List<DataSet5>	cashFin					= new ArrayList<>();
+	public static List<DataSet5>	cashInv					= new ArrayList<>();
+	public static List<DataSet5>	dividend				= new ArrayList<>();
+	public static List<DataSet5>	shares					= new ArrayList<>();
+	public static List<DataSet5>	cash						= new ArrayList<>();
+	public static List<DataSet5>	assets					= new ArrayList<>();
+	public static List<DataSet5>	liabilities			= new ArrayList<>();
+	public static List<DataSet5>	accTx						= new ArrayList<>();
+	public static List<DataSet5>	accRx						= new ArrayList<>();
+	public static List<DataSet5>	goodwill				= new ArrayList<>();
+	public static List<DataSet5>	ltDebt					= new ArrayList<>();
+	public static List<DataSet5>	capEx						= new ArrayList<>();
+	public static List<DataSet5>	equity					= new ArrayList<>();
+	public static List<DataSet5>	interest				= new ArrayList<>();
+	public static List<DataSet5>	resDev					= new ArrayList<>();
+	public static List<DataSet5>	bookValue				= new ArrayList<>();
+	public static List<DataSet5>	inventoryValue	= new ArrayList<>();
+	public static List<DataSet5>	enterpriseValue	= new ArrayList<>();
+	public static List<DataSet5>	prices					= new ArrayList<>();
+	public static List<DataSet5>	fcf							= new ArrayList<>();
 
 	public static List<DataSet5> eps = new ArrayList<>();
 
@@ -114,8 +116,8 @@ public class SipData5 {
 		System.out.println(Utils.stringDate(latest));
 
 		SipData5.processData("500");
-		//SipData5.processData("MidCap 400");
-		//SipData5.processData("SmallCap 600");
+		SipData5.processData("MidCap 400");
+		SipData5.processData("SmallCap 600");
 
 		SipData5.archiveData(latest);
 
@@ -153,6 +155,8 @@ public class SipData5 {
 		final DataSet5 totInterest = DataSet5.sum(SipData5.interest, index);
 		final DataSet5 totResDev = DataSet5.sum(SipData5.resDev, index);
 		final DataSet5 totInventory = DataSet5.sum(SipData5.inventoryValue, index);
+		final DataSet5 totEnterprise = DataSet5.sum(SipData5.enterpriseValue, index);
+		final DataSet5 totFcf = DataSet5.sum(SipData5.fcf, index);
 
 		String prefix = "";
 
@@ -220,6 +224,8 @@ public class SipData5 {
 		SipData5.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
 		SipData5.write(totMktCap, prefix + " Market Cap v4", dates, false);
 		SipData5.write(totInventory, prefix + " Inventory v4", dates, false);
+		SipData5.write(totEnterprise, prefix + " Enterprise v4", dates, false);
+		SipData5.write(totFcf, prefix + " FCFps v4", dates, false);
 
 		//-----------------------------------------
 
@@ -248,36 +254,37 @@ public class SipData5 {
 		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
 		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
 		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
-		
+
 		SipData5.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates,
 		    dsPrices);
 
 	}
-/**
- * 
- * net.ajaskey.market.tools.sipro.v5.writeEps
- *
- * @param totIncome
- * @param totShr
- * @param epsStr
- * @param epsannualStr
- * @param peStr
- * @param dates
- * @param dsPrices
- * @throws FileNotFoundException
- */
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.sipro.v5.writeEps
+	 *
+	 * @param totIncome
+	 * @param totShr
+	 * @param epsStr
+	 * @param epsannualStr
+	 * @param peStr
+	 * @param dates
+	 * @param dsPrices
+	 * @throws FileNotFoundException
+	 */
 	private static void writeEps(DataSet5 totIncome, DataSet5 totShr, String epsStr, String epsannualStr, String peStr,
 	    DateSet dates, DataSet5 dsPrices) throws FileNotFoundException {
 
 		final DataSet5 totEps = DataSet5.scale(DataSet5.div(totIncome, totShr), 40.0);
 		SipData5.write(totEps, epsStr, dates, false);
 
-		totEps.mode = DataSet5.dMode.SEQUENTIAL;
-		SipData5.write(totEps, epsannualStr, dates, false);
+		//		totEps.mode = DataSet5.dMode.SEQUENTIAL;
+		//		SipData5.write(totEps, epsannualStr, dates, false);
 
-//		final DataSet5 totPE = DataSet5.scale(DataSet5.div(dsPrices, totEps), 1.0);
-//		totPE.mode = DataSet5.dMode.SEQUENTIAL;
-//		SipData5.write(totPE, peStr, dates, false);
+		//		final DataSet5 totPE = DataSet5.scale(DataSet5.div(dsPrices, totEps), 1.0);
+		//		totPE.mode = DataSet5.dMode.SEQUENTIAL;
+		//		SipData5.write(totPE, peStr, dates, false);
 
 	}
 
@@ -329,7 +336,6 @@ public class SipData5 {
 					SipData5.accTx.add(sc.getData5("Accounts Payable", line, DataSet5.dMode.SEQUENTIAL, SipCommon.MILLION));
 					SipData5.goodwill.add(sc.getData5("Goodwill", line, DataSet5.dMode.SEQUENTIAL, SipCommon.MILLION));
 					SipData5.ltDebt.add(sc.getData5("LT Debt", line, DataSet5.dMode.SEQUENTIAL, SipCommon.MILLION));
-					SipData5.equity.add(sc.getData5("Common Equity", line, DataSet5.dMode.SEQUENTIAL, SipCommon.MILLION));
 				}
 			}
 		}
@@ -363,13 +369,14 @@ public class SipData5 {
 
 					sc.reset();
 
+					SipData5.equity.add(sc.getData5("Common Equity", line, DataSet5.dMode.SEQUENTIAL, SipCommon.MILLION));
 					SipData5.interest.add(sc.getData5("interest", line, DataSet5.dMode.ACCUMULATION, SipCommon.MILLION));
 					SipData5.resDev.add(sc.getData5("R and D", line, DataSet5.dMode.ACCUMULATION, SipCommon.MILLION));
 					SipData5.bookValue.add(sc.getData5("Book Value per Share", line, DataSet5.dMode.SEQUENTIAL, 1.0));
 					SipData5.inventoryValue.add(sc.getData5("Inventory", line, DataSet5.dMode.SEQUENTIAL, 1.0));
-
-					
+					SipData5.enterpriseValue.add(sc.getData5("Enterprice", line, DataSet5.dMode.SEQUENTIAL, 1.0));
 					SipData5.prices.add(sc.getData5("Prices", line, DataSet5.dMode.SEQUENTIAL, 1.0));
+					SipData5.fcf.add(sc.getData5("FCF", line, DataSet5.dMode.SEQUENTIAL, 1.0));
 
 					try {
 						final Calendar date = sc.getDate(line);
@@ -550,7 +557,6 @@ public class SipData5 {
 			}
 		}
 	}
-
 
 	/**
 	 * net.ajaskey.market.tools.sipro.v4.writePriceToDate

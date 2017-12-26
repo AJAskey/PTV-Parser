@@ -83,7 +83,7 @@ public class SipCommon {
 
 	public void reset() {
 
-		this.ptr = 1;
+		this.ptr = 2;
 	}
 
 }

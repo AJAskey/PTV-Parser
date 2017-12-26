@@ -35,7 +35,7 @@ import java.io.IOException;
 public class TickerNames {
 
 	final static String	p1	= "openinsider.com/screener?s=";
-	final static String	p2	= "&o=&pl=&ph=&ll=&lh=&fd=0&fdr=&td=7&tdr=&fdlyl=&fdlyh=&daysago=&xp=1&xs=1&excludeDerivRelated=1&vl=&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&isofficer=1&iscob=1&isceo=1&ispres=1&iscoo=1&iscfo=1&isgc=1&isvp=1&isdirector=1&grp=0&nfl=&nfh=&nil=&nih=&nol=&noh=&v2l=&v2h=&oc2l=&oc2h=&sortcol=8&cnt=100&page=1";
+	final static String	p2	= "&o=&pl=&ph=&ll=&lh=&fd=7&fdr=&td=0&tdr=&fdlyl=&fdlyh=&daysago=&xp=1&xs=1&excludeDerivRelated=1&vl=&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&isofficer=1&iscob=1&isceo=1&ispres=1&iscoo=1&iscfo=1&isgc=1&isvp=1&isdirector=1&grp=0&nfl=&nfh=&nil=&nih=&nol=&noh=&v2l=&v2h=&oc2l=&oc2h=&sortcol=8&cnt=100&page=1";
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -47,44 +47,52 @@ public class TickerNames {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		//TickerNames tn = new TickerNames("lists/ivv-components.csv");
-		final TickerNames tn = new TickerNames("data/SP500-SIP3.txt");
+		final TickerNames tn = new TickerNames("data/SP-Stocks.txt", "500");
 		final String s = tn.get();
 		System.out.println(p1 + s + p2);
 
 	}
 
-	private final String listName;
+	private final String	listName;
+	private final String	idx;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public TickerNames(String list) {
+	public TickerNames(String list, String spidx) {
 		this.listName = list;
+		this.idx = spidx;
 	}
 
 	public String get() throws FileNotFoundException, IOException {
 
 		String ret = "";
+		int knt = 0;
+
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(this.listName)))) {
 			String line = "";
 
-			int knt = 0;
 			while (line != null) {
 				line = br.readLine();
 				if (line != null) {
 					final String fld[] = line.split("[,\\s+]");
 					final String s = fld[0].replace("\n", "").replaceAll("\"", "");
-					System.out.println(s);
-					if (knt == 0) {
-						ret += s.trim();
-						knt++;
-					} else {
-						ret += "+" + s.trim();
+					String idx = fld[1].replace("\n", "").replaceAll("\"", "");
+					if (idx.equalsIgnoreCase(this.idx)) {
+						System.out.println(s);
+						if (knt == 0) {
+							ret += s.trim();
+							knt++;
+						} else {
+							ret += "+" + s.trim();
+							knt++;
+						}
 					}
 				}
 			}
 		}
+		System.out.println(knt);
 		return ret.trim();
 	}
 

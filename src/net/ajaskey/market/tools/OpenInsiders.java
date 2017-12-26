@@ -52,7 +52,7 @@ public class OpenInsiders {
 		final int minDollar = 10;
 		final int page = 1;
 
-		new OpenInsiders("data/SP500-SIP3.csv", days, minDollar, page, "out/1.html");
+		new OpenInsiders("data/SP-Stocks.txt", days, minDollar, page, "out/1.html");
 
 	}
 
@@ -112,7 +112,7 @@ public class OpenInsiders {
 
 	private String getTickers(String listName) throws FileNotFoundException, IOException {
 
-		final TickerNames tn = new TickerNames(listName);
+		final TickerNames tn = new TickerNames(listName, "500");
 		return tn.get();
 	}
 

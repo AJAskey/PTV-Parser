@@ -131,6 +131,8 @@ public class LongTermOHLCV {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		LongTermOHLCV.update("SP400");
+		LongTermOHLCV.update("SP500");
+		LongTermOHLCV.update("SP600");
 
 	}
 
