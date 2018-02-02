@@ -137,8 +137,8 @@ public class ProcessQuandl {
 		    + QuandlApi.key;
 		final String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key="
 		    + QuandlApi.key;
-		final String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
-		    + QuandlApi.key;
+		//final String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
+		//    + QuandlApi.key;
 		final String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key="
 		    + QuandlApi.key;
 
@@ -147,7 +147,7 @@ public class ProcessQuandl {
 		final String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
-		final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
+		//final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
 		final String balDryURL = "https://www.quandl.com/" + "api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
 		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
@@ -169,16 +169,16 @@ public class ProcessQuandl {
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
 		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
 		List<OneValueData> searn = scaleEarnings(earn, price);
-		//ProcessQuandl.writeOneList(searn, "SP500_Earnings");
+		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
 		ProcessQuandl.writeOneList(earn, "SP500_EarningsYield");
 
 		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
 		ProcessQuandl.writeOneList(div, "SP500_Dividend");
 
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
-		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
+		//ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
-		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
+		//final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
 		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);

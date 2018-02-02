@@ -98,7 +98,6 @@ public class DataSet5 {
 		ds.mode = num.mode;
 		return ds;
 	}
-	
 
 	/**
 	 *
@@ -239,6 +238,44 @@ public class DataSet5 {
 		return ds;
 	}
 
+	public static DataSet5 sum(List<DataSet5> data, String index, String sector) {
+
+		if (data.size() > 0) {
+			final DataSet5 ret = new DataSet5(data.get(0).name, 0);
+			if (data.size() > 0) {
+				ret.ticker = "MERGED_TICKERS";
+				ret.index = index;
+				ret.mode = data.get(0).mode;
+				for (final DataSet5 ds : data) {
+					if (ds.index.equalsIgnoreCase(index)) {
+						if (ds.sector.equalsIgnoreCase(sector)) {
+							ret.y7 += ds.y7;
+							ret.y6 += ds.y6;
+							ret.y5 += ds.y5;
+							ret.y4 += ds.y4;
+							ret.y3 += ds.y3;
+							ret.y2 += ds.y2;
+							ret.y1 += ds.y1;
+							ret.y0 += ds.y0;
+							ret.q8 += ds.q8;
+							ret.q7 += ds.q7;
+							ret.q6 += ds.q6;
+							ret.q5 += ds.q5;
+							ret.q4 += ds.q4;
+							ret.q3 += ds.q3;
+							ret.q2 += ds.q2;
+							ret.q1 += ds.q1;
+						}
+					}
+				}
+			}
+			return ret;
+		} else {
+			return null;
+		}
+
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.sipro.sum
@@ -283,8 +320,11 @@ public class DataSet5 {
 
 	}
 
+
+
 	public String	ticker;
 	public String	index;
+	public String	sector;
 	public double	y7;
 	public double	y6;
 	public double	y5;
@@ -294,24 +334,16 @@ public class DataSet5 {
 	public double	y1;
 	public double	y0;
 	public double	q8;
+	public double	q7;
+	public double	q6;
+	public double	q5;
+	public double	q4;
+	public double	q3;
+	public double	q2;
+	public double	q1;
 
-	public double q7;
-
-	public double q6;
-
-	public double q5;
-
-	public double q4;
-
-	public double q3;
-
-	public double q2;
-
-	public double q1;
-
-	public String name;
-
-	public dMode mode;
+	public String	name;
+	public dMode	mode;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -377,10 +409,11 @@ public class DataSet5 {
 		this.init(n, val);
 	}
 
-	public DataSet5(String index, String name, String code, String[] s, int ptr, dMode mode) {
+	public DataSet5(String index, String name, String code, String sector, String[] s, int ptr, dMode mode) {
 		this.init(name, 0);
 		this.index = index.trim();
 		this.ticker = code.trim();
+		this.sector = sector.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
 		this.y5 = this.getDouble(s[ptr + 3].trim());
@@ -442,8 +475,6 @@ public class DataSet5 {
 		//System.out.println(this);
 	}
 
-
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.sipro.getDouble
@@ -476,6 +507,8 @@ public class DataSet5 {
 	private void init(String n, double val) {
 
 		this.ticker = "";
+		this.sector = "";
+		this.index = "";
 		this.y7 = val;
 		this.y6 = val;
 		this.y5 = val;

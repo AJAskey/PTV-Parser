@@ -101,8 +101,10 @@ public class WriteIndexEOD {
 		filenames.clear();
 		final String dataPath = Utils.getDataPath();
 		filenames.add(dataPath + "\\ASCII\\INDEX");
+		filenames.add(dataPath + "\\ASCII\\AMEX");
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
+		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 		TickerFullName.build(fullfilenames);
 
 		TickerData.clearTickerData(tdList);

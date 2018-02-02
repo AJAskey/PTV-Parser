@@ -38,13 +38,14 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class FredDataDownloader {
 
-	final private static boolean UpdateAll = true;
+	final private static boolean UpdateAll = false;
 
 	private static boolean isNew(List<String> names, String name) {
 
 		for (final String n : names) {
-			System.out.println(n + " " + name);
-			if (n.equalsIgnoreCase(name)) {
+			String nn[] = name.split(" ");
+			//System.out.println(n + " " + nn);
+			if (n.equalsIgnoreCase(nn[0])) {
 				return UpdateAll;
 			}
 		}
@@ -68,7 +69,7 @@ public class FredDataDownloader {
 
 		final List<String> newNames = new ArrayList<>();
 		for (final String name : new_names) {
-			//System.out.println(name);
+			System.out.println(name);
 			if (FredDataDownloader.isNew(names, name)) {
 				names.add(name);
 				newNames.add(name);

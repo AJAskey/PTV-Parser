@@ -57,7 +57,7 @@ public class SipCommon {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 
-		final DataSet5 ds = new DataSet5(fld[1], name, fld[0], fld, this.ptr, mode);
+		final DataSet5 ds = new DataSet5(fld[1], name, fld[0], fld[2], fld, this.ptr, mode);
 		final DataSet5 dsRet = DataSet5.scale(ds, scaler);
 		//System.out.println(dsRet);
 		this.ptr += this.INC;

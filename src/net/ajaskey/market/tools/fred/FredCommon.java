@@ -119,6 +119,8 @@ public class FredCommon {
 			ret = BILLION;
 		} else if (seriesName.equalsIgnoreCase("gdp")) {
 			ret = BILLION;
+		} else if (seriesName.equalsIgnoreCase("MVGFD027MNFRBDAL")) {
+			ret = BILLION;
 		} else if (seriesName.contains("JTS")) {
 			ret = THOUSAND;
 		} else if (seriesName.contains("JTU")) {

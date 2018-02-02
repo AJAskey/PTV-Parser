@@ -86,22 +86,6 @@ public class LongTermOHLCV {
 	}
 
 	/**
-	 * 
-	 * net.ajaskey.market.ta.input.getLatestPrice
-	 *
-	 * @param list
-	 * @return
-	 */
-	public static double getLatestPrice(List<LongTermOHLCV> list) {
-
-		try {
-			return list.get(list.size() - 1).close;
-		} catch (Exception e) {
-			return 0.0;
-		}
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.ta.input.getFilename
 	 *
@@ -119,6 +103,22 @@ public class LongTermOHLCV {
 			fname = "data/SML.CSV";
 		}
 		return fname;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getLatestPrice
+	 *
+	 * @param list
+	 * @return
+	 */
+	public static double getLatestPrice(List<LongTermOHLCV> list) {
+
+		try {
+			return list.get(list.size() - 1).close;
+		} catch (final Exception e) {
+			return 0.0;
+		}
 	}
 
 	/**
@@ -189,7 +189,11 @@ public class LongTermOHLCV {
 		final LongTermOHLCV last = LongTermOHLCV.queryDate(today, data);
 		final Calendar latest = last.date;
 		System.out.println(Utils.stringDate(latest));
-		final int days = today.get(Calendar.DAY_OF_YEAR) - latest.get(Calendar.DAY_OF_YEAR);
+		final int diffyr = today.get(Calendar.YEAR) - latest.get(Calendar.YEAR);
+		int days = today.get(Calendar.DAY_OF_YEAR) - latest.get(Calendar.DAY_OF_YEAR);
+		if (diffyr > 0) {
+			days += 365;
+		}
 		System.out.println(days);
 
 		if (days < 1) {
