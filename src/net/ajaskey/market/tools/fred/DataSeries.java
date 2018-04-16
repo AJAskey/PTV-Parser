@@ -149,21 +149,25 @@ public class DataSeries {
 	 */
 	private void duplicateLastValue(List<DataValues> retList) {
 
-		String f = this.info.getFrequency().toLowerCase();
-		if ((f.contains("daily")) || (f.contains("weekly")) || (f.contains("month"))) {
-			return;
+		try {
+			String f = this.info.getFrequency().toLowerCase();
+			if ((f.contains("daily")) || (f.contains("weekly")) || (f.contains("month"))) {
+				return;
+			}
+
+			final Calendar cal = Calendar.getInstance();
+			final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+			long mNow = cal.get(Calendar.MONTH);
+			long mThen = calLast.get(Calendar.MONTH) + 1;
+
+			if (mNow > mThen) {
+				final double val = retList.get(retList.size() - 1).getValue();
+				final DataValues dv = new DataValues(cal, val);
+				retList.add(dv);
+			}
+		} catch (Exception e) {
 		}
 
-		final Calendar cal = Calendar.getInstance();
-		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
-		long mNow = cal.get(Calendar.MONTH);
-		long mThen = calLast.get(Calendar.MONTH) + 1;
-
-		if (mNow > mThen) {
-			final double val = retList.get(retList.size() - 1).getValue();
-			final DataValues dv = new DataValues(cal, val);
-			retList.add(dv);
-		}
 	}
 
 	/**
@@ -311,39 +315,41 @@ public class DataSeries {
 		try {
 			resp = Utils.getFromUrl(url);
 
-			final Document doc = this.dBuilder.parse(new InputSource(new StringReader(resp)));
+			if (resp.length() > 0) {
 
-			doc.getDocumentElement().normalize();
+				final Document doc = this.dBuilder.parse(new InputSource(new StringReader(resp)));
 
-			final NodeList nResp = doc.getElementsByTagName("observations");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					this.setRespKnt(eElement.getAttribute("count"));
+				doc.getDocumentElement().normalize();
 
+				final NodeList nResp = doc.getElementsByTagName("observations");
+				for (int knt = 0; knt < nResp.getLength(); knt++) {
+					final Node nodeResp = nResp.item(knt);
+					if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+						final Element eElement = (Element) nodeResp;
+						this.setRespKnt(eElement.getAttribute("count"));
+
+					}
 				}
-			}
 
-			final NodeList nList = doc.getElementsByTagName("observation");
-			for (int ptr = 0; ptr < nList.getLength(); ptr++) {
-				final Node nNode = nList.item(ptr);
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nNode;
-					final DataValues dv = new DataValues(eElement.getAttribute("date"), eElement.getAttribute("value"));
-					final int zeroCheck = (int) (dv.getValue() * 1000.0);
-					if ((noZeroValues) && (zeroCheck == 0)) {
-						this.respKnt -= 1;
-					} else {
-						retList.add(dv);
-						dv.getValue();
-						if (this.cal1 == null) {
-							this.cal1 = dv.getDate();
+				final NodeList nList = doc.getElementsByTagName("observation");
+				for (int ptr = 0; ptr < nList.getLength(); ptr++) {
+					final Node nNode = nList.item(ptr);
+					if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+						final Element eElement = (Element) nNode;
+						final DataValues dv = new DataValues(eElement.getAttribute("date"), eElement.getAttribute("value"));
+						final int zeroCheck = (int) (dv.getValue() * 1000.0);
+						if ((noZeroValues) && (zeroCheck == 0)) {
+							this.respKnt -= 1;
+						} else {
+							retList.add(dv);
+							dv.getValue();
+							if (this.cal1 == null) {
+								this.cal1 = dv.getDate();
+							}
 						}
 					}
 				}
 			}
-
 		} catch (IOException | SAXException e) {
 			e.printStackTrace();
 		}

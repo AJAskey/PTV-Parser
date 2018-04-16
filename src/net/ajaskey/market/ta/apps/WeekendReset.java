@@ -10,6 +10,7 @@ import org.xml.sax.SAXException;
 
 import net.ajaskey.market.tools.ProcessIshares;
 import net.ajaskey.market.tools.ProcessSPDRs;
+import net.ajaskey.market.tools.optuma.WriteIndexEOD;
 import net.ajaskey.market.tools.optuma.WriteStockData;
 
 /**
@@ -40,6 +41,8 @@ import net.ajaskey.market.tools.optuma.WriteStockData;
  */
 public class WeekendReset {
 
+	public static boolean AllWeek = false;
+
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
@@ -55,24 +58,32 @@ public class WeekendReset {
 		/**
 		 * Read the symbol lists from eoddata and create sublists.
 		 */
-		ProcessSymbolList.main(args);
-		System.gc();
+		//ProcessSymbolList.main(args);
+		//System.gc();
 
-		/**
-		 * Create stock-list.txt for stocks over $10 and 500k volume.
-		 */
-		GenStockList.main(args);
-		System.gc();
+		if (WeekendReset.AllWeek) {
 
-		ProcessIshares.main(args);
+			/**
+			 * Create stock-list.txt for stocks over $10 and 500k volume.
+			 */
+			GenStockList.main(args);
+			System.gc();
 
-		ProcessSPDRs.main(args);
+			ProcessIshares.main(args);
+
+			ProcessSPDRs.main(args);
+
+			WriteStockData.main(args);
+
+		}
 
 		Internals.main(args);
-
-		BreadthOfList.main(args);
 		
-		WriteStockData.main(args);
+		if (WeekendReset.AllWeek) {
+			BreadthOfList.main(args);
+		}
+		
+		WriteIndexEOD.main(args);
 
 		System.out.println("Weekend Reset Complete.");
 

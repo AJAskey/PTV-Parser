@@ -237,6 +237,10 @@ public class DataSeriesInfo {
 			}
 
 			resp = Utils.getFromUrl(url);
+			
+			if (resp.length() < 1) {
+				return;
+			}
 
 			Debug.pwDbg.println(resp + Utils.NL);
 

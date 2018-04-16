@@ -60,6 +60,10 @@ public class FredDataDownloader {
 	 */
 	public static void main(String[] args) throws IOException {
 
+		String t = "this and this are to be sentenced.";
+		String tp = FredCommon.toSentenceCase(t);
+		System.out.println(tp);
+
 		Debug.pwDbg = new PrintWriter("download-fred.dbg");
 
 		Utils.makeDir(FredCommon.fredPath);
@@ -103,31 +107,38 @@ public class FredDataDownloader {
 	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData,
 	    DataSeries.ResponseType unit) {
 
-		final String fname = FredCommon.fredPath + series + ".csv";
+		DataSeriesInfo dsi = new DataSeriesInfo(series);
 
-		if (!UpdateAll) {
-			if (new File(fname).exists()) {
-				return;
+		if (dsi != null) {
+			final String fname = FredCommon.toFullFileName(series, dsi.getTitle());
+
+			if (!UpdateAll) {
+				if (new File(fname).exists()) {
+					return;
+				}
+			}
+
+			final DataSeries ds = new DataSeries(series);
+
+			if (ds.isValid()) {
+
+				try {
+
+					ds.setAggType(AggregationMethodType.EOP);
+					ds.setRespType(unit);
+
+					final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
+
+					FredCommon.writeToOptuma(dvList, fname, series);
+					Debug.pwDbg.println(ds);
+					Debug.pwDbg.println(futureChg);
+
+					final String title = FredCommon.getShortTitle(ds.getInfo().getTitle());
+
+					System.out.println(ds.getName() + "," + ds.getName() + "," + title);
+				} catch (Exception e) {
+				}
 			}
 		}
-
-		final DataSeries ds = new DataSeries(series);
-
-		if (ds.isValid()) {
-
-			ds.setAggType(AggregationMethodType.EOP);
-			ds.setRespType(unit);
-
-			final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
-
-			FredCommon.writeToOptuma(dvList, ds.getName());
-			Debug.pwDbg.println(ds);
-			Debug.pwDbg.println(futureChg);
-
-			final String title = FredCommon.getShortTitle(ds.getInfo().getTitle());
-
-			System.out.println(ds.getName() + "," + ds.getName() + "," + title);
-		}
 	}
-
 }

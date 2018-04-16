@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.InterdayData;
@@ -95,7 +96,7 @@ public class ParseData {
 			String line = "";
 			while (line != null) {
 				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
+				if ((line != null) && (line.trim().length() > 0)) {
 					final String sline = line.trim().substring(0, Math.min(10, line.length())).toLowerCase();
 					if (!sline.contains("ticker") && !sline.contains("symbol")) {
 						final String fld[] = line.trim().split("[,\\s+]");
@@ -292,6 +293,28 @@ public class ParseData {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.ta.input.parseFiles
+	 *
+	 * @param directoryName
+	 * @param firstDay
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws ParseException
+	 */
+	public static List<TickerData> parseFiles(List<String> directoryName, Calendar firstDay)
+	    throws FileNotFoundException, ParseException {
+		
+		Calendar today = Calendar.getInstance();
+		
+    long end = today.getTimeInMillis();
+    long start = firstDay.getTimeInMillis();
+    long days =  TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
+
+		return ParseData.parseFiles(directoryName, (int)days);
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.ta.input.parseFiles
 	 *
@@ -348,7 +371,7 @@ public class ParseData {
 
 						final List<TickerData> td = ParseData.parseFile(f);
 
-						if (td != null) {
+						if ((td != null) && (td.size() > 0)) {
 							ParseData.mergeLists(tdList, td);
 						}
 					}

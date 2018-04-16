@@ -19,12 +19,12 @@ public class WebGet {
 		String response;
 		try {
 			response = Utils.getFromUrl(url);
-		} catch (final IOException e) {
+		} catch (Exception e) {
 			response = null;
 		}
 		boolean found = false;
 		final List<String> ret = new ArrayList<>();
-		if (response != null) {
+		if (response.length() > 0) {
 			final String[] line = response.split(Utils.NL);
 
 			for (final String s : line) {
@@ -57,10 +57,10 @@ public class WebGet {
 		String response = null;
 		try {
 			response = Utils.getFromUrl(url);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			return null;
 		}
-		if (response != null) {
+		if (response.length() > 0) {
 			final String[] fld = response.split(Utils.NL);
 			final List<String> ret = new ArrayList<>();
 

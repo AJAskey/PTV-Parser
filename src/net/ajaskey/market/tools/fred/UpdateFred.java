@@ -62,7 +62,7 @@ public class UpdateFred {
 
 		final File list[] = file.listFiles();
 
-		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "readme.txt")) {
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "FRED-readme.txt")) {
 
 			int knt = 0;
 
@@ -91,37 +91,42 @@ public class UpdateFred {
 						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
 
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
-						dsi.setType(ldsi.getType().toString());
-						dsi.setRefChart(ldsi.getRefChart());
 
-						dsList.add(dsi);
+						if (dsi != null) {
+							
+							dsi.setType(ldsi.getType().toString());
+							dsi.setRefChart(ldsi.getRefChart());
 
-						if (lastModTime.after(dsi.getLastUpdate())) {
-							Debug.pwDbg.println("Local file created After                               "
-							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
-							if (knt < 100) {
-								System.out.print(".");
-								knt++;
+							dsList.add(dsi);
+
+							if (lastModTime.after(dsi.getLastUpdate())) {
+								Debug.pwDbg.println("Local file created After                               "
+								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+								if (knt < 100) {
+									System.out.print(".");
+									knt++;
+								} else {
+									System.out.println(".");
+									knt = 0;
+								}
 							} else {
-								System.out.println(".");
+								Debug.pwDbg.println("Local file created Before                              "
+								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+								final DataSeries ds = new DataSeries(series);
+
+								if (knt > 0) {
+									System.out.print("\n");
+								}
+								System.out.println(series);
 								knt = 0;
-							}
-						} else {
-							Debug.pwDbg.println("Local file created Before                              "
-							    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
-							final DataSeries ds = new DataSeries(series);
 
-							if (knt > 0) {
-								System.out.print("\n");
+								String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
+								//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
+								FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series);
 							}
-							System.out.println(series);
-							knt = 0;
 
-							//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
-							FredCommon.writeToOptuma(ds.getValues(0.0, true, false), series);
+							pw.println(dsi);
 						}
-
-						pw.println(dsi);
 					}
 
 				}
@@ -143,6 +148,7 @@ public class UpdateFred {
 			}
 		}
 
+		
 		Collections.sort(dsList, new DsiAbcSorter());
 		FredCommon.writeSeriesInfo(dsList);
 

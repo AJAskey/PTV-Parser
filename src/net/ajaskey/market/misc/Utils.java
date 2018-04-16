@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.NumberFormat;
@@ -186,21 +187,27 @@ public class Utils {
 	 * @return
 	 * @throws IOException
 	 */
-	public static String getFromUrl(String url) throws IOException {
+	public static String getFromUrl(String url) {
 
 		final StringBuilder sb = new StringBuilder();
 
-		final URL myURL = new URL(url);
-		final URLConnection myURLConnection = myURL.openConnection();
-		myURLConnection.connect();
-		String line;
-		try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
-			while ((line = resp.readLine()) != null) {
-				if (line.length() > 0) {
-					sb.append(line + NL);
+		URL myURL;
+		try {
+			myURL = new URL(url);
+
+			final URLConnection myURLConnection = myURL.openConnection();
+			myURLConnection.connect();
+			String line;
+			try (BufferedReader resp = new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()))) {
+				while ((line = resp.readLine()) != null) {
+					if (line.length() > 0) {
+						sb.append(line + NL);
+					}
 				}
 			}
-		}
+		} catch (IOException e) {
+			return "";
+		} 
 		return sb.toString();
 	}
 
@@ -435,7 +442,7 @@ public class Utils {
 		else
 			return "";
 	}
-	
+
 	public static String removeFileExt(File f) {
 
 		String fname = f.getName();

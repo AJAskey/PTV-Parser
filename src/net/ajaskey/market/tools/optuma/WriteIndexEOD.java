@@ -1,8 +1,10 @@
 
 package net.ajaskey.market.tools.optuma;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +44,21 @@ public class WriteIndexEOD {
 
 	private final static List<String>	filenames			= new ArrayList<>();
 	private final static List<String>	fullfilenames	= new ArrayList<>();
-	//private final static SimpleDateFormat	sdf						= new SimpleDateFormat("yyyy-MM-dd");
 
 	private static List<TickerData> tdList = new ArrayList<>();
+
+	private static void getNewData() {
+
+		final File allFiles = new File("C:\\Users\\ajask\\Downloads");
+		final File[] listOfFiles = allFiles.listFiles();
+
+		for (final File file : listOfFiles) {
+			if (file.isFile()) {
+				Path path = file.toPath();
+				System.out.println(path);
+			}
+		}
+	}
 
 	/**
 	 * net.ajaskey.market.tools.optuma.main
@@ -55,10 +69,12 @@ public class WriteIndexEOD {
 	 */
 	public static void main(String[] args) throws ParseException, IOException {
 
+		//WriteIndexEOD.getNewData();
+
 		WriteIndexEOD.processIndex();
-		
+
 		WriteStockData.main(args);
-		
+
 		LongTermOHLCV.main(args);
 	}
 
@@ -74,21 +90,13 @@ public class WriteIndexEOD {
 		ParseData.setValidTicker("TQCX.IDX");
 		ParseData.setValidTicker("TICK.IDX");
 		ParseData.setValidTicker("TICX.IDX");
-		
-		ParseData.setValidTicker("ADDN.IDX");
-		ParseData.setValidTicker("ADDQ.IDX");		
-		ParseData.setValidTicker("AVDN.IDX");
-		ParseData.setValidTicker("AVDQ.IDX");
-		ParseData.setValidTicker("AVVN.IDX");
-		ParseData.setValidTicker("AVVN.IDX");
-		ParseData.setValidTicker("DVCN.IDX");
 
 		ParseData.setValidTicker("HIGN.IDX");
 		ParseData.setValidTicker("HIGQ.IDX");
 		ParseData.setValidTicker("LOWN.IDX");
 		ParseData.setValidTicker("LOWQ.IDX");
 
-		ParseData.setValidTicker("MMTW.IDX"); 
+		ParseData.setValidTicker("MMTW.IDX");
 		ParseData.setValidTicker("MMFI.IDX");
 		ParseData.setValidTicker("MMOH.IDX");
 		ParseData.setValidTicker("MMTH.IDX");
@@ -114,9 +122,20 @@ public class WriteIndexEOD {
 
 		for (final TickerData td : tdList) {
 			System.out.println(td.getTicker() + "\t" + td.getTickerName());
-			try (PrintWriter pw = new PrintWriter(outdir + td.getTicker() + ".csv")) {
-				td.generateDerived(true);
-				td.printOptuma(pw);
+			String tn = td.getTicker();
+			if (tn != null) {
+				String nm = TickerFullName.getName(tn);
+				if (nm == null) {
+					nm = "Unknown";
+				}
+				String tname = tn.replaceAll(".IDX", "");
+				String fname = "[" + tname + "] - " + nm;
+				try (PrintWriter pw = new PrintWriter(outdir + fname + ".csv");
+				    PrintWriter pw2 = new PrintWriter(outdir + tn + ".csv")) {
+					td.generateDerived(true);
+					td.printOptuma(pw);
+					td.printOptuma(pw2);
+				}
 			}
 		}
 	}

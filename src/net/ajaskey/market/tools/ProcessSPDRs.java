@@ -2,6 +2,7 @@
 package net.ajaskey.market.tools;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,11 @@ public class ProcessSPDRs {
 	/**
 	 *
 	 * @param args
-	 * @throws FileNotFoundException
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 
+		
 		ProcessSPDRs.processSpdr("xlb");
 		ProcessSPDRs.processSpdr("xle");
 		ProcessSPDRs.processSpdr("xlf");
@@ -32,7 +34,6 @@ public class ProcessSPDRs {
 		ProcessSPDRs.processSpdr("xlu");
 		ProcessSPDRs.processSpdr("xlv");
 		ProcessSPDRs.processSpdr("xly");
-		// processSpdr("xlfs");
 		ProcessSPDRs.processSpdr("xlre");
 
 		System.out.println("Done.");
