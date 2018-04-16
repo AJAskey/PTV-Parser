@@ -5,9 +5,11 @@ NADD.IDX  	52-Week Hi-Lo DOW Indu                            	INDEX
 NADE.IDX  	52-Week Hi-Lo DOW Comp                            	INDEX     
 NADF.IDX  	52-Week Hi-Lo DOW Tran                            	INDEX     
 NADG.IDX  	52-Week Hi-Lo DOW Util                            	INDEX  
+
 TRIA.IDX  	AMEX Trin                                         	INDEX     
 TRIN.IDX  	NYSE Trin                                         	INDEX     
-TRIQ.IDX  	NASD Trin                                         	INDEX   
+TRIQ.IDX  	NASD Trin                                         	INDEX 
+  
 ATXR.IDX  	S&P C.S. Ga-Atlanta Home Price Index              	INDEX     
 BOXR.IDX  	S&P C.S. Ma-Boston Home Price Index               	INDEX     
 CEXR.IDX  	S&P C.S. Oh-Cleveland Home Price Index            	INDEX     
@@ -30,6 +32,7 @@ SFXR.IDX  	S&P C.S. Ca-San Francisco Home Price Index        	INDEX
 SNXR.IDX  	S&P C.S. Ca-San Diego Home Price Index            	INDEX     
 TPXR.IDX  	S&P C.S. Fl-Tampa Home Price Index                	INDEX     
 WDXR.IDX  	S&P C.S. Dc-Washington Home Price Index           	INDEX
+
 TNX.IDX   	10-YEAR TREASURY NOTE                             	INDEX
 TYX.IDX   	30-YEAR TREASURY BOND                             	INDEX
 IRX.IDX   	13-WEEK TREASURY BILL                             	INDEX
@@ -41,6 +44,7 @@ DJU.IDX   	DJ Utility Average                                	INDEX
 NDY.IDX   	Nasdaq 100                                        	INDEX     
 VIX.IDX   	CBOE Volatility Index                             	INDEX     
 IQX.IDX   	S&P 500 EQUAL WEIGHT                              	INDEX     
+
 XLB       	S&P 500 Materials Sector SPDR                     	AMEX      
 XLE       	S&P 500 Energy Sector SPDR                        	AMEX      
 XLF       	S&P 500 Financials Sector SPDR                    	AMEX      
@@ -57,5 +61,50 @@ DXY.IDX   	U.S. Dollar Index                                 	INDEX
 GLD.IDX   	Gold Index                                        	INDEX     
 XHB       	S&P Homebuilders SPDR                             	AMEX      
 XSD       	S&P Semiconductor SPDR                            	AMEX      
-TIP       	TIPS Bond Ishares                                 	AMEX      
+TIP       	TIPS Bond Ishares                                 	AMEX 
+     
+ADDA.IDX  	AMEX Advance Decline Difference                   	INDEX     
+ADDD.IDX  	OTC Advance Decline Difference                    	INDEX     
+ADDE.IDX  	ETFS Advance - Decline                            	INDEX     
+ADDN.IDX  	NYSE Advance Decline Difference                   	INDEX     
+ADDQ.IDX  	NASD Advance Decline Difference                   	INDEX     
+ADDS.IDX  	TSX Advance Decline Difference                    	INDEX     
+ADDT.IDX  	Total Advance Decline Difference                  	INDEX
+
+ADVA.IDX  	AMEX Advancing Stocks                             	INDEX     
+ADVD.IDX  	OTC Advancing Stocks                              	INDEX     
+ADVE.IDX  	ETFS  Advancing Stocks                            	INDEX     
+ADVN.IDX  	NYSE Advancing Stocks                             	INDEX     
+ADVQ.IDX  	NASD Advancing Stocks                             	INDEX     
+ADVS.IDX  	TSX Advancing Stocks                              	INDEX     
+ADVT.IDX  	Total Advancing Stocks                            	INDEX     
+
+AVVA.IDX  	AMEX Advancing Volume                             	INDEX     
+AVVD.IDX  	OTC Advancing Volume                              	INDEX     
+AVVE.IDX  	ETFS  Advancing Volume                            	INDEX     
+AVVN.IDX  	NYSE Advancing Volume                             	INDEX     
+AVVQ.IDX  	NASD Advancing Volume                             	INDEX     
+AVVS.IDX  	TSX Advancing Volume                              	INDEX     
+AVVT.IDX  	Total Advancing Volume                            	INDEX  
+
+DECA.IDX  	AMEX Declining Stocks                             	INDEX     
+DECD.IDX  	OTC Declining Stocks                              	INDEX     
+DECE.IDX  	ETFS  Declining Stocks                            	INDEX     
+DECN.IDX  	NYSE Declining Stocks                             	INDEX     
+DECQ.IDX  	NASD Declining Stocks                             	INDEX     
+DECS.IDX  	TSX Declining Stocks                              	INDEX     
+DECT.IDX  	Total Declining Stocks                            	INDEX       
+
+DVCA.IDX  	AMEX Declining Volume                             	INDEX     
+DVCD.IDX  	OTC Declining Volume                              	INDEX     
+DVCE.IDX  	ETFS  Declining Volume                            	INDEX     
+DVCN.IDX  	NYSE Declining Volume                             	INDEX     
+DVCQ.IDX  	NASD Declining Volume                             	INDEX     
+DVCS.IDX  	TSX Declining Volume                              	INDEX     
+DVCT.IDX  	Total Declining Volume                            	INDEX     
+DVCV.IDX  	Tsxv Declining Volume                             	INDEX     
+DVCX.IDX  	CAD Total Declining Volume                        	INDEX
+
+NVLF.IDX  	NYSE Advance Decline Volume Difference            	INDEX
+QVLF.IDX  	NASD Advance Decline Volume Difference            	INDEX
 
