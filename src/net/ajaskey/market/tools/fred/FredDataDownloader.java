@@ -25,6 +25,7 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
+ *         
  *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -59,10 +60,6 @@ public class FredDataDownloader {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-
-		String t = "this and this are to be sentenced.";
-		String tp = FredCommon.toSentenceCase(t);
-		System.out.println(tp);
 
 		Debug.pwDbg = new PrintWriter("download-fred.dbg");
 
@@ -107,7 +104,17 @@ public class FredDataDownloader {
 	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData,
 	    DataSeries.ResponseType unit) {
 
-		DataSeriesInfo dsi = new DataSeriesInfo(series);
+		if ((series == null) || (series.length() < 2)) {
+			return;
+		}
+
+		DataSeriesInfo dsi = null;
+		String fld[] = series.split("\t");
+		if (fld.length == 9) {
+			dsi = new DataSeriesInfo(series);
+		} else {
+			dsi = new DataSeriesInfo(series);
+		}
 
 		if (dsi != null) {
 			final String fname = FredCommon.toFullFileName(series, dsi.getTitle());
@@ -129,13 +136,13 @@ public class FredDataDownloader {
 
 					final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
-					FredCommon.writeToOptuma(dvList, fname, series);
+					FredCommon.writeToOptuma(dvList, fname, series, dsi.getUnits());
 					Debug.pwDbg.println(ds);
 					Debug.pwDbg.println(futureChg);
 
-					final String title = FredCommon.getShortTitle(ds.getInfo().getTitle());
-
-					System.out.println(ds.getName() + "," + ds.getName() + "," + title);
+					final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
+					System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
+					
 				} catch (Exception e) {
 				}
 			}

@@ -106,7 +106,7 @@ public class FredCommon {
 	 * @param title
 	 * @return
 	 */
-	private static String cleanTitle(String title) {
+	public static String cleanTitle(String title) {
 
 		String sn = title.trim();
 		//sn = FredCommon.replace(sn, "\\)", "");
@@ -180,26 +180,19 @@ public class FredCommon {
 	 * @param seriesName
 	 * @return
 	 */
-	private static double getScaler(String seriesName) {
+	private static double getScaler(String unt) {
 
+		String units = unt.trim().toLowerCase();
 		double ret = 1.0;
-		if (seriesName.equalsIgnoreCase("gdpc1")) {
+		
+		if (units.contains("billion")) {
 			ret = BILLION;
-		} else if (seriesName.equalsIgnoreCase("gdp")) {
-			ret = BILLION;
-		} else if (seriesName.equalsIgnoreCase("MVGFD027MNFRBDAL")) {
-			ret = BILLION;
-		} else if (seriesName.contains("JTS")) {
+		} else if (units.contains("million")) {
+			ret = MILLION;
+		} else if (units.contains("thousand")) {
 			ret = THOUSAND;
-		} else if (seriesName.contains("JTU")) {
-			ret = THOUSAND;
-		} else if (seriesName.equalsIgnoreCase("BOGMBASE")) {
-			ret = MILLION;
-		} else if (seriesName.equalsIgnoreCase("GFDEBTN")) {
-			ret = MILLION;
-		} else if (seriesName.equalsIgnoreCase("TREAST")) {
-			ret = MILLION;
 		}
+
 		return ret;
 	}
 
@@ -209,16 +202,15 @@ public class FredCommon {
 	 * @param title
 	 * @return
 	 */
-	public static String getShortTitle(String title) {
-
-		final String s1 = title.replaceAll("Disposable Personal Income", "DPI")
-		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
-		final String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "")
-		    .replaceAll("  ", " ");
-		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
-		final String s4 = s3.replaceAll("\\s+", "");
-		return s4.trim();
-	}
+//	public static String getShortTitle(String title) {
+//
+//		final String s1 = title.replaceAll("Disposable Personal Income", "DPI")
+//		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
+//		final String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "");
+//		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
+//		final String s4 = s3.replaceAll("\\s+", "");
+//		return s4.trim();
+//	}
 
 	private static boolean isArticle(String word) {
 
@@ -388,9 +380,9 @@ public class FredCommon {
 	 * @param data
 	 * @param seriesName
 	 */
-	public static void writeToOptuma(List<DataValues> data, String fullFileName, String seriesName) {
+	public static void writeToOptuma(List<DataValues> data, String fullFileName, String seriesName, String units) {
 
-		final double scaler = FredCommon.getScaler(seriesName);
+		final double scaler = FredCommon.getScaler(units);
 
 		final File file = new File(fullFileName);
 		//System.out.println(file.getAbsolutePath());

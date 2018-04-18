@@ -122,7 +122,7 @@ public class UpdateFred {
 
 								String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
 								//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
-								FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series);
+								FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits());
 							}
 
 							pw.println(dsi);

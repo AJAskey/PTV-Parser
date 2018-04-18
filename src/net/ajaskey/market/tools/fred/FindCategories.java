@@ -136,7 +136,7 @@ public class FindCategories {
 		try {
 			for (final String s : optumaIncludeCode) {
 				//System.out.println(s);
-				if (fld[3].trim().equalsIgnoreCase(s)) {
+				if (fld[2].trim().equalsIgnoreCase(s)) {
 					return true;
 				}
 			}
@@ -436,6 +436,12 @@ public class FindCategories {
 	 * @throws FileNotFoundException
 	 */
 	private static void processTickerList() throws FileNotFoundException {
+		
+		try (PrintWriter pwAll = new PrintWriter("out/optumaTickers.txt")) {
+			for (String s : optumaTickerList) {
+			pwAll.println(s);
+			}
+		}
 
 		try {
 			FindCategories.setupIncluded();
