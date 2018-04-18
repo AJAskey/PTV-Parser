@@ -1,0 +1,138 @@
+CODE	CIU1030000000000I
+FREQUENCY	NSA
+PERIOD	DAILY
+PERIOD	MONTH
+PERIOD	WEEK
+EXCLUDE	$
+EXCLUDE	Alabama
+EXCLUDE	Alaska
+EXCLUDE	AMERICA
+EXCLUDE	Arizona
+EXCLUDE	Arkansas
+EXCLUDE	ASIA
+EXCLUDE	AUSTRALIA
+EXCLUDE	BELGIUM
+EXCLUDE	BRAZIL
+EXCLUDE	BRITISH
+EXCLUDE	California
+EXCLUDE	CANADA
+EXCLUDE	Carolina
+EXCLUDE	CHICAGO
+EXCLUDE	CHILE
+EXCLUDE	CHINA
+EXCLUDE	Colorado
+EXCLUDE	"Condo """
+EXCLUDE	Connecticut
+EXCLUDE	CZECH
+EXCLUDE	Dakota
+EXCLUDE	Delaware
+EXCLUDE	DENMARK
+EXCLUDE	EURO
+EXCLUDE	FINLAND
+EXCLUDE	Florida
+EXCLUDE	FOREIGN
+EXCLUDE	FRANCE
+EXCLUDE	Georgia
+EXCLUDE	GERMANY
+EXCLUDE	GREECE
+EXCLUDE	Hawaii
+EXCLUDE	"HQM """
+EXCLUDE	HUNGARY
+EXCLUDE	Idaho
+EXCLUDE	Illinois
+EXCLUDE	INDIA
+EXCLUDE	Indiana
+EXCLUDE	Iowa
+EXCLUDE	IRELAND
+EXCLUDE	ITALY
+EXCLUDE	JAPAN
+EXCLUDE	Kansas
+EXCLUDE	Kentucky
+EXCLUDE	KINGDOM
+EXCLUDE	KOREA
+EXCLUDE	Louisiana
+EXCLUDE	LUXEMBOURG
+EXCLUDE	Maine
+EXCLUDE	Maryland
+EXCLUDE	Massachusetts
+EXCLUDE	MEXICO
+EXCLUDE	Michigan
+EXCLUDE	Minnesota
+EXCLUDE	Mississippi
+EXCLUDE	Missouri
+EXCLUDE	Montana
+EXCLUDE	NAFTA
+EXCLUDE	Nebraska
+EXCLUDE	NETHERLANDS
+EXCLUDE	Nevada
+EXCLUDE	New Hampshire
+EXCLUDE	New Jersey
+EXCLUDE	New York
+EXCLUDE	NORWAY
+EXCLUDE	OECD
+EXCLUDE	Ohio
+EXCLUDE	Oklahoma
+EXCLUDE	Oregon
+EXCLUDE	"PADD """
+EXCLUDE	Pennsylvania
+EXCLUDE	PHILADELPHIA
+EXCLUDE	POLAND
+EXCLUDE	PORTUGAL
+EXCLUDE	REPUBLIC
+EXCLUDE	REST OF THE WORLD
+EXCLUDE	Rhode Island
+EXCLUDE	"RUSSELL """
+EXCLUDE	RUSSIA
+EXCLUDE	SLOVENIA
+EXCLUDE	SNAP BENEFITS
+EXCLUDE	SPAIN
+EXCLUDE	ST. LOUIS
+EXCLUDE	STONIA
+EXCLUDE	SWEDEN
+EXCLUDE	SWISS
+EXCLUDE	SWITZERLAND
+EXCLUDE	Tennessee
+EXCLUDE	Texas
+EXCLUDE	TURKEY
+EXCLUDE	Utah
+EXCLUDE	Vermont
+EXCLUDE	Virginia
+EXCLUDE	Washington
+EXCLUDE	"WILSHIRE """
+EXCLUDE	Wisconsin
+EXCLUDE	Wyoming
+EXCLUDE	ZEALAND
+INCLUDE	(NAICS)
+INCLUDE	Chained Consumer Price Index for all Urban Consumers:
+INCLUDE	Conventional Gasoline Prices
+INCLUDE	Crude Oil Prices: Brent - Europe
+INCLUDE	"Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma"
+INCLUDE	Henry Hub Natural Gas Spot Price
+INCLUDE	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast
+INCLUDE	No. 2 Heating Oil Prices: New York Harbor
+INCLUDE	"Propane Prices: Mont Belvieu, Texas"
+INCLUDE	"US All Grades """
+INCLUDE	"US Diesel """
+INCLUDE	"US Regular """
+INCLUDE	Total Construction Spending
+INCLUDE	Industrial Production
+INCLUDE	Capacity Utilization
+INCLUDE	Value of Manufacturers
+	
+CODE	MSPNHSUS
+CODE	NHSDPT
+	
+	
+EXCLUDE	Diffusion Index
+EXCLUDE	Recession Indicators
+EXCLUDE	Advance Retail
+EXCLUDE	Unemploy
+EXCLUDE	Producer Price Index by Commodity
+EXCLUDE	Miscellaneous
+EXCLUDE	""" other """
+EXCLUDE	Nondurable Goods Industries: Food Products:
+EXCLUDE	Industrial Production: Durable Goods:
+EXCLUDE	Industrial Production: Nondurable Goods:
+EXCLUDE	Industrial Production: Nondurable manufacturing:
+EXCLUDE	Industrial Production: Durable manufacturing:
+EXCLUDE	"Inventories, by Stage of"
