@@ -1,7 +1,10 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
@@ -48,19 +51,21 @@ public class FindCategories {
 
 	private static final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
-	private static PrintWriter									pw;
-	private static PrintWriter									pwSum;
 
-	private static List<Integer>	catList						= new ArrayList<>();
-	private static List<String>		optumaTickerList	= new ArrayList<>();
+	private static PrintWriter	pw;
+	private static PrintWriter	pwSum;
 
-	private static List<String> optumaExcludeNames = new ArrayList<>();
+	private static List<Integer> catList = new ArrayList<>();
 
-	private static List<String>	optumaIncludePeriod			= new ArrayList<>();
-	private static List<String>	optumaIncludeFreq				= new ArrayList<>();
+	private static List<String>	optumaTickerList				= new ArrayList<>();
 	private static List<String>	optumaIntermediateList	= new ArrayList<>();
+	private static List<String>	optumaFinalList					= new ArrayList<>();
 
-	private static List<String> optumaFinalList = new ArrayList<>();
+	private static List<String>	optumaIncludeNames			= new ArrayList<>();
+	private static List<String>	optumaExcludeNames			= new ArrayList<>();
+	private static List<String>	optumaIncludePeriod			= new ArrayList<>();
+	private static List<String>	optumaIncludeFrequency	= new ArrayList<>();
+	private static List<String>	optumaIncludeCode				= new ArrayList<>();
 
 	/**
 	 * net.ajaskey.market.tools.fred.getSeries
@@ -125,8 +130,23 @@ public class FindCategories {
 
 		String fld[];
 
-		boolean period = false;
 		fld = item.split("\t");
+		
+		// Check individual codes
+		try {
+			for (final String s : optumaIncludeCode) {
+				//System.out.println(s);
+				if (fld[3].trim().equalsIgnoreCase(s)) {
+					return true;
+				}
+			}
+
+		} catch (final Exception e) {
+			return false;
+		}
+		
+		//Check if valid Period
+		boolean period = false;
 		try {
 			for (final String s : optumaIncludePeriod) {
 				//System.out.println(s);
@@ -143,9 +163,10 @@ public class FindCategories {
 			return false;
 		}
 
+		// Check if valid frequency
 		boolean freq = false;
 		try {
-			for (final String s : optumaIncludeFreq) {
+			for (final String s : optumaIncludeFrequency) {
 				//System.out.println(s);
 				if (fld[5].toUpperCase().contains(s)) {
 					freq = true;
@@ -160,6 +181,7 @@ public class FindCategories {
 			return false;
 		}
 
+		// Check if name is excluded
 		try {
 			for (final String s : optumaExcludeNames) {
 				//System.out.println(s);
@@ -170,8 +192,21 @@ public class FindCategories {
 		} catch (final Exception e) {
 			return false;
 		}
+		
+		// Check if name is included
+		try {
+			for (final String s : optumaIncludeNames) {
+				//System.out.println(s);
+				if (fld[3].toUpperCase().contains(s)) {
+					return true;
+				}
+			}
+		} catch (final Exception e) {
+			return false;
+		}
 
-		return true;
+
+		return false;
 	}
 
 	/**
@@ -181,6 +216,8 @@ public class FindCategories {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+
+		setupIncluded();
 
 		pwSum = new PrintWriter("fred-categories.txt");
 
@@ -400,7 +437,12 @@ public class FindCategories {
 	 */
 	private static void processTickerList() throws FileNotFoundException {
 
-		FindCategories.setupExcluded();
+		try {
+			FindCategories.setupIncluded();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
 
 		for (final String s : optumaTickerList) {
 			if (FindCategories.isValid(s)) {
@@ -446,193 +488,66 @@ public class FindCategories {
 	/**
 	 *
 	 * net.ajaskey.market.tools.fred.setupExcluded
+	 * 
+	 * @throws IOException
+	 * @throws FileNotFoundException
 	 *
 	 */
-	private static void setupExcluded() {
+	private static void setupIncluded() throws FileNotFoundException, IOException {
 
-		optumaExcludeNames.add("EURO");
-		optumaExcludeNames.add("AUSTRALIA");
-		optumaExcludeNames.add("BELGIUM");
-		optumaExcludeNames.add("BRAZIL");
-		optumaExcludeNames.add("CANADA");
-		optumaExcludeNames.add("SWITZERLAND");
-		optumaExcludeNames.add("CHILE");
-		optumaExcludeNames.add("CHINA");
-		optumaExcludeNames.add("CZECH");
-		optumaExcludeNames.add("GERMANY");
-		optumaExcludeNames.add("DENMARK");
-		optumaExcludeNames.add("SPAIN");
-		optumaExcludeNames.add("ESTONIA");
-		optumaExcludeNames.add("FINLAND");
-		optumaExcludeNames.add("FRANCE");
-		optumaExcludeNames.add("KINGDOM");
-		optumaExcludeNames.add("GREECE");
-		optumaExcludeNames.add("HUNGARY");
-		optumaExcludeNames.add("INDIA");
-		optumaExcludeNames.add("IRELAND");
-		optumaExcludeNames.add("ITALY");
-		optumaExcludeNames.add("JAPAN");
-		optumaExcludeNames.add("KOREA");
-		optumaExcludeNames.add("LUXEMBOURG");
-		optumaExcludeNames.add("ASIA");
-		optumaExcludeNames.add("MEXICO");
-		optumaExcludeNames.add("NAFTA");
-		optumaExcludeNames.add("NETHERLANDS");
-		optumaExcludeNames.add("NORWAY");
-		optumaExcludeNames.add("ZEALAND");
-		optumaExcludeNames.add("OECD");
-		optumaExcludeNames.add("POLAND");
-		optumaExcludeNames.add("PORTUGAL");
-		optumaExcludeNames.add("RUSSIA");
-		optumaExcludeNames.add("REPUBLIC");
-		optumaExcludeNames.add("SLOVENIA");
-		optumaExcludeNames.add("SWEDEN");
-		optumaExcludeNames.add("TURKEY");
-		optumaExcludeNames.add("ARKANSAS");
-		optumaExcludeNames.add("ILLINOIS");
-		optumaExcludeNames.add("KENTUCKY");
-		optumaExcludeNames.add("MISSISSIPPI");
-		optumaExcludeNames.add("MISSOURI");
-		optumaExcludeNames.add("TENNESSEE");
-		optumaExcludeNames.add("TEXAS");
-		optumaExcludeNames.add("PHILADELPHIA");
-		optumaExcludeNames.add("NEW YORK");
-		optumaExcludeNames.add("ST. LOUIS");
-		optumaExcludeNames.add("SWISS");
-		optumaExcludeNames.add("BRITISH");
-		optumaExcludeNames.add("HQM");
-		optumaExcludeNames.add("FOREIGN");
-		optumaExcludeNames.add("REST OF THE WORLD");
-		optumaExcludeNames.add("LATIN AMERICA");
-		optumaExcludeNames.add("SOUTH AMERICA");
-		optumaExcludeNames.add("SNAP BENEFITS");
-		optumaExcludeNames.add("STATE AND LOCAL GOVERNMENTS");
-		optumaExcludeNames.add("TERM REPURCHASE AGREEMENTS");
-		optumaExcludeNames.add("TOTAL VALUE OF ISSUES,");
-		optumaExcludeNames.add("UNEMPLOYED:");
-		optumaExcludeNames.add("UNEMPLOYMENT LEVEL");
-		optumaExcludeNames.add("UNEMPLOYMENT RATE -");
-		optumaExcludeNames.add(", DUE");
-		optumaExcludeNames.add("ALLL ");
-		optumaExcludeNames.add("CBOE ");
-		optumaExcludeNames.add(", MEN ");
-		optumaExcludeNames.add("WOMEN ");
-		optumaExcludeNames.add("GOLD ");
-		optumaExcludeNames.add("HIGH SCHOOL");
-		optumaExcludeNames.add("DHI-DFH");
-		optumaExcludeNames.add("FACTORS ");
-		optumaExcludeNames.add("GLOBAL PRICE ");
-		optumaExcludeNames.add("MATURITY BETWEEN");
-		optumaExcludeNames.add(": MATURING");
-		optumaExcludeNames.add(" EMERGING MARKET");
-		optumaExcludeNames.add("ALL-TRANSACTIONS HOUSE PRICE INDEX FOR");
-		optumaExcludeNames.add("Producer Price Index by Commodity for Advertising Space and Time Sales:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Chemicals and Allied Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Construction:".toUpperCase());
-		optumaExcludeNames.add(
-		    "Producer Price Index by Commodity for Contract Work on Textile Products, Apparel, and Leather:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Data Processing and Related Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Farm Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Final Demand:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Furniture and Household Durables:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Fuels and Related Products and Power:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Health Care Services:".toUpperCase());
-		optumaExcludeNames
-		    .add("Producer Price Index by Commodity for Hides, Skins, Leather, and Related Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Inputs to Industries:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Insurance and Annuitie:".toUpperCase());
-		optumaExcludeNames
-		    .add("Producer Price Index by Commodity for Intermediate Demand by Commodity Type:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Lumber and Wood Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Machinery and Equipment:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Metal and Metal Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Metal Treatment Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Miscellaneous Products:".toUpperCase());
-		optumaExcludeNames
-		    .add("Producer Price Index by Commodity for Network Compensation from Broadcast and Cable Television and Radio:"
-		        .toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Nonmetallic Mineral Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Processed Foods and Feeds:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Professional Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Publishing Sales, Excluding Software:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Pulp, Paper, and Allied Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Real Estate Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Repair and Maintenance Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Retail Trade Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Rubber and Plastic Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Software Publishing:".toUpperCase());
-		optumaExcludeNames.add(
-		    "Producer Price Index by Commodity for Telecommunication, Cable, and Internet User Service:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Textile Products and Apparel:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Transportation Equipment:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Wholesale Trade Services:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Metal and Metal Products:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Machinery and Equipment:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Metal Treatment Services:".toUpperCase());
+		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/Fred-Include-List.txt")))) {
+			String line = "";
+			while (line != null) {
+				line = br.readLine();
+				if (line == null)
+					break;
+				//System.out.println(line);
+				
+				try {
+					final String uline = line.trim().toUpperCase();
 
-		optumaExcludeNames.add("Producer Price Index by Industry".toUpperCase());
+					if (uline.length() > 0) {
+						final String fld[] = uline.split("\t");
 
-		optumaExcludeNames.add("Producer Price Index by Commodity for Travel Arrangement Service:".toUpperCase());
-		optumaExcludeNames.add("Producer Price Index by Commodity for Special Indexes:".toUpperCase());
+						if (fld.length > 1) {
+							final String cat = fld[0].trim();
+							final String item = fld[1].replaceAll("\"", "");
 
-		optumaExcludeNames.add("Russell ".toUpperCase());
-		optumaExcludeNames.add("$".toUpperCase());
-		optumaExcludeNames.add("Unemployment Rate".toUpperCase());
-		optumaExcludeNames.add("Wilshire ".toUpperCase());
-		optumaExcludeNames.add("Other ".toUpperCase());
-		
-		optumaExcludeNames.add("Condo ".toUpperCase());
-		optumaExcludeNames.add("Delinquenc".toUpperCase());
-		optumaExcludeNames.add("Labor Force".toUpperCase());
-		optumaExcludeNames.add("Unemployed for ".toUpperCase());
+							if (cat.equals("INCLUDE")) {
+								optumaIncludeNames.add(item);
+							} else if (cat.equals("EXCLUDE")) {
+								optumaExcludeNames.add(item);
+							} else if (cat.equals("PERIOD")) {
+								optumaIncludePeriod.add(item);
+							} else if (cat.equals("FREQUENCY")) {
+								optumaIncludeFrequency.add(item);
+							} else if (cat.equals("CODE")) {
+								optumaIncludeCode.add(item);
+							}
+						}
+					}
 
-		optumaExcludeNames.add("New Houses Sold by Sales Price in the United States, ".toUpperCase());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
-		optumaExcludeNames.add("All Employees: Construction:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Durable Goods:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Education and Health Services:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Financial Activities:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Information:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Leisure and Hospitality:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Mining and Logging:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Nondurable Goods:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Professional and Business Services:".toUpperCase());
-		optumaExcludeNames.add("All Employees: Transportation and Warehousing:".toUpperCase());
-		optumaExcludeNames.add("Average Weekly Earnings of All Employees:".toUpperCase());
-		optumaExcludeNames.add("Average Weekly Hours of All Employees:".toUpperCase());
-		optumaExcludeNames.add("Civilian Labor Force".toUpperCase());
-		optumaExcludeNames.add("Civilian Noninstitutional Population -".toUpperCase());
-		optumaExcludeNames.add("Consumer Price Index for Urban".toUpperCase());
-		optumaExcludeNames.add("Employed full time:".toUpperCase());
-		optumaExcludeNames.add("Employment Cost Index:".toUpperCase());
-		optumaExcludeNames.add("Chicago".toUpperCase());
-		optumaExcludeNames.add("Charge-Off Rate on".toUpperCase());
-		optumaExcludeNames.add("All Sectors;".toUpperCase());
-
-		optumaExcludeNames.add("Employment-Population".toUpperCase());
-		optumaExcludeNames.add("Harmonized System".toUpperCase());
-		optumaExcludeNames.add("Home Price Index (".toUpperCase());
-		optumaExcludeNames.add("Home Price Sales Pair Counts for".toUpperCase());
-		optumaExcludeNames.add("(SITC)".toUpperCase());
-		optumaExcludeNames.add("Indexes of Aggregate".toUpperCase());
-		optumaExcludeNames.add("Mortgage Debt Outstanding by Type".toUpperCase());
-		optumaExcludeNames.add("Multiple Jobholders, ".toUpperCase());
-		optumaExcludeNames.add("National Rate on ".toUpperCase());
-		optumaExcludeNames.add("Net Interest Margin for U.S.".toUpperCase());
-		optumaExcludeNames.add("Net Percentage of Domestic Banks".toUpperCase());
-		optumaExcludeNames.add("Other Loans ".toUpperCase());
-		optumaExcludeNames.add("Other Separations".toUpperCase());
-		optumaExcludeNames.add("PADD ".toUpperCase());
-		optumaExcludeNames.add("Inputs to Stage ".toUpperCase());
-
-		optumaExcludeNames.add("All Employees: Other Services".toUpperCase());
-
-		optumaIncludePeriod.add("DAILY");
-		optumaIncludePeriod.add("WEEK");
-		optumaIncludePeriod.add("MONTH");
-		optumaIncludePeriod.add("QUARTER");
-
-		optumaIncludeFreq.add("NSA");
+		for (String s : optumaIncludeCode) {
+			System.out.printf("Code\t%s%n", s);
+		}		
+		for (String s : optumaIncludePeriod) {
+			System.out.printf("Period\t%s%n", s);
+		}
+		for (String s : optumaIncludeFrequency) {
+			System.out.printf("Frequency\t%s%n", s);
+		}
+		for (String s : optumaIncludeNames) {
+			System.out.printf("Include Name\t%s%n", s);
+		}
+		for (String s : optumaExcludeNames) {
+			System.out.printf("Exclude Name\t%s%n", s);
+		}
 
 	}
 
