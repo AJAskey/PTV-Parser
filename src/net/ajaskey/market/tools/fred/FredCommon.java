@@ -100,6 +100,31 @@ public class FredCommon {
 
 	}
 
+	public static void addSeries2(List<DataSeriesInfo> allSeries) throws FileNotFoundException, IOException {
+
+		final List<String> data = new ArrayList<>();
+
+		for (DataSeriesInfo dsi : allSeries) {
+			if (dsi.getTitle().length() == 0) {
+				dsi = new DataSeriesInfo(dsi.getName());
+			}
+			String s = toSeriesInfo(dsi);
+			data.add(s);
+		}
+
+		Collections.sort(data);
+
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
+			pw.println(infoHeader);
+
+			for (String s : data) {
+				System.out.print(s);
+				pw.print(s);
+			}
+		}
+
+	}
+
 	/**
 	 * net.ajaskey.market.tools.fred.cleanTitle
 	 *
@@ -170,7 +195,20 @@ public class FredCommon {
 	 */
 	public static String fromFullFileName(String fname) {
 
-		final String ret = "";
+		String ret = "";
+		if ((fname != null) && (fname.trim().length() > 2)) {
+			int idx = fname.lastIndexOf(".");
+			if (idx > 0) {
+				String ext = fname.substring(idx);
+				if (ext.equalsIgnoreCase(".csv")) {
+					String fld[] = fname.trim().split("]");
+					if (fld.length > 1) {
+						ret = fld[0].replaceAll("\\[", "").trim();
+						ret += ext;
+					}
+				}
+			}
+		}
 		return ret;
 	}
 
@@ -184,7 +222,7 @@ public class FredCommon {
 
 		String units = unt.trim().toLowerCase();
 		double ret = 1.0;
-		
+
 		if (units.contains("billion")) {
 			ret = BILLION;
 		} else if (units.contains("million")) {
@@ -202,15 +240,15 @@ public class FredCommon {
 	 * @param title
 	 * @return
 	 */
-//	public static String getShortTitle(String title) {
-//
-//		final String s1 = title.replaceAll("Disposable Personal Income", "DPI")
-//		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
-//		final String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "");
-//		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
-//		final String s4 = s3.replaceAll("\\s+", "");
-//		return s4.trim();
-//	}
+	//	public static String getShortTitle(String title) {
+	//
+	//		final String s1 = title.replaceAll("Disposable Personal Income", "DPI")
+	//		    .replaceAll("Personal Consumption Expenditures", "PCE").replaceAll("London Interbank Offered Rate", "");
+	//		final String s2 = s1.replaceAll("\\(", "").replaceAll("\\)", "").replaceAll(", based on U.S. Dollar", "");
+	//		final String s3 = s2.replaceAll("Compensation of Employees, Received: ", "");
+	//		final String s4 = s3.replaceAll("\\s+", "");
+	//		return s4.trim();
+	//	}
 
 	private static boolean isArticle(String word) {
 
@@ -265,9 +303,9 @@ public class FredCommon {
 	 * @param string
 	 * @return
 	 */
-	public static List<String> readSeriesNames(String fname) {
+	public static List<DataSeriesInfo> readSeriesNames(String fname) {
 
-		final List<String> retList = new ArrayList<>();
+		final List<DataSeriesInfo> retList = new ArrayList<>();
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
@@ -276,10 +314,13 @@ public class FredCommon {
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
 				if (str.length() > 1) {
-					final String s = str.substring(0, 1);
-					if (!s.contains("#")) {
-						final String fld[] = str.split("\t");
-						retList.add(fld[0].trim());
+					if (!str.equals(infoHeader)) {
+						final String s1 = str.substring(0, 1);
+						if (!s1.contains("#")) {
+							final String fld[] = str.split("\t");
+							DataSeriesInfo dsi = new DataSeriesInfo(fld);
+							retList.add(dsi);
+						}
 					}
 				}
 
@@ -334,6 +375,24 @@ public class FredCommon {
 
 		String ret = sb.toString().replaceAll("\\s+", " ").trim();
 
+		return ret;
+	}
+
+	public static String toSeriesInfo(DataSeriesInfo dsi) {
+
+		String ret = "";
+		String lastObs = "";
+		String lastUpdate = "";
+		if (dsi != null) {
+			if (dsi.getLastObservation() != null) {
+				lastObs = sdf.format(dsi.getLastObservation().getTime());
+			}
+			if (dsi.getLastUpdate() != null) {
+				lastUpdate = sdf.format(dsi.getLastUpdate().getTime());
+			}
+			ret = String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", dsi.getName(), dsi.getTitle(), dsi.getRefChart(),
+			    dsi.getFrequency(), dsi.getUnits(), dsi.getType(), lastUpdate, lastObs);
+		}
 		return ret;
 	}
 

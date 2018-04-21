@@ -49,11 +49,14 @@ import net.ajaskey.market.misc.Utils;
  */
 public class FindCategories {
 
+	private static final boolean useOnline = false;
+
 	private static final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
 
 	private static PrintWriter	pw;
 	private static PrintWriter	pwSum;
+	private static PrintWriter	pwDbg;
 
 	private static List<Integer> catList = new ArrayList<>();
 
@@ -131,20 +134,20 @@ public class FindCategories {
 		String fld[];
 
 		fld = item.split("\t");
-		
+
 		// Check individual codes
 		try {
-			for (final String s : optumaIncludeCode) {
+			for (String s : optumaIncludeCode) {
 				//System.out.println(s);
 				if (fld[2].trim().equalsIgnoreCase(s)) {
+					pwDbg.printf("IN\tCode\t%s%n", item);
 					return true;
 				}
 			}
-
 		} catch (final Exception e) {
 			return false;
 		}
-		
+
 		//Check if valid Period
 		boolean period = false;
 		try {
@@ -160,6 +163,7 @@ public class FindCategories {
 			period = false;
 		}
 		if (!period) {
+			pwDbg.printf("OUT\tPeriod\t%s%n", item);
 			return false;
 		}
 
@@ -178,6 +182,7 @@ public class FindCategories {
 			freq = false;
 		}
 		if (!freq) {
+			pwDbg.printf("OUT\tFrequency\t%s%n", item);
 			return false;
 		}
 
@@ -186,18 +191,20 @@ public class FindCategories {
 			for (final String s : optumaExcludeNames) {
 				//System.out.println(s);
 				if (fld[3].toUpperCase().contains(s)) {
+					pwDbg.printf("OUT\tEXCLUDED\t%s\t%s%n", item, s);
 					return false;
 				}
 			}
 		} catch (final Exception e) {
 			return false;
 		}
-		
+
 		// Check if name is included
 		try {
 			for (final String s : optumaIncludeNames) {
 				//System.out.println(s);
 				if (fld[3].toUpperCase().contains(s)) {
+					pwDbg.printf("IN\tINCLUDED\t%s\t%s%n", item,s);
 					return true;
 				}
 			}
@@ -205,7 +212,7 @@ public class FindCategories {
 			return false;
 		}
 
-
+		pwDbg.printf("OUT\tUNMATCHED\t%s%n", item);
 		return false;
 	}
 
@@ -217,20 +224,42 @@ public class FindCategories {
 	 */
 	public static void main(String[] args) throws IOException {
 
+		pwDbg = new PrintWriter("out/findcat.dbg");
+
 		setupIncluded();
 
-		pwSum = new PrintWriter("fred-categories.txt");
+		if (useOnline) {
 
-		FindCategories.processProductionBusiness();
-		FindCategories.processBanking();
-		FindCategories.processEmployment();
-		FindCategories.processPrices();
-		FindCategories.processNatlAccounts();
+			pwSum = new PrintWriter("fred-categories.txt");
+			FindCategories.processProductionBusiness();
+			FindCategories.processBanking();
+			FindCategories.processEmployment();
+			FindCategories.processPrices();
+			FindCategories.processNatlAccounts();
+			pwSum.close();
 
-		pwSum.close();
+			try (PrintWriter pwAll = new PrintWriter("data/optumaAllTickers.txt")) {
+				for (String s : optumaTickerList) {
+					pwAll.println(s);
+				}
+			}
+
+		} else {
+			try (BufferedReader br = new BufferedReader(new FileReader(new File("data/optumaAllTickers.txt")))) {
+				String line = "";
+				while (line != null) {
+					line = br.readLine();
+					if ((line != null) && (line.trim().length() > 0)) {
+						String s = line.trim().replaceAll("\"", "");
+						optumaTickerList.add(s);
+					}
+				}
+			}
+		}
 
 		FindCategories.processTickerList();
 
+		pwDbg.close();
 	}
 
 	/**
@@ -436,12 +465,6 @@ public class FindCategories {
 	 * @throws FileNotFoundException
 	 */
 	private static void processTickerList() throws FileNotFoundException {
-		
-		try (PrintWriter pwAll = new PrintWriter("out/optumaTickers.txt")) {
-			for (String s : optumaTickerList) {
-			pwAll.println(s);
-			}
-		}
 
 		try {
 			FindCategories.setupIncluded();
@@ -505,10 +528,9 @@ public class FindCategories {
 			String line = "";
 			while (line != null) {
 				line = br.readLine();
-				if (line == null)
-					break;
+				if (line == null) break;
 				//System.out.println(line);
-				
+
 				try {
 					final String uline = line.trim().toUpperCase();
 
@@ -541,7 +563,7 @@ public class FindCategories {
 
 		for (String s : optumaIncludeCode) {
 			System.out.printf("Code\t%s%n", s);
-		}		
+		}
 		for (String s : optumaIncludePeriod) {
 			System.out.printf("Period\t%s%n", s);
 		}

@@ -183,8 +183,7 @@ public class DataSeriesInfo {
 
 	private DataSeries.ResponseType	type;
 	private Calendar								lastUpdate;
-
-	private Calendar lastObservation;
+	private Calendar								lastObservation;
 
 	private int timeOffset;
 
@@ -208,16 +207,30 @@ public class DataSeriesInfo {
 	}
 
 	public DataSeriesInfo(String fld[]) {
-		this.name = fld[0].trim();
-		this.title = fld[1].trim();
-		this.refChart = fld[2].trim();
-		this.frequency = fld[3].trim();
-		this.units = fld[4].trim();
-		this.setType(fld[5].trim());
-		this.lastObservation = null;
-		this.lastUpdate = null;
-		this.seasonalAdjustment = "";
-		this.timeOffset = 0;
+		int len = fld.length;
+		if (len > 1) {
+			this.name = fld[0].trim();
+			this.title = fld[1].trim();
+			this.refChart = fld[2].trim();
+			this.frequency = fld[3].trim();
+			this.units = fld[4].trim();
+			this.setType(fld[5].trim());
+			this.lastObservation = null;
+			this.lastUpdate = null;
+			this.seasonalAdjustment = "";
+			this.timeOffset = 0;
+		} else {
+			this.name = fld[0];
+			this.title = "";
+			this.frequency = "";
+			this.units = "";
+			this.seasonalAdjustment = "";
+			this.lastObservation = null;
+			this.lastUpdate = null;
+			this.timeOffset = 0;
+			this.refChart = "";
+			this.type = DataSeries.ResponseType.LIN;
+		}
 	}
 
 	/**
@@ -237,7 +250,7 @@ public class DataSeriesInfo {
 			}
 
 			resp = Utils.getFromUrl(url);
-			
+
 			if (resp.length() < 1) {
 				return;
 			}

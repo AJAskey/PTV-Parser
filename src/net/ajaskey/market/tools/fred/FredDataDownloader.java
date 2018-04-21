@@ -25,7 +25,7 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *         
+ * 
  *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -41,12 +41,13 @@ public class FredDataDownloader {
 
 	final private static boolean UpdateAll = false;
 
-	private static boolean isNew(List<String> names, String name) {
+	private static File[] existingFiles = null;
 
-		for (final String n : names) {
-			String nn[] = name.split(" ");
-			//System.out.println(n + " " + nn);
-			if (n.equalsIgnoreCase(nn[0])) {
+	private static boolean isNew(List<DataSeriesInfo> dsiList, DataSeriesInfo newDsi) {
+
+		for (final DataSeriesInfo dsi : dsiList) {
+
+			if (dsi.getName().equalsIgnoreCase(newDsi.getName())) {
 				return UpdateAll;
 			}
 		}
@@ -65,27 +66,33 @@ public class FredDataDownloader {
 
 		Utils.makeDir(FredCommon.fredPath);
 
-		final List<String> new_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
-		final List<String> names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
+		File folder = new File(FredCommon.fredPath);
+		existingFiles = folder.listFiles();
 
-		final List<String> newNames = new ArrayList<>();
-		for (final String name : new_names) {
-			System.out.println(name);
-			if (FredDataDownloader.isNew(names, name)) {
-				names.add(name);
-				newNames.add(name);
+		final List<DataSeriesInfo> new_names = FredCommon
+		    .readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
+		final List<DataSeriesInfo> saved_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
+
+		final List<DataSeriesInfo> allNames = new ArrayList<>();
+
+		for (DataSeriesInfo dsi : saved_names) {
+			allNames.add(dsi);
+		}
+
+		for (final DataSeriesInfo dsi : new_names) {
+			//System.out.println(dsi);
+			if (FredDataDownloader.isNew(saved_names, dsi)) {
+				allNames.add(dsi);
 			}
 		}
 
-		for (final String name : names) {
-			final String s = name.trim();
-			if (!s.equalsIgnoreCase("name")) {
-				//System.out.println(s);
-				FredDataDownloader.process(s, 0.0, true, false, ResponseType.LIN);
-			}
+		for (final DataSeriesInfo dsi : allNames) {
+			final String s = dsi.getName().trim();
+			System.out.println(s);
+			FredDataDownloader.process(dsi, 0.0, true, false, ResponseType.LIN);
 		}
 
-		FredCommon.addSeries(newNames);
+		FredCommon.addSeries2(allNames);
 
 		Debug.pwDbg.close();
 
@@ -93,59 +100,76 @@ public class FredDataDownloader {
 	}
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.seriesFileExists
+	 *
+	 * @param fname
+	 * @return
+	 */
+	private static boolean seriesFileExists(String fname) {
+
+		for (File f : existingFiles) {
+			String ename = FredCommon.fromFullFileName(f.getName());
+			if (fname.equalsIgnoreCase(ename)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.fred.process
 	 *
-	 * @param series
+	 * @param seriesDsi
 	 * @param futureChg
 	 * @param noZeroValues
 	 * @param estimateData
 	 */
-	private static void process(String series, double futureChg, boolean noZeroValues, boolean estimateData,
+	private static void process(DataSeriesInfo seriesDsi, double futureChg, boolean noZeroValues, boolean estimateData,
 	    DataSeries.ResponseType unit) {
 
-		if ((series == null) || (series.length() < 2)) {
+		if ((seriesDsi == null) || (seriesDsi.getName().length() < 2)) {
 			return;
 		}
 
-		DataSeriesInfo dsi = null;
-		String fld[] = series.split("\t");
-		if (fld.length == 9) {
-			dsi = new DataSeriesInfo(series);
-		} else {
-			dsi = new DataSeriesInfo(series);
-		}
-
-		if (dsi != null) {
-			final String fname = FredCommon.toFullFileName(series, dsi.getTitle());
-
-			if (!UpdateAll) {
-				if (new File(fname).exists()) {
+		String fname = seriesDsi.getName().trim() + ".csv";
+		if (!UpdateAll) {
+			//System.out.println(seriesDsi);
+			if (!seriesDsi.getTitle().equalsIgnoreCase("Title")) {
+				if (seriesFileExists(fname)) {
 					return;
 				}
 			}
+		}
 
-			final DataSeries ds = new DataSeries(series);
+		System.out.println("new series : " + fname);
+		
+		final DataSeries ds = new DataSeries(seriesDsi.getName().trim());
+		if (seriesDsi.getTitle().length() == 0) {
+			seriesDsi = new DataSeriesInfo(seriesDsi.getName());
+		}
 
-			if (ds.isValid()) {
+		if (ds.isValid()) {
 
-				try {
+			try {
 
-					ds.setAggType(AggregationMethodType.EOP);
-					ds.setRespType(unit);
+				ds.setAggType(AggregationMethodType.EOP);
+				ds.setRespType(unit);
 
-					final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
+				final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
-					FredCommon.writeToOptuma(dvList, fname, series, dsi.getUnits());
-					Debug.pwDbg.println(ds);
-					Debug.pwDbg.println(futureChg);
+				String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
+				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits());
+				Debug.pwDbg.println(ds);
+				Debug.pwDbg.println(futureChg);
 
-					final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
-					System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
-					
-				} catch (Exception e) {
-				}
+				final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
+				System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
+				
+			} catch (Exception e) {
 			}
 		}
+
 	}
 }
