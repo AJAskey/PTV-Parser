@@ -176,7 +176,7 @@ public class ProcessQuandl {
 		//ProcessQuandl.writeOneList(div, "SP500_Dividend");
 
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
-		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
+		//ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
 		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
 		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");

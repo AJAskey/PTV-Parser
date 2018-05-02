@@ -71,9 +71,9 @@ public class UpdateFred {
 				final String name = f.getName();
 				final String ext = name.substring(name.length() - 3);
 
-				if (ext.equalsIgnoreCase("csv")) {
+				if ((ext.equalsIgnoreCase("csv")) && (name.substring(0, 1).equals("["))) {
 
-					final String series = name.substring(0, name.length() - 4);
+					final String series = FredCommon.fromFullFileNameToSeries(name);
 
 					//final InputRecord ir = UpdateFred.findInputRecord(series);
 					final DataSeriesInfo ldsi = FredCommon.findDsi(series);
@@ -93,7 +93,7 @@ public class UpdateFred {
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
 						if (dsi != null) {
-							
+
 							dsi.setType(ldsi.getType().toString());
 							dsi.setRefChart(ldsi.getRefChart());
 
@@ -148,7 +148,6 @@ public class UpdateFred {
 			}
 		}
 
-		
 		Collections.sort(dsList, new DsiAbcSorter());
 		FredCommon.writeSeriesInfo(dsList);
 

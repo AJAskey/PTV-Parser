@@ -55,52 +55,9 @@ public class FredCommon {
 
 	public static List<DataSeriesInfo> legacyDsi = null;
 
-	/**
-	 * net.ajaskey.market.tools.fred.addSeries
-	 *
-	 * @param new_names
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public static void addSeries(List<String> newSeries) throws FileNotFoundException, IOException {
 
-		final List<String> data = new ArrayList<>();
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(FredCommon.fredPath + "/fred-series-info.txt"))) {
-
-			String line;
-			// Utils.printCalendar(d.getDate());
-			while ((line = reader.readLine()) != null) {
-				if (line != null) {
-					if (!line.equalsIgnoreCase(infoHeader)) {
-						data.add(line.trim());
-					}
-				}
-			}
-		} catch (final FileNotFoundException e) {
-			data.clear();
-		}
-
-		Collections.sort(data);
-
-		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
-			pw.println(infoHeader);
-			for (final String str : data) {
-				pw.println(str);
-			}
-			//"Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation";
-			for (final String str : newSeries) {
-				final DataSeriesInfo dsi = new DataSeriesInfo(str.trim());
-				FredCommon.writeSeriesInfo(dsi, pw);
-				//				System.out.println(dsi);
-				//				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", str, dsi.getTitle(), dum, dsi.getFrequency(), dsi.getUnits(),
-				//				    dsi.getType(), sdf.format(dsi.getLastUpdate().getTime()), dum);
-			}
-		}
-
-	}
-
-	public static void addSeries2(List<DataSeriesInfo> allSeries) throws FileNotFoundException, IOException {
+	public static void addSeries(List<DataSeriesInfo> allSeries) throws FileNotFoundException, IOException {
 
 		final List<String> data = new ArrayList<>();
 
@@ -209,6 +166,21 @@ public class FredCommon {
 				}
 			}
 		}
+		return ret;
+	}
+	
+	public static String fromFullFileNameToSeries(String fname) {
+		String ret = "";
+		String str = fromFullFileName(fname);
+		if (str.length() > 0) {
+			int idx = str.lastIndexOf(".");
+			if (idx > 0) {
+				ret = str.substring(0, idx);
+			} else {
+				ret = str;
+			}
+		}
+
 		return ret;
 	}
 

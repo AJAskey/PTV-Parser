@@ -92,7 +92,7 @@ public class FredDataDownloader {
 			FredDataDownloader.process(dsi, 0.0, true, false, ResponseType.LIN);
 		}
 
-		FredCommon.addSeries2(allNames);
+		FredCommon.addSeries(allNames);
 
 		Debug.pwDbg.close();
 

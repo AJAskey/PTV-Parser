@@ -41,7 +41,7 @@ import net.ajaskey.market.tools.optuma.WriteStockData;
  */
 public class WeekendReset {
 
-	public static boolean AllWeek = true;
+	public static boolean AllWeek = false;
 
 	/**
 	 * net.ajaskey.market.ta.apps.main
