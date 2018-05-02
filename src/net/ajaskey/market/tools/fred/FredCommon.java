@@ -91,12 +91,19 @@ public class FredCommon {
 	public static String cleanTitle(String title) {
 
 		String sn = title.trim();
+
 		//sn = FredCommon.replace(sn, "\\)", "");
 		sn = sn.replaceAll("[/\\)\\(:,;\"]", " ");
 		sn = sn.replaceAll("U.S.", "US");
 		sn = FredCommon.replace(sn, "-Year", "Y");
 		sn = FredCommon.replace(sn, "-Month", "M");
 		sn = FredCommon.replace(sn, " -", "");
+
+		//System.out.println(sn);
+		
+		sn = FredCommon.replace(sn, "Control", "Ctrl");
+		sn = FredCommon.replace(sn, "Components", "Comp");
+		sn = FredCommon.replace(sn, "Ventilation  Heating  Air-Conditioning", "HVAC");
 		sn = FredCommon.replace(sn, "Contributions to percent change in GDPNow", "");
 		sn = FredCommon.replace(sn, "Except Manufacturers' Sales Branches and Offices Sales", "");
 		sn = FredCommon.replace(sn, "Commercial Paper", "CP");
@@ -126,10 +133,12 @@ public class FredCommon {
 		sn = FredCommon.replace(sn, "development", "Devel");
 		sn = FredCommon.replace(sn, "Consumer Price Index", "CPI");
 		sn = FredCommon.replace(sn, "Producer Price Index", "PPI");
+		sn = FredCommon.replace(sn, "Industries", "Ind");
+		sn = FredCommon.replace(sn, "Nondefense", "NonDef");
+		
 		sn = FredCommon.toSentenceCase(sn);
-		sn = sn.trim();
 
-		return sn.trim();
+		return sn;
 	}
 
 	public static DataSeriesInfo findDsi(String series) {
