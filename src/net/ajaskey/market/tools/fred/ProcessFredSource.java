@@ -44,7 +44,7 @@ public class ProcessFredSource {
 		String charset = "UTF-8";
 		String line;
 		try (BufferedReader in = new BufferedReader(
-		    new InputStreamReader(new FileInputStream("data/tst-src.txt"), charset))) {
+		    new InputStreamReader(new FileInputStream("data/cpi.html"), charset))) {
 
 			int knt = 0;
 			while ((line = in.readLine()) != null) {

@@ -39,7 +39,7 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class FredDataDownloader {
 
-	final private static boolean UpdateAll = false;
+	final private static boolean UpdateAll = true;
 
 	private static File[] existingFiles = null;
 
@@ -160,7 +160,8 @@ public class FredDataDownloader {
 				final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
 				String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
-				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits());
+				//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
+				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency());
 				Debug.pwDbg.println(ds);
 				Debug.pwDbg.println(futureChg);
 

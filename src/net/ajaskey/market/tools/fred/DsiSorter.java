@@ -38,13 +38,17 @@ public class DsiSorter implements Comparator<DataSeriesInfo> {
 	@Override
 	public int compare(DataSeriesInfo d1, DataSeriesInfo d2) {
 
-		int ret = 0;
-		if (d1.getLastUpdate().before(d2.getLastUpdate())) {
-			ret = 1;
-		} else if (d1.getLastUpdate().after(d2.getLastUpdate())) {
-			ret = -1;
+		try {
+			int ret = 0;
+			if (d1.getLastUpdate().before(d2.getLastUpdate())) {
+				ret = 1;
+			} else if (d1.getLastUpdate().after(d2.getLastUpdate())) {
+				ret = -1;
+			}
+			return ret;
+		} catch (Exception e) {
+			return 0;
 		}
-		return ret;
 	}
 
 }

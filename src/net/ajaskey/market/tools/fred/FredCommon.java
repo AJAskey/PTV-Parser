@@ -7,11 +7,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.math3.stat.regression.SimpleRegression;
+
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -47,15 +53,13 @@ public class FredCommon {
 
 	final static String infoHeader = "Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation";
 
-	final private static double BILLION = 1E9;
+	final public static double BILLION = 1E9;
 
-	final private static double MILLION = 1E6;
+	final public static double MILLION = 1E6;
 
-	final private static double THOUSAND = 1E3;
+	final public static double THOUSAND = 1E3;
 
 	public static List<DataSeriesInfo> legacyDsi = null;
-
-
 
 	public static void addSeries(List<DataSeriesInfo> allSeries) throws FileNotFoundException, IOException {
 
@@ -65,7 +69,7 @@ public class FredCommon {
 			if (dsi.getTitle().length() == 0) {
 				dsi = new DataSeriesInfo(dsi.getName());
 			}
-			String s = toSeriesInfo(dsi);
+			final String s = FredCommon.toSeriesInfo(dsi);
 			data.add(s);
 		}
 
@@ -74,7 +78,7 @@ public class FredCommon {
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
 			pw.println(infoHeader);
 
-			for (String s : data) {
+			for (final String s : data) {
 				System.out.print(s);
 				pw.print(s);
 			}
@@ -100,7 +104,7 @@ public class FredCommon {
 		sn = FredCommon.replace(sn, " -", "");
 
 		//System.out.println(sn);
-		
+
 		sn = FredCommon.replace(sn, "Control", "Ctrl");
 		sn = FredCommon.replace(sn, "Components", "Comp");
 		sn = FredCommon.replace(sn, "Ventilation  Heating  Air-Conditioning", "HVAC");
@@ -135,7 +139,7 @@ public class FredCommon {
 		sn = FredCommon.replace(sn, "Producer Price Index", "PPI");
 		sn = FredCommon.replace(sn, "Industries", "Ind");
 		sn = FredCommon.replace(sn, "Nondefense", "NonDef");
-		
+
 		sn = FredCommon.toSentenceCase(sn);
 
 		return sn;
@@ -153,7 +157,7 @@ public class FredCommon {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.fromFullFileName
 	 *
 	 * @param fname
@@ -163,11 +167,11 @@ public class FredCommon {
 
 		String ret = "";
 		if ((fname != null) && (fname.trim().length() > 2)) {
-			int idx = fname.lastIndexOf(".");
+			final int idx = fname.lastIndexOf(".");
 			if (idx > 0) {
-				String ext = fname.substring(idx);
+				final String ext = fname.substring(idx);
 				if (ext.equalsIgnoreCase(".csv")) {
-					String fld[] = fname.trim().split("]");
+					final String fld[] = fname.trim().split("]");
 					if (fld.length > 1) {
 						ret = fld[0].replaceAll("\\[", "").trim();
 						ret += ext;
@@ -177,17 +181,45 @@ public class FredCommon {
 		}
 		return ret;
 	}
-	
+
 	public static String fromFullFileNameToSeries(String fname) {
+
 		String ret = "";
-		String str = fromFullFileName(fname);
+		final String str = FredCommon.fromFullFileName(fname);
 		if (str.length() > 0) {
-			int idx = str.lastIndexOf(".");
+			final int idx = str.lastIndexOf(".");
 			if (idx > 0) {
 				ret = str.substring(0, idx);
 			} else {
 				ret = str;
 			}
+		}
+
+		return ret;
+	}
+
+	private static double getGrowth(String freq, double lastVal, double nextLastVal, double factor) {
+
+		double ret = 0.0;
+		try {
+			ret = ((lastVal - nextLastVal) / nextLastVal) * factor;
+		} catch (final Exception e) {
+			ret = 0.0;
+		}
+		return ret;
+	}
+
+	private static double getGrowthValue(String freq, double lastVal, double nextLastVal, double baseVal, double factor) {
+
+		double ret = 0.0;
+
+		System.out.printf("Growth : %s\t%f\t%f\t%f %n", freq, lastVal, nextLastVal, baseVal);
+
+		try {
+			final double growth = ((lastVal - nextLastVal) / nextLastVal) * factor;
+			ret = baseVal + (baseVal * growth);
+		} catch (final Exception e) {
+			ret = lastVal;
 		}
 
 		return ret;
@@ -201,7 +233,7 @@ public class FredCommon {
 	 */
 	private static double getScaler(String unt) {
 
-		String units = unt.trim().toLowerCase();
+		final String units = unt.trim().toLowerCase();
 		double ret = 1.0;
 
 		if (units.contains("billion")) {
@@ -253,6 +285,142 @@ public class FredCommon {
 		return false;
 	}
 
+	private static List<DataValues> propagate(List<DataValues> data, String freq) {
+
+		final List<DataValues> retProp = new ArrayList<>();
+
+		try {
+			final Calendar lastDate = data.get(data.size() - 1).getDate();
+			final Calendar today = Calendar.getInstance();
+			System.out.printf("%s\t%s\t Last Date%n", Utils.getString(lastDate), freq);
+			boolean doit = true;
+
+			final Calendar next = Utils.buildCalendar(lastDate);
+			double lval = data.get(data.size() - 1).getValue();
+
+			if (freq.trim().toUpperCase().contains("QUARTER")) {
+				
+				SimpleRegression reg = regression(data, 12);
+
+				while (doit) {
+					next.add(Calendar.MONTH, 3);
+					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					if (next.before(today)) {
+						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
+						    data.get(data.size() - 5).getValue(), lval, 0.25);
+						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
+						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
+						retProp.add(newDv);
+						lval = newVal;
+					} else {
+						final Calendar cal = Calendar.getInstance();
+						double newVal = 0.0;
+						if (retProp.size() > 0) {
+							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
+							    data.get(data.size() - 1).getValue(), lval, 0.33);
+						} else {
+							newVal = lval;
+						}
+						final DataValues newDv = new DataValues(cal, newVal);
+						retProp.add(newDv);
+						doit = false;
+					}
+				}
+			} else if (freq.trim().toUpperCase().contains("MONTH")) {
+				while (doit) {
+					next.add(Calendar.MONTH, 1);
+					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					if (next.before(today)) {
+						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
+						    data.get(data.size() - 13).getValue(), lval, 0.5);
+						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
+						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
+						retProp.add(newDv);
+						lval = newVal;
+					} else {
+						final Calendar cal = Calendar.getInstance();
+						double newVal = 0.0;
+						if (retProp.size() > 0) {
+							final int dom = cal.get(Calendar.DAY_OF_MONTH);
+							final double monthFactor = dom / 30.0;
+							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
+							    data.get(data.size() - 1).getValue(), lval, monthFactor);
+						} else {
+							newVal = lval;
+						}
+						final DataValues newDv = new DataValues(cal, newVal);
+						retProp.add(newDv);
+						doit = false;
+					}
+				}
+			} else if (freq.trim().toUpperCase().contains("WEEK")) {
+				while (doit) {
+					next.add(Calendar.DATE, 7);
+					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					if (next.before(today)) {
+						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
+						    data.get(data.size() - 5).getValue(), lval, 0.25);
+						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
+						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
+						retProp.add(newDv);
+						lval = newVal;
+					} else {
+						final Calendar cal = Calendar.getInstance();
+						double newVal = 0.0;
+						if (retProp.size() > 0) {
+							final int dow = cal.get(Calendar.DAY_OF_WEEK);
+							final double weekFactor = dow / 7.0;
+							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
+							    data.get(data.size() - 1).getValue(), lval, weekFactor);
+						} else {
+							newVal = lval;
+						}
+						final DataValues newDv = new DataValues(cal, newVal);
+						retProp.add(newDv);
+						doit = false;
+					}
+				}
+			}
+
+		} catch (final Exception e) {
+			e.printStackTrace();
+			retProp.clear();
+		}
+		return retProp;
+	}
+
+	public static List<DataValues> readFromOptuma(String fname) {
+
+		final List<DataValues> ret = new ArrayList<>();
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if ((str.length() > 4) && (!str.toLowerCase().contains("date"))) {
+					final String fld[] = str.split(",");
+					final Calendar cal = Calendar.getInstance();
+					final Date d = DataValues.sdf.parse(fld[0].trim());
+					cal.setTime(d);
+					final double val = Double.parseDouble(fld[1].trim());
+					final DataValues dv = new DataValues(cal, val);
+					ret.add(dv);
+				}
+
+			}
+		} catch (final FileNotFoundException e) {
+			ret.clear();
+		} catch (final IOException e) {
+			ret.clear();
+		} catch (final ParseException e) {
+			ret.clear();
+		}
+
+		return ret;
+
+	}
+
 	public static List<DataSeriesInfo> readSeriesInfo(String fname) throws FileNotFoundException, IOException {
 
 		final List<DataSeriesInfo> retList = new ArrayList<>();
@@ -299,7 +467,12 @@ public class FredCommon {
 						final String s1 = str.substring(0, 1);
 						if (!s1.contains("#")) {
 							final String fld[] = str.split("\t");
-							DataSeriesInfo dsi = new DataSeriesInfo(fld);
+							DataSeriesInfo dsi = null;
+							if (fld.length < 5) {
+								dsi = new DataSeriesInfo(fld[0]);
+							} else {
+								dsi = new DataSeriesInfo(fld);
+							}
 							retList.add(dsi);
 						}
 					}
@@ -310,6 +483,33 @@ public class FredCommon {
 			retList.clear();
 		}
 		return retList;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.regression
+	 *
+	 * @param data
+	 * @param valuesToUse
+	 * @return
+	 */
+	public static SimpleRegression regression(List<DataValues> data, int valuesToUse) {
+
+		final SimpleRegression ret = new SimpleRegression(true);
+
+		int len = data.size();
+
+		if (valuesToUse < len) {
+			return null;
+		}
+
+		int start = len - valuesToUse;
+		for (int i = start; i < len; i++) {
+			System.out.println(data.get(i));
+			ret.addData((double) i, data.get(i).getValue());
+		}
+		return ret;
+
 	}
 
 	/**
@@ -354,7 +554,7 @@ public class FredCommon {
 			}
 		}
 
-		String ret = sb.toString().replaceAll("\\s+", " ").trim();
+		final String ret = sb.toString().replaceAll("\\s+", " ").trim();
 
 		return ret;
 	}
@@ -419,16 +619,24 @@ public class FredCommon {
 	 *
 	 * @param data
 	 * @param seriesName
+	 * @param freq
 	 */
-	public static void writeToOptuma(List<DataValues> data, String fullFileName, String seriesName, String units) {
+	public static void writeToOptuma(List<DataValues> data, String fullFileName, String seriesName, String units,
+	    String freq) {
 
 		final double scaler = FredCommon.getScaler(units);
 
+		final List<DataValues> propagated = FredCommon.propagate(data, freq);
+
 		final File file = new File(fullFileName);
-		//System.out.println(file.getAbsolutePath());
 		try (PrintWriter pw = new PrintWriter(file)) {
 			pw.println("Date," + seriesName);
 			for (final DataValues dv : data) {
+				final String date = DataValues.sdf.format(dv.getDate().getTime());
+				final double d = dv.getValue() * scaler;
+				pw.printf("%s,%.2f%n", date, d);
+			}
+			for (final DataValues dv : propagated) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
 				final double d = dv.getValue() * scaler;
 				pw.printf("%s,%.2f%n", date, d);
@@ -437,5 +645,4 @@ public class FredCommon {
 			e.printStackTrace();
 		}
 	}
-
 }

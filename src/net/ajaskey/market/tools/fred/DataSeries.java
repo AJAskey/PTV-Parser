@@ -341,6 +341,7 @@ public class DataSeries {
 						if ((noZeroValues) && (zeroCheck == 0)) {
 							this.respKnt -= 1;
 						} else {
+							//System.out.println(Utils.getString(dv.getDate()));
 							retList.add(dv);
 							dv.getValue();
 							if (this.cal1 == null) {
@@ -357,7 +358,7 @@ public class DataSeries {
 		if (estimateData) {
 			this.appendEstimates(retList, futureChg);
 		} else {
-			duplicateLastValue(retList);
+			//duplicateLastValue(retList);
 		}
 
 		return retList;

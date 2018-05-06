@@ -103,4 +103,8 @@ public class DataValues {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return (String.format("%s\t%f", sdf.format(this.date.getTime()), this.value));
+	}
 }

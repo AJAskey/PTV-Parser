@@ -110,19 +110,22 @@ public class UpdateFred {
 									knt = 0;
 								}
 							} else {
-								Debug.pwDbg.println("Local file created Before                              "
-								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
-								final DataSeries ds = new DataSeries(series);
+								try {
+									Debug.pwDbg.println("Local file created Before                              "
+									    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+									final DataSeries ds = new DataSeries(series);
 
-								if (knt > 0) {
-									System.out.print("\n");
+									if (knt > 0) {
+										System.out.print("\n");
+									}
+									System.out.println(series);
+									knt = 0;
+
+									String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
+									//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
+									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(), dsi.getFrequency());
+								} catch (Exception e) {
 								}
-								System.out.println(series);
-								knt = 0;
-
-								String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
-								//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
-								FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits());
 							}
 
 							pw.println(dsi);
