@@ -44,7 +44,9 @@ public class UpdateFred {
 	public final static File							file	= new File(FredCommon.fredPath);
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
-	//private static List<InputRecord>		records		= new ArrayList<>();
+	
+	private static List<DataSeriesInfo> dnp_names = null;
+
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -59,6 +61,8 @@ public class UpdateFred {
 		Utils.makeDir(FredCommon.fredPath);
 
 		FredCommon.legacyDsi = FredCommon.readSeriesInfo(FredCommon.fredPath + "/fred-series-info.txt");
+		
+		dnp_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-do-not-propagate.txt");
 
 		final File list[] = file.listFiles();
 
@@ -121,9 +125,13 @@ public class UpdateFred {
 									System.out.println(series);
 									knt = 0;
 
+									boolean propagate = FredCommon.doPropagate(dnp_names, series);
+
 									String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
 									//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
-									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(), dsi.getFrequency());
+									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(),
+									    dsi.getFrequency(), propagate);
+									
 								} catch (Exception e) {
 								}
 							}

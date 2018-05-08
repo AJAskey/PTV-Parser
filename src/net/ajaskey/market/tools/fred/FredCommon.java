@@ -51,7 +51,7 @@ public class FredCommon {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
 
-	final static String infoHeader = "Name\tTitle\tOptuma File\tFrequency\tUnits\tType\tLast Download\tLast Observation";
+	final static String infoHeader = "Name\tTitle\tMethod\tFrequency\tUnits\tType\tLast Download\tLast Observation";
 
 	final public static double BILLION = 1E9;
 
@@ -292,89 +292,92 @@ public class FredCommon {
 		try {
 			final Calendar lastDate = data.get(data.size() - 1).getDate();
 			final Calendar today = Calendar.getInstance();
-			System.out.printf("%s\t%s\t Last Date%n", Utils.getString(lastDate), freq);
+			//System.out.printf("%s\t%s\t Last Date%n", Utils.getString(lastDate), freq);
 			boolean doit = true;
 
 			final Calendar next = Utils.buildCalendar(lastDate);
-			double lval = data.get(data.size() - 1).getValue();
+			data.get(data.size() - 1).getValue();
 
 			if (freq.trim().toUpperCase().contains("QUARTER")) {
-				
-				SimpleRegression reg = regression(data, 12);
+
+				int regKnt = 18;
+				final SimpleRegression reg = FredCommon.regression(data, regKnt);
+				if (reg == null) {
+					return retProp;
+				}
 
 				while (doit) {
 					next.add(Calendar.MONTH, 3);
-					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					//System.out.printf("%s\t%f%n", Utils.getString(next), lval);
 					if (next.before(today)) {
-						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
-						    data.get(data.size() - 5).getValue(), lval, 0.25);
+
+						final double newVal = reg.predict(regKnt++);
+
 						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
-						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
+						//System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
 						retProp.add(newDv);
-						lval = newVal;
 					} else {
 						final Calendar cal = Calendar.getInstance();
-						double newVal = 0.0;
-						if (retProp.size() > 0) {
-							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
-							    data.get(data.size() - 1).getValue(), lval, 0.33);
-						} else {
-							newVal = lval;
-						}
+						final double newVal = reg.predict((double) regKnt - 0.5);
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
 						doit = false;
 					}
 				}
 			} else if (freq.trim().toUpperCase().contains("MONTH")) {
+
+				int regKnt = 18;
+				final SimpleRegression reg = FredCommon.regression(data, regKnt);
+				if (reg == null) {
+					return retProp;
+				}
+
 				while (doit) {
 					next.add(Calendar.MONTH, 1);
-					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					//System.out.printf("%s\t%f%n", Utils.getString(next), lval);
 					if (next.before(today)) {
-						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
-						    data.get(data.size() - 13).getValue(), lval, 0.5);
+
+						final double newVal = reg.predict(regKnt++);
+
 						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
-						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
 						retProp.add(newDv);
-						lval = newVal;
 					} else {
+
 						final Calendar cal = Calendar.getInstance();
-						double newVal = 0.0;
-						if (retProp.size() > 0) {
-							final int dom = cal.get(Calendar.DAY_OF_MONTH);
-							final double monthFactor = dom / 30.0;
-							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
-							    data.get(data.size() - 1).getValue(), lval, monthFactor);
-						} else {
-							newVal = lval;
-						}
+						final int dom = cal.get(Calendar.DAY_OF_MONTH);
+						final double monthFactor = dom / 30.0;
+						regKnt--;
+						final double newVal = reg.predict((double) regKnt + monthFactor);
+
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
 						doit = false;
 					}
 				}
 			} else if (freq.trim().toUpperCase().contains("WEEK")) {
+
+				int regKnt = 26;
+				final SimpleRegression reg = FredCommon.regression(data, regKnt);
+				if (reg == null) {
+					return retProp;
+				}
+
 				while (doit) {
 					next.add(Calendar.DATE, 7);
-					System.out.printf("%s\t%f%n", Utils.getString(next), lval);
 					if (next.before(today)) {
-						final double newVal = FredCommon.getGrowthValue(freq, data.get(data.size() - 1).getValue(),
-						    data.get(data.size() - 5).getValue(), lval, 0.25);
+
+						final double newVal = reg.predict(regKnt++);
+
 						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
-						System.out.printf("%s\t%s\t%f\t%f%n", Utils.getString(next), freq, lval, newVal);
 						retProp.add(newDv);
-						lval = newVal;
 					} else {
+
 						final Calendar cal = Calendar.getInstance();
-						double newVal = 0.0;
-						if (retProp.size() > 0) {
-							final int dow = cal.get(Calendar.DAY_OF_WEEK);
-							final double weekFactor = dow / 7.0;
-							newVal = FredCommon.getGrowthValue(freq, retProp.get(retProp.size() - 1).getValue(),
-							    data.get(data.size() - 1).getValue(), lval, weekFactor);
-						} else {
-							newVal = lval;
-						}
+						final int dow = cal.get(Calendar.DAY_OF_WEEK);
+						final double weekFactor = dow / 7.0;
+						regKnt--;
+						final double newVal = reg.predict((double) regKnt + weekFactor);
+
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
 						doit = false;
@@ -486,7 +489,7 @@ public class FredCommon {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.regression
 	 *
 	 * @param data
@@ -495,21 +498,26 @@ public class FredCommon {
 	 */
 	public static SimpleRegression regression(List<DataValues> data, int valuesToUse) {
 
-		final SimpleRegression ret = new SimpleRegression(true);
+		try {
+			final SimpleRegression ret = new SimpleRegression(true);
 
-		int len = data.size();
+			final int len = data.size();
 
-		if (valuesToUse < len) {
+			if (valuesToUse > len) {
+				return null;
+			}
+
+			final int start = len - valuesToUse;
+			int regKnt = 0;
+			for (int i = start; i < len; i++) {
+				//System.out.println(data.get(i));
+				ret.addData(regKnt++, data.get(i).getValue());
+			}
+
+			return ret;
+		} catch (Exception e) {
 			return null;
 		}
-
-		int start = len - valuesToUse;
-		for (int i = start; i < len; i++) {
-			System.out.println(data.get(i));
-			ret.addData((double) i, data.get(i).getValue());
-		}
-		return ret;
-
 	}
 
 	/**
@@ -588,8 +596,8 @@ public class FredCommon {
 	public static void writeSeriesInfo(DataSeriesInfo ds, PrintWriter pw) {
 
 		if ((pw != null) && (ds != null)) {
-			pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
-			    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+			pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
+			    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
 			    sdf.format(ds.getLastObservation().getTime()));
 		}
 	}
@@ -606,8 +614,8 @@ public class FredCommon {
 			pw.println(infoHeader);
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getRefChart(), ds.getFrequency(),
-				    ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
+				    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
 				    sdf.format(ds.getLastObservation().getTime()));
 			}
 		}
@@ -622,11 +630,15 @@ public class FredCommon {
 	 * @param freq
 	 */
 	public static void writeToOptuma(List<DataValues> data, String fullFileName, String seriesName, String units,
-	    String freq) {
+	    String freq, boolean propagate) {
 
 		final double scaler = FredCommon.getScaler(units);
 
-		final List<DataValues> propagated = FredCommon.propagate(data, freq);
+		List<DataValues> propagated = new ArrayList<>();
+
+		if (propagate) {
+			propagated = FredCommon.propagate(data, freq);
+		}
 
 		final File file = new File(fullFileName);
 		try (PrintWriter pw = new PrintWriter(file)) {
@@ -644,5 +656,22 @@ public class FredCommon {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.doPropagate
+	 *
+	 * @param name
+	 * @return
+	 */
+	public static boolean doPropagate(List<DataSeriesInfo> dnp_list, String name) {
+
+		for (DataSeriesInfo dsi : dnp_list) {
+			if (name.equalsIgnoreCase(dsi.getName())) {
+				System.out.println("Not Propagating : " + name);
+				return false;
+			}
+		}
+		return true;
 	}
 }

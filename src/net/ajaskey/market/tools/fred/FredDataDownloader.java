@@ -39,9 +39,11 @@ import net.ajaskey.market.tools.fred.DataSeries.ResponseType;
  */
 public class FredDataDownloader {
 
-	final private static boolean UpdateAll = true;
+	final private static boolean UpdateAll = false;
 
 	private static File[] existingFiles = null;
+
+	private static List<DataSeriesInfo> dnp_names = null;
 
 	private static boolean isNew(List<DataSeriesInfo> dsiList, DataSeriesInfo newDsi) {
 
@@ -72,6 +74,8 @@ public class FredDataDownloader {
 		final List<DataSeriesInfo> new_names = FredCommon
 		    .readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
 		final List<DataSeriesInfo> saved_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
+
+		dnp_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-do-not-propagate.txt");
 
 		final List<DataSeriesInfo> allNames = new ArrayList<>();
 
@@ -144,7 +148,7 @@ public class FredDataDownloader {
 		}
 
 		System.out.println("new series : " + fname);
-		
+
 		final DataSeries ds = new DataSeries(seriesDsi.getName().trim());
 		if (seriesDsi.getTitle().length() == 0) {
 			seriesDsi = new DataSeriesInfo(seriesDsi.getName());
@@ -159,15 +163,18 @@ public class FredDataDownloader {
 
 				final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
+				boolean propagate = FredCommon.doPropagate(dnp_names, seriesDsi.getName());
+
 				String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
 				//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
-				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency());
+				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency(),
+				    propagate);
 				Debug.pwDbg.println(ds);
 				Debug.pwDbg.println(futureChg);
 
 				final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
 				System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
-				
+
 			} catch (Exception e) {
 			}
 		}
