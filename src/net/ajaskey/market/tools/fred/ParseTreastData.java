@@ -48,7 +48,7 @@ public class ParseTreastData {
 	public static void main(String[] args) throws IOException {
 
 		final List<DateValue> pastList = readFile(
-		    FredCommon.fredPath + "/[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv");
+		    FredCommon.fredPath + "[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv");
 		final List<DateValue> dvList = readFile("data\\treast-data.csv");
 
 		process(pastList, dvList);
@@ -94,6 +94,7 @@ public class ParseTreastData {
 		}
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL.csv");
+		    PrintWriter pw2018 = new PrintWriter(FredCommon.fredPath + "/TREAST-2018.csv");
 		    PrintWriter pw50 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-50.csv");
 		    PrintWriter pw90 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-90.csv")) {
 
@@ -101,10 +102,13 @@ public class ParseTreastData {
 			double last50 = 0;
 			double last90 = 0;
 			Calendar lastDate = null;
+			Calendar end2018 = Calendar.getInstance();
+			end2018.set(2019, Calendar.JANUARY, 1);
 			for (DateValue dv : pastList) {
 				pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
+				pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				last = dv.value;
 				last50 = dv.value;
 				last90 = dv.value;
@@ -122,6 +126,10 @@ public class ParseTreastData {
 					pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
 					pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot50);
 					pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot90);
+					if (dv.date.before(end2018)) {
+						System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
+						pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);						
+					}
 				}
 			}
 		}

@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -143,6 +145,80 @@ public class FredCommon {
 		sn = FredCommon.toSentenceCase(sn);
 
 		return sn;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.copyToSimpleFileNames
+	 *
+	 */
+	public static void copyToSimpleFileNames() {
+
+		FredCommon.copyToSimpleFileNames("");
+
+	}
+
+	public static void copyToSimpleFileNames(String toDir) {
+
+		int len = toDir.trim().length();
+
+		String toDirectory = FredCommon.fredPath;
+		if (len > 0) {
+			toDirectory = toDir.trim();
+		}
+
+		len = toDirectory.length();
+		String eos = toDirectory.substring(len - 1, len);
+
+		if (!eos.equals("\\")) {
+			toDirectory += "\\";
+		}
+		System.out.println(toDirectory);
+
+		final List<String> copy_names = FredCommon.readTextNames(FredCommon.fredPath + "fred-copy-names.txt");
+
+		final File folder = new File(FredCommon.fredPath);
+		final File[] existingFiles = folder.listFiles();
+
+		for (final String s : copy_names) {
+			System.out.println(s);
+		}
+
+		for (final File from : existingFiles) {
+			final String name = from.getName();
+			if (name.contains("[")) {
+				final String ename = FredCommon.fromFullFileNameToSeries(name);
+				for (final String s : copy_names) {
+					if (ename.equalsIgnoreCase(s)) {
+						final File to = new File(toDirectory + ename + ".csv");
+						System.out.println(to.getAbsolutePath());
+						try {
+							Files.copy(from.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
+						} catch (final IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.doPropagate
+	 *
+	 * @param name
+	 * @return
+	 */
+	public static boolean doPropagate(List<DataSeriesInfo> dnp_list, String name) {
+
+		for (final DataSeriesInfo dsi : dnp_list) {
+			if (name.equalsIgnoreCase(dsi.getName())) {
+				System.out.println("Not Propagating : " + name);
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public static DataSeriesInfo findDsi(String series) {
@@ -318,7 +394,7 @@ public class FredCommon {
 						retProp.add(newDv);
 					} else {
 						final Calendar cal = Calendar.getInstance();
-						final double newVal = reg.predict((double) regKnt - 0.5);
+						final double newVal = reg.predict(regKnt - 0.5);
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
 						doit = false;
@@ -347,7 +423,7 @@ public class FredCommon {
 						final int dom = cal.get(Calendar.DAY_OF_MONTH);
 						final double monthFactor = dom / 30.0;
 						regKnt--;
-						final double newVal = reg.predict((double) regKnt + monthFactor);
+						final double newVal = reg.predict(regKnt + monthFactor);
 
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
@@ -376,7 +452,7 @@ public class FredCommon {
 						final int dow = cal.get(Calendar.DAY_OF_WEEK);
 						final double weekFactor = dow / 7.0;
 						regKnt--;
-						final double newVal = reg.predict((double) regKnt + weekFactor);
+						final double newVal = reg.predict(regKnt + weekFactor);
 
 						final DataValues newDv = new DataValues(cal, newVal);
 						retProp.add(newDv);
@@ -488,6 +564,33 @@ public class FredCommon {
 		return retList;
 	}
 
+	public static List<String> readTextNames(String fname) {
+
+		final List<String> retList = new ArrayList<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					final String s1 = str.substring(0, 1);
+					if (!s1.contains("#")) {
+						final String fld[] = str.split("[\\s+,]");
+						if (fld.length > 0) {
+							retList.add(fld[0].trim());
+						}
+					}
+				}
+
+			}
+		} catch (final IOException e) {
+			retList.clear();
+		}
+		return retList;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.fred.regression
@@ -515,7 +618,7 @@ public class FredCommon {
 			}
 
 			return ret;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return null;
 		}
 	}
@@ -656,22 +759,5 @@ public class FredCommon {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.doPropagate
-	 *
-	 * @param name
-	 * @return
-	 */
-	public static boolean doPropagate(List<DataSeriesInfo> dnp_list, String name) {
-
-		for (DataSeriesInfo dsi : dnp_list) {
-			if (name.equalsIgnoreCase(dsi.getName())) {
-				System.out.println("Not Propagating : " + name);
-				return false;
-			}
-		}
-		return true;
 	}
 }
