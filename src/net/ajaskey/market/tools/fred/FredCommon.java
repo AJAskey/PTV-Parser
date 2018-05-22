@@ -68,11 +68,14 @@ public class FredCommon {
 		final List<String> data = new ArrayList<>();
 
 		for (DataSeriesInfo dsi : allSeries) {
-			if (dsi.getTitle().length() == 0) {
-				dsi = new DataSeriesInfo(dsi.getName());
+			try {
+				if (dsi.getTitle().length() == 0) {
+					dsi = new DataSeriesInfo(dsi.getName());
+				}
+				final String s = FredCommon.toSeriesInfo(dsi);
+				data.add(s);
+			} catch (Exception e) {
 			}
-			final String s = FredCommon.toSeriesInfo(dsi);
-			data.add(s);
 		}
 
 		Collections.sort(data);
@@ -98,14 +101,11 @@ public class FredCommon {
 
 		String sn = title.trim();
 
-		//sn = FredCommon.replace(sn, "\\)", "");
 		sn = sn.replaceAll("[/\\)\\(:,;\"]", " ");
 		sn = sn.replaceAll("U.S.", "US");
 		sn = FredCommon.replace(sn, "-Year", "Y");
 		sn = FredCommon.replace(sn, "-Month", "M");
 		sn = FredCommon.replace(sn, " -", "");
-
-		//System.out.println(sn);
 
 		sn = FredCommon.replace(sn, "Control", "Ctrl");
 		sn = FredCommon.replace(sn, "Components", "Comp");
@@ -167,7 +167,7 @@ public class FredCommon {
 		}
 
 		len = toDirectory.length();
-		String eos = toDirectory.substring(len - 1, len);
+		final String eos = toDirectory.substring(len - 1, len);
 
 		if (!eos.equals("\\")) {
 			toDirectory += "\\";
@@ -744,17 +744,21 @@ public class FredCommon {
 		}
 
 		final File file = new File(fullFileName);
-		try (PrintWriter pw = new PrintWriter(file)) {
+		final File fileshort = new File(FredCommon.fredPath + seriesName + ".csv");
+		try (PrintWriter pw = new PrintWriter(file); PrintWriter pwShort = new PrintWriter(fileshort)) {
 			pw.println("Date," + seriesName);
+			pwShort.println("Date," + seriesName);
 			for (final DataValues dv : data) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
 				final double d = dv.getValue() * scaler;
 				pw.printf("%s,%.2f%n", date, d);
+				pwShort.printf("%s,%.2f%n", date, d);
 			}
 			for (final DataValues dv : propagated) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
 				final double d = dv.getValue() * scaler;
 				pw.printf("%s,%.2f%n", date, d);
+				pwShort.printf("%s,%.2f%n", date, d);
 			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();

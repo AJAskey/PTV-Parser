@@ -28,7 +28,7 @@ package net.ajaskey.market.tools.optuma;
  */
 public class OptumaCommon {
 
-	public final static String optumaPath = "d:\\data\\MA\\CSV Data\\";
+	public final static String optumaPath = "c:\\data\\MA\\CSV Data\\";
 	//public final static String optumaPath = "C:\\Users\\ajask\\Dropbox\\Optuma\\";
 
 }

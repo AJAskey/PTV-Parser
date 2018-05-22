@@ -44,9 +44,8 @@ public class UpdateFred {
 	public final static File							file	= new File(FredCommon.fredPath);
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
-	
-	private static List<DataSeriesInfo> dnp_names = null;
 
+	private static List<DataSeriesInfo> dnp_names = null;
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -61,7 +60,7 @@ public class UpdateFred {
 		Utils.makeDir(FredCommon.fredPath);
 
 		FredCommon.legacyDsi = FredCommon.readSeriesInfo(FredCommon.fredPath + "/fred-series-info.txt");
-		
+
 		dnp_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-do-not-propagate.txt");
 
 		final File list[] = file.listFiles();
@@ -131,7 +130,7 @@ public class UpdateFred {
 									//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
 									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(),
 									    dsi.getFrequency(), propagate);
-									
+
 								} catch (Exception e) {
 								}
 							}
@@ -153,9 +152,12 @@ public class UpdateFred {
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {
-				pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
-				    sdf.format(ds.getLastUpdate().getTime()), FredCommon.sdf.format(ds.getLastObservation().getTime()),
-				    ds.getTitle());
+				try {
+					pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
+					    sdf.format(ds.getLastUpdate().getTime()), FredCommon.sdf.format(ds.getLastObservation().getTime()),
+					    ds.getTitle());
+				} catch (Exception e) {
+				}
 			}
 		}
 

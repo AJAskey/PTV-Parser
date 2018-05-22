@@ -158,7 +158,7 @@ public class Utils {
 
 	public static String getDataPath() {
 
-		final String path = System.getProperty("dataPath", "D:\\Data\\EODData\\DataClient");
+		final String path = System.getProperty("dataPath", "C:\\Data\\EODData\\DataClient");
 		return path;
 	}
 

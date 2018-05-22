@@ -47,4 +47,9 @@ public class OneValueData {
 	}
 
 
+	@Override
+	public String toString() {
+		String s = String.format("%s\t%f", Utils.getString(this.date), this.value);
+		return s;
+	}
 }

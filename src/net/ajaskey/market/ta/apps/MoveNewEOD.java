@@ -1,23 +1,15 @@
 
 package net.ajaskey.market.ta.apps;
 
+import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
-import net.ajaskey.market.tools.ProcessIshares;
-import net.ajaskey.market.tools.ProcessSPDRs;
-import net.ajaskey.market.tools.optuma.WriteIndexEOD;
-import net.ajaskey.market.tools.optuma.WriteStockData;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 /**
- * This application runs the other applications to reset the stock lists to
- * contain new those stocks that meets the price and volume requirements.
+ * This class...
  *
- * @author Andy Askey <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author Andy <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -28,7 +20,7 @@ import net.ajaskey.market.tools.optuma.WriteStockData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -39,49 +31,46 @@ import net.ajaskey.market.tools.optuma.WriteStockData;
  *         SOFTWARE. </p>
  *
  */
-public class WeekendReset {
+public class MoveNewEOD {
 
-	public static boolean AllWeek = false;
+	public static void main(String[] args) {
+
+		String dest = "C:\\Data\\EODData\\DataClient\\ASCII\\";
+
+		MoveNewEOD.moveFile(dest);
+	}
 
 	/**
 	 * net.ajaskey.market.ta.apps.main
 	 *
 	 * @param args
-	 * @throws IOException
-	 * @throws SAXException
-	 * @throws ParserConfigurationException
-	 * @throws ParseException
 	 */
-	public static void main(String[] args)
-	    throws ParserConfigurationException, SAXException, IOException, ParseException {
+	public static void moveFile(String path) {
 
-		MoveNewEOD.moveFile("C:\\Data\\EODData\\DataClient\\ASCII\\");
+		File downloads = new File("C:\\Users\\Andy\\Downloads");
+		final File flist[] = downloads.listFiles();
 
-		if (WeekendReset.AllWeek) {
+		for (File f : flist) {
+			File to = null;
+			if (f.getName().toUpperCase().contains("NYSE_2018")) {
+				to = new File(path + "NYSE\\" + f.getName());
+			} else if (f.getName().toUpperCase().contains("NASDAQ_2018")) {
+				to = new File(path + "NASDAQ\\" + f.getName());
+			} else if (f.getName().toUpperCase().contains("AMEX_2018")) {
+				to = new File(path + "AMEX\\" + f.getName());
+			} else if (f.getName().toUpperCase().contains("INDEX_2018")) {
+				to = new File(path + "INDEX\\" + f.getName());
+			}
 
-			/**
-			 * Create stock-list.txt for stocks over $10 and 500k volume.
-			 */
-			GenStockList.main(args);
-			System.gc();
-
-			ProcessIshares.main(args);
-
-			ProcessSPDRs.main(args);
-
-			WriteStockData.main(args);
-
+			try {
+				if (to != null) {
+					Files.move(f.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
+					System.out.println(f.getAbsolutePath());
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-
-		Internals.main(args);
-		
-		if (WeekendReset.AllWeek) {
-			BreadthOfList.main(args);
-		}
-		
-		WriteIndexEOD.main(args);
-
-		System.out.println("Weekend Reset Complete.");
 
 	}
 

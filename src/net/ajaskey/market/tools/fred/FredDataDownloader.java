@@ -137,47 +137,51 @@ public class FredDataDownloader {
 			return;
 		}
 
-		String fname = seriesDsi.getName().trim() + ".csv";
-		if (!UpdateAll) {
-			//System.out.println(seriesDsi);
-			if (!seriesDsi.getTitle().equalsIgnoreCase("Title")) {
-				if (seriesFileExists(fname)) {
-					return;
+		try {
+			String fname = seriesDsi.getName().trim() + ".csv";
+			if (!UpdateAll) {
+				//System.out.println(seriesDsi);
+				if (!seriesDsi.getTitle().equalsIgnoreCase("Title")) {
+					if (seriesFileExists(fname)) {
+						return;
+					}
 				}
 			}
-		}
 
-		System.out.println("new series : " + fname);
+			System.out.println("new series : " + fname);
 
-		final DataSeries ds = new DataSeries(seriesDsi.getName().trim());
-		if (seriesDsi.getTitle().length() == 0) {
-			seriesDsi = new DataSeriesInfo(seriesDsi.getName());
-		}
-
-		if (ds.isValid()) {
-
-			try {
-
-				ds.setAggType(AggregationMethodType.EOP);
-				ds.setRespType(unit);
-
-				final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
-
-				boolean propagate = FredCommon.doPropagate(dnp_names, seriesDsi.getName());
-
-				String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
-				//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
-				FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency(),
-				    propagate);
-				Debug.pwDbg.println(ds);
-				Debug.pwDbg.println(futureChg);
-
-				final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
-				System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
-
-			} catch (Exception e) {
+			final DataSeries ds = new DataSeries(seriesDsi.getName().trim());
+			if (seriesDsi.getTitle().length() == 0) {
+				seriesDsi = new DataSeriesInfo(seriesDsi.getName());
 			}
-		}
 
+			if (ds.isValid()) {
+
+				try {
+
+					ds.setAggType(AggregationMethodType.EOP);
+					ds.setRespType(unit);
+
+					final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
+
+					boolean propagate = FredCommon.doPropagate(dnp_names, seriesDsi.getName());
+
+					String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
+					//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
+					FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency(),
+					    propagate);
+					Debug.pwDbg.println(ds);
+					Debug.pwDbg.println(futureChg);
+
+					final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
+					System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);
+
+				} catch (Exception e) {
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
 	}
 }

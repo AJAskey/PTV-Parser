@@ -1,13 +1,21 @@
+
 package net.ajaskey.market.tools.quandl;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.fred.FredCommon;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 
 /**
@@ -36,6 +44,10 @@ import net.ajaskey.market.tools.helpers.OhlcvData;
  *
  */
 public class ProcessQuandl {
+
+	public final static SimpleDateFormat sdfFile = new SimpleDateFormat("yyyy-MM-dd");
+
+	public static List<LastDataPoint> lastDataPoint = new ArrayList<>();
 
 	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
 
@@ -99,6 +111,14 @@ public class ProcessQuandl {
 			ret.add(dp);
 		}
 
+		for (LastDataPoint ldp : lastDataPoint) {
+			if (url.contains(ldp.name)) {
+				final OneValueData dp = new OneValueData(Calendar.getInstance(), ldp.value);
+				ret.add(0, dp);
+				break;
+			}
+		}
+
 		return ret;
 	}
 
@@ -129,6 +149,11 @@ public class ProcessQuandl {
 	 */
 	public static void main(String[] args) {
 
+		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", 32.24));
+		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", 4.05));
+		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 50.0));
+		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 830.0));
+
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
 		final String sp500EarnYldURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key"
@@ -147,58 +172,99 @@ public class ProcessQuandl {
 		final String tpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/TOTAL_PC.xml?api_key=" + QuandlApi.key;
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
-		//final String mtsURL = "https://www.quandl.com/api/v3/datasets/FMSTREAS/MTS.xml?api_key=" + QuandlApi.key;
-		final String balDryURL = "https://www.quandl.com/" + "api/v3/datasets/LLOYDS/BDI.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
 		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
+
+		final List<OneValueData> spxFred = ProcessQuandl.getFromFile(FredCommon.fredPath + "sp500.csv");
+		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
+
+		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
+		price.add(0, lastSpxPrice);
+
+		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
+		List<OneValueData> searn = scaleEarnings(earnYld, price);
+
+		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
+
+		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
+
+		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
+		ProcessQuandl.writeOneList(div, "SP500_Dividend");
+
+		List<OneValueData> sdiv = scaleYield(div, price);
+		ProcessQuandl.writeOneList(sdiv, "SP500_DividendYield");
 
 		final List<NaaimData> naaim = ProcessQuandl.getNaaimData(naaimURL);
 		ProcessQuandl.writeNaaimList(naaim, "NAAIM");
 
-		final List<OneValueData> balDry = ProcessQuandl.getOneDataPoint(balDryURL);
-		ProcessQuandl.writeOneList(balDry, "Baltic_Dry_Index");
-
-		//Manual update from Treasury website
-		//final List<MtsData> mts = ProcessQuandl.getMtsData(mtsURL);
-		//ProcessQuandl.writeMtsList(mts, "MTS");
-
-	  final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
 		processEcri(li, 0.0, 0.0);
 		ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
-		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
-		final List<OneValueData> earn = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
-		List<OneValueData> searn = scaleEarnings(earn, price);
-		//ProcessQuandl.writeOneList(searn, "SP500_Earnings");
-		ProcessQuandl.writeOneList(earn, "SP500_EarningsYield");
-
-		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
-		//ProcessQuandl.writeOneList(div, "SP500_Dividend");
-
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
-		//ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
+		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");
 
 		final List<OneValueData> sPE = ProcessQuandl.getOneDataPoint(shillerPeURL);
-		//ProcessQuandl.writeOneList(sPE, "Shiller_PE");
+		ProcessQuandl.writeOneList(sPE, "Shiller_PE");
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
-		//ProcessQuandl.writeOneList(sales, "SP500_Sales");
+		ProcessQuandl.writeOneList(sales, "SP500_Sales");
+		//
+		//		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
+		//		ProcessQuandl.writePcList(epc, "EquityPC");
+		//
+		//		final List<OhlcvData> ipc = ProcessQuandl.getPutCallData(ipcURL, 0, 1, 2, 3);
+		//		ProcessQuandl.writePcList(ipc, "IndexPC");
+		//
+		//		final List<OhlcvData> tpc = ProcessQuandl.getPutCallData(tpcURL, 0, 1, 2, 3);
+		//		ProcessQuandl.writePcList(tpc, "TotalPC");
+		//
+		//		final List<OhlcvData> spxpc = ProcessQuandl.getPutCallData(spxpcURL, 1, 2, 3, 0);
+		//		ProcessQuandl.writePcList(spxpc, "SPX PC");
+		//
+		//		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
+		//		ProcessQuandl.writePcList(vixpc, "VIX PC");
 
-		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
-		ProcessQuandl.writePcList(epc, "EquityPC");
+	}
 
-		final List<OhlcvData> ipc = ProcessQuandl.getPutCallData(ipcURL, 0, 1, 2, 3);
-		ProcessQuandl.writePcList(ipc, "IndexPC");
+	/**
+	 * net.ajaskey.market.tools.quandl.getFromFile
+	 *
+	 * @param sp500EarningsURL
+	 * @return
+	 * @throws ParseException
+	 */
+	private static List<OneValueData> getFromFile(String filename) {
 
-		final List<OhlcvData> tpc = ProcessQuandl.getPutCallData(tpcURL, 0, 1, 2, 3);
-		ProcessQuandl.writePcList(tpc, "TotalPC");
+		List<OneValueData> retList = new ArrayList<>();
 
-		final List<OhlcvData> spxpc = ProcessQuandl.getPutCallData(spxpcURL, 1, 2, 3, 0);
-		ProcessQuandl.writePcList(spxpc, "SPX PC");
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
-		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
-		ProcessQuandl.writePcList(vixpc, "VIX PC");
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
 
+					final String fld[] = str.split("[\\s+,]");
+					if (fld.length > 1) {
+						try {
+							Date d = sdfFile.parse(fld[0]);
+							Calendar c = Calendar.getInstance();
+							c.setTime(d);
+							double v = Double.parseDouble(fld[1]);
+							OneValueData ovd = new OneValueData(c, v);
+							retList.add(ovd);
+						} catch (Exception e) {
+						}
+					}
+				}
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+			retList.clear();
+		}
+		return retList;
 	}
 
 	/**
@@ -238,6 +304,19 @@ public class ProcessQuandl {
 		int knt = 0;
 		for (OneValueData data : earn) {
 			OneValueData nd = new OneValueData(data.date, data.value * price.get(knt++).value / 100.0);
+			ret.add(nd);
+		}
+		return ret;
+	}
+
+	private static List<OneValueData> scaleYield(List<OneValueData> div, List<OneValueData> price) {
+
+		List<OneValueData> ret = new ArrayList<>();
+		int knt = price.size() - 1;
+		for (OneValueData data : div) {
+			//System.out.println(data + "\t" + price.get(knt));
+			OneValueData nd = new OneValueData(data.date, data.value / price.get(knt--).value * 100.0);
+			//System.out.println(nd);
 			ret.add(nd);
 		}
 		return ret;
@@ -349,7 +428,10 @@ public class ProcessQuandl {
 	 */
 	private static void writeOneList(List<OneValueData> list, String fname) {
 
-		Collections.reverse(list);
+		if ((!fname.equalsIgnoreCase("Shiller_SP500_Earnings") && (!fname.equalsIgnoreCase("SP500_DividendYield")))) {
+			Collections.reverse(list);
+		}
+
 		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
 			for (final OneValueData one : list) {
 
