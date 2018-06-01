@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
@@ -85,7 +85,7 @@ public class VerifyData {
 	 */
 	private static boolean fileInUse(String code) {
 
-		for (String s : codeInUse) {
+		for (final String s : codeInUse) {
 			if (code.equalsIgnoreCase(s)) {
 				return true;
 			}
@@ -99,9 +99,9 @@ public class VerifyData {
 	 * @param td
 	 * @return
 	 */
-	private static SummaryStatistics getStats(EodDataList eList) {
+	private static DescriptiveStatistics getStats(EodDataList eList) {
 
-		final SummaryStatistics stats = new SummaryStatistics();
+		final DescriptiveStatistics stats = new DescriptiveStatistics();
 		for (final EodData e : eList.list) {
 			stats.addValue(e.open);
 			stats.addValue(e.high);
@@ -122,9 +122,9 @@ public class VerifyData {
 
 		final String optumaEodDir = OptumaCommon.optumaPath + "\\EOD-Data\\";
 		VerifyData.setEodInUse(optumaEodDir);
-		for (String s : codeInUse) {
-			System.out.println(s);
-		}
+		//		for (String s : codeInUse) {
+		//			System.out.println(s);
+		//		}
 
 		final String dataPath = Utils.getDataPath() + "\\ASCII\\";
 		final File file = new File(dataPath + "INDEX");
@@ -137,8 +137,7 @@ public class VerifyData {
 			//System.out.println(f.getName() + "\t" + dataList.size());
 
 			for (final EodData eod : dataList) {
-				//if (fileInUse(eod.code)) 
-				VerifyData.add(eod);
+				if (fileInUse(eod.code)) VerifyData.add(eod);
 			}
 		}
 
@@ -152,12 +151,14 @@ public class VerifyData {
 
 		try (PrintWriter pw = new PrintWriter("out\\eod-verify.txt")) {
 			for (final EodDataList td : tl) {
-				final SummaryStatistics stat = VerifyData.getStats(td);
+				final DescriptiveStatistics stat = VerifyData.getStats(td);
 				final double stddev = stat.getStandardDeviation();
 				final double mean = stat.getMean();
-				final double stddev25 = Math.abs(stddev * 6.0);
-				final double upFromMean = mean + stddev25;
-				final double downFromMean = mean - stddev25;
+				final double median = stat.getPercentile(50.0);
+				final double stddevMax = Math.abs(stddev * 6.0);
+				final double upFromMean = mean + stddevMax;
+				final double downFromMean = mean - stddevMax;
+				final double stddevChg = stddev * 2.5;
 				//System.out.println(td);
 
 				String fileUsed = "";
@@ -165,22 +166,23 @@ public class VerifyData {
 					fileUsed = "*";
 				}
 
-				pw.println("\n" + fileUsed + td.code + "\t" + downFromMean + "\t" + mean + "\t" + upFromMean);
+				pw.println(
+				    "\n" + fileUsed + td.code + "\t" + downFromMean + "\t" + mean + "\t" + upFromMean + "\t(" + median + ")");
 				for (final EodData eod : td.list) {
 					if ((eod.open > upFromMean) || (eod.open < downFromMean)) {
-						pw.println("\t" + eod + " ... OPEN out of bounds!");
+						pw.println("\t" + eod + " ... OPEN out of bounds!   Set to " + mean);
 						VerifyData.writeDbg(td, "open", fileUsed);
 					}
 					if ((eod.high > upFromMean) || (eod.high < downFromMean)) {
-						pw.println("\t" + eod + " ... HIGH out of bounds!");
+						pw.println("\t" + eod + " ... HIGH out of bounds!   Set to " + (mean + stddevChg));
 						VerifyData.writeDbg(td, "high", fileUsed);
 					}
 					if ((eod.low > upFromMean) || (eod.low < downFromMean)) {
-						pw.println("\t" + eod + " ... LOW out of bounds!");
+						pw.println("\t" + eod + " ... LOW out of bounds!   Set to " + (mean - stddevChg));
 						VerifyData.writeDbg(td, "low", fileUsed);
 					}
 					if ((eod.close > upFromMean) || (eod.close < downFromMean)) {
-						pw.println("\t" + eod + " ... CLOSE out of bounds!");
+						pw.println("\t" + eod + " ... CLOSE out of bounds!   Set to " + mean);
 						VerifyData.writeDbg(td, "close", fileUsed);
 					}
 				}
@@ -222,21 +224,21 @@ public class VerifyData {
 			final int idx = fname.indexOf(".csv");
 			if (idx > 1) {
 				if (fname.contains("[")) {
-					int idx2 = fname.indexOf("-");
+					final int idx2 = fname.indexOf("-");
 					if (idx2 > 1) {
-						String stmp = fname.substring(0, idx2);
+						final String stmp = fname.substring(0, idx2);
 						fname = stmp.replaceAll("\\[", "").replaceAll("\\]", "").trim();
 						fname += ".IDX";
 					}
 				}
 				String code = fname.replaceAll(".csv", "");
-				int idx3 = code.indexOf(".IDX");
+				final int idx3 = code.indexOf(".IDX");
 				if (idx3 < 1) {
 					code += ".IDX";
 				}
 
 				boolean found = false;
-				for (String s : codeInUse) {
+				for (final String s : codeInUse) {
 					if (code.equalsIgnoreCase(s)) {
 						found = true;
 						break;

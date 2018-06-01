@@ -210,15 +210,15 @@ public class FredCommon {
 	 * @param name
 	 * @return
 	 */
-	public static boolean doPropagate(List<DataSeriesInfo> dnp_list, String name) {
+	public static boolean doPropagate(List<DataSeriesInfo> p_list, String name) {
 
-		for (final DataSeriesInfo dsi : dnp_list) {
+		for (final DataSeriesInfo dsi : p_list) {
 			if (name.equalsIgnoreCase(dsi.getName())) {
-				System.out.println("Not Propagating : " + name);
-				return false;
+				System.out.println("Propagating : " + name);
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public static DataSeriesInfo findDsi(String series) {
@@ -402,7 +402,7 @@ public class FredCommon {
 				}
 			} else if (freq.trim().toUpperCase().contains("MONTH")) {
 
-				int regKnt = 18;
+				int regKnt = 12;
 				final SimpleRegression reg = FredCommon.regression(data, regKnt);
 				if (reg == null) {
 					return retProp;
@@ -432,7 +432,7 @@ public class FredCommon {
 				}
 			} else if (freq.trim().toUpperCase().contains("WEEK")) {
 
-				int regKnt = 26;
+				int regKnt = 13;
 				final SimpleRegression reg = FredCommon.regression(data, regKnt);
 				if (reg == null) {
 					return retProp;
@@ -754,10 +754,11 @@ public class FredCommon {
 				pw.printf("%s,%.2f%n", date, d);
 				pwShort.printf("%s,%.2f%n", date, d);
 			}
+			//Overwrite short filename with any propagated codes
 			for (final DataValues dv : propagated) {
 				final String date = DataValues.sdf.format(dv.getDate().getTime());
 				final double d = dv.getValue() * scaler;
-				pw.printf("%s,%.2f%n", date, d);
+				//pw.printf("%s,%.2f%n", date, d);
 				pwShort.printf("%s,%.2f%n", date, d);
 			}
 		} catch (final FileNotFoundException e) {

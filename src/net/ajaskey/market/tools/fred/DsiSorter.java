@@ -38,6 +38,10 @@ public class DsiSorter implements Comparator<DataSeriesInfo> {
 	@Override
 	public int compare(DataSeriesInfo d1, DataSeriesInfo d2) {
 
+		if ((d1 == null) || (d2 == null)) {
+			return 0;
+		}
+
 		try {
 			int ret = 0;
 			if (d1.getLastUpdate().before(d2.getLastUpdate())) {

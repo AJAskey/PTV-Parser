@@ -45,7 +45,7 @@ public class UpdateFred {
 
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
 
-	private static List<DataSeriesInfo> dnp_names = null;
+	private static List<DataSeriesInfo> prop_names = null;
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -61,7 +61,7 @@ public class UpdateFred {
 
 		FredCommon.legacyDsi = FredCommon.readSeriesInfo(FredCommon.fredPath + "/fred-series-info.txt");
 
-		dnp_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-do-not-propagate.txt");
+		prop_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-propagate.txt");
 
 		final File list[] = file.listFiles();
 
@@ -102,7 +102,9 @@ public class UpdateFred {
 
 							dsList.add(dsi);
 
-							if (lastModTime.after(dsi.getLastUpdate())) {
+							boolean propagate = FredCommon.doPropagate(prop_names, series);
+
+							if ((!propagate) && (lastModTime.after(dsi.getLastUpdate()))) {
 								Debug.pwDbg.println("Local file created After                               "
 								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 								if (knt < 100) {
@@ -123,8 +125,6 @@ public class UpdateFred {
 									}
 									System.out.println(series);
 									knt = 0;
-
-									boolean propagate = FredCommon.doPropagate(dnp_names, series);
 
 									String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
 									//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
@@ -148,7 +148,10 @@ public class UpdateFred {
 
 		Debug.pwDbg.close();
 
-		Collections.sort(dsList, new DsiSorter());
+		try {
+			Collections.sort(dsList, new DsiSorter());
+		} catch (Exception e) {
+		}
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {

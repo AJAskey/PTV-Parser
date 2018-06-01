@@ -149,10 +149,11 @@ public class ProcessQuandl {
 	 */
 	public static void main(String[] args) {
 
-		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", 32.24));
-		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", 4.05));
+		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", 32.16));
+		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", 4.06));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 50.0));
-		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 830.0));
+		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 817.82));
+		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1231.57));
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -177,14 +178,17 @@ public class ProcessQuandl {
 
 		final List<OneValueData> spxFred = ProcessQuandl.getFromFile(FredCommon.fredPath + "sp500.csv");
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
+		System.out.println("SPX latest price : " + lastSpxPrice);
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
 		price.add(0, lastSpxPrice);
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
 		List<OneValueData> searn = scaleEarnings(earnYld, price);
+		List<OneValueData> sp500pe = scalePE(price, searn);
 
 		ProcessQuandl.writeOneList(searn, "SP500_Earnings");
+		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 
 		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
 
@@ -209,21 +213,21 @@ public class ProcessQuandl {
 
 		final List<OneValueData> sales = ProcessQuandl.getOneDataPoint(sp500SalesURL);
 		ProcessQuandl.writeOneList(sales, "SP500_Sales");
-		//
-		//		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
-		//		ProcessQuandl.writePcList(epc, "EquityPC");
-		//
-		//		final List<OhlcvData> ipc = ProcessQuandl.getPutCallData(ipcURL, 0, 1, 2, 3);
-		//		ProcessQuandl.writePcList(ipc, "IndexPC");
-		//
-		//		final List<OhlcvData> tpc = ProcessQuandl.getPutCallData(tpcURL, 0, 1, 2, 3);
-		//		ProcessQuandl.writePcList(tpc, "TotalPC");
-		//
-		//		final List<OhlcvData> spxpc = ProcessQuandl.getPutCallData(spxpcURL, 1, 2, 3, 0);
-		//		ProcessQuandl.writePcList(spxpc, "SPX PC");
-		//
-		//		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
-		//		ProcessQuandl.writePcList(vixpc, "VIX PC");
+
+		final List<OhlcvData> epc = ProcessQuandl.getPutCallData(epcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(epc, "EquityPC");
+
+		final List<OhlcvData> ipc = ProcessQuandl.getPutCallData(ipcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(ipc, "IndexPC");
+
+		final List<OhlcvData> tpc = ProcessQuandl.getPutCallData(tpcURL, 0, 1, 2, 3);
+		ProcessQuandl.writePcList(tpc, "TotalPC");
+
+		final List<OhlcvData> spxpc = ProcessQuandl.getPutCallData(spxpcURL, 1, 2, 3, 0);
+		ProcessQuandl.writePcList(spxpc, "SPX PC");
+
+		final List<OhlcvData> vixpc = ProcessQuandl.getPutCallData(vixpcURL, 1, 2, 3, 0);
+		ProcessQuandl.writePcList(vixpc, "VIX PC");
 
 	}
 
@@ -304,6 +308,18 @@ public class ProcessQuandl {
 		int knt = 0;
 		for (OneValueData data : earn) {
 			OneValueData nd = new OneValueData(data.date, data.value * price.get(knt++).value / 100.0);
+			ret.add(nd);
+		}
+		return ret;
+	}
+
+	private static List<OneValueData> scalePE(List<OneValueData> price, List<OneValueData> earn) {
+
+		List<OneValueData> ret = new ArrayList<>();
+		int knt = 0;
+		for (OneValueData data : earn) {
+			double pe = Math.min(price.get(knt++).value / data.value, 35.0);
+			OneValueData nd = new OneValueData(data.date, pe);
 			ret.add(nd);
 		}
 		return ret;
@@ -455,9 +471,9 @@ public class ProcessQuandl {
 		Collections.reverse(list);
 		try (PrintWriter pwCall = new PrintWriter(Qcommon.outpath + "\\" + fname + "-CallVol.csv");
 		    PrintWriter pwPut = new PrintWriter(Qcommon.outpath + "\\" + fname + "-PutVol.csv");
-		    PrintWriter pwTot = new PrintWriter(Qcommon.outpath + "\\" + fname + "-TotalVol.csv");
+		    PrintWriter pwTot = new PrintWriter(Qcommon.outpath + "\\" + fname + "_TotalVol.csv");
 		    PrintWriter pwDiff = new PrintWriter(Qcommon.outpath + "\\" + fname + "-DiffVol.csv");
-		    PrintWriter pwRatio = new PrintWriter(Qcommon.outpath + "\\" + fname + "-Ratio.csv")) {
+		    PrintWriter pwRatio = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Ratio.csv")) {
 
 			for (final OhlcvData price : list) {
 

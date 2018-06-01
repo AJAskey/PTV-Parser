@@ -43,8 +43,16 @@ public class FredDataDownloader {
 
 	private static File[] existingFiles = null;
 
-	private static List<DataSeriesInfo> dnp_names = null;
+	private static List<DataSeriesInfo> prop_names = null;
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.isNew
+	 *
+	 * @param dsiList
+	 * @param newDsi
+	 * @return
+	 */
 	private static boolean isNew(List<DataSeriesInfo> dsiList, DataSeriesInfo newDsi) {
 
 		for (final DataSeriesInfo dsi : dsiList) {
@@ -75,7 +83,7 @@ public class FredDataDownloader {
 		    .readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
 		final List<DataSeriesInfo> saved_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
 
-		dnp_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-do-not-propagate.txt");
+		prop_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-propagate.txt");
 
 		final List<DataSeriesInfo> allNames = new ArrayList<>();
 
@@ -137,9 +145,11 @@ public class FredDataDownloader {
 			return;
 		}
 
+		boolean propFile = false;
 		try {
 			String fname = seriesDsi.getName().trim() + ".csv";
-			if (!UpdateAll) {
+			propFile = FredCommon.doPropagate(prop_names, seriesDsi.getName().trim());
+			if ((!UpdateAll) && (!propFile)) {
 				//System.out.println(seriesDsi);
 				if (!seriesDsi.getTitle().equalsIgnoreCase("Title")) {
 					if (seriesFileExists(fname)) {
@@ -148,7 +158,11 @@ public class FredDataDownloader {
 				}
 			}
 
-			System.out.println("new series : " + fname);
+			if (propFile) {
+				System.out.println("updating propogation for series : " + fname);
+			} else {
+				System.out.println("new series : " + fname);
+			}
 
 			final DataSeries ds = new DataSeries(seriesDsi.getName().trim());
 			if (seriesDsi.getTitle().length() == 0) {
@@ -164,7 +178,7 @@ public class FredDataDownloader {
 
 					final List<DataValues> dvList = ds.getValues(futureChg, noZeroValues, estimateData);
 
-					boolean propagate = FredCommon.doPropagate(dnp_names, seriesDsi.getName());
+					boolean propagate = FredCommon.doPropagate(prop_names, seriesDsi.getName());
 
 					String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
 					//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
