@@ -459,8 +459,37 @@ public class FredCommon {
 						doit = false;
 					}
 				}
-			}
+			} else if (freq.trim().toUpperCase().contains("ANNUAL")) {
 
+				int regKnt = 10;
+				final SimpleRegression reg = FredCommon.regression(data, regKnt);
+				if (reg == null) {
+					return retProp;
+				}
+
+				while (doit) {
+					next.add(Calendar.YEAR, 1);
+					//System.out.printf("%s\t%f%n", Utils.getString(next), lval);
+					if (next.before(today)) {
+
+						final double newVal = reg.predict(regKnt++);
+
+						final DataValues newDv = new DataValues(Utils.buildCalendar(next), newVal);
+						retProp.add(newDv);
+					} else {
+
+						final Calendar cal = Calendar.getInstance();
+						final int doy = cal.get(Calendar.DAY_OF_YEAR);
+						final double yearFactor = doy / 365.0;
+						regKnt--;
+						final double newVal = reg.predict(regKnt + yearFactor);
+
+						final DataValues newDv = new DataValues(cal, newVal);
+						retProp.add(newDv);
+						doit = false;
+					}
+				}
+			}
 		} catch (final Exception e) {
 			e.printStackTrace();
 			retProp.clear();

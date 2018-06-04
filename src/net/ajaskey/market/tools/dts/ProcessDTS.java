@@ -46,13 +46,13 @@ public class ProcessDTS {
 	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
-	final static private String folderPath = "d:/data/dts";
+	final static private String folderPath = "c:/data/dts";
 	// final static private String folderPath = "d:/temp/dts-lt";
 	//final static private Charset charset = Charset.forName("UTF-8");
 
-	final static public int	webDownloadYear		= 2017;
-	final static public int	webDownloadMonth	= Calendar.NOVEMBER;
-	final static public int	webDownloadDay		= 26;
+	final static public int	webDownloadYear		= 2018;
+	final static public int	webDownloadMonth	= Calendar.MAY;
+	final static public int	webDownloadDay		= 20;
 
 	/**
 	 *

@@ -80,7 +80,7 @@ public class SipData5 {
 
 	private static int companyKnt = 0;
 
-	static String path = OptumaCommon.optumaPath + "SIP/";
+	static String path = OptumaCommon.optumaPath + "SIP\\";
 
 	/**
 	 * net.ajaskey.market.tools.sipro.v4.archiveData
