@@ -324,6 +324,7 @@ DCPF3M	3-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN
 DCPN2M	2-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN		
 DCPN30	1-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN		
 DCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN		
+DDDM01USA156NWDB	Stock Market Capitalization to GDP for United States		Annual	Percent	LIN		
 DGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Daily	Dollars per Gallon	LIN		
 DGS1	1-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN		
 DGS10	10-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN		
@@ -498,6 +499,7 @@ IR3TCD01USM156N	3-Month or 90-day Rates and Yields: Certificates of Deposit for 
 IR3TCD01USQ156N	3-Month or 90-day Rates and Yields: Certificates of Deposit for the United States	NSA	Quarterly	Percent	LIN		
 IR3TIB01USM156N	3-Month or 90-day Rates and Yields: Interbank Rates for the United States	NSA	Monthly	Percent	LIN		
 IR3TIB01USQ156N	3-Month or 90-day Rates and Yields: Interbank Rates for the United States	NSA	Quarterly	Percent	LIN		
+ISRATIO	Total Business: Inventories to Sales Ratio		Monthly	Ratio	LIN		
 IY11	Export Price Index (NAICS): Agriculture, forestry, fishing and hunting	NSA	Monthly	Index 2005=100	LIN		
 IY111	Export Price Index (NAICS): Crop production	NSA	Monthly	Index 2005=100	LIN		
 IY1111	Export Price Index (NAICS): Oilseed and grain farming	NSA	Monthly	Index 2005=100	LIN		
@@ -748,12 +750,16 @@ JTUHIL	Hires: Total Nonfarm	NSA	Monthly	Level in Thousands	LIN
 LCEAMN01USM661N	Hourly Earnings: Manufacturing for the United States	NSA	Monthly	Index 2010=1	LIN		
 LES1252881600Q	Employed full time: Median usual weekly real earnings: Wage and salary workers: 16 years and over	SA	Quarterly	1982-84 CPI Adjusted Dollars	LIN		
 LEU0252881500Q	Employed full time: Median usual weekly nominal earnings (second quartile): Wage and salary workers: 16 years and over	NSA	Quarterly	Dollars	LIN		
+LFEM64TTUSM647N	Employed Population: Aged 15-64: All Persons for the United States		Monthly	Persons	LIN		
 LFWA25TTUSM647N	Working Age Population: Aged 25-54: All Persons for the United States	NSA	Monthly	Persons	LIN		
 LFWA64TTUSM647N	Working Age Population: Aged 15-64: All Persons for the United States	NSA	Monthly	Persons	LIN		
+LFWA64TTUSQ647N	Working Age Population: Aged 15-64: All Persons for the United States		Quarterly	Persons	LIN		
 LMJVTTUVUSM647N	Total Unfilled Job Vacancies for the United States	NSA	Monthly	Persons	LIN		
-LNU05000000	Not in Labor Force		Monthly	Thousands of Persons	LIN	2018-Jun-01	2018-May-01
+LNU02000060	Employment Level: 25 to 54 years		Monthly	Thousands of Persons	LIN		
+LNU05000000	Not in Labor Force		Monthly	Thousands of Persons	LIN		
 LODINIM066N	University of Louisville and Oklahoma State University: LoDI National Index	NSA	Monthly	Index	LIN		
 LREM25TTUSM156N	Employment Rate: Aged 25-54: All Persons for the United States	NSA	Monthly	Percent	LIN		
+LREM64TTUSM156N	Employment Rate: Aged 15-64: All Persons for the United States		Monthly	Percent	LIN		
 LREM64TTUSQ156N	Employment Rate: Aged 15-64: All Persons for the United States	NSA	Quarterly	Percent	LIN		
 M2	M2 Money Stock	SA	Weekly, Ending Monday	Billions of Dollars	LIN		
 M2V	Velocity of M2 Money Stock	SA	Quarterly	Ratio	LIN		
