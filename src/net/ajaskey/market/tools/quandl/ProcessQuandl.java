@@ -149,11 +149,11 @@ public class ProcessQuandl {
 	 */
 	public static void main(String[] args) {
 
-		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", 32.40));
-		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", 4.03));
+		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", 32.92));
+		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", 3.97));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 50.0));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 817.82));
-		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1248.78));
+		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1231.57));
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;

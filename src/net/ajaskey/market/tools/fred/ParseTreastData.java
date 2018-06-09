@@ -123,12 +123,15 @@ public class ParseTreastData {
 					last = tot;
 					last50 = tot50;
 					last90 = tot90;
-					pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
-					pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot50);
-					pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot90);
-					if (dv.date.before(end2018)) {
-						System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
-						pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);						
+					if (tot > 0.0) {
+						pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
+						pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot50);
+						pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot90);
+						if (dv.date.before(end2018)) {
+							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
+							System.out.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
+							pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
+						}
 					}
 				}
 			}

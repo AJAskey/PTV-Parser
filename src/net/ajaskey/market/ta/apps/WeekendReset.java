@@ -73,14 +73,14 @@ public class WeekendReset {
 
 		}
 
+		WriteIndexEOD.main(args);
+		
 		Internals.main(args);
 		
 		if (WeekendReset.AllWeek) {
 			BreadthOfList.main(args);
 		}
 		
-		WriteIndexEOD.main(args);
-
 		System.out.println("Weekend Reset Complete.");
 
 	}

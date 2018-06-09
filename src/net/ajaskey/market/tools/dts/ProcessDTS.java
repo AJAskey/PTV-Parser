@@ -118,9 +118,9 @@ public class ProcessDTS {
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.MONTH));
 			System.out.println(DtsReports.genLastReport(DtsReports.REPORT_RANGE.DAY));
 
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.JULY);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.AUGUST);
-			DtsReports.dumpCompareMonths(2017, 2016, Calendar.SEPTEMBER);
+			//DtsReports.dumpCompareMonths(2017, 2016, Calendar.JULY);
+			//DtsReports.dumpCompareMonths(2017, 2016, Calendar.AUGUST);
+			//DtsReports.dumpCompareMonths(2017, 2016, Calendar.SEPTEMBER);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
