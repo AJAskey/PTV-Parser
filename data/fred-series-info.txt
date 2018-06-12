@@ -9,8 +9,8 @@ AMBNS	St. Louis Adjusted Monetary Base	NSA	Monthly	Billions of Dollars	LIN	2018-
 B069RC1	Personal interest payments	SAAR	Monthly	Billions of Dollars	LIN	2018-May-31	2018-Apr-01
 B102RC1Q027SBEA	State and local government current tax receipts: Taxes on corporate income	SAAR	Quarterly	Billions of Dollars	LIN	2018-May-30	2018-Jan-01
 BACTUAMFRBDAL	Current General Business Activity; Diffusion Index for Texas	NSA	Monthly	Index	LIN	2018-May-29	2018-May-01
-BAMLC0A1CAAAEY	ICE BofAML US Corporate AAA Effective Yield	NSA	Daily, Close	Percent	LIN	2018-Jun-08	2018-Jun-07
-BAMLH0A0HYM2EY	ICE BofAML US High Yield Master II Effective Yield	NSA	Daily, Close	Percent	LIN	2018-Jun-08	2018-Jun-07
+BAMLC0A1CAAAEY	ICE BofAML US Corporate AAA Effective Yield	NSA	Daily, Close	Percent	LIN	2018-Jun-11	2018-Jun-08
+BAMLH0A0HYM2EY	ICE BofAML US High Yield Master II Effective Yield	NSA	Daily, Close	Percent	LIN	2018-Jun-11	2018-Jun-08
 BOGMBASE	Monetary Base; Total	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-07	2018-May-01
 BOGMBASEW	Monetary Base; Total	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2018-Jun-07	2018-Jun-06
 BUSFIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
@@ -289,7 +289,7 @@ CP	Corporate Profits After Tax (without IVA and CCAdj)	SAAR	Quarterly	Billions o
 CPALTT01USQ657N	Consumer Price Index: Total All Items for the United States	NSA	Quarterly	Growth Rate Previous Period	LIN	2018-Apr-12	2018-Jan-01
 CPALWE01USM661N	Consumer Price Index: Total All Items: Wage Earners for the United States	NSA	Monthly	Index 2010=1	LIN	2018-May-14	2018-Apr-01
 CPALWE01USQ661N	Consumer Price Index: Total All Items: Wage Earners for the United States	NSA	Quarterly	Index 2010=1	LIN	2018-Apr-20	2018-Jan-01
-CPFF	3-Month Commercial Paper Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+CPFF	3-Month Commercial Paper Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 CPGRLE01USQ657N	Consumer Price Index: OECD Groups: All Items Non-Food and Non-Energy for the United States	NSA	Quarterly	Growth Rate Previous Period	LIN	2018-Apr-12	2018-Jan-01
 CPIAPPNS	Consumer Price Index for All Urban Consumers: Apparel	NSA	Monthly	Index 1982-1984=100	LIN	2018-May-10	2018-Apr-01
 CPIAUCNS	Consumer Price Index for All Urban Consumers: All Items	NSA	Monthly	Index 1982-1984=100	LIN	2018-May-10	2018-Apr-01
@@ -314,34 +314,35 @@ CPIUFDNS	Consumer Price Index for All Urban Consumers: Food	NSA	Monthly	Index 19
 CPIULFNS	Consumer Price Index for All Urban Consumers: All Items Less Food	NSA	Monthly	Index 1982-1984=100	LIN	2018-May-10	2018-Apr-01
 CUMFNS	Capacity Utilization: Manufacturing (SIC)	SA	Monthly	Percent of Capacity	LIN	2018-May-16	2018-Apr-01
 CUUR0000SETA02	Consumer Price Index for All Urban Consumers: Used cars and trucks	NSA	Monthly	Index 1982-1984=100	LIN	2018-May-10	2018-Apr-01
-DAAA	Moody's Seasoned Aaa Corporate Bond Yield	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DBAA	Moody's Seasoned Baa Corporate Bond Yield	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+DAAA	Moody's Seasoned Aaa Corporate Bond Yield	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DABSHNO	Households and Nonprofit Organizations; Total Currency and Deposits Including Money Market Fund Shares; Asset, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Jan-01
+DBAA	Moody's Seasoned Baa Corporate Bond Yield	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 DCOILBRENTEU	Crude Oil Prices: Brent - Europe	NSA	Daily	Dollars per Barrel	LIN	2018-Jun-06	2018-Jun-04
 DCOILWTICO	Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma	NSA	Daily	Dollars per Barrel	LIN	2018-Jun-06	2018-Jun-04
-DCPF1M	1-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-07	2018-Jun-06
-DCPF2M	2-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DCPF3M	3-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DCPN2M	2-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DCPN30	1-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+DCPF1M	1-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DCPF2M	2-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DCPF3M	3-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DCPN2M	2-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DCPN30	1-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 DDDM01USA156NWDB	Stock Market Capitalization to GDP for United States	NSA	Annual	Percent	LIN	2017-Aug-30	2015-Jan-01
 DGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Daily	Dollars per Gallon	LIN	2018-Jun-06	2018-Jun-04
-DGS1	1-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS10	10-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS1MO	1-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS2	2-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS20	20-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS3	3-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS30	30-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS3MO	3-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS5	5-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS6MO	6-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-DGS7	7-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+DGS1	1-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS10	10-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS1MO	1-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS2	2-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS20	20-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS3	3-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS30	30-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS3MO	3-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS5	5-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS6MO	6-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+DGS7	7-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 DHHNGSP	Henry Hub Natural Gas Spot Price	NSA	Daily	Dollars per Million BTU	LIN	2018-Jun-06	2018-Jun-04
-DHIDFHIRIPV	DHI-DFH Index of Recruiting Intensity per Vacancy	NSA	Monthly	Index	LIN	2018-May-17	2018-Mar-01
-DHIDFHMVDM	DHI-DFH Mean Vacancy Duration Measure	NSA	Monthly	Working Days	LIN	2018-May-17	2018-Mar-01
-DHIDFHQTRT	Quits Rate	NSA	Monthly	Ratio	LIN	2018-May-17	2018-Mar-01
-DHIDFHVTUR	Vacancy to Unemployment Ratio	NSA	Monthly	Ratio	LIN	2018-May-17	2018-Mar-01
+DHIDFHIRIPV	DHI-DFH Index of Recruiting Intensity per Vacancy	NSA	Monthly	Index	LIN	2018-Jun-11	2018-Apr-01
+DHIDFHMVDM	DHI-DFH Mean Vacancy Duration Measure	NSA	Monthly	Working Days	LIN	2018-Jun-11	2018-Apr-01
+DHIDFHQTRT	Quits Rate	NSA	Monthly	Ratio	LIN	2018-Jun-11	2018-Apr-01
+DHIDFHVTUR	Vacancy to Unemployment Ratio	NSA	Monthly	Ratio	LIN	2018-Jun-11	2018-Apr-01
 DJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Daily	Dollars per Gallon	LIN	2018-Jun-06	2018-Jun-04
 DPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	NSA	Daily	Dollars per Gallon	LIN	2018-Jun-06	2018-Jun-04
 DPSACBM027NBOG	Deposits, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2018-Jun-08	2018-Apr-01
@@ -350,12 +351,12 @@ DRCCLACBN	Delinquency Rate on Credit Card Loans, All Commercial Banks	NSA	Quarte
 DRCCLOBN	Delinquency Rate on Credit Card Loans, Banks Not Among the 100 Largest in Size (By Assets)	NSA	Quarterly, End of Period	Percent	LIN	2018-May-18	2018-Jan-01
 DSPI	Disposable Personal Income	SAAR	Monthly	Billions of Dollars	LIN	2018-May-31	2018-Apr-01
 DSPIC96	Real Disposable Personal Income	SAAR	Monthly	Billions of Chained 2009 Dollars	LIN	2018-May-31	2018-Apr-01
-DTB1YR	1-Year Treasury Bill: Secondary Market Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+DTB1YR	1-Year Treasury Bill: Secondary Market Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 DTCTHFNM	Total Consumer Loans and Leases Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2018-May-31	2018-Mar-01
 DTRTNM	Total Real Estate Loans Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2018-May-31	2018-Mar-01
 ECOMNSA	E-Commerce Retail Sales	NSA	Quarterly	Millions of Dollars	LIN	2018-May-17	2018-Jan-01
-EFFR	Effective Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-EFFRVOL	Effective Federal Funds Volume	NSA	Daily	Billions of U.S. Dollars	LIN	2018-Jun-08	2018-Jun-07
+EFFR	Effective Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+EFFRVOL	Effective Federal Funds Volume	NSA	Daily	Billions of U.S. Dollars	LIN	2018-Jun-11	2018-Jun-08
 EQUIPCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Equipment	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
 EXHOSLUSM495N	Existing Home Sales	NSA	Monthly	Number of Units	LIN	2018-May-24	2018-Apr-01
 EXPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
@@ -369,14 +370,14 @@ FIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Privat
 FRGEXPUSM649NCIS	Cass Freight Index: Expenditures	NSA	Monthly	Index Jan 1990=1	LIN	2018-May-21	2018-Apr-01
 FRGSHPUSM649NCIS	Cass Freight Index: Shipments	NSA	Monthly	Index Jan 1990=1	LIN	2018-May-21	2018-Apr-01
 GACDISA066MSFRBNY	Current General Business Conditions; Diffusion Index for New York	SA	Monthly	Index	LIN	2018-May-15	2018-May-01
-GASALLCOVW	US All Grades Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASALLREFW	US All Grades Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASALLW	US All Grades All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASDESLSW	US Diesel Ultra Low Sulfur (0-15 ppm) Sales Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASDESW	US Diesel Sales Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASREGCOVW	US Regular Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASREGREFW	US Regular Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
-GASREGW	US Regular All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-04	2018-Jun-04
+GASALLCOVW	US All Grades Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASALLREFW	US All Grades Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASALLW	US All Grades All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASDESLSW	US Diesel Ultra Low Sulfur (0-15 ppm) Sales Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASDESW	US Diesel Sales Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASREGCOVW	US Regular Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASREGREFW	US Regular Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
+GASREGW	US Regular All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2018-Jun-11	2018-Jun-11
 GDP	Gross Domestic Product	SAAR	Quarterly	Billions of Dollars	LIN	2018-May-30	2018-Jan-01
 GDPC1	Real Gross Domestic Product	SAAR	Quarterly	Billions of Chained 2009 Dollars	LIN	2018-May-30	2018-Jan-01
 GDPDEF	Gross Domestic Product: Implicit Price Deflator	SA	Quarterly	Index 2009=100	LIN	2018-May-30	2018-Jan-01
@@ -407,8 +408,8 @@ IMPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goo
 IMPORTSERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Services	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
 IMPORTSGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goods	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
 INDPRO	Industrial Production Index	SA	Monthly	Index 2012=100	LIN	2018-May-16	2018-Apr-01
-IOER	Interest Rate on Excess Reserves	NSA	Daily, 7-Day	Percent	LIN	2018-Jun-08	2018-Jun-11
-IORR	Interest Rate on Required Reserves	NSA	Daily, 7-Day	Percent	LIN	2018-Jun-08	2018-Jun-11
+IOER	Interest Rate on Excess Reserves	NSA	Daily, 7-Day	Percent	LIN	2018-Jun-11	2018-Jun-12
+IORR	Interest Rate on Required Reserves	NSA	Daily, 7-Day	Percent	LIN	2018-Jun-11	2018-Jun-12
 IPB50001N	Industrial Production: Total index	NSA	Monthly	Index 2012=100	LIN	2018-May-16	2018-Apr-01
 IPB50002N	Industrial Production: Final products	NSA	Monthly	Index 2012=100	LIN	2018-May-16	2018-Apr-01
 IPB50089N	Industrial Production: Energy Materials: Energy, total	NSA	Monthly	Index 2012=100	LIN	2018-May-16	2018-Apr-01
@@ -777,7 +778,7 @@ MZMV	Velocity of MZM Money Stock	SA	Quarterly	Ratio	LIN	2018-Apr-27	2018-Jan-01
 NCBEILQ027S	Nonfinancial corporate business; corporate equities; liability, Level	NSA	Quarterly	Millions of Dollars	LIN	2018-Jun-07	2018-Jan-01
 NECDFNA066MNFRBPHI	Current Employment; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2018-May-17	2018-May-01
 NHSDPT	New Houses Sold by Stage of Construction, Total	NSA	Monthly	Thousands of Units	LIN	2018-May-23	2018-Apr-01
-NIKKEI225	Nikkei Stock Average, Nikkei 225	NSA	Daily, Close	Index	LIN	2018-Jun-08	2018-Jun-08
+NIKKEI225	Nikkei Stock Average, Nikkei 225	NSA	Daily, Close	Index	LIN	2018-Jun-11	2018-Jun-11
 NONREVNS	Total Nonrevolving Credit Owned and Securitized, Outstanding	NSA	Monthly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Apr-01
 NPPTTL	Total Nonfarm Private Payroll Employment	SA	Monthly	Thousands	LIN	2018-May-30	2018-May-01
 OUTMS	Manufacturing Sector: Real Output	SA	Quarterly	Index 2009=100	LIN	2018-Jun-06	2018-Jan-01
@@ -804,63 +805,63 @@ RETAILIMNSA	Retailers Inventories	NSA	Monthly	Millions of Dollars	LIN	2018-May-1
 RETAILIRNSA	Retailers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2018-May-15	2018-Mar-01
 RETAILSMNSA	Retailers Sales	NSA	Monthly	Millions of Dollars	LIN	2018-May-15	2018-Mar-01
 REVOLNS	Total Revolving Credit Owned and Securitized, Outstanding	NSA	Monthly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Apr-01
-RIFSPPNAAD07NB	7-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-RIFSPPNAAD15NB	15-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-RIFSPPNAAD30NB	30-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-RIFSPPNAAD60NB	60-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-RIFSPPNAAD90NB	90-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+RIFSPPNAAD07NB	7-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+RIFSPPNAAD15NB	15-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+RIFSPPNAAD30NB	30-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+RIFSPPNAAD60NB	60-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+RIFSPPNAAD90NB	90-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 RSXFS	Advance Retail Sales: Retail (Excluding Food Services)	SA	Monthly	Millions of Dollars	LIN	2018-May-29	2018-Apr-01
 RSXFSN	Advance Retail Sales: Retail (Excluding Food Services)	NSA	Monthly	Millions of Dollars	LIN	2018-May-29	2018-Apr-01
-RTWVDAK684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alaska	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDAL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alabama	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDAR684NMFRBDAL	Real Trade-Weighted Value of the dollar for Arkansas	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDAZ684NMFRBDAL	Real Trade-Weighted Value of the dollar for Arizona	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDCA684NMFRBDAL	Real Trade-Weighted Value of the dollar for California	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDCO684NMFRBDAL	Real Trade-Weighted Value of the dollar for Colorado	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDCT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Connecticut	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDDE684NMFRBDAL	Real Trade-Weighted Value of the dollar for Delaware	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDFL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Florida	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDGA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Georgia	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDHI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Hawaii	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDIA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Iowa	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDID684NMFRBDAL	Real Trade-Weighted Value of the dollar for Idaho	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDIL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Illinois	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDIN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Indiana	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDKS684NMFRBDAL	Real Trade-Weighted Value of the dollar for Kansas	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDKY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Kentucky	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDLA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Louisiana	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Massachusetts	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMD684NMFRBDAL	Real Trade-Weighted Value of the dollar for Maryland	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDME684NMFRBDAL	Real Trade-Weighted Value of the dollar for Maine	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Michigan	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Minnesota	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMO684NMFRBDAL	Real Trade-Weighted Value of the dollar for Missouri	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMS684NMFRBDAL	Real Trade-Weighted Value of the dollar for Mississippi	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDMT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Montana	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNC684NMFRBDAL	Real Trade-Weighted Value of the dollar for North Carolina	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDND684NMFRBDAL	Real Trade-Weighted Value of the dollar for North Dakota	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNE684NMFRBDAL	Real Trade-Weighted Value of the dollar for Nebraska	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNH684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Hampshire	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNJ684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Jersey	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNM684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Mexico	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNV684NMFRBDAL	Real Trade-Weighted Value of the dollar for Nevada	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDNY684NMFRBDAL	Real Trade-Weighted Value of the dollar for New York	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDOH684NMFRBDAL	Real Trade-Weighted Value of the dollar for Ohio	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDOK684NMFRBDAL	Real Trade-Weighted Value of the dollar for Oklahoma	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDOR684NMFRBDAL	Real Trade-Weighted Value of the dollar for Oregon	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDPA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Pennsylvania	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDRI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Rhode Island	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDSC684NMFRBDAL	Real Trade-Weighted Value of the dollar for South Carolina	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDSD684NMFRBDAL	Real Trade-Weighted Value of the dollar for South Dakota	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDTN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Tennessee	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDTX684NMFRBDAL	Real Trade-Weighted Value of the dollar for Texas	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDUT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Utah	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDVA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Virginia	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDVT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Vermont	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDWA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Washington	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDWI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wisconsin	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDWV684NMFRBDAL	Real Trade-Weighted Value of the dollar for West Virginia	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
-RTWVDWY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wyoming	NSA	Monthly	Index Jan 1988=100	LIN	2018-May-10	2018-Feb-01
+RTWVDAK684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alaska	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDAL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alabama	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDAR684NMFRBDAL	Real Trade-Weighted Value of the dollar for Arkansas	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDAZ684NMFRBDAL	Real Trade-Weighted Value of the dollar for Arizona	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDCA684NMFRBDAL	Real Trade-Weighted Value of the dollar for California	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDCO684NMFRBDAL	Real Trade-Weighted Value of the dollar for Colorado	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDCT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Connecticut	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDDE684NMFRBDAL	Real Trade-Weighted Value of the dollar for Delaware	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDFL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Florida	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDGA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Georgia	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDHI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Hawaii	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDIA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Iowa	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDID684NMFRBDAL	Real Trade-Weighted Value of the dollar for Idaho	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDIL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Illinois	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDIN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Indiana	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDKS684NMFRBDAL	Real Trade-Weighted Value of the dollar for Kansas	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDKY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Kentucky	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDLA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Louisiana	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Massachusetts	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMD684NMFRBDAL	Real Trade-Weighted Value of the dollar for Maryland	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDME684NMFRBDAL	Real Trade-Weighted Value of the dollar for Maine	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Michigan	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Minnesota	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMO684NMFRBDAL	Real Trade-Weighted Value of the dollar for Missouri	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMS684NMFRBDAL	Real Trade-Weighted Value of the dollar for Mississippi	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDMT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Montana	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNC684NMFRBDAL	Real Trade-Weighted Value of the dollar for North Carolina	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDND684NMFRBDAL	Real Trade-Weighted Value of the dollar for North Dakota	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNE684NMFRBDAL	Real Trade-Weighted Value of the dollar for Nebraska	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNH684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Hampshire	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNJ684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Jersey	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNM684NMFRBDAL	Real Trade-Weighted Value of the dollar for New Mexico	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNV684NMFRBDAL	Real Trade-Weighted Value of the dollar for Nevada	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDNY684NMFRBDAL	Real Trade-Weighted Value of the dollar for New York	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDOH684NMFRBDAL	Real Trade-Weighted Value of the dollar for Ohio	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDOK684NMFRBDAL	Real Trade-Weighted Value of the dollar for Oklahoma	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDOR684NMFRBDAL	Real Trade-Weighted Value of the dollar for Oregon	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDPA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Pennsylvania	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDRI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Rhode Island	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDSC684NMFRBDAL	Real Trade-Weighted Value of the dollar for South Carolina	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDSD684NMFRBDAL	Real Trade-Weighted Value of the dollar for South Dakota	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDTN684NMFRBDAL	Real Trade-Weighted Value of the dollar for Tennessee	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDTX684NMFRBDAL	Real Trade-Weighted Value of the dollar for Texas	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDUT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Utah	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDVA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Virginia	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDVT684NMFRBDAL	Real Trade-Weighted Value of the dollar for Vermont	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDWA684NMFRBDAL	Real Trade-Weighted Value of the dollar for Washington	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDWI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wisconsin	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDWV684NMFRBDAL	Real Trade-Weighted Value of the dollar for West Virginia	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
+RTWVDWY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wyoming	NSA	Monthly	Index Jan 1988=100	LIN	2018-Jun-11	2018-Mar-01
 S4231SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Motor Vehicle and Motor Vehicle Parts and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-08	2018-Apr-01
 S4232SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Furniture and Home Furnishings Sales	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-08	2018-Apr-01
 S4233SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Lumber and Other Construction Materials Sales	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-08	2018-Apr-01
@@ -884,7 +885,7 @@ S42SMNM144NCEN	Total Merchant Wholesalers, Except Manufacturers' Sales Branches 
 SFTPINDM114SFRBSF	San Francisco Tech Pulse	SA	Monthly	Index Jan 2000=100	LIN	2018-May-10	2018-Apr-01
 SLGOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment: State and Local Government	SA	Quarterly	Percentage Points	LIN	2018-Jun-06	2018-Apr-01
 SLOAS	Student Loans Owned and Securitized, Outstanding	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2018-May-07	2018-Jan-01
-SP500	S&P 500	NSA	Daily	Index	LIN	2018-Jun-08	2018-Jun-08
+SP500	S&P 500	NSA	Daily	Index	LIN	2018-Jun-11	2018-Jun-11
 SPASTT01USM661N	Total Share Prices for All Shares for the United States	NSA	Monthly	Index 2010=1	LIN	2018-Jun-05	2018-May-01
 STLENI	St. Louis Fed Economic News Index: Real GDP Nowcast	SAAR	Quarterly	Percent Change at Annual Rate	LIN	2018-Jun-08	2018-Apr-01
 STRUCTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Structures	SA	Quarterly	Percentage Points	LIN	2018-Jun-08	2018-Apr-01
@@ -915,21 +916,23 @@ SUUR0000SAT	Chained Consumer Price Index for all Urban Consumers: Transportation
 SUUR0000SAT1	Chained Consumer Price Index for all Urban Consumers: Private transportation	NSA	Monthly	Index Dec 1999=100	LIN	2018-May-10	2018-Apr-01
 SUUR0000SEFV	Chained Consumer Price Index for all Urban Consumers: Food away from home	NSA	Monthly	Index Dec 1999=100	LIN	2018-May-10	2018-Apr-01
 SUUR0000SETG	Chained Consumer Price Index for all Urban Consumers: Public transportation	NSA	Monthly	Index Dec 1999=100	LIN	2018-May-10	2018-Apr-01
-T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T10Y3M	10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T10YFF	10-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T10YIE	10-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T1YFF	1-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T3MFF	3-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T5YFF	5-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T5YIE	5-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T5YIFR	5-Year, 5-Year Forward Inflation Expectation Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
-T6MFF	6-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-07
+T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T10Y3M	10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T10YFF	10-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T10YIE	10-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T1YFF	1-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T3MFF	3-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T5YFF	5-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T5YIE	5-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T5YIFR	5-Year, 5-Year Forward Inflation Expectation Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
+T6MFF	6-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-08
 TABSNNCB	Nonfinancial Corporate Business; Total Assets, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Jan-01
 TBSDODNS	Nonfinancial Business; Credit Market Instruments; Liability, Level	SA	Quarterly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Jan-01
 TCU	Capacity Utilization: Total Industry	SA	Monthly	Percent of Capacity	LIN	2018-May-16	2018-Apr-01
-TEDRATE	TED Spread	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-01
+TEDRATE	TED Spread	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-04
+TFAABSHNO	Households and Nonprofit Organizations; Total Financial Assets, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Jan-01
 TLAMUSCON	Total Construction Spending: Amusement and recreation	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-01	2018-Apr-01
+TLBSHNO	Households and Nonprofit Organizations; Total Liabilities, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2018-Jun-07	2018-Jan-01
 TLCADCON	Total Construction Spending: Conservation and development	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-01	2018-Apr-01
 TLCMUCON	Total Construction Spending: Communication	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-01	2018-Apr-01
 TLCOMCON	Total Construction Spending: Commercial	NSA	Monthly	Millions of Dollars	LIN	2018-Jun-01	2018-Apr-01
@@ -1212,8 +1215,8 @@ US300LLRTL	Loan Loss Reserve to Total Loans for U.S. Banks with average assets u
 USACPIALLMINMEI	Consumer Price Index: All Items for the United States	NSA	Monthly	Index 2010=100	LIN	2018-May-14	2018-Apr-01
 USACPIHOUMINMEI	Consumer Price Index: Housing for the United States	NSA	Monthly	Index 2010=100	LIN	2018-May-14	2018-Apr-01
 USACPIHOUQINMEI	Consumer Price Index: Housing for the United States	NSA	Quarterly	Index 2010=100	LIN	2018-Apr-12	2018-Jan-01
-USD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-01
-USD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2018-Jun-08	2018-Jun-01
+USD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-04
+USD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2018-Jun-11	2018-Jun-04
 USLLRTL	Loan Loss Reserve to Total Loans for all U.S. Banks	NSA	Quarterly, End of Period	Percent	LIN	2018-May-25	2018-Jan-01
 USPHCI	Coincident Economic Activity Index for the United States	SA	Monthly	Index Jul 1992=100	LIN	2018-May-23	2018-Apr-01
 USROE	Return on Average Equity for all U.S. Banks	NSA	Quarterly, End of Period	Percent	LIN	2018-May-25	2018-Jan-01
@@ -1231,7 +1234,7 @@ WHLSLRIMNSA	Merchant Wholesalers Inventories	NSA	Monthly	Millions of Dollars	LIN
 WHLSLRIRNSA	Merchant Wholesalers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2018-May-15	2018-Mar-01
 WHLSLRSMNSA	Merchant Wholesalers Sales	NSA	Monthly	Millions of Dollars	LIN	2018-May-15	2018-Mar-01
 WHOILNYH	No. 2 Heating Oil Prices: New York Harbor	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2018-Jun-06	2018-Jun-01
-WILL5000IND	Wilshire 5000 Total Market Index	NSA	Daily, Close	Index	LIN	2018-Jun-08	2018-Jun-07
+WILL5000IND	Wilshire 5000 Total Market Index	NSA	Daily, Close	Index	LIN	2018-Jun-11	2018-Jun-08
 WJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2018-Jun-06	2018-Jun-01
 WRMFNS	Retail Money Funds	NSA	Weekly, Ending Monday	Billions of Dollars	LIN	2018-Jun-07	2018-May-28
 XTEXVA01USM664N	Exports: Value Goods for the United States	NSA	Monthly	National currency, Monthly Level	LIN	2018-Jun-08	2018-Apr-01
