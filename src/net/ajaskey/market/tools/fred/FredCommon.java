@@ -108,6 +108,7 @@ public class FredCommon {
 		sn = FredCommon.replace(sn, " -", "");
 
 		sn = FredCommon.replace(sn, "Control", "Ctrl");
+		sn = FredCommon.replace(sn, "Value of Manufacturers'", "Value");
 		sn = FredCommon.replace(sn, "Components", "Comp");
 		sn = FredCommon.replace(sn, "Ventilation  Heating  Air-Conditioning", "HVAC");
 		sn = FredCommon.replace(sn, "Contributions to percent change in GDPNow", "");
@@ -214,7 +215,7 @@ public class FredCommon {
 
 		for (final DataSeriesInfo dsi : p_list) {
 			if (name.equalsIgnoreCase(dsi.getName())) {
-				System.out.println("Propagating : " + name);
+				System.out.println("\nPropagating : " + name);
 				return true;
 			}
 		}
@@ -742,13 +743,27 @@ public class FredCommon {
 	 */
 	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
 
-		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/fred-series-info.txt")) {
+		File f = new File(FredCommon.fredPath + "/fred-series-info.txt");
+		if (f.exists()) {
+			File fb = new File(f.getAbsolutePath() + ".bak");
+			try {
+				Files.copy(f.toPath(), fb.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		try (PrintWriter pw = new PrintWriter(f)) {
 			pw.println(infoHeader);
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
-				pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
-				    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
-				    sdf.format(ds.getLastObservation().getTime()));
+				try {
+					pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
+					    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+					    sdf.format(ds.getLastObservation().getTime()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}

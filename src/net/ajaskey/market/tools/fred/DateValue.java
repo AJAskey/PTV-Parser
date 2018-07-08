@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import net.ajaskey.market.misc.Utils;
+
 /**
  * This class...
  *
@@ -42,16 +44,17 @@ public class DateValue {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DateValue(String str) {
+	public DateValue(String str, int fptr) {
 		this.valid = false;
 		try {
 			if (str.trim().length() > 10) {
-				String fld[] = str.trim().split("[\t,]");
+				String fld[] = str.trim().split(",");
 				if (fld.length > 1) {
 					Date dat = sdf.parse(fld[0].trim());
 					this.date = Calendar.getInstance();
 					this.date.setTime(dat);
-					this.value = Double.parseDouble(fld[1].trim());
+					String field = fld[fptr].replaceAll("\"", "").replaceAll(",", "").trim();
+					this.value = Double.parseDouble(field);
 					this.valid = true;
 				}
 			}
@@ -73,4 +76,9 @@ public class DateValue {
 		this.valid = true;
 	}
 
+	@Override
+	public String toString() {
+		String ret = String.format("%s\t%.2f", Utils.getString(this.date), this.value);
+		return ret;
+	}
 }

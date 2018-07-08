@@ -104,7 +104,7 @@ public class UpdateFred {
 
 							boolean propagate = FredCommon.doPropagate(prop_names, series);
 
-							if ((!propagate) && (lastModTime.after(dsi.getLastUpdate()))) {
+							if ((!series.equalsIgnoreCase("SP500")) && (!propagate) && (lastModTime.after(dsi.getLastUpdate()))) {
 								Debug.pwDbg.println("Local file created After                               "
 								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 								if (knt < 100) {
@@ -120,7 +120,7 @@ public class UpdateFred {
 									    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 									final DataSeries ds = new DataSeries(series);
 
-									if (knt > 0) {
+									if ((knt > 0) && (!propagate)) {
 										System.out.print("\n");
 									}
 									System.out.println(series);
@@ -141,6 +141,19 @@ public class UpdateFred {
 
 				}
 			}
+
+			List<String> always = new ArrayList<>();
+			always.add("SP500");
+
+			for (String series : always) {
+				System.out.println("\n" + series);
+				final DataSeriesInfo dsi = new DataSeriesInfo(series);
+				final DataSeries ds = new DataSeries(series);
+				String filename = FredCommon.toFullFileName(series, dsi.getTitle());
+				FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(), dsi.getFrequency(),
+				    false);
+			}
+
 			System.out.println("");
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();

@@ -57,7 +57,7 @@ public class ConvertOHLCV {
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
 	final private static SimpleDateFormat	sdfOut		= new SimpleDateFormat("yyyy-MM-dd");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
-	final public static String						shortPath	= OptumaCommon.optumaPath + "/Dc";
+	final public static String						shortPath	= OptumaCommon.optumaPath + "/Quandl";
 	final public static String						fullPath	= OptumaCommon.optumaPath + "/Dohlcv";
 
 	/**
