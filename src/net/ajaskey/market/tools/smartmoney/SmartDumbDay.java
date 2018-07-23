@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.ta.apps.helpers;
+package net.ajaskey.market.tools.smartmoney;
 
 import java.util.ArrayList;
 import java.util.Calendar;

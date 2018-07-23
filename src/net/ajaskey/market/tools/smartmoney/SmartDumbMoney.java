@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.ta.apps;
+package net.ajaskey.market.tools.smartmoney;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,7 +11,6 @@ import java.util.List;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
-import net.ajaskey.market.ta.apps.helpers.SmartDumbDay;
 import net.ajaskey.market.ta.input.ParseData;
 import net.ajaskey.market.ta.input.TickerFullName;
 import net.ajaskey.market.tools.fred.DataValues;
