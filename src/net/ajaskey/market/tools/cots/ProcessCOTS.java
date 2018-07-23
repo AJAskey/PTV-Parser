@@ -50,7 +50,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
 public class ProcessCOTS {
 
 	final private static String						outputPath	= "out/optuma";
-	final private static String						folderPath	= "d:/data/cots";
+	final private static String						folderPath	= "data/cots";
 	final private static Charset					charset			= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf					= new SimpleDateFormat("yyMMdd");
 	final private static SimpleDateFormat	sdf2				= new SimpleDateFormat("MMMM dd, yyyy");

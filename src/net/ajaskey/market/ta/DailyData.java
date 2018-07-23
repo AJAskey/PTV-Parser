@@ -76,6 +76,7 @@ public class DailyData {
 	 *          Volume of daily activity.
 	 */
 	public DailyData(Calendar d, double o, double h, double l, double c, double v, double oi) {
+
 		this.date = d;
 		this.date.set(Calendar.HOUR_OF_DAY, 0);
 		this.date.set(Calendar.MINUTE, 0);
@@ -118,8 +119,8 @@ public class DailyData {
 	}
 
 	/**
-	 * Returns the percent change in the close of the current day minus the
-	 * previous day.
+	 * Returns the percent change in the close of the current day minus the previous
+	 * day.
 	 *
 	 * @return the dailyPercentChg
 	 */
@@ -129,8 +130,8 @@ public class DailyData {
 	}
 
 	/**
-	 * Returns the percent range (high to low) in the close of the current day
-	 * minus the previous day.
+	 * Returns the percent range (high to low) in the close of the current day minus
+	 * the previous day.
 	 *
 	 * @return the dailyPercentRng
 	 */
@@ -241,8 +242,8 @@ public class DailyData {
 
 	/**
 	 * Sets the change value based on the price passed in. It is assumed that this
-	 * price is the close from the previous day, but can be any price the use
-	 * wants to send in.
+	 * price is the close from the previous day, but can be any price the use wants
+	 * to send in.
 	 *
 	 * @param closeYesterday
 	 *          the close from the previous day.
@@ -308,15 +309,15 @@ public class DailyData {
 	public String toString() {
 
 		final String sDate = this.sdf.format(this.date.getTime());
-		final String ret = String.format("%s  %.2f  %.2f  %.2f  %.2f %5d %5d %9.2f %9.2f%n", sDate, this.open, this.high,
-		    this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi), this.close * this.volume,
-		    this.close * this.oi);
+		final String ret = String.format("%s  %7.2f  %7.2f  %7.2f  %7.2f %15d %5d %15.2f %9.2f %6.2f %9d %n", sDate, this.open,
+		    this.high, this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi),
+		    this.close * this.volume, this.close * this.oi, this.dailyChg, (long) (double) (this.dailyChg * this.volume));
 		return ret.trim();
 	}
 
-	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
+	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
-	/** 
+	/**
 	 * net.ajaskey.market.ta.toOputma
 	 *
 	 * @return
@@ -324,8 +325,8 @@ public class DailyData {
 	public String toOputma() {
 
 		final String sDate = sdfOptuma.format(this.date.getTime());
-		final String ret = String.format("%s,%.2f,%.2f,%.2f,%.2f,%d", sDate, this.open, this.high,
-		    this.low, this.close, (int) (double) (this.volume));
+		final String ret = String.format("%s,%.2f,%.2f,%.2f,%.2f,%d", sDate, this.open, this.high, this.low, this.close,
+		    (long) (double) (this.volume));
 		return ret.trim();
 	}
 
