@@ -144,6 +144,7 @@ public class BreadthOfList {
 
 		final List<TickerData> tdAll = BreadthOfList.readList(name);
 		final List<BreadthData> bd = BreadthOfList.processList(tdAll, 0);
+		//System.out.println(name + "\t" + bd.size());
 		final List<BreadthData> bd1week = BreadthOfList.processList(tdAll, 6);
 		BreadthOfList.writeData(bd, bd1week, name, indexName);
 		BreadthOfList.writePercentData(bd, name);

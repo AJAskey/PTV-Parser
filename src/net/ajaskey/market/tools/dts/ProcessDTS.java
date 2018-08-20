@@ -51,8 +51,8 @@ public class ProcessDTS {
 	//final static private Charset charset = Charset.forName("UTF-8");
 
 	final static public int	webDownloadYear		= 2018;
-	final static public int	webDownloadMonth	= Calendar.MAY;
-	final static public int	webDownloadDay		= 20;
+	final static public int	webDownloadMonth	= Calendar.JULY;
+	final static public int	webDownloadDay		= 31;
 
 	/**
 	 *

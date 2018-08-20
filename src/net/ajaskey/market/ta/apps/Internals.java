@@ -197,8 +197,8 @@ public class Internals {
 			Internals.printBreath("lists\\ndx-components.csv", "NDX", days);
 			Internals.printBreath("lists\\ijr-components.csv", "SML", days);
 			Internals.printBreath("lists\\stock-list.txt", "STOCKS - Over $10 and 500k volume", days);
-			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
 			Internals.printBreath("lists\\nya-components.csv", "NYSE Composite", days);
+			Internals.printBreath("lists\\etf-major-list.txt", "Simple non-leveraged ETFs", days);
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();

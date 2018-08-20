@@ -63,6 +63,17 @@ public class SipCommon {
 		this.ptr += this.INC;
 		return dsRet;
 	}
+	
+	public DataSet5 getUsData5(String name, String line, DataSet5.dMode mode, double scaler) {
+
+		final String fld[] = line.replace("\"", "").split(this.splitChar);
+
+		final DataSet5 ds = new DataSet5("US", name, fld[0], fld[2], fld, this.ptr, mode);
+		final DataSet5 dsRet = DataSet5.scale(ds, scaler);
+		//System.out.println(dsRet);
+		this.ptr += this.INC;
+		return dsRet;
+	}
 
 	/**
 	 * net.ajaskey.market.tools.sipro.v4.getDate

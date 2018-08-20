@@ -168,17 +168,17 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 32.58;
+		double shillerpe = 32.84;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO",shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 50.99));
-		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 836.97));
-		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1275.00));
-		double spxearn = 113.0;
+		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 826.52));
+		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1300.00));
+		double spxearn = 120.0;
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS", spxearn));
-		double lastEcri = 0;
-		double lastCoin = 178.45;
+		double lastEcri = 0.0;
+		double lastCoin = 181.3;
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -207,9 +207,9 @@ public class ProcessQuandl {
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
 		List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
-		ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
+		//ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
 
-		Collections.reverse(scaledEarnings);
+		//Collections.reverse(scaledEarnings);
 		List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
 		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 

@@ -48,6 +48,7 @@ public class Utils {
 	private final static Calendar					baseDate	= Calendar.getInstance();
 	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdf2			= new SimpleDateFormat("E dd-MMM-yyyy");
+	public final static SimpleDateFormat	sdfFull		= new SimpleDateFormat("E dd-MMM-yyyy HH:mm:ss");
 
 	// public static String[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU",
 	// "FRI", "SAT" };
@@ -66,7 +67,9 @@ public class Utils {
 	public static Calendar buildCalendar(Calendar inCal) {
 
 		final Calendar cal = Calendar.getInstance();
-		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE));
+		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE),
+		    inCal.get(Calendar.HOUR_OF_DAY), inCal.get(Calendar.MINUTE), inCal.get(Calendar.SECOND));
+		cal.set(Calendar.MILLISECOND, 0);
 		return cal;
 	}
 
@@ -207,7 +210,7 @@ public class Utils {
 			}
 		} catch (IOException e) {
 			return "";
-		} 
+		}
 		return sb.toString();
 	}
 
@@ -486,6 +489,17 @@ public class Utils {
 				}
 			}
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.misc.getStringFull
+	 *
+	 * @param day
+	 * @return
+	 */
+	public static String getStringFull(Calendar cal) {
+
+		return sdfFull.format(cal.getTime());
 	}
 
 }

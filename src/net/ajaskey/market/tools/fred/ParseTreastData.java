@@ -51,7 +51,7 @@ public class ParseTreastData {
 		final List<DateValue> pastList = ParseTreastData.readFile(
 		    FredCommon.fredPath + "[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv", 1);
 		//final List<DateValue> dvList = readFile("data\\treast-data.csv");
-		final List<DateValue> dvList = ParseTreastData.readFile("data\\SomaNonMbs-062718.csv", 6);
+		final List<DateValue> dvList = ParseTreastData.readFile("data\\SomaNonMbs-080118.csv", 6);
 		
 		for (DateValue dv : dvList) {
 			System.out.println(dv);
