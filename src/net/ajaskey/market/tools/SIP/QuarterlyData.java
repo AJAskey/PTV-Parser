@@ -41,7 +41,7 @@ public class QuarterlyData {
 	public static Map<String, Integer> colPos = new HashMap<>();
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.init
 	 *
 	 */
@@ -52,7 +52,7 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("stInvestments", pos);
 		pos += 8;
-		colPos.put("acctRx", pos);
+		colPos.put("acctReceiveable", pos);
 		pos += 8;
 		colPos.put("inventory", pos);
 		pos += 8;
@@ -66,6 +66,32 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("goodwill", pos);
 		pos += 8;
+		colPos.put("otherLtAssets", pos);
+		pos += 8;
+		colPos.put("totalAssets", pos);
+		pos += 8;
+		colPos.put("acctPayable", pos);
+		pos += 8;
+		colPos.put("stDebt", pos);
+		pos += 8;
+		colPos.put("otherCurrLiab", pos);
+		pos += 8;
+		colPos.put("currLiab", pos);
+		pos += 8;
+		colPos.put("ltDebt", pos);
+		pos += 8;
+		colPos.put("otherLtLiab", pos);
+		pos += 8;
+		colPos.put("totalLiab", pos);
+		pos += 8;
+		colPos.put("prefStock", pos);
+		pos += 8;
+		colPos.put("equity", pos);
+		pos += 8;
+		colPos.put("liabEquity", pos);
+		pos += 8;
+		colPos.put("bvps", pos);
+		pos += 8;
 
 	}
 
@@ -73,12 +99,12 @@ public class QuarterlyData {
 	 * net.ajaskey.market.tools.SIP.main
 	 *
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		
+
 		QuarterlyData.init();
-		
+
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
 
 			String line = reader.readLine(); //header line
@@ -122,6 +148,16 @@ public class QuarterlyData {
 
 		this.type = t;
 		this.pos = colPos.get(t);
+		this.initData();
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.initData
+	 *
+	 */
+	private void initData() {
+
 		this.q8 = 0.0;
 		this.q7 = 0.0;
 		this.q6 = 0.0;
@@ -133,7 +169,7 @@ public class QuarterlyData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.parse
 	 *
 	 * @param fld
@@ -142,25 +178,37 @@ public class QuarterlyData {
 
 		try {
 			int pos = colPos.get(this.type);
-			this.q1 = Double.parseDouble(fld[pos++]);
-			this.q2 = Double.parseDouble(fld[pos++]);
-			this.q3 = Double.parseDouble(fld[pos++]);
-			this.q4 = Double.parseDouble(fld[pos++]);
-			this.q5 = Double.parseDouble(fld[pos++]);
-			this.q6 = Double.parseDouble(fld[pos++]);
-			this.q7 = Double.parseDouble(fld[pos++]);
-			this.q8 = Double.parseDouble(fld[pos++]);
+			this.q1 = this.parseDouble(fld[pos++]);
+			this.q2 = this.parseDouble(fld[pos++]);
+			this.q3 = this.parseDouble(fld[pos++]);
+			this.q4 = this.parseDouble(fld[pos++]);
+			this.q5 = this.parseDouble(fld[pos++]);
+			this.q6 = this.parseDouble(fld[pos++]);
+			this.q7 = this.parseDouble(fld[pos++]);
+			this.q8 = this.parseDouble(fld[pos++]);
 
 		} catch (final Exception e) {
-			this.q1 = 0.0;
-			this.q2 = 0.0;
-			this.q3 = 0.0;
-			this.q4 = 0.0;
-			this.q5 = 0.0;
-			this.q6 = 0.0;
-			this.q7 = 0.0;
-			this.q8 = 0.0;
+			this.initData();
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.parseDouble
+	 *
+	 * @param string
+	 * @return
+	 */
+	private double parseDouble(String fld) {
+
+		try {
+			double d = Double.parseDouble(fld);
+			if (d < 0.0001) {
+				d = 0.0;
+			}
+			return d;
+		} catch (final Exception e) {
+		}
+		return 0;
 	}
 
 	/* (non-Javadoc)
