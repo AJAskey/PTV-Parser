@@ -4,6 +4,8 @@ package net.ajaskey.market.tools.SIP;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,12 +42,31 @@ public class QuarterlyData {
 
 	public static Map<String, Integer> colPos = new HashMap<>();
 
+	private static DecimalFormatSymbols	decimalFormatSymbols	= new DecimalFormatSymbols();
+	private static DecimalFormat				df;
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.fmt
+	 *
+	 * @param d
+	 * @return
+	 */
+	private static String fmt(double d) {
+
+		return String.format("%15s", df.format(d));
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.init
 	 *
 	 */
 	public static void init() {
+
+		decimalFormatSymbols.setDecimalSeparator('.');
+		decimalFormatSymbols.setGroupingSeparator(',');
+		df = new DecimalFormat("#,###,##0.00", decimalFormatSymbols);
 
 		int pos = 5;
 		colPos.put("cash", pos);
@@ -137,7 +158,8 @@ public class QuarterlyData {
 	public double	q4;
 	public double	q3;
 	public double	q2;
-	public double	q1;
+
+	public double q1;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -152,7 +174,7 @@ public class QuarterlyData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.initData
 	 *
 	 */
@@ -211,6 +233,24 @@ public class QuarterlyData {
 		return 0;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.SIP.sum
+	 *
+	 * @param cash
+	 */
+	public void sum(QuarterlyData qd) {
+
+		this.q1 += qd.q1;
+		this.q2 += qd.q2;
+		this.q3 += qd.q3;
+		this.q4 += qd.q4;
+		this.q5 += qd.q5;
+		this.q6 += qd.q6;
+		this.q7 += qd.q7;
+		this.q8 += qd.q8;
+
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -218,14 +258,14 @@ public class QuarterlyData {
 	public String toString() {
 
 		String ret = this.type + NL;
-		ret += TAB2 + "Q1" + TAB + this.q1 + NL;
-		ret += TAB2 + "Q2" + TAB + this.q2 + NL;
-		ret += TAB2 + "Q3" + TAB + this.q3 + NL;
-		ret += TAB2 + "Q4" + TAB + this.q4 + NL;
-		ret += TAB2 + "Q5" + TAB + this.q5 + NL;
-		ret += TAB2 + "Q6" + TAB + this.q6 + NL;
-		ret += TAB2 + "Q7" + TAB + this.q7 + NL;
-		ret += TAB2 + "Q8" + TAB + this.q8 + NL;
+		ret += TAB2 + "Q1 :" + TAB + QuarterlyData.fmt(this.q1) + NL;
+		ret += TAB2 + "Q2 :" + TAB + QuarterlyData.fmt(this.q2) + NL;
+		ret += TAB2 + "Q3 :" + TAB + QuarterlyData.fmt(this.q3) + NL;
+		ret += TAB2 + "Q4 :" + TAB + QuarterlyData.fmt(this.q4) + NL;
+		ret += TAB2 + "Q5 :" + TAB + QuarterlyData.fmt(this.q5) + NL;
+		ret += TAB2 + "Q6 :" + TAB + QuarterlyData.fmt(this.q6) + NL;
+		ret += TAB2 + "Q7 :" + TAB + QuarterlyData.fmt(this.q7) + NL;
+		ret += TAB2 + "Q8 :" + TAB + QuarterlyData.fmt(this.q8) + NL;
 		return ret;
 	}
 

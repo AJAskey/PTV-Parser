@@ -4,6 +4,8 @@ package net.ajaskey.market.tools.SIP;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class...
@@ -42,8 +44,13 @@ public class CompanyData {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+		
+		List<CompanyData> companyList = new ArrayList<>();
 
 		QuarterlyData.init();
+		
+		TotalData td = new TotalData();
+
 
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
 
@@ -55,10 +62,16 @@ public class CompanyData {
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
 					CompanyData cd = CompanyData.setCompanyInfo(fld);
-					System.out.println(cd);
+					companyList.add(cd);
 				}
 
 			}
+			
+			for (CompanyData cd : companyList) {
+				System.out.println(cd);
+				td.add(cd);
+			}
+			System.out.println(td);
 		}
 
 	}
@@ -150,6 +163,7 @@ public class CompanyData {
 	public QuarterlyData	equity;
 	public QuarterlyData	liabEquity;
 	public QuarterlyData	bvps;
+	
 
 	/**
 	 * This method serves as a constructor for the class.
