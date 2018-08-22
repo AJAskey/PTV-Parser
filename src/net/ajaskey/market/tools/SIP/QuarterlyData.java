@@ -149,17 +149,17 @@ public class QuarterlyData {
 
 	}
 
-	public String	type;
-	public int		pos;
-	public double	q8;
-	public double	q7;
-	public double	q6;
-	public double	q5;
-	public double	q4;
-	public double	q3;
-	public double	q2;
-
-	public double q1;
+	public String				type;
+	public int					pos;
+	public double				q8;
+	public double				q7;
+	public double				q6;
+	public double				q5;
+	public double				q4;
+	public double				q3;
+	public double				q2;
+	public double				q1;
+	public DerivedData	dd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -171,6 +171,7 @@ public class QuarterlyData {
 		this.type = t;
 		this.pos = colPos.get(t);
 		this.initData();
+		this.dd = new DerivedData();
 	}
 
 	/**
@@ -208,6 +209,8 @@ public class QuarterlyData {
 			this.q6 = this.parseDouble(fld[pos++]);
 			this.q7 = this.parseDouble(fld[pos++]);
 			this.q8 = this.parseDouble(fld[pos++]);
+
+			this.dd.calculate(this);
 
 		} catch (final Exception e) {
 			this.initData();
@@ -266,6 +269,7 @@ public class QuarterlyData {
 		ret += TAB2 + "Q6 :" + TAB + QuarterlyData.fmt(this.q6) + NL;
 		ret += TAB2 + "Q7 :" + TAB + QuarterlyData.fmt(this.q7) + NL;
 		ret += TAB2 + "Q8 :" + TAB + QuarterlyData.fmt(this.q8) + NL;
+		ret += this.dd;
 		return ret;
 	}
 

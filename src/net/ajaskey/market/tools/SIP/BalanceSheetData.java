@@ -1,8 +1,6 @@
 
 package net.ajaskey.market.tools.SIP;
 
-import java.text.DecimalFormatSymbols;
-
 /**
  * This class...
  *
@@ -17,7 +15,7 @@ import java.text.DecimalFormatSymbols;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,24 +26,61 @@ import java.text.DecimalFormatSymbols;
  *         SOFTWARE. </p>
  *
  */
-public class TotalData {
+public class BalanceSheetData {
 
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
 
-	/**
-	 * net.ajaskey.market.tools.SIP.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static BalanceSheetData setBalanceSheetInfo(String[] fld) {
+
+		final BalanceSheetData bsd = new BalanceSheetData();
+
+		bsd.cash.parse(fld);
+		bsd.stInvestments.parse(fld);
+		bsd.acctReceiveable.parse(fld);
+		bsd.inventory.parse(fld);
+		bsd.otherAssets.parse(fld);
+		bsd.currentAssets.parse(fld);
+		bsd.fixedAssets.parse(fld);
+		bsd.ltInvestments.parse(fld);
+		bsd.goodwill.parse(fld);
+		bsd.otherLtAssets.parse(fld);
+		bsd.totalAssets.parse(fld);
+		bsd.acctPayable.parse(fld);
+		bsd.stDebt.parse(fld);
+		bsd.otherCurrLiab.parse(fld);
+		bsd.currLiab.parse(fld);
+		bsd.ltDebt.parse(fld);
+		bsd.otherLtLiab.parse(fld);
+		bsd.totalLiab.parse(fld);
+		bsd.prefStock.parse(fld);
+		bsd.equity.parse(fld);
+		bsd.liabEquity.parse(fld);
+		bsd.bvps.parse(fld);
+
+		return bsd;
 
 	}
 
-	public String					name;
-	public String					sector;
-	public String					industry;
+	/**
+	 * net.ajaskey.market.tools.SIP.setSecInd
+	 *
+	 * @param string
+	 * @return
+	 */
+	private static String setSecInd(String secind) {
+
+		String ret = "";
+		final String str = secind.trim();
+		final int pos = secind.indexOf(" - ");
+		if (pos > 0) {
+			ret = str.substring(pos + 3, str.length()).trim();
+		} else {
+			ret = str;
+		}
+		return ret;
+	}
+
 	public QuarterlyData	cash;
 	public QuarterlyData	stInvestments;
 	public QuarterlyData	acctReceiveable;
@@ -66,19 +101,15 @@ public class TotalData {
 	public QuarterlyData	totalLiab;
 	public QuarterlyData	prefStock;
 	public QuarterlyData	equity;
-	public QuarterlyData	liabEquity;
-
+	public QuarterlyData liabEquity;
 	public QuarterlyData bvps;
-
-	DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public TotalData() {
+	public BalanceSheetData() {
 
-		this.name = "";
 		this.cash = new QuarterlyData("cash");
 		this.stInvestments = new QuarterlyData("stInvestments");
 		this.acctReceiveable = new QuarterlyData("acctReceiveable");
@@ -103,104 +134,36 @@ public class TotalData {
 		this.bvps = new QuarterlyData("bvps");
 	}
 
-	/**
-	 * net.ajaskey.market.tools.SIP.add
-	 *
-	 * @param bsd
-	 */
-	public void add(BalanceSheetData bsd) {
-
-		this.acctReceiveable.sum(bsd.acctReceiveable);
-		this.acctPayable.sum(bsd.acctPayable);
-		this.bvps.sum(bsd.bvps);
-		this.cash.sum(bsd.cash);
-		this.currentAssets.sum(bsd.currentAssets);
-		this.currLiab.sum(bsd.currLiab);
-		this.equity.sum(bsd.equity);
-		this.fixedAssets.sum(bsd.fixedAssets);
-		this.goodwill.sum(bsd.goodwill);
-		this.inventory.sum(bsd.inventory);
-		this.liabEquity.sum(bsd.liabEquity);
-		this.ltDebt.sum(bsd.ltDebt);
-		this.ltInvestments.sum(bsd.ltInvestments);
-		this.otherAssets.sum(bsd.otherAssets);
-		this.otherCurrLiab.sum(bsd.otherCurrLiab);
-		this.otherLtAssets.sum(bsd.otherLtAssets);
-		this.otherLtLiab.sum(bsd.otherLtLiab);
-		this.prefStock.sum(bsd.prefStock);
-		this.stDebt.sum(bsd.stDebt);
-		this.stInvestments.sum(bsd.stInvestments);
-		this.totalAssets.sum(bsd.totalAssets);
-		this.totalLiab.sum(bsd.totalLiab);
-
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.sum
-	 *
-	 */
-	public void sum() {
-
-		this.acctReceiveable.dd.calculate(this.acctReceiveable);
-		this.acctPayable.dd.calculate(this.acctPayable);
-		this.bvps.dd.calculate(this.bvps);
-		this.cash.dd.calculate(this.cash);
-		this.currentAssets.dd.calculate(this.currentAssets);
-		this.currLiab.dd.calculate(this.currLiab);
-		this.equity.dd.calculate(this.equity);
-		this.fixedAssets.dd.calculate(this.fixedAssets);
-		this.goodwill.dd.calculate(this.goodwill);
-		this.inventory.dd.calculate(this.inventory);
-		this.liabEquity.dd.calculate(this.liabEquity);
-		this.ltDebt.dd.calculate(this.ltDebt);
-		this.ltInvestments.dd.calculate(this.ltInvestments);
-		this.otherAssets.dd.calculate(this.otherAssets);
-		this.otherCurrLiab.dd.calculate(this.otherCurrLiab);
-		this.otherLtAssets.dd.calculate(this.otherLtAssets);
-		this.otherLtLiab.dd.calculate(this.otherLtLiab);
-		this.prefStock.dd.calculate(this.prefStock);
-		this.stDebt.dd.calculate(this.stDebt);
-		this.stInvestments.dd.calculate(this.stInvestments);
-		this.totalAssets.dd.calculate(this.totalAssets);
-		this.totalLiab.dd.calculate(this.totalLiab);
-
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 
-		String ret = "Totals ==>" + NL;
-		ret += TAB + this.acctPayable;
-		ret += TAB + this.acctReceiveable;
-		ret += TAB + this.bvps;
+		String ret = ""; 
 		ret += TAB + this.cash;
-		ret += TAB + this.equity;
+		ret += TAB + this.stInvestments;
+		ret += TAB + this.acctReceiveable;
+		ret += TAB + this.acctPayable;
 		ret += TAB + this.inventory;
-		ret += TAB + this.prefStock;
-
+		ret += TAB + this.otherAssets;
 		ret += TAB + this.currentAssets;
 		ret += TAB + this.fixedAssets;
-		ret += TAB + this.otherLtAssets;
-		ret += TAB + this.otherAssets;
-		ret += TAB + this.goodwill;
-		ret += TAB + this.totalAssets;
-
-		ret += TAB + this.stInvestments;
 		ret += TAB + this.ltInvestments;
-
+		ret += TAB + this.goodwill;
+		ret += TAB + this.otherLtAssets;
+		ret += TAB + this.totalAssets;
+		ret += TAB + this.acctPayable;
 		ret += TAB + this.stDebt;
-		ret += TAB + this.ltDebt;
-
-		ret += TAB + this.currLiab;
-		ret += TAB + this.liabEquity;
 		ret += TAB + this.otherCurrLiab;
+		ret += TAB + this.currLiab;
+		ret += TAB + this.ltDebt;
 		ret += TAB + this.otherLtLiab;
 		ret += TAB + this.totalLiab;
-
+		ret += TAB + this.prefStock;
+		ret += TAB + this.equity;
+		ret += TAB + this.liabEquity;
+		ret += TAB + this.bvps;
 		return ret;
 	}
-
 }
