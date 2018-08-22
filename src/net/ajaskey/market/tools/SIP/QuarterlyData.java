@@ -112,8 +112,52 @@ public class QuarterlyData {
 		colPos.put("liabEquity", pos);
 		pos += 8;
 		colPos.put("bvps", pos);
-		pos += 8;
 
+		pos = 5;
+		colPos.put("sales", pos);
+		pos += 8;
+		colPos.put("cogs", pos);
+		pos += 8;
+		colPos.put("grossIncome", pos);
+		pos += 8;
+		colPos.put("rd", pos);
+		pos += 8;
+		colPos.put("depreciation", pos);
+		pos += 8;
+		colPos.put("interestExp", pos);
+		pos += 8;
+		colPos.put("unusualIncome", pos);
+		pos += 8;
+		colPos.put("totalOpExp", pos);
+		pos += 8;
+		colPos.put("interestExpNonOp", pos);
+		pos += 8;
+		colPos.put("otherIncome", pos);
+		pos += 8;
+		colPos.put("pretaxIncome", pos);
+		pos += 8;
+		colPos.put("incomeTax", pos);
+		pos += 8;
+		colPos.put("incomeAfterTaxes", pos);
+		pos += 8;
+		colPos.put("adjustments", pos);
+		pos += 8;
+		colPos.put("incomeEps", pos);
+		pos += 8;
+		colPos.put("nonrecurring", pos);
+		pos += 8;
+		colPos.put("netIncome", pos);
+		pos += 8;
+		colPos.put("eps", pos);
+		pos += 8;
+		colPos.put("epsContinuing", pos);
+		pos += 8;
+		colPos.put("epsDiluted", pos);
+		pos += 8;
+		colPos.put("epsDilCont", pos);
+		pos += 8;
+		colPos.put("dividend", pos);
+		pos += 8;
 	}
 
 	/**
@@ -126,7 +170,7 @@ public class QuarterlyData {
 
 		QuarterlyData.init();
 
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-INCOMESTMTQTR.TXT"))) {
 
 			String line = reader.readLine(); //header line
 
@@ -135,7 +179,7 @@ public class QuarterlyData {
 				if (str.length() > 1) {
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
-					final QuarterlyData qd = new QuarterlyData("cash");
+					final QuarterlyData qd = new QuarterlyData("sales");
 					qd.parse(fld);
 
 					System.out.println(qd);
@@ -144,7 +188,7 @@ public class QuarterlyData {
 			}
 		}
 
-		final QuarterlyData qd = new QuarterlyData("cash");
+		final QuarterlyData qd = new QuarterlyData("sales");
 		System.out.println(qd);
 
 	}

@@ -37,6 +37,8 @@ public class CompanyData {
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
 
+	private static List<CompanyData> companyList = new ArrayList<>();
+
 	/**
 	 * net.ajaskey.market.tools.SIP.main
 	 *
@@ -45,12 +47,11 @@ public class CompanyData {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		final List<CompanyData> companyList = new ArrayList<>();
-
 		QuarterlyData.init();
 
 		final TotalData td = new TotalData();
 
+		// Read balance sheet
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
 
 			String line = reader.readLine(); //header line
@@ -65,17 +66,51 @@ public class CompanyData {
 					companyList.add(cd);
 				}
 			}
-
-			for (final CompanyData cd : companyList) {
-				System.out.println(cd);
-				td.add(cd);
-			}
-
-			td.sum();
-
-			System.out.println(td);
 		}
 
+		// Read income statement
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-INCOMESTMTQTR.TXT"))) {
+			String line = reader.readLine(); //header line
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
+				if (str.length() > 1) {
+
+					
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					String ticker = fld[1].trim();
+					CompanyData cd = getCompany(ticker);
+					if (cd != null) {
+						cd.id = IncomeData.setIncomeData(fld);
+					}
+				}
+			}
+		}
+		for (final CompanyData cd : companyList) {
+			System.out.println(cd);
+			td.add(cd);
+		}
+
+		td.sum();
+
+		System.out.println(td);
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.getCompany
+	 *
+	 * @param ticker
+	 * @return
+	 */
+	private static CompanyData getCompany(String ticker) {
+
+		for (final CompanyData cd : companyList) {
+			if (cd.ticker.equalsIgnoreCase(ticker)) {
+				return cd;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -121,6 +156,7 @@ public class CompanyData {
 	public String						sector;
 	public String						industry;
 	public BalanceSheetData	bsd;
+	public IncomeData				id;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -148,6 +184,7 @@ public class CompanyData {
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
 		ret += this.bsd;
+		ret += this.id;
 
 		return ret;
 	}
