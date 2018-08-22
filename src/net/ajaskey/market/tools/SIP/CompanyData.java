@@ -60,20 +60,20 @@ public class CompanyData {
 				if (str.length() > 1) {
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
-					final CompanyData cd = CompanyData.setCompanyInfo(fld);
+					final CompanyData cd = setCompanyInfo(fld);
+					cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
 					companyList.add(cd);
 				}
-
 			}
 
-						for (final CompanyData cd : companyList) {
-							System.out.println(cd);
-//							td.add(cd);
-						}
-			//
-			//			td.sum();
-			//
-			//			System.out.println(td);
+			for (final CompanyData cd : companyList) {
+				System.out.println(cd);
+				td.add(cd);
+			}
+
+			td.sum();
+
+			System.out.println(td);
 		}
 
 	}
@@ -91,8 +91,6 @@ public class CompanyData {
 		cd.exchange = fld[2].trim();
 		cd.sector = CompanyData.setSecInd(fld[3]);
 		cd.industry = CompanyData.setSecInd(fld[4]);
-
-		cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
 
 		return cd;
 

@@ -108,30 +108,30 @@ public class TotalData {
 	 *
 	 * @param bsd
 	 */
-	public void add(BalanceSheetData bsd) {
+	public void add(CompanyData cd) {
 
-		this.acctReceiveable.sum(bsd.acctReceiveable);
-		this.acctPayable.sum(bsd.acctPayable);
-		this.bvps.sum(bsd.bvps);
-		this.cash.sum(bsd.cash);
-		this.currentAssets.sum(bsd.currentAssets);
-		this.currLiab.sum(bsd.currLiab);
-		this.equity.sum(bsd.equity);
-		this.fixedAssets.sum(bsd.fixedAssets);
-		this.goodwill.sum(bsd.goodwill);
-		this.inventory.sum(bsd.inventory);
-		this.liabEquity.sum(bsd.liabEquity);
-		this.ltDebt.sum(bsd.ltDebt);
-		this.ltInvestments.sum(bsd.ltInvestments);
-		this.otherAssets.sum(bsd.otherAssets);
-		this.otherCurrLiab.sum(bsd.otherCurrLiab);
-		this.otherLtAssets.sum(bsd.otherLtAssets);
-		this.otherLtLiab.sum(bsd.otherLtLiab);
-		this.prefStock.sum(bsd.prefStock);
-		this.stDebt.sum(bsd.stDebt);
-		this.stInvestments.sum(bsd.stInvestments);
-		this.totalAssets.sum(bsd.totalAssets);
-		this.totalLiab.sum(bsd.totalLiab);
+		this.acctReceiveable.sum(cd.bsd.acctReceiveable);
+		this.acctPayable.sum(cd.bsd.acctPayable);
+		this.bvps.sum(cd.bsd.bvps);
+		this.cash.sum(cd.bsd.cash);
+		this.currentAssets.sum(cd.bsd.currentAssets);
+		this.currLiab.sum(cd.bsd.currLiab);
+		this.equity.sum(cd.bsd.equity);
+		this.fixedAssets.sum(cd.bsd.fixedAssets);
+		this.goodwill.sum(cd.bsd.goodwill);
+		this.inventory.sum(cd.bsd.inventory);
+		this.liabEquity.sum(cd.bsd.liabEquity);
+		this.ltDebt.sum(cd.bsd.ltDebt);
+		this.ltInvestments.sum(cd.bsd.ltInvestments);
+		this.otherAssets.sum(cd.bsd.otherAssets);
+		this.otherCurrLiab.sum(cd.bsd.otherCurrLiab);
+		this.otherLtAssets.sum(cd.bsd.otherLtAssets);
+		this.otherLtLiab.sum(cd.bsd.otherLtLiab);
+		this.prefStock.sum(cd.bsd.prefStock);
+		this.stDebt.sum(cd.bsd.stDebt);
+		this.stInvestments.sum(cd.bsd.stInvestments);
+		this.totalAssets.sum(cd.bsd.totalAssets);
+		this.totalLiab.sum(cd.bsd.totalLiab);
 
 	}
 

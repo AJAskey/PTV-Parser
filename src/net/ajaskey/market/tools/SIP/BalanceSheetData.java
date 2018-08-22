@@ -28,7 +28,6 @@ package net.ajaskey.market.tools.SIP;
  */
 public class BalanceSheetData {
 
-	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
 
 	public static BalanceSheetData setBalanceSheetInfo(String[] fld) {
@@ -62,25 +61,6 @@ public class BalanceSheetData {
 
 	}
 
-	/**
-	 * net.ajaskey.market.tools.SIP.setSecInd
-	 *
-	 * @param string
-	 * @return
-	 */
-	private static String setSecInd(String secind) {
-
-		String ret = "";
-		final String str = secind.trim();
-		final int pos = secind.indexOf(" - ");
-		if (pos > 0) {
-			ret = str.substring(pos + 3, str.length()).trim();
-		} else {
-			ret = str;
-		}
-		return ret;
-	}
-
 	public QuarterlyData	cash;
 	public QuarterlyData	stInvestments;
 	public QuarterlyData	acctReceiveable;
@@ -101,8 +81,8 @@ public class BalanceSheetData {
 	public QuarterlyData	totalLiab;
 	public QuarterlyData	prefStock;
 	public QuarterlyData	equity;
-	public QuarterlyData liabEquity;
-	public QuarterlyData bvps;
+	public QuarterlyData	liabEquity;
+	public QuarterlyData	bvps;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -140,30 +120,33 @@ public class BalanceSheetData {
 	@Override
 	public String toString() {
 
-		String ret = ""; 
-		ret += TAB + this.cash;
-		ret += TAB + this.stInvestments;
-		ret += TAB + this.acctReceiveable;
+		String ret = "";
 		ret += TAB + this.acctPayable;
+		ret += TAB + this.acctReceiveable;
+		ret += TAB + this.bvps;
+		ret += TAB + this.cash;
+		ret += TAB + this.equity;
 		ret += TAB + this.inventory;
-		ret += TAB + this.otherAssets;
+		ret += TAB + this.prefStock;
+
 		ret += TAB + this.currentAssets;
 		ret += TAB + this.fixedAssets;
-		ret += TAB + this.ltInvestments;
-		ret += TAB + this.goodwill;
 		ret += TAB + this.otherLtAssets;
+		ret += TAB + this.otherAssets;
+		ret += TAB + this.goodwill;
 		ret += TAB + this.totalAssets;
-		ret += TAB + this.acctPayable;
+
+		ret += TAB + this.stInvestments;
+		ret += TAB + this.ltInvestments;
+
 		ret += TAB + this.stDebt;
-		ret += TAB + this.otherCurrLiab;
-		ret += TAB + this.currLiab;
 		ret += TAB + this.ltDebt;
+
+		ret += TAB + this.currLiab;
+		ret += TAB + this.liabEquity;
+		ret += TAB + this.otherCurrLiab;
 		ret += TAB + this.otherLtLiab;
 		ret += TAB + this.totalLiab;
-		ret += TAB + this.prefStock;
-		ret += TAB + this.equity;
-		ret += TAB + this.liabEquity;
-		ret += TAB + this.bvps;
 		return ret;
 	}
 }
