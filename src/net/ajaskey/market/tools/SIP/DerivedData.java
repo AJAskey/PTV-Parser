@@ -30,11 +30,27 @@ public class DerivedData {
 
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
+	
+	final private static double MAX_PE = 250.0;
 
 	public double					qoqGrowth;
 	public double					seqGrowth;
 	public double					yoyGrowth;
 	private QuarterlyData	qd;
+	
+	public static double calcPE(IncomeData id, double price) {
+		double ret = MAX_PE;
+		double e1 = id.eps.q1;
+		if (e1 == 0.0) {
+			e1 = id.eps.q2;
+		}
+		if (e1 > 0.0) {
+			ret = price / e1;
+		}
+		ret = Math.min(MAX_PE, ret);
+		return ret;
+		
+	}
 
 	/**
 	 * This method serves as a constructor for the class.

@@ -4,6 +4,7 @@ package net.ajaskey.market.tools.SIP;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,8 @@ public class CompanyData {
 
 		String line = "";
 
+		// Read last price
+
 		// Read balance sheet
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
 
@@ -61,7 +64,7 @@ public class CompanyData {
 				if (str.length() > 1) {
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
-					final CompanyData cd = setCompanyInfo(fld);
+					final CompanyData cd = CompanyData.setCompanyInfo(fld);
 					cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
 					//System.out.println(cd.bsd);
 					companyList.add(cd);
@@ -78,8 +81,8 @@ public class CompanyData {
 
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
-					String ticker = fld[1].trim();
-					CompanyData cd = getCompany(ticker);
+					final String ticker = fld[1].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
 					if (cd != null) {
 						cd.id = IncomeData.setIncomeData(fld);
 						//System.out.println(cd.id);
@@ -87,14 +90,63 @@ public class CompanyData {
 				}
 			}
 		}
-		for (final CompanyData cd : companyList) {
-			System.out.println(cd);
-			td.add(cd);
+
+		// Read last proce
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/closing_prices.txt"))) {
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+
+					try {
+						//System.out.println(str);
+						final String fld[] = str.split(TAB);
+						final String ticker = fld[0].trim();
+						for (final CompanyData cd : companyList) {
+							if (ticker.equalsIgnoreCase(cd.ticker)) {
+								final double price = Double.parseDouble(fld[1].trim());
+								cd.lastPrice = price;
+								cd.pe = DerivedData.calcPE(cd.id, price);
+								break;
+							}
+						}
+					} catch (final Exception e) {
+					}
+				}
+			}
+		}
+
+		final Statistics bvps = new Statistics("bvps");
+		final Statistics sales = new Statistics("sales");
+		final Statistics eps = new Statistics("eps");
+		final Statistics netIncome = new Statistics("netIncome");
+		final Statistics inventory = new Statistics("inventory");
+		final Statistics peStat = new Statistics("pe");
+
+		try (PrintWriter pw = new PrintWriter("data/spx-stocks.txt")) {
+			for (final CompanyData cd : companyList) {
+				pw.println(cd.ticker);
+				System.out.println(cd);
+				td.add(cd);
+				bvps.addValues(cd.bsd.bvps);
+				sales.addValues(cd.id.sales);
+				eps.addValues(cd.id.eps);
+				netIncome.addValues(cd.id.netIncome);
+				inventory.addValues(cd.bsd.inventory);
+				peStat.addValue(cd.pe);
+			}
 		}
 
 		td.sum();
 
 		System.out.println(td);
+
+		System.out.println(bvps);
+		System.out.println(sales);
+		System.out.println(eps);
+		System.out.println(netIncome);
+		System.out.println(inventory);
+		System.out.println(peStat);
 	}
 
 	/**
@@ -157,6 +209,8 @@ public class CompanyData {
 	public String						industry;
 	public BalanceSheetData	bsd;
 	public IncomeData				id;
+	public double						lastPrice;
+	public double						pe;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -169,6 +223,8 @@ public class CompanyData {
 		this.exchange = "";
 		this.sector = "";
 		this.industry = "";
+		this.lastPrice = 0.0;
+		this.pe = 0.0;
 
 	}
 
@@ -183,6 +239,8 @@ public class CompanyData {
 		ret += TAB + this.exchange + NL;
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
+		ret += TAB + "Last Price : " + QuarterlyData.fmt(this.lastPrice) + NL;
+		ret += TAB + "PE         : " + QuarterlyData.fmt(this.pe) + NL;
 		ret += this.bsd;
 		ret += this.id;
 

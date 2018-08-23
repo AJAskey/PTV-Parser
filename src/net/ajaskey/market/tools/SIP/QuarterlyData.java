@@ -52,7 +52,7 @@ public class QuarterlyData {
 	 * @param d
 	 * @return
 	 */
-	private static String fmt(double d) {
+	public static String fmt(double d) {
 
 		return String.format("%15s", df.format(d));
 	}
