@@ -51,10 +51,10 @@ public class CompanyData {
 
 		final TotalData td = new TotalData();
 
+		String line = "";
+
 		// Read balance sheet
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
-
-			String line = reader.readLine(); //header line
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -63,6 +63,7 @@ public class CompanyData {
 					final String fld[] = str.split(TAB);
 					final CompanyData cd = setCompanyInfo(fld);
 					cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
+					//System.out.println(cd.bsd);
 					companyList.add(cd);
 				}
 			}
@@ -70,19 +71,18 @@ public class CompanyData {
 
 		// Read income statement
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-INCOMESTMTQTR.TXT"))) {
-			String line = reader.readLine(); //header line
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
 				if (str.length() > 1) {
 
-					
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
 					String ticker = fld[1].trim();
 					CompanyData cd = getCompany(ticker);
 					if (cd != null) {
 						cd.id = IncomeData.setIncomeData(fld);
+						//System.out.println(cd.id);
 					}
 				}
 			}

@@ -130,6 +130,8 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("totalOpExp", pos);
 		pos += 8;
+		colPos.put("grossOpIncome", pos);
+		pos += 8;
 		colPos.put("interestExpNonOp", pos);
 		pos += 8;
 		colPos.put("otherIncome", pos);
@@ -271,7 +273,9 @@ public class QuarterlyData {
 
 		try {
 			double d = Double.parseDouble(fld);
-			if (d < 0.0001) {
+			if ((d > 0.0) && (d < 0.0001)) {
+				d = 0.0;
+			} else if (d < -999999.0) {
 				d = 0.0;
 			}
 			return d;

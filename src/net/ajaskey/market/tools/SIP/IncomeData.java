@@ -42,6 +42,7 @@ public class IncomeData {
 		id.interestExp.parse(fld);
 		id.unusualIncome.parse(fld);
 		id.totalOpExp.parse(fld);
+		id.grossOpIncome.parse(fld);
 		id.interestExpNonOp.parse(fld);
 		id.otherIncome.parse(fld);
 		id.pretaxIncome.parse(fld);
@@ -79,6 +80,7 @@ public class IncomeData {
 		id.interestExp.parse(fld);
 		id.unusualIncome.parse(fld);
 		id.totalOpExp.parse(fld);
+		id.grossOpIncome.parse(fld);
 		id.interestExpNonOp.parse(fld);
 		id.otherIncome.parse(fld);
 		id.pretaxIncome.parse(fld);
@@ -105,6 +107,7 @@ public class IncomeData {
 	public QuarterlyData	interestExp;
 	public QuarterlyData	unusualIncome;
 	public QuarterlyData	totalOpExp;
+	public QuarterlyData	grossOpIncome;
 	public QuarterlyData	interestExpNonOp;
 	public QuarterlyData	otherIncome;
 	public QuarterlyData	pretaxIncome;
@@ -118,7 +121,6 @@ public class IncomeData {
 	public QuarterlyData	epsContinuing;
 	public QuarterlyData	epsDiluted;
 	public QuarterlyData	epsDilCont;
-
 	public QuarterlyData dividend;
 
 	/**
@@ -135,6 +137,7 @@ public class IncomeData {
 		this.interestExp = new QuarterlyData("interestExp");
 		this.unusualIncome = new QuarterlyData("unusualIncome");
 		this.totalOpExp = new QuarterlyData("totalOpExp");
+		this.grossOpIncome = new QuarterlyData("grossOpIncome");
 		this.interestExpNonOp = new QuarterlyData("interestExpNonOp");
 		this.otherIncome = new QuarterlyData("otherIncome");
 		this.pretaxIncome = new QuarterlyData("pretaxIncome");
@@ -167,6 +170,7 @@ public class IncomeData {
 		ret += TAB + this.unusualIncome;
 
 		ret += TAB + this.totalOpExp;
+		ret += TAB + this.grossOpIncome;
 		ret += TAB + this.interestExpNonOp;
 		ret += TAB + this.otherIncome;
 		ret += TAB + this.pretaxIncome;

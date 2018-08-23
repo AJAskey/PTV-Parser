@@ -43,9 +43,11 @@ public class TotalData {
 
 	}
 
-	public String					name;
-	public String					sector;
-	public String					industry;
+	//public String					name;
+	//public String					sector;
+	//public String					industry;
+	
+	// Balance Sheet
 	public QuarterlyData	cash;
 	public QuarterlyData	stInvestments;
 	public QuarterlyData	acctReceiveable;
@@ -67,8 +69,32 @@ public class TotalData {
 	public QuarterlyData	prefStock;
 	public QuarterlyData	equity;
 	public QuarterlyData	liabEquity;
+	public QuarterlyData	bvps;
 
-	public QuarterlyData bvps;
+	// Income Statement
+	public QuarterlyData	sales;
+	public QuarterlyData	cogs;
+	public QuarterlyData	grossIncome;
+	public QuarterlyData	rd;
+	public QuarterlyData	depreciation;
+	public QuarterlyData	interestExp;
+	public QuarterlyData	unusualIncome;
+	public QuarterlyData	totalOpExp;
+	public QuarterlyData	grossOpIncome;
+	public QuarterlyData	interestExpNonOp;
+	public QuarterlyData	otherIncome;
+	public QuarterlyData	pretaxIncome;
+	public QuarterlyData	incomeTax;
+	public QuarterlyData	incomeAfterTaxes;
+	public QuarterlyData	adjustments;
+	public QuarterlyData	incomeEps;
+	public QuarterlyData	nonrecurring;
+	public QuarterlyData	netIncome;
+	public QuarterlyData	eps;
+	public QuarterlyData	epsContinuing;
+	public QuarterlyData	epsDiluted;
+	public QuarterlyData	epsDilCont;
+	public QuarterlyData	dividend;
 
 	DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
 
@@ -78,7 +104,7 @@ public class TotalData {
 	 */
 	public TotalData() {
 
-		this.name = "";
+		//this.name = "";
 		this.cash = new QuarterlyData("cash");
 		this.stInvestments = new QuarterlyData("stInvestments");
 		this.acctReceiveable = new QuarterlyData("acctReceiveable");
@@ -101,6 +127,30 @@ public class TotalData {
 		this.equity = new QuarterlyData("equity");
 		this.liabEquity = new QuarterlyData("liabEquity");
 		this.bvps = new QuarterlyData("bvps");
+
+		this.sales = new QuarterlyData("sales");
+		this.cogs = new QuarterlyData("cogs");
+		this.grossIncome = new QuarterlyData("grossIncome");
+		this.rd = new QuarterlyData("rd");
+		this.depreciation = new QuarterlyData("depreciation");
+		this.interestExp = new QuarterlyData("interestExp");
+		this.grossOpIncome = new QuarterlyData("grossOpIncome");
+		this.unusualIncome = new QuarterlyData("unusualIncome");
+		this.totalOpExp = new QuarterlyData("totalOpExp");
+		this.interestExpNonOp = new QuarterlyData("interestExpNonOp");
+		this.otherIncome = new QuarterlyData("otherIncome");
+		this.pretaxIncome = new QuarterlyData("pretaxIncome");
+		this.incomeTax = new QuarterlyData("incomeTax");
+		this.incomeAfterTaxes = new QuarterlyData("incomeAfterTaxes");
+		this.adjustments = new QuarterlyData("adjustments");
+		this.incomeEps = new QuarterlyData("incomeEps");
+		this.nonrecurring = new QuarterlyData("nonrecurring");
+		this.netIncome = new QuarterlyData("netIncome");
+		this.eps = new QuarterlyData("eps");
+		this.epsContinuing = new QuarterlyData("epsContinuing");
+		this.epsDiluted = new QuarterlyData("epsDiluted");
+		this.epsDilCont = new QuarterlyData("epsDilCont");
+		this.dividend = new QuarterlyData("dividend");
 	}
 
 	/**
@@ -133,6 +183,30 @@ public class TotalData {
 		this.totalAssets.sum(cd.bsd.totalAssets);
 		this.totalLiab.sum(cd.bsd.totalLiab);
 
+		this.sales.sum(cd.id.sales);
+		this.cogs.sum(cd.id.cogs);
+		this.grossIncome.sum(cd.id.grossIncome);
+		this.rd.sum(cd.id.rd);
+		this.depreciation.sum(cd.id.depreciation);
+		this.interestExp.sum(cd.id.interestExp);
+		this.unusualIncome.sum(cd.id.unusualIncome);
+		this.totalOpExp.sum(cd.id.totalOpExp);
+		this.grossOpIncome.sum(cd.id.grossOpIncome);
+		this.interestExpNonOp.sum(cd.id.interestExpNonOp);
+		this.otherIncome.sum(cd.id.otherIncome);
+		this.pretaxIncome.sum(cd.id.pretaxIncome);
+		this.incomeTax.sum(cd.id.incomeTax);
+		this.incomeAfterTaxes.sum(cd.id.incomeAfterTaxes);
+		this.adjustments.sum(cd.id.adjustments);
+		this.incomeEps.sum(cd.id.incomeEps);
+		this.nonrecurring.sum(cd.id.nonrecurring);
+		this.netIncome.sum(cd.id.netIncome);
+		this.eps.sum(cd.id.eps);
+		this.epsContinuing.sum(cd.id.epsContinuing);
+		this.epsDiluted.sum(cd.id.epsDiluted);
+		this.epsDilCont.sum(cd.id.epsDilCont);
+		this.dividend.sum(cd.id.dividend);
+
 	}
 
 	/**
@@ -163,6 +237,29 @@ public class TotalData {
 		this.stInvestments.dd.calculate(this.stInvestments);
 		this.totalAssets.dd.calculate(this.totalAssets);
 		this.totalLiab.dd.calculate(this.totalLiab);
+
+		this.sales.dd.calculate(this.sales);
+		this.cogs.dd.calculate(this.cogs);
+		this.grossIncome.dd.calculate(this.grossIncome);
+		this.rd.dd.calculate(this.rd);
+		this.depreciation.dd.calculate(this.depreciation);
+		this.interestExp.dd.calculate(this.interestExp);
+		this.unusualIncome.dd.calculate(this.unusualIncome);
+		this.totalOpExp.dd.calculate(this.totalOpExp);
+		this.interestExpNonOp.dd.calculate(this.interestExpNonOp);
+		this.otherIncome.dd.calculate(this.otherIncome);
+		this.pretaxIncome.dd.calculate(this.pretaxIncome);
+		this.incomeTax.dd.calculate(this.incomeTax);
+		this.incomeAfterTaxes.dd.calculate(this.incomeAfterTaxes);
+		this.adjustments.dd.calculate(this.adjustments);
+		this.incomeEps.dd.calculate(this.incomeEps);
+		this.nonrecurring.dd.calculate(this.nonrecurring);
+		this.netIncome.dd.calculate(this.netIncome);
+		this.eps.dd.calculate(this.eps);
+		this.epsContinuing.dd.calculate(this.epsContinuing);
+		this.epsDiluted.dd.calculate(this.epsDiluted);
+		this.epsDilCont.dd.calculate(this.epsDilCont);
+		this.dividend.dd.calculate(this.dividend);
 
 	}
 
@@ -199,6 +296,26 @@ public class TotalData {
 		ret += TAB + this.otherCurrLiab;
 		ret += TAB + this.otherLtLiab;
 		ret += TAB + this.totalLiab;
+
+		ret += TAB + this.sales;
+		ret += TAB + this.cogs;
+		ret += TAB + this.grossIncome;
+		ret += TAB + this.rd;
+		ret += TAB + this.depreciation;
+		ret += TAB + this.interestExp;
+		ret += TAB + this.otherIncome;
+		ret += TAB + this.pretaxIncome;
+		ret += TAB + this.incomeTax;
+		ret += TAB + this.incomeAfterTaxes;
+		ret += TAB + this.adjustments;
+		ret += TAB + this.incomeEps;
+		ret += TAB + this.nonrecurring;
+		ret += TAB + this.netIncome;
+		ret += TAB + this.eps;
+		ret += TAB + this.epsContinuing;
+		ret += TAB + this.epsDiluted;
+		ret += TAB + this.epsDilCont;
+		ret += TAB + this.dividend;
 
 		return ret;
 	}
