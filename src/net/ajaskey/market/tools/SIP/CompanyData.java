@@ -107,6 +107,8 @@ public class CompanyData {
 								final double price = Double.parseDouble(fld[1].trim());
 								cd.lastPrice = price;
 								cd.pe = DerivedData.calcPE(cd.id, price);
+								cd.psales = DerivedData.calcPSales(cd.id, price);
+								cd.opMargin = DerivedData.calcOpMargin(cd.id);
 								break;
 							}
 						}
@@ -116,37 +118,48 @@ public class CompanyData {
 			}
 		}
 
-		final Statistics bvps = new Statistics("bvps");
-		final Statistics sales = new Statistics("sales");
-		final Statistics eps = new Statistics("eps");
-		final Statistics netIncome = new Statistics("netIncome");
-		final Statistics inventory = new Statistics("inventory");
-		final Statistics peStat = new Statistics("pe");
+		final Statistics bvpsStats = new Statistics("bvps");
+		final Statistics salesStats = new Statistics("sales");
+		final Statistics epsStats = new Statistics("eps");
+		final Statistics netIncomeStats = new Statistics("netIncome");
+		final Statistics inventoryStats = new Statistics("inventory");
+		final Statistics peStats = new Statistics("pe");
+		final Statistics opMarginStats = new Statistics("Operations Margin");
 
 		try (PrintWriter pw = new PrintWriter("data/spx-stocks.txt")) {
 			for (final CompanyData cd : companyList) {
 				pw.println(cd.ticker);
 				System.out.println(cd);
 				td.add(cd);
-				bvps.addValues(cd.bsd.bvps);
-				sales.addValues(cd.id.sales);
-				eps.addValues(cd.id.eps);
-				netIncome.addValues(cd.id.netIncome);
-				inventory.addValues(cd.bsd.inventory);
-				peStat.addValue(cd.pe);
+				bvpsStats.addValues(cd.bsd.bvps);
+				salesStats.addValues(cd.id.sales);
+				epsStats.addValues(cd.id.eps);
+				netIncomeStats.addValues(cd.id.netIncome);
+				inventoryStats.addValues(cd.bsd.inventory);
+				peStats.addValue(cd.pe);
+				opMarginStats.addValue(cd.opMargin);
 			}
 		}
 
 		td.sum();
 
-		System.out.println(td);
+		try (PrintWriter pw = new PrintWriter("out/companydata.dbg")) {
+			
+			for (CompanyData cd : companyList) {
+				pw.println(cd);
+			}
 
-		System.out.println(bvps);
-		System.out.println(sales);
-		System.out.println(eps);
-		System.out.println(netIncome);
-		System.out.println(inventory);
-		System.out.println(peStat);
+			pw.println(td);
+
+			pw.println(bvpsStats);
+			pw.println(salesStats);
+			pw.println(epsStats);
+			pw.println(netIncomeStats);
+			pw.println(inventoryStats);
+			pw.println(peStats);
+			pw.println(opMarginStats);
+
+		}
 	}
 
 	/**
@@ -211,6 +224,8 @@ public class CompanyData {
 	public IncomeData				id;
 	public double						lastPrice;
 	public double						pe;
+	public double						psales;
+	public double						opMargin;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -225,7 +240,8 @@ public class CompanyData {
 		this.industry = "";
 		this.lastPrice = 0.0;
 		this.pe = 0.0;
-
+		this.psales = 0.0;
+		this.opMargin = 0.0;
 	}
 
 	/* (non-Javadoc)
@@ -239,8 +255,10 @@ public class CompanyData {
 		ret += TAB + this.exchange + NL;
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
-		ret += TAB + "Last Price : " + QuarterlyData.fmt(this.lastPrice) + NL;
-		ret += TAB + "PE         : " + QuarterlyData.fmt(this.pe) + NL;
+		ret += TAB + "Last Price  : " + QuarterlyData.fmt(this.lastPrice) + NL;
+		ret += TAB + "PE          : " + QuarterlyData.fmt(this.pe) + NL;
+		ret += TAB + "Price/Sales : " + QuarterlyData.fmt(this.psales) + NL;
+		ret += TAB + "Op Margin   : " + QuarterlyData.fmt(this.opMargin) + NL;
 		ret += this.bsd;
 		ret += this.id;
 

@@ -132,6 +132,16 @@ public class Statistics {
 		return this.ds.getPercentile(50);
 	}
 
+	public double get25Percentile() {
+
+		return this.ds.getPercentile(25);
+	}
+
+	public double get75Percentile() {
+
+		return this.ds.getPercentile(75);
+	}
+
 	/**
 	 * 
 	 * net.ajaskey.market.tools.SIP.getMin
@@ -173,10 +183,12 @@ public class Statistics {
 
 		String ret = "Stats for " + this.name + NL;
 		ret += TAB + "Count  : " + this.getN() + NL;
-		ret += TAB + "Median : " + QuarterlyData.fmt(this.getMedian()) + NL;
 		ret += TAB + "Mean   : " + QuarterlyData.fmt(this.getMean()) + NL;
 		ret += TAB + "StdDev : " + QuarterlyData.fmt(this.getStdDev()) + NL;
 		ret += TAB + "Min    : " + QuarterlyData.fmt(this.getMin()) + NL;
+		ret += TAB + "25 Per : " + QuarterlyData.fmt(this.get25Percentile()) + NL;
+		ret += TAB + "Median : " + QuarterlyData.fmt(this.getMedian()) + NL;
+		ret += TAB + "75 Per : " + QuarterlyData.fmt(this.get75Percentile()) + NL;
 		ret += TAB + "Max    : " + QuarterlyData.fmt(this.getMax()) + NL;
 		return ret;
 	}

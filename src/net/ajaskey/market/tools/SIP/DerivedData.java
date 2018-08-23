@@ -38,11 +38,19 @@ public class DerivedData {
 	public double					yoyGrowth;
 	private QuarterlyData	qd;
 	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.calcPE
+	 *
+	 * @param id
+	 * @param price
+	 * @return
+	 */
 	public static double calcPE(IncomeData id, double price) {
 		double ret = MAX_PE;
-		double e1 = id.eps.q1;
-		if (e1 == 0.0) {
-			e1 = id.eps.q2;
+		double e1 = id.eps.q1 + id.eps.q2 + id.eps.q3 + id.eps.q4;
+		if (id.eps.q1 == 0.0) {
+			e1 += id.eps.q5;
 		}
 		if (e1 > 0.0) {
 			ret = price / e1;
@@ -52,6 +60,36 @@ public class DerivedData {
 		
 	}
 
+	public static double calcPSales(IncomeData id, double price) {
+		double ret = MAX_PE;
+		double s1 = id.sales.q1;
+		if (s1 == 0.0) {
+			s1 = id.sales.q2 / 1000000.0;
+		}
+		if (s1 > 0.0) {
+			ret = price / s1 * 1000.0;
+		}
+		ret = Math.min(MAX_PE, ret);
+		return ret;
+		
+	}	
+	
+	public static double calcOpMargin(IncomeData id) {
+		double ret = MAX_PE;
+		double g1 = id.grossOpIncome.q1;
+		double s1 = id.sales.q1;
+		if (g1 == 0.0) {
+			g1 = id.grossOpIncome.q2;
+			s1 = id.sales.q2;
+		}
+		if (s1 > 0.0) {
+			ret = g1 / s1 * 100.0;
+		}
+		//ret = Math.min(MAX_PE, ret);
+		return ret;
+		
+	}
+	
 	/**
 	 * This method serves as a constructor for the class.
 	 *
