@@ -62,34 +62,45 @@ public class Reports {
 				pw.printf("\t%s%n", cd.sector);
 				pw.printf("\t%s%n", cd.industry);
 				
+				pw.printf("%n\tShares     : %s M%n", QuarterlyData.fmt(cd.shares.q1, 15));
+				pw.printf("\tMarket Cap : %s M%n", QuarterlyData.fmt(cd.marketCap, 15));
+				
+
 				pw.printf("%n\tLast Price : %s%n", QuarterlyData.fmt(cd.lastPrice, 15));
 				pw.printf("\tPE         : %s%n", QuarterlyData.fmt(cd.pe, 15));
 				pw.printf("\tOp Margin  : %s%n", QuarterlyData.fmt(cd.opMargin, 15));
 				pw.printf("\tNet Margin : %s%n", QuarterlyData.fmt(cd.netMargin, 15));
-				
-				
-				pw.printf("%n\tLast Sales      : %s\t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.sales.getMostRecent(), 15),
+
+				pw.printf("%n\tLast Sales      : %s M\t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.sales.getMostRecent(), 15),
 				    QuarterlyData.fmt(cd.id.sales.dd.qoqGrowth, 7));
-				pw.printf("\tLast Net Income : %s\t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.netIncome.getMostRecent(), 15),
+				pw.printf("\tLast Net Income : %s M\t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.netIncome.getMostRecent(), 15),
 				    QuarterlyData.fmt(cd.id.netIncome.dd.qoqGrowth, 7));
-				pw.printf("\tLast EPS        : %s\t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.epsDilCont.getMostRecent(), 15),
+				pw.printf("\tLast EPS        : %s  \t(QoQ=%s%%)%n", QuarterlyData.fmt(cd.id.epsDilCont.getMostRecent(), 15),
 				    QuarterlyData.fmt(cd.id.epsDilCont.dd.qoqGrowth, 7));
-				
-				pw.printf("%n\t12m Sales       : %s\t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.sales.getTtm(), 15),
+
+				pw.printf("%n\t12m Sales       : %s M\t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.sales.getTtm(), 15),
 				    QuarterlyData.fmt(cd.id.sales.dd.yoyGrowth, 7));
-				pw.printf("\t12m Net Income  : %s\t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.netIncome.getTtm(), 15),
-				    QuarterlyData.fmt(cd.id.netIncome.dd.yoyGrowth, 7))	;			
-				pw.printf("\t12m EPS         : %s\t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.epsDilCont.getTtm(), 15),
+				pw.printf("\t12m Net Income  : %s M\t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.netIncome.getTtm(), 15),
+				    QuarterlyData.fmt(cd.id.netIncome.dd.yoyGrowth, 7));
+				pw.printf("\t12m EPS         : %s  \t(YoY=%s%%)%n", QuarterlyData.fmt(cd.id.epsDilCont.getTtm(), 15),
 				    QuarterlyData.fmt(cd.id.epsDilCont.dd.yoyGrowth, 7));
 
-				pw.printf("%n\tLT Debt           : %s\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent(), 15),
+				pw.printf("%n\tLT Debt           : %s M\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent(), 15),
 				    QuarterlyData.fmt(cd.bsd.ltDebt.dd.seqGrowth, 7));
-				pw.printf("\tEquity            : %s\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.equity.getMostRecent(), 15),
-				    QuarterlyData.fmt(cd.bsd.equity.dd.seqGrowth, 7));		
-				pw.printf("\tLT Debt to Equity : %s%n", QuarterlyData.fmt(cd.debtEquity, 15));
+				pw.printf("\tEquity            : %s M\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.equity.getMostRecent(), 15),
+				    QuarterlyData.fmt(cd.bsd.equity.dd.seqGrowth, 7));
+				pw.printf("\tLT Debt to Equity : %s%n", QuarterlyData.fmt(cd.ltDebtEquity, 15));
+
+				pw.printf("%n\tST Debt           : %s M\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.stDebt.getMostRecent(), 15),
+				    QuarterlyData.fmt(cd.bsd.stDebt.dd.seqGrowth, 7));
+				pw.printf("\tOperating Income  : %s M\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.id.grossOpIncome.getMostRecent(), 15),
+				    QuarterlyData.fmt(cd.id.grossOpIncome.dd.seqGrowth, 7));
+				pw.printf("\tST Debt to OpInc  : %s%n", QuarterlyData.fmt(cd.stDebtOpIncome, 15));
 				
-				
-				
+				pw.printf("%n\tCash              : %s M\t(Seq=%s%%)%n", QuarterlyData.fmt(cd.bsd.cash.getMostRecent(), 15),
+				    QuarterlyData.fmt(cd.bsd.cash.dd.seqGrowth, 7));
+				pw.printf("\tDebt to Cash      : %s%n", QuarterlyData.fmt(cd.debtCash, 15));
+
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

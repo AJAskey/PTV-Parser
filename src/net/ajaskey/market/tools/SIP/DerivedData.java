@@ -35,6 +35,37 @@ public class DerivedData {
 
 	/**
 	 * 
+	 * net.ajaskey.market.tools.SIP.calcDebtToCash
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcMarketCap(CompanyData cd) {
+
+		double ret = cd.lastPrice * cd.shares.q1;
+		return ret;
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.calcDebtToCash
+	 *
+	 * @param bsd
+	 * @return
+	 */
+	public static double calcDebtToCash(BalanceSheetData bsd) {
+
+		double ret = 0.0;
+		if (bsd.cash.q1 > 0.0) {
+			ret = (bsd.ltDebt.q1 + bsd.stDebt.q1) / bsd.cash.q1;
+		} else if (bsd.cash.q2 > 0.0) {
+			ret = (bsd.ltDebt.q2 + bsd.stDebt.q2) / bsd.cash.q2;
+		}
+		return ret;
+	}
+
+	/**
+	 * 
 	 * net.ajaskey.market.tools.SIP.calcDebtToEquity
 	 *
 	 * @param bsd
@@ -47,6 +78,17 @@ public class DerivedData {
 			ret = bsd.ltDebt.q1 / bsd.equity.q1;
 		} else if (bsd.equity.q2 > 0.0) {
 			ret = bsd.ltDebt.q2 / bsd.equity.q2;
+		}
+		return ret;
+	}
+
+	public static double calcStDebtToOpIncome(CompanyData cd) {
+
+		double ret = 0.0;
+		if (cd.id.grossOpIncome.q1 > 0.0) {
+			ret = cd.bsd.stDebt.q1 / cd.id.grossOpIncome.q1;
+		} else if (cd.id.grossOpIncome.q2 > 0.0) {
+			ret = cd.bsd.stDebt.q2 / cd.id.grossOpIncome.q2;
 		}
 		return ret;
 	}

@@ -5,8 +5,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -37,6 +43,8 @@ public class CompanyData {
 
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
+
+	public final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
 	private static List<CompanyData> companyList = new ArrayList<>();
 
@@ -107,7 +115,33 @@ public class CompanyData {
 			}
 		}
 
-		// Read last proce
+		// Read income statement
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-MISC.TXT"))) {
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.replaceAll("\"", "").trim();
+				if (str.length() > 1) {
+
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[0].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
+					if (cd != null) {
+						cd.numEmp = (int)Double.parseDouble((fld[1].trim()));
+						try {
+							cd.eoq = sdf.parse(fld[2].trim());
+						} catch (ParseException e) {
+							cd.eoq = null;
+						}
+						cd.insiders = Double.parseDouble(fld[3].trim());
+						cd.floatShares = Double.parseDouble(fld[4].trim());
+						cd.shares.parse(fld);
+					}
+				}
+			}
+		}
+
+		// Read last price of tickers
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/closing_prices.txt"))) {
 
 			while ((line = reader.readLine()) != null) {
@@ -131,7 +165,10 @@ public class CompanyData {
 								cd.interestRate = DerivedData.calcInterestRate(cd.id);
 								cd.divYld = DerivedData.calcDividendYield(cd.id, price);
 								cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
-								cd.debtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+								cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+								cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
+								cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
+								cd.marketCap = DerivedData.calcMarketCap(cd);
 							}
 						}
 					} catch (final Exception e) {
@@ -196,7 +233,7 @@ public class CompanyData {
 			pw.println(epsYldStats);
 
 		}
-		
+
 		Reports reports = new Reports(companyList);
 		reports.DumpCompanyReports();
 	}
@@ -239,11 +276,16 @@ public class CompanyData {
 	}
 
 	// from data
-	public String	name;
-	public String	ticker;
-	public String	exchange;
-	public String	sector;
-	public String	industry;
+	public String					name;
+	public String					ticker;
+	public String					exchange;
+	public String					sector;
+	public String					industry;
+	public int						numEmp;
+	public Date						eoq;
+	public double					insiders;
+	public double					floatShares;
+	public QuarterlyData	shares;
 
 	// aggregate data
 	public BalanceSheetData	bsd;
@@ -260,7 +302,10 @@ public class CompanyData {
 	public double	divYld;
 	public double	epsYld;
 
-	public double	debtEquity;
+	public double ltDebtEquity;
+	public double stDebtOpIncome;
+	public double debtCash;
+	public double marketCap;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -273,6 +318,11 @@ public class CompanyData {
 		this.exchange = "";
 		this.sector = "";
 		this.industry = "";
+		this.numEmp = 0;
+		this.eoq = null;
+		this.floatShares = 0.0;
+		this.shares = new QuarterlyData("shares");
+
 		this.lastPrice = 0.0;
 		this.pe = 0.0;
 		this.psales = 0.0;
@@ -282,7 +332,10 @@ public class CompanyData {
 		this.interestRate = 0.0;
 		this.divYld = 0.0;
 		this.epsYld = 0.0;
-		this.debtEquity = 0.0;
+		this.ltDebtEquity = 0.0;
+		this.stDebtOpIncome = 0.0;
+		this.debtCash = 0.0;
+		this.marketCap = 0.0;
 	}
 
 	/* (non-Javadoc)
@@ -296,6 +349,13 @@ public class CompanyData {
 		ret += TAB + this.exchange + NL;
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
+		ret += TAB + "Number Employees  : " + String.format("%15d", this.numEmp) + NL;
+		ret += TAB + "End of Quarter    : " + String.format("%15s", sdf.format(this.eoq)) + NL;
+		ret += TAB + "Insiders Own      : " + QuarterlyData.fmt(this.insiders) + NL;
+		ret += TAB + "Float             : " + QuarterlyData.fmt(this.floatShares) + NL;
+		ret += TAB + "Outstanding       : " + QuarterlyData.fmt(this.shares.q1) + NL;
+		ret += TAB + "Market Cap        : " + QuarterlyData.fmt(this.marketCap) + NL;
+
 		ret += TAB + "Last Price        : " + QuarterlyData.fmt(this.lastPrice) + NL;
 		ret += TAB + "PE                : " + QuarterlyData.fmt(this.pe) + NL;
 		ret += TAB + "Price/Sales       : " + QuarterlyData.fmt(this.psales) + NL;
@@ -305,7 +365,9 @@ public class CompanyData {
 		ret += TAB + "Interest Rate     : " + QuarterlyData.fmt(this.interestRate) + NL;
 		ret += TAB + "Dividend Yield    : " + QuarterlyData.fmt(this.divYld) + NL;
 		ret += TAB + "Earnings Yield    : " + QuarterlyData.fmt(this.epsYld) + NL;
-		ret += TAB + "LT Debt to Equity : " + QuarterlyData.fmt(this.debtEquity) + NL;
+		ret += TAB + "LT Debt to Equity : " + QuarterlyData.fmt(this.ltDebtEquity) + NL;
+		ret += TAB + "ST Debt to OpInc  : " + QuarterlyData.fmt(this.stDebtOpIncome) + NL;
+		ret += TAB + "Debt to Cash      : " + QuarterlyData.fmt(this.debtCash) + NL;
 		ret += this.bsd;
 		ret += this.id;
 
