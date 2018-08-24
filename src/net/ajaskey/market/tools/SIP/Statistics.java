@@ -1,16 +1,12 @@
 
 package net.ajaskey.market.tools.SIP;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 public class Statistics {
 
 	final private static String	NL		= "\n";
 	final private static String	TAB		= "\t";
-	final private static String	TAB2	= "\t\t";
 
 	/**
 	 * net.ajaskey.market.tools.SIP.main
@@ -53,7 +49,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.addValue
 	 *
 	 * @param d
@@ -66,7 +62,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.addValues
 	 *
 	 * @param qd
@@ -100,7 +96,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getMax
 	 *
 	 * @return
@@ -111,7 +107,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getMean
 	 *
 	 * @return
@@ -122,7 +118,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getMedian
 	 *
 	 * @return
@@ -132,18 +128,8 @@ public class Statistics {
 		return this.ds.getPercentile(50);
 	}
 
-	public double get25Percentile() {
-
-		return this.ds.getPercentile(25);
-	}
-
-	public double get75Percentile() {
-
-		return this.ds.getPercentile(75);
-	}
-
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getMin
 	 *
 	 * @return
@@ -154,7 +140,7 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getN
 	 *
 	 * @return
@@ -165,7 +151,18 @@ public class Statistics {
 	}
 
 	/**
-	 * 
+	 * net.ajaskey.market.tools.SIP.getPercentile
+	 *
+	 * @param i
+	 * @return
+	 */
+	private double getPercentile(int percentile) {
+
+		return this.ds.getPercentile(percentile);
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.SIP.getStdDev
 	 *
 	 * @return
@@ -173,6 +170,17 @@ public class Statistics {
 	public double getStdDev() {
 
 		return this.ds.getStandardDeviation();
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.getSum
+	 *
+	 * @return
+	 */
+	public double getSum() {
+
+		return this.ds.getSum();
 	}
 
 	/* (non-Javadoc)
@@ -186,9 +194,10 @@ public class Statistics {
 		ret += TAB + "Mean   : " + QuarterlyData.fmt(this.getMean()) + NL;
 		ret += TAB + "StdDev : " + QuarterlyData.fmt(this.getStdDev()) + NL;
 		ret += TAB + "Min    : " + QuarterlyData.fmt(this.getMin()) + NL;
-		ret += TAB + "25 Per : " + QuarterlyData.fmt(this.get25Percentile()) + NL;
-		ret += TAB + "Median : " + QuarterlyData.fmt(this.getMedian()) + NL;
-		ret += TAB + "75 Per : " + QuarterlyData.fmt(this.get75Percentile()) + NL;
+		ret += TAB + "  -2 StdDev : " + QuarterlyData.fmt(this.getPercentile(5)) + " (knt=" + (int) (this.getN() * 0.05) + ")"
+		    + NL;
+		ret += TAB + "  Median    : " + QuarterlyData.fmt(this.getMedian()) + NL;
+		ret += TAB + "  +2 StdDev : " + QuarterlyData.fmt(this.getPercentile(95)) + NL;
 		ret += TAB + "Max    : " + QuarterlyData.fmt(this.getMax()) + NL;
 		return ret;
 	}

@@ -56,6 +56,12 @@ public class QuarterlyData {
 
 		return String.format("%15s", df.format(d));
 	}
+	
+	public static String fmt(double d, int len) {
+
+		String f = String.format("%%%ds", len);
+		return String.format(f, df.format(d));
+	}
 
 	/**
 	 *

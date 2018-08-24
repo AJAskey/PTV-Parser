@@ -46,7 +46,7 @@ public class TotalData {
 	//public String					name;
 	//public String					sector;
 	//public String					industry;
-	
+
 	// Balance Sheet
 	public QuarterlyData	cash;
 	public QuarterlyData	stInvestments;

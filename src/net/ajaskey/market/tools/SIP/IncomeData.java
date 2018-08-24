@@ -121,7 +121,7 @@ public class IncomeData {
 	public QuarterlyData	epsContinuing;
 	public QuarterlyData	epsDiluted;
 	public QuarterlyData	epsDilCont;
-	public QuarterlyData dividend;
+	public QuarterlyData	dividend;
 
 	/**
 	 * This method serves as a constructor for the class.
