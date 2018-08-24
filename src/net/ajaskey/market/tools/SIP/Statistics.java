@@ -5,8 +5,8 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 public class Statistics {
 
-	final private static String	NL		= "\n";
-	final private static String	TAB		= "\t";
+	final private static String	NL	= "\n";
+	final private static String	TAB	= "\t";
 
 	/**
 	 * net.ajaskey.market.tools.SIP.main
@@ -171,9 +171,9 @@ public class Statistics {
 
 		return this.ds.getStandardDeviation();
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.getSum
 	 *
 	 * @return
@@ -194,8 +194,8 @@ public class Statistics {
 		ret += TAB + "Mean   : " + QuarterlyData.fmt(this.getMean()) + NL;
 		ret += TAB + "StdDev : " + QuarterlyData.fmt(this.getStdDev()) + NL;
 		ret += TAB + "Min    : " + QuarterlyData.fmt(this.getMin()) + NL;
-		ret += TAB + "  -2 StdDev : " + QuarterlyData.fmt(this.getPercentile(5)) + " (knt=" + (int) (this.getN() * 0.05) + ")"
-		    + NL;
+		ret += TAB + "  -2 StdDev : " + QuarterlyData.fmt(this.getPercentile(5)) + " (knt=" + (int) (this.getN() * 0.05)
+		    + ")" + NL;
 		ret += TAB + "  Median    : " + QuarterlyData.fmt(this.getMedian()) + NL;
 		ret += TAB + "  +2 StdDev : " + QuarterlyData.fmt(this.getPercentile(95)) + NL;
 		ret += TAB + "Max    : " + QuarterlyData.fmt(this.getMax()) + NL;

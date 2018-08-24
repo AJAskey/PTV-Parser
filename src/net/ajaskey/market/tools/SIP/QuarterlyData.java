@@ -56,10 +56,10 @@ public class QuarterlyData {
 
 		return String.format("%15s", df.format(d));
 	}
-	
+
 	public static String fmt(double d, int len) {
 
-		String f = String.format("%%%ds", len);
+		final String f = String.format("%%%ds", len);
 		return String.format(f, df.format(d));
 	}
 
@@ -306,6 +306,22 @@ public class QuarterlyData {
 		this.q7 += qd.q7;
 		this.q8 += qd.q8;
 
+	}
+	
+	public double getMostRecent() {
+		double d = this.q1;
+		if (d == 0.0) {
+			d = this.q2;
+		}
+		return d;
+	}
+	
+	public double getTtm() {
+		double d = this.q1 + this.q2 + this.q3 + this.q4;
+		if (this.q1 == 0.0) {
+			d += this.q5;
+		}
+		return d;
 	}
 
 	/* (non-Javadoc)

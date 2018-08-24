@@ -131,6 +131,7 @@ public class CompanyData {
 								cd.interestRate = DerivedData.calcInterestRate(cd.id);
 								cd.divYld = DerivedData.calcDividendYield(cd.id, price);
 								cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
+								cd.debtEquity = DerivedData.calcDebtToEquity(cd.bsd);
 							}
 						}
 					} catch (final Exception e) {
@@ -195,6 +196,9 @@ public class CompanyData {
 			pw.println(epsYldStats);
 
 		}
+		
+		Reports reports = new Reports(companyList);
+		reports.DumpCompanyReports();
 	}
 
 	/**
@@ -234,22 +238,29 @@ public class CompanyData {
 		return ret;
 	}
 
-	public String						name;
-	public String						ticker;
-	public String						exchange;
-	public String						sector;
-	public String						industry;
+	// from data
+	public String	name;
+	public String	ticker;
+	public String	exchange;
+	public String	sector;
+	public String	industry;
+
+	// aggregate data
 	public BalanceSheetData	bsd;
 	public IncomeData				id;
-	public double						lastPrice;
-	public double						pe;
-	public double						psales;
-	public double						opMargin;
-	public double						netMargin;
-	public double						taxRate;
-	public double						interestRate;
-	public double						divYld;
-	public double						epsYld;
+
+	// derived data
+	public double	lastPrice;
+	public double	pe;
+	public double	psales;
+	public double	opMargin;
+	public double	netMargin;
+	public double	taxRate;
+	public double	interestRate;
+	public double	divYld;
+	public double	epsYld;
+
+	public double	debtEquity;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -271,6 +282,7 @@ public class CompanyData {
 		this.interestRate = 0.0;
 		this.divYld = 0.0;
 		this.epsYld = 0.0;
+		this.debtEquity = 0.0;
 	}
 
 	/* (non-Javadoc)
@@ -284,15 +296,16 @@ public class CompanyData {
 		ret += TAB + this.exchange + NL;
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
-		ret += TAB + "Last Price     : " + QuarterlyData.fmt(this.lastPrice) + NL;
-		ret += TAB + "PE             : " + QuarterlyData.fmt(this.pe) + NL;
-		ret += TAB + "Price/Sales    : " + QuarterlyData.fmt(this.psales) + NL;
-		ret += TAB + "Op Margin      : " + QuarterlyData.fmt(this.opMargin) + NL;
-		ret += TAB + "Net Margin     : " + QuarterlyData.fmt(this.netMargin) + NL;
-		ret += TAB + "Tax Rate       : " + QuarterlyData.fmt(this.taxRate) + NL;
-		ret += TAB + "Interest Rate  : " + QuarterlyData.fmt(this.interestRate) + NL;
-		ret += TAB + "Dividend Yield : " + QuarterlyData.fmt(this.divYld) + NL;
-		ret += TAB + "Earnings Yield : " + QuarterlyData.fmt(this.epsYld) + NL;
+		ret += TAB + "Last Price        : " + QuarterlyData.fmt(this.lastPrice) + NL;
+		ret += TAB + "PE                : " + QuarterlyData.fmt(this.pe) + NL;
+		ret += TAB + "Price/Sales       : " + QuarterlyData.fmt(this.psales) + NL;
+		ret += TAB + "Op Margin         : " + QuarterlyData.fmt(this.opMargin) + NL;
+		ret += TAB + "Net Margin        : " + QuarterlyData.fmt(this.netMargin) + NL;
+		ret += TAB + "Tax Rate          : " + QuarterlyData.fmt(this.taxRate) + NL;
+		ret += TAB + "Interest Rate     : " + QuarterlyData.fmt(this.interestRate) + NL;
+		ret += TAB + "Dividend Yield    : " + QuarterlyData.fmt(this.divYld) + NL;
+		ret += TAB + "Earnings Yield    : " + QuarterlyData.fmt(this.epsYld) + NL;
+		ret += TAB + "LT Debt to Equity : " + QuarterlyData.fmt(this.debtEquity) + NL;
 		ret += this.bsd;
 		ret += this.id;
 

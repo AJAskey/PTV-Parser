@@ -34,6 +34,68 @@ public class DerivedData {
 	final private static double MAX_PE = 275.0;
 
 	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.calcDebtToEquity
+	 *
+	 * @param bsd
+	 * @return
+	 */
+	public static double calcDebtToEquity(BalanceSheetData bsd) {
+
+		double ret = 0.0;
+		if (bsd.equity.q1 > 0.0) {
+			ret = bsd.ltDebt.q1 / bsd.equity.q1;
+		} else if (bsd.equity.q2 > 0.0) {
+			ret = bsd.ltDebt.q2 / bsd.equity.q2;
+		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.calcDividendYield
+	 *
+	 * @param id
+	 * @param price
+	 * @return
+	 */
+	public static double calcDividendYield(IncomeData id, double price) {
+
+		double ret = 0.0;
+		if (price > 0.0) {
+			double d1 = id.dividend.q1 + id.dividend.q2 + id.dividend.q3 + id.dividend.q4;
+			if (id.dividend.q1 == 0.0) {
+				d1 += id.dividend.q5;
+			}
+			ret = (d1 / price) * 100.0;
+		}
+		return ret;
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.calcEarningsYield
+	 *
+	 * @param id
+	 * @param price
+	 * @return
+	 */
+	public static double calcEarningsYield(IncomeData id, double price) {
+
+		double ret = 0.0;
+		if (price > 0.0) {
+			double e1 = id.epsDilCont.q1 + id.epsDilCont.q2 + id.epsDilCont.q3 + id.epsDilCont.q4;
+			if (id.epsDilCont.q1 == 0.0) {
+				e1 += id.epsDilCont.q5;
+			}
+			ret = (e1 / price) * 100.0;
+		}
+		return ret;
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.calcInterestRate
 	 *
@@ -122,7 +184,7 @@ public class DerivedData {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.calcPSales
 	 *
 	 * @param id
@@ -140,50 +202,6 @@ public class DerivedData {
 			ret = (price / s1) * 1000.0;
 		}
 		ret = Math.min(MAX_PE, ret);
-		return ret;
-
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcDividendYield
-	 *
-	 * @param id
-	 * @param price
-	 * @return
-	 */
-	public static double calcDividendYield(IncomeData id, double price) {
-
-		double ret = 0.0;
-		if (price > 0.0) {
-			double d1 = id.dividend.q1 + id.dividend.q2 + id.dividend.q3 + id.dividend.q4;
-			if (id.dividend.q1 == 0.0) {
-				d1 += id.dividend.q5;
-			}
-			ret = d1 / price * 100.0;
-		}
-		return ret;
-
-	}
-	
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcEarningsYield
-	 *
-	 * @param id
-	 * @param price
-	 * @return
-	 */
-	public static double calcEarningsYield(IncomeData id, double price) {
-
-		double ret = 0.0;
-		if (price > 0.0) {
-			double e1 = id.epsDilCont.q1 + id.epsDilCont.q2 + id.epsDilCont.q3 + id.epsDilCont.q4;
-			if (id.epsDilCont.q1 == 0.0) {
-				e1 += id.epsDilCont.q5;
-			}
-			ret = e1 / price * 100.0;
-		}
 		return ret;
 
 	}
