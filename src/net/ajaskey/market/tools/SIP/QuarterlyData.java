@@ -318,7 +318,7 @@ public class QuarterlyData {
 	 * @param string
 	 * @return
 	 */
-	private double parseDouble(String fld) {
+	public static double parseDouble(String fld) {
 
 		try {
 			double d = Double.parseDouble(fld);

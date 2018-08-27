@@ -56,11 +56,10 @@ public class DerivedData {
 	public static double calcDebtToCash(BalanceSheetData bsd) {
 
 		double ret = 0.0;
-		if (bsd.cash.q1 > 0.0) {
-			ret = (bsd.ltDebt.q1 + bsd.stDebt.q1) / bsd.cash.q1;
-		} else if (bsd.cash.q2 > 0.0) {
-			ret = (bsd.ltDebt.q2 + bsd.stDebt.q2) / bsd.cash.q2;
-		}
+		double c = bsd.cash.getMostRecent();
+		if (c > 0.0) {
+			ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
+		} 
 		return ret;
 	}
 
@@ -74,10 +73,9 @@ public class DerivedData {
 	public static double calcDebtToEquity(BalanceSheetData bsd) {
 
 		double ret = 0.0;
-		if (bsd.equity.q1 > 0.0) {
-			ret = bsd.ltDebt.q1 / bsd.equity.q1;
-		} else if (bsd.equity.q2 > 0.0) {
-			ret = bsd.ltDebt.q2 / bsd.equity.q2;
+		double e = bsd.equity.getMostRecent();
+		if (e > 0.0) {
+			ret = bsd.ltDebt.getMostRecent() / e;
 		}
 		return ret;
 	}
@@ -85,10 +83,9 @@ public class DerivedData {
 	public static double calcStDebtToOpIncome(CompanyData cd) {
 
 		double ret = 0.0;
-		if (cd.id.grossOpIncome.q1 > 0.0) {
-			ret = cd.bsd.stDebt.q1 / cd.id.grossOpIncome.q1;
-		} else if (cd.id.grossOpIncome.q2 > 0.0) {
-			ret = cd.bsd.stDebt.q2 / cd.id.grossOpIncome.q2;
+		double g = cd.id.grossOpIncome.getTtm();
+		if (g != 0.0) {
+			ret = cd.bsd.stDebt.q1 / g;
 		}
 		return ret;
 	}
@@ -212,6 +209,7 @@ public class DerivedData {
 		double ret = cd.id.netIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.calcOpMargin

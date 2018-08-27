@@ -137,11 +137,11 @@ public class CompanyData {
 						} catch (ParseException e) {
 							cd.eoq = null;
 						}
-						cd.insiders = Double.parseDouble(fld[3].trim());
-						cd.floatShares = Double.parseDouble(fld[4].trim());
-						cd.capEx = Double.parseDouble(fld[5].trim());
-						cd.cashFlow = Double.parseDouble(fld[6].trim());
-						cd.cashFromOps = Double.parseDouble(fld[7].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[3].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[4].trim());
+						cd.capEx = QuarterlyData.parseDouble(fld[5].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[6].trim());
+						cd.cashFromOps = QuarterlyData.parseDouble(fld[7].trim());
 						cd.shares.parse(fld);
 					}
 				}
