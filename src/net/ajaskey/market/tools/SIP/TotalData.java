@@ -96,7 +96,7 @@ public class TotalData {
 	public QuarterlyData	epsDilCont;
 	public QuarterlyData	dividend;
 
-	public QuarterlyData	shares;
+	public QuarterlyData shares;
 
 	DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
 

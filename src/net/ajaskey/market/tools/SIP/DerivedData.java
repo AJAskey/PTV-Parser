@@ -34,20 +34,7 @@ public class DerivedData {
 	final private static double MAX_PE = 275.0;
 
 	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcDebtToCash
 	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcMarketCap(CompanyData cd) {
-
-		double ret = cd.lastPrice * cd.shares.q1;
-		return ret;
-	}
-
-	/**
-	 * 
 	 * net.ajaskey.market.tools.SIP.calcDebtToCash
 	 *
 	 * @param bsd
@@ -56,15 +43,15 @@ public class DerivedData {
 	public static double calcDebtToCash(BalanceSheetData bsd) {
 
 		double ret = 0.0;
-		double c = bsd.cash.getMostRecent();
+		final double c = bsd.cash.getMostRecent();
 		if (c > 0.0) {
 			ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
-		} 
+		}
 		return ret;
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.calcDebtToEquity
 	 *
 	 * @param bsd
@@ -73,19 +60,9 @@ public class DerivedData {
 	public static double calcDebtToEquity(BalanceSheetData bsd) {
 
 		double ret = 0.0;
-		double e = bsd.equity.getMostRecent();
+		final double e = bsd.equity.getMostRecent();
 		if (e > 0.0) {
 			ret = bsd.ltDebt.getMostRecent() / e;
-		}
-		return ret;
-	}
-
-	public static double calcStDebtToOpIncome(CompanyData cd) {
-
-		double ret = 0.0;
-		double g = cd.id.grossOpIncome.getTtm();
-		if (g != 0.0) {
-			ret = cd.bsd.stDebt.q1 / g;
 		}
 		return ret;
 	}
@@ -102,7 +79,7 @@ public class DerivedData {
 
 		double ret = 0.0;
 		if (price > 0.0) {
-			double d1 = id.dividend.getTtm();
+			final double d1 = id.dividend.getTtm();
 			ret = (d1 / price) * 100.0;
 		}
 		return ret;
@@ -121,11 +98,24 @@ public class DerivedData {
 
 		double ret = 0.0;
 		if (price > 0.0) {
-			double e1 = id.epsDilCont.getTtm();
+			final double e1 = id.epsDilCont.getTtm();
 			ret = (e1 / price) * 100.0;
 		}
 		return ret;
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.calcFreeCashFlow
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcFreeCashFlow(CompanyData cd) {
+
+		final double ret = cd.cashFromOps - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		return ret;
 	}
 
 	/**
@@ -149,6 +139,19 @@ public class DerivedData {
 
 	/**
 	 *
+	 * net.ajaskey.market.tools.SIP.calcDebtToCash
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcMarketCap(CompanyData cd) {
+
+		final double ret = cd.lastPrice * cd.shares.q1;
+		return ret;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.tools.SIP.calcNetMargin
 	 *
 	 * @param id
@@ -157,57 +160,13 @@ public class DerivedData {
 	public static double calcNetMargin(IncomeData id) {
 
 		double ret = 0.0;
-		double n1 = id.netIncome.getMostRecent();
-		double s1 = id.sales.getMostRecent();
+		final double n1 = id.netIncome.getMostRecent();
+		final double s1 = id.sales.getMostRecent();
 		if (s1 > 0.0) {
 			ret = (n1 / s1) * 100.0;
 		}
 		return ret;
 
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcRoe
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcRoe(CompanyData cd) {
-
-		double ret = 0.0;
-		double n1 = cd.id.netIncome.getMostRecent();
-		double e1 = cd.bsd.equity.getMostRecent();
-		if (e1 > 0.0) {
-			ret = (n1 / e1) * 100.0;
-		}
-		return ret;
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcFreeCashFlow
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcFreeCashFlow(CompanyData cd) {
-
-		double ret = cd.cashFromOps - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
-		return ret;
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.calcWorkingCashFlow
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcWorkingCashFlow(CompanyData cd) {
-
-		double ret = cd.id.netIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
-		return ret;
 	}
 
 	/**
@@ -244,7 +203,7 @@ public class DerivedData {
 	public static double calcPE(IncomeData id, double price) {
 
 		double ret = MAX_PE;
-		double e1 = id.epsDilCont.getTtm();
+		final double e1 = id.epsDilCont.getTtm();
 		if (e1 > 0.0) {
 			ret = price / e1;
 		}
@@ -265,12 +224,40 @@ public class DerivedData {
 
 		double ret = 0.0;
 		if ((cd.shares.q1 > 0.0) && (cd.lastPrice > 0.0)) {
-			double sps = cd.id.sales.getTtm() / cd.shares.getTtmAvg();
+			final double sps = cd.id.sales.getTtm() / cd.shares.getTtmAvg();
 			ret = cd.lastPrice / sps;
 		}
 		//ret = Math.min(MAX_PE, ret);
 		return ret;
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.calcRoe
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcRoe(CompanyData cd) {
+
+		double ret = 0.0;
+		final double n1 = cd.id.netIncome.getMostRecent();
+		final double e1 = cd.bsd.equity.getMostRecent();
+		if (e1 > 0.0) {
+			ret = (n1 / e1) * 100.0;
+		}
+		return ret;
+	}
+
+	public static double calcStDebtToOpIncome(CompanyData cd) {
+
+		double ret = 0.0;
+		final double g = cd.id.grossOpIncome.getTtm();
+		if (g != 0.0) {
+			ret = cd.bsd.stDebt.q1 / g;
+		}
+		return ret;
 	}
 
 	/**
@@ -294,6 +281,19 @@ public class DerivedData {
 		}
 		return ret;
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.calcWorkingCashFlow
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcWorkingCashFlow(CompanyData cd) {
+
+		final double ret = cd.id.netIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		return ret;
 	}
 
 	public double qoqGrowth;
@@ -378,7 +378,7 @@ public class DerivedData {
 	 */
 	private void setTtmEps() {
 
-		double e1 = this.qd.getTtm();
+		final double e1 = this.qd.getTtm();
 		this.ttm = e1;
 	}
 

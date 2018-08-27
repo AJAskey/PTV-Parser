@@ -8,11 +8,8 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -119,7 +116,7 @@ public class CompanyData {
 			}
 		}
 
-		// Read miscellaneous data 
+		// Read miscellaneous data
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-MISC.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
@@ -134,7 +131,7 @@ public class CompanyData {
 						cd.numEmp = (int) Double.parseDouble((fld[1].trim()));
 						try {
 							cd.eoq = sdf.parse(fld[2].trim());
-						} catch (ParseException e) {
+						} catch (final ParseException e) {
 							cd.eoq = null;
 						}
 						cd.insiders = QuarterlyData.parseDouble(fld[3].trim());
@@ -192,13 +189,13 @@ public class CompanyData {
 			}
 		}
 
-		for (CompanyData cd : companyList) {
+		for (final CompanyData cd : companyList) {
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
-			double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
+			final double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
 			totalEps += te;
 			System.out.printf("%f\t%f\t%f%n", cd.id.eps.getMostRecent(), cd.partOfTotalCap * 100.0, te);
 		}
-		double spxPE = spxPrice / totalEps;
+		final double spxPE = spxPrice / totalEps;
 
 		// Calculate statistics
 		final Statistics bvpsStats = new Statistics("Book Value per Share");
@@ -263,7 +260,7 @@ public class CompanyData {
 
 		}
 
-		Reports reports = new Reports(companyList);
+		final Reports reports = new Reports(companyList);
 		reports.DumpCompanyReports();
 	}
 

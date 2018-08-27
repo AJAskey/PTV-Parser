@@ -21,7 +21,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -42,13 +42,13 @@ public class Reports {
 	 */
 	public Reports(List<CompanyData> list) {
 
-		companyList = list;
+		this.companyList = list;
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.DumpCompanyReports
-	 * 
+	 *
 	 * @throws FileNotFoundException
 	 *
 	 */
@@ -56,15 +56,15 @@ public class Reports {
 
 		Utils.makeDir("out/CompanyReports");
 
-		PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
-		for (CompanyData cd : companyList) {
+		final PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
+		for (final CompanyData cd : this.companyList) {
 
 			try (PrintWriter pw = new PrintWriter("out/CompanyReports/" + cd.ticker + ".txt")) {
-				printData(pw, cd);
-				printData(pwAll, cd);
+				this.printData(pw, cd);
+				this.printData(pwAll, cd);
 				pwAll.println();
 
-			} catch (FileNotFoundException e) {
+			} catch (final FileNotFoundException e) {
 				e.printStackTrace();
 			}
 

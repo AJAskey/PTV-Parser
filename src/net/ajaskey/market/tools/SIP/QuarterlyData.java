@@ -203,17 +203,39 @@ public class QuarterlyData {
 
 	}
 
-	public String				type;
-	public int					pos;
-	public double				q8;
-	public double				q7;
-	public double				q6;
-	public double				q5;
-	public double				q4;
-	public double				q3;
-	public double				q2;
-	public double				q1;
-	public DerivedData	dd;
+	/**
+	 * net.ajaskey.market.tools.SIP.parseDouble
+	 *
+	 * @param string
+	 * @return
+	 */
+	public static double parseDouble(String fld) {
+
+		try {
+			double d = Double.parseDouble(fld);
+			if ((d > 0.0) && (d < 0.0001)) {
+				d = 0.0;
+			} else if (d < -999999.0) {
+				d = 0.0;
+			}
+			return d;
+		} catch (final Exception e) {
+		}
+		return 0;
+	}
+
+	public String	type;
+	public int		pos;
+	public double	q8;
+	public double	q7;
+	public double	q6;
+	public double	q5;
+	public double	q4;
+	public double	q3;
+	public double	q2;
+	public double	q1;
+
+	public DerivedData dd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -296,41 +318,20 @@ public class QuarterlyData {
 
 		try {
 			int pos = colPos.get(this.type);
-			this.q1 = this.parseDouble(fld[pos++]);
-			this.q2 = this.parseDouble(fld[pos++]);
-			this.q3 = this.parseDouble(fld[pos++]);
-			this.q4 = this.parseDouble(fld[pos++]);
-			this.q5 = this.parseDouble(fld[pos++]);
-			this.q6 = this.parseDouble(fld[pos++]);
-			this.q7 = this.parseDouble(fld[pos++]);
-			this.q8 = this.parseDouble(fld[pos++]);
+			this.q1 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q2 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q3 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q4 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q5 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q6 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q7 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q8 = QuarterlyData.parseDouble(fld[pos++]);
 
 			this.dd.calculate(this);
 
 		} catch (final Exception e) {
 			this.initData();
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.parseDouble
-	 *
-	 * @param string
-	 * @return
-	 */
-	public static double parseDouble(String fld) {
-
-		try {
-			double d = Double.parseDouble(fld);
-			if ((d > 0.0) && (d < 0.0001)) {
-				d = 0.0;
-			} else if (d < -999999.0) {
-				d = 0.0;
-			}
-			return d;
-		} catch (final Exception e) {
-		}
-		return 0;
 	}
 
 	/**
