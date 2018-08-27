@@ -72,6 +72,10 @@ public class CompanyData {
 	 */
 	public static void main(String[] args) throws IOException {
 
+		double totalMarketCap = 0.0;
+		double totalEps = 0.0;
+		double spxPrice = 0.0;
+
 		QuarterlyData.init();
 
 		final TotalData td = new TotalData();
@@ -115,7 +119,7 @@ public class CompanyData {
 			}
 		}
 
-		// Read income statement
+		// Read miscellaneous data 
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-MISC.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
@@ -127,7 +131,7 @@ public class CompanyData {
 					final String ticker = fld[0].trim();
 					final CompanyData cd = CompanyData.getCompany(ticker);
 					if (cd != null) {
-						cd.numEmp = (int)Double.parseDouble((fld[1].trim()));
+						cd.numEmp = (int) Double.parseDouble((fld[1].trim()));
 						try {
 							cd.eoq = sdf.parse(fld[2].trim());
 						} catch (ParseException e) {
@@ -135,13 +139,16 @@ public class CompanyData {
 						}
 						cd.insiders = Double.parseDouble(fld[3].trim());
 						cd.floatShares = Double.parseDouble(fld[4].trim());
+						cd.capEx = Double.parseDouble(fld[5].trim());
+						cd.cashFlow = Double.parseDouble(fld[6].trim());
+						cd.cashFromOps = Double.parseDouble(fld[7].trim());
 						cd.shares.parse(fld);
 					}
 				}
 			}
 		}
 
-		// Read last price of tickers
+		// Read last price of tickers and calculate derived data
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/closing_prices.txt"))) {
 
 			while ((line = reader.readLine()) != null) {
@@ -152,23 +159,31 @@ public class CompanyData {
 						//System.out.println(str);
 						final String fld[] = str.split(TAB);
 						final String ticker = fld[0].trim();
-						final CompanyData cd = CompanyData.getCompany(ticker);
-						if (cd != null) {
-							if (ticker.equalsIgnoreCase(cd.ticker)) {
-								final double price = Double.parseDouble(fld[1].trim());
-								cd.lastPrice = price;
-								cd.pe = DerivedData.calcPE(cd.id, price);
-								cd.psales = DerivedData.calcPSales(cd.id, price);
-								cd.opMargin = DerivedData.calcOpMargin(cd.id);
-								cd.netMargin = DerivedData.calcNetMargin(cd.id);
-								cd.taxRate = DerivedData.calcTaxRate(cd.id);
-								cd.interestRate = DerivedData.calcInterestRate(cd.id);
-								cd.divYld = DerivedData.calcDividendYield(cd.id, price);
-								cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
-								cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
-								cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
-								cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
-								cd.marketCap = DerivedData.calcMarketCap(cd);
+						if (ticker.equals("SPX.IDX")) {
+							spxPrice = Double.parseDouble(fld[1].trim());
+						} else {
+							final CompanyData cd = CompanyData.getCompany(ticker);
+							if (cd != null) {
+								if (ticker.equalsIgnoreCase(cd.ticker)) {
+									final double price = Double.parseDouble(fld[1].trim());
+									cd.lastPrice = price;
+									cd.pe = DerivedData.calcPE(cd.id, price);
+									cd.psales = DerivedData.calcPSales(cd);
+									cd.opMargin = DerivedData.calcOpMargin(cd.id);
+									cd.netMargin = DerivedData.calcNetMargin(cd.id);
+									cd.roe = DerivedData.calcRoe(cd);
+									cd.taxRate = DerivedData.calcTaxRate(cd.id);
+									cd.interestRate = DerivedData.calcInterestRate(cd.id);
+									cd.divYld = DerivedData.calcDividendYield(cd.id, price);
+									cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
+									cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+									cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
+									cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
+									cd.marketCap = DerivedData.calcMarketCap(cd);
+									cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
+									cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
+									totalMarketCap += cd.marketCap;
+								}
 							}
 						}
 					} catch (final Exception e) {
@@ -177,6 +192,14 @@ public class CompanyData {
 			}
 		}
 
+		for (CompanyData cd : companyList) {
+			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
+			double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
+			totalEps += te;
+			System.out.printf("%f\t%f\t%f%n", cd.id.eps.getMostRecent(), cd.partOfTotalCap * 100.0, te);
+		}
+		double spxPE = spxPrice / totalEps;
+
 		// Calculate statistics
 		final Statistics bvpsStats = new Statistics("Book Value per Share");
 		final Statistics salesStats = new Statistics("Sales");
@@ -184,6 +207,7 @@ public class CompanyData {
 		final Statistics netIncomeStats = new Statistics("Net Income");
 		final Statistics inventoryStats = new Statistics("Inventory");
 		final Statistics peStats = new Statistics("Price / Earnings");
+		final Statistics psStats = new Statistics("Price / Sales");
 		final Statistics opMarginStats = new Statistics("Operations Margin");
 		final Statistics taxRateStats = new Statistics("Tax Rate");
 		final Statistics interestRateStats = new Statistics("Interest Rate");
@@ -201,6 +225,7 @@ public class CompanyData {
 				netIncomeStats.addValues(cd.id.netIncome);
 				inventoryStats.addValues(cd.bsd.inventory);
 				peStats.addValue(cd.pe);
+				psStats.addValue(cd.psales);
 				opMarginStats.addValue(cd.opMargin);
 				taxRateStats.addValue(cd.taxRate);
 				interestRateStats.addValue(cd.interestRate);
@@ -226,11 +251,15 @@ public class CompanyData {
 			pw.println(netIncomeStats);
 			pw.println(inventoryStats);
 			pw.println(peStats);
+			pw.println(psStats);
 			pw.println(opMarginStats);
 			pw.println(taxRateStats);
 			pw.println(interestRateStats);
 			pw.println(divYldStats);
 			pw.println(epsYldStats);
+			pw.println("Total Market Cap :" + QuarterlyData.fmt(totalMarketCap, 20));
+			pw.println("Total EPS        :" + QuarterlyData.fmt(totalEps, 20));
+			pw.println("SPX PE           :" + QuarterlyData.fmt(spxPE, 20));
 
 		}
 
@@ -285,6 +314,9 @@ public class CompanyData {
 	public Date						eoq;
 	public double					insiders;
 	public double					floatShares;
+	public double					capEx;
+	public double					cashFlow;
+	public double					cashFromOps;
 	public QuarterlyData	shares;
 
 	// aggregate data
@@ -297,15 +329,19 @@ public class CompanyData {
 	public double	psales;
 	public double	opMargin;
 	public double	netMargin;
+	public double	roe;
 	public double	taxRate;
 	public double	interestRate;
 	public double	divYld;
 	public double	epsYld;
 
-	public double ltDebtEquity;
-	public double stDebtOpIncome;
-	public double debtCash;
-	public double marketCap;
+	public double	freeCashFlow;
+	public double	workingCashFlow;
+	public double	ltDebtEquity;
+	public double	stDebtOpIncome;
+	public double	debtCash;
+	public double	marketCap;
+	public double	partOfTotalCap;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -319,8 +355,12 @@ public class CompanyData {
 		this.sector = "";
 		this.industry = "";
 		this.numEmp = 0;
+		this.insiders = 0.0;
 		this.eoq = null;
 		this.floatShares = 0.0;
+		this.capEx = 0.0;
+		this.cashFlow = 0.0;
+		this.cashFromOps = 0.0;
 		this.shares = new QuarterlyData("shares");
 
 		this.lastPrice = 0.0;
@@ -328,14 +368,18 @@ public class CompanyData {
 		this.psales = 0.0;
 		this.opMargin = 0.0;
 		this.netMargin = 0.0;
+		this.roe = 0.0;
 		this.taxRate = 0.0;
 		this.interestRate = 0.0;
 		this.divYld = 0.0;
 		this.epsYld = 0.0;
+		this.freeCashFlow = 0.0;
+		this.workingCashFlow = 0.0;
 		this.ltDebtEquity = 0.0;
 		this.stDebtOpIncome = 0.0;
 		this.debtCash = 0.0;
 		this.marketCap = 0.0;
+		this.partOfTotalCap = 0.0;
 	}
 
 	/* (non-Javadoc)
@@ -354,13 +398,15 @@ public class CompanyData {
 		ret += TAB + "Insiders Own      : " + QuarterlyData.fmt(this.insiders) + NL;
 		ret += TAB + "Float             : " + QuarterlyData.fmt(this.floatShares) + NL;
 		ret += TAB + "Outstanding       : " + QuarterlyData.fmt(this.shares.q1) + NL;
-		ret += TAB + "Market Cap        : " + QuarterlyData.fmt(this.marketCap) + NL;
+		ret += TAB + "Market Cap        : " + QuarterlyData.fmt(this.marketCap)
+		    + String.format("  %s", String.format("(%3.5f%%)", (this.partOfTotalCap * 100.0))) + NL;
 
 		ret += TAB + "Last Price        : " + QuarterlyData.fmt(this.lastPrice) + NL;
 		ret += TAB + "PE                : " + QuarterlyData.fmt(this.pe) + NL;
 		ret += TAB + "Price/Sales       : " + QuarterlyData.fmt(this.psales) + NL;
 		ret += TAB + "Op Margin         : " + QuarterlyData.fmt(this.opMargin) + NL;
 		ret += TAB + "Net Margin        : " + QuarterlyData.fmt(this.netMargin) + NL;
+		ret += TAB + "ROE               : " + QuarterlyData.fmt(this.roe) + NL;
 		ret += TAB + "Tax Rate          : " + QuarterlyData.fmt(this.taxRate) + NL;
 		ret += TAB + "Interest Rate     : " + QuarterlyData.fmt(this.interestRate) + NL;
 		ret += TAB + "Dividend Yield    : " + QuarterlyData.fmt(this.divYld) + NL;

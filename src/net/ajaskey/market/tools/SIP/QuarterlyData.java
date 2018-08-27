@@ -166,8 +166,8 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("dividend", pos);
 		pos += 8;
-		
-		colPos.put("shares", 5);
+
+		colPos.put("shares", 8);
 	}
 
 	/**
@@ -226,6 +226,47 @@ public class QuarterlyData {
 		this.pos = colPos.get(t);
 		this.initData();
 		this.dd = new DerivedData();
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.getMostRecent
+	 *
+	 * @return
+	 */
+	public double getMostRecent() {
+
+		double d = this.q1;
+		if (d == 0.0) {
+			d = this.q2;
+		}
+		return d;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.getTtm
+	 *
+	 * @return
+	 */
+	public double getTtm() {
+
+		double d = this.q1 + this.q2 + this.q3 + this.q4;
+		if (this.q1 == 0.0) {
+			d += this.q5;
+		}
+		return d;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.getTtmAvg
+	 *
+	 * @return
+	 */
+	public double getTtmAvg() {
+
+		return this.getTtm() / 4.0;
 	}
 
 	/**
@@ -308,22 +349,6 @@ public class QuarterlyData {
 		this.q7 += qd.q7;
 		this.q8 += qd.q8;
 
-	}
-	
-	public double getMostRecent() {
-		double d = this.q1;
-		if (d == 0.0) {
-			d = this.q2;
-		}
-		return d;
-	}
-	
-	public double getTtm() {
-		double d = this.q1 + this.q2 + this.q3 + this.q4;
-		if (this.q1 == 0.0) {
-			d += this.q5;
-		}
-		return d;
 	}
 
 	/* (non-Javadoc)

@@ -96,6 +96,8 @@ public class TotalData {
 	public QuarterlyData	epsDilCont;
 	public QuarterlyData	dividend;
 
+	public QuarterlyData	shares;
+
 	DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
 
 	/**
@@ -151,6 +153,8 @@ public class TotalData {
 		this.epsDiluted = new QuarterlyData("epsDiluted");
 		this.epsDilCont = new QuarterlyData("epsDilCont");
 		this.dividend = new QuarterlyData("dividend");
+
+		this.shares = new QuarterlyData("shares");
 	}
 
 	/**
@@ -207,6 +211,8 @@ public class TotalData {
 		this.epsDilCont.sum(cd.id.epsDilCont);
 		this.dividend.sum(cd.id.dividend);
 
+		this.shares.sum(cd.shares);
+
 	}
 
 	/**
@@ -260,6 +266,8 @@ public class TotalData {
 		this.epsDiluted.dd.calculate(this.epsDiluted);
 		this.epsDilCont.dd.calculate(this.epsDilCont);
 		this.dividend.dd.calculate(this.dividend);
+
+		this.shares.dd.calculate(this.shares);
 
 	}
 
@@ -316,6 +324,8 @@ public class TotalData {
 		ret += TAB + this.epsDiluted;
 		ret += TAB + this.epsDilCont;
 		ret += TAB + this.dividend;
+
+		ret += TAB + this.shares;
 
 		return ret;
 	}
