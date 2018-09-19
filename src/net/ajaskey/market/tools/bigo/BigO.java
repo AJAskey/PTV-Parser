@@ -5,11 +5,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -43,33 +46,164 @@ public class BigO {
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
 
-	final static public SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	final static public SimpleDateFormat	sdf				= new SimpleDateFormat("yyyy-MM-dd");
+	final static public SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyyMMdd");
+
+	enum Frequency {
+		DAILY, WEEKLY, MONTHLY
+	};
+
+	public enum Direction {
+		NORMAL, REVERSE
+	};
 
 	/**
 	 * net.ajaskey.market.tools.bigo.main
 	 *
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		DescriptiveStatistics ds = new DescriptiveStatistics(250);
+		CreateWilshireData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\D\\DWC.csv");
+		CreateVixData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\V\\VIX.csv");
 
-		final SeriesData[] sd = BigO.read("data/RydexData.txt");
+		final SeriesData[] dwc = BigO.processData("data/Wilshire.txt", 500, Direction.NORMAL, Frequency.DAILY);
+		BigO.write("wilshire", dwc);
+
+		final SeriesData[] rydex = BigO.processData("data/RydexData.txt", 500, Direction.NORMAL, Frequency.DAILY);
+		BigO.write("rydex", rydex);
+
+		final SeriesData[] aaii = BigO.processData("data/AAIIBull.txt", 104, Direction.NORMAL, Frequency.DAILY);
+		BigO.write("aaii", aaii);
+
+		final SeriesData[] vix = BigO.processData("data/VIX.txt", 104, Direction.REVERSE, Frequency.DAILY);
+		BigO.write("vix", vix);
+
+		final SeriesData[] spread = BigO.processData("data/aaii-spread.txt", 104, Direction.NORMAL, Frequency.DAILY);
+		BigO.write("aaii_spread", spread);
+
+		final SeriesData[] pe = BigO.processData("data/SP500PE.txt", 600, Direction.NORMAL, Frequency.DAILY);
+		BigO.write("sp500pe", pe);
+
+		System.out.println("Done.");
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.bigo.CreateVixData
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void CreateVixData(String fname) throws FileNotFoundException, IOException {
+
+		final int MA_KNT = 500;
+
+		final DescriptiveStatistics ds = new DescriptiveStatistics(MA_KNT);
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname));
+		    PrintWriter pw = new PrintWriter("data/vix.txt")) {
+
+			//skip header
+			String line = "";
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					//System.out.println(str);
+					final String fld[] = str.split(",");
+
+					final Calendar cal = Calendar.getInstance();
+					try {
+						cal.setTime(sdfOptuma.parse(fld[1].trim()));
+						// High value used
+						final double d = Double.parseDouble(fld[3].trim());
+						ds.addValue(d);
+						if (ds.getN() == MA_KNT) {
+							String fstr = String.format("%s\t%.2f", sdf.format(cal.getTime()), d);
+							pw.println(fstr);
+						}
+					} catch (final ParseException e) {
+						System.out.println(fname + "  -- Invalid data found : " + str);
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.bigo.CreateWilshireData
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws NumberFormatException
+	 */
+	private static void CreateWilshireData(String fname) throws NumberFormatException, IOException {
+
+		final int MA_KNT = 500;
+
+		final DescriptiveStatistics ds = new DescriptiveStatistics(MA_KNT);
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname));
+		    PrintWriter pw = new PrintWriter("data/wilshire.txt")) {
+
+			//skip header
+			String line = "";
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					//System.out.println(str);
+					final String fld[] = str.split(",");
+
+					final Calendar cal = Calendar.getInstance();
+					try {
+						cal.setTime(sdfOptuma.parse(fld[1].trim()));
+						final double d = Double.parseDouble(fld[5].trim());
+						ds.addValue(d);
+						if (ds.getN() == MA_KNT) {
+							double delta = d / ds.getMean() * 100.0;
+							String fstr = String.format("%s\t%.2f", sdf.format(cal.getTime()), delta);
+							pw.println(fstr);
+						}
+					} catch (final ParseException e) {
+						System.out.println(fname + "  -- Invalid data found : " + str);
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.bigo.processData
+	 *
+	 * @param fname
+	 * @param window
+	 * @param freq 
+	 * @return
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static SeriesData[] processData(String fname, int window, Direction direction, Frequency freq)
+	    throws FileNotFoundException, IOException {
+
+		System.out.println("Processing : " + fname);
+		
+		final DescriptiveStatistics ds = new DescriptiveStatistics(window);
+
+		final SeriesData[] sd = BigO.read(fname);
 		for (final SeriesData s : sd) {
 			ds.addValue(s.value);
 			s.knt = ds.getN();
-			if (ds.getN() == 250) {
-				s.mean = ds.getMean();
-				s.median = ds.getPercentile(50.0);
-				s.stddev = ds.getStandardDeviation();
-				s.min = ds.getMin();
-				s.max = ds.getMax();
-				s.setStats(ds);
-			}
-			System.out.println(s);
+			if (ds.getN() == window) s.setStats(ds, direction);
 		}
-		System.out.println(sd.length);
 
+		return sd;
 	}
 
 	/**
@@ -78,8 +212,10 @@ public class BigO {
 	 *
 	 * @param fname
 	 * @return
+	 * @throws IOException
+	 * @throws FileNotFoundException
 	 */
-	public static SeriesData[] read(String fname) {
+	public static SeriesData[] read(String fname) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 		final SeriesData[] data = new SeriesData[MAX_DATA_VALUES];
@@ -102,20 +238,38 @@ public class BigO {
 						data[knt] = new SeriesData(cal, d);
 						knt++;
 					} catch (final ParseException e) {
-						//e.printStackTrace();
+						System.out.println(fname + "  -- Invalid data found : " + str);
 					}
-
 				}
 			}
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (final IOException e) {
-			e.printStackTrace();
 		}
 
 		final SeriesData[] ret = new SeriesData[knt];
 		System.arraycopy(data, 0, ret, 0, knt);
 		return ret;
+	}
+
+	public static void write(String prefix, SeriesData[] data) throws FileNotFoundException {
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Quandl/" + prefix + "_value.csv")) {
+			for (final SeriesData s : data)
+				if (s.mean > 0.0) pw.println(sdf.format(s.date.getTime()) + String.format(", %.2f", s.value));
+		}
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Quandl/" + prefix + "_median.csv")) {
+			for (final SeriesData s : data)
+				if (s.mean > 0.0) pw.println(sdf.format(s.date.getTime()) + String.format(", %.2f", s.median));
+		}
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Quandl/" + prefix + "_score.csv")) {
+			for (final SeriesData s : data)
+				if (s.mean > 0.0) pw.println(sdf.format(s.date.getTime()) + String.format(", %.2f", s.score));
+		}
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Quandl/" + prefix + "_delta.csv")) {
+			for (final SeriesData s : data)
+				if (s.mean > 0.0) pw.println(sdf.format(s.date.getTime()) + String.format(", %.2f", s.delta));
+		}
 	}
 
 }

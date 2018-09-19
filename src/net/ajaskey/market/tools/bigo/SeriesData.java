@@ -108,13 +108,29 @@ public class SeriesData {
 	 * net.ajaskey.market.tools.bigo.setStats
 	 *
 	 * @param ds
+	 * @param direction
 	 *
 	 */
-	public void setStats(DescriptiveStatistics ds) {
+	public void setStats(DescriptiveStatistics ds, BigO.Direction direction) {
+
+		this.mean = ds.getMean();
+		this.median = ds.getPercentile(50.0);
+		this.stddev = ds.getStandardDeviation();
+		this.min = ds.getMin();
+		this.max = ds.getMax();
+
+		if (this.stddev > 0.0) {
+			double d = this.value - this.mean;
+			this.delta = d / this.stddev;
+		}
 
 		for (int i = 1; i < 101; i++) {
-			final double p = ds.getPercentile(i);
-			final Percentiles pt = new Percentiles(i, p);
+			final double p = ds.getPercentile((double) i);
+			int pct = i;
+			if (direction == BigO.Direction.REVERSE) {
+				pct = i - 101;
+			}
+			final Percentiles pt = new Percentiles(Math.abs(pct), p);
 			this.perc.add(pt);
 		}
 
