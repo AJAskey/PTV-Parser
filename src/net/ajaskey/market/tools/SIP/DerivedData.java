@@ -44,9 +44,7 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double c = bsd.cash.getMostRecent();
-		if (c > 0.0) {
-			ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
-		}
+		if (c > 0.0) ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
 		return ret;
 	}
 
@@ -61,9 +59,7 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double e = bsd.equity.getMostRecent();
-		if (e > 0.0) {
-			ret = bsd.ltDebt.getMostRecent() / e;
-		}
+		if (e > 0.0) ret = bsd.ltDebt.getMostRecent() / e;
 		return ret;
 	}
 
@@ -130,9 +126,7 @@ public class DerivedData {
 		double ret = 0.0;
 		final double i1 = id.interestExp.q1 + id.interestExpNonOp.q1;
 		final double s1 = id.sales.q1;
-		if (s1 > 0.0) {
-			ret = (i1 / s1) * 100.0;
-		}
+		if (s1 > 0.0) ret = (i1 / s1) * 100.0;
 		return ret;
 
 	}
@@ -162,9 +156,7 @@ public class DerivedData {
 		double ret = 0.0;
 		final double n1 = id.netIncome.getMostRecent();
 		final double s1 = id.sales.getMostRecent();
-		if (s1 > 0.0) {
-			ret = (n1 / s1) * 100.0;
-		}
+		if (s1 > 0.0) ret = (n1 / s1) * 100.0;
 		return ret;
 
 	}
@@ -185,9 +177,7 @@ public class DerivedData {
 			g1 = id.grossOpIncome.q2;
 			s1 = id.sales.q2;
 		}
-		if (s1 > 0.0) {
-			ret = (g1 / s1) * 100.0;
-		}
+		if (s1 > 0.0) ret = (g1 / s1) * 100.0;
 		return ret;
 
 	}
@@ -204,9 +194,7 @@ public class DerivedData {
 
 		double ret = MAX_PE;
 		final double e1 = id.epsDilCont.getTtm();
-		if (e1 > 0.0) {
-			ret = price / e1;
-		}
+		if (e1 > 0.0) ret = price / e1;
 		ret = Math.min(MAX_PE, ret);
 		return ret;
 
@@ -242,11 +230,9 @@ public class DerivedData {
 	public static double calcRoe(CompanyData cd) {
 
 		double ret = 0.0;
-		final double n1 = cd.id.netIncome.getMostRecent();
+		final double n1 = cd.id.netIncome.getTtm();
 		final double e1 = cd.bsd.equity.getMostRecent();
-		if (e1 > 0.0) {
-			ret = (n1 / e1) * 100.0;
-		}
+		if (e1 > 0.0) ret = (n1 / e1) * 100.0;
 		return ret;
 	}
 
@@ -254,9 +240,7 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double g = cd.id.grossOpIncome.getTtm();
-		if (g != 0.0) {
-			ret = cd.bsd.stDebt.q1 / g;
-		}
+		if (g != 0.0) ret = cd.bsd.stDebt.q1 / g;
 		return ret;
 	}
 
@@ -276,9 +260,7 @@ public class DerivedData {
 			t1 = id.incomeTax.q2;
 			s1 = id.sales.q2;
 		}
-		if (s1 > 0.0) {
-			ret = (t1 / s1) * 100.0;
-		}
+		if (s1 > 0.0) ret = (t1 / s1) * 100.0;
 		return ret;
 
 	}
@@ -292,7 +274,7 @@ public class DerivedData {
 	 */
 	public static double calcWorkingCashFlow(CompanyData cd) {
 
-		final double ret = cd.id.netIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		final double ret = cd.id.pretaxIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
 
@@ -346,9 +328,7 @@ public class DerivedData {
 			qtr1 = this.qd.q2;
 			qtr5 = this.qd.q6;
 		}
-		if (qtr5 != 0.0) {
-			this.qoqGrowth = ((qtr1 - qtr5) / Math.abs(qtr5)) * 100.0;
-		}
+		if (qtr5 != 0.0) this.qoqGrowth = ((qtr1 - qtr5) / Math.abs(qtr5)) * 100.0;
 	}
 
 	/**
@@ -367,9 +347,7 @@ public class DerivedData {
 			qtr1 = this.qd.q2;
 			qtr2 = this.qd.q3;
 		}
-		if (qtr2 != 0.0) {
-			this.seqGrowth = ((qtr1 - qtr2) / Math.abs(qtr2)) * 100.0;
-		}
+		if (qtr2 != 0.0) this.seqGrowth = ((qtr1 - qtr2) / Math.abs(qtr2)) * 100.0;
 	}
 
 	/**
@@ -392,9 +370,7 @@ public class DerivedData {
 		final double yr1 = this.qd.q1 + this.qd.q2 + this.qd.q3 + this.qd.q4;
 		final double yr2 = this.qd.q5 + this.qd.q6 + this.qd.q7 + this.qd.q8;
 
-		if (yr2 != 0.0) {
-			this.yoyGrowth = ((yr1 - yr2) / Math.abs(yr2)) * 100.0;
-		}
+		if (yr2 != 0.0) this.yoyGrowth = ((yr1 - yr2) / Math.abs(yr2)) * 100.0;
 	}
 
 	/* (non-Javadoc)

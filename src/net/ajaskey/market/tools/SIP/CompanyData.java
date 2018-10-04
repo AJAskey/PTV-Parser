@@ -53,11 +53,8 @@ public class CompanyData {
 	 */
 	private static CompanyData getCompany(String ticker) {
 
-		for (final CompanyData cd : companyList) {
-			if (cd.ticker.equalsIgnoreCase(ticker)) {
-				return cd;
-			}
-		}
+		for (final CompanyData cd : companyList)
+			if (cd.ticker.equalsIgnoreCase(ticker)) return cd;
 		return null;
 	}
 
@@ -108,10 +105,8 @@ public class CompanyData {
 					final String fld[] = str.split(TAB);
 					final String ticker = fld[1].trim();
 					final CompanyData cd = CompanyData.getCompany(ticker);
-					if (cd != null) {
-						cd.id = IncomeData.setIncomeData(fld);
-						//System.out.println(cd.id);
-					}
+					if (cd != null) cd.id = IncomeData.setIncomeData(fld);
+					//System.out.println(cd.id);
 				}
 			}
 		}
@@ -150,41 +145,36 @@ public class CompanyData {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
-				if (str.length() > 1) {
+				if (str.length() > 1) try {
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[0].trim();
+					if (ticker.equals("SPX.IDX")) spxPrice = Double.parseDouble(fld[1].trim());
+					else {
+						final CompanyData cd = CompanyData.getCompany(ticker);
+						if (cd != null) if (ticker.equalsIgnoreCase(cd.ticker)) {
+							final double price = Double.parseDouble(fld[1].trim());
+							cd.lastPrice = price;
+							cd.pe = DerivedData.calcPE(cd.id, price);
+							cd.psales = DerivedData.calcPSales(cd);
+							cd.opMargin = DerivedData.calcOpMargin(cd.id);
+							cd.netMargin = DerivedData.calcNetMargin(cd.id);
+							cd.roe = DerivedData.calcRoe(cd);
+							cd.taxRate = DerivedData.calcTaxRate(cd.id);
+							cd.interestRate = DerivedData.calcInterestRate(cd.id);
+							cd.divYld = DerivedData.calcDividendYield(cd.id, price);
+							cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
+							cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+							cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
+							cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
+							cd.marketCap = DerivedData.calcMarketCap(cd);
+							cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
+							cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
 
-					try {
-						//System.out.println(str);
-						final String fld[] = str.split(TAB);
-						final String ticker = fld[0].trim();
-						if (ticker.equals("SPX.IDX")) {
-							spxPrice = Double.parseDouble(fld[1].trim());
-						} else {
-							final CompanyData cd = CompanyData.getCompany(ticker);
-							if (cd != null) {
-								if (ticker.equalsIgnoreCase(cd.ticker)) {
-									final double price = Double.parseDouble(fld[1].trim());
-									cd.lastPrice = price;
-									cd.pe = DerivedData.calcPE(cd.id, price);
-									cd.psales = DerivedData.calcPSales(cd);
-									cd.opMargin = DerivedData.calcOpMargin(cd.id);
-									cd.netMargin = DerivedData.calcNetMargin(cd.id);
-									cd.roe = DerivedData.calcRoe(cd);
-									cd.taxRate = DerivedData.calcTaxRate(cd.id);
-									cd.interestRate = DerivedData.calcInterestRate(cd.id);
-									cd.divYld = DerivedData.calcDividendYield(cd.id, price);
-									cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
-									cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
-									cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
-									cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
-									cd.marketCap = DerivedData.calcMarketCap(cd);
-									cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
-									cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
-									totalMarketCap += cd.marketCap;
-								}
-							}
+							totalMarketCap += cd.marketCap;
 						}
-					} catch (final Exception e) {
 					}
+				} catch (final Exception e) {
 				}
 			}
 		}
@@ -210,6 +200,20 @@ public class CompanyData {
 		final Statistics interestRateStats = new Statistics("Interest Rate");
 		final Statistics divYldStats = new Statistics("Dividend Yield");
 		final Statistics epsYldStats = new Statistics("Earnings Yield");
+		
+		List<Statistics> statList = new ArrayList<>();
+		statList.add(bvpsStats);
+		statList.add(salesStats);
+		statList.add(epsStats);
+		statList.add(netIncomeStats);
+		statList.add(inventoryStats);
+		statList.add(peStats);
+		statList.add(psStats);
+		statList.add(opMarginStats);
+		statList.add(taxRateStats);
+		statList.add(interestRateStats);
+		statList.add(divYldStats);
+		statList.add(epsYldStats);
 
 		try (PrintWriter pw = new PrintWriter("data/spx-stocks.txt")) {
 			for (final CompanyData cd : companyList) {
@@ -232,13 +236,14 @@ public class CompanyData {
 		}
 
 		td.sum();
+		
+		Reports.dumpStats(statList, td);
 
 		// output data
 		try (PrintWriter pw = new PrintWriter("out/companydata.dbg")) {
 
-			for (final CompanyData cd : companyList) {
+			for (final CompanyData cd : companyList)
 				pw.println(cd);
-			}
 
 			pw.println(td);
 
@@ -262,6 +267,7 @@ public class CompanyData {
 
 		final Reports reports = new Reports(companyList);
 		reports.DumpCompanyReports();
+		reports.DumpBestFinancial();
 	}
 
 	/**
@@ -293,11 +299,9 @@ public class CompanyData {
 		String ret = "";
 		final String str = secind.trim();
 		final int pos = secind.indexOf(" - ");
-		if (pos > 0) {
-			ret = str.substring(pos + 3, str.length()).trim();
-		} else {
+		if (pos > 0) ret = str.substring(pos + 3, str.length()).trim();
+		else
 			ret = str;
-		}
 		return ret;
 	}
 

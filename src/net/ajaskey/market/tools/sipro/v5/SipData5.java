@@ -437,7 +437,7 @@ public class SipData5 {
 
 			while (line != null) {
 				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
+				if ((line != null) && (line.length() > 0) && (!line.contains("BRK.A"))) {
 
 					knt++;
 					sc.reset();
@@ -492,7 +492,7 @@ public class SipData5 {
 
 			while (line != null) {
 				line = br.readLine();
-				if ((line != null) && (line.length() > 0)) {
+				if ((line != null) && (line.length() > 0) && (!line.contains("BRK.A"))) {
 
 					sc.reset();
 

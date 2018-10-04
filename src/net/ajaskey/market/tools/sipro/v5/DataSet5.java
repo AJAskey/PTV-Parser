@@ -487,7 +487,7 @@ public class DataSet5 {
 		double d = 0.0;
 		try {
 			d = Double.parseDouble(s.trim());
-			if (d < -9999999.990) {
+			if (d < -999999.990) {
 				//System.out.println(d);
 				d = 0.0;
 			}

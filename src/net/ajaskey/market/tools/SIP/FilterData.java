@@ -1,10 +1,10 @@
 
-package net.ajaskey.market.tools.optuma;
+package net.ajaskey.market.tools.SIP;
 
 /**
  * This class...
  *
- * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author Andy <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -26,10 +26,26 @@ package net.ajaskey.market.tools.optuma;
  *         SOFTWARE. </p>
  *
  */
-public class OptumaCommon {
+public class FilterData {
 
-	public final static String optumaPath = "c:\\data\\MA\\CSV Data\\";
+	public double		bound;
+	public boolean	inPlay;
 
-	public final static String optumaPricePath = "C:\\Users\\Andy\\Documents\\PriceData\\";
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public FilterData(double val) {
+
+		this.bound = val;
+		this.inPlay = false;
+	}
+
+	public boolean check(double val) {
+
+		boolean ret = false;
+		if (this.inPlay) if (val >= this.bound) ret = true;
+		return ret;
+	}
 
 }

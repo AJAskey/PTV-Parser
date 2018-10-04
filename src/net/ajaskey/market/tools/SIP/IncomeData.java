@@ -96,6 +96,10 @@ public class IncomeData {
 		id.epsDilCont.parse(fld);
 		id.dividend.parse(fld);
 
+		id.totalInterest.sum(id.interestExp);
+		id.totalInterest.sum(id.interestExpNonOp);
+		id.totalInterest.dd.calculate(id.totalInterest);
+
 		return id;
 	}
 
@@ -122,6 +126,7 @@ public class IncomeData {
 	public QuarterlyData	epsDiluted;
 	public QuarterlyData	epsDilCont;
 	public QuarterlyData	dividend;
+	public QuarterlyData	totalInterest;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -152,6 +157,7 @@ public class IncomeData {
 		this.epsDiluted = new QuarterlyData("epsDiluted");
 		this.epsDilCont = new QuarterlyData("epsDilCont");
 		this.dividend = new QuarterlyData("dividend");
+		this.totalInterest = new QuarterlyData("totalInterest");
 	}
 
 	/* (non-Javadoc)
@@ -166,12 +172,13 @@ public class IncomeData {
 		ret += TAB + this.grossIncome;
 		ret += TAB + this.rd;
 		ret += TAB + this.depreciation;
-		ret += TAB + this.interestExp;
 		ret += TAB + this.unusualIncome;
 
 		ret += TAB + this.totalOpExp;
 		ret += TAB + this.grossOpIncome;
+		ret += TAB + this.interestExp;
 		ret += TAB + this.interestExpNonOp;
+		ret += TAB + this.totalInterest;
 		ret += TAB + this.otherIncome;
 		ret += TAB + this.pretaxIncome;
 		ret += TAB + this.incomeTax;

@@ -1,10 +1,14 @@
 
-package net.ajaskey.market.tools.optuma;
+package net.ajaskey.market.tools.fred;
+
+import java.io.File;
+
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
  *
- * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author Andy <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -26,10 +30,50 @@ package net.ajaskey.market.tools.optuma;
  *         SOFTWARE. </p>
  *
  */
-public class OptumaCommon {
+public class ParseValueManufacturing {
 
-	public final static String optumaPath = "c:\\data\\MA\\CSV Data\\";
+	/**
+	 * net.ajaskey.market.tools.fred.main
+	 *
+	 * @param args
+	 */
+	public static void main(String[] args) {
 
-	public final static String optumaPricePath = "C:\\Users\\Andy\\Documents\\PriceData\\";
+		File folder = new File(OptumaCommon.optumaPath + "/Fred-Download/");
+		File[] listOfFiles = folder.listFiles();
+
+		for (File file : listOfFiles) {
+			if (file.isFile()) {
+				if (file.getName().toUpperCase().contains("VALUE SHIPMENTS")) {
+					String match = getFilePair(file.getName().substring(1, 4), listOfFiles);
+					System.out.printf("%s%n%s%n%n", file.getName(), match);
+				}
+			}
+		}
+
+		//
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.getFilePair
+	 * 
+	 * @param files
+	 *
+	 * @return
+	 */
+	private static String getFilePair(String code, File[] files) {
+
+		for (File file : files) {
+			if (file.isFile()) {
+				if (file.getName().toUpperCase().contains("VALUE TOTAL INVENTORIES")) {
+					if (file.getName().substring(1, 4).equalsIgnoreCase(code)) {
+						return file.getName();
+					}
+				}
+			}
+		}
+		return null;
+	}
 
 }

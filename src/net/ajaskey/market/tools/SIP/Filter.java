@@ -1,10 +1,14 @@
 
-package net.ajaskey.market.tools.optuma;
+package net.ajaskey.market.tools.SIP;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class...
  *
- * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author Andy <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -15,7 +19,7 @@ package net.ajaskey.market.tools.optuma;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,10 +30,44 @@ package net.ajaskey.market.tools.optuma;
  *         SOFTWARE. </p>
  *
  */
-public class OptumaCommon {
+public class Filter {
 
-	public final static String optumaPath = "c:\\data\\MA\\CSV Data\\";
+	private List<CompanyData> cList = null;
 
-	public final static String optumaPricePath = "C:\\Users\\Andy\\Documents\\PriceData\\";
+	public FilterData epsQoQ = null;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public Filter(List<CompanyData> cdList) {
+
+		this.cList = cdList;
+		this.epsQoQ = new FilterData(0.0);
+	}
+	
+	public void addBound(double val) {
+		
+	}
+
+	public List<CompanyData> execute() {
+
+		final List<CompanyData> retList = new ArrayList<>();
+		for (final CompanyData cd : this.cList) {
+			if (this.epsQoQ.check(cd.id.epsDilCont.dd.qoqGrowth)) {
+
+				retList.add(cd);
+			}
+		}
+
+		return retList;
+
+	}
+	
+	public static void main(String[] args) {
+
+		
+
+	}
 
 }

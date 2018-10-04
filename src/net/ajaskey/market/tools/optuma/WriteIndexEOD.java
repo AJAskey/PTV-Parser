@@ -99,6 +99,7 @@ public class WriteIndexEOD {
 		ParseData.setValidTicker("MMTW.IDX");
 		ParseData.setValidTicker("MMFI.IDX");
 		ParseData.setValidTicker("MMOH.IDX");
+		ParseData.setValidTicker("MMOF.IDX");
 		ParseData.setValidTicker("MMTH.IDX");
 
 		ParseData.setValidTicker("S5TW.IDX");

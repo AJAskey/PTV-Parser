@@ -67,7 +67,7 @@ public class WriteStockData {
 		filenames.add(dataPath + "\\ASCII\\INDEX");
 
 		//WriteStockData.processList("lists/stockdata-list.txt");
-		WriteStockData.processLastPrice("data/SP500-SIP3.TXT");
+		WriteStockData.processLastPrice("data/spx-stocks.txt");
 	}
 
 	private static void processLastPrice(String listName) throws ParseException, IOException {
@@ -80,7 +80,7 @@ public class WriteStockData {
 
 		final List<TickerData> tdAll = ParseData.parseFiles(filenames, 10);
 
-		try (PrintWriter pw = new PrintWriter("data/closing_price.txt")) {
+		try (PrintWriter pw = new PrintWriter("data/closing_prices.txt")) {
 
 			for (final TickerData td : tdAll) {
 				td.fillDataArrays(0, false);

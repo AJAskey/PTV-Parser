@@ -763,6 +763,7 @@ public class FredCommon {
 					    sdf.format(ds.getLastObservation().getTime()));
 				} catch (Exception e) {
 					e.printStackTrace();
+					System.out.println("Continuing...");
 				}
 			}
 		}

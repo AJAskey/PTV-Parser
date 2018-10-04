@@ -65,8 +65,8 @@ public class BigO {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		CreateWilshireData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\D\\DWC.csv");
-		CreateVixData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\V\\VIX.csv");
+		CreateWilshireData(OptumaCommon.optumaPricePath + "World Indices\\D\\DWC.csv");
+		CreateVixData(OptumaCommon.optumaPricePath + "World Indices\\V\\VIX.csv");
 
 		final SeriesData[] dwc = BigO.processData("data/Wilshire.txt", 500, Direction.NORMAL, Frequency.DAILY);
 		BigO.write("wilshire", dwc);
@@ -74,16 +74,16 @@ public class BigO {
 		final SeriesData[] rydex = BigO.processData("data/RydexData.txt", 500, Direction.NORMAL, Frequency.DAILY);
 		BigO.write("rydex", rydex);
 
-		final SeriesData[] aaii = BigO.processData("data/AAIIBull.txt", 104, Direction.NORMAL, Frequency.DAILY);
+		final SeriesData[] aaii = BigO.processData("data/AAIIBull.txt", 104, Direction.NORMAL, Frequency.WEEKLY);
 		BigO.write("aaii", aaii);
 
 		final SeriesData[] vix = BigO.processData("data/VIX.txt", 104, Direction.REVERSE, Frequency.DAILY);
 		BigO.write("vix", vix);
 
-		final SeriesData[] spread = BigO.processData("data/aaii-spread.txt", 104, Direction.NORMAL, Frequency.DAILY);
+		final SeriesData[] spread = BigO.processData("data/aaii-spread.txt", 104, Direction.NORMAL, Frequency.WEEKLY);
 		BigO.write("aaii_spread", spread);
 
-		final SeriesData[] pe = BigO.processData("data/SP500PE.txt", 600, Direction.NORMAL, Frequency.DAILY);
+		final SeriesData[] pe = BigO.processData("data/SP500PE.txt", 600, Direction.NORMAL, Frequency.MONTHLY);
 		BigO.write("sp500pe", pe);
 
 		System.out.println("Done.");
@@ -184,7 +184,7 @@ public class BigO {
 	 *
 	 * @param fname
 	 * @param window
-	 * @param freq 
+	 * @param freq
 	 * @return
 	 * @throws IOException
 	 * @throws FileNotFoundException
@@ -193,10 +193,11 @@ public class BigO {
 	    throws FileNotFoundException, IOException {
 
 		System.out.println("Processing : " + fname);
-		
+
 		final DescriptiveStatistics ds = new DescriptiveStatistics(window);
 
 		final SeriesData[] sd = BigO.read(fname);
+		SeriesData [] sd1 = setToWeekly(sd, freq);
 		for (final SeriesData s : sd) {
 			ds.addValue(s.value);
 			s.knt = ds.getN();
@@ -204,6 +205,19 @@ public class BigO {
 		}
 
 		return sd;
+	}
+
+	/** 
+	 * net.ajaskey.market.tools.bigo.setToWeekly
+	 *
+	 * @param sd
+	 * @param freq
+	 * @return
+	 */
+	private static SeriesData[] setToWeekly(SeriesData[] sd, Frequency freq) {
+
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**

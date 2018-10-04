@@ -168,17 +168,17 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 32.80;
-		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO",shillerpe));
-		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 50.99));
-		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 826.52));
+		double shillerpe = 33.58;
+		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
+		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 51.02));
+		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 833.44));
 		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1300.00));
-		double spxearn = 120.0;
+		double spxearn = 124.40;
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS", spxearn));
 		double lastEcri = 0.0;
-		double lastCoin = 181.3;
+		double lastCoin = 0.0;
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -206,12 +206,12 @@ public class ProcessQuandl {
 		price.add(0, lastSpxPrice);
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
-		List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
+		//List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
 		//ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
 
 		//Collections.reverse(scaledEarnings);
-		List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
-		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
+		//List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
+		//ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 
 		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
 
@@ -313,7 +313,7 @@ public class ProcessQuandl {
 			li.add(0, d1);
 		}
 	}
-	
+
 	private static void processEcriCoin(List<LeadingIndicatorData> coin, double wk1) {
 
 		Calendar cal1 = Calendar.getInstance();
@@ -405,7 +405,7 @@ public class ProcessQuandl {
 		}
 
 	}
-	
+
 	/**
 	 * net.ajaskey.market.tools.quandl.writeMtsList
 	 *
