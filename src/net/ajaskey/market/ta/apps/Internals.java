@@ -133,9 +133,12 @@ public class Internals {
 	private static double getSum(double[] val, int days) {
 
 		double sum = 0;
-		for (int i = 0; i < days; i++) {
-			// System.out.println(val[i]);
-			sum += val[i];
+		try {
+			for (int i = 0; i < days; i++) {
+				// System.out.println(val[i]);
+				sum += val[i];
+			}
+		} catch (Exception e) {
 		}
 		return sum;
 	}

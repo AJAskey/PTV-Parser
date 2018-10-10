@@ -51,7 +51,7 @@ public class CI {
 	public static void main(String[] args) {
 
 		try {
-			processIndex("data/indexdata_rqdc5sl1.csv");
+			processIndex("data/indexdata.csv");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

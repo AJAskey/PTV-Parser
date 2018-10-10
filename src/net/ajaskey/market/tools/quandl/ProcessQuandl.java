@@ -168,12 +168,12 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 33.58;
+		double shillerpe = 32.66;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
-		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 51.02));
+		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 52.34));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 833.44));
 		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1300.00));
-		double spxearn = 124.40;
+		double spxearn = 134.87;
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS", spxearn));
@@ -206,12 +206,12 @@ public class ProcessQuandl {
 		price.add(0, lastSpxPrice);
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
-		//List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
-		//ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
+		List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
+		ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
 
-		//Collections.reverse(scaledEarnings);
-		//List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
-		//ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
+		Collections.reverse(scaledEarnings);
+		List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
+		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 
 		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
 
@@ -360,10 +360,12 @@ public class ProcessQuandl {
 		List<OneValueData> ret = new ArrayList<>();
 		int knt = price.size() - 1;
 		for (OneValueData data : div) {
-			//System.out.println(data + "\t" + price.get(knt));
-			OneValueData nd = new OneValueData(data.date, data.value / price.get(knt--).value * 100.0);
-			//System.out.println(nd);
-			ret.add(nd);
+			if (knt >= 0) {
+				//System.out.println(data + "\t" + price.get(knt));
+				OneValueData nd = new OneValueData(data.date, data.value / price.get(knt--).value * 100.0);
+				//System.out.println(nd);
+				ret.add(nd);
+			}
 		}
 		return ret;
 	}

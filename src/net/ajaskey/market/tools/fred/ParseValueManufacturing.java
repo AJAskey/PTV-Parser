@@ -1,8 +1,14 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -36,23 +42,53 @@ public class ParseValueManufacturing {
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		File folder = new File(OptumaCommon.optumaPath + "/Fred-Download/");
 		File[] listOfFiles = folder.listFiles();
 
-		for (File file : listOfFiles) {
-			if (file.isFile()) {
-				if (file.getName().toUpperCase().contains("VALUE SHIPMENTS")) {
-					String match = getFilePair(file.getName().substring(1, 4), listOfFiles);
-					System.out.printf("%s%n%s%n%n", file.getName(), match);
+		for (File shipFile : listOfFiles) {
+			if (shipFile.isFile()) {
+				if (shipFile.getName().toUpperCase().contains("VALUE SHIPMENTS")) {
+					String invFile = getFilePair(shipFile.getName().substring(1, 4), listOfFiles);
+					if (invFile != null) {
+						//System.out.printf("%s%n%s%n%n", shipFile.getName(), invFile);
+						writeItoS(shipFile.getName(), invFile);
+					}
 				}
 			}
 		}
 
 		//
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.writeItoS
+	 *
+	 * @param shipFile
+	 * @param invFile
+	 * @throws IOException
+	 */
+	private static void writeItoS(String shipFile, String invFile) throws IOException {
+
+		ValueMfgData.setShipments(shipFile);
+
+		System.out.println(invFile);
+		String line = "";
+		try (BufferedReader reader = new BufferedReader(
+		    new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + invFile))) {
+			while ((line = reader.readLine()) != null) {
+				ValueMfgData invValue = new ValueMfgData(line.trim());
+				if (invValue.valid) {
+					System.out.println(invValue);
+				}
+			}
+		}
+
+		ValueMfgData.shipments.clear();
 	}
 
 	/**
