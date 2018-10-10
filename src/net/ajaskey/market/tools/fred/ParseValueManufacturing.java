@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,13 +82,23 @@ public class ParseValueManufacturing {
 		try (BufferedReader reader = new BufferedReader(
 		    new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + invFile))) {
 			while ((line = reader.readLine()) != null) {
-				ValueMfgData invValue = new ValueMfgData(line.trim());
-				if (invValue.valid) {
-					System.out.println(invValue);
+				ValueMfgData.setInventory(line.trim());
+			}
+		}
+
+		int idx = shipFile.indexOf("Value Shipments for ");
+		String outname = "Inventory to Shipments for " + shipFile.substring(idx + 20);
+
+		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Fred-Download/" + outname)) {
+			pw.println("Date,ItoS");
+			for (ValueMfgData vmd : ValueMfgData.shipments) {
+				if (vmd.valid) {
+					pw.printf("%s,%.2f%n", ValueMfgData.sdf.format(vmd.date.getTime()), vmd.itos);
 				}
 			}
 		}
 
+		//ValueMfgData.dump();
 		ValueMfgData.shipments.clear();
 	}
 
