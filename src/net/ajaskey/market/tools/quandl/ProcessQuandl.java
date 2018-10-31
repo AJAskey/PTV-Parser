@@ -168,11 +168,11 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 32.66;
+		double shillerpe = 30.00;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 52.34));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 833.44));
-		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1300.00));
+		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1325.00));
 		double spxearn = 134.87;
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
@@ -206,12 +206,12 @@ public class ProcessQuandl {
 		price.add(0, lastSpxPrice);
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
-		List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
-		ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
+		//List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
+		//ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
 
-		Collections.reverse(scaledEarnings);
-		List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
-		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
+		//Collections.reverse(scaledEarnings);
+		//List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
+		//ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 
 		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
 
@@ -224,13 +224,13 @@ public class ProcessQuandl {
 		final List<NaaimData> naaim = ProcessQuandl.getNaaimData(naaimURL);
 		ProcessQuandl.writeNaaimList(naaim, "NAAIM");
 
-		final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
-		processEcriLead(li, lastEcri);
-		ProcessQuandl.writeLiList(li, "Leading_Indicator");
+		//final List<LeadingIndicatorData> li = ProcessQuandl.getLeadingIndicatorData(leadURL);
+		//processEcriLead(li, lastEcri);
+		//ProcessQuandl.writeLiList(li, "Leading_Indicator");
 
-		final List<LeadingIndicatorData> coin = ProcessQuandl.getLeadingIndicatorData(coinURL);
-		processEcriCoin(coin, lastCoin);
-		ProcessQuandl.writeCoinList(coin, "Coincident_Indicator");
+		//final List<LeadingIndicatorData> coin = ProcessQuandl.getLeadingIndicatorData(coinURL);
+		//processEcriCoin(coin, lastCoin);
+		//ProcessQuandl.writeCoinList(coin, "Coincident_Indicator");
 
 		final List<OneValueData> bv = ProcessQuandl.getOneDataPoint(bookValueURL);
 		ProcessQuandl.writeOneList(bv, "SP500_BookValuePS");

@@ -758,12 +758,14 @@ public class FredCommon {
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
 				try {
-					pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
-					    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
-					    sdf.format(ds.getLastObservation().getTime()));
+					if (ds != null) {
+						pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
+						    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
+						    sdf.format(ds.getLastObservation().getTime()));
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					System.out.println("Continuing...");
+					System.out.println("Continuing... after error in " + ds.getName());
 				}
 			}
 		}

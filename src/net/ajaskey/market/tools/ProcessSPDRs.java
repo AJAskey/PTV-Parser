@@ -11,20 +11,13 @@ import net.ajaskey.market.tools.helpers.WebGet;
 
 public class ProcessSPDRs {
 
-	// private static String sDummy =
-	// ",\"SPDR\",\"0.0%\",\"0.0\",\"0.0\",\"0.0%\",\"1 M\",\"0.0 - 1.0\",";
-	// private static String header = "\"Symbol\",\"Company Name\",\"Index
-	// Weight\",\"Last\",\"Change\",\"%Change\",\"Volume\",\"52 Week Range\",";
-	// private static PrintWriter pwAll;
-
 	/**
 	 *
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
 
-		
 		ProcessSPDRs.processSpdr("xlb");
 		ProcessSPDRs.processSpdr("xle");
 		ProcessSPDRs.processSpdr("xlf");
@@ -38,8 +31,6 @@ public class ProcessSPDRs {
 
 		System.out.println("Done.");
 	}
-
-	// https://www.spdrs.com/site-content/xls/DIA_All_Holdings.xls?fund=DIA&docname=All+Holdings&onyx_code1=1286&onyx_code2=1506
 
 	/**
 	 *

@@ -1,8 +1,10 @@
 
 package net.ajaskey.market.tools.fred;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -12,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
  * This class...
@@ -46,6 +49,53 @@ public class UpdateFred {
 	private static List<DataSeriesInfo> dsList = new ArrayList<>();
 
 	private static List<DataSeriesInfo> prop_names = null;
+
+	private static String getLastLine(String fname) throws FileNotFoundException, IOException {
+
+		String ret = "";
+
+		try (BufferedReader reader = new BufferedReader(
+		    new FileReader(OptumaCommon.optumaPath + "FRED-Download\\" + fname))) {
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+					ret = str;
+				}
+			}
+		}
+
+		return ret.trim();
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.dumpRates
+	 *
+	 * @param seriesName
+	 * @param dv
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void dumpRates() throws FileNotFoundException, IOException {
+
+		List<String> rateFiles = new ArrayList<>();
+
+		rateFiles.add("[DGS3MO] - 3M Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS6MO] - 6M Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS2] - 2Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS3] - 3Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS5] - 5Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS7] - 7Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS10] - 10Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS20] - 20Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS30] - 30Y Treasury Constant Maturity Rate");
+
+		for (String fil : rateFiles) {
+			String line = getLastLine(fil + ".csv");
+			System.out.println(fil + "," + line);
+		}
+	}
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -150,8 +200,8 @@ public class UpdateFred {
 				final DataSeriesInfo dsi = new DataSeriesInfo(series);
 				final DataSeries ds = new DataSeries(series);
 				String filename = FredCommon.toFullFileName(series, dsi.getTitle());
-				FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(), dsi.getFrequency(),
-				    false);
+				List<DataValues> ldv = ds.getValues(0.0, true, false);
+				FredCommon.writeToOptuma(ldv, filename, series, dsi.getUnits(), dsi.getFrequency(), false);
 			}
 
 			System.out.println("");
@@ -179,6 +229,8 @@ public class UpdateFred {
 
 		Collections.sort(dsList, new DsiAbcSorter());
 		FredCommon.writeSeriesInfo(dsList);
+		
+		dumpRates();
 
 		System.out.println("Done.");
 

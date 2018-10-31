@@ -125,7 +125,7 @@ public class CompanyData {
 					if (cd != null) {
 						cd.numEmp = (int) Double.parseDouble((fld[1].trim()));
 						try {
-							cd.eoq = sdf.parse(fld[2].trim());
+							cd.eoq = sdf.parse(fld[3].trim());
 						} catch (final ParseException e) {
 							cd.eoq = null;
 						}
@@ -200,7 +200,7 @@ public class CompanyData {
 		final Statistics interestRateStats = new Statistics("Interest Rate");
 		final Statistics divYldStats = new Statistics("Dividend Yield");
 		final Statistics epsYldStats = new Statistics("Earnings Yield");
-		
+
 		List<Statistics> statList = new ArrayList<>();
 		statList.add(bvpsStats);
 		statList.add(salesStats);
@@ -236,7 +236,7 @@ public class CompanyData {
 		}
 
 		td.sum();
-		
+
 		Reports.dumpStats(statList, td);
 
 		// output data
@@ -395,7 +395,11 @@ public class CompanyData {
 		ret += TAB + this.sector + NL;
 		ret += TAB + this.industry + NL;
 		ret += TAB + "Number Employees  : " + String.format("%15d", this.numEmp) + NL;
-		ret += TAB + "End of Quarter    : " + String.format("%15s", sdf.format(this.eoq)) + NL;
+		try {
+			ret += TAB + "End of Quarter    : " + String.format("%15s", sdf.format(this.eoq)) + NL;
+		} catch (Exception e) {
+			ret += TAB + "End of Quarter    : ERROR" + NL;
+		}
 		ret += TAB + "Insiders Own      : " + QuarterlyData.fmt(this.insiders) + NL;
 		ret += TAB + "Float             : " + QuarterlyData.fmt(this.floatShares) + NL;
 		ret += TAB + "Outstanding       : " + QuarterlyData.fmt(this.shares.q1) + NL;
