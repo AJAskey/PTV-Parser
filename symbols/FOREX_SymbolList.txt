@@ -21,7 +21,6 @@ ARSCHF    	Argentine Peso / Swiss Franc                      	FOREX
 ARSEUR    	Argentine Peso / Euro Dollar                      	FOREX     
 ARSGBP    	Argentine Peso / Pound Sterling                   	FOREX     
 ARSHKD    	Argentine Peso / Hong Kong Dollar                 	FOREX     
-ARSHUF    	Argentine Peso / Hungarian Forint                 	FOREX     
 ARSJPY    	Argentine Peso / Japanese Yen                     	FOREX     
 ARSMXN    	Argentine Peso / Mexican Peso                     	FOREX     
 ARSSGD    	Argentine Peso / Singapore Dollar                 	FOREX     
@@ -158,7 +157,6 @@ CHFTHB    	Swiss Franc / Thai Baht                           	FOREX
 CHFTRY    	Swiss Franc / Turkish Lira                        	FOREX     
 CHFTWD    	Swiss Franc / New Taiwan Dollar                   	FOREX     
 CHFUSD    	Swiss Franc / US Dollar                           	FOREX     
-CHFUZS    	Swiss Franc / Uzbekistan Sum                      	FOREX     
 CHFZAR    	Swiss Franc / South African Rand                  	FOREX     
 CLPEUR    	Chilean Peso / Euro Dollar                        	FOREX     
 CLPGBP    	Chilean Peso / Pound Sterling                     	FOREX     
@@ -181,6 +179,7 @@ CNYGBP    	Yuan Renminbi / Pound Sterling                    	FOREX
 CNYHKD    	Yuan Renminbi / Hong Kong Dollar                  	FOREX     
 CNYJPY    	Yuan Renminbi / Japanese Yen                      	FOREX     
 CNYKRW    	Yuan Renminbi / Korean Won                        	FOREX     
+CNYMYR    	Yuan Renminbi / Malaysian Ringgit                 	FOREX     
 CNYNZD    	Yuan Renminbi / New Zealand Dollar                	FOREX     
 CNYPLN    	Yuan Renminbi / Polish Zloty                      	FOREX     
 CNYUSD    	Yuan Renminbi / US Dollar                         	FOREX     
@@ -305,7 +304,6 @@ EURMDL    	Euro Dollar / Moldovan Leu                        	FOREX
 EURMKD    	Euro Dollar / Denar                               	FOREX     
 EURMMK    	Euro Dollar / Kyat                                	FOREX     
 EURMOP    	Euro Dollar / Pataca                              	FOREX     
-EURMRO    	Euro Dollar / Ouguiya                             	FOREX     
 EURMUR    	Euro Dollar / Mauritius Rupee                     	FOREX     
 EURMVR    	Euro Dollar / Rufiyaa                             	FOREX     
 EURMWK    	Euro Dollar / Kwacha                              	FOREX     
@@ -332,11 +330,9 @@ EURRUB    	Euro Dollar / Russian Ruble                       	FOREX
 EURRWF    	Euro Dollar / Rwanda Franc                        	FOREX     
 EURSAR    	Euro Dollar / Saudi Riyal                         	FOREX     
 EURSCR    	Euro Dollar / Seychelles Rupee                    	FOREX     
-EURSDD    	Euro Dollar / Sudanese Dinar                      	FOREX     
 EURSEK    	Euro Dollar / Swedish Krona                       	FOREX     
 EURSGD    	Euro Dollar / Singapore Dollar                    	FOREX     
 EURSOS    	Euro Dollar / Somali Shilling                     	FOREX     
-EURSTD    	Euro Dollar / Dobra                               	FOREX     
 EURSVC    	Euro Dollar / El Salvador Colon                   	FOREX     
 EURSZL    	Euro Dollar / Lilangeni                           	FOREX     
 EURTHB    	Euro Dollar / Thai Baht                           	FOREX     
@@ -350,7 +346,6 @@ EURUGX    	Euro Dollar / Uganda Shilling                     	FOREX
 EURUSD    	Euro Dollar / US Dollar                           	FOREX     
 EURUYU    	Euro Dollar / Peso Uruguayo                       	FOREX     
 EURUZS    	Euro Dollar / Uzbekistan Sum                      	FOREX     
-EURVEF    	Euro Dollar / Venezualan bolivar fuerte           	FOREX     
 EURVND    	Euro Dollar / Dong                                	FOREX     
 EURXAF    	Euro Dollar / CFA Franc BEAC                      	FOREX     
 EURXOF    	Euro Dollar / CFA Franc BCEAO                     	FOREX     
@@ -478,7 +473,6 @@ HRKEUR    	Croatian kuna / Euro Dollar                       	FOREX
 HRKPLN    	Croatian kuna / Polish Zloty                      	FOREX     
 HRKUSD    	Croatian kuna / US Dollar                         	FOREX     
 HTGGBP    	Gourde / Pound Sterling                           	FOREX     
-HUFARS    	Hungarian Forint / Argentine Peso                 	FOREX     
 HUFCHF    	Hungarian Forint / Swiss Franc                    	FOREX     
 HUFDKK    	Hungarian Forint / Danish Krone                   	FOREX     
 HUFEUR    	Hungarian Forint / Euro Dollar                    	FOREX     
@@ -542,7 +536,6 @@ JPYAUD    	Japanese Yen / Australian Dollar                  	FOREX
 JPYBRL    	Japanese Yen / Brazilian Real                     	FOREX     
 JPYCAD    	Japanese Yen / Canadian Dollar                    	FOREX     
 JPYCHF    	Japanese Yen / Swiss Franc                        	FOREX     
-JPYCLP    	Japanese Yen / Chilean Peso                       	FOREX     
 JPYCNY    	Japanese Yen / Yuan Renminbi                      	FOREX     
 JPYCZK    	Japanese Yen / Czech Koruna                       	FOREX     
 JPYDKK    	Japanese Yen / Danish Krone                       	FOREX     
@@ -715,7 +708,6 @@ PLNHUF    	Polish Zloty / Hungarian Forint                   	FOREX
 PLNILS    	Polish Zloty / New Israeli Sheqel                 	FOREX     
 PLNJPY    	Polish Zloty / Japanese Yen                       	FOREX     
 PLNNOK    	Polish Zloty / Norwegian Krone                    	FOREX     
-PLNRUB    	Polish Zloty / Russian Ruble                      	FOREX     
 PLNSEK    	Polish Zloty / Swedish Krona                      	FOREX     
 PLNUSD    	Polish Zloty / US Dollar                          	FOREX     
 QARAED    	Qatari Rial / UAE Dirham                          	FOREX     
@@ -889,6 +881,7 @@ USDIDR    	US Dollar / Indian Rupiah                         	FOREX
 USDILS    	US Dollar / New Israeli Sheqel                    	FOREX     
 USDINR    	US Dollar / Indian Rupee                          	FOREX     
 USDIQD    	US Dollar / Iraqi Dinar                           	FOREX     
+USDIRR    	US Dollar / Iranian Rial                          	FOREX     
 USDISK    	US Dollar / Iceland Krona                         	FOREX     
 USDJOD    	US Dollar / Jordanian Dinar                       	FOREX     
 USDJPY    	US Dollar / Japanese Yen                          	FOREX     
@@ -936,12 +929,11 @@ USDRUB    	US Dollar / Russian Ruble                         	FOREX
 USDRWF    	US Dollar / Rwanda Franc                          	FOREX     
 USDSAR    	US Dollar / Saudi Riyal                           	FOREX     
 USDSCR    	US Dollar / Seychelles Rupee                      	FOREX     
-USDSDD    	US Dollar / Sudanese Dinar                        	FOREX     
 USDSEK    	US Dollar / Swedish Krona                         	FOREX     
 USDSGD    	US Dollar / Singapore Dollar                      	FOREX     
+USDSKK    	US Dollar / Slovak Koruna                         	FOREX     
 USDSLL    	US Dollar / Leone                                 	FOREX     
 USDSOS    	US Dollar / Somali Shilling                       	FOREX     
-USDSTD    	US Dollar / Dobra                                 	FOREX     
 USDSVC    	US Dollar / El Salvador Colon                     	FOREX     
 USDSZL    	US Dollar / Lilangeni                             	FOREX     
 USDTHB    	US Dollar / Thai Baht                             	FOREX     
@@ -952,7 +944,6 @@ USDTZS    	US Dollar / Tanzanian Shilling                    	FOREX
 USDUAH    	US Dollar / Hryvnia                               	FOREX     
 USDUYU    	US Dollar / Peso Uruguayo                         	FOREX     
 USDUZS    	US Dollar / Uzbekistan Sum                        	FOREX     
-USDVEF    	US Dollar / Venezualan bolivar fuerte             	FOREX     
 USDVND    	US Dollar / Dong                                  	FOREX     
 USDXAF    	US Dollar / CFA Franc BEAC                        	FOREX     
 USDXOF    	US Dollar / CFA Franc BCEAO                       	FOREX     
@@ -961,9 +952,6 @@ USDYER    	US Dollar / Yemeni Rial                           	FOREX
 USDZAR    	US Dollar / South African Rand                    	FOREX     
 UYUEUR    	Peso Uruguayo / Euro Dollar                       	FOREX     
 UYUUSD    	Peso Uruguayo / US Dollar                         	FOREX     
-UZSCHF    	Uzbekistan Sum / Swiss Franc                      	FOREX     
-VEFEUR    	Venezualan bolivar fuerte / Euro Dollar           	FOREX     
-VEFUSD    	Venezualan bolivar fuerte / US Dollar             	FOREX     
 VNDJPY    	Dong / Japanese Yen                               	FOREX     
 VNDXAF    	Dong / CFA Franc BEAC                             	FOREX     
 XAGARS    	Silver / Argentine Peso                           	FOREX     
@@ -999,7 +987,6 @@ XAUINR    	Gold / Indian Rupee                               	FOREX
 XAUJPY    	Gold / Japanese Yen                               	FOREX     
 XAUKRW    	Gold / Korean Won                                 	FOREX     
 XAUMXN    	Gold / Mexican Peso                               	FOREX     
-XAUPLN    	Gold / Polish Zloty                               	FOREX     
 XAURUB    	Gold / Russian Ruble                              	FOREX     
 XAUSAR    	Gold / Saudi Riyal                                	FOREX     
 XAUTHB    	Gold / Thai Baht                                  	FOREX     

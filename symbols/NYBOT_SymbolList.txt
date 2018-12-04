@@ -1,743 +1,604 @@
-A9H18     	MSCI EAFE NTR Index {Mar 18}                      	NYBOT     
 A9H19     	MSCI EAFE NTR Index {Mar 19}                      	NYBOT     
-A9M18     	MSCI EAFE NTR Index {Jun 18}                      	NYBOT     
-A9U18     	MSCI EAFE NTR Index {Sep 18}                      	NYBOT     
-A9Z17     	MSCI EAFE NTR Index {Dec 17}                      	NYBOT     
+A9M19     	MSCI EAFE NTR Index {Jun 19}                      	NYBOT     
+A9U19     	MSCI EAFE NTR Index {Sep 19}                      	NYBOT     
 A9Z18     	MSCI EAFE NTR Index {Dec 18}                      	NYBOT     
-AFH18     	MSCI USA Value {Mar 18}                           	NYBOT     
+A9Z19     	MSCI EAFE NTR Index {Dec 19}                      	NYBOT     
 AFH19     	MSCI USA Value {Mar 19}                           	NYBOT     
-AFM18     	MSCI USA Value {Jun 18}                           	NYBOT     
-AFU18     	MSCI USA Value {Sep 18}                           	NYBOT     
-AFZ17     	MSCI USA Value {Dec 17}                           	NYBOT     
+AFM19     	MSCI USA Value {Jun 19}                           	NYBOT     
+AFU19     	MSCI USA Value {Sep 19}                           	NYBOT     
 AFZ18     	MSCI USA Value {Dec 18}                           	NYBOT     
-AMH18     	MSCI EM Asia NTR {Mar 18}                         	NYBOT     
+AFZ19     	MSCI USA Value {Dec 19}                           	NYBOT     
 AMH19     	MSCI EM Asia NTR {Mar 19}                         	NYBOT     
-AMM18     	MSCI EM Asia NTR {Jun 18}                         	NYBOT     
-AMU18     	MSCI EM Asia NTR {Sep 18}                         	NYBOT     
-AMZ17     	MSCI EM Asia NTR {Dec 17}                         	NYBOT     
+AMM19     	MSCI EM Asia NTR {Jun 19}                         	NYBOT     
+AMU19     	MSCI EM Asia NTR {Sep 19}                         	NYBOT     
 AMZ18     	MSCI EM Asia NTR {Dec 18}                         	NYBOT     
-ANH18     	MSCI Euro Index {Mar 18}                          	NYBOT     
+AMZ19     	MSCI EM Asia NTR {Dec 19}                         	NYBOT     
 ANH19     	MSCI Euro Index {Mar 19}                          	NYBOT     
-ANM18     	MSCI Euro Index {Jun 18}                          	NYBOT     
-ANU18     	MSCI Euro Index {Sep 18}                          	NYBOT     
-ANZ17     	MSCI Euro Index {Dec 17}                          	NYBOT     
+ANM19     	MSCI Euro Index {Jun 19}                          	NYBOT     
+ANU19     	MSCI Euro Index {Sep 19}                          	NYBOT     
 ANZ18     	MSCI Euro Index {Dec 18}                          	NYBOT     
-AOH18     	MSCI Pan-Euro Index {Mar 18}                      	NYBOT     
+ANZ19     	MSCI Euro Index {Dec 19}                          	NYBOT     
 AOH19     	MSCI Pan-Euro Index {Mar 19}                      	NYBOT     
-AOM18     	MSCI Pan-Euro Index {Jun 18}                      	NYBOT     
-AOU18     	MSCI Pan-Euro Index {Sep 18}                      	NYBOT     
-AOZ17     	MSCI Pan-Euro Index {Dec 17}                      	NYBOT     
+AOM19     	MSCI Pan-Euro Index {Jun 19}                      	NYBOT     
+AOU19     	MSCI Pan-Euro Index {Sep 19}                      	NYBOT     
 AOZ18     	MSCI Pan-Euro Index {Dec 18}                      	NYBOT     
+AOZ19     	MSCI Pan-Euro Index {Dec 19}                      	NYBOT     
 AR        	Aussie/New Zealand                                	NYBOT     
-ARH18     	Aussie/New Zealand {Mar 18}                       	NYBOT     
-ARM18     	Aussie/New Zealand {Jun 18}                       	NYBOT     
-ARU18     	Aussie/New Zealand {Sep 18}                       	NYBOT     
-ARZ17     	Aussie/New Zealand {Dec 17}                       	NYBOT     
+ARH19     	Aussie/New Zealand {Mar 19}                       	NYBOT     
+ARM19     	Aussie/New Zealand {Jun 19}                       	NYBOT     
+ARU19     	Aussie/New Zealand {Sep 19}                       	NYBOT     
+ARZ18     	Aussie/New Zealand {Dec 18}                       	NYBOT     
 AS        	Aussie/Canadian                                   	NYBOT     
-ASH18     	Aussie/Canadian {Mar 18}                          	NYBOT     
-ASM18     	Aussie/Canadian {Jun 18}                          	NYBOT     
-ASU18     	Aussie/Canadian {Sep 18}                          	NYBOT     
-ASZ17     	Aussie/Canadian {Dec 17}                          	NYBOT     
+ASH19     	Aussie/Canadian {Mar 19}                          	NYBOT     
+ASM19     	Aussie/Canadian {Jun 19}                          	NYBOT     
+ASU19     	Aussie/Canadian {Sep 19}                          	NYBOT     
+ASZ18     	Aussie/Canadian {Dec 18}                          	NYBOT     
 AU        	Australian Dollar                                 	NYBOT     
-AUH18     	Australian Dollar {Mar 18}                        	NYBOT     
-AUM18     	Australian Dollar {Jun 18}                        	NYBOT     
-AUU18     	Australian Dollar {Sep 18}                        	NYBOT     
-AUZ17     	Australian Dollar {Dec 17}                        	NYBOT     
+AUH19     	Australian Dollar {Mar 19}                        	NYBOT     
+AUM19     	Australian Dollar {Jun 19}                        	NYBOT     
+AUU19     	Australian Dollar {Sep 19}                        	NYBOT     
+AUZ18     	Australian Dollar {Dec 18}                        	NYBOT     
 CC        	Cocoa                                             	NYBOT     
-CCH18     	Cocoa {Mar 18}                                    	NYBOT     
 CCH19     	Cocoa {Mar 19}                                    	NYBOT     
-CCK18     	Cocoa {May 18}                                    	NYBOT     
+CCH20     	Cocoa {Mar 20}                                    	NYBOT     
 CCK19     	Cocoa {May 19}                                    	NYBOT     
-CCN18     	Cocoa {Jul 18}                                    	NYBOT     
+CCK20     	Cocoa {May 20}                                    	NYBOT     
 CCN19     	Cocoa {Jul 19}                                    	NYBOT     
-CCU18     	Cocoa {Sep 18}                                    	NYBOT     
+CCN20     	Cocoa {Jul 20}                                    	NYBOT     
 CCU19     	Cocoa {Sep 19}                                    	NYBOT     
-CCZ17     	Cocoa {Dec 17}                                    	NYBOT     
+CCU20     	Cocoa {Sep 20}                                    	NYBOT     
 CCZ18     	Cocoa {Dec 18}                                    	NYBOT     
+CCZ19     	Cocoa {Dec 19}                                    	NYBOT     
 CT        	Cotton #2                                         	NYBOT     
-CTH18     	Cotton #2 {Mar 18}                                	NYBOT     
 CTH19     	Cotton #2 {Mar 19}                                	NYBOT     
 CTH20     	Cotton #2 {Mar 20}                                	NYBOT     
-CTK18     	Cotton #2 {May 18}                                	NYBOT     
+CTH21     	Cotton #2 {Mar 21}                                	NYBOT     
 CTK19     	Cotton #2 {May 19}                                	NYBOT     
 CTK20     	Cotton #2 {May 20}                                	NYBOT     
-CTN18     	Cotton #2 {Jul 18}                                	NYBOT     
+CTK21     	Cotton #2 {May 21}                                	NYBOT     
 CTN19     	Cotton #2 {Jul 19}                                	NYBOT     
 CTN20     	Cotton #2 {Jul 20}                                	NYBOT     
-CTV18     	Cotton #2 {Oct 18}                                	NYBOT     
+CTN21     	Cotton #2 {Jul 21}                                	NYBOT     
 CTV19     	Cotton #2 {Oct 19}                                	NYBOT     
 CTV20     	Cotton #2 {Oct 20}                                	NYBOT     
-CTZ17     	Cotton #2 {Dec 17}                                	NYBOT     
+CTV21     	Cotton #2 {Oct 21}                                	NYBOT     
 CTZ18     	Cotton #2 {Dec 18}                                	NYBOT     
 CTZ19     	Cotton #2 {Dec 19}                                	NYBOT     
-DEH18     	MSCI EMI Index {Mar 18}                           	NYBOT     
+CTZ20     	Cotton #2 {Dec 20}                                	NYBOT     
 DEH19     	MSCI EMI Index {Mar 19}                           	NYBOT     
-DEM18     	MSCI EMI Index {Jun 18}                           	NYBOT     
-DEU18     	MSCI EMI Index {Sep 18}                           	NYBOT     
-DEZ17     	MSCI EMI Index {Dec 17}                           	NYBOT     
+DEH20     	MSCI EMI Index {Mar 20}                           	NYBOT     
+DEH21     	MSCI EMI Index {Mar 21}                           	NYBOT     
+DEM19     	MSCI EMI Index {Jun 19}                           	NYBOT     
+DEM20     	MSCI EMI Index {Jun 20}                           	NYBOT     
+DEM21     	MSCI EMI Index {Jun 21}                           	NYBOT     
+DEU19     	MSCI EMI Index {Sep 19}                           	NYBOT     
+DEU20     	MSCI EMI Index {Sep 20}                           	NYBOT     
+DEU21     	MSCI EMI Index {Sep 21}                           	NYBOT     
 DEZ18     	MSCI EMI Index {Dec 18}                           	NYBOT     
-DIH18     	MSCI EAFE Index {Mar 18}                          	NYBOT     
+DEZ19     	MSCI EMI Index {Dec 19}                           	NYBOT     
+DEZ20     	MSCI EMI Index {Dec 20}                           	NYBOT     
 DIH19     	MSCI EAFE Index {Mar 19}                          	NYBOT     
-DIM18     	MSCI EAFE Index {Jun 18}                          	NYBOT     
-DIU18     	MSCI EAFE Index {Sep 18}                          	NYBOT     
-DIZ17     	MSCI EAFE Index {Dec 17}                          	NYBOT     
+DIH20     	MSCI EAFE Index {Mar 20}                          	NYBOT     
+DIH21     	MSCI EAFE Index {Mar 21}                          	NYBOT     
+DIM19     	MSCI EAFE Index {Jun 19}                          	NYBOT     
+DIM20     	MSCI EAFE Index {Jun 20}                          	NYBOT     
+DIM21     	MSCI EAFE Index {Jun 21}                          	NYBOT     
+DIU19     	MSCI EAFE Index {Sep 19}                          	NYBOT     
+DIU20     	MSCI EAFE Index {Sep 20}                          	NYBOT     
+DIU21     	MSCI EAFE Index {Sep 21}                          	NYBOT     
 DIZ18     	MSCI EAFE Index {Dec 18}                          	NYBOT     
-DQH18     	MSCI USA Index {Mar 18}                           	NYBOT     
+DIZ19     	MSCI EAFE Index {Dec 19}                          	NYBOT     
+DIZ20     	MSCI EAFE Index {Dec 20}                          	NYBOT     
 DQH19     	MSCI USA Index {Mar 19}                           	NYBOT     
-DQM18     	MSCI USA Index {Jun 18}                           	NYBOT     
-DQU18     	MSCI USA Index {Sep 18}                           	NYBOT     
-DQZ17     	MSCI USA Index {Dec 17}                           	NYBOT     
+DQM19     	MSCI USA Index {Jun 19}                           	NYBOT     
+DQU19     	MSCI USA Index {Sep 19}                           	NYBOT     
 DQZ18     	MSCI USA Index {Dec 18}                           	NYBOT     
+DQZ19     	MSCI USA Index {Dec 19}                           	NYBOT     
 DX        	U.S. Dollar Index                                 	NYBOT     
-DXH18     	U.S. Dollar Index {Mar 18}                        	NYBOT     
-DXM18     	U.S. Dollar Index {Jun 18}                        	NYBOT     
-DXU18     	U.S. Dollar Index {Sep 18}                        	NYBOT     
-DXZ17     	U.S. Dollar Index {Dec 17}                        	NYBOT     
-EHH18     	MSCI Europe Index {Mar 18}                        	NYBOT     
+DXH19     	U.S. Dollar Index {Mar 19}                        	NYBOT     
+DXM19     	U.S. Dollar Index {Jun 19}                        	NYBOT     
+DXU19     	U.S. Dollar Index {Sep 19}                        	NYBOT     
+DXZ18     	U.S. Dollar Index {Dec 18}                        	NYBOT     
 EHH19     	MSCI Europe Index {Mar 19}                        	NYBOT     
-EHM18     	MSCI Europe Index {Jun 18}                        	NYBOT     
-EHU18     	MSCI Europe Index {Sep 18}                        	NYBOT     
-EHZ17     	MSCI Europe Index {Dec 17}                        	NYBOT     
+EHM19     	MSCI Europe Index {Jun 19}                        	NYBOT     
+EHU19     	MSCI Europe Index {Sep 19}                        	NYBOT     
 EHZ18     	MSCI Europe Index {Dec 18}                        	NYBOT     
+EHZ19     	MSCI Europe Index {Dec 19}                        	NYBOT     
 EJ        	Euro/Yen                                          	NYBOT     
-EJH18     	Euro/Yen {Mar 18}                                 	NYBOT     
-EJM18     	Euro/Yen {Jun 18}                                 	NYBOT     
-EJU18     	Euro/Yen {Sep 18}                                 	NYBOT     
-EJZ17     	Euro/Yen {Dec 17}                                 	NYBOT     
+EJH19     	Euro/Yen {Mar 19}                                 	NYBOT     
+EJM19     	Euro/Yen {Jun 19}                                 	NYBOT     
+EJU19     	Euro/Yen {Sep 19}                                 	NYBOT     
+EJZ18     	Euro/Yen {Dec 18}                                 	NYBOT     
 EK        	Krone/Krona                                       	NYBOT     
-EKH18     	Krone/Krona {Mar 18}                              	NYBOT     
-EKM18     	Krone/Krona {Jun 18}                              	NYBOT     
-EKU18     	Krone/Krona {Sep 18}                              	NYBOT     
-EKZ17     	Krone/Krona {Dec 17}                              	NYBOT     
-ELH18     	MSCI Europe Growth {Mar 18}                       	NYBOT     
+EKH19     	Krone/Krona {Mar 19}                              	NYBOT     
+EKM19     	Krone/Krona {Jun 19}                              	NYBOT     
+EKU19     	Krone/Krona {Sep 19}                              	NYBOT     
+EKZ18     	Krone/Krona {Dec 18}                              	NYBOT     
 ELH19     	MSCI Europe Growth {Mar 19}                       	NYBOT     
-ELM18     	MSCI Europe Growth {Jun 18}                       	NYBOT     
-ELU18     	MSCI Europe Growth {Sep 18}                       	NYBOT     
-ELZ17     	MSCI Europe Growth {Dec 17}                       	NYBOT     
+ELM19     	MSCI Europe Growth {Jun 19}                       	NYBOT     
+ELU19     	MSCI Europe Growth {Sep 19}                       	NYBOT     
 ELZ18     	MSCI Europe Growth {Dec 18}                       	NYBOT     
-ENH18     	MSCI Europe Value {Mar 18}                        	NYBOT     
+ELZ19     	MSCI Europe Growth {Dec 19}                       	NYBOT     
 ENH19     	MSCI Europe Value {Mar 19}                        	NYBOT     
-ENM18     	MSCI Europe Value {Jun 18}                        	NYBOT     
-ENU18     	MSCI Europe Value {Sep 18}                        	NYBOT     
-ENZ17     	MSCI Europe Value {Dec 17}                        	NYBOT     
+ENM19     	MSCI Europe Value {Jun 19}                        	NYBOT     
+ENU19     	MSCI Europe Value {Sep 19}                        	NYBOT     
 ENZ18     	MSCI Europe Value {Dec 18}                        	NYBOT     
+ENZ19     	MSCI Europe Value {Dec 19}                        	NYBOT     
 EP        	Euro/Canadian                                     	NYBOT     
-EPH18     	Euro/Canadian {Mar 18}                            	NYBOT     
-EPM18     	Euro/Canadian {Jun 18}                            	NYBOT     
-EPU18     	Euro/Canadian {Sep 18}                            	NYBOT     
-EPZ17     	Euro/Canadian {Dec 17}                            	NYBOT     
+EPH19     	Euro/Canadian {Mar 19}                            	NYBOT     
+EPM19     	Euro/Canadian {Jun 19}                            	NYBOT     
+EPU19     	Euro/Canadian {Sep 19}                            	NYBOT     
+EPZ18     	Euro/Canadian {Dec 18}                            	NYBOT     
 EQ        	Euro/Australian                                   	NYBOT     
-EQH18     	Euro/Australian {Mar 18}                          	NYBOT     
-EQM18     	Euro/Australian {Jun 18}                          	NYBOT     
-EQU18     	Euro/Australian {Sep 18}                          	NYBOT     
-EQZ17     	Euro/Australian {Dec 17}                          	NYBOT     
+EQH19     	Euro/Australian {Mar 19}                          	NYBOT     
+EQM19     	Euro/Australian {Jun 19}                          	NYBOT     
+EQU19     	Euro/Australian {Sep 19}                          	NYBOT     
+EQZ18     	Euro/Australian {Dec 18}                          	NYBOT     
 EU        	Euro Futures                                      	NYBOT     
-EUH18     	Euro Futures {Mar 18}                             	NYBOT     
-EUM18     	Euro Futures {Jun 18}                             	NYBOT     
-EUU18     	Euro Futures {Sep 18}                             	NYBOT     
-EUZ17     	Euro Futures {Dec 17}                             	NYBOT     
-FGH18     	FANG Index {Mar 18}                               	NYBOT     
-FGM18     	FANG Index {Jun 18}                               	NYBOT     
-FGU18     	FANG Index {Sep 18}                               	NYBOT     
-FGZ17     	FANG Index {Dec 17}                               	NYBOT     
+EUH19     	Euro Futures {Mar 19}                             	NYBOT     
+EUM19     	Euro Futures {Jun 19}                             	NYBOT     
+EUU19     	Euro Futures {Sep 19}                             	NYBOT     
+EUZ18     	Euro Futures {Dec 18}                             	NYBOT     
+FGH19     	FANG Index {Mar 19}                               	NYBOT     
+FGM19     	FANG Index {Jun 19}                               	NYBOT     
+FGU19     	FANG Index {Sep 19}                               	NYBOT     
 FGZ18     	FANG Index {Dec 18}                               	NYBOT     
-G8H18     	ICE Gold Miners {Mar 18}                          	NYBOT     
 G8H19     	ICE Gold Miners {Mar 19}                          	NYBOT     
-G8M18     	ICE Gold Miners {Jun 18}                          	NYBOT     
-G8U18     	ICE Gold Miners {Sep 18}                          	NYBOT     
-G8Z17     	ICE Gold Miners {Dec 17}                          	NYBOT     
+G8M19     	ICE Gold Miners {Jun 19}                          	NYBOT     
+G8U19     	ICE Gold Miners {Sep 19}                          	NYBOT     
 G8Z18     	ICE Gold Miners {Dec 18}                          	NYBOT     
+G8Z19     	ICE Gold Miners {Dec 19}                          	NYBOT     
 GB        	Euro/Pound                                        	NYBOT     
-GBH18     	Euro/Pound {Mar 18}                               	NYBOT     
-GBM18     	Euro/Pound {Jun 18}                               	NYBOT     
-GBU18     	Euro/Pound {Sep 18}                               	NYBOT     
-GBZ17     	Euro/Pound {Dec 17}                               	NYBOT     
+GBH19     	Euro/Pound {Mar 19}                               	NYBOT     
+GBM19     	Euro/Pound {Jun 19}                               	NYBOT     
+GBU19     	Euro/Pound {Sep 19}                               	NYBOT     
+GBZ18     	Euro/Pound {Dec 18}                               	NYBOT     
 GN        	Pound/New Zealand                                 	NYBOT     
-GNH18     	Pound/New Zealand {Mar 18}                        	NYBOT     
-GNM18     	Pound/New Zealand {Jun 18}                        	NYBOT     
-GNU18     	Pound/New Zealand {Sep 18}                        	NYBOT     
-GNZ17     	Pound/New Zealand {Dec 17}                        	NYBOT     
+GNH19     	Pound/New Zealand {Mar 19}                        	NYBOT     
+GNM19     	Pound/New Zealand {Jun 19}                        	NYBOT     
+GNU19     	Pound/New Zealand {Sep 19}                        	NYBOT     
+GNZ18     	Pound/New Zealand {Dec 18}                        	NYBOT     
 GY        	Euro/Forint                                       	NYBOT     
-GYH18     	Euro/Forint {Mar 18}                              	NYBOT     
-GYM18     	Euro/Forint {Jun 18}                              	NYBOT     
-GYU18     	Euro/Forint {Sep 18}                              	NYBOT     
-GYZ17     	Euro/Forint {Dec 17}                              	NYBOT     
+GYH19     	Euro/Forint {Mar 19}                              	NYBOT     
+GYM19     	Euro/Forint {Jun 19}                              	NYBOT     
+GYU19     	Euro/Forint {Sep 19}                              	NYBOT     
+GYZ18     	Euro/Forint {Dec 18}                              	NYBOT     
 GZ        	Euro/Koruna                                       	NYBOT     
-GZH18     	Euro/Koruna {Mar 18}                              	NYBOT     
-GZM18     	Euro/Koruna {Jun 18}                              	NYBOT     
-GZU18     	Euro/Koruna {Sep 18}                              	NYBOT     
-GZZ17     	Euro/Koruna {Dec 17}                              	NYBOT     
+GZH19     	Euro/Koruna {Mar 19}                              	NYBOT     
+GZM19     	Euro/Koruna {Jun 19}                              	NYBOT     
+GZU19     	Euro/Koruna {Sep 19}                              	NYBOT     
+GZZ18     	Euro/Koruna {Dec 18}                              	NYBOT     
 H0        	Indian Rupee                                      	NYBOT     
-H0F18     	Indian Rupee {Jan 18}                             	NYBOT     
-H0G18     	Indian Rupee {Feb 18}                             	NYBOT     
-H0H18     	Indian Rupee {Mar 18}                             	NYBOT     
-H0J18     	Indian Rupee {Apr 18}                             	NYBOT     
-H0K18     	Indian Rupee {May 18}                             	NYBOT     
-H0M18     	Indian Rupee {Jun 18}                             	NYBOT     
-H0N18     	Indian Rupee {Jul 18}                             	NYBOT     
-H0Q18     	Indian Rupee {Aug 18}                             	NYBOT     
-H0U18     	Indian Rupee {Sep 18}                             	NYBOT     
-H0V18     	Indian Rupee {Oct 18}                             	NYBOT     
-H0X17     	Indian Rupee {Nov 17}                             	NYBOT     
+H0F19     	Indian Rupee {Jan 19}                             	NYBOT     
+H0G19     	Indian Rupee {Feb 19}                             	NYBOT     
+H0H19     	Indian Rupee {Mar 19}                             	NYBOT     
+H0J19     	Indian Rupee {Apr 19}                             	NYBOT     
+H0K19     	Indian Rupee {May 19}                             	NYBOT     
+H0M19     	Indian Rupee {Jun 19}                             	NYBOT     
+H0N19     	Indian Rupee {Jul 19}                             	NYBOT     
+H0Q19     	Indian Rupee {Aug 19}                             	NYBOT     
+H0U19     	Indian Rupee {Sep 19}                             	NYBOT     
+H0V19     	Indian Rupee {Oct 19}                             	NYBOT     
 H0X18     	Indian Rupee {Nov 18}                             	NYBOT     
-H0Z17     	Indian Rupee {Dec 17}                             	NYBOT     
+H0Z18     	Indian Rupee {Dec 18}                             	NYBOT     
 H8        	Brazilian Real                                    	NYBOT     
-H8F18     	Brazilian Real {Jan 18}                           	NYBOT     
 H8F19     	Brazilian Real {Jan 19}                           	NYBOT     
 H8F20     	Brazilian Real {Jan 20}                           	NYBOT     
 H8F21     	Brazilian Real {Jan 21}                           	NYBOT     
 H8F22     	Brazilian Real {Jan 22}                           	NYBOT     
-H8G18     	Brazilian Real {Feb 18}                           	NYBOT     
+H8F23     	Brazilian Real {Jan 23}                           	NYBOT     
 H8G19     	Brazilian Real {Feb 19}                           	NYBOT     
 H8G20     	Brazilian Real {Feb 20}                           	NYBOT     
 H8G21     	Brazilian Real {Feb 21}                           	NYBOT     
 H8G22     	Brazilian Real {Feb 22}                           	NYBOT     
-H8H18     	Brazilian Real {Mar 18}                           	NYBOT     
+H8G23     	Brazilian Real {Feb 23}                           	NYBOT     
 H8H19     	Brazilian Real {Mar 19}                           	NYBOT     
 H8H20     	Brazilian Real {Mar 20}                           	NYBOT     
 H8H21     	Brazilian Real {Mar 21}                           	NYBOT     
 H8H22     	Brazilian Real {Mar 22}                           	NYBOT     
-H8J18     	Brazilian Real {Apr 18}                           	NYBOT     
+H8H23     	Brazilian Real {Mar 23}                           	NYBOT     
 H8J19     	Brazilian Real {Apr 19}                           	NYBOT     
 H8J20     	Brazilian Real {Apr 20}                           	NYBOT     
 H8J21     	Brazilian Real {Apr 21}                           	NYBOT     
 H8J22     	Brazilian Real {Apr 22}                           	NYBOT     
-H8K18     	Brazilian Real {May 18}                           	NYBOT     
+H8J23     	Brazilian Real {Apr 23}                           	NYBOT     
 H8K19     	Brazilian Real {May 19}                           	NYBOT     
 H8K20     	Brazilian Real {May 20}                           	NYBOT     
 H8K21     	Brazilian Real {May 21}                           	NYBOT     
 H8K22     	Brazilian Real {May 22}                           	NYBOT     
-H8M18     	Brazilian Real {Jun 18}                           	NYBOT     
+H8K23     	Brazilian Real {May 23}                           	NYBOT     
 H8M19     	Brazilian Real {Jun 19}                           	NYBOT     
 H8M20     	Brazilian Real {Jun 20}                           	NYBOT     
 H8M21     	Brazilian Real {Jun 21}                           	NYBOT     
 H8M22     	Brazilian Real {Jun 22}                           	NYBOT     
-H8N18     	Brazilian Real {Jul 18}                           	NYBOT     
+H8M23     	Brazilian Real {Jun 23}                           	NYBOT     
 H8N19     	Brazilian Real {Jul 19}                           	NYBOT     
 H8N20     	Brazilian Real {Jul 20}                           	NYBOT     
 H8N21     	Brazilian Real {Jul 21}                           	NYBOT     
 H8N22     	Brazilian Real {Jul 22}                           	NYBOT     
-H8Q18     	Brazilian Real {Aug 18}                           	NYBOT     
+H8N23     	Brazilian Real {Jul 23}                           	NYBOT     
 H8Q19     	Brazilian Real {Aug 19}                           	NYBOT     
 H8Q20     	Brazilian Real {Aug 20}                           	NYBOT     
 H8Q21     	Brazilian Real {Aug 21}                           	NYBOT     
 H8Q22     	Brazilian Real {Aug 22}                           	NYBOT     
-H8U18     	Brazilian Real {Sep 18}                           	NYBOT     
+H8Q23     	Brazilian Real {Aug 23}                           	NYBOT     
 H8U19     	Brazilian Real {Sep 19}                           	NYBOT     
 H8U20     	Brazilian Real {Sep 20}                           	NYBOT     
 H8U21     	Brazilian Real {Sep 21}                           	NYBOT     
 H8U22     	Brazilian Real {Sep 22}                           	NYBOT     
-H8V18     	Brazilian Real {Oct 18}                           	NYBOT     
+H8U23     	Brazilian Real {Sep 23}                           	NYBOT     
 H8V19     	Brazilian Real {Oct 19}                           	NYBOT     
 H8V20     	Brazilian Real {Oct 20}                           	NYBOT     
 H8V21     	Brazilian Real {Oct 21}                           	NYBOT     
 H8V22     	Brazilian Real {Oct 22}                           	NYBOT     
+H8V23     	Brazilian Real {Oct 23}                           	NYBOT     
 H8X18     	Brazilian Real {Nov 18}                           	NYBOT     
 H8X19     	Brazilian Real {Nov 19}                           	NYBOT     
 H8X20     	Brazilian Real {Nov 20}                           	NYBOT     
 H8X21     	Brazilian Real {Nov 21}                           	NYBOT     
 H8X22     	Brazilian Real {Nov 22}                           	NYBOT     
-H8Z17     	Brazilian Real {Dec 17}                           	NYBOT     
+H8X23     	Brazilian Real {Nov 23}                           	NYBOT     
 H8Z18     	Brazilian Real {Dec 18}                           	NYBOT     
 H8Z19     	Brazilian Real {Dec 19}                           	NYBOT     
 H8Z20     	Brazilian Real {Dec 20}                           	NYBOT     
 H8Z21     	Brazilian Real {Dec 21}                           	NYBOT     
 H8Z22     	Brazilian Real {Dec 22}                           	NYBOT     
-HCH18     	Turkish Lira/Euro {Mar 18}                        	NYBOT     
-HCM18     	Turkish Lira/Euro {Jun 18}                        	NYBOT     
-HCU18     	Turkish Lira/Euro {Sep 18}                        	NYBOT     
-HCZ17     	Turkish Lira/Euro {Dec 17}                        	NYBOT     
-HDH18     	Turkish Lira/USD {Mar 18}                         	NYBOT     
-HDM18     	Turkish Lira/USD {Jun 18}                         	NYBOT     
-HDU18     	Turkish Lira/USD {Sep 18}                         	NYBOT     
-HDZ17     	Turkish Lira/USD {Dec 17}                         	NYBOT     
+HCH19     	Turkish Lira/Euro {Mar 19}                        	NYBOT     
+HCM19     	Turkish Lira/Euro {Jun 19}                        	NYBOT     
+HCU19     	Turkish Lira/Euro {Sep 19}                        	NYBOT     
+HCZ18     	Turkish Lira/Euro {Dec 18}                        	NYBOT     
+HDH19     	Turkish Lira/USD {Mar 19}                         	NYBOT     
+HDM19     	Turkish Lira/USD {Jun 19}                         	NYBOT     
+HDU19     	Turkish Lira/USD {Sep 19}                         	NYBOT     
+HDZ18     	Turkish Lira/USD {Dec 18}                         	NYBOT     
 HY        	Canadian/Yen                                      	NYBOT     
-HYH18     	Canadian/Yen {Mar 18}                             	NYBOT     
-HYM18     	Canadian/Yen {Jun 18}                             	NYBOT     
-HYU18     	Canadian/Yen {Sep 18}                             	NYBOT     
-HYZ17     	Canadian/Yen {Dec 17}                             	NYBOT     
-JCH18     	ICE Corn {Mar 18}                                 	NYBOT     
-JCH19     	ICE Corn {Mar 19}                                 	NYBOT     
-JCH20     	ICE Corn {Mar 20}                                 	NYBOT     
-JCK18     	ICE Corn {May 18}                                 	NYBOT     
-JCK19     	ICE Corn {May 19}                                 	NYBOT     
-JCK20     	ICE Corn {May 20}                                 	NYBOT     
-JCN18     	ICE Corn {Jul 18}                                 	NYBOT     
-JCN19     	ICE Corn {Jul 19}                                 	NYBOT     
-JCN20     	ICE Corn {Jul 20}                                 	NYBOT     
-JCN21     	ICE Corn {Jul 21}                                 	NYBOT     
-JCU18     	ICE Corn {Sep 18}                                 	NYBOT     
-JCU19     	ICE Corn {Sep 19}                                 	NYBOT     
-JCU20     	ICE Corn {Sep 20}                                 	NYBOT     
-JCZ17     	ICE Corn {Dec 17}                                 	NYBOT     
-JCZ18     	ICE Corn {Dec 18}                                 	NYBOT     
-JCZ19     	ICE Corn {Dec 19}                                 	NYBOT     
-JCZ20     	ICE Corn {Dec 20}                                 	NYBOT     
-JCZ21     	ICE Corn {Dec 21}                                 	NYBOT     
-JFF18     	ICE Soybean Meal {Jan 18}                         	NYBOT     
-JFF19     	ICE Soybean Meal {Jan 19}                         	NYBOT     
-JFF20     	ICE Soybean Meal {Jan 20}                         	NYBOT     
-JFH18     	ICE Soybean Meal {Mar 18}                         	NYBOT     
-JFH19     	ICE Soybean Meal {Mar 19}                         	NYBOT     
-JFH20     	ICE Soybean Meal {Mar 20}                         	NYBOT     
-JFK18     	ICE Soybean Meal {May 18}                         	NYBOT     
-JFK19     	ICE Soybean Meal {May 19}                         	NYBOT     
-JFK20     	ICE Soybean Meal {May 20}                         	NYBOT     
-JFN18     	ICE Soybean Meal {Jul 18}                         	NYBOT     
-JFN19     	ICE Soybean Meal {Jul 19}                         	NYBOT     
-JFN20     	ICE Soybean Meal {Jul 20}                         	NYBOT     
-JFN21     	ICE Soybean Meal {Jul 21}                         	NYBOT     
-JFQ18     	ICE Soybean Meal {Aug 18}                         	NYBOT     
-JFQ19     	ICE Soybean Meal {Aug 19}                         	NYBOT     
-JFQ20     	ICE Soybean Meal {Aug 20}                         	NYBOT     
-JFU18     	ICE Soybean Meal {Sep 18}                         	NYBOT     
-JFU19     	ICE Soybean Meal {Sep 19}                         	NYBOT     
-JFU20     	ICE Soybean Meal {Sep 20}                         	NYBOT     
-JFV18     	ICE Soybean Meal {Oct 18}                         	NYBOT     
-JFV19     	ICE Soybean Meal {Oct 19}                         	NYBOT     
-JFV20     	ICE Soybean Meal {Oct 20}                         	NYBOT     
-JFV21     	ICE Soybean Meal {Oct 21}                         	NYBOT     
-JFZ17     	ICE Soybean Meal {Dec 17}                         	NYBOT     
-JFZ18     	ICE Soybean Meal {Dec 18}                         	NYBOT     
-JFZ19     	ICE Soybean Meal {Dec 19}                         	NYBOT     
-JFZ20     	ICE Soybean Meal {Dec 20}                         	NYBOT     
-JFZ21     	ICE Soybean Meal {Dec 21}                         	NYBOT     
+HYH19     	Canadian/Yen {Mar 19}                             	NYBOT     
+HYM19     	Canadian/Yen {Jun 19}                             	NYBOT     
+HYU19     	Canadian/Yen {Sep 19}                             	NYBOT     
+HYZ18     	Canadian/Yen {Dec 18}                             	NYBOT     
 JJ        	New Zealand Dollar                                	NYBOT     
-JJH18     	New Zealand Dollar {Mar 18}                       	NYBOT     
-JJM18     	New Zealand Dollar {Jun 18}                       	NYBOT     
-JJU18     	New Zealand Dollar {Sep 18}                       	NYBOT     
-JJZ17     	New Zealand Dollar {Dec 17}                       	NYBOT     
-JLF18     	ICE Soybean Oil {Jan 18}                          	NYBOT     
-JLF19     	ICE Soybean Oil {Jan 19}                          	NYBOT     
-JLF20     	ICE Soybean Oil {Jan 20}                          	NYBOT     
-JLH18     	ICE Soybean Oil {Mar 18}                          	NYBOT     
-JLH19     	ICE Soybean Oil {Mar 19}                          	NYBOT     
-JLH20     	ICE Soybean Oil {Mar 20}                          	NYBOT     
-JLK18     	ICE Soybean Oil {May 18}                          	NYBOT     
-JLK19     	ICE Soybean Oil {May 19}                          	NYBOT     
-JLK20     	ICE Soybean Oil {May 20}                          	NYBOT     
-JLN18     	ICE Soybean Oil {Jul 18}                          	NYBOT     
-JLN19     	ICE Soybean Oil {Jul 19}                          	NYBOT     
-JLN20     	ICE Soybean Oil {Jul 20}                          	NYBOT     
-JLN21     	ICE Soybean Oil {Jul 21}                          	NYBOT     
-JLQ18     	ICE Soybean Oil {Aug 18}                          	NYBOT     
-JLQ19     	ICE Soybean Oil {Aug 19}                          	NYBOT     
-JLQ20     	ICE Soybean Oil {Aug 20}                          	NYBOT     
-JLU18     	ICE Soybean Oil {Sep 18}                          	NYBOT     
-JLU19     	ICE Soybean Oil {Sep 19}                          	NYBOT     
-JLU20     	ICE Soybean Oil {Sep 20}                          	NYBOT     
-JLV18     	ICE Soybean Oil {Oct 18}                          	NYBOT     
-JLV19     	ICE Soybean Oil {Oct 19}                          	NYBOT     
-JLV20     	ICE Soybean Oil {Oct 20}                          	NYBOT     
-JLV21     	ICE Soybean Oil {Oct 21}                          	NYBOT     
-JLZ17     	ICE Soybean Oil {Dec 17}                          	NYBOT     
-JLZ18     	ICE Soybean Oil {Dec 18}                          	NYBOT     
-JLZ19     	ICE Soybean Oil {Dec 19}                          	NYBOT     
-JLZ20     	ICE Soybean Oil {Dec 20}                          	NYBOT     
-JLZ21     	ICE Soybean Oil {Dec 21}                          	NYBOT     
-JSF18     	ICE Soybeans {Jan 18}                             	NYBOT     
-JSF19     	ICE Soybeans {Jan 19}                             	NYBOT     
-JSF20     	ICE Soybeans {Jan 20}                             	NYBOT     
-JSH18     	ICE Soybeans {Mar 18}                             	NYBOT     
-JSH19     	ICE Soybeans {Mar 19}                             	NYBOT     
-JSH20     	ICE Soybeans {Mar 20}                             	NYBOT     
-JSK18     	ICE Soybeans {May 18}                             	NYBOT     
-JSK19     	ICE Soybeans {May 19}                             	NYBOT     
-JSK20     	ICE Soybeans {May 20}                             	NYBOT     
-JSN18     	ICE Soybeans {Jul 18}                             	NYBOT     
-JSN19     	ICE Soybeans {Jul 19}                             	NYBOT     
-JSN20     	ICE Soybeans {Jul 20}                             	NYBOT     
-JSN21     	ICE Soybeans {Jul 21}                             	NYBOT     
-JSQ18     	ICE Soybeans {Aug 18}                             	NYBOT     
-JSQ19     	ICE Soybeans {Aug 19}                             	NYBOT     
-JSQ20     	ICE Soybeans {Aug 20}                             	NYBOT     
-JSU18     	ICE Soybeans {Sep 18}                             	NYBOT     
-JSU19     	ICE Soybeans {Sep 19}                             	NYBOT     
-JSU20     	ICE Soybeans {Sep 20}                             	NYBOT     
-JSX18     	ICE Soybeans {Nov 18}                             	NYBOT     
-JSX19     	ICE Soybeans {Nov 19}                             	NYBOT     
-JSX20     	ICE Soybeans {Nov 20}                             	NYBOT     
-JSX21     	ICE Soybeans {Nov 21}                             	NYBOT     
-JWH18     	ICE Wheat {Mar 18}                                	NYBOT     
-JWH19     	ICE Wheat {Mar 19}                                	NYBOT     
-JWH20     	ICE Wheat {Mar 20}                                	NYBOT     
-JWK18     	ICE Wheat {May 18}                                	NYBOT     
-JWK19     	ICE Wheat {May 19}                                	NYBOT     
-JWK20     	ICE Wheat {May 20}                                	NYBOT     
-JWN18     	ICE Wheat {Jul 18}                                	NYBOT     
-JWN19     	ICE Wheat {Jul 19}                                	NYBOT     
-JWN20     	ICE Wheat {Jul 20}                                	NYBOT     
-JWU18     	ICE Wheat {Sep 18}                                	NYBOT     
-JWU19     	ICE Wheat {Sep 19}                                	NYBOT     
-JWZ17     	ICE Wheat {Dec 17}                                	NYBOT     
-JWZ18     	ICE Wheat {Dec 18}                                	NYBOT     
-JWZ19     	ICE Wheat {Dec 19}                                	NYBOT     
+JJH19     	New Zealand Dollar {Mar 19}                       	NYBOT     
+JJM19     	New Zealand Dollar {Jun 19}                       	NYBOT     
+JJU19     	New Zealand Dollar {Sep 19}                       	NYBOT     
+JJZ18     	New Zealand Dollar {Dec 18}                       	NYBOT     
 KC        	Coffee                                            	NYBOT     
-KCH18     	Coffee {Mar 18}                                   	NYBOT     
 KCH19     	Coffee {Mar 19}                                   	NYBOT     
 KCH20     	Coffee {Mar 20}                                   	NYBOT     
-KCK18     	Coffee {May 18}                                   	NYBOT     
+KCH21     	Coffee {Mar 21}                                   	NYBOT     
 KCK19     	Coffee {May 19}                                   	NYBOT     
 KCK20     	Coffee {May 20}                                   	NYBOT     
-KCN18     	Coffee {Jul 18}                                   	NYBOT     
+KCK21     	Coffee {May 21}                                   	NYBOT     
 KCN19     	Coffee {Jul 19}                                   	NYBOT     
 KCN20     	Coffee {Jul 20}                                   	NYBOT     
-KCU18     	Coffee {Sep 18}                                   	NYBOT     
+KCN21     	Coffee {Jul 21}                                   	NYBOT     
 KCU19     	Coffee {Sep 19}                                   	NYBOT     
 KCU20     	Coffee {Sep 20}                                   	NYBOT     
-KCZ17     	Coffee {Dec 17}                                   	NYBOT     
+KCU21     	Coffee {Sep 21}                                   	NYBOT     
 KCZ18     	Coffee {Dec 18}                                   	NYBOT     
 KCZ19     	Coffee {Dec 19}                                   	NYBOT     
+KCZ20     	Coffee {Dec 20}                                   	NYBOT     
 KJ        	Krona/Yen                                         	NYBOT     
-KJH18     	Krona/Yen {Mar 18}                                	NYBOT     
-KJM18     	Krona/Yen {Jun 18}                                	NYBOT     
-KJU18     	Krona/Yen {Sep 18}                                	NYBOT     
-KJZ17     	Krona/Yen {Dec 17}                                	NYBOT     
+KJH19     	Krona/Yen {Mar 19}                                	NYBOT     
+KJM19     	Krona/Yen {Jun 19}                                	NYBOT     
+KJU19     	Krona/Yen {Sep 19}                                	NYBOT     
+KJZ18     	Krona/Yen {Dec 18}                                	NYBOT     
 KU        	Dollar/Krona                                      	NYBOT     
-KUH18     	Dollar/Krona {Mar 18}                             	NYBOT     
-KUM18     	Dollar/Krona {Jun 18}                             	NYBOT     
-KUU18     	Dollar/Krona {Sep 18}                             	NYBOT     
-KUZ17     	Dollar/Krona {Dec 17}                             	NYBOT     
+KUH19     	Dollar/Krona {Mar 19}                             	NYBOT     
+KUM19     	Dollar/Krona {Jun 19}                             	NYBOT     
+KUU19     	Dollar/Krona {Sep 19}                             	NYBOT     
+KUZ18     	Dollar/Krona {Dec 18}                             	NYBOT     
 KY        	Krone/Yen                                         	NYBOT     
-KYH18     	Krone/Yen {Mar 18}                                	NYBOT     
-KYM18     	Krone/Yen {Jun 18}                                	NYBOT     
-KYU18     	Krone/Yen {Sep 18}                                	NYBOT     
-KYZ17     	Krone/Yen {Dec 17}                                	NYBOT     
-L0H18     	MSCI ACWI ex-US {Mar 18}                          	NYBOT     
+KYH19     	Krone/Yen {Mar 19}                                	NYBOT     
+KYM19     	Krone/Yen {Jun 19}                                	NYBOT     
+KYU19     	Krone/Yen {Sep 19}                                	NYBOT     
+KYZ18     	Krone/Yen {Dec 18}                                	NYBOT     
 L0H19     	MSCI ACWI ex-US {Mar 19}                          	NYBOT     
-L0M18     	MSCI ACWI ex-US {Jun 18}                          	NYBOT     
-L0U18     	MSCI ACWI ex-US {Sep 18}                          	NYBOT     
-L0Z17     	MSCI ACWI ex-US {Dec 17}                          	NYBOT     
+L0M19     	MSCI ACWI ex-US {Jun 19}                          	NYBOT     
+L0U19     	MSCI ACWI ex-US {Sep 19}                          	NYBOT     
 L0Z18     	MSCI ACWI ex-US {Dec 18}                          	NYBOT     
-L1H18     	MSCI ACWI ex-US NTR {Mar 18}                      	NYBOT     
+L0Z19     	MSCI ACWI ex-US {Dec 19}                          	NYBOT     
 L1H19     	MSCI ACWI ex-US NTR {Mar 19}                      	NYBOT     
-L1M18     	MSCI ACWI ex-US NTR {Jun 18}                      	NYBOT     
-L1U18     	MSCI ACWI ex-US NTR {Sep 18}                      	NYBOT     
-L1Z17     	MSCI ACWI ex-US NTR {Dec 17}                      	NYBOT     
+L1M19     	MSCI ACWI ex-US NTR {Jun 19}                      	NYBOT     
+L1U19     	MSCI ACWI ex-US NTR {Sep 19}                      	NYBOT     
 L1Z18     	MSCI ACWI ex-US NTR {Dec 18}                      	NYBOT     
-L2H18     	MSCI ACWI Index {Mar 18}                          	NYBOT     
+L1Z19     	MSCI ACWI ex-US NTR {Dec 19}                      	NYBOT     
 L2H19     	MSCI ACWI Index {Mar 19}                          	NYBOT     
-L2M18     	MSCI ACWI Index {Jun 18}                          	NYBOT     
-L2U18     	MSCI ACWI Index {Sep 18}                          	NYBOT     
-L2Z17     	MSCI ACWI Index {Dec 17}                          	NYBOT     
+L2M19     	MSCI ACWI Index {Jun 19}                          	NYBOT     
+L2U19     	MSCI ACWI Index {Sep 19}                          	NYBOT     
 L2Z18     	MSCI ACWI Index {Dec 18}                          	NYBOT     
-L3H18     	MSCI ACWI NTR Index {Mar 18}                      	NYBOT     
+L2Z19     	MSCI ACWI Index {Dec 19}                          	NYBOT     
 L3H19     	MSCI ACWI NTR Index {Mar 19}                      	NYBOT     
-L3M18     	MSCI ACWI NTR Index {Jun 18}                      	NYBOT     
-L3U18     	MSCI ACWI NTR Index {Sep 18}                      	NYBOT     
-L3Z17     	MSCI ACWI NTR Index {Dec 17}                      	NYBOT     
+L3M19     	MSCI ACWI NTR Index {Jun 19}                      	NYBOT     
+L3U19     	MSCI ACWI NTR Index {Sep 19}                      	NYBOT     
 L3Z18     	MSCI ACWI NTR Index {Dec 18}                      	NYBOT     
-L4H18     	MSCI EM Asia Index {Mar 18}                       	NYBOT     
+L3Z19     	MSCI ACWI NTR Index {Dec 19}                      	NYBOT     
 L4H19     	MSCI EM Asia Index {Mar 19}                       	NYBOT     
-L4M18     	MSCI EM Asia Index {Jun 18}                       	NYBOT     
-L4U18     	MSCI EM Asia Index {Sep 18}                       	NYBOT     
-L4Z17     	MSCI EM Asia Index {Dec 17}                       	NYBOT     
+L4M19     	MSCI EM Asia Index {Jun 19}                       	NYBOT     
+L4U19     	MSCI EM Asia Index {Sep 19}                       	NYBOT     
 L4Z18     	MSCI EM Asia Index {Dec 18}                       	NYBOT     
-L5H18     	MSCI EM NTR Index {Mar 18}                        	NYBOT     
+L4Z19     	MSCI EM Asia Index {Dec 19}                       	NYBOT     
 L5H19     	MSCI EM NTR Index {Mar 19}                        	NYBOT     
-L5M18     	MSCI EM NTR Index {Jun 18}                        	NYBOT     
-L5U18     	MSCI EM NTR Index {Sep 18}                        	NYBOT     
-L5Z17     	MSCI EM NTR Index {Dec 17}                        	NYBOT     
+L5H20     	MSCI EM NTR Index {Mar 20}                        	NYBOT     
+L5H21     	MSCI EM NTR Index {Mar 21}                        	NYBOT     
+L5M19     	MSCI EM NTR Index {Jun 19}                        	NYBOT     
+L5M20     	MSCI EM NTR Index {Jun 20}                        	NYBOT     
+L5M21     	MSCI EM NTR Index {Jun 21}                        	NYBOT     
+L5U19     	MSCI EM NTR Index {Sep 19}                        	NYBOT     
+L5U20     	MSCI EM NTR Index {Sep 20}                        	NYBOT     
+L5U21     	MSCI EM NTR Index {Sep 21}                        	NYBOT     
 L5Z18     	MSCI EM NTR Index {Dec 18}                        	NYBOT     
-MIH18     	MSCI USA Growth {Mar 18}                          	NYBOT     
+L5Z19     	MSCI EM NTR Index {Dec 19}                        	NYBOT     
+L5Z20     	MSCI EM NTR Index {Dec 20}                        	NYBOT     
 MIH19     	MSCI USA Growth {Mar 19}                          	NYBOT     
-MIM18     	MSCI USA Growth {Jun 18}                          	NYBOT     
-MIU18     	MSCI USA Growth {Sep 18}                          	NYBOT     
-MIZ17     	MSCI USA Growth {Dec 17}                          	NYBOT     
+MIM19     	MSCI USA Growth {Jun 19}                          	NYBOT     
+MIU19     	MSCI USA Growth {Sep 19}                          	NYBOT     
 MIZ18     	MSCI USA Growth {Dec 18}                          	NYBOT     
+MIZ19     	MSCI USA Growth {Dec 19}                          	NYBOT     
 NS        	Dollar/Krone                                      	NYBOT     
-NSH18     	Dollar/Krone {Mar 18}                             	NYBOT     
-NSM18     	Dollar/Krone {Jun 18}                             	NYBOT     
-NSU18     	Dollar/Krone {Sep 18}                             	NYBOT     
-NSZ17     	Dollar/Krone {Dec 17}                             	NYBOT     
-OJF18     	Orange Juice {Jan 18}                             	NYBOT     
+NSH19     	Dollar/Krone {Mar 19}                             	NYBOT     
+NSM19     	Dollar/Krone {Jun 19}                             	NYBOT     
+NSU19     	Dollar/Krone {Sep 19}                             	NYBOT     
+NSZ18     	Dollar/Krone {Dec 18}                             	NYBOT     
 OJF19     	Orange Juice {Jan 19}                             	NYBOT     
 OJF20     	Orange Juice {Jan 20}                             	NYBOT     
-OJH18     	Orange Juice {Mar 18}                             	NYBOT     
+OJF21     	Orange Juice {Jan 21}                             	NYBOT     
 OJH19     	Orange Juice {Mar 19}                             	NYBOT     
 OJH20     	Orange Juice {Mar 20}                             	NYBOT     
-OJK18     	Orange Juice {May 18}                             	NYBOT     
+OJH21     	Orange Juice {Mar 21}                             	NYBOT     
 OJK19     	Orange Juice {May 19}                             	NYBOT     
 OJK20     	Orange Juice {May 20}                             	NYBOT     
-OJN18     	Orange Juice {Jul 18}                             	NYBOT     
+OJK21     	Orange Juice {May 21}                             	NYBOT     
 OJN19     	Orange Juice {Jul 19}                             	NYBOT     
 OJN20     	Orange Juice {Jul 20}                             	NYBOT     
-OJU18     	Orange Juice {Sep 18}                             	NYBOT     
+OJN21     	Orange Juice {Jul 21}                             	NYBOT     
 OJU19     	Orange Juice {Sep 19}                             	NYBOT     
 OJU20     	Orange Juice {Sep 20}                             	NYBOT     
+OJU21     	Orange Juice {Sep 21}                             	NYBOT     
 OJX18     	Orange Juice {Nov 18}                             	NYBOT     
 OJX19     	Orange Juice {Nov 19}                             	NYBOT     
 OJX20     	Orange Juice {Nov 20}                             	NYBOT     
 OL        	Euro/Krone                                        	NYBOT     
-OLH18     	Euro/Krone {Mar 18}                               	NYBOT     
-OLM18     	Euro/Krone {Jun 18}                               	NYBOT     
-OLU18     	Euro/Krone {Sep 18}                               	NYBOT     
-OLZ17     	Euro/Krone {Dec 17}                               	NYBOT     
+OLH19     	Euro/Krone {Mar 19}                               	NYBOT     
+OLM19     	Euro/Krone {Jun 19}                               	NYBOT     
+OLU19     	Euro/Krone {Sep 19}                               	NYBOT     
+OLZ18     	Euro/Krone {Dec 18}                               	NYBOT     
 OR        	Dollar/Rand                                       	NYBOT     
-ORH18     	Dollar/Rand {Mar 18}                              	NYBOT     
 ORH19     	Dollar/Rand {Mar 19}                              	NYBOT     
 ORH20     	Dollar/Rand {Mar 20}                              	NYBOT     
 ORH21     	Dollar/Rand {Mar 21}                              	NYBOT     
 ORH22     	Dollar/Rand {Mar 22}                              	NYBOT     
-ORM18     	Dollar/Rand {Jun 18}                              	NYBOT     
+ORH23     	Dollar/Rand {Mar 23}                              	NYBOT     
 ORM19     	Dollar/Rand {Jun 19}                              	NYBOT     
 ORM20     	Dollar/Rand {Jun 20}                              	NYBOT     
 ORM21     	Dollar/Rand {Jun 21}                              	NYBOT     
 ORM22     	Dollar/Rand {Jun 22}                              	NYBOT     
-ORU18     	Dollar/Rand {Sep 18}                              	NYBOT     
+ORM23     	Dollar/Rand {Jun 23}                              	NYBOT     
 ORU19     	Dollar/Rand {Sep 19}                              	NYBOT     
 ORU20     	Dollar/Rand {Sep 20}                              	NYBOT     
 ORU21     	Dollar/Rand {Sep 21}                              	NYBOT     
 ORU22     	Dollar/Rand {Sep 22}                              	NYBOT     
-ORZ17     	Dollar/Rand {Dec 17}                              	NYBOT     
+ORU23     	Dollar/Rand {Sep 23}                              	NYBOT     
 ORZ18     	Dollar/Rand {Dec 18}                              	NYBOT     
 ORZ19     	Dollar/Rand {Dec 19}                              	NYBOT     
 ORZ20     	Dollar/Rand {Dec 20}                              	NYBOT     
 ORZ21     	Dollar/Rand {Dec 21}                              	NYBOT     
+ORZ22     	Dollar/Rand {Dec 22}                              	NYBOT     
 PK        	Pound/Krone                                       	NYBOT     
-PKH18     	Pound/Krone {Mar 18}                              	NYBOT     
-PKM18     	Pound/Krone {Jun 18}                              	NYBOT     
-PKU18     	Pound/Krone {Sep 18}                              	NYBOT     
-PKZ17     	Pound/Krone {Dec 17}                              	NYBOT     
+PKH19     	Pound/Krone {Mar 19}                              	NYBOT     
+PKM19     	Pound/Krone {Jun 19}                              	NYBOT     
+PKU19     	Pound/Krone {Sep 19}                              	NYBOT     
+PKZ18     	Pound/Krone {Dec 18}                              	NYBOT     
 PP        	Japanese Yen                                      	NYBOT     
-PPH18     	Japanese Yen {Mar 18}                             	NYBOT     
-PPM18     	Japanese Yen {Jun 18}                             	NYBOT     
-PPU18     	Japanese Yen {Sep 18}                             	NYBOT     
-PPZ17     	Japanese Yen {Dec 17}                             	NYBOT     
+PPH19     	Japanese Yen {Mar 19}                             	NYBOT     
+PPM19     	Japanese Yen {Jun 19}                             	NYBOT     
+PPU19     	Japanese Yen {Sep 19}                             	NYBOT     
+PPZ18     	Japanese Yen {Dec 18}                             	NYBOT     
 PR        	Canadian Dollar                                   	NYBOT     
-PRH18     	Canadian Dollar {Mar 18}                          	NYBOT     
-PRM18     	Canadian Dollar {Jun 18}                          	NYBOT     
-PRU18     	Canadian Dollar {Sep 18}                          	NYBOT     
-PRZ17     	Canadian Dollar {Dec 17}                          	NYBOT     
+PRH19     	Canadian Dollar {Mar 19}                          	NYBOT     
+PRM19     	Canadian Dollar {Jun 19}                          	NYBOT     
+PRU19     	Canadian Dollar {Sep 19}                          	NYBOT     
+PRZ18     	Canadian Dollar {Dec 18}                          	NYBOT     
 PS        	Pound/Krona                                       	NYBOT     
-PSH18     	Pound/Krona {Mar 18}                              	NYBOT     
-PSM18     	Pound/Krona {Jun 18}                              	NYBOT     
-PSU18     	Pound/Krona {Sep 18}                              	NYBOT     
-PSZ17     	Pound/Krona {Dec 17}                              	NYBOT     
+PSH19     	Pound/Krona {Mar 19}                              	NYBOT     
+PSM19     	Pound/Krona {Jun 19}                              	NYBOT     
+PSU19     	Pound/Krona {Sep 19}                              	NYBOT     
+PSZ18     	Pound/Krona {Dec 18}                              	NYBOT     
 PV        	Pound/Australian                                  	NYBOT     
-PVH18     	Pound/Australian {Mar 18}                         	NYBOT     
-PVM18     	Pound/Australian {Jun 18}                         	NYBOT     
-PVU18     	Pound/Australian {Sep 18}                         	NYBOT     
-PVZ17     	Pound/Australian {Dec 17}                         	NYBOT     
+PVH19     	Pound/Australian {Mar 19}                         	NYBOT     
+PVM19     	Pound/Australian {Jun 19}                         	NYBOT     
+PVU19     	Pound/Australian {Sep 19}                         	NYBOT     
+PVZ18     	Pound/Australian {Dec 18}                         	NYBOT     
 PW        	Pound/Canadian                                    	NYBOT     
-PWH18     	Pound/Canadian {Mar 18}                           	NYBOT     
-PWM18     	Pound/Canadian {Jun 18}                           	NYBOT     
-PWU18     	Pound/Canadian {Sep 18}                           	NYBOT     
-PWZ17     	Pound/Canadian {Dec 17}                           	NYBOT     
+PWH19     	Pound/Canadian {Mar 19}                           	NYBOT     
+PWM19     	Pound/Canadian {Jun 19}                           	NYBOT     
+PWU19     	Pound/Canadian {Sep 19}                           	NYBOT     
+PWZ18     	Pound/Canadian {Dec 18}                           	NYBOT     
 PX        	Pound/Rand                                        	NYBOT     
-PXH18     	Pound/Rand {Mar 18}                               	NYBOT     
-PXM18     	Pound/Rand {Jun 18}                               	NYBOT     
-PXU18     	Pound/Rand {Sep 18}                               	NYBOT     
-PXZ17     	Pound/Rand {Dec 17}                               	NYBOT     
+PXH19     	Pound/Rand {Mar 19}                               	NYBOT     
+PXM19     	Pound/Rand {Jun 19}                               	NYBOT     
+PXU19     	Pound/Rand {Sep 19}                               	NYBOT     
+PXZ18     	Pound/Rand {Dec 18}                               	NYBOT     
 PY        	Euro/Rand                                         	NYBOT     
-PYH18     	Euro/Rand {Mar 18}                                	NYBOT     
-PYM18     	Euro/Rand {Jun 18}                                	NYBOT     
-PYU18     	Euro/Rand {Sep 18}                                	NYBOT     
-PYZ17     	Euro/Rand {Dec 17}                                	NYBOT     
+PYH19     	Euro/Rand {Mar 19}                                	NYBOT     
+PYM19     	Euro/Rand {Jun 19}                                	NYBOT     
+PYU19     	Euro/Rand {Sep 19}                                	NYBOT     
+PYZ18     	Euro/Rand {Dec 18}                                	NYBOT     
 PZ        	Swiss Franc                                       	NYBOT     
-PZH18     	Swiss Franc {Mar 18}                              	NYBOT     
-PZM18     	Swiss Franc {Jun 18}                              	NYBOT     
-PZU18     	Swiss Franc {Sep 18}                              	NYBOT     
-PZZ17     	Swiss Franc {Dec 17}                              	NYBOT     
-R1H18     	MSCI Canada Index {Mar 18}                        	NYBOT     
+PZH19     	Swiss Franc {Mar 19}                              	NYBOT     
+PZM19     	Swiss Franc {Jun 19}                              	NYBOT     
+PZU19     	Swiss Franc {Sep 19}                              	NYBOT     
+PZZ18     	Swiss Franc {Dec 18}                              	NYBOT     
 R1H19     	MSCI Canada Index {Mar 19}                        	NYBOT     
-R1M18     	MSCI Canada Index {Jun 18}                        	NYBOT     
-R1U18     	MSCI Canada Index {Sep 18}                        	NYBOT     
-R1Z17     	MSCI Canada Index {Dec 17}                        	NYBOT     
+R1M19     	MSCI Canada Index {Jun 19}                        	NYBOT     
+R1U19     	MSCI Canada Index {Sep 19}                        	NYBOT     
 R1Z18     	MSCI Canada Index {Dec 18}                        	NYBOT     
-R2H18     	MSCI World Index {Mar 18}                         	NYBOT     
+R1Z19     	MSCI Canada Index {Dec 19}                        	NYBOT     
 R2H19     	MSCI World Index {Mar 19}                         	NYBOT     
-R2M18     	MSCI World Index {Jun 18}                         	NYBOT     
-R2U18     	MSCI World Index {Sep 18}                         	NYBOT     
-R2Z17     	MSCI World Index {Dec 17}                         	NYBOT     
+R2M19     	MSCI World Index {Jun 19}                         	NYBOT     
+R2U19     	MSCI World Index {Sep 19}                         	NYBOT     
 R2Z18     	MSCI World Index {Dec 18}                         	NYBOT     
-RI        	Russell 1000 Mini                                 	NYBOT     
-RIH18     	Russell 1000 Mini {Mar 18}                        	NYBOT     
-RIM18     	Russell 1000 Mini {Jun 18}                        	NYBOT     
-RIZ17     	Russell 1000 Mini {Dec 17}                        	NYBOT     
-RJ        	Russell 2000 Mini                                 	NYBOT     
-RJH18     	Russell 2000 Mini {Mar 18}                        	NYBOT     
-RJM18     	Russell 2000 Mini {Jun 18}                        	NYBOT     
-RJZ17     	Russell 2000 Mini {Dec 17}                        	NYBOT     
+R2Z19     	MSCI World Index {Dec 19}                         	NYBOT     
 RK        	Euro/Krona                                        	NYBOT     
-RKH18     	Euro/Krona {Mar 18}                               	NYBOT     
-RKM18     	Euro/Krona {Jun 18}                               	NYBOT     
-RKU18     	Euro/Krona {Sep 18}                               	NYBOT     
-RKZ17     	Euro/Krona {Dec 17}                               	NYBOT     
-RN        	Russell 2500                                      	NYBOT     
+RKH19     	Euro/Krona {Mar 19}                               	NYBOT     
+RKM19     	Euro/Krona {Jun 19}                               	NYBOT     
+RKU19     	Euro/Krona {Sep 19}                               	NYBOT     
+RKZ18     	Euro/Krona {Dec 18}                               	NYBOT     
 RZ        	Euro/Swiss                                        	NYBOT     
-RZH18     	Euro/Swiss {Mar 18}                               	NYBOT     
-RZM18     	Euro/Swiss {Jun 18}                               	NYBOT     
-RZU18     	Euro/Swiss {Sep 18}                               	NYBOT     
-RZZ17     	Euro/Swiss {Dec 17}                               	NYBOT     
-S2H18     	MSCI EMLA Index {Mar 18}                          	NYBOT     
+RZH19     	Euro/Swiss {Mar 19}                               	NYBOT     
+RZM19     	Euro/Swiss {Jun 19}                               	NYBOT     
+RZU19     	Euro/Swiss {Sep 19}                               	NYBOT     
+RZZ18     	Euro/Swiss {Dec 18}                               	NYBOT     
 S2H19     	MSCI EMLA Index {Mar 19}                          	NYBOT     
-S2M18     	MSCI EMLA Index {Jun 18}                          	NYBOT     
-S2U18     	MSCI EMLA Index {Sep 18}                          	NYBOT     
-S2Z17     	MSCI EMLA Index {Dec 17}                          	NYBOT     
+S2M19     	MSCI EMLA Index {Jun 19}                          	NYBOT     
+S2U19     	MSCI EMLA Index {Sep 19}                          	NYBOT     
 S2Z18     	MSCI EMLA Index {Dec 18}                          	NYBOT     
+S2Z19     	MSCI EMLA Index {Dec 19}                          	NYBOT     
 SB        	Sugar #11                                         	NYBOT     
-SBH18     	Sugar #11 {Mar 18}                                	NYBOT     
 SBH19     	Sugar #11 {Mar 19}                                	NYBOT     
 SBH20     	Sugar #11 {Mar 20}                                	NYBOT     
-SBK18     	Sugar #11 {May 18}                                	NYBOT     
+SBH21     	Sugar #11 {Mar 21}                                	NYBOT     
 SBK19     	Sugar #11 {May 19}                                	NYBOT     
 SBK20     	Sugar #11 {May 20}                                	NYBOT     
-SBN18     	Sugar #11 {Jul 18}                                	NYBOT     
+SBK21     	Sugar #11 {May 21}                                	NYBOT     
 SBN19     	Sugar #11 {Jul 19}                                	NYBOT     
 SBN20     	Sugar #11 {Jul 20}                                	NYBOT     
-SBV18     	Sugar #11 {Oct 18}                                	NYBOT     
+SBN21     	Sugar #11 {Jul 21}                                	NYBOT     
 SBV19     	Sugar #11 {Oct 19}                                	NYBOT     
 SBV20     	Sugar #11 {Oct 20}                                	NYBOT     
-SDF18     	Sugar #16 {Jan 18}                                	NYBOT     
+SBV21     	Sugar #11 {Oct 21}                                	NYBOT     
 SDF19     	Sugar #16 {Jan 19}                                	NYBOT     
-SDH18     	Sugar #16 {Mar 18}                                	NYBOT     
+SDF20     	Sugar #16 {Jan 20}                                	NYBOT     
 SDH19     	Sugar #16 {Mar 19}                                	NYBOT     
-SDK18     	Sugar #16 {May 18}                                	NYBOT     
+SDH20     	Sugar #16 {Mar 20}                                	NYBOT     
 SDK19     	Sugar #16 {May 19}                                	NYBOT     
-SDN18     	Sugar #16 {Jul 18}                                	NYBOT     
+SDK20     	Sugar #16 {May 20}                                	NYBOT     
 SDN19     	Sugar #16 {Jul 19}                                	NYBOT     
-SDU18     	Sugar #16 {Sep 18}                                	NYBOT     
+SDN20     	Sugar #16 {Jul 20}                                	NYBOT     
 SDU19     	Sugar #16 {Sep 19}                                	NYBOT     
-SDX18     	Sugar #16 {Nov 18}                                	NYBOT     
+SDU20     	Sugar #16 {Sep 20}                                	NYBOT     
 SDX19     	Sugar #16 {Nov 19}                                	NYBOT     
 SS        	Pound/Swiss                                       	NYBOT     
-SSH18     	Pound/Swiss {Mar 18}                              	NYBOT     
-SSM18     	Pound/Swiss {Jun 18}                              	NYBOT     
-SSU18     	Pound/Swiss {Sep 18}                              	NYBOT     
-SSZ17     	Pound/Swiss {Dec 17}                              	NYBOT     
+SSH19     	Pound/Swiss {Mar 19}                              	NYBOT     
+SSM19     	Pound/Swiss {Jun 19}                              	NYBOT     
+SSU19     	Pound/Swiss {Sep 19}                              	NYBOT     
+SSZ18     	Pound/Swiss {Dec 18}                              	NYBOT     
 SY        	Pound/Yen                                         	NYBOT     
-SYH18     	Pound/Yen {Mar 18}                                	NYBOT     
-SYM18     	Pound/Yen {Jun 18}                                	NYBOT     
-SYU18     	Pound/Yen {Sep 18}                                	NYBOT     
-SYZ17     	Pound/Yen {Dec 17}                                	NYBOT     
-TH        	Russell 3000                                      	NYBOT     
+SYH19     	Pound/Yen {Mar 19}                                	NYBOT     
+SYM19     	Pound/Yen {Jun 19}                                	NYBOT     
+SYU19     	Pound/Yen {Sep 19}                                	NYBOT     
+SYZ18     	Pound/Yen {Dec 18}                                	NYBOT     
 UY        	Dollar/Forint                                     	NYBOT     
-UYH18     	Dollar/Forint {Mar 18}                            	NYBOT     
-UYM18     	Dollar/Forint {Jun 18}                            	NYBOT     
-UYU18     	Dollar/Forint {Sep 18}                            	NYBOT     
-UYZ17     	Dollar/Forint {Dec 17}                            	NYBOT     
+UYH19     	Dollar/Forint {Mar 19}                            	NYBOT     
+UYM19     	Dollar/Forint {Jun 19}                            	NYBOT     
+UYU19     	Dollar/Forint {Sep 19}                            	NYBOT     
+UYZ18     	Dollar/Forint {Dec 18}                            	NYBOT     
 UZ        	Dollar/Koruna                                     	NYBOT     
-UZH18     	Dollar/Koruna {Mar 18}                            	NYBOT     
-UZM18     	Dollar/Koruna {Jun 18}                            	NYBOT     
-UZU18     	Dollar/Koruna {Sep 18}                            	NYBOT     
-UZZ17     	Dollar/Koruna {Dec 17}                            	NYBOT     
-VU        	Russell 1000 Growth                               	NYBOT     
-VUH18     	Russell 1000 Growth {Mar 18}                      	NYBOT     
-VUM18     	Russell 1000 Growth {Jun 18}                      	NYBOT     
-VUZ17     	Russell 1000 Growth {Dec 17}                      	NYBOT     
-VV        	Russell 1000 Value                                	NYBOT     
-VVH18     	Russell 1000 Value {Mar 18}                       	NYBOT     
-VVM18     	Russell 1000 Value {Jun 18}                       	NYBOT     
-VVZ17     	Russell 1000 Value {Dec 17}                       	NYBOT     
+UZH19     	Dollar/Koruna {Mar 19}                            	NYBOT     
+UZM19     	Dollar/Koruna {Jun 19}                            	NYBOT     
+UZU19     	Dollar/Koruna {Sep 19}                            	NYBOT     
+UZZ18     	Dollar/Koruna {Dec 18}                            	NYBOT     
 YA        	Aussie/Yen                                        	NYBOT     
-YAH18     	Aussie/Yen {Mar 18}                               	NYBOT     
-YAM18     	Aussie/Yen {Jun 18}                               	NYBOT     
-YAU18     	Aussie/Yen {Sep 18}                               	NYBOT     
-YAZ17     	Aussie/Yen {Dec 17}                               	NYBOT     
-YGF18     	Gold mini-sized {Jan 18}                          	NYBOT     
-YGG18     	Gold mini-sized {Feb 18}                          	NYBOT     
+YAH19     	Aussie/Yen {Mar 19}                               	NYBOT     
+YAM19     	Aussie/Yen {Jun 19}                               	NYBOT     
+YAU19     	Aussie/Yen {Sep 19}                               	NYBOT     
+YAZ18     	Aussie/Yen {Dec 18}                               	NYBOT     
+YGF19     	Gold mini-sized {Jan 19}                          	NYBOT     
 YGG19     	Gold mini-sized {Feb 19}                          	NYBOT     
-YGJ18     	Gold mini-sized {Apr 18}                          	NYBOT     
+YGG20     	Gold mini-sized {Feb 20}                          	NYBOT     
 YGJ19     	Gold mini-sized {Apr 19}                          	NYBOT     
-YGM18     	Gold mini-sized {Jun 18}                          	NYBOT     
+YGJ20     	Gold mini-sized {Apr 20}                          	NYBOT     
 YGM19     	Gold mini-sized {Jun 19}                          	NYBOT     
 YGM20     	Gold mini-sized {Jun 20}                          	NYBOT     
 YGM21     	Gold mini-sized {Jun 21}                          	NYBOT     
 YGM22     	Gold mini-sized {Jun 22}                          	NYBOT     
-YGQ18     	Gold mini-sized {Aug 18}                          	NYBOT     
+YGM23     	Gold mini-sized {Jun 23}                          	NYBOT     
 YGQ19     	Gold mini-sized {Aug 19}                          	NYBOT     
-YGV18     	Gold mini-sized {Oct 18}                          	NYBOT     
+YGQ20     	Gold mini-sized {Aug 20}                          	NYBOT     
 YGV19     	Gold mini-sized {Oct 19}                          	NYBOT     
-YGX17     	Gold mini-sized {Nov 17}                          	NYBOT     
-YGZ17     	Gold mini-sized {Dec 17}                          	NYBOT     
+YGX18     	Gold mini-sized {Nov 18}                          	NYBOT     
 YGZ18     	Gold mini-sized {Dec 18}                          	NYBOT     
 YGZ19     	Gold mini-sized {Dec 19}                          	NYBOT     
 YGZ20     	Gold mini-sized {Dec 20}                          	NYBOT     
 YGZ21     	Gold mini-sized {Dec 21}                          	NYBOT     
-YIF18     	Silver mini-sized {Jan 18}                        	NYBOT     
+YGZ22     	Gold mini-sized {Dec 22}                          	NYBOT     
 YIF19     	Silver mini-sized {Jan 19}                        	NYBOT     
-YIG18     	Silver mini-sized {Feb 18}                        	NYBOT     
-YIH18     	Silver mini-sized {Mar 18}                        	NYBOT     
+YIF20     	Silver mini-sized {Jan 20}                        	NYBOT     
 YIH19     	Silver mini-sized {Mar 19}                        	NYBOT     
-YIK18     	Silver mini-sized {May 18}                        	NYBOT     
+YIH20     	Silver mini-sized {Mar 20}                        	NYBOT     
 YIK19     	Silver mini-sized {May 19}                        	NYBOT     
-YIN18     	Silver mini-sized {Jul 18}                        	NYBOT     
+YIK20     	Silver mini-sized {May 20}                        	NYBOT     
 YIN19     	Silver mini-sized {Jul 19}                        	NYBOT     
 YIN20     	Silver mini-sized {Jul 20}                        	NYBOT     
 YIN21     	Silver mini-sized {Jul 21}                        	NYBOT     
 YIN22     	Silver mini-sized {Jul 22}                        	NYBOT     
-YIU18     	Silver mini-sized {Sep 18}                        	NYBOT     
+YIN23     	Silver mini-sized {Jul 23}                        	NYBOT     
 YIU19     	Silver mini-sized {Sep 19}                        	NYBOT     
-YIX17     	Silver mini-sized {Nov 17}                        	NYBOT     
-YIZ17     	Silver mini-sized {Dec 17}                        	NYBOT     
+YIU20     	Silver mini-sized {Sep 20}                        	NYBOT     
+YIX18     	Silver mini-sized {Nov 18}                        	NYBOT     
 YIZ18     	Silver mini-sized {Dec 18}                        	NYBOT     
 YIZ19     	Silver mini-sized {Dec 19}                        	NYBOT     
 YIZ20     	Silver mini-sized {Dec 20}                        	NYBOT     
 YIZ21     	Silver mini-sized {Dec 21}                        	NYBOT     
-YNH18     	Colombian Peso {Mar 18}                           	NYBOT     
-YNM18     	Colombian Peso {Jun 18}                           	NYBOT     
-YNU18     	Colombian Peso {Sep 18}                           	NYBOT     
-YNZ17     	Colombian Peso {Dec 17}                           	NYBOT     
+YIZ22     	Silver mini-sized {Dec 22}                        	NYBOT     
+YNH19     	Colombian Peso {Mar 19}                           	NYBOT     
+YNM19     	Colombian Peso {Jun 19}                           	NYBOT     
+YNU19     	Colombian Peso {Sep 19}                           	NYBOT     
 YNZ18     	Colombian Peso {Dec 18}                           	NYBOT     
 YO        	Mexican Peso                                      	NYBOT     
-YOH18     	Mexican Peso {Mar 18}                             	NYBOT     
-YOM18     	Mexican Peso {Jun 18}                             	NYBOT     
-YOU18     	Mexican Peso {Sep 18}                             	NYBOT     
-YOZ17     	Mexican Peso {Dec 17}                             	NYBOT     
+YOH19     	Mexican Peso {Mar 19}                             	NYBOT     
+YOM19     	Mexican Peso {Jun 19}                             	NYBOT     
+YOU19     	Mexican Peso {Sep 19}                             	NYBOT     
+YOZ18     	Mexican Peso {Dec 18}                             	NYBOT     
 YP        	Pound/Dollar                                      	NYBOT     
-YPH18     	Pound/Dollar {Mar 18}                             	NYBOT     
-YPM18     	Pound/Dollar {Jun 18}                             	NYBOT     
-YPU18     	Pound/Dollar {Sep 18}                             	NYBOT     
-YPZ17     	Pound/Dollar {Dec 17}                             	NYBOT     
-YV        	NYSE Composite                                    	NYBOT     
-ZGF18     	ICE Gold 100-oz {Jan 18}                          	NYBOT     
-ZGG18     	ICE Gold 100-oz {Feb 18}                          	NYBOT     
+YPH19     	Pound/Dollar {Mar 19}                             	NYBOT     
+YPM19     	Pound/Dollar {Jun 19}                             	NYBOT     
+YPU19     	Pound/Dollar {Sep 19}                             	NYBOT     
+YPZ18     	Pound/Dollar {Dec 18}                             	NYBOT     
+ZGF19     	ICE Gold 100-oz {Jan 19}                          	NYBOT     
 ZGG19     	ICE Gold 100-oz {Feb 19}                          	NYBOT     
-ZGJ18     	ICE Gold 100-oz {Apr 18}                          	NYBOT     
+ZGG20     	ICE Gold 100-oz {Feb 20}                          	NYBOT     
 ZGJ19     	ICE Gold 100-oz {Apr 19}                          	NYBOT     
-ZGM18     	ICE Gold 100-oz {Jun 18}                          	NYBOT     
+ZGJ20     	ICE Gold 100-oz {Apr 20}                          	NYBOT     
 ZGM19     	ICE Gold 100-oz {Jun 19}                          	NYBOT     
 ZGM20     	ICE Gold 100-oz {Jun 20}                          	NYBOT     
 ZGM21     	ICE Gold 100-oz {Jun 21}                          	NYBOT     
 ZGM22     	ICE Gold 100-oz {Jun 22}                          	NYBOT     
-ZGQ18     	ICE Gold 100-oz {Aug 18}                          	NYBOT     
+ZGM23     	ICE Gold 100-oz {Jun 23}                          	NYBOT     
 ZGQ19     	ICE Gold 100-oz {Aug 19}                          	NYBOT     
-ZGV18     	ICE Gold 100-oz {Oct 18}                          	NYBOT     
+ZGQ20     	ICE Gold 100-oz {Aug 20}                          	NYBOT     
 ZGV19     	ICE Gold 100-oz {Oct 19}                          	NYBOT     
-ZGX17     	ICE Gold 100-oz {Nov 17}                          	NYBOT     
-ZGZ17     	ICE Gold 100-oz {Dec 17}                          	NYBOT     
+ZGX18     	ICE Gold 100-oz {Nov 18}                          	NYBOT     
 ZGZ18     	ICE Gold 100-oz {Dec 18}                          	NYBOT     
 ZGZ19     	ICE Gold 100-oz {Dec 19}                          	NYBOT     
 ZGZ20     	ICE Gold 100-oz {Dec 20}                          	NYBOT     
 ZGZ21     	ICE Gold 100-oz {Dec 21}                          	NYBOT     
-ZIF18     	ICE Silver 5000-oz {Jan 18}                       	NYBOT     
+ZGZ22     	ICE Gold 100-oz {Dec 22}                          	NYBOT     
 ZIF19     	ICE Silver 5000-oz {Jan 19}                       	NYBOT     
-ZIG18     	ICE Silver 5000-oz {Feb 18}                       	NYBOT     
-ZIH18     	ICE Silver 5000-oz {Mar 18}                       	NYBOT     
+ZIF20     	ICE Silver 5000-oz {Jan 20}                       	NYBOT     
 ZIH19     	ICE Silver 5000-oz {Mar 19}                       	NYBOT     
-ZIK18     	ICE Silver 5000-oz {May 18}                       	NYBOT     
+ZIH20     	ICE Silver 5000-oz {Mar 20}                       	NYBOT     
 ZIK19     	ICE Silver 5000-oz {May 19}                       	NYBOT     
-ZIN18     	ICE Silver 5000-oz {Jul 18}                       	NYBOT     
+ZIK20     	ICE Silver 5000-oz {May 20}                       	NYBOT     
 ZIN19     	ICE Silver 5000-oz {Jul 19}                       	NYBOT     
 ZIN20     	ICE Silver 5000-oz {Jul 20}                       	NYBOT     
 ZIN21     	ICE Silver 5000-oz {Jul 21}                       	NYBOT     
 ZIN22     	ICE Silver 5000-oz {Jul 22}                       	NYBOT     
-ZIU18     	ICE Silver 5000-oz {Sep 18}                       	NYBOT     
+ZIN23     	ICE Silver 5000-oz {Jul 23}                       	NYBOT     
 ZIU19     	ICE Silver 5000-oz {Sep 19}                       	NYBOT     
-ZIX17     	ICE Silver 5000-oz {Nov 17}                       	NYBOT     
-ZIZ17     	ICE Silver 5000-oz {Dec 17}                       	NYBOT     
+ZIU20     	ICE Silver 5000-oz {Sep 20}                       	NYBOT     
+ZIX18     	ICE Silver 5000-oz {Nov 18}                       	NYBOT     
 ZIZ18     	ICE Silver 5000-oz {Dec 18}                       	NYBOT     
 ZIZ19     	ICE Silver 5000-oz {Dec 19}                       	NYBOT     
 ZIZ20     	ICE Silver 5000-oz {Dec 20}                       	NYBOT     
 ZIZ21     	ICE Silver 5000-oz {Dec 21}                       	NYBOT     
+ZIZ22     	ICE Silver 5000-oz {Dec 22}                       	NYBOT     
 ZJ        	New Zealand/Yen                                   	NYBOT     
-ZJH18     	New Zealand/Yen {Mar 18}                          	NYBOT     
-ZJM18     	New Zealand/Yen {Jun 18}                          	NYBOT     
-ZJU18     	New Zealand/Yen {Sep 18}                          	NYBOT     
-ZJZ17     	New Zealand/Yen {Dec 17}                          	NYBOT     
+ZJH19     	New Zealand/Yen {Mar 19}                          	NYBOT     
+ZJM19     	New Zealand/Yen {Jun 19}                          	NYBOT     
+ZJU19     	New Zealand/Yen {Sep 19}                          	NYBOT     
+ZJZ18     	New Zealand/Yen {Dec 18}                          	NYBOT     
 ZY        	Swiss/Yen                                         	NYBOT     
-ZYH18     	Swiss/Yen {Mar 18}                                	NYBOT     
-ZYM18     	Swiss/Yen {Jun 18}                                	NYBOT     
-ZYU18     	Swiss/Yen {Sep 18}                                	NYBOT     
-ZYZ17     	Swiss/Yen {Dec 17}                                	NYBOT     
+ZYH19     	Swiss/Yen {Mar 19}                                	NYBOT     
+ZYM19     	Swiss/Yen {Jun 19}                                	NYBOT     
+ZYU19     	Swiss/Yen {Sep 19}                                	NYBOT     
+ZYZ18     	Swiss/Yen {Dec 18}                                	NYBOT     
