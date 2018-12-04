@@ -109,5 +109,7 @@ NVLF.IDX  	NYSE Advance Decline Volume Difference            	INDEX
 QVLF.IDX  	NASD Advance Decline Volume Difference            	INDEX
 
 BCMM.IDX	Barchart Market Momentum Index                      INDEX
+CPR.IDX		Copper Index										INDEX
 
-
+ES        	S&P 500 E-Mini                                    	CME       
+ES.C      	S&P 500 E-Mini Continuation                       	CME
