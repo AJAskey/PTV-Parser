@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.ta.DailyData;
 import net.ajaskey.market.ta.TickerData;
 import net.ajaskey.market.ta.input.LongTermOHLCV;
 import net.ajaskey.market.ta.input.ParseData;
@@ -109,11 +110,13 @@ public class WriteIndexEOD {
 
 		filenames.clear();
 		final String dataPath = Utils.getDataPath();
-		filenames.add(dataPath + "\\ASCII\\INDEX");
-		filenames.add(dataPath + "\\ASCII\\AMEX");
+		//filenames.add(dataPath + "\\ASCII\\INDEX");
+		//filenames.add(dataPath + "\\ASCII\\AMEX");
+		filenames.add(dataPath + "\\ASCII\\CME");
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
+		fullfilenames.add("symbols\\CME_SymbolList.txt");
 		TickerFullName.build(fullfilenames);
 
 		TickerData.clearTickerData(tdList);
@@ -129,6 +132,7 @@ public class WriteIndexEOD {
 				if (nm == null) {
 					nm = "Unknown";
 				}
+				fixBadData(td);
 				String tname = tn.replaceAll(".IDX", "");
 				String fname = "[" + tname + "] - " + nm;
 				try (PrintWriter pw = new PrintWriter(outdir + fname + ".csv");
@@ -139,6 +143,31 @@ public class WriteIndexEOD {
 				}
 			}
 		}
+	}
+
+	/**
+	 * net.ajaskey.market.tools.optuma.fixBadData
+	 *
+	 * @param td
+	 */
+	private static void fixBadData(TickerData td) {
+
+		if (td.getTicker().equalsIgnoreCase("CPR.IDX")) {
+			System.out.println("Fixing " + td.getTicker());
+			DailyData prev = null;
+			for (final DailyData dd : td.getData()) {
+				if (prev != null) {
+					if ((dd.getOpen() > 10.0) || (dd.getHigh() > 10.0) || (dd.getLow() > 10.0) || (dd.getClose() > 10.0)) {
+						dd.resetOpen(prev.getOpen());
+						dd.resetHigh(prev.getHigh());
+						dd.resetLow(prev.getLow());
+						dd.resetClose(prev.getClose());
+					}
+				}
+				prev = dd;
+			}
+		}
+
 	}
 
 }

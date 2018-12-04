@@ -40,10 +40,10 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
 public class DailyData {
 
 	private final Calendar	date;
-	private final Double		open;
-	private final Double		high;
-	private final Double		low;
-	private final Double		close;
+	private Double					open;
+	private Double					high;
+	private Double					low;
+	private Double					close;
 	private Double					volume;
 	private final Double		oi;
 
@@ -210,6 +210,26 @@ public class DailyData {
 		return this.open;
 	}
 
+	public void resetOpen(double val) {
+
+		this.open = val;
+	}
+
+	public void resetHigh(double val) {
+
+		this.high = val;
+	}
+
+	public void resetLow(double val) {
+
+		this.low = val;
+	}
+
+	public void resetClose(double val) {
+
+		this.close = val;
+	}
+
 	/**
 	 * Returns the true high when considering the previous day's close.
 	 *
@@ -309,8 +329,8 @@ public class DailyData {
 	public String toString() {
 
 		final String sDate = this.sdf.format(this.date.getTime());
-		final String ret = String.format("%s  %7.2f  %7.2f  %7.2f  %7.2f %15d %5d %15.2f %9.2f %6.2f %9d %n", sDate, this.open,
-		    this.high, this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi),
+		final String ret = String.format("%s  %7.2f  %7.2f  %7.2f  %7.2f %15d %5d %15.2f %9.2f %6.2f %9d %n", sDate,
+		    this.open, this.high, this.low, this.close, (int) (double) (this.volume), (int) (double) (this.oi),
 		    this.close * this.volume, this.close * this.oi, this.dailyChg, (long) (double) (this.dailyChg * this.volume));
 		return ret.trim();
 	}

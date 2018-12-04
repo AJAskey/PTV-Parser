@@ -57,7 +57,7 @@ public class ProcessICI {
 	public static void processEtfFlow() {
 
 		String line;
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/combined_flows_data_2017.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/combined_flows_data_2018.txt"))) {
 
 			Calendar lastCal = null;
 			while ((line = reader.readLine()) != null) {
@@ -131,7 +131,7 @@ public class ProcessICI {
 	public static void processMoneyFlow() {
 
 		String line;
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/flows_data_2017.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/flows_data_2018.txt"))) {
 
 			Calendar lastCal = null;
 			while ((line = reader.readLine()) != null) {

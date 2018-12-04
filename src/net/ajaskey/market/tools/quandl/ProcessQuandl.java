@@ -168,10 +168,10 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 30.00;
+		double shillerpe = 29.58;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 52.34));
-		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 833.44));
+		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 836.39));
 		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1325.00));
 		double spxearn = 134.87;
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;

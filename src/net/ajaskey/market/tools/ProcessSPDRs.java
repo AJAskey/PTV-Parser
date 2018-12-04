@@ -60,6 +60,9 @@ public class ProcessSPDRs {
 					knt++;
 				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Continuing...");
 		}
 	}
 

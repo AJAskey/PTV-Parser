@@ -232,7 +232,7 @@ public class ParseData {
 
 							// System.out.println("\t" + line);
 
-							if ((fld.length == 7) || ((fld.length == 8) && (fld[0].contains("OEX.XO")))) {
+							if (fld.length >= 7) {
 
 								double oi = 0;
 								if (fld.length == 8) {
@@ -273,7 +273,7 @@ public class ParseData {
 			System.out.printf("ERROR - Input file \"%s\" not found in ParseFile()!%n", file);
 			throw e1;
 		} catch (final Exception e2) {
-			System.out.printf("ERROR - Processing issues in ParseFile()!%n");
+			System.out.printf("ERROR - Processing issues in ParseFile() \"%s\" !%n", file);
 			throw new ParseException("bad data", 1);
 		}
 		return tdList;
@@ -304,14 +304,14 @@ public class ParseData {
 	 */
 	public static List<TickerData> parseFiles(List<String> directoryName, Calendar firstDay)
 	    throws FileNotFoundException, ParseException {
-		
-		Calendar today = Calendar.getInstance();
-		
-    long end = today.getTimeInMillis();
-    long start = firstDay.getTimeInMillis();
-    long days =  TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
 
-		return ParseData.parseFiles(directoryName, (int)days);
+		Calendar today = Calendar.getInstance();
+
+		long end = today.getTimeInMillis();
+		long start = firstDay.getTimeInMillis();
+		long days = TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
+
+		return ParseData.parseFiles(directoryName, (int) days);
 	}
 
 	/**
@@ -649,6 +649,7 @@ public class ParseData {
 	 *
 	 */
 	private ParseData() {
+
 	}
 
 }

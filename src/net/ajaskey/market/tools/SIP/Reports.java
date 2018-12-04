@@ -53,7 +53,16 @@ public class Reports {
 
 		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
 
+			for (final CompanyData cd : this.companyList) {
+				this.printZombieData(pw, cd);
+			}
+
+		}
+
+		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
+
 			for (final CompanyData cd : this.companyList)
+
 				if ((cd.opMargin > 10.0) && (cd.netMargin > 10.0) && (cd.roe > 10.0) && (cd.bsd.equity.getMostRecent() > 0.0)
 				    && (cd.workingCashFlow > 0.0) && (cd.id.sales.dd.qoqGrowth > 10.0) && (cd.id.sales.dd.yoyGrowth > 10.0)
 				    && (cd.id.netIncome.dd.qoqGrowth > 10.0) && (cd.id.netIncome.dd.yoyGrowth > 10.0)) {
@@ -88,7 +97,7 @@ public class Reports {
 		pwAll.close();
 	}
 
-	private void printData(PrintWriter pw, CompanyData cd) {
+	private void printHeaderData(PrintWriter pw, CompanyData cd) {
 
 		pw.println(cd.ticker);
 		pw.printf("\t%s%n", cd.name);
@@ -108,6 +117,18 @@ public class Reports {
 		pw.printf("\tOp Margin     : %s%n", QuarterlyData.fmt(cd.opMargin, 15));
 		pw.printf("\tNet Margin    : %s%n", QuarterlyData.fmt(cd.netMargin, 15));
 		pw.printf("\tROE           : %s%n", QuarterlyData.fmt(cd.roe, 15));
+
+	}
+
+	private void printZombieData(PrintWriter pw, CompanyData cd) {
+
+		this.printHeaderData(pw, cd);
+
+	}
+
+	private void printData(PrintWriter pw, CompanyData cd) {
+
+		this.printHeaderData(pw, cd);
 
 		pw.printf("%n\tLast Sales        : %s M\t(QoQ= %s%%)%n", QuarterlyData.fmt(cd.id.sales.getMostRecent(), 15),
 		    QuarterlyData.fmt(cd.id.sales.dd.qoqGrowth, 7));
@@ -178,7 +199,7 @@ public class Reports {
 
 	}
 
-	/** 
+	/**
 	 * net.ajaskey.market.tools.SIP.dumpStats
 	 *
 	 * @param statList
@@ -187,7 +208,7 @@ public class Reports {
 	public static void dumpStats(List<Statistics> statList, TotalData td) {
 
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
