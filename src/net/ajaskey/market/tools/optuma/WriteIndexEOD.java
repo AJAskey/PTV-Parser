@@ -110,13 +110,17 @@ public class WriteIndexEOD {
 
 		filenames.clear();
 		final String dataPath = Utils.getDataPath();
-		//filenames.add(dataPath + "\\ASCII\\INDEX");
-		//filenames.add(dataPath + "\\ASCII\\AMEX");
+		filenames.add(dataPath + "\\ASCII\\INDEX");
+		filenames.add(dataPath + "\\ASCII\\AMEX");
 		filenames.add(dataPath + "\\ASCII\\CME");
+		filenames.add(dataPath + "\\ASCII\\COMEX");
+		filenames.add(dataPath + "\\ASCII\\NYMEX");
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
 		fullfilenames.add("symbols\\CME_SymbolList.txt");
+		fullfilenames.add("symbols\\COMEX_SymbolList.txt");
+		fullfilenames.add("symbols\\NYMEX_SymbolList.txt");
 		TickerFullName.build(fullfilenames);
 
 		TickerData.clearTickerData(tdList);
@@ -133,8 +137,10 @@ public class WriteIndexEOD {
 					nm = "Unknown";
 				}
 				fixBadData(td);
-				String tname = tn.replaceAll(".IDX", "");
-				String fname = "[" + tname + "] - " + nm;
+				String tname = tn.replace(".IDX", "");
+				String nm2 = nm.replace("/", "_");
+				String fname = "[" + tname + "] - " + nm2;
+				//System.out.println(fname);
 				try (PrintWriter pw = new PrintWriter(outdir + fname + ".csv");
 				    PrintWriter pw2 = new PrintWriter(outdir + tn + ".csv")) {
 					td.generateDerived(true);

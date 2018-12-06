@@ -51,7 +51,7 @@ public class Reports {
 
 		Utils.makeDir("out/CompanyReports");
 
-		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
+		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
 
 			for (final CompanyData cd : this.companyList) {
 				this.printZombieData(pw, cd);
@@ -120,9 +120,77 @@ public class Reports {
 
 	}
 
+	private void print4QtrData(PrintWriter pw, QuarterlyData qd, String heading) {
+
+		double q1, q2, q3, q4;
+		if (Math.abs(qd.q1) > 0.0) {
+			q1 = qd.q1;
+			q2 = qd.q2;
+			q3 = qd.q3;
+			q4 = qd.q4;
+		} else {
+			q1 = qd.q2;
+			q2 = qd.q3;
+			q3 = qd.q4;
+			q4 = qd.q5;
+		}
+		String s1 = QuarterlyData.fmt(q1, 15);
+		String s2 = QuarterlyData.fmt(q2, 15);
+		String s3 = QuarterlyData.fmt(q3, 15);
+		String s4 = QuarterlyData.fmt(q4, 15);
+		pw.printf("\t  %-15s: %s %s %s %s%n", heading, s1, s2, s3, s4);
+	}
+
+	private void print1QtrData(PrintWriter pw, double q1, String heading) {
+
+		String s1 = QuarterlyData.fmt(q1, 15);
+		pw.printf("\t  %-15s: %s%n", heading, s1);
+	}
+
 	private void printZombieData(PrintWriter pw, CompanyData cd) {
 
-		this.printHeaderData(pw, cd);
+		if (cd.zFactor < 4.01) {
+			pw.println("");
+			this.printHeaderData(pw, cd);
+
+			pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zCash, 15));
+			print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
+			print1QtrData(pw, cd.bsd.acctReceiveable.getMostRecent(), "AcctRx");
+			print1QtrData(pw, cd.bsd.stInvestments.getMostRecent(), "ST Invest");
+			print1QtrData(pw, cd.bsd.otherAssets.getMostRecent(), "Other Assets");
+			print1QtrData(pw, (cd.bsd.inventory.getMostRecent() * 0.5), "0.5 Inventory");
+			print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * 0.75), "0.75 LT Invest");
+
+			pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zDebt, 15));
+			print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
+			print1QtrData(pw, cd.bsd.stDebt.getMostRecent(), "ST Debt");
+			print1QtrData(pw, cd.bsd.otherCurrLiab.getMostRecent(), "Other Liab");
+
+			double netcurr = cd.zCash - cd.zDebt;
+			pw.printf("\t*Net Cash        : %s%n", QuarterlyData.fmt(netcurr, 15));
+
+			pw.printf("\t*Zombie Income   : %s%n", QuarterlyData.fmt(cd.zIncome, 15));
+			print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
+			double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
+			if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
+				avgpre += cd.id.pretaxIncome.q5;
+			}
+			avgpre /= 4.0;
+			print1QtrData(pw, avgpre, "Avg Pretax");
+			double div = cd.id.dividend.q1 * cd.shares.getMostRecent();
+			print1QtrData(pw, cd.id.dividend.q1, "Div/Shr");
+			print1QtrData(pw, cd.shares.getMostRecent(), "Shares");
+			print1QtrData(pw, div, "Dividends");
+
+			double qtr8inc = cd.zIncome * 8.0;
+			double zf = cd.zFactor;
+			if (qtr8inc < Math.abs(netcurr)) {
+				if (cd.zFactor < 0.0) {
+					zf = -100.0;
+				}
+			}
+			pw.printf("\t*Zombie Factor   : %s%n", QuarterlyData.fmt(zf, 15));
+		}
 
 	}
 

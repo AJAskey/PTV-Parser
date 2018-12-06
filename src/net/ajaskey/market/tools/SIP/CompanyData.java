@@ -171,6 +171,13 @@ public class CompanyData {
 							cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
 							cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
 
+							cd.zIncome = DerivedData.calcZIncome(cd);
+							cd.zCash = DerivedData.calcZCash(cd);
+							cd.zDebt = DerivedData.calcZDebt(cd);
+							if (Math.abs(cd.zIncome) > 0.0) {
+								cd.zFactor = (cd.zCash - cd.zDebt) / Math.abs(cd.zIncome);
+							}
+
 							totalMarketCap += cd.marketCap;
 						}
 					}
@@ -344,6 +351,11 @@ public class CompanyData {
 	public double	marketCap;
 	public double	partOfTotalCap;
 
+	public double	zIncome;
+	public double	zCash;
+	public double	zDebt;
+	public double	zFactor;
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
@@ -381,6 +393,12 @@ public class CompanyData {
 		this.debtCash = 0.0;
 		this.marketCap = 0.0;
 		this.partOfTotalCap = 0.0;
+
+		this.zIncome = 0.0;
+		this.zCash = 0.0;
+		this.zDebt = 0.0;
+		this.zFactor = 0.0;
+
 	}
 
 	/* (non-Javadoc)

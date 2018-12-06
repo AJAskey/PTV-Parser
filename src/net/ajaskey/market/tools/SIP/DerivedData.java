@@ -278,15 +278,11 @@ public class DerivedData {
 		return ret;
 	}
 
-	public double qoqGrowth;
-
-	public double seqGrowth;
-
-	public double yoyGrowth;
-
-	public double ttm;
-
-	private QuarterlyData qd;
+	public double					qoqGrowth;
+	public double					seqGrowth;
+	public double					yoyGrowth;
+	public double					ttm;
+	private QuarterlyData	qd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -385,6 +381,51 @@ public class DerivedData {
 		ret += TAB + TAB + TAB + String.format("Y/Y Growth : %15.2f%%", this.yoyGrowth) + NL;
 		ret += TAB + TAB + TAB + "12m Total  : " + QuarterlyData.fmt(this.ttm) + " (avg= "
 		    + QuarterlyData.fmt(this.ttm / 4.0, 1) + ")" + NL;
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcZIncome
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcZIncome(CompanyData cd) {
+
+		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
+		if (cd.id.pretaxIncome.q1 == 0.0) {
+			ret += cd.id.pretaxIncome.q5;
+		}
+		double avg = ret / 4.0;
+		double div = cd.id.dividend.q1 * cd.shares.getMostRecent();
+		ret = avg - div;
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcZCash
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcZCash(CompanyData cd) {
+
+		double ret = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent()
+		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.otherAssets.getMostRecent()
+		    + (cd.bsd.inventory.getMostRecent() * 0.5) + (cd.bsd.ltInvestments.getMostRecent() * 0.75);
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcZDebt
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcZDebt(CompanyData cd) {
+
+		double ret = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
+		    + cd.bsd.otherCurrLiab.getMostRecent();
 		return ret;
 	}
 
