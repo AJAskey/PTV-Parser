@@ -79,7 +79,7 @@ public class CompanyData {
 		// Read last price
 
 		// Read balance sheet
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-BALANCESHEETQTR.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-BALANCESHEETQTR.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -95,7 +95,7 @@ public class CompanyData {
 		}
 
 		// Read income statement
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-INCOMESTMTQTR.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-INCOMESTMTQTR.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -112,7 +112,7 @@ public class CompanyData {
 		}
 
 		// Read miscellaneous data
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/SP500-MISC.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-MISC.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.replaceAll("\"", "").trim();
@@ -123,17 +123,17 @@ public class CompanyData {
 					final String ticker = fld[0].trim();
 					final CompanyData cd = CompanyData.getCompany(ticker);
 					if (cd != null) {
-						cd.numEmp = (int) Double.parseDouble((fld[1].trim()));
+						cd.numEmp = (int) Double.parseDouble((fld[2].trim()));
 						try {
 							cd.eoq = sdf.parse(fld[3].trim());
 						} catch (final ParseException e) {
 							cd.eoq = null;
 						}
-						cd.insiders = QuarterlyData.parseDouble(fld[3].trim());
-						cd.floatShares = QuarterlyData.parseDouble(fld[4].trim());
-						cd.capEx = QuarterlyData.parseDouble(fld[5].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[6].trim());
-						cd.cashFromOps = QuarterlyData.parseDouble(fld[7].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[4].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[5].trim());
+						cd.capEx = QuarterlyData.parseDouble(fld[6].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[7].trim());
+						cd.cashFromOps = QuarterlyData.parseDouble(fld[8].trim());
 						cd.shares.parse(fld);
 					}
 				}
@@ -174,9 +174,8 @@ public class CompanyData {
 							cd.zIncome = DerivedData.calcZIncome(cd);
 							cd.zCash = DerivedData.calcZCash(cd);
 							cd.zDebt = DerivedData.calcZDebt(cd);
-							if (Math.abs(cd.zIncome) > 0.0) {
-								cd.zFactor = (cd.zCash - cd.zDebt) / Math.abs(cd.zIncome);
-							}
+							cd.zNet = cd.zCash - cd.zDebt;
+							cd.zScore = DerivedData.calcZScore(cd);
 
 							totalMarketCap += cd.marketCap;
 						}
@@ -354,7 +353,8 @@ public class CompanyData {
 	public double	zIncome;
 	public double	zCash;
 	public double	zDebt;
-	public double	zFactor;
+	public double zNet;
+	public double	zScore;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -397,7 +397,8 @@ public class CompanyData {
 		this.zIncome = 0.0;
 		this.zCash = 0.0;
 		this.zDebt = 0.0;
-		this.zFactor = 0.0;
+		this.zNet = 0.0;
+		this.zScore = 0.0;
 
 	}
 

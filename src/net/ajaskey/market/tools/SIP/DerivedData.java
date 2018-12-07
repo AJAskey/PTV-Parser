@@ -411,8 +411,9 @@ public class DerivedData {
 	public static double calcZCash(CompanyData cd) {
 
 		double ret = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent()
-		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.otherAssets.getMostRecent()
-		    + (cd.bsd.inventory.getMostRecent() * 0.5) + (cd.bsd.ltInvestments.getMostRecent() * 0.75);
+		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.otherAssets.getMostRecent() + cd.bsd.inventory.getMostRecent()
+		    + (cd.bsd.ltInvestments.getMostRecent() * 0.85) + (cd.bsd.otherLtAssets.getMostRecent() * 0.25)
+		    + (cd.bsd.goodwill.getMostRecent() * 0.10);
 		return ret;
 	}
 
@@ -427,6 +428,52 @@ public class DerivedData {
 		double ret = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
 		    + cd.bsd.otherCurrLiab.getMostRecent();
 		return ret;
+	}
+
+	private static void print(String desc, double val) {
+
+		System.out.printf("%-10s : %f%n", desc, val);
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcZScore
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcZScore(CompanyData cd) {
+
+		double scr = 999.0;
+		if (cd.sector.equalsIgnoreCase("Financials")) {
+			scr = 25.0;
+		} else {
+			print("zCash", cd.zCash);
+			print("zDebt", cd.zDebt);
+			print("zNet", cd.zNet);
+			print("zIncome", cd.zIncome);
+
+			//Case both net and income positive
+			if ((cd.zNet > 0.0) && (cd.zIncome > 0.0)) {
+				return 100.0;
+			}
+
+			//Case net is positive and income is negative
+			if ((cd.zNet > 0.0) && (cd.zIncome < 0.0)) {
+				scr = cd.zNet / cd.zIncome; //Quarters net can cover negative income
+			}
+
+			//Cast net is negative and income is positive
+			if ((cd.zNet < 0.0) && (cd.zIncome > 0.0)) {
+				scr = cd.zNet / cd.zIncome; //Quarters income can pay off net
+			}
+
+			//Case both net and income are negative
+			if ((cd.zNet < 0.0) && (cd.zIncome < 0.0)) {
+				return -100.0;
+			}
+
+		}
+		return scr;
 	}
 
 }
