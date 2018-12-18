@@ -79,7 +79,7 @@ public class CompanyData {
 		// Read last price
 
 		// Read balance sheet
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-BALANCESHEETQTR.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-bs.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -95,7 +95,7 @@ public class CompanyData {
 		}
 
 		// Read income statement
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-INCOMESTMTQTR.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-is.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -112,7 +112,7 @@ public class CompanyData {
 		}
 
 		// Read miscellaneous data
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-MISC.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-misc.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.replaceAll("\"", "").trim();
@@ -171,11 +171,7 @@ public class CompanyData {
 							cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
 							cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
 
-							cd.zIncome = DerivedData.calcZIncome(cd);
-							cd.zCash = DerivedData.calcZCash(cd);
-							cd.zDebt = DerivedData.calcZDebt(cd);
-							cd.zNet = cd.zCash - cd.zDebt;
-							cd.zScore = DerivedData.calcZScore(cd);
+							cd.zd.calc(cd);
 
 							totalMarketCap += cd.marketCap;
 						}
@@ -207,7 +203,7 @@ public class CompanyData {
 		final Statistics divYldStats = new Statistics("Dividend Yield");
 		final Statistics epsYldStats = new Statistics("Earnings Yield");
 
-		List<Statistics> statList = new ArrayList<>();
+		final List<Statistics> statList = new ArrayList<>();
 		statList.add(bvpsStats);
 		statList.add(salesStats);
 		statList.add(epsStats);
@@ -350,14 +346,7 @@ public class CompanyData {
 	public double	marketCap;
 	public double	partOfTotalCap;
 
-	public double	zIncome;
-	public double zAdjInc;
-	public double	zCash;
-	public double	zDebt;
-	public double zNet;
-	public double	zScore;
-	public double zAdjScr;
-	public ZombieStates zState;
+	public ZombieData zd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -397,14 +386,7 @@ public class CompanyData {
 		this.marketCap = 0.0;
 		this.partOfTotalCap = 0.0;
 
-		this.zIncome = 0.0;
-		this.zAdjInc = 0.0;
-		this.zCash = 0.0;
-		this.zDebt = 0.0;
-		this.zNet = 0.0;
-		this.zScore = 0.0;
-		this.zAdjScr = 0.0;
-		this.zState = ZombieStates.UNKNOWN;
+		this.zd = new ZombieData();
 
 	}
 
@@ -422,7 +404,7 @@ public class CompanyData {
 		ret += TAB + "Number Employees  : " + String.format("%15d", this.numEmp) + NL;
 		try {
 			ret += TAB + "End of Quarter    : " + String.format("%15s", sdf.format(this.eoq)) + NL;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			ret += TAB + "End of Quarter    : ERROR" + NL;
 		}
 		ret += TAB + "Insiders Own      : " + QuarterlyData.fmt(this.insiders) + NL;
@@ -446,6 +428,7 @@ public class CompanyData {
 		ret += TAB + "Debt to Cash      : " + QuarterlyData.fmt(this.debtCash) + NL;
 		ret += this.bsd;
 		ret += this.id;
+		ret += this.zd;
 
 		return ret;
 	}

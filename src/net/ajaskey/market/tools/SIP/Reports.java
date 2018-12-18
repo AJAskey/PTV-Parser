@@ -150,8 +150,8 @@ public class Reports {
 
 	private void printZombieData(PrintWriter pw, CompanyData cd) {
 
-		if ((cd.zScore < 0.0) || (cd.zState == ZombieStates.NNET_PINC_DIVCUT)
-		    || (cd.zState == ZombieStates.PNET_NINC_DIVCUT)) {
+		if ((cd.zd.zScore < 0.0) || (cd.zd.zState == ZombieStates.NNET_PINC_DIVCUT)
+		    || (cd.zd.zState == ZombieStates.PNET_NINC_DIVCUT)) {
 
 			pw.println("");
 			this.printHeaderData(pw, cd);
@@ -160,7 +160,7 @@ public class Reports {
 			    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent(), 15), QuarterlyData.fmt(cd.bsd.ltDebt.dd.seqGrowth, 7),
 			    QuarterlyData.fmt(cd.bsd.ltDebt.dd.qoqGrowth, 7));
 
-			pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zCash, 15));
+			pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zd.zCash, 15));
 			print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
 			print1QtrData(pw, cd.bsd.acctReceiveable.getMostRecent(), "AcctRx");
 			print1QtrData(pw, cd.bsd.stInvestments.getMostRecent(), "ST Invest");
@@ -170,15 +170,15 @@ public class Reports {
 			print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * 0.25), "25% LT Assets");
 			print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * 0.10), "10% Goodwill");
 
-			pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zDebt, 15));
+			pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zd.zDebt, 15));
 			print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
 			print1QtrData(pw, cd.bsd.stDebt.getMostRecent(), "ST Debt");
 			print1QtrData(pw, cd.bsd.otherCurrLiab.getMostRecent(), "Other Liab");
 
-			pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zNet, 15));
+			pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zd.zNet, 15));
 
 			pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income minus Dividends Paid]%n",
-			    QuarterlyData.fmt(cd.zIncome, 15));
+			    QuarterlyData.fmt(cd.zd.zIncome, 15));
 			print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
 			double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
 			if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
@@ -191,28 +191,28 @@ public class Reports {
 			if (div > 0.0) {
 				print1QtrData(pw, (-1.0 * div), "Dividends");
 			}
-			if (cd.zAdjInc != cd.zIncome) {
-				print1QtrData(pw, cd.zAdjInc, "Adj Income");
+			if (cd.zd.zAdjInc != cd.zd.zIncome) {
+				print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
 			}
 
-			switch (cd.zState) {
+			switch (cd.zd.zState) {
 				case NNET_PINC_DIVCUT:
 				case PNET_NINC_DIVCUT:
 				case NNET_NINC_DIVCUT:
-					print1QtrData(pw, cd.zAdjInc, "Adj Income");
+					print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
 					break;
 				default:
 					break;
 			}
 
-			pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zScore, 15));
-			pw.printf("\tZombie State     : %15s%n", cd.zState);
+			pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
+			pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
 
-			switch (cd.zState) {
+			switch (cd.zd.zState) {
 				case NNET_PINC_DIVCUT:
 				case PNET_NINC_DIVCUT:
 				case NNET_NINC_DIVCUT:
-					print1QtrData(pw, cd.zAdjInc, "Adj Income");
+					print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
 					break;
 				case NNET_NINC:
 					pw.println("\tZombie!");
@@ -232,26 +232,26 @@ public class Reports {
 
 			}
 
-			if (cd.zScore == 100.0) {
+			if (cd.zd.zScore == 100.0) {
 				pw.println("\tPlenty of cash.");
-			} else if (cd.zScore == -100.0) {
+			} else if (cd.zd.zScore == -100.0) {
 				pw.println("\tDead Zombie!");
-			} else if (cd.zScore == 25.0) {
+			} else if (cd.zd.zScore == 25.0) {
 				pw.println("\tFinancials ignored.");
 
-			} else if (cd.zScore < -8.0) {
+			} else if (cd.zd.zScore < -8.0) {
 				pw.println("\tZombie!");
-			} else if ((cd.zScore < 0.0) && (cd.zIncome < 0.0)) {
-				if (Math.abs(cd.zScore) < 4.0) {
-					pw.printf("\tZombie! Cash only covers income shortfall for %.2f quarters.%n", Math.abs(cd.zScore));
+			} else if ((cd.zd.zScore < 0.0) && (cd.zd.zIncome < 0.0)) {
+				if (Math.abs(cd.zd.zScore) < 4.0) {
+					pw.printf("\tZombie! Cash only covers income shortfall for %.2f quarters.%n", Math.abs(cd.zd.zScore));
 
 				} else {
-					pw.printf("\tCash covers income shortfall for %.2f quarters.%n", Math.abs(cd.zScore));
+					pw.printf("\tCash covers income shortfall for %.2f quarters.%n", Math.abs(cd.zd.zScore));
 				}
-			} else if ((cd.zScore < 0.0) && (cd.zNet < 0.0)) {
-				pw.printf("\tFuture income covers Cash shortfall in %.2f quarters.%n", Math.abs(cd.zScore));
+			} else if ((cd.zd.zScore < 0.0) && (cd.zd.zNet < 0.0)) {
+				pw.printf("\tFuture income covers Cash shortfall in %.2f quarters.%n", Math.abs(cd.zd.zScore));
 			} else {
-				pw.printf("\tUnexpected zScore : %.2f%n", cd.zScore);
+				pw.printf("\tUnexpected zScore : %.2f%n", cd.zd.zScore);
 			}
 
 		}
