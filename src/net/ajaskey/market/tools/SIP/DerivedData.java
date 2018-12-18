@@ -447,29 +447,55 @@ public class DerivedData {
 		if (cd.sector.equalsIgnoreCase("Financials")) {
 			scr = 25.0;
 		} else {
-			print("zCash", cd.zCash);
-			print("zDebt", cd.zDebt);
-			print("zNet", cd.zNet);
-			print("zIncome", cd.zIncome);
+			//print("zCash", cd.zCash);
+			//print("zDebt", cd.zDebt);
+			//print("zNet", cd.zNet);
+			//print("zIncome", cd.zIncome);
+
+			cd.zAdjInc = cd.zIncome + (cd.id.dividend.q1 * cd.shares.getMostRecent());
+			if (Math.abs(cd.zAdjInc) > 0.0) {
+				cd.zAdjScr = cd.zNet / cd.zAdjInc;
+			}
 
 			//Case both net and income positive
 			if ((cd.zNet > 0.0) && (cd.zIncome > 0.0)) {
-				return 100.0;
-			}
-
-			//Case net is positive and income is negative
-			if ((cd.zNet > 0.0) && (cd.zIncome < 0.0)) {
-				scr = cd.zNet / cd.zIncome; //Quarters net can cover negative income
-			}
-
-			//Cast net is negative and income is positive
-			if ((cd.zNet < 0.0) && (cd.zIncome > 0.0)) {
-				scr = cd.zNet / cd.zIncome; //Quarters income can pay off net
+				cd.zState = ZombieStates.PNET_PINC;
+				scr = 100.0;
 			}
 
 			//Case both net and income are negative
-			if ((cd.zNet < 0.0) && (cd.zIncome < 0.0)) {
-				return -100.0;
+			else if ((cd.zNet < 0.0) && (cd.zIncome < 0.0)) {
+				if (cd.zAdjInc > 0.0) {
+					cd.zState = ZombieStates.NNET_NINC_DIVCUT;
+				} else {
+					cd.zState = ZombieStates.NNET_NINC;
+					scr = -100.0;
+				}
+			}
+
+			//Case net is positive and income is negative
+			else if ((cd.zNet > 0.0) && (cd.zIncome < 0.0)) {
+
+				scr = cd.zNet / cd.zIncome; //Quarters net can cover negative income
+
+				cd.zState = ZombieStates.PNET_NINC;
+
+				if ((scr < -8.0) && (cd.id.dividend.q1 > 0.0)) {
+					cd.zAdjInc = cd.zNet + (cd.id.dividend.q1 * cd.shares.getMostRecent());
+					if (Math.abs(cd.zAdjInc) > 0.0) {
+						double newscr = cd.zNet / cd.zAdjInc;
+						if (newscr > -8.0) {
+							scr = newscr;
+							cd.zState = ZombieStates.PNET_NINC_DIVCUT;
+						}
+					}
+				}
+			}
+
+			//Cast net is negative and income is positive
+			else if ((cd.zNet < 0.0) && (cd.zIncome > 0.0)) {
+				scr = cd.zNet / cd.zIncome; //Quarters income can pay off net
+				cd.zState = ZombieStates.NNET_PINC;
 			}
 
 		}

@@ -189,7 +189,7 @@ public class CompanyData {
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
 			final double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
 			totalEps += te;
-			System.out.printf("%f\t%f\t%f%n", cd.id.eps.getMostRecent(), cd.partOfTotalCap * 100.0, te);
+			//System.out.printf("%f\t%f\t%f%n", cd.id.eps.getMostRecent(), cd.partOfTotalCap * 100.0, te);
 		}
 		final double spxPE = spxPrice / totalEps;
 
@@ -224,7 +224,7 @@ public class CompanyData {
 		try (PrintWriter pw = new PrintWriter("data/spx-stocks.txt")) {
 			for (final CompanyData cd : companyList) {
 				pw.println(cd.ticker);
-				System.out.println(cd);
+				//System.out.println(cd);
 				td.add(cd);
 				bvpsStats.addValues(cd.bsd.bvps);
 				salesStats.addValues(cd.id.sales);
@@ -351,10 +351,13 @@ public class CompanyData {
 	public double	partOfTotalCap;
 
 	public double	zIncome;
+	public double zAdjInc;
 	public double	zCash;
 	public double	zDebt;
 	public double zNet;
 	public double	zScore;
+	public double zAdjScr;
+	public ZombieStates zState;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -395,10 +398,13 @@ public class CompanyData {
 		this.partOfTotalCap = 0.0;
 
 		this.zIncome = 0.0;
+		this.zAdjInc = 0.0;
 		this.zCash = 0.0;
 		this.zDebt = 0.0;
 		this.zNet = 0.0;
 		this.zScore = 0.0;
+		this.zAdjScr = 0.0;
+		this.zState = ZombieStates.UNKNOWN;
 
 	}
 
