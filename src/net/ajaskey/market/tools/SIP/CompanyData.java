@@ -79,7 +79,8 @@ public class CompanyData {
 		// Read last price
 
 		// Read balance sheet
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-bs.TXT"))) {
+		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-bs.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-BALANCESHEETQTR.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -95,7 +96,8 @@ public class CompanyData {
 		}
 
 		// Read income statement
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-is.TXT"))) {
+		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-is.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-INCOMESTMTQTR.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
@@ -112,7 +114,8 @@ public class CompanyData {
 		}
 
 		// Read miscellaneous data
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/test-misc.TXT"))) {
+		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-misc.TXT"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-MISC.TXT"))) {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.replaceAll("\"", "").trim();
