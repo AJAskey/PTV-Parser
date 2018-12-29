@@ -1,29 +1,41 @@
 BH.C      	ULSD NY Harbor (F) Continuation                   	NYMEX     
 BHF19     	ULSD NY Harbor (F) {Jan 19}                       	NYMEX     
 BHF20     	ULSD NY Harbor (F) {Jan 20}                       	NYMEX     
+BHF21     	ULSD NY Harbor (F) {Jan 21}                       	NYMEX     
 BHG19     	ULSD NY Harbor (F) {Feb 19}                       	NYMEX     
 BHG20     	ULSD NY Harbor (F) {Feb 20}                       	NYMEX     
+BHG21     	ULSD NY Harbor (F) {Feb 21}                       	NYMEX     
 BHH19     	ULSD NY Harbor (F) {Mar 19}                       	NYMEX     
 BHH20     	ULSD NY Harbor (F) {Mar 20}                       	NYMEX     
+BHH21     	ULSD NY Harbor (F) {Mar 21}                       	NYMEX     
 BHJ19     	ULSD NY Harbor (F) {Apr 19}                       	NYMEX     
 BHJ20     	ULSD NY Harbor (F) {Apr 20}                       	NYMEX     
+BHJ21     	ULSD NY Harbor (F) {Apr 21}                       	NYMEX     
 BHK19     	ULSD NY Harbor (F) {May 19}                       	NYMEX     
 BHK20     	ULSD NY Harbor (F) {May 20}                       	NYMEX     
+BHK21     	ULSD NY Harbor (F) {May 21}                       	NYMEX     
 BHM19     	ULSD NY Harbor (F) {Jun 19}                       	NYMEX     
 BHM20     	ULSD NY Harbor (F) {Jun 20}                       	NYMEX     
+BHM21     	ULSD NY Harbor (F) {Jun 21}                       	NYMEX     
 BHN19     	ULSD NY Harbor (F) {Jul 19}                       	NYMEX     
 BHN20     	ULSD NY Harbor (F) {Jul 20}                       	NYMEX     
+BHN21     	ULSD NY Harbor (F) {Jul 21}                       	NYMEX     
 BHQ19     	ULSD NY Harbor (F) {Aug 19}                       	NYMEX     
 BHQ20     	ULSD NY Harbor (F) {Aug 20}                       	NYMEX     
+BHQ21     	ULSD NY Harbor (F) {Aug 21}                       	NYMEX     
 BHU19     	ULSD NY Harbor (F) {Sep 19}                       	NYMEX     
 BHU20     	ULSD NY Harbor (F) {Sep 20}                       	NYMEX     
+BHU21     	ULSD NY Harbor (F) {Sep 21}                       	NYMEX     
 BHV19     	ULSD NY Harbor (F) {Oct 19}                       	NYMEX     
 BHV20     	ULSD NY Harbor (F) {Oct 20}                       	NYMEX     
+BHV21     	ULSD NY Harbor (F) {Oct 21}                       	NYMEX     
 BHX19     	ULSD NY Harbor (F) {Nov 19}                       	NYMEX     
 BHX20     	ULSD NY Harbor (F) {Nov 20}                       	NYMEX     
+BHX21     	ULSD NY Harbor (F) {Nov 21}                       	NYMEX     
 BHZ18     	ULSD NY Harbor (F) {Dec 18}                       	NYMEX     
 BHZ19     	ULSD NY Harbor (F) {Dec 19}                       	NYMEX     
 BHZ20     	ULSD NY Harbor (F) {Dec 20}                       	NYMEX     
+BHZ21     	ULSD NY Harbor (F) {Dec 21}                       	NYMEX     
 CJ.C      	CME Cocoa Continuation                            	NYMEX     
 CJH19     	CME Cocoa {Mar 19}                                	NYMEX     
 CJH20     	CME Cocoa {Mar 20}                                	NYMEX     
@@ -33,7 +45,6 @@ CJN19     	CME Cocoa {Jul 19}                                	NYMEX
 CJN20     	CME Cocoa {Jul 20}                                	NYMEX     
 CJU19     	CME Cocoa {Sep 19}                                	NYMEX     
 CJU20     	CME Cocoa {Sep 20}                                	NYMEX     
-CJZ18     	CME Cocoa {Dec 18}                                	NYMEX     
 CJZ19     	CME Cocoa {Dec 19}                                	NYMEX     
 CL        	Crude Oil WTI                                     	NYMEX     
 CL.C      	Crude Oil WTI Continuation                        	NYMEX     
@@ -138,7 +149,6 @@ CLX24     	Crude Oil WTI {Nov 24}                            	NYMEX
 CLX25     	Crude Oil WTI {Nov 25}                            	NYMEX     
 CLX26     	Crude Oil WTI {Nov 26}                            	NYMEX     
 CLX27     	Crude Oil WTI {Nov 27}                            	NYMEX     
-CLZ18     	Crude Oil WTI {Dec 18}                            	NYMEX     
 CLZ19     	Crude Oil WTI {Dec 19}                            	NYMEX     
 CLZ20     	Crude Oil WTI {Dec 20}                            	NYMEX     
 CLZ21     	Crude Oil WTI {Dec 21}                            	NYMEX     
@@ -207,7 +217,6 @@ D2M19     	Ethanol T2 ROB {Jun 19}                           	NYMEX
 D2N19     	Ethanol T2 ROB {Jul 19}                           	NYMEX     
 D2Q19     	Ethanol T2 ROB {Aug 19}                           	NYMEX     
 D2U19     	Ethanol T2 ROB {Sep 19}                           	NYMEX     
-D2V18     	Ethanol T2 ROB {Oct 18}                           	NYMEX     
 D2V19     	Ethanol T2 ROB {Oct 19}                           	NYMEX     
 D2X18     	Ethanol T2 ROB {Nov 18}                           	NYMEX     
 D2X19     	Ethanol T2 ROB {Nov 19}                           	NYMEX     
@@ -220,7 +229,6 @@ FHH19     	Ethanol Swaps-NY {Mar 19}                         	NYMEX
 FHJ19     	Ethanol Swaps-NY {Apr 19}                         	NYMEX     
 FHK19     	Ethanol Swaps-NY {May 19}                         	NYMEX     
 FHM19     	Ethanol Swaps-NY {Jun 19}                         	NYMEX     
-FHV18     	Ethanol Swaps-NY {Oct 18}                         	NYMEX     
 FHX18     	Ethanol Swaps-NY {Nov 18}                         	NYMEX     
 FHZ18     	Ethanol Swaps-NY {Dec 18}                         	NYMEX     
 FL.C      	Ethanol Swaps-Chgo Continuation                   	NYMEX     
@@ -233,7 +241,6 @@ FLM19     	Ethanol Swaps-Chgo {Jun 19}                       	NYMEX
 FLN19     	Ethanol Swaps-Chgo {Jul 19}                       	NYMEX     
 FLQ19     	Ethanol Swaps-Chgo {Aug 19}                       	NYMEX     
 FLU19     	Ethanol Swaps-Chgo {Sep 19}                       	NYMEX     
-FLV18     	Ethanol Swaps-Chgo {Oct 18}                       	NYMEX     
 FLV19     	Ethanol Swaps-Chgo {Oct 19}                       	NYMEX     
 FLX18     	Ethanol Swaps-Chgo {Nov 18}                       	NYMEX     
 FLX19     	Ethanol Swaps-Chgo {Nov 19}                       	NYMEX     
@@ -403,41 +410,52 @@ HOF19     	ULSD NY Harbor {Jan 19}                           	NYMEX
 HOF20     	ULSD NY Harbor {Jan 20}                           	NYMEX     
 HOF21     	ULSD NY Harbor {Jan 21}                           	NYMEX     
 HOF22     	ULSD NY Harbor {Jan 22}                           	NYMEX     
+HOF23     	ULSD NY Harbor {Jan 23}                           	NYMEX     
 HOG19     	ULSD NY Harbor {Feb 19}                           	NYMEX     
 HOG20     	ULSD NY Harbor {Feb 20}                           	NYMEX     
 HOG21     	ULSD NY Harbor {Feb 21}                           	NYMEX     
+HOG22     	ULSD NY Harbor {Feb 22}                           	NYMEX     
 HOH19     	ULSD NY Harbor {Mar 19}                           	NYMEX     
 HOH20     	ULSD NY Harbor {Mar 20}                           	NYMEX     
 HOH21     	ULSD NY Harbor {Mar 21}                           	NYMEX     
+HOH22     	ULSD NY Harbor {Mar 22}                           	NYMEX     
 HOJ19     	ULSD NY Harbor {Apr 19}                           	NYMEX     
 HOJ20     	ULSD NY Harbor {Apr 20}                           	NYMEX     
 HOJ21     	ULSD NY Harbor {Apr 21}                           	NYMEX     
+HOJ22     	ULSD NY Harbor {Apr 22}                           	NYMEX     
 HOK19     	ULSD NY Harbor {May 19}                           	NYMEX     
 HOK20     	ULSD NY Harbor {May 20}                           	NYMEX     
 HOK21     	ULSD NY Harbor {May 21}                           	NYMEX     
+HOK22     	ULSD NY Harbor {May 22}                           	NYMEX     
 HOM19     	ULSD NY Harbor {Jun 19}                           	NYMEX     
 HOM20     	ULSD NY Harbor {Jun 20}                           	NYMEX     
 HOM21     	ULSD NY Harbor {Jun 21}                           	NYMEX     
+HOM22     	ULSD NY Harbor {Jun 22}                           	NYMEX     
 HON19     	ULSD NY Harbor {Jul 19}                           	NYMEX     
 HON20     	ULSD NY Harbor {Jul 20}                           	NYMEX     
 HON21     	ULSD NY Harbor {Jul 21}                           	NYMEX     
+HON22     	ULSD NY Harbor {Jul 22}                           	NYMEX     
 HOQ19     	ULSD NY Harbor {Aug 19}                           	NYMEX     
 HOQ20     	ULSD NY Harbor {Aug 20}                           	NYMEX     
 HOQ21     	ULSD NY Harbor {Aug 21}                           	NYMEX     
+HOQ22     	ULSD NY Harbor {Aug 22}                           	NYMEX     
 HOU19     	ULSD NY Harbor {Sep 19}                           	NYMEX     
 HOU20     	ULSD NY Harbor {Sep 20}                           	NYMEX     
 HOU21     	ULSD NY Harbor {Sep 21}                           	NYMEX     
+HOU22     	ULSD NY Harbor {Sep 22}                           	NYMEX     
 HOV19     	ULSD NY Harbor {Oct 19}                           	NYMEX     
 HOV20     	ULSD NY Harbor {Oct 20}                           	NYMEX     
 HOV21     	ULSD NY Harbor {Oct 21}                           	NYMEX     
-HOX18     	ULSD NY Harbor {Nov 18}                           	NYMEX     
+HOV22     	ULSD NY Harbor {Oct 22}                           	NYMEX     
 HOX19     	ULSD NY Harbor {Nov 19}                           	NYMEX     
 HOX20     	ULSD NY Harbor {Nov 20}                           	NYMEX     
 HOX21     	ULSD NY Harbor {Nov 21}                           	NYMEX     
+HOX22     	ULSD NY Harbor {Nov 22}                           	NYMEX     
 HOZ18     	ULSD NY Harbor {Dec 18}                           	NYMEX     
 HOZ19     	ULSD NY Harbor {Dec 19}                           	NYMEX     
 HOZ20     	ULSD NY Harbor {Dec 20}                           	NYMEX     
 HOZ21     	ULSD NY Harbor {Dec 21}                           	NYMEX     
+HOZ22     	ULSD NY Harbor {Dec 22}                           	NYMEX     
 HP.C      	Natural Gas (F) Continuation                      	NYMEX     
 HPF19     	Natural Gas (F) {Jan 19}                          	NYMEX     
 HPF20     	Natural Gas (F) {Jan 20}                          	NYMEX     
@@ -541,14 +559,12 @@ JMM19     	PJM Monthly On Peak {Jun 19}                      	NYMEX
 JMN19     	PJM Monthly On Peak {Jul 19}                      	NYMEX     
 JMQ19     	PJM Monthly On Peak {Aug 19}                      	NYMEX     
 JMU19     	PJM Monthly On Peak {Sep 19}                      	NYMEX     
-JMV18     	PJM Monthly On Peak {Oct 18}                      	NYMEX     
 JMV19     	PJM Monthly On Peak {Oct 19}                      	NYMEX     
 JMX18     	PJM Monthly On Peak {Nov 18}                      	NYMEX     
 JMX19     	PJM Monthly On Peak {Nov 19}                      	NYMEX     
 JMZ18     	PJM Monthly On Peak {Dec 18}                      	NYMEX     
 JMZ19     	PJM Monthly On Peak {Dec 19}                      	NYMEX     
 JP.C      	PJM Monthly Off Peak Continuation                 	NYMEX     
-JPV18     	PJM Monthly Off Peak {Oct 18}                     	NYMEX     
 JPX18     	PJM Monthly Off Peak {Nov 18}                     	NYMEX     
 JPZ18     	PJM Monthly Off Peak {Dec 18}                     	NYMEX     
 KA.C      	CME Sugar #11 Continuation                        	NYMEX     
@@ -569,8 +585,8 @@ KGN19     	CME Cotton #2 {Jul 19}                            	NYMEX
 KGN20     	CME Cotton #2 {Jul 20}                            	NYMEX     
 KGV19     	CME Cotton #2 {Oct 19}                            	NYMEX     
 KGV20     	CME Cotton #2 {Oct 20}                            	NYMEX     
-KGZ18     	CME Cotton #2 {Dec 18}                            	NYMEX     
 KGZ19     	CME Cotton #2 {Dec 19}                            	NYMEX     
+KGZ20     	CME Cotton #2 {Dec 20}                            	NYMEX     
 KT.C      	CME Coffee Continuation                           	NYMEX     
 KTH19     	CME Coffee {Mar 19}                               	NYMEX     
 KTH20     	CME Coffee {Mar 20}                               	NYMEX     
@@ -580,12 +596,12 @@ KTN19     	CME Coffee {Jul 19}                               	NYMEX
 KTN20     	CME Coffee {Jul 20}                               	NYMEX     
 KTU19     	CME Coffee {Sep 19}                               	NYMEX     
 KTU20     	CME Coffee {Sep 20}                               	NYMEX     
-KTZ18     	CME Coffee {Dec 18}                               	NYMEX     
 KTZ19     	CME Coffee {Dec 19}                               	NYMEX     
 MT.C      	Gulf Sour Crude Oil Continuation                  	NYMEX     
 MTF19     	Gulf Sour Crude Oil {Jan 19}                      	NYMEX     
 MTF20     	Gulf Sour Crude Oil {Jan 20}                      	NYMEX     
 MTF21     	Gulf Sour Crude Oil {Jan 21}                      	NYMEX     
+MTF22     	Gulf Sour Crude Oil {Jan 22}                      	NYMEX     
 MTG19     	Gulf Sour Crude Oil {Feb 19}                      	NYMEX     
 MTG20     	Gulf Sour Crude Oil {Feb 20}                      	NYMEX     
 MTG21     	Gulf Sour Crude Oil {Feb 21}                      	NYMEX     
@@ -616,7 +632,6 @@ MTV21     	Gulf Sour Crude Oil {Oct 21}                      	NYMEX
 MTX19     	Gulf Sour Crude Oil {Nov 19}                      	NYMEX     
 MTX20     	Gulf Sour Crude Oil {Nov 20}                      	NYMEX     
 MTX21     	Gulf Sour Crude Oil {Nov 21}                      	NYMEX     
-MTZ18     	Gulf Sour Crude Oil {Dec 18}                      	NYMEX     
 MTZ19     	Gulf Sour Crude Oil {Dec 19}                      	NYMEX     
 MTZ20     	Gulf Sour Crude Oil {Dec 20}                      	NYMEX     
 MTZ21     	Gulf Sour Crude Oil {Dec 21}                      	NYMEX     
@@ -893,7 +908,6 @@ QAX23     	Crude Oil Brent (F) {Nov 23}                      	NYMEX
 QAX24     	Crude Oil Brent (F) {Nov 24}                      	NYMEX     
 QAX25     	Crude Oil Brent (F) {Nov 25}                      	NYMEX     
 QAX26     	Crude Oil Brent (F) {Nov 26}                      	NYMEX     
-QAZ18     	Crude Oil Brent (F) {Dec 18}                      	NYMEX     
 QAZ19     	Crude Oil Brent (F) {Dec 19}                      	NYMEX     
 QAZ20     	Crude Oil Brent (F) {Dec 20}                      	NYMEX     
 QAZ21     	Crude Oil Brent (F) {Dec 21}                      	NYMEX     
@@ -991,6 +1005,7 @@ QHU19     	E-Mini ULSD NYHarbor {Sep 19}                     	NYMEX
 QHV19     	E-Mini ULSD NYHarbor {Oct 19}                     	NYMEX     
 QHX19     	E-Mini ULSD NYHarbor {Nov 19}                     	NYMEX     
 QHZ18     	E-Mini ULSD NYHarbor {Dec 18}                     	NYMEX     
+QHZ19     	E-Mini ULSD NYHarbor {Dec 19}                     	NYMEX     
 QM        	E-Mini Crude Oil                                  	NYMEX     
 QM.C      	E-Mini Crude Oil Continuation                     	NYMEX     
 QMF19     	E-Mini Crude Oil {Jan 19}                         	NYMEX     
@@ -1059,7 +1074,6 @@ QMX21     	E-Mini Crude Oil {Nov 21}                         	NYMEX
 QMX22     	E-Mini Crude Oil {Nov 22}                         	NYMEX     
 QMX23     	E-Mini Crude Oil {Nov 23}                         	NYMEX     
 QMX24     	E-Mini Crude Oil {Nov 24}                         	NYMEX     
-QMZ18     	E-Mini Crude Oil {Dec 18}                         	NYMEX     
 QMZ19     	E-Mini Crude Oil {Dec 19}                         	NYMEX     
 QMZ20     	E-Mini Crude Oil {Dec 20}                         	NYMEX     
 QMZ21     	E-Mini Crude Oil {Dec 21}                         	NYMEX     
@@ -1079,47 +1093,59 @@ QUU19     	E-Mini Gasoline {Sep 19}                          	NYMEX
 QUV19     	E-Mini Gasoline {Oct 19}                          	NYMEX     
 QUX19     	E-Mini Gasoline {Nov 19}                          	NYMEX     
 QUZ18     	E-Mini Gasoline {Dec 18}                          	NYMEX     
+QUZ19     	E-Mini Gasoline {Dec 19}                          	NYMEX     
 RB        	Gasoline RBOB                                     	NYMEX     
 RB.C      	Gasoline RBOB Continuation                        	NYMEX     
 RBF19     	Gasoline RBOB {Jan 19}                            	NYMEX     
 RBF20     	Gasoline RBOB {Jan 20}                            	NYMEX     
 RBF21     	Gasoline RBOB {Jan 21}                            	NYMEX     
 RBF22     	Gasoline RBOB {Jan 22}                            	NYMEX     
+RBF23     	Gasoline RBOB {Jan 23}                            	NYMEX     
 RBG19     	Gasoline RBOB {Feb 19}                            	NYMEX     
 RBG20     	Gasoline RBOB {Feb 20}                            	NYMEX     
 RBG21     	Gasoline RBOB {Feb 21}                            	NYMEX     
+RBG22     	Gasoline RBOB {Feb 22}                            	NYMEX     
 RBH19     	Gasoline RBOB {Mar 19}                            	NYMEX     
 RBH20     	Gasoline RBOB {Mar 20}                            	NYMEX     
 RBH21     	Gasoline RBOB {Mar 21}                            	NYMEX     
+RBH22     	Gasoline RBOB {Mar 22}                            	NYMEX     
 RBJ19     	Gasoline RBOB {Apr 19}                            	NYMEX     
 RBJ20     	Gasoline RBOB {Apr 20}                            	NYMEX     
 RBJ21     	Gasoline RBOB {Apr 21}                            	NYMEX     
+RBJ22     	Gasoline RBOB {Apr 22}                            	NYMEX     
 RBK19     	Gasoline RBOB {May 19}                            	NYMEX     
 RBK20     	Gasoline RBOB {May 20}                            	NYMEX     
 RBK21     	Gasoline RBOB {May 21}                            	NYMEX     
+RBK22     	Gasoline RBOB {May 22}                            	NYMEX     
 RBM19     	Gasoline RBOB {Jun 19}                            	NYMEX     
 RBM20     	Gasoline RBOB {Jun 20}                            	NYMEX     
 RBM21     	Gasoline RBOB {Jun 21}                            	NYMEX     
+RBM22     	Gasoline RBOB {Jun 22}                            	NYMEX     
 RBN19     	Gasoline RBOB {Jul 19}                            	NYMEX     
 RBN20     	Gasoline RBOB {Jul 20}                            	NYMEX     
 RBN21     	Gasoline RBOB {Jul 21}                            	NYMEX     
+RBN22     	Gasoline RBOB {Jul 22}                            	NYMEX     
 RBQ19     	Gasoline RBOB {Aug 19}                            	NYMEX     
 RBQ20     	Gasoline RBOB {Aug 20}                            	NYMEX     
 RBQ21     	Gasoline RBOB {Aug 21}                            	NYMEX     
+RBQ22     	Gasoline RBOB {Aug 22}                            	NYMEX     
 RBU19     	Gasoline RBOB {Sep 19}                            	NYMEX     
 RBU20     	Gasoline RBOB {Sep 20}                            	NYMEX     
 RBU21     	Gasoline RBOB {Sep 21}                            	NYMEX     
+RBU22     	Gasoline RBOB {Sep 22}                            	NYMEX     
 RBV19     	Gasoline RBOB {Oct 19}                            	NYMEX     
 RBV20     	Gasoline RBOB {Oct 20}                            	NYMEX     
 RBV21     	Gasoline RBOB {Oct 21}                            	NYMEX     
-RBX18     	Gasoline RBOB {Nov 18}                            	NYMEX     
+RBV22     	Gasoline RBOB {Oct 22}                            	NYMEX     
 RBX19     	Gasoline RBOB {Nov 19}                            	NYMEX     
 RBX20     	Gasoline RBOB {Nov 20}                            	NYMEX     
 RBX21     	Gasoline RBOB {Nov 21}                            	NYMEX     
+RBX22     	Gasoline RBOB {Nov 22}                            	NYMEX     
 RBZ18     	Gasoline RBOB {Dec 18}                            	NYMEX     
 RBZ19     	Gasoline RBOB {Dec 19}                            	NYMEX     
 RBZ20     	Gasoline RBOB {Dec 20}                            	NYMEX     
 RBZ21     	Gasoline RBOB {Dec 21}                            	NYMEX     
+RBZ22     	Gasoline RBOB {Dec 22}                            	NYMEX     
 RT.C      	Gasoline RBOB (F) Continuation                    	NYMEX     
 RTF19     	Gasoline RBOB (F) {Jan 19}                        	NYMEX     
 RTF20     	Gasoline RBOB (F) {Jan 20}                        	NYMEX     
@@ -1157,6 +1183,7 @@ RTX21     	Gasoline RBOB (F) {Nov 21}                        	NYMEX
 RTZ18     	Gasoline RBOB (F) {Dec 18}                        	NYMEX     
 RTZ19     	Gasoline RBOB (F) {Dec 19}                        	NYMEX     
 RTZ20     	Gasoline RBOB (F) {Dec 20}                        	NYMEX     
+RTZ21     	Gasoline RBOB (F) {Dec 21}                        	NYMEX     
 SC        	Crude Oil Brent                                   	NYMEX     
 SC.C      	Crude Oil Brent Continuation                      	NYMEX     
 SCF19     	Crude Oil Brent {Jan 19}                          	NYMEX     
@@ -1275,7 +1302,6 @@ TRQ19     	Iron Ore 62% Fe CFR {Aug 19}                      	NYMEX
 TRQ20     	Iron Ore 62% Fe CFR {Aug 20}                      	NYMEX     
 TRU19     	Iron Ore 62% Fe CFR {Sep 19}                      	NYMEX     
 TRU20     	Iron Ore 62% Fe CFR {Sep 20}                      	NYMEX     
-TRV18     	Iron Ore 62% Fe CFR {Oct 18}                      	NYMEX     
 TRV19     	Iron Ore 62% Fe CFR {Oct 19}                      	NYMEX     
 TRV20     	Iron Ore 62% Fe CFR {Oct 20}                      	NYMEX     
 TRX18     	Iron Ore 62% Fe CFR {Nov 18}                      	NYMEX     
@@ -1373,7 +1399,6 @@ WSX21     	Crude Oil WTI (F) {Nov 21}                        	NYMEX
 WSX22     	Crude Oil WTI (F) {Nov 22}                        	NYMEX     
 WSX23     	Crude Oil WTI (F) {Nov 23}                        	NYMEX     
 WSX24     	Crude Oil WTI (F) {Nov 24}                        	NYMEX     
-WSZ18     	Crude Oil WTI (F) {Dec 18}                        	NYMEX     
 WSZ19     	Crude Oil WTI (F) {Dec 19}                        	NYMEX     
 WSZ20     	Crude Oil WTI (F) {Dec 20}                        	NYMEX     
 WSZ21     	Crude Oil WTI (F) {Dec 21}                        	NYMEX     

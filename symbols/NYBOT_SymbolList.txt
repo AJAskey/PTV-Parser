@@ -180,6 +180,7 @@ H0Q19     	Indian Rupee {Aug 19}                             	NYBOT
 H0U19     	Indian Rupee {Sep 19}                             	NYBOT     
 H0V19     	Indian Rupee {Oct 19}                             	NYBOT     
 H0X18     	Indian Rupee {Nov 18}                             	NYBOT     
+H0X19     	Indian Rupee {Nov 19}                             	NYBOT     
 H0Z18     	Indian Rupee {Dec 18}                             	NYBOT     
 H8        	Brazilian Real                                    	NYBOT     
 H8F19     	Brazilian Real {Jan 19}                           	NYBOT     
@@ -232,7 +233,6 @@ H8V20     	Brazilian Real {Oct 20}                           	NYBOT
 H8V21     	Brazilian Real {Oct 21}                           	NYBOT     
 H8V22     	Brazilian Real {Oct 22}                           	NYBOT     
 H8V23     	Brazilian Real {Oct 23}                           	NYBOT     
-H8X18     	Brazilian Real {Nov 18}                           	NYBOT     
 H8X19     	Brazilian Real {Nov 19}                           	NYBOT     
 H8X20     	Brazilian Real {Nov 20}                           	NYBOT     
 H8X21     	Brazilian Real {Nov 21}                           	NYBOT     
@@ -243,6 +243,7 @@ H8Z19     	Brazilian Real {Dec 19}                           	NYBOT
 H8Z20     	Brazilian Real {Dec 20}                           	NYBOT     
 H8Z21     	Brazilian Real {Dec 21}                           	NYBOT     
 H8Z22     	Brazilian Real {Dec 22}                           	NYBOT     
+H8Z23     	Brazilian Real {Dec 23}                           	NYBOT     
 HCH19     	Turkish Lira/Euro {Mar 19}                        	NYBOT     
 HCM19     	Turkish Lira/Euro {Jun 19}                        	NYBOT     
 HCU19     	Turkish Lira/Euro {Sep 19}                        	NYBOT     
@@ -354,9 +355,9 @@ OJN21     	Orange Juice {Jul 21}                             	NYBOT
 OJU19     	Orange Juice {Sep 19}                             	NYBOT     
 OJU20     	Orange Juice {Sep 20}                             	NYBOT     
 OJU21     	Orange Juice {Sep 21}                             	NYBOT     
-OJX18     	Orange Juice {Nov 18}                             	NYBOT     
 OJX19     	Orange Juice {Nov 19}                             	NYBOT     
 OJX20     	Orange Juice {Nov 20}                             	NYBOT     
+OJX21     	Orange Juice {Nov 21}                             	NYBOT     
 OL        	Euro/Krone                                        	NYBOT     
 OLH19     	Euro/Krone {Mar 19}                               	NYBOT     
 OLM19     	Euro/Krone {Jun 19}                               	NYBOT     
@@ -477,6 +478,7 @@ SDN20     	Sugar #16 {Jul 20}                                	NYBOT
 SDU19     	Sugar #16 {Sep 19}                                	NYBOT     
 SDU20     	Sugar #16 {Sep 20}                                	NYBOT     
 SDX19     	Sugar #16 {Nov 19}                                	NYBOT     
+SDX20     	Sugar #16 {Nov 20}                                	NYBOT     
 SS        	Pound/Swiss                                       	NYBOT     
 SSH19     	Pound/Swiss {Mar 19}                              	NYBOT     
 SSM19     	Pound/Swiss {Jun 19}                              	NYBOT     
@@ -515,6 +517,7 @@ YGM23     	Gold mini-sized {Jun 23}                          	NYBOT
 YGQ19     	Gold mini-sized {Aug 19}                          	NYBOT     
 YGQ20     	Gold mini-sized {Aug 20}                          	NYBOT     
 YGV19     	Gold mini-sized {Oct 19}                          	NYBOT     
+YGV20     	Gold mini-sized {Oct 20}                          	NYBOT     
 YGX18     	Gold mini-sized {Nov 18}                          	NYBOT     
 YGZ18     	Gold mini-sized {Dec 18}                          	NYBOT     
 YGZ19     	Gold mini-sized {Dec 19}                          	NYBOT     
@@ -523,6 +526,7 @@ YGZ21     	Gold mini-sized {Dec 21}                          	NYBOT
 YGZ22     	Gold mini-sized {Dec 22}                          	NYBOT     
 YIF19     	Silver mini-sized {Jan 19}                        	NYBOT     
 YIF20     	Silver mini-sized {Jan 20}                        	NYBOT     
+YIG19     	Silver mini-sized {Feb 19}                        	NYBOT     
 YIH19     	Silver mini-sized {Mar 19}                        	NYBOT     
 YIH20     	Silver mini-sized {Mar 20}                        	NYBOT     
 YIK19     	Silver mini-sized {May 19}                        	NYBOT     
@@ -544,6 +548,7 @@ YNH19     	Colombian Peso {Mar 19}                           	NYBOT
 YNM19     	Colombian Peso {Jun 19}                           	NYBOT     
 YNU19     	Colombian Peso {Sep 19}                           	NYBOT     
 YNZ18     	Colombian Peso {Dec 18}                           	NYBOT     
+YNZ19     	Colombian Peso {Dec 19}                           	NYBOT     
 YO        	Mexican Peso                                      	NYBOT     
 YOH19     	Mexican Peso {Mar 19}                             	NYBOT     
 YOM19     	Mexican Peso {Jun 19}                             	NYBOT     
@@ -567,6 +572,7 @@ ZGM23     	ICE Gold 100-oz {Jun 23}                          	NYBOT
 ZGQ19     	ICE Gold 100-oz {Aug 19}                          	NYBOT     
 ZGQ20     	ICE Gold 100-oz {Aug 20}                          	NYBOT     
 ZGV19     	ICE Gold 100-oz {Oct 19}                          	NYBOT     
+ZGV20     	ICE Gold 100-oz {Oct 20}                          	NYBOT     
 ZGX18     	ICE Gold 100-oz {Nov 18}                          	NYBOT     
 ZGZ18     	ICE Gold 100-oz {Dec 18}                          	NYBOT     
 ZGZ19     	ICE Gold 100-oz {Dec 19}                          	NYBOT     
@@ -575,6 +581,7 @@ ZGZ21     	ICE Gold 100-oz {Dec 21}                          	NYBOT
 ZGZ22     	ICE Gold 100-oz {Dec 22}                          	NYBOT     
 ZIF19     	ICE Silver 5000-oz {Jan 19}                       	NYBOT     
 ZIF20     	ICE Silver 5000-oz {Jan 20}                       	NYBOT     
+ZIG19     	ICE Silver 5000-oz {Feb 19}                       	NYBOT     
 ZIH19     	ICE Silver 5000-oz {Mar 19}                       	NYBOT     
 ZIH20     	ICE Silver 5000-oz {Mar 20}                       	NYBOT     
 ZIK19     	ICE Silver 5000-oz {May 19}                       	NYBOT     

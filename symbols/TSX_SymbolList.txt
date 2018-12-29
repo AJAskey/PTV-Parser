@@ -6,6 +6,7 @@ AC        	Air Canada                                        	TSX
 ACB       	Aurora Cannabis Inc                               	TSX       
 ACB.WT    	Aurora Cannabis Inc Wts                           	TSX       
 ACD       	Accord Financial                                  	TSX       
+ACD.DB    	Accord Financial Corp 7.00 Pct Debs               	TSX       
 ACI       	Altagas Canada Inc                                	TSX       
 ACO.X     	Atco Ltd Cl.I Nv                                  	TSX       
 ACO.Y     	Atco Ltd Cl II                                    	TSX       
@@ -15,6 +16,8 @@ ACZ.UN    	American Core Sectors Dividend Fund               	TSX
 AD        	Alaris Royalty Corp                               	TSX       
 ADC.UN    	First Asset Canadian Convertibles Fund            	TSX       
 ADN       	Acadian Timber Corp                               	TSX       
+ADVZ      	Advanz Pharma Corp                                	TSX       
+ADVZ.U    	Advanz Pharma Corp USD                            	TSX       
 ADW.A     	Andrew Peller Limited Cl.A                        	TSX       
 ADW.B     	Andrew Peller Limited Cl.B                        	TSX       
 AEF       	Acasta Enterprises Inc                            	TSX       
@@ -68,7 +71,6 @@ AMM       	Almaden Minerals Ltd                              	TSX
 ANX       	Anaconda Mining Inc                               	TSX       
 AOI       	Africa Oil Corp                                   	TSX       
 AP.UN     	Allied Properties Real Estate Inv Trust           	TSX       
-APH       	Aphria Inc                                        	TSX       
 APHA      	Aphria Inc                                        	TSX       
 APR.UN    	Automotive Properties REIT                        	TSX       
 APS       	Aptose Biosciences Inc                            	TSX       
@@ -178,6 +180,7 @@ BCE.PR.Y  	BCE Inc Ser Y Pr                                  	TSX
 BCE.PR.Z  	BCE Inc Series Z                                  	TSX       
 BCI       	New Look Vision Group Inc                         	TSX       
 BDI       	Black Diamond Group Ltd                           	TSX       
+BDIV      	Brompton Global Dividend Growth ETF               	TSX       
 BDT       	Bird Construction Inc                             	TSX       
 BEI.UN    	Boardwalk Real Estate Investment Trust            	TSX       
 BEK.B     	Becker Milk Company Ltd Cl.B Nv                   	TSX       
@@ -212,7 +215,6 @@ BKCH.U    	Horizons Blockchain Tech Hardware Etfusd          	TSX
 BKI       	Black Iron Inc                                    	TSX       
 BKL.C     	Powershares Senior Loan Index ETF                 	TSX       
 BKL.F     	Powershares Senior Loan Index ETF                 	TSX       
-BKL.U     	Powershares Senior Loan Index USD ETF             	TSX       
 BKX       	Bnk Petroleum Inc                                 	TSX       
 BL.UN     	Global Innovation Dividend Fund                   	TSX       
 BLB.UN    	Bloom Select Income Fund                          	TSX       
@@ -289,7 +291,7 @@ BSX       	Belo Sun Mining Corp                              	TSX
 BTB.DB.E  	Btb REIT 6.90 Pct Debs                            	TSX       
 BTB.DB.F  	Btb REIT 7.15 Pct Debs                            	TSX       
 BTB.UN    	Btb REIT Units                                    	TSX       
-BTE       	Baytex Energy Corp                                	TSX       
+BTE       	Baytex Energy Corp.                               	TSX       
 BTO       	B2Gold Corp                                       	TSX       
 BU        	Burcon Nutrascience Corp                          	TSX       
 BUA.UN    	Bloom US Income and Growth Fund                   	TSX       
@@ -314,6 +316,7 @@ CAPS.U    	Evolve Active US Core Equity ETF USD              	TSX
 CAR.UN    	CDN Apartment Un                                  	TSX       
 CARS      	Evolve Automobile Innovation Idx Hgd ETF          	TSX       
 CARS.B    	Evolve Automobile Innovation Idx Uh ETF           	TSX       
+CARS.U    	Evolve Automobile Innovation Idx ETF USD          	TSX       
 CAS       	Cascades Inc                                      	TSX       
 CBD       	Ishares Balanced Income Core ETF                  	TSX       
 CBH       	Ishares 1-10 Yr Laddered Corp Bond ETF            	TSX       
@@ -342,6 +345,7 @@ CEF       	Sprott Physical Gold Silver Trust                 	TSX
 CEF.U     	Central Fund of Canada Ltd Cl.U Nv                	TSX       
 CERV      	Cervus Equipment Corp                             	TSX       
 CES       	First Asset Core US Equity ETF                    	TSX       
+CES.U     	First Asset Core US Equity ETF USD Unhgd          	TSX       
 CET       	Cathedral Energy Services Ltd                     	TSX       
 CEU       	Ces Energy Solutions Corp                         	TSX       
 CEW       	Ishares Equal Weight Banc Lifeco ETF              	TSX       
@@ -434,6 +438,7 @@ CPX.PR.G  	Capital Power Corporation Pref Ser 7              	TSX
 CPX.PR.I  	Capital Power Corporation Pref Ser 9              	TSX       
 CQE       	Cequence Energy Ltd                               	TSX       
 CR        	Crew Energy Inc                                   	TSX       
+CRDL      	Cardiol Therapeutics Inc                          	TSX       
 CRH       	CRH Medical Corp                                  	TSX       
 CRON      	Cronos Group Inc                                  	TSX       
 CRP       	Ceres Global Ag Corp                              	TSX       
@@ -544,6 +549,7 @@ DR        	Medical Facilities Corp                           	TSX
 DR.DB.A   	Medical Facilities Corp 5.90 Pct Debs             	TSX       
 DRA.UN    	Dream Hard Asset Alternatives Trust               	TSX       
 DRCU      	Desjardins Ri Active Canadian Bond-Low C          	TSX       
+DRFC      	Desjardins Ri Cda Multi Low Co2 ETF               	TSX       
 DRG.UN    	Dream Global REIT                                 	TSX       
 DRM       	Dream Unlimited Corp                              	TSX       
 DRM.PR.A  	Dream Unlimited Corp Pref Ser 1                   	TSX       
@@ -647,7 +653,6 @@ ENB.PR.T  	Enbridge Inc Pref Ser R                           	TSX
 ENB.PR.U  	Enbridge Inc Pref Sh Series J                     	TSX       
 ENB.PR.V  	Enbridge Inc Pref Ser 1                           	TSX       
 ENB.PR.Y  	Enbridge Inc Cum Red Pref Ser 3                   	TSX       
-ENF       	Enbridge Income Fund Holdings Inc                 	TSX       
 ENGH      	Enghouse Systems Limited                          	TSX       
 ENI.UN    	Energy Income Fund                                	TSX       
 ENS       	E Split Corp                                      	TSX       
@@ -660,7 +665,6 @@ EQB       	Equitable Group Inc                               	TSX
 EQB.PR.C  	Equitable Group Inc Pref Ser 3                    	TSX       
 EQL       	Invesco S&P 500 Eql Weight Idx ETF                	TSX       
 EQL.F     	Invesco S&P 500 Eql Weight Idx ETF Hgd            	TSX       
-EQL.U     	Invesco S&P 500 Eql Weight Idx ETF USD            	TSX       
 ER        	Eastmain Res J                                    	TSX       
 ERD       	Erdene Resource Development Corp                  	TSX       
 ERF       	Enerplus Corp                                     	TSX       
@@ -713,10 +717,8 @@ FCU       	Fission Uranium Corp                              	TSX
 FCUD      	Fidelity US High Div Index ETF                    	TSX       
 FCUH      	Fidelity US High Div Cur Neu Idx ETF              	TSX       
 FCW       	First Asset Cambridge Global Div Hgd ETF          	TSX       
-FCW.B     	First Asset Cambridge Global Div Uh ETF           	TSX       
-FCY       	First Asset Cambridge Core US Equity ETF          	TSX       
-FCY.B     	First Asset Cambridge Core US Eq ETF Uh           	TSX       
 FDE       	First Trust Alphadex Emg Mkt Div ETF CAD          	TSX       
+FDE.A     	First Trust Alphadex Emg Mkt Div CAD AC           	TSX       
 FDV       	First Asset Active CDN Dividend ETF               	TSX       
 FEC       	Frontera Energy Corp                              	TSX       
 FF        	First Mining Gold Corp                            	TSX       
@@ -731,7 +733,6 @@ FFH.PR.I  	Fairfax Financial Holdings Series I Pref          	TSX
 FFH.PR.J  	Fairfax Fncl Holdings Ltd Pref Ser J              	TSX       
 FFH.PR.K  	Fairfax Financial Holdings Pref Ser K             	TSX       
 FFH.PR.M  	Fairfax Financial Holdings Pref Ser M             	TSX       
-FFH.U     	Fairfax Financial Holdings Limited USD            	TSX       
 FFI.UN    	Flaherty & Crumrine Fixed Income Fund             	TSX       
 FFN       	North American Financial 15 Split Corp            	TSX       
 FFN.PR.A  	North American Fin 15 Split Corp Pref             	TSX       
@@ -752,6 +753,7 @@ FHG.F     	First Trust Ad US Industrials ETF                 	TSX
 FHH       	First Trust US Health Care ETF                    	TSX       
 FHH.F     	First Trust Ad US Health Care ETF                 	TSX       
 FHI       	First Asset Hlth Care Giant Cov Call ETF          	TSX       
+FHI.B     	First Asset Hlth Care Giant Cov Call Unh          	TSX       
 FHM       	First Trust US Materials ETF                      	TSX       
 FHQ       	First Trust US Technology ETF                     	TSX       
 FHQ.F     	First Trust Ad US Technology ETF                  	TSX       
@@ -761,6 +763,7 @@ FIG       	First Asset Investment Grade Bond ETF             	TSX
 FIG.U     	First Asset Invest Grade Bond ETF USD             	TSX       
 FIH.U     	Fairfax India Holdings Corporation USD            	TSX       
 FINT      	First Trust Intl Capital Strength ETF             	TSX       
+FLB       	Fa Long Dur Fixed Inc ETF                         	TSX       
 FLBA      	Franklin Liberty Core Balanced ETF                	TSX       
 FLCI      	Franklin Liberty CDN Invest Grd Corp ETF          	TSX       
 FLDM      	Franklin Libertyqt Intl Eqt Index ETF             	TSX       
@@ -791,6 +794,7 @@ FRU       	Freehold Royalties Ltd                            	TSX
 FRX       	Fennec Pharmaceuticals Inc                        	TSX       
 FSB       	First Asset Enhanced Sh Dur Bond ETF              	TSX       
 FSB.U     	First Asset Enhanced Sh Dur Bond ETF USD          	TSX       
+FSD       	First Trust Sh Dur Hi Yld Bnd ETF                 	TSX       
 FSD.A     	First Trust Sh Dur Hi Yld Bnd ETF Ch              	TSX       
 FSF       	First Asset Global Financial Sector ETF           	TSX       
 FSL       	First Trust Senior Loan ETF                       	TSX       
@@ -908,6 +912,7 @@ HAJ       	Horizons Active Emerging Mkts Div ETF             	TSX
 HAL       	Horizons Active CDN Dividend ETF                  	TSX       
 HARC      	Horizons Abs Return Global Currency ETF           	TSX       
 HAU       	Horizons Active US Dividend ETF                   	TSX       
+HAU.U     	Horizons Active US Dividend ETF USD               	TSX       
 HAZ       	Horizons Active Global Dividend ETF               	TSX       
 HBAL      	Horizons Balanced Tri ETF                         	TSX       
 HBB       	Horizons CDN Select Universe Bond ETF             	TSX       
@@ -945,6 +950,7 @@ HEW       	Horizons S&P TSX 60 Equal Wgt ETF                 	TSX
 HEX       	Horizons Enhanced Income Equity ETF               	TSX       
 HEXO      	Hexo Corp                                         	TSX       
 HEXO.WT   	The Hydropothecary Corporation Wts                	TSX       
+HFA       	Hamilton Capital Australian Fin Yld ETF           	TSX       
 HFD       	Betapro S&P TSX Cap Fncl 2X Dly Bear ETF          	TSX       
 HFMU      	Hamilton Capital US Mid Financial Etfcad          	TSX       
 HFMU.U    	Hamilton Capital US Mid Financials ETF            	TSX       
@@ -963,6 +969,7 @@ HGY       	Horizons Gold Yield ETF                           	TSX
 HHF       	Horizons Morningstar Hdg Fd ETF                   	TSX       
 HHL       	Harvest Healthcare Leaders Income ETF             	TSX       
 HHL.U     	Harvest Healthcare Leaders Income ETF USD         	TSX       
+HID       	Wisdomtree US High Div ETF                        	TSX       
 HIG       	Global Healthcare Income Growth ETF               	TSX       
 HII       	Horizons CDN Insider Index ETF                    	TSX       
 HIU       	Betapro Sp500 Daily Inverse ETF                   	TSX       
@@ -1056,12 +1063,10 @@ IAG.PR.I  	Industrial Alliance Pref Ser I                    	TSX
 IAM       	Integrated Asset Management Corp                  	TSX       
 IBG       	Ibi Group Inc                                     	TSX       
 IBG.DB.D  	Ibi Group Inc 5.50 Pct Debs                       	TSX       
-IBR       	Iron Bridge Resources Inc                         	TSX       
 ICE       	Canlan ICE Sports Corp                            	TSX       
 ICPB      	Ia Clarington Core Plus Bond Fund                 	TSX       
 IDG       	Indigo Books & Music Inc                          	TSX       
 IDR.UN    	REIT Indexplus Income Fund                        	TSX       
-IEMB      	Ia Clarington Emerging Mkts Bond Fund             	TSX       
 IFA       	Ifabric Corp                                      	TSX       
 IFB.UN    	Investment Grade Infrstrctr Bond Fund             	TSX       
 IFC       	Intact Financial Corp                             	TSX       
@@ -1185,6 +1190,7 @@ LUN       	Lundin Mining Corp                                	TSX
 LVN       	Levon Resources Ltd                               	TSX       
 LVU.UN    	Low Volatility US Equity Income Fund              	TSX       
 LXR       	Lxrandco Inc                                      	TSX       
+LXR.WT    	Lxrandco Inc Wts                                  	TSX       
 LYD       	Lydian International Limited                      	TSX       
 MAG       	MAG Silver Corp                                   	TSX       
 MAL       	Magellan Aero                                     	TSX       
@@ -1248,7 +1254,6 @@ MMP.UN    	Precious Metals and Mining Trust                  	TSX
 MND       	Mandalay Resources Corp                           	TSX       
 MNR       	Mason Resources Corp                              	TSX       
 MNS       	Royal CDN Mint CDN Silver Reserves Etr            	TSX       
-MNS.U     	Royal CDN Mint CDN Svr Reserves Etr USD           	TSX       
 MNT       	Royal Canadian Mint CDN Gold Reserves             	TSX       
 MNT.U     	Royal Canadian Mint CDN Gld Reserves USD          	TSX       
 MNW       	Mitel Networks Corp                               	TSX       
@@ -1335,7 +1340,6 @@ NPI.PR.A  	Northland Power Pref Equity Inc                   	TSX
 NPI.PR.B  	Northland Power Inc Pref Ser 2                    	TSX       
 NPI.PR.C  	Northland Power Inc Pref Ser 3                    	TSX       
 NPK       	Verde Agritech Plc                                	TSX       
-NRGY.UN   	Sprott Energy Opportunities Trust                 	TSX       
 NRI       	Nuvo Pharmaceuticals Inc                          	TSX       
 NSU       	Nevsun Res J                                      	TSX       
 NTR       	Nutrien Ltd                                       	TSX       
@@ -1350,6 +1354,7 @@ NWH.DB.C  	Northwest Healthcare Prop 7.25 Pct Debs           	TSX
 NWH.DB.D  	Northwest Healthcare Prop 5.50 Pct Debs           	TSX       
 NWH.DB.E  	Northwest Healthcare Prop 5.25 Pct Debs           	TSX       
 NWH.DB.F  	Northwest Healthcare Prop 5.25 Pct Debs           	TSX       
+NWH.DB.G  	Northwest Healthcare Prop REIT 5.50 Debs          	TSX       
 NWH.UN    	Northwest Healthcare Prop REIT                    	TSX       
 NXE       	Nexgen Energy Ltd                                 	TSX       
 NXF       	First Asset Energy Giants Cov Call ETF            	TSX       
@@ -1408,6 +1413,7 @@ PDV       	Prime Dividend Corp Cl A                          	TSX
 PDV.PR.A  	Prime Dividend Corp Pref                          	TSX       
 PEGI      	Pattern Energy Group Inc                          	TSX       
 PEU       	Purpose Enhanced US Equity Fund                   	TSX       
+PEU.B     	Purpose Enhanced US Equity Fd Nc Hedg             	TSX       
 PEY       	Peyto Exploration and Dvlpmnt Corp                	TSX       
 PFB       	Pfb Corp                                          	TSX       
 PFG       	Purpose Global Financials Income ETF              	TSX       
@@ -1448,8 +1454,6 @@ PMM       	Purpose Multi Strategy Mkt Neutral Fund           	TSX
 PMN       	Promis Neurosciences Inc                          	TSX       
 PMT       	Perpetual Energy Inc                              	TSX       
 PMTS      	CPI Card Group Inc                                	TSX       
-PNC.A     	Postmedia Network Canada Corp Cl A                	TSX       
-PNC.B     	Postmedia Network Canada Corp Cl B                	TSX       
 PNE       	Pine Cliff Energy Ltd                             	TSX       
 PNP       	Pinetree Capital Ltd                              	TSX       
 POM       	Polymet Mining Corp                               	TSX       
@@ -1477,11 +1481,9 @@ PPL.PR.O  	Pembina Pipeline Corp Pref Series 15              	TSX
 PPL.PR.Q  	Pembina Pipeline Corp Pref Series 17              	TSX       
 PPL.PR.S  	Pembina Pipeline Corp Pref Series 19              	TSX       
 PPR       	Prairie Provident Resources Inc                   	TSX       
-PPR.WT    	Prairie Provident Resources Inc Wts               	TSX       
 PPS       	Powershares CDN Pref Share ETF                    	TSX       
 PR        	Lysander Slater Pref Share Activ ETF              	TSX       
 PRA       	Purpose Diversified Real Asset Fund ETF           	TSX       
-PRF.UN    	Pinebridge Inv Grade Pref Sec Fund Units          	TSX       
 PRM       	Big Pharma Split Corp                             	TSX       
 PRM.PR.A  	Big Pharma Split Corp Pref Shares                 	TSX       
 PRN       	Profound Medical Corp                             	TSX       
@@ -1497,6 +1499,7 @@ PSLV      	Sprott Physical Silver Trust CAD                  	TSX
 PSLV.U    	Sprott Physical Silver Trust USD                  	TSX       
 PSU.U     	Purpose US Cash ETF                               	TSX       
 PSY       	Pwrshr Glb Sharehldr Yield ETF                    	TSX       
+PSY.U     	Invesco Glb Sharehldr Yield USD                   	TSX       
 PTB       	Powershares Tactical Bond ETF                     	TSX       
 PTG       	Pivot Technology Solutions Inc                    	TSX       
 PTM       	Platinum Group Metals Ltd                         	TSX       
@@ -1529,10 +1532,12 @@ PWF.PR.Z  	Power Financial Corp 5.15 Pct Pref Ser V          	TSX
 PXC       	Powershr FTSE RAFI CAD ETF                        	TSX       
 PXG       	Pwrshr FTSE RAFI Global Plus Fdamntl ETF          	TSX       
 PXS       	Pwrshr FTSE RAFI US Fdamntl ETF II                	TSX       
+PXS.U     	Pwrshr FTSE RAFI US Fdamntl ETF USD II            	TSX       
 PXT       	Parex Resources Inc                               	TSX       
 PXU.F     	Invesco FTSE RAFI U.S. Index ETF                  	TSX       
 PXX       	Blackpearl Resources Inc                          	TSX       
 PYF       	Purpose Premium Yield Fund ETF                    	TSX       
+PYF.U     	Purpose Premium Yield Fund Nh USD ETF             	TSX       
 PZA       	Pizza Pizza Royalty Corp                          	TSX       
 PZC       	Pwrshr FTSE RAFI CDN Sml Mid Fdamntl ETF          	TSX       
 PZW       	Pwrshr FTSE RAFI Glb Sml Mid Fdamntl ETF          	TSX       
@@ -1545,15 +1550,14 @@ QCD       	Quantshrs Enh Core CDN Equity ETF                 	TSX
 QCE       	Mackenzie CDN Large Cap Equity Index ETF          	TSX       
 QCN       	Mackenzie Canadian Equity Index ETF               	TSX       
 QDX       	Mackenzie International Equity Index ETF          	TSX       
-QDXH      	Mackenzie Intl Equity Index ETF CAD Hgd           	TSX       
 QEC       	Questerre Energy Corp                             	TSX       
 QEM       	Quantshrs Enh Core Emg Mkt Eqt ETF                	TSX       
 QGL       	Quantshrs Global Equity Rotation ETF              	TSX       
 QHY       	Mackenzie US High Yld Bnd Idx CAD Hgd             	TSX       
 QIE       	Quantshrs Enh Core Intl Equity ETF                	TSX       
 QMA       	Quantshrs Multiasset Allocation ETF               	TSX       
+QMY       	Quantshrs Multiasset Inc Allocation ETF           	TSX       
 QQC.F     	Powershares QQQ Index ETF                         	TSX       
-QSB       	Mackenzie CDN Short Term Bond Index ETF           	TSX       
 QSP.UN    	Restaurant Brands Intl Ltd Partnership            	TSX       
 QSR       	Restaurant Brands International Inc               	TSX       
 QTRH      	Quarterhill Inc                                   	TSX       
@@ -1561,9 +1565,8 @@ QUIG      	Mackenzie US Inv Grd Corp Bd Idx CAD Hgd          	TSX
 QUS       	Quantshrs Enh Core US Equity ETF                  	TSX       
 QUU       	Mackenzie US Large Cap Equity Index ETF           	TSX       
 QXM       	F A Morningstar Nb Quebec ETF                     	TSX       
-R         	Red Eagle Mining Corp                             	TSX       
-R.WT      	Red Eagle Mining Corporation Wts                  	TSX       
 RAI.UN    	Real Asset Income and Growth Fund                 	TSX       
+RAV.UN    	Ravensource Fund                                  	TSX       
 RAY.A     	Stingray Digital Group Inc Sv                     	TSX       
 RAY.B     	Stingray Digital Group Inc Variable Sv            	TSX       
 RBA       	Ritchie Bros Auctioneers Inc                      	TSX       
@@ -1588,7 +1591,6 @@ RET       	Reitmans Canada                                   	TSX
 RET.A     	Reitmans [Canada] Ltd Cl.A Nv                     	TSX       
 RFP       	Resolute Forest Products Inc                      	TSX       
 RGRE      	RBC Qnt Glbl Real Estate Ldrs                     	TSX       
-RGRE.U    	RBC Qnt Glbl Real Estate Ldrs USD                 	TSX       
 RGX       	Argex Titanium Inc                                	TSX       
 RIB.UN    	Ridgewood CAD Invest Grade Bond Fund              	TSX       
 RID       	RBC Quant EAFE Div Leaders ETF                    	TSX       
@@ -1602,7 +1604,6 @@ RIG.U     	RBC Quant Global Infras Leaders ETF USD           	TSX
 RIT       	First Asset Canadian REIT ETF                     	TSX       
 RLB       	RBC 1 To 5 Year Laddered Can Bond ETF             	TSX       
 RLD       	RBC Strategic Global Div Leaders ETF              	TSX       
-RLE       	RBC Stategic Global Equity Leaders ETF            	TSX       
 RMBO      	RBC 6 To 10 Yr CDN Corp Bond ETF                  	TSX       
 RME       	Rocky Mountain Dealerships Inc                    	TSX       
 RMX       	Rubicon Minerals Corp                             	TSX       
@@ -1616,7 +1617,6 @@ RPDH      	RBC Quant European Div Leaders ETF                	TSX
 RPF       	RBC Canadian Pref Share ETF                       	TSX       
 RPI.UN    	Richards Packaging Income Fund                    	TSX       
 RPSB      	RBC Phn Short Term CDN Bond ETF                   	TSX       
-RQF       	RBC Target 2018 Corp Bond Index ETF               	TSX       
 RQG       	RBC Target 2019 Corp Bond Index ETF               	TSX       
 RQH       	RBC Target 2020 Corp Bond Index ETF               	TSX       
 RQI       	RBC Target 2021 Corp Bond Index ETF               	TSX       
@@ -1658,7 +1658,6 @@ RXE.U     	RBC Quant Emrg Mkts Eqt Leaders ETF USD           	TSX
 RY        	Royal Bank of Canada                              	TSX       
 RY.PR.A   	Royal Bank of Canada Prf Series Aa                	TSX       
 RY.PR.C   	Royal Bank of Can. First Pref Ser AC              	TSX       
-RY.PR.D   	RBC First Pref Shares Series Ad                   	TSX       
 RY.PR.E   	RBC Non-Cum First Pr Shs. Series Ae               	TSX       
 RY.PR.F   	RBC Non-Cum First Pref Ser Af                     	TSX       
 RY.PR.G   	RBC Non-Cum First Pr Series Ag                    	TSX       
@@ -1702,7 +1701,6 @@ SEC       	Senvest Capital                                   	TSX
 SEED      	Evolve Marijuana ETF                              	TSX       
 SES       	Secure Energy Services Inc                        	TSX       
 SEV       	Spectra7 Microsystems Inc                         	TSX       
-SEV.DB.A  	Spectra7 Microsystems Inc 7.00 Pct Debs           	TSX       
 SFD       	Nxt Energy Solutions Inc                          	TSX       
 SFIX      	Scotia Strategic Fixed Inc ETF Portfolio          	TSX       
 SGQ       	Southgobi Resources Ltd                           	TSX       
@@ -1815,8 +1813,6 @@ TD.PF.H   	TD Bank Pref Ser 14                               	TSX
 TD.PF.I   	TD Bank Pref Ser 16                               	TSX       
 TD.PF.J   	TD Bank Pref Series 18                            	TSX       
 TD.PF.K   	TD Bank Pref Series 20                            	TSX       
-TD.PR.Y   	TD Bank Pref Ser Y                                	TSX       
-TD.PR.Z   	TD Bank Pref Ser Z                                	TSX       
 TDB       	TD CDN Aggregate Bond Index ETF                   	TSX       
 TDG       	Trinidad Drilling Ltd                             	TSX       
 TECK.A    	Teck Resources Limited Cl A                       	TSX       
@@ -1844,6 +1840,7 @@ THU       	TD S&P 500 CAD Hedge Index ETF                    	TSX
 TI        	Titan Mining Corporation                          	TSX       
 TIH       	Toromont Ind                                      	TSX       
 TIME      	Evolve Active Short Dur Bond ETF                  	TSX       
+TIME.B    	Evolve Active Short Dur Bond Unheg                	TSX       
 TKO       	Taseko Mines Ltd                                  	TSX       
 TLF       	Tech Leaders Income ETF                           	TSX       
 TLG       	Troilus Gold Corp                                 	TSX       
@@ -1901,6 +1898,7 @@ TSL       	Tree Island Steel Ltd                             	TSX
 TSU       	Trisura Group Ltd                                 	TSX       
 TTP       	TD S&P TSX Capped Comp Index ETF                  	TSX       
 TUSB      	TD Select U.S. Short Term Corporate Bond          	TSX       
+TUSB.U    	TD Select US Short Term Corp Bnd ETF USD          	TSX       
 TUT.UN    	Top 20 US Dividend Trust Cls A Units              	TSX       
 TV        	Trevali Mining Corp                               	TSX       
 TVA.B     	Tva Group Inc Cl.B Nv                             	TSX       
@@ -1918,7 +1916,6 @@ TXT.UN    	Top 10 Split Trust                                	TSX
 TZS       	Trez Capital Senior Mortgage Inv Corp             	TSX       
 TZZ       	Trez Capital Mortgage Inv Corp                    	TSX       
 U         	Uranium Participation Co                          	TSX       
-UDA.UN    	Caldwell US Dividend Adv Fund                     	TSX       
 UEX       	Uex Corp                                          	TSX       
 UFS       	Domtar Corp                                       	TSX       
 ULV.C     	Powershares Sp500 Low Volatility ETF              	TSX       
@@ -1926,7 +1923,6 @@ ULV.F     	Powershares Sp500 Low Volatility ETF              	TSX
 UMI       	Wisdomtree US Midcap Div Idx Heg ETF              	TSX       
 UNC       	United Corp Ltd                                   	TSX       
 UNG.PR.C  	Union Gas 5-1/2% Pr                               	TSX       
-UNG.PR.D  	Union Gas 6% B Pr                                 	TSX       
 UNS       	Uni Select Inc                                    	TSX       
 UR        	Urthecast Corp                                    	TSX       
 URB       	Urbana Corporation                                	TSX       
@@ -1966,6 +1962,7 @@ VFV       	Vanguard S&P 500 Index ETF                        	TSX
 VGG       	Vanguard US Div Appr ETF                          	TSX       
 VGH       	Vanguard US Div Appr ETF CAD Hdg                  	TSX       
 VGRO      	Vanguard Growth ETF Portfolio                     	TSX       
+VGV       	Vanguard CDN Government Bond Index ETF            	TSX       
 VGZ       	Vista Gold Corp                                   	TSX       
 VI        	Vanguard FTSE Dev All Cap Na ETF                  	TSX       
 VIDY      	Vanguard FTSE Dev Ex Na High Div Yld ETF          	TSX       
@@ -1997,6 +1994,8 @@ W.PR.H    	Westcoast 7 Pr                                    	TSX
 W.PR.J    	Westcoast 8 Pr                                    	TSX       
 W.PR.K    	Westcoast Energy Inc Pref Ser 10                  	TSX       
 W.PR.M    	Westcoast Energy Inc Pref Ser 12                  	TSX       
+WCM.A     	Wilmington Capital Mgmt Inc Cl.A Nv               	TSX       
+WCM.B     	Wilmington Capital Management Cl B                	TSX       
 WCN       	Waste Connections Inc                             	TSX       
 WCP       	Whitecap Resources Inc                            	TSX       
 WDO       	Wesdome Gold Mines Ltd                            	TSX       
@@ -2031,6 +2030,7 @@ X         	Tmx Group Limited                                 	TSX
 XAM       	Xanadu Mines Ltd                                  	TSX       
 XAU       	Goldmoney Inc                                     	TSX       
 XAW       	Ishares Core MSCI All Cntry Ex Can ETF            	TSX       
+XBAL      	Ishares Core Balanced ETF Portfolio               	TSX       
 XBB       	Ishares Core CDN Universe Bond ETF                	TSX       
 XBM       	Ishares S&P TSX Global Base Mtls ETF              	TSX       
 XCB       	Ishares Canadian Corporate Bond ETF               	TSX       
@@ -2066,6 +2066,7 @@ XFS       	Ishares Edge MSCI Multifact USA ETF               	TSX
 XGB       	Ishares Canadian Govt Bond Index ETF              	TSX       
 XGD       	Ishares S&P/Tsx Global Gold Index ETF             	TSX       
 XGI       	Ishares S&P Global Industrials ETF                	TSX       
+XGRO      	Ishares Core Growth ETF Portfolio                 	TSX       
 XHB       	Ishares CDN Hybrid Corp Bond ETF                  	TSX       
 XHC       	Ishares Global Healthcare Index ETF               	TSX       
 XHD       	Ishares US High Div Equity Index ETF              	TSX       
@@ -2157,11 +2158,13 @@ ZEM       	BMO MSCI Emerging Markets Index ETF               	TSX
 ZEO       	BMO S&P TSX Eql Weight Oil Gas Index ETF          	TSX       
 ZEQ       	BMO MSCI EU Hq Hcad ETF                           	TSX       
 ZEUS      	BMO Shiller Select US Index ETF                   	TSX       
+ZFC       	BMO Sia Focused Canadian Equity Fund              	TSX       
 ZFH       	BMO Floating Rate High Yield ETF                  	TSX       
 ZFL       	BMO Long Fed Bond Index ETF                       	TSX       
 ZFM       	BMO Mid Federal Bond Index ETF                    	TSX       
+ZFN       	BMO Sia Focused North American Equity Fu          	TSX       
 ZFS       	BMO Short Federal Bond Index ETF                  	TSX       
-ZFS.L     	BMO Short Federal Bond Index ETF                  	TSX       
+ZGB       	BMO Government Bond Index ETF                     	TSX       
 ZGD       	BMO S&P TSX Eql Weight Glbl Gold ETF              	TSX       
 ZGI       	BMO Global Infrastructure Index ETF               	TSX       
 ZGQ       	BMO MSCI All Cntry Wrld High Qlty ETF             	TSX       
@@ -2213,7 +2216,6 @@ ZUP       	BMO US Pref Share Index ETF                       	TSX
 ZUP.U     	BMO US Pref Share Index ETF                       	TSX       
 ZUQ       	BMO MSCI USA High Quality Index ETF               	TSX       
 ZUT       	BMO Equal Weight Utilities Index ETF              	TSX       
-ZVC       	BMO MSCI Cda Value Index ETF                      	TSX       
 ZVI       	BMO MSCI EAFE Value Index ETF                     	TSX       
 ZVU       	BMO MSCI USA Value Index ETF                      	TSX       
 ZWA       	BMO Covered Call DJIA CAD ETF                     	TSX       

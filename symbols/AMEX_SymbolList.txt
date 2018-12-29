@@ -4,6 +4,7 @@ AAMC      	Altisource Asset                                  	AMEX
 AAU       	Almaden Minerals                                  	AMEX      
 ACES      	Alps Clean Energy ETF                             	AMEX      
 ACIM      	ACWI IMI MSCI ETF SPDR                            	AMEX      
+ACSG      	Xtrackers MSCI ACWI Ex USA ESG Leaders Equity Et  	AMEX      
 ACSI      	American Customer Satisfaction Core Alpha ETF     	AMEX      
 ACU       	Acme United Corp                                  	AMEX      
 ACWF      	Global Multifactor Ishares Edge MSCI ETF          	AMEX      
@@ -14,6 +15,7 @@ AEF       	Aberdeen EM Equity Income Fund Inc                	AMEX
 AFIF      	Anfield Universal Fixed Income ETF                	AMEX      
 AFK       	Africa Index ETF Vaneck                           	AMEX      
 AFTY      	CSOP FTSE China A50 ETF                           	AMEX      
+AGE       	Agex Therapeutics Inc                             	AMEX      
 AGF       	DB Agriculture ETN Powershares                    	AMEX      
 AGG       	US Aggregate Bond Ishares Core ETF                	AMEX      
 AGGE      	IQ Enhanced Core Bond U.S. ETF                    	AMEX      
@@ -55,7 +57,6 @@ ARKQ      	Ark Industrial Innovation ETF                     	AMEX
 ARKW      	Ark Web X.0 ETF                                   	AMEX      
 ARN.P     	Arconic Inc Pf 3.75                               	AMEX      
 ARVR      	Tactile Analytics Ar/Vr Virtual Tech              	AMEX      
-ASB.W     	Associated Banc-Corp WT                           	AMEX      
 ASEA      	G-X FTSE Asean 40 ETF                             	AMEX      
 ASHR      	Db-Xt Harvest CSI 300 China A                     	AMEX      
 ASHS      	Db-Xt Harvest CSI 500 China A                     	AMEX      
@@ -75,9 +76,8 @@ AXJV      	Asia Ex Japan Min Vol Ishares Edge MSCI ETF       	AMEX
 AXU       	Alexco Resource Corp                              	AMEX      
 BAB       	Taxable Municipal Bond Invesco ETF                	AMEX      
 BAL       	Ipatha Cotton Subindex Total Return ETN           	AMEX      
-BALB      	Ipath.B Cotton Subindex TR Series B ETN           	AMEX      
 BAR       	Graniteshares Gold Trust Shares of Beneficial In  	AMEX      
-BATT      	Amplify Advanced Battery Metals and Materials Et  	AMEX      
+BATT      	Advanced Battery Metals and Materials Amplify ET  	AMEX      
 BBAX      	Jpmorgan Betabuilders Developed Asia-Ex Japan Et  	AMEX      
 BBC       	Bioshares Biotech Clinical Trial                  	AMEX      
 BBCA      	Jpmorgan Betabuilders Canada ETF                  	AMEX      
@@ -110,9 +110,7 @@ BIKR      	Rogers Ai Global Macro ETF                        	AMEX
 BIL       	1-3 Month T-Bill Barclays Capital SPDR            	AMEX      
 BIV       	Interm Term Bond ETF Vanguard                     	AMEX      
 BIZD      	Bdc Income Vaneck ETF                             	AMEX      
-BJJN      	Ipath.B Nickel Subindex TR Series B ETN           	AMEX      
 BJK       	Gaming ETF Vaneck                                 	AMEX      
-BJO       	Ipath.B Coffee Subindex TR Series B ETN           	AMEX      
 BJUL      	Innovator S&P 500 Buffer ETF                      	AMEX      
 BKC       	Rex Bkcm ETF                                      	AMEX      
 BKF       	BRIC Ishares MSCI ETF                             	AMEX      
@@ -121,7 +119,7 @@ BKLN      	Senior Loan Invesco ETF                           	AMEX
 BKTI      	Bk Technologies Inc                               	AMEX      
 BLES      	Inspire Global Hope Large Cap ETF                 	AMEX      
 BLHY      	Virtus Dynamic Credit ETF                         	AMEX      
-BLOK      	Amplify Transformational Data Sharing ETF         	AMEX      
+BLOK      	Transformational Data Sharing Amplify ETF         	AMEX      
 BLV       	Long Term Bond Index ETF Vanguard                 	AMEX      
 BNDC      	Flexshares Core Select Bond Fund                  	AMEX      
 BNO       	US Brent Oil                                      	AMEX      
@@ -208,9 +206,15 @@ CHAU      	Direxion CSI 300 China A 2X                       	AMEX
 CHEP      	US Value Fund Mkt Neutral ETF Quantshares         	AMEX      
 CHGX      	Diversified Impact U.S. Large Cap Fossil Fuel F   	AMEX      
 CHIE      	G-X China Energy ETF                              	AMEX      
+CHIH      	G-X MSCI China Health Care ETF                    	AMEX      
 CHII      	G-X China Industrials ETF                         	AMEX      
+CHIK      	G-X MSCI China Information Technology ETF         	AMEX      
+CHIL      	G-X MSCI China Large-Cap 50 ETF                   	AMEX      
 CHIM      	G-X China Materials ETF                           	AMEX      
 CHIQ      	G-X China Consumer ETF                            	AMEX      
+CHIR      	G-X MSCI China Real Estate ETF                    	AMEX      
+CHIS      	G-X MSCI China Consumer Staples ETF               	AMEX      
+CHIU      	G-X MSCI China Utilities ETF                      	AMEX      
 CHIX      	G-X China Financials ETF                          	AMEX      
 CIK       	Credit Suisse Asset Management                    	AMEX      
 CIX       	Compx International Inc                           	AMEX      
@@ -237,7 +241,6 @@ COPX      	G-X Copper Miners ETF                             	AMEX
 CORN      	Teucrium Corn                                     	AMEX      
 CORP      	Invest Grade Corp Bd Index ETF Pimco              	AMEX      
 COW       	Ipatha Livestock Subindex Total Return ETN        	AMEX      
-COWB      	Ipath.B Livestock Subindex TR Series B ETN        	AMEX      
 COWZ      	Pacer US Cash Cows 100 ETF                        	AMEX      
 CPER      	US Copper                                         	AMEX      
 CPHI      	China Pharma Holdings                             	AMEX      
@@ -270,7 +273,6 @@ CWEB      	Direxion CSI China Internet Idx Bull 2X           	AMEX
 CWI       	ACWI [Ex-Us] MSCI ETF SPDR                        	AMEX      
 CWS       	Advisorshares Focused Equity ETF                  	AMEX      
 CYB       	Wisdomtree Chinese Yuan Fund                      	AMEX      
-CYM       	Cymat Technologies Ltd                            	AMEX      
 CZA       	Zacks Mid-Cap Invesco ETF                         	AMEX      
 DAG       	DB Agriculture 2X ETN Powershares                 	AMEX      
 DALT      	Anfield Capital Diversified Alternatives ETF      	AMEX      
@@ -279,7 +281,7 @@ DBA       	DB Agriculture Fund Invesco                       	AMEX
 DBAP      	Db-Xt MSCI Asia Pacific Ex-Japan Hgd Eq           	AMEX      
 DBAW      	Db-Xt MSCI All World Ex-US Hgd Eq                 	AMEX      
 DBB       	DB Base Metals Fund Invesco                       	AMEX      
-DBC       	DB Commodity Index Tracking Fund Invesco          	AMEX      
+DBC       	DB Commodity Index Fund Invesco                   	AMEX      
 DBE       	DB Energy Fund Invesco                            	AMEX      
 DBEF      	Db-Xt MSCI EAFE Hgd Eq                            	AMEX      
 DBEM      	Db-Xt MSCI EM Mkts Hgd Eq                         	AMEX      
@@ -339,7 +341,8 @@ DIT       	Amcon Distributing Company                        	AMEX
 DIV       	G-X Super Dividend ETF                            	AMEX      
 DIVA      	Quantshares Hedged Dividend Income ETF            	AMEX      
 DIVB      	US Dividend and Buyback Ishares ETF               	AMEX      
-DIVO      	Amplify Yieldshares Cwp Dividend Option Inc ETF   	AMEX      
+DIVC      	Citigroup Inc C-Tracks ETN                        	AMEX      
+DIVO      	Yieldshares Cwp Dividend & Option Income Amplify  	AMEX      
 DIVY      	Reality Shares Divs ETF                           	AMEX      
 DJCI      	DJ-UBS Commodity Idx TR ETN UBS E-Tracs           	AMEX      
 DJD       	Dow Jones Indu Dividend Invesco ETF               	AMEX      
@@ -349,6 +352,7 @@ DLA       	Delta Apparel                                     	AMEX
 DLBR      	Velocityshares Short Libor                        	AMEX      
 DLN       	Largecap Dividend Wisdomtree                      	AMEX      
 DLS       	Intl Smallcap Dividend Wisdomtree                 	AMEX      
+DMDV      	Aam S&P Dev Markets High Divd Value ETF           	AMEX      
 DMF       	Dreyfus Muni Income                               	AMEX      
 DMRI      	Deltashares S&P Intl Managed Risk ETF             	AMEX      
 DMRL      	Deltashares S&P 500 Managed Risk ETF              	AMEX      
@@ -408,7 +412,7 @@ DZZ       	DB Gold -2X ETN Powershares                       	AMEX
 EAD       	Wells Fargo Advantage                             	AMEX      
 EAGG      	Ishares ESG U.S. Aggregate Bond ETF               	AMEX      
 EASG      	Xtrackers MSCI EAFE ESG Leaders Equity ETF        	AMEX      
-EASI      	Amplify ETF Trust ETF                             	AMEX      
+EASI      	Easi Tactical Growth Amplify ETF                  	AMEX      
 EBND      	EM Local Bond ETF Barclays Capital SPDR           	AMEX      
 ECF       	Ellsworth Convertible Growth and Income           	AMEX      
 ECF-A     	Ellsworth Fund Ltd                                	AMEX      
@@ -424,7 +428,6 @@ EDOW      	First Trust Dow 30 Equal Weight ETF               	AMEX
 EDV       	Extended Dur Trs Idx ETF Vanguard                 	AMEX      
 EDZ       	Emrg Mkts Bear 3X Direxion                        	AMEX      
 EEB       	BRIC Invesco ETF                                  	AMEX      
-EED       	Xxeed - Claymore BNY BRIC ETF Intraday            	AMEX      
 EEH       	Spectrum Lg Cap U.S. Sector ETN Elements          	AMEX      
 EELV      	S&P Emerging Markets Low Vol Invesco ETF          	AMEX      
 EEM       	Emerging Markets Ishares MSCI ETF                 	AMEX      
@@ -476,6 +479,7 @@ EMLC      	Emrg Mkts Local Curr Bond ETF Vaneck              	AMEX
 EMLP      	North American Energy Infr Fund FT                	AMEX      
 EMMF      	Wisdomtree Emerging Markets Multifactor Fund      	AMEX      
 EMQQ      	Emrg Mkts Internet and Ecommerce Etc              	AMEX      
+EMSG      	Xtrackers MSCI Emerging Markets ESG Leaders Equi  	AMEX      
 EMSH      	Short-Term USD EM Bond Proshares                  	AMEX      
 EMTL      	EM Fixed Income ETF SPDR                          	AMEX      
 EMTY      	Proshares Decline of The Retail Store ETF         	AMEX      
@@ -512,7 +516,7 @@ ESGF      	Global ESG Revenue ETF Oppenheimer                	AMEX
 ESGL      	ESG Revenue ETF Oppenheimer                       	AMEX      
 ESGN      	Columbia Sustainable Internatio                   	AMEX      
 ESGS      	Columbia Sustainable U.S. Equit                   	AMEX      
-ESGV      	Vanguard ESG U.S. Stock ETF                       	AMEX      
+ESGV      	ESG U.S. Stock Vanguard ETF                       	AMEX      
 ESGW      	Columbia Sustainable Global Equ                   	AMEX      
 ESML      	USA Small-Cap ESG Optimized Ishares MSCI ETF      	AMEX      
 ESNC      	Ensync Inc                                        	AMEX      
@@ -706,6 +710,7 @@ FRI       	S&P REIT Index                                    	AMEX
 FRLG      	Large Cap Growth Index-Linked Exchange Traded No  	AMEX      
 FRN       	Frontier Markets Invesco ETF                      	AMEX      
 FSI       	Flexible Solutions International Inc              	AMEX      
+FSMB      	First Trust Short Duration Managed Municipal ETF  	AMEX      
 FSP       	Franklin Street Properties                        	AMEX      
 FSTA      	Fidelity Consumer Staples MSCI ETF                	AMEX      
 FTEC      	Fidelity Info Tech MSCI ETF                       	AMEX      
@@ -753,7 +758,6 @@ GARD      	Reality Divcon Dividend Guard ETF                 	AMEX
 GASL      	Natural Gas Bull 3X Direxion                      	AMEX      
 GASX      	Direxion Natural Gas Bear 3X                      	AMEX      
 GAZ       	Ipath Bloomberg Natural Gas Subindex Total Retur  	AMEX      
-GAZB      	Ipath.B Natural Gas Subindex TR Series B ETN      	AMEX      
 GBF       	Government/Credit Bond Ishares ETF                	AMEX      
 GBIL      	GS Treasuryaccess 0-1 Year ETF                    	AMEX      
 GBR       	New Concept Energy Inc                            	AMEX      
@@ -779,11 +783,10 @@ GHYB      	Access High Yield Corporate Bond ETF Goldman Sac  	AMEX
 GHYG      	US and Intl High Yield Corp Bond Ishares ETF      	AMEX      
 GIGB      	Goldman Sachs Access Investment Grade Corp Bond   	AMEX      
 GII       	FTSE Global Infra 100 SPDR                        	AMEX      
+GLBY      	Wisdomtree Yield Enhanced Global Aggregate Bond   	AMEX      
 GLD       	Gold SPDR                                         	AMEX      
 GLDM      	SPDR Gold Minishares Trust                        	AMEX      
 GLDW      	Long Dollar Gold Trust SPDR                       	AMEX      
-GLF       	Gulfmark Offshore Inc                             	AMEX      
-GLF.W     	Gulfmark Offshore Inc WT                          	AMEX      
 GLL       	Ultrashort Gold Proshares                         	AMEX      
 GLO       	Clough Global Opportunities Fund                  	AMEX      
 GLOW      	Glowpoint Inc                                     	AMEX      
@@ -795,7 +798,6 @@ GLU.P     	Gabelli Global Utility & Income Trust             	AMEX
 GLV       	Clough Global Allocation Fund                     	AMEX      
 GMF       	S&P Emerging Asia Pacific SPDR                    	AMEX      
 GMFL      	Multi-Factor Large Cap Invesco ETF                	AMEX      
-GMI       	Xxgmi - Market Vectors Gold Miners Index Intrada  	AMEX      
 GMO       	General Moly Inc                                  	AMEX      
 GMOM      	Cambria Global Momentum ETF                       	AMEX      
 GNAF      	Microsectors Fang Index Inverse Etns 01/08/2023   	AMEX      
@@ -845,7 +847,7 @@ GXC       	S&P China SPDR                                    	AMEX
 GXF       	G-X FTSE Nordic Region ETF                        	AMEX      
 GXG       	G-X FTSE Colombia 20 ETF                          	AMEX      
 GYLD      	Arrow DJ Global Yield ETF                         	AMEX      
-HACK      	Etfmg Prime Cyber Security ETF                    	AMEX      
+HACK      	ISE Cyber Security ETF                            	AMEX      
 HAO       	China Small Cap Invesco ETF                       	AMEX      
 HAP       	Rve Hard Assets Producers Vaneck ETF              	AMEX      
 HAUD      	Australia Curr Hedged Ishares MSCI ETF            	AMEX      
@@ -890,12 +892,12 @@ HONR      	Insightshares Patriotic Employers ETF             	AMEX
 HSCZ      	EAFE Small-Cap Curr Hedged Ishares MSCI ETF       	AMEX      
 HSPX      	Horizons S&P 500 Covered Call                     	AMEX      
 HSRT      	Hartford Short Duration ETF                       	AMEX      
+HTAB      	Hartford Schroders Tax-Aware Bond ETF             	AMEX      
 HTRB      	Hartford Total Return Bond ETF                    	AMEX      
 HTUS      	Hull Tactical US ETF                              	AMEX      
 HUSA      	Houston American Energy Corp                      	AMEX      
 HUSE      	US Equity Rotation Strategy ETF                   	AMEX      
 HUSV      	Horizon Vol Domestic ETF FT                       	AMEX      
-HVX       	Xxhvx - Market Vectors Environment Services Inde  	AMEX      
 HYD       	High Yld Muni ETF Vaneck                          	AMEX      
 HYDB      	High Yield Defensive Bond Ishares Edge ETF        	AMEX      
 HYDD      	Direxion High Yield Bear 2X                       	AMEX      
@@ -907,7 +909,7 @@ HYGV      	Flexshares High Yield Value-Scored Bond Index Fu  	AMEX
 HYHG      	High Yld Interest Rate Proshares                  	AMEX      
 HYIH      	Db-Xt HY Corp Bd Intr Rt Hdg                      	AMEX      
 HYLB      	D-X USD Hi Yld Corp Bond ETF                      	AMEX      
-HYLD      	Peritus High Yield ETF                            	AMEX      
+HYLD      	High Yield ETF                                    	AMEX      
 HYLV      	Indexiq S&P High Yld Low Vol ETF                  	AMEX      
 HYMB      	S&P Hi Yld Muni Bond SPDR                         	AMEX      
 HYS       	0-5 Year Hi Yld Corp Bond Idx ETF Pimco           	AMEX      
@@ -1003,6 +1005,7 @@ IHY       	Intl High Yield Bond ETF Vaneck                   	AMEX
 IHYD      	Invesco Corp Income Defensive ETF                 	AMEX      
 IHYV      	Invesco Corporate Income Value ETF                	AMEX      
 IIGD      	Invesco Investment Grade Defensive ETF            	AMEX      
+IIGV      	Invesco Investment Grade Value ETF                	AMEX      
 IJH       	S&P Mid-Cap 400 Ishares Core ETF                  	AMEX      
 IJJ       	S&P Mid-Cap 400 Value Ishares ETF                 	AMEX      
 IJK       	S&P Mid-Cap 400 Growth Ishares ETF                	AMEX      
@@ -1011,6 +1014,9 @@ IJS       	S&P Small-Cap 600 Value Ishares ETF               	AMEX
 ILF       	Latin America 40 Ishares ETF                      	AMEX      
 ILTB      	10+ Year USD Bond Ishares Core ETF                	AMEX      
 IMFC      	Invesco Multi-Factor Core Fixed Income ETF        	AMEX      
+IMFD      	Invesco Multi-Factor Defensive Core Fixed Income  	AMEX      
+IMFI      	Invesco Multi-Factor Income ETF                   	AMEX      
+IMFP      	Invesco Multi-Factor Core Plus Fixed Income ETF   	AMEX      
 IMH       	Impac Mortgage Holdings                           	AMEX      
 IMLP      	Ipath S&P MLP ETN                                 	AMEX      
 IMO       	Imperial Oil Ltd                                  	AMEX      
@@ -1042,6 +1048,7 @@ IQDE      	Flexshares Intl Quality Div Def Fund              	AMEX
 IQDF      	Flexshares Intl Quality Div Fund                  	AMEX      
 IQDG      	Wisdomtree Intl Quality Divd Growth Fund          	AMEX      
 IQDY      	Flexshares Intl Quality Div Dyn Fund              	AMEX      
+IQIN      	IQ 500 International ETF                          	AMEX      
 IQLT      	Intl Quality Factor Ishares Edge MSCI ETF         	AMEX      
 IRBO      	Ishares Robotics and Artificial Intelligence ETF  	AMEX      
 ISCF      	Intl Small-Cap Multifactor Ishares Edge MSCI ETF  	AMEX      
@@ -1099,7 +1106,7 @@ IYW       	US Technology Ishares ETF                         	AMEX
 IYY       	DJ US Ishares ETF                                 	AMEX      
 IYZ       	US Telecommunications Ishares ETF                 	AMEX      
 IZRL      	Ark Israel Innovative Technology ETF              	AMEX      
-JBRI      	James Biblically Responsible Investment ETF       	AMEX      
+JAGG      	Jpmorgan U.S. Aggregate Bond ETF                  	AMEX      
 JDIV      	JPM U.S. Dividend ETF                             	AMEX      
 JDST      	Direxion Junior Gold Mine Bear 3X                 	AMEX      
 JETS      	US Global Jets ETF                                	AMEX      
@@ -1118,25 +1125,17 @@ JHMS      	JH Consumer Staples Multifactor ETF               	AMEX
 JHMT      	JH Technology Multifactor ETF                     	AMEX      
 JHMU      	JH Utilities Multifactor ETF                      	AMEX      
 JHSC      	John Hancock Multifactor Small Cap ETF            	AMEX      
+JIGB      	Jpmorgan Corp Bond Research Enhanced ETF          	AMEX      
 JJA       	Ipatha Agriculture Subindex Total Return ETN      	AMEX      
-JJAB      	Ipath.B Agriculture Subindex TR Series B ETN      	AMEX      
 JJC       	Ipatha Copper Subindex Total Return ETN           	AMEX      
-JJCB      	Ipath.B Copper Subindex TR Series B ETN           	AMEX      
 JJE       	Ipatha Energy Subindex Total Return ETN           	AMEX      
-JJEB      	Ipath.B Energy Subindex TR Series B ETN           	AMEX      
 JJG       	Ipatha Grains Subindex Total Return ETN           	AMEX      
-JJGB      	Ipath.B Grains Subindex TR Series B ETN           	AMEX      
 JJM       	Ipatha Industrial Metals Subindex Total Retur     	AMEX      
-JJMB      	Ipath.B Industrial Metals Subindex TR Series B E  	AMEX      
 JJN       	Ipath.B Nickel Subindex TR Series B ETN           	AMEX      
 JJP       	Ipatha Precious Metals Subindex Total Return      	AMEX      
-JJPB      	Ipath.B Precious Metals Subindex TR Series B ETN  	AMEX      
 JJS       	Ipatha Softs Subindex Total Return ETN            	AMEX      
-JJSB      	Ipath.B Softs Subindex TR Series B ETN            	AMEX      
 JJT       	Ipatha Tin Subindex Total Return ETN              	AMEX      
-JJTB      	Ipath.B Tin Subindex TR Series B ETN              	AMEX      
 JJU       	Ipatha Aluminum Subindex Total Return ETN         	AMEX      
-JJUB      	Ipath.B Aluminum Subindex TR Series B ETN         	AMEX      
 JKD       	Mstar Large-Cap Ishares ETF                       	AMEX      
 JKE       	Mstar Large-Cap Growth Ishares ETF                	AMEX      
 JKF       	Mstar Large-Cap Value Ishares ETF                 	AMEX      
@@ -1193,7 +1192,6 @@ KGRN      	Kraneshares MSCI China Environment Index ETF      	AMEX
 KIE       	S&P Insurance ETF SPDR                            	AMEX      
 KIQ       	Kelso Technologies I                              	AMEX      
 KLDW      	Exchange Listed Funds Trust Gav                   	AMEX      
-KLX       	Xxklx - Market Vectors Steel Index Intraday       	AMEX      
 KMED      	Kraneshares Emerging Markets Healthcare Index     	AMEX      
 KNG       	ETF Series Solutions ETF CBOE Vest S&P 500 Divid  	AMEX      
 KNOW      	All Cap Insider Sentiment Direxion                	AMEX      
@@ -1210,10 +1208,10 @@ KWEB      	Kranes CSI China ETF                              	AMEX
 KXI       	Global Cons Staples Ishares ETF                   	AMEX      
 LABD      	Direxion S&P Biotech Bear 3X                      	AMEX      
 LABU      	Direxion S&P Biotech Bull 3X                      	AMEX      
+LACK      	Direxion Daily Consumer Staples Bear 3X Shares    	AMEX      
 LBDC      	Etracs Mt Pay 2X Levd Wells Bdc ETN Series B      	AMEX      
 LBJ       	Latin America Bull 3X Direxion                    	AMEX      
 LBY       	Libbey Inc                                        	AMEX      
-LD        	Ipath Bloomberg Lead Subindex Total Return Sm In  	AMEX      
 LDRS      	Innovator Ibd ETF Leaders ETF                     	AMEX      
 LDUR      	Pimco Low Duration ETF                            	AMEX      
 LEAD      	Reality Divcon Leaders Dividend ETF               	AMEX      
@@ -1278,7 +1276,7 @@ MIDZ      	Midcap Bear 3X Direxion                           	AMEX
 MINC      	Advisorshares Newfleet Multi-Se                   	AMEX      
 MINT      	Enhanced Short-Maturity Strgy ETF Pimco           	AMEX      
 MIW       	Eaton Vance Michigan Muni Bond Fund               	AMEX      
-MJ        	Etfmg Alternative Harvest ETF                     	AMEX      
+MJ        	Alternative Harvest ETF                           	AMEX      
 MJCO      	Majesco                                           	AMEX      
 MLN       	Long Municipal Index ETF Vaneck                   	AMEX      
 MLPA      	G-X MLP ETF                                       	AMEX      
@@ -1336,9 +1334,9 @@ NBO       	Neuberger Berman New York Intermediate Fund Inc   	AMEX
 NBW       	Neuberger Berman California Intermediate Fund In  	AMEX      
 NBY       	Novabay Pharmaceuticals                           	AMEX      
 NEAR      	Short Maturity Bond Ishares ETF                   	AMEX      
+NEED      	Direxion Daily Consumer Staples Bull 3X Shares    	AMEX      
 NEN       	New England Realty Associates Limited Partnershi  	AMEX      
 NES       	Nuverra Environmental Solutions                   	AMEX      
-NFA       	Xxnfa - Claymore/Sabrient Insider ETF Index Intr  	AMEX      
 NFLT      	Virtus Multi-Sector Uncstd Bond                   	AMEX      
 NFO       	Insider Sentiment Invesco ETF                     	AMEX      
 NFRA      	Flexshares Global Broad Infr Fund                 	AMEX      
@@ -1390,7 +1388,6 @@ OGEN      	Oragenics Inc                                     	AMEX
 OGIG      	O'Shares Global Internet Giants ETF               	AMEX      
 OIH       	Oil Services Vaneck ETF                           	AMEX      
 OIL       	Ipath Series B S&P GSCI Crude Oil                 	AMEX      
-OILB      	Ipath S&P GSCI Crude Oil TR Index Series B ETN    	AMEX      
 OILD      	Ultrapro Short Crude Oil Proshares                	AMEX      
 OILK      	Crude Oil Strategy Proshares                      	AMEX      
 OILU      	Ultrapro Crude Oil Proshares                      	AMEX      
@@ -1421,6 +1418,7 @@ PACA      	Xtrackers MSCI Latin America Pacific Alliance Et  	AMEX
 PAF       	FTSE RAFI Asia Pacific Ex- Japan Invesco ETF      	AMEX      
 PAK       	G-X MSCI Pakistan ETF                             	AMEX      
 PALL      	Physical Palladium                                	AMEX      
+PASS      	Direxion Daily Consumer Discretionary Bear 3X Sh  	AMEX      
 PAVE      	G-X US Infr Development ETF                       	AMEX      
 PAWZ      	Proshares Trust                                   	AMEX      
 PBD       	Global Clean Energy Invesco ETF                   	AMEX      
@@ -1462,7 +1460,6 @@ PGAL      	G-X FTSE Portugal 20 ETF                          	AMEX
 PGF       	Financial Preferred Invesco ETF                   	AMEX      
 PGHY      	Global Short Term Hi-Yld Bond Invesco ETF         	AMEX      
 PGM       	Ipatha Platinum Subindex Total Return ETN         	AMEX      
-PGMB      	Ipath.B Platinum Subindex TR Series B ETN         	AMEX      
 PGX       	Preferred Invesco ETF                             	AMEX      
 PHB       	Fundamental Hi-Yld Corp Bond Invesco ETF          	AMEX      
 PHDG      	S&P 500 Downside Hedged Invesco ETF               	AMEX      
@@ -1495,6 +1492,7 @@ PPLT      	Physical Platinum                                 	AMEX
 PPMC      	Portfolio S&P Mid Cap ETF                         	AMEX      
 PPSC      	Portfolio S&P Small Cap                           	AMEX      
 PPTY      	Ppty U.S. Diversified Real Estate ETF             	AMEX      
+PQIN      	PGIM Qma Strategic Alpha International Equity ET  	AMEX      
 PQLC      	PGIM Qma Strategic Alpha Large-Cap Core ETF       	AMEX      
 PQSG      	PGIM Qma Strategic Alpha Small-Cap Growth ETF     	AMEX      
 PQSV      	PGIM ETF Trust ETF PGIM Qma Strategic Alpha Smal  	AMEX      
@@ -1578,8 +1576,6 @@ QVAL      	US Quantitative Valueshares ETF                   	AMEX
 QVM       	Arrow Qvm Equity Factor ETF                       	AMEX      
 QWLD      	World Qlty Mix MSCI ETF SPDR                      	AMEX      
 QXGG      	Quantx Risk Managed Growth ETF                    	AMEX      
-QXMI      	Quantx Risk Managed Multi-Asset Income ETF        	AMEX      
-QXRR      	Quantx Risk Managed Real Return ETF               	AMEX      
 QXTR      	Quantx Risk Managed Multi-Asset Total Return ETF  	AMEX      
 RAAX      	Vaneck Vectors ETF Trust ETF Vaneck Vectors Real  	AMEX      
 RALS      	RAFI Long/Short Proshares                         	AMEX      
@@ -1630,6 +1626,7 @@ RLY       	SSGA Multi-Asset Real Return ETF SPDR             	AMEX
 RNN       	Rexahn Pharmaceuticals                            	AMEX      
 ROAM      	Lattice EM Strategy ETF                           	AMEX      
 ROBO      	Global Robotics and Automation ETF                	AMEX      
+RODI      	Barclays Return On Disability ETN                 	AMEX      
 RODM      	Lattice Developed Markets Ex-US ETF               	AMEX      
 ROGS      	Lattice Global Smallcap Strategy ETF              	AMEX      
 ROM       	Ultra Technology Proshares                        	AMEX      
@@ -1732,7 +1729,6 @@ SGB       	Southwest Georgia Financial Corp                  	AMEX
 SGDJ      	Alps ETF Trust Sprott Junior Gold                 	AMEX      
 SGDM      	Sprott Gold Miners ETF                            	AMEX      
 SGG       	Ipatha Sugar Subindex Total Return ETN            	AMEX      
-SGGB      	Ipath.B Sugar Subindex TR Series B ETN            	AMEX      
 SGOL      	Physical Swiss Gold                               	AMEX      
 SH        	S&P 500 Short Proshares                           	AMEX      
 SHAG      	Wisdomtree Yield Enhanced U.S. Short-Term Aggreg  	AMEX      
@@ -1837,7 +1833,7 @@ SUSA      	USA ESG Select Ishares MSCI ETF                   	AMEX
 SVM       	Silvercorp Metals Inc                             	AMEX      
 SVT       	Servotronics Inc                                  	AMEX      
 SVXY      	VIX Short-Term Fut Short Proshares                	AMEX      
-SWAN      	Amplify ETF Trust Amplify Blackswan Growth & Tre  	AMEX      
+SWAN      	Blackswan Growth & Treasury Core Amplify ETF      	AMEX      
 SYE       	MFS Core Equity ETF SPDR                          	AMEX      
 SYG       	MFS Growth Equity ETF SPDR                        	AMEX      
 SYLD      	Cambria Shareholder Yield ETF                     	AMEX      
@@ -2010,12 +2006,12 @@ VESH      	Virtus Enhanced Short U.S. Equity ETF             	AMEX
 VEU       	FTSE All-World Ex-US ETF Vanguard                 	AMEX      
 VFH       	Financial ETF Vanguard                            	AMEX      
 VFL       	Delaware Florida Insured Muni                     	AMEX      
-VFLQ      	Vanguard U.S. Liquidity Factor ETF                	AMEX      
-VFMF      	Vanguard U.S. Multifactor ETF                     	AMEX      
-VFMO      	Vanguard U.S. Momentum Factor ETF                 	AMEX      
-VFMV      	Vanguard U.S. Minimum Volatility ETF              	AMEX      
-VFQY      	Vanguard U.S. Quality Factor ETF                  	AMEX      
-VFVA      	Vanguard Wellington Fund ETF                      	AMEX      
+VFLQ      	U.S. Liquidity Factor Vanguard ETF                	AMEX      
+VFMF      	U.S. Multifactor Vanguard ETF                     	AMEX      
+VFMO      	U.S. Momentum Factor Vanguard ETF                 	AMEX      
+VFMV      	U.S. Minimum Volatility Vanguard ETF              	AMEX      
+VFQY      	U.S. Quality Factor Vanguard ETF                  	AMEX      
+VFVA      	Wellington Fund Vanguard ETF                      	AMEX      
 VGFO      	Virtus Wmc Global Factor Opportunities ETF        	AMEX      
 VGK       	Europe ETF FTSE Vanguard                          	AMEX      
 VGT       	Information Technology ETF Vanguard               	AMEX      
@@ -2039,7 +2035,7 @@ VMM       	Delaware Minnesota Muni II                        	AMEX
 VMOT      	Alpha Architect Value Momentum Trend ETF          	AMEX      
 VNLA      	Janus Short Duration Income ETF                   	AMEX      
 VNM       	Vietnam Vaneck ETF                                	AMEX      
-VNQ       	Vanguard Real Estate ETF                          	AMEX      
+VNQ       	Real Estate Vanguard ETF                          	AMEX      
 VNRX      	Volitionrx Ltd                                    	AMEX      
 VO        	Midcap ETF Vanguard                               	AMEX      
 VOE       	Midcap Value ETF Vanguard                         	AMEX      
@@ -2052,7 +2048,7 @@ VPL       	Pacific ETF FTSE Vanguard                         	AMEX
 VPU       	Utilities ETF Vanguard                            	AMEX      
 VQT       	S&P 500 Dynamic Veqtor ETN Barclays               	AMEX      
 VRP       	Variable Rate Preferred Invesco ETF               	AMEX      
-VSGX      	Vanguard ESG International Stock ETF              	AMEX      
+VSGX      	ESG International Stock Vanguard ETF              	AMEX      
 VSL       	Volshares Large Cap ETF                           	AMEX      
 VSS       	FTSE All-World Ex-US Smcp Idx ETF Vanguard        	AMEX      
 VT        	Total World Stock Index ETF Vanguard              	AMEX      
@@ -2068,7 +2064,8 @@ VXX       	Ipath S&P 500 VIX Short-Term Futures ETN          	AMEX
 VXXB      	Ipath S&P 500 VIX Short-Term Futures Series B Et  	AMEX      
 VXZ       	Ipath S&P 500 VIX Mid-Term Futures ETN            	AMEX      
 VXZB      	Ipath S&P 500 VIX Mid-Term Futures Series B ETN   	AMEX      
-VYM       	High Dividend Yld Indx ETF Vanguard               	AMEX      
+VYM       	High Dividend Yield Vanguard ETF                  	AMEX      
+WANT      	Direxion Daily Consumer Discretionary Bull 3X Sh  	AMEX      
 WBAL      	Wisdomtree Balanced Income Fund                   	AMEX      
 WBIA      	WBI Smg Growth Shares                             	AMEX      
 WBIB      	WBI Smg Value Shares                              	AMEX      
@@ -2121,13 +2118,17 @@ XKST      	SPDR Kensho Smart Mobility ETF                    	AMEX
 XLB       	S&P 500 Materials Sector SPDR                     	AMEX      
 XLC       	S&P 500 Communication Sector SPDR                 	AMEX      
 XLE       	S&P 500 Energy Sector SPDR                        	AMEX      
+XLEY      	Cushing Energy & MLP ETF                          	AMEX      
 XLF       	S&P 500 Financials Sector SPDR                    	AMEX      
 XLG       	S&P 500 Top 50 Invesco ETF                        	AMEX      
 XLI       	S&P 500 Industrial Sector SPDR                    	AMEX      
 XLK       	S&P 500 Info Tech Sector SPDR                     	AMEX      
 XLP       	S&P 500 Cons Staples Sector SPDR                  	AMEX      
 XLRE      	S&P 500 Real Estate Sector SPDR                   	AMEX      
+XLSY      	Cushing Energy Supply Chain & MLP ETF             	AMEX      
+XLTY      	Cushing Transportation & MLP ETF                  	AMEX      
 XLU       	S&P 500 Utilities Sector SPDR                     	AMEX      
+XLUY      	Cushing Utility & MLP ETF                         	AMEX      
 XLV       	S&P 500 Healthcare Sector SPDR                    	AMEX      
 XLY       	S&P 500 Cons Disc Sector SPDR                     	AMEX      
 XME       	S&P Metals & Mining SPDR                          	AMEX      

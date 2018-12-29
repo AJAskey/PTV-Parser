@@ -21,7 +21,6 @@ ADRV.IDX  	TSXV Advance Decline Ratio                        	INDEX
 ADRX.IDX  	CAD Total Advance Decline Ratio                   	INDEX     
 ADVA.IDX  	AMEX Advancing Stocks                             	INDEX     
 ADVC.IDX  	CSE Advancing Stocks                              	INDEX     
-ADVD.IDX  	OTC Advancing Stocks                              	INDEX     
 ADVE.IDX  	ETFS Advancing Stocks                             	INDEX     
 ADVN.IDX  	NYSE Advancing Stocks                             	INDEX     
 ADVQ.IDX  	NASD Advancing Stocks                             	INDEX     
@@ -62,7 +61,6 @@ AVRV.IDX  	TSXV Advance Decline Volume Ratio                 	INDEX
 AVRX.IDX  	CAD Total Advance Decline Volume Ratio            	INDEX     
 AVVA.IDX  	AMEX Advancing Volume                             	INDEX     
 AVVC.IDX  	CSE Advancing Volume                              	INDEX     
-AVVD.IDX  	OTC Advancing Volume                              	INDEX     
 AVVE.IDX  	ETFS Advancing Volume                             	INDEX     
 AVVN.IDX  	NYSE Advancing Volume                             	INDEX     
 AVVQ.IDX  	NASD Advancing Volume                             	INDEX     
@@ -946,6 +944,7 @@ N1DK.IDX  	1-Month Hi-Lo TSX                                 	INDEX
 N1DL.IDX  	1-Month Hi-Lo TSXV                                	INDEX     
 N1DM.IDX  	1-Month Hi-Lo CSE                                 	INDEX     
 N1DN.IDX  	1-Month Hi-Lo Canada                              	INDEX     
+N1DO.IDX  	1-Month Hi-Lo Nasdaq Comp                         	INDEX     
 N1DU.IDX  	1-Month Hi-Lo OTC US                              	INDEX     
 N1HA.IDX  	1-Month Highs S&P 600                             	INDEX     
 N1HB.IDX  	1-Month Highs S&P 400                             	INDEX     
@@ -961,6 +960,7 @@ N1HK.IDX  	1-Month Highs TSX                                 	INDEX
 N1HL.IDX  	1-Month Highs TSXV                                	INDEX     
 N1HM.IDX  	1-Month Highs CSE                                 	INDEX     
 N1HN.IDX  	1-Month Highs Canada                              	INDEX     
+N1HO.IDX  	1-Month Highs Nasdaq Comp                         	INDEX     
 N1HU.IDX  	1-Month Highs OTC US                              	INDEX     
 N1LA.IDX  	1-Month Lows S&P 600                              	INDEX     
 N1LB.IDX  	1-Month Lows S&P 400                              	INDEX     
@@ -976,6 +976,7 @@ N1LK.IDX  	1-Month Lows TSX                                  	INDEX
 N1LL.IDX  	1-Month Lows TSXV                                 	INDEX     
 N1LM.IDX  	1-Month Lows CSE                                  	INDEX     
 N1LN.IDX  	1-Month Lows Canada                               	INDEX     
+N1LO.IDX  	1-Month Lows Nasdaq Comp                          	INDEX     
 N1LU.IDX  	1-Month Lows OTC US                               	INDEX     
 N3DA.IDX  	3-Month Hi-Lo S&P 600                             	INDEX     
 N3DB.IDX  	3-Month Hi-Lo S&P 400                             	INDEX     
@@ -991,6 +992,7 @@ N3DK.IDX  	3-Month Hi-Lo TSX                                 	INDEX
 N3DL.IDX  	3-Month Hi-Lo TSXV                                	INDEX     
 N3DM.IDX  	3-Month Hi-Lo CSE                                 	INDEX     
 N3DN.IDX  	3-Month Hi-Lo Canada                              	INDEX     
+N3DO.IDX  	3-Month Hi-Lo Nasdaq Comp                         	INDEX     
 N3DU.IDX  	3-Month Hi-Lo OTC US                              	INDEX     
 N3HA.IDX  	3-Month Highs S&P 600                             	INDEX     
 N3HB.IDX  	3-Month Highs S&P 400                             	INDEX     
@@ -1006,6 +1008,7 @@ N3HK.IDX  	3-Month Highs TSX                                 	INDEX
 N3HL.IDX  	3-Month Highs TSXV                                	INDEX     
 N3HM.IDX  	3-Month Highs CSE                                 	INDEX     
 N3HN.IDX  	3-Month Highs Canada                              	INDEX     
+N3HO.IDX  	3-Month Highs Nasdaq Comp                         	INDEX     
 N3HU.IDX  	3-Month Highs OTC US                              	INDEX     
 N3LA.IDX  	3-Month Lows S&P 600                              	INDEX     
 N3LB.IDX  	3-Month Lows S&P 400                              	INDEX     
@@ -1021,6 +1024,7 @@ N3LK.IDX  	3-Month Lows TSX                                  	INDEX
 N3LL.IDX  	3-Month Lows TSXV                                 	INDEX     
 N3LM.IDX  	3-Month Lows CSE                                  	INDEX     
 N3LN.IDX  	3-Month Lows Canada                               	INDEX     
+N3LO.IDX  	3-Month Lows Nasdaq Comp                          	INDEX     
 N3LU.IDX  	3-Month Lows OTC US                               	INDEX     
 N5DA.IDX  	5-Day Hi-Lo S&P 600                               	INDEX     
 N5DB.IDX  	5-Day Hi-Lo S&P 400                               	INDEX     
@@ -1036,6 +1040,7 @@ N5DK.IDX  	5-Day Hi-Lo TSX                                   	INDEX
 N5DL.IDX  	5-Day Hi-Lo TSXV                                  	INDEX     
 N5DM.IDX  	5-Day Hi-Lo CSE                                   	INDEX     
 N5DN.IDX  	5-Day Hi-Lo Canada                                	INDEX     
+N5DO.IDX  	5-Day Hi-Lo Nasdaq Comp                           	INDEX     
 N5DU.IDX  	5-Day Hi-Lo OTC US                                	INDEX     
 N5HA.IDX  	5-Day Highs S&P 600                               	INDEX     
 N5HB.IDX  	5-Day Highs S&P 400                               	INDEX     
@@ -1051,6 +1056,7 @@ N5HK.IDX  	5-Day Highs TSX                                   	INDEX
 N5HL.IDX  	5-Day Highs TSXV                                  	INDEX     
 N5HM.IDX  	5-Day Highs CSE                                   	INDEX     
 N5HN.IDX  	5-Day Highs Canada                                	INDEX     
+N5HO.IDX  	5-Day Highs Nasdaq Comp                           	INDEX     
 N5HU.IDX  	5-Day Highs OTC US                                	INDEX     
 N5LA.IDX  	5-Day Lows S&P 600                                	INDEX     
 N5LB.IDX  	5-Day Lows S&P 400                                	INDEX     
@@ -1066,6 +1072,7 @@ N5LK.IDX  	5-Day Lows TSX                                    	INDEX
 N5LL.IDX  	5-Day Lows TSXV                                   	INDEX     
 N5LM.IDX  	5-Day Lows CSE                                    	INDEX     
 N5LN.IDX  	5-Day Lows Canada                                 	INDEX     
+N5LO.IDX  	5-Day Lows Nasdaq Comp                            	INDEX     
 N5LU.IDX  	5-Day Lows OTC US                                 	INDEX     
 N6DA.IDX  	6-Month Hi-Lo S&P 600                             	INDEX     
 N6DB.IDX  	6-Month Hi-Lo S&P 400                             	INDEX     
@@ -1081,6 +1088,7 @@ N6DK.IDX  	6-Month Hi-Lo TSX                                 	INDEX
 N6DL.IDX  	6-Month Hi-Lo TSXV                                	INDEX     
 N6DM.IDX  	6-Month Hi-Lo CSE                                 	INDEX     
 N6DN.IDX  	6-Month Hi-Lo Canada                              	INDEX     
+N6DO.IDX  	6-Month Hi-Lo Nasdaq Comp                         	INDEX     
 N6DU.IDX  	6-Month Hi-Lo OTC US                              	INDEX     
 N6HA.IDX  	6-Month Highs S&P 600                             	INDEX     
 N6HB.IDX  	6-Month Highs S&P 400                             	INDEX     
@@ -1096,6 +1104,7 @@ N6HK.IDX  	6-Month Highs TSX                                 	INDEX
 N6HL.IDX  	6-Month Highs TSXV                                	INDEX     
 N6HM.IDX  	6-Month Highs CSE                                 	INDEX     
 N6HN.IDX  	6-Month Highs Canada                              	INDEX     
+N6HO.IDX  	6-Month Highs Nasdaq Comp                         	INDEX     
 N6HU.IDX  	6-Month Highs OTC US                              	INDEX     
 N6LA.IDX  	6-Month Lows S&P 600                              	INDEX     
 N6LB.IDX  	6-Month Lows S&P 400                              	INDEX     
@@ -1111,6 +1120,7 @@ N6LK.IDX  	6-Month Lows TSX                                  	INDEX
 N6LL.IDX  	6-Month Lows TSXV                                 	INDEX     
 N6LM.IDX  	6-Month Lows CSE                                  	INDEX     
 N6LN.IDX  	6-Month Lows Canada                               	INDEX     
+N6LO.IDX  	6-Month Lows Nasdaq Comp                          	INDEX     
 N6LU.IDX  	6-Month Lows OTC US                               	INDEX     
 NADA.IDX  	52-Week Hi-Lo S&P 600                             	INDEX     
 NADB.IDX  	52-Week Hi-Lo S&P 400                             	INDEX     
@@ -1126,6 +1136,7 @@ NADK.IDX  	52-Week Hi-Lo TSX                                 	INDEX
 NADL.IDX  	52-Week Hi-Lo TSXV                                	INDEX     
 NADM.IDX  	52-Week Hi-Lo CSE                                 	INDEX     
 NADN.IDX  	52-Week Hi-Lo Canada                              	INDEX     
+NADO.IDX  	52-Week Hi-Lo Nasdaq Comp                         	INDEX     
 NADU.IDX  	52-Week Hi-Lo OTC US                              	INDEX     
 NAHA.IDX  	52-Week Highs S&P 600                             	INDEX     
 NAHB.IDX  	52-Week Highs S&P 400                             	INDEX     
@@ -1141,6 +1152,7 @@ NAHK.IDX  	52-Week Highs TSX                                 	INDEX
 NAHL.IDX  	52-Week Highs TSXV                                	INDEX     
 NAHM.IDX  	52-Week Highs CSE                                 	INDEX     
 NAHN.IDX  	52-Week Highs Canada                              	INDEX     
+NAHO.IDX  	52-Week Highs Nasdaq Comp                         	INDEX     
 NAHU.IDX  	52-Week Highs OTC US                              	INDEX     
 NALA.IDX  	52-Week Lows S&P 600                              	INDEX     
 NALB.IDX  	52-Week Lows S&P 400                              	INDEX     
@@ -1156,9 +1168,16 @@ NALK.IDX  	52-Week Lows TSX                                  	INDEX
 NALL.IDX  	52-Week Lows TSXV                                 	INDEX     
 NALM.IDX  	52-Week Lows CSE                                  	INDEX     
 NALN.IDX  	52-Week Lows Canada                               	INDEX     
+NALO.IDX  	52-Week Lows Nasdaq Comp                          	INDEX     
 NALU.IDX  	52-Week Lows OTC US                               	INDEX     
 NAST.IDX  	NASDAQ Transportation Index                       	INDEX     
 NBI.IDX   	Nasdaq Biotechnology                              	INDEX     
+NCFD.IDX  	Nasdaq Comp Stocks Above 5-Day Average            	INDEX     
+NCFI.IDX  	Nasdaq Comp Stocks Above 50-Day Average           	INDEX     
+NCOF.IDX  	Nasdaq Comp Stocks Above 150-Day Average          	INDEX     
+NCOH.IDX  	Nasdaq Comp Stocks Above 100-Day Average          	INDEX     
+NCTH.IDX  	Nasdaq Comp Stocks Above 200-Day Average          	INDEX     
+NCTW.IDX  	Nasdaq Comp Stocks Above 20-Day Average           	INDEX     
 NDFD.IDX  	Nasdaq 100 Stocks Above 5-Day Average             	INDEX     
 NDFI.IDX  	Nasdaq 100 Stocks Above 50-Day Average            	INDEX     
 NDOF.IDX  	Nasdaq 100 Stocks Above 150-Day Average           	INDEX     
@@ -1196,6 +1215,7 @@ NYDK.IDX  	YTD Hi-Lo TSX                                     	INDEX
 NYDL.IDX  	YTD Hi-Lo TSXV                                    	INDEX     
 NYDM.IDX  	YTD Hi-Lo CSE                                     	INDEX     
 NYDN.IDX  	YTD Hi-Lo Canada                                  	INDEX     
+NYDO.IDX  	YTD Hi-Lo Nasdaq Comp                             	INDEX     
 NYDU.IDX  	YTD Hi-Lo OTC US                                  	INDEX     
 NYHA.IDX  	YTD Highs S&P 600                                 	INDEX     
 NYHB.IDX  	YTD Highs S&P 400                                 	INDEX     
@@ -1211,6 +1231,7 @@ NYHK.IDX  	YTD Highs TSX                                     	INDEX
 NYHL.IDX  	YTD Highs TSXV                                    	INDEX     
 NYHM.IDX  	YTD Highs CSE                                     	INDEX     
 NYHN.IDX  	YTD Highs Canada                                  	INDEX     
+NYHO.IDX  	YTD Highs Nasdaq Comp                             	INDEX     
 NYHU.IDX  	YTD Highs OTC US                                  	INDEX     
 NYLA.IDX  	YTD Lows S&P 600                                  	INDEX     
 NYLB.IDX  	YTD Lows S&P 400                                  	INDEX     
@@ -1226,6 +1247,7 @@ NYLK.IDX  	YTD Lows TSX                                      	INDEX
 NYLL.IDX  	YTD Lows TSXV                                     	INDEX     
 NYLM.IDX  	YTD Lows CSE                                      	INDEX     
 NYLN.IDX  	YTD Lows Canada                                   	INDEX     
+NYLO.IDX  	YTD Lows Nasdaq Comp                              	INDEX     
 NYLU.IDX  	YTD Lows OTC US                                   	INDEX     
 NYXR.IDX  	S&P C.S. Ny-New York Home Price Index             	INDEX     
 OEX.IDX   	S&P 100 Index                                     	INDEX     
@@ -1583,7 +1605,6 @@ SJPA.IDX  	S&P Japan 500                                     	INDEX
 SJPB.IDX  	S&P Japan Mid Cap 100                             	INDEX     
 SJPC.IDX  	S&P Japan Small Cap 250 Index                     	INDEX     
 SJPD.IDX  	S&P TOPIX YEN                                     	INDEX     
-SJPE.IDX  	S&P JES100                                        	INDEX     
 SJRI.IDX  	S&P Japan Regional Index-Tokai                    	INDEX     
 SJTR.IDX  	S&P 500 Semiconductors & Semiconductor Equipment  	INDEX     
 SKFD.IDX  	S&P Info Tech Stocks Above 5-Day Average          	INDEX     

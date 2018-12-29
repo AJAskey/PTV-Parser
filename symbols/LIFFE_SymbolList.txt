@@ -12,7 +12,6 @@ A8H20     	MSCI Far East ex-Japan {Mar 20}                   	LIFFE
 A8M19     	MSCI Far East ex-Japan {Jun 19}                   	LIFFE     
 A8M20     	MSCI Far East ex-Japan {Jun 20}                   	LIFFE     
 A8U19     	MSCI Far East ex-Japan {Sep 19}                   	LIFFE     
-A8X18     	MSCI Far East ex-Japan {Nov 18}                   	LIFFE     
 A8Z18     	MSCI Far East ex-Japan {Dec 18}                   	LIFFE     
 A8Z19     	MSCI Far East ex-Japan {Dec 19}                   	LIFFE     
 AE        	Wheat {Mar 13}                                    	LIFFE     
@@ -27,6 +26,7 @@ CAU19     	No. 7 Cocoa {Sep 19}                              	LIFFE
 CAU20     	No. 7 Cocoa {Sep 20}                              	LIFFE     
 CAZ18     	No. 7 Cocoa {Dec 18}                              	LIFFE     
 CAZ19     	No. 7 Cocoa {Dec 19}                              	LIFFE     
+CAZ20     	No. 7 Cocoa {Dec 20}                              	LIFFE     
 EG.C      	EuroDollar Continuation                           	LIFFE     
 EGF19     	EuroDollar {Jan 19}                               	LIFFE     
 EGG19     	EuroDollar {Feb 19}                               	LIFFE     
@@ -45,7 +45,6 @@ EGU20     	EuroDollar {Sep 20}                               	LIFFE
 EGU21     	EuroDollar {Sep 21}                               	LIFFE     
 EGU22     	EuroDollar {Sep 22}                               	LIFFE     
 EGU23     	EuroDollar {Sep 23}                               	LIFFE     
-EGX18     	EuroDollar {Nov 18}                               	LIFFE     
 EGZ18     	EuroDollar {Dec 18}                               	LIFFE     
 EGZ19     	EuroDollar {Dec 19}                               	LIFFE     
 EGZ20     	EuroDollar {Dec 20}                               	LIFFE     
@@ -108,11 +107,11 @@ IJQ19     	1-Month EONIA {Aug 19}                            	LIFFE
 IJQ20     	1-Month EONIA {Aug 20}                            	LIFFE     
 IJU19     	1-Month EONIA {Sep 19}                            	LIFFE     
 IJU20     	1-Month EONIA {Sep 20}                            	LIFFE     
-IJV18     	1-Month EONIA {Oct 18}                            	LIFFE     
 IJV19     	1-Month EONIA {Oct 19}                            	LIFFE     
 IJV20     	1-Month EONIA {Oct 20}                            	LIFFE     
 IJX18     	1-Month EONIA {Nov 18}                            	LIFFE     
 IJX19     	1-Month EONIA {Nov 19}                            	LIFFE     
+IJX20     	1-Month EONIA {Nov 20}                            	LIFFE     
 IJZ18     	1-Month EONIA {Dec 18}                            	LIFFE     
 IJZ19     	1-Month EONIA {Dec 19}                            	LIFFE     
 IM.C      	3-Month EuriBor Continuation                      	LIFFE     
@@ -125,6 +124,7 @@ IMH22     	3-Month EuriBor {Mar 22}                          	LIFFE
 IMH23     	3-Month EuriBor {Mar 23}                          	LIFFE     
 IMH24     	3-Month EuriBor {Mar 24}                          	LIFFE     
 IMJ19     	3-Month EuriBor {Apr 19}                          	LIFFE     
+IMK19     	3-Month EuriBor {May 19}                          	LIFFE     
 IMM19     	3-Month EuriBor {Jun 19}                          	LIFFE     
 IMM20     	3-Month EuriBor {Jun 20}                          	LIFFE     
 IMM21     	3-Month EuriBor {Jun 21}                          	LIFFE     
@@ -137,7 +137,6 @@ IMU21     	3-Month EuriBor {Sep 21}                          	LIFFE
 IMU22     	3-Month EuriBor {Sep 22}                          	LIFFE     
 IMU23     	3-Month EuriBor {Sep 23}                          	LIFFE     
 IMU24     	3-Month EuriBor {Sep 24}                          	LIFFE     
-IMX18     	3-Month EuriBor {Nov 18}                          	LIFFE     
 IMZ18     	3-Month EuriBor {Dec 18}                          	LIFFE     
 IMZ19     	3-Month EuriBor {Dec 19}                          	LIFFE     
 IMZ20     	3-Month EuriBor {Dec 20}                          	LIFFE     
@@ -163,11 +162,11 @@ JHQ19     	U.S Treasury Repo {Aug 19}                        	LIFFE
 JHQ20     	U.S Treasury Repo {Aug 20}                        	LIFFE     
 JHU19     	U.S Treasury Repo {Sep 19}                        	LIFFE     
 JHU20     	U.S Treasury Repo {Sep 20}                        	LIFFE     
-JHV18     	U.S Treasury Repo {Oct 18}                        	LIFFE     
 JHV19     	U.S Treasury Repo {Oct 19}                        	LIFFE     
 JHV20     	U.S Treasury Repo {Oct 20}                        	LIFFE     
 JHX18     	U.S Treasury Repo {Nov 18}                        	LIFFE     
 JHX19     	U.S Treasury Repo {Nov 19}                        	LIFFE     
+JHX20     	U.S Treasury Repo {Nov 20}                        	LIFFE     
 JHZ18     	U.S Treasury Repo {Dec 18}                        	LIFFE     
 JHZ19     	U.S Treasury Repo {Dec 19}                        	LIFFE     
 JR.C      	Mortgage-Backed Repo Continuation                 	LIFFE     
@@ -180,9 +179,9 @@ JRM19     	Mortgage-Backed Repo {Jun 19}                     	LIFFE
 JRN19     	Mortgage-Backed Repo {Jul 19}                     	LIFFE     
 JRQ19     	Mortgage-Backed Repo {Aug 19}                     	LIFFE     
 JRU19     	Mortgage-Backed Repo {Sep 19}                     	LIFFE     
-JRV18     	Mortgage-Backed Repo {Oct 18}                     	LIFFE     
 JRV19     	Mortgage-Backed Repo {Oct 19}                     	LIFFE     
 JRX18     	Mortgage-Backed Repo {Nov 18}                     	LIFFE     
+JRX19     	Mortgage-Backed Repo {Nov 19}                     	LIFFE     
 JRZ18     	Mortgage-Backed Repo {Dec 18}                     	LIFFE     
 L.C       	3-Month Sterling Continuation                     	LIFFE     
 L7.C      	MSCI Europe NTR Index Continuation                	LIFFE     
@@ -192,6 +191,7 @@ L7U19     	MSCI Europe NTR Index {Sep 19}                    	LIFFE
 L7Z18     	MSCI Europe NTR Index {Dec 18}                    	LIFFE     
 L7Z19     	MSCI Europe NTR Index {Dec 19}                    	LIFFE     
 LF19      	3-Month Sterling {Jan 19}                         	LIFFE     
+LG19      	3-Month Sterling {Feb 19}                         	LIFFE     
 LH19      	3-Month Sterling {Mar 19}                         	LIFFE     
 LH20      	3-Month Sterling {Mar 20}                         	LIFFE     
 LH21      	3-Month Sterling {Mar 21}                         	LIFFE     
@@ -219,10 +219,8 @@ LWK19     	Wheat {May 19}                                    	LIFFE
 LWK20     	Wheat {May 20}                                    	LIFFE     
 LWN19     	Wheat {Jul 19}                                    	LIFFE     
 LWN20     	Wheat {Jul 20}                                    	LIFFE     
-LWX18     	Wheat {Nov 18}                                    	LIFFE     
 LWX19     	Wheat {Nov 19}                                    	LIFFE     
 LWX20     	Wheat {Nov 20}                                    	LIFFE     
-LX18      	3-Month Sterling {Nov 18}                         	LIFFE     
 LZ18      	3-Month Sterling {Dec 18}                         	LIFFE     
 LZ19      	3-Month Sterling {Dec 19}                         	LIFFE     
 LZ20      	3-Month Sterling {Dec 20}                         	LIFFE     
@@ -257,6 +255,7 @@ RMH20     	Robusta Coffee 10-T {Mar 20}                      	LIFFE
 RMK19     	Robusta Coffee 10-T {May 19}                      	LIFFE     
 RMK20     	Robusta Coffee 10-T {May 20}                      	LIFFE     
 RMN19     	Robusta Coffee 10-T {Jul 19}                      	LIFFE     
+RMN20     	Robusta Coffee 10-T {Jul 20}                      	LIFFE     
 RMU19     	Robusta Coffee 10-T {Sep 19}                      	LIFFE     
 RMX18     	Robusta Coffee 10-T {Nov 18}                      	LIFFE     
 RMX19     	Robusta Coffee 10-T {Nov 19}                      	LIFFE     
@@ -268,7 +267,6 @@ SWK20     	No. 5 White Sugar {May 20}                        	LIFFE
 SWQ19     	No. 5 White Sugar {Aug 19}                        	LIFFE     
 SWQ20     	No. 5 White Sugar {Aug 20}                        	LIFFE     
 SWV19     	No. 5 White Sugar {Oct 19}                        	LIFFE     
-SWZ18     	No. 5 White Sugar {Dec 18}                        	LIFFE     
 SWZ19     	No. 5 White Sugar {Dec 19}                        	LIFFE     
 VF.C      	5-Yr Euro Swapnote Continuation                   	LIFFE     
 VFH19     	5-Yr Euro Swapnote {Mar 19}                       	LIFFE     
