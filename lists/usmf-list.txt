@@ -566,11 +566,6 @@ AFTFX     	American Fds The Tax-Exempt  Bond Fund of Ameri   	USMF
 AFTSX     	Invesco Balanced-Risk Retirement 2020 Fund Class  	USMF      
 AFTYX     	Invesco Balanced-Risk Retirement 2020 Fund Class  	USMF      
 AFVPX     	Allianzgi Nfj International Value Fund Class P    	USMF      
-AFXAX     	American Beacon Flexible Bond Fund A Class        	USMF      
-AFXCX     	American Beacon Flexible Bond Fund C Class        	USMF      
-AFXIX     	American Beacon Flexible Bond Fund Insti Class    	USMF      
-AFXPX     	American Beacon Flexible Bond Fund Investor Clas  	USMF      
-AFXYX     	American Beacon Flexible Bond Fund Y Class        	USMF      
 AFYCX     	Aam/Bahl & Gaynor Income Growth Fd Cl C           	USMF      
 AFYDX     	American Century Sustainable Equity Fund - Y Cla  	USMF      
 AGAAX     	Invesco Global Small & Mid Cap Growth Fund Cl A   	USMF      
@@ -827,7 +822,6 @@ AIVSX     	American Funds Investment Co of America A         	USMF
 AIWCX     	American Century International Growth - Class C   	USMF      
 AIWEX     	Cavanal Hill World Energy Fund Institutional Cl   	USMF      
 AIWVX     	Mid Cap Core Equity Fund - Institutional Shares   	USMF      
-AIYDX     	American Century International Discovery Fund -   	USMF      
 AIZAX     	Sanford C. Bernstein Fund Inc.- Ab Internationa   	USMF      
 AIZBX     	Sanford C. Bernstein Fund Inc.- Ab Internationa   	USMF      
 AIZCX     	Sanford C. Bernstein Fund Inc.- Ab Internationa   	USMF      
@@ -1115,8 +1109,10 @@ ANRHX     	Nt Global Real Estate Fund - G Class              	USMF
 ANRPX     	Allianzgi Nfj Mid-Cap Value  Fund Class  P        	USMF      
 ANSIX     	Ancora Special Opportunity Fund Class I           	USMF      
 ANTDX     	Nt Disciplined Growth - Investor Class            	USMF      
+ANTGX     	Nt Non-U.S. Intrinsic Value Fund - G Class        	USMF      
 ANTMX     	Nt International Small-Mid Cap Fund - G Class     	USMF      
 ANTSX     	Nt International Small-Mid Cap - Investor Class   	USMF      
+ANTUX     	Nt Non-U.S. Intrinsic Value Fund - Investor Clas  	USMF      
 ANTVX     	Nt International Value - Investor Class           	USMF      
 ANTYX     	Nt International Value Fund - G Class             	USMF      
 ANVIX     	Allianzgi Nfj Large-Cap Value Fund Institutional  	USMF      
@@ -1174,6 +1170,7 @@ APCZX     	Amg Managers Pictet International Fund Class Z    	USMF
 APDFX     	Artisan High Income Fund Advisor Shares           	USMF      
 APDGX     	Artisan Global Value Fund Advisor Shares          	USMF      
 APDIX     	Artisan International Fund Advisor Shares         	USMF      
+APDJX     	Artisan International Small-Mid Fund - Advisor S  	USMF      
 APDKX     	Artisan International Value Fund Advisor Shares   	USMF      
 APDLX     	Artisan Value Fund Advisor Shares                 	USMF      
 APDMX     	Artisan Mid Cap Fund Advisor Shares               	USMF      
@@ -1248,6 +1245,7 @@ APSHX     	Pinnacle Sherman Multi-Strategy Core Fund - Clas  	USMF
 APSRX     	Fiera Capital Small/Mid-Cap Growth Fund Investor  	USMF      
 APSTX     	Cavanal Hill Limited Duration Fund No Load Inv S  	USMF      
 APTIX     	American Century Vp Inflation Protection Fund Cl  	USMF      
+APTRX     	Pinnacle Trendrating Innovative Equity Fund-Clas  	USMF      
 APUPX     	Allianzgi Preferred Securities and Income Fund C  	USMF      
 APUSX     	Ultra Short Tax-Free Income Fund Investor Share   	USMF      
 APWEX     	Cavanal Hill World Energy Fund Investor Cl        	USMF      
@@ -1325,7 +1323,6 @@ AREMX     	American Century One Choice 2055 Port A Cl        	USMF
 ARENX     	American Century One Choice 2055 Portfolio - I C  	USMF      
 AREOX     	American Century One Choice 2055 Port R Cl        	USMF      
 AREPX     	Allianzgi Real Estate Debt Fund Class P           	USMF      
-ARESX     	Anchor Tactical Real Estate Fund - Institutional  	USMF      
 AREUX     	One Choice 2055 Portfolio - R6 Class              	USMF      
 AREVX     	American Century One Choice 2055 Port Inv Cl      	USMF      
 AREWX     	American Century Real Estate Fund R Class         	USMF      
@@ -1521,6 +1518,7 @@ ASPFX     	Aspiration Flagship Fund                          	USMF
 ASPGX     	Astor Sector Allocation Fund Class A Shares       	USMF      
 ASPIX     	Alger Spectra Fund Class I                        	USMF      
 ASPNX     	Aspen Portfolio Strategy Fund Class I             	USMF      
+ASPYX     	Alger Spectra Fund Class Y                        	USMF      
 ASPZX     	The Alger Fds II Alger Spectra Fund Class Z       	USMF      
 ASQAX     	American Century Small Company A Cl               	USMF      
 ASQCX     	American Century Small Company Fd - C Class       	USMF      
@@ -2128,6 +2126,8 @@ BGALX     	The Global Alpha Equity Fund - Share Class 4      	USMF
 BGAQX     	BMO Global Long/Short Equity Fund Class A         	USMF      
 BGASX     	The Global Alpha Equity Fund - Institutional Cla  	USMF      
 BGATX     	The Global Alpha Equity Fund - Share Class 2      	USMF      
+BGBIX     	The Multi Asset Fund - Institutional Class        	USMF      
+BGBKX     	The Multi Asset Fund - Class K                    	USMF      
 BGBRX     	Blackrock U.S. Government Bond Portfolio - Class  	USMF      
 BGCAX     	Blackrock Global Long/Short Credit Fund - Class   	USMF      
 BGCCX     	Blackrock Global Long/Short Credit Fund - Class   	USMF      
@@ -2251,8 +2251,10 @@ BIDAX     	Ishares Municipal Bond Index Fund - Class A       	USMF
 BIDIX     	Ishares Municipal Bond Index Fund - Institutiona  	USMF      
 BIDKX     	Ishares Municipal Bond Index Fund- Class K        	USMF      
 BIDPX     	Ishares Municipal Bond Index Fund - Investor P S  	USMF      
+BIDVX     	Blackrock Ga Disciplined Volatility Equity Fund   	USMF      
 BIEAX     	Brandes International Equity Fund- Class A        	USMF      
 BIECX     	Brandes International Equity Fund - Class C       	USMF      
+BIEEX     	Blackrock Ga Enhanced Equity Fund - Institutiona  	USMF      
 BIEGX     	Blackrock Lifepath Smart Beta 2060 Fund - Instit  	USMF      
 BIEMX     	William Blair Emerging Markets Growth Fund Insti  	USMF      
 BIERX     	Brandes International Equity Fund Class R6        	USMF      
@@ -2480,8 +2482,6 @@ BNPQX     	Bnp Paribas Am Emerging Markets Equity Fund Reta  	USMF
 BNPUX     	Bnp Paribas Am U.S. Small Cap Equity Fund Instit  	USMF      
 BNPVX     	Bnp Paribas Am U.S. Small Cap Equity Fund Invest  	USMF      
 BNPWX     	Bnp Paribas Am U.S. Small Cap Equity Fund Retail  	USMF      
-BNSAX     	State Farm Bond Fund Class A Shares               	USMF      
-BNSBX     	State Farm Bond Fund Class B Shares               	USMF      
 BNSCX     	UBS U.S. Small Cap Growth Fund Class A            	USMF      
 BNUEX     	UBS International Sustainable Equity Fund Class   	USMF      
 BOGIX     	Bogle Investment Management Small Cap Growth Fun  	USMF      
@@ -3121,6 +3121,7 @@ CCCZX     	Center Coast Brookfield MLP Focus Fund - Class I  	USMF
 CCDTX     	American Funds 2025 Target Date Retirement Fd Cl  	USMF      
 CCDVX     	Calamos Dividend Growth Fd Cl C                   	USMF      
 CCECX     	Columbia Moderate 529 Portfolio - Conservative T  	USMF      
+CCEIX     	Columbia Large Cap Enhanced Core Fund Class I     	USMF      
 CCERX     	Columbia Large Cap Enhanced Core Fund Class R     	USMF      
 CCETX     	American Funds 2030 Target Date Retirement Fd Cl  	USMF      
 CCFAX     	American Funds College Fund 2036 Class 529-A      	USMF      
@@ -3718,7 +3719,6 @@ CLTAX     	Catalyst/Lyons Tactical Allocation Fd Cl A        	USMF
 CLTCX     	Catalyst/Lyons Tactical Allocation Fd Cl C        	USMF      
 CLTIX     	Catalyst/Lyons Tactical Allocation Fund Class I   	USMF      
 CLURX     	Columbia Small Cap Value Fund II Class Adv        	USMF      
-CLVGX     	Virtus Growth Allocation Strategy Fund  I         	USMF      
 CLWFX     	Columbia Large Cap Growth Fund Class I2           	USMF      
 CLXRX     	Columbia Large Cap Index Fund Class I2            	USMF      
 CMAAX     	Calvert Moderate Allocation Fund Class A          	USMF      
@@ -4078,6 +4078,7 @@ CPSHX     	Pinnacle Sherman Multi-Strategy Core Fund - Clas  	USMF
 CPSSX     	Columbia Aggressive Growth 529 Port A- Static     	USMF      
 CPSTX     	Columbia Aggressive Growth A Aggr Trac            	USMF      
 CPTNX     	American Century Government Bond Investor Class   	USMF      
+CPTRX     	Pinnacle Trendrating Innovative Equity Fund-Clas  	USMF      
 CPUAX     	Aam Select Income Fund Class A                    	USMF      
 CPUCX     	Aam Select Income Fund Class C                    	USMF      
 CPUIX     	Aam Select Income Fund Class I                    	USMF      
@@ -4372,9 +4373,11 @@ CURCX     	Mainstay Cushing Royalty Energy Income Fund Clas  	USMF
 CURNX     	Mainstay Cushing Royalty Energy Income Fund Inv   	USMF      
 CURZX     	Mainstay Cushing Royalty Energy Income Fund Clas  	USMF      
 CUSAX     	Columbia Acorn USA Class Adv                      	USMF      
+CUSBX     	Columbia Ultra Short Term Bond Fund Class Inst    	USMF      
 CUSCX     	Cullen Small Cap Value Fund Class C               	USMF      
 CUSDX     	Six Circles Ultra Short Duration Fund             	USMF      
 CUSEX     	Capital Group U.S. Equity Fund                    	USMF      
+CUSHX     	Columbia Ultra Short Term Bond Fund Class Adv     	USMF      
 CUSIX     	Cullen Small Cap Value Fund Class I               	USMF      
 CUSRX     	Cullen Small Cap Value Fund Retail Class          	USMF      
 CUSUX     	Six Circles US Unconstrained Equity Fund          	USMF      
@@ -5810,6 +5813,7 @@ EMQIX     	Ashmore Emerging Markets Active Equity Fund - In  	USMF
 EMRCX     	Van Eck Funds Emerging Markets Fund C             	USMF      
 EMRGX     	Emerging Markets Growth Fund Inc. - Class M       	USMF      
 EMRIX     	Van Eck Emerging Markets Fund I                   	USMF      
+EMRSX     	Jpmorgan Emerging Markets Research Enhanced Equi  	USMF      
 EMRYX     	Van Eck Emerging Markets Fund Cl Y                	USMF      
 EMSPX     	Msif Emerging Markets Breakout Nations Portfolio  	USMF      
 EMTAX     	Transamerica Emerging Markets Debt Class A        	USMF      
@@ -5978,8 +5982,6 @@ ETDFX     	Carillon Cougar Tactical Allocation Fund Class C  	USMF
 ETEGX     	Eaton Vance Small-Cap Fund - Class A              	USMF      
 ETFAX     	Stadion Tactical Growth Fund Class A              	USMF      
 ETFCX     	Stadion Market Opportunity Fund Cl C              	USMF      
-ETFDX     	Stadion Tactical Growth Fund Class T              	USMF      
-ETFHX     	Stadion Tactical Defensive Fund Class T           	USMF      
 ETFOX     	Stadion Tactical Growth Fund Class I              	USMF      
 ETFRX     	Stadion Tactical Defensive Fund  Class A          	USMF      
 ETFWX     	Stadion Tactical Defensive Fund Class I           	USMF      
@@ -6293,7 +6295,6 @@ FBCVX     	Fidelity Blue Chip Value                          	USMF
 FBDAX     	Franklin Total Return Fund Advisor Class          	USMF      
 FBDIX     	Franklin Strategic Biotechnology Discovery Fund   	USMF      
 FBDTX     	American Funds 2025 Target Date Retirement Fd Cl  	USMF      
-FBENX     	Fidelity Short-Term Treasury Bond Index Fund In   	USMF      
 FBETX     	American Funds 2030 Target Date Retirement Fd Cl  	USMF      
 FBFQX     	Franklin Balanced Fund Class R                    	USMF      
 FBFTX     	American Funds 2035 Target Date Retirement Fd Cl  	USMF      
@@ -6304,7 +6305,6 @@ FBGLX     	Fidelity Advisor Freedom 2055 Fund Class Z6       	USMF
 FBGRX     	Fidelity Blue Chip Growth Fund                    	USMF      
 FBGTX     	American Funds 2040 Target Date Retirement Fd Cl  	USMF      
 FBHTX     	American Funds 2045 Target Date Retirement Fd Cl  	USMF      
-FBIDX     	Fidelity U.S. Bond Index Fund - Investor Class    	USMF      
 FBIFX     	Fidelity Freedom Index 2040 Fund - Investor Clas  	USMF      
 FBIOX     	Fidelity Select Biotechnology Pt                  	USMF      
 FBJTX     	American Funds 2055 Target Date Retirement Fd Cl  	USMF      
@@ -6665,7 +6665,6 @@ FEMRX     	Templeton Emerging Markets Bond Fund Class R6     	USMF
 FEMSX     	Fidelity Series Emerging Markets Fund             	USMF      
 FEMTX     	Fidelity Advisor Emerging Europe Middle East A    	USMF      
 FEMZX     	Templeton Emerging Markets Bond Fund Class Advis  	USMF      
-FENSX     	Fidelity U.S. Sustainability Index Fund Investo   	USMF      
 FEORX     	First Eagle Overseas Fund Class R6                	USMF      
 FEPAX     	Fidelity Advisor Total Bond Fund Class A          	USMF      
 FEPCX     	Fa 529 Equity Income Port-Cl C                    	USMF      
@@ -6820,6 +6819,7 @@ FGBAX     	Fidelity Advisor Investment Grade Bond Fund Cl A  	USMF
 FGBCX     	Fidelity Advisor Investment Grade Bond Fund Cl C  	USMF      
 FGBFX     	Fidelity Global Credit Fund                       	USMF      
 FGBIX     	Fidelity Advisor Global Credit Fund Class I       	USMF      
+FGBMX     	Fidelity New Markets Income Fund Class Z          	USMF      
 FGBPX     	Fidelity Advisor Investment Grade Bond Fund Cla   	USMF      
 FGBRX     	Templeton Global Bond Fund Class R                	USMF      
 FGBTX     	Fidelity Advisor Investment Grade Bond Fund - Cl  	USMF      
@@ -6834,10 +6834,12 @@ FGDAX     	Fidelity Advisor Gold Fund Class A                	USMF
 FGDCX     	Fidelity Advisor Gold Fund Class C                	USMF      
 FGDIX     	Fidelity Advisor Gold Fund Class I                	USMF      
 FGDKX     	Fidelity Growth Discovery Fund Class K            	USMF      
+FGDMX     	Fidelity Advisor Communication Services Fund Cla  	USMF      
 FGDPX     	Fa 529 Growth Opportunities Port-Cl C             	USMF      
 FGDTX     	Fidelity Advisor Gold Fund - Class M              	USMF      
 FGDXX     	First American Mm Fds Gv Obligations Corp TR Cl   	USMF      
 FGEAX     	Fidelity Advisor Global Equity Cl A               	USMF      
+FGEMX     	Fidelity Advisor Communication Services Fund Cla  	USMF      
 FGETX     	Fidelity Advisor Global Capital Appreciation Fun  	USMF      
 FGFAX     	Federated International Leaders Fund Class A      	USMF      
 FGFBX     	Federated International Leaders Fund Class B      	USMF      
@@ -6853,6 +6855,7 @@ FGGBX     	Templeton Global Balanced Fund Class R6           	USMF
 FGHAX     	Fidelity Advisor Global High Income Fd Cl A       	USMF      
 FGHCX     	Fidelity Advisor Global High Income Fd Cl C       	USMF      
 FGHIX     	Fidelity Advisor Global High Income Fund Class    	USMF      
+FGHMX     	Fidelity Advisor Communication Services Fund Cla  	USMF      
 FGHNX     	Fidelity Global High Income Fd                    	USMF      
 FGHTX     	Fidelity Advisor Global High Income Fund - Class  	USMF      
 FGIAX     	Nuveen Global Infrastructure Fd Cl A              	USMF      
@@ -6869,6 +6872,8 @@ FGIUX     	Fidelity Advisor Series I Fidelity Advisor Grow   	USMF
 FGIWX     	Nuveen Global Infrastructure Fund Class R6        	USMF      
 FGIYX     	Nuveen Global Infrastructure Fd Cl I              	USMF      
 FGIZX     	Fidelity Advisor Growth & Income Fund Class Z     	USMF      
+FGJMX     	Fidelity Advisor Communication Services Fund Cla  	USMF      
+FGKMX     	Fidelity Advisor Communication Services Fund Cla  	USMF      
 FGKNX     	Fss Strategic Income Fund - Cl R6                 	USMF      
 FGLDX     	Invesco Gold & Precious Metals Fd Investor Cl     	USMF      
 FGLGX     	Fidelity Series Large Cap Stock Fund              	USMF      
@@ -6886,10 +6891,12 @@ FGOVX     	Fidelity Government Income Fund                   	USMF
 FGPAX     	Fa 529 Asset Manager 60% Portfolio - Class A      	USMF      
 FGPCX     	Fa 529 Asset Manager 60% Portfolio - Class C      	USMF      
 FGPMX     	Franklin Gold and Precious Metals Fund - Cl R6    	USMF      
+FGQMX     	Fidelity High Income Fund Class A                 	USMF      
 FGRAX     	Franklin Growth Opportunities Fund Class A        	USMF      
 FGRCX     	Fidelity Advisor Mega Cap Stock Fund Class C      	USMF      
 FGREX     	Invesco Global Real Estate Fd Cl R6               	USMF      
 FGRIX     	Fidelity Growth and Income Pt                     	USMF      
+FGRMX     	Fidelity High Income Fund Class M                 	USMF      
 FGROX     	Emerald Growth Fund Institutional Class           	USMF      
 FGRSX     	Federated International Leaders Fd R6 Shs         	USMF      
 FGRTX     	Fidelity Mega Cap Stock Fund                      	USMF      
@@ -6897,21 +6904,28 @@ FGSAX     	Federated Mdt Mid Cap Growth Fund - A Shares      	USMF
 FGSCX     	Federated Mdt Mid Cap Growth Fund - C Shares      	USMF      
 FGSIX     	Federated Mdt Mid Cap Growth Fund - Is Shares     	USMF      
 FGSKX     	Federated Mdt Mid Cap Growth Fund - R6 Shares     	USMF      
+FGSMX     	Fidelity High Income Fund Class C                 	USMF      
 FGSPX     	Fa 529 Asset Manager 60% Portfolio - Class P      	USMF      
 FGSRX     	Franklin Growth Series Fund - Class R             	USMF      
 FGTAX     	Fidelity Advisor Mega Cap Stock Fund Class A      	USMF      
 FGTBX     	Federated Global Total Return Bond Fund - Is Sha  	USMF      
 FGTIX     	Franklin Templeton Growth Target Fund Class A     	USMF      
 FGTKX     	Fidelity Freedom 2030 Fund Class K6               	USMF      
+FGTMX     	Fidelity High Income Fund Class I                 	USMF      
 FGTNX     	Fidelity Advisor Global Equity Income Fd Cl C     	USMF      
 FGTRX     	Franklin Templeton Growth Target Fund - Class R   	USMF      
 FGTZX     	Ftfa-Franklin Templeton Growth Target Fund        	USMF      
 FGUAX     	Federated Government Ultrashort Duration Fund Cl  	USMF      
 FGULX     	Federated Government Ultrashort Duration Fund -   	USMF      
+FGUMX     	Fidelity High Income Fund Class Z                 	USMF      
 FGUSX     	Federated Government Ultra Short Duration Fund I  	USMF      
 FGUXX     	Government Obligations Fund Class U               	USMF      
+FGVMX     	Fidelity New Markets Income Fund Class A          	USMF      
 FGVXX     	First American Funds Institutional Government Fu  	USMF      
+FGWMX     	Fidelity New Markets Income Fund Class M          	USMF      
 FGXXX     	First American Government Obligations Fund Class  	USMF      
+FGYMX     	Fidelity New Markets Income Fund Class C          	USMF      
+FGZMX     	Fidelity New Markets Income Fund Class I          	USMF      
 FHAAX     	Fidelity Advisor Freedom Blend 2005 Fund Class C  	USMF      
 FHABX     	Fidelity Advisor Freedom Blend 2010 Fund Class A  	USMF      
 FHACX     	Fidelity Advisor Freedom Blend 2005 Fund Class Z  	USMF      
@@ -7077,9 +7091,7 @@ FIANX     	Fa Strategic Income 529 Port Ag                   	USMF
 FIARX     	Fidelity Advisor Simplicity Rmd 2010 Fund - Clas  	USMF      
 FIASX     	Fidelity Advisor International Small Cap Class A  	USMF      
 FIATX     	Fidelity Advisor International Capital Appreciat  	USMF      
-FIBAX     	Fidelity Intermediate Treasury Bond Index Fund -  	USMF      
 FIBGX     	First Investors Global Fund Class B Inc.          	USMF      
-FIBIX     	Fidelity Intermediate Treasury Bond Index Fund -  	USMF      
 FIBPX     	Federated International Bond Strategy Portfolio   	USMF      
 FIBQX     	Templeton International Bond Fund Class R6        	USMF      
 FIBUX     	Fidelity Flex U.S. Bond Index Fund                	USMF      
@@ -7263,7 +7275,6 @@ FIONX     	Fidelity Sai International Index Fund             	USMF
 FIOOX     	Fidelity Series 1000 Value Index Fund             	USMF      
 FIORX     	First Eagle Overseas Fund Class R4                	USMF      
 FIOTX     	Fidelity Advisor Managed Retirement 2005 Fund -   	USMF      
-FIPBX     	Fidelity Inflation-Protected Bond Index Fund - I  	USMF      
 FIPDX     	Fidelity Inflation-Protected Bond Index Fund - I  	USMF      
 FIPEX     	Fa 529 Inflation Protected Bd Port-Cl A           	USMF      
 FIPFX     	Fidelity Freedom Index 2050 Fund - Investor Clas  	USMF      
@@ -7484,18 +7495,13 @@ FLAQX     	Franklin Louisiana Tax-Free Income Fund Class R6  	USMF
 FLARX     	Pioneer Floating Rate Fund Class A                	USMF      
 FLATX     	Fidelity Latin America Fund                       	USMF      
 FLAUX     	Strategic Advisers Core Multi-Manager Fd          	USMF      
-FLBAX     	Fidelity Long-Term Treasury Bond Index Fund - Pr  	USMF      
 FLBCX     	Fa 529 Limited Term Bond Port-Cl C                	USMF      
 FLBDX     	Meeder Total Return Bond Fund - Retail Class      	USMF      
-FLBIX     	Fidelity Long-Term Treasury Bond Index Fund - In  	USMF      
 FLCCX     	Fidelity Advisor Series I Fidelity Advisor Larg   	USMF      
-FLCDX     	Fidelity Large Cap Value Index Fund Investor Cl   	USMF      
 FLCEX     	Fidelity Large Cap Core Enhanced Index Fund       	USMF      
 FLCGX     	Meeder Quantex Fund - Retail Class                	USMF      
-FLCHX     	Fidelity Large Cap Value Index Fund Premium Cla   	USMF      
 FLCKX     	Fidelity Leveraged Company Stock Fund Class K     	USMF      
 FLCLX     	Fidelity Flex Large Cap Growth Fund               	USMF      
-FLCMX     	Fidelity Large Cap Value Index Fund Institution   	USMF      
 FLCNX     	Fidelity Contrafund K6                            	USMF      
 FLCOX     	Fidelity Large Cap Value Index Fund Institution   	USMF      
 FLCPX     	Fidelity Sai U.S. Large Cap Index Fund            	USMF      
@@ -7510,6 +7516,7 @@ FLDLX     	First Investors Limited Duration Bond Fund - Adv  	USMF
 FLDMX     	First Investors Limited Duration Bond Fund - Ins  	USMF      
 FLDOX     	Meeder Moderate Allocation Fund - Retail Class    	USMF      
 FLDZX     	Franklin Low Duration Total Return Fund Class Ad  	USMF      
+FLEIX     	Cls Flexible Income Fund Class T                  	USMF      
 FLEKX     	Pioneer Flexible Opportunities Fund - Class K     	USMF      
 FLERX     	Franklin Lifesmart 2030 Retirement Target Fund    	USMF      
 FLFAX     	Fidelity Advisor Latin America Fund Cl A          	USMF      
@@ -7739,13 +7746,10 @@ FMVUX     	Matson Money U.S. Equity Vi Portfolio             	USMF
 FMXKX     	Federated Max Cap Index Fund Class R              	USMF      
 FMXSX     	Federated Max-Cap Index Fd Svc Shs                	USMF      
 FMYIX     	Federated Municipal High Yield Advantage- Is Cla  	USMF      
-FNAMX     	Fidelity Long-Term Treasury Bond Index Fund Ins   	USMF      
 FNAPX     	Strategic Advisers Small-Cap Multi-Manager        	USMF      
 FNARX     	Fidelity Select Portfolio Natural Resources Port  	USMF      
-FNASX     	Sustainability Bond Index Fund Investor Class     	USMF      
 FNBCX     	Fidelity Advisor Limited Term Bond Fund Class C   	USMF      
 FNBGX     	Fidelity Long-Term Treasury Bond Index Fund Ins   	USMF      
-FNBSX     	Sustainability Bond Index Fund Premium Class      	USMF      
 FNCAX     	Franklin Nextstep Conservative Fund Class A       	USMF      
 FNCCX     	Nuveen Nm Municipal Bond Fd Cl C                  	USMF      
 FNCDX     	Franklin Nextstep Conservative Fund Class C       	USMF      
@@ -7774,9 +7778,7 @@ FNIDX     	Fidelity International Sustainability Index Fund  	USMF
 FNIHX     	American Independence U.S. Inflation-Protected F  	USMF      
 FNIIX     	Franklin New Jersey Tax-Free Income Fund Class C  	USMF      
 FNILX     	Fidelity Zero Large Cap Index Fund                	USMF      
-FNIRX     	Fidelity International Sustainability Index Fund  	USMF      
 FNITX     	Fidelity Advisor New Insights Fund - Class M      	USMF      
-FNIYX     	Fidelity International Sustainability Index Fund  	USMF      
 FNJHX     	Fidelity  New Jersey Municipal Income Fund        	USMF      
 FNJQX     	Franklin New Jersey Tax-Free Income Fund Class A  	USMF      
 FNJRX     	Franklin New Jersey Tax-Free Income Fund Class R  	USMF      
@@ -7805,9 +7807,6 @@ FNSBX     	Fidelity Freedom 2050 Fund Class K                	USMF
 FNSDX     	Fidelity Freedom 2055 Fund Class K                	USMF      
 FNSFX     	Fidelity Freedom 2060 Fund Class K                	USMF      
 FNSHX     	Fidelity Freedom Income Fund Class K              	USMF      
-FNSJX     	Fidelity Short-Term Bond Index Fund Investor Cl   	USMF      
-FNSKX     	Fidelity Short-Term Bond Index Fund Premium Cla   	USMF      
-FNSLX     	Fidelity Short-Term Bond Index Fund Institution   	USMF      
 FNSOX     	Fidelity Short-Term Bond Index Fund Institution   	USMF      
 FNTAX     	Nuveen Nebraska Municipal Bond Fund Class A       	USMF      
 FNTCX     	Nuveen Nebraska Municipal Bond Fund Cl C1         	USMF      
@@ -7898,7 +7897,6 @@ FPECX     	First Trust Preferred Securities and Income Fund  	USMF
 FPEFX     	First Trust Preferred Securities and Income Fund  	USMF      
 FPEIX     	First Trust Preferred Securities and Income Fund  	USMF      
 FPELX     	Franklin Pelagos Commodities Strategy Fund - Cl   	USMF      
-FPEMX     	Fidelity Emerging Markets Index Fund - Investor   	USMF      
 FPERX     	First Trust Preferred Securities and Income Fund  	USMF      
 FPFAX     	Fa 529 Port 2028-Cl A                             	USMF      
 FPFCX     	Fa 529 Port 2028-Cl C                             	USMF      
@@ -7922,11 +7920,8 @@ FPJHX     	Fidelity Advisor 529 Portfolio 2037 - Class P     	USMF
 FPKAX     	Fa 529 Port 2022-Old Cl A                         	USMF      
 FPLCX     	Fa 529 Port 2019-Cl C                             	USMF      
 FPLLX     	Fa 529 Port 2034-Cl C                             	USMF      
-FPMAX     	Fidelity Emerging Markets Index Fund - Premium C  	USMF      
 FPMBX     	Nuveen Flagship Pennsylvania Municipal Bond Fund  	USMF      
-FPMIX     	Fidelity Emerging Markets Index Fund - Instituti  	USMF      
 FPNIX     	Fpa New Income                                    	USMF      
-FPNSX     	Fidelity U.S. Sustainability Index Fund Premium   	USMF      
 FPNTX     	Nuveen Flagship Pennsylvania Muni Bd Fd Cl A      	USMF      
 FPODX     	Franklin Payout 2018 Fund Cl Adv                  	USMF      
 FPOEX     	Franklin Payout 2019 Fund Cl R6                   	USMF      
@@ -8098,7 +8093,6 @@ FRVFX     	Franklin Small Cap Value Fund Class C             	USMF
 FRVLX     	Franklin Small Cap Value Fund Class A             	USMF      
 FRVRX     	Franklin Virginia Tax-Free Income Fund Class R6   	USMF      
 FRVZX     	Franklin Virginia Tax-Free Income Fd Cl Adv       	USMF      
-FRXIX     	Fidelity Real Estate Index Fund - Investor Class  	USMF      
 FSAAX     	Fidelity Advisor Asset Manager 60% Class A        	USMF      
 FSACX     	Nuveen Strategy Aggressive Growth Allocation Fd   	USMF      
 FSADX     	Strategic Advisers Income Opportunities Fd of Fd  	USMF      
@@ -8115,12 +8109,10 @@ FSATX     	Fidelity Advisor Asset Manager 60% - Class M      	USMF
 FSAVX     	Fidelity Select Automotive Portfolio              	USMF      
 FSAYX     	Nuveen Strategy Aggressive Growth Allocation Fd   	USMF      
 FSAZX     	Fidelity Arizona Municipal Income Fund            	USMF      
-FSBAX     	Fidelity Short-Term Treasury Bond Index Fund - P  	USMF      
 FSBBX     	Federated Global Allocation Fund Class B Shs      	USMF      
 FSBCX     	Federated Global Allocation Fund Class C Shs      	USMF      
 FSBDX     	Fidelity Series Blue Chip Growth Fund             	USMF      
 FSBHX     	Fidelity Advisor Short Duration High Income Fund  	USMF      
-FSBIX     	Fidelity Short-Term Treasury Bond Index Fund - I  	USMF      
 FSBKX     	Federated Global Allocation Fund Class R Shs      	USMF      
 FSBLX     	Federated Global Allocation Fund - Class R6 Shar  	USMF      
 FSBTX     	Short-Term Bond Fund of America - Class F-3       	USMF      
@@ -8131,8 +8123,6 @@ FSCEX     	Fidelity Advisor Series I Fidelity Advisor Smal   	USMF
 FSCFX     	Strategic Advisers Small-Mid Cap Fund             	USMF      
 FSCHX     	Fidelity Select Chemical Pt                       	USMF      
 FSCIX     	Fidelity Advisor Small Cap Fund Class I           	USMF      
-FSCKX     	Fidelity Mid Cap Index Fund - Premium Class       	USMF      
-FSCLX     	Fidelity Mid Cap Index Fund - Investor Class      	USMF      
 FSCNX     	Fidelity Advisor Asset Manager 60% Class C        	USMF      
 FSCOX     	Fidelity International Small Cap Opportunities F  	USMF      
 FSCPX     	Fidelity Select Consumer Discretionary            	USMF      
@@ -8152,27 +8142,22 @@ FSECX     	Fa 529 Strategic Div & Income Port-Cl C           	USMF
 FSEHX     	Fidelity Advisor Short Duration High Income Fund  	USMF      
 FSEIX     	Nuveen Mid Cap Value Fund I                       	USMF      
 FSELX     	Fidelity Select Semiconductors Portfolio          	USMF      
-FSEMX     	Fidelity Extended Market Index Fund - Investor C  	USMF      
 FSENX     	Fidelity Select Energy                            	USMF      
 FSERX     	Franklin Real Estate Securities Fd Cl R6          	USMF      
 FSESX     	Fidelity Select Energy Services Pt                	USMF      
-FSEVX     	Fidelity Extended Market Index Fund - Premium Cl  	USMF      
 FSFHX     	Fidelity Advisor Short Duration High Income Fund  	USMF      
 FSFIX     	Nuveen Strategy Conservative Allocation Class A   	USMF      
 FSFRX     	Nuveen Strategic Income Fund Class R6             	USMF      
 FSFYX     	Nuveen Strategy Conservative Allocation Fd Cl I   	USMF      
 FSGAX     	Franklin Small -Mid Cap Growth Fund Advisor Clas  	USMF      
 FSGCX     	Franklin Strategic Income Fund Class C            	USMF      
-FSGDX     	Fidelity Global Ex U.S. Index Fund - Premium Cla  	USMF      
 FSGEX     	Fidelity Series Global Ex U.S. Index Fund         	USMF      
 FSGFX     	Strategic Advisers Growth Fund                    	USMF      
 FSGGX     	Fidelity Global Ex U.S. Index Fund - Institution  	USMF      
 FSGIX     	Federated US Government Securities Fund 1-3 Yrs   	USMF      
 FSGNX     	Nuveen Strategy Balanced Allocation Class A       	USMF      
 FSGRX     	Franklin Small Cap Growth Fund Class A            	USMF      
-FSGSX     	Fidelity Global Ex U.S. Index Fund - Institution  	USMF      
 FSGTX     	Federated U.S. Government Securities Fund 1-3 Ye  	USMF      
-FSGUX     	Fidelity Global Ex U.S. Index Fund - Investor Cl  	USMF      
 FSGVX     	Federated US Government Securities Fund 1-3 Year  	USMF      
 FSGYX     	Nuveen Strategy Growth Allocation Fund-Class I    	USMF      
 FSHAX     	Nuveen Short Tax Free Fund Class A                	USMF      
@@ -8189,16 +8174,10 @@ FSIEX     	Touchstone International Value Fd Cl A            	USMF
 FSIFX     	First Investors Strategic Income Fd Cl A          	USMF      
 FSIGX     	Fidelity Series Investment Grade Bond Fund        	USMF      
 FSIHX     	First Investors Strategic Income Fd Adv Cl        	USMF      
-FSIIX     	Fidelity International Index Fund - Investor Cla  	USMF      
 FSILX     	Federated Short Term Income Fund - R6 Shares      	USMF      
 FSIPX     	Fidelity Series Inflation-Protected Bond Index F  	USMF      
-FSIQX     	Fidelity Inflation-Protected Bond Index Fund - I  	USMF      
 FSIRX     	Fidelity Advisor Strategic Real Return Fund Cla   	USMF      
-FSISX     	Federated Short-Term Income Fd Svc Shs            	USMF      
-FSITX     	Fidelity U.S. Bond Index Fund - Premium Class     	USMF      
 FSIUX     	Invesco Dividend Income Fd Cl R5                  	USMF      
-FSIVX     	Fidelity International Index Fund - Premium Clas  	USMF      
-FSIYX     	Fidelity Inflation-Protected Bond Index Fund - P  	USMF      
 FSJCX     	Nuveen Strategy Conservative Allocation Fund-Cla  	USMF      
 FSJHX     	Fidelity Advisor Stock Selector All Cap Fund - C  	USMF      
 FSJSX     	Nuveen Strategy Conservative Allocation Fd Cl R3  	USMF      
@@ -8208,7 +8187,6 @@ FSKGX     	Fidelity Growth Strategies K6 Fund                	USMF
 FSKKX     	Franklin K2 Alternative Strategies Fund Cl R      	USMF      
 FSKLX     	Fidelity Sai International Minimum Volatility In  	USMF      
 FSKSX     	Nuveen Strategy Balanced Allocation Fund Cl R3    	USMF      
-FSKTX     	Fidelity Total Market Index Fund - Institutional  	USMF      
 FSKYX     	Nuveen Strategy Balanced Allocation Fd Cl I       	USMF      
 FSLAX     	Fa 529 Small Cap Port-Cl A                        	USMF      
 FSLBX     	Fidelity Select Brokerage & Investment MGT Pt.    	USMF      
@@ -8259,7 +8237,6 @@ FSPEX     	Fa Small Cap 529 Portfolio Class I                	USMF
 FSPGX     	Fidelity Large Cap Growth Index Fund Institutio   	USMF      
 FSPHX     	Fidelity Select Health Care                       	USMF      
 FSPLX     	Fa 529 Strategic Div & Income Port-Cl P           	USMF      
-FSPNX     	Fidelity International Index Fund - Institutiona  	USMF      
 FSPPX     	Fa 529 Small Cap Port-Cl P                        	USMF      
 FSPSX     	Fidelity International Index Fund - Institutiona  	USMF      
 FSPTX     	Fidelity Select Technology                        	USMF      
@@ -8273,17 +8250,13 @@ FSRNX     	Fidelity Real Estate Index Fund - Institutional   	USMF
 FSRPX     	Fidelity Select Retailing Pt                      	USMF      
 FSRRX     	Fidelity Strategic Real Return Fund               	USMF      
 FSRTX     	Fidelity Advisor Strategic Real Return Fund - Cl  	USMF      
-FSRVX     	Fidelity Real Estate Index Fund - Premium Class   	USMF      
 FSSAX     	Franklin Small Cap Growth Fd  Advisor Cl          	USMF      
 FSSDX     	Fa 529 Stock Selector Mid Cap Port-Cl D           	USMF      
 FSSFX     	Fidelity Advisor Series Small Cap Fund            	USMF      
 FSSKX     	Fidelity Stock Selector All Cap Class K           	USMF      
 FSSMX     	Fidelity Stock Sector Mid Cap Fund                	USMF      
 FSSNX     	Fidelity Small Cap Index Fund - Institutional Pr  	USMF      
-FSSPX     	Fidelity Small Cap Index Fund - Investor Class    	USMF      
 FSSRX     	Franklin Small Cap Growth Fund Class R            	USMF      
-FSSSX     	Fidelity Small Cap Index Fund - Institutional Cl  	USMF      
-FSSVX     	Fidelity Small Cap Index Fund - Premium Class     	USMF      
 FSSZX     	Fidelity Stock Selector Small Cap Fund Class Z    	USMF      
 FSTAX     	Fidelity Advisor Series II Fidelity Advisor Stra  	USMF      
 FSTBX     	Federated Global Allocation Fund Class A Shs      	USMF      
@@ -8294,22 +8267,16 @@ FSTGX     	Fidelity Intermediate Government Income Fund      	USMF
 FSTIX     	Federated Short-Term Income Fund - Institutional  	USMF      
 FSTKX     	Federated Mdt Large Cap  Value Fund - Class Ss    	USMF      
 FSTLX     	Federated Mdt Large Cap  Value Fund - Class R6    	USMF      
-FSTMX     	Fidelity Total Market Index Fund - Investor Clas  	USMF      
-FSTPX     	Fidelity Mid Cap Index Fund - Institutional Clas  	USMF      
 FSTRX     	Federated Mdt Large Cap Value Fund - Class A      	USMF      
 FSTSX     	Fidelity Series International Small Cap Fund      	USMF      
 FSTTX     	American Funds Short-Term Tax-Exempt Bd Fd Cl F-  	USMF      
 FSTUX     	Invesco Dividend Income Fd Inv Cl                 	USMF      
-FSTVX     	Fidelity Total Market Index Fund - Premium Class  	USMF      
 FSTYX     	Federated Short Term Income Fundclass Y           	USMF      
-FSUIX     	Fidelity Large Cap Growth Index Fund Investor C   	USMF      
-FSUPX     	Fidelity Large Cap Growth Index Fund Premium Cl   	USMF      
 FSUTX     	Fidelity Select Utilities Growth Portfolio        	USMF      
 FSUVX     	Fidelity Sai U.S. Minimum Volatility Index Fund   	USMF      
 FSVLX     	Fidelity Select Consumer Finance Portfolio        	USMF      
 FSVSX     	Nuveen Small Cap Value Fund Class R3              	USMF      
 FSWCX     	Fidelity Sai U.S. Value Index Fund                	USMF      
-FSWIX     	Fidelity Large Cap Growth Index Fund Institutio   	USMF      
 FSWTX     	Fidelity Advisor Municipal Income 2023 Fund Cla   	USMF      
 FSXMX     	Fa 529 Strategic Income Port-Cl C                 	USMF      
 FSXPX     	Fa 529 Strategic Income Port-Cl P                 	USMF      
@@ -8368,6 +8335,7 @@ FTGRX     	Fidelity Advisor Mega Cap Stock Fund - Class M    	USMF
 FTGSX     	Federated Total Return Government Bond Fd Svc Sh  	USMF      
 FTGTX     	Franklin Templeton Growth Target Fund Class C     	USMF      
 FTGWX     	Salient Tactical Growth Fund Institutional Class  	USMF      
+FTHAX     	Fuller & Thaler Behavioral Core Equity Fund - A   	USMF      
 FTHCX     	Fidelity Advisor Series Vii  Fidelity Advisor T   	USMF      
 FTHFX     	Fuller & Thaler Behavioral Small-Cap Equity Fund  	USMF      
 FTHNX     	Fuller & Thaler Behavioral Small-Cap Equity Fund  	USMF      
@@ -8377,14 +8345,11 @@ FTIAX     	Federated Short Term Income Fund Class A          	USMF
 FTIBX     	Federated Global Total Return Bond Fund - C Shar  	USMF      
 FTICX     	Dws Communications Fund - Class C                 	USMF      
 FTIEX     	Fidelity Total International Equity Fund          	USMF      
-FTIGX     	Fidelity Total International Index Fund Investo   	USMF      
 FTIHX     	Fidelity Total International Index Fund Institu   	USMF      
 FTIIX     	Federated Global Total Return Bond Fund - A Shar  	USMF      
 FTINX     	Fidelity Advisor Asset Manager 30% Class I        	USMF      
-FTIPX     	Fidelity Total International Index Fund Premium   	USMF      
 FTIRX     	Fidelity Advisor Simplicity Rmd 2010 Fund - Clas  	USMF      
 FTISX     	Fidelity Advisor International Small Cap Fund -   	USMF      
-FTIUX     	Fidelity Total International Index Fund Institu   	USMF      
 FTIWX     	Fidelity Advisor Asset Manager 20% Class I        	USMF      
 FTKFX     	Fidelity Total Bond K6 Fund                       	USMF      
 FTLAX     	Nuveen Flagship Louisiana Muni Bd Fd Cl A         	USMF      
@@ -8458,6 +8423,8 @@ FTVNX     	Fuller & Thaler Behavioral Mid-Cap Value Fund -   	USMF
 FTVSX     	Fuller & Thaler Behavioral Mid-Cap Value Fund -   	USMF      
 FTVZX     	Fuller & Thaler Behavioral Mid-Cap Value Fund -   	USMF      
 FTWRX     	Templeton World Cl R6                             	USMF      
+FTXAX     	Fidelity Advisor Tax Managed Stock Fund Class A   	USMF      
+FTXCX     	Fidelity Advisor Tax Managed Stock Fund Class C   	USMF      
 FTXFX     	Fuller & Thaler Behavioral Small-Cap Growth Fund  	USMF      
 FTXNX     	Fuller & Thaler Behavioral Small-Cap Growth Fund  	USMF      
 FTXSX     	Fuller & Thaler Behavioral Small-Cap Growth Fund  	USMF      
@@ -8483,7 +8450,6 @@ FUNCX     	Pioneer Fundamental Growth Fund Class C           	USMF
 FUNDX     	Fund X Upgrader Fund                              	USMF      
 FUNFX     	American Funds Fundamental Investors - Class F-3  	USMF      
 FUNYX     	Pioneer Fundamental Growth Fund Class Y           	USMF      
-FUPDX     	Fidelity Intermediate Treasury Bond Index Fund    	USMF      
 FUPXX     	Treasury Obligations Fund Class P                 	USMF      
 FUQIX     	Fidelity Sai U.S. Quality Index Fund              	USMF      
 FURAX     	Fidelity Advisor Simplicity Rmd 2015 Fund - Clas  	USMF      
@@ -8493,11 +8459,9 @@ FURTX     	Fidelity Advisor Simplicity Rmd 2015 Fund - Clas  	USMF
 FUSAX     	Franklin U.S. Government Securities Fund Advisor  	USMF      
 FUSBX     	Federated Fund For U.S. Government Securities Cl  	USMF      
 FUSCX     	Federated Fund For U.S. Government Securities Cl  	USMF      
-FUSEX     	Fidelity 500 Index Fund - Investor Class          	USMF      
 FUSGX     	Federated Fund For U.S. Government Securities Cl  	USMF      
 FUSIX     	Strategic Advisers Fidelity International Fund    	USMF      
 FUSRX     	Franklin U.S. Government Securities Fund -  Clas  	USMF      
-FUSVX     	Fidelity 500 Index Fund - Premium Class           	USMF      
 FUTBX     	Fidelity Sai U.S. Treasury Bond Index Fund        	USMF      
 FUZXX     	First American Treasury Obligations Fund Class Z  	USMF      
 FVACX     	Nuveen Flagship Virginia Municipal Bond Fund Cl   	USMF      
@@ -8578,8 +8542,6 @@ FXNAX     	Fidelity U.S. Bond Index Fund - Institutional Pr  	USMF
 FXNCX     	Franklin North Carolina Tax-Free Income Fund Cla  	USMF      
 FXRXX     	Retail Prime Obligations Fund Class X             	USMF      
 FXSAX     	Psi Strategic Growth Fund Class A                 	USMF      
-FXSIX     	Fidelity 500 Index Fund - Institutional Class     	USMF      
-FXSTX     	Fidelity U.S. Bond Index Fund - Institutional Cl  	USMF      
 FXTAX     	Psi Tactical Growth Fund Class A                  	USMF      
 FYAIX     	Access Flex High Yield Fund Investor Class        	USMF      
 FYASX     	Access Flex High Yield Fund Service Class         	USMF      
@@ -8875,6 +8837,7 @@ GDIFX     	Goldman Sachs Alternative Premia Fund - Institut  	USMF
 GDIIX     	Rnc Genter Dividend Income Fund                   	USMF      
 GDIRX     	Goldman Sachs Short Duration Tax-Free Fund  - In  	USMF      
 GDIUX     	Goldman Sachs Short Duration Income Fund Class R  	USMF      
+GDIVX     	Cls Global Diversified Equity Fund Class T        	USMF      
 GDLFX     	Gotham Defensive Long 500 Fund - Institutional C  	USMF      
 GDLIX     	Gotham Defensive Long Fund - Institutional Class  	USMF      
 GDMIX     	Lazard Global Dynamic Multi Asset Portfolio Inst  	USMF      
@@ -9142,6 +9105,7 @@ GIMDX     	Goldman Sachs Local Emerging Markets Debt Fund C  	USMF
 GIMFX     	Implementation Fund                               	USMF      
 GIMMX     	Goldman Sachs Multi-Manager Alternatives Fund -   	USMF      
 GIMSX     	Goldman Sachs Local Emerging Markets Debt Fund C  	USMF      
+GINCX     	Cls Growth and Income Fund Class T                	USMF      
 GINDX     	Gotham Index Plus Fund Institutional Class        	USMF      
 GINGX     	Goldman Sachs Blue Chip Fund- Institutional Shar  	USMF      
 GINNX     	Guinness Atkinson Global Innovators Fund - Insti  	USMF      
@@ -9189,6 +9153,8 @@ GIUSX     	Guggenheim Investment Grade Bond Fund- Instituti  	USMF
 GIWEX     	Guidemark World Ex-US Fd Insti Shs                	USMF      
 GIXFX     	Guidepath Flexible Income Allocation Fund - Inst  	USMF      
 GIXIX     	Nationwide International Index Fund Class R6      	USMF      
+GIYAX     	Guggenheim Ultra Short Duration Fund A Class      	USMF      
+GIYIX     	Guggenheim Ultra Short Duration Fund Institution  	USMF      
 GIZAX     	Invesco Global Infrastructure Fund Class A        	USMF      
 GIZCX     	Invesco Global Infrastructure Fund Class C        	USMF      
 GIZFX     	Invesco Global Infrastructure Fund Class R5       	USMF      
@@ -9198,6 +9164,7 @@ GIZYX     	Invesco Global Infrastructure Fund Class Y        	USMF
 GJRTX     	Goldman Sachs Absolute Return Tracker Fund Class  	USMF      
 GKIRX     	Goldman Sachs Income Builder Fund  - Investor Cl  	USMF      
 GLACX     	Power Global Tactical Allocation/Jaforlines Fund  	USMF      
+GLAGX     	Cls Global Aggressive Equity Fund Class T         	USMF      
 GLAPX     	GMO Global Asset Allocation Series Fund Class PS  	USMF      
 GLBFX     	Gl Beyond Income Fund                             	USMF      
 GLBIX     	Leuthold Global Fund Insti Class                  	USMF      
@@ -9318,7 +9285,6 @@ GMHZX     	Guidestone Funds Mydestination 2035 Fund - Inves  	USMF
 GMIAX     	Nationwide Investor Destinations Moderately Aggr  	USMF      
 GMICX     	GMO International Equity Fund II                  	USMF      
 GMIDX     	Gotham Master Index Plus Fund  - Institutional C  	USMF      
-GMIEX     	GMO International Large/Mid Cap Equity Fund Clas  	USMF      
 GMIFX     	Guidemark Opportunistic Fixed Income Fd Svc Shs   	USMF      
 GMIMX     	Nationwide Investor Destinations Moderately Cons  	USMF      
 GMIXX     	Nationwide Government Money Market Fund Class R6  	USMF      
@@ -9336,16 +9302,13 @@ GMMRX     	Nationwide Investor Destinations Moderately Cons  	USMF
 GMNAX     	Gabelli Global Mini Mites Fund Class A Shares     	USMF      
 GMNCX     	Gabelli Global Mini Mites Fund Class C Shares     	USMF      
 GMNFX     	Gotham Master Neutral Fund  - Institutional Clas  	USMF      
-GMNIX     	Lmcg Global Market Neutral Fd Inst                	USMF      
 GMNPX     	Goldman Sachs MLP Energy Infrastructure Fund Cla  	USMF      
-GMNRX     	Lmcg Global Market Neutral Fd Inv                 	USMF      
 GMOBX     	GMO Asset Allocation Bond Fund Class III          	USMF      
 GMODX     	GMO Opportunistic Income Fund Class Vi            	USMF      
 GMOEX     	GMO Emerging Markets Fund Class III               	USMF      
 GMOIX     	GMO International Equity Fund III                 	USMF      
 GMOKX     	GMO Risk Premium Fund Class Vi                    	USMF      
 GMPPX     	Goldman Sachs Mid Cap Value Fund Class P Shares   	USMF      
-GMQAX     	Mid Cap Equity Portfolio Advisor Shares           	USMF      
 GMQPX     	Goldman Sachs Managed Futures Strategy Fund Clas  	USMF      
 GMRAX     	Nationwide Small Cap Index Fund Class A           	USMF      
 GMRCX     	Nationwide Small Cap Index Fund Class C           	USMF      
@@ -10809,6 +10772,7 @@ HUDIX     	Huber Capital Diversified Large Cap Value Fund -  	USMF
 HULAX     	Hawaiian Tax-Free Trust Class A                   	USMF      
 HULCX     	Hawaiian Tax-Free Trust Class C Shares            	USMF      
 HULEX     	Huber Capital Equity Income Fd Instl              	USMF      
+HULFX     	Hawaiian Tax-Free Trust Class F                   	USMF      
 HULIX     	Huber Capital Equity Income Fd Inv Cl             	USMF      
 HULYX     	Hawaiian Tax-Free Trust Class Y Shares            	USMF      
 HUMDX     	Huber Mid Cap Value Fund - Investor Class         	USMF      
@@ -11185,22 +11149,16 @@ IENIX     	Invesco Energy Fund Class R5                      	USMF
 IENRX     	Ivy Energy Fund Class N                           	USMF      
 IENSX     	Invesco Energy Fund Class R6                      	USMF      
 IENYX     	Invesco Energy Fund Class Y                       	USMF      
-IEOAX     	Ivy European Opportunities Fd A                   	USMF      
-IEOBX     	Ivy European Opportunities Fd Cl B                	USMF      
-IEOCX     	Ivy European Opportunites Fd C                    	USMF      
 IEOHX     	VOYA Large Cap Growth Portfolio Initial           	USMF      
-IEOIX     	Ivy European Opportunities Fund Class I           	USMF      
 IEOPX     	VOYA Large Cap Growth Portfolio Adviser           	USMF      
 IEOSX     	VOYA Large Cap Growth Portfolio Service           	USMF      
 IEOTX     	VOYA Large Cap Growth Portfolio S2                	USMF      
-IEOYX     	Ivy European Opportunities Fund Class Y           	USMF      
 IEPIX     	VOYA Emerging Markets Index Portfolio Initial     	USMF      
 IEPSX     	VOYA Emerging Markets Index Portfolio Service     	USMF      
 IEQAX     	Icon Equity Income Fund Class A                   	USMF      
 IERBX     	Msif International Real Estate Class A            	USMF      
 IESGX     	Sit ESG Growth Fund - Class I                     	USMF      
 IETFX     	Morningstar Income and Growth ETF Asset Allocati  	USMF      
-IEURX     	Ivy European Opportunities Fund Class N           	USMF      
 IEVAX     	Columbia Global Equity Value Fund A               	USMF      
 IEVIX     	Lazard International Equity Value Institutional   	USMF      
 IEVOX     	Lazard International Equity Value Open Shares     	USMF      
@@ -11303,12 +11261,7 @@ IGTIX     	Transamerica Tactical Income Class I              	USMF
 IGTTX     	Transamerica Dynamic Income Class T1              	USMF      
 IGTVX     	Transamerica Dynamic Income Advisor Class         	USMF      
 IGVWX     	VOYA Global Equity Fund Class W                   	USMF      
-IGWAX     	Ivy Micro Cap Growth Fund Class A                 	USMF      
-IGWBX     	Ivy Micro Cap Growth Fund Class B                 	USMF      
-IGWCX     	Ivy Micro Cap Growth Fund Class C                 	USMF      
-IGWIX     	Ivy Micro Cap Growth Fund Class I                 	USMF      
 IGWRX     	Transamerica Asset Allocation Growth Portfolio C  	USMF      
-IGWYX     	Ivy Micro Cap Growth Fund Class Y                 	USMF      
 IGZAX     	VOYA Short Term Bond Fund Class R6                	USMF      
 IHAYX     	The Hartford Balanced Fund Class Y                	USMF      
 IHCSX     	VOYA Emerging Markets Hard Currency Debt Fund Cl  	USMF      
@@ -11344,8 +11297,6 @@ IHYWX     	VOYA High Yield Bond Fund Class W                 	USMF
 IIASX     	Invesco Income Allocation Fund Class R6           	USMF      
 IIBAX     	VOYA Intermediate Bond Fund Class A               	USMF      
 IIBCX     	Invesco International Core Equity Fd Investor Cl  	USMF      
-IIBEX     	Ivy Global Income Allocation Fund Class E         	USMF      
-IIBIX     	Ivy Global Income Allocation Fund Class I         	USMF      
 IIBOX     	VOYA Intermediate Bond Fund Class R               	USMF      
 IIBPX     	VOYA Intermediate Bond Portfolio Adviser          	USMF      
 IIBRX     	Invesco International Core Equity Fd Cl R         	USMF      
@@ -11440,7 +11391,6 @@ ILBPX     	VOYA Limited Maturity Bond Portfolio Initial      	USMF
 ILCDX     	VOYA Emerging Markets Local Currency Debt Fund C  	USMF      
 ILCEX     	Ivy Large Cap Growth Fund Class E                 	USMF      
 ILGRX     	Ivy Large Cap Growth Fund Class N                 	USMF      
-ILIAX     	Ivy Global Income Allocation Fund Class N         	USMF      
 ILLLX     	Transamerica Capital Growth Class C               	USMF      
 ILMBX     	VOYA Limited Maturity Bond Portfolio Service      	USMF      
 ILMDX     	Ivy Limited Term Bond Fund Class N                	USMF      
@@ -11478,7 +11428,6 @@ IMHCX     	Ivy California Municipal High Income Fund Cl C    	USMF
 IMHIX     	Ivy California Municipal High Income Fund Cl I    	USMF      
 IMHYX     	Ivy California Municipal High Income Fund Cl Y    	USMF      
 IMIDX     	Congress Mid Cap Growth Fd Inst Cl                	USMF      
-IMIGX     	Ivy Micro Cap Growth Fund Class N                 	USMF      
 IMIOX     	Vy T. Rowe Price International Stock Portfolio A  	USMF      
 IMISX     	Vy T. Rowe Price International Stock Portfolio S  	USMF      
 IMLAX     	Transamerica Asset Allocation - Moderate Growth   	USMF      
@@ -11562,6 +11511,7 @@ INSAX     	Catalyst Insider Buying Fd Cl A                   	USMF
 INSCX     	Catalyst  Insider Buying Fd Cl C                  	USMF      
 INSIX     	Catalyst Insider Buying Fund Class I              	USMF      
 INTAX     	Columbia Strategic Municipal Income Fund Class A  	USMF      
+INTFX     	Cls International Equity Fund Class T             	USMF      
 INTIX     	VOYA International Index Portfolio Service        	USMF      
 INTLX     	Forester Discovery Fund                           	USMF      
 INUTX     	Columbia Dividend Opportunity Fund Class A        	USMF      
@@ -11930,17 +11880,12 @@ IUTCX     	Invesco Dividend Income Fd Cl C                   	USMF
 IUTIX     	Columbia U.S. Treasury Index Fund Class I         	USMF      
 IVAEX     	Ivy Asset Strategy Fund Class I                   	USMF      
 IVALX     	Ivy Value Fund Class N                            	USMF      
-IVBAX     	Ivy Global  Income Allocation Fund Class A        	USMF      
-IVBBX     	Ivy Global Income Allocation Fund Class B         	USMF      
-IVBCX     	Ivy Global Income Allocation Fund Class C         	USMF      
 IVBDX     	Ivy Global Bond Fund Class N                      	USMF      
 IVBEX     	Ivy Securian Core Bond Fund Class E               	USMF      
 IVBIX     	Ivy Securian Core Bond Fund Class I               	USMF      
-IVBYX     	Ivy Global Income Allocation Fund Class Y         	USMF      
 IVCSX     	VOYA Small Company Portfolio  Initial             	USMF      
 IVEEX     	Ivy Energy Fund Class E                           	USMF      
 IVEIX     	Ivy Energy Fund Class I                           	USMF      
-IVEOX     	Ivy European Opportunities Fund Class E           	USMF      
 IVEXX     	Ivy Government Money Market Fund Class E          	USMF      
 IVFAX     	Federated International Strategic Value Dividend  	USMF      
 IVFCX     	Federated International Strategic Value Dividend  	USMF      
@@ -11960,7 +11905,6 @@ IVINX     	Ivy Global Growth Fund Class A                    	USMF
 IVIOX     	Iva International Fund Class A                    	USMF      
 IVIPX     	Vy Invesco Equity and Income Portfolio S2         	USMF      
 IVIQX     	Iva International Fund Class I                    	USMF      
-IVIRX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
 IVITX     	Vy Invesco Growth and Income Portfolio S2         	USMF      
 IVIYX     	Ivy Global Growth Fund Class Y                    	USMF      
 IVJAX     	Ivy Ig International Small Cap Fund Cl A          	USMF      
@@ -11983,15 +11927,9 @@ IVOSX     	Ivy Mid Cap Income Opportunities Fd Cl N          	USMF
 IVOYX     	Ivy Mid Cap Income Opportunities Fd Cl Y          	USMF      
 IVPOX     	VOYA Smallcap Opportunities Portfolio  Service    	USMF      
 IVPSX     	VOYA Small Company Portfolio  Service             	USMF      
-IVRAX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
-IVRBX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
-IVRCX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
 IVRIX     	Vy Clarion Real Estate Portfolio Initial          	USMF      
-IVRNX     	Ivy Lasalle Global Risk-Managed Real Estate Clas  	USMF      
-IVRRX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
 IVRSX     	Vy Clarion Real Estate Portfolio Service          	USMF      
 IVRTX     	Vy Clarion Real Estate Portfolio S2               	USMF      
-IVRYX     	Ivy Lasalle Global Risk-Managed Real Estate Fund  	USMF      
 IVSAX     	Ivy Global Bond Fund Class A                      	USMF      
 IVSBX     	Ivy Global Bond Fund Class B                      	USMF      
 IVSCX     	Ivy Global Bond Fund Class C                      	USMF      
@@ -12036,15 +11974,8 @@ IYBIX     	Ivy Balanced Fund Class I                         	USMF
 IYCEX     	Ivy Core Equity Fund Class R                      	USMF      
 IYCTX     	Ivy Small Cap Core Class T                        	USMF      
 IYCUX     	Ivy Pzena International Value Fund Class R        	USMF      
-IYEAX     	Ivy Tax Managed Equity Fund Class A               	USMF      
-IYEBX     	Ivy Tax Managed Equity Fund Class B               	USMF      
-IYECX     	Ivy Tax Managed Equity Fund Class C               	USMF      
 IYEFX     	Ivy Energy Fund Class R                           	USMF      
 IYEMX     	Invesco Emerging Markets Flexible Bond Fund Clas  	USMF      
-IYENX     	Ivy Tax-Managed Equity Fund Class N               	USMF      
-IYEUX     	Ivy European Opportunities Fund Class R           	USMF      
-IYEYX     	Ivy Tax Managed Equity Fund Class Y               	USMF      
-IYGBX     	Ivy Global Income Allocation Fund Class R         	USMF      
 IYGEX     	Ivy Global Equity Income Fund Class R             	USMF      
 IYGIX     	Ivy Large Cap Growth Fund Class I                 	USMF      
 IYGOX     	Ivy Global Bond Fund Class R                      	USMF      
@@ -12059,7 +11990,6 @@ IYIYX     	Ivy Municipal High Income Fund Class Y            	USMF
 IYLTX     	Ivy Limited-Term Bond Fund Class R                	USMF      
 IYMGX     	Ivy Managed International Opportunities Fund Cla  	USMF      
 IYMIX     	Ivy Mid Cap Growth Fund Class I                   	USMF      
-IYMRX     	Ivy Micro Cap Growth Fund Class R                 	USMF      
 IYOPX     	Invesco Global Opportunities Fd Cl Y              	USMF      
 IYPCX     	Ivy Emerging Markets Equity Fund Class R          	USMF      
 IYPOX     	Ivy Apollo Strategic Income Fd Cl Y               	USMF      
@@ -13420,6 +13350,7 @@ JUTUX     	Jpmorgan Smartretirement Blend 2030 Fund - R4     	USMF
 JVAAX     	Jpmorgan Value Advantage Class A                  	USMF      
 JVACX     	Jpmorgan Value Advantage Class C                  	USMF      
 JVAIX     	Jpmorgan Value Advantage Class L                  	USMF      
+JVANX     	John Hancock Variable Insurance Trust Internatio  	USMF      
 JVAPX     	Jpmorgan Value Advantage Fund-R3                  	USMF      
 JVAQX     	Jpmorgan Value Advantage Fund-R4                  	USMF      
 JVARX     	Jpmorgan Value Advantage Fund-R5                  	USMF      
@@ -13515,6 +13446,7 @@ KGDZX     	Dws Global Small Cap Fund - Class R6              	USMF
 KGGAX     	Kopernik Global All-Cap Fund- Class A             	USMF      
 KGGIX     	Kopernik Global All-Cap Fund- Institutional Clas  	USMF      
 KGIIX     	Kopernik International Fund Class I               	USMF      
+KGIRX     	Kopernik International Fund Class Investor        	USMF      
 KGLAX     	Kinetics Mutual Fds The Global Fund Advisor Cla   	USMF      
 KGLCX     	Kinetics Mutual Fds The Global Fund Advisor Cla   	USMF      
 KHMIX     	Marketgrader 100 Enhanced Fund - Class I          	USMF      
@@ -14175,7 +14107,6 @@ LKBAX     	Lkcm Balanced Fund                                	USMF
 LKBLX     	Lk Balanced Fund Inst Cl                          	USMF      
 LKEQX     	Lkcm Equity Fund Institutional                    	USMF      
 LKFIX     	Lkcm Fixed Income Fund                            	USMF      
-LKSAX     	Lkcm Small Cap Equity Fund Adviser Class          	USMF      
 LKSCX     	Lkcm Small Cap Equity Fund Institutional          	USMF      
 LKSMX     	Lkcm Small-Mid Cap Equity Fd Insti Cl             	USMF      
 LLAIX     	Qs Moderate Growth Fund Class I                   	USMF      
@@ -14446,7 +14377,6 @@ LRSSX     	Lord Abbett Small-Cap Value Fund Class R4         	USMF
 LRSTX     	Lord Abbett Small-Cap Value Fund Class R5         	USMF      
 LRSVX     	Lord Abbett Small-Cap Value Fund Class R6         	USMF      
 LRSYX     	Lord Abbett Research Fund Inc. Small Cap Value S  	USMF      
-LSABX     	Loomis Sayles Core Disciplined Alpha Bond Fund I  	USMF      
 LSAGX     	Loomis Sayles Global Growth Fund Class A          	USMF      
 LSBDX     	Loomis Sayles Funds - Bond Fund Institutional Cl  	USMF      
 LSBIX     	Ladder Select Bond Fund - Institutional Class     	USMF      
@@ -14897,9 +14827,6 @@ MBOBX     	Madison Core Bond Fund Class B                    	USMF
 MBOVX     	M Large Cap Value Fund                            	USMF      
 MBOYX     	Madison Core Bond Fund Class Y                    	USMF      
 MBPAX     	MFS Pennsylvania Municipal Bond Fund B            	USMF      
-MBPHX     	Msif Global Insight Portfolio Class A             	USMF      
-MBPIX     	Morgan Stanley Institutional Fund Global Insight  	USMF      
-MBPLX     	Morgan Stanley Institutional Fund Global Insight  	USMF      
 MBRRX     	MFS Bond Fund Cl R2                               	USMF      
 MBRSX     	Amg Managers Essex Small/Micro Cap Growth Fund -  	USMF      
 MBSCX     	MFS South Carolina Municipal Bond Fund Class B    	USMF      
@@ -15273,6 +15200,7 @@ MFGKX     	MFS Government Securitities Cl R5                 	USMF
 MFGSX     	MFS Government Securities Trust A                 	USMF      
 MFHQX     	Blackrock Total Return Fund Class C               	USMF      
 MFHRX     	Monteagle Fixed Income Fund                       	USMF      
+MFHVX     	Mesirow Financial High Yield Fund Investor Share  	USMF      
 MFIAX     	MFS Muni Income Fund Class A                      	USMF      
 MFIIX     	MFS Strategic Income Fund - Class I               	USMF      
 MFIOX     	MFS Strategic Income Fund                         	USMF      
@@ -15310,9 +15238,6 @@ MFOCX     	Marsico Focus Fund                                	USMF
 MFOIX     	BNY Mellon Focused Equity Opportunities Fund Inv  	USMF      
 MFOMX     	BNY Mellon Focused Equity Opportunities Fund Cla  	USMF      
 MFPAX     	MFS Pennsylvania Municipal Bond Fund Class A      	USMF      
-MFPHX     	Msif Insight Portfolio Class A                    	USMF      
-MFPIX     	Morgan Stanley Institutional Fund Insight Portfo  	USMF      
-MFPLX     	Morgan Stanley Institutional Fund Insight Portfo  	USMF      
 MFPYX     	Blackrock Pa Muni Bnd C                           	USMF      
 MFQAX     	Amg Fq Tax-Managed U.S. Equity Fund - Class N     	USMF      
 MFQTX     	Amg Fq Tax-Managed U.S. Equity Fund - Class I     	USMF      
@@ -15376,9 +15301,7 @@ MGDAX     	Mainstay Moderate Growth Allocation Fund Class A  	USMF
 MGDBX     	Mainstay Moderate Growth Allocation Fund Class B  	USMF      
 MGDCX     	Mainstay Moderate Growth Allocation Fund Class C  	USMF      
 MGDIX     	Mainstay Moderate Growth Allocation Fund Class I  	USMF      
-MGDLX     	Morgan Stanley Insti Fd Global Discovery Port Cl  	USMF      
 MGDNX     	Mainstay Moderate Growth Allocation Fund Investo  	USMF      
-MGDPX     	Msif Global Discovery Portfolio Class A           	USMF      
 MGDRX     	Mainstay Moderate Growth Allocation Fund Class R  	USMF      
 MGEMX     	Morgan Stanley Institutional Fund Inc Emerging    	USMF      
 MGETX     	Msvif Global Real Estate Portfolio Class II       	USMF      
@@ -15407,6 +15330,7 @@ MGIAX     	MFS Series Trust X- MFS International Value Fund  	USMF
 MGIBX     	MFS Series Trust X- MFS International Value Fund  	USMF      
 MGICX     	MFS International Value Fund Class C              	USMF      
 MGIDX     	Amg Managers Amundi Intermediate Government Fund  	USMF      
+MGIFX     	Regions Morgan Keegan Select Core Equity Fund Class A	USMF      
 MGIIX     	BMO Strategic Income Fund - I                     	USMF      
 MGILX     	Morgan Stanley Insti Fd TR Investment Grade Fix   	USMF      
 MGINX     	Dws Global Macro Fund - Class Institutional       	USMF      
@@ -15606,7 +15530,6 @@ MILAX     	Mirae Asset Discovery Funds Asia Fund Class I     	USMF
 MILCX     	BNY Mellon Large Cap Stock Fund Investor Shares   	USMF      
 MILGX     	Mirae Asset Discovery Funds Emerging Markets Fun  	USMF      
 MILIX     	Miles Capital Alternatives Advantage Fund Class   	USMF      
-MILNX     	Miles Capital Alternatives Advantage Fund Class   	USMF      
 MIMAX     	Mcdonnellintermediate Municipal Bond Fd Cl A      	USMF      
 MIMCX     	Mcdonnellintermediate Municipal Bond Fd Cl C      	USMF      
 MIMFX     	Amg Managers Emerging Opportunities Fund - Class  	USMF      
@@ -15732,7 +15655,6 @@ MLALX     	MFS Alabama Municipal Bond Fund - Class I         	USMF
 MLCIX     	BMO Large-Cap Growth Fund Class I                 	USMF      
 MLCPX     	Maingate MLP Fund Class C Shares                  	USMF      
 MLDAX     	Msift Limited Duration Class A                    	USMF      
-MLDIX     	Morgan Stanley Insti Fd Global Discovery Port Cl  	USMF      
 MLFAX     	MFS Lifetime 2040 Fund Class A                    	USMF      
 MLFBX     	MFS Lifetime 2040 Fund Class B                    	USMF      
 MLFCX     	MFS Lifetime 2040 Fund Class C                    	USMF      
@@ -16214,6 +16136,7 @@ MPSSX     	BNY Mellon Small Cap Multi-Strategy Class M Shar  	USMF
 MPSTX     	BNY Mellon National Short-Term Muni Bond Fund Cl  	USMF      
 MPSUX     	BNY Mellon Short Term U.S. Government Securities  	USMF      
 MPTRX     	Select Total Return Bond Fund Class A             	USMF      
+MPUSX     	Midanek/Pak Fund Advisors Series Trust            	USMF      
 MPVOX     	MFS Virginia Municipal Bond Fund - R6             	USMF      
 MPWVX     	MFS West Virginia Municipal Bond Fund - R6        	USMF      
 MPYEX     	Meritage Yield-Focus Equity Fund Investor Shs     	USMF      
@@ -16482,7 +16405,6 @@ MSIOX     	Morgan Stanley Institutional Fd TR Core Plus Fix  	USMF
 MSIPX     	MS Global Fixed Income Opportunities Fund Class   	USMF      
 MSIQX     	Morgan Stanley Institutional Fund Inc Intl Equi   	USMF      
 MSIRX     	Mainstay Mackay Unconstrained Bond Fund Class R   	USMF      
-MSIZX     	Msif Global Insight Portfolio Class C             	USMF      
 MSJLX     	Morgan Stanley Institutional Fd TR Limited Durat  	USMF      
 MSKLX     	Morgan Stanley Institutional Fd TR Mid Cap Growt  	USMF      
 MSLDX     	Msift Limited Duration Class C                    	USMF      
@@ -16510,7 +16432,6 @@ MSOLX     	Morgan Stanley Institutional Fd International Re  	USMF
 MSOOX     	Massmutual Premier Small Cap Opportunities Fund   	USMF      
 MSOPX     	Msif Global Opportunity Portfolio Class C         	USMF      
 MSOSX     	Mainstay Mackay Common Stock Fund Class R3        	USMF      
-MSPCX     	Msif Global Discovery Portfolio Class C           	USMF      
 MSPDX     	Msift Strategic Income Portfolio Class C          	USMF      
 MSPGX     	Select Total Return Bond Fund Class R4            	USMF      
 MSPHX     	Select Total Return Bond Fund Service Class       	USMF      
@@ -16547,7 +16468,6 @@ MSSIX     	Victory Trivalent International Small-Cap Cl R6   	USMF
 MSSLX     	Msif Small Company Growth Ptf Class L             	USMF      
 MSSMX     	Msif Small Company Growth Class A                 	USMF      
 MSSOX     	Msift Global Strategist Portfolio Class C         	USMF      
-MSSPX     	Msif Insight Portfolio Class C                    	USMF      
 MSSRX     	Massmutual Premier Main Street Fund Class R4      	USMF      
 MSSVX     	Amg Frontier Small Cap Growth Fund - Class N      	USMF      
 MSSYX     	Amg Frontier Small Cap Growth Fund - Class Z      	USMF      
@@ -16575,6 +16495,7 @@ MSVAX     	MFS Virginia Municipal Bond Fund A                	USMF
 MSVCX     	Invesco  American Value Fund Class C              	USMF      
 MSVNX     	Massmutual Select Small Company Value Fund Class  	USMF      
 MSVSX     	Massmutual Select Small Company Value Fund Class  	USMF      
+MSVVX     	Mainstay Small Cap Value Fund Class I             	USMF      
 MSVYX     	Massmutual Premier Small Cap Opportunities Fund   	USMF      
 MSVZX     	Massmutual Select Small Company Value Fund Class  	USMF      
 MSXAX     	Mainstay Mackay S&P 500 Index Fund Class A        	USMF      
@@ -16760,8 +16681,10 @@ MWEHX     	MFS Global Equity Fund Class R3                   	USMF
 MWEIX     	MFS Global Equity Fund - Class I                  	USMF      
 MWELX     	MFS Global Equity Fund Class R4                   	USMF      
 MWEMX     	MFS Global Equity Fund Class R5                   	USMF      
+MWFEX     	Metropolitan West Flexible Income Fund - I Share  	USMF      
 MWFLX     	Metropolitan West Floating Rate Income Fd Cl I S  	USMF      
 MWFRX     	Metropolitan West Floating Rate Income Fd Cl M S  	USMF      
+MWFSX     	Metropolitan West Flexible Income Fund - M Share  	USMF      
 MWHIX     	Metropolitan West High Yield Bond Fund Class I    	USMF      
 MWHYX     	Metropolitan West High Yield Bond Fund Class M    	USMF      
 MWIGX     	Metropolitan West Investment Grade Credit Fund -  	USMF      
@@ -17123,8 +17046,6 @@ NBRIX     	Neuberger Berman Real Estate Fund Insti Class     	USMF
 NBRRX     	Neuberger Berman Mid Cap Intrinsic Value Fd Cl R  	USMF      
 NBRTX     	Neuberger Berman Mid Cap Instrinsic Value Fd Ins  	USMF      
 NBRVX     	Neuberger Berman Mid Cap Instrinic Value Fd Inv   	USMF      
-NBSAX     	State Farm Equity & Bond Fund Class A Shares      	USMF      
-NBSBX     	State Farm Equity & Bond Fund Class B Shares      	USMF      
 NBSLX     	Neuberger Berman Sustainable Equity Fund Institu  	USMF      
 NBSMX     	Neuberger Berman Small Cap Growth Fd Insti Class  	USMF      
 NBSRX     	Neuberger Berman Sustainable Equity Fund Investo  	USMF      
@@ -17232,6 +17153,10 @@ NEIMX     	Neiman Large Cap Value Fund                       	USMF
 NEITX     	Nebraska Municipal Fund Class I                   	USMF      
 NEJCX     	Vaughan Nelson Small Cap Value Fund Class C       	USMF      
 NEJYX     	Vaughan Nelson Small Cap Value Fund Class Y       	USMF      
+NEKAX     	Nuveen Emerging Markets Equity Fund Class A       	USMF      
+NEKCX     	Nuveen Emerging Markets Equity Fund Class C       	USMF      
+NEKFX     	Nuveen Emerging Markets Equity Fund Class R6      	USMF      
+NEKIX     	Nuveen Emerging Markets Equity Fund Class I       	USMF      
 NELAX     	Nuveen Equity Long/Short Fund Class A             	USMF      
 NELCX     	Nuveen Equity Long/Short Fund Class C             	USMF      
 NELIX     	Nuveen Equity Long/Short Fund Class I             	USMF      
@@ -17283,8 +17208,6 @@ NFRCX     	Aig Senior Floating Rate Fund - Class C           	USMF
 NFRFX     	Nuveen Symphony Floating Rate Income Fund Class   	USMF      
 NFRIX     	Nuveen Symphony Floating Rae Income Fund Class I  	USMF      
 NFRWX     	Aig Senior Floating Rate Fund - Class W           	USMF      
-NFSAX     	State Farm International Index Fund Class A Shar  	USMF      
-NFSBX     	State Farm International Index Fund Class B Shar  	USMF      
 NGAFX     	Nuveen Gresham Managed Futures Strategy Fund Cla  	USMF      
 NGAMX     	Columbia Amt-Free Georgia Intermediate Muni Bond  	USMF      
 NGCAX     	Columbia Fds Srs TR I Greater China Fd Cl A       	USMF      
@@ -17351,11 +17274,10 @@ NIECX     	Dreyfus/Newton International Equity Fund Class C  	USMF
 NIEQX     	Columbia Select International Equity Fund Class   	USMF      
 NIEYX     	Dreyfus/Newton International Equity Fund Class Y  	USMF      
 NIFAX     	Nationwide Inflation-Protected Securities Fd Cl   	USMF      
+NIFFX     	Aquila Narragansett Tax-Free Income Fund Class F  	USMF      
 NIFIX     	Nationwide Inflation-Protected Securities Fund C  	USMF      
 NIIAX     	Columbia Fds Srs TR Columbia Select Internation   	USMF      
 NIICX     	Columbia Capital Allocation Moderate Conservativ  	USMF      
-NILAX     	State Farm Lifepath Retirement Fund Class A Shar  	USMF      
-NILBX     	State Farm Lifepath Retirement Fund Class B Shar  	USMF      
 NILIX     	International Select Fund Institutional Class     	USMF      
 NILTX     	International Select Fund Trust                   	USMF      
 NIMCX     	Neuberger Berman Municipal Impact Fund Class C    	USMF      
@@ -17389,7 +17311,6 @@ NJTFX     	New Jersey Tax-Free Bond Fund                     	USMF
 NLACX     	Nuveen Large Cap Core Fund Class A                	USMF      
 NLAFX     	Nuveen Large Cap Growth Fund Class R6             	USMF      
 NLAGX     	Nuveen Large Cap Growth Fund Class A              	USMF      
-NLBOX     	State Farm Lifepath 2040 Fund Class B Shares      	USMF      
 NLCAX     	VOYA Large-Cap Growth Fund - A                    	USMF      
 NLCCX     	VOYA Large-Cap Growth Fund - C                    	USMF      
 NLCDX     	Nuveen Large Cap Core Fund Class C                	USMF      
@@ -17399,21 +17320,14 @@ NLCIX     	Nuveen Large Cap Core Fund Class I                	USMF
 NLGAX     	Columbia Capital Allocation Moderate Conservativ  	USMF      
 NLGCX     	Columbia Global Strategic Equity Fund Class C     	USMF      
 NLGIX     	Columbia Global Strategic Equity Fund Class A     	USMF      
-NLHAX     	State Farm Lifepath 2030 Fund Class A Shares      	USMF      
-NLHBX     	State Farm Lifepath 2030 Fund Class B Shares      	USMF      
 NLIGX     	Nuveen Large Cap Growth Fund Class I              	USMF      
 NLNAX     	Neuberger Berman Long Short Credit Fund Class A   	USMF      
 NLNCX     	Neuberger Berman Long Short Credit Fund Class C   	USMF      
 NLNIX     	Neuberger Berman Long Short Credit Fund Institut  	USMF      
-NLOAX     	State Farm Lifepath 2040 Fund Class A Shares      	USMF      
-NLPAX     	State Farm Lifepath 2050 Fund Class A Shs         	USMF      
-NLPPX     	State Farm Lifepath 2050 Fund Premier Shares      	USMF      
 NLRLX     	Neuberger Berman Value Instl Class                	USMF      
 NLSAX     	Neuberger Berman Long Short Fd Cl A               	USMF      
 NLSCX     	Neuberger Berman Long Short Fd Cl C               	USMF      
 NLSIX     	Neuberger Berman Long Short Fd Instl Cl           	USMF      
-NLWAX     	State Farm Lifepath 2020 Fund Class A Shares      	USMF      
-NLWBX     	State Farm Lifepath 2020 Fund Class B Shares      	USMF      
 NMAAX     	Nuveen Massachusetts Muni Bd Fd Cl A              	USMF      
 NMACX     	Nuveen Massachusetts Municipal Bond Fund Cl C     	USMF      
 NMAEX     	Nuveen Equity Market Neutral Fund Class A         	USMF      
@@ -17965,7 +17879,6 @@ OCGCX     	Jpmorgan Investor Conservative Growth Fund Cl C   	USMF
 OCHIX     	Oberweis China Opportunities Fund Institutional   	USMF      
 OCIEX     	Optimum International Equity Fund Class C         	USMF      
 OCIIX     	Oppenheimer Capital Income Fund I                 	USMF      
-OCIMX     	Oppenheimer International Growth and Income Fund  	USMF      
 OCINX     	Oppenheimer Capital Income Fund Class R           	USMF      
 OCIYX     	Oppenheimer Capital Income Fund Class Y           	USMF      
 OCLGX     	Optimum Large Cap Growth Fund Class C             	USMF      
@@ -18087,10 +18000,6 @@ OIGYX     	Oppenheimer International Growth Fund Y Class     	USMF
 OIIEX     	Optimum International Equity Fund Class I         	USMF      
 OILGX     	Optimum Large Cap Growth Fund Class I             	USMF      
 OILVX     	Optimum Large Cap Value Fund Class I              	USMF      
-OIMAX     	Oppenheimer International Growth and Income Fund  	USMF      
-OIMIX     	Oppenheimer International Growth and Income Fund  	USMF      
-OIMRX     	Oppenheimer International Growth and Income Fund  	USMF      
-OIMYX     	Oppenheimer International Growth and Income Fund  	USMF      
 OINCX     	Jpmorgan Equity Income Fd Cl C                    	USMF      
 OIOAX     	Orinda Income Opportunities Fund- Class A         	USMF      
 OIODX     	Orinda Income Opportunities Fund- Class D         	USMF      
@@ -18211,6 +18120,7 @@ ORECX     	Oppenheimer Real Estate Fund Class C              	USMF
 OREIX     	Oppenheimer Real Estate Fund I                    	USMF      
 ORENX     	Oppenheimer Real Estate Fund Class R              	USMF      
 OREYX     	Oppenheimer Real Estate Fund Class Y              	USMF      
+ORFFX     	Aquila Tax-Free  Trust of Oregon Class F          	USMF      
 ORIAX     	Oak Ridge International Small Cap Fund - Class A  	USMF      
 ORICX     	Oak Ridge Small Cap Growth Fund Class C           	USMF      
 ORIGX     	Oak Ridge Small Cap Growth Fund Class A           	USMF      
@@ -18312,9 +18222,11 @@ OVSIX     	Oppenheimer Small Cap Value Fund I                	USMF
 OVSRX     	Oppenheimer Small Cap Value Fund R                	USMF      
 OVSYX     	Oppenheimer Small Cap Value Fund Y                	USMF      
 OWACX     	Old Westbury All Cap Core Fund                    	USMF      
+OWCAX     	Old Westbury California Municipal Bond Fund       	USMF      
 OWFIX     	Old Westbury Fixed Income Fund                    	USMF      
 OWLSX     	Old Westbury Large Cap Strategies Fund            	USMF      
 OWMBX     	Old Westbury Municipal Bond Fund                  	USMF      
+OWNYX     	Old Westbury New York Municipal Bond Fund         	USMF      
 OWSIX     	Old Westbury All Cap ESG Fund                     	USMF      
 OWSMX     	Old Westbury Small & Mid Cap Strategies Fund      	USMF      
 OWSOX     	Old Westbury Strategic Opportunities Fund         	USMF      
@@ -18369,7 +18281,6 @@ PAEIX     	T. Rowe Price Overseas Stock Fund - Advisor Clas  	USMF
 PAELX     	T. Rowe Price Emerging Markets Currency Bond Fd   	USMF      
 PAEMX     	Pimco Emerging Markets Bond Fund Class A          	USMF      
 PAERX     	T. Rowe Price Target Retirement 2010 Fund Adv Cl  	USMF      
-PAFCX     	Pimco Global Advantage Strategy Bond Fd Cl C      	USMF      
 PAFDX     	T. Rowe Price Equity Income Fd Advisor Cl         	USMF      
 PAFFX     	T. Rowe Price Target Retirement 2045 Fund Adv Cl  	USMF      
 PAFGX     	T. Rowe Price Global Allocation Fund Advisor Cl   	USMF      
@@ -18580,6 +18491,7 @@ PCCOX     	T. Rowe Price Capital Opportunity Fund - I Class  	USMF
 PCCPX     	Pimco Rae Plus Small Fund Class I-2               	USMF      
 PCCRX     	Pimco Credit Opportunities Bond Fund Class C      	USMF      
 PCDAX     	Pimco California Short Duration Municipal Income  	USMF      
+PCDGX     	Pinnacle Dynamic Growth Fund-Class C              	USMF      
 PCDIX     	Pimco California Short Duration Municipal Incm F  	USMF      
 PCDPX     	Pimco California Short Duration Municipal Income  	USMF      
 PCEKX     	Pioneer Core Equity Fund - Class K                	USMF      
@@ -18802,7 +18714,6 @@ PDNIX     	Pimco Diversified Income Fund Class I-3           	USMF
 PDPAX     	Virtus Rampart Alternatives Diversifier Fund Cla  	USMF      
 PDPCX     	Virtus Rampart Alternatives Diversifier Fund Cla  	USMF      
 PDPPX     	Principal Fds Inc. Largecap Growth Fd Cl R-5      	USMF      
-PDRAX     	Pimco Low Duration ESG Fund Administrative Class  	USMF      
 PDRBX     	Putnam Dynamic Risk Allocation Fd Cl  B           	USMF      
 PDRDX     	Principal Fds Inc. Diversified Real Asset Fund    	USMF      
 PDREX     	Putnam Dynamic Risk Allocation Fd Cl A            	USMF      
@@ -18829,13 +18740,10 @@ PDYIX     	Dynamic Floating Rate High Income Fund Institut   	USMF
 PEAFX     	Pimco Rae Emerging Markets Fund Class A           	USMF      
 PEAPX     	Principal Fds Inc. International Emerging Mkts    	USMF      
 PEASX     	Principal Fds Inc.International Emerging Market   	USMF      
-PEBAX     	Pimco Fds Emerging Markets Bd Fd Administrative   	USMF      
 PEBCX     	Pimco Emerging Markets Bond Fund Class C          	USMF      
 PEBIX     	Pimco Fds Emerging Markets Bond Fd Institu        	USMF      
-PEBLX     	Pimco Fds Emerging Local Bond Fd - Admin Cl       	USMF      
 PEBNX     	Pimco Emerging Markets Bond Fund Class I-3        	USMF      
 PECAX     	Jpmorgan Intrepid Mid Cap Fund Class A            	USMF      
-PECFX     	Pimco Rae Emerging Markets Fund Class C           	USMF      
 PEDGX     	Principal Funds Inc. - Edge Midcap Fund Instit    	USMF      
 PEDIX     	Pimco Extended Duration Fund Institutional Cl     	USMF      
 PEDMX     	Principal Funds Inc. - Edge Midcap Fund Class     	USMF      
@@ -18876,16 +18784,11 @@ PELPX     	Pimco Emerging Local Bond Fund Class I-2          	USMF
 PEMAX     	Putnam Emerging Markets Equity Fd -M              	USMF      
 PEMBX     	Putnam Emerging Markets Equity Fd - B             	USMF      
 PEMGX     	Principal Fds Inc. Midcap Fd Cl A                 	USMF      
-PEMHX     	Putnam Emerging Markets Income Fd Cl B            	USMF      
 PEMIX     	Pimco Emerging Markets Corporate Bond Fd Inst Cl  	USMF      
-PEMJX     	Putnam Emerging Markets Income Fd Cl C            	USMF      
-PEMKX     	Putnam Emerging Markets Income Fd Cl M            	USMF      
 PEMLX     	Putnam Emerging Markets Equity Fd -R              	USMF      
 PEMMX     	Putnam Emerging Markets Equity Fd -A              	USMF      
-PEMOX     	Putnam Emerging Markets Income Fd Cl Y            	USMF      
 PEMPX     	Pimco Emerging Markets Bond Fund Class I-2        	USMF      
 PEMQX     	Putnam Emerging Markets Equity Class R6           	USMF      
-PEMWX     	Putnam Emerging Markets Income Fd Cl A            	USMF      
 PEMYX     	Putnam Emerging Markets Equity Fd -Y              	USMF      
 PEMZX     	Putnam Emerging Markets Equity Fd - C             	USMF      
 PENAX     	Principal Fds Inc. Principal Lifetime 2010 Fd C   	USMF      
@@ -18950,6 +18853,7 @@ PFDPX     	Riskpro Dynamic 15-25 Fund - Class R              	USMF
 PFEAX     	Pacific Funds Small-Cap Value - Class A           	USMF      
 PFEIX     	Pacific Funds Small-Cap Value - Institutional     	USMF      
 PFFDX     	Pacific Funds Small-Cap Value - Advisor           	USMF      
+PFFLX     	Pimco Flexible Credit Income Fund Class A         	USMF      
 PFFRX     	T. Rowe Price Institutional Floating Rate Fund F  	USMF      
 PFGAX     	Pimco Fds Long-Term US Govt Cl A Fd               	USMF      
 PFGCX     	Pimco Fds Long-Term US Govt Cl C                  	USMF      
@@ -19006,7 +18910,6 @@ PFPPX     	Principal Fds Inc. Midcap Growth Fd Cl R-3        	USMF
 PFPRX     	Parnassus Fund - Institutional Shares             	USMF      
 PFPWX     	Parnassus Endeavor Fund - Institutional Shares    	USMF      
 PFQAX     	Pimco Rae Global Fund Class A                     	USMF      
-PFQCX     	Pimco Rae Global Fund Class C                     	USMF      
 PFQDX     	Pacific Funds Small-Cap - Advisor                 	USMF      
 PFQIX     	Pimco Rae Global Fund Class Instl                 	USMF      
 PFQPX     	Pimco Rae Global Fund Class I-2                   	USMF      
@@ -19144,7 +19047,6 @@ PGMAX     	Pimco Global Multi Asset Fund Cl A                	USMF
 PGMCX     	Pimco Global Multi Asset Fund Cl C                	USMF      
 PGMIX     	Jpmorgan Market Expansion Enhanced Index Fund I   	USMF      
 PGMMX     	Principal Funds Inc. - Multi-Manager Equity Lon   	USMF      
-PGMRX     	Pimco Global Multi Asset Fd Cl R                  	USMF      
 PGMSX     	T. Rowe Price Global Multi-Sector Bond Fund - I   	USMF      
 PGNAX     	PGIM Jennison Natural Resources Fund Class A      	USMF      
 PGNBX     	Putnam International Growth and Income Fund Cla   	USMF      
@@ -19303,6 +19205,7 @@ PICOX     	Putnam International Capital Opportunities Fund   	USMF
 PICRX     	Putnam International Capital Opportunities Fd Cl  	USMF      
 PICYX     	Pioneer Bond Fund Class Y                         	USMF      
 PIDCX     	Pioneer Solutions- Balanced Fund- Class C         	USMF      
+PIDGX     	Pinnacle Dynamic Growth Fund-Class I              	USMF      
 PIDIX     	Principal Fds Inc. International Equity Index I   	USMF      
 PIDRX     	Putnam International Growth Fund Class R6         	USMF      
 PIECX     	Pacific Advisors Income and Equity Fund C Shares  	USMF      
@@ -19461,7 +19364,6 @@ PJSQX     	PGIM Jennison Small Company Fund Class R6         	USMF
 PJTQX     	PGIM Jennison 20/20 Focus Fund Class R6           	USMF      
 PJVQX     	PGIM Jennison Value Fund Class R6                 	USMF      
 PKAAX     	Pimco Rae US Fund Class A                         	USMF      
-PKACX     	Pimco Rae US Fund Class C                         	USMF      
 PKAIX     	Pimco Rae US Fund Class Instl                     	USMF      
 PKAPX     	Pimco Rae US Fund Class I-2                       	USMF      
 PKARX     	Principal Fds Inc. Smallcap Value Fd II Cl R-2    	USMF      
@@ -19623,7 +19525,6 @@ PLKGX     	Putnam Small Cap Growth Fund Class R6             	USMF
 PLKTX     	Principal Funds Inc. - Principal Lifetime Hybri   	USMF      
 PLLAX     	Principal Fds Inc. Smallcap Fund Class A          	USMF      
 PLMAX     	Pimco Emerging Markets Currency and Short-Term I  	USMF      
-PLMCX     	Pimco Emerging Markets Currency and Short-Term I  	USMF      
 PLMIX     	Pimco Emerging Markets Currency and Short-Term I  	USMF      
 PLMPX     	Pimco Emerging Markets Currency and Short-Term I  	USMF      
 PLMTX     	Principal Funds Inc. - Principal Lifetime Hybri   	USMF      
@@ -19734,7 +19635,6 @@ PMHYX     	PGIM Muni High Income Fund Class B                	USMF
 PMIDX     	PAX Mid Cap Fund Institutional Class              	USMF      
 PMIEX     	PNC International Equity Fund  Cass A             	USMF      
 PMJAX     	Pimco Rae US Small Fund Class A                   	USMF      
-PMJCX     	Pimco Rae US Small Fund Class C                   	USMF      
 PMJIX     	Pimco Rae US Small Fund Class Instl               	USMF      
 PMJPX     	Pimco Rae US Small Fund Class I-2                 	USMF      
 PMKCX     	Principal Fds Inc. International Emerging Marke   	USMF      
@@ -19774,7 +19674,6 @@ PMSIX     	Principal Fds Inc. Core Plus Bond Fund Institu    	USMF
 PMSSX     	Principal Fds Inc.Midcap S&P 400 Idx Fd Cl R-1    	USMF      
 PMSTX     	Virtus Newfleet Multi-Sector Short Term Bond Fun  	USMF      
 PMSVX     	Principal Fds Inc. Midcap Value Fd III Cl R-1     	USMF      
-PMTAX     	Pimco Fds Mortgage-Backed Securities Fd Administ  	USMF      
 PMTBX     	Putnam Minnesota Tax Exempt Class B Shares        	USMF      
 PMTGX     	Pia MBS Bond Fund Managed Account Completion Shs  	USMF      
 PMTIX     	Principal Fds Inc. Principal Lifetime 2030 Fd I   	USMF      
@@ -19892,7 +19791,6 @@ POIIX     	Polen International Growth Fund-Institutional Cl  	USMF
 POIRX     	Polen International Growth Fund-Investor Class    	USMF      
 POLIX     	Polen Growth Fund Institutional Class             	USMF      
 POLRX     	Polen Growth Fund - Investor Class                	USMF      
-POLVX     	Pimco Rae Low Volatility Plus Fund Class C        	USMF      
 POLYX     	Putnam Mortgage Securities Fund Class R6          	USMF      
 POMBX     	Pacific Funds Portfolio Optimization Moderate -   	USMF      
 POMCX     	Pacific Funds Portfolio Optimization Moderate -   	USMF      
@@ -20016,7 +19914,6 @@ PPVCX     	American Funds Preservation Portfolio Class C     	USMF
 PPVFX     	American Funds Preservation Portfolio Class F-1   	USMF      
 PPVIX     	Principal Fds Inc. Smallcap Value Fd II Insti     	USMF      
 PPYAX     	Pimco Rae International Fund Class A              	USMF      
-PPYCX     	Pimco Rae International Fund Class C              	USMF      
 PPYIX     	Pimco Rae International Fund Class Instl          	USMF      
 PPYPX     	Pimco Rae International Fund Class I-2            	USMF      
 PPZAX     	Pimco Realpath Blend 2025 Fund Class A            	USMF      
@@ -20503,7 +20400,6 @@ PTPPX     	Principal Fds Inc. International Fd I Cl R-5      	USMF
 PTQLX     	PGIM Qma Global Tactical Allocation Fund Class R  	USMF      
 PTRAX     	Pimco Funds Total Return Fund Administrative Sha  	USMF      
 PTRBX     	Putnam Fixed Income Absolute Return Fund  Class   	USMF      
-PTRCX     	Pimco Rae Fundamental Advantage Plus Fund Class   	USMF      
 PTREX     	Putnam Absolute Return 300 Fd Cl R6               	USMF      
 PTRGX     	Putnam Fixed Income Absolute Return Fund Class C  	USMF      
 PTRIX     	Pimco Fds Mortgage-Backed Securities Fd Institut  	USMF      
@@ -20529,7 +20425,6 @@ PTTIX     	Principal Fds Inc.Principal Lifetime 2010 Fd In   	USMF
 PTTNX     	Pimco Total Return Fund Class I-3                 	USMF      
 PTTPX     	Pimco Total Return Fund Class I-2                 	USMF      
 PTTRX     	Pimco Funds Total Return Fund Institutional Shar  	USMF      
-PTUCX     	Pimco Total Return IV Fund Class C                	USMF      
 PTUIX     	Pimco Total Return Fd IV Insti                    	USMF      
 PTUZX     	Pimco Total Return Fd IV A                        	USMF      
 PTVAX     	PNC Total Return Advantage Fund Class A           	USMF      
@@ -20732,7 +20627,6 @@ PZISX     	Pzena Small Cap Value Fund - Institutional Class  	USMF
 PZLIX     	Ppm Large Cap Value Fund Institutional Class      	USMF      
 PZMIX     	Ppm Mid Cap Value Fund Institutional Class        	USMF      
 PZRAX     	Pimco Rae Global Ex-US Fund Class A               	USMF      
-PZRCX     	Pimco Rae Global Ex-US Fund Class C               	USMF      
 PZRIX     	Pimco Rae Global Ex-US Fund Class Instl           	USMF      
 PZRMX     	Pimco Inflation Repsonse Multi-Asset Fd Cl A      	USMF      
 PZRPX     	Pimco Rae Global Ex-US Fund Class I-2             	USMF      
@@ -20992,18 +20886,7 @@ RASAX     	Brookfield Real Assets Securities Fund - Class A  	USMF
 RASCX     	Brookfield Real Assets Securities Fund - Class C  	USMF      
 RASIX     	Brookfield Real Assets Securities Fund - Class I  	USMF      
 RASYX     	Brookfield Real Assets Securities Fund - Class Y  	USMF      
-RAUHX     	State Farm Life Path 2040 Fund Class R-3 Shs      	USMF      
-RAUOX     	State Farm Life Path 2040 Fund Class R-1 Shs      	USMF      
-RAUTX     	State Farm Life Path 2040 Fund Class R-2 Shs      	USMF      
-RAVRX     	State Farm Lifepath 2050 Fund Class R-1 Shs       	USMF      
-RAVSX     	State Farm Lifepath 2050 Fund Class R-2 Shs       	USMF      
-RAWHX     	State Farm Life Path 2020 Fund Class R-3 Shs      	USMF      
-RAWOX     	State Farm Life Path 2020 Fund Class R-1 Shs      	USMF      
-RAWTX     	State Farm Life Path 2020 Fund Class R-2 Shs      	USMF      
-RAYHX     	State Farm Life Path 2030 Fund Class R-3 Shs      	USMF      
 RAYLX     	Conductor Global Equity Value Fund - Class Y      	USMF      
-RAYOX     	State Farm Life Path 2030 Fund Class R-1 Shs      	USMF      
-RAYTX     	State Farm Life Path 2030 Fund Class R-2 Shs      	USMF      
 RAZAX     	Multi-Asset Growth Strategy Fund - Class A        	USMF      
 RAZCX     	Multi-Asset Growth Strategy Fund - Class C        	USMF      
 RBAAX     	American Funds Moderate Growth and Income Portfo  	USMF      
@@ -21198,9 +21081,6 @@ REBBX     	Intermediate Bond Fund of America - Class R2E     	USMF
 REBCX     	Columbia Emerging Markets Bond Fund Class C       	USMF      
 REBEX     	U.S. Small Cap Equity Fund Class E                	USMF      
 REBGX     	American Funds Global Growth Portfolio - Class R  	USMF      
-REBHX     	State Farm Equity and Bond Fund Class R-3 Shs     	USMF      
-REBOX     	State Farm Equity and Bond Fund Class R-1 Shs     	USMF      
-REBTX     	State Farm Equity and Bond Fund Class R-2 Shs     	USMF      
 REBYX     	U.S. Small Cap Equity Fund Class Y                	USMF      
 RECTX     	American Fds 2020 Target Date Retirement Fd Cl R  	USMF      
 REDTX     	American Fds 2025 Target Date Retirement Fd Cl R  	USMF      
@@ -21452,12 +21332,9 @@ RIDFX     	The Income Fund of America Class R-5 Shares       	USMF
 RIDGX     	The Income Fund of America Class R-6 Shares       	USMF      
 RIDHX     	The Income Fund of America - Class R-5E           	USMF      
 RIEBX     	The Income Fund of America - Class R2E            	USMF      
-RIEHX     	State Farm International Equity Fund Class R-3 S  	USMF      
 RIEIX     	Amg Renaissance International Equity Fund - Clas  	USMF      
 RIELX     	Amg Renaissance International Equity Fund - Clas  	USMF      
-RIEOX     	State Farm International Equity Fund Class R-1 S  	USMF      
 RIESX     	Amg Renaissance International Equity Fund - Clas  	USMF      
-RIETX     	State Farm International Equity Fund Class R-2 S  	USMF      
 RIFEX     	International Developed Markets Fund Class E      	USMF      
 RIFKX     	Victory Rs Science and Technology Fund - Class R  	USMF      
 RIFYX     	Victory Rs Science and Technology Fund - Class Y  	USMF      
@@ -21471,9 +21348,6 @@ RIGIX     	International Growth and Income Fund - Class R-5  	USMF
 RIGKX     	Victory Rs International Fund - Class R           	USMF      
 RIGRX     	Investment Grade Bond Fund Class R6               	USMF      
 RIIEX     	International Growth and Income Fund - Class R2E  	USMF      
-RIIHX     	State Farm International Index Fund Class R-3 Sh  	USMF      
-RIIOX     	State Farm International Index Fund Class R-1 Sh  	USMF      
-RIITX     	State Farm International Index Fund Class R-2 Sh  	USMF      
 RILAX     	American Funds Inflation Linked Bond Fund - Clas  	USMF      
 RILBX     	American Funds Inflation Linked Bond Fund - Clas  	USMF      
 RILCX     	American Funds Inflation Linked Bond Fund - Clas  	USMF      
@@ -21569,10 +21443,7 @@ RLLGX     	Smallcap World Fund Inc. Cl R-6                   	USMF
 RLNAX     	International Developed Markets Fund Class A      	USMF      
 RLNCX     	International Developed Markets Fund Class C      	USMF      
 RLPHX     	Royce Low-Priced Stock Fund Investment Class      	USMF      
-RLRHX     	State Farm Lifepath Retirement Fund Class R-3 Sh  	USMF      
-RLROX     	State Farm Lifepath Retirement Fund Class R-1 Sh  	USMF      
 RLRPX     	American Funds Retirement Income Portfolio - Enh  	USMF      
-RLRTX     	State Farm Lifepath Retirement Fund Class R-2 Sh  	USMF      
 RLSFX     	Riverpark Long/Short Opportunity Fd Retail        	USMF      
 RLSIX     	Riverpark Long/Short Opportunity Fd Inst          	USMF      
 RLTAX     	Riverfront Global Growth Fund - Investor Class    	USMF      
@@ -21742,7 +21613,6 @@ RPIEX     	T. Rowe Price Dynamic Global Bond Fund            	USMF
 RPIFX     	T. Rowe Price Institutional Floating Rate Fund    	USMF      
 RPIGX     	T. Rowe Price Institutional Global Growth Equity  	USMF      
 RPIHX     	T. Rowe Price Global High Income Bond Fund        	USMF      
-RPIIX     	T. Rowe Price Institutional International Bond F  	USMF      
 RPISX     	T. Rowe Price International Bond Fund - I Class   	USMF      
 RPLCX     	T. Rowe Price Institutional Long Duration Credit  	USMF      
 RPMAX     	Reinhart Genesis Pmv Fund Investor Class          	USMF      
@@ -21863,16 +21733,13 @@ RSEDX     	Columbia Large Cap Value Fund Class I2            	USMF
 RSEEX     	U.S. Strategic Equity Fund Class E                	USMF      
 RSEFX     	Royce Special Equity Fd Service Class             	USMF      
 RSEGX     	Victory Rs Small Cap Growth Fund - Class A        	USMF      
-RSEHX     	State Farm Small Mid Cap Equity Fund Class R-3 S  	USMF      
 RSEIX     	Royce Special Equity Fund Institutional Class     	USMF      
 RSEJX     	Victory Rs Small Cap Growth Fund - Class R6       	USMF      
 RSEKX     	Victory Rs Small Cap Growth Fund - Class R        	USMF      
 RSEMX     	Royce Special Equity Multi-Cap Fd Service Cl      	USMF      
 RSENX     	Victory Sophus Emerging Markets Fund - Class Y    	USMF      
-RSEOX     	State Farm Small Mid Cap Equity Fund Class R-1 S  	USMF      
 RSERX     	Victory Sophus Emerging Markets Fund Class R6     	USMF      
 RSESX     	U.S. Strategic Equity Fund Class S                	USMF      
-RSETX     	State Farm Small Mid Cap Equity Fund Class R-2 S  	USMF      
 RSEVX     	Columbia Global Equity Value Fund Class Adv       	USMF      
 RSEYX     	Columbia Global Equity Value Fund Class I2        	USMF      
 RSFCX     	Victory Floating Rate Fund - Class C              	USMF      
@@ -21896,13 +21763,10 @@ RSIAX     	Victory Strategic Income Fund - Class A           	USMF
 RSICX     	Victory Strategic Income Fund - Class C           	USMF      
 RSIFX     	Victory Rs Science and Technology Fund - Class A  	USMF      
 RSIGX     	Victory Rs International Fund - Class Y           	USMF      
-RSIHX     	State Farm Small Cap Index Fund Class R-3 Shs     	USMF      
 RSIIX     	Riverpark Strategic Income Fund Institutional Cl  	USMF      
 RSIKX     	Victory Rs Investors Fund - Class R               	USMF      
 RSINX     	Victory Rs Investors Fund - Class A               	USMF      
-RSIOX     	State Farm Small Cap Index Fund Class R-1 Shs     	USMF      
 RSIPX     	Columbia Disciplined Core Fund Class I2           	USMF      
-RSITX     	State Farm Small Cap Index Fund Class R-2 Shs     	USMF      
 RSIVX     	Riverpark Strategic Income Fund Retail Class      	USMF      
 RSIYX     	Victory Rs Investors Fund - Class Y               	USMF      
 RSKIX     	CCA Aggressive Return Fund - Institutional Class  	USMF      
@@ -21925,10 +21789,7 @@ RSNRX     	Victory Global Natural Resources Fund - Class A   	USMF
 RSNYX     	Victory Global Natural Resources Fund - Class Y   	USMF      
 RSOOX     	Columbia Dividend Opportunity Fund Class R        	USMF      
 RSPFX     	Victory Rs Partners Fund - Class A                	USMF      
-RSPHX     	State Farm S&P 500 Index Class R-3 Shs            	USMF      
 RSPKX     	Victory Rs Partners Fund - Class R                	USMF      
-RSPOX     	State Farm S&P 500 Index Fund Class R-1 Shs       	USMF      
-RSPTX     	State Farm S&P 500 Index Fund Class R-2 Shs       	USMF      
 RSPYX     	Victory Rs Partners Fund - Class Y                	USMF      
 RSQAX     	Equity Income Fund - Class A                      	USMF      
 RSQCX     	Royce Special Equity Fund - Consultant Class      	USMF      
@@ -22335,10 +22196,7 @@ SASVX     	Virtus Ceredex Small-Cap Value Equity Fund A      	USMF
 SASWX     	Aig Small-Cap Fund - Class W                      	USMF      
 SATLX     	Sa International Value Fund Select Shares         	USMF      
 SATMX     	Satuit Capital U.S. Emerging Companies Fund Clas  	USMF      
-SAUAX     	State Farm Lifepath 2040 Fund - Premier           	USMF      
-SAUBX     	State Farm Lifepath 2040 Fund Legacy Class B Sha  	USMF      
 SAUFX     	Sa U.S. Fixed Income Fund                         	USMF      
-SAUIX     	State Farm Lifepath 2040 Fund Institutional Shar  	USMF      
 SAULX     	Sa U.S. Fixed Income Fund Select Shares           	USMF      
 SAUMX     	Sa US Small Company Fd                            	USMF      
 SAUPX     	Principal Fds Inc. Strategic Asset Mgmt Flexibl   	USMF      
@@ -22347,16 +22205,11 @@ SAVCX     	Virtus Newfleet Bond Fund C                       	USMF
 SAVIX     	Symons Value Institutional Fund                   	USMF      
 SAVLX     	Sa U.S. Value Fund Select Shares                  	USMF      
 SAVYX     	Virtus Newfleet Bond Fund I                       	USMF      
-SAWAX     	State Farm Lifepath 2020 Fund - Premier           	USMF      
-SAWBX     	State Farm Lifepath 2020 Fund Legacy Class B Sha  	USMF      
-SAWIX     	State Farm Lifepath 2020 Fund Institutional Shar  	USMF      
 SAWMX     	Sa Worldwide Moderate Growth Fund                 	USMF      
 SAXIX     	Sa Global Fixed Income Fd                         	USMF      
-SAYAX     	State Farm Lifepath 2030 Fund - Premier           	USMF      
-SAYBX     	State Farm Lifepath 2030 Fund Legacy Class B Sha  	USMF      
-SAYIX     	State Farm Lifepath 2030 Fund Institutional Shar  	USMF      
 SBACX     	Touchstone Balanced Fund Class C                  	USMF      
 SBALX     	Victory Strategic Allocation Fund Class A         	USMF      
+SBAPX     	Segall Bryant Short Term Plus Fund Institutional  	USMF      
 SBAYX     	Western Asset Adjustable Rate Income Fund Class   	USMF      
 SBBAX     	Qs Conservative Growth Fund Class A               	USMF      
 SBBIX     	Schroder Total Return Fixed Income Fund Investor  	USMF      
@@ -22373,6 +22226,7 @@ SBFIX     	Federated Global Allocation Fund Cl Instl Shs     	USMF
 SBHAX     	Segall Bryant & Hamill All Cap Fund               	USMF      
 SBHEX     	Segall Bryant & Hamill Emerging Markets Fund - C  	USMF      
 SBHIX     	Saratoga Advantage Trust Health & Biotechnology   	USMF      
+SBHPX     	Segall Bryant Short Term Plus Fund Retail Class   	USMF      
 SBHSX     	Segall Bryant & Hamill International Small Cap F  	USMF      
 SBHVX     	Segall Bryant & Hamill Small Cap Value Fund       	USMF      
 SBIAX     	Sterling Capital Behavioral International Equity  	USMF      
@@ -22439,11 +22293,9 @@ SCBRX     	Schroder Core Bond Fund R6 Shares                 	USMF
 SCBSX     	Virtus Seix Short-Term Bond Fund C                	USMF      
 SCCIX     	Carillon Reams Core Bond Fund Class I             	USMF      
 SCCKX     	All Fixed Income Option Class A                   	USMF      
-SCCLX     	Virtus Conservative Allocation Strategy Fund C    	USMF      
 SCCMX     	Sterling Capital Corporate Fd Cl A                	USMF      
 SCCNX     	Sterling Capital Corporate Fd Cl C                	USMF      
 SCCPX     	Sterling Capital Corporate Fund Inst Cl           	USMF      
-SCCTX     	Virtus Conservative Allocation Strategy Fund I    	USMF      
 SCCUX     	Invesco Low Volatility Equity Yield Fund Class C  	USMF      
 SCCVX     	Ab Cap Fund Inc. - Ab Small Cap Value Portfolio   	USMF      
 SCCYX     	Carillon Reams Core Bond Fund Class Y             	USMF      
@@ -22643,7 +22495,6 @@ SEAIX     	Sei Asset Allocation Trust Aggressive Strategy F  	USMF
 SEAKX     	Steward Select Bond Fund - Class A                	USMF      
 SEATX     	Sei Tax Exempt Trust Tax-Advantaged Income Fund   	USMF      
 SEBFX     	Saturna Sustainable Bond Fund                     	USMF      
-SEBIX     	State Farm Equity & Bond Fund Institutional Shar  	USMF      
 SEBLX     	Touchstone Balanced Fund Class A                  	USMF      
 SECAX     	Sei Small Cap II Fd Cl A                          	USMF      
 SECEX     	Guggenheim Styleplus - Large Core Fund Class A    	USMF      
@@ -22725,10 +22576,7 @@ SEVSX     	Guggenheim Mid Cap Value Fund- C Class            	USMF
 SEWIX     	Guggenheim World Equity Income Fund- Institution  	USMF      
 SFAAX     	Wells Fargo Index Asset Allocation Fund Class A   	USMF      
 SFAFX     	Goldman Sachs Strategic Factor Allocation Fund -  	USMF      
-SFBAX     	State Farm Bond Fund - Premier                    	USMF      
-SFBBX     	State Farm Bond Fund Legacy Class B Shares        	USMF      
 SFBDX     	State Farm Municipal Bond Fd                      	USMF      
-SFBIX     	State Farm Bond Fund Institutional Shares         	USMF      
 SFBPX     	Great-West Securefoundation Balanced ETF Fd Cl A  	USMF      
 SFCCX     	Wells Fargo California Limited Term Tax Free Fun  	USMF      
 SFCIX     	Wells Fargo California Limited Term Tax-Free Fun  	USMF      
@@ -22736,18 +22584,13 @@ SFCNX     	Wf California Ltd Tm Tax-Free- Institutional      	USMF
 SFCWX     	Smallcap World Fund Inc. - Class F-3              	USMF      
 SFDYX     	Mid Cap Fund Class Y                              	USMF      
 SFECX     	Guggenheim Styleplus - Large Core Fund- C Class   	USMF      
-SFEIX     	State Farm Small Mid Cap Equity Fund Institution  	USMF      
 SFENX     	Schwab Fundamental Emerging Markets Large Compan  	USMF      
 SFEPX     	Guggenheim Styleplus - Large Core Fund P Class    	USMF      
-SFFAX     	State Farm International Equity Fund - Premier    	USMF      
-SFFBX     	State Farm International Equity Fund Legacy Clas  	USMF      
-SFFFX     	State Farm International Index Fund Institutiona  	USMF      
 SFGCX     	Guggenheim World Equity Income Fund- C Class      	USMF      
 SFGIX     	Seafarer Overseas Growth & Income Fd Inv Cl       	USMF      
 SFHFX     	Shenkman Capital Floating Rate High Income Fund   	USMF      
 SFHIX     	Shenkman Capital Floating Rate High Income Fund   	USMF      
 SFHYX     	Northern Lights Fund Trust II Hundredfold Selec   	USMF      
-SFIIX     	State Farm International Equity Fund Institution  	USMF      
 SFILX     	Schwab Fundamental International Small Company I  	USMF      
 SFITX     	State Farm Interim Fd                             	USMF      
 SFLAX     	Aig Focused Alpha Large-Cap Fund - Class A        	USMF      
@@ -22764,12 +22607,8 @@ SFRAX     	Virtus Seix Floating Rate High Income Fund A      	USMF
 SFRCX     	Virtus Seix Floating Rate High Income Fund C      	USMF      
 SFREX     	Schwab Fundamental Global Real Estate Index Fund  	USMF      
 SFRZX     	Virtus Seix Floating Rate High Income Fund R6     	USMF      
-SFSAX     	State Farm Small/Mid Cap Equity Fund - Premier    	USMF      
-SFSBX     	State Farm Small Mid Cap Equity Fund Legacy Clas  	USMF      
 SFSLX     	1919 Financial Services Fund Cl C                 	USMF      
 SFSNX     	Schwab Fundamental US Small Company Index Fd      	USMF      
-SFTAX     	State Farm Tax Advantaged Fund - Premier          	USMF      
-SFTBX     	State Farm Tax Advantaged Bond Fund Legacy Class  	USMF      
 SFTEX     	American Funds Short-Term Tax-Exempt Bond Fund -  	USMF      
 SFVAX     	Aig Strategic Value Fund - Class A                	USMF      
 SFVCX     	Clearbridge All Cap Value Fund Class C            	USMF      
@@ -22777,7 +22616,6 @@ SFVLX     	Seafarer Overseas Value Fund Investor Class       	USMF
 SFVTX     	Aig Strategic Value Fund - Class C                	USMF      
 SFVWX     	Aig Strategic Value Fund - Class W                	USMF      
 SFVYX     	Clearbridge All Cap Value Fund Class I            	USMF      
-SFXIX     	State Farm S&P 500 Index Fund Institutional Shar  	USMF      
 SGAAX     	American Beacon Sga Global Growth Fund A Cl       	USMF      
 SGACX     	American Beacon Sga Global Growth Fund C Cl       	USMF      
 SGAGX     	American Beacon Sga Global Growth Fund Inst Cl    	USMF      
@@ -22804,14 +22642,12 @@ SGHIX     	Sextant Global High Income Fund                   	USMF
 SGHRX     	Dws Global High Income Fund - Class R6            	USMF      
 SGHSX     	Dws Global High Income Fund - Class S             	USMF      
 SGHTX     	Dws Global High Income Fund - Class T             	USMF      
-SGIAX     	Virtus Growth Allocation Strategy Fund A          	USMF      
 SGICX     	Summit Global Investments U.S. Low Volatility Eq  	USMF      
 SGIDX     	Steward Global Equity Income Fund - Class A       	USMF      
 SGIEX     	Columbia Fds Srs TR I Contrarian Core Fund Clas   	USMF      
 SGIFX     	Steward Global Equity Income Fund - Class C       	USMF      
 SGIGX     	Steward Global Equity Income Fund - Class K       	USMF      
 SGIIX     	First Eagle Global Fund Class I                   	USMF      
-SGILX     	Virtus Growth Allocation Strategy Fund C          	USMF      
 SGINX     	Dws GNMA Fund - Class S                           	USMF      
 SGISX     	Stewart Global Equity Income Fund Insti Class     	USMF      
 SGLCX     	Sga International Equity Fund Institutional Shar  	USMF      
@@ -22862,6 +22698,7 @@ SHDPX     	American Beacon Shapiro Smid Cap Equity Fund - I  	USMF
 SHDQX     	Western Asset Short Duration Municipal Income Fu  	USMF      
 SHDSX     	Western Asset Short Duration Municipal Income Fu  	USMF      
 SHDYX     	American Beacon Shapiro Smid Cap Equity Fund - Y  	USMF      
+SHELX     	Cls Shelter Fund Class T                          	USMF      
 SHERX     	Stone Harbor 500 Plus Fund Institutional Class    	USMF      
 SHFVX     	Clearbridge All Cap Value Fund Class A            	USMF      
 SHGTX     	Columbia Seligman Global Technology Fund Class A  	USMF      
@@ -22902,6 +22739,9 @@ SHSKX     	Blackrock Health Sciences Opportunities Portfoli  	USMF
 SHSSX     	Blackrock Hlthsc Op I                             	USMF      
 SHTCX     	Columbia Seligman Global Technology Fund Class C  	USMF      
 SHTIX     	Invesco Short Duration Inflation Protected Fund   	USMF      
+SHUAX     	Abbf-Ab Short Duration Income Portfolio - A       	USMF      
+SHUCX     	Abbf-Ab Short Duration Income Portfolio - C       	USMF      
+SHUYX     	Abbf-Ab Short Duration Income Portfolio - Adviso  	USMF      
 SHXIX     	American Beacon Shapiro Equity Opportunities Fun  	USMF      
 SHXPX     	American Beacon Shapiro Equity Opportunities Fun  	USMF      
 SHXYX     	American Beacon Shapiro Equity Opportunities Fun  	USMF      
@@ -22949,8 +22789,6 @@ SIGZX     	Virtus Seix U.S. Government Securities Ultra-Sho  	USMF
 SIHAX     	Guggenheim High Yield Fund- A Class               	USMF      
 SIHPX     	Guggenheim High Yield Fund P Class                	USMF      
 SIHSX     	Guggenheim High Yield Fund- C Class               	USMF      
-SIIAX     	State Farm International Index Fund - Premier     	USMF      
-SIIBX     	State Farm International Index Fund Legacy Class  	USMF      
 SIIDX     	Sanford C. Bernstein Fund II Inc.- Bernstein In   	USMF      
 SIIEX     	Touchstone International Equity Fund Class Y      	USMF      
 SILAX     	Wells Fargo Diversified International Class A     	USMF      
@@ -23015,8 +22853,6 @@ SLANX     	Dws Latin America Equity Fund - Class A           	USMF
 SLAPX     	Dws Latin America Equity Fund - Class C           	USMF      
 SLARX     	Dws Latin America Equity Fund - Class Institutio  	USMF      
 SLASX     	Selected American Shares Inc. Class S             	USMF      
-SLBAX     	State Farm Equity & Bond Fund - Premier           	USMF      
-SLBBX     	State Farm Equity & Bond Fund Legacy Class B Sha  	USMF      
 SLCAX     	Sei Insti Inv TR Large Cap Fund Cl A              	USMF      
 SLCCX     	Clearbridge Large Cap Growth Fd Cl C              	USMF      
 SLCGX     	Saratoga Large Capitalization Growth Portfolio    	USMF      
@@ -23024,9 +22860,6 @@ SLCSX     	Selective Opportunity Fund - Service Class        	USMF
 SLCTX     	Selective Opportunity Fund - Foundation Class     	USMF      
 SLCVX     	Saratoga Large Capitalization Value Portfolio I   	USMF      
 SLDBX     	Limited Duration Bond Fund Cl A                   	USMF      
-SLEAX     	State Farm Equity Fund - Premier                  	USMF      
-SLEBX     	State Farm Equity Fund Legacy Class B             	USMF      
-SLEIX     	State Farm Equity Fund Institutional Shares       	USMF      
 SLESX     	Invesco Low Volatility Equity Yield Fund Class R  	USMF      
 SLFYX     	Multi Asset Inflation Managed Fund Class Y        	USMF      
 SLGAX     	Sei Insti Mgd TR Large Cap Fund Class F           	USMF      
@@ -23035,8 +22868,6 @@ SLGFX     	Sei Institutional Managed Trust Large Cap Index   	USMF
 SLGRX     	Wf Large Cap Growth Fd R4                         	USMF      
 SLGYX     	Saratoga Large Capitlization Growth Class A       	USMF      
 SLHIX     	Sirios Long/Short Fund- Institutional Class       	USMF      
-SLIAX     	State Farm S&P 500 Index Fund - Premier           	USMF      
-SLIBX     	State Farm S&P 500 Index Fund Legacy Class B Sha  	USMF      
 SLIYX     	Multi Asset Income Fund Class Y                   	USMF      
 SLLAX     	Sei Insti Mgd TR Small Cap Fund Class F           	USMF      
 SLMCX     	Columbia Seligman Communications & Information F  	USMF      
@@ -23045,9 +22876,6 @@ SLMTX     	Virtus Seix U.S. Mortgage Fund I                  	USMF
 SLPAX     	Sei Insti Inv TR Small Cap Fund Cl A              	USMF      
 SLPIX     	Small-Cap Profund Investor Class                  	USMF      
 SLPSX     	Small-Cap Profund Service Class                   	USMF      
-SLRAX     	State Farm Lifepath Retirement Fund - Premier     	USMF      
-SLRBX     	State Farm Lifepath Retirement Fund Legacy Class  	USMF      
-SLRIX     	State Farm Lifepath Retirement Fund Institutiona  	USMF      
 SLRYX     	Large Cap Growth Fund Class Y                     	USMF      
 SLSDX     	Selected Special Shares Inc. Class D              	USMF      
 SLSFX     	Long/Short Alternative Fund Class Y               	USMF      
@@ -23106,12 +22934,9 @@ SMGAX     	Sei Asset Allocation TR Conservative Strategy A   	USMF
 SMGIX     	Columbia Contrarian Core Fund Class I             	USMF      
 SMGSX     	Sei Asset Allocation Trust Market Growth Strateg  	USMF      
 SMHLX     	Western Asset Municipal High Income Fund Class C  	USMF      
-SMIAX     	State Farm Small Cap Index Fund - Premier         	USMF      
-SMIBX     	State Farm Small Cap Index Fund Legacy Class B S  	USMF      
 SMICX     	Moderately Conservative Balanced Allocation Port  	USMF      
 SMIDX     	Smi Dynamic Allocation Fund                       	USMF      
 SMIFX     	Sound Mind Investing Fund                         	USMF      
-SMIIX     	State Farm Small Cap Index Fund Institutional Sh  	USMF      
 SMILX     	Smi 50/40/10 Fund                                 	USMF      
 SMINX     	Tax Managed International Managed Volatility Fun  	USMF      
 SMIPX     	Saratoga Advantage Trust Mid Capitalization Por   	USMF      
@@ -23182,14 +23007,10 @@ SNAEX     	Schroder North American Equity Fund               	USMF
 SNCAX     	Sanford C. Bernstein Fund Inc. - California Mun   	USMF      
 SNCIX     	Virtus Seix North Carolina Tax-Exempt Bond Fund   	USMF      
 SNDPX     	Sanford C. Bernstein Diversified Municipal Pt     	USMF      
-SNEAX     	State Farm Equity Fund Class A Shares             	USMF      
-SNEBX     	State Farm Equity Fund Class B Shares             	USMF      
 SNEMX     	Sanford C. Bernstein Fund Inc. Bernstein Emergi   	USMF      
 SNGRX     	Sit International  Fund                           	USMF      
 SNGVX     	Sit U.S. Government Securities Fund               	USMF      
 SNHYX     	Enhanced Income Fund Class Y                      	USMF      
-SNIAX     	State Farm International Equity Fund Class A Sha  	USMF      
-SNIBX     	State Farm International Equity Fund Class B Sha  	USMF      
 SNIDX     	Sanford C. Bernstein Intermediate Duration Pt     	USMF      
 SNIEX     	Dreyfus/Newton International Equity Fund Class I  	USMF      
 SNIGX     	Sit Large Cap Growth Fund Inc.                    	USMF      
@@ -23200,13 +23021,9 @@ SNNYX     	Sanford C. Bernstein New York Municipal Pt        	USMF
 SNOAX     	Snow Capital Long/Short Opportunity Fund Class A  	USMF      
 SNOCX     	Snow Capital Long/Short Opportunity Fund Class C  	USMF      
 SNOIX     	Snow Capital Long/Short Opportunity Fund Institu  	USMF      
-SNPAX     	State Farm S&P 500 Index Fund Class A Shares      	USMF      
-SNPBX     	State Farm S&P 500 Index Fund Class B Shares      	USMF      
 SNPIX     	Profunds Short Oil & Gas Profund Investor Class   	USMF      
 SNPSX     	Profunds Short Oil & Gas Profund Service Class    	USMF      
 SNPYX     	Western Asset  New York Municipals Fund Class I   	USMF      
-SNRAX     	State Farm Small Cap Index Fund Class A Shares    	USMF      
-SNRBX     	State Farm Small Cap Index Fund Class B Shares    	USMF      
 SNSAX     	Sei Asset Allocation TR Defensive Strategy Fund   	USMF      
 SNSDX     	Sanford C. Bernstein Short Duration Plus Pt       	USMF      
 SNTCX     	Steward International Equity Fund Instit Class    	USMF      
@@ -23304,16 +23121,10 @@ SQMCX     	Dws Massachusetts Tax Free Fund - Class C         	USMF
 SRAAX     	Sei Institutional Managed TR Real Return Fund C   	USMF      
 SRAFX     	Goldman Sachs Strategic Factor Allocation Fund C  	USMF      
 SRBFX     	Columbia Total Return Bond Fund Class I           	USMF      
-SRBHX     	State Farm Bond Fund Class R-3 Shs                	USMF      
-SRBOX     	State Farm Bond Fund Class R-1 Shs                	USMF      
 SRBRX     	Federated Short-Intermediate Total Return Bond F  	USMF      
-SRBTX     	State Farm Bond Fund Class R-2 Shs                	USMF      
 SRCCX     	Principal Fds Inc. California Municipal Fund Cl   	USMF      
 SRCMX     	Principal Fds Inc. California Municipal Fd Cl A   	USMF      
-SREHX     	State Farm Equity Fund Class R-3 Shs              	USMF      
-SREOX     	State Farm Equity Fund Class R-1 Shs              	USMF      
 SREQX     	PGIM Select Real Estate Fund Class R6             	USMF      
-SRETX     	State Farm Equity Fund Class R-2 Shs              	USMF      
 SREYX     	Real Estate Fund Class Y                          	USMF      
 SREZX     	PGIM Select Real Estate Fund Class Z              	USMF      
 SRFAX     	MFS Equity Opportunities Fund - Class A           	USMF      
@@ -23362,6 +23173,8 @@ SRRIX     	Stone Ridge Reinsurance Risk Premium Interval Fu  	USMF
 SRRQX     	Invesco Strategic Real Return Fund Class R        	USMF      
 SRRSX     	Invesco Strategic Real Return Fund Class R6       	USMF      
 SRRYX     	Invesco Strategic Real Return Fund Class Y        	USMF      
+SRSAX     	Spouting Rock Small Cap Growth Fund Advisor Clas  	USMF      
+SRSCX     	Spouting Rock Small Cap Growth Fund Institutiona  	USMF      
 SRSXX     	Stic Prime Portfolio Resource Class               	USMF      
 SRTGX     	Sma Relationship Trust Srs G                      	USMF      
 SRTMX     	Sma Relationship Trust Series M                   	USMF      
@@ -23470,8 +23283,6 @@ SSMKX     	State Street Small/Mid Cap Equity Index Fund Cla  	USMF
 SSMLX     	State Street Small/Mid Cap Equity Index Fund Cla  	USMF      
 SSMMX     	Western Asset Managed Municipals Fund Cl Is       	USMF      
 SSMOX     	Steward Small Mid-Cap Enhanced Index Fund - Clas  	USMF      
-SSNAX     	State Farm Small Mid Cap Equity Fund Class A Sha  	USMF      
-SSNBX     	State Farm Small Mid Cap Equity Fund Class B Sha  	USMF      
 SSOLX     	Amg Southernsun Global Opportunities Fund - Clas  	USMF      
 SSOVX     	Amg Southernsun Global Opportunities Fund - Clas  	USMF      
 SSPGX     	State Street Institutional Premier Growth Equity  	USMF      
@@ -23605,7 +23416,6 @@ STSVX     	Dreyfus/The Boston Company Small Cap Value Fund   	USMF
 STTBX     	Virtus Seix Investment Grade Tax-Exempt Bond Fun  	USMF      
 STTCX     	Stadion Trilogy Alternative Return Fund Class C   	USMF      
 STTGX     	Stadion Trilogy Alternative Return Fund Class A   	USMF      
-STTHX     	Stadion Trilogy Alternative Return Fund Class T   	USMF      
 STTIX     	Stadion Trilogy Alternative Return Fund Class I   	USMF      
 STTKX     	Alphacore Statistical Arbitrage Fund - Class N    	USMF      
 STTRX     	Wells Fargo Target 2020 Fund Class A              	USMF      
@@ -23672,7 +23482,6 @@ SVBAX     	John Hancock Balanced Fund Class A                	USMF
 SVBBX     	John Hancock Balanced Fund Class B                	USMF      
 SVBCX     	John Hancock Balanced Fund Class C                	USMF      
 SVBIX     	John Hancock Balanced Fund Class I                	USMF      
-SVCAX     	Virtus Conservative Allocation Strategy Fund  A   	USMF      
 SVCMX     	Sei Vp Balanced Strategy Fund Cl III              	USMF      
 SVCSX     	Sei Vp Conservative Strategy Fund Cl III          	USMF      
 SVDHX     	Savos Dynamic Hedging Fund                        	USMF      
@@ -23698,7 +23507,6 @@ SVPSX     	Small-Cap Value Profund Service Class             	USMF
 SVPTX     	Vp Conservative Strategy Fd Cl II                 	USMF      
 SVPUX     	Vp Balanced Strategy Fd Cl II                     	USMF      
 SVPYX     	Vp Moderate Strategy Fd Cl II                     	USMF      
-SVREX     	Select Value Real Estate Securities Fund Class Z  	USMF      
 SVSAX     	Sei Asset Allocation TR Conservative Strategy F   	USMF      
 SVSCX     	SSGA Dynamic Small Cap Fund                       	USMF      
 SVSPX     	SSGA S&P 500 Index Fd                             	USMF      
@@ -23720,7 +23528,6 @@ SWEGX     	Schwab Markettrack All Equity Portfolio           	USMF
 SWERX     	Schwab Target 2040 Fund                           	USMF      
 SWFCX     	Touchstone International Equity Fund Class C      	USMF      
 SWGRX     	Schwab Target 2015 Fund                           	USMF      
-SWGSX     	Schwab GNMA Fund - Select Shares                  	USMF      
 SWHCX     	Principal Fds Inc. Strategic Asset Mgmt Strateg   	USMF      
 SWHEX     	Schwab Hedged Equity Fund Select Shares           	USMF      
 SWHFX     	Schwab Health Care Fund                           	USMF      
@@ -23804,7 +23611,6 @@ TACIX     	Transamerica Asset Allocation Conservative Ptf C  	USMF
 TACLX     	Touchstone Large Cap Fund Class A                 	USMF      
 TACNX     	Transamerica Concentrated Growth - Advisor Class  	USMF      
 TACQX     	Transamerica Asset Allocation Conservative Portf  	USMF      
-TACRX     	Stadion Alternative Income Fund Class T           	USMF      
 TACSX     	Stadion Alternative Income Fd Cl I                	USMF      
 TACTX     	Fundx Tactical Upgrader Fund                      	USMF      
 TACVX     	Transamerica Asset Allocation Conservative Advis  	USMF      
@@ -23864,8 +23670,6 @@ TAMOX     	Transamerica Mid Cap Value Opportunities - Advis  	USMF
 TAMTX     	Transamerica Intermediate Muni Class T1           	USMF      
 TAMUX     	Transamerica Enhanced Muni Class A                	USMF      
 TAMVX     	T. Rowe Price Mid-Cap Value Fund-Advisor Class    	USMF      
-TANAX     	State Farm Tax Advantaged Bond Fund Class A Shar  	USMF      
-TANBX     	State Farm Tax Advantaged Bond Fund Class B Shar  	USMF      
 TAPRX     	Columbia Contrarian Asia Pacific Fund Class I2    	USMF      
 TARBX     	Touchstone Arbitrage Fund Inst Cl                 	USMF      
 TAREX     	Third Avenue Real Estate Value Fd Insti Class     	USMF      
@@ -24049,7 +23853,6 @@ TDAIX     	Ab Cap Fund Inc. - Ab Multi-Manager Select Reti   	USMF
 TDAKX     	Ab Cap Fund Inc. - Ab Multi-Manager Select Reti   	USMF      
 TDAPX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF      
 TDARX     	Ab Cap Fund Inc. - Ab Multi-Manager Select Reti   	USMF      
-TDAXX     	Tdam Money Market Portfolio Class A               	USMF      
 TDAYX     	Ab Cap Fund Inc. - Ab Multi-Manager Select Reti   	USMF      
 TDAZX     	Ab Cap Fund Inc. - Ab Multi-Manager Select Reti   	USMF      
 TDBAX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2010   	USMF      
@@ -24066,7 +23869,6 @@ TDCKX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2015   	USMF
 TDCLX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2050   	USMF      
 TDCPX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF      
 TDCRX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2015   	USMF      
-TDCXX     	Tdam California Municipal Money Market Portfolio  	USMF      
 TDCYX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2015   	USMF      
 TDCZX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2015   	USMF      
 TDDAX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2020   	USMF      
@@ -24106,7 +23908,6 @@ TDIHX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2030   	USMF
 TDIMX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2035   	USMF      
 TDIPX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF      
 TDITX     	Cleartrack 2025 Class R1                          	USMF      
-TDIXX     	Tdam Municipal Portfolio Class A                  	USMF      
 TDJAX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2040   	USMF      
 TDJCX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2040   	USMF      
 TDJIX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2040   	USMF      
@@ -24142,15 +23943,11 @@ TDPRX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF
 TDPYX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF      
 TDPZX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2055   	USMF      
 TDRMX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2035   	USMF      
-TDSXX     	Tdam Money Market Portfolio Select Class          	USMF      
 TDUAX     	Epoch U.S. Small Mid Cap Equity Fund Advisor Cl   	USMF      
 TDUSX     	Epoch U.S. Small Mid Cap Equity Fund Instituitio  	USMF      
-TDUXX     	Tdam U.S. Government Portfolio Class A            	USMF      
 TDVFX     	Towle Deep Value Fund                             	USMF      
-TDVXX     	Tdam Institutional Treasury Obligations Fd Insti  	USMF      
 TDWRX     	Thornburg Developing World Fund Class R6          	USMF      
 TDYHX     	Ab Cap Fund Inc. - Ab Multi-Manager Select 2030   	USMF      
-TDYXX     	Tdam New York Municipal Money Market Portfolio C  	USMF      
 TEAFX     	American Fds The Tax-Exempt Bond Fund of Americ   	USMF      
 TEBCX     	American Fds The Tax-Exempt  Bond Fund of Ameri   	USMF      
 TEBIX     	Franklin Mutual Beacon Fund Cl A                  	USMF      
@@ -25134,7 +24931,6 @@ TSYZX     	Amg Timessquare Global Small Cap Fund - Class Z   	USMF
 TTABX     	T. Rowe Price International Bond Fund [Usd Hedge  	USMF      
 TTBHX     	Tiaa-Cref Short-Term Bond Index Fund - Advisor    	USMF      
 TTBWX     	Tiaa-Cref Short-Term Bond Index Fund - Class W    	USMF      
-TTCXX     	Tdam Institutional Treasury Obligations Fd Comme  	USMF      
 TTDAX     	Toews Tactical Defensive Alpha Fund               	USMF      
 TTEEX     	T. Rowe Price Emerging Europe Fund - I Class      	USMF      
 TTFHX     	Tiaa-Cref Lifecycle 2045 Fund - Advisor           	USMF      
@@ -25470,6 +25266,7 @@ USTEX     	Usaa Mutual Fds TR Tax Exempt Long-Term Fund      	USMF
 USVAX     	Usaa Mutual Fds TR Virginia Bond Fund             	USMF      
 USWGX     	Usaa World Growth Fund Adv Shs                    	USMF      
 UTACX     	Aquila Tax-Free Fund For Utah Class C             	USMF      
+UTAFX     	Aquila Tax-Free  Fund  For Utah Class F           	USMF      
 UTAHX     	Aquila Tax-Free Fund For Utah Class A             	USMF      
 UTAYX     	Aquila Tax-Free Fund For Utah Class Y             	USMF      
 UTBAX     	UBS Total Return Bond Fund Class A                	USMF      
@@ -25878,6 +25675,10 @@ VLMIX     	Value Line Mid Cap Focused Fund Inc. Institutio   	USMF
 VLPAX     	Virtus Duff & Phelps Select MLP and Energy Fund   	USMF      
 VLPCX     	Virtus Duff & Phelps Select MLP and Energy Fund   	USMF      
 VLPIX     	Virtus Duff & Phelps Select MLP and Energy Fund   	USMF      
+VLSAX     	Virtus Kar Long/Short Equity Fund Class A         	USMF      
+VLSCX     	Virtus Kar Long/Short Equity Fund Class C         	USMF      
+VLSIX     	Virtus Kar Long/Short Equity Fund Class I         	USMF      
+VLSRX     	Virtus Kar Long/Short Equity Fund Class R6        	USMF      
 VLTCX     	Vanguard Lt Corporate Bond Index Fund Admiral Sh  	USMF      
 VLVPX     	VOYA Large Cap Value Fund Class P3                	USMF      
 VLXVX     	Vanguard Target Retirement 2065 Fund              	USMF      
@@ -26901,7 +26702,6 @@ WWWEX     	Kinetics The Global Fund                          	USMF
 WWWFX     	Kinetics Funds The Internet Fund                  	USMF      
 WYMHX     	Ivy Municipal High Income Class I                 	USMF      
 WYSCX     	Wells Fargo Small Cap Core Fund - Inst Class      	USMF      
-WYTMX     	Ivy Tax-Managed Equity Fd Class I                 	USMF      
 XACPX     	Aberdeen Income Credit Strategies Fund            	USMF      
 XACVX     	Allianzgi Diversified Income & Convertible Fund   	USMF      
 XADCX     	Ares Dynamic Credit Allocation Fund Inc.          	USMF      
@@ -26967,7 +26767,6 @@ XBYMX     	Blackrock Municipal Income Quality Trust          	USMF
 XBZMX     	Blackrock Maryland Municipal Bond Trust           	USMF      
 XCAFX     	Morgan Stanley China A Share Fund Inc.            	USMF      
 XCAPX     	Acap Strategic Fund                               	USMF      
-XCBAX     	Clearbridge American Energy MLP Fund Inc.         	USMF      
 XCBFX     	Capstone Church Bond Fund                         	USMF      
 XCBHX     	Allianzgi Convertible & Income 2024 Target Term   	USMF      
 XCCAX     	MFS California Municipal Fund                     	USMF      
@@ -27006,7 +26805,6 @@ XDMOX     	Western Asset Mortgage Defined Opportunities Fun  	USMF
 XDNIX     	Dividend and Income Fd Inc.                       	USMF      
 XDNPX     	Dnp Select Income Fund Inc.                       	USMF      
 XDPGX     	Duff & Phelps Global Utility Income Fd Inc.       	USMF      
-XDSCX     	Cross Shore Discovery Fund                        	USMF      
 XDSEX     	Duff & Phelps Select Energy MLP Fund Inc.         	USMF      
 XDSLX     	Doubleline Income Solutions Fund                  	USMF      
 XDSMX     	Dreyfus Strategic Municipal Bond Fund Inc.        	USMF      
@@ -27189,11 +26987,8 @@ XJTDX     	Nuveen Tax-Advantaged Dividend Growth Fund        	USMF
 XKFDX     	The Korea Fund Inc.                               	USMF      
 XKIOX     	KKR Income Opportunities Fund                     	USMF      
 XKMFX     	Kayne Anderson Midstream Energy Fund Inc.         	USMF      
-XKMMX     	Deutsche Multi-Market Income Trust                	USMF      
 XKSMX     	Dws Strategic Municipal Income Trust              	USMF      
-XKSTX     	Deutsche Strategic Income Trust                   	USMF      
 XKTFX     	Dws Municipal Income Trust                        	USMF      
-XLDFX     	The Latin American Discovery Fund Inc.            	USMF      
 XLDPX     	Cohen & Steers Limited Duration Preferred and In  	USMF      
 XLEOX     	Dreyfus Strategic Municipals Inc.                 	USMF      
 XLGIX     	Lazard Global Total Return and Income Fund Inc.   	USMF      
@@ -27257,7 +27052,6 @@ XNAFX     	Northstar Real Estate Capital Income Fund [Class  	USMF
 XNANX     	Nuveen New York Quality Municipal Income Fund     	USMF      
 XNAZX     	Nuveen Arizona Quality Municipal Income Fund      	USMF      
 XNBBX     	Nuveen Build America Bond Fund                    	USMF      
-XNBDX     	Nuveen Build America Bond Opportunity Fund        	USMF      
 XNBHX     	Neuberger Berman Municipal Fund Inc.              	USMF      
 XNBOX     	Neuberger Berman New York Municipal Fund Inc.     	USMF      
 XNBWX     	Neuberger Berman California Municipal Fund Inc.   	USMF      
@@ -27442,6 +27236,8 @@ YWBIX     	Yorktown Mid Cap Fund Institutional Share Class   	USMF
 YWBLX     	Yorktown Mid Cap Fund Class L                     	USMF      
 ZDIIX     	Zacks Dividend Fund - Institutional Class         	USMF      
 ZDIVX     	Zacks Dividend Fund Investor Class                	USMF      
+ZEMAX     	Investec Emerging Markets Equity Fund A Shares    	USMF      
+ZEMIX     	Investec Emerging Markets Equity Fund I Shares    	USMF      
 ZEOIX     	Zeo Short Duration Income Fund Class I            	USMF      
 ZFLAX     	Ziegler Floating Rate Fund - Class A              	USMF      
 ZFLCX     	Ziegler Floating Rate Fund - Class C              	USMF      

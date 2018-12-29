@@ -349,6 +349,7 @@ CU31      	Ishares Vii Plc                                   	LSE
 CU71      	Ishares Vii Plc                                   	LSE       
 CUS1      	Ishares Vii Plc                                   	LSE       
 DBRC      	Ishares II Plc                                    	LSE       
+DEGH      	Ishares V Public Limited Company                  	LSE       
 DGIT      	Ishares IV Plc                                    	LSE       
 DGTL      	Ishares IV Plc                                    	LSE       
 DH2O      	Ishares II Plc                                    	LSE       
@@ -725,7 +726,6 @@ SPAG      	Ishares V Public Limited Company                  	LSE
 SPDM      	Ishares Physical Metals Plc                       	LSE       
 SPEH      	Ishares V Public Limited Company                  	LSE       
 SPGP      	Ishares V Public Limited Company                  	LSE       
-SPHG      	Ishares V Public Limited Company                  	LSE       
 SPLT      	Ishares Physical Metals Plc                       	LSE       
 SPMD      	Ishares Vi Plc                                    	LSE       
 SPMV      	Ishares Vi Plc [The Comp                          	LSE       
@@ -775,6 +775,7 @@ ACWI      	ACWI Ishares MSCI ETF                             	NASDAQ
 ACWX      	ACWI Ex US Ishares MSCI ETF                       	NASDAQ    
 AIA       	Asia 50 Ishares ETF                               	NASDAQ    
 AMCA      	Russell 1000 Pure US Rev Ishares ETF              	NASDAQ    
+BGRN      	Ishares Global Green Bond ETF                     	NASDAQ    
 COMT      	Commodities Select Strategy Ishares ETF           	NASDAQ    
 DVY       	Select Dividend Ishares ETF                       	NASDAQ    
 EEMA      	Emrg Mkts Asia Ishares MSCI ETF                   	NASDAQ    
@@ -830,55 +831,53 @@ UAE       	UAE Ishares MSCI ETF                              	NASDAQ
 USIG      	Broad USD Investment Gr. Corp Bond Ishares ETF    	NASDAQ    
 WOOD      	Global Timber & Forestry Ishares ETF              	NASDAQ    
 XT        	Exponential Technologies Ishares ETF              	NASDAQ    
-CMOXF     	Ishares Global Water Index ETF Com Unit           	OTCBB     
-DJXXF     	Ishares Stoxx Europe 600 Ucits ETF                	OTCBB     
+BCYIF     	Ishares Plc Ord FTSE                              	OTCBB     
 EMSQF     	Ishares IV Plc Edge MSCI USA Multifactor Ucits E  	OTCBB     
+EMSWF     	Ishares MSCI World Multifactor Ucits ETF          	OTCBB     
 HDIQF     	Ishares II Plc MSCI USA Qlty Div Ucits ETF        	OTCBB     
 IHHFF     	Ishares US Aggregate Bond Ucits ETF               	OTCBB     
 IHIHF     	Ishares III Plc Shs USD                           	OTCBB     
 IHPCF     	Ishares Plc                                       	OTCBB     
+IHREF     	Ishares III Plc                                   	OTCBB     
 IHRMF     	Ishares MSCI Japan                                	OTCBB     
+IHSEF     	Ishares Plc Ord Shs                               	OTCBB     
 IHSFF     	Ishares II Plc                                    	OTCBB     
 IHSRF     	Ishares Edge S&P 500 Minimum Volatility Ucits Et  	OTCBB     
-IHSXF     	Ishares Plc MSCI Na Fd                            	OTCBB     
 IHSZF     	Ishares II Plc                                    	OTCBB     
 IIREF     	Ishares MSCI World                                	OTCBB     
+IISHF     	Ishares III Plc Emerging Mkts Loc Govt Bd Ucits   	OTCBB     
+IJSHF     	Ishares Plc                                       	OTCBB     
 IMSEF     	Ishares II Plc MSCI Europe EUR Ucits ETF Inc      	OTCBB     
 IPYYF     	Ishares Physical Metals Plc - Ishares Physical G  	OTCBB     
-IREMF     	Ishares MSCI                                      	OTCBB     
-IRRRF     	Ishares Core MSCI World Ucits ETF USD [Acc]       	OTCBB     
 ISAPF     	Ishares Plc Accum Ptg Shs ETF USD                 	OTCBB     
 ISDJF     	Ishares Canadian Select Dividend Index ETF Unit   	OTCBB     
+ISDXF     	Ishares Canadian Corporate Bond Index ETF Unit    	OTCBB     
 ISEXF     	Ishares MSCI AC Far East Ex-Japan Ucits ETF       	OTCBB     
 ISHFF     	Ishares $ Short Duration Corp Bd Ucits ETF        	OTCBB     
 ISHHF     	Ishares Plc Shs ETF EUR                           	OTCBB     
-ISHJF     	Ishares III Plc                                   	OTCBB     
 ISHOF     	Ishares III                                       	OTCBB     
 ISHPF     	Ishares Emerging Markets Dividend Ucits ETF       	OTCBB     
-ISMCF     	Ishares MSCI USA Ucits ETF                        	OTCBB     
-ISMUF     	Ishares MSCI China Trckr                          	OTCBB     
 ISPFF     	Ishares II Plc Developed Mkts Pt Yld USD Ucits E  	OTCBB     
 ISRCF     	Ishares V Plc MSCI World IT USD                   	OTCBB     
 ISRHF     	Ishares V Plc MSCI World Energy USD               	OTCBB     
 ISRIF     	Ishares USD Treasury Bond 20+Yr Ucits ETF         	OTCBB     
 ISRPF     	Ishares Plc                                       	OTCBB     
+ISRRF     	Ishares Plc Shs ETF GBP                           	OTCBB     
 ISRUF     	Ishares V Plc MSCI World Financials USD           	OTCBB     
 ISRVF     	Ishares V Plc Accum Ordinary Sh                   	OTCBB     
 ISRWF     	Ishares II Plc                                    	OTCBB     
 ISRZF     	Ishares II Plc                                    	OTCBB     
-ISSGF     	Ishares 1-10 Year Laddered Government Bond Index  	OTCBB     
+ISSGF     	Ishares 1-10 Year Laddered Gvmt Bond Index ETF C  	OTCBB     
 ISSHF     	Ishares $ Treasury Bond 7-10Yr Ucits ETF          	OTCBB     
-ISSIF     	Ishares III Plc                                   	OTCBB     
 ISSPF     	Ishares Global Government Bond Ucits ETF          	OTCBB     
 ISSRF     	Ishares Vi Plc Shs USD MSCI Emerging Mkts Min Vo  	OTCBB     
 ISUPF     	Ishares US Property Yield Ucits ETF               	OTCBB     
 ISVFF     	Ishares V Plc MSCI World Health Care USD          	OTCBB     
-ISVPF     	Ishares MSCI EMU USD Hedged Ucits ETF [Acc]       	OTCBB     
 ISXPF     	Ishares Plc Ptg Shs ETF USD                       	OTCBB     
 ITBFF     	Ishares $ Treasury Bond 1-3Yr Ucits ETF           	OTCBB     
 IUNSF     	Ishares S&P/Tsx Capp                              	OTCBB     
+IUSPF     	Ishares S&P/Tsx Capped REIT Index ETF Unit        	OTCBB     
 IVIVF     	Ishares Vi Plc Shs ETF USD                        	OTCBB     
-IVVVF     	Ishares IV Plc Shs ETF USD                        	OTCBB     
 IZIZF     	Ishares III Plc                                   	OTCBB     
 XMTIF     	Ishares Vii Plc Accum Ptg Shs ETF EUR             	OTCBB     
 N6M       	Ishares Usd Asia Bond Etf                         	SGX       
@@ -919,6 +918,7 @@ FIE       	Ishares CDN Fin Mthly Income ETF                  	TSX
 SVR       	Ishares Silver Bullion ETF Hdg                    	TSX       
 SVR.C     	Ishares Silver Bullion ETF Non Hdg                	TSX       
 XAW       	Ishares Core MSCI All Cntry Ex Can ETF            	TSX       
+XBAL      	Ishares Core Balanced ETF Portfolio               	TSX       
 XBB       	Ishares Core CDN Universe Bond ETF                	TSX       
 XBM       	Ishares S&P TSX Global Base Mtls ETF              	TSX       
 XCB       	Ishares Canadian Corporate Bond ETF               	TSX       
@@ -953,6 +953,7 @@ XFS       	Ishares Edge MSCI Multifact USA ETF               	TSX
 XGB       	Ishares Canadian Govt Bond Index ETF              	TSX       
 XGD       	Ishares S&P/Tsx Global Gold Index ETF             	TSX       
 XGI       	Ishares S&P Global Industrials ETF                	TSX       
+XGRO      	Ishares Core Growth ETF Portfolio                 	TSX       
 XHB       	Ishares CDN Hybrid Corp Bond ETF                  	TSX       
 XHC       	Ishares Global Healthcare Index ETF               	TSX       
 XHD       	Ishares US High Div Equity Index ETF              	TSX       

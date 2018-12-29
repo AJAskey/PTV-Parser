@@ -15,10 +15,8 @@ CJNK      	Bofa Crossover Corp Bond ETF SPDR                 	AMEX
 CORP      	Invest Grade Corp Bd Index ETF Pimco              	AMEX      
 CWI       	ACWI [Ex-Us] MSCI ETF SPDR                        	AMEX      
 DGT       	Global Dow ETF SPDR                               	AMEX      
-EASI      	Amplify ETF Trust ETF                             	AMEX      
 EBND      	EM Local Bond ETF Barclays Capital SPDR           	AMEX      
 EDV       	Extended Dur Trs Idx ETF Vanguard                 	AMEX      
-EED       	Xxeed - Claymore BNY BRIC ETF Intraday            	AMEX      
 EEMX      	EM Fossil Fuel Reserves MSCI ETF SPDR             	AMEX      
 EFAX      	EAFE Fossil Fuel Reserves Free MSCI ETF SPDR      	AMEX      
 EGPT      	Egypt Index ETF Vaneck                            	AMEX      
@@ -81,7 +79,6 @@ MOM       	US Momentum Mkt Neutral ETF Quantshares           	AMEX
 MOO       	Agribusiness ETF Vaneck                           	AMEX      
 MRGR      	Merger ETF Proshares                              	AMEX      
 MUNI      	Interm Muni Bond Strgy ETF Pimco                  	AMEX      
-NFA       	Xxnfa - Claymore/Sabrient Insider ETF Index Intr  	AMEX      
 ONEO      	Russell 1000 Momentum Focus ETF SPDR              	AMEX      
 ONEV      	Russell 1000 Low Vol ETF SPDR                     	AMEX      
 ONEY      	Russell 1000 Yield Focus ETF SPDR                 	AMEX      
@@ -120,7 +117,6 @@ SPYB      	S&P 500 Buyback ETF SPDR                          	AMEX
 SPYX      	S&P 500 Ex-Fossil Fuel ETF SPDR                   	AMEX      
 STOT      	Short Duration TR Tactical ETF SPDR               	AMEX      
 STPZ      	1-5 Year US TIPS Index ETF Pimco                  	AMEX      
-SWAN      	Amplify ETF Trust Amplify Blackswan Growth & Tre  	AMEX      
 SYE       	MFS Core Equity ETF SPDR                          	AMEX      
 SYG       	MFS Growth Equity ETF SPDR                        	AMEX      
 SYV       	MFS Value Equity ETF SPDR                         	AMEX      
@@ -164,7 +160,6 @@ VUG       	Growth ETF Vanguard                               	AMEX
 VV        	Largecap ETF Vanguard                             	AMEX      
 VWO       	Emrg Mkts ETF MSCI Vanguard                       	AMEX      
 VXF       	Extended Market Index ETF Vanguard                	AMEX      
-VYM       	High Dividend Yld Indx ETF Vanguard               	AMEX      
 XINA      	China A Shares IMI MSCI ETF SPDR                  	AMEX      
 XMPT      	CEF Municipal Income ETF Vaneck                   	AMEX      
 XSW       	S&P Software & Srvs ETF SPDR                      	AMEX      
@@ -181,7 +176,6 @@ W1        	Crude Oil ETF VIX                                 	CFE
 0KEJ      	LYXOR INTL ASSET MANAGEMENT ETF DJ STOXX 600 BANKS EUR ACC NAV	LSE       
 0KEQ      	LYXOR INTL ASSET MANAGEMENT LYXOR ETF LEVERAGED DJ EURO STOXX 50	LSE       
 0KEZ      	LYXOR INTL ASSET MANAGEMENT LYXOR ETF WORLD WATER 	LSE       
-AUGA      	UBS [Irl] ETF Plc                                 	LSE       
 AWSG      	UBS [Irl] ETF Plc                                 	LSE       
 BATG      	Go Ucits ETF Solutions Plc                        	LSE       
 BATT      	Go Ucits ETF Solutions Plc                        	LSE       
@@ -190,11 +184,11 @@ BCOM      	Go Ucits ETF Solutions Plc                        	LSE
 BIGT      	Go Ucits ETF Solutions Plc                        	LSE       
 BIOT      	Go Ucits ETF Solutions Plc                        	LSE       
 CASE      	Go Ucits ETF Solutions P                          	LSE       
+CASH      	Go Ucits ETF Solutions P                          	LSE       
 CEMA      	CS ETF [Ie] Plc                                   	LSE       
 CEU       	CS ETF [Ie] Plc                                   	LSE       
 CEUS      	CS ETF [Ie] Plc                                   	LSE       
 CHIN      	Icbc Credit Suisse Ucits ETF Sicav                	LSE       
-CHIP      	Icbc Credit Suisse Ucits ETF Sicav                	LSE       
 CIND      	CS ETF [Ie] Plc                                   	LSE       
 CMIB      	CS ETF [Ie] Plc                                   	LSE       
 CMXC      	CS ETF [Ie] Plc                                   	LSE       
@@ -222,14 +216,11 @@ DEL2      	Go Ucits ETF Solutions P                          	LSE
 DES2      	Go Ucits ETF Solutions P                          	LSE       
 DL2P      	Go Ucits ETF Solutions P                          	LSE       
 DS2P      	Go Ucits ETF Solutions P                          	LSE       
-DXGYEIV   	Wisdomtree Germany Equity Ucits ETF - EU          	LSE       
-DXJFEIV   	Wisdomtree Japan Equity Ucits ETF - EUR           	LSE       
-DXJZEIV   	Wisdomtree Japan Equity Ucits ETF - JPY           	LSE       
 ECOG      	Go Ucits ETF Solutions Plc                        	LSE       
 ECOM      	Go Ucits ETF Solutions Plc                        	LSE       
+FWEC      	Go Ucits ETF Solutions P                          	LSE       
 GENE      	UBS [Irl] ETF Plc                                 	LSE       
 GENG      	UBS [Irl] ETF Plc                                 	LSE       
-HEDFEIV   	Wisdomtree Europe Equity Ucits ETF - EUR          	LSE       
 ISPY      	Go Ucits ETF Solutions Plc                        	LSE       
 LOCE      	Go Ucits ETF Solutions P                          	LSE       
 LOCG      	Go Ucits ETF Solutions P                          	LSE       
@@ -246,16 +237,15 @@ SUK2      	Go Ucits ETF Solutions P                          	LSE
 UB0A      	UBS [Irl] ETF Plc                                 	LSE       
 UB0B      	UBS [Irl] ETF Plc                                 	LSE       
 UC03      	UBS (Irl) ETF Plc                                 	LSE       
+UC04      	UBS (Irl) ETF Plc                                 	LSE       
 UC07      	UBS (Irl) ETF Plc                                 	LSE       
 UC13      	UBS (Irl) ETF Plc                                 	LSE       
 UKSR      	UBS [Irl] ETF Plc                                 	LSE       
 UPVL      	UBS [Irl] ETF Plc                                 	LSE       
-USFM      	UBS [Irl] ETF Plc                                 	LSE       
 USPG      	UBS [Irl] ETF Plc                                 	LSE       
 USPY      	Go Ucits ETF Solutions Plc                        	LSE       
-XAGG      	Go Ucits ETF Solutions Plc                        	LSE       
-XAGS      	Go Ucits ETF Solutions Plc                        	LSE       
 XSPU      	DB X-Trackers Dbx S&P 500 ETF $                   	LSE       
+XUFB      	Xtrackers MSCI USA Banks Ucits ETF 1D             	LSE       
 ZC1G      	BMO Ucits ETF Icav                                	LSE       
 ZC3G      	BMO Ucits ETF Icav                                	LSE       
 ZC7G      	BMO Ucits ETF Icav                                	LSE       
@@ -264,12 +254,13 @@ ZIEG      	BMO Ucits ETF Icav                                	LSE
 ZIEM      	BMO Ucits ETF Icav                                	LSE       
 ZILE      	BMO Ucits ETF Icav                                	LSE       
 ZILK      	BMO Ucits ETF Icav                                	LSE       
-ZILS      	BMO Ucits ETF Icav                                	LSE       
 ZISG      	BMO Ucits ETF Icav                                	LSE       
 ZIUS      	BMO Ucits ETF Icav                                	LSE       
 ZWEE      	BMO Ucits ETF Icav                                	LSE       
 ZWEU      	BMO Ucits ETF Icav                                	LSE       
 ZWUK      	BMO Ucits ETF Icav                                	LSE       
+ZWUS      	BMO Ucits ETF Icav                                	LSE       
+ZWUU      	BMO Ucits ETF Icav                                	LSE       
 AIRR      	Rba American Industrial Renaissance ETF FT        	NASDAQ    
 BND       	Total Bond Market ETF Vanguard                    	NASDAQ    
 BNDX      	Total Intl Bond ETF Vanguard                      	NASDAQ    
@@ -313,14 +304,16 @@ VIGI      	Intl Div Appreciation ETF Vanguard                	NASDAQ
 VXUS      	Total Intl Stock ETF Vanguard                     	NASDAQ    
 VYMI      	Intl High Divd Yld ETF Vanguard                   	NASDAQ    
 BSLGOLDETF	BIRLA SL GOLD ETF - GO                            	NSE       
+BMDLF     	BMO Covered Call Canadian Banks ETF Unit          	OTCBB     
+BMMPF     	BMO Equal Weight Banks Index ETF TR Unit          	OTCBB     
 BMMVF     	BMO Covered Call Utilities ETF TR Unit            	OTCBB     
 CSTNL     	CS ETF Ie On S&P 500                              	OTCBB     
-EFNCF     	ETFS Fund Co Plc Shs ETF USD                      	OTCBB     
+HEPZF     	Horizons Enhanced Income Gold Producers ETF Unit  	OTCBB     
 HZEMF     	Horizons Emerging Marijuana Growers Index ETF Un  	OTCBB     
 LYXMF     	Lyxor Euro Stoxx 50 Dr ETF D-Eur A/I              	OTCBB     
 VNGDF     	Vanguard S&P 500 Ucits ETF USD                    	OTCBB     
 WSDMF     	Wisdomtree Europe Equity Ucits ETF - USD Hedged   	OTCBB     
-ZKPLF     	Zkb Palladium ETF Klasse                          	OTCBB     
+XMTFF     	Xmtch Ie Plc Accum Part Shs ETF USD               	OTCBB     
 PHG       	Lyxor ETF SX6 Hous                                	PAR       
 D07       	Spdr Djia Etf Trust                               	SGX       
 G1N       	Lyxor Etf Msci India 10                           	SGX       
@@ -354,19 +347,17 @@ N2E       	Dbxt Msci Philippines Etf 10                      	SGX
 O9A       	Dbxt Msci Singapore Im Etf 10                     	SGX       
 O9C       	Dbxt Msci Bangladesh Im Etf 10                    	SGX       
 O9D       	Dbxt Msci Pakistan Im Etf 10                      	SGX       
-P2P       	Lyxor Etf Thai Set 10                             	SGX       
-P2Q       	Lyxor Etf Indonesia 10                            	SGX       
 S27       	Spdr S&p 500 Etf Trust                            	SGX       
 BGU.U     	Bristol Gate Conc US Eqty ETF USD                 	TSX       
 CAPS.U    	Evolve Active US Core Equity ETF USD              	TSX       
+CARS.U    	Evolve Automobile Innovation Idx ETF USD          	TSX       
+CES.U     	First Asset Core US Equity ETF USD Unhgd          	TSX       
 DGR.B     	Wisdomtree US Qlty Div Gwth ETF Nh                	TSX       
 DLR.U     	Horizons US Dollar Currency ETF USD               	TSX       
 EHE.B     	Wisdomtree Europe Hedged Eqty ETF Nh              	TSX       
 EQL.F     	Invesco S&P 500 Eql Weight Idx ETF Hgd            	TSX       
-EQL.U     	Invesco S&P 500 Eql Weight Idx ETF USD            	TSX       
 ETP.A     	First Trust Glb Risk Managed Inc ETF AC           	TSX       
 FAO.U     	First Asset Active Credit ETF USD                 	TSX       
-FCY.B     	First Asset Cambridge Core US Eq ETF Uh           	TSX       
 FDE       	First Trust Alphadex Emg Mkt Div ETF CAD          	TSX       
 FGO.U     	First Asset Enhanced Govt Bond ETF USD            	TSX       
 FIG.U     	First Asset Invest Grade Bond ETF USD             	TSX       
@@ -375,6 +366,7 @@ FSB.U     	First Asset Enhanced Sh Dur Bond ETF USD          	TSX
 FSD.A     	First Trust Sh Dur Hi Yld Bnd ETF Ch              	TSX       
 FST.A     	First Trust CDN Capital Strength ETF AC           	TSX       
 FUD       	First Trust Alphadex US Div ETF CAD Hdg           	TSX       
+HAU.U     	Horizons Active US Dividend ETF USD               	TSX       
 HBF.U     	Harvest Brand Leaders Plus Income ETF USD         	TSX       
 HBG.U     	Hamilton Capital Global Bank ETF USD              	TSX       
 HFY.U     	Hamilton Capital Glbl Fin Yield ETF USD           	TSX       
@@ -395,7 +387,7 @@ MUSC.B    	Manulife Mulfact US Scap Idx ETF Unheg            	TSX
 NXF.B     	First Asset Energy Giants ETF Unhedged            	TSX       
 PUD.B     	Purpose US Dividend Fund ETF Nc Hedged            	TSX       
 PXS       	Pwrshr FTSE RAFI US Fdamntl ETF II                	TSX       
-QDXH      	Mackenzie Intl Equity Index ETF CAD Hgd           	TSX       
+PXS.U     	Pwrshr FTSE RAFI US Fdamntl ETF USD II            	TSX       
 RBOT.U    	Horizons Robotics and Automa Idx ETF USD          	TSX       
 RIE.U     	RBC Quant EAFE Equity Leaders ETF USD             	TSX       
 RIG.U     	RBC Quant Global Infras Leaders ETF USD           	TSX       
@@ -411,6 +403,7 @@ SCAD      	Scotia Strategic CDN Eqty ETF Portfolio           	TSX
 SFIX      	Scotia Strategic Fixed Inc ETF Portfolio          	TSX       
 SINT      	Scotia Strategic Intl Eqty ETF Portfolio          	TSX       
 SUSA      	Scotia Strategic US Eqty ETF Portfolio            	TSX       
+TUSB.U    	TD Select US Short Term Corp Bnd ETF USD          	TSX       
 USB.U     	Powershares Lad US 0 To 5 Yr Corp Bd ETF USD      	TSX       
 VAH       	Vanguard FTSE Dev Asia Pac ETF CAD Hdg            	TSX       
 VBAL      	Vanguard Balanced ETF Portfolio                   	TSX       
