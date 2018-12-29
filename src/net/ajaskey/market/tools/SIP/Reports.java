@@ -51,10 +51,15 @@ public class Reports {
 
 		Utils.makeDir("out/CompanyReports");
 
-		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
+		try (PrintWriter pw = new PrintWriter("out/Zombies.txt");
+				PrintWriter zpw = new PrintWriter("out/zCompanies.txt")) {
 
 			for (final CompanyData cd : this.companyList) {
 				this.printZombieData(pw, cd);
+				String rpt = cd.zd.report(cd.ticker, cd.sector);
+				if (rpt.length() > 0) {
+					zpw.println(rpt);
+				}
 			}
 
 		}
