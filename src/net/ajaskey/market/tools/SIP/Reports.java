@@ -54,17 +54,18 @@ public class Reports {
 		try (PrintWriter pw = new PrintWriter("out/Zombies.txt"); PrintWriter zpw = new PrintWriter("out/zCompanies.txt")) {
 
 			for (final CompanyData cd : this.companyList) {
-				String rpt = cd.zd.zStatus();
+				//		if (cd.zd.zIsZombie || cd.zd.zState == ZombieStates.NNET_NINC_DIVCUT
+				//		    || cd.zd.zState == ZombieStates.NNET_PINC_DIVCUT || cd.zd.zState == ZombieStates.PNET_NINC_DIVCUT) {
+				String rpt = "";// cd.zd.zStatus();
 				this.printZombieData(pw, cd);
-				if (rpt.length() > 0) pw.println(rpt);
-				if (cd.zd.zIsZombie) pw.println("\tIs Zombie!");
 
-				rpt = cd.zd.report(cd.ticker, cd.sector);
-				if (rpt.length() > 0) {
-					zpw.println("");
-					this.printData(zpw, cd);
-					zpw.println(rpt);
-				}
+				//	}
+				cd.zd.report(cd.ticker, cd.sector);
+				//				if (rpt.length() > 0) {
+				//					zpw.println("");
+				//					this.printData(zpw, cd);
+				//					zpw.println(rpt);
+				//				}
 			}
 			System.out.println("Zombie Count : " + ZombieData.zKnt);
 			System.out.println(ZombieData.zStr);
@@ -161,6 +162,10 @@ public class Reports {
 
 	private void printZombieData(PrintWriter pw, CompanyData cd) {
 
+		if (cd.ticker.equalsIgnoreCase("abc")) {
+			System.out.println(cd.ticker);
+		}
+
 		switch (cd.zd.zState) {
 			case PNET_PINC:
 			case NNET_PINC_DIVCUT:
@@ -204,55 +209,17 @@ public class Reports {
 				avgpre /= 4.0;
 				print1QtrData(pw, avgpre, "Avg Pretax");
 				double div = cd.id.dividend.q1 * cd.shares.getMostRecent();
-				//print1QtrData(pw, cd.id.dividend.q1, "Div/Shr");
-//				print1QtrData(pw, cd.zd.zScore, "Zombie Score");
-//				if (div > 0.0) {
-//					print1QtrData(pw, (-1.0 * div), "Dividends");
-//				}
-//				if (cd.zd.zAdjInc != cd.zd.zIncome) {
-//					print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
-//				}
-
-//				switch (cd.zd.zState) {
-//					case NNET_PINC_DIVCUT:
-//					case PNET_NINC_DIVCUT:
-//					case NNET_NINC_DIVCUT:
-//						print1QtrData(pw, (-1.0 * div), "Dividends");
-//						print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
-//						break;
-//					default:
-//						break;
-//				}
 
 				pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
 				print1QtrData(pw, (-1.0 * div), "Dividends");
 				print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
+				pw.printf("\t*Ops Cost / Qtr  : %s%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15));
 				pw.printf("\t*Zombie Adj Scr  : %s%n", QuarterlyData.fmt(cd.zd.zAdjScr, 15));
 				pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
 
-
-
-//				if (cd.zd.zScore == 100.0) {
-//					pw.println("\tPlenty of cash.");
-//				} else if (cd.zd.zScore == -100.0) {
-//					pw.println("\tDead Zombie!");
-//				} else if (cd.zd.zScore == 25.0) {
-//					pw.println("\tFinancials ignored.");
-//
-//				} else if (cd.zd.zScore < -8.0) {
-//					pw.println("\tZombie!");
-//				} else if ((cd.zd.zScore < 0.0) && (cd.zd.zIncome < 0.0)) {
-//					if (Math.abs(cd.zd.zScore) < 4.0) {
-//						pw.printf("\tZombie! Cash only covers income shortfall for %.2f quarters.%n", Math.abs(cd.zd.zScore));
-//
-//					} else {
-//						pw.printf("\tCash covers income shortfall for %.2f quarters.%n", Math.abs(cd.zd.zScore));
-//					}
-//				} else if ((cd.zd.zScore < 0.0) && (cd.zd.zNet < 0.0)) {
-//					pw.printf("\tFuture income covers Cash shortfall in %.2f quarters.%n", Math.abs(cd.zd.zScore));
-//				} else {
-//					//pw.printf("\tUnexpected zScore : %.2f%n", cd.zd.zScore);
-//				}
+				String rpt =  cd.zd.zStatus();
+				if (rpt.length() > 0) pw.println(rpt);
+				if (cd.zd.zIsZombie) pw.println("\tIs Zombie!");
 		}
 	}
 

@@ -47,6 +47,7 @@ public class ZombieData {
 	public double				zNet;
 	public double				zScore;
 	public double				zAdjScr;
+	public double				zKeepItRunning;
 	public boolean			zIsZombie;
 	public ZombieStates	zState;
 
@@ -64,6 +65,7 @@ public class ZombieData {
 		this.zNet = 0.0;
 		this.zScore = 0.0;
 		this.zAdjScr = 0.0;
+		this.zKeepItRunning = 0.0;
 		this.zIsZombie = false;
 		this.zState = ZombieStates.UNKNOWN;
 	}
@@ -136,7 +138,6 @@ public class ZombieData {
 
 		this.zAdjInc = this.zIncome + this.zDividend;
 		if (Math.abs(this.zAdjInc) > 0.0) this.zAdjScr = this.zNet / Math.abs(this.zAdjInc);
-
 		if (Math.abs(this.zIncome) > 0.0) this.zScore = Math.abs(this.zNet / this.zIncome);
 
 		if (cd.sector.equalsIgnoreCase("Financials")) {
@@ -147,76 +148,99 @@ public class ZombieData {
 		//Case both net and income positive
 		if ((this.zNet > 0.0) && (this.zIncome > 0.0)) {
 			this.zState = ZombieStates.PNET_PINC;
+			this.zIsZombie = false;
 			this.zScore = 100.0;
 		}
 
 		//Case both net and income are negative
 		else if ((this.zNet < 0.0) && (this.zIncome < 0.0)) {
 
-			//this.zAdjInc = this.zIncome + this.zDividend;
+			this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
+			if (this.zKeepItRunning > 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+
 			this.zState = ZombieStates.NNET_NINC;
-			this.zScore = -100.0;
+			this.zScore = 0.0;
 			this.zIsZombie = true;
 
 			if (this.zAdjInc > 0.0) {
-				this.zAdjScr = Math.abs(this.zNet) / this.zAdjInc;
-				if (this.zAdjScr < 8.0) {
+				if (this.zAdjScr > 8.0) {
 					this.zState = ZombieStates.NNET_NINC_DIVCUT;
 					this.zIsZombie = false;
 				}
+			} else {
+				this.zAdjScr = 0.0;
 			}
 		}
 
 		//Case net is positive and income is negative
 		else if ((this.zNet > 0.0) && (this.zIncome < 0.0)) {
 
+			this.zKeepItRunning = Math.abs(this.zIncome) + (this.zDebt / 8.0);
+			if (this.zKeepItRunning > 0.0) this.zScore = Math.abs(this.zCash / this.zKeepItRunning);
+
 			this.zState = ZombieStates.PNET_NINC;
-			System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
+			//System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
 
 			//Cash funds at least 8 quarters
 			if (this.zScore >= 8.0) {
 				this.zState = ZombieStates.PNET_NINC_ENUFCASH;
+				this.zIsZombie = false;
 			}
 
 			//Cash funds less than 8 quarters but can use dividend
 			else if ((this.zScore < 8.0) && (this.zDividend > 0.0)) {
 
-				System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
+				//System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
 
 				this.zIsZombie = true;
 
-				if (Math.abs(this.zAdjInc) > 0.0) {
-					this.zAdjScr = Math.abs(this.zNet / this.zAdjInc);
+				this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
+				if (this.zKeepItRunning > 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
 
-					if (this.zAdjScr > 8.0) {
-						this.zState = ZombieStates.PNET_NINC_DIVCUT;
-						this.zIsZombie = false;
-					}
+				if (this.zAdjScr > 8.0) {
+					this.zState = ZombieStates.PNET_NINC_DIVCUT;
+					this.zIsZombie = false;
 				}
 			}
 
 			//Cash funds less than 8 quarters with no dividend
-			else if (this.zScore < 8.0) {
+			else {
 				this.zIsZombie = true;
-				System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
+				//System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
 			}
 		}
 
 		//Case net is negative and income is positive
 		else if ((this.zNet < 0.0) && (this.zIncome > 0.0)) {
 
-			this.zScore = Math.abs(this.zNet) / this.zIncome;
-			this.zState = ZombieStates.NNET_PINC;
+			this.zKeepItRunning = (this.zDebt / 8.0) + this.zIncome;
+			this.zScore = this.zKeepItRunning / this.zIncome;
+			this.zAdjScr = this.zKeepItRunning / this.zAdjInc;
 
-			if (this.zScore > 8.0) {
-				this.zIsZombie = true;
-				this.zAdjInc = this.zIncome + this.zDividend;
-				if (Math.abs(this.zAdjInc) > 0.0) {
-					this.zAdjScr = Math.abs(this.zNet) / this.zAdjInc;
+			if (cd.ticker.equalsIgnoreCase("AAL")) {
+				System.out.println(this);
+			}
+
+			if (this.zScore <= 8.0) {
+				this.zState = ZombieStates.NNET_PINC_ENUFINCOME;
+				this.zIsZombie = false;
+				
+			} else {
+
+				this.zScore = this.zCash / this.zKeepItRunning;
+				this.zState = ZombieStates.NNET_PINC;
+
+				//More than 8Qs to pay off debt with income, try removing dividend
+				if (this.zScore > 8.0) {
+					this.zIsZombie = true;
+					this.zKeepItRunning = (this.zDebt / 8.0) - this.zAdjInc;
+					this.zAdjScr = this.zCash / Math.abs(this.zKeepItRunning);
 					if (this.zAdjScr < 8.0) {
 						this.zState = ZombieStates.NNET_PINC_DIVCUT;
 						this.zIsZombie = false;
 					}
+				} else { //Less than 8Qs to pay off debt with income
+					this.zIsZombie = false;
 				}
 			}
 		}
@@ -225,39 +249,56 @@ public class ZombieData {
 	public String zStatus() {
 
 		String ret = "";
+
+		if (this.zScore == 123.456) {
+			return ret;
+		}
+
 		switch (this.zState) {
 			case NNET_PINC_DIVCUT:
-				ret += TAB + "Can survive for 2 years by reducing the dividend.";
+				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case NNET_NINC:
+				if (this.zAdjScr > 0.0) {
+					ret += TAB + String.format("Can only survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
+				} else {
+					ret += TAB + "No income and no cash reserves!";
+				}
 				break;
 			case NNET_NINC_DIVCUT:
-				ret += TAB + String.format("Can survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
+				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case NNET_PINC:
-				if (!this.zIsZombie) try {
-					final String s = String.format("\tCan pay existing current debt in %.2f quarters.", Math.abs(this.zScore));
+				if (!this.zIsZombie) {
+					final String s = String.format("\tCan pay of debt in %.2f quarters.", Math.abs(this.zAdjScr));
 					ret += s;
-				} catch (final Exception e) {
-					e.printStackTrace();
+				} else {
+					final String s = String.format("\tWill take %.2f quarters to pay off current debt with quarterly income.",
+					    Math.abs(this.zAdjScr));
+					ret += s;
 				}
 				break;
 			case PNET_NINC:
-				final String s = String.format("\tOnly enough cash to pay for %.2f quarters.", Math.abs(this.zScore));
+				final String s = String.format("\tOnly enough cash to continue operations for %.2f quarters.",
+				    Math.abs(this.zAdjScr));
 				ret += s;
 				break;
 			case PNET_NINC_DIVCUT:
-				ret += TAB + "Can survive for 2 years by reducing the dividend.";
+				ret += TAB + String.format("Can survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case PNET_NINC_ENUFCASH:
-				ret += TAB + "Can survive for 2 years using existing cash reserves.";
+				ret += TAB + String.format("Can survive for %.2f quarters using cash reserves.", this.zAdjScr);
 				break;
 			case PNET_PINC:
 				break;
 			case UNKNOWN:
 				break;
+			case NNET_PINC_ENUFINCOME:
+				ret += TAB + String.format("Will payoff existing ST debt in %.2f quarters using quarterly income.", this.zScore);
+				break;
 			default:
 				break;
+
 		}
 		return ret;
 	}
@@ -313,11 +354,10 @@ public class ZombieData {
 		ret += TAB + "Zombie Net        : " + QuarterlyData.fmt(this.zNet) + NL;
 		ret += TAB + "Zombie Income     : " + QuarterlyData.fmt(this.zIncome) + NL;
 		ret += TAB + "Zombie Score      : " + QuarterlyData.fmt(this.zScore) + NL;
-		if (this.zScore < 100.0) {
-			ret += TAB + "Zombie Adj Income : " + QuarterlyData.fmt(this.zAdjInc) + NL;
-			ret += TAB + "Zombie Dividend   : " + QuarterlyData.fmt(this.zDividend) + NL;
-			ret += TAB + "Zombie Adj Score  : " + QuarterlyData.fmt(this.zAdjScr) + NL;
-		}
+		ret += TAB + "Zombie Adj Income : " + QuarterlyData.fmt(this.zAdjInc) + NL;
+		ret += TAB + "Zombie Dividend   : " + QuarterlyData.fmt(this.zDividend) + NL;
+		ret += TAB + "Zombie Adj Score  : " + QuarterlyData.fmt(this.zAdjScr) + NL;
+		ret += TAB + "Operations Cost   : " + QuarterlyData.fmt(this.zKeepItRunning) + NL;
 		ret += TAB + "Zombie State      : " + this.zState + NL;
 		if (this.zIsZombie) ret += TAB + "Is ZOMBIE!" + NL;
 		return ret;
