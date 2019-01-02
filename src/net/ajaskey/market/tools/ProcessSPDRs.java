@@ -41,7 +41,9 @@ public class ProcessSPDRs {
 
 		System.out.println("Processing " + spdr);
 
-		try (PrintWriter pwComp = new PrintWriter("lists\\" + spdr.toLowerCase() + "-components.csv")) {
+		final String outdir = "c:\\data\\MA\\Lists\\";
+		try (PrintWriter pwComp = new PrintWriter("lists\\" + spdr.toLowerCase() + "-components.csv");
+		    PrintWriter pwList = new PrintWriter(outdir + spdr.toLowerCase() + "-components.csv")) {
 
 			List<String> resp = new ArrayList<>();
 
@@ -55,7 +57,9 @@ public class ProcessSPDRs {
 
 					if (knt > 1) {
 						final String str[] = s.split(",");
-						pwComp.println(str[0].replaceAll("\"", ""));
+						String ss = str[0].replaceAll("\"", "");
+						pwComp.println(ss);
+						if (knt < 26) pwList.println(ss);
 					}
 					knt++;
 				}

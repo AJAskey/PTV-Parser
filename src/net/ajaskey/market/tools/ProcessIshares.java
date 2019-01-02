@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.ajaskey.market.tools.helpers.WebGet;
+import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 public class ProcessIshares {
 
@@ -245,16 +246,21 @@ public class ProcessIshares {
 			return;
 		}
 
-		try (PrintWriter pw = new PrintWriter("lists\\" + iShare.toLowerCase() + "-components.csv")) {
+		final String outdir = "c:\\data\\MA\\Lists\\";
+		try (PrintWriter pw = new PrintWriter("lists\\" + iShare.toLowerCase() + "-components.csv");
+		    PrintWriter pwList = new PrintWriter(outdir + iShare.toLowerCase() + "-components.csv")) {
 
 			List<String> resp = new ArrayList<>();
 			resp = WebGet.getIshares(url);
 			if (resp != null) {
+				int knt = 0;
 				for (final String s : resp) {
 					if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0)
 					    && (ProcessIshares.isValid(s))) {
 						// System.out.println(s);
 						pw.println(s);
+						knt++;
+						if (knt < 26) pwList.println(s);
 					}
 				}
 				System.out.println("Processed " + iShare + " : " + resp.size());

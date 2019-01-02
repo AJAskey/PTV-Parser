@@ -31,6 +31,9 @@ public class ZombieData {
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
 
+	public static int			zKnt	= 0;
+	public static String	zStr	= "";
+
 	private static void print(String desc, double val) {
 
 		System.out.printf("%-10s : %f%n", desc, val);
@@ -131,10 +134,17 @@ public class ZombieData {
 	 */
 	public void calcZScore(CompanyData cd) {
 
+		this.zAdjInc = this.zIncome + this.zDividend;
+		if (Math.abs(this.zAdjInc) > 0.0) this.zAdjScr = this.zNet / Math.abs(this.zAdjInc);
+
+		if (Math.abs(this.zIncome) > 0.0) this.zScore = Math.abs(this.zNet / this.zIncome);
+
 		if (cd.sector.equalsIgnoreCase("Financials")) {
 			this.zScore = 123.456;
 			return;
-		} else //Case both net and income positive
+		}
+
+		//Case both net and income positive
 		if ((this.zNet > 0.0) && (this.zIncome > 0.0)) {
 			this.zState = ZombieStates.PNET_PINC;
 			this.zScore = 100.0;
@@ -142,11 +152,18 @@ public class ZombieData {
 
 		//Case both net and income are negative
 		else if ((this.zNet < 0.0) && (this.zIncome < 0.0)) {
-			if (this.zAdjInc > 0.0) this.zState = ZombieStates.NNET_NINC_DIVCUT;
-			else {
-				this.zState = ZombieStates.NNET_NINC;
-				this.zScore = -100.0;
-				this.zIsZombie = true;
+
+			//this.zAdjInc = this.zIncome + this.zDividend;
+			this.zState = ZombieStates.NNET_NINC;
+			this.zScore = -100.0;
+			this.zIsZombie = true;
+
+			if (this.zAdjInc > 0.0) {
+				this.zAdjScr = Math.abs(this.zNet) / this.zAdjInc;
+				if (this.zAdjScr < 8.0) {
+					this.zState = ZombieStates.NNET_NINC_DIVCUT;
+					this.zIsZombie = false;
+				}
 			}
 		}
 
@@ -154,32 +171,44 @@ public class ZombieData {
 		else if ((this.zNet > 0.0) && (this.zIncome < 0.0)) {
 
 			this.zState = ZombieStates.PNET_NINC;
+			System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
 
-			this.zScore = this.zNet / Math.abs(this.zIncome);
+			//Cash funds at least 8 quarters
+			if (this.zScore >= 8.0) {
+				this.zState = ZombieStates.PNET_NINC_ENUFCASH;
+			}
 
-			if (this.zScore > 8.0) this.zState = ZombieStates.PNET_NINC_ENUFCASH;
+			//Cash funds less than 8 quarters but can use dividend
 			else if ((this.zScore < 8.0) && (this.zDividend > 0.0)) {
 
+				System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
+
 				this.zIsZombie = true;
-				this.zAdjInc = this.zIncome + this.zDividend;
+
 				if (Math.abs(this.zAdjInc) > 0.0) {
-					this.zAdjScr = this.zNet / this.zAdjInc;
+					this.zAdjScr = Math.abs(this.zNet / this.zAdjInc);
 
 					if (this.zAdjScr > 8.0) {
 						this.zState = ZombieStates.PNET_NINC_DIVCUT;
 						this.zIsZombie = false;
 					}
 				}
-			} else if (this.zScore < 8.0) this.zIsZombie = true;
+			}
+
+			//Cash funds less than 8 quarters with no dividend
+			else if (this.zScore < 8.0) {
+				this.zIsZombie = true;
+				System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
+			}
 		}
 
 		//Case net is negative and income is positive
 		else if ((this.zNet < 0.0) && (this.zIncome > 0.0)) {
 
-			this.zScore = this.zNet / this.zIncome;
+			this.zScore = Math.abs(this.zNet) / this.zIncome;
 			this.zState = ZombieStates.NNET_PINC;
 
-			if (this.zScore < -8.0) {
+			if (this.zScore > 8.0) {
 				this.zIsZombie = true;
 				this.zAdjInc = this.zIncome + this.zDividend;
 				if (Math.abs(this.zAdjInc) > 0.0) {
@@ -193,29 +222,9 @@ public class ZombieData {
 		}
 	}
 
-	/**
-	 *
-	 * net.ajaskey.market.tools.SIP.report
-	 *
-	 * @param ticker
-	 * @param sector
-	 * @return
-	 */
-	public String report(String ticker, String sector) {
+	public String zStatus() {
 
 		String ret = "";
-
-		if (sector.equalsIgnoreCase("Financials")) return ret;
-
-		switch (this.zState) {
-			case PNET_PINC:
-				break;
-			default:
-				ret = NL + ticker + NL;
-				ret += this.toString();
-				break;
-		}
-
 		switch (this.zState) {
 			case NNET_PINC_DIVCUT:
 				ret += TAB + "Can survive for 2 years by reducing the dividend.";
@@ -223,7 +232,7 @@ public class ZombieData {
 			case NNET_NINC:
 				break;
 			case NNET_NINC_DIVCUT:
-				ret += TAB + "Can survive for 2 years by reducing the dividend.";
+				ret += TAB + String.format("Can survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case NNET_PINC:
 				if (!this.zIsZombie) try {
@@ -250,6 +259,45 @@ public class ZombieData {
 			default:
 				break;
 		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.report
+	 *
+	 * @param ticker
+	 * @param sector
+	 * @return
+	 */
+	public String report(String ticker, String sector) {
+
+		String ret = "";
+
+		if (sector.equalsIgnoreCase("Financials")) return ret;
+
+		if (!this.zIsZombie) return ret;
+
+		System.out.printf("%-6s\t%s%n", ticker, sector);
+		zStr += " $" + ticker;
+		int len = zStr.length();
+		int m = len % 200;
+		if ((len > 100) && (m < 6)) {
+			zStr += NL;
+		}
+		zKnt++;
+
+		switch (this.zState) {
+			case PNET_PINC:
+				break;
+			default:
+				ret = ticker + NL;
+				ret += this.toString();
+				break;
+		}
+
+		ret += zStatus();
+
 		return ret;
 	}
 
