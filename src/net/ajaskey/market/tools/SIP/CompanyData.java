@@ -132,54 +132,34 @@ public class CompanyData {
 						} catch (final ParseException e) {
 							cd.eoq = null;
 						}
-						cd.insiders = QuarterlyData.parseDouble(fld[4].trim());
-						cd.floatShares = QuarterlyData.parseDouble(fld[5].trim());
-						cd.capEx = QuarterlyData.parseDouble(fld[6].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[7].trim());
-						cd.cashFromOps = QuarterlyData.parseDouble(fld[8].trim());
+						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[5].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[6].trim());
+						cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[8].trim());
+						cd.cashFromOps = QuarterlyData.parseDouble(fld[9].trim());
 						cd.shares.parse(fld);
+
+						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
+						cd.psales = DerivedData.calcPSales(cd);
+						cd.opMargin = DerivedData.calcOpMargin(cd.id);
+						cd.netMargin = DerivedData.calcNetMargin(cd.id);
+						cd.roe = DerivedData.calcRoe(cd);
+						cd.taxRate = DerivedData.calcTaxRate(cd.id);
+						cd.interestRate = DerivedData.calcInterestRate(cd.id);
+						cd.divYld = DerivedData.calcDividendYield(cd.id, cd.lastPrice);
+						cd.epsYld = DerivedData.calcEarningsYield(cd.id, cd.lastPrice);
+						cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+						cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
+						cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
+						cd.marketCap = DerivedData.calcMarketCap(cd);
+						cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
+						cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
+
+						cd.zd.calc(cd);
+
+						totalMarketCap += cd.marketCap;
 					}
-				}
-			}
-		}
-
-		// Read last price of tickers and calculate derived data
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/closing_prices.txt"))) {
-
-			while ((line = reader.readLine()) != null) {
-				final String str = line.trim();
-				if (str.length() > 1) try {
-					//System.out.println(str);
-					final String fld[] = str.split(TAB);
-					final String ticker = fld[0].trim();
-					if (ticker.equals("SPX.IDX")) spxPrice = Double.parseDouble(fld[1].trim());
-					else {
-						final CompanyData cd = CompanyData.getCompany(ticker);
-						if (cd != null) if (ticker.equalsIgnoreCase(cd.ticker)) {
-							final double price = Double.parseDouble(fld[1].trim());
-							cd.lastPrice = price;
-							cd.pe = DerivedData.calcPE(cd.id, price);
-							cd.psales = DerivedData.calcPSales(cd);
-							cd.opMargin = DerivedData.calcOpMargin(cd.id);
-							cd.netMargin = DerivedData.calcNetMargin(cd.id);
-							cd.roe = DerivedData.calcRoe(cd);
-							cd.taxRate = DerivedData.calcTaxRate(cd.id);
-							cd.interestRate = DerivedData.calcInterestRate(cd.id);
-							cd.divYld = DerivedData.calcDividendYield(cd.id, price);
-							cd.epsYld = DerivedData.calcEarningsYield(cd.id, price);
-							cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
-							cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
-							cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
-							cd.marketCap = DerivedData.calcMarketCap(cd);
-							cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
-							cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
-
-							cd.zd.calc(cd);
-
-							totalMarketCap += cd.marketCap;
-						}
-					}
-				} catch (final Exception e) {
 				}
 			}
 		}

@@ -56,11 +56,17 @@ public class Reports {
 			for (final CompanyData cd : this.companyList) {
 				//		if (cd.zd.zIsZombie || cd.zd.zState == ZombieStates.NNET_NINC_DIVCUT
 				//		    || cd.zd.zState == ZombieStates.NNET_PINC_DIVCUT || cd.zd.zState == ZombieStates.PNET_NINC_DIVCUT) {
-				String rpt = "";// cd.zd.zStatus();
-				this.printZombieData(pw, cd);
+				//String rpt = "";// cd.zd.zStatus();
+
+				if (cd.ticker.equalsIgnoreCase("QTNT")) {
+					System.out.println(cd.zd);
+				}
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					this.printZombieData(pw, cd);
+				}
 
 				//	}
-				cd.zd.report(cd.ticker, cd.sector);
+				//cd.zd.report(cd.ticker, cd.sector);
 				//				if (rpt.length() > 0) {
 				//					zpw.println("");
 				//					this.printData(zpw, cd);
@@ -167,12 +173,12 @@ public class Reports {
 		}
 
 		switch (cd.zd.zState) {
-			case PNET_PINC:
-			case NNET_PINC_DIVCUT:
-			case NNET_NINC_DIVCUT:
-			case PNET_NINC_ENUFCASH:
-			case UNKNOWN:
-				return;
+			//			case PNET_PINC:
+			//			case NNET_PINC_DIVCUT:
+			//			case NNET_NINC_DIVCUT:
+			//			case PNET_NINC_ENUFCASH:
+			//			case UNKNOWN:
+			//				return;
 			default:
 
 				pw.println("");
@@ -184,13 +190,29 @@ public class Reports {
 
 				pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zd.zCash, 15));
 				print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
-				print1QtrData(pw, cd.bsd.acctReceiveable.getMostRecent(), "AcctRx");
-				print1QtrData(pw, cd.bsd.stInvestments.getMostRecent(), "ST Invest");
-				print1QtrData(pw, cd.bsd.otherAssets.getMostRecent(), "Other Assets");
-				print1QtrData(pw, cd.bsd.inventory.getMostRecent(), "Inventory");
-				print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * 0.85), "85% LT Invest");
-				print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * 0.25), "25% LT Assets");
-				print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * 0.10), "10% Goodwill");
+				String str = String.format("%d%% AcctRx", (int) (ZombieData.arKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.acctReceiveable.getMostRecent() * ZombieData.arKnob), str);
+
+				str = String.format("%d%% ST Invest", (int) (ZombieData.stInvestmentsKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob), str);
+
+				//System.out.printf("%s\t%.2f\t%.2f%n", cd.ticker, cd.bsd.stInvestments.getMostRecent(),
+				//    (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob));
+
+				str = String.format("%d%% ST Assets", (int) (ZombieData.stAssetsKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.otherAssets.getMostRecent() * ZombieData.stAssetsKnob), str);
+
+				str = String.format("%d%% Inventory", (int) (ZombieData.inventoryKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.inventory.getMostRecent() * ZombieData.inventoryKnob), str);
+
+				str = String.format("%d%% LT Invest", (int) (ZombieData.ltInvestmentsKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * ZombieData.ltAssetsKnob), str);
+
+				str = String.format("%d%% LT Assets", (int) (ZombieData.ltAssetsKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * ZombieData.ltAssetsKnob), str);
+
+				str = String.format("%d%% Goodwill", (int) (ZombieData.gwKnob * 100.0));
+				print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * ZombieData.gwKnob), str);
 
 				pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zd.zDebt, 15));
 				print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
@@ -199,27 +221,32 @@ public class Reports {
 
 				pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zd.zNet, 15));
 
-				pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income minus Dividends Paid]%n",
+				pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income w/o Unusual Expenses]%n",
 				    QuarterlyData.fmt(cd.zd.zIncome, 15));
 				print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
-				double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
-				if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
-					avgpre += cd.id.pretaxIncome.q5;
-				}
-				avgpre /= 4.0;
-				print1QtrData(pw, avgpre, "Avg Pretax");
-				double div = cd.id.dividend.q1 * cd.shares.getMostRecent();
+				print4QtrData(pw, (cd.id.unusualIncome), "4Q Unusual Exp");
+				//				double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
+				//				if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
+				//					avgpre += cd.id.pretaxIncome.q5;
+				//				}
+				//				avgpre /= 4.0;
+				print1QtrData(pw, cd.zd.zIncome, "Avg Pretax");
 
 				pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
-				print1QtrData(pw, (-1.0 * div), "Dividends");
-				print1QtrData(pw, cd.zd.zAdjInc, "Adj Income");
-				pw.printf("\t*Ops Cost / Qtr  : %s%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15));
+				print1QtrData(pw, cd.zd.zDividend, "Dividends");
+				pw.printf("\tAdj Income       : %s  [Income with Dividends Added Back In]%n",
+				    QuarterlyData.fmt(cd.zd.zAdjInc, 15));
+				pw.printf("\t*Ops Cost / Qtr  : %s  [%.2f/8.0 + %.2f]%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15),
+				    cd.zd.zDebt, Math.abs(cd.zd.zIncome));
 				pw.printf("\t*Zombie Adj Scr  : %s%n", QuarterlyData.fmt(cd.zd.zAdjScr, 15));
 				pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
 
-				String rpt =  cd.zd.zStatus();
+				String rpt = cd.zd.zStatus();
 				if (rpt.length() > 0) pw.println(rpt);
-				if (cd.zd.zIsZombie) pw.println("\tIs Zombie!");
+				if (cd.zd.zIsZombie) {
+					pw.printf("\t%s Is Zombie!%n", cd.ticker);
+					if (cd.zd.zAdjScr < 4.0) pw.println("\tDead Zombie!");
+				}
 		}
 	}
 

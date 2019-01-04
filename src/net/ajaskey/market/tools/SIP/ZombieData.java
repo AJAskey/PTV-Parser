@@ -34,12 +34,20 @@ public class ZombieData {
 	public static int			zKnt	= 0;
 	public static String	zStr	= "";
 
-	private static void print(String desc, double val) {
+	public static double	arKnob						= 0.8;
+	public static double	inventoryKnob			= 0.7;
+	public static double	stAssetsKnob			= 0.9;
+	public static double	ltAssetsKnob			= 0.15;
+	public static double	stInvestmentsKnob	= 0.95;
+	public static double	ltInvestmentsKnob	= 0.85;
+	public static double	gwKnob						= 0.10;
 
-		System.out.printf("%-10s : %f%n", desc, val);
-	}
+	//	private static void print(String desc, double val) {
+	//		System.out.printf("%-10s : %f%n", desc, val);
+	//	}
 
 	public double				zIncome;
+	public double				unusualExpenses;
 	public double				zAdjInc;
 	public double				zDividend;
 	public double				zCash;
@@ -58,6 +66,7 @@ public class ZombieData {
 	public ZombieData() {
 
 		this.zIncome = 0.0;
+		this.unusualExpenses = 0.0;
 		this.zAdjInc = 0.0;
 		this.zDividend = 0.0;
 		this.zCash = 0.0;
@@ -76,11 +85,27 @@ public class ZombieData {
 	 */
 	public void calc(CompanyData cd) {
 
+		if (cd.ticker.equalsIgnoreCase("QTNT")) {
+			//System.out.println(this);
+		}
+
 		this.zCash = this.calcZCash(cd);
 		this.zDebt = this.calcZDebt(cd);
 		this.zNet = this.zCash - this.zDebt;
 		this.zIncome = this.calcZIncome(cd);
 		this.calcZScore(cd);
+
+		if (this.zIsZombie) {
+			//zStr += " $" + cd.ticker;
+			zStr += " " + cd.ticker;
+			int len = zStr.length();
+			int m = len % 100;
+			if ((len > 100) && (m < 6)) {
+				zStr += NL;
+			}
+			zKnt++;
+			System.out.printf("%-8s\t%25s\t%d%n", cd.ticker, cd.sector, cd.numEmp);
+		}
 
 	}
 
@@ -92,10 +117,11 @@ public class ZombieData {
 	 */
 	public double calcZCash(CompanyData cd) {
 
-		final double ret = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent()
-		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.otherAssets.getMostRecent() + cd.bsd.inventory.getMostRecent()
-		    + (cd.bsd.ltInvestments.getMostRecent() * 0.85) + (cd.bsd.otherLtAssets.getMostRecent() * 0.25)
-		    + (cd.bsd.goodwill.getMostRecent() * 0.10);
+		final double ret = cd.bsd.cash.getMostRecent() + (cd.bsd.acctReceiveable.getMostRecent() * arKnob)
+		    + (cd.bsd.stInvestments.getMostRecent() * stInvestmentsKnob)
+		    + (cd.bsd.otherAssets.getMostRecent() * stAssetsKnob) + (cd.bsd.inventory.getMostRecent() * inventoryKnob)
+		    + (cd.bsd.ltInvestments.getMostRecent() * ltInvestmentsKnob)
+		    + (cd.bsd.otherLtAssets.getMostRecent() * ltAssetsKnob) + (cd.bsd.goodwill.getMostRecent() * gwKnob);
 		return ret;
 	}
 
@@ -120,11 +146,17 @@ public class ZombieData {
 	 */
 	public double calcZIncome(CompanyData cd) {
 
-		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
-		if (cd.id.pretaxIncome.q1 == 0.0) ret += cd.id.pretaxIncome.q5;
+		if (cd.ticker.equalsIgnoreCase("NI")) {
+			System.out.println(this);
+		}
+
+		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4
+		    + cd.id.unusualIncome.q1 + cd.id.unusualIncome.q2 + cd.id.unusualIncome.q3 + cd.id.unusualIncome.q4;
+
+		if (cd.id.pretaxIncome.q1 == 0.0) ret += cd.id.pretaxIncome.q5 + cd.id.unusualIncome.q5;
 		final double avg = ret / 4.0;
 		this.zDividend = cd.id.dividend.q1 * cd.shares.getMostRecent();
-		ret = avg - this.zDividend;
+		ret = avg; // - this.zDividend;
 		return ret;
 	}
 
@@ -136,9 +168,13 @@ public class ZombieData {
 	 */
 	public void calcZScore(CompanyData cd) {
 
+		if (cd.ticker.equalsIgnoreCase("QTS")) {
+			//System.out.println(this);
+		}
+
 		this.zAdjInc = this.zIncome + this.zDividend;
-		if (Math.abs(this.zAdjInc) > 0.0) this.zAdjScr = this.zNet / Math.abs(this.zAdjInc);
-		if (Math.abs(this.zIncome) > 0.0) this.zScore = Math.abs(this.zNet / this.zIncome);
+		//if (Math.abs(this.zAdjInc) > 0.0) this.zAdjScr = this.zNet / Math.abs(this.zAdjInc);
+		//if (Math.abs(this.zIncome) > 0.0) this.zScore = Math.abs(this.zNet / this.zIncome);
 
 		if (cd.sector.equalsIgnoreCase("Financials")) {
 			this.zScore = 123.456;
@@ -150,16 +186,17 @@ public class ZombieData {
 			this.zState = ZombieStates.PNET_PINC;
 			this.zIsZombie = false;
 			this.zScore = 100.0;
+			this.zKeepItRunning = this.zIncome + (this.zDebt / 8.0);
 		}
 
 		//Case both net and income are negative
 		else if ((this.zNet < 0.0) && (this.zIncome < 0.0)) {
 
 			this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
-			if (this.zKeepItRunning > 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+			if (this.zKeepItRunning != 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
 
 			this.zState = ZombieStates.NNET_NINC;
-			this.zScore = 0.0;
+			this.zScore = this.zIncome + (this.zDebt / 8.0);
 			this.zIsZombie = true;
 
 			if (this.zAdjInc > 0.0) {
@@ -168,7 +205,7 @@ public class ZombieData {
 					this.zIsZombie = false;
 				}
 			} else {
-				this.zAdjScr = 0.0;
+				//this.zAdjScr = 0.0;
 			}
 		}
 
@@ -176,7 +213,9 @@ public class ZombieData {
 		else if ((this.zNet > 0.0) && (this.zIncome < 0.0)) {
 
 			this.zKeepItRunning = Math.abs(this.zIncome) + (this.zDebt / 8.0);
-			if (this.zKeepItRunning > 0.0) this.zScore = Math.abs(this.zCash / this.zKeepItRunning);
+			if (this.zKeepItRunning != 0.0) this.zScore = Math.abs(this.zCash / this.zKeepItRunning);
+			double kir = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
+			this.zAdjScr = Math.abs(this.zCash / kir);
 
 			this.zState = ZombieStates.PNET_NINC;
 			//System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
@@ -195,7 +234,7 @@ public class ZombieData {
 				this.zIsZombie = true;
 
 				this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
-				if (this.zKeepItRunning > 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+				if (this.zKeepItRunning != 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
 
 				if (this.zAdjScr > 8.0) {
 					this.zState = ZombieStates.PNET_NINC_DIVCUT;
@@ -217,14 +256,10 @@ public class ZombieData {
 			this.zScore = this.zKeepItRunning / this.zIncome;
 			this.zAdjScr = this.zKeepItRunning / this.zAdjInc;
 
-			if (cd.ticker.equalsIgnoreCase("AAL")) {
-				System.out.println(this);
-			}
-
 			if (this.zScore <= 8.0) {
 				this.zState = ZombieStates.NNET_PINC_ENUFINCOME;
 				this.zIsZombie = false;
-				
+
 			} else {
 
 				this.zScore = this.zCash / this.zKeepItRunning;
@@ -259,11 +294,7 @@ public class ZombieData {
 				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case NNET_NINC:
-				if (this.zAdjScr > 0.0) {
-					ret += TAB + String.format("Can only survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
-				} else {
-					ret += TAB + "No income and no cash reserves!";
-				}
+				ret += TAB + String.format("Can only survive for %.2f quarters with existing cash reserves.", this.zAdjScr);
 				break;
 			case NNET_NINC_DIVCUT:
 				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend.", this.zAdjScr);
@@ -287,14 +318,15 @@ public class ZombieData {
 				ret += TAB + String.format("Can survive for %.2f quarters by reducing the dividend.", this.zAdjScr);
 				break;
 			case PNET_NINC_ENUFCASH:
-				ret += TAB + String.format("Can survive for %.2f quarters using cash reserves.", this.zAdjScr);
+				ret += TAB + String.format("Can survive for %.2f quarters using cash reserves.", this.zScore);
 				break;
 			case PNET_PINC:
 				break;
 			case UNKNOWN:
 				break;
 			case NNET_PINC_ENUFINCOME:
-				ret += TAB + String.format("Will payoff existing ST debt in %.2f quarters using quarterly income.", this.zScore);
+				ret += TAB
+				    + String.format("Will payoff existing ST debt in %.2f quarters using quarterly income.", this.zScore);
 				break;
 			default:
 				break;
@@ -320,13 +352,13 @@ public class ZombieData {
 		if (!this.zIsZombie) return ret;
 
 		System.out.printf("%-6s\t%s%n", ticker, sector);
-		zStr += " $" + ticker;
-		int len = zStr.length();
-		int m = len % 200;
-		if ((len > 100) && (m < 6)) {
-			zStr += NL;
-		}
-		zKnt++;
+		//		zStr += " $" + ticker;
+		//		int len = zStr.length();
+		//		int m = len % 200;
+		//		if ((len > 100) && (m < 6)) {
+		//			zStr += NL;
+		//		}
+		//		zKnt++;
 
 		switch (this.zState) {
 			case PNET_PINC:
