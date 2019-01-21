@@ -138,6 +138,8 @@ public class CompanyData {
 						cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
 						cd.cashFlow = QuarterlyData.parseDouble(fld[8].trim());
 						cd.cashFromOps = QuarterlyData.parseDouble(fld[9].trim());
+						cd.cashFromFin = QuarterlyData.parseDouble(fld[10].trim());
+						cd.cashFromInv = QuarterlyData.parseDouble(fld[11].trim());
 						cd.shares.parse(fld);
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -155,6 +157,11 @@ public class CompanyData {
 						cd.marketCap = DerivedData.calcMarketCap(cd);
 						cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
 						cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
+						cd.sumCurrAssets = DerivedData.calcCurrAssets(cd);
+						cd.sumCurrLiab = DerivedData.calcCurrLiabilities(cd);
+						cd.currentRatio = DerivedData.calcCurrentRatio(cd);
+						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
+						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
 
 						cd.zd.calc(cd);
 
@@ -303,6 +310,8 @@ public class CompanyData {
 	public double					capEx;
 	public double					cashFlow;
 	public double					cashFromOps;
+	public double					cashFromFin;
+	public double					cashFromInv;
 	public QuarterlyData	shares;
 
 	// aggregate data
@@ -328,6 +337,12 @@ public class CompanyData {
 	public double	debtCash;
 	public double	marketCap;
 	public double	partOfTotalCap;
+	
+	public double sumCurrAssets;
+	public double sumCurrLiab;
+	public double currentRatio;
+	public double workingCapital;
+	public double netCashFlow;
 
 	public ZombieData zd;
 
@@ -349,6 +364,8 @@ public class CompanyData {
 		this.capEx = 0.0;
 		this.cashFlow = 0.0;
 		this.cashFromOps = 0.0;
+		this.cashFromFin = 0.0;
+		this.cashFromInv = 0.0;
 		this.shares = new QuarterlyData("shares");
 
 		this.lastPrice = 0.0;
@@ -368,6 +385,12 @@ public class CompanyData {
 		this.debtCash = 0.0;
 		this.marketCap = 0.0;
 		this.partOfTotalCap = 0.0;
+		
+		this.sumCurrAssets = 0.0;
+		this.sumCurrLiab = 0.0;
+		this.currentRatio = 0.0;
+		this.workingCapital = 0.0;
+		this.netCashFlow = 0.0;
 
 		this.zd = new ZombieData();
 

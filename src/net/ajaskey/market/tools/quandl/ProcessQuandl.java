@@ -168,7 +168,7 @@ public class ProcessQuandl {
 		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 27.51;
+		double shillerpe = 29.36;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 52.43));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 836.39));
@@ -177,8 +177,6 @@ public class ProcessQuandl {
 		double spxyield = spxearn / lastSpxPrice.value * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS", spxearn));
-		double lastEcri = 0.0;
-		double lastCoin = 0.0;
 
 		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
 		    + QuandlApi.key;
@@ -199,8 +197,6 @@ public class ProcessQuandl {
 		final String spxpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/SPX_PC.xml?api_key=" + QuandlApi.key;
 		final String vixpcURL = "https://www.quandl.com/api/v3/datasets/CBOE/VIX_PC.xml?api_key=" + QuandlApi.key;
 		final String naaimURL = "https://www.quandl.com/api/v3/datasets/NAAIM/NAAIM.xml?api_key=" + QuandlApi.key;
-		final String leadURL = "https://www.quandl.com/api/v3/datasets/ECRI/USLEADING.xml?api_key=" + QuandlApi.key;
-		final String coinURL = "https://www.quandl.com/api/v3/datasets/ECRI/USCOIN.xml?api_key=" + QuandlApi.key;
 
 		final List<OneValueData> price = ProcessQuandl.getOneDataPoint(sp500URL);
 		price.add(0, lastSpxPrice);
@@ -299,31 +295,6 @@ public class ProcessQuandl {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.quandl.processEcri
-	 *
-	 * @param li
-	 * @param d
-	 * @param e
-	 */
-	private static void processEcriLead(List<LeadingIndicatorData> li, double wk1) {
-
-		Calendar cal1 = Calendar.getInstance();
-		if (wk1 > 0.0) {
-			LeadingIndicatorData d1 = new LeadingIndicatorData(cal1, wk1, 0.0);
-			li.add(0, d1);
-		}
-	}
-
-	private static void processEcriCoin(List<LeadingIndicatorData> coin, double wk1) {
-
-		Calendar cal1 = Calendar.getInstance();
-		if (wk1 > 0.0) {
-			LeadingIndicatorData d1 = new LeadingIndicatorData(cal1, wk1, 0.0);
-			coin.add(0, d1);
-		}
-	}
-
-	/**
 	 * net.ajaskey.market.tools.quandl.scaleEarnings
 	 *
 	 * @param earn
@@ -373,44 +344,6 @@ public class ProcessQuandl {
 			}
 		}
 		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.quandl.writeLiList
-	 *
-	 * @param li
-	 * @param string
-	 */
-	private static void writeLiList(List<LeadingIndicatorData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final LeadingIndicatorData item : list) {
-
-				pw.printf("%s,%.1f%n", Qcommon.sdf.format(item.date.getTime()), item.index);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	private static void writeCoinList(List<LeadingIndicatorData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final LeadingIndicatorData item : list) {
-
-				pw.printf("%s,%.1f%n", Qcommon.sdf.format(item.date.getTime()), item.index);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	/**

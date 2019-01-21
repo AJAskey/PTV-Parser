@@ -89,7 +89,7 @@ public class ParseTreastData {
 		}
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL.csv");
-		    PrintWriter pw2018 = new PrintWriter(FredCommon.fredPath + "/TREAST-2018.csv");
+		    PrintWriter pw2019 = new PrintWriter(FredCommon.fredPath + "/TREAST-2019.csv");
 		    PrintWriter pw50 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-50.csv");
 		    PrintWriter pw90 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-90.csv")) {
 
@@ -98,12 +98,12 @@ public class ParseTreastData {
 			double last90 = 0;
 			Calendar lastDate = null;
 			final Calendar end2018 = Calendar.getInstance();
-			end2018.set(2019, Calendar.JANUARY, 1);
+			end2018.set(2020, Calendar.JANUARY, 1);
 			for (final DateValue dv : pastList) {
 				pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
-				pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
+				pw2019.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
 				last = dv.value;
 				last50 = dv.value;
 				last90 = dv.value;
@@ -129,7 +129,7 @@ public class ParseTreastData {
 						if (dv.date.before(end2018)) {
 							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
 							System.out.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
-							pw2018.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
+							pw2019.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
 						}
 					}
 				}

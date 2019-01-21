@@ -12,6 +12,7 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -412,6 +413,14 @@ public class Utils {
 		}
 		return "";
 	}
+	
+	public static String stringDate(Date dat) {
+
+		if (dat != null) {
+			return sdf.format(dat);
+		}
+		return "";
+	}
 
 	/**
 	 *
@@ -500,6 +509,17 @@ public class Utils {
 	public static String getStringFull(Calendar cal) {
 
 		return sdfFull.format(cal.getTime());
+	}
+
+	/** 
+	 * net.ajaskey.market.misc.getCurrentDateStr
+	 *
+	 * @return
+	 */
+	public static String getCurrentDateStr() {
+
+		Calendar cal = Calendar.getInstance();
+		return getStringFull(cal);
 	}
 
 }
