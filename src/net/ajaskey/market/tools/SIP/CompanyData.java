@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.text.WordUtils;
+
 /**
  * This class...
  *
@@ -68,7 +70,7 @@ public class CompanyData {
 
 		double totalMarketCap = 0.0;
 		double totalEps = 0.0;
-		double spxPrice = 0.0;
+		final double spxPrice = 0.0;
 
 		QuarterlyData.init();
 
@@ -132,6 +134,10 @@ public class CompanyData {
 						} catch (final ParseException e) {
 							cd.eoq = null;
 						}
+						final String s = fld[1].trim();
+						if (s.length() > 0) if (s.contains("500")) cd.spIndex = "SP500";
+						else if (s.contains("400")) cd.spIndex = "SP400";
+						else if (s.contains("600")) cd.spIndex = "SP600";
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[5].trim());
 						cd.floatShares = QuarterlyData.parseDouble(fld[6].trim());
@@ -162,6 +168,7 @@ public class CompanyData {
 						cd.currentRatio = DerivedData.calcCurrentRatio(cd);
 						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
 						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
+						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
 
 						cd.zd.calc(cd);
 
@@ -273,9 +280,9 @@ public class CompanyData {
 		cd.name = fld[0].trim();
 		cd.ticker = fld[1].trim();
 		cd.exchange = fld[2].trim();
-		cd.sector = CompanyData.setSecInd(fld[3]);
-		cd.industry = CompanyData.setSecInd(fld[4]);
-
+		cd.sector = CompanyData.setSecInd(fld[3].trim());
+		final String s = CompanyData.setSecInd(fld[4].trim());
+		cd.industry = WordUtils.capitalizeFully(s);
 		return cd;
 
 	}
@@ -303,6 +310,7 @@ public class CompanyData {
 	public String					exchange;
 	public String					sector;
 	public String					industry;
+	public String					spIndex;
 	public int						numEmp;
 	public Date						eoq;
 	public double					insiders;
@@ -337,12 +345,13 @@ public class CompanyData {
 	public double	debtCash;
 	public double	marketCap;
 	public double	partOfTotalCap;
-	
-	public double sumCurrAssets;
-	public double sumCurrLiab;
-	public double currentRatio;
-	public double workingCapital;
-	public double netCashFlow;
+
+	public double	sumCurrAssets;
+	public double	sumCurrLiab;
+	public double	currentRatio;
+	public double	workingCapital;
+	public double	netCashFlow;
+	public double totalCashFlow;
 
 	public ZombieData zd;
 
@@ -357,6 +366,7 @@ public class CompanyData {
 		this.exchange = "";
 		this.sector = "";
 		this.industry = "";
+		this.spIndex = "";
 		this.numEmp = 0;
 		this.insiders = 0.0;
 		this.eoq = null;
@@ -385,12 +395,13 @@ public class CompanyData {
 		this.debtCash = 0.0;
 		this.marketCap = 0.0;
 		this.partOfTotalCap = 0.0;
-		
+
 		this.sumCurrAssets = 0.0;
 		this.sumCurrLiab = 0.0;
 		this.currentRatio = 0.0;
 		this.workingCapital = 0.0;
 		this.netCashFlow = 0.0;
+		this.totalCashFlow = 0.0;
 
 		this.zd = new ZombieData();
 

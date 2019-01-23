@@ -58,11 +58,11 @@ public class Reports {
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
 			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
 
-			pw.println("\nList of tickers with Current Ratio < 1.0 and negative Cash from Operations.");
+			pw.println("\nList of tickers with Current Ratio < 1.0 and negative Net Cash Flow. [Cash from Ops + Financing]");
 			String str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.cashFromOps < 0.0)) {
+					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
 						str = addStr(cd.ticker, str);
 					}
 				}
@@ -70,11 +70,11 @@ public class Reports {
 			pw.println(str);
 
 			pw.println(
-			    "\nList of tickers with Current Ratio < 1.0 and negative Net Cash Flow. [Cash from Ops + Cash from Financing]");
+			    "\nList of tickers with Current Ratio < 1.0 and negative Total Cash Flow. [Cash from Ops + Financing + Investing]");
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
+					if ((cd.currentRatio < 1.0) && (cd.totalCashFlow < 0.0)) {
 						str = addStr(cd.ticker, str);
 					}
 				}
@@ -85,7 +85,7 @@ public class Reports {
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.freeCashFlow <= 0.0) && (cd.netCashFlow > 0.0) && (Math.abs(cd.cashFromOps) > 0.0)) {
+					if ((cd.freeCashFlow <= 0.0) && (cd.netCashFlow > 0.0)) {
 						str = addStr(cd.ticker, str);
 					}
 				}
@@ -116,6 +116,60 @@ public class Reports {
 			System.out.println(ZombieData.zStr);
 		}
 
+		/**
+		 * 
+		 */
+		try (PrintWriter pw = new PrintWriter("out/Zombies-Fin.txt")) {
+
+			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
+			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
+
+			pw.println("\nList of tickers with Current Ratio < 1.0 and negative Cash from Operations.");
+			String str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.currentRatio < 1.0) && (cd.cashFromOps < 0.0)) {
+						str = addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.println(
+			    "\nList of tickers with Current Ratio < 1.0 and negative Net Cash Flow. [Cash from Ops + Cash from Financing]");
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
+						str = addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.println("\nList of tickers with negative FCF and using Financing to continue operations.");
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.freeCashFlow <= 0.0) && (cd.netCashFlow > 0.0) && (Math.abs(cd.cashFromOps) > 0.0)) {
+						str = addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			for (final CompanyData cd : this.companyList) {
+
+				if (cd.sector.equalsIgnoreCase("Financials")) {
+					pw.println("");
+					this.printHeaderData(pw, cd);
+				}
+			}
+		}
+
+		/**
+		 * 
+		 */
 		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
 
 			for (final CompanyData cd : this.companyList)
@@ -174,7 +228,13 @@ public class Reports {
 
 		pw.println(" " + cd.ticker);
 		pw.printf("\t%s%n", cd.name);
-		pw.printf("\t%s, %s%n", cd.sector, cd.industry);
+
+		String index = "";
+		if (cd.spIndex.length() > 0) {
+			index = ", " + cd.spIndex;
+		}
+
+		pw.printf("\t%s, %s%s%n", cd.sector, cd.industry, index);
 		//pw.printf("\t%s%n", cd.industry);
 		String sNumEmp = "?";
 		if (cd.numEmp > 0) {
@@ -201,11 +261,12 @@ public class Reports {
 		    "[Cash from Operations - CapEx - Dividends]");
 		pw.printf("\tCash <- Fin 12m : %s %s%n", QuarterlyData.fmt(cd.cashFromFin, 15),
 		    "[Movement of cash between a firm and its owners and creditors : additional borrowing, debt repayment, dividend payments, equity financing.]");
-		pw.printf("\tNet Cash 12m    : %s %s%n", QuarterlyData.fmt(cd.netCashFlow, 15),
+		pw.printf("\t  Net Cash 12m  : %s %s%n", QuarterlyData.fmt(cd.netCashFlow, 15),
 		    "[Cash from Ops + Cash from Financing]");
-
-		pw.printf("%n\tCash <- Inv 12m : %s %s%n", QuarterlyData.fmt(cd.cashFromInv, 15),
+		pw.printf("\tCash <- Inv 12m : %s %s%n", QuarterlyData.fmt(cd.cashFromInv, 15),
 		    "[Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]");
+		pw.printf("\t  Total Cash 12m: %s %s%n", QuarterlyData.fmt(cd.netCashFlow + cd.cashFromInv, 15),
+		    "[Cash from Ops + Cash from Financing + Cash from Investing]");
 		//pw.printf("\tCash + ST Inv   : %s%n",
 		//    QuarterlyData.fmt((cd.bsd.cash.getMostRecent() + cd.bsd.stInvestments.getMostRecent())), 15);
 

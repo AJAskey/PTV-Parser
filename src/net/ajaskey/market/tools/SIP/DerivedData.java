@@ -441,4 +441,16 @@ public class DerivedData {
 		return ncf;
 	}
 
+	/** 
+	 * net.ajaskey.market.tools.SIP.calcTotalCashFlow
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcTotalCashFlow(CompanyData cd) {
+
+		double tcf = cd.cashFromOps + cd.cashFromFin + cd.cashFromInv;
+		return tcf;
+	}
+
 }
