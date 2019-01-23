@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="PTV-Parser">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../Users/Andy/.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../Users/Andy/.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="PTV-Parser.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/apache.commons.math/commons-math3-3.5.jar"/>
+        <pathelement location="lib/apache.poi.314/poi-excelant-3.14-20160307.jar"/>
+        <pathelement location="lib/apache.poi.314/poi-ooxml-3.14-20160307.jar"/>
+        <pathelement location="lib/apache.poi.314/poi-ooxml-schemas-3.14-20160307.jar"/>
+        <pathelement location="lib/apache.poi.314/xmlbeans-2.6.0.jar"/>
+        <pathelement location="lib/apache.poi.314/poi-3.14-20160307.jar"/>
+        <pathelement location="lib/apache.commons.math/commons-math3-3.5-javadoc.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="Test">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="lib">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="Jdatepicker/"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="Test"/>
+            <src path="lib"/>
+            <exclude name="Jdatepicker/"/>
+            <classpath refid="PTV-Parser.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="BigO">
+        <java classname="net.ajaskey.market.tools.bigo.BigO" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="BreadthOfList">
+        <java classname="net.ajaskey.market.ta.apps.BreadthOfList" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="CI">
+        <java classname="net.ajaskey.market.tools.consumerindex.CI" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="CompanyData">
+        <java classname="net.ajaskey.market.tools.SIP.CompanyData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ConvertOHLCV">
+        <java classname="net.ajaskey.market.tools.ConvertOHLCV" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="FredDataDownloader">
+        <java classname="net.ajaskey.market.tools.fred.FredDataDownloader" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="Internals">
+        <java classname="net.ajaskey.market.ta.apps.Internals" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="MoveNewEOD">
+        <java classname="net.ajaskey.market.ta.apps.MoveNewEOD" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="NewHighsLows">
+        <java classname="net.ajaskey.market.ta.apps.NewHighsLows" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="New_configuration">
+        <java classname="" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ParseData">
+        <java classname="net.ajaskey.market.ta.input.ParseData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ParseTreastData">
+        <java classname="net.ajaskey.market.tools.fred.ParseTreastData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ParseValueManufacturing">
+        <java classname="net.ajaskey.market.tools.fred.ParseValueManufacturing" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessCOTS">
+        <java classname="net.ajaskey.market.tools.cots.ProcessCOTS" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessDTS">
+        <java classname="net.ajaskey.market.tools.dts.ProcessDTS" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessEIA">
+        <java classname="net.ajaskey.market.tools.optuma.ProcessEIA" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessICI">
+        <java classname="net.ajaskey.market.tools.optuma.ProcessICI" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessQuandl">
+        <java classname="net.ajaskey.market.tools.quandl.ProcessQuandl" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessSPDRs">
+        <java classname="net.ajaskey.market.tools.ProcessSPDRs" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessSymbolList">
+        <java classname="net.ajaskey.market.ta.apps.ProcessSymbolList" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="QuarterlyData">
+        <java classname="net.ajaskey.market.tools.SIP.QuarterlyData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="SipData5">
+        <java classname="net.ajaskey.market.tools.sipro.v5.SipData5" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="SipDataUS">
+        <java classname="net.ajaskey.market.tools.sipro.v5.SipDataUS" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="SmartDumbDay">
+        <java classname="net.ajaskey.market.tools.smartmoney.SmartDumbDay" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="SmartDumbMoney">
+        <java classname="net.ajaskey.market.tools.smartmoney.SmartDumbMoney" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="SmartMoneyIntraday">
+        <java classname="net.ajaskey.market.tools.smartmoney.SmartMoneyIntraday" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="Statistics">
+        <java classname="net.ajaskey.market.tools.SIP.Statistics" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="TickerNames">
+        <java classname="net.ajaskey.market.tools.TickerNames" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="TotalData">
+        <java classname="net.ajaskey.market.tools.SIP.TotalData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="UpdateFred">
+        <java classname="net.ajaskey.market.tools.fred.UpdateFred" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="VerifyData">
+        <java classname="net.ajaskey.market.eod.VerifyData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="WeekendReset">
+        <java classname="net.ajaskey.market.ta.apps.WeekendReset" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="WriteIndexEOD">
+        <java classname="net.ajaskey.market.tools.optuma.WriteIndexEOD" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="WriteStockData">
+        <java classname="net.ajaskey.market.tools.optuma.WriteStockData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="Zip">
+        <java classname="net.ajaskey.market.misc.Zip" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+</project>

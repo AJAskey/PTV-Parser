@@ -1,0 +1,12 @@
+echo OFF
+echo ProcessEIA
+echo ProcessDTS
+echo ProcessQuandl
+echo WriteIndexEOD
+echo WeekendReset
+echo UpdateFred
+echo FredDataDownloader
+echo ParseTreastData
+echo CI
+echo SipData5
+echo CompanyData
