@@ -34,6 +34,47 @@ public class DerivedData {
 	final private static double MAX_PE = 275.0;
 
 	/**
+	 * net.ajaskey.market.tools.SIP.calcCurrAssets
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcCurrAssets(CompanyData cd) {
+
+		final double ca = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent()
+		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.inventory.getMostRecent() + cd.bsd.otherAssets.getMostRecent();
+		return ca;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcCurrentRatio
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcCurrentRatio(CompanyData cd) {
+
+		double cr = 0.0;
+		if (cd.sumCurrLiab > 0.0) {
+			cr = cd.sumCurrAssets / cd.sumCurrLiab;
+		}
+		return cr;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcCurrLiabilities
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcCurrLiabilities(CompanyData cd) {
+
+		final double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
+		    + cd.bsd.otherCurrLiab.getMostRecent();
+		return cl;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.calcDebtToCash
 	 *
@@ -44,7 +85,9 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double c = bsd.cash.getMostRecent();
-		if (c > 0.0) ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
+		if (c > 0.0) {
+			ret = (bsd.ltDebt.getMostRecent() + bsd.stDebt.getMostRecent()) / c;
+		}
 		return ret;
 	}
 
@@ -59,7 +102,9 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double e = bsd.equity.getMostRecent();
-		if (e > 0.0) ret = bsd.ltDebt.getMostRecent() / e;
+		if (e > 0.0) {
+			ret = bsd.ltDebt.getMostRecent() / e;
+		}
 		return ret;
 	}
 
@@ -124,9 +169,11 @@ public class DerivedData {
 	public static double calcInterestRate(IncomeData id) {
 
 		double ret = 0.0;
-		final double i1 = id.interestExp.q1 + id.interestExpNonOp.q1;
-		final double s1 = id.sales.q1;
-		if (s1 > 0.0) ret = (i1 / s1) * 100.0;
+		final double i1 = id.totalInterest.getTtm();
+		final double s1 = id.sales.getTtm();
+		if (s1 > 0.0) {
+			ret = (i1 / s1) * 100.0;
+		}
 		return ret;
 
 	}
@@ -145,6 +192,18 @@ public class DerivedData {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.SIP.calcNetCashFlow
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcNetCashFlow(CompanyData cd) {
+
+		final double ncf = cd.cashFromOps + cd.cashFromFin;
+		return ncf;
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.calcNetMargin
 	 *
@@ -156,7 +215,9 @@ public class DerivedData {
 		double ret = 0.0;
 		final double n12 = id.netIncome.getTtm();
 		final double s12 = id.sales.getTtm();
-		if (s12 > 0.0) ret = (n12 / s12) * 100.0;
+		if (s12 > 0.0) {
+			ret = (n12 / s12) * 100.0;
+		}
 		return ret;
 
 	}
@@ -171,9 +232,11 @@ public class DerivedData {
 	public static double calcOpMargin(IncomeData id) {
 
 		double ret = 0.0;
-		double g12 = id.grossOpIncome.getTtm();
-		double s12 = id.sales.getTtm();
-		if (s12 > 0.0) ret = (g12 / s12) * 100.0;
+		final double g12 = id.grossOpIncome.getTtm();
+		final double s12 = id.sales.getTtm();
+		if (s12 > 0.0) {
+			ret = (g12 / s12) * 100.0;
+		}
 		return ret;
 
 	}
@@ -190,7 +253,9 @@ public class DerivedData {
 
 		double ret = MAX_PE;
 		final double e12 = id.epsDilCont.getTtm();
-		if (e12 > 0.0) ret = price / e12;
+		if (e12 > 0.0) {
+			ret = price / e12;
+		}
 		ret = Math.min(MAX_PE, ret);
 		return ret;
 
@@ -208,7 +273,9 @@ public class DerivedData {
 
 		double ret = MAX_PE;
 		final double s12 = cd.id.sales.getTtm();
-		if (s12 > 0.0) ret = cd.lastPrice / s12;
+		if (s12 > 0.0) {
+			ret = cd.lastPrice / s12;
+		}
 		ret = Math.min(MAX_PE, ret);
 		return ret;
 
@@ -226,7 +293,9 @@ public class DerivedData {
 		double ret = 0.0;
 		final double n1 = cd.id.netIncome.getTtm();
 		final double e1 = cd.bsd.equity.getMostRecent();
-		if (e1 > 0.0) ret = (n1 / e1) * 100.0;
+		if (e1 > 0.0) {
+			ret = (n1 / e1) * 100.0;
+		}
 		return ret;
 	}
 
@@ -234,7 +303,9 @@ public class DerivedData {
 
 		double ret = 0.0;
 		final double g = cd.id.grossOpIncome.getTtm();
-		if (g != 0.0) ret = cd.bsd.stDebt.q1 / g;
+		if (g != 0.0) {
+			ret = cd.bsd.stDebt.q1 / g;
+		}
 		return ret;
 	}
 
@@ -254,9 +325,34 @@ public class DerivedData {
 			t1 = id.incomeTax.q2;
 			s1 = id.sales.q2;
 		}
-		if (s1 > 0.0) ret = (t1 / s1) * 100.0;
+		if (s1 > 0.0) {
+			ret = (t1 / s1) * 100.0;
+		}
 		return ret;
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcTotalCashFlow
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcTotalCashFlow(CompanyData cd) {
+
+		final double tcf = cd.cashFromOps + cd.cashFromFin + cd.cashFromInv;
+		return tcf;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcWorkingCapital
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcWorkingCapital(CompanyData cd) {
+
+		return (cd.sumCurrAssets - cd.sumCurrLiab);
 	}
 
 	/**
@@ -272,11 +368,15 @@ public class DerivedData {
 		return ret;
 	}
 
-	public double					qoqGrowth;
-	public double					seqGrowth;
-	public double					yoyGrowth;
-	public double					ttm;
-	private QuarterlyData	qd;
+	public double qoqGrowth;
+
+	public double seqGrowth;
+
+	public double yoyGrowth;
+
+	public double ttm;
+
+	private QuarterlyData qd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -318,7 +418,9 @@ public class DerivedData {
 			qtr1 = this.qd.q2;
 			qtr5 = this.qd.q6;
 		}
-		if (qtr5 != 0.0) this.qoqGrowth = ((qtr1 - qtr5) / Math.abs(qtr5)) * 100.0;
+		if (qtr5 != 0.0) {
+			this.qoqGrowth = ((qtr1 - qtr5) / Math.abs(qtr5)) * 100.0;
+		}
 	}
 
 	/**
@@ -337,7 +439,9 @@ public class DerivedData {
 			qtr1 = this.qd.q2;
 			qtr2 = this.qd.q3;
 		}
-		if (qtr2 != 0.0) this.seqGrowth = ((qtr1 - qtr2) / Math.abs(qtr2)) * 100.0;
+		if (qtr2 != 0.0) {
+			this.seqGrowth = ((qtr1 - qtr2) / Math.abs(qtr2)) * 100.0;
+		}
 	}
 
 	/**
@@ -360,7 +464,9 @@ public class DerivedData {
 		final double yr1 = this.qd.q1 + this.qd.q2 + this.qd.q3 + this.qd.q4;
 		final double yr2 = this.qd.q5 + this.qd.q6 + this.qd.q7 + this.qd.q8;
 
-		if (yr2 != 0.0) this.yoyGrowth = ((yr1 - yr2) / Math.abs(yr2)) * 100.0;
+		if (yr2 != 0.0) {
+			this.yoyGrowth = ((yr1 - yr2) / Math.abs(yr2)) * 100.0;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -376,81 +482,6 @@ public class DerivedData {
 		ret += TAB + TAB + TAB + "12m Total  : " + QuarterlyData.fmt(this.ttm) + " (avg= "
 		    + QuarterlyData.fmt(this.ttm / 4.0, 1) + ")" + NL;
 		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.calcCurrentRatio
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcCurrentRatio(CompanyData cd) {
-
-		double cr = 0.0;
-		if (cd.sumCurrLiab > 0.0) {
-			cr = cd.sumCurrAssets / cd.sumCurrLiab;
-		}
-		return cr;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.calcWorkingCapital
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcWorkingCapital(CompanyData cd) {
-
-		return (cd.sumCurrAssets - cd.sumCurrLiab);
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.calcCurrAssets
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcCurrAssets(CompanyData cd) {
-
-		double ca = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent()
-		    + cd.bsd.stInvestments.getMostRecent() + cd.bsd.inventory.getMostRecent() + cd.bsd.otherAssets.getMostRecent();
-		return ca;
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.SIP.calcCurrLiabilities
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcCurrLiabilities(CompanyData cd) {
-
-		double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent() + cd.bsd.otherCurrLiab.getMostRecent();
-		return cl;
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.SIP.calcNetCashFlow
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcNetCashFlow(CompanyData cd) {
-
-		double ncf = cd.cashFromOps + cd.cashFromFin;
-		return ncf;
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.SIP.calcTotalCashFlow
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcTotalCashFlow(CompanyData cd) {
-
-		double tcf = cd.cashFromOps + cd.cashFromFin + cd.cashFromInv;
-		return tcf;
 	}
 
 }

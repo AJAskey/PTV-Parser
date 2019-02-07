@@ -171,6 +171,12 @@ public class ZombieData {
 		if (cd.ticker.equalsIgnoreCase("CAKE")) {
 			System.out.println(this);
 		}
+		
+		if (cd.currentRatio > 0.95) {
+			this.zScore = 55.0;
+			this.zAdjScr = this.zScore;
+			return;
+		}
 
 		this.zAdjInc = this.zIncome + this.zDividend;
 

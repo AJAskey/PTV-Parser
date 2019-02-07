@@ -169,6 +169,7 @@ public class CompanyData {
 						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
 						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
 						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
+						//cd.totalInterestPaid = DerivedData.calcTotalInterest(cd);
 
 						cd.zd.calc(cd);
 
