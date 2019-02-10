@@ -98,8 +98,8 @@ public class ZombieData {
 		if (this.zIsZombie && (this.zAdjScr < 4.0)) {
 			//zStr += " $" + cd.ticker;
 			zStr += " " + cd.ticker;
-			int len = zStr.length();
-			int m = len % 100;
+			final int len = zStr.length();
+			final int m = len % 100;
 			if ((len > 100) && (m < 6)) {
 				zStr += NL;
 			}
@@ -153,7 +153,9 @@ public class ZombieData {
 		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4
 		    + cd.id.unusualIncome.q1 + cd.id.unusualIncome.q2 + cd.id.unusualIncome.q3 + cd.id.unusualIncome.q4;
 
-		if (cd.id.pretaxIncome.q1 == 0.0) ret += cd.id.pretaxIncome.q5 + cd.id.unusualIncome.q5;
+		if (cd.id.pretaxIncome.q1 == 0.0) {
+			ret += cd.id.pretaxIncome.q5 + cd.id.unusualIncome.q5;
+		}
 		final double avg = ret / 4.0;
 		this.zDividend = cd.id.dividend.q1 * cd.shares.getMostRecent();
 		ret = avg; // - this.zDividend;
@@ -171,7 +173,7 @@ public class ZombieData {
 		if (cd.ticker.equalsIgnoreCase("CAKE")) {
 			System.out.println(this);
 		}
-		
+
 		if (cd.currentRatio > 0.95) {
 			this.zScore = 55.0;
 			this.zAdjScr = this.zScore;
@@ -198,7 +200,9 @@ public class ZombieData {
 		else if ((this.zNet < 0.0) && (this.zIncome < 0.0)) {
 
 			this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
-			if (this.zKeepItRunning != 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+			if (this.zKeepItRunning != 0.0) {
+				this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+			}
 
 			this.zState = ZombieStates.NNET_NINC;
 			this.zScore = this.zAdjScr;
@@ -218,7 +222,9 @@ public class ZombieData {
 		else if ((this.zNet > 0.0) && (this.zIncome < 0.0)) {
 
 			this.zKeepItRunning = Math.abs(this.zIncome) + (this.zDebt / 8.0);
-			if (this.zKeepItRunning != 0.0) this.zScore = Math.abs(this.zCash / this.zKeepItRunning);
+			if (this.zKeepItRunning != 0.0) {
+				this.zScore = Math.abs(this.zCash / this.zKeepItRunning);
+			}
 
 			this.zState = ZombieStates.PNET_NINC;
 			//System.out.printf("%s\t%s%n%s%n", cd.ticker, cd.sector, this.toString());
@@ -238,7 +244,9 @@ public class ZombieData {
 				this.zIsZombie = true;
 
 				this.zKeepItRunning = Math.abs(this.zAdjInc) + (this.zDebt / 8.0);
-				if (this.zKeepItRunning != 0.0) this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+				if (this.zKeepItRunning != 0.0) {
+					this.zAdjScr = Math.abs(this.zCash / this.zKeepItRunning);
+				}
 
 				if (this.zAdjScr > 8.0) {
 					this.zState = ZombieStates.PNET_NINC_DIVCUT;
@@ -281,6 +289,72 @@ public class ZombieData {
 		}
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.report
+	 *
+	 * @param ticker
+	 * @param sector
+	 * @return
+	 */
+	public String report(String ticker, String sector) {
+
+		String ret = "";
+
+		if (sector.equalsIgnoreCase("Financials")) {
+			return ret;
+		}
+
+		if (!this.zIsZombie) {
+			return ret;
+		}
+
+		System.out.printf("%-6s\t%s%n", ticker, sector);
+		//		zStr += " $" + ticker;
+		//		int len = zStr.length();
+		//		int m = len % 200;
+		//		if ((len > 100) && (m < 6)) {
+		//			zStr += NL;
+		//		}
+		//		zKnt++;
+
+		switch (this.zState) {
+			case PNET_PINC:
+				break;
+			default:
+				ret = ticker + NL;
+				ret += this.toString();
+				break;
+		}
+
+		ret += this.zStatus();
+
+		return ret;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+
+		String ret = "";
+		ret += TAB + "Zombie Cash       : " + QuarterlyData.fmt(this.zCash) + NL;
+		ret += TAB + "Zombie Debt       : " + QuarterlyData.fmt(this.zDebt) + NL;
+		ret += TAB + "Zombie Net        : " + QuarterlyData.fmt(this.zNet) + NL;
+		ret += TAB + "Zombie Income     : " + QuarterlyData.fmt(this.zIncome) + NL;
+		ret += TAB + "Zombie Score      : " + QuarterlyData.fmt(this.zScore) + NL;
+		ret += TAB + "Zombie Adj Income : " + QuarterlyData.fmt(this.zAdjInc) + NL;
+		ret += TAB + "Zombie Dividend   : " + QuarterlyData.fmt(this.zDividend) + NL;
+		ret += TAB + "Zombie Adj Score  : " + QuarterlyData.fmt(this.zAdjScr) + NL;
+		ret += TAB + "Operations Cost   : " + QuarterlyData.fmt(this.zKeepItRunning) + NL;
+		ret += TAB + "Zombie State      : " + this.zState + NL;
+		if (this.zIsZombie) {
+			ret += TAB + "Is ZOMBIE!" + NL;
+		}
+		return ret;
+	}
+
 	public String zStatus() {
 
 		String ret = "";
@@ -291,7 +365,9 @@ public class ZombieData {
 
 		switch (this.zState) {
 			case NNET_PINC_DIVCUT:
-				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend with existing cash and quarterly income.", this.zAdjScr);
+				ret += TAB + String.format(
+				    "Can pay off debt in %.2f quarters by reducing the dividend with existing cash and quarterly income.",
+				    this.zAdjScr);
 				break;
 			case NNET_NINC:
 				ret += TAB + String.format("Can only survive for %.2f quarters with existing cash reserves.", this.zAdjScr);
@@ -325,73 +401,13 @@ public class ZombieData {
 			case UNKNOWN:
 				break;
 			case NNET_PINC_ENUFINCOME:
-				ret += TAB
-				    + String.format("Will payoff existing ST debt in %.2f quarters using existing cash and quarterly income.", this.zScore);
+				ret += TAB + String.format(
+				    "Will payoff existing ST debt in %.2f quarters using existing cash and quarterly income.", this.zScore);
 				break;
 			default:
 				break;
 
 		}
-		return ret;
-	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.SIP.report
-	 *
-	 * @param ticker
-	 * @param sector
-	 * @return
-	 */
-	public String report(String ticker, String sector) {
-
-		String ret = "";
-
-		if (sector.equalsIgnoreCase("Financials")) return ret;
-
-		if (!this.zIsZombie) return ret;
-
-		System.out.printf("%-6s\t%s%n", ticker, sector);
-		//		zStr += " $" + ticker;
-		//		int len = zStr.length();
-		//		int m = len % 200;
-		//		if ((len > 100) && (m < 6)) {
-		//			zStr += NL;
-		//		}
-		//		zKnt++;
-
-		switch (this.zState) {
-			case PNET_PINC:
-				break;
-			default:
-				ret = ticker + NL;
-				ret += this.toString();
-				break;
-		}
-
-		ret += zStatus();
-
-		return ret;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-
-		String ret = "";
-		ret += TAB + "Zombie Cash       : " + QuarterlyData.fmt(this.zCash) + NL;
-		ret += TAB + "Zombie Debt       : " + QuarterlyData.fmt(this.zDebt) + NL;
-		ret += TAB + "Zombie Net        : " + QuarterlyData.fmt(this.zNet) + NL;
-		ret += TAB + "Zombie Income     : " + QuarterlyData.fmt(this.zIncome) + NL;
-		ret += TAB + "Zombie Score      : " + QuarterlyData.fmt(this.zScore) + NL;
-		ret += TAB + "Zombie Adj Income : " + QuarterlyData.fmt(this.zAdjInc) + NL;
-		ret += TAB + "Zombie Dividend   : " + QuarterlyData.fmt(this.zDividend) + NL;
-		ret += TAB + "Zombie Adj Score  : " + QuarterlyData.fmt(this.zAdjScr) + NL;
-		ret += TAB + "Operations Cost   : " + QuarterlyData.fmt(this.zKeepItRunning) + NL;
-		ret += TAB + "Zombie State      : " + this.zState + NL;
-		if (this.zIsZombie) ret += TAB + "Is ZOMBIE!" + NL;
 		return ret;
 	}
 }

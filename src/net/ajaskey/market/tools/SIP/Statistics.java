@@ -16,10 +16,12 @@ public class Statistics {
 	public static void main(String[] args) {
 
 		final Statistics stats = new Statistics("atest");
-		for (double i = -200.0; i < 100.0; i += 1.5)
+		for (double i = -200.0; i < 100.0; i += 1.5) {
 			stats.addValue(i);
-		for (double i = 1000.0; i < 2000.0; i += .255)
+		}
+		for (double i = 1000.0; i < 2000.0; i += .255) {
 			stats.addValue(i);
+		}
 		stats.addValue(5000.0);
 		stats.addValue(0.0);
 
@@ -54,7 +56,9 @@ public class Statistics {
 	 */
 	public void addValue(double d) {
 
-		if (d != 0.0) this.ds.addValue(d);
+		if (d != 0.0) {
+			this.ds.addValue(d);
+		}
 	}
 
 	/**
@@ -65,14 +69,30 @@ public class Statistics {
 	 */
 	public void addValues(QuarterlyData qd) {
 
-		if (qd.q1 != 0.0) this.ds.addValue(qd.q1);
-		if (qd.q2 != 0.0) this.ds.addValue(qd.q2);
-		if (qd.q3 != 0.0) this.ds.addValue(qd.q3);
-		if (qd.q4 != 0.0) this.ds.addValue(qd.q4);
-		if (qd.q5 != 0.0) this.ds.addValue(qd.q5);
-		if (qd.q6 != 0.0) this.ds.addValue(qd.q6);
-		if (qd.q7 != 0.0) this.ds.addValue(qd.q7);
-		if (qd.q8 != 0.0) this.ds.addValue(qd.q8);
+		if (qd.q1 != 0.0) {
+			this.ds.addValue(qd.q1);
+		}
+		if (qd.q2 != 0.0) {
+			this.ds.addValue(qd.q2);
+		}
+		if (qd.q3 != 0.0) {
+			this.ds.addValue(qd.q3);
+		}
+		if (qd.q4 != 0.0) {
+			this.ds.addValue(qd.q4);
+		}
+		if (qd.q5 != 0.0) {
+			this.ds.addValue(qd.q5);
+		}
+		if (qd.q6 != 0.0) {
+			this.ds.addValue(qd.q6);
+		}
+		if (qd.q7 != 0.0) {
+			this.ds.addValue(qd.q7);
+		}
+		if (qd.q8 != 0.0) {
+			this.ds.addValue(qd.q8);
+		}
 	}
 
 	/**

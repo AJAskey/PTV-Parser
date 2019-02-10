@@ -55,8 +55,11 @@ public class CompanyData {
 	 */
 	private static CompanyData getCompany(String ticker) {
 
-		for (final CompanyData cd : companyList)
-			if (cd.ticker.equalsIgnoreCase(ticker)) return cd;
+		for (final CompanyData cd : companyList) {
+			if (cd.ticker.equalsIgnoreCase(ticker)) {
+				return cd;
+			}
+		}
 		return null;
 	}
 
@@ -109,8 +112,10 @@ public class CompanyData {
 					final String fld[] = str.split(TAB);
 					final String ticker = fld[1].trim();
 					final CompanyData cd = CompanyData.getCompany(ticker);
-					if (cd != null) cd.id = IncomeData.setIncomeData(fld);
-					//System.out.println(cd.id);
+					if (cd != null) {
+						cd.id = IncomeData.setIncomeData(fld);
+						//System.out.println(cd.id);
+					}
 				}
 			}
 		}
@@ -135,9 +140,15 @@ public class CompanyData {
 							cd.eoq = null;
 						}
 						final String s = fld[1].trim();
-						if (s.length() > 0) if (s.contains("500")) cd.spIndex = "SP500";
-						else if (s.contains("400")) cd.spIndex = "SP400";
-						else if (s.contains("600")) cd.spIndex = "SP600";
+						if (s.length() > 0) {
+							if (s.contains("500")) {
+								cd.spIndex = "SP500";
+							} else if (s.contains("400")) {
+								cd.spIndex = "SP400";
+							} else if (s.contains("600")) {
+								cd.spIndex = "SP600";
+							}
+						}
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[5].trim());
 						cd.floatShares = QuarterlyData.parseDouble(fld[6].trim());
@@ -237,13 +248,12 @@ public class CompanyData {
 
 		td.sum();
 
-		Reports.dumpStats(statList, td);
-
 		// output data
 		try (PrintWriter pw = new PrintWriter("out/companydata.dbg")) {
 
-			for (final CompanyData cd : companyList)
+			for (final CompanyData cd : companyList) {
 				pw.println(cd);
+			}
 
 			pw.println(td);
 
@@ -299,9 +309,11 @@ public class CompanyData {
 		String ret = "";
 		final String str = secind.trim();
 		final int pos = secind.indexOf(" - ");
-		if (pos > 0) ret = str.substring(pos + 3, str.length()).trim();
-		else
+		if (pos > 0) {
+			ret = str.substring(pos + 3, str.length()).trim();
+		} else {
 			ret = str;
+		}
 		return ret;
 	}
 
@@ -352,7 +364,7 @@ public class CompanyData {
 	public double	currentRatio;
 	public double	workingCapital;
 	public double	netCashFlow;
-	public double totalCashFlow;
+	public double	totalCashFlow;
 
 	public ZombieData zd;
 

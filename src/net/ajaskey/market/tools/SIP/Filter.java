@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.tools.SIP;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +31,10 @@ import java.util.List;
  */
 public class Filter {
 
+	public static void main(String[] args) {
+
+	}
+
 	private List<CompanyData> cList = null;
 
 	public FilterData epsQoQ = null;
@@ -45,9 +48,9 @@ public class Filter {
 		this.cList = cdList;
 		this.epsQoQ = new FilterData(0.0);
 	}
-	
+
 	public void addBound(double val) {
-		
+
 	}
 
 	public List<CompanyData> execute() {
@@ -61,12 +64,6 @@ public class Filter {
 		}
 
 		return retList;
-
-	}
-	
-	public static void main(String[] args) {
-
-		
 
 	}
 

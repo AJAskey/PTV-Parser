@@ -34,9 +34,12 @@ import net.ajaskey.market.misc.Utils;
  */
 public class Reports {
 
-	final private static double MILLION = 1000000.0;
+	private static final double MILLION = 1000000.0;
 
 	private static final String NL = "\n";
+
+	private static final double	intToSalesHWM	= 15.0;
+	private static final double	cratioLWM			= 0.7;
 
 	private List<CompanyData> companyList = null;
 
@@ -49,6 +52,28 @@ public class Reports {
 		this.companyList = list;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.SIP.addStr
+	 *
+	 * @param ticker
+	 * @param str
+	 */
+	private String addStr(String ticker, String str) {
+
+		str += " " + ticker;
+		final int len = str.length() - str.lastIndexOf(NL);
+		if (len > 85) {
+			str += NL;
+		}
+		return str;
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.DumpBestFinancial
+	 *
+	 * @throws FileNotFoundException
+	 */
 	public void DumpBestFinancial() throws FileNotFoundException {
 
 		Utils.makeDir("out/CompanyReports");
@@ -58,37 +83,52 @@ public class Reports {
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
 			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
 
-			pw.println("\nList of tickers with Current Ratio < 1.0 and negative Net Cash Flow. [Cash from Ops + Financing]");
+			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n",
+			    cratioLWM, intToSalesHWM);
 			String str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
-						str = addStr(cd.ticker, str);
+					if ((cd.currentRatio < cratioLWM) && (cd.interestRate > intToSalesHWM)) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+
+			pw.println(str);
+			pw.printf("%nList of tickers with Current Ratio < %.2f and negative Net Cash Flow. [Cash from Ops + Financing]%n",
+			    cratioLWM);
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.currentRatio < cratioLWM) && (cd.netCashFlow < 0.0)) {
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
 			pw.println(str);
 
-			pw.println(
-			    "\nList of tickers with Current Ratio < 1.0 and negative Total Cash Flow. [Cash from Ops + Financing + Investing]");
+			pw.printf(
+			    "%nList of tickers with Current Ratio < %.2f and negative Total Cash Flow. [Cash from Ops + Financing + Investing]%n",
+			    cratioLWM);
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.totalCashFlow < 0.0)) {
-						str = addStr(cd.ticker, str);
+					if ((cd.currentRatio < cratioLWM) && (cd.totalCashFlow < 0.0)) {
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
 			pw.println(str);
 
-			pw.println(
-			    "\nList of tickers with Current Ratio < 1.0 and negative FCF and using Financing to continue operations. [Cash from Financing > ABS(FCF)]");
+			pw.printf(
+			    "%nList of tickers with Current Ratio < %.2f and negative FCF and using Financing to continue operations. [Cash from Financing > ABS(FCF)]%n",
+			    cratioLWM);
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.freeCashFlow <= 0.0) && (cd.cashFromFin > 0.0)
+					if ((cd.currentRatio < cratioLWM) && (cd.freeCashFlow <= 0.0) && (cd.cashFromFin > 0.0)
 					    && (cd.cashFromFin > Math.abs(cd.freeCashFlow))) {
-						str = addStr(cd.ticker, str);
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -99,7 +139,7 @@ public class Reports {
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
 					if (cd.zd.zIsZombie && (cd.zd.zAdjScr < 4.0)) {
-						str = addStr(cd.ticker, str);
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -119,7 +159,7 @@ public class Reports {
 		}
 
 		/**
-		 * 
+		 *
 		 */
 		try (PrintWriter pw = new PrintWriter("out/Zombies-Fin.txt")) {
 
@@ -131,7 +171,7 @@ public class Reports {
 			for (final CompanyData cd : this.companyList) {
 				if (cd.sector.equalsIgnoreCase("Financials")) {
 					if ((cd.currentRatio < 1.0) && (cd.cashFromOps < 0.0)) {
-						str = addStr(cd.ticker, str);
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -143,7 +183,7 @@ public class Reports {
 			for (final CompanyData cd : this.companyList) {
 				if (cd.sector.equalsIgnoreCase("Financials")) {
 					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
-						str = addStr(cd.ticker, str);
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -154,7 +194,7 @@ public class Reports {
 			for (final CompanyData cd : this.companyList) {
 				if (cd.sector.equalsIgnoreCase("Financials")) {
 					if ((cd.freeCashFlow <= 0.0) && (cd.cashFromFin > 0.0) && (cd.cashFromFin > Math.abs(cd.freeCashFlow))) {
-						str = addStr(cd.ticker, str);
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -170,36 +210,20 @@ public class Reports {
 		}
 
 		/**
-		 * 
+		 *
 		 */
 		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
 
-			for (final CompanyData cd : this.companyList)
-
+			for (final CompanyData cd : this.companyList) {
 				if ((cd.opMargin > 10.0) && (cd.netMargin > 10.0) && (cd.roe > 10.0) && (cd.bsd.equity.getMostRecent() > 0.0)
 				    && (cd.workingCashFlow > 0.0) && (cd.id.sales.dd.qoqGrowth > 10.0) && (cd.id.sales.dd.yoyGrowth > 10.0)
 				    && (cd.id.netIncome.dd.qoqGrowth > 10.0) && (cd.id.netIncome.dd.yoyGrowth > 10.0)) {
 					this.printData(pw, cd);
 					pw.println();
 				}
+			}
 
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.addStr
-	 *
-	 * @param ticker
-	 * @param str
-	 */
-	private String addStr(String ticker, String str) {
-
-		str += " " + ticker;
-		int len = str.length() - str.lastIndexOf(NL);
-		if (len > 85) {
-			str += NL;
-		}
-		return str;
 	}
 
 	/**
@@ -214,7 +238,7 @@ public class Reports {
 		Utils.makeDir("out/CompanyReports");
 
 		final PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
-		for (final CompanyData cd : this.companyList)
+		for (final CompanyData cd : this.companyList) {
 			try (PrintWriter pw = new PrintWriter("out/CompanyReports/" + cd.ticker + ".txt")) {
 				this.printData(pw, cd);
 				this.printData(pwAll, cd);
@@ -223,145 +247,32 @@ public class Reports {
 			} catch (final FileNotFoundException e) {
 				e.printStackTrace();
 			}
+		}
 		pwAll.close();
 	}
 
-	private void printHeaderData(PrintWriter pw, CompanyData cd) {
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.print1QtrData
+	 *
+	 * @param pw
+	 * @param q1
+	 * @param heading
+	 */
+	private void print1QtrData(PrintWriter pw, double q1, String heading) {
 
-		pw.println(" " + cd.ticker);
-		pw.printf("\t%s%n", cd.name);
-
-		String index = "";
-		if (cd.spIndex.length() > 0) {
-			index = ", " + cd.spIndex;
-		}
-
-		pw.printf("\t%s, %s%s%n", cd.sector, cd.industry, index);
-		//pw.printf("\t%s%n", cd.industry);
-		String sNumEmp = "?";
-		if (cd.numEmp > 0) {
-			sNumEmp = String.format("%,d", cd.numEmp);
-		}
-		pw.printf("\tEmployees : %s%n", sNumEmp);
-		String dat = Utils.stringDate(cd.eoq);
-		pw.printf("\t10Q Date  : %s%n", dat);
-
-		pw.printf("%n\tShares             : %s M\t(Seq= %s%% : YoY= %s%%)%n",
-		    QuarterlyData.fmt(cd.shares.getMostRecent(), 12), QuarterlyData.fmt(cd.shares.dd.seqGrowth, 7),
-		    QuarterlyData.fmt(cd.shares.dd.qoqGrowth, 7));
-		pw.printf("\tShareholder Equity : %s M\t(Seq= %s%% : YoY= %s%%)%n",
-		    QuarterlyData.fmt(cd.bsd.equity.getMostRecent(), 12), QuarterlyData.fmt(cd.bsd.equity.dd.seqGrowth, 7),
-		    QuarterlyData.fmt(cd.bsd.equity.dd.qoqGrowth, 7));
-		pw.printf("\tMarket Cap         : %s M%n", QuarterlyData.fmt(cd.marketCap, 12));
-
-		pw.printf("%n\tSales 12m         : %s M\t(Seq= %s%% : YoY= %s%%)%n", QuarterlyData.fmt(cd.id.sales.getTtm(), 13),
-		    QuarterlyData.fmt(cd.id.sales.dd.seqGrowth, 7), QuarterlyData.fmt(cd.id.sales.dd.yoyGrowth, 7));
-
-		pw.printf("\tOps Income 12m    : %s M%n", QuarterlyData.fmt(cd.id.grossOpIncome.getTtm(), 13));
-		pw.printf("\tNet Income 12m    : %s M%n", QuarterlyData.fmt(cd.id.netIncome.getTtm(), 13));
-		pw.printf("\tInterest Paid 12m : %s M\t(Seq= %s%% : YoY= %s%%)%n", QuarterlyData.fmt(cd.id.totalInterest.getTtm(), 13),
-		    QuarterlyData.fmt(cd.id.totalInterest.dd.seqGrowth, 7), QuarterlyData.fmt(cd.id.totalInterest.dd.yoyGrowth, 7));
-
-		pw.printf("%n\tCash <- Ops 12m   : %s%n", QuarterlyData.fmt(cd.cashFromOps, 13));
-		pw.printf("\t  CapEx 12m       : %s%n", QuarterlyData.fmt(cd.capEx, 13));
-		pw.printf("\t  Dividends 12m   : %s%n", QuarterlyData.fmt((cd.id.dividend.getTtm() * cd.shares.getTtmAvg()), 13));
-		pw.printf("\t    FCF 12m       : %s %s%n", QuarterlyData.fmt(cd.freeCashFlow, 13),
-		    "[Cash from Operations - CapEx - Dividends]");
-		pw.printf("\tCash <- Fin 12m   : %s %s%n", QuarterlyData.fmt(cd.cashFromFin, 13),
-		    "[Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]");
-		pw.printf("\t  Net Cash 12m    : %s %s%n", QuarterlyData.fmt(cd.netCashFlow, 13),
-		    "[Cash from Ops + Cash from Financing]");
-		pw.printf("\tCash <- Inv 12m   : %s %s%n", QuarterlyData.fmt(cd.cashFromInv, 13),
-		    "[Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]");
-		pw.printf("\t  Cash Flow 12m   : %s %s%n", QuarterlyData.fmt(cd.netCashFlow + cd.cashFromInv, 13),
-		    "[Cash from Ops + Cash from Financing + Cash from Investing]");
-		//pw.printf("\tCash + ST Inv     : %s%n",
-		//    QuarterlyData.fmt((cd.bsd.cash.getMostRecent() + cd.bsd.stInvestments.getMostRecent())), 15);
-
-		pw.printf("%n\tCurrent Assets    : %s%n", QuarterlyData.fmt(cd.sumCurrAssets, 13));
-		pw.printf("\tCurrent Liab      : %s%n", QuarterlyData.fmt(cd.sumCurrLiab, 13));
-		pw.printf("\tWorking Capital   : %s (Ratio=%.2f)%n", QuarterlyData.fmt((cd.workingCapital), 13), cd.currentRatio);
-
-		pw.printf("%n\tLT Debt           : %s M\t(Seq= %s%% : YoY= %s%%)%n",
-		    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent(), 13), QuarterlyData.fmt(cd.bsd.ltDebt.dd.seqGrowth, 7),
-		    QuarterlyData.fmt(cd.bsd.ltDebt.dd.qoqGrowth, 7));
-		if (cd.bsd.equity.getMostRecent() > 0.0) pw.printf("\tLT Debt to Equity : %s%n",
-		    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 13));
-
-		printState(pw, cd);
-
-		pw.printf("%n\tLast Price          : %s%n", QuarterlyData.fmt(cd.lastPrice, 11));
-		pw.printf("\tPE                  : %s%n", QuarterlyData.fmt(cd.pe, 11));
-		//pw.printf("\tPS                  : %s%n", QuarterlyData.fmt(cd.psales, 10));
-		pw.printf("\tOp Margin           : %s%n", QuarterlyData.fmt(cd.opMargin, 11));
-		pw.printf("\tNet Margin          : %s%n", QuarterlyData.fmt(cd.netMargin, 11));
-		pw.printf("\tROE                 : %s%n", QuarterlyData.fmt(cd.roe, 11));
-		//pw.printf("\tInterest Paid Q1 : %s%n", QuarterlyData.fmt((cd.id.interestExp.q1 + cd.id.interestExpNonOp.q1), 10));
-		pw.printf("\tInterest %% of sales : %s%n", QuarterlyData.fmt(cd.interestRate, 11));
-
+		final String s1 = QuarterlyData.fmt(q1, 15);
+		pw.printf("\t  %-15s: %s%n", heading, s1);
 	}
 
 	/**
-	 * net.ajaskey.market.tools.SIP.printState
+	 * 
+	 * net.ajaskey.market.tools.SIP.print4QtrData
 	 *
 	 * @param pw
-	 * @param cd
+	 * @param qd
+	 * @param heading
 	 */
-	private void printState(PrintWriter pw, CompanyData cd) {
-
-		pw.printf("%n\t%s State -->%n", cd.ticker);
-
-		boolean goodState = true;
-
-		if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
-			pw.println("\t  Current Ratio less than 1 ..AND.. Net Cash flow less than 0.");
-			goodState = false;
-		}
-
-		if ((cd.currentRatio < 1.0) && (cd.totalCashFlow < 0.0)) {
-			pw.println("\t  Current Ratio less than 1 ..AND.. Cash Flow less than 0.");
-			goodState = false;
-		}
-
-		if ((cd.currentRatio < 1.0) && (cd.freeCashFlow <= 0.0) && (cd.cashFromFin > 0.0)
-		    && (cd.cashFromFin > Math.abs(cd.freeCashFlow))) {
-			pw.println(
-			    "\t  Current Ratio less than 1 ..AND.. FCF less than 0 ..AND.. Cash from Financing greater than FCF deficit.");
-			goodState = false;
-		}
-
-		if ((cd.id.interestExpNonOp.getTtm() > 0.0) && (cd.interestRate > 15.0)) {
-			pw.printf("\t  Interest payments to sales is high at %.2f%%.%n", cd.interestRate);
-			goodState = false;
-		}
-
-		if ((cd.workingCapital < 0.0) && (cd.freeCashFlow < Math.abs(cd.workingCapital))) {
-			pw.println("\t  Free Cash Flow does not make up for negative Working Capital.");
-			goodState = false;
-		}
-
-		if (cd.bsd.equity.getMostRecent() <= 0.0) {
-			pw.println("\t  Shareholders have no equity.");
-			goodState = false;
-		} else {
-			double dte = cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent();
-			if (dte > 4) {
-				pw.printf("\t  LT debt to equity of %.2f is high.%n", dte);
-				goodState = false;
-			}
-		}
-
-		if (cd.zd.zIsZombie) {
-			pw.println("\t  Is a Zombie by algorithm.");
-			goodState = false;
-		}
-
-		if (goodState) {
-			pw.println("\t  Good shape - no red flags.");
-		}
-
-	}
-
 	private void print4QtrData(PrintWriter pw, QuarterlyData qd, String heading) {
 
 		double q1, q2, q3, q4;
@@ -376,99 +287,20 @@ public class Reports {
 			q3 = qd.q4;
 			q4 = qd.q5;
 		}
-		String s1 = QuarterlyData.fmt(q1, 15);
-		String s2 = QuarterlyData.fmt(q2, 15);
-		String s3 = QuarterlyData.fmt(q3, 15);
-		String s4 = QuarterlyData.fmt(q4, 15);
+		final String s1 = QuarterlyData.fmt(q1, 15);
+		final String s2 = QuarterlyData.fmt(q2, 15);
+		final String s3 = QuarterlyData.fmt(q3, 15);
+		final String s4 = QuarterlyData.fmt(q4, 15);
 		pw.printf("\t  %-15s: %s %s %s %s%n", heading, s1, s2, s3, s4);
 	}
 
-	private void print1QtrData(PrintWriter pw, double q1, String heading) {
-
-		String s1 = QuarterlyData.fmt(q1, 15);
-		pw.printf("\t  %-15s: %s%n", heading, s1);
-	}
-
-	private void printZombieData(PrintWriter pw, CompanyData cd) {
-
-		if (cd.ticker.equalsIgnoreCase("abc")) {
-			System.out.println(cd.ticker);
-		}
-
-		switch (cd.zd.zState) {
-			//			case PNET_PINC:
-			//			case NNET_PINC_DIVCUT:
-			//			case NNET_NINC_DIVCUT:
-			//			case PNET_NINC_ENUFCASH:
-			//			case UNKNOWN:
-			//				return;
-			default:
-
-				pw.println("");
-				this.printHeaderData(pw, cd);
-
-				pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zd.zCash, 15));
-				print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
-				String str = String.format("%d%% AcctRx", (int) (ZombieData.arKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.acctReceiveable.getMostRecent() * ZombieData.arKnob), str);
-
-				str = String.format("%d%% ST Invest", (int) (ZombieData.stInvestmentsKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob), str);
-
-				//System.out.printf("%s\t%.2f\t%.2f%n", cd.ticker, cd.bsd.stInvestments.getMostRecent(),
-				//    (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob));
-
-				str = String.format("%d%% ST Assets", (int) (ZombieData.stAssetsKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.otherAssets.getMostRecent() * ZombieData.stAssetsKnob), str);
-
-				str = String.format("%d%% Inventory", (int) (ZombieData.inventoryKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.inventory.getMostRecent() * ZombieData.inventoryKnob), str);
-
-				str = String.format("%d%% LT Invest", (int) (ZombieData.ltInvestmentsKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * ZombieData.ltAssetsKnob), str);
-
-				str = String.format("%d%% LT Assets", (int) (ZombieData.ltAssetsKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * ZombieData.ltAssetsKnob), str);
-
-				str = String.format("%d%% Goodwill", (int) (ZombieData.gwKnob * 100.0));
-				print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * ZombieData.gwKnob), str);
-
-				pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zd.zDebt, 15));
-				print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
-				print1QtrData(pw, cd.bsd.stDebt.getMostRecent(), "ST Debt");
-				print1QtrData(pw, cd.bsd.otherCurrLiab.getMostRecent(), "Other ST Liab");
-
-				pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zd.zNet, 15));
-
-				pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income w/o Unusual Expenses]%n",
-				    QuarterlyData.fmt(cd.zd.zIncome, 15));
-				print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
-				print4QtrData(pw, (cd.id.unusualIncome), "4Q Unusual Exp");
-				//				double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
-				//				if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
-				//					avgpre += cd.id.pretaxIncome.q5;
-				//				}
-				//				avgpre /= 4.0;
-				print1QtrData(pw, cd.zd.zIncome, "Avg Pretax");
-
-				pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
-				print1QtrData(pw, cd.zd.zDividend, "Dividends");
-				pw.printf("\tAdj Income       : %s  [Income with Dividends Added Back In]%n",
-				    QuarterlyData.fmt(cd.zd.zAdjInc, 15));
-				pw.printf("\t*Ops Cost / Qtr  : %s  [%.2f/8.0 + %.2f]%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15),
-				    cd.zd.zDebt, Math.abs(cd.zd.zIncome));
-				pw.printf("\t*Zombie Adj Scr  : %s%n", QuarterlyData.fmt(cd.zd.zAdjScr, 15));
-				pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
-
-				String rpt = cd.zd.zStatus();
-				if (rpt.length() > 0) pw.println(rpt);
-				if (cd.zd.zIsZombie) {
-					pw.printf("\t%s Is Zombie!%n", cd.ticker);
-					if (cd.zd.zAdjScr < 4.0) pw.println("\tDead Zombie!");
-				}
-		}
-	}
-
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.printData
+	 *
+	 * @param pw
+	 * @param cd
+	 */
 	private void printData(PrintWriter pw, CompanyData cd) {
 
 		this.printHeaderData(pw, cd);
@@ -522,7 +354,7 @@ public class Reports {
 		    15);
 		if (cd.bsd.goodwill.getMostRecent() > 0.0) {
 			pw.printf("\tGoodwill / Assets : %s%%%n",
-			    QuarterlyData.fmt(cd.bsd.goodwill.getMostRecent() / cd.bsd.totalAssets.getMostRecent() * 100.0), 15);
+			    QuarterlyData.fmt((cd.bsd.goodwill.getMostRecent() / cd.bsd.totalAssets.getMostRecent()) * 100.0), 15);
 		}
 
 		pw.printf("%n\tST Debt           : %s M\t(Seq=%s%% : YoY= %s%%)%n",
@@ -536,22 +368,252 @@ public class Reports {
 		pw.printf("\tDebt / Cash       : %s%n", QuarterlyData.fmt(cd.debtCash, 15));
 
 		if (cd.numEmp > 0) {
-			String s = QuarterlyData.fmt((cd.id.grossOpIncome.getTtm() / (double) cd.numEmp * MILLION));
+			final String s = QuarterlyData.fmt(((cd.id.grossOpIncome.getTtm() / cd.numEmp) * MILLION));
 			pw.printf("%n\tOpInc per Emp : $%s%n", s.trim(), 15);
 		}
 
 	}
 
 	/**
-	 * net.ajaskey.market.tools.SIP.dumpStats
+	 * 
+	 * net.ajaskey.market.tools.SIP.printHeaderData
 	 *
-	 * @param statList
-	 * @param td
+	 * @param pw
+	 * @param cd
 	 */
-	public static void dumpStats(List<Statistics> statList, TotalData td) {
+	private void printHeaderData(PrintWriter pw, CompanyData cd) {
 
-		// TODO Auto-generated method stub
+		pw.println(" " + cd.ticker);
+		pw.printf("\t%s%n", cd.name);
 
+		String index = "";
+		if (cd.spIndex.length() > 0) {
+			index = ", " + cd.spIndex;
+		}
+
+		pw.printf("\t%s, %s%s%n", cd.sector, cd.industry, index);
+		//pw.printf("\t%s%n", cd.industry);
+		String sNumEmp = "?";
+		if (cd.numEmp > 0) {
+			sNumEmp = String.format("%,d", cd.numEmp);
+		}
+		pw.printf("\tEmployees : %s%n", sNumEmp);
+		final String dat = Utils.stringDate(cd.eoq);
+		pw.printf("\t10Q Date  : %s%n", dat);
+
+		pw.printf("%n\tShares            : %s M (Seq= %s%% : YoY= %s%%)%n",
+		    QuarterlyData.fmt(cd.shares.getMostRecent(), 13), QuarterlyData.fmt(cd.shares.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(cd.shares.dd.qoqGrowth, 7));
+		pw.printf("\tMarket Cap        : %s M%n", QuarterlyData.fmt(cd.marketCap, 13));
+
+		pw.printf("%n\tSales 12m         : %s M (Seq= %s%% : YoY= %s%%)%n", QuarterlyData.fmt(cd.id.sales.getTtm(), 13),
+		    QuarterlyData.fmt(cd.id.sales.dd.seqGrowth, 7), QuarterlyData.fmt(cd.id.sales.dd.yoyGrowth, 7));
+
+		pw.printf("\tOps Income 12m    : %s M%n", QuarterlyData.fmt(cd.id.grossOpIncome.getTtm(), 13));
+		pw.printf("\tNet Income 12m    : %s M%n", QuarterlyData.fmt(cd.id.netIncome.getTtm(), 13));
+		pw.printf("\tInterest Paid 12m : %s M (Seq= %s%% : YoY= %s%%)%n",
+		    QuarterlyData.fmt(cd.id.totalInterest.getTtm(), 13), QuarterlyData.fmt(cd.id.totalInterest.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(cd.id.totalInterest.dd.yoyGrowth, 7));
+
+		pw.printf("%n\tCash <- Ops 12m   : %s M%n", QuarterlyData.fmt(cd.cashFromOps, 13));
+		pw.printf("\t  CapEx 12m       : %s M%n", QuarterlyData.fmt(cd.capEx, 13));
+		pw.printf("\t  Dividends 12m   : %s M%n", QuarterlyData.fmt((cd.id.dividend.getTtm() * cd.shares.getTtmAvg()), 13));
+		pw.printf("\t    FCF 12m       : %s M %s%n", QuarterlyData.fmt(cd.freeCashFlow, 13),
+		    "[Cash from Operations - CapEx - Dividends]");
+		pw.printf("\tCash <- Fin 12m   : %s M %s%n", QuarterlyData.fmt(cd.cashFromFin, 13),
+		    "[Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]");
+		pw.printf("\t  Net Cash 12m    : %s M %s%n", QuarterlyData.fmt(cd.netCashFlow, 13),
+		    "[Cash from Ops + Cash from Financing]");
+		pw.printf("\tCash <- Inv 12m   : %s M %s%n", QuarterlyData.fmt(cd.cashFromInv, 13),
+		    "[Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]");
+		pw.printf("\t  Cash Flow 12m   : %s M %s%n", QuarterlyData.fmt(cd.netCashFlow + cd.cashFromInv, 13),
+		    "[Cash from Ops + Cash from Financing + Cash from Investing]");
+		//pw.printf("\tCash + ST Inv     : %s%n",
+		//    QuarterlyData.fmt((cd.bsd.cash.getMostRecent() + cd.bsd.stInvestments.getMostRecent())), 15);
+
+		pw.printf("%n\tCash Available    : %s M (Seq= %s%% : YoY= %s%%)%n",
+		    QuarterlyData.fmt(cd.bsd.cash.getMostRecent(), 13), QuarterlyData.fmt(cd.bsd.cash.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(cd.bsd.cash.dd.qoqGrowth, 7));
+
+		pw.printf("%n\tCurrent Assets    : %s M%n", QuarterlyData.fmt(cd.sumCurrAssets, 13));
+		pw.printf("\tCurrent Liab      : %s M%n", QuarterlyData.fmt(cd.sumCurrLiab, 13));
+		pw.printf("\tWorking Capital   : %s M (Ratio=%.2f)%n", QuarterlyData.fmt((cd.workingCapital), 13), cd.currentRatio);
+
+		pw.printf("%n\tShareholder Equity : %s M (Seq= %s%% : YoY= %s%%)%n",
+		    QuarterlyData.fmt(cd.bsd.equity.getMostRecent(), 12), QuarterlyData.fmt(cd.bsd.equity.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(cd.bsd.equity.dd.qoqGrowth, 7));
+		pw.printf("\tLT Debt            : %s M (Seq= %s%% : YoY= %s%%)%n",
+		    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent(), 12), QuarterlyData.fmt(cd.bsd.ltDebt.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(cd.bsd.ltDebt.dd.qoqGrowth, 7));
+		if (cd.bsd.equity.getMostRecent() > 0.0) {
+			pw.printf("\tLT Debt to Equity  : %s%n",
+			    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 12));
+		}
+
+		this.printState(pw, cd);
+
+		pw.printf("%n\tLast Price          : %s%n", QuarterlyData.fmt(cd.lastPrice, 11));
+		pw.printf("\tPE                  : %s%n", QuarterlyData.fmt(cd.pe, 11));
+		//pw.printf("\tPS                  : %s%n", QuarterlyData.fmt(cd.psales, 10));
+		pw.printf("\tOp Margin           : %s%n", QuarterlyData.fmt(cd.opMargin, 11));
+		pw.printf("\tNet Margin          : %s%n", QuarterlyData.fmt(cd.netMargin, 11));
+		pw.printf("\tROE                 : %s%n", QuarterlyData.fmt(cd.roe, 11));
+		//pw.printf("\tInterest Paid Q1 : %s%n", QuarterlyData.fmt((cd.id.interestExp.q1 + cd.id.interestExpNonOp.q1), 10));
+		pw.printf("\tInterest %% of sales : %s%n", QuarterlyData.fmt(cd.interestRate, 11));
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.printState
+	 *
+	 * @param pw
+	 * @param cd
+	 */
+	private void printState(PrintWriter pw, CompanyData cd) {
+
+		pw.printf("%n\t%s State -->%n", cd.ticker);
+
+		boolean goodState = true;
+
+		if ((cd.currentRatio < cratioLWM) && (cd.netCashFlow < 0.0)) {
+			pw.printf("\t  Current Ratio less than %.2f ..AND.. Net Cash flow less than 0.%n", cratioLWM);
+			goodState = false;
+		}
+
+		if ((cd.currentRatio < cratioLWM) && (cd.totalCashFlow < 0.0)) {
+			pw.printf("\t  Current Ratio less than %.2f ..AND.. Cash Flow less than 0.%n", cratioLWM);
+			goodState = false;
+		}
+
+		if ((cd.currentRatio < cratioLWM) && (cd.freeCashFlow <= 0.0) && (cd.cashFromFin > 0.0)
+		    && (cd.cashFromFin > Math.abs(cd.freeCashFlow))) {
+			pw.printf(
+			    "\t  Current Ratio less than %.2f ..AND.. FCF less than 0 ..AND.. Cash from Financing greater than FCF deficit.%n",
+			    cratioLWM);
+			goodState = false;
+		}
+
+		if ((cd.id.interestExpNonOp.getTtm() > 0.0) && (cd.interestRate > intToSalesHWM)) {
+			pw.printf("\t  Interest payments to sales is high at %.2f%%.%n", cd.interestRate);
+			goodState = false;
+		}
+
+		if ((cd.workingCapital < 0.0) && (cd.freeCashFlow < Math.abs(cd.workingCapital))) {
+			pw.println("\t  Free Cash Flow does not make up for negative Working Capital.");
+			goodState = false;
+		}
+
+		if (cd.bsd.equity.getMostRecent() <= 0.0) {
+			pw.println("\t  Shareholders have no equity.");
+			goodState = false;
+		} else {
+			final double dte = cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent();
+			if (dte > 4) {
+				pw.printf("\t  LT debt to equity of %.2f is high.%n", dte);
+				goodState = false;
+			}
+		}
+
+		if (cd.zd.zIsZombie) {
+			pw.println("\t  Is a Zombie by algorithm.");
+			goodState = false;
+		}
+
+		if (goodState) {
+			pw.println("\t  Good shape - no red flags.");
+		}
+
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.SIP.printZombieData
+	 *
+	 * @param pw
+	 * @param cd
+	 */
+	private void printZombieData(PrintWriter pw, CompanyData cd) {
+
+		if (cd.ticker.equalsIgnoreCase("abc")) {
+			System.out.println(cd.ticker);
+		}
+
+		switch (cd.zd.zState) {
+			//			case PNET_PINC:
+			//			case NNET_PINC_DIVCUT:
+			//			case NNET_NINC_DIVCUT:
+			//			case PNET_NINC_ENUFCASH:
+			//			case UNKNOWN:
+			//				return;
+			default:
+
+				pw.println("");
+				this.printHeaderData(pw, cd);
+
+				pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zd.zCash, 15));
+				this.print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
+				String str = String.format("%d%% AcctRx", (int) (ZombieData.arKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.acctReceiveable.getMostRecent() * ZombieData.arKnob), str);
+
+				str = String.format("%d%% ST Invest", (int) (ZombieData.stInvestmentsKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob), str);
+
+				//System.out.printf("%s\t%.2f\t%.2f%n", cd.ticker, cd.bsd.stInvestments.getMostRecent(),
+				//    (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob));
+
+				str = String.format("%d%% ST Assets", (int) (ZombieData.stAssetsKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.otherAssets.getMostRecent() * ZombieData.stAssetsKnob), str);
+
+				str = String.format("%d%% Inventory", (int) (ZombieData.inventoryKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.inventory.getMostRecent() * ZombieData.inventoryKnob), str);
+
+				str = String.format("%d%% LT Invest", (int) (ZombieData.ltInvestmentsKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * ZombieData.ltAssetsKnob), str);
+
+				str = String.format("%d%% LT Assets", (int) (ZombieData.ltAssetsKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * ZombieData.ltAssetsKnob), str);
+
+				str = String.format("%d%% Goodwill", (int) (ZombieData.gwKnob * 100.0));
+				this.print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * ZombieData.gwKnob), str);
+
+				pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zd.zDebt, 15));
+				this.print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
+				this.print1QtrData(pw, cd.bsd.stDebt.getMostRecent(), "ST Debt");
+				this.print1QtrData(pw, cd.bsd.otherCurrLiab.getMostRecent(), "Other ST Liab");
+
+				pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zd.zNet, 15));
+
+				pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income w/o Unusual Expenses]%n",
+				    QuarterlyData.fmt(cd.zd.zIncome, 15));
+				this.print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
+				this.print4QtrData(pw, (cd.id.unusualIncome), "4Q Unusual Exp");
+				//				double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
+				//				if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
+				//					avgpre += cd.id.pretaxIncome.q5;
+				//				}
+				//				avgpre /= 4.0;
+				this.print1QtrData(pw, cd.zd.zIncome, "Avg Pretax");
+
+				pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
+				this.print1QtrData(pw, cd.zd.zDividend, "Dividends");
+				pw.printf("\tAdj Income       : %s  [Income with Dividends Added Back In]%n",
+				    QuarterlyData.fmt(cd.zd.zAdjInc, 15));
+				pw.printf("\t*Ops Cost / Qtr  : %s  [%.2f/8.0 + %.2f]%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15),
+				    cd.zd.zDebt, Math.abs(cd.zd.zIncome));
+				pw.printf("\t*Zombie Adj Scr  : %s%n", QuarterlyData.fmt(cd.zd.zAdjScr, 15));
+				pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
+
+				final String rpt = cd.zd.zStatus();
+				if (rpt.length() > 0) {
+					pw.println(rpt);
+				}
+				if (cd.zd.zIsZombie) {
+					pw.printf("\t%s Is Zombie!%n", cd.ticker);
+					if (cd.zd.zAdjScr < 4.0) {
+						pw.println("\tDead Zombie!");
+					}
+				}
+		}
 	}
 
 }

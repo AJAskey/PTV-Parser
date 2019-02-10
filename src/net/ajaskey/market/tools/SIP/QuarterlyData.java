@@ -215,8 +215,11 @@ public class QuarterlyData {
 
 		try {
 			double d = Double.parseDouble(fld);
-			if ((d > 0.0) && (d < 0.0001)) d = 0.0;
-			else if (d < -999999.0) d = 0.0;
+			if ((d > 0.0) && (d < 0.0001)) {
+				d = 0.0;
+			} else if (d < -999999.0) {
+				d = 0.0;
+			}
 			return d;
 		} catch (final Exception e) {
 		}
@@ -258,7 +261,9 @@ public class QuarterlyData {
 	public double getMostRecent() {
 
 		double d = this.q1;
-		if (d == 0.0) d = this.q2;
+		if (d == 0.0) {
+			d = this.q2;
+		}
 		return d;
 	}
 
@@ -271,7 +276,9 @@ public class QuarterlyData {
 	public double getTtm() {
 
 		double d = this.q1 + this.q2 + this.q3 + this.q4;
-		if (this.q1 == 0.0) d += this.q5;
+		if (this.q1 == 0.0) {
+			d += this.q5;
+		}
 		return d;
 	}
 
