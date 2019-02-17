@@ -155,7 +155,7 @@ public class DerivedData {
 	 */
 	public static double calcFreeCashFlow(CompanyData cd) {
 
-		final double ret = cd.cashFromOps - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		final double ret = cd.cashData.cashFromOps.getTtm() - cd.cashData.capEx.getTtm() - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
 
@@ -199,7 +199,7 @@ public class DerivedData {
 	 */
 	public static double calcNetCashFlow(CompanyData cd) {
 
-		final double ncf = cd.cashFromOps + cd.cashFromFin;
+		final double ncf = cd.cashData.cashFromOps.getTtm() + cd.cashData.cashFromFin.getTtm();
 		return ncf;
 	}
 
@@ -340,7 +340,7 @@ public class DerivedData {
 	 */
 	public static double calcTotalCashFlow(CompanyData cd) {
 
-		final double tcf = cd.cashFromOps + cd.cashFromFin + cd.cashFromInv;
+		final double tcf = cd.cashData.cashFromOps.getTtm() + cd.cashData.cashFromFin.getTtm() + cd.cashData.cashFromInv.getTtm();
 		return tcf;
 	}
 
@@ -364,7 +364,7 @@ public class DerivedData {
 	 */
 	public static double calcWorkingCashFlow(CompanyData cd) {
 
-		final double ret = cd.id.pretaxIncome.getTtm() - cd.capEx - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		final double ret = cd.id.pretaxIncome.getTtm() - cd.cashData.capEx.getTtm() - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
 

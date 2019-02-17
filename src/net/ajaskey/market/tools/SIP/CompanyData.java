@@ -119,6 +119,26 @@ public class CompanyData {
 				}
 			}
 		}
+		
+		// Read Cash Flow data
+		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-CASH.TXT"))) {
+
+			while ((line = reader.readLine()) != null) {
+				final String str = line.replaceAll("\"", "").trim();
+				if (str.length() > 1) {
+
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[0].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
+					if (cd != null) {
+						cd.cashData = CashData.setCashDataInfo(fld);
+						//System.out.println(ticker);
+						//System.out.println(cd.cashData);
+					}
+				}
+			}
+		}
 
 		// Read miscellaneous data
 		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-misc.TXT"))) {
@@ -152,11 +172,11 @@ public class CompanyData {
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[5].trim());
 						cd.floatShares = QuarterlyData.parseDouble(fld[6].trim());
-						cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
+						//cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
 						cd.cashFlow = QuarterlyData.parseDouble(fld[8].trim());
-						cd.cashFromOps = QuarterlyData.parseDouble(fld[9].trim());
-						cd.cashFromFin = QuarterlyData.parseDouble(fld[10].trim());
-						cd.cashFromInv = QuarterlyData.parseDouble(fld[11].trim());
+						//cd.cashFromOps = QuarterlyData.parseDouble(fld[9].trim());
+						//cd.cashFromFin = QuarterlyData.parseDouble(fld[10].trim());
+						//cd.cashFromInv = QuarterlyData.parseDouble(fld[11].trim());
 						cd.shares.parse(fld);
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -182,13 +202,15 @@ public class CompanyData {
 						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
 						//cd.totalInterestPaid = DerivedData.calcTotalInterest(cd);
 
-						cd.zd.calc(cd);
+						//cd.zd.calc(cd);
 
 						totalMarketCap += cd.marketCap;
 					}
 				}
 			}
 		}
+
+
 
 		for (final CompanyData cd : companyList) {
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
@@ -328,16 +350,17 @@ public class CompanyData {
 	public Date						eoq;
 	public double					insiders;
 	public double					floatShares;
-	public double					capEx;
+	//public double					capEx;
 	public double					cashFlow;
-	public double					cashFromOps;
-	public double					cashFromFin;
-	public double					cashFromInv;
+//	public double					cashFromOps;
+//	public double					cashFromFin;
+//	public double					cashFromInv;
 	public QuarterlyData	shares;
 
 	// aggregate data
 	public BalanceSheetData	bsd;
 	public IncomeData				id;
+	public CashData					cashData;
 
 	// derived data
 	public double	lastPrice;
@@ -366,7 +389,7 @@ public class CompanyData {
 	public double	netCashFlow;
 	public double	totalCashFlow;
 
-	public ZombieData zd;
+	//public ZombieData zd;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -384,11 +407,11 @@ public class CompanyData {
 		this.insiders = 0.0;
 		this.eoq = null;
 		this.floatShares = 0.0;
-		this.capEx = 0.0;
 		this.cashFlow = 0.0;
-		this.cashFromOps = 0.0;
-		this.cashFromFin = 0.0;
-		this.cashFromInv = 0.0;
+//		this.capEx = 0.0;
+//		this.cashFromOps = 0.0;
+//		this.cashFromFin = 0.0;
+//		this.cashFromInv = 0.0;
 		this.shares = new QuarterlyData("shares");
 
 		this.lastPrice = 0.0;
@@ -416,7 +439,7 @@ public class CompanyData {
 		this.netCashFlow = 0.0;
 		this.totalCashFlow = 0.0;
 
-		this.zd = new ZombieData();
+		//this.zd = new ZombieData();
 
 	}
 
@@ -458,7 +481,7 @@ public class CompanyData {
 		ret += TAB + "Debt to Cash      : " + QuarterlyData.fmt(this.debtCash) + NL;
 		ret += this.bsd;
 		ret += this.id;
-		ret += this.zd;
+		//ret += this.zd;
 
 		return ret;
 	}

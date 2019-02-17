@@ -165,7 +165,15 @@ public class QuarterlyData {
 		colPos.put("epsDilCont", pos);
 		pos += 8;
 		colPos.put("dividend", pos);
+		
+		pos = 1;
+		colPos.put("capEx", pos);
 		pos += 8;
+		colPos.put("cashFromFin", pos);
+		pos += 8;
+		colPos.put("cashFromInv", pos);
+		pos += 8;
+		colPos.put("cashFromOps", pos);
 
 		colPos.put("shares", 12);
 
@@ -238,6 +246,9 @@ public class QuarterlyData {
 	public double	q1;
 
 	public DerivedData dd;
+	
+	private double ttm;
+
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -274,12 +285,16 @@ public class QuarterlyData {
 	 * @return
 	 */
 	public double getTtm() {
-
-		double d = this.q1 + this.q2 + this.q3 + this.q4;
-		if (this.q1 == 0.0) {
-			d += this.q5;
+		
+		if (this.ttm != 0.0) {
+			return ttm;
 		}
-		return d;
+
+		this.ttm = this.q1 + this.q2 + this.q3 + this.q4;
+		if (this.q1 == 0.0) {
+			this.ttm += this.q5;
+		}
+		return this.ttm;
 	}
 
 	/**
@@ -308,6 +323,7 @@ public class QuarterlyData {
 		this.q3 = 0.0;
 		this.q2 = 0.0;
 		this.q1 = 0.0;
+		this.ttm = 0.0;
 	}
 
 	/**
