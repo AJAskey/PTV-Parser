@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -33,43 +33,6 @@ import java.io.IOException;
 public class CashData {
 
 	final private static String TAB = "\t";
-
-	public QuarterlyData	capEx;
-	public QuarterlyData	cashFromOps;
-	public QuarterlyData	cashFromFin;
-	public QuarterlyData	cashFromInv;
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.SIP.setCashDataInfo
-	 *
-	 * @param fld
-	 * @return
-	 */
-	public static CashData setCashDataInfo(String[] fld) {
-
-		final CashData cashData = new CashData();
-
-		cashData.capEx.parse(fld);
-		cashData.cashFromFin.parse(fld);
-		cashData.cashFromInv.parse(fld);
-		cashData.cashFromOps.parse(fld);
-
-		return cashData;
-
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public CashData() {
-
-		this.capEx = new QuarterlyData("capEx");
-		this.cashFromOps = new QuarterlyData("cashFromOps");
-		this.cashFromFin = new QuarterlyData("cashFromFin");
-		this.cashFromInv = new QuarterlyData("cashFromInv");
-	}
 
 	/**
 	 * net.ajaskey.market.tools.SIP.main
@@ -90,13 +53,52 @@ public class CashData {
 					//System.out.println(str);
 					final String fld[] = str.split(TAB);
 
-					CashData cashData = setCashDataInfo(fld);
+					final CashData cashData = CashData.setCashDataInfo(fld);
 					System.out.println(fld[0]);
 					System.out.println(cashData);
 				}
 			}
 		}
 
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.setCashDataInfo
+	 *
+	 * @param fld
+	 * @return
+	 */
+	public static CashData setCashDataInfo(String[] fld) {
+
+		final CashData cashData = new CashData();
+
+		cashData.capEx.parse(fld);
+		cashData.cashFromFin.parse(fld);
+		cashData.cashFromInv.parse(fld);
+		cashData.cashFromOps.parse(fld);
+
+		return cashData;
+
+	}
+
+	public QuarterlyData	capEx;
+	public QuarterlyData	cashFromOps;
+
+	public QuarterlyData cashFromFin;
+
+	public QuarterlyData cashFromInv;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public CashData() {
+
+		this.capEx = new QuarterlyData("capEx");
+		this.cashFromOps = new QuarterlyData("cashFromOps");
+		this.cashFromFin = new QuarterlyData("cashFromFin");
+		this.cashFromInv = new QuarterlyData("cashFromInv");
 	}
 
 	/* (non-Javadoc)

@@ -55,7 +55,9 @@ public class DerivedData {
 	public static double calcCurrentRatio(CompanyData cd) {
 
 		double cr = 0.0;
-		if (cd.sumCurrLiab > 0.0) {
+		if (cd.bsd.currLiab.getMostRecent() > 0.0) {
+			cr = cd.bsd.currentAssets.getMostRecent() / cd.bsd.currLiab.getMostRecent();
+		} else if (cd.sumCurrLiab > 0.0) {
 			cr = cd.sumCurrAssets / cd.sumCurrLiab;
 		}
 		return cr;
@@ -69,7 +71,7 @@ public class DerivedData {
 	 */
 	public static double calcCurrLiabilities(CompanyData cd) {
 
-		final double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
+		double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
 		    + cd.bsd.otherCurrLiab.getMostRecent();
 		return cl;
 	}
@@ -116,12 +118,12 @@ public class DerivedData {
 	 * @param price
 	 * @return
 	 */
-	public static double calcDividendYield(IncomeData id, double price) {
+	public static double calcDividendYield(CompanyData cd) {
 
 		double ret = 0.0;
-		if (price > 0.0) {
-			final double d1 = id.dividend.getTtm();
-			ret = (d1 / price) * 100.0;
+		if (cd.lastPrice > 0.0) {
+			final double d1 = cd.id.dividend.getTtm();
+			ret = (d1 / cd.lastPrice) * 100.0;
 		}
 		return ret;
 
@@ -135,12 +137,12 @@ public class DerivedData {
 	 * @param price
 	 * @return
 	 */
-	public static double calcEarningsYield(IncomeData id, double price) {
+	public static double calcEarningsYield(CompanyData cd) {
 
 		double ret = 0.0;
-		if (price > 0.0) {
-			final double e1 = id.epsDilCont.getTtm();
-			ret = (e1 / price) * 100.0;
+		if (cd.lastPrice > 0.0) {
+			final double e1 = cd.id.epsDilCont.getTtm();
+			ret = (e1 / cd.lastPrice) * 100.0;
 		}
 		return ret;
 
@@ -155,7 +157,8 @@ public class DerivedData {
 	 */
 	public static double calcFreeCashFlow(CompanyData cd) {
 
-		final double ret = cd.cashData.cashFromOps.getTtm() - cd.cashData.capEx.getTtm() - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		final double ret = cd.cashData.cashFromOps.getTtm() - cd.cashData.capEx.getTtm()
+		    - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
 
@@ -187,7 +190,7 @@ public class DerivedData {
 	 */
 	public static double calcMarketCap(CompanyData cd) {
 
-		final double ret = cd.lastPrice * cd.shares.q1;
+		final double ret = cd.lastPrice * cd.shares.getTtmAvg();
 		return ret;
 	}
 
@@ -340,7 +343,8 @@ public class DerivedData {
 	 */
 	public static double calcTotalCashFlow(CompanyData cd) {
 
-		final double tcf = cd.cashData.cashFromOps.getTtm() + cd.cashData.cashFromFin.getTtm() + cd.cashData.cashFromInv.getTtm();
+		final double tcf = cd.cashData.cashFromOps.getTtm() + cd.cashData.cashFromFin.getTtm()
+		    + cd.cashData.cashFromInv.getTtm();
 		return tcf;
 	}
 
@@ -352,7 +356,14 @@ public class DerivedData {
 	 */
 	public static double calcWorkingCapital(CompanyData cd) {
 
-		return (cd.sumCurrAssets - cd.sumCurrLiab);
+		double wc = 0.0;
+		if (cd.bsd.currentAssets.getMostRecent() > 0.0) {
+			wc = (cd.bsd.currentAssets.getMostRecent() - cd.bsd.currLiab.getMostRecent());
+		} else {
+			wc = cd.sumCurrAssets - cd.sumCurrLiab;
+		}
+
+		return wc;
 	}
 
 	/**
@@ -364,7 +375,8 @@ public class DerivedData {
 	 */
 	public static double calcWorkingCashFlow(CompanyData cd) {
 
-		final double ret = cd.id.pretaxIncome.getTtm() - cd.cashData.capEx.getTtm() - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
+		final double ret = cd.id.pretaxIncome.getTtm() - cd.cashData.capEx.getTtm()
+		    - (cd.id.dividend.getTtm() * cd.shares.getTtmAvg());
 		return ret;
 	}
 
@@ -482,6 +494,23 @@ public class DerivedData {
 		ret += TAB + TAB + TAB + "12m Total  : " + QuarterlyData.fmt(this.ttm) + " (avg= "
 		    + QuarterlyData.fmt(this.ttm / 4.0, 1) + ")" + NL;
 		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.calcShareChange
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcShareChange(CompanyData cd) {
+
+		double sc = 0.0;
+		if (cd.shares.q1 > 0.0) {
+			sc = cd.shares.q1 - cd.shares.q5;
+		} else {
+			sc = cd.shares.q2 - cd.shares.q6;
+		}
+		return sc;
 	}
 
 }

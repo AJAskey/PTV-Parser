@@ -65,12 +65,32 @@ public class Utils {
 
 	private static boolean initialized = false;
 
+	/**
+	 * 
+	 * net.ajaskey.market.misc.buildCalendar
+	 *
+	 * @param inCal
+	 * @return
+	 */
 	public static Calendar buildCalendar(Calendar inCal) {
 
 		final Calendar cal = Calendar.getInstance();
 		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE),
 		    inCal.get(Calendar.HOUR_OF_DAY), inCal.get(Calendar.MINUTE), inCal.get(Calendar.SECOND));
 		cal.set(Calendar.MILLISECOND, 0);
+		return cal;
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.misc.buildCalendar
+	 *
+	 * @param date
+	 * @return
+	 */
+	public static Calendar buildCalendar(Date date) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
 		return cal;
 	}
 

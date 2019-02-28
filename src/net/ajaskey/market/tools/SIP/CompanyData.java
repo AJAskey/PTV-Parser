@@ -8,10 +8,13 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.text.WordUtils;
+
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -72,6 +75,8 @@ public class CompanyData {
 	public static void main(String[] args) throws IOException {
 
 		double totalMarketCap = 0.0;
+		double totalBuyBacks = 0.0;
+		double totalNewShares = 0.0;
 		double totalEps = 0.0;
 		final double spxPrice = 0.0;
 
@@ -119,7 +124,7 @@ public class CompanyData {
 				}
 			}
 		}
-		
+
 		// Read Cash Flow data
 		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-CASH.TXT"))) {
 
@@ -170,13 +175,16 @@ public class CompanyData {
 							}
 						}
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
-						cd.insiders = QuarterlyData.parseDouble(fld[5].trim());
-						cd.floatShares = QuarterlyData.parseDouble(fld[6].trim());
+						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[7].trim());
 						//cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[8].trim());
-						//cd.cashFromOps = QuarterlyData.parseDouble(fld[9].trim());
-						//cd.cashFromFin = QuarterlyData.parseDouble(fld[10].trim());
-						//cd.cashFromInv = QuarterlyData.parseDouble(fld[11].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[9].trim());
+						//cd.cashFromOps = QuarterlyData.parseDouble(fld[10].trim());
+						//cd.cashFromFin = QuarterlyData.parseDouble(fld[11].trim());
+						//cd.cashFromInv = QuarterlyData.parseDouble(fld[12].trim());
+						cd.city = fld[13].trim();
+						cd.state = fld[14].trim();
 						cd.shares.parse(fld);
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -186,8 +194,8 @@ public class CompanyData {
 						cd.roe = DerivedData.calcRoe(cd);
 						cd.taxRate = DerivedData.calcTaxRate(cd.id);
 						cd.interestRate = DerivedData.calcInterestRate(cd.id);
-						cd.divYld = DerivedData.calcDividendYield(cd.id, cd.lastPrice);
-						cd.epsYld = DerivedData.calcEarningsYield(cd.id, cd.lastPrice);
+						cd.divYld = DerivedData.calcDividendYield(cd);
+						cd.epsYld = DerivedData.calcEarningsYield(cd);
 						cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
 						cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
 						cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
@@ -204,15 +212,25 @@ public class CompanyData {
 
 						//cd.zd.calc(cd);
 
+						if (cd.spIndex.equals("SP500")) {
+							double sc = DerivedData.calcShareChange(cd);
+							double bbest = Math.abs(sc) * cd.avgPrice;
+							if (sc < 0.0) {
+								totalBuyBacks += bbest;
+							} else {
+								totalNewShares += bbest;
+							}
+						}
+
 						totalMarketCap += cd.marketCap;
 					}
 				}
 			}
 		}
 
+		for (
 
-
-		for (final CompanyData cd : companyList) {
+		final CompanyData cd : companyList) {
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
 			final double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
 			totalEps += te;
@@ -296,10 +314,23 @@ public class CompanyData {
 			pw.println("SPX PE           :" + QuarterlyData.fmt(spxPE, 20));
 
 		}
+		
+		List<CompanyData> filteredList = new ArrayList<>();
+		Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
+		for (CompanyData cd : companyList) {
+			Calendar cal = Utils.buildCalendar(cd.eoq);
+			if (cal.after(endCal)) {
+				filteredList.add(cd);
+			}
+		}
 
-		final Reports reports = new Reports(companyList);
+		final Reports reports = new Reports(filteredList);
 		reports.DumpCompanyReports();
 		reports.DumpBestFinancial();
+
+		System.out.printf("Total Buyback Estimate   :  $%sB%n", QuarterlyData.fmt(totalBuyBacks / 1000.0, 2));
+		System.out.printf("Total New Share Estimate :  $%sB%n", QuarterlyData.fmt(totalNewShares / 1000.0, 2));
+
 	}
 
 	/**
@@ -340,30 +371,34 @@ public class CompanyData {
 	}
 
 	// from data
-	public String					name;
-	public String					ticker;
-	public String					exchange;
-	public String					sector;
-	public String					industry;
-	public String					spIndex;
-	public int						numEmp;
-	public Date						eoq;
-	public double					insiders;
-	public double					floatShares;
+	public String	name;
+	public String	city;
+	public String	state;
+	public String	ticker;
+	public String	exchange;
+	public String	sector;
+	public String	industry;
+	public String	spIndex;
+	public int		numEmp;
+	public Date		eoq;
+	public double	insiders;
+	public double	floatShares;
 	//public double					capEx;
-	public double					cashFlow;
-//	public double					cashFromOps;
-//	public double					cashFromFin;
-//	public double					cashFromInv;
-	public QuarterlyData	shares;
+	public double cashFlow;
+	//	public double					cashFromOps;
+	//	public double					cashFromFin;
+	//	public double					cashFromInv;
+	public QuarterlyData shares;
 
 	// aggregate data
 	public BalanceSheetData	bsd;
 	public IncomeData				id;
 	public CashData					cashData;
 
-	// derived data
 	public double	lastPrice;
+	public double	avgPrice;
+
+	// derived data
 	public double	pe;
 	public double	psales;
 	public double	opMargin;
@@ -398,6 +433,8 @@ public class CompanyData {
 	public CompanyData() {
 
 		this.name = "";
+		this.city = "";
+		this.state = "";
 		this.ticker = "";
 		this.exchange = "";
 		this.sector = "";
@@ -408,13 +445,14 @@ public class CompanyData {
 		this.eoq = null;
 		this.floatShares = 0.0;
 		this.cashFlow = 0.0;
-//		this.capEx = 0.0;
-//		this.cashFromOps = 0.0;
-//		this.cashFromFin = 0.0;
-//		this.cashFromInv = 0.0;
+		//		this.capEx = 0.0;
+		//		this.cashFromOps = 0.0;
+		//		this.cashFromFin = 0.0;
+		//		this.cashFromInv = 0.0;
 		this.shares = new QuarterlyData("shares");
 
 		this.lastPrice = 0.0;
+		this.avgPrice = 0.0;
 		this.pe = 0.0;
 		this.psales = 0.0;
 		this.opMargin = 0.0;
@@ -437,7 +475,7 @@ public class CompanyData {
 		this.currentRatio = 0.0;
 		this.workingCapital = 0.0;
 		this.netCashFlow = 0.0;
-		this.totalCashFlow = 0.0;
+		this.totalCashFlow = 0.0; 
 
 		//this.zd = new ZombieData();
 
@@ -467,6 +505,7 @@ public class CompanyData {
 		    + String.format("  %s", String.format("(%3.5f%%)", (this.partOfTotalCap * 100.0))) + NL;
 
 		ret += TAB + "Last Price        : " + QuarterlyData.fmt(this.lastPrice) + NL;
+		ret += TAB + "Average Price     : " + QuarterlyData.fmt(this.avgPrice) + NL;
 		ret += TAB + "PE                : " + QuarterlyData.fmt(this.pe) + NL;
 		ret += TAB + "Price/Sales       : " + QuarterlyData.fmt(this.psales) + NL;
 		ret += TAB + "Op Margin         : " + QuarterlyData.fmt(this.opMargin) + NL;

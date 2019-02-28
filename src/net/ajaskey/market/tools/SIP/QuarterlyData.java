@@ -63,6 +63,22 @@ public class QuarterlyData {
 		return String.format(f, df.format(d));
 	}
 
+	public String fmtGrowth4Q(String desc) {
+
+		String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, fmt(this.getTtm(), 13),
+		    fmt(this.dd.seqGrowth, 7), fmt(this.dd.qoqGrowth, 7));
+
+		return ret;
+	}
+
+	public String fmtGrowth1Q(String desc) {
+
+		String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, fmt(this.getMostRecent(), 13),
+		    fmt(this.dd.seqGrowth, 7), fmt(this.dd.qoqGrowth, 7));
+
+		return ret;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.init
@@ -165,7 +181,7 @@ public class QuarterlyData {
 		colPos.put("epsDilCont", pos);
 		pos += 8;
 		colPos.put("dividend", pos);
-		
+
 		pos = 1;
 		colPos.put("capEx", pos);
 		pos += 8;
@@ -175,7 +191,7 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("cashFromOps", pos);
 
-		colPos.put("shares", 12);
+		colPos.put("shares", 15);
 
 		colPos.put("totalInterest", 0);
 	}
@@ -246,9 +262,8 @@ public class QuarterlyData {
 	public double	q1;
 
 	public DerivedData dd;
-	
-	private double ttm;
 
+	private double ttm;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -285,9 +300,9 @@ public class QuarterlyData {
 	 * @return
 	 */
 	public double getTtm() {
-		
+
 		if (this.ttm != 0.0) {
-			return ttm;
+			return this.ttm;
 		}
 
 		this.ttm = this.q1 + this.q2 + this.q3 + this.q4;
@@ -343,7 +358,7 @@ public class QuarterlyData {
 			this.q5 = QuarterlyData.parseDouble(fld[pos++]);
 			this.q6 = QuarterlyData.parseDouble(fld[pos++]);
 			this.q7 = QuarterlyData.parseDouble(fld[pos++]);
-			this.q8 = QuarterlyData.parseDouble(fld[pos++]);
+			this.q8 = QuarterlyData.parseDouble(fld[pos]);
 
 			this.dd.calculate(this);
 

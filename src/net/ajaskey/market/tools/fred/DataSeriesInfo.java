@@ -128,7 +128,7 @@ public class DataSeriesInfo {
 
 		Debug.pwDbg = new PrintWriter("out/dsi.dbg");
 
-		final DataSeriesInfo dsi = new DataSeriesInfo("GDPC1");
+		final DataSeriesInfo dsi = new DataSeriesInfo("CEU0500000001");
 
 		try (PrintWriter pw = new PrintWriter("out/fred-series.txt")) {
 			pw.println("Series\tTitle\tFrequency\tUnits\tSeasonality\tLastUpdate");
