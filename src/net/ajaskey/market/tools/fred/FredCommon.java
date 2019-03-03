@@ -15,7 +15,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
@@ -74,7 +76,7 @@ public class FredCommon {
 				}
 				final String s = FredCommon.toSeriesInfo(dsi);
 				data.add(s);
-			} catch (Exception e) {
+			} catch (final Exception e) {
 			}
 		}
 
@@ -498,6 +500,105 @@ public class FredCommon {
 		return retProp;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.fred.queryFredDsi
+	 *
+	 * @param codeNames
+	 * @return
+	 */
+	public static List<DataSeriesInfo> queryFredDsi(List<String> codeNames) {
+
+		final List<DataSeriesInfo> ret = new ArrayList<>();
+
+		for (final String code : codeNames) {
+
+			for (int i = 0; i <= FredDataDownloader.maxRetries; i++) {
+				Utils.sleep(1000 * (i + i));
+				final DataSeriesInfo dsi = new DataSeriesInfo(code);
+				if (dsi != null) {
+					if (dsi.getTitle() != null) {
+						ret.add(dsi);
+						FredDataDownloader.retryCount = 0;
+						Debug.pwDbg.printf("Received data for %s%n", code);
+						FredDataDownloader.LOGGER.info(String.format("Received data for %s%n", code));
+						break;
+					}
+				}
+				FredDataDownloader.retryCount++;
+				if (i < FredDataDownloader.maxRetries) {
+					Debug.pwDbg.printf("Retrying DSI query for %s%n", code);
+					Debug.pwDbg.flush();
+					FredDataDownloader.LOGGER.info(String.format("Retrying DSI query for %s%n", code));
+				} else if (i == FredDataDownloader.maxRetries) {
+					FredDataDownloader.tryAgainFile.println(code);
+					FredDataDownloader.tryAgainFile.flush();
+				}
+			}
+
+			if (FredDataDownloader.retryCount > FredDataDownloader.consecutiveRetryFailures) {
+				Debug.pwDbg.printf("Too many retries (%d). Sleeping %d seconds.%n", FredDataDownloader.retryCount,
+				    (FredDataDownloader.longSleep / 1000));
+				Debug.pwDbg.flush();
+
+				FredDataDownloader.LOGGER.info(String.format("Too many retries (%d). Sleeping %d seconds.%n",
+				    FredDataDownloader.retryCount, (FredDataDownloader.longSleep / 1000)));
+
+				Utils.sleep(FredDataDownloader.longSleep);
+				FredDataDownloader.retryCount = 0;
+			}
+		}
+
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.queryFredDsi
+	 *
+	 * @param code
+	 * @return
+	 */
+	public static DataSeriesInfo queryFredDsi(String code) {
+
+		for (int i = 0; i <= FredDataDownloader.maxRetries; i++) {
+			Utils.sleep((1000 * (5 * i)) + 250);
+			final DataSeriesInfo dsi = new DataSeriesInfo(code);
+			if (dsi != null) {
+				if (dsi.getTitle() != null) {
+					FredDataDownloader.retryCount = 0;
+					//Debug.pwDbg.printf("Received data for %s%n", code);
+					Debug.log(String.format("Received data for %s", code));
+					return dsi;
+				}
+			}
+			FredDataDownloader.retryCount++;
+			if (i < FredDataDownloader.maxRetries) {
+				Debug.log(String.format("Retrying DSI query for %s", code));
+				Debug.flush();
+			} else if (i == FredDataDownloader.maxRetries) {
+				FredDataDownloader.tryAgainFile.println(code);
+				FredDataDownloader.tryAgainFile.flush();
+			}
+		}
+
+		if (FredDataDownloader.retryCount > FredDataDownloader.consecutiveRetryFailures) {
+			Debug.log(String.format("Too many retries (%d). Sleeping %d seconds.", FredDataDownloader.retryCount,
+			    (FredDataDownloader.longSleep / 1000)));
+			Debug.flush();
+
+			Utils.sleep(FredDataDownloader.longSleep);
+			FredDataDownloader.retryCount = 0;
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.readFromOptuma
+	 *
+	 * @param fname
+	 * @return
+	 */
 	public static List<DataValues> readFromOptuma(String fname) {
 
 		final List<DataValues> ret = new ArrayList<>();
@@ -553,6 +654,33 @@ public class FredCommon {
 			}
 		}
 		return retList;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.readSeriesList
+	 *
+	 * @param string
+	 * @return
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static List<String> readSeriesList(String fname) throws FileNotFoundException, IOException {
+
+		final Set<String> uniqCodes = new HashSet<>();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line;
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				final String fld[] = str.split("\\s+");
+				final String code = fld[0].trim().toUpperCase();
+				uniqCodes.add(code);
+			}
+		}
+
+		final List<String> ret = new ArrayList<>(uniqCodes);
+		return ret;
 	}
 
 	/**
@@ -726,12 +854,12 @@ public class FredCommon {
 	 * @param pw
 	 * @throws FileNotFoundException
 	 */
-	public static void writeSeriesInfo(DataSeriesInfo ds, PrintWriter pw) {
+	public static void writeSeriesInfo(DataSeriesInfo dsi, PrintWriter pw) {
 
-		if ((pw != null) && (ds != null)) {
-			pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", ds.getName(), ds.getTitle(), ds.getSeasonalAdjusted(),
-			    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
-			    sdf.format(ds.getLastObservation().getTime()));
+		if ((pw != null) && (dsi != null) && (dsi.getTitle() != null)) {
+			pw.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", dsi.getName(), dsi.getTitle(), dsi.getSeasonalAdjusted(),
+			    dsi.getFrequency(), dsi.getUnits(), dsi.getType(), sdf.format(dsi.getLastUpdate().getTime()),
+			    sdf.format(dsi.getLastObservation().getTime()));
 		}
 	}
 
@@ -741,14 +869,14 @@ public class FredCommon {
 	 * @param dsList
 	 * @throws FileNotFoundException
 	 */
-	public static void writeSeriesInfo(List<DataSeriesInfo> dsList) throws FileNotFoundException {
+	public static void writeSeriesInfo(List<DataSeriesInfo> dsList, String filename) throws FileNotFoundException {
 
-		File f = new File(FredCommon.fredPath + "/fred-series-info.txt");
+		final File f = new File(filename);
 		if (f.exists()) {
-			File fb = new File(f.getAbsolutePath() + ".bak");
+			final File fb = new File(f.getAbsolutePath() + ".bak");
 			try {
 				Files.copy(f.toPath(), fb.toPath(), StandardCopyOption.REPLACE_EXISTING);
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -763,7 +891,7 @@ public class FredCommon {
 						    ds.getFrequency(), ds.getUnits(), ds.getType(), sdf.format(ds.getLastUpdate().getTime()),
 						    sdf.format(ds.getLastObservation().getTime()));
 					}
-				} catch (Exception e) {
+				} catch (final Exception e) {
 					e.printStackTrace();
 					System.out.println("Continuing... after error in " + ds.getName());
 				}
@@ -784,11 +912,11 @@ public class FredCommon {
 
 		final double scaler = FredCommon.getScaler(units);
 
-		List<DataValues> propagated = new ArrayList<>();
-
-		if (propagate) {
-			propagated = FredCommon.propagate(data, freq);
-		}
+		//		List<DataValues> propagated = new ArrayList<>();
+		//
+		//		if (propagate) {
+		//			propagated = FredCommon.propagate(data, freq);
+		//		}
 
 		final File file = new File(fullFileName);
 		final File fileshort = new File(FredCommon.fredPath + seriesName + ".csv");
@@ -802,12 +930,12 @@ public class FredCommon {
 				pwShort.printf("%s,%.2f%n", date, d);
 			}
 			//Overwrite short filename with any propagated codes
-			for (final DataValues dv : propagated) {
-				final String date = DataValues.sdf.format(dv.getDate().getTime());
-				final double d = dv.getValue() * scaler;
-				//pw.printf("%s,%.2f%n", date, d);
-				pwShort.printf("%s,%.2f%n", date, d);
-			}
+			//			for (final DataValues dv : propagated) {
+			//				final String date = DataValues.sdf.format(dv.getDate().getTime());
+			//				final double d = dv.getValue() * scaler;
+			//				//pw.printf("%s,%.2f%n", date, d);
+			//				pwShort.printf("%s,%.2f%n", date, d);
+			//			}
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}

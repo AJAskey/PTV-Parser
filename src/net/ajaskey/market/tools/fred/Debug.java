@@ -2,6 +2,8 @@
 package net.ajaskey.market.tools.fred;
 
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * This class...
@@ -30,6 +32,30 @@ import java.io.PrintWriter;
  */
 public class Debug {
 
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+
 	public static PrintWriter pwDbg;
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.log
+	 *
+	 * @param s
+	 */
+	public static void log(String s) {
+
+		Calendar cal = Calendar.getInstance();
+		String swithdate = String.format("%s : %s", sdf.format(cal.getTime()), s);
+		pwDbg.println(swithdate);
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.flush
+	 *
+	 */
+	public static void flush() {
+
+		pwDbg.flush();
+	}
 
 }

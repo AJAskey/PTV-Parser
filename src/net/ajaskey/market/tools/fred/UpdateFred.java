@@ -145,7 +145,7 @@ public class UpdateFred {
 
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
-						if (dsi != null) {
+						if ((dsi != null) && (dsi.getTitle() != null)) {
 
 							dsi.setType(ldsi.getType().toString());
 							dsi.setRefChart(ldsi.getRefChart());
@@ -167,10 +167,10 @@ public class UpdateFred {
 							} else {
 								try {
 									try {
-									Debug.pwDbg.println("Local file created Before                              "
-									    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+										Debug.pwDbg.println("Local file created Before                              "
+										    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 									} catch (Exception ee) {
-										ee.printStackTrace();										
+										ee.printStackTrace();
 									}
 									final DataSeries ds = new DataSeries(series);
 
@@ -202,12 +202,15 @@ public class UpdateFred {
 
 			for (String series : always) {
 				try {
-				System.out.println("\n" + series);
-				final DataSeriesInfo dsi = new DataSeriesInfo(series);
-				final DataSeries ds = new DataSeries(series);
-				String filename = FredCommon.toFullFileName(series, dsi.getTitle());
-				List<DataValues> ldv = ds.getValues(0.0, true, false);
-				FredCommon.writeToOptuma(ldv, filename, series, dsi.getUnits(), dsi.getFrequency(), false);
+
+					System.out.println("\n" + series);
+					final DataSeriesInfo dsi = new DataSeriesInfo(series);
+					if ((dsi != null) && (dsi.getTitle() != null)) {
+						final DataSeries ds = new DataSeries(series);
+						String filename = FredCommon.toFullFileName(series, dsi.getTitle());
+						List<DataValues> ldv = ds.getValues(0.0, true, false);
+						FredCommon.writeToOptuma(ldv, filename, series, dsi.getUnits(), dsi.getFrequency(), false);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -239,8 +242,8 @@ public class UpdateFred {
 		}
 
 		Collections.sort(dsList, new DsiAbcSorter());
-		FredCommon.writeSeriesInfo(dsList);
-		
+		FredCommon.writeSeriesInfo(dsList, FredCommon.fredPath + "/fred-series-info.txt");
+
 		dumpRates();
 
 		System.out.println("Done.");

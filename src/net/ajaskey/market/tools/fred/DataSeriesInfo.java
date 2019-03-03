@@ -185,15 +185,17 @@ public class DataSeriesInfo {
 	private Calendar								lastUpdate;
 	private Calendar								lastObservation;
 
-	private int timeOffset;
+	private int			timeOffset;
+	private String	refChart;
 
-	private String refChart;
+	private String response;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public DataSeriesInfo() {
+
 		this.name = "";
 		this.title = "";
 		this.frequency = "";
@@ -207,6 +209,7 @@ public class DataSeriesInfo {
 	}
 
 	public DataSeriesInfo(String fld[]) {
+
 		int len = fld.length;
 		if (len > 1) {
 			this.name = fld[0].trim();
@@ -255,7 +258,8 @@ public class DataSeriesInfo {
 				return;
 			}
 
-			Debug.pwDbg.println(resp + Utils.NL);
+			this.response = resp.trim();
+			//Debug.pwDbg.println(resp + Utils.NL);
 
 			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -276,7 +280,7 @@ public class DataSeriesInfo {
 					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 					this.setLastUpdate(eElement.getAttribute("last_updated"));
 					this.setLastObservation(eElement.getAttribute("observation_end"));
-					Debug.pwDbg.print(this);
+					//Debug.pwDbg.print(this);
 				}
 			}
 		} catch (final Exception e) {
@@ -470,7 +474,7 @@ public class DataSeriesInfo {
 	@Override
 	public String toString() {
 
-		String ret = "";
+		String ret = Utils.NL + this.response + Utils.NL;
 		ret += "Name               : " + this.name + Utils.NL;
 		ret += "  Title            : " + this.title + Utils.NL;
 		ret += "  Frequency        : " + this.frequency + Utils.NL;
@@ -483,7 +487,7 @@ public class DataSeriesInfo {
 		if (this.lastObservation != null) {
 			ret += "  Last Observation : " + sdf2.format(this.lastObservation.getTime()) + Utils.NL;
 		}
-		ret += "  Reference Chart  : " + this.refChart;
+		//ret += "  Reference Chart  : " + this.refChart;
 		return ret;
 	}
 

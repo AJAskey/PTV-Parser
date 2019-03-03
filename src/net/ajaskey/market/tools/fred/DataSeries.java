@@ -122,6 +122,7 @@ public class DataSeries {
 	 *
 	 */
 	public DataSeries(String name) {
+
 		this.setName(name);
 		this.setAggType(AggregationMethodType.AVG);
 		this.setFileType(FileType.XML);
@@ -301,6 +302,15 @@ public class DataSeries {
 		return "&units=" + this.respType.toString().toLowerCase();
 	}
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.getValues
+	 *
+	 * @param futureChg
+	 * @param noZeroValues
+	 * @param estimateData
+	 * @return
+	 */
 	public List<DataValues> getValues(double futureChg, boolean noZeroValues, boolean estimateData) {
 
 		final List<DataValues> retList = new ArrayList<>();
@@ -343,7 +353,7 @@ public class DataSeries {
 						} else {
 							//System.out.println(Utils.getString(dv.getDate()));
 							retList.add(dv);
-							dv.getValue();
+							//dv.getValue();
 							if (this.cal1 == null) {
 								this.cal1 = dv.getDate();
 							}
@@ -457,10 +467,15 @@ public class DataSeries {
 	@Override
 	public String toString() {
 
-		String ret = this.info.toString() + Utils.NL;
-		//ret += "Period : " + period + Utils.NL;
-		ret += "Count  : " + this.respKnt + Utils.NL;
-		ret += "First  : " + Utils.getString(this.cal1);
+		String ret = "";
+		try {
+			ret += this.info.toString() + Utils.NL;
+			//ret += "Period : " + period + Utils.NL;
+			ret += "Count  : " + this.respKnt + Utils.NL;
+			ret += "First  : " + Utils.getString(this.cal1);
+		} catch (Exception e) {
+			ret = "";
+		}
 		return ret;
 	}
 

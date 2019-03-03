@@ -50,6 +50,7 @@ public class Utils {
 	public final static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdf2			= new SimpleDateFormat("E dd-MMM-yyyy");
 	public final static SimpleDateFormat	sdfFull		= new SimpleDateFormat("E dd-MMM-yyyy HH:mm:ss");
+	public final static SimpleDateFormat	sdfTime		= new SimpleDateFormat("HH:mm:ss.SSS");
 
 	// public static String[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU",
 	// "FRI", "SAT" };
@@ -355,6 +356,11 @@ public class Utils {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
 	}
+	
+	public static String getCurrentTime() {
+		 Calendar cal = Calendar.getInstance();
+		 return sdfTime.format(cal.getTime());
+	}
 
 	/**
 	 *
@@ -540,6 +546,24 @@ public class Utils {
 
 		Calendar cal = Calendar.getInstance();
 		return getStringFull(cal);
+	}
+
+	/** 
+	 * net.ajaskey.market.misc.sleep
+	 *
+	 * @param i
+	 */
+	public static void sleep(int milliseconds) {
+		
+		if (milliseconds < 1) {
+			return;
+		}
+
+		try {
+			Thread.sleep(milliseconds);
+		} catch (InterruptedException e) {
+		}
+		
 	}
 
 }
