@@ -447,6 +447,9 @@ public class Reports {
 		final String dat = Utils.stringDate(cd.eoq);
 		pw.printf("\t10Q Date  : %s%n", dat);
 
+//		if (cd.ticker.equalsIgnoreCase("MAXR")) {
+//			System.out.println(cd);
+//		}
 		pw.printf("%n\tMarket Cap        : %s M%n", QuarterlyData.fmt(cd.marketCap, 13));
 		pw.println(cd.shares.fmtGrowth1Q("Shares"));
 

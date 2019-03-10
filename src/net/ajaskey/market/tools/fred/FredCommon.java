@@ -499,55 +499,23 @@ public class FredCommon {
 		}
 		return retProp;
 	}
-
+	
 	/**
+	 * 
 	 * net.ajaskey.market.tools.fred.queryFredDsi
 	 *
 	 * @param codeNames
 	 * @return
 	 */
 	public static List<DataSeriesInfo> queryFredDsi(List<String> codeNames) {
-
 		final List<DataSeriesInfo> ret = new ArrayList<>();
 
 		for (final String code : codeNames) {
-
-			for (int i = 0; i <= FredDataDownloader.maxRetries; i++) {
-				Utils.sleep(1000 * (i + i));
-				final DataSeriesInfo dsi = new DataSeriesInfo(code);
-				if (dsi != null) {
-					if (dsi.getTitle() != null) {
-						ret.add(dsi);
-						FredDataDownloader.retryCount = 0;
-						Debug.pwDbg.printf("Received data for %s%n", code);
-						FredDataDownloader.LOGGER.info(String.format("Received data for %s%n", code));
-						break;
-					}
-				}
-				FredDataDownloader.retryCount++;
-				if (i < FredDataDownloader.maxRetries) {
-					Debug.pwDbg.printf("Retrying DSI query for %s%n", code);
-					Debug.pwDbg.flush();
-					FredDataDownloader.LOGGER.info(String.format("Retrying DSI query for %s%n", code));
-				} else if (i == FredDataDownloader.maxRetries) {
-					FredDataDownloader.tryAgainFile.println(code);
-					FredDataDownloader.tryAgainFile.flush();
-				}
-			}
-
-			if (FredDataDownloader.retryCount > FredDataDownloader.consecutiveRetryFailures) {
-				Debug.pwDbg.printf("Too many retries (%d). Sleeping %d seconds.%n", FredDataDownloader.retryCount,
-				    (FredDataDownloader.longSleep / 1000));
-				Debug.pwDbg.flush();
-
-				FredDataDownloader.LOGGER.info(String.format("Too many retries (%d). Sleeping %d seconds.%n",
-				    FredDataDownloader.retryCount, (FredDataDownloader.longSleep / 1000)));
-
-				Utils.sleep(FredDataDownloader.longSleep);
-				FredDataDownloader.retryCount = 0;
+			DataSeriesInfo dsi = queryFredDsi(code);
+			if (dsi != null) {
+				ret.add(dsi);
 			}
 		}
-
 		return ret;
 	}
 
@@ -564,17 +532,18 @@ public class FredCommon {
 			Utils.sleep((1000 * (5 * i)) + 250);
 			final DataSeriesInfo dsi = new DataSeriesInfo(code);
 			if (dsi != null) {
-				if (dsi.getTitle() != null) {
-					FredDataDownloader.retryCount = 0;
-					//Debug.pwDbg.printf("Received data for %s%n", code);
-					Debug.log(String.format("Received data for %s", code));
-					return dsi;
+				if ((dsi.getResponse() != null) && (dsi.getResponse().length() > 0)) {
+					if (dsi.getTitle() != null) {
+						FredDataDownloader.retryCount = 0;
+						//Debug.pwDbg.printf("Received data for %s%n", code);
+						Debug.log(String.format("Received data for %s%n%s%n", code, dsi.getResponse()));
+						return dsi;
+					}
 				}
 			}
 			FredDataDownloader.retryCount++;
 			if (i < FredDataDownloader.maxRetries) {
 				Debug.log(String.format("Retrying DSI query for %s", code));
-				Debug.flush();
 			} else if (i == FredDataDownloader.maxRetries) {
 				FredDataDownloader.tryAgainFile.println(code);
 				FredDataDownloader.tryAgainFile.flush();
@@ -584,11 +553,11 @@ public class FredCommon {
 		if (FredDataDownloader.retryCount > FredDataDownloader.consecutiveRetryFailures) {
 			Debug.log(String.format("Too many retries (%d). Sleeping %d seconds.", FredDataDownloader.retryCount,
 			    (FredDataDownloader.longSleep / 1000)));
-			Debug.flush();
 
 			Utils.sleep(FredDataDownloader.longSleep);
 			FredDataDownloader.retryCount = 0;
 		}
+		
 		return null;
 	}
 

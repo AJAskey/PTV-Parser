@@ -55,11 +55,13 @@ public class FredDataDownloader {
 
 	public static final int maxRetries = 1;
 
+	private static final String NL = "\n";
+
 	private static File[] existingFiles = null;
 
 	private static List<DataSeriesInfo> prop_names = null;
 
-	public static final Logger LOGGER = Logger.getLogger(FredDataDownloader.class.getName());
+	//public static final Logger LOGGER = Logger.getLogger(FredDataDownloader.class.getName());
 
 	public static PrintWriter	tryAgainFile	= null;
 	public static int					retryCount		= 0;
@@ -91,34 +93,8 @@ public class FredDataDownloader {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		//Handler consoleHandler = null;
-		Handler fileHandler = null;
-		Formatter simpleFormatter = null;
+		Debug.init("FredDataDownloader.log");
 
-		try {
-
-			//consoleHandler = new ConsoleHandler();
-
-			LogManager.getLogManager().reset();
-
-			fileHandler = new FileHandler("./FredDataDownloader.log");
-
-			//Assigning handlers to LOGGER object
-			//LOGGER.addHandler(consoleHandler);
-			LOGGER.addHandler(fileHandler);
-
-			simpleFormatter = new SimpleFormatter();
-			fileHandler.setFormatter(simpleFormatter);
-
-			//Setting levels to handlers and LOGGER
-			//consoleHandler.setLevel(Level.SEVERE);
-			fileHandler.setLevel(Level.ALL);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		Debug.pwDbg = new PrintWriter("download-fred.dbg");
 		tryAgainFile = new PrintWriter("fred-try-again.txt");
 
 		Utils.makeDir(FredCommon.fredPath);
@@ -127,63 +103,25 @@ public class FredDataDownloader {
 		existingFiles = folder.listFiles();
 
 		List<String> codeNames = new ArrayList<>();
-		//List<String> codeNames2 = new ArrayList<>();
 
 		codeNames = FredCommon.readSeriesList(FredCommon.fredPath + "/fred-series-new-names.txt");
 		Collections.sort(codeNames);
+		String codes = "Processing codes :" + NL;
 		for (final String s : codeNames) {
-			Debug.pwDbg.println(s);
+			codes += s + NL;
 		}
-		Debug.pwDbg.println("\n----------------------------------------------------------\n");
-		Debug.pwDbg.flush();
-
-		//codeNames = FredCommon.readSeriesList(FredCommon.fredPath + "/fred-series-info.txt", codeNames);
-		//		Collections.sort(codeNames);
-		//		for (String s : codeNames) {
-		//			Debug.pwDbg.println(s);
-		//		}
+		Debug.log(codes);
 
 		Utils.sleep(1000);
 
 		final List<DataSeriesInfo> allNames = FredCommon.queryFredDsi(codeNames);
 
-		Debug.pwDbg.println("\n----------------------------------------------------------\n");
+		Debug.log("\n----------------------------------------------------------\n");
 
 		for (final DataSeriesInfo dsi : allNames) {
-			//Debug.pwDbg.println(dsi);
 			FredDataDownloader.process(dsi);
 		}
 
-		//		final List<DataSeriesInfo> new_names = FredCommon
-		//		    .readSeriesNames(FredCommon.fredPath + "/fred-series-new-names.txt");
-		//		final List<DataSeriesInfo> saved_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-series-info.txt");
-		//
-		//		prop_names = FredCommon.readSeriesNames(FredCommon.fredPath + "/fred-propagate.txt");
-		//
-		//		final List<DataSeriesInfo> allNames = new ArrayList<>();
-		//
-		//		for (DataSeriesInfo dsi : saved_names) {
-		//			allNames.add(dsi);
-		//		}
-		//
-		//		for (final DataSeriesInfo dsi : new_names) {
-		//			//System.out.println(dsi);
-		//			if (FredDataDownloader.isNew(saved_names, dsi)) {
-		//				allNames.add(dsi);
-		//			}
-		//		}
-		//
-		//		Collections.sort(allNames, new DsiAbcSorter());
-		//
-		//		for (final DataSeriesInfo dsi : allNames) {
-		//			final String s = dsi.getName().trim();
-		//			Debug.pwDbg.println(s);
-		//			//FredDataDownloader.process(dsi, 0.0, true, false, ResponseType.LIN);
-		//		}
-
-		//FredCommon.addSeries(allNames);
-
-		Debug.pwDbg.close();
 		tryAgainFile.close();
 
 		System.out.println("Done.");
@@ -202,28 +140,26 @@ public class FredDataDownloader {
 		ds.setAggType(AggregationMethodType.EOP);
 		ds.setRespType(DataSeries.ResponseType.LIN);
 
-		Debug.pwDbg.println("\n~~~~~\nQuerying for data values ...\n");
+		Debug.log("Querying for data values ...\n");
 
 		List<DataValues> dvList = null;
 		for (int i = 0; i <= maxRetries; i++) {
-			Utils.sleep((1000 * (5*i)) + 250);
+			Utils.sleep((1000 * (5 * i)) + 250);
 			dvList = ds.getValues(0.0, false, false);
 			if (dvList.size() > 0) {
+				System.out.println(seriesDsi.getName());
 				retryCount = 0;
 				break;
 			}
 			retryCount++;
 			if (i < maxRetries) {
-				Debug.pwDbg.println("\tQuery dvList retry...");
-				Debug.pwDbg.flush();
-				FredDataDownloader.LOGGER.info(String.format("\tQuery dvList retry for %s ...%n", seriesDsi.getName()));
+				Debug.log(String.format("\tQuery dvList retry for %s ...%n", seriesDsi.getName()));
 			}
 		}
 
-		if (dvList.size() > 0) {
+		if ((dvList != null) && (dvList.size() > 0)) {
 
-			Debug.pwDbg.printf("%nWriting to Optuma:%n%s%nvalues : %d%n", ds, dvList.size());
-			FredDataDownloader.LOGGER.info(String.format("%nWriting to Optuma:%n%s%nvalues : %d%n", ds, dvList.size()));
+			Debug.log(String.format("Writing to Optuma%n%s%nvalues : %d%n", ds, dvList.size()));
 
 			final String outname = FredCommon.toFullFileName(seriesDsi.getName(), seriesDsi.getTitle());
 
@@ -232,17 +168,12 @@ public class FredDataDownloader {
 
 			//Debug.pwDbg.println(ds);
 		} else {
-			Debug.pwDbg.printf("%nZero Data Values: %s : %s%n", seriesDsi.getName(), seriesDsi.getTitle());
-			FredDataDownloader.LOGGER
-			    .info(String.format("%nZero Data Values: %s : %s%n", seriesDsi.getName(), seriesDsi.getTitle()));
+			Debug.log(String.format("%nZero Data Values: %s : %s%n", seriesDsi.getName(), seriesDsi.getTitle()));
 
 			tryAgainFile.println(seriesDsi.getName());
 			tryAgainFile.flush();
 			if (retryCount > consecutiveRetryFailures) {
-				Debug.pwDbg.printf("Too many retries (%d). Sleeping %d seconds.%n", retryCount, (longSleep / 1000));
-				Debug.pwDbg.flush();
-				FredDataDownloader.LOGGER
-				    .info(String.format("Too many retries (%d). Sleeping %d seconds.%n", retryCount, (longSleep / 1000)));
+				Debug.log(String.format("Too many retries (%d). Sleeping %d seconds.%n", retryCount, (longSleep / 1000)));
 
 				Utils.sleep(longSleep);
 				retryCount = 0;
@@ -312,8 +243,7 @@ public class FredDataDownloader {
 					//System.out.println(Utils.getString(dvList.get(dvList.size()-1).getDate()));
 					FredCommon.writeToOptuma(dvList, outname, seriesDsi.getName(), seriesDsi.getUnits(), seriesDsi.getFrequency(),
 					    propagate);
-					Debug.pwDbg.println(ds);
-					Debug.pwDbg.println(futureChg);
+					Debug.log(ds.toString());
 
 					final String title = FredCommon.cleanTitle(ds.getInfo().getTitle());
 					System.out.println(ds.getName() + "\t" + ds.getName() + "\t" + title);

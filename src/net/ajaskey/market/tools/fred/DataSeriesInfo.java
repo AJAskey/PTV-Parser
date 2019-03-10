@@ -96,7 +96,7 @@ public class DataSeriesInfo {
 
 						final Element eElement = (Element) nodeResp;
 						final String series = eElement.getAttribute("id");
-						Debug.pwDbg.println(series);
+						Debug.log("Series : " +series);
 
 						dsi.setName(series);
 						dsi.setTitle(eElement.getAttribute("title"));
@@ -126,7 +126,7 @@ public class DataSeriesInfo {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 
-		Debug.pwDbg = new PrintWriter("out/dsi.dbg");
+		Debug.init("out/dsi.dbg");
 
 		final DataSeriesInfo dsi = new DataSeriesInfo("CEU0500000001");
 
@@ -136,9 +136,6 @@ public class DataSeriesInfo {
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
-		Debug.pwDbg.close();
-
 	}
 
 	public static List<DataSeriesInfo> readSeriesInfo() {
@@ -190,12 +187,22 @@ public class DataSeriesInfo {
 
 	private String response;
 
+	
+	/**
+	 * @return the response
+	 */
+	public String getResponse() {
+	
+		return response;
+	}
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public DataSeriesInfo() {
 
+		this.response = "";
 		this.name = "";
 		this.title = "";
 		this.frequency = "";
@@ -211,6 +218,7 @@ public class DataSeriesInfo {
 	public DataSeriesInfo(String fld[]) {
 
 		int len = fld.length;
+		this.response = "";
 		if (len > 1) {
 			this.name = fld[0].trim();
 			this.title = fld[1].trim();

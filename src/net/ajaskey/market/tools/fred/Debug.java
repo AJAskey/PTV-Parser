@@ -4,6 +4,13 @@ package net.ajaskey.market.tools.fred;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * This class...
@@ -32,9 +39,56 @@ import java.util.Calendar;
  */
 public class Debug {
 
-	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
 
-	public static PrintWriter pwDbg;
+	private static PrintWriter pwDbg;
+
+	private static final Logger LOGGER = Logger.getLogger(FredDataDownloader.class.getName());
+
+	public static final Level	INFO		= Level.INFO;
+	public static final Level	WARNING	= Level.WARNING;
+	public static final Level	SEVERE	= Level.SEVERE;
+
+	private static boolean isInit = false;
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.init
+	 *
+	 * @param logfileName
+	 */
+	public static void init(String logfileName) {
+
+		if (isInit) {
+			return;
+		}
+
+		Handler fileHandler = null;
+		Formatter simpleFormatter = null;
+
+		try {
+
+			LogManager.getLogManager().reset();
+
+			fileHandler = new FileHandler(logfileName);
+			LOGGER.addHandler(fileHandler);
+
+			simpleFormatter = new SimpleFormatter();
+			fileHandler.setFormatter(simpleFormatter);
+
+			fileHandler.setLevel(Level.INFO);
+
+			isInit = true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void log(String s) {
+
+		LOGGER.info(s);
+	}
 
 	/**
 	 * 
@@ -42,20 +96,8 @@ public class Debug {
 	 *
 	 * @param s
 	 */
-	public static void log(String s) {
+	public static void log(Level l, String s) {
 
-		Calendar cal = Calendar.getInstance();
-		String swithdate = String.format("%s : %s", sdf.format(cal.getTime()), s);
-		pwDbg.println(swithdate);
+		LOGGER.log(l, s);
 	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.flush
-	 *
-	 */
-	public static void flush() {
-
-		pwDbg.flush();
-	}
-
 }

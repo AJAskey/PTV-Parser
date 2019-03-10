@@ -186,10 +186,6 @@ public class DataSeries {
 		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
 		final double last = retList.get(retList.size() - 1).getValue();
 
-		Debug.pwDbg.println(this.period);
-
-		Debug.pwDbg.println(Utils.getString(calLast));
-
 		int periodKnt = 0;
 		int duration = 0;
 		if (this.period.contains("daily")) {
@@ -207,7 +203,6 @@ public class DataSeries {
 		}
 
 		calLast.add(duration, periodKnt);
-		Debug.pwDbg.println(Utils.getString(calLast) + Utils.NL);
 
 		final double val = last + (last * (futureChg / 100.0));
 		final DataValues dv = new DataValues(calLast, val);
@@ -319,7 +314,7 @@ public class DataSeries {
 		    + this.getFileType() + this.getLimit() + this.getOffset() + this.getOrder() + this.getRespType() + "&api_key="
 		    + ApiKey.get();
 
-		Debug.pwDbg.println(url);
+		Debug.log(url + "\n");
 
 		String resp;
 		try {

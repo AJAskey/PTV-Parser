@@ -43,6 +43,13 @@ import net.ajaskey.market.misc.Utils;
  */
 public class FredBookkeeping {
 
+	private static final String	fsiFilename				= "fred-series-info.txt";
+	private static final String	tryAgainFilename	= "fred-try-again.txt";
+
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
+
+	private static List<DataSeriesInfo> dsiList = new ArrayList<>();
+
 	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
@@ -51,8 +58,8 @@ public class FredBookkeeping {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		Debug.pwDbg = new PrintWriter("fred-bookkeeping.dbg");
-		FredDataDownloader.tryAgainFile = new PrintWriter("fred-try-again.txt");
+		Debug.init("fred-bookkeeping.dbg");
+		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
 
 		final File folder = new File(FredCommon.fredPath);
 		//		File existingFiles[] = folder.listFiles();
@@ -67,6 +74,7 @@ public class FredBookkeeping {
 		List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
 		for (File file : files) {
 			String name = file.getName();
+			//Ignore derived TREAST files
 			if (!name.contains("TREAST-")) {
 				String f1 = name.replace(".csv", "");
 				String f2 = f1.replace("[", "").trim();
@@ -78,19 +86,40 @@ public class FredBookkeeping {
 				uniqCodes.add(f3);
 			}
 		}
-		
-		String fsiFilename = "fred-series-info.txt";
-		
+
 		// for later : List<DataSeriesInfo> oldList = FredCommon.readSeriesInfo(fsiFilename );
 
 		final List<String> codes = new ArrayList<>(uniqCodes);
 		Collections.sort(codes);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
+		process(codes);
 
-		PrintWriter pw = new PrintWriter(fsiFilename);
+		FredDataDownloader.tryAgainFile.close();
 
-		List<DataSeriesInfo> dsiList = new ArrayList<>();
+		Utils.sleep(2500);
+		Debug.log("Processing retry attempts...");
+
+		List<String> retry = FredCommon.readSeriesList(tryAgainFilename);
+		process(retry);
+
+		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
+
+		System.out.println(codes.size());
+
+		Collections.sort(dsiList, new DsiSorter());
+		FredCommon.writeSeriesInfo(dsiList, fsiFilename);
+
+		FredDataDownloader.tryAgainFile.close();
+
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.process
+	 *
+	 * @param codes
+	 */
+	private static void process(List<String> codes) {
 
 		int knt = 0;
 		for (String s : codes) {
@@ -107,18 +136,9 @@ public class FredBookkeeping {
 				dsiList.add(dsi);
 			}
 			// Set to lower number for testing
-			if (++knt > 20000) {
+			if (++knt > 20050) {
 				break;
 			}
 		}
-		System.out.println(codes.size());
-
-		Collections.sort(dsiList, new DsiSorter());
-		FredCommon.writeSeriesInfo(dsiList, "fredseriesinfo.txt");
-
-		pw.close();
-		FredDataDownloader.tryAgainFile.close();
-
 	}
-
 }

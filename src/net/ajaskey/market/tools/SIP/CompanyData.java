@@ -185,6 +185,9 @@ public class CompanyData {
 						//cd.cashFromInv = QuarterlyData.parseDouble(fld[12].trim());
 						cd.city = fld[13].trim();
 						cd.state = fld[14].trim();
+//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
+//							System.out.println(cd);
+//						}
 						cd.shares.parse(fld);
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -212,7 +215,7 @@ public class CompanyData {
 
 						//cd.zd.calc(cd);
 
-						if (cd.spIndex.equals("SP500")) {
+						if (!cd.spIndex.equals("SP500")) {
 							double sc = DerivedData.calcShareChange(cd);
 							double bbest = Math.abs(sc) * cd.avgPrice;
 							if (sc < 0.0) {
@@ -500,7 +503,7 @@ public class CompanyData {
 		}
 		ret += TAB + "Insiders Own      : " + QuarterlyData.fmt(this.insiders) + NL;
 		ret += TAB + "Float             : " + QuarterlyData.fmt(this.floatShares) + NL;
-		ret += TAB + "Outstanding       : " + QuarterlyData.fmt(this.shares.q1) + NL;
+		ret += TAB + "Outstanding       : " + QuarterlyData.fmt(this.shares.getMostRecent()) + NL;
 		ret += TAB + "Market Cap        : " + QuarterlyData.fmt(this.marketCap)
 		    + String.format("  %s", String.format("(%3.5f%%)", (this.partOfTotalCap * 100.0))) + NL;
 

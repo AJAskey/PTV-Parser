@@ -105,7 +105,7 @@ public class UpdateFred {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		Debug.pwDbg = new PrintWriter("update-fred.dbg");
+		Debug.init("update-fred.dbg");
 
 		Utils.makeDir(FredCommon.fredPath);
 
@@ -141,7 +141,7 @@ public class UpdateFred {
 						final Calendar lastModTime = Calendar.getInstance();
 						lastModTime.setTimeInMillis(modTime);
 
-						Debug.pwDbg.printf("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime()));
+						Debug.log(String.format("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime())));
 
 						final DataSeriesInfo dsi = new DataSeriesInfo(series);
 
@@ -155,7 +155,7 @@ public class UpdateFred {
 							boolean propagate = FredCommon.doPropagate(prop_names, series);
 
 							if ((!series.equalsIgnoreCase("SP500")) && (!propagate) && (lastModTime.after(dsi.getLastUpdate()))) {
-								Debug.pwDbg.println("Local file created After                               "
+								Debug.log("Local file created After                               "
 								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 								if (knt < 100) {
 									System.out.print(".");
@@ -167,7 +167,7 @@ public class UpdateFred {
 							} else {
 								try {
 									try {
-										Debug.pwDbg.println("Local file created Before                              "
+										Debug.log("Local file created Before                              "
 										    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
 									} catch (Exception ee) {
 										ee.printStackTrace();
@@ -220,8 +220,6 @@ public class UpdateFred {
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
-
-		Debug.pwDbg.close();
 
 		try {
 			Collections.sort(dsList, new DsiSorter());
