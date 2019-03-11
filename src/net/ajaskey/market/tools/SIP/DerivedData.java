@@ -71,7 +71,7 @@ public class DerivedData {
 	 */
 	public static double calcCurrLiabilities(CompanyData cd) {
 
-		double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
+		final double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
 		    + cd.bsd.otherCurrLiab.getMostRecent();
 		return cl;
 	}
@@ -302,6 +302,23 @@ public class DerivedData {
 		return ret;
 	}
 
+	/**
+	 * net.ajaskey.market.tools.SIP.calcShareChange
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calcShareChange(CompanyData cd) {
+
+		double sc = 0.0;
+		if (cd.shares.q1 > 0.0) {
+			sc = cd.shares.q1 - cd.shares.q5;
+		} else {
+			sc = cd.shares.q2 - cd.shares.q6;
+		}
+		return sc;
+	}
+
 	public static double calcStDebtToOpIncome(CompanyData cd) {
 
 		double ret = 0.0;
@@ -494,23 +511,6 @@ public class DerivedData {
 		ret += TAB + TAB + TAB + "12m Total  : " + QuarterlyData.fmt(this.ttm) + " (avg= "
 		    + QuarterlyData.fmt(this.ttm / 4.0, 1) + ")" + NL;
 		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.SIP.calcShareChange
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calcShareChange(CompanyData cd) {
-
-		double sc = 0.0;
-		if (cd.shares.q1 > 0.0) {
-			sc = cd.shares.q1 - cd.shares.q5;
-		} else {
-			sc = cd.shares.q2 - cd.shares.q6;
-		}
-		return sc;
 	}
 
 }

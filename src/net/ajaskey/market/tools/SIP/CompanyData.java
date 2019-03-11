@@ -15,6 +15,7 @@ import java.util.List;
 import org.apache.commons.text.WordUtils;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.fred.Debug;
 
 /**
  * This class...
@@ -73,6 +74,8 @@ public class CompanyData {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+
+		Debug.init("CompanyData.log");
 
 		double totalMarketCap = 0.0;
 		double totalBuyBacks = 0.0;
@@ -177,17 +180,19 @@ public class CompanyData {
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
-						cd.floatShares = QuarterlyData.parseDouble(fld[7].trim());
-						//cd.capEx = QuarterlyData.parseDouble(fld[7].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[9].trim());
-						//cd.cashFromOps = QuarterlyData.parseDouble(fld[10].trim());
-						//cd.cashFromFin = QuarterlyData.parseDouble(fld[11].trim());
-						//cd.cashFromInv = QuarterlyData.parseDouble(fld[12].trim());
-						cd.city = fld[13].trim();
-						cd.state = fld[14].trim();
-//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
-//							System.out.println(cd);
-//						}
+						cd.inst = QuarterlyData.parseDouble(fld[7].trim());
+						cd.turnover = QuarterlyData.parseDouble(fld[8].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[9].trim());
+						//cd.capEx = QuarterlyData.parseDouble(fld[10].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[11].trim());
+						//cd.cashFromOps = QuarterlyData.parseDouble(fld[12].trim());
+						//cd.cashFromFin = QuarterlyData.parseDouble(fld[13].trim());
+						//cd.cashFromInv = QuarterlyData.parseDouble(fld[14].trim());
+						cd.city = fld[15].trim();
+						cd.state = fld[16].trim();
+						//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
+						//							System.out.println(cd);
+						//						}
 						cd.shares.parse(fld);
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -216,8 +221,8 @@ public class CompanyData {
 						//cd.zd.calc(cd);
 
 						if (!cd.spIndex.equals("SP500")) {
-							double sc = DerivedData.calcShareChange(cd);
-							double bbest = Math.abs(sc) * cd.avgPrice;
+							final double sc = DerivedData.calcShareChange(cd);
+							final double bbest = Math.abs(sc) * cd.avgPrice;
 							if (sc < 0.0) {
 								totalBuyBacks += bbest;
 							} else {
@@ -317,19 +322,20 @@ public class CompanyData {
 			pw.println("SPX PE           :" + QuarterlyData.fmt(spxPE, 20));
 
 		}
-		
-		List<CompanyData> filteredList = new ArrayList<>();
-		Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
-		for (CompanyData cd : companyList) {
-			Calendar cal = Utils.buildCalendar(cd.eoq);
+
+		final List<CompanyData> filteredList = new ArrayList<>();
+		final Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
+		for (final CompanyData cd : companyList) {
+			final Calendar cal = Utils.buildCalendar(cd.eoq);
 			if (cal.after(endCal)) {
 				filteredList.add(cd);
 			}
 		}
 
 		final Reports reports = new Reports(filteredList);
-		reports.DumpCompanyReports();
-		reports.DumpBestFinancial();
+		reports.WriteCompanyReports();
+		reports.WriteBestFinancial();
+		reports.WriteZombies();
 
 		System.out.printf("Total Buyback Estimate   :  $%sB%n", QuarterlyData.fmt(totalBuyBacks / 1000.0, 2));
 		System.out.printf("Total New Share Estimate :  $%sB%n", QuarterlyData.fmt(totalNewShares / 1000.0, 2));
@@ -385,6 +391,8 @@ public class CompanyData {
 	public int		numEmp;
 	public Date		eoq;
 	public double	insiders;
+	public double	inst;
+	public double	turnover;
 	public double	floatShares;
 	//public double					capEx;
 	public double cashFlow;
@@ -445,6 +453,8 @@ public class CompanyData {
 		this.spIndex = "";
 		this.numEmp = 0;
 		this.insiders = 0.0;
+		this.inst = 0.0;
+		this.turnover = 0.0;
 		this.eoq = null;
 		this.floatShares = 0.0;
 		this.cashFlow = 0.0;
@@ -478,7 +488,7 @@ public class CompanyData {
 		this.currentRatio = 0.0;
 		this.workingCapital = 0.0;
 		this.netCashFlow = 0.0;
-		this.totalCashFlow = 0.0; 
+		this.totalCashFlow = 0.0;
 
 		//this.zd = new ZombieData();
 

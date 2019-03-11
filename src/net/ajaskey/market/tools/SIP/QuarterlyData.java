@@ -63,22 +63,6 @@ public class QuarterlyData {
 		return String.format(f, df.format(d));
 	}
 
-	public String fmtGrowth4Q(String desc) {
-
-		String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, fmt(this.getTtm(), 13),
-		    fmt(this.dd.seqGrowth, 7), fmt(this.dd.qoqGrowth, 7));
-
-		return ret;
-	}
-
-	public String fmtGrowth1Q(String desc) {
-
-		String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, fmt(this.getMostRecent(), 13),
-		    fmt(this.dd.seqGrowth, 7), fmt(this.dd.qoqGrowth, 7));
-
-		return ret;
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.init
@@ -191,7 +175,7 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("cashFromOps", pos);
 
-		colPos.put("shares", 16);
+		colPos.put("shares", 18);
 
 		colPos.put("totalInterest", 0);
 	}
@@ -250,20 +234,20 @@ public class QuarterlyData {
 		return 0;
 	}
 
-	public String	type;
-	public int		pos;
-	public double	q8;
-	public double	q7;
-	public double	q6;
-	public double	q5;
-	public double	q4;
-	public double	q3;
-	public double	q2;
-	public double	q1;
+	public String type;
 
-	public DerivedData dd;
+	public int pos;
 
-	private double ttm;
+	public double				q8;
+	public double				q7;
+	public double				q6;
+	public double				q5;
+	public double				q4;
+	public double				q3;
+	public double				q2;
+	public double				q1;
+	public DerivedData	dd;
+	private double			ttm;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -276,6 +260,39 @@ public class QuarterlyData {
 		this.pos = colPos.get(t);
 		this.initData();
 		this.dd = new DerivedData();
+	}
+
+	public String fmtGrowth1Q(String desc) {
+
+		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc,
+		    QuarterlyData.fmt(this.getMostRecent(), 13), QuarterlyData.fmt(this.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(this.dd.qoqGrowth, 7));
+
+		return ret;
+	}
+
+	public String fmtGrowth4Q(String desc) {
+
+		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc,
+		    QuarterlyData.fmt(this.getTtm(), 13), QuarterlyData.fmt(this.dd.seqGrowth, 7),
+		    QuarterlyData.fmt(this.dd.qoqGrowth, 7));
+
+		return ret;
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.fmtGrowthQY
+	 *
+	 * @param string
+	 * @return
+	 */
+	public String fmtGrowthQY(String desc) {
+
+		final String ret = String.format("\t%-18s: %s M (QoQ= %s%% : YoY= %s%%)", desc,
+		    QuarterlyData.fmt(this.getTtm(), 13), QuarterlyData.fmt(this.dd.qoqGrowth, 7),
+		    QuarterlyData.fmt(this.dd.yoyGrowth, 7));
+
+		return ret;
 	}
 
 	/**

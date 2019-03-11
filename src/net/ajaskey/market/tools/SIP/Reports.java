@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.fred.Debug;
 
 /**
  * This class...
@@ -42,6 +43,18 @@ public class Reports {
 	private static final double	cratioLWM			= 0.75;
 	private static final double	lteHWM				= 4.0;
 
+	private static boolean checkBestValue(String desc, double val, double min) {
+
+		boolean ret = true;
+
+		if (val < min) {
+			Debug.log(String.format("  %-15s Value : %.2f is less than Min : %.2f%n", desc, val, min));
+			ret = false;
+		}
+
+		return ret;
+	}
+
 	private List<CompanyData> companyList = null;
 
 	/**
@@ -70,231 +83,70 @@ public class Reports {
 	}
 
 	/**
+	 * net.ajaskey.market.tools.SIP.printState
 	 *
-	 * net.ajaskey.market.tools.SIP.DumpBestFinancial
-	 *
-	 * @throws FileNotFoundException
+	 * @param pw
+	 * @param cd
 	 */
-	public void DumpBestFinancial() throws FileNotFoundException {
+	private String getState(CompanyData cd) {
 
-		Utils.makeDir("out/CompanyReports");
+		String ret = String.format("%n\t%s State -->%n", cd.ticker);
 
-		try (PrintWriter pw = new PrintWriter("out/Zombies.txt"); PrintWriter zpw = new PrintWriter("out/zCompanies.txt")) {
+		boolean goodState = true;
 
-			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
-			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
+		final double fcfwc = cd.freeCashFlow + cd.workingCapital;
 
-			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n", 1.0,
-			    intToSalesHWM);
-			String str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					System.out.println(cd.ticker);
-					if ((cd.currentRatio < 1.0) && (cd.interestRate > intToSalesHWM)) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
+		if ((fcfwc < 0.0) && (cd.id.dividend.getTtm() <= 0.0)) {
+			ret += String.format("\t  Free Cash Flow plus Working Capital is negative (%.2f)%n",
+			    (cd.freeCashFlow + cd.workingCapital));
+			goodState = false;
+		}
 
-			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
+		if ((fcfwc < 0.0) && (cd.id.dividend.getTtm() > 0.0)) {
+			ret += String.format("\t  Free Cash Flow plus Working Capital is negative (%.2f) with dividend paid %.2f.%n",
+			    (fcfwc), (cd.id.dividend.getTtm() * cd.shares.getTtmAvg()));
+			goodState = false;
+		}
 
-			pw.printf(
-			    "%nList of tickers with FCF + Working Capital less than 0 and paid a dividend -- may need to cut dividend.%n",
+		if ((cd.currentRatio < cratioLWM) && (cd.totalCashFlow < 0.0)) {
+			ret += String.format("\t  Current Ratio less than %.2f and Cash Flow less than 0.%n", cratioLWM);
+			goodState = false;
+		}
+
+		if ((fcfwc < 0.0) && (cd.cashData.cashFromFin.getTtm() > 0.0)
+		    && (cd.cashData.cashFromFin.getTtm() > Math.abs(fcfwc))) {
+			ret += String.format(
+			    "\t  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.%n",
 			    cratioLWM);
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if (((cd.freeCashFlow + cd.workingCapital) < 0.0) && (cd.id.dividend.getTtm() > 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
-
-			pw.printf("%nList of tickers with negative Cash from Ops and Cash Flow with no Shareholder Equity.%n");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.cashData.cashFromOps.getTtm() < 0.0) && (cd.bsd.equity.getMostRecent() < 0.0)
-					    && (cd.cashFlow < 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
-
-			pw.printf("%nList of tickers with big buybacks and an available cash flow deficit.%n");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-
-					double sc = DerivedData.calcShareChange(cd);
-					if (sc < -0.25) {
-						double fcfwc = cd.freeCashFlow + cd.workingCapital;
-						if ((fcfwc < 0.0) && ((Math.abs(sc) * cd.avgPrice) > Math.abs(fcfwc))) {
-							str = this.addStr(cd.ticker, str);
-						}
-					}
-				}
-			}
-			pw.println(str);
-
-			pw.println("\nSeq : this quarter versus last quarter.");
-			pw.println("QoQ : this quarter versus same quarter a year ago.\n\n--------------------------");
-
-			//			pw.printf("%nList of tickers with Current Ratio < %.2f and negative Net Cash Flow. [Cash from Ops + Financing]%n",
-			//			    cratioLWM);
-			//			str = "";
-			//			for (final CompanyData cd : this.companyList) {
-			//				if (!cd.sector.equalsIgnoreCase("Financials")) {
-			//					if ((cd.currentRatio < cratioLWM) && (cd.netCashFlow < 0.0)) {
-			//						str = this.addStr(cd.ticker, str);
-			//					}
-			//				}
-			//			}
-			//			pw.println(str);
-			//
-			//			pw.printf(
-			//			    "%nList of tickers with Current Ratio < %.2f and negative Total Cash Flow. [Cash from Ops + Financing + Investing]%n",
-			//			    cratioLWM);
-			//			str = "";
-			//			for (final CompanyData cd : this.companyList) {
-			//				if (!cd.sector.equalsIgnoreCase("Financials")) {
-			//					if ((cd.currentRatio < cratioLWM) && (cd.totalCashFlow < 0.0)) {
-			//						str = this.addStr(cd.ticker, str);
-			//					}
-			//				}
-			//			}
-			//			pw.println(str);
-
-			//			pw.println("\nList of tickers meeting Zombie criteria.");
-			//			str = "";
-			//			for (final CompanyData cd : this.companyList) {
-			//				if (!cd.sector.equalsIgnoreCase("Financials")) {
-			//					if (cd.zd.zIsZombie && (cd.zd.zAdjScr < 4.0)) {
-			//						str = this.addStr(cd.ticker, str);
-			//					}
-			//				}
-			//			}
-			//			pw.println(str);
-
-			for (final CompanyData cd : this.companyList) {
-
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					//this.printZombieData(pw, cd);
-					pw.println("");
-					this.printHeaderData(pw, cd);
-				}
-			}
-
-			//			System.out.println("Zombie Count : " + ZombieData.zKnt);
-			//			System.out.println(ZombieData.zStr);
+			goodState = false;
 		}
 
-		/**
-		 *
-		 */
-		try (PrintWriter pw = new PrintWriter("out/Zombies-Fin.txt")) {
+		if ((cd.id.interestExpNonOp.getTtm() > 0.0) && (cd.interestRate > intToSalesHWM)) {
+			ret += String.format("\t  Interest payments to sales is high at %.2f%%.%n", cd.interestRate);
+			goodState = false;
+		}
 
-			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
-			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
-
-			pw.println("\nList of tickers with Current Ratio < 1.0 and negative Cash from Operations.");
-			String str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.cashData.cashFromOps.getTtm() < 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
-
-			pw.println(
-			    "\nList of tickers with Current Ratio < 1.0 and negative Net Cash Flow. [Cash from Ops + Cash from Financing]");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.currentRatio < 1.0) && (cd.netCashFlow < 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
-
-			pw.println("\nList of tickers with negative FCF and using Financing to continue operations.");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.freeCashFlow <= 0.0) && (cd.cashData.cashFromFin.getTtm() > 0.0)
-					    && (cd.cashData.cashFromFin.getTtm() > Math.abs(cd.freeCashFlow))) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
-
-			for (final CompanyData cd : this.companyList) {
-
-				if (cd.sector.equalsIgnoreCase("Financials")) {
-					pw.println("");
-					this.printHeaderData(pw, cd);
-				}
+		if (cd.bsd.equity.getMostRecent() <= 0.0) {
+			ret += String.format("\t  Shareholders have no equity.%n");
+			goodState = false;
+		} else {
+			final double dte = cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent();
+			if (dte > lteHWM) {
+				ret += String.format("\t  LT debt to equity of %.2f is high.%n", dte);
+				goodState = false;
 			}
 		}
 
-		/**
-		 *
-		 */
-		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
+		//		if (cd.zd.zIsZombie) {
+		//			pw.println("\t  Is a Zombie by algorithm.");
+		//			goodState = false;
+		//		}
 
-			for (final CompanyData cd : this.companyList) {
-				if ((cd.opMargin > 10.0) && (cd.netMargin > 10.0) && (cd.roe > 10.0) && (cd.bsd.equity.getMostRecent() > 0.0)
-				    && (cd.workingCashFlow > 0.0) && (cd.id.sales.dd.qoqGrowth > 10.0) && (cd.id.sales.dd.yoyGrowth > 10.0)
-				    && (cd.id.netIncome.dd.qoqGrowth > 10.0) && (cd.id.netIncome.dd.yoyGrowth > 10.0)) {
-					double fcfwc = cd.freeCashFlow + cd.workingCapital;
-					if ((fcfwc > 0.0) && (cd.roe > 10.0)) {
-						this.printHeaderData(pw, cd);
-						pw.println();
-					}
-				}
-			}
+		if (goodState) {
+			ret += String.format("\t  Good shape - no red flags.%n");
 		}
-	}
 
-	/**
-	 *
-	 * net.ajaskey.market.tools.SIP.DumpCompanyReports
-	 *
-	 * @throws FileNotFoundException
-	 *
-	 */
-	public void DumpCompanyReports() throws FileNotFoundException {
-
-		Utils.makeDir("out/CompanyReports");
-
-		final PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
-		for (final CompanyData cd : this.companyList) {
-			try (PrintWriter pw = new PrintWriter("out/CompanyReports/" + cd.ticker + ".txt")) {
-				this.printData(pw, cd);
-				this.printData(pwAll, cd);
-				pwAll.println();
-
-			} catch (final FileNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-		pwAll.close();
+		return ret;
 	}
 
 	/**
@@ -447,15 +299,17 @@ public class Reports {
 		final String dat = Utils.stringDate(cd.eoq);
 		pw.printf("\t10Q Date  : %s%n", dat);
 
-//		if (cd.ticker.equalsIgnoreCase("MAXR")) {
-//			System.out.println(cd);
-//		}
+		//this.printState(pw, cd);
+
+		//		if (cd.ticker.equalsIgnoreCase("MAXR")) {
+		//			System.out.println(cd);
+		//		}
 		pw.printf("%n\tMarket Cap        : %s M%n", QuarterlyData.fmt(cd.marketCap, 13));
 		pw.println(cd.shares.fmtGrowth1Q("Shares"));
 
-		double sc = DerivedData.calcShareChange(cd);
+		final double sc = DerivedData.calcShareChange(cd);
 		if (sc < -0.250) {
-			double bbest = Math.abs(sc) * cd.avgPrice;
+			final double bbest = Math.abs(sc) * cd.avgPrice;
 			pw.printf("\tShare Change 12m  : %s M (Buyback Est= $%sM)%n", QuarterlyData.fmt(sc, 13),
 			    QuarterlyData.fmt(bbest, 1));
 		}
@@ -506,11 +360,8 @@ public class Reports {
 			    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 13));
 		}
 
-		this.printState(pw, cd);
-
 		pw.printf("%n\tLast Price          : %s%n", QuarterlyData.fmt(cd.lastPrice, 11));
 		pw.printf("\tPE                  : %s%n", QuarterlyData.fmt(cd.pe, 11));
-		//pw.printf("\tPS                  : %s%n", QuarterlyData.fmt(cd.psales, 10));
 		pw.printf("\tOp Margin           : %s%%%n", QuarterlyData.fmt(cd.opMargin, 11));
 		pw.printf("\tNet Margin          : %s%%%n", QuarterlyData.fmt(cd.netMargin, 11));
 		pw.printf("\tROE                 : %s%%%n", QuarterlyData.fmt(cd.roe, 11));
@@ -519,162 +370,246 @@ public class Reports {
 			pw.printf("\tEPS Yield           : %s%% ($%.2f)%n", QuarterlyData.fmt(cd.epsYld, 11), cd.id.epsDilCont.getTtm(),
 			    2);
 		}
+		if (cd.numEmp > 0) {
+			final double d = (cd.id.grossOpIncome.getTtm() / cd.numEmp) * MILLION;
+			pw.printf("\tOpInc per Emp       : %s%n", QuarterlyData.fmt(d, 11));
+		}
 
 	}
 
 	/**
-	 * net.ajaskey.market.tools.SIP.printState
 	 *
-	 * @param pw
-	 * @param cd
+	 * net.ajaskey.market.tools.SIP.WriteBestFinancial
+	 *
+	 * @throws FileNotFoundException
 	 */
-	private void printState(PrintWriter pw, CompanyData cd) {
+	public void WriteBestFinancial() throws FileNotFoundException {
 
-		pw.printf("%n\t%s State -->%n", cd.ticker);
+		Utils.makeDir("out/CompanyReports");
 
-		boolean goodState = true;
+		/**
+		 *
+		 */
+		int knt = 0;
+		try (PrintWriter pw = new PrintWriter("out/BestCompanies.txt")) {
 
-		final double fcfwc = cd.freeCashFlow + cd.workingCapital;
+			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
+			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K." + NL);
 
-		if ((fcfwc < 0.0) && (cd.id.dividend.getTtm() <= 0.0)) {
-			pw.printf("\t  Free Cash Flow plus Working Capital is negative (%.2f)%n", (cd.freeCashFlow + cd.workingCapital));
-			goodState = false;
-		}
+			for (final CompanyData cd : this.companyList) {
 
-		if ((fcfwc < 0.0) && (cd.id.dividend.getTtm() > 0.0)) {
-			pw.printf("\t  Free Cash Flow plus Working Capital is negative (%.2f) with dividend paid %.2f.%n", (fcfwc),
-			    (cd.id.dividend.getTtm() * cd.shares.getTtmAvg()));
-			goodState = false;
-		}
+				if (!Reports.checkBestValue(cd.ticker + " OpMargin", cd.opMargin, 10.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " NetMargin", cd.netMargin, 10.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " ROE", cd.roe, 10.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " Equity", cd.bsd.equity.getMostRecent(), 0.0)) {
+					continue;
+				}
 
-		if ((cd.currentRatio < cratioLWM) && (cd.totalCashFlow < 0.0)) {
-			pw.printf("\t  Current Ratio less than %.2f and Cash Flow less than 0.%n", cratioLWM);
-			goodState = false;
-		}
+				if (!Reports.checkBestValue(cd.ticker + " Sales QoQ", cd.id.sales.dd.qoqGrowth, 10.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " Sales YoY", cd.id.sales.dd.yoyGrowth, 10.0)) {
+					continue;
+				}
 
-		if ((fcfwc < 0.0) && (cd.cashData.cashFromFin.getTtm() > 0.0)
-		    && (cd.cashData.cashFromFin.getTtm() > Math.abs(fcfwc))) {
-			pw.printf("\t  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.%n",
-			    cratioLWM);
-			goodState = false;
-		}
+				if (!Reports.checkBestValue(cd.ticker + " OpMargin", cd.opMargin, 10.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " GrossOpIncome", cd.id.grossOpIncome.getMostRecent(), 0.01)) {
+					continue;
+				}
 
-		if ((cd.id.interestExpNonOp.getTtm() > 0.0) && (cd.interestRate > intToSalesHWM)) {
-			pw.printf("\t  Interest payments to sales is high at %.2f%%.%n", cd.interestRate);
-			goodState = false;
-		}
+				if (!Reports.checkBestValue(cd.ticker + " NetIncome", cd.id.netIncome.getMostRecent(), 0.01)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " NetIncome QoQ", cd.id.netIncome.dd.qoqGrowth, 25.0)) {
+					continue;
+				}
 
-		if (cd.bsd.equity.getMostRecent() <= 0.0) {
-			pw.println("\t  Shareholders have no equity.");
-			goodState = false;
-		} else {
-			final double dte = cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent();
-			if (dte > lteHWM) {
-				pw.printf("\t  LT debt to equity of %.2f is high.%n", dte);
-				goodState = false;
+				if (!Reports.checkBestValue(cd.ticker + " IncomeEPS QoQ", cd.id.incomeEps.dd.qoqGrowth, 25.0)) {
+					continue;
+				}
+				if (!Reports.checkBestValue(cd.ticker + " IncomeEPS YoY", cd.id.incomeEps.dd.yoyGrowth, 25.0)) {
+					continue;
+				}
+
+				if (!Reports.checkBestValue(cd.ticker + " Insiders", cd.bsd.equity.dd.seqGrowth, 5.0)) {
+					continue;
+				}
+
+				if (!Reports.checkBestValue(cd.ticker + " Insiders", cd.insiders, 1.0)) {
+					continue;
+				}
+
+				if (Reports.checkBestValue(cd.ticker + " Interest Paid", cd.interestRate, 10.0)) {
+					continue;
+				}
+
+				final double fcfwc = cd.freeCashFlow + cd.workingCapital;
+				if (!Reports.checkBestValue(cd.ticker + " FCFWS", fcfwc, 0.01)) {
+					continue;
+				}
+
+				if (Reports.checkBestValue(cd.ticker + " SupplyDemand", cd.turnover, 45.0)) {
+					continue;
+				}
+
+				this.printHeaderData(pw, cd);
+				this.WriteShareData(pw, cd);
+				pw.println();
+
+				pw.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
+				pw.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
+				pw.println();
+
+				knt++;
+
 			}
 		}
-
-		//		if (cd.zd.zIsZombie) {
-		//			pw.println("\t  Is a Zombie by algorithm.");
-		//			goodState = false;
-		//		}
-
-		if (goodState) {
-			pw.println("\t  Good shape - no red flags.");
-		}
+		System.out.printf("Total Best Companies found : %d%n", knt);
 
 	}
 
 	/**
 	 *
-	 * net.ajaskey.market.tools.SIP.printZombieData
+	 * net.ajaskey.market.tools.SIP.DumpCompanyReports
 	 *
-	 * @param pw
-	 * @param cd
+	 * @throws FileNotFoundException
+	 *
 	 */
-	//	private void printZombieData(PrintWriter pw, CompanyData cd) {
-	//
-	//		if (cd.ticker.equalsIgnoreCase("abc")) {
-	//			System.out.println(cd.ticker);
-	//		}
-	//
-	//		switch (cd.zd.zState) {
-	//			//			case PNET_PINC:
-	//			//			case NNET_PINC_DIVCUT:
-	//			//			case NNET_NINC_DIVCUT:
-	//			//			case PNET_NINC_ENUFCASH:
-	//			//			case UNKNOWN:
-	//			//				return;
-	//			default:
-	//
-	//				pw.println("");
-	//				this.printHeaderData(pw, cd);
-	//
-	//				pw.printf("%n\tZombie Cash      : %s%n", QuarterlyData.fmt(cd.zd.zCash, 15));
-	//				this.print1QtrData(pw, cd.bsd.cash.getMostRecent(), "Cash");
-	//				String str = String.format("%d%% AcctRx", (int) (ZombieData.arKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.acctReceiveable.getMostRecent() * ZombieData.arKnob), str);
-	//
-	//				str = String.format("%d%% ST Invest", (int) (ZombieData.stInvestmentsKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob), str);
-	//
-	//				//System.out.printf("%s\t%.2f\t%.2f%n", cd.ticker, cd.bsd.stInvestments.getMostRecent(),
-	//				//    (cd.bsd.stInvestments.getMostRecent() * ZombieData.stInvestmentsKnob));
-	//
-	//				str = String.format("%d%% ST Assets", (int) (ZombieData.stAssetsKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.otherAssets.getMostRecent() * ZombieData.stAssetsKnob), str);
-	//
-	//				str = String.format("%d%% Inventory", (int) (ZombieData.inventoryKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.inventory.getMostRecent() * ZombieData.inventoryKnob), str);
-	//
-	//				str = String.format("%d%% LT Invest", (int) (ZombieData.ltInvestmentsKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.ltInvestments.getMostRecent() * ZombieData.ltAssetsKnob), str);
-	//
-	//				str = String.format("%d%% LT Assets", (int) (ZombieData.ltAssetsKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.otherLtAssets.getMostRecent() * ZombieData.ltAssetsKnob), str);
-	//
-	//				str = String.format("%d%% Goodwill", (int) (ZombieData.gwKnob * 100.0));
-	//				this.print1QtrData(pw, (cd.bsd.goodwill.getMostRecent() * ZombieData.gwKnob), str);
-	//
-	//				pw.printf("\tZombie Debt      : %s%n", QuarterlyData.fmt(cd.zd.zDebt, 15));
-	//				this.print1QtrData(pw, cd.bsd.acctPayable.getMostRecent(), "Acct Payable");
-	//				this.print1QtrData(pw, cd.bsd.stDebt.getMostRecent(), "ST Debt");
-	//				this.print1QtrData(pw, cd.bsd.otherCurrLiab.getMostRecent(), "Other ST Liab");
-	//
-	//				pw.printf("\t*Net Cash        : %s\t[Zombie Cash minus Zombie Debt]%n", QuarterlyData.fmt(cd.zd.zNet, 15));
-	//
-	//				pw.printf("\t*Zombie Income   : %s\t[Average PreTax Income w/o Unusual Expenses]%n",
-	//				    QuarterlyData.fmt(cd.zd.zIncome, 15));
-	//				this.print4QtrData(pw, (cd.id.pretaxIncome), "4Q Pretax");
-	//				this.print4QtrData(pw, (cd.id.unusualIncome), "4Q Unusual Exp");
-	//				//				double avgpre = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4;
-	//				//				if (Math.abs(cd.id.pretaxIncome.q1) == 0.0) {
-	//				//					avgpre += cd.id.pretaxIncome.q5;
-	//				//				}
-	//				//				avgpre /= 4.0;
-	//				this.print1QtrData(pw, cd.zd.zIncome, "Avg Pretax");
-	//
-	//				pw.printf("\t*Zombie Score    : %s%n", QuarterlyData.fmt(cd.zd.zScore, 15));
-	//				this.print1QtrData(pw, cd.zd.zDividend, "Dividends");
-	//				pw.printf("\tAdj Income       : %s  [Income with Dividends Added Back In]%n",
-	//				    QuarterlyData.fmt(cd.zd.zAdjInc, 15));
-	//				pw.printf("\t*Ops Cost / Qtr  : %s  [%.2f/8.0 + %.2f]%n", QuarterlyData.fmt(cd.zd.zKeepItRunning, 15),
-	//				    cd.zd.zDebt, Math.abs(cd.zd.zIncome));
-	//				pw.printf("\t*Zombie Adj Scr  : %s%n", QuarterlyData.fmt(cd.zd.zAdjScr, 15));
-	//				pw.printf("\tZombie State     : %15s%n", cd.zd.zState);
-	//
-	//				final String rpt = cd.zd.zStatus();
-	//				if (rpt.length() > 0) {
-	//					pw.println(rpt);
-	//				}
-	//				if (cd.zd.zIsZombie) {
-	//					pw.printf("\t%s Is Zombie!%n", cd.ticker);
-	//					if (cd.zd.zAdjScr < 4.0) {
-	//						pw.println("\tDead Zombie!");
-	//					}
-	//				}
-	//		}
-	//	}
+	public void WriteCompanyReports() throws FileNotFoundException {
+
+		Utils.makeDir("out/CompanyReports");
+
+		final PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
+		for (final CompanyData cd : this.companyList) {
+			try (PrintWriter pw = new PrintWriter("out/CompanyReports/" + cd.ticker + ".txt")) {
+				this.printHeaderData(pw, cd);
+				this.WriteShareData(pw, cd);
+
+				this.printHeaderData(pwAll, cd);
+				pwAll.println();
+
+			} catch (final FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+		pwAll.close();
+	}
+
+	private void WriteShareData(PrintWriter pw, CompanyData cd) {
+
+		pw.printf("%n\tFloat             : %s M%n", QuarterlyData.fmt(cd.floatShares, 13));
+		double d = (cd.insiders * cd.floatShares) / 100.0;
+		pw.printf("\tInsiders          : %s M (%s%%)%n", QuarterlyData.fmt(d, 13), QuarterlyData.fmt(cd.insiders, 5));
+		d = (cd.inst * cd.floatShares) / 100.0;
+		pw.printf("\tInstitutions      : %s M (%s%%)%n", QuarterlyData.fmt(d, 13), QuarterlyData.fmt(cd.inst, 5));
+		pw.printf("\tTurnover Float    : %s days%n", QuarterlyData.fmt(cd.turnover, 13));
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.WriteZombies
+	 *
+	 * @throws FileNotFoundException
+	 */
+	public void WriteZombies() throws FileNotFoundException {
+
+		Utils.makeDir("out/CompanyReports");
+
+		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
+
+			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
+			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
+
+			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n", 1.0,
+			    intToSalesHWM);
+			String str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					System.out.println(cd.ticker);
+					if ((cd.currentRatio < 1.0) && (cd.interestRate > intToSalesHWM)) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n");
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.printf(
+			    "%nList of tickers with FCF + Working Capital less than 0 and paid a dividend -- may need to cut dividend.%n",
+			    cratioLWM);
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					if (((cd.freeCashFlow + cd.workingCapital) < 0.0) && (cd.id.dividend.getTtm() > 0.0)) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.printf("%nList of tickers with negative Cash from Ops and Cash Flow with no Shareholder Equity.%n");
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					if ((cd.cashData.cashFromOps.getTtm() < 0.0) && (cd.bsd.equity.getMostRecent() < 0.0)
+					    && (cd.cashFlow < 0.0)) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.printf("%nList of tickers with big buybacks and an available cash flow deficit.%n");
+			str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+
+					final double sc = DerivedData.calcShareChange(cd);
+					if (sc < -0.25) {
+						final double fcfwc = cd.freeCashFlow + cd.workingCapital;
+						if ((fcfwc < 0.0) && ((Math.abs(sc) * cd.avgPrice) > Math.abs(fcfwc))) {
+							str = this.addStr(cd.ticker, str);
+						}
+					}
+				}
+			}
+			pw.println(str);
+
+			pw.println("\nSeq : this quarter versus last quarter.");
+			pw.println("QoQ : this quarter versus same quarter a year ago.");
+			pw.println("YoY : last 12m versus 12m a year ago.\n\n--------------------------");
+
+			for (final CompanyData cd : this.companyList) {
+
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					final String state = this.getState(cd);
+					if (!state.contains("Good shape - no red flags")) {
+						pw.println("");
+						this.printHeaderData(pw, cd);
+						pw.printf("%s", state);
+					}
+				}
+			}
+		}
+	}
 
 }
