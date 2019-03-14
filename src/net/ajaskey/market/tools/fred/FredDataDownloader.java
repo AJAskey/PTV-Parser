@@ -16,6 +16,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.fred.DataSeries.AggregationMethodType;
 

@@ -1,5 +1,5 @@
 
-package net.ajaskey.market.tools.fred;
+package net.ajaskey.market.misc;
 
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -11,6 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+
+import net.ajaskey.market.tools.fred.FredDataDownloader;
 
 /**
  * This class...

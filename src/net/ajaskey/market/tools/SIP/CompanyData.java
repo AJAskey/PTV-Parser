@@ -2,6 +2,7 @@
 package net.ajaskey.market.tools.SIP;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,8 +15,8 @@ import java.util.List;
 
 import org.apache.commons.text.WordUtils;
 
+import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.fred.Debug;
 
 /**
  * This class...
@@ -49,7 +50,12 @@ public class CompanyData {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
-	private static List<CompanyData> companyList = new ArrayList<>();
+	public static List<CompanyData> companyList = new ArrayList<>();
+
+	private static double	totalMarketCap	= 0.0;
+	private static double	totalBuyBacks		= 0.0;
+	private static double	totalNewShares	= 0.0;
+	private static double	totalEps				= 0.0;
 
 	/**
 	 * net.ajaskey.market.tools.SIP.getCompany
@@ -57,7 +63,7 @@ public class CompanyData {
 	 * @param ticker
 	 * @return
 	 */
-	private static CompanyData getCompany(String ticker) {
+	static CompanyData getCompany(String ticker) {
 
 		for (final CompanyData cd : companyList) {
 			if (cd.ticker.equalsIgnoreCase(ticker)) {
@@ -77,168 +83,23 @@ public class CompanyData {
 
 		Debug.init("CompanyData.log");
 
-		double totalMarketCap = 0.0;
-		double totalBuyBacks = 0.0;
-		double totalNewShares = 0.0;
-		double totalEps = 0.0;
 		final double spxPrice = 0.0;
 
 		QuarterlyData.init();
 
 		final TotalData td = new TotalData();
 
-		String line = "";
-
 		// Read last price
 
 		// Read balance sheet
 		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-bs.TXT"))) {
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-BALANCESHEETQTR.TXT"))) {
 
-			while ((line = reader.readLine()) != null) {
-				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
-				if (str.length() > 1) {
-					//System.out.println(str);
-					final String fld[] = str.split(TAB);
-					final CompanyData cd = CompanyData.setCompanyInfo(fld);
-					cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
-					//System.out.println(cd.bsd);
-					companyList.add(cd);
-				}
-			}
-		}
+		CompanyData.readBsdData("data/US-STOCKS-BALANCESHEETQTR.TXT");
+		CompanyData.readIdData("data/US-STOCKS-INCOMESTMTQTR.TXT");
+		CompanyData.readCashData("data/US-STOCKS-CASH.TXT");
+		CompanyData.readMiscData("data/US-STOCKS-MISC.TXT");
 
-		// Read income statement
-		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-is.TXT"))) {
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-INCOMESTMTQTR.TXT"))) {
-
-			while ((line = reader.readLine()) != null) {
-				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
-				if (str.length() > 1) {
-
-					//System.out.println(str);
-					final String fld[] = str.split(TAB);
-					final String ticker = fld[1].trim();
-					final CompanyData cd = CompanyData.getCompany(ticker);
-					if (cd != null) {
-						cd.id = IncomeData.setIncomeData(fld);
-						//System.out.println(cd.id);
-					}
-				}
-			}
-		}
-
-		// Read Cash Flow data
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-CASH.TXT"))) {
-
-			while ((line = reader.readLine()) != null) {
-				final String str = line.replaceAll("\"", "").trim();
-				if (str.length() > 1) {
-
-					//System.out.println(str);
-					final String fld[] = str.split(TAB);
-					final String ticker = fld[0].trim();
-					final CompanyData cd = CompanyData.getCompany(ticker);
-					if (cd != null) {
-						cd.cashData = CashData.setCashDataInfo(fld);
-						//System.out.println(ticker);
-						//System.out.println(cd.cashData);
-					}
-				}
-			}
-		}
-
-		// Read miscellaneous data
-		//try (BufferedReader reader = new BufferedReader(new FileReader("data/test-misc.TXT"))) {
-		try (BufferedReader reader = new BufferedReader(new FileReader("data/US-STOCKS-MISC.TXT"))) {
-
-			while ((line = reader.readLine()) != null) {
-				final String str = line.replaceAll("\"", "").trim();
-				if (str.length() > 1) {
-
-					//System.out.println(str);
-					final String fld[] = str.split(TAB);
-					final String ticker = fld[0].trim();
-					final CompanyData cd = CompanyData.getCompany(ticker);
-					if (cd != null) {
-						cd.numEmp = (int) Double.parseDouble((fld[2].trim()));
-						try {
-							cd.eoq = sdf.parse(fld[3].trim());
-						} catch (final ParseException e) {
-							cd.eoq = null;
-						}
-						final String s = fld[1].trim();
-						if (s.length() > 0) {
-							if (s.contains("500")) {
-								cd.spIndex = "SP500";
-							} else if (s.contains("400")) {
-								cd.spIndex = "SP400";
-							} else if (s.contains("600")) {
-								cd.spIndex = "SP600";
-							}
-						}
-						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
-						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
-						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
-						cd.inst = QuarterlyData.parseDouble(fld[7].trim());
-						cd.turnover = QuarterlyData.parseDouble(fld[8].trim());
-						cd.floatShares = QuarterlyData.parseDouble(fld[9].trim());
-						//cd.capEx = QuarterlyData.parseDouble(fld[10].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[11].trim());
-						//cd.cashFromOps = QuarterlyData.parseDouble(fld[12].trim());
-						//cd.cashFromFin = QuarterlyData.parseDouble(fld[13].trim());
-						//cd.cashFromInv = QuarterlyData.parseDouble(fld[14].trim());
-						cd.city = fld[15].trim();
-						cd.state = fld[16].trim();
-						//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
-						//							System.out.println(cd);
-						//						}
-						cd.shares.parse(fld);
-
-						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
-						cd.psales = DerivedData.calcPSales(cd);
-						cd.opMargin = DerivedData.calcOpMargin(cd.id);
-						cd.netMargin = DerivedData.calcNetMargin(cd.id);
-						cd.roe = DerivedData.calcRoe(cd);
-						cd.taxRate = DerivedData.calcTaxRate(cd.id);
-						cd.interestRate = DerivedData.calcInterestRate(cd.id);
-						cd.divYld = DerivedData.calcDividendYield(cd);
-						cd.epsYld = DerivedData.calcEarningsYield(cd);
-						cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
-						cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
-						cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
-						cd.marketCap = DerivedData.calcMarketCap(cd);
-						cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
-						cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
-						cd.sumCurrAssets = DerivedData.calcCurrAssets(cd);
-						cd.sumCurrLiab = DerivedData.calcCurrLiabilities(cd);
-						cd.currentRatio = DerivedData.calcCurrentRatio(cd);
-						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
-						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
-						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
-						//cd.totalInterestPaid = DerivedData.calcTotalInterest(cd);
-
-						//cd.zd.calc(cd);
-
-						if (!cd.spIndex.equals("SP500")) {
-							final double sc = DerivedData.calcShareChange(cd);
-							final double bbest = Math.abs(sc) * cd.avgPrice;
-							if (sc < 0.0) {
-								totalBuyBacks += bbest;
-							} else {
-								totalNewShares += bbest;
-							}
-						}
-
-						totalMarketCap += cd.marketCap;
-					}
-				}
-			}
-		}
-
-		for (
-
-		final CompanyData cd : companyList) {
+		for (final CompanyData cd : companyList) {
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
 			final double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
 			totalEps += te;
@@ -339,6 +200,192 @@ public class CompanyData {
 
 		System.out.printf("Total Buyback Estimate   :  $%sB%n", QuarterlyData.fmt(totalBuyBacks / 1000.0, 2));
 		System.out.printf("Total New Share Estimate :  $%sB%n", QuarterlyData.fmt(totalNewShares / 1000.0, 2));
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.readBsdData
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	static void readBsdData(String fname) throws FileNotFoundException, IOException {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
+				if (str.length() > 1) {
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final CompanyData cd = CompanyData.setCompanyInfo(fld);
+					cd.bsd = BalanceSheetData.setBalanceSheetInfo(fld);
+					//System.out.println(cd.bsd);
+					companyList.add(cd);
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.readCashData
+	 *
+	 * @param string
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	static void readCashData(String fname) throws FileNotFoundException, IOException {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.replaceAll("\"", "").trim();
+				if (str.length() > 1) {
+
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[0].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
+					if (cd != null) {
+						cd.cashData = CashData.setCashDataInfo(fld);
+						//System.out.println(ticker);
+						//System.out.println(cd.cashData);
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * net.ajaskey.market.tools.SIP.readIdData
+	 *
+	 * @param string
+	 * @throws IOException
+	 */
+	static void readIdData(String fname) throws IOException {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
+				if (str.length() > 1) {
+
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[1].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
+					if (cd != null) {
+						cd.id = IncomeData.setIncomeData(fld);
+						//System.out.println(cd.id);
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.readMiscData
+	 *
+	 * @param fname
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void readMiscData(String fname) throws FileNotFoundException, IOException {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.replaceAll("\"", "").trim();
+				if (str.length() > 1) {
+
+					//System.out.println(str);
+					final String fld[] = str.split(TAB);
+					final String ticker = fld[0].trim();
+					final CompanyData cd = CompanyData.getCompany(ticker);
+					if (cd != null) {
+						cd.numEmp = (int) Double.parseDouble((fld[2].trim()));
+						try {
+							cd.eoq = sdf.parse(fld[3].trim());
+						} catch (final ParseException e) {
+							cd.eoq = null;
+						}
+						final String s = fld[1].trim();
+						if (s.length() > 0) {
+							if (s.contains("500")) {
+								cd.spIndex = "SP500";
+							} else if (s.contains("400")) {
+								cd.spIndex = "SP400";
+							} else if (s.contains("600")) {
+								cd.spIndex = "SP600";
+							}
+						}
+						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
+						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
+						cd.inst = QuarterlyData.parseDouble(fld[7].trim());
+						cd.turnover = QuarterlyData.parseDouble(fld[8].trim());
+						cd.floatShares = QuarterlyData.parseDouble(fld[9].trim());
+						//cd.capEx = QuarterlyData.parseDouble(fld[10].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[11].trim());
+						//cd.cashFromOps = QuarterlyData.parseDouble(fld[12].trim());
+						//cd.cashFromFin = QuarterlyData.parseDouble(fld[13].trim());
+						//cd.cashFromInv = QuarterlyData.parseDouble(fld[14].trim());
+						cd.city = fld[15].trim();
+						cd.state = fld[16].trim();
+						//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
+						//							System.out.println(cd);
+						//						}
+						cd.shares.parse(fld);
+
+						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
+						cd.psales = DerivedData.calcPSales(cd);
+						cd.opMargin = DerivedData.calcOpMargin(cd.id);
+						cd.netMargin = DerivedData.calcNetMargin(cd.id);
+						cd.roe = DerivedData.calcRoe(cd);
+						cd.taxRate = DerivedData.calcTaxRate(cd.id);
+						cd.interestRate = DerivedData.calcInterestRate(cd.id);
+						cd.divYld = DerivedData.calcDividendYield(cd);
+						cd.epsYld = DerivedData.calcEarningsYield(cd);
+						cd.ltDebtEquity = DerivedData.calcDebtToEquity(cd.bsd);
+						cd.stDebtOpIncome = DerivedData.calcStDebtToOpIncome(cd);
+						cd.debtCash = DerivedData.calcDebtToCash(cd.bsd);
+						cd.marketCap = DerivedData.calcMarketCap(cd);
+						cd.freeCashFlow = DerivedData.calcFreeCashFlow(cd);
+						cd.workingCashFlow = DerivedData.calcWorkingCashFlow(cd);
+						cd.sumCurrAssets = DerivedData.calcCurrAssets(cd);
+						cd.sumCurrLiab = DerivedData.calcCurrLiabilities(cd);
+						cd.currentRatio = DerivedData.calcCurrentRatio(cd);
+						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
+						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
+						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
+						//cd.totalInterestPaid = DerivedData.calcTotalInterest(cd);
+
+						//cd.zd.calc(cd);
+
+						if (!cd.spIndex.equals("SP500")) {
+							final double sc = DerivedData.calcShareChange(cd);
+							final double bbest = Math.abs(sc) * cd.avgPrice;
+							if (sc < 0.0) {
+								totalBuyBacks += bbest;
+							} else {
+								totalNewShares += bbest;
+							}
+						}
+
+						totalMarketCap += cd.marketCap;
+					}
+				}
+			}
+		}
 
 	}
 
@@ -492,6 +539,17 @@ public class CompanyData {
 
 		//this.zd = new ZombieData();
 
+	}
+
+	/**
+	 * This method serves as a constructor for the class. Used for test setup.
+	 *
+	 * @param string
+	 */
+	public CompanyData(String code) {
+
+		this.ticker = code;
+		this.shares = new QuarterlyData("shares");
 	}
 
 	/* (non-Javadoc)

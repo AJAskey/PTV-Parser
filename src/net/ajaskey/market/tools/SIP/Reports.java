@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.fred.Debug;
 
 /**
  * This class...
@@ -43,12 +43,46 @@ public class Reports {
 	private static final double	cratioLWM			= 0.75;
 	private static final double	lteHWM				= 4.0;
 
-	private static boolean checkBestValue(String desc, double val, double min) {
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.checkMaxValue
+	 *
+	 * @param ticker
+	 * @param desc
+	 * @param val
+	 * @param max
+	 * @return
+	 */
+	private static boolean checkMaxValue(String ticker, String desc, double val, double max) {
+
+		boolean ret = true;
+
+		if (val > max) {
+			final String s = ticker + desc;
+			Debug.log(String.format("  %-15s Value : %.2f is greater than Max : %.2f%n", s, val, max));
+			ret = false;
+		}
+
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.checkMinValue
+	 *
+	 * @param ticker
+	 * @param desc
+	 * @param val
+	 * @param min
+	 * @return
+	 */
+	private static boolean checkMinValue(String ticker, String desc, double val, double min) {
 
 		boolean ret = true;
 
 		if (val < min) {
-			Debug.log(String.format("  %-15s Value : %.2f is less than Min : %.2f%n", desc, val, min));
+			final String s = ticker + desc;
+			Debug.log(String.format("  %-15s Value : %.2f is less than Min : %.2f%n", s, val, min));
 			ret = false;
 		}
 
@@ -95,6 +129,11 @@ public class Reports {
 		boolean goodState = true;
 
 		final double fcfwc = cd.freeCashFlow + cd.workingCapital;
+
+		if ((cd.cashData.cashFromOps.getTtm() < cd.workingCapital) && (cd.workingCapital < 0.0)) {
+			ret += String.format("\t  Cash from Operations less than Working Capital deficit%n");
+			goodState = false;
+		}
 
 		if ((fcfwc < 0.0) && (cd.id.dividend.getTtm() <= 0.0)) {
 			ret += String.format("\t  Free Cash Flow plus Working Capital is negative (%.2f)%n",
@@ -398,65 +437,65 @@ public class Reports {
 
 			for (final CompanyData cd : this.companyList) {
 
-				if (!Reports.checkBestValue(cd.ticker + " OpMargin", cd.opMargin, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " OpMargin", cd.opMargin, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkBestValue(cd.ticker + " NetMargin", cd.netMargin, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " NetMargin", cd.netMargin, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkBestValue(cd.ticker + " ROE", cd.roe, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " ROE", cd.roe, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkBestValue(cd.ticker + " Equity", cd.bsd.equity.getMostRecent(), 0.0)) {
-					continue;
-				}
-
-				if (!Reports.checkBestValue(cd.ticker + " Sales QoQ", cd.id.sales.dd.qoqGrowth, 10.0)) {
-					continue;
-				}
-				if (!Reports.checkBestValue(cd.ticker + " Sales YoY", cd.id.sales.dd.yoyGrowth, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " Equity", cd.bsd.equity.getMostRecent(), 0.0)) {
 					continue;
 				}
 
-				if (!Reports.checkBestValue(cd.ticker + " OpMargin", cd.opMargin, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " Sales QoQ", cd.id.sales.dd.qoqGrowth, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkBestValue(cd.ticker + " GrossOpIncome", cd.id.grossOpIncome.getMostRecent(), 0.01)) {
-					continue;
-				}
-
-				if (!Reports.checkBestValue(cd.ticker + " NetIncome", cd.id.netIncome.getMostRecent(), 0.01)) {
-					continue;
-				}
-				if (!Reports.checkBestValue(cd.ticker + " NetIncome QoQ", cd.id.netIncome.dd.qoqGrowth, 25.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " Sales YoY", cd.id.sales.dd.yoyGrowth, 10.0)) {
 					continue;
 				}
 
-				if (!Reports.checkBestValue(cd.ticker + " IncomeEPS QoQ", cd.id.incomeEps.dd.qoqGrowth, 25.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " OpMargin", cd.opMargin, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkBestValue(cd.ticker + " IncomeEPS YoY", cd.id.incomeEps.dd.yoyGrowth, 25.0)) {
-					continue;
-				}
-
-				if (!Reports.checkBestValue(cd.ticker + " Insiders", cd.bsd.equity.dd.seqGrowth, 5.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " GrossOpIncome", cd.id.grossOpIncome.getMostRecent(), 0.01)) {
 					continue;
 				}
 
-				if (!Reports.checkBestValue(cd.ticker + " Insiders", cd.insiders, 1.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " NetIncome", cd.id.netIncome.getMostRecent(), 0.01)) {
+					continue;
+				}
+				if (!Reports.checkMinValue(cd.ticker, " NetIncome QoQ", cd.id.netIncome.dd.qoqGrowth, 25.0)) {
 					continue;
 				}
 
-				if (Reports.checkBestValue(cd.ticker + " Interest Paid", cd.interestRate, 10.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " IncomeEPS QoQ", cd.id.incomeEps.dd.qoqGrowth, 25.0)) {
+					continue;
+				}
+				if (!Reports.checkMinValue(cd.ticker, " IncomeEPS YoY", cd.id.incomeEps.dd.yoyGrowth, 25.0)) {
+					continue;
+				}
+
+				if (!Reports.checkMinValue(cd.ticker, " Insiders", cd.bsd.equity.dd.seqGrowth, 5.0)) {
+					continue;
+				}
+
+				if (!Reports.checkMinValue(cd.ticker, " Insiders", cd.insiders, 1.0)) {
+					continue;
+				}
+
+				if (!Reports.checkMaxValue(cd.ticker, " Interest Paid", cd.interestRate, 10.0)) {
 					continue;
 				}
 
 				final double fcfwc = cd.freeCashFlow + cd.workingCapital;
-				if (!Reports.checkBestValue(cd.ticker + " FCFWS", fcfwc, 0.01)) {
+				if (!Reports.checkMinValue(cd.ticker, " FCFWS", fcfwc, 0.01)) {
 					continue;
 				}
 
-				if (Reports.checkBestValue(cd.ticker + " SupplyDemand", cd.turnover, 45.0)) {
+				if (!Reports.checkMaxValue(cd.ticker, " SupplyDemand", cd.turnover, 60.0)) {
 					continue;
 				}
 
@@ -529,9 +568,21 @@ public class Reports {
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
 			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
 
+			pw.printf("%nList of tickers with Cash from Operations less than Working Capital deficit.%n");
+			String str = "";
+			for (final CompanyData cd : this.companyList) {
+				if (!cd.sector.equalsIgnoreCase("Financials")) {
+					System.out.println(cd.ticker);
+					if ((cd.cashData.cashFromOps.getTtm() < cd.workingCapital) && (cd.workingCapital < 0.0)) {
+						str = this.addStr(cd.ticker, str);
+					}
+				}
+			}
+			pw.println(str);
+
 			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n", 1.0,
 			    intToSalesHWM);
-			String str = "";
+			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
 					System.out.println(cd.ticker);

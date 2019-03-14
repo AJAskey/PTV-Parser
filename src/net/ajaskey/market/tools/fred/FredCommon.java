@@ -21,6 +21,7 @@ import java.util.Set;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
