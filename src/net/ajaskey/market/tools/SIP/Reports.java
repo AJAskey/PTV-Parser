@@ -332,11 +332,17 @@ public class Reports {
 		//pw.printf("\t%s%n", cd.industry);
 		String sNumEmp = "?";
 		if (cd.numEmp > 0) {
-			sNumEmp = String.format("%,d", cd.numEmp);
+			sNumEmp = QuarterlyData.ifmt(cd.numEmp, 12);
 		}
-		pw.printf("\tEmployees : %s%n", sNumEmp);
+		pw.printf("\tEmployees     : %s%n", sNumEmp);
+		if (cd.numEmp > 0) {
+			final double d = (cd.id.grossOpIncome.getTtm() / cd.numEmp) * MILLION;
+			final int i = (int) d;
+			pw.printf("\tOpInc per Emp : $%s%n", QuarterlyData.ifmt(i, 11));
+		}
+
 		final String dat = Utils.stringDate(cd.eoq);
-		pw.printf("\t10Q Date  : %s%n", dat);
+		pw.printf("\t10Q Date      :  %s%n", dat);
 
 		//this.printState(pw, cd);
 
@@ -409,10 +415,6 @@ public class Reports {
 			pw.printf("\tEPS Yield           : %s%% ($%.2f)%n", QuarterlyData.fmt(cd.epsYld, 11), cd.id.epsDilCont.getTtm(),
 			    2);
 		}
-		if (cd.numEmp > 0) {
-			final double d = (cd.id.grossOpIncome.getTtm() / cd.numEmp) * MILLION;
-			pw.printf("\tOpInc per Emp       : %s%n", QuarterlyData.fmt(d, 11));
-		}
 
 	}
 
@@ -435,20 +437,11 @@ public class Reports {
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
 			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K." + NL);
 
-			for (final CompanyData cd : this.companyList) {
+			pw.println("Seq : this quarter versus last quarter.");
+			pw.println("QoQ : this quarter versus same quarter a year ago.");
+			pw.println("YoY : last 12m versus 12m a year ago.\n\n--------------------------");
 
-				if (!Reports.checkMinValue(cd.ticker, " OpMargin", cd.opMargin, 10.0)) {
-					continue;
-				}
-				if (!Reports.checkMinValue(cd.ticker, " NetMargin", cd.netMargin, 10.0)) {
-					continue;
-				}
-				if (!Reports.checkMinValue(cd.ticker, " ROE", cd.roe, 10.0)) {
-					continue;
-				}
-				if (!Reports.checkMinValue(cd.ticker, " Equity", cd.bsd.equity.getMostRecent(), 0.0)) {
-					continue;
-				}
+			for (final CompanyData cd : this.companyList) {
 
 				if (!Reports.checkMinValue(cd.ticker, " Sales QoQ", cd.id.sales.dd.qoqGrowth, 10.0)) {
 					continue;
@@ -457,10 +450,25 @@ public class Reports {
 					continue;
 				}
 
+				if (!Reports.checkMinValue(cd.ticker, " GrossOpIncome", cd.id.grossOpIncome.getMostRecent(), 0.01)) {
+					continue;
+				}
+
 				if (!Reports.checkMinValue(cd.ticker, " OpMargin", cd.opMargin, 10.0)) {
 					continue;
 				}
-				if (!Reports.checkMinValue(cd.ticker, " GrossOpIncome", cd.id.grossOpIncome.getMostRecent(), 0.01)) {
+				if (!Reports.checkMinValue(cd.ticker, " NetMargin", cd.netMargin, 10.0)) {
+					continue;
+				}
+
+				if (!Reports.checkMinValue(cd.ticker, " Cash from Operations", cd.cashData.cashFromOps.getTtm(), 0.01)) {
+					continue;
+				}
+
+				if (!Reports.checkMinValue(cd.ticker, " Equity", cd.bsd.equity.getMostRecent(), 0.0)) {
+					continue;
+				}
+				if (!Reports.checkMinValue(cd.ticker, " ROE", cd.roe, 10.0)) {
 					continue;
 				}
 
@@ -478,7 +486,10 @@ public class Reports {
 					continue;
 				}
 
-				if (!Reports.checkMinValue(cd.ticker, " Insiders", cd.bsd.equity.dd.seqGrowth, 5.0)) {
+				if (!Reports.checkMinValue(cd.ticker, " Sharehold Equity", cd.bsd.equity.getMostRecent(), 1.0)) {
+					continue;
+				}
+				if (!Reports.checkMinValue(cd.ticker, " Sharehold Equity Growth", cd.bsd.equity.dd.qoqGrowth, 5.0)) {
 					continue;
 				}
 
@@ -486,7 +497,11 @@ public class Reports {
 					continue;
 				}
 
-				if (!Reports.checkMaxValue(cd.ticker, " Interest Paid", cd.interestRate, 10.0)) {
+				if (!Reports.checkMaxValue(cd.ticker, " Interest Paid", cd.interestRate, 5.0)) {
+					continue;
+				}
+
+				if (!Reports.checkMinValue(cd.ticker, " OpInc Growth 3Yr", cd.opInc3yrGrowth, 0.0)) {
 					continue;
 				}
 
@@ -495,7 +510,7 @@ public class Reports {
 					continue;
 				}
 
-				if (!Reports.checkMaxValue(cd.ticker, " SupplyDemand", cd.turnover, 60.0)) {
+				if (!Reports.checkMaxValue(cd.ticker, " SupplyDemand", cd.turnover, 90.0)) {
 					continue;
 				}
 
@@ -505,6 +520,7 @@ public class Reports {
 
 				pw.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
 				pw.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
+				pw.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
 				pw.println();
 
 				knt++;
@@ -549,6 +565,7 @@ public class Reports {
 		pw.printf("\tInsiders          : %s M (%s%%)%n", QuarterlyData.fmt(d, 13), QuarterlyData.fmt(cd.insiders, 5));
 		d = (cd.inst * cd.floatShares) / 100.0;
 		pw.printf("\tInstitutions      : %s M (%s%%)%n", QuarterlyData.fmt(d, 13), QuarterlyData.fmt(cd.inst, 5));
+		pw.printf("\tAvg Daily Vol     : %s%n", QuarterlyData.ifmt(cd.adv, 13));
 		pw.printf("\tTurnover Float    : %s days%n", QuarterlyData.fmt(cd.turnover, 13));
 
 	}
@@ -593,25 +610,28 @@ public class Reports {
 			}
 			pw.println(str);
 
-			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n");
-			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
-						str = this.addStr(cd.ticker, str);
-					}
-				}
-			}
-			pw.println(str);
+			//			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n");
+			//			str = "";
+			//			for (final CompanyData cd : this.companyList) {
+			//				if (!cd.sector.equalsIgnoreCase("Financials")) {
+			//					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
+			//						str = this.addStr(cd.ticker, str);
+			//					}
+			//				}
+			//			}
+			//			pw.println(str);
 
 			pw.printf(
-			    "%nList of tickers with FCF + Working Capital less than 0 and paid a dividend -- may need to cut dividend.%n",
-			    cratioLWM);
+			    "%nList of tickers with FCF + Working Capital less than 0. *Paid a dividend -- may need to cut dividend.%n");
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if (((cd.freeCashFlow + cd.workingCapital) < 0.0) && (cd.id.dividend.getTtm() > 0.0)) {
-						str = this.addStr(cd.ticker, str);
+					String div = "";
+					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
+						if (cd.id.dividend.getTtm() > 0.0) {
+							div += "*";
+						}
+						str = this.addStr(cd.ticker + div, str);
 					}
 				}
 			}

@@ -45,6 +45,8 @@ public class QuarterlyData {
 	private static DecimalFormatSymbols	decimalFormatSymbols	= new DecimalFormatSymbols();
 	private static DecimalFormat				df;
 
+	private static DecimalFormat dfmt = new DecimalFormat("#,###");
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.fmt
@@ -54,13 +56,37 @@ public class QuarterlyData {
 	 */
 	public static String fmt(double d) {
 
-		return String.format("%15s", df.format(d));
+		return QuarterlyData.fmt(d, 15);
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.fmt
+	 *
+	 * @param d
+	 * @param len
+	 * @return
+	 */
 	public static String fmt(double d, int len) {
 
-		final String f = String.format("%%%ds", len);
-		return String.format(f, df.format(d));
+		final String sfmt = String.format("%%%ds", len);
+		return String.format(sfmt, df.format(d));
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.ifmt
+	 *
+	 * @param i
+	 * @param len
+	 * @return
+	 */
+	public static String ifmt(int i, int len) {
+
+		final String s = dfmt.format(i);
+		final String sfmt = String.format("%%%ds", len);
+
+		return String.format(sfmt, s);
 	}
 
 	/**
@@ -175,7 +201,7 @@ public class QuarterlyData {
 		pos += 8;
 		colPos.put("cashFromOps", pos);
 
-		colPos.put("shares", 18);
+		colPos.put("shares", 19);
 
 		colPos.put("totalInterest", 0);
 	}

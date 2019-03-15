@@ -332,19 +332,24 @@ public class CompanyData {
 						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
 						cd.inst = QuarterlyData.parseDouble(fld[7].trim());
-						cd.turnover = QuarterlyData.parseDouble(fld[8].trim());
+						cd.adv = (int) QuarterlyData.parseDouble(fld[8].trim()) * 1000;
 						cd.floatShares = QuarterlyData.parseDouble(fld[9].trim());
 						//cd.capEx = QuarterlyData.parseDouble(fld[10].trim());
 						cd.cashFlow = QuarterlyData.parseDouble(fld[11].trim());
 						//cd.cashFromOps = QuarterlyData.parseDouble(fld[12].trim());
 						//cd.cashFromFin = QuarterlyData.parseDouble(fld[13].trim());
 						//cd.cashFromInv = QuarterlyData.parseDouble(fld[14].trim());
-						cd.city = fld[15].trim();
-						cd.state = fld[16].trim();
+						cd.opInc3yrGrowth = QuarterlyData.parseDouble(fld[15].trim());
+						cd.city = fld[16].trim();
+						cd.state = fld[17].trim();
 						//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
 						//							System.out.println(cd);
 						//						}
 						cd.shares.parse(fld);
+
+						if (cd.adv != 0.0) {
+							cd.turnover = (cd.floatShares * 1000000.0) / cd.adv;
+						}
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
 						cd.psales = DerivedData.calcPSales(cd);
@@ -439,8 +444,10 @@ public class CompanyData {
 	public Date		eoq;
 	public double	insiders;
 	public double	inst;
+	public int		adv;
 	public double	turnover;
 	public double	floatShares;
+	public double	opInc3yrGrowth;
 	//public double					capEx;
 	public double cashFlow;
 	//	public double					cashFromOps;
@@ -502,8 +509,10 @@ public class CompanyData {
 		this.insiders = 0.0;
 		this.inst = 0.0;
 		this.turnover = 0.0;
+		this.adv = 0;
 		this.eoq = null;
 		this.floatShares = 0.0;
+		this.opInc3yrGrowth = 0.0;
 		this.cashFlow = 0.0;
 		//		this.capEx = 0.0;
 		//		this.cashFromOps = 0.0;
