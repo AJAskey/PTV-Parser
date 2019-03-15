@@ -489,6 +489,8 @@ public class CompanyData {
 	public double	netCashFlow;
 	public double	totalCashFlow;
 
+	public ZombieScore zscore;
+
 	//public ZombieData zd;
 
 	/**

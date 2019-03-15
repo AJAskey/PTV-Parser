@@ -3,6 +3,8 @@ package net.ajaskey.market.tools.SIP;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.Debug;
@@ -558,6 +560,13 @@ public class Reports {
 		pwAll.close();
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.SIP.WriteShareData
+	 *
+	 * @param pw
+	 * @param cd
+	 */
 	private void WriteShareData(PrintWriter pw, CompanyData cd) {
 
 		pw.printf("%n\tFloat             : %s M%n", QuarterlyData.fmt(cd.floatShares, 13));
@@ -583,7 +592,7 @@ public class Reports {
 		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
 
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
-			pw.println("\nPre-filtered for US companies over $5 and average trading volume of at least 100K.");
+			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K.");
 
 			pw.printf("%nList of tickers with Cash from Operations less than Working Capital deficit.%n");
 			String str = "";
@@ -610,19 +619,8 @@ public class Reports {
 			}
 			pw.println(str);
 
-			//			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n");
-			//			str = "";
-			//			for (final CompanyData cd : this.companyList) {
-			//				if (!cd.sector.equalsIgnoreCase("Financials")) {
-			//					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
-			//						str = this.addStr(cd.ticker, str);
-			//					}
-			//				}
-			//			}
-			//			pw.println(str);
-
 			pw.printf(
-			    "%nList of tickers with FCF + Working Capital less than 0. *Paid a dividend -- may need to cut dividend.%n");
+			    "%nList of tickers with FCF + Working Capital less than 0.%n*Paid a dividend -- may need to cut dividend.%n");
 			str = "";
 			for (final CompanyData cd : this.companyList) {
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
@@ -669,18 +667,29 @@ public class Reports {
 			pw.println("QoQ : this quarter versus same quarter a year ago.");
 			pw.println("YoY : last 12m versus 12m a year ago.\n\n--------------------------");
 
+			final List<CompanyData> zombieList = new ArrayList<>();
 			for (final CompanyData cd : this.companyList) {
-
 				if (!cd.sector.equalsIgnoreCase("Financials")) {
 					final String state = this.getState(cd);
 					if (!state.contains("Good shape - no red flags")) {
-						pw.println("");
-						this.printHeaderData(pw, cd);
-						pw.printf("%s", state);
+						cd.zscore = ZombieScore.calculate(cd);
+						zombieList.add(cd);
 					}
 				}
 			}
+
+			Collections.sort(zombieList, new SortScore());
+
+			for (final CompanyData cd : zombieList) {
+
+				final String state = this.getState(cd);
+				pw.println("");
+				this.printHeaderData(pw, cd);
+				pw.printf("%s", state);
+				pw.printf("%s%n", cd.zscore);
+			}
 		}
+
 	}
 
 }
