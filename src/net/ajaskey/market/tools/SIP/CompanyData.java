@@ -330,25 +330,31 @@ public class CompanyData {
 						}
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
-						cd.insiders = QuarterlyData.parseDouble(fld[6].trim());
-						cd.inst = QuarterlyData.parseDouble(fld[7].trim());
-						cd.adv = (int) QuarterlyData.parseDouble(fld[8].trim()) * 1000;
-						cd.floatShares = QuarterlyData.parseDouble(fld[9].trim());
-						//cd.capEx = QuarterlyData.parseDouble(fld[10].trim());
-						cd.cashFlow = QuarterlyData.parseDouble(fld[11].trim());
-						//cd.cashFromOps = QuarterlyData.parseDouble(fld[12].trim());
-						//cd.cashFromFin = QuarterlyData.parseDouble(fld[13].trim());
-						//cd.cashFromInv = QuarterlyData.parseDouble(fld[14].trim());
-						cd.opInc3yrGrowth = QuarterlyData.parseDouble(fld[15].trim());
-						cd.city = fld[16].trim();
-						cd.state = fld[17].trim();
+						cd.pricePercOf52High = QuarterlyData.parseDouble(fld[6].trim());
+						cd.insiders = QuarterlyData.parseDouble(fld[7].trim());
+						cd.inst = QuarterlyData.parseDouble(fld[8].trim());
+						cd.adv = (int) QuarterlyData.parseDouble(fld[9].trim()) * 1000;
+						cd.floatShares = QuarterlyData.parseDouble(fld[10].trim());
+						//cd.capEx = QuarterlyData.parseDouble(fld[11].trim());
+						cd.cashFlow = QuarterlyData.parseDouble(fld[12].trim());
+						//cd.cashFromOps = QuarterlyData.parseDouble(fld[13].trim());
+						//cd.cashFromFin = QuarterlyData.parseDouble(fld[14].trim());
+						//cd.cashFromInv = QuarterlyData.parseDouble(fld[15].trim());
+						cd.opInc3yrGrowth = QuarterlyData.parseDouble(fld[16].trim());
+						cd.city = fld[17].trim();
+						cd.state = fld[18].trim();
 						//						if (cd.ticker.equalsIgnoreCase("MAXR")) {
 						//							System.out.println(cd);
 						//						}
 						cd.shares.parse(fld);
 
-						if (cd.adv != 0.0) {
+						if (cd.adv > 0.0) {
 							cd.turnover = (cd.floatShares * 1000000.0) / cd.adv;
+						}
+
+						double shr = cd.shares.getTtm();
+						if ((shr == 0.0) && (cd.id.eps.getMostRecent() != 0.0)) {
+							cd.shares.q1 = Math.abs(cd.id.netIncome.getMostRecent() / cd.id.eps.getMostRecent());
 						}
 
 						cd.pe = DerivedData.calcPE(cd.id, cd.lastPrice);
@@ -372,11 +378,12 @@ public class CompanyData {
 						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
 						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
 						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
-						//cd.totalInterestPaid = DerivedData.calcTotalInterest(cd);
+						
+						cd.high52wk = DerivedData.calc52weekHigh(cd);
 
 						//cd.zd.calc(cd);
 
-						if (!cd.spIndex.equals("SP500")) {
+						if (cd.spIndex.equals("SP500")) {
 							final double sc = DerivedData.calcShareChange(cd);
 							final double bbest = Math.abs(sc) * cd.avgPrice;
 							if (sc < 0.0) {
@@ -462,6 +469,7 @@ public class CompanyData {
 
 	public double	lastPrice;
 	public double	avgPrice;
+	public double	pricePercOf52High;
 
 	// derived data
 	public double	pe;
@@ -489,6 +497,8 @@ public class CompanyData {
 	public double	netCashFlow;
 	public double	totalCashFlow;
 
+	public double high52wk;
+	
 	public ZombieScore zscore;
 
 	//public ZombieData zd;
@@ -524,6 +534,7 @@ public class CompanyData {
 
 		this.lastPrice = 0.0;
 		this.avgPrice = 0.0;
+		this.pricePercOf52High = 0.0;
 		this.pe = 0.0;
 		this.psales = 0.0;
 		this.opMargin = 0.0;
@@ -547,6 +558,8 @@ public class CompanyData {
 		this.workingCapital = 0.0;
 		this.netCashFlow = 0.0;
 		this.totalCashFlow = 0.0;
+		
+		this.high52wk = 0.0;
 
 		//this.zd = new ZombieData();
 

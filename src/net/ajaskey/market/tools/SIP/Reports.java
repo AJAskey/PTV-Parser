@@ -43,7 +43,7 @@ public class Reports {
 
 	private static final double	intToSalesHWM	= 10.0;
 	private static final double	cratioLWM			= 0.75;
-	private static final double	lteHWM				= 4.0;
+	private static final double	lteHWM				= 5.0;
 
 	/**
 	 *
@@ -407,7 +407,7 @@ public class Reports {
 			    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 13));
 		}
 
-		pw.printf("%n\tLast Price          : %s%n", QuarterlyData.fmt(cd.lastPrice, 11));
+		pw.printf("%n\tLast Price          : %s : (52wkHi= %.2f)%n", QuarterlyData.fmt(cd.lastPrice, 11), cd.high52wk);
 		pw.printf("\tPE                  : %s%n", QuarterlyData.fmt(cd.pe, 11));
 		pw.printf("\tOp Margin           : %s%%%n", QuarterlyData.fmt(cd.opMargin, 11));
 		pw.printf("\tNet Margin          : %s%%%n", QuarterlyData.fmt(cd.netMargin, 11));
@@ -589,6 +589,19 @@ public class Reports {
 
 		Utils.makeDir("out/CompanyReports");
 
+		final List<CompanyData> zombieList = new ArrayList<>();
+		for (final CompanyData cd : this.companyList) {
+			if (!cd.sector.equalsIgnoreCase("Financials")) {
+				final String state = this.getState(cd);
+				if (!state.contains("Good shape - no red flags")) {
+					cd.zscore = ZombieScore.calculate(cd);
+					if (cd.zscore.score > 50.0) {
+						zombieList.add(cd);
+					}
+				}
+			}
+		}
+
 		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
 
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
@@ -596,12 +609,10 @@ public class Reports {
 
 			pw.printf("%nList of tickers with Cash from Operations less than Working Capital deficit.%n");
 			String str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					System.out.println(cd.ticker);
-					if ((cd.cashData.cashFromOps.getTtm() < cd.workingCapital) && (cd.workingCapital < 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
+			for (final CompanyData cd : zombieList) {
+				System.out.println(cd.ticker);
+				if ((cd.cashData.cashFromOps.getTtm() < cd.workingCapital) && (cd.workingCapital < 0.0)) {
+					str = this.addStr(cd.ticker, str);
 				}
 			}
 			pw.println(str);
@@ -609,12 +620,10 @@ public class Reports {
 			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n", 1.0,
 			    intToSalesHWM);
 			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					System.out.println(cd.ticker);
-					if ((cd.currentRatio < 1.0) && (cd.interestRate > intToSalesHWM)) {
-						str = this.addStr(cd.ticker, str);
-					}
+			for (final CompanyData cd : zombieList) {
+				System.out.println(cd.ticker);
+				if ((cd.currentRatio < 1.0) && (cd.interestRate > intToSalesHWM)) {
+					str = this.addStr(cd.ticker, str);
 				}
 			}
 			pw.println(str);
@@ -622,42 +631,35 @@ public class Reports {
 			pw.printf(
 			    "%nList of tickers with FCF + Working Capital less than 0.%n*Paid a dividend -- may need to cut dividend.%n");
 			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					String div = "";
-					if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
-						if (cd.id.dividend.getTtm() > 0.0) {
-							div += "*";
-						}
-						str = this.addStr(cd.ticker + div, str);
+			for (final CompanyData cd : zombieList) {
+				String div = "";
+				if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
+					if (cd.id.dividend.getTtm() > 0.0) {
+						div += "*";
 					}
+					str = this.addStr(cd.ticker + div, str);
 				}
 			}
 			pw.println(str);
 
 			pw.printf("%nList of tickers with negative Cash from Ops and Cash Flow with no Shareholder Equity.%n");
 			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					if ((cd.cashData.cashFromOps.getTtm() < 0.0) && (cd.bsd.equity.getMostRecent() < 0.0)
-					    && (cd.cashFlow < 0.0)) {
-						str = this.addStr(cd.ticker, str);
-					}
+			for (final CompanyData cd : zombieList) {
+				if ((cd.cashData.cashFromOps.getTtm() < 0.0) && (cd.bsd.equity.getMostRecent() < 0.0) && (cd.cashFlow < 0.0)) {
+					str = this.addStr(cd.ticker, str);
 				}
 			}
 			pw.println(str);
 
 			pw.printf("%nList of tickers with big buybacks and an available cash flow deficit.%n");
 			str = "";
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
+			for (final CompanyData cd : zombieList) {
 
-					final double sc = DerivedData.calcShareChange(cd);
-					if (sc < -0.25) {
-						final double fcfwc = cd.freeCashFlow + cd.workingCapital;
-						if ((fcfwc < 0.0) && ((Math.abs(sc) * cd.avgPrice) > Math.abs(fcfwc))) {
-							str = this.addStr(cd.ticker, str);
-						}
+				final double sc = DerivedData.calcShareChange(cd);
+				if (sc < -0.25) {
+					final double fcfwc = cd.freeCashFlow + cd.workingCapital;
+					if ((fcfwc < 0.0) && ((Math.abs(sc) * cd.avgPrice) > Math.abs(fcfwc))) {
+						str = this.addStr(cd.ticker, str);
 					}
 				}
 			}
@@ -667,26 +669,22 @@ public class Reports {
 			pw.println("QoQ : this quarter versus same quarter a year ago.");
 			pw.println("YoY : last 12m versus 12m a year ago.\n\n--------------------------");
 
-			final List<CompanyData> zombieList = new ArrayList<>();
-			for (final CompanyData cd : this.companyList) {
-				if (!cd.sector.equalsIgnoreCase("Financials")) {
-					final String state = this.getState(cd);
-					if (!state.contains("Good shape - no red flags")) {
-						cd.zscore = ZombieScore.calculate(cd);
-						zombieList.add(cd);
-					}
-				}
-			}
-
 			Collections.sort(zombieList, new SortScore());
 
-			for (final CompanyData cd : zombieList) {
+			int knt = 1;
+			try (PrintWriter pwCode = new PrintWriter("out/zombie-list.csv")) {
+				for (final CompanyData cd : zombieList) {
 
-				final String state = this.getState(cd);
-				pw.println("");
-				this.printHeaderData(pw, cd);
-				pw.printf("%s", state);
-				pw.printf("%s%n", cd.zscore);
+					final String state = this.getState(cd);
+					pw.printf("%nRank : %d%n", knt++);
+					this.printHeaderData(pw, cd);
+					pw.printf("%s", state);
+					pw.printf("%s%n", cd.zscore);
+
+					if (cd.zscore.score > 80.0) {
+						pwCode.println(cd.ticker);
+					}
+				}
 			}
 		}
 

@@ -513,4 +513,16 @@ public class DerivedData {
 		return ret;
 	}
 
+	/** 
+	 * net.ajaskey.market.tools.SIP.calc52weekHigh
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calc52weekHigh(CompanyData cd) {
+
+		double d = ((100.0 - cd.pricePercOf52High) / 100.0) + 1.0;
+		return cd.lastPrice * d;
+	}
+
 }
