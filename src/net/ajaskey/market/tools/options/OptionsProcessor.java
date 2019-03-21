@@ -245,7 +245,7 @@ public class OptionsProcessor {
 		final Calendar c = Calendar.getInstance();
 		c.setTime(sdf.parse("20191231"));
 
-		final DataItem di = new DataItem(DataItem.ACALL, 2850.0, 2475.0, c, 0.01, 0.19);
+		final DataItem di = new DataItem(DataItem.ACALL, 2850.0, 2475.0, c, 0.01, 0.19, Calendar.getInstance());
 		System.out.println(di);
 
 		//final double p = di.getPutPrice(1700.0, "20190621", .35);

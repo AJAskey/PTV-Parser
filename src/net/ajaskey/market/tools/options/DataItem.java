@@ -4,6 +4,8 @@ package net.ajaskey.market.tools.options;
 import java.text.ParseException;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.Utils;
+
 public class DataItem {
 
 	// Expiration Date Calls Last Sale Net Bid Ask Vol IV Delta Gamma Open Int
@@ -41,7 +43,7 @@ public class DataItem {
 	double	net;
 	double	bid;
 	double	ask;
-	double	volume;
+	int			volume;
 
 	double	iv;
 	double	oi;
@@ -61,6 +63,7 @@ public class DataItem {
 	int dataType;
 
 	Calendar expiry;
+	Calendar sellDate;
 
 	double price;
 
@@ -73,7 +76,7 @@ public class DataItem {
 	 * @param rate
 	 * @param iv
 	 */
-	public DataItem(int pctype, double currentPrice, double strike, Calendar expiration, double rate, double iv) {
+	public DataItem(int pctype, double currentPrice, double strike, Calendar expiration, double rate, double iv, Calendar selldate) {
 
 		this.dataType = pctype;
 		this.strike = strike;
@@ -87,9 +90,10 @@ public class DataItem {
 		this.bid = 0.0;
 		this.ask = 0.0;
 		this.last = 0.0;
-		this.volume = 0.0;
+		this.volume = 0;
 		this.oi = 0.0;
 		this.yrs = 0.0;
+		this.sellDate = selldate;
 
 		this.delta = 0.0;
 		this.gamma = 0.0;
@@ -97,7 +101,7 @@ public class DataItem {
 		this.rho = 0.0;
 		this.vega = 0.0;
 
-		this.yrs = OptionsProcessor.getDeltaYears(expiration);
+		this.yrs = OptionsProcessor.getDeltaYears(this.sellDate, this.expiry);
 
 		OptionsProcessor.setGreeks(this);
 
@@ -121,7 +125,7 @@ public class DataItem {
 		this.net = Double.parseDouble(fld[ptr++].trim());
 		this.bid = Double.parseDouble(fld[ptr++].trim());
 		this.ask = Double.parseDouble(fld[ptr++].trim());
-		this.volume = Double.parseDouble(fld[ptr++].trim());
+		this.volume = Integer.parseInt(fld[ptr++].trim());
 		this.iv = Double.parseDouble(fld[ptr++].trim());
 		this.delta = Double.parseDouble(fld[ptr++].trim());
 		this.gamma = Double.parseDouble(fld[ptr++].trim());
@@ -165,10 +169,13 @@ public class DataItem {
 	 * @return
 	 * @throws ParseException
 	 */
-	public double getPutPrice(double currentPrice, String date, double ivnew) {
+	public DataItem getPutPrice(double currentPrice, String date, double ivnew) {
 
 		double price = 0.0;
+		DataItem retDi = null;
+
 		try {
+
 			final Calendar c = Calendar.getInstance();
 			c.setTime(OptionsProcessor.sdf.parse(date));
 			final double years = OptionsProcessor.getDeltaYears(c, this.expiry);
@@ -178,12 +185,14 @@ public class DataItem {
 				ivput = ivnew;
 			}
 
-			price = OptionsProcessor.getPutPrice(currentPrice, this.strike, this.rate, years, ivput);
+			retDi = new DataItem(this.dataType, currentPrice, this.strike, this.expiry, this.rate, ivput, c);
+
+			//price = OptionsProcessor.getPutPrice(currentPrice, this.strike, this.rate, years, ivput);
 
 		} catch (final Exception e) {
 			price = -1.0;
 		}
-		return price;
+		return retDi;
 	}
 
 	@Override
@@ -198,21 +207,27 @@ public class DataItem {
 			ret = "Unknown ->" + NL;
 		}
 
-		ret += String.format("\tPrice : %9.2f%n", this.price);
-		ret += String.format("\tYears : %9.2f%n", this.yrs);
+		double days = 365.0 * this.yrs;
 
-		ret += String.format("%n\tid    : %s%n", this.id);
-		ret += String.format("\tlast  : %.2f%n", this.last);
-		ret += String.format("\tnet   : %.2f%n", this.net);
-		ret += String.format("\tbid   : %.2f%n", this.bid);
-		ret += String.format("\task   : %.2f%n", this.ask);
-		ret += String.format("\tvol   : %d%n", (int) this.volume);
-		ret += String.format("\tiv    : %9.4f%n", this.iv);
-		ret += String.format("\tdelta : %9.4f%n", this.delta);
-		ret += String.format("\tgamma : %9.4f%n", this.gamma);
-		ret += String.format("\ttheta : %9.4f%n", this.theta);
-		ret += String.format("\trho   : %9.4f%n", this.rho);
-		ret += String.format("\tvega  : %9.4f%n", this.vega);
+		ret += String.format("\tExpiry : %s%n", Utils.sdf2.format(this.expiry.getTime()));
+		ret += String.format("\tiv     : %9.4f%n", this.iv);
+		ret += String.format("\tdelta  : %9.4f%n", this.delta);
+		ret += String.format("\tgamma  : %9.4f%n", this.gamma);
+		ret += String.format("\ttheta  : %9.4f%n", this.theta);
+		ret += String.format("\trho    : %9.4f%n", this.rho);
+		ret += String.format("\tvega   : %9.4f%n", this.vega);
+		
+		ret += String.format("%n\tPrice of Underlying : %9.4f%n", this.priceOfUnderlying);
+		ret += String.format("\tYears to Expiry     : %9.2f (%d days)%n", this.yrs, (int) days);
+		ret += String.format("\tSell Date           : %s%n", Utils.sdf2.format(this.sellDate.getTime()));
+		ret += String.format("\tPrice               : %9.2f%n", this.price);
+
+//		ret += String.format("%n\tid     : %s%n", this.id);
+//		ret += String.format("\tlast   : %.2f%n", this.last);
+//		ret += String.format("\tnet    : %.2f%n", this.net);
+//		ret += String.format("\tbid    : %.2f%n", this.bid);
+//		ret += String.format("\task    : %.2f%n", this.ask);
+//		ret += String.format("\tvol    : %d%n", this.volume);
 
 		return ret;
 	}
