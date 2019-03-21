@@ -1,3 +1,4 @@
+
 package net.ajaskey.market.tools.options;
 
 import java.text.ParseException;
@@ -8,49 +9,63 @@ public class DataItem {
 	// Expiration Date Calls Last Sale Net Bid Ask Vol IV Delta Gamma Open Int
 	// Strike Puts Last Sale Net Bid Ask Vol IV Delta Gamma Open Int
 
-	final static int APUT = 1;
-	final static int ACALL = 2;
+	final static int	APUT	= 1;
+	final static int	ACALL	= 2;
 
 	final static String NL = "\n";
 
-	String id;
-	double last;
-	double net;
-	double bid;
-	double ask;
-	double volume;
-	double iv;
-	double oi;
+	/**
+	 *
+	 * @param fld
+	 * @return
+	 */
+	public static DataItem setCall(String fld[]) {
 
-	double delta;
-	double gamma;
-	double theta;
-	double rho;
+		final DataItem di = new DataItem(fld, ACALL);
+		return di;
+	}
 
-	double strike;
-	double priceOfUnderlying;
+	/**
+	 *
+	 * @param fld
+	 * @return
+	 */
+	public static DataItem setPut(String fld[]) {
 
-	double rate;
-	double yrs;
+		final DataItem di = new DataItem(fld, APUT);
+		return di;
+	}
+
+	String	id;
+	double	last;
+	double	net;
+	double	bid;
+	double	ask;
+	double	volume;
+
+	double	iv;
+	double	oi;
+
+	double	delta;
+	double	gamma;
+	double	theta;
+	double	rho;
+	double	vega;
+
+	double	strike;
+	double	priceOfUnderlying;
+
+	double	rate;
+	double	yrs;
 
 	int dataType;
+
 	Calendar expiry;
 
 	double price;
 
-	public DataItem klone(DataItem di) {
-		DataItem diret = null;
-		try {
-			diret = (DataItem) di.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-			return null;
-		}
-		return diret;
-	}
-
 	/**
-	 * 
+	 *
 	 * @param pctype
 	 * @param currentPrice
 	 * @param strike
@@ -80,22 +95,26 @@ public class DataItem {
 		this.gamma = 0.0;
 		this.theta = 0.0;
 		this.rho = 0.0;
+		this.vega = 0.0;
 
 		this.yrs = OptionsProcessor.getDeltaYears(expiration);
 
+		OptionsProcessor.setGreeks(this);
+
 		if (pctype == ACALL) {
-			this.price = OptionsProcessor.getCallPrice(this.priceOfUnderlying, this.strike, this.rate, yrs, this.iv);
+			this.price = OptionsProcessor.getCallPrice(this.priceOfUnderlying, this.strike, this.rate, this.yrs, this.iv);
 		} else if (pctype == APUT) {
-			this.price = OptionsProcessor.getPutPrice(this.priceOfUnderlying, this.strike, this.rate, yrs, this.iv);
+			this.price = OptionsProcessor.getPutPrice(this.priceOfUnderlying, this.strike, this.rate, this.yrs, this.iv);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param fld
 	 * @param putcalltype
 	 */
 	private DataItem(String fld[], int putcalltype) {
+
 		int ptr = 0;
 		this.id = fld[ptr++].trim();
 		this.last = Double.parseDouble(fld[ptr++].trim());
@@ -111,67 +130,65 @@ public class DataItem {
 	}
 
 	/**
-	 * 
-	 * @param fld
-	 * @return
-	 */
-	public static DataItem setCall(String fld[]) {
-		DataItem di = new DataItem(fld, ACALL);
-		return di;
-	}
-
-	/**
-	 * 
-	 * @param fld
-	 * @return
-	 */
-	public static DataItem setPut(String fld[]) {
-		DataItem di = new DataItem(fld, APUT);
-		return di;
-	}
-
-	/**
-	 * 
+	 *
 	 * @param currentPrice
 	 * @param date
 	 * @return
 	 * @throws ParseException
 	 */
-	public double getCallPrice(double currentPrice, String date) throws ParseException {
-		double price = 0.0;
-		Calendar c = Calendar.getInstance();
-		c.setTime(OptionsProcessor.sdf.parse(date));
-		double years = OptionsProcessor.getDeltaYears(c, this.expiry);
+	public double getCallPrice(double currentPrice, String date, double ivnew) throws ParseException {
 
-		price = OptionsProcessor.getCallPrice(currentPrice, this.strike, this.rate, years, this.iv);
+		double price = 0.0;
+		try {
+			final Calendar c = Calendar.getInstance();
+			c.setTime(OptionsProcessor.sdf.parse(date));
+			final double years = OptionsProcessor.getDeltaYears(c, this.expiry);
+
+			double ivcall = this.iv;
+			if (ivnew > 0.0) {
+				ivcall = ivnew;
+			}
+
+			price = OptionsProcessor.getCallPrice(currentPrice, this.strike, this.rate, years, ivcall);
+
+		} catch (final Exception e) {
+			price = -1.0;
+		}
 		return price;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param currentPrice
 	 * @param date
 	 * @param ivnew
 	 * @return
 	 * @throws ParseException
 	 */
-	public double getPutPrice(double currentPrice, String date, double ivnew) throws ParseException {
+	public double getPutPrice(double currentPrice, String date, double ivnew) {
+
 		double price = 0.0;
-		Calendar c = Calendar.getInstance();
-		c.setTime(OptionsProcessor.sdf.parse(date));
-		double years = OptionsProcessor.getDeltaYears(c, this.expiry);
+		try {
+			final Calendar c = Calendar.getInstance();
+			c.setTime(OptionsProcessor.sdf.parse(date));
+			final double years = OptionsProcessor.getDeltaYears(c, this.expiry);
 
-		double ivput = this.iv;
-		if (ivnew > 0.0) {
-			ivput = ivnew;
+			double ivput = this.iv;
+			if (ivnew > 0.0) {
+				ivput = ivnew;
+			}
+
+			price = OptionsProcessor.getPutPrice(currentPrice, this.strike, this.rate, years, ivput);
+
+		} catch (final Exception e) {
+			price = -1.0;
 		}
-
-		price = OptionsProcessor.getPutPrice(currentPrice, this.strike, this.rate, years, ivput);
 		return price;
 	}
 
 	@Override
 	public String toString() {
+
 		String ret = "";
 		if (this.dataType == ACALL) {
 			ret = "CALL ->" + NL;
@@ -181,8 +198,8 @@ public class DataItem {
 			ret = "Unknown ->" + NL;
 		}
 
-		ret += String.format("\tPrice : %s%n", this.price);
-		ret += String.format("\tYears : %s%n", this.yrs);
+		ret += String.format("\tPrice : %9.2f%n", this.price);
+		ret += String.format("\tYears : %9.2f%n", this.yrs);
 
 		ret += String.format("%n\tid    : %s%n", this.id);
 		ret += String.format("\tlast  : %.2f%n", this.last);
@@ -190,9 +207,12 @@ public class DataItem {
 		ret += String.format("\tbid   : %.2f%n", this.bid);
 		ret += String.format("\task   : %.2f%n", this.ask);
 		ret += String.format("\tvol   : %d%n", (int) this.volume);
-		ret += String.format("\tiv    : %7.4f%n", this.iv);
-		ret += String.format("\tdelta : %7.4f%n", this.delta);
-		ret += String.format("\tgamma : %7.4f%n", this.gamma);
+		ret += String.format("\tiv    : %9.4f%n", this.iv);
+		ret += String.format("\tdelta : %9.4f%n", this.delta);
+		ret += String.format("\tgamma : %9.4f%n", this.gamma);
+		ret += String.format("\ttheta : %9.4f%n", this.theta);
+		ret += String.format("\trho   : %9.4f%n", this.rho);
+		ret += String.format("\tvega  : %9.4f%n", this.vega);
 
 		return ret;
 	}
