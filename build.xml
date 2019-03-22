@@ -5,6 +5,7 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="PTV-Parser">
     <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../eclipse/java-oxygen/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
@@ -22,24 +23,24 @@
         <pathelement location="lib/apache.poi.314/xmlbeans-2.6.0.jar"/>
         <pathelement location="lib/apache.poi.314/poi-3.14-20160307.jar"/>
         <pathelement location="lib/apache.commons.math/commons-math3-3.5-javadoc.jar"/>
+        <pathelement location="lib/apache.commons-text/commons-text-1.6.jar"/>
+        <pathelement location="lib/apache.commons-lang3/commons-lang3-3.8.1.jar"/>
+        <pathelement location="lib/commons-io-2.6/commons-io-2.6.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="Test">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="lib">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
                 <exclude name="Jdatepicker/"/>
             </fileset>
@@ -85,6 +86,11 @@
             <classpath refid="PTV-Parser.classpath"/>
         </java>
     </target>
+    <target name="CashData">
+        <java classname="net.ajaskey.market.tools.SIP.CashData" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
     <target name="CI">
         <java classname="net.ajaskey.market.tools.consumerindex.CI" failonerror="true" fork="yes">
             <classpath refid="PTV-Parser.classpath"/>
@@ -100,13 +106,34 @@
             <classpath refid="PTV-Parser.classpath"/>
         </java>
     </target>
+    <target name="DataSeriesInfo">
+        <java classname="net.ajaskey.market.tools.fred.DataSeriesInfo" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="FredBookkeeping">
+        <java classname="net.ajaskey.market.tools.fred.FredBookkeeping" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
     <target name="FredDataDownloader">
         <java classname="net.ajaskey.market.tools.fred.FredDataDownloader" failonerror="true" fork="yes">
             <classpath refid="PTV-Parser.classpath"/>
         </java>
     </target>
+    <target name="GetOneSeries">
+        <java classname="net.ajaskey.market.tools.fred.GetOneSeries" failonerror="true" fork="yes">
+            <arg line="CEU0500000001"/>
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
     <target name="Internals">
         <java classname="net.ajaskey.market.ta.apps.Internals" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="Match">
+        <java classname="net.ajaskey.market.misc.Match" failonerror="true" fork="yes">
             <classpath refid="PTV-Parser.classpath"/>
         </java>
     </target>
@@ -157,6 +184,11 @@
     </target>
     <target name="ProcessICI">
         <java classname="net.ajaskey.market.tools.optuma.ProcessICI" failonerror="true" fork="yes">
+            <classpath refid="PTV-Parser.classpath"/>
+        </java>
+    </target>
+    <target name="ProcessIshares">
+        <java classname="net.ajaskey.market.tools.ProcessIshares" failonerror="true" fork="yes">
             <classpath refid="PTV-Parser.classpath"/>
         </java>
     </target>
