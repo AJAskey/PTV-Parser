@@ -1,9 +1,13 @@
 
 package net.ajaskey.market.tools.options;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import net.ajaskey.market.misc.Utils;
 
 /**
  *
@@ -24,6 +28,54 @@ public class OptionsProcessor {
 	private final static double p2 = Math.sqrt(2.0 * Math.PI);
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.options.CalcTimeSeries
+	 *
+	 * @param openDi
+	 * @param days
+	 * @param priceRange
+	 * @param ivRange
+	 * @param filename
+	 * @throws FileNotFoundException
+	 */
+	public static void CalcTimeSeries(DataItem openDi, int days, double priceRange, double ivRange, String filename)
+	    throws FileNotFoundException {
+
+		double chgPerDay = priceRange / (double) days;
+		double ivPerDay = ivRange / (double) days;
+
+		Calendar sellit = Calendar.getInstance();
+		double iv = openDi.iv;
+		double cp = openDi.stockPrice;
+
+		try (PrintWriter pw = new PrintWriter(filename)) {
+
+			for (int i = 0; i < days; i++) {
+
+				sellit.add(Calendar.DATE, 1);
+
+				DataItem di = null;
+
+				if (openDi.dataType == DataItem.ACALL) {
+
+					di = openDi.getCallPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
+					cp += chgPerDay;
+
+				} else if (openDi.dataType == DataItem.APUT) {
+
+					di = openDi.getPutPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
+					cp -= chgPerDay;
+				}
+				iv += ivPerDay;
+
+				if (di != null) pw.println(di);
+
+			}
+		}
+
+	}
 
 	/**
 	 *
@@ -272,11 +324,12 @@ public class OptionsProcessor {
 	public static void setGreeks(DataItem di) {
 
 		try {
-			final double d1 = OptionsProcessor.d1(di.priceOfUnderlying, di.strike, di.rate, di.yrs, di.iv);
-			final double d2 = OptionsProcessor.d2(di.priceOfUnderlying, di.strike, di.rate, di.yrs, di.iv);
+			final double d1 = OptionsProcessor.d1(di.stockPrice, di.strike, di.rate, di.yrs, di.iv);
+			final double d2 = OptionsProcessor.d2(di.stockPrice, di.strike, di.rate, di.yrs, di.iv);
 
 			final double sd1 = OptionsProcessor.standardNormalDistribution(d1);
 			final double cd1 = OptionsProcessor.cumulativeDistribution(d1);
+
 			final double thetaLeft = -(di.strike * sd1 * di.iv) / (2.0 * Math.sqrt(di.yrs));
 
 			if (di.dataType == DataItem.ACALL) {
@@ -285,10 +338,10 @@ public class OptionsProcessor {
 
 				di.delta = cd1;
 
-				final double thetaRight = di.rate * di.priceOfUnderlying * Math.exp(-di.rate * di.yrs) * cd2;
-				di.theta = thetaLeft - thetaRight;
+				final double thetaRight = di.rate * di.strike * Math.exp(-di.rate * di.yrs) * cd2;
+				di.theta = (thetaLeft - thetaRight) / 100.0;
 
-				di.rho = di.priceOfUnderlying * di.yrs * Math.exp(-di.rate * di.yrs) * cd2;
+				di.rho = di.strike * di.yrs * Math.exp(-di.rate * di.yrs) * cd2;
 
 			} else if (di.dataType == DataItem.APUT) {
 
@@ -296,21 +349,20 @@ public class OptionsProcessor {
 
 				di.delta = cd1 - 1.0;
 
-				final double thetaRight = di.rate * di.priceOfUnderlying * Math.exp(-di.rate * di.yrs) * pcd2;
-				di.theta = thetaLeft + thetaRight;
+				final double thetaRight = di.rate * di.strike * Math.exp(-di.rate * di.yrs) * pcd2;
+				di.theta = (thetaLeft + thetaRight) / 100.0;
 
-				di.rho = -di.priceOfUnderlying * di.yrs * Math.exp(-di.rate * di.yrs) * pcd2;
+				di.rho = -di.strike * di.yrs * Math.exp(-di.rate * di.yrs) * pcd2;
 
 			}
 
 			di.gamma = sd1 / (di.strike * di.iv * Math.sqrt(di.yrs));
 
-			di.vega = di.strike * sd1 * Math.sqrt(di.yrs);
+			di.vega = di.strike * sd1 * Math.sqrt(di.yrs) / 100.0;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**

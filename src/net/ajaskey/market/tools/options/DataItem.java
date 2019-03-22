@@ -55,15 +55,15 @@ public class DataItem {
 	double	vega;
 
 	double	strike;
-	double	priceOfUnderlying;
+	double	stockPrice;
 
 	double	rate;
 	double	yrs;
 
 	int dataType;
 
-	Calendar expiry;
-	Calendar sellDate;
+	Calendar	expiry;
+	Calendar	sellDate;
 
 	double price;
 
@@ -76,11 +76,12 @@ public class DataItem {
 	 * @param rate
 	 * @param iv
 	 */
-	public DataItem(int pctype, double currentPrice, double strike, Calendar expiration, double rate, double iv, Calendar selldate) {
+	public DataItem(int pctype, double currentPrice, double strike, Calendar expiration, double rate, double iv,
+	    Calendar selldate) {
 
 		this.dataType = pctype;
 		this.strike = strike;
-		this.priceOfUnderlying = currentPrice;
+		this.stockPrice = currentPrice;
 		this.expiry = expiration;
 		this.rate = rate;
 		this.iv = iv;
@@ -106,9 +107,9 @@ public class DataItem {
 		OptionsProcessor.setGreeks(this);
 
 		if (pctype == ACALL) {
-			this.price = OptionsProcessor.getCallPrice(this.priceOfUnderlying, this.strike, this.rate, this.yrs, this.iv);
+			this.price = OptionsProcessor.getCallPrice(this.stockPrice, this.strike, this.rate, this.yrs, this.iv);
 		} else if (pctype == APUT) {
-			this.price = OptionsProcessor.getPutPrice(this.priceOfUnderlying, this.strike, this.rate, this.yrs, this.iv);
+			this.price = OptionsProcessor.getPutPrice(this.stockPrice, this.strike, this.rate, this.yrs, this.iv);
 		}
 	}
 
@@ -140,25 +141,26 @@ public class DataItem {
 	 * @return
 	 * @throws ParseException
 	 */
-	public double getCallPrice(double currentPrice, String date, double ivnew) throws ParseException {
+	public DataItem getCallPrice(double currentPrice, String date, double ivnew) {
 
-		double price = 0.0;
+		DataItem retDi = null;
+
 		try {
+
 			final Calendar c = Calendar.getInstance();
 			c.setTime(OptionsProcessor.sdf.parse(date));
-			final double years = OptionsProcessor.getDeltaYears(c, this.expiry);
 
-			double ivcall = this.iv;
+			double ivput = this.iv;
 			if (ivnew > 0.0) {
-				ivcall = ivnew;
+				ivput = ivnew;
 			}
 
-			price = OptionsProcessor.getCallPrice(currentPrice, this.strike, this.rate, years, ivcall);
+			retDi = new DataItem(this.dataType, currentPrice, this.strike, this.expiry, this.rate, ivput, c);
 
 		} catch (final Exception e) {
 			price = -1.0;
 		}
-		return price;
+		return retDi;
 	}
 
 	/**
@@ -171,14 +173,12 @@ public class DataItem {
 	 */
 	public DataItem getPutPrice(double currentPrice, String date, double ivnew) {
 
-		double price = 0.0;
 		DataItem retDi = null;
 
 		try {
 
 			final Calendar c = Calendar.getInstance();
 			c.setTime(OptionsProcessor.sdf.parse(date));
-			final double years = OptionsProcessor.getDeltaYears(c, this.expiry);
 
 			double ivput = this.iv;
 			if (ivnew > 0.0) {
@@ -186,8 +186,6 @@ public class DataItem {
 			}
 
 			retDi = new DataItem(this.dataType, currentPrice, this.strike, this.expiry, this.rate, ivput, c);
-
-			//price = OptionsProcessor.getPutPrice(currentPrice, this.strike, this.rate, years, ivput);
 
 		} catch (final Exception e) {
 			price = -1.0;
@@ -214,20 +212,20 @@ public class DataItem {
 		ret += String.format("\tdelta  : %9.4f%n", this.delta);
 		ret += String.format("\tgamma  : %9.4f%n", this.gamma);
 		ret += String.format("\ttheta  : %9.4f%n", this.theta);
-		ret += String.format("\trho    : %9.4f%n", this.rho);
+		//ret += String.format("\trho    : %9.4f%n", this.rho);
 		ret += String.format("\tvega   : %9.4f%n", this.vega);
-		
-		ret += String.format("%n\tPrice of Underlying : %9.4f%n", this.priceOfUnderlying);
+
+		ret += String.format("%n\tPrice of Underlying : %9.4f%n", this.stockPrice);
 		ret += String.format("\tYears to Expiry     : %9.2f (%d days)%n", this.yrs, (int) days);
 		ret += String.format("\tSell Date           : %s%n", Utils.sdf2.format(this.sellDate.getTime()));
 		ret += String.format("\tPrice               : %9.2f%n", this.price);
 
-//		ret += String.format("%n\tid     : %s%n", this.id);
-//		ret += String.format("\tlast   : %.2f%n", this.last);
-//		ret += String.format("\tnet    : %.2f%n", this.net);
-//		ret += String.format("\tbid    : %.2f%n", this.bid);
-//		ret += String.format("\task    : %.2f%n", this.ask);
-//		ret += String.format("\tvol    : %d%n", this.volume);
+		//		ret += String.format("%n\tid     : %s%n", this.id);
+		//		ret += String.format("\tlast   : %.2f%n", this.last);
+		//		ret += String.format("\tnet    : %.2f%n", this.net);
+		//		ret += String.format("\tbid    : %.2f%n", this.bid);
+		//		ret += String.format("\task    : %.2f%n", this.ask);
+		//		ret += String.format("\tvol    : %d%n", this.volume);
 
 		return ret;
 	}

@@ -41,41 +41,49 @@ public class ProcessOptions {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException {
 
-		final Calendar c = Calendar.getInstance();
-		final Calendar sellit = Calendar.getInstance();
+		double cp = 2822.0;
+		double iv = 0.24;
 
-		try (PrintWriter pw = new PrintWriter("out/options.out")) {
+		Calendar c = Calendar.getInstance();
+		DataItem di = new DataItem(DataItem.APUT, cp, 2200.0, c, 0.01, iv, c);
+		
+		OptionsProcessor.CalcTimeSeries(di, 90, 900, .15, "out/opt.out");
 
-			c.setTime(OptionsProcessor.sdf.parse("20190816"));
-			//sellit.setTime(OptionsProcessor.sdf.parse("20190416"));
-
-			double cp = 2822.0;
-			double iv = 0.24;
-
-			final DataItem di = new DataItem(DataItem.APUT, cp, 2200.0, c, 0.01, iv, sellit);
-			pw.println(di);
-
-			double downrng = 900.0;
-			double downtime = 90;
-			double downperday = downrng / downtime;
-
-			double ivrng = 0.15;
-			double ivperday = ivrng / downtime;
-
-			for (int i = 0; i < (int) downtime; i++) {
-
-				sellit.add(Calendar.DATE, 1);
-				cp -= downperday;
-
-				DataItem di2 = di.getPutPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
-
-				iv += ivperday;
-
-				pw.println(di2);
-				//pw.printf("%.2f%n",iv);
-			}
-
-		}
+		//		final Calendar c = Calendar.getInstance();
+		//		final Calendar sellit = Calendar.getInstance();
+		//
+		//		try (PrintWriter pw = new PrintWriter("out/options.out")) {
+		//
+		//			c.setTime(OptionsProcessor.sdf.parse("20190816"));
+		//			//sellit.setTime(OptionsProcessor.sdf.parse("20190416"));
+		//
+		//			double cp = 2822.0;
+		//			double iv = 0.24;
+		//
+		//			final DataItem di = new DataItem(DataItem.APUT, cp, 2200.0, c, 0.01, iv, sellit);
+		//			pw.println(di);
+		//
+		//			double downrng = 900.0;
+		//			double downtime = 90;
+		//			double downperday = downrng / downtime;
+		//
+		//			double ivrng = 0.15;
+		//			double ivperday = ivrng / downtime;
+		//
+		//			for (int i = 0; i < (int) downtime; i++) {
+		//
+		//				sellit.add(Calendar.DATE, 1);
+		//				cp -= downperday;
+		//
+		//				DataItem di2 = di.getPutPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
+		//
+		//				iv += ivperday;
+		//
+		//				pw.println(di2);
+		//				//pw.printf("%.2f%n",iv);
+		//			}
+		//
+		//		}
 		//final double p = di.getPutPrice(1700.0, "20190621", .35);
 		//System.out.println(p);
 
