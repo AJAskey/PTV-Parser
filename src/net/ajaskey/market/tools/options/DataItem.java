@@ -1,18 +1,28 @@
 
 package net.ajaskey.market.tools.options;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.tools.SIP.CompanyData;
+import net.ajaskey.market.tools.SIP.IncomeData;
 
 public class DataItem {
 
 	// Expiration Date Calls Last Sale Net Bid Ask Vol IV Delta Gamma Open Int
 	// Strike Puts Last Sale Net Bid Ask Vol IV Delta Gamma Open Int
 
-	final static int	APUT	= 1;
-	final static int	ACALL	= 2;
+	final static int	APUT				= 1;
+	final static int	ACALL				= 2;
+	final static int	ALLOPTIONS	= 3;
 
 	final static String NL = "\n";
 
@@ -113,26 +123,7 @@ public class DataItem {
 		}
 	}
 
-	/**
-	 *
-	 * @param fld
-	 * @param putcalltype
-	 */
-	private DataItem(String fld[], int putcalltype) {
 
-		int ptr = 0;
-		this.id = fld[ptr++].trim();
-		this.last = Double.parseDouble(fld[ptr++].trim());
-		this.net = Double.parseDouble(fld[ptr++].trim());
-		this.bid = Double.parseDouble(fld[ptr++].trim());
-		this.ask = Double.parseDouble(fld[ptr++].trim());
-		this.volume = Integer.parseInt(fld[ptr++].trim());
-		this.iv = Double.parseDouble(fld[ptr++].trim());
-		this.delta = Double.parseDouble(fld[ptr++].trim());
-		this.gamma = Double.parseDouble(fld[ptr++].trim());
-		this.oi = Double.parseDouble(fld[ptr++].trim());
-		this.dataType = putcalltype;
-	}
 
 	/**
 	 *
@@ -191,6 +182,48 @@ public class DataItem {
 			price = -1.0;
 		}
 		return retDi;
+	}
+
+	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+
+
+	/**
+	 * net.ajaskey.market.tools.options.readOptionData
+	 *
+	 * @param string
+	 * @return
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static List<DataItem> readOptionData(String filename, int optionType)
+	    throws FileNotFoundException, IOException {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+
+			String header1 = reader.readLine();
+			String header2 = reader.readLine();
+			System.out.println(header1);
+			System.out.println(header2);
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+
+					String fld[] = str.split(",");
+
+					try {
+						Date d = sdf.parse(fld[0].trim());
+						Calendar c = Calendar.getInstance();
+						c.setTime(d);
+						//System.out.println(sdf.format(c.getTime()));
+					} catch (Exception e) {
+					}
+
+				}
+			}
+		}
+		return null;
 	}
 
 	@Override

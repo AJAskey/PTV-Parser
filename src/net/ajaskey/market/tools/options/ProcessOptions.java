@@ -41,13 +41,16 @@ public class ProcessOptions {
 	 */
 	public static void main(String[] args) throws ParseException, FileNotFoundException {
 
-		double cp = 2822.0;
+		double cp = 1503.0;
 		double iv = 0.24;
 
 		Calendar c = Calendar.getInstance();
-		DataItem di = new DataItem(DataItem.APUT, cp, 2200.0, c, 0.01, iv, c);
+		c.set(2019, Calendar.SEPTEMBER, 21);
 		
-		OptionsProcessor.CalcTimeSeries(di, 90, 900, .15, "out/opt.out");
+		
+		DataItem di = new DataItem(DataItem.APUT, cp, 1300.0, c, 0.01, iv, c);
+		
+		OptionsProcessor.CalcTimeSeries(di, 90, 500, .15, "out/opt.out");
 
 		//		final Calendar c = Calendar.getInstance();
 		//		final Calendar sellit = Calendar.getInstance();
