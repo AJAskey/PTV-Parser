@@ -119,7 +119,7 @@ public class GenerateTests {
 		}
 
 		String randoop1 = "java -cp c:/dev/randoop/randoop-all-4.1.1.jar;c:/dev/PTV-Investing/bin randoop.main.Main gentests --junit-output-dir=c:/dev/PTV-Investing/Test";
-		String randoop4 = String.format("--log=randoop.log --time-limit=15 --flaky-test-behavior=DISCARD");
+		String randoop4 = String.format("--log=C:/Dev/PTV-Investing/src/net/ajaskey/randoop/randoop.log --time-limit=60 --flaky-test-behavior=DISCARD");
 
 		for (PackageData pd : packageList) {
 			String fname = pd.fullpath + "/classlist.txt";
