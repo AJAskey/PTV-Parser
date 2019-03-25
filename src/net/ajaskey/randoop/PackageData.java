@@ -39,21 +39,24 @@ public class PackageData {
 	public PackageData(String pkg) {
 
 		this.packageName = pkg;
+		this.fullpath = "";
 		this.classNames = new ArrayList<>();
 	}
 
 	String				packageName;
+	String				fullpath;
 	List<String>	classNames;
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-	
+
 		String ret = this.packageName;
+		ret += "\n\t" + this.fullpath;
 		for (String s : this.classNames) {
-			ret += "\n\t"+s;
+			ret += "\n\t" + s;
 		}
 		return ret;
 	}

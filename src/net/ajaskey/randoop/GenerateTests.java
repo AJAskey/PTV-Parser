@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,6 +52,8 @@ public class GenerateTests {
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
+		//System.out.println(randoop);
+
 		final File folder = new File("src/");
 		final Set<String> uniqPackages = new HashSet<>();
 
@@ -82,8 +85,14 @@ public class GenerateTests {
 		}
 
 		for (PackageData pd : packageList) {
+
 			String fname = "src/" + pd.packageName.replace(".", "/");
 			File dir = new File(fname);
+
+			//Only need to set the path once per package
+			if (pd.fullpath.length() == 0) {
+				pd.fullpath = dir.getAbsolutePath();
+			}
 
 			List<File> javaFiles = (List<File>) FileUtils.listFiles(dir, ext, false);
 
@@ -108,8 +117,26 @@ public class GenerateTests {
 				}
 			}
 		}
-		
+
+		String randoop1 = "java -cp c:/dev/randoop/randoop-all-4.1.1.jar;c:/dev/PTV-Investing/bin randoop.main.Main gentests --junit-output-dir=c:/dev/PTV-Investing/Test";
+		String randoop4 = String.format("--log=randoop.log --time-limit=15 --flaky-test-behavior=DISCARD");
+
 		for (PackageData pd : packageList) {
+			String fname = pd.fullpath + "/classlist.txt";
+			try (PrintWriter pw = new PrintWriter(fname)) {
+				for (String s : pd.classNames) {
+					pw.println(pd.packageName + "." + s);
+				}
+			}
+
+			String randoop2 = String.format("--classlist=%s", fname);
+			String randoop3 = String.format("--junit-package-name=%s", pd.packageName);
+
+			try (PrintWriter pw = new PrintWriter(pd.fullpath + "/gentests.bat")) {
+
+				pw.printf("%s %s %s %s%n", randoop1, randoop2, randoop3, randoop4);
+
+			}
 			System.out.println(pd);
 		}
 
