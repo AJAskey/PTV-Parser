@@ -407,7 +407,8 @@ public class Reports {
 			    QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 13));
 		}
 
-		pw.printf("%n\tLast Price          : %s : (52wkHi= %.2f)%n", QuarterlyData.fmt(cd.lastPrice, 11), cd.high52wk);
+		pw.printf("%n\tLast Price          : %s : (52wkHi= %.2f %%offHigh=%d%%)%n", QuarterlyData.fmt(cd.lastPrice, 11),
+		    cd.high52wk, (int) cd.pricePercOff52High);
 		pw.printf("\tPE                  : %s%n", QuarterlyData.fmt(cd.pe, 11));
 		pw.printf("\tOp Margin           : %s%%%n", QuarterlyData.fmt(cd.opMargin, 11));
 		pw.printf("\tNet Margin          : %s%%%n", QuarterlyData.fmt(cd.netMargin, 11));
@@ -429,6 +430,8 @@ public class Reports {
 	public void WriteBestFinancial() throws FileNotFoundException {
 
 		Utils.makeDir("out/CompanyReports");
+
+		final List<CompanyData> bestList = new ArrayList<>();
 
 		/**
 		 *
@@ -525,11 +528,19 @@ public class Reports {
 				pw.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
 				pw.println();
 
+				bestList.add(cd);
+
 				knt++;
 
 			}
 		}
 		System.out.printf("Total Best Companies found : %d%n", knt);
+
+		try (PrintWriter pw = new PrintWriter("out/best-list.txt")) {
+			for (final CompanyData cd : bestList) {
+				pw.printf(" $%s", cd.ticker);
+			}
+		}
 
 	}
 
@@ -672,7 +683,7 @@ public class Reports {
 			Collections.sort(zombieList, new SortScore());
 
 			int knt = 1;
-			try (PrintWriter pwCode = new PrintWriter("out/zombie-list.csv")) {
+			try (PrintWriter pwCode = new PrintWriter("out/zombie-list.txt")) {
 				for (final CompanyData cd : zombieList) {
 
 					final String state = this.getState(cd);
@@ -682,7 +693,11 @@ public class Reports {
 					pw.printf("%s%n", cd.zscore);
 
 					if (cd.zscore.score > 80.0) {
-						pwCode.println(cd.ticker);
+						pwCode.printf(" $%s", cd.ticker);
+					}
+
+					if (knt > 100) {
+						break;
 					}
 				}
 			}

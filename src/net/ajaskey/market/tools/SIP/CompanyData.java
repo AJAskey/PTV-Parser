@@ -330,7 +330,7 @@ public class CompanyData {
 						}
 						cd.lastPrice = QuarterlyData.parseDouble(fld[4].trim());
 						cd.avgPrice = QuarterlyData.parseDouble(fld[5].trim());
-						cd.pricePercOf52High = QuarterlyData.parseDouble(fld[6].trim());
+						cd.high52wk = QuarterlyData.parseDouble(fld[6].trim());
 						cd.insiders = QuarterlyData.parseDouble(fld[7].trim());
 						cd.inst = QuarterlyData.parseDouble(fld[8].trim());
 						cd.adv = (int) QuarterlyData.parseDouble(fld[9].trim()) * 1000;
@@ -352,7 +352,7 @@ public class CompanyData {
 							cd.turnover = (cd.floatShares * 1000000.0) / cd.adv;
 						}
 
-						double shr = cd.shares.getTtm();
+						final double shr = cd.shares.getTtm();
 						if ((shr == 0.0) && (cd.id.eps.getMostRecent() != 0.0)) {
 							cd.shares.q1 = Math.abs(cd.id.netIncome.getMostRecent() / cd.id.eps.getMostRecent());
 						}
@@ -378,8 +378,8 @@ public class CompanyData {
 						cd.workingCapital = DerivedData.calcWorkingCapital(cd);
 						cd.netCashFlow = DerivedData.calcNetCashFlow(cd);
 						cd.totalCashFlow = DerivedData.calcTotalCashFlow(cd);
-						
-						cd.high52wk = DerivedData.calc52weekHigh(cd);
+
+						cd.pricePercOff52High = DerivedData.calc52weekHighPercent(cd);
 
 						//cd.zd.calc(cd);
 
@@ -469,7 +469,7 @@ public class CompanyData {
 
 	public double	lastPrice;
 	public double	avgPrice;
-	public double	pricePercOf52High;
+	public double	pricePercOff52High;
 
 	// derived data
 	public double	pe;
@@ -498,7 +498,7 @@ public class CompanyData {
 	public double	totalCashFlow;
 
 	public double high52wk;
-	
+
 	public ZombieScore zscore;
 
 	//public ZombieData zd;
@@ -534,7 +534,7 @@ public class CompanyData {
 
 		this.lastPrice = 0.0;
 		this.avgPrice = 0.0;
-		this.pricePercOf52High = 0.0;
+		this.pricePercOff52High = 0.0;
 		this.pe = 0.0;
 		this.psales = 0.0;
 		this.opMargin = 0.0;
@@ -558,7 +558,7 @@ public class CompanyData {
 		this.workingCapital = 0.0;
 		this.netCashFlow = 0.0;
 		this.totalCashFlow = 0.0;
-		
+
 		this.high52wk = 0.0;
 
 		//this.zd = new ZombieData();

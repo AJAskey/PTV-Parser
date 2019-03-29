@@ -29,7 +29,7 @@ package net.ajaskey.market.tools.SIP;
 public class ZombieScore {
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.SIP.calculate
 	 *
 	 * @param cd
@@ -39,30 +39,31 @@ public class ZombieScore {
 
 		final ZombieScore zc = new ZombieScore();
 
-		double margin = 0.0;
-		double interest = 0.0;
-		double eqPercent = 0.0;
-		double ltdtoe = 0.0;
-
 		double d = 0.0;
 		double scr = 0;
 
 		if (cd.id.sales.getMostRecent() > 0.0) {
+
 			if (cd.ticker.equalsIgnoreCase("SPWR")) {
 				//System.out.println(cd);
 			}
+
 			if (cd.opMargin < 0) {
 				d = Math.abs(cd.opMargin + cd.netMargin) / 10.0;
-				margin = Math.min(d, 35.0);
+				final double margin = Math.min(d, 35.0);
 				scr += margin;
 				zc.margin = margin;
 			}
 
-			interest = Math.min(cd.interestRate, 35.0);
+			final double interest = Math.min(cd.interestRate, 35.0);
 			scr += interest;
 			zc.interest = interest;
 
 			if (cd.marketCap > 0.0) {
+
+				double ltdtoe = 0.0;
+				double eqPercent = 0.0;
+
 				d = (cd.bsd.equity.getMostRecent() / cd.marketCap) * 100.0;
 				if (d < 0.0) {
 					eqPercent = Math.abs(Math.max(d, -30.0));
@@ -81,10 +82,9 @@ public class ZombieScore {
 				} else if (cd.bsd.ltDebt.getMostRecent() > 0.0) {
 					ltdtoe = 5;
 				}
+				zc.ltDebt = ltdtoe;
+				scr += ltdtoe;
 			}
-
-			zc.ltDebt = ltdtoe;
-			scr += ltdtoe;
 
 			d = cd.cashData.cashFromOps.getTtm() + cd.workingCapital;
 			if ((d < 0.0) && (cd.marketCap > 0.0)) {
@@ -100,28 +100,28 @@ public class ZombieScore {
 			}
 
 			if (cd.shares.dd.qoqGrowth < 0.0) {
-				zc.shares = Math.min(Math.abs(cd.shares.dd.qoqGrowth), 10.0);
+				zc.shares = Math.min(Math.abs(cd.shares.dd.qoqGrowth * 2.5), 15.0);
 				scr += zc.shares;
 			}
 
 			zc.growth3y = cd.opInc3yrGrowth;
 			if (cd.opInc3yrGrowth < 0.0) {
-				zc.growth = Math.min(Math.abs(cd.opInc3yrGrowth), 20);
+				zc.growth = Math.min(Math.abs(cd.opInc3yrGrowth), 35.0);
 				scr += zc.growth;
 			}
 
-			if (cd.lastPrice > 20.0) {
-				d = Math.min(cd.lastPrice, 35.0) - 10.0;
-			} else {
-				d = -2.0 * (20.0 - cd.lastPrice);
+			//Less weight to low cost stocks
+			if (cd.lastPrice < 10.0) {
+				zc.price = -35.0;
+				scr += zc.price;
 			}
-			zc.price = d;
-			scr += zc.price;
 
-			if (cd.lastPrice > 20.0) {
-				if (cd.pricePercOf52High <= 70.0) {
-					d = (cd.pricePercOf52High - 20.0) / 2.0;
-					zc.price52High = Math.abs(d);
+			if (cd.lastPrice > 10.0) {
+
+				if (cd.pricePercOff52High > 50.0) {
+
+					d = (cd.pricePercOff52High - 50.0) / 2.0;
+					zc.price52High = d;
 					scr += zc.price52High;
 				}
 			}
@@ -180,7 +180,7 @@ public class ZombieScore {
 		ret += String.format("%n\t\tInterest Paid         : %7.2f", this.interest);
 		ret += String.format("%n\t\tLT Debt to Equity     : %7.2f", this.ltDebt);
 		ret += String.format("%n\t\tEquity to MC          : %7.2f", this.equitytoMC);
-		ret += String.format("%n\t\tOpsInc Growth 3Yr     : %7.2f : (%.2f)", this.growth, this.growth3y);
+		ret += String.format("%n\t\tOpsInc Growth 3Yr     : %7.2f : (%.2f%%)", this.growth, this.growth3y);
 		ret += String.format("%n\t\tShare Decline         : %7.2f", this.shares);
 		ret += String.format("%n\t\tPrice                 : %7.2f", this.price);
 		ret += String.format("%n\t\tPrice %% of 52wk High  : %7.2f", this.price52High);

@@ -34,6 +34,18 @@ public class DerivedData {
 	final private static double MAX_PE = 275.0;
 
 	/**
+	 * net.ajaskey.market.tools.SIP.calc52weekHigh
+	 *
+	 * @param cd
+	 * @return
+	 */
+	public static double calc52weekHighPercent(CompanyData cd) {
+
+		final double d = ((cd.high52wk - cd.lastPrice) / cd.high52wk) * 100.0;
+		return d;
+	}
+
+	/**
 	 * net.ajaskey.market.tools.SIP.calcCurrAssets
 	 *
 	 * @param cd
@@ -511,18 +523,6 @@ public class DerivedData {
 		ret += TAB + TAB + TAB + "12m Total  : " + QuarterlyData.fmt(this.ttm) + " (avg= "
 		    + QuarterlyData.fmt(this.ttm / 4.0, 1) + ")" + NL;
 		return ret;
-	}
-
-	/** 
-	 * net.ajaskey.market.tools.SIP.calc52weekHigh
-	 *
-	 * @param cd
-	 * @return
-	 */
-	public static double calc52weekHigh(CompanyData cd) {
-
-		double d = ((100.0 - cd.pricePercOf52High) / 100.0) + 1.0;
-		return cd.lastPrice * d;
 	}
 
 }
