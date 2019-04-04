@@ -304,9 +304,9 @@
       PBARLUSDA	Global price of Barley	Annual	U.S. Dollars per Metric Ton -- NSA
       PBARLUSDM	Global price of Barley	Monthly	U.S. Dollars per Metric Ton -- NSA
       PBARLUSDQ	Global price of Barley	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PBEEFUSDA	Global price of Beef	Annual	U.S. Dollars per Metric Ton -- NSA
-      PBEEFUSDM	Global price of Beef	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PBEEFUSDQ	Global price of Beef	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PBEEFUSDA	Global price of Beef	Annual	U.S. Cents per Pound -- NSA
+      PBEEFUSDM	Global price of Beef	Monthly	U.S. Cents per Pound -- NSA
+      PBEEFUSDQ	Global price of Beef	Quarterly	U.S. Cents per Pound -- NSA
       PBEVEINDEXA	Global price of Beverages index	Annual	Index 2005 = 100 -- NSA
       PBEVEINDEXM	Global price of Beverages index	Monthly	Index 2005 = 100 -- NSA
       PBEVEINDEXQ	Global price of Beverages index	Quarterly	Index 2005 = 100 -- NSA
@@ -316,18 +316,18 @@
       PCOCOUSDA	Global price of Cocoa	Annual	U.S. Dollars per Metric Ton -- NSA
       PCOCOUSDM	Global price of Cocoa	Monthly	U.S. Dollars per Metric Ton -- NSA
       PCOCOUSDQ	Global price of Cocoa	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PCOFFOTMUSDA	Global price of Coffee, Other Mild Arabica	Annual	U.S. Dollars per Metric Ton -- NSA
-      PCOFFOTMUSDM	Global price of Coffee, Other Mild Arabica	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PCOFFOTMUSDQ	Global price of Coffee, Other Mild Arabica	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PCOFFROBUSDA	Global price of Coffee, Robustas	Annual	U.S. Dollars per Metric Ton -- NSA
-      PCOFFROBUSDM	Global price of Coffee, Robustas	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PCOFFROBUSDQ	Global price of Coffee, Robustas	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PCOFFOTMUSDA	Global price of Coffee, Other Mild Arabica	Annual	U.S. Cents per Pound -- NSA
+      PCOFFOTMUSDM	Global price of Coffee, Other Mild Arabica	Monthly	U.S. Cents per Pound -- NSA
+      PCOFFOTMUSDQ	Global price of Coffee, Other Mild Arabica	Quarterly	U.S. Cents per Pound -- NSA
+      PCOFFROBUSDA	Global price of Coffee, Robustas	Annual	U.S. Cents per Pound -- NSA
+      PCOFFROBUSDM	Global price of Coffee, Robustas	Monthly	U.S. Cents per Pound -- NSA
+      PCOFFROBUSDQ	Global price of Coffee, Robustas	Quarterly	U.S. Cents per Pound -- NSA
       PCOPPUSDA	Global price of Copper	Annual	U.S. Dollars per Metric Ton -- NSA
       PCOPPUSDM	Global price of Copper	Monthly	U.S. Dollars per Metric Ton -- NSA
       PCOPPUSDQ	Global price of Copper	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PCOTTINDUSDA	Global price of Cotton	Annual	U.S. Dollars per Metric Ton -- NSA
-      PCOTTINDUSDM	Global price of Cotton	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PCOTTINDUSDQ	Global price of Cotton	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PCOTTINDUSDA	Global price of Cotton	Annual	U.S. Cents per Pound -- NSA
+      PCOTTINDUSDM	Global price of Cotton	Monthly	U.S. Cents per Pound -- NSA
+      PCOTTINDUSDQ	Global price of Cotton	Quarterly	U.S. Cents per Pound -- NSA
       PFANDBINDEXA	Global price of Food and beverage index	Annual	Index 2005 = 100 -- NSA
       PFANDBINDEXM	Global price of Food and beverage index	Monthly	Index 2005 = 100 -- NSA
       PFANDBINDEXQ	Global price of Food and beverage index	Quarterly	Index 2005 = 100 -- NSA
@@ -340,27 +340,27 @@
       PGNUTSUSDA	Global price of Groundnuts	Annual	U.S. Dollars per Metric Ton -- NSA
       PGNUTSUSDM	Global price of Groundnuts	Monthly	U.S. Dollars per Metric Ton -- NSA
       PGNUTSUSDQ	Global price of Groundnuts	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PHIDEUSDA	Global price of Hides	Annual	U.S. Dollars per Metric Ton -- NSA
-      PHIDEUSDM	Global price of Hides	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PHIDEUSDQ	Global price of Hides	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PHIDEUSDA	Global price of Hides	Annual	U.S. Cents per Pound -- NSA
+      PHIDEUSDM	Global price of Hides	Monthly	U.S. Cents per Pound -- NSA
+      PHIDEUSDQ	Global price of Hides	Quarterly	U.S. Cents per Pound -- NSA
       PINDUINDEXA	Global price of Industrial Materials index	Annual	Index 2005 = 100 -- NSA
       PINDUINDEXM	Global price of Industrial Materials index	Monthly	Index 2005 = 100 -- NSA
       PINDUINDEXQ	Global price of Industrial Materials index	Quarterly	Index 2005 = 100 -- NSA
       PIORECRUSDA	Global price of Iron Ore	Annual	U.S. Dollars per Metric Ton -- NSA
       PIORECRUSDM	Global price of Iron Ore	Monthly	U.S. Dollars per Metric Ton -- NSA
       PIORECRUSDQ	Global price of Iron Ore	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PLAMBUSDA	Global price of Lamb	Annual	U.S. Dollars per Metric Ton -- NSA
-      PLAMBUSDM	Global price of Lamb	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PLAMBUSDQ	Global price of Lamb	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PLAMBUSDA	Global price of Lamb	Annual	U.S. Cents per Pound -- NSA
+      PLAMBUSDM	Global price of Lamb	Monthly	U.S. Cents per Pound -- NSA
+      PLAMBUSDQ	Global price of Lamb	Quarterly	U.S. Cents per Pound -- NSA
       PLEADUSDA	Global price of Lead	Annual	U.S. Dollars per Metric Ton -- NSA
       PLEADUSDM	Global price of Lead	Monthly	U.S. Dollars per Metric Ton -- NSA
       PLEADUSDQ	Global price of Lead	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PLOGOREUSDA	Global price of Soft Logs	Annual	U.S. Dollars per Metric Ton -- NSA
-      PLOGOREUSDM	Global price of Soft Logs	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PLOGOREUSDQ	Global price of Soft Logs	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PLOGSKUSDA	Global price of Hard Logs, Import Price Japan	Annual	U.S. Dollars per Metric Ton -- NSA
-      PLOGSKUSDM	Global price of Hard Logs, Import Price Japan	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PLOGSKUSDQ	Global price of Hard Logs, Import Price Japan	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PLOGOREUSDA	Global price of Soft Logs	Annual	U.S. Dollars per Cubic Meter -- NSA
+      PLOGOREUSDM	Global price of Soft Logs	Monthly	U.S. Dollars per Cubic Meter -- NSA
+      PLOGOREUSDQ	Global price of Soft Logs	Quarterly	U.S. Dollars per Cubic Meter -- NSA
+      PLOGSKUSDA	Global price of Hard Logs, Import Price Japan	Annual	U.S. Dollars per Cubic Meter -- NSA
+      PLOGSKUSDM	Global price of Hard Logs, Import Price Japan	Monthly	U.S. Dollars per Cubic Meter -- NSA
+      PLOGSKUSDQ	Global price of Hard Logs, Import Price Japan	Quarterly	U.S. Dollars per Cubic Meter -- NSA
       PMAIZMTUSDA	Global price of Corn	Annual	U.S. Dollars per Metric Ton -- NSA
       PMAIZMTUSDM	Global price of Corn	Monthly	U.S. Dollars per Metric Ton -- NSA
       PMAIZMTUSDQ	Global price of Corn	Quarterly	U.S. Dollars per Metric Ton -- NSA
@@ -373,9 +373,9 @@
       PNGASEUUSDA	Global price of Natural gas, EU	Annual	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASEUUSDM	Global price of Natural gas, EU	Monthly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASEUUSDQ	Global price of Natural gas, EU	Quarterly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
-      PNGASJPUSDA	Global price of LNG, Asia	Annual	U.S. Dollars per Metric Ton -- NSA
+      PNGASJPUSDA	Global price of LNG, Asia	Annual	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASJPUSDM	Global price of LNG, Asia	Monthly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
-      PNGASJPUSDQ	Global price of LNG, Asia	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PNGASJPUSDQ	Global price of LNG, Asia	Quarterly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASUSUSDA	Global price of Natural Gas, US Henry Hub Gas	Annual	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASUSUSDM	Global price of Natural Gas, US Henry Hub Gas	Monthly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
       PNGASUSUSDQ	Global price of Natural Gas, US Henry Hub Gas	Quarterly	U.S. Dollars per Million Metric British Thermal Unit -- NSA
@@ -409,12 +409,12 @@
       PPOILUSDA	Global price of Palm Oil	Annual	U.S. Dollars per Metric Ton -- NSA
       PPOILUSDM	Global price of Palm Oil	Monthly	U.S. Dollars per Metric Ton -- NSA
       PPOILUSDQ	Global price of Palm Oil	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PPORKUSDA	Global price of Swine	Annual	U.S. Dollars per Metric Ton -- NSA
-      PPORKUSDM	Global price of Swine	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PPORKUSDQ	Global price of Swine	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PPOULTUSDA	Global price of Poultry	Annual	U.S. Dollars per Metric Ton -- NSA
-      PPOULTUSDM	Global price of Poultry	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PPOULTUSDQ	Global price of Poultry	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PPORKUSDA	Global price of Swine	Annual	U.S. Cents per Pound -- NSA
+      PPORKUSDM	Global price of Swine	Monthly	U.S. Cents per Pound -- NSA
+      PPORKUSDQ	Global price of Swine	Quarterly	U.S. Cents per Pound -- NSA
+      PPOULTUSDA	Global price of Poultry	Annual	U.S. Cents per Pound -- NSA
+      PPOULTUSDM	Global price of Poultry	Monthly	U.S. Cents per Pound -- NSA
+      PPOULTUSDQ	Global price of Poultry	Quarterly	U.S. Cents per Pound -- NSA
       PRAWMINDEXA	Global price of Agr. Raw Material Index	Annual	Index 2005 = 100 -- NSA
       PRAWMINDEXM	Global price of Agr. Raw Material Index	Monthly	Index 2005 = 100 -- NSA
       PRAWMINDEXQ	Global price of Agr. Raw Material Index	Quarterly	Index 2005 = 100 -- NSA
@@ -430,15 +430,15 @@
       PSALMUSDA	Global price of Fish	Annual	U.S. Dollars per Metric Ton -- NSA
       PSALMUSDM	Global price of Fish	Monthly	U.S. Dollars per Metric Ton -- NSA
       PSALMUSDQ	Global price of Fish	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PSAWMALUSDA	Global price of Hard Sawnwood, Dark Red Meranti	Annual	U.S. Dollars per Metric Ton -- NSA
-      PSAWMALUSDM	Global price of Hard Sawnwood, Dark Red Meranti	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PSAWMALUSDQ	Global price of Hard Sawnwood, Dark Red Meranti	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PSAWMALUSDA	Global price of Hard Sawnwood, Dark Red Meranti	Annual	U.S. Dollars per Cubic Meter -- NSA
+      PSAWMALUSDM	Global price of Hard Sawnwood, Dark Red Meranti	Monthly	U.S. Dollars per Cubic Meter -- NSA
+      PSAWMALUSDQ	Global price of Hard Sawnwood, Dark Red Meranti	Quarterly	U.S. Dollars per Cubic Meter -- NSA
       PSAWOREUSDA	Global price of Soft Sawnwood, Average of Softwoods,	Annual	U.S. Dollars per Metric Ton -- NSA
       PSAWOREUSDM	Global price of Soft Sawnwood, Average of Softwoods,	Monthly	U.S. Dollars per Metric Ton -- NSA
       PSAWOREUSDQ	Global price of Soft Sawnwood, Average of Softwoods,	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PSHRIUSDA	Global price of Shrimp	Annual	U.S. Dollars per Metric Ton -- NSA
-      PSHRIUSDM	Global price of Shrimp	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PSHRIUSDQ	Global price of Shrimp	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PSHRIUSDA	Global price of Shrimp	Annual	U.S. Dollars per Kilogram -- NSA
+      PSHRIUSDM	Global price of Shrimp	Monthly	U.S. Dollars per Kilogram -- NSA
+      PSHRIUSDQ	Global price of Shrimp	Quarterly	U.S. Dollars per Kilogram -- NSA
       PSMEAUSDA	Global price of Soybean Meal	Annual	U.S. Dollars per Metric Ton -- NSA
       PSMEAUSDM	Global price of Soybean Meal	Monthly	U.S. Dollars per Metric Ton -- NSA
       PSMEAUSDQ	Global price of Soybean Meal	Quarterly	U.S. Dollars per Metric Ton -- NSA
@@ -460,9 +460,9 @@
       PSUNOUSDA	Global price of Sunflower Oil	Annual	U.S. Dollars per Metric Ton -- NSA
       PSUNOUSDM	Global price of Sunflower Oil	Monthly	U.S. Dollars per Metric Ton -- NSA
       PSUNOUSDQ	Global price of Sunflower Oil	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PTEAUSDA	Global price of Tea, Kenyan	Annual	U.S. Dollars per Metric Ton -- NSA
-      PTEAUSDM	Global price of Tea, Kenyan	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PTEAUSDQ	Global price of Tea, Kenyan	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PTEAUSDA	Global price of Tea, Kenyan	Annual	U.S. Cents per Kilogram -- NSA
+      PTEAUSDM	Global price of Tea, Kenyan	Monthly	U.S. Cents per Kilogram -- NSA
+      PTEAUSDQ	Global price of Tea, Kenyan	Quarterly	U.S. Cents per Kilogram -- NSA
       PTINUSDA	Global price of Tin	Annual	U.S. Dollars per Metric Ton -- NSA
       PTINUSDM	Global price of Tin	Monthly	U.S. Dollars per Metric Ton -- NSA
       PTINUSDQ	Global price of Tin	Quarterly	U.S. Dollars per Metric Ton -- NSA
@@ -472,15 +472,32 @@
       PWHEAMTUSDA	Global price of Wheat	Annual	U.S. Dollars per Metric Ton -- NSA
       PWHEAMTUSDM	Global price of Wheat	Monthly	U.S. Dollars per Metric Ton -- NSA
       PWHEAMTUSDQ	Global price of Wheat	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PWOOLCUSDA	Global price of Wool, Coarse	Annual	U.S. Dollars per Metric Ton -- NSA
-      PWOOLCUSDM	Global price of Wool, Coarse	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PWOOLCUSDQ	Global price of Wool, Coarse	Quarterly	U.S. Dollars per Metric Ton -- NSA
-      PWOOLFUSDA	Global price of Wool, Fine	Annual	U.S. Dollars per Metric Ton -- NSA
-      PWOOLFUSDM	Global price of Wool, Fine	Monthly	U.S. Dollars per Metric Ton -- NSA
-      PWOOLFUSDQ	Global price of Wool, Fine	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      PWOOLCUSDA	Global price of Wool, Coarse	Annual	U.S. Cents per Kilogram -- NSA
+      PWOOLCUSDM	Global price of Wool, Coarse	Monthly	U.S. Cents per Kilogram -- NSA
+      PWOOLCUSDQ	Global price of Wool, Coarse	Quarterly	U.S. Cents per Kilogram -- NSA
+      PWOOLFUSDA	Global price of Wool, Fine	Annual	U.S. Cents per Kilogram -- NSA
+      PWOOLFUSDM	Global price of Wool, Fine	Monthly	U.S. Cents per Kilogram -- NSA
+      PWOOLFUSDQ	Global price of Wool, Fine	Quarterly	U.S. Cents per Kilogram -- NSA
       PZINCUSDA	Global price of Zinc	Annual	U.S. Dollars per Metric Ton -- NSA
       PZINCUSDM	Global price of Zinc	Monthly	U.S. Dollars per Metric Ton -- NSA
       PZINCUSDQ	Global price of Zinc	Quarterly	U.S. Dollars per Metric Ton -- NSA
+      SLVPRAUD	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Australian Dollars	Daily	Australian Dollars per Troy Ounce -- NSA
+      SLVPRCAD	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Canadian Dollars	Daily	Canadian Dollars per Troy Ounce -- NSA
+      SLVPRCHF	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Swiss Francs	Daily	Swiss Francs per Troy Ounce -- NSA
+      SLVPRCNH	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Chinese Offshore Yuans	Daily	Chinese Yuans per Troy Ounce -- NSA
+      SLVPRCNY	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Chinese Onshore Yuans	Daily	Chinese Yuans per Troy Ounce -- NSA
+      SLVPREUR	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Euros	Daily	Euros per Troy Ounce -- NSA
+      SLVPRGBP	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in British Pounds	Daily	British Pounds per Troy Ounce -- NSA
+      SLVPRINR	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Indian Rupees	Daily	Indian Rupee per Troy Ounce -- NSA
+      SLVPRJPY	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Japanese Yen	Daily	Japanese Yen per Troy Ounce -- NSA
+      SLVPRMYR	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Malaysian Ringgits	Daily	Malaysian Ringgits per Troy Ounce -- NSA
+      SLVPRRUB	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Russian Rubles	Daily	Russian Rubles per Troy Ounce -- NSA
+      SLVPRSGD	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Singapore Dollars	Daily	Singapore Dollars per Troy Ounce -- NSA
+      SLVPRTHB	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Thailand Bahts	Daily	Thailand Bahts per Troy Ounce -- NSA
+      SLVPRTRY	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in Turkish Liras	Daily	Turkish Liras per Troy Ounce -- NSA
+      SLVPRTWD	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in New Taiwan Dollars	Daily	New Taiwan Dollars per Troy Ounce -- NSA
+      SLVPRUSD	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in U.S. Dollars	Daily	U.S. Dollars per Troy Ounce -- NSA
+      SLVPRZAR	Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in South African Rands	Daily	South African Rands per Troy Ounce -- NSA
       WCOILBRENTEU	Crude Oil Prices: Brent - Europe	Weekly, Ending Friday	Dollars per Barrel -- NSA
       WCOILWTICO	Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma	Weekly, Ending Friday	Dollars per Barrel -- NSA
       WDFUELLA	Ultra-Low-Sulfur No. 2 Diesel Fuel Prices: Los Angeles	Weekly, Ending Friday	Dollars per Gallon -- NSA
@@ -1069,7 +1086,7 @@
       FLEXCPIM158SFRBATL	Flexible Price Consumer Price Index	Monthly	Percent Change at Annual Rate -- SA
       FLEXCPIM159SFRBATL	Flexible Price Consumer Price Index	Monthly	Percent Change from Year Ago -- SA
       FLEXCPIM679SFRBATL	Flexible Price Consumer Price Index	Monthly	3-Month Annualized Percent Change -- SA
-      JCXFE	Personal Consumption Expenditures: Chain-type Price Index Less Food and Energy	Quarterly	Index 2009=100 -- SA
+      JCXFE	Personal Consumption Expenditures: Chain-type Price Index Less Food and Energy	Quarterly	Index 2012=100 -- SA
       JCXFECTH	FOMC Summary of Economic Projections for the Personal Consumption Expenditures less Food and Energy Inflation Rate, Central Tendency, High	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       JCXFECTL	FOMC Summary of Economic Projections for the Personal Consumption Expenditures less Food and Energy Inflation Rate, Central Tendency, Low	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       JCXFECTM	FOMC Summary of Economic Projections for the Personal Consumption Expenditures less Food and Energy Inflation Rate, Central Tendency, Midpoint	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
@@ -1081,7 +1098,7 @@
       MEDCPIM157SFRBCLE	Median Consumer Price Index	Monthly	Percent Change -- SA
       MEDCPIM158SFRBCLE	Median Consumer Price Index	Monthly	Percent Change at Annual Rate -- SA
       MEDCPIM159SFRBCLE	Median Consumer Price Index	Monthly	Percent Change at Annual Rate -- SA
-      PCECTPI	Personal Consumption Expenditures: Chain-type Price Index	Quarterly	Index 2009=100 -- SA
+      PCECTPI	Personal Consumption Expenditures: Chain-type Price Index	Quarterly	Index 2012=100 -- SA
       PCECTPICTH	FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Central Tendency, High	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       PCECTPICTHLR	Longer Run FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Central Tendency, High	Not Applicable	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       PCECTPICTL	FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Central Tendency, Low	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
@@ -1096,8 +1113,8 @@
       PCECTPIRLLR	Longer Run FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Range, Low	Not Applicable	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       PCECTPIRM	FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Range, Midpoint	Annual	Fourth Quarter to Fourth Quarter Percent Change -- NSA
       PCECTPIRMLR	Longer Run FOMC Summary of Economic Projections for the Personal Consumption Expenditures Inflation Rate, Range, Midpoint	Not Applicable	Fourth Quarter to Fourth Quarter Percent Change -- NSA
-      PCEPI	Personal Consumption Expenditures: Chain-type Price Index	Monthly	Index 2009=100 -- SA
-      PCEPILFE	Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index)	Monthly	Index 2009=100 -- SA
+      PCEPI	Personal Consumption Expenditures: Chain-type Price Index	Monthly	Index 2012=100 -- SA
+      PCEPILFE	Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index)	Monthly	Index 2012=100 -- SA
       PCETRIM12M159SFRBDAL	Trimmed Mean PCE Inflation Rate	Monthly	Percent Change from Year Ago -- SA
       PCETRIM1M158SFRBDAL	Trimmed Mean PCE Inflation Rate	Monthly	Percent Change at Annual Rate -- SA
       PCETRIM6M680SFRBDAL	Trimmed Mean PCE Inflation Rate	Monthly	6-Month Annualized Percent Change -- SA
@@ -1115,8 +1132,14 @@
       TRMMEANCPIM158SFRBCLE	16% Trimmed-Mean Consumer Price Index	Monthly	Percent Change at Annual Rate -- SA
       TRMMEANCPIM159SFRBCLE	16% Trimmed-Mean Consumer Price Index	Monthly	Percent Change at Annual Rate -- SA
 
+  33913 Cryptocurrencies
+      CBBCHUSD	Coinbase Bitcoin Cash	Daily, 7-Day	U.S. Dollars -- NSA
+      CBBTCUSD	Coinbase Bitcoin	Daily, 7-Day	U.S. Dollars -- NSA
+      CBCCIND	Coinbase Index	Daily, 7-Day	Index Jan 1, 2015=100 -- NSA
+      CBETHUSD	Coinbase Ethereum	Daily, 7-Day	U.S. Dollars -- NSA
+      CBLTCUSD	Coinbase Litecoin	Daily, 7-Day	U.S. Dollars -- NSA
+
   4 Employment Cost Index
-      CIS1010000000000I	Employment Cost Index: Total compensation for All Civilian workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
       CIS1013000000000I	Employment Cost Index: Total compensation for All Civilian workers in Manufacturing	Quarterly	Index Dec 2005=100 -- SA
       CIS1016000000000I	Employment Cost Index: Total compensation for All Civilian workers in Education and health services	Quarterly	Index Dec 2005=100 -- SA
       CIS1016100000000I	Employment Cost Index: Total compensation for All Civilian workers in Education services	Quarterly	Index Dec 2005=100 -- SA
@@ -1141,7 +1164,6 @@
       CIS102G000000000I	Employment Cost Index: Wages and salaries for All Civilian workers in Goods-producing industries	Quarterly	Index Dec 2005=100 -- SA
       CIS102S000000000I	Employment Cost Index: Wages and salaries for All Civilian workers in Service-providing industries	Quarterly	Index Dec 2005=100 -- SA
       CIS1030000000000I	Employment Cost Index: Total benefits for All Civilian workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
-      CIS2010000000000I	Employment Cost Index: Total compensation for Private industry workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
       CIS2010000100000I	Employment Cost Index: Total compensation for Private industry workers in Management, professional, and related	Quarterly	Index Dec 2005=100 -- SA
       CIS2010000110000I	Employment Cost Index: Total compensation for Private industry workers in Management, business, and financial	Quarterly	Index Dec 2005=100 -- SA
       CIS2010000120000I	Employment Cost Index: Total compensation for Private industry workers in Professional and related	Quarterly	Index Dec 2005=100 -- SA
@@ -1154,7 +1176,6 @@
       CIS2010000500000I	Employment Cost Index: Total compensation for Private industry workers in Production, transportation, and material moving	Quarterly	Index Dec 2005=100 -- SA
       CIS2010000510000I	Employment Cost Index: Total compensation for Private industry workers in Production	Quarterly	Index Dec 2005=100 -- SA
       CIS2010000520000I	Employment Cost Index: Total compensation for Private industry workers in Transportation and material moving	Quarterly	Index Dec 2005=100 -- SA
-      CIS2013000000000I	Employment Cost Index: Total compensation for Private industry workers in Manufacturing	Quarterly	Index Dec 2005=100 -- SA
       CIS2013211000000I	Employment Cost Index: Total compensation for Private industry workers in Aircraft manufacturing	Quarterly	Index Dec 2005=100 -- SA
       CIS2014000000000I	Employment Cost Index: Total compensation for Private industry workers in Trade, transportation, and utilities	Quarterly	Index Dec 2005=100 -- SA
       CIS2014110000000I	Employment Cost Index: Total compensation for Private industry workers in Wholesale trade	Quarterly	Index Dec 2005=100 -- SA
@@ -1181,7 +1202,6 @@
       CIS2018100000000I	Employment Cost Index: Total compensation for Private industry workers in Other services, except public administration	Quarterly	Index Dec 2005=100 -- SA
       CIS201G000000000I	Employment Cost Index: Total compensation for Private industry workers in Goods-producing industries	Quarterly	Index Dec 2005=100 -- SA
       CIS201S000000000I	Employment Cost Index: Total compensation for Private industry workers in Service-providing industries	Quarterly	Index Dec 2005=100 -- SA
-      CIS2020000000000I	Employment Cost Index: Wages and salaries for Private industry workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
       CIS2020000100000I	Employment Cost Index: Wages and salaries for Private industry workers in Management, professional, and related	Quarterly	Index Dec 2005=100 -- SA
       CIS2020000110000I	Employment Cost Index: Wages and salaries for Private industry workers in Management, business, and financial	Quarterly	Index Dec 2005=100 -- SA
       CIS2020000120000I	Employment Cost Index: Wages and salaries for Private industry workers in Professional and related	Quarterly	Index Dec 2005=100 -- SA
@@ -1219,14 +1239,12 @@
       CIS2028100000000I	Employment Cost Index: Wages and salaries for Private industry workers in Other services, except public administration	Quarterly	Index Dec 2005=100 -- SA
       CIS202G000000000I	Employment Cost Index: Wages and salaries for Private industry workers in Goods-producing industries	Quarterly	Index Dec 2005=100 -- SA
       CIS202S000000000I	Employment Cost Index: Wages and salaries for Private industry workers in Service-providing industries	Quarterly	Index Dec 2005=100 -- SA
-      CIS2030000000000I	Employment Cost Index: Total benefits for Private industry workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
       CIS2030000100000I	Employment Cost Index: Total benefits for Private industry workers in Management, professional, and related	Quarterly	Index Dec 2005=100 -- SA
       CIS2030000200000I	Employment Cost Index: Total benefits for Private industry workers in Sales and office	Quarterly	Index Dec 2005=100 -- SA
       CIS2030000400000I	Employment Cost Index: Total benefits for Private industry workers in Natural resources, construction, and maintenance	Quarterly	Index Dec 2005=100 -- SA
       CIS2030000500000I	Employment Cost Index: Total benefits for Private industry workers in Production, transportation, and material moving	Quarterly	Index Dec 2005=100 -- SA
       CIS203G000000000I	Employment Cost Index: Total benefits for Private industry workers in Goods-producing industries	Quarterly	Index Dec 2005=100 -- SA
       CIS203S000000000I	Employment Cost Index: Total benefits for Private industry workers in Service-providing industries	Quarterly	Index Dec 2005=100 -- SA
-      CIS3010000000000I	Employment Cost Index: Total compensation for State and local government workers in All industries and occupations	Quarterly	Index Dec 2005=100 -- SA
       CIS3016000000000I	Employment Cost Index: Total compensation for State and local government workers in Education and health services	Quarterly	Index Dec 2005=100 -- SA
       CIS3016100000000I	Employment Cost Index: Total compensation for State and local government workers in Education services	Quarterly	Index Dec 2005=100 -- SA
       CIS3016105000000I	Employment Cost Index: Total compensation for State and local government workers in Schools	Quarterly	Index Dec 2005=100 -- SA
@@ -1609,15 +1627,15 @@
       ATNHPIUS11180Q	All-Transactions House Price Index for Ames, IA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS11260Q	All-Transactions House Price Index for Anchorage, AK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS11460Q	All-Transactions House Price Index for Ann Arbor, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS11500Q	All-Transactions House Price Index for Anniston-Oxford-Jacksonville, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS11500Q	All-Transactions House Price Index for Anniston-Oxford, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS11540Q	All-Transactions House Price Index for Appleton, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS11700Q	All-Transactions House Price Index for Asheville, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12020Q	All-Transactions House Price Index for Athens-Clarke County, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS12060Q	All-Transactions House Price Index for Atlanta-Sandy Springs-Roswell, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS12060Q	All-Transactions House Price Index for Atlanta-Sandy Springs-Alpharetta, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12100Q	All-Transactions House Price Index for Atlantic City-Hammonton, NJ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12220Q	All-Transactions House Price Index for Auburn-Opelika, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12260Q	All-Transactions House Price Index for Augusta-Richmond County, GA-SC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS12420Q	All-Transactions House Price Index for Austin-Round Rock-San Marcos, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS12420Q	All-Transactions House Price Index for Austin-Round Rock-Georgetown, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12540Q	All-Transactions House Price Index for Bakersfield-Delano, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12580Q	All-Transactions House Price Index for Baltimore-Columbia-Towson, MD (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS12620Q	All-Transactions House Price Index for Bangor, ME (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1627,21 +1645,21 @@
       ATNHPIUS13020Q	All-Transactions House Price Index for Bay City, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13140Q	All-Transactions House Price Index for Beaumont-Port Arthur, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13380Q	All-Transactions House Price Index for Bellingham, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS13460Q	All-Transactions House Price Index for Bend-Redmond, OR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS13460Q	All-Transactions House Price Index for Bend, OR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13740Q	All-Transactions House Price Index for Billings, MT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13780Q	All-Transactions House Price Index for Binghamton, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13820Q	All-Transactions House Price Index for Birmingham-Hoover, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS13900Q	All-Transactions House Price Index for Bismarck, ND (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS13980Q	All-Transactions House Price Index for Blacksburg-Christiansburg-Radford, VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS13980Q	All-Transactions House Price Index for Blacksburg-Christiansburg, VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS14020Q	All-Transactions House Price Index for Bloomington, IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS14260Q	All-Transactions House Price Index for Boise City, ID (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS14500Q	All-Transactions House Price Index for Boulder, CO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS14540Q	All-Transactions House Price Index for Bowling Green, KY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS14740Q	All-Transactions House Price Index for Bremerton-Silverdale, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS14740Q	All-Transactions House Price Index for Bremerton-Silverdale-Port Orchard, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS14860Q	All-Transactions House Price Index for Bridgeport-Stamford-Norwalk, CT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS15180Q	All-Transactions House Price Index for Brownsville-Harlingen, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS15260Q	All-Transactions House Price Index for Brunswick, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS15380Q	All-Transactions House Price Index for Buffalo-Cheektowaga-Niagara Falls, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS15380Q	All-Transactions House Price Index for Buffalo-Cheektowaga, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS15500Q	All-Transactions House Price Index for Burlington, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS15540Q	All-Transactions House Price Index for Burlington-South Burlington, VT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS15764Q	All-Transactions House Price Index for Cambridge-Newton-Framingham, MA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1659,7 +1677,7 @@
       ATNHPIUS16820Q	All-Transactions House Price Index for Charlottesville, VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS16860Q	All-Transactions House Price Index for Chattanooga, TN-GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS16940Q	All-Transactions House Price Index for Cheyenne, WY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS16974Q	All-Transactions House Price Index for Chicago-Naperville-Arlington Heights, IL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS16984Q	All-Transactions House Price Index for Chicago-Naperville-Evanston, IL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS17020Q	All-Transactions House Price Index for Chico, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS17140Q	All-Transactions House Price Index for Cincinnati, OH-KY-IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS17300Q	All-Transactions House Price Index for Clarksville, TN-KY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1681,7 +1699,7 @@
       ATNHPIUS19140Q	All-Transactions House Price Index for Dalton, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS19180Q	All-Transactions House Price Index for Danville, IL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS19340Q	All-Transactions House Price Index for Davenport-Moline-Rock Island, IA-IL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS19380Q	All-Transactions House Price Index for Dayton, OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS19430Q	All-Transactions House Price Index for Dayton-Kettering, OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS19460Q	All-Transactions House Price Index for Decatur, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS19500Q	All-Transactions House Price Index for Decatur, IL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS19660Q	All-Transactions House Price Index for Deltona-Daytona Beach-Ormond Beach, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1701,23 +1719,24 @@
       ATNHPIUS21340Q	All-Transactions House Price Index for El Paso, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS21420Q	All-Transactions House Price Index for Enid, OK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS21500Q	All-Transactions House Price Index for Erie, PA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS21660Q	All-Transactions House Price Index for Eugene, OR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS21660Q	All-Transactions House Price Index for Eugene-Springfield, OR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS21780Q	All-Transactions House Price Index for Evansville, IN-KY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS21820Q	All-Transactions House Price Index for Fairbanks, AK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22020Q	All-Transactions House Price Index for Fargo, ND-MN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22140Q	All-Transactions House Price Index for Farmington, NM (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22180Q	All-Transactions House Price Index for Fayetteville, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS22220Q	All-Transactions House Price Index for Fayetteville-Springdale-Rogers, AR-MO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS22220Q	All-Transactions House Price Index for Fayetteville-Springdale-Rogers, AR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22380Q	All-Transactions House Price Index for Flagstaff, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22420Q	All-Transactions House Price Index for Flint, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22500Q	All-Transactions House Price Index for Florence, SC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22520Q	All-Transactions House Price Index for Florence-Muscle Shoals, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22540Q	All-Transactions House Price Index for Fond du Lac, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22660Q	All-Transactions House Price Index for Fort Collins, CO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS22744Q	All-Transactions House Price Index for Ft. Lauderdale-Pompano Beach-Deerfield Beach, FL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS22744Q	All-Transactions House Price Index for Ft. Lauderdale-Pompano Beach-Sunrise, FL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS22900Q	All-Transactions House Price Index for Fort Smith, AR-OK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS23060Q	All-Transactions House Price Index for Fort Wayne, IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS23104Q	All-Transactions House Price Index for Fort Worth-Arlington, TX (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS23104Q	All-Transactions House Price Index for Fort Worth-Arlington-Grapevine, TX (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS23224Q	All-Transactions House Price Index for Frederick-Gaithersburg-Rockville, MD (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS23420Q	All-Transactions House Price Index for Fresno, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS23460Q	All-Transactions House Price Index for Gadsden, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS23540Q	All-Transactions House Price Index for Gainesville, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1727,19 +1746,19 @@
       ATNHPIUS24140Q	All-Transactions House Price Index for Goldsboro, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24220Q	All-Transactions House Price Index for Grand Forks, ND-MN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24300Q	All-Transactions House Price Index for Grand Junction, CO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS24340Q	All-Transactions House Price Index for Grand Rapids-Wyoming, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS24340Q	All-Transactions House Price Index for Grand Rapids-Kentwood, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24500Q	All-Transactions House Price Index for Great Falls, MT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24540Q	All-Transactions House Price Index for Greeley, CO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24580Q	All-Transactions House Price Index for Green Bay, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24660Q	All-Transactions House Price Index for Greensboro-High Point, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS24780Q	All-Transactions House Price Index for Greenville, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS24860Q	All-Transactions House Price Index for Greenville-Anderson-Mauldin, SC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS25060Q	All-Transactions House Price Index for Gulfport-Biloxi-Pascagoula, MS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS24860Q	All-Transactions House Price Index for Greenville-Anderson, SC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS25060Q	All-Transactions House Price Index for Gulfport-Biloxi, MS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25180Q	All-Transactions House Price Index for Hagerstown-Martinsburg, MD-WV (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25260Q	All-Transactions House Price Index for Hanford-Corcoran, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25420Q	All-Transactions House Price Index for Harrisburg-Carlisle, PA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25500Q	All-Transactions House Price Index for Harrisonburg, VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS25540Q	All-Transactions House Price Index for Hartford-West Hartford-East Hartford, CT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS25540Q	All-Transactions House Price Index for Hartford-East Hartford-Middletown, CT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25620Q	All-Transactions House Price Index for Hattiesburg, MS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25860Q	All-Transactions House Price Index for Hickory-Lenoir-Morganton, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS25980Q	All-Transactions House Price Index for Hinesville, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1768,7 +1787,7 @@
       ATNHPIUS28140Q	All-Transactions House Price Index for Kansas City, MO-KS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS28420Q	All-Transactions House Price Index for Kennewick-Richland, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS28660Q	All-Transactions House Price Index for Killeen-Temple, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS28700Q	All-Transactions House Price Index for Kingsport-Bristol-Bristol, TN-VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS28700Q	All-Transactions House Price Index for Kingsport-Bristol, TN-VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS28740Q	All-Transactions House Price Index for Kingston, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS28940Q	All-Transactions House Price Index for Knoxville, TN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS29020Q	All-Transactions House Price Index for Kokomo, IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1799,12 +1818,12 @@
       ATNHPIUS31140Q	All-Transactions House Price Index for Louisville/Jefferson County, KY-IN (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
       ATNHPIUS31180Q	All-Transactions House Price Index for Lubbock, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS31340Q	All-Transactions House Price Index for Lynchburg, VA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS31420Q	All-Transactions House Price Index for Macon, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS31420Q	All-Transactions House Price Index for Macon-Bibb County, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS31460Q	All-Transactions House Price Index for Madera-Chowchilla, CA (MSA)	Quarterly	Index 1992=100 -- NSA
       ATNHPIUS31540Q	All-Transactions House Price Index for Madison, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS31700Q	All-Transactions House Price Index for Manchester-Nashua, NH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS31740Q	All-Transactions House Price Index for Manhattan, KS (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
-      ATNHPIUS31860Q	All-Transactions House Price Index for Mankato-North Mankato, MN (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
+      ATNHPIUS31860Q	All-Transactions House Price Index for Mankato, MN (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
       ATNHPIUS31900Q	All-Transactions House Price Index for Mansfield, OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS32580Q	All-Transactions House Price Index for McAllen-Edinburg-Mission, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS32780Q	All-Transactions House Price Index for Medford, OR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1813,7 +1832,7 @@
       ATNHPIUS33124Q	All-Transactions House Price Index for Miami-Miami Beach-Kendall, FL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS33140Q	All-Transactions House Price Index for Michigan City-La Porte, IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS33260Q	All-Transactions House Price Index for Midland, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS33340Q	All-Transactions House Price Index for Milwaukee-Waukesha-West Allis, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS33340Q	All-Transactions House Price Index for Milwaukee-Waukesha, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS33460Q	All-Transactions House Price Index for Minneapolis-St. Paul-Bloomington, MN-WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS33540Q	All-Transactions House Price Index for Missoula, MT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS33660Q	All-Transactions House Price Index for Mobile, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1828,22 +1847,23 @@
       ATNHPIUS34740Q	All-Transactions House Price Index for Muskegon, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS34820Q	All-Transactions House Price Index for Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS34900Q	All-Transactions House Price Index for Napa, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS34940Q	All-Transactions House Price Index for Naples-Immokalee-Marco Island, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS34940Q	All-Transactions House Price Index for Naples-Marco Island, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS34980Q	All-Transactions House Price Index for Nashville-Davidson--Murfreesboro--Franklin, TN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35004Q	All-Transactions House Price Index for Nassau County-Suffolk County, NY (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35084Q	All-Transactions House Price Index for Newark, NJ-PA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS35154Q	All-Transactions House Price Index for New Brunswick-Lakewood, NJ (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35300Q	All-Transactions House Price Index for New Haven-Milford, CT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35380Q	All-Transactions House Price Index for New Orleans-Metairie, LA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS35660Q	All-Transactions House Price Index for Niles-Benton Harbor, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS35660Q	All-Transactions House Price Index for Niles, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35840Q	All-Transactions House Price Index for North Port-Sarasota-Bradenton, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS35980Q	All-Transactions House Price Index for Norwich-New London, CT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS36084Q	All-Transactions House Price Index for Oakland-Hayward-Berkeley, CA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS36084Q	All-Transactions House Price Index for Oakland-Berkeley-Livermore, CA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36100Q	All-Transactions House Price Index for Ocala, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36140Q	All-Transactions House Price Index for Ocean City, NJ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36220Q	All-Transactions House Price Index for Odessa, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36260Q	All-Transactions House Price Index for Ogden-Clearfield, UT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36420Q	All-Transactions House Price Index for Oklahoma City, OK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS36500Q	All-Transactions House Price Index for Olympia-Tumwater, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS36500Q	All-Transactions House Price Index for Olympia-Lacey-Tumwater, WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36540Q	All-Transactions House Price Index for Omaha-Council Bluffs, NE-IA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36740Q	All-Transactions House Price Index for Orlando-Kissimmee-Sanford, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS36780Q	All-Transactions House Price Index for Oshkosh-Neenah, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1855,7 +1875,7 @@
       ATNHPIUS37860Q	All-Transactions House Price Index for Pensacola-Ferry Pass-Brent, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS37900Q	All-Transactions House Price Index for Peoria, IL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS37964Q	All-Transactions House Price Index for Philadelphia, PA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS38060Q	All-Transactions House Price Index for Phoenix-Mesa-Glendale, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS38060Q	All-Transactions House Price Index for Phoenix-Mesa-Chandler, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS38220Q	All-Transactions House Price Index for Pine Bluff, AR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS38300Q	All-Transactions House Price Index for Pittsburgh, PA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS38340Q	All-Transactions House Price Index for Pittsfield, MA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1863,13 +1883,14 @@
       ATNHPIUS38860Q	All-Transactions House Price Index for Portland-South Portland, ME (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS38900Q	All-Transactions House Price Index for Portland-Vancouver-Hillsboro, OR-WA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS38940Q	All-Transactions House Price Index for Port St. Lucie, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS39140Q	All-Transactions House Price Index for Prescott, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS39100Q	All-Transactions House Price Index for Poughkeepsie-Newburgh-Middletown, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS39150Q	All-Transactions House Price Index for Prescott Valley-Prescott, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39300Q	All-Transactions House Price Index for Providence-Warwick, RI-MA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39340Q	All-Transactions House Price Index for Provo-Orem, UT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39380Q	All-Transactions House Price Index for Pueblo, CO (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39460Q	All-Transactions House Price Index for Punta Gorda, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39540Q	All-Transactions House Price Index for Racine, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS39580Q	All-Transactions House Price Index for Raleigh, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS39580Q	All-Transactions House Price Index for Raleigh-Cary, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39660Q	All-Transactions House Price Index for Rapid City, SD (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39740Q	All-Transactions House Price Index for Reading, PA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS39820Q	All-Transactions House Price Index for Redding, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1883,7 +1904,7 @@
       ATNHPIUS40484Q	All-Transactions House Price Index for Rockingham County-Strafford County, NH (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS40580Q	All-Transactions House Price Index for Rocky Mount, NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS40660Q	All-Transactions House Price Index for Rome, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS40900Q	All-Transactions House Price Index for Sacramento-Roseville-Arden-Arcade, CA (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
+      ATNHPIUS40900Q	All-Transactions House Price Index for Sacramento-Roseville-Folsom, CA (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
       ATNHPIUS40980Q	All-Transactions House Price Index for Saginaw, MI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS41060Q	All-Transactions House Price Index for St. Cloud, MN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS41100Q	All-Transactions House Price Index for St. George, UT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1895,16 +1916,16 @@
       ATNHPIUS41620Q	All-Transactions House Price Index for Salt Lake City, UT (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS41660Q	All-Transactions House Price Index for San Angelo, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS41700Q	All-Transactions House Price Index for San Antonio-New Braunfels, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS41740Q	All-Transactions House Price Index for San Diego-Carlsbad, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS41884Q	All-Transactions House Price Index for San Francisco-Redwood City-South San Francisco, CA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS41740Q	All-Transactions House Price Index for San Diego-Chula Vista-Carlsbad, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS41884Q	All-Transactions House Price Index for San Francisco-San Mateo-Redwood City, CA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS41940Q	All-Transactions House Price Index for San Jose-Sunnyvale-Santa Clara, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS42020Q	All-Transactions House Price Index for San Luis Obispo-Paso Robles-Arroyo Grande, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS42020Q	All-Transactions House Price Index for San Luis Obispo-Paso Robles, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS42100Q	All-Transactions House Price Index for Santa Cruz-Watsonville, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS42140Q	All-Transactions House Price Index for Santa Fe, NM (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS42220Q	All-Transactions House Price Index for Santa Rosa, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS42220Q	All-Transactions House Price Index for Santa Rosa-Petaluma, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS42340Q	All-Transactions House Price Index for Savannah, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS42540Q	All-Transactions House Price Index for Scranton-Wilkes-Barre-Hazleton, PA (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
-      ATNHPIUS42644Q	All-Transactions House Price Index for Seattle-Bellevue-Everett, WA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS42540Q	All-Transactions House Price Index for Scranton-Wilkes-Barre, PA (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
+      ATNHPIUS42644Q	All-Transactions House Price Index for Seattle-Bellevue-Kent, WA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS42680Q	All-Transactions House Price Index for Sebastian-Vero Beach, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS43100Q	All-Transactions House Price Index for Sheboygan, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS43300Q	All-Transactions House Price Index for Sherman-Denison, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -1920,36 +1941,36 @@
       ATNHPIUS44220Q	All-Transactions House Price Index for Springfield, OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS44300Q	All-Transactions House Price Index for State College, PA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS44600Q	All-Transactions House Price Index for Weirton-Steubenville, WV-OH (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
-      ATNHPIUS44700Q	All-Transactions House Price Index for Stockton-Lodi, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS44700Q	All-Transactions House Price Index for Stockton, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS44940Q	All-Transactions House Price Index for Sumter, SC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45060Q	All-Transactions House Price Index for Syracuse, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS45104Q	All-Transactions House Price Index for Tacoma-Lakewood, WA (MSAD) (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS45104Q	All-Transactions House Price Index for Tacoma-Lakewood, WA (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45220Q	All-Transactions House Price Index for Tallahassee, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45300Q	All-Transactions House Price Index for Tampa-St. Petersburg-Clearwater, FL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45460Q	All-Transactions House Price Index for Terre Haute, IN (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45500Q	All-Transactions House Price Index for Texarkana, TX-Texarkana, AR (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45780Q	All-Transactions House Price Index for Toledo, OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS45820Q	All-Transactions House Price Index for Topeka, KS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS45940Q	All-Transactions House Price Index for Trenton, NJ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS45940Q	All-Transactions House Price Index for Trenton-Princeton, NJ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46060Q	All-Transactions House Price Index for Tucson, AZ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46140Q	All-Transactions House Price Index for Tulsa, OK (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46220Q	All-Transactions House Price Index for Tuscaloosa, AL (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46340Q	All-Transactions House Price Index for Tyler, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46540Q	All-Transactions House Price Index for Utica-Rome, NY (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS46660Q	All-Transactions House Price Index for Valdosta, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS46700Q	All-Transactions House Price Index for Vallejo-Fairfield, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS46700Q	All-Transactions House Price Index for Vallejo, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47020Q	All-Transactions House Price Index for Victoria, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47220Q	All-Transactions House Price Index for Vineland-Bridgeton, NJ (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47260Q	All-Transactions House Price Index for Virginia Beach-Norfolk-Newport News, VA-NC (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS47300Q	All-Transactions House Price Index for Visalia-Porterville, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS47300Q	All-Transactions House Price Index for Visalia, CA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47380Q	All-Transactions House Price Index for Waco, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47580Q	All-Transactions House Price Index for Warner Robins, GA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47644Q	All-Transactions House Price Index for Warren-Troy-Farmington Hills, MI (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47894Q	All-Transactions House Price Index for Washington-Arlington-Alexandria, DC-VA-MD-WV (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS47940Q	All-Transactions House Price Index for Waterloo-Cedar Falls, IA (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
-      ATNHPIUS48140Q	All-Transactions House Price Index for Wausau, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS48140Q	All-Transactions House Price Index for Wausau-Weston, WI (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS48300Q	All-Transactions House Price Index for Wenatchee-East Wenatchee-East Wenatchee, WA (MSA)	Quarterly	Index 1991:Q1=100 -- NSA
-      ATNHPIUS48424Q	All-Transactions House Price Index for West Palm Beach-Boca Raton-Delray Beach, FL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
+      ATNHPIUS48424Q	All-Transactions House Price Index for West Palm Beach-Boca Raton-Boynton Beach, FL (MSAD)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS48540Q	All-Transactions House Price Index for Wheeling, WV-OH (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS48620Q	All-Transactions House Price Index for Wichita, KS (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
       ATNHPIUS48660Q	All-Transactions House Price Index for Wichita Falls, TX (MSA)	Quarterly	Index 1995:Q1=100 -- NSA
@@ -2210,10 +2231,10 @@
       SFXRPSNSA	Home Price Sales Pair Counts for San Francisco, California	Monthly	Units -- NSA
       SFXRSA	S&P/Case-Shiller CA-San Francisco Home Price Index	Monthly	Index Jan 2000=100 -- SA
       SPCS10RNSA	S&P/Case-Shiller 10-City Composite Home Price Index	Monthly	Index Jan 2000=100 -- NSA
-      SPCS10RPSNSA	S&P Case-Shiller 10-City Home Price Sales Pair Counts	Monthly	Units -- NSA
+      SPCS10RPSNSA	S&P/Case-Shiller 10-City Home Price Sales Pair Counts	Monthly	Units -- NSA
       SPCS10RSA	S&P/Case-Shiller 10-City Composite Home Price Index	Monthly	Index Jan 2000=100 -- SA
       SPCS20RNSA	S&P/Case-Shiller 20-City Composite Home Price Index	Monthly	Index Jan 2000=100 -- NSA
-      SPCS20RPSNSA	S&P Case-Shiller 20-City Home Price Sales Pair Counts	Monthly	Units -- NSA
+      SPCS20RPSNSA	S&P/Case-Shiller 20-City Home Price Sales Pair Counts	Monthly	Units -- NSA
       SPCS20RSA	S&P/Case-Shiller 20-City Composite Home Price Index	Monthly	Index Jan 2000=100 -- SA
       TNSTHPI	All-Transactions House Price Index for Tennessee	Quarterly	Index 1980:Q1=100 -- NSA
       TPXRHTNSA	Home Price Index (High Tier) for Tampa, Florida	Monthly	Index Jan 2000=100 -- NSA
@@ -2633,14 +2654,6 @@
           WPU38110301	Producer Price Index by Commodity for Data Processing and Related Services: Data Management and Storage, Information Transformation and Other Services	Monthly	Index Dec 2008=100 -- NSA
 
       33574 Durability of Product
-          WPUDUR0110	Producer Price Index by Commodity for Durability of Product: Total Durable Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0120	Producer Price Index by Commodity for Durability of Product: Total Nondurable Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0200	Producer Price Index by Commodity for Durability of Product: Manufactured Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0211	Producer Price Index by Commodity for Durability of Product: Durable Manufactured Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0222	Producer Price Index by Commodity for Durability of Product: Nondurable Manufactured Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0300	Producer Price Index by Commodity for Durability of Product: Total Raw or Slightly Processed Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0313	Producer Price Index by Commodity for Durability of Product: Durable Raw or Slightly Processed Goods	Monthly	Index 1982=100 -- NSA
-          WPUDUR0324	Producer Price Index by Commodity for Durability of Product: Nondurable Raw or Slightly Processed Goods	Monthly	Index 1982=100 -- NSA
 
       33563 Educational Services
           WPU52	Producer Price Index by Commodity for Educational Services: Educational Services (Partial)	Monthly	Index Dec 2008=100 -- NSA
@@ -2707,6 +2720,7 @@
           WPS0131	Producer Price Index by Commodity for Farm Products: Slaughter Cattle	Monthly	Index 1982=100 -- SA
           WPS013101	Producer Price Index by Commodity for Farm Products: Slaughter Steers and Heifers	Monthly	Index 1982=100 -- SA
           WPS013102	Producer Price Index by Commodity for Farm Products: Slaughter Cows and Bulls	Monthly	Index 1982=100 -- SA
+          WPS013103	Producer Price Index by Commodity for Farm Products: Slaughter Vealers	Monthly	Index 1982=100 -- SA
           WPS0132	Producer Price Index by Commodity for Farm Products: Slaughter Hogs	Monthly	Index 1982=100 -- SA
           WPS013201	Producer Price Index by Commodity for Farm Products: Slaughter Barrows and Gilts	Monthly	Index 1982=100 -- SA
           WPS0133	Producer Price Index by Commodity for Farm Products: Slaughter Lambs	Monthly	Index 1982=100 -- SA
@@ -2739,6 +2753,7 @@
           WPU011102	Producer Price Index by Commodity for Farm Products: Other Fruits and Berries	Monthly	Index 1982=100 -- NSA
           WPU01110201	Producer Price Index by Commodity for Farm Products: Plums and Fresh Prunes	Monthly	Index Dec 1991=100 -- NSA
           WPU01110202	Producer Price Index by Commodity for Farm Products: Nectarines	Monthly	Index Dec 1991=100 -- NSA
+          WPU01110203	Producer Price Index by Commodity for Farm Products: Cherries	Monthly	Index Dec 1991=100 -- NSA
           WPU01110204	Producer Price Index by Commodity for Farm Products: Apricots	Monthly	Index Dec 1991=100 -- NSA
           WPU01110205	Producer Price Index by Commodity for Farm Products: Avocados	Monthly	Index Dec 1991=100 -- NSA
           WPU01110206	Producer Price Index by Commodity for Farm Products: Kiwifruit	Monthly	Index Dec 1991=100 -- NSA
@@ -3479,6 +3494,7 @@
           WPU51310101	Producer Price Index by Commodity for Health Care Services: Sales of Blood and Blood Products, Organs, and Tissues	Monthly	Index Mar 2009=100 -- NSA
 
       33531 Hides, Skins, Leather, and Related Products
+          WPS041	Producer Price Index by Commodity for Hides, Skins, Leather, and Related Products: Hides and Skins, Including Cattle	Monthly	Index 1982=100 -- SA
           WPS042	Producer Price Index by Commodity for Hides, Skins, Leather, and Related Products: Leather	Monthly	Index 1982=100 -- SA
           WPS043	Producer Price Index by Commodity for Hides, Skins, Leather, and Related Products: Footwear	Monthly	Index 1982=100 -- SA
           WPS0431	Producer Price Index by Commodity for Hides, Skins, Leather, and Related Products: Men's Nonathletic Footwear	Monthly	Index 1982=100 -- SA
@@ -4358,6 +4374,7 @@
           WPS113603	Producer Price Index by Commodity for Machinery and Equipment: Nonmetallic Abrasive Products (Including Diamond Abrasives)	Monthly	Index 1982=100 -- SA
           WPS113605	Producer Price Index by Commodity for Machinery and Equipment: Nonmetallic Coated Abrasive Products and Buffing Wheels, Polishing Wheels, and Laps	Monthly	Index 1982=100 -- SA
           WPS113713	Producer Price Index by Commodity for Machinery and Equipment: Metal Grinding, Polishing, Buffing, Honing, and Lapping Machines	Monthly	Index 1982=100 -- SA
+          WPS1138	Producer Price Index by Commodity for Machinery and Equipment: Metal Forming Machine Tools	Monthly	Index 1982=100 -- SA
           WPS114	Producer Price Index by Commodity for Machinery and Equipment: General Purpose Machinery and Equipment	Monthly	Index 1982=100 -- SA
           WPS1141	Producer Price Index by Commodity for Machinery and Equipment: Pumps, Compressors, and Equipment	Monthly	Index 1982=100 -- SA
           WPS114108	Producer Price Index by Commodity for Machinery and Equipment: Industrial Spraying Equipment	Monthly	Index Jun 1984=100 -- SA
@@ -4392,7 +4409,9 @@
           WPS118201	Producer Price Index by Commodity for Machinery and Equipment: Industrial Process Control Instruments	Monthly	Index Jun 1983=100 -- SA
           WPS1184	Producer Price Index by Commodity for Machinery and Equipment: Fluid Meters and Counting Devices	Monthly	Index Dec 1985=100 -- SA
           WPS118401	Producer Price Index by Commodity for Machinery and Equipment: Fluid Meters and Counting Devices	Monthly	Index Dec 1985=100 -- SA
+          WPS1186	Producer Price Index by Commodity for Machinery and Equipment: Measuring Instruments and Lenses	Monthly	Index Dec 1985=100 -- SA
           WPS118601	Producer Price Index by Commodity for Machinery and Equipment: Sighting, Tracking, and Fire-Control Equipment, Optical Type	Monthly	Index Dec 1985=100 -- SA
+          WPS118603	Producer Price Index by Commodity for Machinery and Equipment: Laboratory Analytical Instruments	Monthly	Index Dec 1985=100 -- SA
           WPS1189	Producer Price Index by Commodity for Machinery and Equipment: Measuring and Controlling Devices, Not Elsewhere Classified	Monthly	Index Jun 1985=100 -- SA
           WPS118904	Producer Price Index by Commodity for Machinery and Equipment: Nuclear Radiation Detection and Monitoring Instruments	Monthly	Index Jun 1985=100 -- SA
           WPS119	Producer Price Index by Commodity for Machinery and Equipment: Miscellaneous Machinery	Monthly	Index 1982=100 -- SA
@@ -4934,6 +4953,9 @@
           WPS102	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Metals	Monthly	Index 1982=100 -- SA
           WPS1023	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Scrap	Monthly	Index 1982=100 -- SA
           WPS102302	Producer Price Index by Commodity for Metals and Metal Products: Aluminum Base Scrap	Monthly	Index 1982=100 -- SA
+          WPS102402	Producer Price Index by Commodity for Metals and Metal Products: Secondary Aluminum	Monthly	Index 1982=100 -- SA
+          WPS1027	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Forge Shop Products	Monthly	Index Dec 1983=100 -- SA
+          WPS102701	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Forge Shop Products	Monthly	Index Dec 1983=100 -- SA
           WPS1028	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Foundry Shop Products	Monthly	Index 1982=100 -- SA
           WPS102802	Producer Price Index by Commodity for Metals and Metal Products: Castings, Aluminum and Aluminum-Base Alloy	Monthly	Index 1982=100 -- SA
           WPS1032	Producer Price Index by Commodity for Metals and Metal Products: Barrels, Drums, Pails and Other Metal Containers	Monthly	Index 1982=100 -- SA
@@ -5089,6 +5111,7 @@
           WPU1027011111	Producer Price Index by Commodity for Metals and Metal Products: Hot Impression Die, Impact, Press and Upset Aluminum and Aluminum Alloy Forgings	Monthly	Index Dec 2007=100 -- NSA
           WPU1027011112	Producer Price Index by Commodity for Metals and Metal Products: Hot Impression Die, Impact, Press and Upset Titanium and Titanium Alloy Forgings	Monthly	Index Dec 2007=100 -- NSA
           WPU1027011113	Producer Price Index by Commodity for Metals and Metal Products: Other Nonferrous Hot Impression Die Impact, Press, and Upset Forgings	Monthly	Index Dec 2007=100 -- NSA
+          WPU102701112	Producer Price Index by Commodity for Metals and Metal Products: Other Nonferrous Forgings, Including Cold Impression Die Impact and Seamless Rolled	Monthly	Index Dec 2007=100 -- NSA
           WPU1028	Producer Price Index by Commodity for Metals and Metal Products: Nonferrous Foundry Shop Products	Monthly	Index 1982=100 -- NSA
           WPU102802	Producer Price Index by Commodity for Metals and Metal Products: Castings, Aluminum and Aluminum-Base Alloy	Monthly	Index 1982=100 -- NSA
           WPU10280204	Producer Price Index by Commodity for Metals and Metal Products: Sand Castings, Aluminum and Aluminum-Base Alloy	Monthly	Index Jun 1983=100 -- NSA
@@ -5295,6 +5318,7 @@
           WPU10890913	Producer Price Index by Commodity for Metals and Metal Products: Cold Formed Steel Springs, Except Wire	Monthly	Index Jun 2004=100 -- NSA
 
       33571 Mining Services
+          WPS601103	Producer Price Index by Commodity for Mining Services: Drilling Oil and Gas Wells Services	Monthly	Index Dec 1985=100 -- SA
           WPS601105	Producer Price Index by Commodity for Mining Services: Nonmetallic Minerals Mining Services	Monthly	Index Jun 1985=100 -- SA
           WPU60	Producer Price Index by Commodity for Mining Services	Monthly	Index Jun 1985=100 -- NSA
           WPU601	Producer Price Index by Commodity for Mining Services	Monthly	Index Jun 1985=100 -- NSA
@@ -5320,6 +5344,8 @@
           WPS156201	Producer Price Index by Commodity for Miscellaneous Products: Surgical and Medical Instruments	Monthly	Index Jun 1982=100 -- SA
           WPS1564	Producer Price Index by Commodity for Miscellaneous Products: Ophthalmic Goods	Monthly	Index Dec 1983=100 -- SA
           WPS156401	Producer Price Index by Commodity for Miscellaneous Products: Ophthalmic Goods	Monthly	Index Dec 1983=100 -- SA
+          WPS1565	Producer Price Index by Commodity for Miscellaneous Products: Dental Equipment and Supplies	Monthly	Index Jun 1985=100 -- SA
+          WPS156501	Producer Price Index by Commodity for Miscellaneous Products: Dental Equipment and Supplies	Monthly	Index Jun 1985=100 -- SA
           WPS159	Producer Price Index by Commodity for Miscellaneous Products: Other Miscellaneous Products	Monthly	Index 1982=100 -- SA
           WPS1591	Producer Price Index by Commodity for Miscellaneous Products: Burial Caskets	Monthly	Index 1982=100 -- SA
           WPS159101	Producer Price Index by Commodity for Miscellaneous Products: Burial Caskets	Monthly	Index 1982=100 -- SA
@@ -5497,6 +5523,7 @@
           WPS133	Producer Price Index by Commodity for Nonmetallic Mineral Products: Concrete Products	Monthly	Index 1982=100 -- SA
           WPS1331	Producer Price Index by Commodity for Nonmetallic Mineral Products: Concrete Block and Brick	Monthly	Index 1982=100 -- SA
           WPS133111	Producer Price Index by Commodity for Nonmetallic Mineral Products: Structural Concrete Block	Monthly	Index 1982=100 -- SA
+          WPS133121	Producer Price Index by Commodity for Nonmetallic Mineral Products: Decorative Concrete Block	Monthly	Index 1982=100 -- SA
           WPS1333	Producer Price Index by Commodity for Nonmetallic Mineral Products: Ready-Mix Concrete	Monthly	Index 1982=100 -- SA
           WPS133301	Producer Price Index by Commodity for Nonmetallic Mineral Products: Ready-Mix Concrete	Monthly	Index 1982=100 -- SA
           WPS1334	Producer Price Index by Commodity for Nonmetallic Mineral Products: Precast Concrete Products	Monthly	Index 1982=100 -- SA
@@ -5516,6 +5543,7 @@
           WPS138	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly	Index 1982=100 -- SA
           WPS1381	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly	Index 1982=100 -- SA
           WPS138101	Producer Price Index by Commodity for Nonmetallic Mineral Products: Glass Containers	Monthly	Index 1982=100 -- SA
+          WPS139	Producer Price Index by Commodity for Nonmetallic Mineral Products: Other Nonmetallic Minerals	Monthly	Index 1982=100 -- SA
           WPS1392	Producer Price Index by Commodity for Nonmetallic Mineral Products: Insulation Materials	Monthly	Index 1982=100 -- SA
           WPS139201	Producer Price Index by Commodity for Nonmetallic Mineral Products: Mineral Wool for Thermal and Acoustical Envelope Insulation	Monthly	Index 1982=100 -- SA
           WPS1398	Producer Price Index by Commodity for Nonmetallic Mineral Products: Gaskets, Packing, and Sealing Devices	Monthly	Index Dec 1985=100 -- SA
@@ -5694,6 +5722,8 @@
           WPS0242	Producer Price Index by Commodity for Processed Foods and Feeds: Frozen Fruits, Juices and Ades	Monthly	Index 1982=100 -- SA
           WPS024202	Producer Price Index by Commodity for Processed Foods and Feeds: Frozen Fruits	Monthly	Index 1982=100 -- SA
           WPS024203	Producer Price Index by Commodity for Processed Foods and Feeds: Frozen Juices, Ades, Drinks, and Cocktails	Monthly	Index 1982=100 -- SA
+          WPS0254	Producer Price Index by Commodity for Processed Foods and Feeds: Confectionery Materials	Monthly	Index 1982=100 -- SA
+          WPS025401	Producer Price Index by Commodity for Processed Foods and Feeds: Confectionery Materials	Monthly	Index 1982=100 -- SA
           WPS026	Producer Price Index by Commodity for Processed Foods and Feeds: Beverages and Beverage Materials	Monthly	Index 1982=100 -- SA
           WPS0261	Producer Price Index by Commodity for Processed Foods and Feeds: Alcoholic Beverages	Monthly	Index 1982=100 -- SA
           WPS026101	Producer Price Index by Commodity for Processed Foods and Feeds: Malt Beverages	Monthly	Index 1982=100 -- SA
@@ -5706,6 +5736,8 @@
           WPS0283	Producer Price Index by Commodity for Processed Foods and Feeds: Processed Eggs, Liquid, Dried, or Frozen	Monthly	Index 1982=100 -- SA
           WPS028301	Producer Price Index by Commodity for Processed Foods and Feeds: Processed Eggs, Liquid, Dried, or Frozen	Monthly	Index 1982=100 -- SA
           WPS029	Producer Price Index by Commodity for Processed Foods and Feeds: Prepared Animal Feeds	Monthly	Index 1982=100 -- SA
+          WPS0292	Producer Price Index by Commodity for Processed Foods and Feeds: Soybean Cake, Meal, and Other Byproducts	Monthly	Index 1982=100 -- SA
+          WPS029201	Producer Price Index by Commodity for Processed Foods and Feeds: Soybean Cake, Meal, and Other Byproducts	Monthly	Index 1982=100 -- SA
           WPS0293	Producer Price Index by Commodity for Processed Foods and Feeds: Formula Feeds	Monthly	Index 1982=100 -- SA
           WPS029301	Producer Price Index by Commodity for Processed Foods and Feeds: Formula Feeds	Monthly	Index 1982=100 -- SA
           WPS0294	Producer Price Index by Commodity for Processed Foods and Feeds: Miscellaneous Feedstuffs	Monthly	Index 1982=100 -- SA
@@ -6103,6 +6135,7 @@
       33545 Publishing Sales, Excluding Software
           WPS331101	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales of Textbooks	Monthly	Index 1982=100 -- SA
           WPS331102	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales of Technical, Scientific, and Professional Books	Monthly	Index 1982=100 -- SA
+          WPS331202	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales and Subscriptions of Newspapers	Monthly	Index 1982=100 -- SA
           WPU33	Producer Price Index by Commodity for Publishing Sales, Excluding Software	Monthly	Index Jun 2009=100 -- NSA
           WPU331	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Book, Periodical, and Newspaper Publishing Sales and Subscriptions	Monthly	Index Jun 2009=100 -- NSA
           WPU3311	Producer Price Index by Commodity for Publishing Sales, Excluding Software: Sales of Books	Monthly	Index 1982=100 -- NSA
@@ -6487,6 +6520,7 @@
       33534 Rubber and Plastic Products
           WPS0721	Producer Price Index by Commodity for Rubber and Plastic Products: Plastic Construction Products	Monthly	Index 1982=100 -- SA
           WPS072106	Producer Price Index by Commodity for Rubber and Plastic Products: Plastic Construction Products	Monthly	Index 1982=100 -- SA
+          WPS0723	Producer Price Index by Commodity for Rubber and Plastic Products: Laminated Plastic Sheets, Rods, and Tubes	Monthly	Index 1982=100 -- SA
           WPS072603	Producer Price Index by Commodity for Rubber and Plastic Products: Foam Components for Furniture	Monthly	Index Dec 1982=100 -- SA
           WPU07	Producer Price Index by Commodity for Rubber and Plastic Products	Monthly	Index 1982=100 -- NSA
           WPU071	Producer Price Index by Commodity for Rubber and Plastic Products: Rubber and Rubber Products	Monthly	Index 1982=100 -- NSA
@@ -6827,6 +6861,7 @@
           WPU03830351	Producer Price Index by Commodity for Textile Products and Apparel: Fabricated Textile Products, Not Elsewhere Classified	Monthly	Index Dec 1985=100 -- NSA
           WPU038303513	Producer Price Index by Commodity for Textile Products and Apparel: Fabricated Flags, Banners, and Similar Emblems	Monthly	Index Dec 2009=100 -- NSA
           WPU038303515	Producer Price Index by Commodity for Textile Products and Apparel: Fabricated Textile Products	Monthly	Index Dec 2009=100 -- NSA
+          WPU03830361	Producer Price Index by Commodity for Textile Products and Apparel: Other Trimmings and Findings	Monthly	Index Dec 2006=100 -- NSA
           WPU039	Producer Price Index by Commodity for Textile Products and Apparel: Miscellaneous Textile Products/Services	Monthly	Index Jun 1985=100 -- NSA
           WPU0391	Producer Price Index by Commodity for Textile Products and Apparel: Textile Materials Not Elsewhere Classified and Processed Textile Waste	Monthly	Index Jun 1985=100 -- NSA
           WPU039101	Producer Price Index by Commodity for Textile Products and Apparel: Textile Fibers, Yarns, and Fabrics, Not Elsewhere Classified	Monthly	Index Jun 1985=100 -- NSA
@@ -6842,6 +6877,7 @@
           WPS1411	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicles	Monthly	Index 1982=100 -- SA
           WPS141101	Producer Price Index by Commodity for Transportation Equipment: Passenger Cars	Monthly	Index 1982=100 -- SA
           WPS141105	Producer Price Index by Commodity for Transportation Equipment: Trucks, 14,000 Lbs. and Under	Monthly	Index 1982=100 -- SA
+          WPS141106	Producer Price Index by Commodity for Transportation Equipment: Trucks, Over 14,000 Lbs. GVW	Monthly	Index 1982=100 -- SA
           WPS1416	Producer Price Index by Commodity for Transportation Equipment: Travel Trailers and Campers	Monthly	Index Jun 1984=100 -- SA
           WPS141601	Producer Price Index by Commodity for Transportation Equipment: Travel Trailers	Monthly	Index Jun 1984=100 -- SA
           WPS142	Producer Price Index by Commodity for Transportation Equipment: Aircraft and Aircraft Equipment	Monthly	Index 1982=100 -- SA
@@ -6872,6 +6908,7 @@
           WPU1412	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicles Parts	Monthly	Index 1982=100 -- NSA
           WPU141205	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicles Parts	Monthly	Index Dec 2003=100 -- NSA
           WPU14120501	Producer Price Index by Commodity for Transportation Equipment: Gasoline Engines and Engine Parts, Excluding Carburetors, Pistons, and Valves	Monthly	Index Dec 2003=100 -- NSA
+          WPU141205011	Producer Price Index by Commodity for Transportation Equipment: Gasoline Engines and Engine Parts, New	Monthly	Index Jun 2011=100 -- NSA
           WPU14120502	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicle Steering and Suspension Parts	Monthly	Index Dec 2003=100 -- NSA
           WPU14120503	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicle Transmission and Power Train	Monthly	Index Dec 2003=100 -- NSA
           WPU141205031	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicle Drive Train Components, Except Wheels and Brakes, New	Monthly	Index Dec 2011=100 -- NSA
@@ -6886,6 +6923,7 @@
           WPU141205041C	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicle Disc Brake Assemblies and Parts, New	Monthly	Index Dec 2011=100 -- NSA
           WPU14120505	Producer Price Index by Commodity for Transportation Equipment: Filters for Internal Combustion Engines and Motor Vehicles	Monthly	Index Dec 2003=100 -- NSA
           WPU14120506	Producer Price Index by Commodity for Transportation Equipment: Exhaust Systems	Monthly	Index Dec 2003=100 -- NSA
+          WPU14120507	Producer Price Index by Commodity for Transportation Equipment: Motor Vehicle Wheels	Monthly	Index Dec 2003=100 -- NSA
           WPU14120508	Producer Price Index by Commodity for Transportation Equipment: Other Motor Vehicle Parts	Monthly	Index Dec 2003=100 -- NSA
           WPU14120511	Producer Price Index by Commodity for Transportation Equipment: Vehicle Seating and Interior Trim	Monthly	Index Jun 2004=100 -- NSA
           WPU141205111	Producer Price Index by Commodity for Transportation Equipment: Automobile Trimmings	Monthly	Index Jun 2009=100 -- NSA
@@ -9565,6 +9603,7 @@
           IP8528	Import Price Index (Harmonized System): TV reception apparatus; video monitors and video projectors	Monthly	Index 2000=100 -- NSA
           IP8536	Import Price Index (Harmonized System): Electrical circuit switching, protecting or connection app. not > 1000 volt	Monthly	Index 2000=100 -- NSA
           IP8537	Import Price Index (Harmonized System): Electric control or distribution equipment	Monthly	Index Dec 2012=100 -- NSA
+          IP8541	Import Price Index (Harmonized System): Semiconductor devices; L.E.D.s; mounted piezoelectric crystals; parts thereof	Monthly	Index 2000=100 -- NSA
           IP8542	Import Price Index (Harmonized System): Electronic integrated circuits and micro assemblies; parts thereof	Monthly	Index 2000=100 -- NSA
           IP8543	Import Price Index (Harmonized System): Electrical machines and apparatus, functions n.e.s.o.i.; parts	Monthly	Index Dec 2014=100 -- NSA
           IP8544	Import Price Index (Harmonized System): Insulated conductors	Monthly	Index Dec 2010=100 -- NSA
@@ -9799,6 +9838,7 @@
           IQ003	Export Price Index (End Use): Other agricultural foods	Monthly	Index 2000=100 -- NSA
           IQ00300	Export Price Index (End Use): Meat, poultry and other edible animal products	Monthly	Index Dec 2006=100 -- NSA
           IQ00320	Export Price Index (End Use): Fruit and fruit preparations, including fruit juices	Monthly	Index 2000=100 -- NSA
+          IQ00330	Export Price Index (End Use): Vegetables and vegetable preparations and juices	Monthly	Index 2000=100 -- NSA
           IQ00340	Export Price Index (End Use): Nuts and preparations	Monthly	Index Dec 2007=100 -- NSA
           IQ00350	Export Price Index (End Use): Bakery and confectionery products	Monthly	Index Dec 2007=100 -- NSA
           IQ00360	Export Price Index (End Use): Other foods and food preparations (lard,soft bev, spices), not elsewhere specified	Monthly	Index 2000=100 -- NSA
@@ -9937,6 +9977,7 @@
           IY32	Export Price Index (NAICS): Manufactured goods, part 2	Monthly	Index 2005=100 -- NSA
           IY322	Export Price Index (NAICS): Paper manufacturing	Monthly	Index 2005=100 -- NSA
           IY3221	Export Price Index (NAICS): Pulp, paper, and paperboard mills	Monthly	Index 2005=100 -- NSA
+          IY32211	Export Price Index (NAICS): Pulp mills	Monthly	Index 2005=100 -- NSA
           IY3222	Export Price Index (NAICS): Converted paper product manufacturing	Monthly	Index 2005=100 -- NSA
           IY32222	Export Price Index (NAICS): Paper bag and coated and treated paper manufacturing	Monthly	Index Dec 2015=100 -- NSA
           IY324	Export Price Index (NAICS): Petroleum and coal products manufacturing	Monthly	Index 2005=100 -- NSA
@@ -10049,6 +10090,7 @@
           ID48	Export Price Index (Harmonized System): Paper and paperboard; articles of paper pulp, paper or paperboard	Monthly	Index 2000=100 -- NSA
           ID49	Export Price Index (Harmonized System): Printed material	Monthly	Index 2000=100 -- NSA
           ID52	Export Price Index (Harmonized System): Cotton, including yarns and woven fabrics thereof	Monthly	Index 2000=100 -- NSA
+          ID5201	Export Price Index (Harmonized System): Cotton, not carded or combed	Monthly	Index Dec 2006=100 -- NSA
           ID68	Export Price Index (Harmonized System): Articles of stone, plaster, cement, asbestos, or mica	Monthly	Index Dec 2015=100 -- NSA
           ID70	Export Price Index (Harmonized System): Glass and glassware	Monthly	Index 2000=100 -- NSA
           ID7102	Export Price Index (Harmonized System): Diamonds, whether or not worked, but not mounted or set	Monthly	Index Dec 2013=100 -- NSA

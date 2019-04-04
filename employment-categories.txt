@@ -4974,7 +4974,6 @@
         CES3231300001	All Employees: Nondurable Goods: Textile Mills	Monthly	Thousands of Persons -- SA
         CES3231400001	All Employees: Nondurable Goods: Textile Product Mills	Monthly	Thousands of Persons -- SA
         CES3231500001	All Employees: Nondurable Goods: Apparel	Monthly	Thousands of Persons -- SA
-        CES3231600001	All Employees: Nondurable Goods: Leather and Allied Products	Monthly	Thousands of Persons -- SA
         CES3232200001	All Employees: Nondurable Goods: Paper and Paper Products	Monthly	Thousands of Persons -- SA
         CES3232300001	All Employees: Nondurable Goods: Printing and Related Support Activities	Monthly	Thousands of Persons -- SA
         CES3232400001	All Employees: Nondurable Goods: Petroleum and Coal Products	Monthly	Thousands of Persons -- SA
@@ -5000,7 +4999,6 @@
         CEU3231300001	All Employees: Nondurable Goods: Textile Mills	Monthly	Thousands of Persons -- NSA
         CEU3231400001	All Employees: Nondurable Goods: Textile Product Mills	Monthly	Thousands of Persons -- NSA
         CEU3231500001	All Employees: Nondurable Goods: Apparel	Monthly	Thousands of Persons -- NSA
-        CEU3231600001	All Employees: Nondurable Goods: Leather and Allied Products	Monthly	Thousands of Persons -- NSA
         CEU3232200001	All Employees: Nondurable Goods: Paper and Paper Products	Monthly	Thousands of Persons -- NSA
         CEU3232300001	All Employees: Nondurable Goods: Printing and Related Support Activities	Monthly	Thousands of Persons -- NSA
         CEU3232400001	All Employees: Nondurable Goods: Petroleum and Coal Products	Monthly	Thousands of Persons -- NSA
@@ -5098,7 +5096,6 @@
         CES4244800001	All Employees: Retail Trade: Clothing and Clothing Accessories Stores	Monthly	Thousands of Persons -- SA
         CES4245100001	All Employees: Retail Trade: Sporting Goods, Hobby, Book, and Music Stores	Monthly	Thousands of Persons -- SA
         CES4245200001	All Employees: Retail Trade: General Merchandise Stores	Monthly	Thousands of Persons -- SA
-        CES4245210001	All Employees: Retail Trade: Department Stores	Monthly	Thousands of Persons -- SA
         CES4245300001	All Employees: Retail Trade: Miscellaneous Store Retailers	Monthly	Thousands of Persons -- SA
         CES4245400001	All Employees: Retail Trade: Nonstore Retailers	Monthly	Thousands of Persons -- SA
         CEU4200000001	All Employees: Retail Trade	Monthly	Thousands of Persons -- NSA
@@ -5125,7 +5122,6 @@
         CEU4244800001	All Employees: Retail Trade: Clothing and Clothing Accessories Stores	Monthly	Thousands of Persons -- NSA
         CEU4245100001	All Employees: Retail Trade: Sporting Goods, Hobby, Book, and Music Stores	Monthly	Thousands of Persons -- NSA
         CEU4245200001	All Employees: Retail Trade: General Merchandise Stores	Monthly	Thousands of Persons -- NSA
-        CEU4245210001	All Employees: Retail Trade: Department Stores	Monthly	Thousands of Persons -- NSA
         CEU4245300001	All Employees: Retail Trade: Miscellaneous Store Retailers	Monthly	Thousands of Persons -- NSA
         CEU4245400001	All Employees: Retail Trade: Nonstore Retailers	Monthly	Thousands of Persons -- NSA
         USTRADE	All Employees: Retail Trade	Monthly	Thousands of Persons -- SA
@@ -5545,9 +5541,6 @@
       NPPTTU	Nonfarm Private Trade, Transportation, and Utilities Payroll Employment	Monthly	Thousands -- SA
 
   33500 Education
-      GCT1501US	People 25 Years and Over Who Have Completed High School (Includes Equivalency) for the United States	Annual	Percent -- NSA
-      GCT1502US	People 25 Years and Over Who Have Completed a Bachelor's Degree for the United States	Annual	Percent -- NSA
-      GCT1503US	People 25 Years and Over Who Have Completed an Advanced Degree for the United States	Annual	Percent -- NSA
       HC01ESTVC1601001	High School Graduate or Higher (5-year estimate) in Autauga County, AL	Annual	Percent -- NSA
       HC01ESTVC1601003	High School Graduate or Higher (5-year estimate) in Baldwin County, AL	Annual	Percent -- NSA
       HC01ESTVC1601005	High School Graduate or Higher (5-year estimate) in Barbour County, AL	Annual	Percent -- NSA
@@ -5640,7 +5633,6 @@
       HC01ESTVC1602230	High School Graduate or Higher (5-year estimate) in Skagway Municipality, AK	Annual	Percent -- NSA
       HC01ESTVC1602240	High School Graduate or Higher (5-year estimate) in Southeast Fairbanks Census Area, AK	Annual	Percent -- NSA
       HC01ESTVC1602261	High School Graduate or Higher (5-year estimate) in Valdez-Cordova Census Area, AK	Annual	Percent -- NSA
-      HC01ESTVC1602270	High School Graduate or Higher (5-year estimate) in Wade Hampton Census Area, AK	Annual	Percent -- NSA
       HC01ESTVC1602275	High School Graduate or Higher (5-year estimate) in Wrangell Borough/City, AK	Annual	Percent -- NSA
       HC01ESTVC1602282	High School Graduate or Higher (5-year estimate) in Yakutat City and Borough, AK	Annual	Percent -- NSA
       HC01ESTVC1602290	High School Graduate or Higher (5-year estimate) in Yukon-Koyukuk Census Area, AK	Annual	Percent -- NSA
@@ -6564,47 +6556,47 @@
       GINIWANHF	Income Gini Ratio of Families by Race of Householder, White Alone Not Hispanic	Annual	Ratio -- NSA
       GINIWANHH	Income Gini Ratio for Households by Race of Householder, White Alone Not Hispanic	Annual	Ratio -- NSA
       MAFAINUSA646N	Mean Family Income in the United States	Annual	Current Dollars -- NSA
-      MAFAINUSA672N	Real Mean Family Income in the United States	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAFAINUSA672N	Real Mean Family Income in the United States	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAFAINUSMWA646N	Mean Family Income in Midwest Census Region	Annual	Current Dollars -- NSA
-      MAFAINUSMWA672N	Real Mean Family Income in Midwest Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAFAINUSMWA672N	Real Mean Family Income in Midwest Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAFAINUSNEA646N	Mean Family Income in Northeast Census Region	Annual	Current Dollars -- NSA
-      MAFAINUSNEA672N	Real Mean Family Income in Northeast Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAFAINUSNEA672N	Real Mean Family Income in Northeast Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAFAINUSSOA646N	Mean Family Income in South Census Region	Annual	Current Dollars -- NSA
-      MAFAINUSSOA672N	Real Mean Family Income in South Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAFAINUSSOA672N	Real Mean Family Income in South Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAFAINUSWEA646N	Mean Family Income in West Census Region	Annual	Current Dollars -- NSA
-      MAFAINUSWEA672N	Real Mean Family Income in West Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAFAINUSWEA672N	Real Mean Family Income in West Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAPAINUSA646N	Mean Personal Income in the United States	Annual	Current Dollars -- NSA
-      MAPAINUSA672N	Real Mean Personal Income in the United States	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAPAINUSA672N	Real Mean Personal Income in the United States	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAPAINUSMWA646N	Mean Personal Income in Midwest Census Region	Annual	Current Dollars -- NSA
-      MAPAINUSMWA672N	Real Mean Personal Income in Midwest Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAPAINUSMWA672N	Real Mean Personal Income in Midwest Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAPAINUSNEA646N	Mean Personal Income in Northeast Census Region	Annual	Current Dollars -- NSA
-      MAPAINUSNEA672N	Real Mean Personal Income in Northeast Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAPAINUSNEA672N	Real Mean Personal Income in Northeast Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAPAINUSSOA646N	Mean Personal Income in South Census Region	Annual	Current Dollars -- NSA
-      MAPAINUSSOA672N	Real Mean Personal Income in South Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAPAINUSSOA672N	Real Mean Personal Income in South Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MAPAINUSWEA646N	Mean Personal Income in West Census Region	Annual	Current Dollars -- NSA
-      MAPAINUSWEA672N	Real Mean Personal Income in West Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MAPAINUSWEA672N	Real Mean Personal Income in West Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEFAINUSA646N	Median Family Income in the United States	Annual	Current Dollars -- NSA
-      MEFAINUSA672N	Real Median Family Income in the United States	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEFAINUSA672N	Real Median Family Income in the United States	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEFAINUSMWA646N	Median Family Income in Midwest Census Region	Annual	Current Dollars -- NSA
-      MEFAINUSMWA672N	Real Median Family Income in Midwest Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEFAINUSMWA672N	Real Median Family Income in Midwest Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEFAINUSNEA646N	Median Family Income in Northeast Census Region	Annual	Current Dollars -- NSA
-      MEFAINUSNEA672N	Real Median Family Income in Northeast Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEFAINUSNEA672N	Real Median Family Income in Northeast Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEFAINUSSOA646N	Median Family Income in South Census Region	Annual	Current Dollars -- NSA
-      MEFAINUSSOA672N	Real Median Family Income in South Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEFAINUSSOA672N	Real Median Family Income in South Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEFAINUSWEA646N	Median Family Income in West Census Region	Annual	Current Dollars -- NSA
-      MEFAINUSWEA672N	Real Median Family Income in West Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEFAINUSWEA672N	Real Median Family Income in West Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEHOINUSA646N	Median Household Income in the United States	Annual	Current Dollars -- NSA
-      MEHOINUSA672N	Real Median Household Income in the United States	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEHOINUSA672N	Real Median Household Income in the United States	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEPAINUSA646N	Median Personal Income in the United States	Annual	Current Dollars -- NSA
-      MEPAINUSA672N	Real Median Personal Income in the United States	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEPAINUSA672N	Real Median Personal Income in the United States	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEPAINUSMWA646N	Median Personal Income in Midwest Census Region	Annual	Current Dollars -- NSA
-      MEPAINUSMWA672N	Real Median Personal Income in Midwest Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEPAINUSMWA672N	Real Median Personal Income in Midwest Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEPAINUSNEA646N	Median Personal Income in Northeast Census Region	Annual	Current Dollars -- NSA
-      MEPAINUSNEA672N	Real Median Personal Income in Northeast Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEPAINUSNEA672N	Real Median Personal Income in Northeast Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEPAINUSSOA646N	Median Personal Income in South Census Region	Annual	Current Dollars -- NSA
-      MEPAINUSSOA672N	Real Median Personal Income in South Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEPAINUSSOA672N	Real Median Personal Income in South Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
       MEPAINUSWEA646N	Median Personal Income in West Census Region	Annual	Current Dollars -- NSA
-      MEPAINUSWEA672N	Real Median Personal Income in West Census Region	Annual	2016 CPI-U-RS Adjusted Dollars -- NSA
+      MEPAINUSWEA672N	Real Median Personal Income in West Census Region	Annual	2017 CPI-U-RS Adjusted Dollars -- NSA
 
   32241 Job Openings and Labor Turnover (JOLTS)
 
@@ -7082,62 +7074,6 @@
       JTSOSR	Other Separations: Total Nonfarm	Monthly	Rate -- SA
 
   33509 Labor Market Conditions
-      DHIDFHDMI1	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 1-9 Employees	Monthly	Working Days -- NSA
-      DHIDFHDMI10	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 10-49 Employees	Monthly	Working Days -- NSA
-      DHIDFHDMI1000	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 1000-4999 Employees	Monthly	Working Days -- NSA
-      DHIDFHDMI250	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 250-999 Employees	Monthly	Working Days -- NSA
-      DHIDFHDMI50	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 50-249 Employees	Monthly	Working Days -- NSA
-      DHIDFHDMI5000	DHI-DFH Mean Vacancy Duration Measure by Establishment Size Class: 5000+ Employees	Monthly	Working Days -- NSA
-      DHIDFHDMIC	DHI-DFH Mean Vacancy Duration Measure by Industry: Construction	Monthly	Working Days -- NSA
-      DHIDFHDMIE	DHI-DFH Mean Vacancy Duration Measure by Industry: Education	Monthly	Working Days -- NSA
-      DHIDFHDMIEHS	DHI-DFH Mean Vacancy Duration Measure by Industry: Education and Health Services	Monthly	Working Days -- NSA
-      DHIDFHDMIFS	DHI-DFH Mean Vacancy Duration Measure by Industry: Financial Services	Monthly	Working Days -- NSA
-      DHIDFHDMIG	DHI-DFH Mean Vacancy Duration Measure by Industry: Government	Monthly	Working Days -- NSA
-      DHIDFHDMIHS	DHI-DFH Mean Vacancy Duration Measure by Industry: Health Services	Monthly	Working Days -- NSA
-      DHIDFHDMII	DHI-DFH Mean Vacancy Duration Measure by Industry: Information	Monthly	Working Days -- NSA
-      DHIDFHDMILH	DHI-DFH Mean Vacancy Duration Measure by Industry: Leisure and Hospitality	Monthly	Working Days -- NSA
-      DHIDFHDMIM	DHI-DFH Mean Vacancy Duration Measure by Industry: Manufacturing	Monthly	Working Days -- NSA
-      DHIDFHDMIMW	DHI-DFH Mean Vacancy Duration Measure for Midwest Census Region	Monthly	Working Days -- NSA
-      DHIDFHDMINE	DHI-DFH Mean Vacancy Duration Measure for Northeast Census Region	Monthly	Working Days -- NSA
-      DHIDFHDMIOS	DHI-DFH Mean Vacancy Duration Measure by Industry: Other Services	Monthly	Working Days -- NSA
-      DHIDFHDMIP	DHI-DFH Mean Vacancy Duration Measure by Industry: Private	Monthly	Working Days -- NSA
-      DHIDFHDMIPBS	DHI-DFH Mean Vacancy Duration Measure by Industry: Professional and Business Services	Monthly	Working Days -- NSA
-      DHIDFHDMIR	DHI-DFH Mean Vacancy Duration Measure by Industry: Resources	Monthly	Working Days -- NSA
-      DHIDFHDMISO	DHI-DFH Mean Vacancy Duration Measure for South Census Region	Monthly	Working Days -- NSA
-      DHIDFHDMIWE	DHI-DFH Mean Vacancy Duration Measure for West Census Region	Monthly	Working Days -- NSA
-      DHIDFHDMIWRT	DHI-DFH Mean Vacancy Duration Measure by Industry: Wholesale and Retail Trade	Monthly	Working Days -- NSA
-      DHIDFHDMIWTU	DHI-DFH Mean Vacancy Duration Measure by Industry: Warehouse, Transportation & Utilities	Monthly	Working Days -- NSA
-      DHIDFHIRIPV	DHI-DFH Index of Recruiting Intensity per Vacancy	Monthly	Index -- NSA
-      DHIDFHMVDM	DHI-DFH Mean Vacancy Duration Measure	Monthly	Working Days -- NSA
-      DHIDFHQTRT	Quits Rate	Monthly	Ratio -- NSA
-      DHIDFHRIV1	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 1-9 Employees	Monthly	Index -- NSA
-      DHIDFHRIV10	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 10-49 Employees	Monthly	Index -- NSA
-      DHIDFHRIV1000	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 1000-4999 Employees	Monthly	Index -- NSA
-      DHIDFHRIV250	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 250-999 Employees	Monthly	Index -- NSA
-      DHIDFHRIV50	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 50-249 Employees	Monthly	Index -- NSA
-      DHIDFHRIV5000	DHI-DFH Index of Recruiting Intensity per Vacancy by Establishment Size Class: 5000+ Employees	Monthly	Index -- NSA
-      DHIDFHRIVMW	DHI-DFH Index of Recruiting Intensity per Vacancy for Midwest Census Region	Monthly	Index -- NSA
-      DHIDFHRIVNE	DHI-DFH Index of Recruiting Intensity per Vacancy for Northeast Census Region	Monthly	Index -- NSA
-      DHIDFHRIVSO	DHI-DFH Index of Recruiting Intensity per Vacancy for South Census Region	Monthly	Index -- NSA
-      DHIDFHRIVWE	DHI-DFH Index of Recruiting Intensity per Vacancy for West Census Region	Monthly	Index -- NSA
-      DHIDFHRSQTRT	Rescaled Quits Rate	Monthly	Ratio -- NSA
-      DHIDFHRVIC	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Construction	Monthly	Index -- NSA
-      DHIDFHRVIE	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Education	Monthly	Index -- NSA
-      DHIDFHRVIEHS	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Education and Health Services	Monthly	Index -- NSA
-      DHIDFHRVIFS	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Financial Services	Monthly	Index -- NSA
-      DHIDFHRVIG	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Government	Monthly	Index -- NSA
-      DHIDFHRVIHS	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Health Services	Monthly	Index -- NSA
-      DHIDFHRVII	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Information	Monthly	Index -- NSA
-      DHIDFHRVILH	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Leisure and Hospitality	Monthly	Index -- NSA
-      DHIDFHRVIM	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Manufacturing	Monthly	Index -- NSA
-      DHIDFHRVIOS	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Other Services	Monthly	Index -- NSA
-      DHIDFHRVIP	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Private	Monthly	Index -- NSA
-      DHIDFHRVIPB	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Professional and Business Services	Monthly	Index -- NSA
-      DHIDFHRVIR	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Resources	Monthly	Index -- NSA
-      DHIDFHRVIWRT	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Wholesale and Retail Trade	Monthly	Index -- NSA
-      DHIDFHRVIWTU	DHI-DFH Index of Recruiting Intensity per Vacancy by Industry: Warehouse, Trans. & Utilities	Monthly	Index -- NSA
-      DHIDFHVTSTUT	Vacancies to Short-Term Unemployment	Monthly	Ratio -- NSA
-      DHIDFHVTUR	Vacancy to Unemployment Ratio	Monthly	Ratio -- NSA
       FRBKCLMCILA	KC Fed Labor Market Conditions Index, Level of Activity Indicator	Monthly	Index -- SA
       FRBKCLMCIM	KC Fed Labor Market Conditions Index, Momentum Indicator	Monthly	Index -- SA
       NEIM156SFRBRIC	Hornstein-Kudlyak-Lange Non-Employment Index	Monthly	Percent -- SA
@@ -7148,130 +7084,79 @@
     33735 Poverty Measures
         MHICILBDC11000A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
         MHICILBDC11001A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
-        MHICILBMT30113A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Yellowstone National Park, MT	Annual	Dollars -- NSA
         MHICILBUS00000A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for United States	Annual	Dollars -- NSA
-        MHICILBVA51560A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for Clifton Forge City, VA	Annual	Dollars -- NSA
-        MHICILBVA51780A052NCEN	90% Confidence Interval Lower Bound of Estimate of Median Household Income for South Boston City, VA	Annual	Dollars -- NSA
         MHICIUBDC11000A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
         MHICIUBDC11001A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
-        MHICIUBMT30113A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Yellowstone National Park, MT	Annual	Dollars -- NSA
         MHICIUBUS00000A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for United States	Annual	Dollars -- NSA
-        MHICIUBVA51560A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for Clifton Forge City, VA	Annual	Dollars -- NSA
-        MHICIUBVA51780A052NCEN	90% Confidence Interval Upper Bound of Estimate of Median Household Income for South Boston City, VA	Annual	Dollars -- NSA
         MHIDC11000A052NCEN	Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
         MHIDC11001A052NCEN	Estimate of Median Household Income for District of Columbia	Annual	Dollars -- NSA
-        MHIMT30113A052NCEN	Estimate of Median Household Income for Yellowstone National Park, MT	Annual	Dollars -- NSA
         MHIUS00000A052NCEN	Estimate of Median Household Income for United States	Annual	Dollars -- NSA
-        MHIVA51560A052NCEN	Estimate of Median Household Income for Clifton Forge City, VA	Annual	Dollars -- NSA
-        MHIVA51780A052NCEN	Estimate of Median Household Income for South Boston City, VA	Annual	Dollars -- NSA
         PE0T4DC11000A647NCEN	Estimate of People Under Age 5 in Poverty for District of Columbia	Annual	Persons -- NSA
         PE0T4US00000A647NCEN	Estimate of People Under Age 5 in Poverty for United States	Annual	Persons -- NSA
         PE5T17DC11000A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
         PE5T17DC11001A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
-        PE5T17MT30113A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Yellowstone National Park, MT	Annual	Persons -- NSA
         PE5T17US00000A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual	Persons -- NSA
-        PE5T17VA51560A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PE5T17VA51780A647NCEN	Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Persons -- NSA
-        PEAADC11000A647NCEN	Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
-        PEAADC11001A647NCEN	Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
-        PEAAMT30113A647NCEN	Estimate of People of All Ages in Poverty for Yellowstone National Park, MT	Annual	Persons -- NSA
-        PEAAUS00000A647NCEN	Estimate of People of All Ages in Poverty for United States	Annual	Persons -- NSA
-        PEAAVA51560A647NCEN	Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PEAAVA51780A647NCEN	Estimate of People of All Ages in Poverty for South Boston City, VA	Annual	Persons -- NSA
+        PEAADC11000A647NCEN	Estimate of People of All Ages in Poverty in District of Columbia	Annual	Persons -- NSA
+        PEAADC11001A647NCEN	Estimate of People of All Ages in Poverty in District of Columbia	Annual	Persons -- NSA
+        PEAAUS00000A647NCEN	Estimate of People of All Ages in Poverty in United States	Annual	Persons -- NSA
         PECILB0T4DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Under Age 5 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILB0T4US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Under Age 5 in Poverty for United States	Annual	Persons -- NSA
         PECILB5T17DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILB5T17DC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILB5T17US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual	Persons -- NSA
-        PECILB5T17VA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECILB5T17VA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Persons -- NSA
         PECILBAADC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILBAADC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILBAAUS00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for United States	Annual	Persons -- NSA
-        PECILBAAVA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECILBAAVA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of People of All Ages in Poverty for South Boston City, VA	Annual	Persons -- NSA
         PECILBU18DC11000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILBU18DC11001A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECILBU18US00000A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for United States	Annual	Persons -- NSA
-        PECILBU18VA51560A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECILBU18VA51780A647NCEN	90% Confidence Interval Lower Bound of Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual	Persons -- NSA
         PECIUB0T4DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Under Age 5 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUB0T4US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Under Age 5 in Poverty for United States	Annual	Persons -- NSA
         PECIUB5T17DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUB5T17DC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUB5T17US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for United States	Annual	Persons -- NSA
-        PECIUB5T17VA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECIUB5T17VA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Persons -- NSA
         PECIUBAADC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUBAADC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUBAAUS00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for United States	Annual	Persons -- NSA
-        PECIUBAAVA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECIUBAAVA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of People of All Ages in Poverty for South Boston City, VA	Annual	Persons -- NSA
         PECIUBU18DC11000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUBU18DC11001A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
         PECIUBU18US00000A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for United States	Annual	Persons -- NSA
-        PECIUBU18VA51560A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PECIUBU18VA51780A647NCEN	90% Confidence Interval Upper Bound of Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual	Persons -- NSA
-        PEU18DC11000A647NCEN	Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
-        PEU18DC11001A647NCEN	Estimate of People Age 0-17 in Poverty for District of Columbia	Annual	Persons -- NSA
-        PEU18MT30113A647NCEN	Estimate of People Age 0-17 in Poverty for Yellowstone National Park, MT	Annual	Persons -- NSA
-        PEU18US00000A647NCEN	Estimate of People Age 0-17 in Poverty for United States	Annual	Persons -- NSA
-        PEU18VA51560A647NCEN	Estimate of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Persons -- NSA
-        PEU18VA51780A647NCEN	Estimate of People Age 0-17 in Poverty for South Boston City, VA	Annual	Persons -- NSA
+        PEU18DC11000A647NCEN	Estimate of People Age 0-17 in Poverty in District of Columbia	Annual	Persons -- NSA
+        PEU18DC11001A647NCEN	Estimate of People Age 0-17 in Poverty in District of Columbia	Annual	Persons -- NSA
+        PEU18US00000A647NCEN	Estimate of People Age 0-17 in Poverty in United States	Annual	Persons -- NSA
         PP0T4DC11000A156NCEN	Estimated Percent of People Under Age 5 in Poverty for District of Columbia	Annual	Percent -- NSA
         PP0T4US00000A156NCEN	Estimated Percent of People Under Age 5 in Poverty for United States	Annual	Percent -- NSA
         PP5T17DC11000A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
         PP5T17DC11001A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
-        PP5T17MT30113A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Yellowstone National Park, MT	Annual	Percent -- NSA
         PP5T17US00000A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual	Percent -- NSA
-        PP5T17VA51560A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PP5T17VA51780A156NCEN	Estimated Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPAADC11000A156NCEN	Estimated Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
         PPAADC11001A156NCEN	Estimated Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
-        PPAAMT30113A156NCEN	Estimated Percent of People of All Ages in Poverty for Yellowstone National Park, MT	Annual	Percent -- NSA
         PPAAUS00000A156NCEN	Estimated Percent of People of All Ages in Poverty for United States	Annual	Percent -- NSA
-        PPAAVA51560A156NCEN	Estimated Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPAAVA51780A156NCEN	Estimated Percent of People of All Ages in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCILB0T4DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Under Age 5 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILB0T4US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Under Age 5 in Poverty for United States	Annual	Percent -- NSA
         PPCILB5T17DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILB5T17DC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILB5T17US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual	Percent -- NSA
-        PPCILB5T17VA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCILB5T17VA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCILBAADC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILBAADC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILBAAUS00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for United States	Annual	Percent -- NSA
-        PPCILBAAVA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCILBAAVA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People of All Ages in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCILBU18DC11000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILBU18DC11001A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCILBU18US00000A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for United States	Annual	Percent -- NSA
-        PPCILBU18VA51560A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCILBU18VA51780A156NCEN	90% Confidence Interval Lower Bound of Estimate of Percent of People Age 0-17 in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCIUB0T4DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Under Age 5 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUB0T4US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Under Age 5 in Poverty for United States	Annual	Percent -- NSA
         PPCIUB5T17DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUB5T17DC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUB5T17US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for United States	Annual	Percent -- NSA
-        PPCIUB5T17VA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCIUB5T17VA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of Related Children Age 5-17 in Families in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCIUBAADC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUBAADC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUBAAUS00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for United States	Annual	Percent -- NSA
-        PPCIUBAAVA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCIUBAAVA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People of All Ages in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPCIUBU18DC11000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUBU18DC11001A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPCIUBU18US00000A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for United States	Annual	Percent -- NSA
-        PPCIUBU18VA51560A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPCIUBU18VA51780A156NCEN	90% Confidence Interval Upper Bound of Estimate of Percent of People Age 0-17 in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PPU18DC11000A156NCEN	Estimated Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
         PPU18DC11001A156NCEN	Estimated Percent of People Age 0-17 in Poverty for District of Columbia	Annual	Percent -- NSA
-        PPU18MT30113A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Yellowstone National Park, MT	Annual	Percent -- NSA
         PPU18US00000A156NCEN	Estimated Percent of People Age 0-17 in Poverty for United States	Annual	Percent -- NSA
-        PPU18VA51560A156NCEN	Estimated Percent of People Age 0-17 in Poverty for Clifton Forge City, VA	Annual	Percent -- NSA
-        PPU18VA51780A156NCEN	Estimated Percent of People Age 0-17 in Poverty for South Boston City, VA	Annual	Percent -- NSA
         PUA0T17AK02000A647NCEN	Poverty Universe, Age 0-17 for Alaska	Annual	Persons -- NSA
         PUA0T17AK02013A647NCEN	Poverty Universe, Age 0-17 for Aleutians East Borough, AK	Annual	Persons -- NSA
         PUA0T17AK02016A647NCEN	Poverty Universe, Age 0-17 for Aleutians West Census Area, AK	Annual	Persons -- NSA
@@ -7298,7 +7183,6 @@
         PUA0T17AK02230A647NCEN	Poverty Universe, Age 0-17 for Skagway Municipality, AK	Annual	Persons -- NSA
         PUA0T17AK02240A647NCEN	Poverty Universe, Age 0-17 for Southeast Fairbanks Census Area, AK	Annual	Persons -- NSA
         PUA0T17AK02261A647NCEN	Poverty Universe, Age 0-17 for Valdez-Cordova Census Area, AK	Annual	Persons -- NSA
-        PUA0T17AK02270A647NCEN	Poverty Universe, Age 0-17 for Wade Hampton Census Area, AK	Annual	Persons -- NSA
         PUA0T17AK02275A647NCEN	Poverty Universe, Age 0-17 for Wrangell Borough/City, AK	Annual	Persons -- NSA
         PUA0T17AK02282A647NCEN	Poverty Universe, Age 0-17 for Yakutat City and Borough, AK	Annual	Persons -- NSA
         PUA0T17AK02290A647NCEN	Poverty Universe, Age 0-17 for Yukon-Koyukuk Census Area, AK	Annual	Persons -- NSA
@@ -9665,49 +9549,49 @@
           MPU9920993	Manufacturing Durable Goods Sector: Hours	Annual	Percent Change from Year Ago -- NSA
           PRS31006011	Manufacturing Durable Goods Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006012	Manufacturing Durable Goods Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006013	Manufacturing Durable Goods Sector: Employment	Quarterly	Index 2009=100 -- SA
+          PRS31006013	Manufacturing Durable Goods Sector: Employment	Quarterly	Index 2012=100 -- SA
           PRS31006021	Manufacturing Durable Goods Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006022	Manufacturing Durable Goods Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006023	Manufacturing Durable Goods Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+          PRS31006023	Manufacturing Durable Goods Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
           PRS31006031	Manufacturing Durable Goods Sector: Hours Worked	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006032	Manufacturing Durable Goods Sector: Hours Worked	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006033	Manufacturing Durable Goods Sector: Hours Worked	Quarterly	Index 2009=100 -- SA
+          PRS31006033	Manufacturing Durable Goods Sector: Hours Worked	Quarterly	Index 2012=100 -- SA
           PRS31006041	Manufacturing Durable Goods Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006042	Manufacturing Durable Goods Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006043	Manufacturing Durable Goods Sector: Real Output	Quarterly	Index 2009=100 -- SA
+          PRS31006043	Manufacturing Durable Goods Sector: Real Output	Quarterly	Index 2012=100 -- SA
           PRS31006051	Manufacturing Durable Goods Sector: Current Dollar Output	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS31006052	Manufacturing Durable Goods Sector: Current Dollar Output	Annual	Percent Change at Annual Rate -- NSA
-          PRS31006053	Manufacturing Durable Goods Sector: Current Dollar Output	Annual	Index 2009=100 -- NSA
+          PRS31006053	Manufacturing Durable Goods Sector: Current Dollar Output	Annual	Index 2012=100 -- NSA
           PRS31006061	Manufacturing Durable Goods Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006062	Manufacturing Durable Goods Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006063	Manufacturing Durable Goods Sector: Compensation	Quarterly	Index 2009=100 -- SA
+          PRS31006063	Manufacturing Durable Goods Sector: Compensation	Quarterly	Index 2012=100 -- SA
           PRS31006081	Manufacturing Durable Goods Sector: Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS31006082	Manufacturing Durable Goods Sector: Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-          PRS31006083	Manufacturing Durable Goods Sector: Nonlabor Payments	Annual	Index 2009=100 -- NSA
+          PRS31006083	Manufacturing Durable Goods Sector: Nonlabor Payments	Annual	Index 2012=100 -- NSA
           PRS31006091	Manufacturing Durable Goods Sector: Real Output Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006092	Manufacturing Durable Goods Sector: Real Output Per Hour	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006093	Manufacturing Durable Goods Sector: Real Output Per Hour	Quarterly	Index 2009=100 -- SA
+          PRS31006093	Manufacturing Durable Goods Sector: Real Output Per Hour	Quarterly	Index 2012=100 -- SA
           PRS31006101	Manufacturing Durable Goods Sector: Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006102	Manufacturing Durable Goods Sector: Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006103	Manufacturing Durable Goods Sector: Hourly Compensation	Quarterly	Index 2009=100 -- SA
+          PRS31006103	Manufacturing Durable Goods Sector: Hourly Compensation	Quarterly	Index 2012=100 -- SA
           PRS31006111	Manufacturing Durable Goods Sector: Unit Labor Costs	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006112	Manufacturing Durable Goods Sector: Unit Labor Costs	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006113	Manufacturing Durable Goods Sector: Unit Labor Costs	Quarterly	Index 2009=100 -- SA
+          PRS31006113	Manufacturing Durable Goods Sector: Unit Labor Costs	Quarterly	Index 2012=100 -- SA
           PRS31006131	Manufacturing Durable Goods Sector: Unit Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS31006132	Manufacturing Durable Goods Sector: Unit Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-          PRS31006133	Manufacturing Durable Goods Sector: Unit Nonlabor Payments	Annual	Index 2009=100 -- NSA
+          PRS31006133	Manufacturing Durable Goods Sector: Unit Nonlabor Payments	Annual	Index 2012=100 -- NSA
           PRS31006141	Manufacturing Durable Goods Sector: Implicit Price Deflator	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS31006142	Manufacturing Durable Goods Sector: Implicit Price Deflator	Annual	Percent Change at Annual Rate -- NSA
-          PRS31006143	Manufacturing Durable Goods Sector: Implicit Price Deflator	Annual	Index 2009=100 -- NSA
+          PRS31006143	Manufacturing Durable Goods Sector: Implicit Price Deflator	Annual	Index 2012=100 -- NSA
           PRS31006151	Manufacturing Durable Goods Sector: Real Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006152	Manufacturing Durable Goods Sector: Real Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006153	Manufacturing Durable Goods Sector: Real Hourly Compensation	Quarterly	Index 2009=100 -- SA
+          PRS31006153	Manufacturing Durable Goods Sector: Real Hourly Compensation	Quarterly	Index 2012=100 -- SA
           PRS31006161	Manufacturing Durable Goods Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS31006162	Manufacturing Durable Goods Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-          PRS31006163	Manufacturing Durable Goods Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+          PRS31006163	Manufacturing Durable Goods Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
           PRS31006171	Manufacturing Durable Goods Sector: Labor share	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS31006172	Manufacturing Durable Goods Sector: Labor share	Annual	Percent Change at Annual Rate -- NSA
-          PRS31006173	Manufacturing Durable Goods Sector: Labor share	Annual	Index 2009=100 -- NSA
+          PRS31006173	Manufacturing Durable Goods Sector: Labor share	Annual	Index 2012=100 -- NSA
 
       32353 Nondurable Goods
           MPU5500012	Manufacturing Nondurable Goods Sector: Food and Beverage and Tobacco Products: Multifactor Productivity	Annual	Index 2009=100 -- NSA
@@ -10171,52 +10055,52 @@
           MPU9910993	Manufacturing Nondurable Goods Sector: Hours	Annual	Percent Change from Year Ago -- NSA
           PRS32006011	Manufacturing Nondurable Goods Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006012	Manufacturing Nondurable Goods Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006013	Manufacturing Nondurable Goods Sector: Employment	Quarterly	Index 2009=100 -- SA
+          PRS32006013	Manufacturing Nondurable Goods Sector: Employment	Quarterly	Index 2012=100 -- SA
           PRS32006021	Manufacturing Nondurable Goods Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006022	Manufacturing Nondurable Goods Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006023	Manufacturing Nondurable Goods Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+          PRS32006023	Manufacturing Nondurable Goods Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
           PRS32006031	Manufacturing Nondurable Goods Sector: Hours Worked	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006032	Manufacturing Nondurable Goods Sector: Hours Worked	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006033	Manufacturing Nondurable Goods Sector: Hours Worked	Quarterly	Index 2009=100 -- SA
+          PRS32006033	Manufacturing Nondurable Goods Sector: Hours Worked	Quarterly	Index 2012=100 -- SA
           PRS32006041	Manufacturing Nondurable Goods Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006042	Manufacturing Nondurable Goods Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006043	Manufacturing Nondurable Goods Sector: Real Output	Quarterly	Index 2009=100 -- SA
+          PRS32006043	Manufacturing Nondurable Goods Sector: Real Output	Quarterly	Index 2012=100 -- SA
           PRS32006051	Manufacturing Nondurable Goods Sector: Current Dollar Output	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS32006052	Manufacturing Nondurable Goods Sector: Current Dollar Output	Annual	Percent Change at Annual Rate -- NSA
-          PRS32006053	Manufacturing Nondurable Goods Sector: Current Dollar Output	Annual	Index 2009=100 -- NSA
+          PRS32006053	Manufacturing Nondurable Goods Sector: Current Dollar Output	Annual	Index 2012=100 -- NSA
           PRS32006061	Manufacturing Nondurable Goods Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006062	Manufacturing Nondurable Goods Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006063	Manufacturing Nondurable Goods Sector: Compensation	Quarterly	Index 2009=100 -- SA
+          PRS32006063	Manufacturing Nondurable Goods Sector: Compensation	Quarterly	Index 2012=100 -- SA
           PRS32006081	Manufacturing Nondurable Goods Sector: Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS32006082	Manufacturing Nondurable Goods Sector: Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-          PRS32006083	Manufacturing Nondurable Goods Sector: Nonlabor Payments	Annual	Index 2009=100 -- NSA
+          PRS32006083	Manufacturing Nondurable Goods Sector: Nonlabor Payments	Annual	Index 2012=100 -- NSA
           PRS32006091	Manufacturing Nondurable Goods Sector: Real Output Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006092	Manufacturing Nondurable Goods Sector: Real Output Per Hour	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006093	Manufacturing Nondurable Goods Sector: Real Output Per Hour	Quarterly	Index 2009=100 -- SA
+          PRS32006093	Manufacturing Nondurable Goods Sector: Real Output Per Hour	Quarterly	Index 2012=100 -- SA
           PRS32006101	Manufacturing Nondurable Goods Sector: Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006102	Manufacturing Nondurable Goods Sector: Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006103	Manufacturing Nondurable Goods Sector: Hourly Compensation	Quarterly	Index 2009=100 -- SA
+          PRS32006103	Manufacturing Nondurable Goods Sector: Hourly Compensation	Quarterly	Index 2012=100 -- SA
           PRS32006111	Manufacturing Nondurable Goods Sector: Unit Labor Costs	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006112	Manufacturing Nondurable Goods Sector: Unit Labor Costs	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006113	Manufacturing Nondurable Goods Sector: Unit Labor Costs	Quarterly	Index 2009=100 -- SA
+          PRS32006113	Manufacturing Nondurable Goods Sector: Unit Labor Costs	Quarterly	Index 2012=100 -- SA
           PRS32006131	Manufacturing Nondurable Goods Sector: Unit Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS32006132	Manufacturing Nondurable Goods Sector: Unit Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-          PRS32006133	Manufacturing Nondurable Goods Sector: Unit Nonlabor Payments	Annual	Index 2009=100 -- NSA
+          PRS32006133	Manufacturing Nondurable Goods Sector: Unit Nonlabor Payments	Annual	Index 2012=100 -- NSA
           PRS32006141	Manufacturing Nondurable Goods Sector: Implicit Price Deflator	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS32006142	Manufacturing Nondurable Goods Sector: Implicit Price Deflator	Annual	Percent Change at Annual Rate -- NSA
-          PRS32006143	Manufacturing Nondurable Goods Sector: Implicit Price Deflator	Annual	Index 2009=100 -- NSA
+          PRS32006143	Manufacturing Nondurable Goods Sector: Implicit Price Deflator	Annual	Index 2012=100 -- NSA
           PRS32006151	Manufacturing Nondurable Goods Sector: Real Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006152	Manufacturing Nondurable Goods Sector: Real Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006153	Manufacturing Nondurable Goods Sector: Real Hourly Compensation	Quarterly	Index 2009=100 -- SA
+          PRS32006153	Manufacturing Nondurable Goods Sector: Real Hourly Compensation	Quarterly	Index 2012=100 -- SA
           PRS32006161	Manufacturing Nondurable Goods Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
           PRS32006162	Manufacturing Nondurable Goods Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-          PRS32006163	Manufacturing Nondurable Goods Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+          PRS32006163	Manufacturing Nondurable Goods Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
           PRS32006171	Manufacturing Nondurable Goods Sector: Labor Share	Annual	Percent Change From Quarter One Year Ago -- NSA
           PRS32006172	Manufacturing Nondurable Goods Sector: Labor Share	Annual	Percent Change at Annual Rate -- NSA
-          PRS32006173	Manufacturing Nondurable Goods Sector: Labor Share	Annual	Index 2009=100 -- NSA
-        COMPMS	Manufacturing Sector: Compensation Per Hour	Quarterly	Index 2009=100 -- SA
-        COMPRMS	Manufacturing Sector: Real Compensation Per Hour	Quarterly	Index 2009=100 -- SA
-        HOAMS	Manufacturing Sector: Hours of All Persons	Quarterly	Index 2009=100 -- SA
+          PRS32006173	Manufacturing Nondurable Goods Sector: Labor Share	Annual	Index 2012=100 -- NSA
+        COMPMS	Manufacturing Sector: Compensation Per Hour	Quarterly	Index 2012=100 -- SA
+        COMPRMS	Manufacturing Sector: Real Compensation Per Hour	Quarterly	Index 2012=100 -- SA
+        HOAMS	Manufacturing Sector: Hours of All Persons	Quarterly	Index 2012=100 -- SA
         MFGOPH	Manufacturing Sector: Output Per Hour of All Persons	Annual	Index 2009=100 -- NSA
         MFGPROD	Manufacturing Sector: Multifactor Productivity	Annual	Index 2009=100 -- NSA
         MPU9900013	Manufacturing Sector: Multifactor Productivity	Annual	Percent Change from Year Ago -- NSA
@@ -10268,27 +10152,27 @@
         MPU9900783	Manufacturing Sector: Contribution of Intermediate Inputs	Annual	Percent Change from Year Ago -- NSA
         MPU9900992	Manufacturing Sector: Hours	Annual	Index 2009=100 -- NSA
         MPU9900993	Manufacturing Sector: Hours	Annual	Percent Change from Year Ago -- NSA
-        OPHMFG	Manufacturing Sector: Real Output Per Hour of All Persons	Quarterly	Index 2009=100 -- SA
-        OUTMS	Manufacturing Sector: Real Output	Quarterly	Index 2009=100 -- SA
+        OPHMFG	Manufacturing Sector: Real Output Per Hour of All Persons	Quarterly	Index 2012=100 -- SA
+        OUTMS	Manufacturing Sector: Real Output	Quarterly	Index 2012=100 -- SA
         PRS30006011	Manufacturing Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006012	Manufacturing Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-        PRS30006013	Manufacturing Sector: Employment	Quarterly	Index 2009=100 -- SA
+        PRS30006013	Manufacturing Sector: Employment	Quarterly	Index 2012=100 -- SA
         PRS30006021	Manufacturing Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006022	Manufacturing Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-        PRS30006023	Manufacturing Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+        PRS30006023	Manufacturing Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
         PRS30006031	Manufacturing Sector: Hours of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006032	Manufacturing Sector: Hours of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS30006041	Manufacturing Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006042	Manufacturing Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
         PRS30006051	Manufacturing Sector: Current Dollar Output	Annual	Percent Change From Quarter One Year Ago -- NSA
         PRS30006052	Manufacturing Sector: Current Dollar Output	Annual	Percent Change at Annual Rate -- NSA
-        PRS30006053	Manufacturing Sector: Current Dollar Output	Annual	Index 2009=100 -- NSA
+        PRS30006053	Manufacturing Sector: Current Dollar Output	Annual	Index 2012=100 -- NSA
         PRS30006061	Manufacturing Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006062	Manufacturing Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS30006063	Manufacturing Sector: Compensation	Quarterly	Index 2009=100 -- SA
+        PRS30006063	Manufacturing Sector: Compensation	Quarterly	Index 2012=100 -- SA
         PRS30006081	Manufacturing Sector: Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
         PRS30006082	Manufacturing Sector: Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-        PRS30006083	Manufacturing Sector: Nonlabor Payments	Annual	Index 2009=100 -- NSA
+        PRS30006083	Manufacturing Sector: Nonlabor Payments	Annual	Index 2012=100 -- NSA
         PRS30006091	Manufacturing Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006092	Manufacturing Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS30006101	Manufacturing Sector: Compensation Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
@@ -10297,19 +10181,19 @@
         PRS30006112	Manufacturing Sector: Unit Labor Cost	Quarterly	Percent Change at Annual Rate -- SA
         PRS30006131	Manufacturing Sector: Unit Nonlabor Payments	Annual	Percent Change From Quarter One Year Ago -- NSA
         PRS30006132	Manufacturing Sector: Unit Nonlabor Payments	Annual	Percent Change at Annual Rate -- NSA
-        PRS30006133	Manufacturing Sector: Unit Nonlabor Payments	Annual	Index 2009=100 -- NSA
+        PRS30006133	Manufacturing Sector: Unit Nonlabor Payments	Annual	Index 2012=100 -- NSA
         PRS30006141	Manufacturing Sector: Implicit Price Deflator	Annual	Percent Change From Quarter One Year Ago -- NSA
         PRS30006142	Manufacturing Sector: Implicit Price Deflator	Annual	Percent Change at Annual Rate -- NSA
-        PRS30006143	Manufacturing Sector: Implicit Price Deflator	Annual	Index 2009=100 -- NSA
+        PRS30006143	Manufacturing Sector: Implicit Price Deflator	Annual	Index 2012=100 -- NSA
         PRS30006151	Manufacturing Sector: Real Compensation Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006152	Manufacturing Sector: Real Compensation Per Hour	Quarterly	Percent Change at Annual Rate -- SA
         PRS30006161	Manufacturing Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS30006162	Manufacturing Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-        PRS30006163	Manufacturing Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+        PRS30006163	Manufacturing Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
         PRS30006171	Manufacturing Sector: Labor Share	Annual	Percent Change From Quarter One Year Ago -- NSA
         PRS30006172	Manufacturing Sector: Labor Share	Annual	Percent Change at Annual Rate -- NSA
-        PRS30006173	Manufacturing Sector: Labor Share	Annual	Index 2009=100 -- NSA
-        ULCMFG	Manufacturing Sector: Unit Labor Cost	Quarterly	Index 2009=100 -- SA
+        PRS30006173	Manufacturing Sector: Labor Share	Annual	Index 2012=100 -- NSA
+        ULCMFG	Manufacturing Sector: Unit Labor Cost	Quarterly	Index 2012=100 -- SA
 
     32350 Business
         CFSBCACTIVITY	Chicago Fed Survey of Business Conditions: Activity Index	Monthly	Index -- NSA
@@ -10322,9 +10206,9 @@
         CFSBCNWAGECOSTS	Chicago Fed Survey of Business Conditions: Nonwage Costs Index	Monthly	Index -- NSA
         CFSBCOUTLOOK	Chicago Fed Survey of Business Conditions: 6 to 12 month Outlook for the US Economy	Monthly	Index -- NSA
         CFSBCWAGECOSTS	Chicago Fed Survey of Business Conditions: Wage Costs Index	Monthly	Index -- NSA
-        HCOMPBS	Business Sector: Compensation Per Hour	Quarterly	Index 2009=100 -- SA
-        HOABS	Business Sector: Hours of All Persons	Quarterly	Index 2009=100 -- SA
-        IPDBS	Business Sector: Implicit Price Deflator	Quarterly	Index 2009=100 -- SA
+        HCOMPBS	Business Sector: Compensation Per Hour	Quarterly	Index 2012=100 -- SA
+        HOABS	Business Sector: Hours of All Persons	Quarterly	Index 2012=100 -- SA
+        IPDBS	Business Sector: Implicit Price Deflator	Quarterly	Index 2012=100 -- SA
         MFPPBS	Private Business Sector: Multifactor Productivity	Annual	Index 2009=100 -- NSA
         MPU4900013	Private Business Sector: Multifactor Productivity	Annual	Percent Change from Year Ago -- NSA
         MPU4900022	Private Business Sector: Real Value-Added Output	Annual	Index 2009=100 -- NSA
@@ -10360,27 +10244,27 @@
         MPU4900193	Private Business Sector: Contribution of Research and Development Intensity	Annual	Percent Change from Year Ago -- NSA
         MPU4900202	Private Business Sector: Contribution of All Other Intellectual Property Products Intensity	Annual	Index 2009=100 -- NSA
         MPU4900203	Private Business Sector: Contribution of All Other Intellectual Property Products Intensity	Annual	Percent Change from Year Ago -- NSA
-        OPHPBS	Business Sector: Real Output Per Hour of All Persons	Quarterly	Index 2009=100 -- SA
-        OUTBS	Business Sector: Real Output	Quarterly	Index 2009=100 -- SA
+        OPHPBS	Business Sector: Real Output Per Hour of All Persons	Quarterly	Index 2012=100 -- SA
+        OUTBS	Business Sector: Real Output	Quarterly	Index 2012=100 -- SA
         PRS84006011	Business Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006012	Business Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006013	Business Sector: Employment	Quarterly	Index 2009=100 -- SA
+        PRS84006013	Business Sector: Employment	Quarterly	Index 2012=100 -- SA
         PRS84006021	Business Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006022	Business Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006023	Business Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+        PRS84006023	Business Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
         PRS84006031	Business Sector: Hours of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006032	Business Sector: Hours of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS84006041	Business Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006042	Business Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
         PRS84006051	Business Sector: Current Dollar Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006052	Business Sector: Current Dollar Output	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006053	Business Sector: Current Dollar Output	Quarterly	Index 2009=100 -- SA
+        PRS84006053	Business Sector: Current Dollar Output	Quarterly	Index 2012=100 -- SA
         PRS84006061	Business Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006062	Business Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006063	Business Sector: Compensation	Quarterly	Index 2009=100 -- SA
+        PRS84006063	Business Sector: Compensation	Quarterly	Index 2012=100 -- SA
         PRS84006081	Business Sector: Non-Labor Payments	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006082	Business Sector: Non-Labor Payments	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006083	Business Sector: Non-Labor Payments	Quarterly	Index 2009=100 -- SA
+        PRS84006083	Business Sector: Non-Labor Payments	Quarterly	Index 2012=100 -- SA
         PRS84006091	Business Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006092	Business Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS84006101	Business Sector: Compensation Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
@@ -10395,19 +10279,19 @@
         PRS84006152	Business Sector: Real Compensation Per Hour	Quarterly	Percent Change at Annual Rate -- SA
         PRS84006161	Business Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006162	Business Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006163	Business Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+        PRS84006163	Business Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
         PRS84006171	Business Sector: Labor Share	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS84006172	Business Sector: Labor Share	Quarterly	Percent Change at Annual Rate -- SA
-        PRS84006173	Business Sector: Labor Share	Quarterly	Index 2009=100 -- SA
-        RCPHBS	Business Sector: Real Compensation Per Hour	Quarterly	Index 2009=100 -- SA
-        ULCBS	Business Sector: Unit Labor Cost	Quarterly	Index 2009=100 -- SA
-        UNLPBS	Business Sector: Unit Nonlabor Payments	Quarterly	Index 2009=100 -- SA
+        PRS84006173	Business Sector: Labor Share	Quarterly	Index 2012=100 -- SA
+        RCPHBS	Business Sector: Real Compensation Per Hour	Quarterly	Index 2012=100 -- SA
+        ULCBS	Business Sector: Unit Labor Cost	Quarterly	Index 2012=100 -- SA
+        UNLPBS	Business Sector: Unit Nonlabor Payments	Quarterly	Index 2012=100 -- SA
 
     32351 Nonfarm Business
         CNSTA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Construction	Annual	Billions of Hours -- NSA
         CNSTQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Construction	Quarterly	Billions of Hours -- SAAR
-        COMPNFB	Nonfarm Business Sector: Compensation Per Hour	Quarterly	Index 2009=100 -- SA
-        COMPRNFB	Nonfarm Business Sector: Real Compensation Per Hour	Quarterly	Index 2009=100 -- SA
+        COMPNFB	Nonfarm Business Sector: Compensation Per Hour	Quarterly	Index 2012=100 -- SA
+        COMPRNFB	Nonfarm Business Sector: Real Compensation Per Hour	Quarterly	Index 2012=100 -- SA
         DRMGA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Manufacturing: Durable Manufacturing	Annual	Billions of Hours -- NSA
         DRMGQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Manufacturing: Durable Manufacturing	Quarterly	Billions of Hours -- SAAR
         EHSCA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Education and Health Services	Annual	Billions of Hours -- NSA
@@ -10416,10 +10300,10 @@
         FNATQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Financial Activities	Quarterly	Billions of Hours -- SAAR
         GVRTA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Government	Annual	Billions of Hours -- NSA
         GVRTQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Government	Quarterly	Billions of Hours -- SAAR
-        HOANBS	Nonfarm Business Sector: Hours of All Persons	Quarterly	Index 2009=100 -- SA
+        HOANBS	Nonfarm Business Sector: Hours of All Persons	Quarterly	Index 2012=100 -- SA
         INFRA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Information	Annual	Billions of Hours -- NSA
         INFRQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Information	Quarterly	Billions of Hours -- SAAR
-        IPDNBS	Nonfarm Business Sector: Implicit Price Deflator	Quarterly	Index 2009=100 -- SA
+        IPDNBS	Nonfarm Business Sector: Implicit Price Deflator	Quarterly	Index 2012=100 -- SA
         LSHSA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Leisure and Hospitality	Annual	Billions of Hours -- NSA
         LSHSQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Leisure and Hospitality	Quarterly	Billions of Hours -- SAAR
         MFPNFBS	Private Non-Farm Business Sector: Multifactor Productivity	Annual	Index 2009=100 -- NSA
@@ -10463,31 +10347,31 @@
         NDMGQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Manufacturing: Nondurable Manufacturing	Quarterly	Billions of Hours -- SAAR
         NRMIA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Natural Resources and Mining	Annual	Billions of Hours -- NSA
         NRMIQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Natural Resources and Mining	Quarterly	Billions of Hours -- SAAR
-        OPHNFB	Nonfarm Business Sector: Real Output Per Hour of All Persons	Quarterly	Index 2009=100 -- SA
+        OPHNFB	Nonfarm Business Sector: Real Output Per Hour of All Persons	Quarterly	Index 2012=100 -- SA
         OSVCA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Other Services	Annual	Billions of Hours -- NSA
         OSVCQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Other Services	Quarterly	Billions of Hours -- SAAR
-        OUTNFB	Nonfarm Business Sector: Real Output	Quarterly	Index 2009=100 -- SA
+        OUTNFB	Nonfarm Business Sector: Real Output	Quarterly	Index 2012=100 -- SA
         PBSVA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Professional and Business Services	Annual	Billions of Hours -- NSA
         PBSVQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Professional and Business Services	Quarterly	Billions of Hours -- SAAR
         PRS85006011	Nonfarm Business Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006012	Nonfarm Business Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006013	Nonfarm Business Sector: Employment	Quarterly	Index 2009=100 -- SA
+        PRS85006013	Nonfarm Business Sector: Employment	Quarterly	Index 2012=100 -- SA
         PRS85006021	Nonfarm Business Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006022	Nonfarm Business Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006023	Nonfarm Business Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+        PRS85006023	Nonfarm Business Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
         PRS85006031	Nonfarm Business Sector: Hours of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006032	Nonfarm Business Sector: Hours of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS85006041	Nonfarm Business Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006042	Nonfarm Business Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
         PRS85006051	Nonfarm Business Sector: Current Dollar Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006052	Nonfarm Business Sector: Current Dollar Output	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006053	Nonfarm Business Sector: Current Dollar Output	Quarterly	Index 2009=100 -- SA
+        PRS85006053	Nonfarm Business Sector: Current Dollar Output	Quarterly	Index 2012=100 -- SA
         PRS85006061	Nonfarm Business Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006062	Nonfarm Business Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006063	Nonfarm Business Sector: Compensation	Quarterly	Index 2009=100 -- SA
+        PRS85006063	Nonfarm Business Sector: Compensation	Quarterly	Index 2012=100 -- SA
         PRS85006081	Nonfarm Business Sector: Non-Labor Payments	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006082	Nonfarm Business Sector: Non-Labor Payments	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006083	Nonfarm Business Sector: Non-Labor Payments	Quarterly	Index 2009=100 -- SA
+        PRS85006083	Nonfarm Business Sector: Non-Labor Payments	Quarterly	Index 2012=100 -- SA
         PRS85006091	Nonfarm Business Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006092	Nonfarm Business Sector: Real Output Per Hour of All Persons	Quarterly	Percent Change at Annual Rate -- SA
         PRS85006101	Nonfarm Business Sector: Compensation Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
@@ -10502,77 +10386,77 @@
         PRS85006152	Nonfarm Business Sector: Real Compensation Per Hour	Quarterly	Percent Change at Annual Rate -- SA
         PRS85006161	Nonfarm Business Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006162	Nonfarm Business Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006163	Nonfarm Business Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+        PRS85006163	Nonfarm Business Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
         PRS85006171	Nonfarm Business Sector: Labor Share	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS85006172	Nonfarm Business Sector: Labor Share	Quarterly	Percent Change at Annual Rate -- SA
-        PRS85006173	Nonfarm Business Sector: Labor Share	Quarterly	Index 2009=100 -- SA
+        PRS85006173	Nonfarm Business Sector: Labor Share	Quarterly	Index 2012=100 -- SA
         PRSCA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Private Sector	Annual	Billions of Hours -- NSA
         PRSCQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Private Sector	Quarterly	Billions of Hours -- SAAR
         TOTLA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Total	Annual	Billions of Hours -- NSA
         TOTLQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Total	Quarterly	Billions of Hours -- SAAR
         TTULA	Hours of Wage and Salary Workers on Nonfarm Payrolls: Trade, Transportation and Utilities	Annual	Billions of Hours -- NSA
         TTULQ	Hours of Wage and Salary Workers on Nonfarm Payrolls: Trade, Transportation and Utilities	Quarterly	Billions of Hours -- SAAR
-        ULCNFB	Nonfarm Business Sector: Unit Labor Cost	Quarterly	Index 2009=100 -- SA
-        UNLPNBS	Nonfarm Business Sector: Unit Nonlabor Payments	Quarterly	Index 2009=100 -- SA
+        ULCNFB	Nonfarm Business Sector: Unit Labor Cost	Quarterly	Index 2012=100 -- SA
+        UNLPNBS	Nonfarm Business Sector: Unit Nonlabor Payments	Quarterly	Index 2012=100 -- SA
 
     32354 Nonfinancial Corporations
         PRS88003011	Nonfinancial Corporations Sector: Employment	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003012	Nonfinancial Corporations Sector: Employment	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003013	Nonfinancial Corporations Sector: Employment	Quarterly	Index 2009=100 -- SA
+        PRS88003013	Nonfinancial Corporations Sector: Employment	Quarterly	Index 2012=100 -- SA
         PRS88003021	Nonfinancial Corporations Sector: Average Weekly Hours	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003022	Nonfinancial Corporations Sector: Average Weekly Hours	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003023	Nonfinancial Corporations Sector: Average Weekly Hours	Quarterly	Index 2009=100 -- SA
+        PRS88003023	Nonfinancial Corporations Sector: Average Weekly Hours	Quarterly	Index 2012=100 -- SA
         PRS88003031	Nonfinancial Corporations Sector: Hours Worked	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003032	Nonfinancial Corporations Sector: Hours Worked	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003033	Nonfinancial Corporations Sector: Hours Worked	Quarterly	Index 2009=100 -- SA
+        PRS88003033	Nonfinancial Corporations Sector: Hours Worked	Quarterly	Index 2012=100 -- SA
         PRS88003041	Nonfinancial Corporations Sector: Real Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003042	Nonfinancial Corporations Sector: Real Output	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003043	Nonfinancial Corporations Sector: Real Output	Quarterly	Index 2009=100 -- SA
+        PRS88003043	Nonfinancial Corporations Sector: Real Output	Quarterly	Index 2012=100 -- SA
         PRS88003051	Nonfinancial Corporations Sector: Current Dollar Output	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003052	Nonfinancial Corporations Sector: Current Dollar Output	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003053	Nonfinancial Corporations Sector: Current Dollar Output	Quarterly	Index 2009=100 -- SA
+        PRS88003053	Nonfinancial Corporations Sector: Current Dollar Output	Quarterly	Index 2012=100 -- SA
         PRS88003061	Nonfinancial Corporations Sector: Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003062	Nonfinancial Corporations Sector: Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003063	Nonfinancial Corporations Sector: Compensation	Quarterly	Index 2009=100 -- SA
+        PRS88003063	Nonfinancial Corporations Sector: Compensation	Quarterly	Index 2012=100 -- SA
         PRS88003081	Nonfinancial Corporations Sector: Non-Labor Payments	Quarterly	Percent Change at Annual Rate -- SA
         PRS88003082	Nonfinancial Corporations Sector: Non-Labor Payments	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003083	Nonfinancial Corporations Sector: Non-Labor Payments	Quarterly	Index 2009=100 -- SA
+        PRS88003083	Nonfinancial Corporations Sector: Non-Labor Payments	Quarterly	Index 2012=100 -- SA
         PRS88003091	Nonfinancial Corporations Sector: Real Output Per Hour	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003092	Nonfinancial Corporations Sector: Real Output Per Hour	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003093	Nonfinancial Corporations Sector: Real Output Per Hour	Quarterly	Index 2009=100 -- SA
+        PRS88003093	Nonfinancial Corporations Sector: Real Output Per Hour	Quarterly	Index 2012=100 -- SA
         PRS88003101	Nonfinancial Corporations Sector: Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003102	Nonfinancial Corporations Sector: Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003103	Nonfinancial Corporations Sector: Hourly Compensation	Quarterly	Index 2009=100 -- SA
+        PRS88003103	Nonfinancial Corporations Sector: Hourly Compensation	Quarterly	Index 2012=100 -- SA
         PRS88003111	Nonfinancial Corporations Sector: Unit Labor Costs	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003112	Nonfinancial Corporations Sector: Unit Labor Costs	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003113	Nonfinancial Corporations Sector: Unit Labor Costs	Quarterly	Index 2009=100 -- SA
+        PRS88003113	Nonfinancial Corporations Sector: Unit Labor Costs	Quarterly	Index 2012=100 -- SA
         PRS88003121	Nonfinancial Corporations Sector: Unit Nonlabor Costs	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003122	Nonfinancial Corporations Sector: Unit Nonlabor Costs	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003123	Nonfinancial Corporations Sector: Unit Nonlabor Costs	Quarterly	Index 2009=100 -- SA
+        PRS88003123	Nonfinancial Corporations Sector: Unit Nonlabor Costs	Quarterly	Index 2012=100 -- SA
         PRS88003131	Nonfinancial Corporations Sector: Unit Nonlabor Payments	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003132	Nonfinancial Corporations Sector: Unit Nonlabor Payments	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003133	Nonfinancial Corporations Sector: Unit Nonlabor Payments	Quarterly	Index 2009=100 -- SA
+        PRS88003133	Nonfinancial Corporations Sector: Unit Nonlabor Payments	Quarterly	Index 2012=100 -- SA
         PRS88003141	Nonfinancial Corporations Sector: Implicit Price Deflator	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003142	Nonfinancial Corporations Sector: Implicit Price Deflator	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003143	Nonfinancial Corporations Sector: Implicit Price Deflator	Quarterly	Index 2009=100 -- SA
+        PRS88003143	Nonfinancial Corporations Sector: Implicit Price Deflator	Quarterly	Index 2012=100 -- SA
         PRS88003151	Nonfinancial Corporations Sector: Real Hourly Compensation	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003152	Nonfinancial Corporations Sector: Real Hourly Compensation	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003153	Nonfinancial Corporations Sector: Real Hourly Compensation	Quarterly	Index 2009=100 -- SA
+        PRS88003153	Nonfinancial Corporations Sector: Real Hourly Compensation	Quarterly	Index 2012=100 -- SA
         PRS88003161	Nonfinancial Corporations Sector: Real Output Per Person	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003162	Nonfinancial Corporations Sector: Real Output Per Person	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003163	Nonfinancial Corporations Sector: Real Output Per Person	Quarterly	Index 2009=100 -- SA
+        PRS88003163	Nonfinancial Corporations Sector: Real Output Per Person	Quarterly	Index 2012=100 -- SA
         PRS88003171	Nonfinancial Corporations Sector: Labor Share	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003172	Nonfinancial Corporations Sector: Labor Share	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003173	Nonfinancial Corporations Sector: Labor Share	Quarterly	Index 2009=100 -- SA
+        PRS88003173	Nonfinancial Corporations Sector: Labor Share	Quarterly	Index 2012=100 -- SA
         PRS88003181	Nonfinancial Corporations Sector: Profits	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003182	Nonfinancial Corporations Sector: Profits	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003183	Nonfinancial Corporations Sector: Profits	Quarterly	Index 2009=100 -- SA
+        PRS88003183	Nonfinancial Corporations Sector: Profits	Quarterly	Index 2012=100 -- SA
         PRS88003191	Nonfinancial Corporations Sector: Unit Profits	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003192	Nonfinancial Corporations Sector: Unit Profits	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003193	Nonfinancial Corporations Sector: Unit Profits	Quarterly	Index 2009=100 -- SA
+        PRS88003193	Nonfinancial Corporations Sector: Unit Profits	Quarterly	Index 2012=100 -- SA
         PRS88003201	Nonfinancial Corporations Sector: Total Unit Costs	Quarterly	Percent Change From Quarter One Year Ago -- SA
         PRS88003202	Nonfinancial Corporations Sector: Total Unit Costs	Quarterly	Percent Change at Annual Rate -- SA
-        PRS88003203	Nonfinancial Corporations Sector: Total Unit Costs	Quarterly	Index 2009=100 -- SA
+        PRS88003203	Nonfinancial Corporations Sector: Total Unit Costs	Quarterly	Index 2012=100 -- SA
 
   33831 Minimum Wage
       STTMINWGAK	State Minimum Wage Rate for Alaska	Annual	Dollars per Hour -- NSA
@@ -10829,8 +10713,8 @@
       INCTACDTA	Individual Income Tax Filing: Income Tax After Credits	Annual	Thousands of U.S. Dollars -- NSA
       INCTXBCT	Individual Income Tax Filing: Income Tax Before Credits	Annual	Number of Returns -- NSA
       INCTXBCTA	Individual Income Tax Filing: Income Tax Before Credits	Annual	Thousands of U.S. Dollars -- NSA
-      IRAADJ	Individual Income Tax Filing: Statutory Adjustments: Individual Retirement Arrangements	Annual	Number of Returns -- NSA
-      IRAADJA	Individual Income Tax Filing: Statutory Adjustments: Individual Retirement Arrangements	Annual	Thousands of U.S. Dollars -- NSA
+      IRAADJ	Individual Income Tax Filing: Statutory Adjustments: Individual Retirement Arrangements Deduction	Annual	Number of Returns -- NSA
+      IRAADJA	Individual Income Tax Filing: Statutory Adjustments: Individual Retirement Arrangements Deduction	Annual	Thousands of U.S. Dollars -- NSA
       KSERP	Individual Income Tax Filing: Statutory Adjustments: Keogh and Self-Employed Retirement Plans	Annual	Number of Returns -- NSA
       KSERPA	Individual Income Tax Filing: Statutory Adjustments: Keogh and Self-Employed Retirement Plans	Annual	Thousands of U.S. Dollars -- NSA
       LT65EXMAK2A647NCEN	Total Tax Exemptions Under Age 65 for Alaska	Annual	Number of Exemptions -- NSA
@@ -11052,8 +10936,8 @@
       PAGEXMWI55A647NCEN	Age 65 and Over, Poverty Tax Exemptions for Wisconsin	Annual	Number of Exemptions -- NSA
       PAGEXMWV54A647NCEN	Age 65 and Over, Poverty Tax Exemptions for West Virginia	Annual	Number of Exemptions -- NSA
       PAGEXMWY56A647NCEN	Age 65 and Over, Poverty Tax Exemptions for Wyoming	Annual	Number of Exemptions -- NSA
-      PATSIAGI	Individual Income Tax Filing: Pensions and Annuities in Adjusted Gross Income (AGI)	Annual	Number of Returns -- NSA
-      PATSIAGIA	Individual Income Tax Filing: Pensions and Annuities in Adjusted Gross Income (AGI)	Annual	Thousands of U.S. Dollars -- NSA
+      PATSIAGI	Individual Income Tax Filing: Taxable Pensions and Annuities	Annual	Number of Returns -- NSA
+      PATSIAGIA	Individual Income Tax Filing: Taxable Pensions and Annuities	Annual	Thousands of U.S. Dollars -- NSA
       PCHEXMAK2A647NCEN	Poverty, Child Tax Exemptions for Alaska	Annual	Number of Exemptions -- NSA
       PCHEXMAL1A647NCEN	Poverty, Child Tax Exemptions for Alabama	Annual	Number of Exemptions -- NSA
       PCHEXMAR5A647NCEN	Poverty, Child Tax Exemptions for Arkansas	Annual	Number of Exemptions -- NSA
@@ -11258,8 +11142,8 @@
       SPOCANGA	Individual Income Tax Filing: Adjusted Gross Income (AGI): Sales of Property Other Than Capital Assets, Net Gain	Annual	Thousands of U.S. Dollars -- NSA
       SPOTCANL	Individual Income Tax Filing: Adjusted Gross Income (AGI): Sales of Property Other Than Capital Assets, Net Loss	Annual	Number of Returns -- NSA
       SPOTCANLA	Individual Income Tax Filing: Adjusted Gross Income (AGI): Sales of Property Other Than Capital Assets, Net Loss	Annual	Thousands of U.S. Dollars -- NSA
-      SSBAGI	Individual Income Tax Filing: Social Security Benefits in Adjusted Gross Income (AGI)	Annual	Number of Returns -- NSA
-      SSBAGIA	Individual Income Tax Filing: Social Security Benefits in Adjusted Gross Income (AGI)	Annual	Thousands of U.S. Dollars -- NSA
+      SSBAGI	Individual Income Tax Filing: Taxable Social Security Benefits	Annual	Number of Returns -- NSA
+      SSBAGIA	Individual Income Tax Filing: Taxable Social Security Benefits	Annual	Thousands of U.S. Dollars -- NSA
       TEXINT	Individual Income Tax Filing: Tax-exempt Interest	Annual	Number of Returns -- NSA
       TEXINTA	Individual Income Tax Filing: Tax-exempt Interest	Annual	Thousands of U.S. Dollars -- NSA
       TIRADTS	Individual Income Tax Filing: Adjusted Gross Income (AGI): Taxable IRA Distributions	Annual	Number of Returns -- NSA

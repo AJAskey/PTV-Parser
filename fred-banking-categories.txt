@@ -486,6 +486,12 @@
         OBFR99	Overnight Bank Funding Rate: 99th Percentile	Daily	Percent -- NSA
         OBFRVOL	Overnight Bank Funding Volume	Daily	Billions of U.S. Dollars -- NSA
         PCREDIT8	Primary Credit Rate for the Eighth District - Historical Dates of Changes and Rates	Not Applicable	Percent -- NSA
+        SOFR	Secured Overnight Financing Rate	Daily	Percent -- NSA
+        SOFR1	Secured Overnight Financing Rate: 1st Percentile	Daily	Percent -- NSA
+        SOFR25	Secured Overnight Financing Rate: 25th Percentile	Daily	Percent -- NSA
+        SOFR75	Secured Overnight Financing Rate: 75th Percentile	Daily	Percent -- NSA
+        SOFR99	Secured Overnight Financing Rate: 99th Percentile	Daily	Percent -- NSA
+        SOFRVOL	Secured Overnight Financing Volume	Daily	Billions of U.S. Dollars -- NSA
         WPCREDIT	Primary Credit Rate	Weekly, Ending Wednesday	Percent -- NSA
 
     33056 Interest Checking Accounts
@@ -503,6 +509,11 @@
         BAAFFM	Moody's Seasoned Baa Corporate Bond Minus Federal Funds Rate	Monthly	Percent -- NSA
         CPFF	3-Month Commercial Paper Minus Federal Funds Rate	Daily	Percent -- NSA
         CPFFM	3-Month Commercial Paper Minus Federal Funds Rate	Monthly	Percent -- NSA
+        ICESPREADS1100USD10Y	ICE Spreads, 11:00 A.M. (London Time), Based on U.S. Dollar, 10 Year Tenor	Daily	Percent -- NSA
+        ICESPREADS1100USD2Y	ICE Spreads, 11:00 A.M. (London Time), Based on U.S. Dollar, 2 Year Tenor	Daily	Percent -- NSA
+        ICESPREADS1100USD3Y	ICE Spreads, 11:00 A.M. (London Time), Based on U.S. Dollar, 3 Year Tenor	Daily	Percent -- NSA
+        ICESPREADS1100USD5Y	ICE Spreads, 11:00 A.M. (London Time), Based on U.S. Dollar, 5 Year Tenor	Daily	Percent -- NSA
+        ICESPREADS1100USD7Y	ICE Spreads, 11:00 A.M. (London Time), Based on U.S. Dollar, 7 Year Tenor	Daily	Percent -- NSA
         T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	Daily	Percent -- NSA
         T10Y2YM	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	Monthly	Percent -- NSA
         T10Y3M	10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity	Daily	Percent -- NSA
@@ -531,6 +542,65 @@
         TEDRATE	TED Spread	Daily	Percent -- NSA
 
     32299 Interest Rate Swaps
+        ICERATES1100EUR10Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 10 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR12Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 12 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR15Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 15 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR1Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 1 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR20Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 20 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR25Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 25 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR2Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 2 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR30Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 30 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR3Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 3 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR4Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 4 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR5Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 5 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR6Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 6 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR7Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 7 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR8Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 8 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100EUR9Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on Euros, 9 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP10Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 10 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP12Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 12 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP15Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 15 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP1Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 1 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP20Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 20 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP25Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 25 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP2Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 2 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP30Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 30 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP3Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 3 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP4Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 4 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP5Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 5 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP6Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 6 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP7Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 7 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP8Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 8 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100GBP9Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on British Pound, 9 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD10Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 10 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD15Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 15 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD1Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 1 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD20Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 20 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD2Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 2 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD30Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 30 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD3Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 3 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD4Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 4 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD5Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 5 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD6Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 6 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD7Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 7 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD8Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 8 Year Tenor	Daily	Percent -- NSA
+        ICERATES1100USD9Y	ICE Swap Rates, 11:00 A.M. (London Time), Based on U.S. Dollar, 9 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR10Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 10 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR12Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 12 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR15Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 15 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR1Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 1 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR20Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 20 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR25Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 25 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR2Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 2 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR30Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 30 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR3Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 3 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR4Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 4 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR5Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 5 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR6Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 6 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR7Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 7 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR8Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 8 Year Tenor	Daily	Percent -- NSA
+        ICERATES1200EUR9Y	ICE Swap Rates, 12:00 P.M. (London Time), Based on Euros, 9 Year Tenor	Daily	Percent -- NSA
+        ICERATES1500USD1Y	ICE Swap Rates, 3:00 P.M. (London Time), Based on U.S. Dollar, 1 Year Tenor	Daily	Percent -- NSA
 
     33003 LIBOR Rates
         CHF12MD156N	12-Month London Interbank Offered Rate (LIBOR), based on Swiss Franc	Daily	Percent -- NSA
@@ -670,8 +740,6 @@
         DFII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Daily	Percent -- NSA
         DFII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Daily	Percent -- NSA
         DLTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Daily	Percent -- NSA
-        DTP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Daily	Percent -- NSA
-        DTP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Daily	Percent -- NSA
         DTP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Daily	Percent -- NSA
         DTP10J21	10-Year 1-1/8% Treasury Inflation-Indexed Note, Due 1/15/2021	Daily	Percent -- NSA
         DTP10J22	10-Year 0-1/8% Treasury Inflation-Indexed Note, Due 1/15/2022	Daily	Percent -- NSA
@@ -680,7 +748,8 @@
         DTP10J25	10-Year 0-1/4% Treasury Inflation-Indexed Note, Due 1/15/2025	Daily	Percent -- NSA
         DTP10J26	10-Year 0.625% Treasury Inflation-Indexed Note, Due 1/15/2026	Daily	Percent -- NSA
         DTP10J27	10-Year 0.375 Treasury Inflation-Indexed Note, Due 1/15/2027	Daily	Percent -- NSA
-        DTP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Daily	Percent -- NSA
+        DTP10J28	10-Year 0.5% Treasury Inflation-Indexed Note, Due 1/15/2028	Daily	Percent -- NSA
+        DTP10J29	10-Year 0.875% Treasury Inflation-Indexed Note, Due 1/15/2029	Daily	Percent -- NSA
         DTP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Daily	Percent -- NSA
         DTP10L20	10-Year 1-1/4% Treasury Inflation-Indexed Note, Due 7/15/2020	Daily	Percent -- NSA
         DTP10L21	10-Year 0-5/8% Treasury Inflation-Indexed Note, Due 7/15/2021	Daily	Percent -- NSA
@@ -689,6 +758,8 @@
         DTP10L24	10-Year 0-1/8% Treasury Inflation-Indexed Note, Due 7/15/2024	Daily	Percent -- NSA
         DTP10L25	10-Year 0.375% Treasury Inflation-Indexed Note, Due 07/15/2025	Daily	Percent -- NSA
         DTP10L26	10-Year 0-1/8% Treasury Inflation-Indexed Note, Due 7/15/2026	Daily	Percent -- NSA
+        DTP10L27	10-Year 0.375% Treasury Inflation-Indexed Note, Due 7/15/2027	Daily	Percent -- NSA
+        DTP10L28	10-Year 0.75% Treasury Inflation-Indexed Note, Due 7/15/2028	Daily	Percent -- NSA
         DTP20J25	20-Year 2-3/8% Treasury Inflation-Indexed Bond, Due 1/15/2025	Daily	Percent -- NSA
         DTP20J26	20-Year 2% Treasury Inflation-Indexed Bond, Due 1/15/2026	Daily	Percent -- NSA
         DTP20J27	20-Year 2-3/8% Treasury Inflation-Indexed Bond, Due 1/15/2027	Daily	Percent -- NSA
@@ -703,23 +774,22 @@
         DTP30F44	30-Year 1-3/8% Treasury Inflation-Indexed Note, Due 2/15/2044	Daily	Percent -- NSA
         DTP30F45	30-Year 0-3/4% Treasury Inflation-Indexed Bond, Due 2/15/2045	Daily	Percent -- NSA
         DTP30F46	30-Year 1.0% Treasury Inflation-Indexed Bond, Due 2/15/2046	Daily	Percent -- NSA
+        DTP30F47	30-Year 0.875% Treasury Inflation-Indexed Bond, Due 2/15/2047	Daily	Percent -- NSA
+        DTP30F48	30-Year 1.0% Treasury Inflation-Indexed Bond, Due 2/15/2048	Daily	Percent -- NSA
         DTP3HA32	30-1/2-Year 3-3/8% Treasury Inflation-Indexed Bond, Due 4/15/2032	Daily	Percent -- NSA
-        DTP5A18	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2018	Daily	Percent -- NSA
         DTP5A19	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2019	Daily	Percent -- NSA
         DTP5A20	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2020	Daily	Percent -- NSA
         DTP5A21	5-Year Treasury Inflation-Indexed Note, Due 4/15/2021	Daily	Percent -- NSA
-        DTP5A22	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2012	Daily	Percent -- NSA
+        DTP5A22	5-Year 0-1/8% Treasury Inflation-Indexed Note, Due 4/15/2022	Daily	Percent -- NSA
+        DTP5A23	5-Year 0.625% Treasury Inflation-Indexed Note, Due 4/15/2023	Daily	Percent -- NSA
         FII10	10-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly	Percent -- NSA
         FII20	20-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly	Percent -- NSA
         FII30	30-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly	Percent -- NSA
         FII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly	Percent -- NSA
         FII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Monthly	Percent -- NSA
         LTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Monthly	Percent -- NSA
-        TP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Monthly	Percent -- NSA
-        TP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Monthly	Percent -- NSA
         TP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Monthly	Percent -- NSA
         TP10J21	10-Year 1-1/8% Treasury Inflation-Indexed Note, Due 1/15/2021	Monthly	Percent -- NSA
-        TP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Monthly	Percent -- NSA
         TP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Monthly	Percent -- NSA
         TP10L20	10-Year 1-1/4% Treasury Inflation-Indexed Note, Due 7/15/2020	Monthly	Percent -- NSA
         TP30A28	30-Year 3-5/8% Treasury Inflation-Indexed Bond, Due 4/15/2028	Monthly	Percent -- NSA
@@ -732,11 +802,8 @@
         WFII5	5-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday	Percent -- NSA
         WFII7	7-Year Treasury Inflation-Indexed Security, Constant Maturity	Weekly, Ending Friday	Percent -- NSA
         WLTIIT	Treasury Inflation-Indexed Long-Term Average Yield	Weekly, Ending Friday	Percent -- NSA
-        WTP10J18	10-Year 1-5/8% Treasury Inflation-Indexed Note, Due 1/15/2018	Weekly, Ending Friday	Percent -- NSA
-        WTP10J19	10-Year 2-1/8% Treasury Inflation-Indexed Note, Due 1/15/2019	Weekly, Ending Friday	Percent -- NSA
         WTP10J20	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 1/15/2020	Weekly, Ending Friday	Percent -- NSA
         WTP10J21	10-Year 1-1/8% Treasury Inflation-Indexed Note, Due 1/15/2021	Weekly, Ending Friday	Percent -- NSA
-        WTP10L18	10-Year 1-3/8% Treasury Inflation-Indexed Note, Due 7/15/2018	Weekly, Ending Friday	Percent -- NSA
         WTP10L19	10-Year 1-7/8% Treasury Inflation-Indexed Note, Due 7/15/2019	Weekly, Ending Friday	Percent -- NSA
         WTP10L20	10-Year 1-1/4% Treasury Inflation-Indexed Note, Due 7/15/2020	Weekly, Ending Friday	Percent -- NSA
         WTP20J25	20-Year 2-3/8% Treasury Inflation-Indexed Bond, Due 1/15/2025	Weekly, Ending Friday	Percent -- NSA
@@ -776,9 +843,18 @@
         DEXUSNZ	U.S. / New Zealand Foreign Exchange Rate	Daily	U.S. Dollars to One New Zealand Dollar -- NSA
         DEXUSUK	U.S. / U.K. Foreign Exchange Rate	Daily	U.S. Dollars to One British Pound -- NSA
         DEXVZUS	Venezuela / U.S. Foreign Exchange Rate	Daily	Venezuelan Bolivares to One U.S. Dollar -- NSA
-        DTWEXB	Trade Weighted U.S. Dollar Index: Broad	Daily	Index Jan 1997=100 -- NSA
-        DTWEXM	Trade Weighted U.S. Dollar Index: Major Currencies	Daily	Index Mar 1973=100 -- NSA
-        DTWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Daily	Index Jan 1997=100 -- NSA
+        DTWEXAFEGS	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXB	Trade Weighted U.S. Dollar Index: Broad, Goods	Daily	Index Jan 1997=100 -- NSA
+        DTWEXBGS	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXEMEGS	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXM	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Daily	Index Mar 1973=100 -- NSA
+        DTWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Daily	Index Jan 1997=100 -- NSA
+        TWEXAFEGSANL	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXAFEGSMTH	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        TWEXBGSANL	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXBGSMTH	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        TWEXEMEGSANL	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXEMEGSMTH	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
 
     95 Monthly Rates
         EXBZUS	Brazil / U.S. Foreign Exchange Rate	Monthly	Brazilian Reals to One U.S. Dollar -- NSA
@@ -804,9 +880,9 @@
         EXUSNZ	U.S. / New Zealand Foreign Exchange Rate	Monthly	U.S. Dollars to One New Zealand Dollar -- NSA
         EXUSUK	U.S. / U.K. Foreign Exchange Rate	Monthly	U.S. Dollars to One British Pound -- NSA
         EXVZUS	Venezuela / U.S. Foreign Exchange Rate	Monthly	Venezuelan Bolivares to One U.S. Dollar -- NSA
-        TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad	Monthly	Index Jan 1997=100 -- NSA
-        TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies	Monthly	Index Mar 1973=100 -- NSA
-        TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Monthly	Index Jan 1997=100 -- NSA
+        TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad, Goods	Monthly	Index Jan 1997=100 -- NSA
+        TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Monthly	Index Mar 1973=100 -- NSA
+        TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Monthly	Index Jan 1997=100 -- NSA
 
     32219 Annual Rates
         AEXBZUS	Brazil / U.S. Foreign Exchange Rate	Annual	Brazilian Reals to One U.S. Dollar -- NSA
@@ -832,14 +908,20 @@
         AEXUSNZ	U.S. / New Zealand Foreign Exchange Rate	Annual	U.S. Dollars to One New Zealand Dollar -- NSA
         AEXUSUK	U.S. / U.K Foreign Exchange Rate	Annual	U.S. Dollars to One British Pound -- NSA
         AEXVZUS	Venezuela / U.S. Foreign Exchange Rate	Annual	Venezuelan Bolivares to One U.S. Dollar -- NSA
-        TWEXBANL	Trade Weighted U.S. Dollar Index: Broad	Annual	Index 1997=100 -- NSA
-        TWEXMANL	Trade Weighted U.S. Dollar Index: Major Currencies	Annual	Index Mar 1973=100 -- NSA
-        TWEXOANL	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Annual	Index Jan 1997=100 -- NSA
+        TWEXBANL	Trade Weighted U.S. Dollar Index: Broad, Goods	Annual	Index 1997=100 -- NSA
+        TWEXMANL	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Annual	Index Mar 1973=100 -- NSA
+        TWEXOANL	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Annual	Index Jan 1997=100 -- NSA
 
     105 Trade-Weighted Indexes
-        DTWEXB	Trade Weighted U.S. Dollar Index: Broad	Daily	Index Jan 1997=100 -- NSA
-        DTWEXM	Trade Weighted U.S. Dollar Index: Major Currencies	Daily	Index Mar 1973=100 -- NSA
-        DTWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Daily	Index Jan 1997=100 -- NSA
+        DTWEXAFEGS	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXB	Trade Weighted U.S. Dollar Index: Broad, Goods	Daily	Index Jan 1997=100 -- NSA
+        DTWEXBGS	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXEMEGS	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Daily	Index Jan 2, 2006=100 -- NSA
+        DTWEXM	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Daily	Index Mar 1973=100 -- NSA
+        DTWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Daily	Index Jan 1997=100 -- NSA
+        RTWEXAFEGS	Real Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        RTWEXBGS	Real Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        RTWEXEMEGS	Real Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
         RTWVDAK684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alaska	Monthly	Index Jan 1988=100 -- NSA
         RTWVDAL684NMFRBDAL	Real Trade-Weighted Value of the dollar for Alabama	Monthly	Index Jan 1988=100 -- NSA
         RTWVDAR684NMFRBDAL	Real Trade-Weighted Value of the dollar for Arkansas	Monthly	Index Jan 1988=100 -- NSA
@@ -890,18 +972,24 @@
         RTWVDWI684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wisconsin	Monthly	Index Jan 1988=100 -- NSA
         RTWVDWV684NMFRBDAL	Real Trade-Weighted Value of the dollar for West Virginia	Monthly	Index Jan 1988=100 -- NSA
         RTWVDWY684NMFRBDAL	Real Trade-Weighted Value of the dollar for Wyoming	Monthly	Index Jan 1988=100 -- NSA
-        TWEXB	Trade Weighted U.S. Dollar Index: Broad	Weekly, Ending Wednesday	Index Jan 1997=100 -- NSA
-        TWEXBANL	Trade Weighted U.S. Dollar Index: Broad	Annual	Index 1997=100 -- NSA
-        TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad	Monthly	Index Jan 1997=100 -- NSA
-        TWEXBPA	Real Trade Weighted U.S. Dollar Index: Broad	Monthly	Index Mar 1973=100 -- NSA
-        TWEXM	Trade Weighted U.S. Dollar Index: Major Currencies	Weekly, Ending Wednesday	Index Mar 1973=100 -- NSA
-        TWEXMANL	Trade Weighted U.S. Dollar Index: Major Currencies	Annual	Index Mar 1973=100 -- NSA
-        TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies	Monthly	Index Mar 1973=100 -- NSA
-        TWEXMPA	Real Trade Weighted U.S. Dollar Index: Major Currencies	Monthly	Index Mar 1973=100 -- NSA
-        TWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Weekly, Ending Wednesday	Index Jan 1997=100 -- NSA
-        TWEXOANL	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Annual	Index Jan 1997=100 -- NSA
-        TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Monthly	Index Jan 1997=100 -- NSA
-        TWEXOPA	Real Trade Weighted U.S. Dollar Index: Other Important Trading Partners	Monthly	Index Mar 1973=100 -- NSA
+        TWEXAFEGSANL	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXAFEGSMTH	Trade Weighted U.S. Dollar Index: Advanced Foreign Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        TWEXB	Trade Weighted U.S. Dollar Index: Broad, Goods	Weekly, Ending Wednesday	Index Jan 1997=100 -- NSA
+        TWEXBANL	Trade Weighted U.S. Dollar Index: Broad, Goods	Annual	Index 1997=100 -- NSA
+        TWEXBGSANL	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXBGSMTH	Trade Weighted U.S. Dollar Index: Broad, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        TWEXBMTH	Trade Weighted U.S. Dollar Index: Broad, Goods	Monthly	Index Jan 1997=100 -- NSA
+        TWEXBPA	Real Trade Weighted U.S. Dollar Index: Broad, Goods	Monthly	Index Mar 1973=100 -- NSA
+        TWEXEMEGSANL	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Annual	Index 2006=100 -- NSA
+        TWEXEMEGSMTH	Trade Weighted U.S. Dollar Index: Emerging Markets Economies, Goods and Services	Monthly	Index Jan 2006=100 -- NSA
+        TWEXM	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Weekly, Ending Wednesday	Index Mar 1973=100 -- NSA
+        TWEXMANL	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Annual	Index Mar 1973=100 -- NSA
+        TWEXMMTH	Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Monthly	Index Mar 1973=100 -- NSA
+        TWEXMPA	Real Trade Weighted U.S. Dollar Index: Major Currencies, Goods	Monthly	Index Mar 1973=100 -- NSA
+        TWEXO	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Weekly, Ending Wednesday	Index Jan 1997=100 -- NSA
+        TWEXOANL	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Annual	Index Jan 1997=100 -- NSA
+        TWEXOMTH	Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Monthly	Index Jan 1997=100 -- NSA
+        TWEXOPA	Real Trade Weighted U.S. Dollar Index: Other Important Trading Partners, Goods	Monthly	Index Mar 1973=100 -- NSA
 
     158 By Country
 
@@ -1177,8 +1265,6 @@
         WOCDTNS	Other Checkable Deposits at Thrift Institutions	Weekly, Ending Monday	Billions of Dollars -- NSA
         WOCDTSL	Other Checkable Deposits at Thrift Institutions	Weekly, Ending Monday	Billions of Dollars -- SA
         WTCDNS	Total Checkable Deposits	Weekly, Ending Monday	Billions of Dollars -- NSA
-        WTCNS	Travelers Checks Outstanding	Weekly, Ending Monday	Billions of Dollars -- NSA
-        WTCSL	Travelers Checks Outstanding	Weekly, Ending Monday	Billions of Dollars -- SA
 
     29 M2 and Components
         ALLMON	M2 Plus Institutional Type Money Market Mutual Funds	Monthly	Billions of Dollars -- SA
@@ -1333,17 +1419,13 @@
         TOTBORR	Total Borrowings of Depository Institutions from the Federal Reserve	Weekly, Ending Wednesday	Billions of Dollars -- NSA
         TREASURY	Treasury Deposits with Federal Reserve Banks	Monthly	Billions of Dollars -- NSA
         WABPL	Assets: Bank Premises	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WACBS	Assets: Central Bank Liquidity Swaps	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WACL	Assets: Coin	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WALCL	All Federal Reserve Banks: Total Assets	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WALL	All Federal Reserve Banks: Total Assets, Eliminations From Consolidation	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WALLNL	Assets: Loans	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WAML1L	Assets: Net Portfolio Holdings of Maiden Lane LLC	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WAML2L	Assets: Net Portfolio Holdings of Maiden Lane II LLC	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WAML3L	Assets: Net Portfolio Holdings of Maiden Lane III LLC	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WAOAL	Assets: Other Assets	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WARAL	Assets: Repurchase Agreements	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WASDRAL	Assets: Special Drawing Rights Certificate Account	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WCBLSA	Factors Supplying Reserve Balances: Central Bank Liquidity Swaps	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WCICL	Factors Absorbing Reserve Funds: Currency in Circulation	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WCPCA	Capital: Other Capital Accounts	Weekly, As of Wednesday	Millions of Dollars -- NSA
@@ -1367,31 +1449,23 @@
         WLCFOCEL	Factors Supplying Reserve Balances: Loans: Other Credit Extensions	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLDACL	Liabilities: Deferred Availability Cash Items, Eliminations From Consolidation	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLDACLC	Liabilities: Deferred Availability Cash Items (Less Eliminations From Consolidation)	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLDBTDL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLDECL	Liabilities: Deposits, Eliminations From Consolidation	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLDLCL	Liabilities: Deposits (Less Eliminations From Consolidation)	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLDOL	Liabilities: Deposits: Other	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLFN	Liabilities: Federal Reserve Notes, Net of F.R. Bank Holdings	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLFOL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: Foreign Official	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLIQSWP	Reserve Bank Credit: Central Bank Liquidity Swaps	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLOCL	Liabilities: Deposits with F.R. Banks: Other, Eliminations From Consolidation	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLODL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Other	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLODLL	Liabilities: Deposits: Other Deposits Held by Depository Institutions	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLRRA	Liabilities: Reverse Repurchase Agreements	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLRRAA	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WLRRAFOIAL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements: Foreign Official and International Accounts	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLRRAL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLRRAOL	Factors Absorbing Reserve Funds: Reverse Repurchase Agreements: Others	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLTDHDIA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, Ending Wednesday	Millions of Dollars -- NSA
-        WLTDHDIL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances: Term Deposits Held by Depository Institutions	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLTEC	Liabilities: Total Liabilities, Eliminations From Consolidation	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WLTGAL	Liabilities: Deposits with F.R. Banks, Other Than Reserve Balances: U.S. Treasury, General Account	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WLTLECL	Liabilities: Total Liabilities (Less Eliminations From Consolidation)	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WMAIDEN1	Net Portfolio Holdings of Maiden Lane LLC	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WMBSEC	Reserve Bank Credit: Securities Held Outright: Mortgage-Backed Securities	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WMTSEC1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WMTSECL1	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Marketable U.S. Treasury Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WNPHML1L	Factors Supplying Reserve Balances: Net Portfolio Holdings of Maiden Lane LLC	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WOCE	Reserve Bank Credit: Other Credit Extensions	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WOFDRBORBA	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WOFDRBORBL	Factors Absorbing Reserve Funds: Deposits with Federal Reserve Banks, Other Than Reserve Balances	Weekly, As of Wednesday	Millions of Dollars -- NSA
@@ -1434,25 +1508,17 @@
         WSEFINOL	Memorandum Item: Securities Held in Custody for Foreign Official and International Accounts: Other Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSEFINT1	Memorandum item: Securities Held in Custody for Foreign Official and International Accounts	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSEFINTL1	Memorandum item: Securities Held in Custody for Foreign Official and International Accounts	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOB	Assets: Securities Held Outright: U.S. Treasury Securities: Bills	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOBA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Bills	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSHOBL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Bills	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOFADSL	Factors Supplying Reserve Balances: Securities Held Outright: Federal Agency Debt Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOFDSL	Assets: Securities Held Outright: Federal Agency Debt Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOIC	Assets: Securities Held Outright: U.S. Treasury Securities: Inflation Compensation	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOICA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Inflation Compensation	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSHOICL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Inflation Compensation	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOIIL	Assets: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Inflation-Indexed	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOL	Assets: Securities Held Outright: Securities Held Outright	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOMBSL	Factors Supplying Reserve Balances: Securities Held Outright: Mortgage-Backed Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOMCB	Assets: Securities Held Outright: Mortgage-Backed Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHONBIIA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Inflation-Indexed	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSHONBIIL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Inflation-Indexed	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHONBNA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Nominal	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSHONBNL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Nominal	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOSHO	Factors Supplying Reserve Balances: Securities Held Outright	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOSNB	Assets: Securities Held Outright: U.S. Treasury Securities: Notes and Bonds, Nominal	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        WSHOTS	Assets: Securities Held Outright: U.S. Treasury Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSHOTSA	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities	Weekly, Ending Wednesday	Millions of Dollars -- NSA
         WSHOTSL	Factors Supplying Reserve Balances: Securities Held Outright: U.S. Treasury Securities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         WSRLL	Assets: Securities, Unamortized Premiums and Discounts, Repurchase Agreements, and Loans	Weekly, As of Wednesday	Millions of Dollars -- NSA
@@ -1480,19 +1546,15 @@
         MBS1T5	Mortgage-backed securities held by the Federal Reserve: Maturing in over 1 year to 5 years	Weekly, As of Wednesday	Millions of Dollars -- NSA
         MBS5T10	Mortgage-backed securities held by the Federal Reserve: Maturing in over 5 years to 10 years	Weekly, As of Wednesday	Millions of Dollars -- NSA
         MBS911Y	Mortgage-backed securities held by the Federal Reserve: Maturing in 91 days to 1 year	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        MBST	Mortgage-backed securities held by the Federal Reserve: All Maturities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         OTHL15	Other loans held by the Federal Reserve: Maturing within 15 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
         OTHL1690	Other loans held by the Federal Reserve: Maturing in 16 days to 90 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
         OTHL1T5	Other loans held by the Federal Reserve: Maturing in over 1 year to 5 years	Weekly, As of Wednesday	Millions of Dollars -- NSA
         OTHL5T10	Other loans held by the Federal Reserve: Maturing in over 5 years to 10 years	Weekly, As of Wednesday	Millions of Dollars -- NSA
         OTHL91T1Y	Other loans held by the Federal Reserve: Maturing in 91 days to 1 year	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        OTHLT	Other loans held by the Federal Reserve: All Maturities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         REP15	Repurchase agreements held by the Federal Reserve: Maturing within 15 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
         REP1690	Repurchase agreements held by the Federal Reserve: within in 16 days to 90 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        REPT	Repurchase agreements held by the Federal Reserve: All Maturities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         RREP15	Reverse repurchase agreements held by the Federal Reserve: Maturing within 15 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
         RREP1690	Reverse repurchase agreements held by the Federal Reserve: Maturing in 16 days to 90 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
-        RREPT	Reverse repurchase agreements held by the Federal Reserve: All Maturities	Weekly, As of Wednesday	Millions of Dollars -- NSA
         SWP10Y	Central Bank Liquidity Swaps held by the Federal Reserve: Maturing in over 10 years	Weekly, As of Wednesday	Millions of Dollars -- NSA
         SWP15	Central Bank Liquidity Swaps held by the Federal Reserve: Maturing within 15 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
         SWP1690	Central Bank Liquidity Swaps held by the Federal Reserve: Maturing in 16 days to 90 days	Weekly, As of Wednesday	Millions of Dollars -- NSA
@@ -1561,7 +1623,7 @@
           BAMLEMUBCRPIUSTRIV	ICE BofAML US Emerging Markets Corporate Plus Sub-Index Total Return Index Value	Daily	Index -- NSA
           BAMLEMXOCOLCRPIUSTRIV	ICE BofAML Crossover US Emerging Markets Liquid Corporate Plus Sub-Index Total Return Index Value	Daily	Index -- NSA
           BAMLHE00EHYITRIV	ICE BofAML Euro High Yield Index Total Return Index Value	Daily, Close	Index -- NSA
-          BAMLHYH0A0HYM2TRIV	ICE BofAML US High Yield Total Return Index Value	Daily, Close	Index -- NSA
+          BAMLHYH0A0HYM2TRIV	ICE BofAML US High Yield Master II Total Return Index Value	Daily, Close	Index -- NSA
           BAMLHYH0A1BBTRIV	ICE BofAML US High Yield BB Total Return Index Value	Daily, Close	Index -- NSA
           BAMLHYH0A2BTRIV	ICE BofAML US High Yield B Total Return Index Value	Daily, Close	Index -- NSA
           BAMLHYH0A3CMTRIV	ICE BofAML US High Yield CCC or Below Total Return Index Value	Daily, Close	Index -- NSA
