@@ -1,75 +1,479 @@
 Name	Title	Method	Frequency	Units	Type	Last Download	Last Observation
-SP500	S&P 500	NSA	Daily	Index	LIN	2019-Mar-21	2019-Mar-21
-CPFF	3-Month Commercial Paper Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T10YFF	10-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T1YFF	1-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T3MFF	3-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T5YFF	5-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T6MFF	6-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T10Y3M	10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T10YIE	10-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T5YIE	5-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T5YIFR	5-Year, 5-Year Forward Inflation Expectation Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-TEDRATE	TED Spread	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-14
-IOER	Interest Rate on Excess Reserves	NSA	Daily, 7-Day	Percent	LIN	2019-Mar-21	2019-Mar-22
-IORR	Interest Rate on Required Reserves	NSA	Daily, 7-Day	Percent	LIN	2019-Mar-21	2019-Mar-22
-TREAST	U.S. Treasury securities held by the Federal Reserve: All Maturities	NSA	Weekly, As of Wednesday	Millions of Dollars	LIN	2019-Mar-21	2019-Mar-20
-WRMFNS	Retail Money Funds	NSA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Mar-21	2019-Mar-11
-M2	M2 Money Stock	SA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Mar-21	2019-Mar-11
-BASE	St. Louis Adjusted Monetary Base	SA	Biweekly, Ending Wednesday	Billions of Dollars	LIN	2019-Mar-21	2019-Mar-13
-DGS7	7-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DTB1YR	1-Year Treasury Bill: Secondary Market Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS10	10-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS1MO	1-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS2	2-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS20	20-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS3	3-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS30	30-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS3MO	3-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS5	5-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS6MO	6-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DGS1	1-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPF1M	1-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPF2M	2-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPF3M	3-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPN2M	2-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPN30	1-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-MORTGAGE15US	15-Year Fixed Rate Mortgage Average in the United States	NSA	Weekly, Ending Thursday	Percent	LIN	2019-Mar-21	2019-Mar-21
-MORTGAGE30US	30-Year Fixed Rate Mortgage Average in the United States	NSA	Weekly, Ending Thursday	Percent	LIN	2019-Mar-21	2019-Mar-21
-DAAA	Moody's Seasoned Aaa Corporate Bond Yield	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-DBAA	Moody's Seasoned Baa Corporate Bond Yield	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-COMPUTN	Commercial Paper Outstanding	NSA	Weekly, Ending Wednesday	Billions of Dollars	LIN	2019-Mar-21	2019-Mar-20
-RIFSPPNAAD30NB	30-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-RIFSPPNAAD60NB	60-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-RIFSPPNAAD90NB	90-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-RIFSPPNAAD07NB	7-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-RIFSPPNAAD15NB	15-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-BAMLC0A1CAAAEY	ICE BofAML US Corporate AAA Effective Yield	NSA	Daily, Close	Percent	LIN	2019-Mar-21	2019-Mar-20
-BAMLH0A0HYM2EY	ICE BofAML US High Yield Master II Effective Yield	NSA	Daily, Close	Percent	LIN	2019-Mar-21	2019-Mar-20
-ICSA	Initial Claims	SA	Weekly, Ending Saturday	Number	LIN	2019-Mar-21	2019-Mar-16
-EFFR	Effective Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-20
-EFFRVOL	Effective Federal Funds Volume	NSA	Daily	Billions of U.S. Dollars	LIN	2019-Mar-21	2019-Mar-20
+SP500	S&P 500	NSA	Daily	Index	LIN	2019-Apr-04	2019-Apr-04
+DGS6MO	6-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS1MO	1-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS20	20-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS3	3-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS3MO	3-Month Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS7	7-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS1	1-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS10	10-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS2	2-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS30	30-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DGS5	5-Year Treasury Constant Maturity Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPF2M	2-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPN2M	2-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPN30	1-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPN3M	3-Month AA Nonfinancial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPF1M	1-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DCPF3M	3-Month AA Financial Commercial Paper Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DTB1YR	1-Year Treasury Bill: Secondary Market Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+CPFF	3-Month Commercial Paper Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T1YFF	1-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T3MFF	3-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T5YFF	5-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T6MFF	6-Month Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T10Y2Y	10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T10Y3M	10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T10YFF	10-Year Treasury Constant Maturity Minus Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T10YIE	10-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T5YIE	5-Year Breakeven Inflation Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+T5YIFR	5-Year, 5-Year Forward Inflation Expectation Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+TEDRATE	TED Spread	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Mar-28
+IOER	Interest Rate on Excess Reserves	NSA	Daily, 7-Day	Percent	LIN	2019-Apr-04	2019-Apr-05
+IORR	Interest Rate on Required Reserves	NSA	Daily, 7-Day	Percent	LIN	2019-Apr-04	2019-Apr-05
+TREAST	U.S. Treasury securities held by the Federal Reserve: All Maturities	NSA	Weekly, As of Wednesday	Millions of Dollars	LIN	2019-Apr-04	2019-Apr-03
+WRMFNS	Retail Money Funds	NSA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Apr-04	2019-Mar-25
+M2	M2 Money Stock	SA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Apr-04	2019-Mar-25
+BASE	St. Louis Adjusted Monetary Base	SA	Biweekly, Ending Wednesday	Billions of Dollars	LIN	2019-Apr-04	2019-Mar-27
+DAAA	Moody's Seasoned Aaa Corporate Bond Yield	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+DBAA	Moody's Seasoned Baa Corporate Bond Yield	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+USSLIND	Leading Index for the United States	SA	Monthly	Percent	LIN	2019-Apr-04	2019-Jan-01
+MORTGAGE15US	15-Year Fixed Rate Mortgage Average in the United States	NSA	Weekly, Ending Thursday	Percent	LIN	2019-Apr-04	2019-Apr-04
+MORTGAGE30US	30-Year Fixed Rate Mortgage Average in the United States	NSA	Weekly, Ending Thursday	Percent	LIN	2019-Apr-04	2019-Apr-04
+RIFSPPNAAD15NB	15-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+COMPUTN	Commercial Paper Outstanding	NSA	Weekly, Ending Wednesday	Billions of Dollars	LIN	2019-Apr-04	2019-Apr-03
+RIFSPPNAAD07NB	7-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+RIFSPPNAAD60NB	60-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+RIFSPPNAAD30NB	30-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+RIFSPPNAAD90NB	90-Day AA Nonfinancial Commercial Paper Interest Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+BAMLC0A1CAAAEY	ICE BofAML US Corporate AAA Effective Yield	NSA	Daily, Close	Percent	LIN	2019-Apr-04	2019-Apr-03
+BAMLH0A0HYM2EY	ICE BofAML US High Yield Master II Effective Yield	NSA	Daily, Close	Percent	LIN	2019-Apr-04	2019-Apr-03
+ICSA	Initial Claims	SA	Weekly, Ending Saturday	Number	LIN	2019-Apr-04	2019-Mar-30
+EFFR	Effective Federal Funds Rate	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Apr-03
+EFFRVOL	Effective Federal Funds Volume	NSA	Daily	Billions of U.S. Dollars	LIN	2019-Apr-04	2019-Apr-03
+WILL5000IND	Wilshire 5000 Total Market Index	NSA	Daily, Close	Index	LIN	2019-Apr-04	2019-Apr-03
+WILL5000PRFC	Wilshire 5000 Full Cap Price Index	NSA	Daily, Close	Index	LIN	2019-Apr-04	2019-Apr-03
+NIKKEI225	Nikkei Stock Average, Nikkei 225	NSA	Daily, Close	Index	LIN	2019-Apr-04	2019-Apr-04
+USD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Mar-28
+USD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2019-Apr-04	2019-Mar-28
+WGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Apr-03	2019-Mar-29
+DGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Daily	Dollars per Gallon	LIN	2019-Apr-03	2019-Apr-01
+DHHNGSP	Henry Hub Natural Gas Spot Price	NSA	Daily	Dollars per Million BTU	LIN	2019-Apr-03	2019-Apr-01
+DJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Daily	Dollars per Gallon	LIN	2019-Apr-03	2019-Apr-01
+DPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	NSA	Daily	Dollars per Gallon	LIN	2019-Apr-03	2019-Apr-01
+WHOILNYH	No. 2 Heating Oil Prices: New York Harbor	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Apr-03	2019-Mar-29
+WJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Apr-03	2019-Mar-29
+DCOILBRENTEU	Crude Oil Prices: Brent - Europe	NSA	Daily	Dollars per Barrel	LIN	2019-Apr-03	2019-Apr-01
+DCOILWTICO	Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma	NSA	Daily	Dollars per Barrel	LIN	2019-Apr-03	2019-Apr-01
+NPPGPL	Nonfarm Private Goods - Producing Large Payroll Employment (> 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPL1	Nonfarm Private Goods - Producing Large Payroll Employment (500 - 999)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPL2	Nonfarm Private Goods - Producing Large Payroll Employment (1000+)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPS	Nonfarm Private Goods - Producing Small Payroll Employment (1 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPS1	Nonfarm Private Goods - Producing Small Payroll Employment (1 - 19)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPS2	Nonfarm Private Goods - Producing Small Payroll Employment (20 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPL	Nonfarm Private Service - Providing Large Payroll Employment (> 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPL1	Nonfarm Private Service - Providing Large Payroll Employment (500 - 999)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPL2	Nonfarm Private Service - Providing Large Payroll Employment (1000+)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPM	Nonfarm Private Service - Providing Medium Payroll Employment (50 - 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPS1	Nonfarm Private Service - Providing Small Payroll Employment (1 - 19)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPS2	Nonfarm Private Service - Providing Small Payroll Employment (20 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTL	Nonfarm Private Large Payroll Employment (> 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTS2	Nonfarm Private Small Payroll Employment (20 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPS	Nonfarm Private Service - Providing Small Payroll Employment (1 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPBUS	Nonfarm Private Professional and Business Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPCON	Nonfarm Private Construction Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPFIN	Nonfarm Private Financial Activities Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPM	Nonfarm Private Goods - Producing Medium Payroll Employment (50 - 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPGPT	Nonfarm Private Goods - Producing Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPMNF	Nonfarm Private Manufacturing Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPSPT	Nonfarm Private Service - Providing Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTL1	Nonfarm Private Large Payroll Employment (500 - 999)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTL2	Nonfarm Private Large Payroll Employment (1000+)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTM	Nonfarm Private Medium Payroll Employment (50 - 499)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTS	Nonfarm Private Small Payroll Employment (1 - 49)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTS1	Nonfarm Private Small Payroll Employment (1 - 19)	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTTU	Nonfarm Private Trade, Transportation, and Utilities Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+NPPTTL	Total Nonfarm Private Payroll Employment	SA	Monthly	Thousands	LIN	2019-Apr-03	2019-Mar-01
+EXPORTSGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Goods	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+EXPORTSSERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+FEDGOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment: Federal Government	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+FINSALESCONTRIBNOW	Contributions to percent change in GDPNow: Real Final Sales of Domestic Product	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+FIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+GOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+IMPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+IMPORTSERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+IMPORTSGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goods	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+IPPCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Intellectual Property Products	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+PCECONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+PCEGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures: Goods	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+EXPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+GDPICONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+PCESERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures: Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+RESCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Residential	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+SLGOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment: State and Local Government	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+BUSFIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+CHNGNETINVENTCONTRIBNOW	Contributions to percent change in GDPNow: Real Change of Inventory Investment	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+EQUIPCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Equipment	SA	Quarterly	Percentage Points	LIN	2019-Apr-02	2019-Jan-01
+GDPNOW	GDPNow	SAAR	Quarterly	Percent Change at Annual Rate	LIN	2019-Apr-02	2019-Jan-01
+U31STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U33STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U33SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34XVS	Value of Manufacturers' Shipments for Communication Equipment Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U35STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U35SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U36SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U36SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDAPTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXDUO	Value of Manufacturers' Unfilled Orders for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXDVS	Value of Manufacturers' Shipments for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXTUO	Value of Manufacturers' Unfilled Orders for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMTUTI	Value of Manufacturers' Total Inventories for All Manufacturing Industries with Unfilled Orders	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMTUVS	Value of Manufacturers' Shipments for All Manufacturing Industries with Unfilled Orders	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNAPTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNAPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U31SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Primary Metals	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U31SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Primary Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U31SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Primary Metals	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U32STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U32SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U32SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U33SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34XNO	Value of Manufacturers' New Orders for Communication Equipment Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34XTI	Value of Manufacturers' Total Inventories for Communication Equipment Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34XUO	Value of Manufacturers' Unfilled Orders for Communication Equipment Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U35SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U35SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U36STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UCRPNO	Value of Manufacturers' New Orders for Computers and Related Products Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UCRPTI	Value of Manufacturers' Total Inventories for Computers and Related Products Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UCRPUO	Value of Manufacturers' Unfilled Orders for Computers and Related Products Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UCRPVS	Value of Manufacturers' Shipments for Computers and Related Products Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDAPNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDAPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDEFNO	Value of Manufacturers' New Orders for Capital Goods: Defense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDAPVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDEFTI	Value of Manufacturers' Total Inventories for Capital Goods: Defense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDEFUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Defense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDEFVS	Value of Manufacturers' Shipments for Capital Goods: Defense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXDTI	Value of Manufacturers' Total Inventories for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXTTI	Value of Manufacturers' Total Inventories for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXTVS	Value of Manufacturers' Shipments for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMTUNO	Value of Manufacturers' New Orders for All Manufacturing Industries with Unfilled Orders	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMVPTI	Value of Manufacturers' Total Inventories for Motor Vehicles and Parts Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMVPUO	Value of Manufacturers' Unfilled Orders for Motor Vehicles and Parts Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMVPVS	Value of Manufacturers' Shipments for Motor Vehicles and Parts Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNAPNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNAPVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNDETI	Value of Manufacturers' Total Inventories for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNDEUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNDEVS	Value of Manufacturers' Shipments for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNXATI	Value of Manufacturers' Total Inventories for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNXAUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UTCGTI	Value of Manufacturers' Total Inventories for Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UTCGUO	Value of Manufacturers' Unfilled Orders for Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UTCGVS	Value of Manufacturers' Shipments for Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U32SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U36SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXDNO	Value of Manufacturers' New Orders for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMDMNO	Value of Manufacturers' New Orders for Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMDMTI	Value of Manufacturers' Total Inventories for Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMDMUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UTCGNO	Value of Manufacturers' New Orders for Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U33SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+U34SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMDMVS	Value of Manufacturers' Shipments for Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UMVPNO	Value of Manufacturers' New Orders for Motor Vehicles and Parts Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNDENO	Value of Manufacturers' New Orders for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UDXTNO	Value of Manufacturers' New Orders for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNXANO	Value of Manufacturers' New Orders for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+UNXAVS	Value of Manufacturers' Shipments for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly	Million of Dollars	LIN	2019-Apr-02	2019-Feb-01
+GASALLCOVW	US All Grades Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASALLREFW	US All Grades Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASALLW	US All Grades All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASDESLSW	US Diesel Ultra Low Sulfur (0-15 ppm) Sales Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASDESW	US Diesel Sales Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASREGCOVW	US Regular Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASREGREFW	US Regular Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+GASREGW	US Regular All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Apr-01	2019-Apr-01
+STRUCTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Structures	SA	Quarterly	Percentage Points	LIN	2019-Apr-01	2019-Jan-01
+CHNGNETEXPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Change of Net Exports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Apr-01	2019-Jan-01
+USPHCI	Coincident Economic Activity Index for the United States	SA	Monthly	Index 2007=100	LIN	2019-Apr-01	2019-Jan-01
+TLRELCON	Total Construction Spending: Religious	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLSWDCON	Total Construction Spending: Sewage and waste disposal	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLTRANSCON	Total Construction Spending: Transportation	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLAMUSCON	Total Construction Spending: Amusement and recreation	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLCADCON	Total Construction Spending: Conservation and development	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLCMUCON	Total Construction Spending: Communication	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLPSCON	Total Construction Spending: Public Safety	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLLODGCON	Total Construction Spending: Lodging	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLOFCON	Total Construction Spending: Office	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLPRVCON	Total Private Construction Spending	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLHWYCON	Total Construction Spending: Highway and street	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLMFGCON	Total Construction Spending: Manufacturing	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLHLTHCON	Total Construction Spending: Health Care	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLPWRCON	Total Construction Spending: Power	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLCOMCON	Total Construction Spending: Commercial	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLEDUCON	Total Construction Spending: Educational	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLWSCON	Total Construction Spending: Water Supply	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLNRESCON	Total Construction Spending: Nonresidential	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TLRESCON	Total Construction Spending: Residential	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+TTLCON	Total Construction Spending	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RETAILIMNSA	Retailers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+WHLSLRIMNSA	Merchant Wholesalers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+WHLSLRSMNSA	Merchant Wholesalers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+MNFCTRIMNSA	Manufacturers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+MNFCTRIRNSA	Manufacturers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Apr-01	2019-Jan-01
+MNFCTRSMNSA	Manufacturers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+RETAILIRNSA	Retailers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Apr-01	2019-Jan-01
+TOTBUSIMNSA	Total Business Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+TOTBUSSMNSA	Total Business Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+WHLSLRIRNSA	Merchant Wholesalers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Apr-01	2019-Jan-01
+RETAILSMNSA	Retailers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Jan-01
+TOTBUSIRNSA	Total Business: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Apr-01	2019-Jan-01
+ISRATIO	Total Business: Inventories to Sales Ratio	SA	Monthly	Ratio	LIN	2019-Apr-01	2019-Jan-01
+RSGMSN	Advance Retail Sales: General Merchandise Stores	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSBMGESDN	Advance Retail Sales: Building Materials, Garden Equipment and Supplies Dealers	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSEASN	Advance Retail Sales: Electronics and Appliance Stores	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSMVPDN	Advance Retail Sales: Motor Vehicle and Parts Dealers	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSCCASN	Advance Retail Sales: Clothing and Clothing Accessory Stores	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSFHFSN	Advance Retail Sales: Furniture and Home Furnishings Stores	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSXFSN	Advance Retail Sales: Retail (Excluding Food Services)	NSA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+RSXFS	Advance Retail Sales: Retail (Excluding Food Services)	SA	Monthly	Millions of Dollars	LIN	2019-Apr-01	2019-Feb-01
+USAGFCEQDSNAQ	Government Final Consumption Expenditure in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+USAIMPORTQDSNAQ	Imports of Goods and Services in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+USAPCEDEFQISNAQ	Private Final Consumption Expenditure Implicit Price Deflator in the United States	SA	Quarterly	2010=100	LIN	2019-Apr-01	2018-Oct-01
+USAEXPORTQDSNAQ	Exports of Goods and Services in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+USARGDPQDSNAQ	Gross Domestic Product in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+USAGFCFQDSNAQ	Gross Fixed Capital Formation in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+USAPFCEQDSNAQ	Private Final Consumption Expenditure in United States	SA	Quarterly	Chained 2012 U.S. Dollars	LIN	2019-Apr-01	2018-Oct-01
+DTCTHFNM	Total Consumer Loans and Leases Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+CASACBM027NBOG	Cash Assets, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-29	2019-Feb-01
+CCLACBM027NBOG	Consumer Loans: Credit Cards and Other Revolving Plans, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-29	2019-Feb-01
+DTRTNM	Total Real Estate Loans Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+BUSLOANSNSA	Commercial and Industrial Loans, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-29	2019-Feb-01
+DPSACBM027NBOG	Deposits, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-29	2019-Feb-01
+TOTCINSA	Commercial and Industrial Loans, All Commercial Banks	NSA	Weekly, Ending Wednesday	Billions of U.S. Dollars	LIN	2019-Mar-29	2019-Mar-20
+LODINIM066N	University of Louisville and Oklahoma State University: LoDI National Index	NSA	Monthly	Index	LIN	2019-Mar-29	2019-Apr-01
+STLENI	St. Louis Fed Economic News Index: Real GDP Nowcast	SAAR	Quarterly	Percent Change at Annual Rate	LIN	2019-Mar-29	2019-Jan-01
+PCETRIM12M159SFRBDAL	Trimmed Mean PCE Inflation Rate	SA	Monthly	Percent Change from Year Ago	LIN	2019-Mar-29	2019-Jan-01
+PCETRIM1M158SFRBDAL	Trimmed Mean PCE Inflation Rate	SA	Monthly	Percent Change at Annual Rate	LIN	2019-Mar-29	2019-Jan-01
+ALTSALES	Light Weight Vehicle Sales: Autos and Light Trucks	SAAR	Monthly	Millions of Units	LIN	2019-Mar-29	2019-Feb-01
+TOTALNSA	Total Vehicle Sales	NSA	Monthly	Thousands of Units	LIN	2019-Mar-29	2019-Feb-01
+NHSDPT	New Houses Sold by Stage of Construction, Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-29	2019-Feb-01
+HSN1FNSA	New One Family Houses Sold: United States	NSA	Monthly	Thousands of Units	LIN	2019-Mar-29	2019-Feb-01
+MSPNHSUS	Median Sales Price for New Houses Sold in the United States	NSA	Monthly	Dollars	LIN	2019-Mar-29	2019-Feb-01
+MZM	MZM Money Stock	SA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Mar-29	2019-Mar-18
+CMRMT	Real Manufacturing and Trade Industries Sales	SA	Monthly	Millions of Chained 2012 Dollars	LIN	2019-Mar-29	2019-Jan-01
+A068RC1	Personal outlays	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+A576RC1	Compensation of Employees, Received: Wage and Salary Disbursements	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Feb-01
+B069RC1	Personal interest payments	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+DSPI	Disposable Personal Income	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Feb-01
+PMSAVE	Personal Saving	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+A229RX0	Real Disposable Personal Income: Per Capita	SAAR	Monthly	Chained 2012 Dollars	LIN	2019-Mar-29	2019-Jan-01
+DSPIC96	Real Disposable Personal Income	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-29	2019-Jan-01
+PSAVERT	Personal Saving Rate	SAAR	Monthly	Percent	LIN	2019-Mar-29	2019-Jan-01
+W055RC1	Personal current taxes	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Feb-01
+PCEND	Personal Consumption Expenditures: Nondurable Goods	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+PCEC96	Real Personal Consumption Expenditures	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-29	2019-Jan-01
+PCEDG	Personal Consumption Expenditures: Durable Goods	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+PCEPI	Personal Consumption Expenditures: Chain-type Price Index	SA	Monthly	Index 2012=100	LIN	2019-Mar-29	2019-Jan-01
+W875RX1	Real personal income excluding current transfer receipts	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-29	2019-Jan-01
+PCE	Personal Consumption Expenditures	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-29	2019-Jan-01
+MBCURRCIRW	Monetary Base; Currency in Circulation	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-28	2019-Mar-27
+NONBORRESW	Reserves of Depository Institutions, Nonborrowed	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-28	2019-Mar-27
+RESBALNSW	Total Reserve Balances Maintained with Federal Reserve Banks	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-28	2019-Mar-27
+TLVAULTW	Vault Cash, Total	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-28	2019-Mar-27
+BOGMBASEW	Monetary Base; Total	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-28	2019-Mar-27
+M2V	Velocity of M2 Money Stock	SA	Quarterly	Ratio	LIN	2019-Mar-28	2018-Oct-01
+MZMV	Velocity of MZM Money Stock	SA	Quarterly	Ratio	LIN	2019-Mar-28	2018-Oct-01
+FINSLC1	Real Final Sales of Domestic Product	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Mar-28	2018-Oct-01
+CP	Corporate Profits After Tax (without IVA and CCAdj)	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+GDPDEF	Gross Domestic Product: Implicit Price Deflator	SA	Quarterly	Index 2012=100	LIN	2019-Mar-28	2018-Oct-01
+GNP	Gross National Product	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+GPDI	Gross Private Domestic Investment	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+GDP	Gross Domestic Product	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+GDPC1	Real Gross Domestic Product	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Mar-28	2018-Oct-01
+B102RC1Q027SBEA	State and local government current tax receipts: Taxes on corporate income	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+PCNDGC96	Real Personal Consumption Expenditures: Nondurable Goods	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Mar-28	2018-Oct-01
+A939RC0Q052SBEA	Gross domestic product per capita	SAAR	Quarterly	Dollars	LIN	2019-Mar-28	2018-Oct-01
+B075RC1Q027SBEA	Federal government current tax receipts: Taxes on corporate income	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+A939RX0Q048SBEA	Real gross domestic product per capita	SAAR	Quarterly	Chained 2012 Dollars	LIN	2019-Mar-28	2018-Oct-01
+W006RC1Q027SBEA	Federal government current tax receipts	SAAR	Quarterly	Billions of Dollars	LIN	2019-Mar-28	2018-Oct-01
+IPB53110N	Industrial Production: Consumer parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53120N	Industrial Production: Equipment parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53123N	Industrial Production: Other equipment parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53320N	Industrial Production: Energy Materials: Converted fuel	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53810N	Industrial Production: Non-energy materials for finished goods producers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB562A3CN	Industrial Production: Primary and semifinished processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB5640CN	Industrial Production: Finished processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG213N	Industrial Production: Mining: Support activities for mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG3342N	Industrial Production: Durable Goods: Communications equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG3212A9N	Industrial Production: Durable Goods: Plywood and miscellaneous wood products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPGMFS	Industrial Capacity: Manufacturing (NAICS)	SA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLGMFOS	Capacity Utilization: Nondurable Manufacturing: Other manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB51111N	Industrial Production: Durable Goods: Autos and trucks, consumer	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51112N	Industrial Production: Durable Goods: Auto parts and allied goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51121N	Industrial Production: Durable Goods: Computers, video and audio equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB511222N	Industrial Production: Durable Goods: Carpeting and furniture	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51122N	Industrial Production: Durable Goods: Appliances, furniture, and carpeting	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51210N	Industrial Production: Nondurable nonenergy consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51211N	Industrial Production: Nondurable Goods: Foods and tobacco	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51212N	Industrial Production: Nondurable Goods: Clothing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51213N	Industrial Production: Nondurable Goods: Chemical products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51214N	Industrial Production: Nondurable Goods: Paper products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51220N	Industrial Production: Consumer energy products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51222N	Industrial Production: Residential utilities	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52000N	Industrial Production: Equipment, total	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52110N	Industrial Production: Equipment: Transit equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52120N	Industrial Production: Information processing and related equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52130N	Industrial Production: Industrial and other equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52131N	Industrial Production: Industrial equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52200N	Industrial Production: Oil and gas well drilling and manufactured homes	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52300N	Industrial Production: Defense and space equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53121N	Industrial Production: Computer and other board assemblies and parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53122N	Industrial Production: Semiconductors, printed circuit boards, and other	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53130N	Industrial Production: Other durable materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53131N	Industrial Production: Durable Materials: Basic metals	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53200N	Industrial Production: Nondurable goods materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53210N	Industrial Production: Nondurable Goods Materials: Textile materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53230N	Industrial Production: Nondurable Goods Materials: Chemical materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53241N	Industrial Production: Nondurable Materials: Containers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53220N	Industrial Production: Nondurable Goods Materials: Paper materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53300N	Industrial Production: Energy materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53820N	Industrial Production: Non-energy materials for intermediate goods producers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB54000N	Industrial Production: Nonindustrial supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB54200N	Industrial Production: Business supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB54210N	Industrial Production: General business supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB54220N	Industrial Production: Commercial energy products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB5610CN	Industrial Production: Crude processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPFPNSN	Industrial Production: Final Products and Nonindustrial Supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPFUELN	Industrial Production: Fuels	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG211112N	Industrial Production: Mining: Natural gas liquid extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG2122N	Industrial Production: Mining: Metal ore mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG2123N	Industrial Production: Mining: Nonmetallic mineral mining and quarrying	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG212N	Industrial Production: Mining: Mining (except oil and gas)	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG22112N	Industrial Production: Utilities: Electric power transmission, control, and distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG2211N	Industrial Production: Electric power generation, transmission, and distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG3251N	Industrial Production: Nondurable Goods: Basic chemical	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG3332N	Industrial Production: Durable Goods: Industrial machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG3341N	Industrial Production: Durable Goods: Computer and peripheral equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPN3311A2BN	Industrial Production: Durable Goods: Construction steel	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Jan-01
+CAPHITEK2S	Industrial Capacity: Computers, communications equipment, and semiconductors	SA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLB5640CS	Capacity Utilization: Finished processing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG2122S	Capacity Utilization: Metal ore mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG2123S	Capacity Utilization: Nonmetallic mineral mining and quarrying	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG212S	Capacity Utilization: Mining (except oil and gas)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB50089N	Industrial Production: Energy Materials: Energy, total	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG211111N	Industrial Production: Mining: Crude petroleum and natural gas extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG2212N	Industrial Production: Natural gas distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG3342S	Capacity Utilization: Communications equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB511221N	Industrial Production: Durable Goods: Household appliances	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53100N	Industrial Production: Durable goods materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG33312N	Industrial Production: Durable Goods: Construction machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG2212S	Capacity Utilization: Natural gas distribution	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG3341S	Capacity Utilization: Computer and peripheral equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB51110N	Industrial Production: Durable Goods: Automotive products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB52100N	Industrial Production: Equipment: Business equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG22111N	Industrial Production: Utilities: Electric power generation	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB50002N	Industrial Production: Final products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53310N	Industrial Production: Energy Materials: Primary energy	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPHITEK2N	Industrial Production: Computers, communications equipment, and semiconductors	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG335S	Capacity Utilization: Durable Manufacturing: Electrical equipment, appliance, and component	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB51200N	Industrial Production: Nondurable consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG333N	Industrial Production: Durable manufacturing: Machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG334S	Capacity Utilization: Durable Manufacturing: Computer and electronic product	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG336S	Capacity Utilization: Durable Manufacturing: Transportation equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB54100N	Industrial Production: Construction supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG211N	Industrial Production: Mining: Oil and gas extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG33612N	Industrial Production: Durable Goods: Heavy duty truck	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLGMFNS	Capacity Utilization: Nondurable manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB51000N	Industrial Production: Consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB53000N	Industrial Production: Materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG3364T9S	Capacity Utilization: Durable Manufacturing: Aerospace and miscellaneous transportation equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG337S	Capacity Utilization: Durable Manufacturing: Furniture and related product	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG333S	Capacity Utilization: Durable Manufacturing: Machinery	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLB5610CS	Capacity Utilization: Crude processing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG33611S	Capacity Utilization: Durable Manufacturing: Automobile and light duty motor vehicle	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLGMFDS	Capacity Utilization: Durable manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPG21N	Industrial Production: Mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG2211A2S	Capacity Utilization: Electric and gas utilities	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPG3331N	Industrial Production: Durable Goods: Agriculture, construction, and mining machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPB51100N	Industrial Production: Durable consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG211S	Capacity Utilization: Oil and gas extraction	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG325S	Capacity Utilization: Nondurable Manufacturing: Chemical	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG3361T3S	Capacity Utilization: Durable Manufacturing: Motor vehicles and parts	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLHITEK2S	Capacity Utilization: Computers, communications equipment, and semiconductors	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPG21223N	Industrial Production: Mining: Copper, nickel, lead, and zinc mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG21S	Capacity Utilization: Mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CUMFNS	Capacity Utilization: Manufacturing (SIC)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPG21222N	Industrial Production: Mining: Gold ore and silver ore mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG2211S	Capacity Utilization: Electric power generation, transmission, and distribution	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPGMFN	Industrial Production: Manufacturing (NAICS)	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLG3311A2S	Capacity Utilization: Durable Manufacturing: Iron and steel products	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+IPB50001N	Industrial Production: Total index	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG211111CN	Industrial Production: Mining: Crude oil	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+IPG2211A2N	Industrial Production: Electric and gas utilities	NSA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+MCUMFN	Capacity Utilization: Manufacturing (NAICS)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+TCU	Capacity Utilization: Total Industry	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+INDPRO	Industrial Production Index	SA	Monthly	Index 2012=100	LIN	2019-Mar-27	2019-Feb-01
+CAPUTLN2121S	Capacity Utilization: Coal mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-27	2019-Feb-01
+CSUSHPISA	S&P/Case-Shiller U.S. National Home Price Index	SA	Monthly	Index Jan 2000=100	LIN	2019-Mar-26	2019-Jan-01
+CEBNDIF066MNFRBPHI	Current Equipment and Software Capital Expenditures; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Mar-26	2019-Mar-01
+CPBNDIF066MNFRBPHI	Current Physical Plant Capital Expenditures; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Mar-26	2019-Mar-01
+PERMITNSA	New Private Housing Units Authorized by Building Permits	NSA	Monthly	Thousands of Units	LIN	2019-Mar-26	2019-Feb-01
+UNDCONTNSA	New Privately-Owned Housing Units Under Construction: Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-26	2019-Feb-01
+COMPUTNSA	New Privately-Owned Housing Units Completed: Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-26	2019-Feb-01
+HOUSTNSA	Housing Starts: Total: New Privately Owned Housing Units Started	NSA	Monthly	Thousands of Units	LIN	2019-Mar-26	2019-Feb-01
+SMU06000003133441301	All Employees: Durable Goods: Semiconductor and Related Device Manufacturing in California	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-25	2019-Feb-01
+SFTPINDM114SFRBSF	San Francisco Tech Pulse	SA	Monthly	Index Jan 2000=100	LIN	2019-Mar-25	2019-Feb-01
+MVGFD027MNFRBDAL	Market Value of Gross Federal Debt	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-25	2019-Feb-01
+MVMTD027MNFRBDAL	Market Value of Marketable Treasury Debt	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-25	2019-Feb-01
+BACTUAMFRBDAL	Current General Business Activity; Diffusion Index for Texas	NSA	Monthly	Index	LIN	2019-Mar-25	2019-Mar-01
+CEXPUAMFRBDAL	Current Capital Expenditures; Diffusion Index for Texas	NSA	Monthly	Index	LIN	2019-Mar-25	2019-Mar-01
+FCEXPSAMFRBDAL	Future Capital Expenditures; Diffusion Index for Texas	SA	Monthly	Index	LIN	2019-Mar-25	2019-Mar-01
+CFNAIDIFF	Chicago Fed National Activity Index: Diffusion Index	NSA	Monthly	Index	LIN	2019-Mar-25	2019-Feb-01
+MTSR133FMS	Total Federal Receipts	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Feb-01
+HSFSUPUSM673N	Existing Single-Family Home Sales: Months Supply	NSA	Monthly	Months' Supply	LIN	2019-Mar-22	2019-Feb-01
+HSFINVUSM495N	Existing Single-Family Home Sales: Housing Inventory	NSA	Monthly	Number of Units	LIN	2019-Mar-22	2019-Feb-01
+HSFMEDUSM052N	Median Sales Price of Existing Single-Family Homes	NSA	Monthly	Dollars	LIN	2019-Mar-22	2019-Feb-01
+HOSSUPUSM673N	Existing Home Sales: Months Supply	NSA	Monthly	Months' Supply	LIN	2019-Mar-22	2019-Feb-01
+HSFAVGUSM052N	Mean Sales Price of Existing Single-Family Homes	NSA	Monthly	Dollars	LIN	2019-Mar-22	2019-Feb-01
+HOSINVUSM495N	Existing Home Sales: Housing Inventory	NSA	Monthly	Number of Units	LIN	2019-Mar-22	2019-Feb-01
+HOSMEDUSM052N	Median Sales Price of Existing Homes	NSA	Monthly	Dollars	LIN	2019-Mar-22	2019-Feb-01
+EXHOSLUSM495N	Existing Home Sales	NSA	Monthly	Number of Units	LIN	2019-Mar-22	2019-Feb-01
+EXSFHSUSM495N	Existing Single-Family Home Sales	NSA	Monthly	Number of Units	LIN	2019-Mar-22	2019-Feb-01
+HOSAVGUSM052N	Mean Sales Price of Existing Homes	NSA	Monthly	Dollars	LIN	2019-Mar-22	2019-Feb-01
+S424SMM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S42SMNM144NCEN	Total Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4246SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Chemicals and Allied Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4247SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Petroleum and Petroleum Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4248SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Beer, Wine, and Distilled Alcoholic Beverages Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4242SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Drugs and Druggists' Sundries Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4243SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Apparel, Piece Goods, and Notions Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4244SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Grocery and Related Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4245SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Farm Product Raw Materials Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4238SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Machinery, Equipment, and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S423SMM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4241SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Paper and Paper Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4234SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Professional and Commercial Equipment and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4235SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Metals and Minerals, Except Petroleum Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4236SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Household Appliances and Electrical and Electronic Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4237SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Hardware, and Plumbing and Heating Equipment and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+R42IRNM163NCEN	Total Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Inventories/Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Mar-22	2019-Jan-01
+S4231SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Motor Vehicle and Motor Vehicle Parts and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4232SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Furniture and Home Furnishings Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S4233SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Lumber and Other Construction Materials Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+S42343M144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Professional and Commercial Equipment and Supplies Sales: Computer and Computer Peripheral Equipment and Software Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-22	2019-Jan-01
+ADJRESNS	St. Louis Adjusted Reserves	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-22	2019-Feb-01
 NECDFNA066MNFRBPHI	Current Employment; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Mar-21	2019-Mar-01
 CEFDFNA066MNFRBPHI	Future Capital Expenditures; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Mar-21	2019-Mar-01
-WILL5000PRFC	Wilshire 5000 Full Cap Price Index	NSA	Daily, Close	Index	LIN	2019-Mar-21	2019-Mar-20
-WILL5000IND	Wilshire 5000 Total Market Index	NSA	Daily, Close	Index	LIN	2019-Mar-21	2019-Mar-20
-USD1MTD156N	1-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-14
-USD3MTD156N	3-Month London Interbank Offered Rate (LIBOR), based on U.S. Dollar	NSA	Daily	Percent	LIN	2019-Mar-21	2019-Mar-14
-DGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Daily	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-18
-DJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Daily	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-18
-WGASUSGULF	Conventional Gasoline Prices: U.S. Gulf Coast, Regular	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-15
-WHOILNYH	No. 2 Heating Oil Prices: New York Harbor	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-15
-DCOILBRENTEU	Crude Oil Prices: Brent - Europe	NSA	Daily	Dollars per Barrel	LIN	2019-Mar-20	2019-Mar-18
-DHHNGSP	Henry Hub Natural Gas Spot Price	NSA	Daily	Dollars per Million BTU	LIN	2019-Mar-20	2019-Mar-18
-DPROPANEMBTX	Propane Prices: Mont Belvieu, Texas	NSA	Daily	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-18
-WJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Weekly, Ending Friday	Dollars per Gallon	LIN	2019-Mar-20	2019-Mar-15
-DCOILWTICO	Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma	NSA	Daily	Dollars per Barrel	LIN	2019-Mar-20	2019-Mar-18
 WATERBORNE	Tonnage for Internal U.S. Waterways	NSA	Monthly	Millions of Short Tons	LIN	2019-Mar-20	2019-Jan-01
 RAILFRTCARLOADS	Rail Freight Carloads	NSA	Monthly	Carloads	LIN	2019-Mar-20	2019-Jan-01
 TRUCKD11	Truck Tonnage	SA	Monthly	Truck Tonnage Index	LIN	2019-Mar-20	2019-Jan-01
-NIKKEI225	Nikkei Stock Average, Nikkei 225	NSA	Daily, Close	Index	LIN	2019-Mar-20	2019-Mar-20
 U34AVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Computers	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U12AVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Beverage and Tobacco Products: Beverages	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U12SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Beverage and Tobacco Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -82,11 +486,8 @@ U25CVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Chemic
 U26SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Plastics and Rubber Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31AVS	Value of Manufacturers' Shipments for Durable Goods Industries: Primary Metals: Iron and Steel Mills	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31CNO	Value of Manufacturers' New Orders for Durable Goods Industries: Primary Metals: Ferrous Metal Foundries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U31SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Primary Metals	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U32SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33AVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Farm machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33DVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Mining, Oil Field, and Gas Field Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33GNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33GVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33INO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Metalworking Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33IVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Metalworking Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -96,12 +497,10 @@ U34EVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers
 U34JNO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products: Defense Search and Navigation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34JVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Defense Search and Navigation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34KVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Electromedical, Measuring and Control Instruments	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34XVS	Value of Manufacturers' Shipments for Communication Equipment Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
+U33GNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35ANO	Value of Manufacturers' New Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electric Lighting Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35CNO	Value of Manufacturers' New Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electrical Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U35SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36BVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Light Trucks and Utility Vehicles	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U36SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U37SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Furniture and Related Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U37SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Furniture and Related Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UANMVS	Value of Manufacturers' Shipments for Durable Goods Industries: Primary Metals: Aluminum and Nonferrous Metals	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -109,64 +508,34 @@ UBTPNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transpor
 UCDGVS	Value of Manufacturers' Shipments for Consumer Goods: Consumer Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCMSNO	Value of Manufacturers' New Orders for Construction Materials and Supplies Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCNGVS	Value of Manufacturers' Shipments for Consumer Goods: Consumer Nondurable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UCRPNO	Value of Manufacturers' New Orders for Computers and Related Products Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UCRPVS	Value of Manufacturers' Shipments for Computers and Related Products Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDEFNO	Value of Manufacturers' New Orders for Capital Goods: Defense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXTVS	Value of Manufacturers' Shipments for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMDMNO	Value of Manufacturers' New Orders for Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMVPVS	Value of Manufacturers' Shipments for Motor Vehicles and Parts Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXTNO	Value of Manufacturers' New Orders for All Manufacturing Industries Excluding Transportation	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXTVS	Value of Manufacturers' Shipments for All Manufacturing Industries Excluding Transportation	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNDEVS	Value of Manufacturers' Shipments for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33DNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Mining, Oil Field, and Gas Field Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMTMVS	Value of Manufacturers' Shipments for All Manufacturing Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U36SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDEFVS	Value of Manufacturers' Shipments for Capital Goods: Defense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMDMVS	Value of Manufacturers' Shipments for Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNDENO	Value of Manufacturers' New Orders for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXTNO	Value of Manufacturers' New Orders for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMTMNO	Value of Manufacturers' New Orders for All Manufacturing Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMVPNO	Value of Manufacturers' New Orders for Motor Vehicles and Parts Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U32SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33GUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34DUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Nondefense Communications Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCOGUO	Value of Manufacturers' Unfilled Orders for Consumer Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U37SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Furniture and Related Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UANMUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Primary Metals: Aluminum and Nonferrous Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCDGUO	Value of Manufacturers' Unfilled Orders for Consumer Goods: Consumer Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDAPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXDUO	Value of Manufacturers' Unfilled Orders for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXDUO	Value of Manufacturers' Unfilled Orders for All Manufacturing Industries Excluding Defense	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNAPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNXAUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UTCGUO	Value of Manufacturers' Unfilled Orders for Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31CUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Primary Metals: Ferrous Metal Foundries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33DUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery: Mining, Oil Field, and Gas Field Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33IUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery: Metalworking Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34HUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Electronic Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34JUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Defense Search and Navigation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34KUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Electromedical, Measuring, and Control Instruments	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34XUO	Value of Manufacturers' Unfilled Orders for Communication Equipment Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35CUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electrical Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U35SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UITIUO	Value of Manufacturers' Unfilled Orders for Information Technology Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMTMUO	Value of Manufacturers' Unfilled Orders for All Manufacturing Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U27SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Nonmetallic Mineral Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34BVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Computer Storage Devices	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34FVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Audio and Video Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDAPVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXDVS	Value of Manufacturers' Shipments for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UITIVS	Value of Manufacturers' Shipments for Information Technology Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMNMVS	Value of Manufacturers' Shipments for Nondurable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMTUVS	Value of Manufacturers' Shipments for All Manufacturing Industries with Unfilled Orders	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXDVS	Value of Manufacturers' Shipments for All Manufacturing Industries Excluding Defense	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNAPVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UTCGVS	Value of Manufacturers' Shipments for Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34IVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Nondefense Search and Navigation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35AVS	Value of Manufacturers' Shipments for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electric Lighting Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35BVS	Value of Manufacturers' Shipments for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Household Appliance	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35DVS	Value of Manufacturers' Shipments for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Batteries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -178,12 +547,9 @@ UCOGVS	Value of Manufacturers' Shipments for Consumer Goods Industries	NSA	Month
 U25SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Chemical Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31ANO	Value of Manufacturers' New Orders for Durable Goods Industries: Primary Metals: Iron and Steel Mills	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31CVS	Value of Manufacturers' Shipments for Durable Goods Industries: Primary Metals: Ferrous Metal Foundries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U31SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Primary Metals	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U32SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33CVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Construction Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33EVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Industrial Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33HVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery: Ventilation, Heating, Air-Conditioning, and Refrigeration Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33SVS	Value of Manufacturers' Shipments for Durable Goods Industries: Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34DVS	Value of Manufacturers' Shipments for Durable Goods Industries: Computers and Electronic Products: Nondefense Communications Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U11SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Food Products	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U12BVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Beverage and Tobacco Products: Tobacco	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -195,29 +561,18 @@ U24SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Petrol
 U25BVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Chemical Products: Pharmaceuticals and Medicines	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U23SVS	Value of Manufacturers' Shipments for Nondurable Goods Industries: Printing	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36CVS	Value of Manufacturers' Shipments for Durable Goods Industries: Transportation Equipment: Heavy Duty Trucks	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNXAVS	Value of Manufacturers' Shipments for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U31SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Primary Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34IUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Nondefense Search and Navigation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36ZUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Ships and Boats	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXTUO	Value of Manufacturers' Unfilled Orders for All Manufacturing Industries Excluding Transportation	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMTUNO	Value of Manufacturers' New Orders for All Manufacturing Industries with Unfilled Orders	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXDNO	Value of Manufacturers' New Orders for All Manufacturing Industries Excluding Defense	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNAPNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UTCGNO	Value of Manufacturers' New Orders for Capital Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35BUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Household Appliance	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U36SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36ZNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment: Ships and Boats	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UBTPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Motor Vehicle Bodies, Parts, and Trailers	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDAPNO	Value of Manufacturers' New Orders for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDEFUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Defense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXTUO	Value of Manufacturers' Unfilled Orders for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UANMNO	Value of Manufacturers' New Orders for Durable Goods Industries: Primary Metals: Aluminum and Nonferrous Metals	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
+UBTPUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Transportation Equipment: Motor Vehicle Bodies, Parts, and Trailers	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34AUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Computers	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34ENO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products: Defense Communications Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34EUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products: Defense Communications Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34KNO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products: Electromedical, Measuring, and Control Instruments	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34SUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34XNO	Value of Manufacturers' New Orders for Communication Equipment Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35AUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electric Lighting Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35BNO	Value of Manufacturers' New Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Household Appliance	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33HNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Ventilation, Heating, Air-Conditioning, and Refrigeration Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -228,26 +583,20 @@ U34ANO	Value of Manufacturers' New Orders for Durable Goods Industries: Computer
 U31AUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Primary Metals: Iron and Steel Mills	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33CUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries: Machinery: Construction Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33CNO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Construction Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U35SNO	Value of Manufacturers' New Orders for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCMSUO	Value of Manufacturers' Unfilled Orders for Construction Materials and Supplies Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UITINO	Value of Manufacturers' New Orders for Information Technology Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMVPUO	Value of Manufacturers' Unfilled Orders for Motor Vehicles and Parts Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33ENO	Value of Manufacturers' New Orders for Durable Goods Industries: Machinery: Industrial Machinery	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCOGNO	Value of Manufacturers' New Orders for Consumer Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXDNO	Value of Manufacturers' New Orders for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMDMUO	Value of Manufacturers' Unfilled Orders for Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNDEUO	Value of Manufacturers' Unfilled Orders for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34INO	Value of Manufacturers' New Orders for Durable Goods Industries: Computers and Electronic Products: Nondefense Search and Navigation Equipment	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCDGNO	Value of Manufacturers' New Orders for Consumer Goods: Consumer Durable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMNMNO	Value of Manufacturers' New Orders for Nondurable Goods Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNXANO	Value of Manufacturers' New Orders for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCOGTI	Value of Manufacturers' Total Inventories for Consumer Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXDTI	Value of Manufacturers' Total Inventories for All Manufacturing Industries Excluding Defense	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMXTTI	Value of Manufacturers' Total Inventories for All Manufacturing Industries Excluding Transportation	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U37STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Furniture and Related Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33GTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34FTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Audio and Video Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34ITI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Nondefense Search and Navigation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
+U33GTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Photographic Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U22STI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries: Paper Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U23STI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries: Printing	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U12ATI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries: Beverage and Tobacco Products: Beverages	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -268,16 +617,13 @@ U25CTI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries
 U25STI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries: Chemical Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U26STI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries: Plastics and Rubber Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U27STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Nonmetallic Mineral Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
+U31ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals: Iron and Steel Mills	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U31CTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals: Ferrous Metal Foundries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U31STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U32STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Fabricated Metal Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33CTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Construction Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33ETI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Industrial Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33HTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Ventilation, Heating, Air-Conditioning, and Refrigeration Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33ITI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Metalworking Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U31ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals: Iron and Steel Mills	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33MTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Material Handling Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U33STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Computers	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34BTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Computer Storage Devices	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34DTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Nondefense Communications Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
@@ -285,58 +631,28 @@ U34ETI	Value of Manufacturers' Total Inventories for Durable Goods Industries: C
 U34HTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Electronic Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34JTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Defense Search and Navigation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U34KTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products: Electromedical, Measuring, and Control Instruments	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Computers and Electronic Products	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U34XTI	Value of Manufacturers' Total Inventories for Communication Equipment Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electric Lighting Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35BTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Household Appliances	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35CTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Electrical Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U35DTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components: Batteries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U35STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Electrical Equipment, Appliances, and Components	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Automobiles	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36CTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Heavy Duty Trucks	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-U36STI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36ZTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Ships and Boats	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UANMTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Primary Metals: Aluminum and Nonferrous Metals	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UBTPTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Motor Vehicle Bodies, Parts, and Trailers	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCDGTI	Value of Manufacturers' Total Inventories for Consumer Goods: Consumer Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCNGTI	Value of Manufacturers' Total Inventories for Consumer Goods: Consumer Nondurable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDAPTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Defense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDEFTI	Value of Manufacturers' Total Inventories for Capital Goods: Defense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXDTI	Value of Manufacturers' Total Inventories for Consumer Goods: Durable Goods Excluding Defense Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UDXTTI	Value of Manufacturers' Total Inventories for Consumer Goods: Durable Goods Excluding Transportation Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMNMTI	Value of Manufacturers' Total Inventories for Nondurable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMTUTI	Value of Manufacturers' Total Inventories for All Manufacturing Industries with Unfilled Orders	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNAPTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Nondefense Aircraft and Parts	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNXATI	Value of Manufacturers' Total Inventories for Capital Goods: Nondefense Capital Goods Excluding Aircraft Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UTCGTI	Value of Manufacturers' Total Inventories for Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33ATI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Farm machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U36BTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Transportation Equipment: Light Trucks and Utility Vehicles	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UCMSTI	Value of Manufacturers' Total Inventories for Construction Materials and Supplies Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UITITI	Value of Manufacturers' Total Inventories for Information Technology Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMVPTI	Value of Manufacturers' Total Inventories for Motor Vehicles and Parts Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UNDETI	Value of Manufacturers' Total Inventories for Capital Goods: Nondefense Capital Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 U33DTI	Value of Manufacturers' Total Inventories for Durable Goods Industries: Machinery: Mining, Oil Field, and Gas Field Machinery	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-UMDMTI	Value of Manufacturers' Total Inventories for Durable Goods Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
 UMTMTI	Value of Manufacturers' Total Inventories for All Manufacturing Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-19	2019-Jan-01
-GASALLCOVW	US All Grades Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASALLREFW	US All Grades Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASDESLSW	US Diesel Ultra Low Sulfur (0-15 ppm) Sales Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASREGREFW	US Regular Reformulated Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASALLW	US All Grades All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASDESW	US Diesel Sales Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASREGCOVW	US Regular Conventional Gas Price	NSA	Weekly	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
-GASREGW	US Regular All Formulations Gas Price	NSA	Weekly, Ending Monday	Dollars per Gallon	LIN	2019-Mar-18	2019-Mar-18
 FRGEXPUSM649NCIS	Cass Freight Index: Expenditures	NSA	Monthly	Index Jan 1990=1	LIN	2019-Mar-18	2019-Feb-01
 FRGSHPUSM649NCIS	Cass Freight Index: Shipments	NSA	Monthly	Index Jan 1990=1	LIN	2019-Mar-18	2019-Feb-01
 INTDSRCNM193N	Interest Rates, Discount Rate for China	NSA	Monthly	Percent per Annum	LIN	2019-Mar-18	2019-Jan-01
 MYAGM2CNM189N	M2 for China	NSA	Monthly	National Currency	LIN	2019-Mar-18	2019-Jan-01
-CASACBM027NBOG	Cash Assets, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-15	2019-Feb-01
-CCLACBM027NBOG	Consumer Loans: Credit Cards and Other Revolving Plans, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-15	2019-Feb-01
-BUSLOANSNSA	Commercial and Industrial Loans, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-15	2019-Feb-01
-TOTCINSA	Commercial and Industrial Loans, All Commercial Banks	NSA	Weekly, Ending Wednesday	Billions of U.S. Dollars	LIN	2019-Mar-15	2019-Mar-06
-DPSACBM027NBOG	Deposits, All Commercial Banks	NSA	Monthly	Billions of U.S. Dollars	LIN	2019-Mar-15	2019-Feb-01
-STLENI	St. Louis Fed Economic News Index: Real GDP Nowcast	SAAR	Quarterly	Percent Change at Annual Rate	LIN	2019-Mar-15	2019-Jan-01
-FIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment	SA	Quarterly	Percentage Points	LIN	2019-Mar-15	2019-Jan-01
 JTU2300TSL	Total Separations: Construction	NSA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
 JTU480099HIL	Hires: Transportation, Warehousing and Utilities	NSA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
 JTU480099TSL	Total Separations: Transportation, Warehousing and Utilities	NSA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
@@ -394,157 +710,13 @@ JTS3000HIL	Hires: Manufacturing	SA	Monthly	Level in Thousands	LIN	2019-Mar-15	20
 JTUHIL	Hires: Total Nonfarm	NSA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
 JTS1000HIL	Hires: Total Private	SA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
 JTS1000QUL	Quits: Total Private	SA	Monthly	Level in Thousands	LIN	2019-Mar-15	2019-Jan-01
-ADJRESNS	St. Louis Adjusted Reserves	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-15	2019-Feb-01
 AMBNS	St. Louis Adjusted Monetary Base	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-15	2019-Feb-01
-MZM	MZM Money Stock	SA	Weekly, Ending Monday	Billions of Dollars	LIN	2019-Mar-15	2019-Mar-04
-IPB53123N	Industrial Production: Other equipment parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG2122S	Capacity Utilization: Metal ore mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG2123S	Capacity Utilization: Nonmetallic mineral mining and quarrying	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG212S	Capacity Utilization: Mining (except oil and gas)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG335S	Capacity Utilization: Durable Manufacturing: Electrical equipment, appliance, and component	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLGMFOS	Capacity Utilization: Nondurable Manufacturing: Other manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPG3212A9N	Industrial Production: Durable Goods: Plywood and miscellaneous wood products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG3251N	Industrial Production: Nondurable Goods: Basic chemical	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG33312N	Industrial Production: Durable Goods: Construction machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG3332N	Industrial Production: Durable Goods: Industrial machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG3341N	Industrial Production: Durable Goods: Computer and peripheral equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB50089N	Industrial Production: Energy Materials: Energy, total	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51121N	Industrial Production: Durable Goods: Computers, video and audio equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB511222N	Industrial Production: Durable Goods: Carpeting and furniture	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51122N	Industrial Production: Durable Goods: Appliances, furniture, and carpeting	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51210N	Industrial Production: Nondurable nonenergy consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51211N	Industrial Production: Nondurable Goods: Foods and tobacco	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51212N	Industrial Production: Nondurable Goods: Clothing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51214N	Industrial Production: Nondurable Goods: Paper products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51222N	Industrial Production: Residential utilities	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52000N	Industrial Production: Equipment, total	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52110N	Industrial Production: Equipment: Transit equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52120N	Industrial Production: Information processing and related equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52130N	Industrial Production: Industrial and other equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52131N	Industrial Production: Industrial equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52300N	Industrial Production: Defense and space equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53100N	Industrial Production: Durable goods materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53110N	Industrial Production: Consumer parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53120N	Industrial Production: Equipment parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53121N	Industrial Production: Computer and other board assemblies and parts	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53122N	Industrial Production: Semiconductors, printed circuit boards, and other	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53130N	Industrial Production: Other durable materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53131N	Industrial Production: Durable Materials: Basic metals	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53210N	Industrial Production: Nondurable Goods Materials: Textile materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53220N	Industrial Production: Nondurable Goods Materials: Paper materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53230N	Industrial Production: Nondurable Goods Materials: Chemical materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53241N	Industrial Production: Nondurable Materials: Containers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53300N	Industrial Production: Energy materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53320N	Industrial Production: Energy Materials: Converted fuel	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53810N	Industrial Production: Non-energy materials for finished goods producers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53820N	Industrial Production: Non-energy materials for intermediate goods producers	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB54000N	Industrial Production: Nonindustrial supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB54100N	Industrial Production: Construction supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB54200N	Industrial Production: Business supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB54210N	Industrial Production: General business supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB54220N	Industrial Production: Commercial energy products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB5610CN	Industrial Production: Crude processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB562A3CN	Industrial Production: Primary and semifinished processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB5640CN	Industrial Production: Finished processing	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPFPNSN	Industrial Production: Final Products and Nonindustrial Supplies	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPFUELN	Industrial Production: Fuels	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG2123N	Industrial Production: Mining: Nonmetallic mineral mining and quarrying	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG212N	Industrial Production: Mining: Mining (except oil and gas)	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG213N	Industrial Production: Mining: Support activities for mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG22111N	Industrial Production: Utilities: Electric power generation	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG22112N	Industrial Production: Utilities: Electric power transmission, control, and distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG2212N	Industrial Production: Natural gas distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG3342N	Industrial Production: Durable Goods: Communications equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG3342S	Capacity Utilization: Communications equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPB51200N	Industrial Production: Nondurable consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51213N	Industrial Production: Nondurable Goods: Chemical products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51220N	Industrial Production: Consumer energy products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB52100N	Industrial Production: Equipment: Business equipment	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53000N	Industrial Production: Materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG2211N	Industrial Production: Electric power generation, transmission, and distribution	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPN3311A2BN	Industrial Production: Durable Goods: Construction steel	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Jan-01
-CAPHITEK2S	Industrial Capacity: Computers, communications equipment, and semiconductors	SA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG2212S	Capacity Utilization: Natural gas distribution	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG3341S	Capacity Utilization: Computer and peripheral equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG336S	Capacity Utilization: Durable Manufacturing: Transportation equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPB50002N	Industrial Production: Final products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51110N	Industrial Production: Durable Goods: Automotive products	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51111N	Industrial Production: Durable Goods: Autos and trucks, consumer	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG211112N	Industrial Production: Mining: Natural gas liquid extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG2122N	Industrial Production: Mining: Metal ore mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG333N	Industrial Production: Durable manufacturing: Machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG33612N	Industrial Production: Durable Goods: Heavy duty truck	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLB5640CS	Capacity Utilization: Finished processing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG3364T9S	Capacity Utilization: Durable Manufacturing: Aerospace and miscellaneous transportation equipment	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG337S	Capacity Utilization: Durable Manufacturing: Furniture and related product	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLHITEK2S	Capacity Utilization: Computers, communications equipment, and semiconductors	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPB51112N	Industrial Production: Durable Goods: Auto parts and allied goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53200N	Industrial Production: Nondurable goods materials	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB53310N	Industrial Production: Energy Materials: Primary energy	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPGMFS	Industrial Capacity: Manufacturing (NAICS)	SA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG333S	Capacity Utilization: Durable Manufacturing: Machinery	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLGMFNS	Capacity Utilization: Nondurable manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLN2121S	Capacity Utilization: Coal mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPB52200N	Industrial Production: Oil and gas well drilling and manufactured homes	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG211111N	Industrial Production: Mining: Crude petroleum and natural gas extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG21N	Industrial Production: Mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG33611S	Capacity Utilization: Durable Manufacturing: Automobile and light duty motor vehicle	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPB511221N	Industrial Production: Durable Goods: Household appliances	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG334S	Capacity Utilization: Durable Manufacturing: Computer and electronic product	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLGMFDS	Capacity Utilization: Durable manufacturing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPG211N	Industrial Production: Mining: Oil and gas extraction	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51000N	Industrial Production: Consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLB5610CS	Capacity Utilization: Crude processing	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG211S	Capacity Utilization: Oil and gas extraction	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG325S	Capacity Utilization: Nondurable Manufacturing: Chemical	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPHITEK2N	Industrial Production: Computers, communications equipment, and semiconductors	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG2211A2S	Capacity Utilization: Electric and gas utilities	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG3361T3S	Capacity Utilization: Durable Manufacturing: Motor vehicles and parts	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPG2211A2N	Industrial Production: Electric and gas utilities	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB51100N	Industrial Production: Durable consumer goods	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG3331N	Industrial Production: Durable Goods: Agriculture, construction, and mining machinery	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG21S	Capacity Utilization: Mining	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG2211S	Capacity Utilization: Electric power generation, transmission, and distribution	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-CUMFNS	Capacity Utilization: Manufacturing (SIC)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPG21222N	Industrial Production: Mining: Gold ore and silver ore mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG21223N	Industrial Production: Mining: Copper, nickel, lead, and zinc mining	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-CAPUTLG3311A2S	Capacity Utilization: Durable Manufacturing: Iron and steel products	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-IPGMFN	Industrial Production: Manufacturing (NAICS)	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-INDPRO	Industrial Production Index	SA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPB50001N	Industrial Production: Total index	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-IPG211111CN	Industrial Production: Mining: Crude oil	NSA	Monthly	Index 2012=100	LIN	2019-Mar-15	2019-Feb-01
-MCUMFN	Capacity Utilization: Manufacturing (NAICS)	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
-TCU	Capacity Utilization: Total Industry	SA	Monthly	Percent of Capacity	LIN	2019-Mar-15	2019-Feb-01
 CEFDINA066MNFRBNY	Future Capital Expenditures; Diffusion Index for New York	NSA	Monthly	Index	LIN	2019-Mar-15	2019-Mar-01
 DTCDISA066MSFRBNY	Current Delivery Time; Diffusion Index for New York	SA	Monthly	Index	LIN	2019-Mar-15	2019-Mar-01
 GACDISA066MSFRBNY	Current General Business Conditions; Diffusion Index for New York	SA	Monthly	Index	LIN	2019-Mar-15	2019-Mar-01
 BOGMBASE	Monetary Base; Total	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-14	2019-Feb-01
-BOGMBASEW	Monetary Base; Total	NSA	Weekly, Ending Wednesday	Millions of Dollars	LIN	2019-Mar-14	2019-Mar-13
-GDPICONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-GOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-IMPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-IMPORTSERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-IMPORTSGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Imports of Goods	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-PCEGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures: Goods	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-PCESERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures: Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-SLGOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment: State and Local Government	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-EXPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-EXPORTSGOODSCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Goods	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-EXPORTSSERVICESCONTRIBNOW	Contributions to percent change in GDPNow: Real Exports of Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-FEDGOVCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Government Investment: Federal Government	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-FINSALESCONTRIBNOW	Contributions to percent change in GDPNow: Real Final Sales of Domestic Product	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-PCECONTRIBNOW	Contributions to percent change in GDPNow: Real Personal Consumption Expenditures	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-RESCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Residential	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-STRUCTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Structures	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-CHNGNETEXPORTSCONTRIBNOW	Contributions to percent change in GDPNow: Real Change of Net Exports of Goods and Services	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-CHNGNETINVENTCONTRIBNOW	Contributions to percent change in GDPNow: Real Change of Inventory Investment	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-IPPCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Intellectual Property Products	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-BUSFIXINVESTCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-EQUIPCONTRIBNOW	Contributions to percent change in GDPNow: Real Gross Private Domestic Investment: Fixed Investment: Business: Equipment	SA	Quarterly	Percentage Points	LIN	2019-Mar-14	2019-Jan-01
-GDPNOW	GDPNow	SAAR	Quarterly	Percent Change at Annual Rate	LIN	2019-Mar-14	2019-Jan-01
-NHSDPT	New Houses Sold by Stage of Construction, Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-14	2019-Jan-01
-HSN1FNSA	New One Family Houses Sold: United States	NSA	Monthly	Thousands of Units	LIN	2019-Mar-14	2019-Jan-01
-MSPNHSUS	Median Sales Price for New Houses Sold in the United States	NSA	Monthly	Dollars	LIN	2019-Mar-14	2019-Jan-01
+REQRESNS	Required Reserves of Depository Institutions	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-14	2019-Feb-01
+TOTRESNS	Total Reserves of Depository Institutions	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-14	2019-Feb-01
 IP8486	Import Price Index (Harmonized System): Machines used for manufacture of semiconductor wafers	NSA	Monthly	Index Dec 2012=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3251	Import Price Index (NAICS): Basic chemical manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ32562	Import Price Index (NAICS): Toilet preparation manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
@@ -561,10 +733,10 @@ IZ31122	Import Price Index (NAICS): Starch and vegetable fats and oils manufactu
 IZ31213	Import Price Index (NAICS): Wineries	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3132	Import Price Index (NAICS): Fabric mills	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ33991	Import Price Index (NAICS): Jewelry and silverware manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
-IZ33992	Import Price Index (NAICS): Sporting and athletic goods manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ33993	Import Price Index (NAICS): Doll, toy, and game manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZMANU	Import Price Index (NAICS): Manufactured articles	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZNONMANU	Import Price Index (NAICS): Nonmanufactured articles	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
+IZ33992	Import Price Index (NAICS): Sporting and athletic goods manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3361	Import Price Index (NAICS): Motor vehicle manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ33611	Import Price Index (NAICS): Automobile and light duty motor vehicle manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ33612	Import Price Index (NAICS): Heavy duty truck manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
@@ -711,12 +883,12 @@ IY334	Export Price Index (NAICS): Computer and electronic product manufacturing	
 IY33422	Export Price Index (NAICS): Radio and TV broadcasting and wireless equipment	NSA	Monthly	Index Dec 2009=100	LIN	2019-Mar-14	2019-Feb-01
 IZ315	Import Price Index (NAICS): Apparel manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ316	Import Price Index (NAICS): Leather and allied product manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
+IZ324	Import Price Index (NAICS): Petroleum and coal products manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3254	Import Price Index (NAICS): Pharmaceutical and medicine manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3313	Import Price Index (NAICS): Alumina and aluminum production and processing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3327	Import Price Index (NAICS): Machine shops, and screw, nut, and bolt manufacturing	NSA	Monthly	Index Dec 2012=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3334	Import Price Index (NAICS): Ventilation, heating, air-conditioning, and commercial refrigeration equipment	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IZ3344	Import Price Index (NAICS): Semiconductor and other electronic component manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
-IZ324	Import Price Index (NAICS): Petroleum and coal products manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IY111	Export Price Index (NAICS): Crop production	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IY3272	Export Price Index (NAICS): Glass and glass product manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
 IY3391	Export Price Index (NAICS): Medical equipment and supplies manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Mar-14	2019-Feb-01
@@ -745,27 +917,6 @@ PRMNTO01USQ661N	Total Manufacturing Production for the United States	NSA	Quarter
 MJFUELUSGULF	Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast	NSA	Monthly	Dollars per Gallon	LIN	2019-Mar-13	2019-Feb-01
 MHHNGSP	Henry Hub Natural Gas Spot Price	NSA	Monthly	Dollars per Million BTU	LIN	2019-Mar-13	2019-Feb-01
 ECOMNSA	E-Commerce Retail Sales	NSA	Quarterly	Millions of Dollars	LIN	2019-Mar-13	2018-Oct-01
-UCRPTI	Value of Manufacturers' Total Inventories for Computers and Related Products Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-13	2019-Jan-01
-UCRPUO	Value of Manufacturers' Unfilled Orders for Computers and Related Products Industries	NSA	Monthly, End of Period	Million of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLAMUSCON	Total Construction Spending: Amusement and recreation	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLCADCON	Total Construction Spending: Conservation and development	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLCMUCON	Total Construction Spending: Communication	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLOFCON	Total Construction Spending: Office	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLPSCON	Total Construction Spending: Public Safety	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLPWRCON	Total Construction Spending: Power	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLTRANSCON	Total Construction Spending: Transportation	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLHLTHCON	Total Construction Spending: Health Care	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLMFGCON	Total Construction Spending: Manufacturing	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLRELCON	Total Construction Spending: Religious	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLSWDCON	Total Construction Spending: Sewage and waste disposal	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLEDUCON	Total Construction Spending: Educational	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLHWYCON	Total Construction Spending: Highway and street	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLLODGCON	Total Construction Spending: Lodging	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLCOMCON	Total Construction Spending: Commercial	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLRESCON	Total Construction Spending: Residential	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLWSCON	Total Construction Spending: Water Supply	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TLNRESCON	Total Construction Spending: Nonresidential	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
-TTLCON	Total Construction Spending	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-13	2019-Jan-01
 PCU3332423332420	Producer Price Index by Industry: Semiconductor Machinery Manufacturing: Semiconductor Machinery and Parts	NSA	Monthly	Index Jun 1987=100	LIN	2019-Mar-13	2019-Feb-01
 WPS061	Producer Price Index by Commodity for Chemicals and Allied Products: Industrial Chemicals	SA	Monthly	Index 1982=100	LIN	2019-Mar-13	2019-Feb-01
 WPS081	Producer Price Index by Commodity for Lumber and Wood Products: Lumber	SA	Monthly	Index 1982=100	LIN	2019-Mar-13	2019-Feb-01
@@ -828,25 +979,6 @@ CPIENGNS	Consumer Price Index for All Urban Consumers: Energy	NSA	Monthly	Index 
 CPIMEDNS	Consumer Price Index for All Urban Consumers: Medical Care	NSA	Monthly	Index 1982-1984=100	LIN	2019-Mar-12	2019-Feb-01
 SUUR0000SA0	Chained Consumer Price Index for all Urban Consumers: All items	NSA	Monthly	Index Dec 1999=100	LIN	2019-Mar-12	2019-Feb-01
 CPILFENS	Consumer Price Index for All Urban Consumers: All Items Less Food and Energy	NSA	Monthly	Index 1982-1984=100	LIN	2019-Mar-12	2019-Feb-01
-SMU06000003133441301	All Employees: Durable Goods: Semiconductor and Related Device Manufacturing in California	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-11	2019-Jan-01
-WHLSLRIMNSA	Merchant Wholesalers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-MNFCTRIMNSA	Manufacturers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-RETAILIMNSA	Retailers Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-WHLSLRSMNSA	Merchant Wholesalers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-WHLSLRIRNSA	Merchant Wholesalers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Mar-11	2018-Dec-01
-TOTBUSIMNSA	Total Business Inventories	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-MNFCTRIRNSA	Manufacturers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Mar-11	2018-Dec-01
-MNFCTRSMNSA	Manufacturers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-RETAILIRNSA	Retailers: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Mar-11	2018-Dec-01
-RETAILSMNSA	Retailers Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-TOTBUSSMNSA	Total Business Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2018-Dec-01
-TOTBUSIRNSA	Total Business: Inventories to Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Mar-11	2018-Dec-01
-ISRATIO	Total Business: Inventories to Sales Ratio	SA	Monthly	Ratio	LIN	2019-Mar-11	2018-Dec-01
-RSXFSN	Advance Retail Sales: Retail (Excluding Food Services)	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2019-Jan-01
-RSXFS	Advance Retail Sales: Retail (Excluding Food Services)	SA	Monthly	Millions of Dollars	LIN	2019-Mar-11	2019-Jan-01
-USSLIND	Leading Index for the United States	SA	Monthly	Percent	LIN	2019-Mar-11	2018-Dec-01
-TOTALNSA	Total Vehicle Sales	NSA	Monthly	Thousands of Units	LIN	2019-Mar-08	2019-Feb-01
-ALTSALES	Light Weight Vehicle Sales: Autos and Light Trucks	SAAR	Monthly	Millions of Units	LIN	2019-Mar-08	2019-Feb-01
 CEU0600000016	Indexes of Aggregate Weekly Hours of All Employees: Goods-Producing	NSA	Monthly	Index 2007=100	LIN	2019-Mar-08	2019-Feb-01
 CEU3100000002	Average Weekly Hours of All Employees: Durable Goods	NSA	Monthly	Hours	LIN	2019-Mar-08	2019-Feb-01
 CEU3100000016	Indexes of Aggregate Weekly Hours of All Employees: Durable Goods	NSA	Monthly	Index 2007=100	LIN	2019-Mar-08	2019-Feb-01
@@ -901,7 +1033,6 @@ CEU5000000002	Average Weekly Hours of All Employees: Information	NSA	Monthly	Hou
 CEU5000000011	Average Weekly Earnings of All Employees: Information	NSA	Monthly	Dollars per Week	LIN	2019-Mar-08	2019-Feb-01
 CEU5500000017	Indexes of Aggregate Weekly Payrolls of All Employees: Financial Activities	NSA	Monthly	Index 2007=100	LIN	2019-Mar-08	2019-Feb-01
 CEU5552300001	All Employees: Financial Activities: Securities, Commodity Contracts, Investments	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
-CEU5552400001	All Employees: Financial Activities: Insurance Carriers and Related Activities	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU6000000011	Average Weekly Earnings of All Employees: Professional and Business Services	NSA	Monthly	Dollars per Week	LIN	2019-Mar-08	2019-Feb-01
 CEU6000000017	Indexes of Aggregate Weekly Payrolls of All Employees: Professional and Business Services	NSA	Monthly	Index 2007=100	LIN	2019-Mar-08	2019-Feb-01
 CEU6056100001	All Employees: Professional and Business Services: Administrative and Support Services	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
@@ -916,6 +1047,7 @@ CEU6562400001	All Employees: Education and Health Services: Social Assistance	NS
 CEU7000000011	Average Weekly Earnings of All Employees: Leisure and Hospitality	NSA	Monthly	Dollars per Week	LIN	2019-Mar-08	2019-Feb-01
 CEU7071000001	All Employees: Leisure and Hospitality: Arts, Entertainment, and Recreation	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU7071300001	All Employees: Leisure and Hospitality: Amusements, Gambling, and Recreation	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
+CEU5552400001	All Employees: Financial Activities: Insurance Carriers and Related Activities	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU7072000001	All Employees: Leisure and Hospitality: Accommodation and Food Services	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU9093200001	All Employees: Government: Local Government, Excluding Education	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU4245100001	All Employees: Retail Trade: Sporting Goods, Hobby, Book, and Music Stores	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
@@ -1031,13 +1163,13 @@ CEU7000000001	All Employees: Leisure and Hospitality	NSA	Monthly	Thousands of Pe
 CEU9093161101	All Employees: Government: Local Government Education	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU3200000001	All Employees: Nondurable Goods	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU4142000001	All Employees: Wholesale Trade	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
+CEU4200000003	Average Hourly Earnings of All Employees: Retail Trade	NSA	Monthly	Dollars per Hour	LIN	2019-Mar-08	2019-Feb-01
 CEU4244700001	All Employees: Retail Trade: Gasoline Stations	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU4422000001	All Employees: Utilities	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU5051700001	All Employees: Information: Telecommunications	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU6056130001	All Employees: Professional and Business Services: Employment Services	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU6561000001	All Employees: Education and Health Services: Educational Services	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU9091912001	All Employees: Government: U.S. Postal Service	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
-CEU4200000003	Average Hourly Earnings of All Employees: Retail Trade	NSA	Monthly	Dollars per Hour	LIN	2019-Mar-08	2019-Feb-01
 CEU0600000001	All Employees: Goods-Producing	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU3133600101	All Employees: Durable Goods: Motor Vehicles and Parts	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CEU4000000001	All Employees: Trade, Transportation, and Utilities	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
@@ -1078,10 +1210,6 @@ CEU0500000003	Average Hourly Earnings of All Employees: Total Private	NSA	Monthl
 CEU1021210001	All Employees: Mining and Logging: Coal Mining	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 PAYNSA	All Employees: Total Nonfarm Payrolls	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
 CNP16OV	Civilian Noninstitutional Population	NSA	Monthly	Thousands of Persons	LIN	2019-Mar-08	2019-Feb-01
-UNDCONTNSA	New Privately-Owned Housing Units Under Construction: Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-08	2019-Jan-01
-COMPUTNSA	New Privately-Owned Housing Units Completed: Total	NSA	Monthly	Thousands of Units	LIN	2019-Mar-08	2019-Jan-01
-HOUSTNSA	Housing Starts: Total: New Privately Owned Housing Units Started	NSA	Monthly	Thousands of Units	LIN	2019-Mar-08	2019-Jan-01
-PERMITNSA	New Private Housing Units Authorized by Building Permits	NSA	Monthly	Thousands of Units	LIN	2019-Mar-08	2019-Jan-01
 NONREVNS	Total Nonrevolving Credit Owned and Securitized, Outstanding	NSA	Monthly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2019-Jan-01
 REVOLNS	Total Revolving Credit Owned and Securitized, Outstanding	NSA	Monthly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2019-Jan-01
 TOTALNS	Total Consumer Credit Owned and Securitized, Outstanding	NSA	Monthly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2019-Jan-01
@@ -1099,6 +1227,7 @@ TABSNNCB	Nonfinancial Corporate Business; Total Assets, Level	NSA	Quarterly, End
 TFAABSHNO	Households and Nonprofit Organizations; Total Financial Assets, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2018-Oct-01
 TNWMVBSNNCB	Nonfinancial Corporate Business; Net Worth, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2018-Oct-01
 HNONWPDPI	Households and Nonprofit Organizations; Net Worth as a Percentage of Disposable Personal Income	NSA	Quarterly, End of Period	Percent	LIN	2019-Mar-07	2018-Oct-01
+NCBCMDPMVCE	Nonfinancial Corporate Business; Credit Market Debt as a Percentage of the Market Value of Corporate Equities	NSA	Quarterly, End of Period	Percent	LIN	2019-Mar-07	2018-Oct-01
 NCBEILQ027S	Nonfinancial corporate business; corporate equities; liability, Level	NSA	Quarterly	Millions of Dollars	LIN	2019-Mar-07	2018-Oct-01
 NCBDBIQ027S	Nonfinancial corporate business; debt securities; liability, Level	NSA	Quarterly	Millions of Dollars	LIN	2019-Mar-07	2018-Oct-01
 TNWBSHNO	Households and Nonprofit Organizations; Net Worth, Level	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2019-Mar-07	2018-Oct-01
@@ -1107,96 +1236,21 @@ PRS88003153	Nonfinancial Corporations Sector: Real Hourly Compensation	SA	Quarte
 OPHPBS	Business Sector: Real Output Per Hour of All Persons	SA	Quarterly	Index 2012=100	LIN	2019-Mar-07	2018-Oct-01
 OUTMS	Manufacturing Sector: Real Output	SA	Quarterly	Index 2012=100	LIN	2019-Mar-07	2018-Oct-01
 PRS85006173	Nonfarm Business Sector: Labor Share	SA	Quarterly	Index 2012=100	LIN	2019-Mar-07	2018-Oct-01
-MVGFD027MNFRBDAL	Market Value of Gross Federal Debt	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-06	2019-Jan-01
-MVMTD027MNFRBDAL	Market Value of Marketable Treasury Debt	NSA	Monthly	Billions of Dollars	LIN	2019-Mar-06	2019-Jan-01
-NPPTTL	Total Nonfarm Private Payroll Employment	SA	Monthly	Thousands	LIN	2019-Mar-06	2019-Feb-01
-MTSR133FMS	Total Federal Receipts	NSA	Monthly	Millions of Dollars	LIN	2019-Mar-05	2019-Jan-01
 CRDQUSANABIS	Total Credit to Non-Financial Corporations, Adjusted for Breaks, for United States	NSA	Quarterly, End of Quarter	Billions of US Dollars	LIN	2019-Mar-05	2018-Jul-01
 JHDUSRGDPBR	Dates of U.S. recessions as inferred by GDP-based recession indicator	NSA	Quarterly	+1 or 0	LIN	2019-Mar-04	2018-Jul-01
-PCETRIM12M159SFRBDAL	Trimmed Mean PCE Inflation Rate	SA	Monthly	Percent Change from Year Ago	LIN	2019-Mar-01	2018-Dec-01
-PCETRIM1M158SFRBDAL	Trimmed Mean PCE Inflation Rate	SA	Monthly	Percent Change at Annual Rate	LIN	2019-Mar-01	2018-Dec-01
-CMRMT	Real Manufacturing and Trade Industries Sales	SA	Monthly	Millions of Chained 2012 Dollars	LIN	2019-Mar-01	2018-Dec-01
-A068RC1	Personal outlays	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-B069RC1	Personal interest payments	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-PCEDG	Personal Consumption Expenditures: Durable Goods	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-PMSAVE	Personal Saving	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-A229RX0	Real Disposable Personal Income: Per Capita	SAAR	Monthly	Chained 2012 Dollars	LIN	2019-Mar-01	2018-Dec-01
-A576RC1	Compensation of Employees, Received: Wage and Salary Disbursements	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2019-Jan-01
-DSPI	Disposable Personal Income	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2019-Jan-01
-DSPIC96	Real Disposable Personal Income	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-01	2018-Dec-01
-PSAVERT	Personal Saving Rate	SAAR	Monthly	Percent	LIN	2019-Mar-01	2018-Dec-01
-PCEND	Personal Consumption Expenditures: Nondurable Goods	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-W055RC1	Personal current taxes	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2019-Jan-01
-W875RX1	Real personal income excluding current transfer receipts	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-01	2018-Dec-01
-PCE	Personal Consumption Expenditures	SAAR	Monthly	Billions of Dollars	LIN	2019-Mar-01	2018-Dec-01
-PCEC96	Real Personal Consumption Expenditures	SAAR	Monthly	Billions of Chained 2012 Dollars	LIN	2019-Mar-01	2018-Dec-01
-PCEPI	Personal Consumption Expenditures: Chain-type Price Index	SA	Monthly	Index 2012=100	LIN	2019-Mar-01	2018-Dec-01
-M2V	Velocity of M2 Money Stock	SA	Quarterly	Ratio	LIN	2019-Feb-28	2018-Oct-01
-MZMV	Velocity of MZM Money Stock	SA	Quarterly	Ratio	LIN	2019-Feb-28	2018-Oct-01
-DTCTHFNM	Total Consumer Loans and Leases Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-28	2018-Dec-01
-DTRTNM	Total Real Estate Loans Owned and Securitized by Finance Companies, Outstanding	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-28	2018-Dec-01
-FINSLC1	Real Final Sales of Domestic Product	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Feb-28	2018-Oct-01
-A939RC0Q052SBEA	Gross domestic product per capita	SAAR	Quarterly	Dollars	LIN	2019-Feb-28	2018-Oct-01
-PCNDGC96	Real Personal Consumption Expenditures: Nondurable Goods	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Feb-28	2018-Oct-01
-A939RX0Q048SBEA	Real gross domestic product per capita	SAAR	Quarterly	Chained 2012 Dollars	LIN	2019-Feb-28	2018-Oct-01
 BPCCRO1Q156NBEA	Personal Consumption Expenditures excluding Food and Energy (chain-type price index)	SA	Quarterly	Percent Change from Quarter One Year Ago	LIN	2019-Feb-28	2018-Oct-01
-GDP	Gross Domestic Product	SAAR	Quarterly	Billions of Dollars	LIN	2019-Feb-28	2018-Oct-01
-GDPC1	Real Gross Domestic Product	SAAR	Quarterly	Billions of Chained 2012 Dollars	LIN	2019-Feb-28	2018-Oct-01
-GDPDEF	Gross Domestic Product: Implicit Price Deflator	SA	Quarterly	Index 2012=100	LIN	2019-Feb-28	2018-Oct-01
-GPDI	Gross Private Domestic Investment	SAAR	Quarterly	Billions of Dollars	LIN	2019-Feb-28	2018-Oct-01
-W006RC1Q027SBEA	Federal government current tax receipts	SAAR	Quarterly	Billions of Dollars	LIN	2019-Feb-28	2018-Jul-01
-LODINIM066N	University of Louisville and Oklahoma State University: LoDI National Index	NSA	Monthly	Index	LIN	2019-Feb-26	2019-Mar-01
-CSUSHPISA	S&P/Case-Shiller U.S. National Home Price Index	SA	Monthly	Index Jan 2000=100	LIN	2019-Feb-26	2018-Dec-01
-CPBNDIF066MNFRBPHI	Current Physical Plant Capital Expenditures; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Feb-26	2019-Feb-01
-CEBNDIF066MNFRBPHI	Current Equipment and Software Capital Expenditures; Diffusion Index for FRB - Philadelphia District	NSA	Monthly	Index	LIN	2019-Feb-26	2019-Feb-01
-BACTUAMFRBDAL	Current General Business Activity; Diffusion Index for Texas	NSA	Monthly	Index	LIN	2019-Feb-25	2019-Jan-01
-CEXPUAMFRBDAL	Current Capital Expenditures; Diffusion Index for Texas	NSA	Monthly	Index	LIN	2019-Feb-25	2019-Jan-01
-FCEXPSAMFRBDAL	Future Capital Expenditures; Diffusion Index for Texas	SA	Monthly	Index	LIN	2019-Feb-25	2019-Jan-01
-R42IRNM163NCEN	Total Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Inventories/Sales Ratio	NSA	Monthly	Ratio	LIN	2019-Feb-25	2018-Dec-01
-S4231SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Motor Vehicle and Motor Vehicle Parts and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4232SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Furniture and Home Furnishings Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4233SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Lumber and Other Construction Materials Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S42343M144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Professional and Commercial Equipment and Supplies Sales: Computer and Computer Peripheral Equipment and Software Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4234SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Professional and Commercial Equipment and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4235SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Metals and Minerals, Except Petroleum Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4236SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Household Appliances and Electrical and Electronic Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4237SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Hardware, and Plumbing and Heating Equipment and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4238SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods: Machinery, Equipment, and Supplies Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S423SMM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Durable Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4241SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Paper and Paper Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4242SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Drugs and Druggists' Sundries Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4243SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Apparel, Piece Goods, and Notions Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4244SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Grocery and Related Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4245SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Farm Product Raw Materials Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4246SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Chemicals and Allied Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4247SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Petroleum and Petroleum Products Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S4248SM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods: Beer, Wine, and Distilled Alcoholic Beverages Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S424SMM144NCEN	Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales: Nondurable Goods Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-S42SMNM144NCEN	Total Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices Sales	NSA	Monthly	Millions of Dollars	LIN	2019-Feb-25	2018-Dec-01
-CFNAIDIFF	Chicago Fed National Activity Index: Diffusion Index	NSA	Monthly	Index	LIN	2019-Feb-25	2019-Jan-01
+USSTHPI	All-Transactions House Price Index for the United States	NSA	Quarterly	Index 1980:Q1=100	LIN	2019-Feb-26	2018-Oct-01
 US300LLRTL	Loan Loss Reserve to Total Loans for U.S. Banks with average assets under $300M	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-22	2018-Oct-01
 US1LLRTL	Loan Loss Reserve to Total Loans for U.S. Banks with average assets under $1B	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-22	2018-Oct-01
 USLLRTL	Loan Loss Reserve to Total Loans for all U.S. Banks	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-22	2018-Oct-01
 USROE	Return on Average Equity for all U.S. Banks	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-22	2018-Oct-01
-HSFAVGUSM052N	Mean Sales Price of Existing Single-Family Homes	NSA	Monthly	Dollars	LIN	2019-Feb-21	2019-Jan-01
-HOSAVGUSM052N	Mean Sales Price of Existing Homes	NSA	Monthly	Dollars	LIN	2019-Feb-21	2019-Jan-01
-HOSSUPUSM673N	Existing Home Sales: Months Supply	NSA	Monthly	Months' Supply	LIN	2019-Feb-21	2019-Jan-01
-EXHOSLUSM495N	Existing Home Sales	NSA	Monthly	Number of Units	LIN	2019-Feb-21	2019-Jan-01
-HOSINVUSM495N	Existing Home Sales: Housing Inventory	NSA	Monthly	Number of Units	LIN	2019-Feb-21	2019-Jan-01
-HOSMEDUSM052N	Median Sales Price of Existing Homes	NSA	Monthly	Dollars	LIN	2019-Feb-21	2019-Jan-01
-HSFSUPUSM673N	Existing Single-Family Home Sales: Months Supply	NSA	Monthly	Months' Supply	LIN	2019-Feb-21	2019-Jan-01
-EXSFHSUSM495N	Existing Single-Family Home Sales	NSA	Monthly	Number of Units	LIN	2019-Feb-21	2019-Jan-01
-HSFINVUSM495N	Existing Single-Family Home Sales: Housing Inventory	NSA	Monthly	Number of Units	LIN	2019-Feb-21	2019-Jan-01
-HSFMEDUSM052N	Median Sales Price of Existing Single-Family Homes	NSA	Monthly	Dollars	LIN	2019-Feb-21	2019-Jan-01
 GOAI	Gross Output of All Industries	SAAR	Quarterly	Millions of Dollars	LIN	2019-Feb-21	2018-Jul-01
 DRCCLOBN	Delinquency Rate on Credit Card Loans, Banks Not Among the 100 Largest in Size (By Assets)	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-20	2018-Oct-01
 DRALACBN	Delinquency Rate on All Loans, All Commercial Banks	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-20	2018-Oct-01
 DRCCLACBN	Delinquency Rate on Credit Card Loans, All Commercial Banks	NSA	Quarterly, End of Period	Percent	LIN	2019-Feb-20	2018-Oct-01
-SFTPINDM114SFRBSF	San Francisco Tech Pulse	SA	Monthly	Index Jan 2000=100	LIN	2019-Feb-20	2019-Jan-01
 SLOAS	Student Loans Owned and Securitized, Outstanding	NSA	Quarterly, End of Period	Billions of Dollars	LIN	2019-Feb-07	2018-Oct-01
 PRS88003183	Nonfinancial Corporations Sector: Profits	SA	Quarterly	Index 2012=100	LIN	2019-Feb-06	2018-Jul-01
 CIU1030000000000I	Employment Cost Index: Total benefits for All Civilian workers in All industries and occupations	NSA	Quarterly	Index Dec 2005=100	LIN	2019-Jan-31	2018-Oct-01
-USPHCI	Coincident Economic Activity Index for the United States	SA	Monthly	Index 2007=100	LIN	2019-Jan-23	2018-Dec-01
 CPALWE01USQ661N	Consumer Price Index: Total All Items: Wage Earners for the United States	NSA	Quarterly	Index 2015=100	LIN	2019-Jan-22	2018-Oct-01
 LREM64TTUSQ156N	Employment Rate: Aged 15-64: All Persons for the United States	NSA	Quarterly	Percent	LIN	2019-Jan-22	2018-Oct-01
 CPGRLE01USQ657N	Consumer Price Index: OECD Groups: All Items Non-Food and Non-Energy for the United States	NSA	Quarterly	Growth Rate Previous Period	LIN	2019-Jan-22	2018-Oct-01
@@ -1220,21 +1274,18 @@ IZ112	Import Price Index (NAICS): Animal production	NSA	Monthly	Index Dec 2014=1
 IZ3113	Import Price Index (NAICS): Sugar and confectionery product manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
 IZ321	Import Price Index (NAICS): Wood product manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
 IZ32212	Import Price Index (NAICS): Paper mills	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
-IZ32531	Import Price Index (NAICS): Fertilizer manufacturing	NSA	Monthly	Index Dec 2008=100	LIN	2019-Jan-16	2018-Dec-01
 IZ323	Import Price Index (NAICS): Printing and related support activities	NSA	Monthly	Index Dec 2013=100	LIN	2019-Jan-16	2018-Dec-01
+IZ32531	Import Price Index (NAICS): Fertilizer manufacturing	NSA	Monthly	Index Dec 2008=100	LIN	2019-Jan-16	2018-Dec-01
 IZ32711	Import Price Index (NAICS): Pottery, ceramics, and plumbing fixture manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
 IZ33149	Import Price Index (NAICS): Nonferr. metal (except copper and alum.) rolling, drawing, extruding, and alloying	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
 IY3114	Export Price Index (NAICS): Fruit and vegetable preserving and specialty food manufacturing	NSA	Monthly	Index 2005=100	LIN	2019-Jan-16	2018-Dec-01
 TERMCBCCALLNS	Commercial Bank Interest Rate on Credit Card Plans, All Accounts	NSA	Monthly	Percent	LIN	2019-Jan-08	2018-Nov-01
 HBFRGDQ188S	Federal Debt Held by Federal Reserve Banks as Percent of Gross Domestic Product	SA	Quarterly	Percent of GDP	LIN	2018-Dec-21	2018-Jul-01
-B102RC1Q027SBEA	State and local government current tax receipts: Taxes on corporate income	SAAR	Quarterly	Billions of Dollars	LIN	2018-Dec-21	2018-Jul-01
-B075RC1Q027SBEA	Federal government current tax receipts: Taxes on corporate income	SAAR	Quarterly	Billions of Dollars	LIN	2018-Dec-21	2018-Jul-01
-CP	Corporate Profits After Tax (without IVA and CCAdj)	SAAR	Quarterly	Billions of Dollars	LIN	2018-Dec-21	2018-Jul-01
-GNP	Gross National Product	SAAR	Quarterly	Billions of Dollars	LIN	2018-Dec-21	2018-Jul-01
 GFDEBTN	Federal Debt: Total Public Debt	NSA	Quarterly, End of Period	Millions of Dollars	LIN	2018-Nov-29	2018-Jul-01
 WSCNDW01USQ470N	Total Dwellings and Residential Buildings by Stage of Construction, Started for the United States	NSA	Quarterly	Number of Buildings	LIN	2018-Nov-23	2018-Jul-01
 SLWHTO02USQ189N	Value of Total Wholesale Trade sales for the United States	NSA	Quarterly	National Currency	LIN	2018-Oct-18	2018-Apr-01
 SLMNTO02USQ189N	Sales Value of Total Manufactured Goods for the United States	NSA	Quarterly	National Currency	LIN	2018-Oct-18	2018-Apr-01
 MKTGDPCNA646NWDB	Gross Domestic Product for China	NSA	Annual	Current U.S. Dollars	LIN	2018-Sep-27	2017-Jan-01
 DDDM01USA156NWDB	Stock Market Capitalization to GDP for United States	NSA	Annual	Percent	LIN	2018-Sep-21	2017-Jan-01
+USACOMPQDSNAQ	Compensation of Employees in United States	SA	Quarterly	Dollars	LIN	2017-Nov-01	2017-Apr-01
 PCU33441333441312	Producer Price Index by Industry: Semiconductors and Related Device Manufacturing: Microprocessors, Including Microcontrollers and Related Devices	NSA	Monthly	Index Jun 2007=100	LIN	2015-May-15	2015-Mar-01
