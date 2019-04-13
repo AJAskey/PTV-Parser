@@ -500,7 +500,7 @@ public class FredCommon {
 		}
 		return retProp;
 	}
-	
+
 	/**
 	 * 
 	 * net.ajaskey.market.tools.fred.queryFredDsi
@@ -509,10 +509,16 @@ public class FredCommon {
 	 * @return
 	 */
 	public static List<DataSeriesInfo> queryFredDsi(List<String> codeNames) {
+
 		final List<DataSeriesInfo> ret = new ArrayList<>();
 
 		for (final String code : codeNames) {
-			DataSeriesInfo dsi = queryFredDsi(code);
+			File f = new File(FredCommon.fredPath + "/" + code + ".csv");
+			Calendar cLastUpdate = Calendar.getInstance();
+			cLastUpdate.setTimeInMillis(f.lastModified());
+			String lastUpdate = sdf.format(f.lastModified());
+			
+			DataSeriesInfo dsi = queryFredDsi(code, lastUpdate);
 			if (dsi != null) {
 				ret.add(dsi);
 			}
@@ -527,7 +533,7 @@ public class FredCommon {
 	 * @param code
 	 * @return
 	 */
-	public static DataSeriesInfo queryFredDsi(String code) {
+	public static DataSeriesInfo queryFredDsi(String code, String lastUpdate) {
 
 		for (int i = 0; i <= FredDataDownloader.maxRetries; i++) {
 			Utils.sleep((1000 * (5 * i)) + 250);
@@ -537,7 +543,8 @@ public class FredCommon {
 					if (dsi.getTitle() != null) {
 						FredDataDownloader.retryCount = 0;
 						//Debug.pwDbg.printf("Received data for %s%n", code);
-						Debug.log(String.format("Received data for %s%n%s%n", code, dsi.getResponse()));
+						Debug.log(
+						    String.format("Received data for %s%n%s%nLast Update : %s%n", code, dsi.getResponse(), lastUpdate));
 						return dsi;
 					}
 				}
@@ -558,7 +565,7 @@ public class FredCommon {
 			Utils.sleep(FredDataDownloader.longSleep);
 			FredDataDownloader.retryCount = 0;
 		}
-		
+
 		return null;
 	}
 
@@ -888,7 +895,8 @@ public class FredCommon {
 		//			propagated = FredCommon.propagate(data, freq);
 		//		}
 
-		final File file = new File(fullFileName);
+		String ffn = fullFileName.replace(">", "greater");
+		final File file = new File(ffn);
 		final File fileshort = new File(FredCommon.fredPath + seriesName + ".csv");
 		try (PrintWriter pw = new PrintWriter(file); PrintWriter pwShort = new PrintWriter(fileshort)) {
 			pw.println("Date," + seriesName);

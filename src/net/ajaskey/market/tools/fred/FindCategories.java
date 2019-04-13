@@ -20,6 +20,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 
 /**
@@ -56,7 +57,6 @@ public class FindCategories {
 
 	private static PrintWriter	pw;
 	private static PrintWriter	pwSum;
-	private static PrintWriter	pwDbg;
 
 	private static List<Integer> catList = new ArrayList<>();
 
@@ -79,42 +79,64 @@ public class FindCategories {
 	private static void getSeries(int id, int indent, String catName, String subCatName) {
 
 		final String url = "https://api.stlouisfed.org/fred/category/series?category_id=" + id + "&api_key=" + ApiKey.get();
+
+		String resp = "";
+		int loopknt = 0;
 		try {
-			final String resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
+			while (resp.length() == 0) {
+				resp = Utils.getFromUrl(url);
 
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+				if ((resp != null) && (resp.trim().length() > 0)) {
 
-			doc.getDocumentElement().normalize();
+					Debug.log(String.format("getSeries :: id : %d\tindent : %d\tcatName : %s\tsubCatName : %s%n%s%n", id, indent,
+					    catName, subCatName, resp));
 
-			final NodeList nResp = doc.getElementsByTagName("series");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					final String idStr = eElement.getAttribute("id");
-					String title = eElement.getAttribute("title");
-					final String freq = eElement.getAttribute("frequency");
-					final String units = eElement.getAttribute("units");
-					final String sa = eElement.getAttribute("seasonal_adjustment_short");
+					final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
-					final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
-					title = filtered.trim();
+					doc.getDocumentElement().normalize();
 
-					if (!title.contains("DISCONTINUED")) {
+					final NodeList nResp = doc.getElementsByTagName("series");
+					for (int knt = 0; knt < nResp.getLength(); knt++) {
+						final Node nodeResp = nResp.item(knt);
+						if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+							final Element eElement = (Element) nodeResp;
+							final String idStr = eElement.getAttribute("id");
+							String title = eElement.getAttribute("title");
+							final String freq = eElement.getAttribute("frequency");
+							final String units = eElement.getAttribute("units");
+							final String sa = eElement.getAttribute("seasonal_adjustment_short");
 
-						String tab = "";
-						for (int i = 0; i < indent; i++) {
-							tab += "  ";
+							final String filtered = title.replaceAll("[^\\x00-\\x7F]", " ");
+							title = filtered.trim();
+
+							if (!title.contains("DISCONTINUED")) {
+
+								String tab = "";
+								for (int i = 0; i < indent; i++) {
+									tab += "  ";
+								}
+
+								//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
+								pw.println(tab + idStr + "\t" + title + "\t" + freq + "\t" + units + " -- " + sa);
+
+								final String str = String.format("%s\t%s\t%s\t%s\t%s\t%s", catName, subCatName, idStr, title, freq, sa);
+								optumaTickerList.add(str);
+								Debug.log(String.format("getSeries :: %s%n", str));
+								//System.out.println(str);
+							}
 						}
-
-						//pw.println(tab + idStr + "   " + title + " -- " + freq + " -- " + sa);
-						pw.println(tab + idStr + "\t" + title + "\t" + freq + "\t" + units + " -- " + sa);
-
-						final String str = String.format("%s\t%s\t%s\t%s\t%s\t%s", catName, subCatName, idStr, title, freq, sa);
-						optumaTickerList.add(str);
-						//System.out.println(str);
 					}
+				} else {
+					loopknt++;
+					if (loopknt == 10) {
+						Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Breaking...%n",
+						    catName, subCatName));
+						break;
+					}
+					Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Sleeping...%n", catName,
+					    subCatName));
+					Utils.sleep(30000);
+					resp = "";
 				}
 			}
 
@@ -140,7 +162,7 @@ public class FindCategories {
 			for (String s : optumaIncludeCode) {
 				//System.out.println(s);
 				if (fld[2].trim().equalsIgnoreCase(s)) {
-					pwDbg.printf("IN\tCode\t%s%n", item);
+					Debug.log(String.format("IN\tCode\t%s%n", item));
 					return true;
 				}
 			}
@@ -163,7 +185,7 @@ public class FindCategories {
 			period = false;
 		}
 		if (!period) {
-			pwDbg.printf("OUT\tPeriod\t%s%n", item);
+			Debug.log(String.format("OUT\tPeriod\t%s%n", item));
 			return false;
 		}
 
@@ -182,7 +204,7 @@ public class FindCategories {
 			freq = false;
 		}
 		if (!freq) {
-			pwDbg.printf("OUT\tFrequency\t%s%n", item);
+			Debug.log(String.format("OUT\tFrequency\t%s%n", item));
 			return false;
 		}
 
@@ -191,7 +213,7 @@ public class FindCategories {
 			for (final String s : optumaExcludeNames) {
 				//System.out.println(s);
 				if (fld[3].toUpperCase().contains(s)) {
-					pwDbg.printf("OUT\tEXCLUDED\t%s\t%s%n", item, s);
+					Debug.log(String.format("OUT\tEXCLUDED\t%s\t%s%n", item, s));
 					return false;
 				}
 			}
@@ -204,7 +226,7 @@ public class FindCategories {
 			for (final String s : optumaIncludeNames) {
 				//System.out.println(s);
 				if (fld[3].toUpperCase().contains(s)) {
-					pwDbg.printf("IN\tINCLUDED\t%s\t%s%n", item,s);
+					Debug.log(String.format("IN\tINCLUDED\t%s\t%s%n", item, s));
 					return true;
 				}
 			}
@@ -212,7 +234,7 @@ public class FindCategories {
 			return false;
 		}
 
-		pwDbg.printf("OUT\tUNMATCHED\t%s%n", item);
+		Debug.log(String.format("OUT\tUNMATCHED\t%s%n", item));
 		return false;
 	}
 
@@ -224,42 +246,43 @@ public class FindCategories {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		pwDbg = new PrintWriter("out/findcat.dbg");
+		Debug.init("findcat.dbg");
 
-		setupIncluded();
+		//setupIncluded();
 
-		if (useOnline) {
+		//if (useOnline) {
 
-			pwSum = new PrintWriter("fred-categories.txt");
-			FindCategories.processProductionBusiness();
-			FindCategories.processBanking();
-			FindCategories.processEmployment();
-			FindCategories.processPrices();
-			FindCategories.processNatlAccounts();
-			pwSum.close();
+		pwSum = new PrintWriter("fred-categories.txt");
+		FindCategories.processProductionBusiness();
+		FindCategories.processBanking();
+		FindCategories.processEmployment();
+		FindCategories.processPrices();
+		FindCategories.processNatlAccounts();
+		pwSum.close();
 
-			try (PrintWriter pwAll = new PrintWriter("data/optumaAllTickers.txt")) {
-				for (String s : optumaTickerList) {
-					pwAll.println(s);
-				}
-			}
+		//			try (PrintWriter pwAll = new PrintWriter("data/optumaAllTickers.txt")) {
+		//				for (String s : optumaTickerList) {
+		//					pwAll.println(s);
+		//				}
+		//			}
+		//
+		//		} else {
+		//			try (BufferedReader br = new BufferedReader(new FileReader(new File("data/optumaAllTickers.txt")))) {
+		//				String line = "";
+		//				while (line != null) {
+		//					line = br.readLine();
+		//					if ((line != null) && (line.trim().length() > 0)) {
+		//						String s = line.trim().replaceAll("\"", "");
+		//						optumaTickerList.add(s);
+		//					}
+		//				}
+		//			}
+		//		}
+		//
+		//		FindCategories.processTickerList();
 
-		} else {
-			try (BufferedReader br = new BufferedReader(new FileReader(new File("data/optumaAllTickers.txt")))) {
-				String line = "";
-				while (line != null) {
-					line = br.readLine();
-					if ((line != null) && (line.trim().length() > 0)) {
-						String s = line.trim().replaceAll("\"", "");
-						optumaTickerList.add(s);
-					}
-				}
-			}
-		}
+		System.out.println("Done.");
 
-		FindCategories.processTickerList();
-
-		pwDbg.close();
 	}
 
 	/**
@@ -294,35 +317,52 @@ public class FindCategories {
 
 		String catName = "";
 
+		String resp = "";
 		try {
-			final String resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
+			int loopknt = 0;
+			while (resp.length() == 0) {
+				resp = Utils.getFromUrl(url);
+				//System.out.println(resp);
 
-			dBuilder = dbFactory.newDocumentBuilder();
+				Debug.log(String.format("processCategory cat : %d%n%s%n", cat, resp));
 
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+				if ((resp != null) && (resp.trim().length() > 0)) {
 
-			doc.getDocumentElement().normalize();
+					dBuilder = dbFactory.newDocumentBuilder();
 
-			int id = 0;
-			final NodeList nResp = doc.getElementsByTagName("category");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					final String tmp = eElement.getAttribute("id");
-					final String name = eElement.getAttribute("name");
-					catName = name;
+					final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
-					if (!name.contains("DISCONTINUED")) {
-						id = Integer.parseInt(tmp);
+					doc.getDocumentElement().normalize();
 
-						pw.println(id + " " + name);
-						pwSum.println(Utils.NL + id + " " + name);
+					int id = 0;
+					final NodeList nResp = doc.getElementsByTagName("category");
+					for (int knt = 0; knt < nResp.getLength(); knt++) {
+						final Node nodeResp = nResp.item(knt);
+						if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+							final Element eElement = (Element) nodeResp;
+							final String tmp = eElement.getAttribute("id");
+							final String name = eElement.getAttribute("name");
+							catName = name;
+
+							if (!name.contains("DISCONTINUED")) {
+								id = Integer.parseInt(tmp);
+
+								Debug.log(String.format("processCategory id : %d\t catname : %s%n", id, catName));
+								pw.println(id + " " + name);
+								pwSum.println(Utils.NL + id + " " + name);
+							}
+						}
 					}
+				} else {
+					loopknt++;
+					if (loopknt == 10) {
+						break;
+					}
+					Debug.log("processCategory null resp ... sleeping\n");
+					Utils.sleep(30000);
+					resp = "";
 				}
 			}
-
 		} catch (final Exception e) {
 			return "";
 		}
@@ -380,42 +420,68 @@ public class FindCategories {
 		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key="
 		    + ApiKey.get();
 
+		String resp = "";
+		int loopknt = 0;
 		try {
-			final String resp = Utils.getFromUrl(url);
-			//System.out.println(resp);
+			while (resp.length() == 0) {
+				resp = Utils.getFromUrl(url);
 
-			dBuilder = dbFactory.newDocumentBuilder();
+				if ((resp != null) && (resp.trim().length() > 0)) {
 
-			final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+					Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%n%s%n", cat, catName, resp));
 
-			doc.getDocumentElement().normalize();
+					dBuilder = dbFactory.newDocumentBuilder();
 
-			int id = 0;
-			final NodeList nResp = doc.getElementsByTagName("category");
-			for (int knt = 0; knt < nResp.getLength(); knt++) {
-				final Node nodeResp = nResp.item(knt);
-				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
-					final Element eElement = (Element) nodeResp;
-					final String tmp = eElement.getAttribute("id");
-					final String name = eElement.getAttribute("name");
-					if (!name.contains("DISCONTINUED")) {
-						id = Integer.parseInt(tmp);
-						String tab = "";
-						for (int i = 0; i < indent; i++) {
-							tab += "  ";
+					final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
+
+					doc.getDocumentElement().normalize();
+
+					int id = 0;
+					final NodeList nResp = doc.getElementsByTagName("category");
+					for (int knt = 0; knt < nResp.getLength(); knt++) {
+						final Node nodeResp = nResp.item(knt);
+						if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
+							final Element eElement = (Element) nodeResp;
+							final String tmp = eElement.getAttribute("id");
+							final String name = eElement.getAttribute("name");
+							if (!name.contains("DISCONTINUED")) {
+								id = Integer.parseInt(tmp);
+								String tab = "";
+								for (int i = 0; i < indent; i++) {
+									tab += "  ";
+								}
+
+								Debug.log(
+								    String.format("processParentCategory id : %d\tindent : %d\tcatName : %s%n", id, indent, catName));
+
+								pw.println(Utils.NL + tab + id + " " + name);
+								pwSum.println(tab + id + " " + name);
+
+								if (id == 191) {
+									System.out.println(id);
+								}
+
+								FindCategories.processParentCategory(id, indent + 1, catName);
+
+								FindCategories.getSeries(id, indent + 2, catName, name);
+							}
 						}
-
-						pw.println(Utils.NL + tab + id + " " + name);
-						pwSum.println(tab + id + " " + name);
-
-						FindCategories.processParentCategory(id, indent + 1, catName);
-
-						FindCategories.getSeries(id, indent + 2, catName, name);
 					}
+				} else {
+					loopknt++;
+					if (loopknt == 10) {
+						Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Breaking...%n", cat,
+						    catName));						break;
+					}
+					Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Sleeping...%n", cat,
+					    catName));
+					Utils.sleep(30000);
+					resp = "";
 				}
 			}
-
 		} catch (final Exception e) {
+			Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%n%s%n", cat, catName, e.getMessage()));
+
 		}
 
 	}

@@ -2,6 +2,7 @@
 package net.ajaskey.market.tools.fred;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -119,26 +120,34 @@ public class FredBookkeeping {
 	 * net.ajaskey.market.tools.fred.process
 	 *
 	 * @param codes
+	 * @throws FileNotFoundException
 	 */
-	private static void process(List<String> codes) {
+	private static void process(List<String> codes) throws FileNotFoundException {
 
-		int knt = 0;
-		for (String s : codes) {
-			File f = new File(FredCommon.fredPath + "/" + s + ".csv");
+		try (PrintWriter pw = new PrintWriter("CodesToUpdate.txt")) {
 
-			Calendar cal = Calendar.getInstance();
-			cal.setTimeInMillis(f.lastModified());
+			int knt = 0;
+			for (String code : codes) {
+				File f = new File(FredCommon.fredPath + "/" + code + ".csv");
+				Calendar cLastUpdate = Calendar.getInstance();
+				cLastUpdate.setTimeInMillis(f.lastModified());
+				cLastUpdate.add(Calendar.DATE, -1);
+				String lastUpdate = sdf.format(cLastUpdate.getTime());
 
-			String date = sdf.format(f.lastModified());
+				DataSeriesInfo dsi = FredCommon.queryFredDsi(code, lastUpdate);
+				if (dsi != null) {
+					System.out.printf("%-20s --> %-20s\t\t%15s%n", code, lastUpdate,
+					    Utils.sdf2.format(dsi.getLastObservation().getTime()));
+					dsiList.add(dsi);
 
-			DataSeriesInfo dsi = FredCommon.queryFredDsi(s);
-			if (dsi != null) {
-				System.out.printf("%-20s --> %-20s\t\t%15s%n", s, date, Utils.getCurrentTime());
-				dsiList.add(dsi);
-			}
-			// Set to lower number for testing
-			if (++knt > 20050) {
-				break;
+					if (cLastUpdate.before(dsi.getLastObservation())) {
+						pw.printf("%s\t%s%n", dsi.getName(), dsi.getTitle());
+					}
+				}
+				// Set to lower number for testing
+				if (++knt > 20050) {
+					break;
+				}
 			}
 		}
 	}
