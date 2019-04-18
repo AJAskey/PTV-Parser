@@ -45,20 +45,28 @@ public class IngestOptumaFile {
 
 	public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+	public static final int	ADD				= 1;
+	public static final int	SUBTRACT	= 2;
+	public static final int	MULTIPLY	= 3;
+	public static final int	DIVIDE		= 4;
+
 	/**
-	 * Interface to world. net.ajaskey.market.tools.fred.process
+	 *
+	 * Interface to world. net.ajaskey.market.tools.fred.processing.process
 	 *
 	 * @param f1name
 	 * @param f2name
 	 * @param title
+	 * @param operation
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void process(String f1name, String f2name, String title) throws FileNotFoundException, IOException {
+	public static void process(String f1name, String f2name, String title, int operation)
+	    throws FileNotFoundException, IOException {
 
 		System.out.printf("%s\t%s%n", f1name, f2name);
 		final IngestOptumaFile iof = new IngestOptumaFile(f1name, f2name);
-		final List<OptumaFileData> diffList = iof.processFiles();
+		final List<OptumaFileData> diffList = iof.processFiles(operation);
 
 		final String fname = String.format("%s%s", FredCommon.fredPath, title);
 		try (PrintWriter pw = new PrintWriter(fname)) {
@@ -87,9 +95,18 @@ public class IngestOptumaFile {
 		this.file2 = new File(f2);
 	}
 
-	private List<OptumaFileData> processFiles() throws FileNotFoundException, IOException {
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.processing.processFiles
+	 *
+	 * @param operation
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private List<OptumaFileData> processFiles(int operation) throws FileNotFoundException, IOException {
 
-		final List<OptumaFileData> diffList = new ArrayList<>();
+		final List<OptumaFileData> resultList = new ArrayList<>();
 
 		this.f1List = this.readFile(this.file1);
 		this.f2List = this.readFile(this.file2);
@@ -101,13 +118,26 @@ public class IngestOptumaFile {
 
 		if (f1size == f2size) {
 			for (int i = 0; i < f1size; i++) {
-				final double diff = this.f1List.get(i).val - this.f2List.get(i).val;
-				final OptumaFileData ofd = new OptumaFileData(this.f1List.get(i).date, diff);
-				diffList.add(ofd);
+				double result = 0.0;
+				try {
+					if (operation == ADD) {
+						result = this.f1List.get(i).val + this.f2List.get(i).val;
+					} else if (operation == SUBTRACT) {
+						result = this.f1List.get(i).val - this.f2List.get(i).val;
+					} else if (operation == MULTIPLY) {
+						result = this.f1List.get(i).val * this.f2List.get(i).val;
+					} else if (operation == DIVIDE) {
+						result = this.f1List.get(i).val / this.f2List.get(i).val;
+					}
+				} catch (final Exception e) {
+					result = 0.0;
+				}
+				final OptumaFileData ofd = new OptumaFileData(this.f1List.get(i).date, result);
+				resultList.add(ofd);
 			}
 		}
 
-		return diffList;
+		return resultList;
 
 	}
 
