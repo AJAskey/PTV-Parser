@@ -52,13 +52,13 @@ public class MoveNewEOD {
 
 		for (File f : flist) {
 			File to = null;
-			if (f.getName().toUpperCase().contains("NYSE_2018")) {
+			if (f.getName().toUpperCase().contains("NYSE_2019")) {
 				to = new File(path + "NYSE\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("NASDAQ_2018")) {
+			} else if (f.getName().toUpperCase().contains("NASDAQ_2019")) {
 				to = new File(path + "NASDAQ\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("AMEX_2018")) {
+			} else if (f.getName().toUpperCase().contains("AMEX_2019")) {
 				to = new File(path + "AMEX\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("INDEX_2018")) {
+			} else if (f.getName().toUpperCase().contains("INDEX_2019")) {
 				to = new File(path + "INDEX\\" + f.getName());
 			}
 

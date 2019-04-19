@@ -66,11 +66,11 @@ public class IngestOptumaFile {
 
 		System.out.printf("%s\t%s%n", f1name, f2name);
 		final IngestOptumaFile iof = new IngestOptumaFile(f1name, f2name);
-		final List<OptumaFileData> diffList = iof.processFiles(operation);
+		final List<OptumaFileData> resultsList = iof.processFiles(operation);
 
 		final String fname = String.format("%s%s", FredCommon.fredPath, title);
 		try (PrintWriter pw = new PrintWriter(fname)) {
-			for (final OptumaFileData ofd : diffList) {
+			for (final OptumaFileData ofd : resultsList) {
 				pw.println(ofd);
 			}
 		}

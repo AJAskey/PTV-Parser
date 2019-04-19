@@ -519,6 +519,10 @@ public class Reports {
 					continue;
 				}
 
+				if (!Reports.checkMaxValue(cd.ticker, " Price vs 52 Week High", cd.pricePercOff52High, 50.0)) {
+					continue;
+				}
+
 				this.printHeaderData(pw, cd);
 				this.WriteShareData(pw, cd);
 				pw.println();
@@ -556,12 +560,20 @@ public class Reports {
 		Utils.makeDir("out/CompanyReports");
 
 		final PrintWriter pwAll = new PrintWriter("out/CompanyReports.txt");
+
 		for (final CompanyData cd : this.companyList) {
 			try (PrintWriter pw = new PrintWriter("out/CompanyReports/" + cd.ticker + ".txt")) {
 				this.printHeaderData(pw, cd);
 				this.WriteShareData(pw, cd);
 
 				this.printHeaderData(pwAll, cd);
+
+				this.WriteShareData(pwAll, cd);
+				pw.println();
+
+				pwAll.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
+				pwAll.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
+				pwAll.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
 				pwAll.println();
 
 			} catch (final FileNotFoundException e) {

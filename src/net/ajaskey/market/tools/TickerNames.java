@@ -54,17 +54,26 @@ public class TickerNames {
 	}
 
 	private final String	listName;
-	private final String	idx;
+	private final String	index;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public TickerNames(String list, String spidx) {
+
 		this.listName = list;
-		this.idx = spidx;
+		this.index = spidx;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.get
+	 *
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public String get() throws FileNotFoundException, IOException {
 
 		String ret = "";
@@ -78,8 +87,8 @@ public class TickerNames {
 				if (line != null) {
 					final String fld[] = line.split("[,\\s+]");
 					final String s = fld[0].replace("\n", "").replaceAll("\"", "");
-					String idx = fld[1].replace("\n", "").replaceAll("\"", "");
-					if (idx.equalsIgnoreCase(this.idx)) {
+					final String idx = fld[1].replace("\n", "").replaceAll("\"", "");
+					if (idx.equalsIgnoreCase(this.index)) {
 						System.out.println(s);
 						if (knt == 0) {
 							ret += s.trim();

@@ -28,12 +28,51 @@ public class DataItem {
 
 	/**
 	 *
+	 * @param last2
+	 * @param cal
+	 * @param fld
+	 * @param putcalltype
+	 */
+	DataItem(Calendar xpiry, double uprice, String fld[], int putcalltype) {
+
+		int ptr = 0;
+		if (putcalltype == APUT) {
+			this.strike = Double.parseDouble(fld[ptr++]);
+		}
+		this.id = fld[ptr++].trim();
+		this.last = Double.parseDouble(fld[ptr++].trim());
+		this.net = Double.parseDouble(fld[ptr++].trim());
+		this.bid = Double.parseDouble(fld[ptr++].trim());
+		this.ask = Double.parseDouble(fld[ptr++].trim());
+		this.volume = Integer.parseInt(fld[ptr++].trim());
+		this.iv = Double.parseDouble(fld[ptr++].trim());
+		this.delta = Double.parseDouble(fld[ptr++].trim());
+		this.gamma = Double.parseDouble(fld[ptr++].trim());
+		this.oi = Double.parseDouble(fld[ptr++].trim());
+		if (putcalltype == ACALL) {
+			this.strike = Double.parseDouble(fld[ptr++]);
+		}
+		this.stockPrice = uprice;
+		this.expiry = xpiry;
+		this.sellDate = xpiry;
+		this.yrs = OptionsProcessor.getDeltaYears(xpiry);
+		this.dataType = putcalltype;
+		if (putcalltype == APUT) {
+			this.price = OptionsProcessor.getPutPrice(this.bid, this.strike, this.yrs, this.rate, this.iv);
+		} else if (putcalltype == ACALL) {
+			this.price = OptionsProcessor.getCallPrice(this.bid, this.strike, this.yrs, this.rate, this.iv);
+		}
+
+	}
+
+	/**
+	 *
 	 * @param fld
 	 * @return
 	 */
 	public static DataItem setCall(String fld[]) {
 
-		final DataItem di = new DataItem(fld, ACALL);
+		final DataItem di = new DataItem(Calendar.getInstance(), 0.0, fld, ACALL);
 		return di;
 	}
 
@@ -44,7 +83,7 @@ public class DataItem {
 	 */
 	public static DataItem setPut(String fld[]) {
 
-		final DataItem di = new DataItem(fld, APUT);
+		final DataItem di = new DataItem(null, 0.0, fld, APUT);
 		return di;
 	}
 
@@ -123,8 +162,6 @@ public class DataItem {
 		}
 	}
 
-
-
 	/**
 	 *
 	 * @param currentPrice
@@ -185,8 +222,6 @@ public class DataItem {
 	}
 
 	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-
-
 
 	/**
 	 * net.ajaskey.market.tools.options.readOptionData

@@ -134,7 +134,7 @@ public class GenerateTests {
 
 			try (PrintWriter pw = new PrintWriter(pd.fullpath + "/gentests.bat")) {
 
-				pw.printf("%s %s %s %s%n", randoop1, randoop2, randoop3, randoop4);
+				pw.printf("cd c:\\temp\\randoopout%n%s %s %s %s%n", randoop1, randoop2, randoop3, randoop4);
 
 			}
 			System.out.println(pd);

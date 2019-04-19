@@ -158,7 +158,7 @@ public class CompanyData {
 		td.sum();
 
 		// output data
-		try (PrintWriter pw = new PrintWriter("out/companydata.dbg")) {
+		try (PrintWriter pw = new PrintWriter("out/companystats.dbg")) {
 
 			for (final CompanyData cd : companyList) {
 				pw.println(cd);
@@ -194,13 +194,23 @@ public class CompanyData {
 		}
 
 		final Reports reports = new Reports(filteredList);
-		reports.WriteCompanyReports();
 		reports.WriteBestFinancial();
 		reports.WriteZombies();
+
+		final Reports tdReport = new Reports(companyList);
+		tdReport.WriteCompanyReports();
 
 		System.out.printf("Total Buyback Estimate   :  $%sB%n", QuarterlyData.fmt(totalBuyBacks / 1000.0, 2));
 		System.out.printf("Total New Share Estimate :  $%sB%n", QuarterlyData.fmt(totalNewShares / 1000.0, 2));
 
+		final List<CompanyData> spxList = new ArrayList<>();
+		for (final CompanyData cd : companyList) {
+			if (cd.spIndex.equals("SP500")) {
+				spxList.add(cd);
+			}
+		}
+		System.out.println(spxList.size());
+	//	WriteOptumaFiles.processData(spxList);
 	}
 
 	/**

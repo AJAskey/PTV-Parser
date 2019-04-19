@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -40,8 +41,6 @@ import java.util.List;
 public class DataItemList {
 
 	String					code;
-	double					bid;
-	double					ask;
 	double					last;
 	int							volume;
 	List<DataItem>	diList;
@@ -52,7 +51,7 @@ public class DataItemList {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataItemList(String c, double b, double a, double l, int volume) {
+	public DataItemList() {
 
 		diList = new ArrayList<>();
 	}
@@ -67,15 +66,22 @@ public class DataItemList {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static DataItemList readOptionData(String filename)
-	    throws FileNotFoundException, IOException {
+	public static DataItemList readOptionData(String filename) throws FileNotFoundException, IOException {
+
+		DataItemList diData = new DataItemList();
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
 			String header1 = reader.readLine();
+			String hdr[] = header1.trim().split(",");
+			diData.code = hdr[0].trim();
+			diData.last = Double.parseDouble(hdr[1].trim());
+
 			String header2 = reader.readLine();
+			String header3 = reader.readLine();
 			System.out.println(header1);
 			System.out.println(header2);
+			System.out.println(header3);
 			String line = "";
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
@@ -87,9 +93,14 @@ public class DataItemList {
 						Date d = sdf.parse(fld[0].trim());
 						Calendar c = Calendar.getInstance();
 						c.setTime(d);
-						
-						DataItem di = new DataItem(fld);
-						
+
+						DataItem dicall = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 1, 12), DataItem.ACALL);
+						diData.diList.add(dicall);
+						System.out.println(dicall);
+						DataItem diput = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 11, 22), DataItem.APUT);
+						diData.diList.add(diput);
+						System.out.println(diput);
+
 						//System.out.println(sdf.format(c.getTime()));
 					} catch (Exception e) {
 					}
@@ -99,28 +110,7 @@ public class DataItemList {
 		}
 		return null;
 	}
-	
-	/**
-	 *
-	 * @param fld
-	 * @param putcalltype
-	 */
-	private DataItemList(String fld[], int putcalltype) {
 
-		int ptr = 0;
-		this.id = fld[ptr++].trim();
-		this.last = Double.parseDouble(fld[ptr++].trim());
-		this.net = Double.parseDouble(fld[ptr++].trim());
-		this.bid = Double.parseDouble(fld[ptr++].trim());
-		this.ask = Double.parseDouble(fld[ptr++].trim());
-		this.volume = Integer.parseInt(fld[ptr++].trim());
-		this.iv = Double.parseDouble(fld[ptr++].trim());
-		this.delta = Double.parseDouble(fld[ptr++].trim());
-		this.gamma = Double.parseDouble(fld[ptr++].trim());
-		this.oi = Double.parseDouble(fld[ptr++].trim());
-		this.dataType = putcalltype;
-	}
-	
 	public static void main(String[] args) throws ParseException, IOException {
 
 		DataItemList diList = readOptionData("data/spy-options.dat");
