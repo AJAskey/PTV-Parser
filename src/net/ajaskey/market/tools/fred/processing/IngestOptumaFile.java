@@ -151,10 +151,25 @@ public class IngestOptumaFile {
 	 */
 	private List<OptumaFileData> readFile(File f) throws FileNotFoundException, IOException {
 
+		return readDataFile(f.getAbsolutePath());
+	}
+
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.processing.readDataFile
+	 *
+	 * @param fname
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static List<OptumaFileData> readDataFile(String fname) throws FileNotFoundException, IOException {
+
 		final List<OptumaFileData> ret = new ArrayList<>();
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
+			boolean firstOne = true;
 			String line;
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
@@ -164,7 +179,12 @@ public class IngestOptumaFile {
 					final Calendar c = Calendar.getInstance();
 					c.setTime(d);
 					final double val = Double.parseDouble(fld[1]);
-					ret.add(new OptumaFileData(c, val));
+					if (firstOne && (Math.abs(val) == 0.0)) {
+						//noop
+					} else {
+						firstOne = false;
+						ret.add(new OptumaFileData(c, val));
+					}
 				} catch (final ParseException e) {
 				}
 			}
