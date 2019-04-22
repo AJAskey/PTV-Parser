@@ -58,32 +58,62 @@ public class SpxVsAll {
 		final File folder = new File(FredCommon.fredPath);
 
 		final List<String> codeList = new ArrayList<>();
+
+		//codeList.add("SP500_Earnings");
+
 		codeList.add("[GDP]");
+		codeList.add("[CP]");
+		codeList.add("[INDPRO]");
+		codeList.add("[TTLCON]");
+		codeList.add("[PAYNSA]");
+		codeList.add("[TOTCINSA]");
+		codeList.add("[TOTBUSSMNSA]");
+		codeList.add("[RETAILSMNSA]");
+		codeList.add("[WHLSLRSMNSA]");
+		codeList.add("[MNFCTRSMNSA]");
+		codeList.add("[A939RC0Q052SBEA]");
+		codeList.add("[TNWBSHNO]");
+		codeList.add("[UMTMNO]");
+		codeList.add("[TOTALNS]");
+		codeList.add("[GPDI]");
+		codeList.add("[HSN1FNSA]");
+		codeList.add("[TLMFGCON]");
+		codeList.add("[AMBNS]");
+		codeList.add("[CAPUTLB5640CS]");
+		codeList.add("[FRGSHPUSM649NCIS]");
+		codeList.add("[SP500]");
 
 		final List<File> fileList = new ArrayList<>();
 
 		spxPrices = OptumaPriceData.getPriceData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\S\\SPX.csv");
-		for (PriceData pd : spxPrices) {
-			System.out.println(pd);
-		}
 
 		final String[] ext = new String[] { "csv" };
 		final List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
 		for (final File file : files) {
 			fileList.add(file);
 		}
+		//File pefile = new File("C:\\Data\\MA\\CSV Data\\Quandl\\SP500_Earnings.csv");
+		//fileList.add(pefile);
 
 		for (String s : codeList) {
+
 			for (File f : fileList) {
 
 				if (f.getName().contains(s)) {
 
-					System.out.println(f.getAbsolutePath());
+					//System.out.println(f.getAbsolutePath());
 					List<OptumaFileData> ofd = IngestOptumaFile.readDataFile(f.getAbsolutePath());
 
 					List<OptumaFileData> mergedData = merge(ofd);
 
-					String outfile = f.getAbsolutePath().replace("\\[", "\\[SPX over ").replace("- ", "- SPX over ");
+					String fname = f.getAbsolutePath();
+					String outfile = "";
+					if (fname.contains("Quandl")) {
+						outfile = "C:\\Data\\MA\\CSV Data\\Quandl\\SPX Growth vs SP500 Earnings Growth.csv";
+					} else {
+						outfile = fname.replace("\\[", "\\[SPX Growth vs ").replace("- ", "- SPX Growth vs ")
+						    .replace("]", " Growth]").replace(".csv", " Growth.csv");
+					}
 					System.out.println(outfile);
 
 					try (PrintWriter pw = new PrintWriter(outfile)) {
@@ -110,34 +140,33 @@ public class SpxVsAll {
 
 		List<OptumaFileData> ret = new ArrayList<>();
 
-		for (OptumaFileData d : ofd) {
+		double totalChg = 1.0;
 
-			double scaler = 100000000000.0 * 100.0;
+		for (int i = 1; i < ofd.size(); i++) {
 
-			double price = getSpxClose(d.date);
-			double ratio = getRatio(price, d.val, scaler);
-			OptumaFileData out = new OptumaFileData(d.date, ratio);
-			ret.add(out);
+			double price1 = getSpxClose(ofd.get(i - 1).date);
+			double price2 = getSpxClose(ofd.get(i).date);
+
+			if (Math.abs(price1) > 0.0 && Math.abs(price2) > 0.0) {
+
+				double pChg = (price2 - price1) / price1;
+
+				price1 = ofd.get(i - 1).val;
+				price2 = ofd.get(i).val;
+
+				double vChg = 0.0;
+				if (Math.abs(price1) > 0.0 && Math.abs(price2) > 0.0) {
+					vChg = (price2 - price1) / price1;
+					totalChg += (pChg - vChg);
+				}
+
+				//System.out.printf("%.3f\t %.3f\t%.3f\t%.3f\t%.3f%n", pChg, vChg, totalChg, price1, price2);
+
+				OptumaFileData out = new OptumaFileData(ofd.get(i).date, totalChg);
+				ret.add(out);
+			}
 		}
 
-		return ret;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.processing.getRatio
-	 *
-	 * @param price
-	 * @param val
-	 * @param scaler
-	 * @return
-	 */
-	private static double getRatio(double price, double val, double scaler) {
-
-		double ret = 0.0;
-
-		if ((Math.abs(price) > 0.0) && (Math.abs(val) > 0.0)) {
-			ret = price / val * scaler;
-		}
 		return ret;
 	}
 
@@ -149,10 +178,19 @@ public class SpxVsAll {
 	 */
 	private static double getSpxClose(Calendar date) {
 
+		//System.out.printf("%s\t%s%n", Utils.sdf.format(date.getTime()), Utils.sdf.format(spxPrices.get(0).date.getTime()));
+
+		if (date.before(spxPrices.get(0).date)) {
+			return 0.0;
+		}
+
 		for (PriceData pd : spxPrices) {
+
+			//System.out.printf("%s\t%s%n", Utils.sdf.format(date.getTime()), Utils.sdf.format(pd.date.getTime()));
+
 			if (Utils.sameDate(pd.date, date)) {
 				return pd.close;
-			} else if (date.after(pd.date)) {
+			} else if (pd.date.after(date)) {
 				return pd.close;
 			}
 		}
