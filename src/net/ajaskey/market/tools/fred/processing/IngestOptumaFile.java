@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.fred.FredCommon;
 
 /**
@@ -49,6 +50,8 @@ public class IngestOptumaFile {
 	public static final int	SUBTRACT	= 2;
 	public static final int	MULTIPLY	= 3;
 	public static final int	DIVIDE		= 4;
+
+	public static final double BAD_OFD_DATA = -666.600;
 
 	/**
 	 *
@@ -95,6 +98,39 @@ public class IngestOptumaFile {
 		this.file2 = new File(f2);
 	}
 
+	private IngestOptumaFile(File f1, File f2) {
+
+		this.file1 = f1;
+		this.file2 = f2;
+	}
+
+	/**
+	 * Testout only
+	 * 
+	 * net.ajaskey.market.tools.fred.processing.main
+	 *
+	 * @param args
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+
+		File f1 = new File("C:\\Data\\MA\\CSV Data\\Fred-Download\\GDP.csv");
+		File f2 = new File("C:\\Data\\MA\\CSV Data\\Fred-Download\\TTLCON.csv");
+
+		IngestOptumaFile iof = new IngestOptumaFile(f2, f1);
+		List<OptumaFileData> mergedData = iof.processFiles(DIVIDE);
+		
+		String fname = "C:\\Data\\MA\\CSV Data\\Fred-Download\\GDP vs TTLCON.csv";
+		
+		try(PrintWriter pw = new PrintWriter (fname)) {
+			for (OptumaFileData d : mergedData) {
+				pw.println(d);
+			}
+		}
+
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.fred.processing.processFiles
@@ -111,10 +147,36 @@ public class IngestOptumaFile {
 		this.f1List = this.readFile(this.file1);
 		this.f2List = this.readFile(this.file2);
 
-		System.out.printf("%d\t%d%n", this.f1List.size(), this.f2List.size());
+		//System.out.printf("%d\t%d%n", this.f1List.size(), this.f2List.size());
 
-		final int f1size = this.f1List.size();
-		final int f2size = this.f2List.size();
+		int f1size = this.f1List.size();
+		int f2size = this.f2List.size();
+
+		/**
+		 * Merge lists of different sizes with f1List as the base.
+		 */
+		if (f1size != f2size) {
+
+			List<OptumaFileData> fList = new ArrayList<>();
+			List<OptumaFileData> fBaseList = new ArrayList<>();
+
+			for (OptumaFileData ofd : f1List) {
+				double price2 = interpolate(ofd.date, f2List);
+				if (price2 != BAD_OFD_DATA) {
+					OptumaFileData d = new OptumaFileData(ofd.date, price2);
+					fList.add(d);
+					OptumaFileData b = new OptumaFileData(ofd.date, ofd.val);
+					fBaseList.add(b);
+				}
+			}
+			f2List.clear();
+			f2List = new ArrayList<>(fList);
+			f2size = f2List.size();
+			
+			f1List.clear();
+			f1List = new ArrayList<>(fBaseList);
+			f1size = f1List.size();
+		}
 
 		if (f1size == f2size) {
 			for (int i = 0; i < f1size; i++) {
@@ -139,6 +201,34 @@ public class IngestOptumaFile {
 
 		return resultList;
 
+	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.processing.interpolate
+	 *
+	 * @param date
+	 * @param f2List2
+	 * @return
+	 */
+	private double interpolate(Calendar baseDate, List<OptumaFileData> fList) {
+
+		if (baseDate.before(fList.get(0).date)) {
+			return BAD_OFD_DATA;
+		}
+
+		for (int i = 0; i < fList.size(); i++) {
+
+			//System.out.printf("%s\t%s%n", Utils.sdf.format(baseDate.getTime()),
+			//    Utils.sdf.format(fList.get(i).date.getTime()));
+
+			if (Utils.sameDate(baseDate, fList.get(i).date)) {
+				return fList.get(i).val;
+			} else if (fList.get(i).date.after(baseDate)) {
+				return fList.get(i).val;
+			}
+		}
+
+		return BAD_OFD_DATA;
 	}
 
 	/**

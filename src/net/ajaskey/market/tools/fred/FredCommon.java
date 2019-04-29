@@ -517,7 +517,7 @@ public class FredCommon {
 			Calendar cLastUpdate = Calendar.getInstance();
 			cLastUpdate.setTimeInMillis(f.lastModified());
 			String lastUpdate = sdf.format(f.lastModified());
-			
+
 			DataSeriesInfo dsi = queryFredDsi(code, lastUpdate);
 			if (dsi != null) {
 				ret.add(dsi);
@@ -858,8 +858,9 @@ public class FredCommon {
 			}
 		}
 
+		Calendar cal = Calendar.getInstance();
 		try (PrintWriter pw = new PrintWriter(f)) {
-			pw.println(infoHeader);
+			pw.printf("%s\t%s%n", infoHeader, Utils.sdfFull.format(cal.getTime()));
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
 				try {

@@ -67,6 +67,7 @@ public class SpxVsAll {
 		codeList.add("[TTLCON]");
 		codeList.add("[PAYNSA]");
 		codeList.add("[TOTCINSA]");
+		codeList.add("[PPIACO]");
 		codeList.add("[TOTBUSSMNSA]");
 		codeList.add("[RETAILSMNSA]");
 		codeList.add("[WHLSLRSMNSA]");
