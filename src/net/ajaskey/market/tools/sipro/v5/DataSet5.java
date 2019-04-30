@@ -3,9 +3,6 @@ package net.ajaskey.market.tools.sipro.v5;
 
 import java.util.List;
 
-import net.ajaskey.market.tools.sipro.v5.DataSet5;
-import net.ajaskey.market.tools.sipro.v5.DateSet;
-
 /**
  * This class...
  *
@@ -45,7 +42,7 @@ public class DataSet5 {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet5 add(DataSet5 set1, DataSet5 set2) {
+	public static DataSet5 add(final DataSet5 set1, final DataSet5 set2) {
 
 		final DataSet5 ds = new DataSet5(set1.name, 0);
 		ds.ticker = "MERGED_TICKERS";
@@ -70,12 +67,13 @@ public class DataSet5 {
 		return ds;
 	}
 
-	public static DataSet5 div(DataSet5 num, DataSet5 div) {
+	public static DataSet5 div(final DataSet5 num, final DataSet5 div) {
 
 		final DataSet5 ds = new DataSet5(num.name, 0);
 		if (div.ticker.equals("SCALED")) {
 			ds.ticker = num.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = num.index;
@@ -107,7 +105,7 @@ public class DataSet5 {
 	 * @param div
 	 * @return
 	 */
-	private static double divide(double num, double div) {
+	private static double divide(final double num, final double div) {
 
 		double ret = 0;
 		try {
@@ -118,12 +116,13 @@ public class DataSet5 {
 		return ret;
 	}
 
-	public static DataSet5 mult(DataSet5 set1, DataSet5 set2) {
+	public static DataSet5 mult(final DataSet5 set1, final DataSet5 set2) {
 
 		final DataSet5 ds = new DataSet5(set1.name, 0);
 		if (set2.ticker.equals("SCALED")) {
 			ds.ticker = set1.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = set1.index;
@@ -154,12 +153,13 @@ public class DataSet5 {
 	 * @param totEquity
 	 * @return
 	 */
-	public static DataSet5 ratio(DataSet5 num, DataSet5 div) {
+	public static DataSet5 ratio(final DataSet5 num, final DataSet5 div) {
 
 		final DataSet5 ds = new DataSet5(num.name, 0);
 		if (div.ticker.equals("SCALED")) {
 			ds.ticker = num.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = num.index;
@@ -190,13 +190,13 @@ public class DataSet5 {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet5 scale(DataSet5 val, double scaler) {
+	public static DataSet5 scale(final DataSet5 val, final double scaler) {
 
 		final DataSet5 ds = DataSet5.scaleSet(scaler);
 		return DataSet5.mult(val, ds);
 	}
 
-	public static DataSet5 scaleSet(double scaler) {
+	public static DataSet5 scaleSet(final double scaler) {
 
 		final DataSet5 ret = new DataSet5("SCALE", scaler);
 		ret.ticker = "SCALED";
@@ -213,7 +213,7 @@ public class DataSet5 {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet5 sub(DataSet5 set1, DataSet5 set2) {
+	public static DataSet5 sub(final DataSet5 set1, final DataSet5 set2) {
 
 		final DataSet5 ds = new DataSet5("SUBTRACT", 0);
 		ds.ticker = "MERGED_TICKERS";
@@ -238,7 +238,52 @@ public class DataSet5 {
 		return ds;
 	}
 
-	public static DataSet5 sum(List<DataSet5> data, String index, String sector) {
+	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.sum
+	 *
+	 * @param data
+	 * @param index
+	 * @return
+	 */
+	public static DataSet5 sum(final List<DataSet5> data, final String index) {
+
+		if (data.size() > 0) {
+			final DataSet5 ret = new DataSet5(data.get(0).name, 0);
+			if (data.size() > 0) {
+				ret.ticker = "MERGED_TICKERS";
+				ret.index = index;
+				ret.mode = data.get(0).mode;
+				for (final DataSet5 ds : data) {
+					if (ds.index.equalsIgnoreCase(index)) {
+						ret.y7 += ds.y7;
+						ret.y6 += ds.y6;
+						ret.y5 += ds.y5;
+						ret.y4 += ds.y4;
+						ret.y3 += ds.y3;
+						ret.y2 += ds.y2;
+						ret.y1 += ds.y1;
+						ret.y0 += ds.y0;
+						ret.q8 += ds.q8;
+						ret.q7 += ds.q7;
+						ret.q6 += ds.q6;
+						ret.q5 += ds.q5;
+						ret.q4 += ds.q4;
+						ret.q3 += ds.q3;
+						ret.q2 += ds.q2;
+						ret.q1 += ds.q1;
+					}
+				}
+			}
+			return ret;
+		}
+		else {
+			return null;
+		}
+
+	}
+
+	public static DataSet5 sum(final List<DataSet5> data, final String index, final String sector) {
 
 		if (data.size() > 0) {
 			final DataSet5 ret = new DataSet5(data.get(0).name, 0);
@@ -270,57 +315,12 @@ public class DataSet5 {
 				}
 			}
 			return ret;
-		} else {
+		}
+		else {
 			return null;
 		}
 
 	}
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.sipro.sum
-	 *
-	 * @param data
-	 * @param index
-	 * @return
-	 */
-	public static DataSet5 sum(List<DataSet5> data, String index) {
-
-		if (data.size() > 0) {
-			final DataSet5 ret = new DataSet5(data.get(0).name, 0);
-			if (data.size() > 0) {
-				ret.ticker = "MERGED_TICKERS";
-				ret.index = index;
-				ret.mode = data.get(0).mode;
-				for (final DataSet5 ds : data) {
-					if (ds.index.equalsIgnoreCase(index)) {
-						ret.y7 += ds.y7;
-						ret.y6 += ds.y6;
-						ret.y5 += ds.y5;
-						ret.y4 += ds.y4;
-						ret.y3 += ds.y3;
-						ret.y2 += ds.y2;
-						ret.y1 += ds.y1;
-						ret.y0 += ds.y0;
-						ret.q8 += ds.q8;
-						ret.q7 += ds.q7;
-						ret.q6 += ds.q6;
-						ret.q5 += ds.q5;
-						ret.q4 += ds.q4;
-						ret.q3 += ds.q3;
-						ret.q2 += ds.q2;
-						ret.q1 += ds.q1;
-					}
-				}
-			}
-			return ret;
-		} else {
-			return null;
-		}
-
-	}
-
-
 
 	public String	ticker;
 	public String	index;
@@ -350,7 +350,8 @@ public class DataSet5 {
 	 *
 	 * @param totEps
 	 */
-	public DataSet5(DataSet5 ds) {
+	public DataSet5(final DataSet5 ds) {
+
 		this.y7 = ds.y7;
 		this.y6 = ds.y6;
 		this.y5 = ds.y5;
@@ -378,7 +379,8 @@ public class DataSet5 {
 	 *
 	 * @param dates
 	 */
-	public DataSet5(DateSet dates, String idx) {
+	public DataSet5(final DateSet dates, final String idx) {
+
 		this.y7 = dates.y7.q4.value;
 		this.y6 = dates.y6.q4.value;
 		this.y5 = dates.y5.q4.value;
@@ -405,11 +407,14 @@ public class DataSet5 {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet5(String n, double val) {
+	public DataSet5(final String n, final double val) {
+
 		this.init(n, val);
 	}
 
-	public DataSet5(String index, String name, String code, String sector, String[] s, int ptr, dMode mode) {
+	public DataSet5(final String index, final String name, final String code, final String sector, final String[] s, final int ptr,
+	    final dMode mode) {
+
 		this.init(name, 0);
 		this.index = index.trim();
 		this.ticker = code.trim();
@@ -441,11 +446,14 @@ public class DataSet5 {
 			if (this.q1 == 0.0) {
 				if (this.q5 != 0.0) {
 					this.q1 = this.q5;
-				} else if (this.q2 != 0.0) {
+				}
+				else if (this.q2 != 0.0) {
 					this.q1 = this.q2;
-				} else if (this.q3 != 0.0) {
+				}
+				else if (this.q3 != 0.0) {
 					this.q1 = this.q3;
-				} else {
+				}
+				else {
 					this.q1 = this.q2;
 				}
 				if (this.q2 == 0.0) {
@@ -458,13 +466,16 @@ public class DataSet5 {
 			}
 			this.y1 = this.q8 + this.q7 + this.q6 + this.q5;
 			this.y0 = this.q4 + this.q3 + this.q2 + this.q1;
-		} else if (mode == dMode.SEQUENTIAL) {
+		}
+		else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				if (this.q2 != 0.0) {
 					this.q1 = this.q2;
-				} else if (this.q3 != 0.0) {
+				}
+				else if (this.q3 != 0.0) {
 					this.q1 = this.q3;
-				} else if (this.q4 != 0.0) {
+				}
+				else if (this.q4 != 0.0) {
 					this.q1 = this.q4;
 				}
 			}
@@ -482,7 +493,7 @@ public class DataSet5 {
 	 * @param s
 	 * @return
 	 */
-	private double getDouble(String s) {
+	private double getDouble(final String s) {
 
 		double d = 0.0;
 		try {
@@ -504,7 +515,7 @@ public class DataSet5 {
 	 * @param n
 	 * @param val
 	 */
-	private void init(String n, double val) {
+	private void init(final String n, final double val) {
 
 		this.ticker = "";
 		this.sector = "";
@@ -532,8 +543,8 @@ public class DataSet5 {
 	@Override
 	public String toString() {
 
-		final String ret = this.y7 + " " + this.y6 + " " + this.y5 + " " + this.y4 + " " + this.y3 + " " + this.q8 + " "
-		    + this.q7 + " " + this.q6 + " " + this.q5 + " " + this.q4 + " " + this.q3 + " " + this.q2 + " " + this.q1;
+		final String ret = this.y7 + " " + this.y6 + " " + this.y5 + " " + this.y4 + " " + this.y3 + " " + this.q8 + " " + this.q7 + " "
+		    + this.q6 + " " + this.q5 + " " + this.q4 + " " + this.q3 + " " + this.q2 + " " + this.q1;
 		return ret;
 	}
 

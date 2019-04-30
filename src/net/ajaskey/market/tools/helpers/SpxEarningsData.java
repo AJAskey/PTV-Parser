@@ -39,7 +39,7 @@ public class SpxEarningsData {
 
 	private static final double NA_VALUE = -99999999.99;
 
-	public static List<SpxEarningsData> readData(String fname) throws IOException {
+	public static List<SpxEarningsData> readData(final String fname) throws IOException {
 
 		final List<SpxEarningsData> data = new ArrayList<>();
 		final Charset charset = Charset.forName("UTF-8");
@@ -130,6 +130,7 @@ public class SpxEarningsData {
 	 *
 	 */
 	public SpxEarningsData() {
+
 		this.ticker = null;
 		this.mktcap = 0;
 		this.shares = 0;
@@ -142,8 +143,8 @@ public class SpxEarningsData {
 	@Override
 	public String toString() {
 
-		final String str = String.format("%-9s %10.1f %11.3f %10.1f %10.3f %10.3f %n", this.ticker, this.mktcap,
-		    this.shares, this.netIncAfterTax, this.eps, this.eps1y);
+		final String str = String.format("%-9s %10.1f %11.3f %10.1f %10.3f %10.3f %n", this.ticker, this.mktcap, this.shares,
+		    this.netIncAfterTax, this.eps, this.eps1y);
 		return str;
 
 	}

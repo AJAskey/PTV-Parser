@@ -38,7 +38,7 @@ public class TotalData {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		// TODO Auto-generated method stub
 
 	}
@@ -162,7 +162,7 @@ public class TotalData {
 	 *
 	 * @param bsd
 	 */
-	public void add(CompanyData cd) {
+	public void add(final CompanyData cd) {
 
 		this.acctReceiveable.sum(cd.bsd.acctReceiveable);
 		this.acctPayable.sum(cd.bsd.acctPayable);

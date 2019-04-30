@@ -1,10 +1,7 @@
 
 package net.ajaskey.market.tools.fred;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
@@ -50,8 +47,6 @@ import net.ajaskey.market.misc.Utils;
  */
 public class FindCategories {
 
-	private static final boolean useOnline = false;
-
 	private static final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 	private static DocumentBuilder							dBuilder	= null;
 
@@ -76,7 +71,7 @@ public class FindCategories {
 	 * @param id
 	 * @param indent
 	 */
-	private static void getSeries(int id, int indent, String catName, String subCatName) {
+	private static void getSeries(final int id, final int indent, final String catName, final String subCatName) {
 
 		final String url = "https://api.stlouisfed.org/fred/category/series?category_id=" + id + "&api_key=" + ApiKey.get();
 
@@ -88,8 +83,8 @@ public class FindCategories {
 
 				if ((resp != null) && (resp.trim().length() > 0)) {
 
-					Debug.log(String.format("getSeries :: id : %d\tindent : %d\tcatName : %s\tsubCatName : %s%n%s%n", id, indent,
-					    catName, subCatName, resp));
+					Debug.log(String.format("getSeries :: id : %d\tindent : %d\tcatName : %s\tsubCatName : %s%n%s%n", id, indent, catName, subCatName,
+					    resp));
 
 					final Document doc = dBuilder.parse(new InputSource(new StringReader(resp)));
 
@@ -126,15 +121,14 @@ public class FindCategories {
 							}
 						}
 					}
-				} else {
+				}
+				else {
 					loopknt++;
 					if (loopknt == 10) {
-						Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Breaking...%n",
-						    catName, subCatName));
+						Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Breaking...%n", catName, subCatName));
 						break;
 					}
-					Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Sleeping...%n", catName,
-					    subCatName));
+					Debug.log(String.format("getSeries :: catName : %s\tsubCatName : %s%nNULL RESPONSE - Sleeping...%n", catName, subCatName));
 					Utils.sleep(30000);
 					resp = "";
 				}
@@ -151,92 +145,92 @@ public class FindCategories {
 	 * @param item
 	 * @return
 	 */
-	private static boolean isValid(String item) {
-
-		String fld[];
-
-		fld = item.split("\t");
-
-		// Check individual codes
-		try {
-			for (String s : optumaIncludeCode) {
-				//System.out.println(s);
-				if (fld[2].trim().equalsIgnoreCase(s)) {
-					Debug.log(String.format("IN\tCode\t%s%n", item));
-					return true;
-				}
-			}
-		} catch (final Exception e) {
-			return false;
-		}
-
-		//Check if valid Period
-		boolean period = false;
-		try {
-			for (final String s : optumaIncludePeriod) {
-				//System.out.println(s);
-				if (fld[4].toUpperCase().contains(s)) {
-					period = true;
-					break;
-				}
-			}
-
-		} catch (final Exception e) {
-			period = false;
-		}
-		if (!period) {
-			Debug.log(String.format("OUT\tPeriod\t%s%n", item));
-			return false;
-		}
-
-		// Check if valid frequency
-		boolean freq = false;
-		try {
-			for (final String s : optumaIncludeFrequency) {
-				//System.out.println(s);
-				if (fld[5].toUpperCase().contains(s)) {
-					freq = true;
-					break;
-				}
-			}
-
-		} catch (final Exception e) {
-			freq = false;
-		}
-		if (!freq) {
-			Debug.log(String.format("OUT\tFrequency\t%s%n", item));
-			return false;
-		}
-
-		// Check if name is excluded
-		try {
-			for (final String s : optumaExcludeNames) {
-				//System.out.println(s);
-				if (fld[3].toUpperCase().contains(s)) {
-					Debug.log(String.format("OUT\tEXCLUDED\t%s\t%s%n", item, s));
-					return false;
-				}
-			}
-		} catch (final Exception e) {
-			return false;
-		}
-
-		// Check if name is included
-		try {
-			for (final String s : optumaIncludeNames) {
-				//System.out.println(s);
-				if (fld[3].toUpperCase().contains(s)) {
-					Debug.log(String.format("IN\tINCLUDED\t%s\t%s%n", item, s));
-					return true;
-				}
-			}
-		} catch (final Exception e) {
-			return false;
-		}
-
-		Debug.log(String.format("OUT\tUNMATCHED\t%s%n", item));
-		return false;
-	}
+	//	private static boolean isValid(final String item) {
+	//
+	//		String fld[];
+	//
+	//		fld = item.split("\t");
+	//
+	//		// Check individual codes
+	//		try {
+	//			for (final String s : optumaIncludeCode) {
+	//				//System.out.println(s);
+	//				if (fld[2].trim().equalsIgnoreCase(s)) {
+	//					Debug.log(String.format("IN\tCode\t%s%n", item));
+	//					return true;
+	//				}
+	//			}
+	//		} catch (final Exception e) {
+	//			return false;
+	//		}
+	//
+	//		//Check if valid Period
+	//		boolean period = false;
+	//		try {
+	//			for (final String s : optumaIncludePeriod) {
+	//				//System.out.println(s);
+	//				if (fld[4].toUpperCase().contains(s)) {
+	//					period = true;
+	//					break;
+	//				}
+	//			}
+	//
+	//		} catch (final Exception e) {
+	//			period = false;
+	//		}
+	//		if (!period) {
+	//			Debug.log(String.format("OUT\tPeriod\t%s%n", item));
+	//			return false;
+	//		}
+	//
+	//		// Check if valid frequency
+	//		boolean freq = false;
+	//		try {
+	//			for (final String s : optumaIncludeFrequency) {
+	//				//System.out.println(s);
+	//				if (fld[5].toUpperCase().contains(s)) {
+	//					freq = true;
+	//					break;
+	//				}
+	//			}
+	//
+	//		} catch (final Exception e) {
+	//			freq = false;
+	//		}
+	//		if (!freq) {
+	//			Debug.log(String.format("OUT\tFrequency\t%s%n", item));
+	//			return false;
+	//		}
+	//
+	//		// Check if name is excluded
+	//		try {
+	//			for (final String s : optumaExcludeNames) {
+	//				//System.out.println(s);
+	//				if (fld[3].toUpperCase().contains(s)) {
+	//					Debug.log(String.format("OUT\tEXCLUDED\t%s\t%s%n", item, s));
+	//					return false;
+	//				}
+	//			}
+	//		} catch (final Exception e) {
+	//			return false;
+	//		}
+	//
+	//		// Check if name is included
+	//		try {
+	//			for (final String s : optumaIncludeNames) {
+	//				//System.out.println(s);
+	//				if (fld[3].toUpperCase().contains(s)) {
+	//					Debug.log(String.format("IN\tINCLUDED\t%s\t%s%n", item, s));
+	//					return true;
+	//				}
+	//			}
+	//		} catch (final Exception e) {
+	//			return false;
+	//		}
+	//
+	//		Debug.log(String.format("OUT\tUNMATCHED\t%s%n", item));
+	//		return false;
+	//	}
 
 	/**
 	 * net.ajaskey.market.tools.fred.main
@@ -244,7 +238,7 @@ public class FindCategories {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		Debug.init("findcat.dbg");
 
@@ -311,7 +305,7 @@ public class FindCategories {
 	 * @param cat
 	 * @return
 	 */
-	private static String processCategory(int cat) {
+	private static String processCategory(final int cat) {
 
 		final String url = "https://api.stlouisfed.org/fred/category?category_id=" + cat + "&api_key=" + ApiKey.get();
 
@@ -353,7 +347,8 @@ public class FindCategories {
 							}
 						}
 					}
-				} else {
+				}
+				else {
 					loopknt++;
 					if (loopknt == 10) {
 						break;
@@ -415,10 +410,9 @@ public class FindCategories {
 	 * @param indent
 	 * @param catName
 	 */
-	private static void processParentCategory(int cat, int indent, String catName) {
+	private static void processParentCategory(final int cat, final int indent, final String catName) {
 
-		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key="
-		    + ApiKey.get();
+		final String url = "https://api.stlouisfed.org/fred/category/children?category_id=" + cat + "&" + "&api_key=" + ApiKey.get();
 
 		String resp = "";
 		int loopknt = 0;
@@ -451,8 +445,7 @@ public class FindCategories {
 									tab += "  ";
 								}
 
-								Debug.log(
-								    String.format("processParentCategory id : %d\tindent : %d\tcatName : %s%n", id, indent, catName));
+								Debug.log(String.format("processParentCategory id : %d\tindent : %d\tcatName : %s%n", id, indent, catName));
 
 								pw.println(Utils.NL + tab + id + " " + name);
 								pwSum.println(tab + id + " " + name);
@@ -467,14 +460,14 @@ public class FindCategories {
 							}
 						}
 					}
-				} else {
+				}
+				else {
 					loopknt++;
 					if (loopknt == 10) {
-						Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Breaking...%n", cat,
-						    catName));						break;
+						Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Breaking...%n", cat, catName));
+						break;
 					}
-					Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Sleeping...%n", cat,
-					    catName));
+					Debug.log(String.format("processParentCategory cat : %d\tcatName : %s%nNULL RESPONSE - Sleeping...%n", cat, catName));
 					Utils.sleep(30000);
 					resp = "";
 				}
@@ -526,123 +519,69 @@ public class FindCategories {
 
 	/**
 	 *
-	 * net.ajaskey.market.tools.fred.processTickerList
-	 *
-	 * @throws FileNotFoundException
-	 */
-	private static void processTickerList() throws FileNotFoundException {
-
-		try {
-			FindCategories.setupIncluded();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return;
-		}
-
-		for (final String s : optumaTickerList) {
-			if (FindCategories.isValid(s)) {
-				//pwList.println(s);
-				optumaIntermediateList.add(s);
-			}
-		}
-
-		for (final String s : optumaIntermediateList) {
-			final String fld[] = s.split("\t");
-			//System.out.printf("%s\t%s\t%s", fld[3], fld[4], fld[5]);
-			if (fld[4].toUpperCase().contains("QUARTER")) {
-				// look for identical name with "not" QUARTER freq
-				boolean found = false;
-				for (final String s2 : optumaIntermediateList) {
-					final String fld2[] = s2.split("\t");
-					if (fld[3].equals(fld2[3])) {
-						if (!fld2[4].toUpperCase().contains("QUARTER")) {
-							found = true;
-							break;
-						}
-					}
-				}
-				if (!found) {
-					//Write QUARTER freq is only one in list
-					optumaFinalList.add(s);
-				}
-
-			} else {
-				//Write all "not" QUARTER
-				optumaFinalList.add(s);
-			}
-		}
-
-		try (PrintWriter pwList = new PrintWriter("FRED-Codes-Optuma.txt")) {
-			pwList.println("Category\tSubCategory\tCode\tTitle\tFrequency\tPeriod");
-			for (final String s : optumaFinalList) {
-				pwList.println(s);
-			}
-		}
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.tools.fred.setupExcluded
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 *
 	 */
-	private static void setupIncluded() throws FileNotFoundException, IOException {
-
-		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/Fred-Include-List.txt")))) {
-			String line = "";
-			while (line != null) {
-				line = br.readLine();
-				if (line == null) break;
-				//System.out.println(line);
-
-				try {
-					final String uline = line.trim().toUpperCase();
-
-					if (uline.length() > 0) {
-						final String fld[] = uline.split("\t");
-
-						if (fld.length > 1) {
-							final String cat = fld[0].trim();
-							final String item = fld[1].replaceAll("\"", "");
-
-							if (cat.equals("INCLUDE")) {
-								optumaIncludeNames.add(item);
-							} else if (cat.equals("EXCLUDE")) {
-								optumaExcludeNames.add(item);
-							} else if (cat.equals("PERIOD")) {
-								optumaIncludePeriod.add(item);
-							} else if (cat.equals("FREQUENCY")) {
-								optumaIncludeFrequency.add(item);
-							} else if (cat.equals("CODE")) {
-								optumaIncludeCode.add(item);
-							}
-						}
-					}
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		for (String s : optumaIncludeCode) {
-			System.out.printf("Code\t%s%n", s);
-		}
-		for (String s : optumaIncludePeriod) {
-			System.out.printf("Period\t%s%n", s);
-		}
-		for (String s : optumaIncludeFrequency) {
-			System.out.printf("Frequency\t%s%n", s);
-		}
-		for (String s : optumaIncludeNames) {
-			System.out.printf("Include Name\t%s%n", s);
-		}
-		for (String s : optumaExcludeNames) {
-			System.out.printf("Exclude Name\t%s%n", s);
-		}
-
-	}
+	//	private static void setupIncluded() throws FileNotFoundException, IOException {
+	//
+	//		try (BufferedReader br = new BufferedReader(new FileReader(new File("data/Fred-Include-List.txt")))) {
+	//			String line = "";
+	//			while (line != null) {
+	//				line = br.readLine();
+	//				if (line == null) {
+	//					break;
+	//					//System.out.println(line);
+	//				}
+	//
+	//				try {
+	//					final String uline = line.trim().toUpperCase();
+	//
+	//					if (uline.length() > 0) {
+	//						final String fld[] = uline.split("\t");
+	//
+	//						if (fld.length > 1) {
+	//							final String cat = fld[0].trim();
+	//							final String item = fld[1].replaceAll("\"", "");
+	//
+	//							if (cat.equals("INCLUDE")) {
+	//								optumaIncludeNames.add(item);
+	//							} else if (cat.equals("EXCLUDE")) {
+	//								optumaExcludeNames.add(item);
+	//							} else if (cat.equals("PERIOD")) {
+	//								optumaIncludePeriod.add(item);
+	//							} else if (cat.equals("FREQUENCY")) {
+	//								optumaIncludeFrequency.add(item);
+	//							} else if (cat.equals("CODE")) {
+	//								optumaIncludeCode.add(item);
+	//							}
+	//						}
+	//					}
+	//
+	//				} catch (final Exception e) {
+	//					e.printStackTrace();
+	//				}
+	//			}
+	//		}
+	//
+	//		for (final String s : optumaIncludeCode) {
+	//			System.out.printf("Code\t%s%n", s);
+	//		}
+	//		for (final String s : optumaIncludePeriod) {
+	//			System.out.printf("Period\t%s%n", s);
+	//		}
+	//		for (final String s : optumaIncludeFrequency) {
+	//			System.out.printf("Frequency\t%s%n", s);
+	//		}
+	//		for (final String s : optumaIncludeNames) {
+	//			System.out.printf("Include Name\t%s%n", s);
+	//		}
+	//		for (final String s : optumaExcludeNames) {
+	//			System.out.printf("Exclude Name\t%s%n", s);
+	//		}
+	//
+	//	}
 
 }

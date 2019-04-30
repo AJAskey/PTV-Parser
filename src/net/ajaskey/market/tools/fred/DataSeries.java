@@ -4,7 +4,6 @@ package net.ajaskey.market.tools.fred;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -18,6 +17,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 
@@ -80,7 +80,7 @@ public class DataSeries {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final DataSeries ds = new DataSeries("AMTMUO");
 
@@ -92,7 +92,7 @@ public class DataSeries {
 			final List<DataValues> dvList = ds.getValues(1.0, true, false);
 
 			for (final DataValues d : dvList) {
-				System.out.println(Utils.stringDate(d.getDate()) + "  " + d.getValue());
+				System.out.println(d.getDate() + "  " + d.getValue());
 			}
 
 			System.out.println(ds);
@@ -114,7 +114,7 @@ public class DataSeries {
 	private final DocumentBuilderFactory	dbFactory	= DocumentBuilderFactory.newInstance();
 
 	private DocumentBuilder	dBuilder	= null;
-	private Calendar				cal1;
+	private DateTime				dtOne;
 
 	private final DataSeriesInfo info;
 
@@ -122,7 +122,7 @@ public class DataSeries {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSeries(String name) {
+	public DataSeries(final String name) {
 
 		this.setName(name);
 		this.setAggType(AggregationMethodType.AVG);
@@ -132,7 +132,7 @@ public class DataSeries {
 		this.setOrder(OrderType.ASC);
 		this.setRespType(ResponseType.LIN);
 		this.setRespKnt("0");
-		this.cal1 = null;
+		this.dtOne = null;
 
 		this.info = new DataSeriesInfo(name);
 		try {
@@ -144,81 +144,85 @@ public class DataSeries {
 	}
 
 	/**
-	 * 
-	 * net.ajaskey.market.tools.fred.duplicateLastValue
-	 *
-	 * @param retList
-	 */
-	private void duplicateLastValue(List<DataValues> retList) {
-
-		try {
-			String f = this.info.getFrequency().toLowerCase();
-			if ((f.contains("daily")) || (f.contains("weekly")) || (f.contains("month"))) {
-				return;
-			}
-
-			final Calendar cal = Calendar.getInstance();
-			final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
-			long mNow = cal.get(Calendar.MONTH);
-			long mThen = calLast.get(Calendar.MONTH) + 1;
-
-			if (mNow > mThen) {
-				final double val = retList.get(retList.size() - 1).getValue();
-				final DataValues dv = new DataValues(cal, val);
-				retList.add(dv);
-			}
-		} catch (Exception e) {
-		}
-
-	}
-
-	/**
 	 *
 	 * net.ajaskey.market.tools.fred.appendEstimates
 	 *
 	 * @param retList
 	 * @param futureChg
 	 */
-	private void appendEstimates(List<DataValues> retList, double futureChg) {
+	private void appendEstimates(final List<DataValues> retList, final double futureChg) {
 
 		this.setPeriod(this.info.getFrequency());
 
-		final Calendar cal = Calendar.getInstance();
-		final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+		final DateTime dt = new DateTime();
+		final DateTime dtLast = new DateTime(retList.get(retList.size() - 1).getDate().getCal());
+
 		final double last = retList.get(retList.size() - 1).getValue();
 
 		int periodKnt = 0;
 		int duration = 0;
 		if (this.period.contains("daily")) {
 			periodKnt = 1;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("weekly")) {
+			duration = DateTime.DATE;
+		}
+		else if (this.period.contains("weekly")) {
 			periodKnt = 7;
-			duration = Calendar.DATE;
-		} else if (this.period.contains("monthly")) {
+			duration = DateTime.DATE;
+		}
+		else if (this.period.contains("monthly")) {
 			periodKnt = 1;
-			duration = Calendar.MONTH;
-		} else {
+			duration = DateTime.MONTH;
+		}
+		else {
 			periodKnt = 3;
-			duration = Calendar.MONTH;
+			duration = DateTime.MONTH;
 		}
 
-		calLast.add(duration, periodKnt);
+		dtLast.add(duration, periodKnt);
 
 		final double val = last + (last * (futureChg / 100.0));
-		final DataValues dv = new DataValues(calLast, val);
+		final DataValues dv = new DataValues(dtLast, val);
 		retList.add(dv);
 
-		final Calendar tmp = Utils.buildCalendar(calLast);
-		while (tmp.before(cal)) {
-			final Calendar nCal = Utils.buildCalendar(tmp);
+		final DateTime tmp = new DateTime(dtLast.getCal());
+		while (tmp.isLessThan(dt)) {
+			final DateTime nCal = new DateTime(tmp.getCal());
 			nCal.add(duration, periodKnt);
 			final DataValues dv1 = new DataValues(nCal, val);
 			retList.add(dv1);
-			tmp.set(nCal.get(Calendar.YEAR), nCal.get(Calendar.MONTH), nCal.get(Calendar.DATE));
+			tmp.set(nCal.getCal().get(DateTime.YEAR), nCal.getCal().get(DateTime.MONTH), nCal.getCal().get(DateTime.DATE));
 		}
 
 	}
+
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.duplicateLastValue
+	 *
+	 * @param retList
+	 */
+	//	private void duplicateLastValue(List<DataValues> retList) {
+	//
+	//		try {
+	//			final String f = this.info.getFrequency().toLowerCase();
+	//			if ((f.contains("daily")) || (f.contains("weekly")) || (f.contains("month"))) {
+	//				return;
+	//			}
+	//
+	//			final Calendar cal = Calendar.getInstance();
+	//			final Calendar calLast = Utils.buildCalendar(retList.get(retList.size() - 1).getDate());
+	//			final long mNow = cal.get(Calendar.MONTH);
+	//			final long mThen = calLast.get(Calendar.MONTH) + 1;
+	//
+	//			if (mNow > mThen) {
+	//				final double val = retList.get(retList.size() - 1).getValue();
+	//				final DataValues dv = new DataValues(cal, val);
+	//				retList.add(dv);
+	//			}
+	//		} catch (final Exception e) {
+	//		}
+	//
+	//	}
 
 	/**
 	 * @return the aggType
@@ -299,7 +303,7 @@ public class DataSeries {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.getValues
 	 *
 	 * @param futureChg
@@ -307,13 +311,12 @@ public class DataSeries {
 	 * @param estimateData
 	 * @return
 	 */
-	public List<DataValues> getValues(double futureChg, boolean noZeroValues, boolean estimateData) {
+	public List<DataValues> getValues(final double futureChg, final boolean noZeroValues, final boolean estimateData) {
 
 		final List<DataValues> retList = new ArrayList<>();
 
-		final String url = "https://api.stlouisfed.org/fred/series/observations?series_id=" + this.name + this.getAggType()
-		    + this.getFileType() + this.getLimit() + this.getOffset() + this.getOrder() + this.getRespType() + "&api_key="
-		    + ApiKey.get();
+		final String url = "https://api.stlouisfed.org/fred/series/observations?series_id=" + this.name + this.getAggType() + this.getFileType()
+		    + this.getLimit() + this.getOffset() + this.getOrder() + this.getRespType() + "&api_key=" + ApiKey.get();
 
 		Debug.log(url + "\n");
 
@@ -346,12 +349,13 @@ public class DataSeries {
 						final int zeroCheck = (int) (dv.getValue() * 1000.0);
 						if ((noZeroValues) && (zeroCheck == 0)) {
 							this.respKnt -= 1;
-						} else {
+						}
+						else {
 							//System.out.println(Utils.getString(dv.getDate()));
 							retList.add(dv);
 							//dv.getValue();
-							if (this.cal1 == null) {
-								this.cal1 = dv.getDate();
+							if (this.dtOne == null) {
+								this.dtOne = dv.getDate();
 							}
 						}
 					}
@@ -363,7 +367,8 @@ public class DataSeries {
 
 		if (estimateData) {
 			this.appendEstimates(retList, futureChg);
-		} else {
+		}
+		else {
 			//duplicateLastValue(retList);
 		}
 
@@ -379,7 +384,7 @@ public class DataSeries {
 	 * @param aggType
 	 *          the aggType to set
 	 */
-	public void setAggType(AggregationMethodType aggType) {
+	public void setAggType(final AggregationMethodType aggType) {
 
 		this.aggType = aggType;
 	}
@@ -388,7 +393,7 @@ public class DataSeries {
 	 * @param type
 	 *          the type to set
 	 */
-	public void setFileType(FileType type) {
+	public void setFileType(final FileType type) {
 
 		this.fileType = type;
 	}
@@ -397,7 +402,7 @@ public class DataSeries {
 	 * @param limit
 	 *          the limit to set
 	 */
-	public void setLimit(int limit) {
+	public void setLimit(final int limit) {
 
 		this.limit = limit;
 	}
@@ -406,7 +411,7 @@ public class DataSeries {
 	 * @param name
 	 *          the name to set
 	 */
-	private void setName(String name) {
+	private void setName(final String name) {
 
 		this.name = name;
 	}
@@ -415,7 +420,7 @@ public class DataSeries {
 	 * @param offset
 	 *          the offset to set
 	 */
-	public void setOffset(int offset) {
+	public void setOffset(final int offset) {
 
 		this.offset = offset;
 	}
@@ -424,7 +429,7 @@ public class DataSeries {
 	 * @param order
 	 *          the order to set
 	 */
-	public void setOrder(OrderType order) {
+	public void setOrder(final OrderType order) {
 
 		this.order = order;
 	}
@@ -433,7 +438,7 @@ public class DataSeries {
 	 * @param period
 	 *          the period to set
 	 */
-	public void setPeriod(String period) {
+	public void setPeriod(final String period) {
 
 		this.period = period.toLowerCase();
 	}
@@ -442,7 +447,7 @@ public class DataSeries {
 	 * @param respKnt
 	 *          the respKnt to set
 	 */
-	public void setRespKnt(String strRespKnt) {
+	public void setRespKnt(final String strRespKnt) {
 
 		try {
 			this.respKnt = Integer.parseInt(strRespKnt);
@@ -455,7 +460,7 @@ public class DataSeries {
 	 * @param respType
 	 *          the respType to set
 	 */
-	public void setRespType(ResponseType respType) {
+	public void setRespType(final ResponseType respType) {
 
 		this.respType = respType;
 	}
@@ -468,8 +473,8 @@ public class DataSeries {
 			ret += this.info.toString() + Utils.NL;
 			//ret += "Period : " + period + Utils.NL;
 			ret += "Count  : " + this.respKnt + Utils.NL;
-			ret += "First  : " + Utils.getString(this.cal1);
-		} catch (Exception e) {
+			ret += "First  : " + this.dtOne;
+		} catch (final Exception e) {
 			ret = "";
 		}
 		return ret;

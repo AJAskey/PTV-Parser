@@ -10,7 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -27,7 +26,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -43,51 +42,51 @@ public class CI {
 	final static public SimpleDateFormat	sdf				= new SimpleDateFormat("MM/dd/yyyy");
 	final static public SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
 
-	/**
-	 * net.ajaskey.market.tools.consumerindex.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		try {
-			processIndex("data/indexdata.csv");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	private static Calendar getDate(String fld) {
+	private static Calendar getDate(final String fld) {
 
 		Calendar cal = Calendar.getInstance();
 		try {
 			cal.setTime(sdf.parse(fld));
-		} catch (ParseException e) {
+		} catch (final ParseException e) {
 			cal = null;
 		}
 		return cal;
 	}
 
-	private static double parseDouble(String fld) {
+	/**
+	 * net.ajaskey.market.tools.consumerindex.main
+	 *
+	 * @param args
+	 */
+	public static void main(final String[] args) {
 
 		try {
-			double d = Double.parseDouble(fld.trim());
+			CI.processIndex("data/indexdata.csv");
+		} catch (final FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private static double parseDouble(final String fld) {
+
+		try {
+			final double d = Double.parseDouble(fld.trim());
 			return d;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0.0;
 		}
 	}
 
-	private static void processIndex(String fname) throws FileNotFoundException, IOException {
+	private static void processIndex(final String fname) throws FileNotFoundException, IOException {
 
 		/**
-		 * 
+		 *
 		 * Date,Automotive,Entertainment,Financial,Health,Household,Housing,Recreation,Retail,Technology,Travel,Composite,
 		 * 91-Day %,183-Day %,365-Day %,91-Day Growth,183-Day Growth,365-Day Growth
-		 * 
+		 *
 		 */
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname));
 		    PrintWriter pw01 = new PrintWriter(OptumaCommon.optumaPath + "/CI/" + "auto_ci.csv");
@@ -110,53 +109,54 @@ public class CI {
 
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
-				String fld[] = str.split(",");
-				Calendar currdate = getDate(fld[0].trim());
+				final String fld[] = str.split(",");
+				final Calendar currdate = CI.getDate(fld[0].trim());
 				if (currdate != null) {
-					double d = parseDouble(fld[1]);
-					String date = sdfOptuma.format(currdate.getTime());
+					double d = CI.parseDouble(fld[1]);
+					final String date = sdfOptuma.format(currdate.getTime());
 					pw01.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[2]);
+					d = CI.parseDouble(fld[2]);
 					pw02.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[3]);
+					d = CI.parseDouble(fld[3]);
 					pw03.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[4]);
+					d = CI.parseDouble(fld[4]);
 					pw04.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[5]);
+					d = CI.parseDouble(fld[5]);
 					pw05.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[6]);
+					d = CI.parseDouble(fld[6]);
 					pw06.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[7]);
+					d = CI.parseDouble(fld[7]);
 					pw07.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[8]);
+					d = CI.parseDouble(fld[8]);
 					pw08.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[9]);
+					d = CI.parseDouble(fld[9]);
 					pw09.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[10]);
+					d = CI.parseDouble(fld[10]);
 					pw10.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[11]);
+					d = CI.parseDouble(fld[11]);
 					pw11.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[15]);
+					d = CI.parseDouble(fld[15]);
 					pw12.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[16]);
+					d = CI.parseDouble(fld[16]);
 					pw13.printf("%s, %.2f%n", date, d);
 
-					d = parseDouble(fld[17]);
+					d = CI.parseDouble(fld[17]);
 					pw14.printf("%s, %.2f%n", date, d);
 
-				} else {
+				}
+				else {
 					break;
 				}
 			}

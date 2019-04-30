@@ -47,11 +47,12 @@ public class SmartDumbDay {
 	 * @param holidays
 	 * @return
 	 */
-	private static boolean isValidDate(Calendar cal, List<Calendar> holidays) {
+	private static boolean isValidDate(final Calendar cal, final List<Calendar> holidays) {
 
 		if ((cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) || (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)) {
 			return false;
-		} else {
+		}
+		else {
 			for (final Calendar holiday : holidays) {
 				if (Utils.sameDate(holiday, cal)) {
 					return false;
@@ -66,13 +67,13 @@ public class SmartDumbDay {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final Calendar cal = Utils.buildCalendar(2018, Calendar.JANUARY, 1);
 		SmartDumbDay.set(cal);
 	}
 
-	public static List<Calendar> set(Calendar cal) {
+	public static List<Calendar> set(final Calendar cal) {
 
 		final List<Calendar> caldays = new ArrayList<>();
 		final List<Calendar> holidays = SmartDumbDay.setHolidays();
@@ -143,7 +144,7 @@ public class SmartDumbDay {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SmartDumbDay(int mday, Calendar cal) {
+	public SmartDumbDay(final int mday, final Calendar cal) {
 
 		this.mode = mday;
 		this.day = cal;

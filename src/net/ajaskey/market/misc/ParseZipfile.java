@@ -51,7 +51,7 @@ public class ParseZipfile {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		final InputStream theFile = new FileInputStream("test.zip");
 		final ZipInputStream stream = new ZipInputStream(theFile);
@@ -65,8 +65,7 @@ public class ParseZipfile {
 			// stream
 			ZipEntry entry;
 			while ((entry = stream.getNextEntry()) != null) {
-				final String s = String.format("Entry: %s len %d added %TD", entry.getName(), entry.getSize(),
-				    new Date(entry.getTime()));
+				final String s = String.format("Entry: %s len %d added %TD", entry.getName(), entry.getSize(), new Date(entry.getTime()));
 				System.out.println(s);
 
 				// Once we get the entry from the stream, the stream is

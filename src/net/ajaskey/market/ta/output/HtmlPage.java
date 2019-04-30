@@ -43,6 +43,7 @@ public class HtmlPage implements java.io.Closeable {
 	 *
 	 */
 	public HtmlPage() {
+
 		this.init(null, null);
 	}
 
@@ -50,7 +51,8 @@ public class HtmlPage implements java.io.Closeable {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public HtmlPage(List<String> preInfo, List<String> headInfo) {
+	public HtmlPage(final List<String> preInfo, final List<String> headInfo) {
+
 		this.init(preInfo, headInfo);
 	}
 
@@ -60,7 +62,7 @@ public class HtmlPage implements java.io.Closeable {
 	 *
 	 * @param words
 	 */
-	public void addParagraph(List<String> words) {
+	public void addParagraph(final List<String> words) {
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<p>");
@@ -78,7 +80,7 @@ public class HtmlPage implements java.io.Closeable {
 	 * @param headings
 	 * @param fields
 	 */
-	public void addTable(List<String> headings, List<String> fields) {
+	public void addTable(final List<String> headings, final List<String> fields) {
 
 		final StringBuilder sb = new StringBuilder();
 
@@ -161,7 +163,7 @@ public class HtmlPage implements java.io.Closeable {
 	 * @param preInfo
 	 * @param headInfo
 	 */
-	private void init(List<String> preInfo, List<String> headInfo) {
+	private void init(final List<String> preInfo, final List<String> headInfo) {
 
 		final StringBuilder sb = new StringBuilder();
 		if (preInfo != null) {
@@ -204,7 +206,7 @@ public class HtmlPage implements java.io.Closeable {
 	 * @param fname
 	 *          the file to set
 	 */
-	public void setFile(String fname) {
+	public void setFile(final String fname) {
 
 		this.filename = fname;
 	}
@@ -213,7 +215,7 @@ public class HtmlPage implements java.io.Closeable {
 	 * @param validateIt
 	 *          the validate to set
 	 */
-	public void setValidate(boolean validateIt) {
+	public void setValidate(final boolean validateIt) {
 
 		this.validate = validateIt;
 	}

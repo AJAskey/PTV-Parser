@@ -52,8 +52,9 @@ public class ValueMfgData {
 	 */
 	public static void dump() {
 
-		for (final ValueMfgData vmd : ValueMfgData.shipments)
+		for (final ValueMfgData vmd : ValueMfgData.shipments) {
 			System.out.println(vmd);
+		}
 
 	}
 
@@ -63,7 +64,7 @@ public class ValueMfgData {
 	 * @param trim
 	 * @throws ParseException
 	 */
-	public static void setInventory(String inv) {
+	public static void setInventory(final String inv) {
 
 		try {
 			final String fld[] = inv.split(",");
@@ -71,7 +72,7 @@ public class ValueMfgData {
 			final Calendar date = Calendar.getInstance();
 			date.setTime(d);
 
-			for (final ValueMfgData vmd : shipments)
+			for (final ValueMfgData vmd : shipments) {
 				if (Utils.sameDate(date, vmd.date)) {
 					final double inventory = Double.parseDouble(fld[1].trim());
 					vmd.inventory = inventory;
@@ -81,24 +82,24 @@ public class ValueMfgData {
 					vmd.valid = true;
 					return;
 				}
+			}
 		} catch (final Exception e) {
 		}
 	}
 
-	public static void setShipments(String shipFile) throws FileNotFoundException, IOException {
+	public static void setShipments(final String shipFile) throws FileNotFoundException, IOException {
 
 		String line = "";
-		try (BufferedReader reader = new BufferedReader(
-		    new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + shipFile))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + shipFile))) {
 			while ((line = reader.readLine()) != null) {
 				final ValueMfgData vmd = new ValueMfgData(line.trim());
 				ValueMfgData.shipments.add(vmd);
 			}
 		}
-		
-//		for (ValueMfgData vmd : shipments) {
-//			System.out.printf("%s : %.2f%n", sdf.format(vmd.date.getTime()), vmd.shipped);
-//		}
+
+		//		for (ValueMfgData vmd : shipments) {
+		//			System.out.printf("%s : %.2f%n", sdf.format(vmd.date.getTime()), vmd.shipped);
+		//		}
 	}
 
 	public Calendar	date;
@@ -113,7 +114,7 @@ public class ValueMfgData {
 	 *
 	 * @param trim
 	 */
-	public ValueMfgData(String inv) {
+	public ValueMfgData(final String inv) {
 
 		try {
 			final String fld[] = inv.split(",");

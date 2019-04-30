@@ -48,7 +48,7 @@ public class ProcessICI {
 
 	private static SimpleDateFormat sdfOptuma = new SimpleDateFormat("yyyy-MM-dd");
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		ProcessICI.processMoneyFlow();
 		ProcessICI.processEtfFlow();
@@ -70,7 +70,8 @@ public class ProcessICI {
 				d.build(line);
 				if (d.valid) {
 					data.add(d);
-				} else {
+				}
+				else {
 					d = null;
 				}
 			}
@@ -144,7 +145,8 @@ public class ProcessICI {
 				d.build(line);
 				if (d.valid) {
 					mfList.add(d);
-				} else {
+				}
+				else {
 					d = null;
 				}
 			}

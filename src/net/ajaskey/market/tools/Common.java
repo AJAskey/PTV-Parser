@@ -36,7 +36,7 @@ import java.util.List;
  */
 public class Common {
 
-	public static void delay(long ms) {
+	public static void delay(final long ms) {
 
 		try {
 			Thread.sleep(ms);
@@ -44,7 +44,7 @@ public class Common {
 		}
 	}
 
-	public static List<String> getTickersFromFile(String filename) throws FileNotFoundException, IOException {
+	public static List<String> getTickersFromFile(final String filename) throws FileNotFoundException, IOException {
 
 		final List<String> ret = new ArrayList<>();
 
@@ -75,7 +75,7 @@ public class Common {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		// TODO Auto-generated method stub
 
 	}

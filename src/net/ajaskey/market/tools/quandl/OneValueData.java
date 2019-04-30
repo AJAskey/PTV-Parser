@@ -1,9 +1,7 @@
 
 package net.ajaskey.market.tools.quandl;
 
-import java.util.Calendar;
-
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -19,7 +17,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -32,7 +30,7 @@ import net.ajaskey.market.misc.Utils;
  */
 public class OneValueData {
 
-	public Calendar	date;
+	public DateTime	date;
 	public double		value;
 
 	/**
@@ -41,15 +39,16 @@ public class OneValueData {
 	 * @param date
 	 * @param double1
 	 */
-	public OneValueData(Calendar cal, Double v) {
-		this.date = Utils.buildCalendar(cal);
+	public OneValueData(final DateTime dt, final Double v) {
+
+		this.date = dt;
 		this.value = v;
 	}
 
-
 	@Override
 	public String toString() {
-		String s = String.format("%s\t%f", Utils.getString(this.date), this.value);
+
+		final String s = String.format("%s\t%f", this.date, this.value);
 		return s;
 	}
 }

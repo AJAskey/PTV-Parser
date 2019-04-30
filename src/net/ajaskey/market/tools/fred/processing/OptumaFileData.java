@@ -1,7 +1,7 @@
 
 package net.ajaskey.market.tools.fred.processing;
 
-import java.util.Calendar;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -30,16 +30,16 @@ import java.util.Calendar;
  */
 public class OptumaFileData {
 
-	Calendar	date;
+	DateTime	date;
 	double		val;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public OptumaFileData(Calendar d, double v) {
+	public OptumaFileData(final DateTime dt, final double v) {
 
-		this.date = d;
+		this.date = new DateTime(dt.getCal());
 		this.val = v;
 	}
 
@@ -49,7 +49,7 @@ public class OptumaFileData {
 	@Override
 	public String toString() {
 
-		final String ret = String.format("%s, %.2f", IngestOptumaFile.sdf.format(this.date.getTime()), this.val);
+		final String ret = String.format("%s, %.2f", this.date, this.val);
 		return ret;
 	}
 

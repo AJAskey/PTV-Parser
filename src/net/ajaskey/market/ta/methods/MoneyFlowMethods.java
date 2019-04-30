@@ -29,7 +29,7 @@ package net.ajaskey.market.ta.methods;
  */
 public class MoneyFlowMethods {
 
-	static public double mfi(double[] typicalPrice, double[] volume, int days) {
+	static public double mfi(final double[] typicalPrice, final double[] volume, final int days) {
 
 		double mfiVal = 0.0;
 
@@ -44,7 +44,8 @@ public class MoneyFlowMethods {
 					final double chg = (typicalPrice[i] - typicalPrice[i + 1]);
 					if (chg > 0.0) {
 						upVol += volume[i] * typicalPrice[i];
-					} else if (chg < 0.0) {
+					}
+					else if (chg < 0.0) {
 						downVol += volume[i] * typicalPrice[i];
 					}
 				}

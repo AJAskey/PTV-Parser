@@ -42,13 +42,13 @@ public class DateLabelFormatter extends AbstractFormatter {
 	private final SimpleDateFormat	dateFormatter			= new SimpleDateFormat(this.datePattern);
 
 	@Override
-	public Object stringToValue(String text) throws ParseException {
+	public Object stringToValue(final String text) throws ParseException {
 
 		return this.dateFormatter.parseObject(text);
 	}
 
 	@Override
-	public String valueToString(Object value) throws ParseException {
+	public String valueToString(final Object value) throws ParseException {
 
 		if (value != null) {
 			final Calendar cal = (Calendar) value;

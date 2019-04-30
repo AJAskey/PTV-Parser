@@ -2,7 +2,6 @@
 package net.ajaskey.market.tools.options;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Calendar;
 
@@ -20,7 +19,7 @@ import java.util.Calendar;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -39,17 +38,16 @@ public class ProcessOptions {
 	 * @param args
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException {
+	public static void main(final String[] args) throws ParseException, FileNotFoundException {
 
-		double cp = 1503.0;
-		double iv = 0.24;
+		final double cp = 1503.0;
+		final double iv = 0.24;
 
-		Calendar c = Calendar.getInstance();
+		final Calendar c = Calendar.getInstance();
 		c.set(2019, Calendar.SEPTEMBER, 21);
-		
-		
-		DataItem di = new DataItem(DataItem.APUT, cp, 1300.0, c, 0.01, iv, c);
-		
+
+		final DataItem di = new DataItem(DataItem.APUT, cp, 1300.0, c, 0.01, iv, c);
+
 		OptionsProcessor.CalcTimeSeries(di, 90, 500, .15, "out/opt.out");
 
 		//		final Calendar c = Calendar.getInstance();

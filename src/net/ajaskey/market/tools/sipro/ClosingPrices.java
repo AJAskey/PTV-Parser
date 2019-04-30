@@ -33,7 +33,7 @@ public class ClosingPrices {
 
 	public static List<ClosingPrices> priceList = new ArrayList<>();
 
-	public static double getPrice(String ticker) {
+	public static double getPrice(final String ticker) {
 
 		double ret = 0.0;
 		for (final ClosingPrices cp : priceList) {
@@ -54,6 +54,7 @@ public class ClosingPrices {
 	 *
 	 */
 	public ClosingPrices() {
+
 		// Not to be called
 	}
 
@@ -61,7 +62,8 @@ public class ClosingPrices {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public ClosingPrices(String t, String p) {
+	public ClosingPrices(final String t, final String p) {
+
 		this.ticker = t;
 		this.price = Double.parseDouble(p);
 		priceList.add(this);

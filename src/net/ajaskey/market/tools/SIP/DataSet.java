@@ -42,7 +42,7 @@ public class DataSet {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet add(DataSet set1, DataSet set2) {
+	public static DataSet add(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet(set1.name, 0);
 		ds.ticker = "MERGED_TICKERS";
@@ -67,12 +67,13 @@ public class DataSet {
 		return ds;
 	}
 
-	public static DataSet div(DataSet num, DataSet div) {
+	public static DataSet div(final DataSet num, final DataSet div) {
 
 		final DataSet ds = new DataSet(num.name, 0);
 		if (div.ticker.equals("SCALED")) {
 			ds.ticker = num.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = num.index;
@@ -104,7 +105,7 @@ public class DataSet {
 	 * @param div
 	 * @return
 	 */
-	private static double divide(double num, double div) {
+	private static double divide(final double num, final double div) {
 
 		double ret = 0;
 		try {
@@ -115,12 +116,13 @@ public class DataSet {
 		return ret;
 	}
 
-	public static DataSet mult(DataSet set1, DataSet set2) {
+	public static DataSet mult(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet(set1.name, 0);
 		if (set2.ticker.equals("SCALED")) {
 			ds.ticker = set1.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = set1.index;
@@ -151,12 +153,13 @@ public class DataSet {
 	 * @param totEquity
 	 * @return
 	 */
-	public static DataSet ratio(DataSet num, DataSet div) {
+	public static DataSet ratio(final DataSet num, final DataSet div) {
 
 		final DataSet ds = new DataSet(num.name, 0);
 		if (div.ticker.equals("SCALED")) {
 			ds.ticker = num.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = num.index;
@@ -187,13 +190,13 @@ public class DataSet {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet scale(DataSet val, double scaler) {
+	public static DataSet scale(final DataSet val, final double scaler) {
 
 		final DataSet ds = DataSet.scaleSet(scaler);
 		return DataSet.mult(val, ds);
 	}
 
-	public static DataSet scaleSet(double scaler) {
+	public static DataSet scaleSet(final double scaler) {
 
 		final DataSet ret = new DataSet("SCALE", scaler);
 		ret.ticker = "SCALED";
@@ -210,7 +213,7 @@ public class DataSet {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet sub(DataSet set1, DataSet set2) {
+	public static DataSet sub(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet("SUBTRACT", 0);
 		ds.ticker = "MERGED_TICKERS";
@@ -243,7 +246,7 @@ public class DataSet {
 	 * @param index
 	 * @return
 	 */
-	public static DataSet sum(List<DataSet> data, String index) {
+	public static DataSet sum(final List<DataSet> data, final String index) {
 
 		if (data.size() > 0) {
 			final DataSet ret = new DataSet(data.get(0).name, 0);
@@ -273,13 +276,14 @@ public class DataSet {
 				}
 			}
 			return ret;
-		} else {
+		}
+		else {
 			return null;
 		}
 
 	}
 
-	public static DataSet sum(List<DataSet> data, String index, String sector) {
+	public static DataSet sum(final List<DataSet> data, final String index, final String sector) {
 
 		if (data.size() > 0) {
 			final DataSet ret = new DataSet(data.get(0).name, 0);
@@ -311,7 +315,8 @@ public class DataSet {
 				}
 			}
 			return ret;
-		} else {
+		}
+		else {
 			return null;
 		}
 
@@ -345,7 +350,7 @@ public class DataSet {
 	 *
 	 * @param totEps
 	 */
-	public DataSet(DataSet ds) {
+	public DataSet(final DataSet ds) {
 
 		this.y7 = ds.y7;
 		this.y6 = ds.y6;
@@ -374,7 +379,7 @@ public class DataSet {
 	 *
 	 * @param dates
 	 */
-	public DataSet(DateSet dates, String idx) {
+	public DataSet(final DateSet dates, final String idx) {
 
 		this.y7 = dates.y7.q4.value;
 		this.y6 = dates.y6.q4.value;
@@ -402,12 +407,13 @@ public class DataSet {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet(String n, double val) {
+	public DataSet(final String n, final double val) {
 
 		this.init(n, val);
 	}
 
-	public DataSet(String index, String name, String code, String sector, String[] s, int ptr, dMode mode) {
+	public DataSet(final String index, final String name, final String code, final String sector, final String[] s, final int ptr,
+	    final dMode mode) {
 
 		this.init(name, 0);
 		this.index = index.trim();
@@ -440,11 +446,14 @@ public class DataSet {
 			if (this.q1 == 0.0) {
 				if (this.q5 != 0.0) {
 					this.q1 = this.q5;
-				} else if (this.q2 != 0.0) {
+				}
+				else if (this.q2 != 0.0) {
 					this.q1 = this.q2;
-				} else if (this.q3 != 0.0) {
+				}
+				else if (this.q3 != 0.0) {
 					this.q1 = this.q3;
-				} else {
+				}
+				else {
 					this.q1 = this.q2;
 				}
 				if (this.q2 == 0.0) {
@@ -457,13 +466,16 @@ public class DataSet {
 			}
 			this.y1 = this.q8 + this.q7 + this.q6 + this.q5;
 			this.y0 = this.q4 + this.q3 + this.q2 + this.q1;
-		} else if (mode == dMode.SEQUENTIAL) {
+		}
+		else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				if (this.q2 != 0.0) {
 					this.q1 = this.q2;
-				} else if (this.q3 != 0.0) {
+				}
+				else if (this.q3 != 0.0) {
 					this.q1 = this.q3;
-				} else if (this.q4 != 0.0) {
+				}
+				else if (this.q4 != 0.0) {
 					this.q1 = this.q4;
 				}
 			}
@@ -481,7 +493,7 @@ public class DataSet {
 	 * @param s
 	 * @return
 	 */
-	private double getDouble(String s) {
+	private double getDouble(final String s) {
 
 		double d = 0.0;
 		try {
@@ -503,7 +515,7 @@ public class DataSet {
 	 * @param n
 	 * @param val
 	 */
-	private void init(String n, double val) {
+	private void init(final String n, final double val) {
 
 		this.ticker = "";
 		this.sector = "";
@@ -531,8 +543,8 @@ public class DataSet {
 	@Override
 	public String toString() {
 
-		final String ret = this.y7 + " " + this.y6 + " " + this.y5 + " " + this.y4 + " " + this.y3 + " " + this.q8 + " "
-		    + this.q7 + " " + this.q6 + " " + this.q5 + " " + this.q4 + " " + this.q3 + " " + this.q2 + " " + this.q1;
+		final String ret = this.y7 + " " + this.y6 + " " + this.y5 + " " + this.y4 + " " + this.y3 + " " + this.q8 + " " + this.q7 + " "
+		    + this.q6 + " " + this.q5 + " " + this.q4 + " " + this.q3 + " " + this.q2 + " " + this.q1;
 		return ret;
 	}
 

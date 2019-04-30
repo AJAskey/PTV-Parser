@@ -64,7 +64,7 @@ public class ProcessShortInterest {
 	 *
 	 * @param sid
 	 */
-	private static void addToBigList(ShortInterestData sid) {
+	private static void addToBigList(final ShortInterestData sid) {
 
 		boolean found = false;
 		for (final ShortInterestList sil : bigList) {
@@ -123,7 +123,7 @@ public class ProcessShortInterest {
 		return retSil;
 	}
 
-	public static void getQuandl(String filename, Calendar staleDate) throws FileNotFoundException, IOException {
+	public static void getQuandl(final String filename, final Calendar staleDate) throws FileNotFoundException, IOException {
 
 		final List<String> tickers = Common.getTickersFromFile(filename);
 
@@ -142,13 +142,14 @@ public class ProcessShortInterest {
 					//ShortInterestList.bigList.add(new ShortInterestList(ticker, siList));
 					for (final ShortInterestData si : siList) {
 						final String dt = Qcommon.sdf.format(si.date.getTime());
-						final String s = String.format("%s\t%s\t%d\t%.2f\t%.2f\t%d", ticker, dt, (long) si.si, si.dtc, si.modDtc,
-						    (long) si.avgVol);
+						final String s = String.format("%s\t%s\t%d\t%.2f\t%.2f\t%d", ticker, dt, (long) si.si, si.dtc, si.modDtc, (long) si.avgVol);
 						pwout.println(s);
 					}
-				} else if ((siList != null) && (siList.size() == 1)) {
+				}
+				else if ((siList != null) && (siList.size() == 1)) {
 					//ignore stale data
-				} else {
+				}
+				else {
 					retry.add(ticker);
 				}
 			}
@@ -160,7 +161,7 @@ public class ProcessShortInterest {
 
 	}
 
-	private static List<ShortInterestData> getShortInterestData(String url, String ticker, Calendar staleDate) {
+	private static List<ShortInterestData> getShortInterestData(final String url, final String ticker, final Calendar staleDate) {
 
 		final List<ShortInterestData> ret = new ArrayList<>();
 
@@ -200,7 +201,8 @@ public class ProcessShortInterest {
 								final Date date = Qcommon.sdf.parse(nr.getTextContent().trim());
 								cal.setTime(date);
 
-							} else if (s.contains("float")) {
+							}
+							else if (s.contains("float")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
 								if (dReads == dd.length) {
@@ -225,7 +227,7 @@ public class ProcessShortInterest {
 		return ret;
 	}
 
-	private static List<ShortInterestData> getTimePeriods(List<ShortInterestData> sid) {
+	private static List<ShortInterestData> getTimePeriods(final List<ShortInterestData> sid) {
 
 		final List<ShortInterestData> retSid = new ArrayList<>();
 
@@ -245,7 +247,7 @@ public class ProcessShortInterest {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		//		ProcessShortInterest.processFile("data/si-data.txt");
 
@@ -257,7 +259,7 @@ public class ProcessShortInterest {
 
 	}
 
-	public static void processFile(String filename) throws IOException {
+	public static void processFile(final String filename) throws IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 
@@ -284,13 +286,13 @@ public class ProcessShortInterest {
 
 	}
 
-	private static void write(ShortInterestData data, PrintWriter pw) throws FileNotFoundException {
+	private static void write(final ShortInterestData data, final PrintWriter pw) throws FileNotFoundException {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(data.date.getTime()), data.si);
 
 	}
 
-	private static void writeList(List<ShortInterestData> list, String fname) throws FileNotFoundException {
+	private static void writeList(final List<ShortInterestData> list, final String fname) throws FileNotFoundException {
 
 		Collections.reverse(list);
 

@@ -2,10 +2,9 @@
 package net.ajaskey.market.tools.cots;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 public class CotsData {
 
@@ -32,10 +31,10 @@ public class CotsData {
 	 * @param date
 	 * @return
 	 */
-	public static CotsData findDate(Calendar date) {
+	public static CotsData findDate(final DateTime date) {
 
 		for (final CotsData cd : CotsData.cotsList) {
-			if (Utils.sameDate(cd.date, date)) {
+			if (cd.date.isEqual(date)) {
 				return cd;
 			}
 		}
@@ -53,8 +52,8 @@ public class CotsData {
 	 * @param mt
 	 * @param st
 	 */
-	public static void setDataPoint(long l, long s, long sp, Calendar d, LongShort.MarketType mt,
-	    LongShort.SourceType st) {
+	public static void setDataPoint(final long l, final long s, final long sp, final DateTime d, final LongShort.MarketType mt,
+	    final LongShort.SourceType st) {
 
 		if (d == null) {
 			return;
@@ -83,8 +82,8 @@ public class CotsData {
 	 * @param mt
 	 * @param st
 	 */
-	public static void setDataPoint(String l, String s, String sp, Calendar d, LongShort.MarketType mt,
-	    LongShort.SourceType st) {
+	public static void setDataPoint(String l, String s, String sp, final DateTime d, final LongShort.MarketType mt,
+	    final LongShort.SourceType st) {
 
 		if (d == null) {
 			return;
@@ -112,7 +111,7 @@ public class CotsData {
 		}
 	}
 
-	public Calendar date = null;
+	public DateTime date = null;
 
 	public long	oi					= 0;
 	public long	totalLong		= 0;
@@ -133,7 +132,8 @@ public class CotsData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public CotsData(LongShort ls) {
+	public CotsData(final LongShort ls) {
+
 		this.setData(ls);
 	}
 
@@ -143,13 +143,13 @@ public class CotsData {
 	 *
 	 * @param ls
 	 */
-	public void setData(LongShort ls) {
+	public void setData(final LongShort ls) {
 
 		if (ls == null) {
 			return;
 		}
 		if (this.date == null) {
-			this.date = Utils.makeCopy(ls.date);
+			this.date = new DateTime(ls.date.getCal());
 		}
 		if (ls.type == LongShort.MarketType.DEALER) {
 			if (this.dealer != null) {
@@ -157,46 +157,56 @@ public class CotsData {
 				this.dealer.shortPos += ls.shortPos;
 				this.dealer.spreadPos += ls.spreadPos;
 				this.dealer.source = LongShort.SourceType.ALL;
-			} else {
+			}
+			else {
 				this.dealer = ls;
 			}
-		} else if (ls.type == LongShort.MarketType.PM) {
+		}
+		else if (ls.type == LongShort.MarketType.PM) {
 			if (this.pm != null) {
 				this.pm.longPos += ls.longPos;
 				this.pm.shortPos += ls.shortPos;
 				this.pm.spreadPos += ls.spreadPos;
 				this.pm.source = LongShort.SourceType.ALL;
-			} else {
+			}
+			else {
 				this.pm = ls;
 			}
-		} else if (ls.type == LongShort.MarketType.LEVERED) {
+		}
+		else if (ls.type == LongShort.MarketType.LEVERED) {
 			if (this.levered != null) {
 				this.levered.longPos += ls.longPos;
 				this.levered.shortPos += ls.shortPos;
 				this.levered.spreadPos += ls.spreadPos;
 				this.levered.source = LongShort.SourceType.ALL;
-			} else {
+			}
+			else {
 				this.levered = ls;
 			}
-		} else if (ls.type == LongShort.MarketType.OTHER) {
+		}
+		else if (ls.type == LongShort.MarketType.OTHER) {
 			if (this.other != null) {
 				this.other.longPos += ls.longPos;
 				this.other.shortPos += ls.shortPos;
 				this.other.spreadPos += ls.spreadPos;
 				this.other.source = LongShort.SourceType.ALL;
-			} else {
+			}
+			else {
 				this.other = ls;
 			}
-		} else if (ls.type == LongShort.MarketType.NONRPT) {
+		}
+		else if (ls.type == LongShort.MarketType.NONRPT) {
 			if (this.nonrpt != null) {
 				this.nonrpt.longPos += ls.longPos;
 				this.nonrpt.shortPos += ls.shortPos;
 				this.nonrpt.spreadPos += ls.spreadPos;
 				this.nonrpt.source = LongShort.SourceType.ALL;
-			} else {
+			}
+			else {
 				this.nonrpt = ls;
 			}
-		} else if (ls.type == LongShort.MarketType.OI) {
+		}
+		else if (ls.type == LongShort.MarketType.OI) {
 			this.oi = ls.longPos;
 		}
 	}
@@ -204,7 +214,7 @@ public class CotsData {
 	@Override
 	public String toString() {
 
-		String ret = Utils.stringDate(this.date) + TAB + this.oi + NL;
+		String ret = this.date + TAB + this.oi + NL;
 		ret += TAB + this.dealer + NL;
 		ret += TAB + this.pm + NL;
 		ret += TAB + this.levered + NL;

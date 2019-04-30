@@ -62,7 +62,7 @@ public class GenerateFundies {
 	 * @param tkr
 	 * @return
 	 */
-	public static GenerateFundies getWithTicker(String tkr) {
+	public static GenerateFundies getWithTicker(final String tkr) {
 
 		for (final GenerateFundies f : fundieList) {
 			if (f.ticker.equalsIgnoreCase(tkr)) {
@@ -81,7 +81,7 @@ public class GenerateFundies {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		System.out.println("GenerateFundies Processing...");
 
@@ -150,6 +150,7 @@ public class GenerateFundies {
 	 *
 	 */
 	public GenerateFundies() {
+
 		this.marketCap = "N/A";
 		this.shares = 0;
 	}

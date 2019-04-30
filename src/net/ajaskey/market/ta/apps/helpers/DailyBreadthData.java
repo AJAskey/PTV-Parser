@@ -79,7 +79,8 @@ public class DailyBreadthData {
 	 *
 	 * @param tdList
 	 */
-	public DailyBreadthData(List<TickerData> tdList) {
+	public DailyBreadthData(final List<TickerData> tdList) {
+
 		this.init();
 		final int knt = tdList.size();
 		int sumAdv = 0;
@@ -94,7 +95,8 @@ public class DailyBreadthData {
 			if (chg > 0.0) {
 				this.adv++;
 				this.advVol += td.getVolume(0);
-			} else if (chg < 0.0) {
+			}
+			else if (chg < 0.0) {
 				this.dec++;
 				this.decVol += td.getVolume(0);
 			}
@@ -130,7 +132,8 @@ public class DailyBreadthData {
 				if (chg > 0.0) {
 					a++;
 					av += td.getVolume(i);
-				} else if (chg < 0.0) {
+				}
+				else if (chg < 0.0) {
 					d++;
 					dv += td.getVolume(i);
 				}
@@ -167,8 +170,8 @@ public class DailyBreadthData {
 	 * @param highs
 	 * @param lows
 	 */
-	public DailyBreadthData(TickerData advancing, TickerData declining, TickerData advancingVol, TickerData decliningVol,
-	    TickerData highs, TickerData lows) {
+	public DailyBreadthData(final TickerData advancing, final TickerData declining, final TickerData advancingVol,
+	    final TickerData decliningVol, final TickerData highs, final TickerData lows) {
 
 		this.init();
 		advancing.generateDerived(false);
@@ -178,13 +181,15 @@ public class DailyBreadthData {
 		if (highs != null) {
 			highs.generateDerived(false);
 			this.newHighs = (int) highs.getClose(0);
-		} else {
+		}
+		else {
 			this.newHighs = 0;
 		}
 		if (lows != null) {
 			lows.generateDerived(false);
 			this.newLows = (int) lows.getClose(0);
-		} else {
+		}
+		else {
 			this.newLows = 0;
 		}
 		newHighsTotal += this.newHighs;
@@ -414,9 +419,9 @@ public class DailyBreadthData {
 			diffVolStr = NumberFormat.getIntegerInstance().format(this.adVolDiff10dma);
 		}
 
-		final String str = this.adv + this.TAB + this.dec + this.TAB + (int) this.percentAdvancing + "%" + this.TAB
-		    + diffStr + this.TAB + this.advVol + this.TAB + this.decVol + this.TAB + (int) this.percentAdvancingVol + "%"
-		    + this.TAB + diffVolStr + this.TAB + (int) this.percentVolume + "%" + this.TAB + nhStr + this.TAB + nlStr;
+		final String str = this.adv + this.TAB + this.dec + this.TAB + (int) this.percentAdvancing + "%" + this.TAB + diffStr + this.TAB
+		    + this.advVol + this.TAB + this.decVol + this.TAB + (int) this.percentAdvancingVol + "%" + this.TAB + diffVolStr + this.TAB
+		    + (int) this.percentVolume + "%" + this.TAB + nhStr + this.TAB + nlStr;
 		return str;
 	}
 

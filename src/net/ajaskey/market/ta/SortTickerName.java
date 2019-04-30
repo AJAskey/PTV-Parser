@@ -32,12 +32,13 @@ import java.util.Comparator;
 public class SortTickerName implements Comparator<TickerData> {
 
 	@Override
-	public int compare(TickerData t1, TickerData t2) {
+	public int compare(final TickerData t1, final TickerData t2) {
 
 		int ret = 0;
 		if (t1.getTicker().compareTo(t2.getTicker()) < 0) {
 			ret = -1;
-		} else if (t1.getTicker().compareTo(t2.getTicker()) > 0) {
+		}
+		else if (t1.getTicker().compareTo(t2.getTicker()) > 0) {
 			ret = 1;
 		}
 		return ret;

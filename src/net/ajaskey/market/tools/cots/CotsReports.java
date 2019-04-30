@@ -4,9 +4,9 @@ package net.ajaskey.market.tools.cots;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.input.SpxLongTermPrices;
 
@@ -37,8 +37,7 @@ import net.ajaskey.market.ta.input.SpxLongTermPrices;
  */
 public class CotsReports {
 
-	private static final String	TAB	= "\t";
-	private static final String	NL	= System.getProperty("line.separator");
+	private static final String NL = System.getProperty("line.separator");
 
 	/**
 	 *
@@ -61,7 +60,7 @@ public class CotsReports {
 	 * @param oi
 	 * @return
 	 */
-	private static String formatCsvData(LongShort ls, double oi) {
+	private static String formatCsvData(final LongShort ls, final double oi) {
 
 		double percOIlong = 0.0;
 		double percOIshort = 0.0;
@@ -73,8 +72,8 @@ public class CotsReports {
 			percOIspread = ls.spreadPos / oi;
 		}
 		final long delta = ls.longPos - ls.shortPos;
-		final String str = String.format("%10s,%10d,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", Utils.getString(ls.date),
-		    ls.longPos, ls.shortPos, ls.spreadPos, delta, ls.pc, percOIlong, percOIshort, percOIspread);
+		final String str = String.format("%10s,%10d,%10d,%10d,%10d,%10.2f,%10.2f,%10.2f,%10.2f%n", ls.date, ls.longPos, ls.shortPos,
+		    ls.spreadPos, delta, ls.pc, percOIlong, percOIshort, percOIspread);
 		return str;
 	}
 
@@ -87,14 +86,14 @@ public class CotsReports {
 	 * @param totLongs
 	 * @param totShorts
 	 */
-	private static void printSummary(PrintWriter pw, LongShort ls, long totLongs, long totShorts) {
+	private static void printSummary(final PrintWriter pw, final LongShort ls, final long totLongs, final long totShorts) {
 
 		final String fmt = "%-10s : %10s %10s %10.2f %10s %10.2f%% %10.2f%%  %10.2f%% %n";
 		final double percl = ((double) ls.longPos / (double) totLongs) * 100.0;
 		final double percs = ((double) ls.shortPos / (double) totShorts) * 100.0;
 		final double perct = (percl + percs) / 2.0;
-		pw.printf(fmt, ls.type, Utils.formatInt(ls.longPos), Utils.formatInt(ls.shortPos), ls.pc, Utils.formatInt(ls.delta),
-		    percl, percs, perct);
+		pw.printf(fmt, ls.type, Utils.formatInt(ls.longPos), Utils.formatInt(ls.shortPos), ls.pc, Utils.formatInt(ls.delta), percl, percs,
+		    perct);
 	}
 
 	/**
@@ -105,7 +104,7 @@ public class CotsReports {
 	 * @param outputPath
 	 * @throws FileNotFoundException
 	 */
-	public static void writeAllCsv(String source, String outputPath, List<SpxLongTermPrices> spx)
+	public static void writeAllCsv(final String source, final String outputPath, final List<SpxLongTermPrices> spx)
 	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(outputPath + "\\" + source + "combined.csv")) {
@@ -121,9 +120,8 @@ public class CotsReports {
 					price = "";
 				}
 
-				pw.printf("%s,%d,%d,%d,%d,%d,%d,%d,%d,%s%n", Utils.getString(cd.date), cd.oi, cd.dealer.delta, cd.pm.delta,
-				    cd.levered.delta, cd.other.delta, cd.nonrpt.delta, (cd.pm.delta + cd.other.delta),
-				    (cd.levered.delta + cd.nonrpt.delta), price);
+				pw.printf("%s,%d,%d,%d,%d,%d,%d,%d,%d,%s%n", cd.date, cd.oi, cd.dealer.delta, cd.pm.delta, cd.levered.delta, cd.other.delta,
+				    cd.nonrpt.delta, (cd.pm.delta + cd.other.delta), (cd.levered.delta + cd.nonrpt.delta), price);
 			}
 		}
 
@@ -137,7 +135,7 @@ public class CotsReports {
 	 * @param outputPath
 	 * @throws FileNotFoundException
 	 */
-	public static void writeCsv(String prefix, String outputPath) throws FileNotFoundException {
+	public static void writeCsv(final String prefix, final String outputPath) throws FileNotFoundException {
 
 		try (PrintWriter pwOI = new PrintWriter(outputPath + "\\" + prefix + "oi-data.csv");
 		    PrintWriter pwDealer = new PrintWriter(outputPath + "\\" + prefix + "dealer-data.csv");
@@ -154,7 +152,7 @@ public class CotsReports {
 			CotsReports.writeCsvHeader(pwOther);
 
 			for (final CotsData cd : CotsData.cotsList) {
-				pwOI.printf("%10s,%10d%n", Utils.getString(cd.date), cd.oi);
+				pwOI.printf("%10s,%10d%n", cd.date, cd.oi);
 				pwDealer.printf("%s", CotsReports.formatCsvData(cd.dealer, cd.oi));
 				pwPM.printf("%s", CotsReports.formatCsvData(cd.pm, cd.oi));
 				pwLevered.printf("%s", CotsReports.formatCsvData(cd.levered, cd.oi));
@@ -171,7 +169,7 @@ public class CotsReports {
 	 *
 	 * @param pw
 	 */
-	private static void writeCsvHeader(PrintWriter pw) {
+	private static void writeCsvHeader(final PrintWriter pw) {
 
 		pw.println("Date,Long,Short,Spread,Long-Short,ShortToLong,PercentLong,PercentShort,PercentSpread");
 	}
@@ -183,10 +181,10 @@ public class CotsReports {
 	 * @param outputpath
 	 * @throws FileNotFoundException
 	 */
-	public static void writeOptuma(String prefix, String outputPath) throws FileNotFoundException {
+	public static void writeOptuma(final String prefix, final String outputPath) throws FileNotFoundException {
 
 		final String header = "Date,Long,Short,Net";
-		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		new SimpleDateFormat("yyyy-MM-dd");
 
 		try (PrintWriter pwDealer = new PrintWriter(outputPath + "\\" + prefix + "dealer_optuma.csv");
 		    PrintWriter pwPM = new PrintWriter(outputPath + "\\" + prefix + "pm-optuma.csv");
@@ -203,7 +201,7 @@ public class CotsReports {
 			pwOther.println(header);
 
 			for (final CotsData cd : CotsData.cotsList) {
-				final String theDate = sdf.format(cd.date.getTime());
+				final String theDate = cd.date.toString();
 				pwDealer.printf("%s,%d,%d,%d%n", theDate, cd.dealer.longPos, cd.dealer.shortPos, cd.dealer.delta);
 				pwPM.printf("%s,%d,%d,%d%n", theDate, cd.pm.longPos, cd.pm.shortPos, cd.pm.delta);
 				pwLevered.printf("%s,%d,%d,%d%n", theDate, cd.levered.longPos, cd.levered.shortPos, cd.levered.delta);
@@ -232,16 +230,14 @@ public class CotsReports {
 	 * @param cal
 	 * @throws FileNotFoundException
 	 */
-	public static void writeSummary(String outputPath, String rptPrefix, Calendar cal) throws FileNotFoundException {
+	public static void writeSummary(final String outputPath, final String rptPrefix, final DateTime dt) throws FileNotFoundException {
 
-		final CotsData cd = CotsData.findDate(cal);
+		final CotsData cd = CotsData.findDate(dt);
 
 		if (cd != null) {
-			try (PrintWriter pw = new PrintWriter(
-			    outputPath + "/" + rptPrefix + Utils.getString(cd.date) + "-cots-summary.txt")) {
+			try (PrintWriter pw = new PrintWriter(outputPath + "/" + rptPrefix + cd.date + "-cots-summary.txt")) {
 
-				pw.printf("OI : %s  Spread Positions : %s  %s %n", Utils.formatInt(cd.oi), Utils.formatInt(cd.totalSpread),
-				    Utils.getString(cd.date));
+				pw.printf("OI : %s  Spread Positions : %s  %s %n", Utils.formatInt(cd.oi), Utils.formatInt(cd.totalSpread), cd.date.toString());
 				pw.printf("%18sLong       Short    Short/Long   Delta     %%-Longs    %%-Shorts      %%-Total %n", " ");
 
 				CotsReports.printSummary(pw, cd.dealer, cd.totalLong, cd.totalShort);
@@ -251,8 +247,9 @@ public class CotsReports {
 				CotsReports.printSummary(pw, cd.nonrpt, cd.totalLong, cd.totalShort);
 
 			}
-		} else {
-			System.out.println(Utils.getString(cal) + " not found.");
+		}
+		else {
+			System.out.println(dt + " not found.");
 		}
 
 	}

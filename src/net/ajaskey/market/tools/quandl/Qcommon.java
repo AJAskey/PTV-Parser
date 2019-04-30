@@ -61,21 +61,21 @@ public class Qcommon {
 	private static DocumentBuilder dBuilder = null;
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.quandl.getData
 	 *
 	 * @param url
 	 * @param num
 	 * @return
 	 */
-	public static List<CommonQuandlData> getData(String url, int num) {
+	public static List<CommonQuandlData> getData(final String url, final int num) {
 
 		final List<CommonQuandlData> ret = new ArrayList<>();
 
 		try {
 			final Document doc = Qcommon.getDocument(url, false);
 
-			Calendar lastUpdate = Qcommon.getLatestTime(doc);
+			Qcommon.getLatestTime(doc);
 
 			final NodeList nResp = doc.getElementsByTagName("datum");
 			for (int knt = 0; knt < nResp.getLength(); knt++) {
@@ -100,7 +100,8 @@ public class Qcommon {
 								final Date date = Qcommon.sdf.parse(nr.getTextContent().trim());
 								cal.setTime(date);
 
-							} else if (s.contains("float")) {
+							}
+							else if (s.contains("float")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								dd[dReads++] = Double.parseDouble(nr.getTextContent().trim());
 								if (dReads == dd.length) {
@@ -124,7 +125,7 @@ public class Qcommon {
 		return ret;
 	}
 
-	public static Document getDocument(String url, boolean debug) {
+	public static Document getDocument(final String url, final boolean debug) {
 
 		dbFactory = DocumentBuilderFactory.newInstance();
 		Document doc = null;
@@ -156,7 +157,7 @@ public class Qcommon {
 
 	}
 
-	public static Calendar getLatestTime(Document doc) {
+	public static Calendar getLatestTime(final Document doc) {
 
 		final Calendar latest = Calendar.getInstance();
 		latest.add(Calendar.YEAR, -25);

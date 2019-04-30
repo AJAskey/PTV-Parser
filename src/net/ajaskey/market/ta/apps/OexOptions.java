@@ -51,7 +51,7 @@ public class OexOptions {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		System.out.println("Processing...");
 
@@ -79,15 +79,16 @@ public class OexOptions {
 
 				if (od.getType() == OptionData.OptionType.CALL) {
 					calls += od.getOi();
-				} else if (od.getType() == OptionData.OptionType.PUT) {
+				}
+				else if (od.getType() == OptionData.OptionType.PUT) {
 					puts += od.getOi();
 				}
 
 				for (int j = 0; j < td.getDataCount(); j++) {
 					od.setData(td.getDate(j), td.getClose(j), (long) td.getVolume(j), (long) td.getOi(j));
 				}
-				System.out.println(td.toString() + Utils.getString(od.getDate()) + "\t" + od.getPrice() + "\t" + od.getVolume()
-				    + "\t" + od.getOi());
+				System.out
+				    .println(td.toString() + Utils.getString(od.getDate()) + "\t" + od.getPrice() + "\t" + od.getVolume() + "\t" + od.getOi());
 			}
 		}
 

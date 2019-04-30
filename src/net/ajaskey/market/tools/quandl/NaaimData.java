@@ -4,6 +4,7 @@ package net.ajaskey.market.tools.quandl;
 import java.lang.reflect.Field;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 
 /**
@@ -46,7 +47,7 @@ public class NaaimData {
 	<column-name>S&P 500</column-name>
 	 */
 
-	public Calendar	date;
+	public DateTime	date;
 	public double		mean;
 	public double		mostBearish;
 	public double		q1;
@@ -63,9 +64,10 @@ public class NaaimData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public NaaimData(Calendar cal, double mn, double mbear, double qq1, double med, double qq3, double mbull, double s,
-	    double n, double sp) {
-		this.date = Utils.buildCalendar(cal);
+	public NaaimData(final DateTime dt, final double mn, final double mbear, final double qq1, final double med, final double qq3,
+	    final double mbull, final double s, final double n, final double sp) {
+
+		this.date = dt;
 		this.mean = mn;
 		this.mostBearish = mbear;
 		if (mbear == 0.0) {
@@ -106,7 +108,8 @@ public class NaaimData {
 				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
-				} else {
+				}
+				else {
 					result.append(field.get(this));
 				}
 			} catch (final IllegalAccessException ex) {

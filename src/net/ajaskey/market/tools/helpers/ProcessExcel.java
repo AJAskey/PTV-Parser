@@ -22,7 +22,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -57,11 +57,12 @@ public class ProcessExcel {
 	 * @param day
 	 * @return
 	 */
-	private static Calendar convertDate(int day) {
+	private static DateTime convertDate(final int day) {
 
-		final Calendar base = Calendar.getInstance();
-		base.set(1900, Calendar.JANUARY, 1);
-		base.add(Calendar.DATE, day);
+		final Calendar b = Calendar.getInstance();
+		b.set(1900, Calendar.JANUARY, 1);
+		b.add(Calendar.DATE, day);
+		final DateTime base = new DateTime(b);
 		return base;
 	}
 
@@ -72,7 +73,7 @@ public class ProcessExcel {
 	 * @param fname
 	 * @throws IOException
 	 */
-	public static void convertXlsToXlsx(String fname) throws IOException {
+	public static void convertXlsToXlsx(final String fname) throws IOException {
 
 		final String outFn = fname + "x";
 
@@ -149,7 +150,7 @@ public class ProcessExcel {
 	 * @param fName
 	 * @return
 	 */
-	public static String getExtention(String fName) {
+	public static String getExtention(final String fName) {
 
 		String ret = null;
 		final int idx = fName.lastIndexOf(".");
@@ -159,13 +160,13 @@ public class ProcessExcel {
 		return ret;
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		// convertXlsToXlsx("input/fred2.xls");
 
 		final List<ProcessExcel> peList = ProcessExcel.parseFred("input/fred.xls");
 		for (final ProcessExcel pe : peList) {
-			System.out.println(Utils.stringDate(pe.date) + "\t" + pe.value);
+			System.out.println(pe.date + "\t" + pe.value);
 		}
 
 	}
@@ -216,10 +217,12 @@ public class ProcessExcel {
 							if (knt == 0) {
 								pe.date = ProcessExcel.convertDate((int) (cell.getNumericCellValue()));
 								knt++;
-							} else if (knt == 1) {
+							}
+							else if (knt == 1) {
 								pe.value = cell.getNumericCellValue();
 								retList.add(pe);
-							} else {
+							}
+							else {
 								System.out.println("Unexpected value in line " + lknt + "  : " + cell.getNumericCellValue());
 							}
 
@@ -234,8 +237,7 @@ public class ProcessExcel {
 		return retList;
 	}
 
-	public Calendar date;
-
-	public double value;
+	public DateTime	date;
+	public double		value;
 
 }

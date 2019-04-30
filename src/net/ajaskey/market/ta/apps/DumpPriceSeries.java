@@ -51,7 +51,7 @@ public class DumpPriceSeries {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, ParseException {
 
 		System.out.println("Processing...");
 

@@ -4,17 +4,15 @@ package net.ajaskey.market.tools.quandl;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.tools.fred.FredCommon;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 
@@ -49,69 +47,55 @@ public class ProcessQuandl {
 
 	public static List<LastDataPoint> lastDataPoint = new ArrayList<>();
 
-	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
-
-		final List<LeadingIndicatorData> ret = new ArrayList<>();
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 2);
-		for (final CommonQuandlData cqd : ddList) {
-			final LeadingIndicatorData li = new LeadingIndicatorData(cqd.date, cqd.dd[0], cqd.dd[1]);
-			ret.add(li);
-		}
-
-		return ret;
-
-	}
-
 	/**
-	 * net.ajaskey.market.tools.quandl.getMtsData
+	 * net.ajaskey.market.tools.quandl.getFromFile
 	 *
-	 * @param mtsURL
+	 * @param sp500EarningsURL
 	 * @return
+	 * @throws ParseException
 	 */
-	@SuppressWarnings("unused")
-	private static List<MtsData> getMtsData(String url) {
+	private static List<OneValueData> getFromFile(final String filename) {
 
-		final List<MtsData> ret = new ArrayList<>();
+		final List<OneValueData> retList = new ArrayList<>();
 
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 6);
-		for (final CommonQuandlData cqd : ddList) {
-			final MtsData md = new MtsData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5]);
-			ret.add(md);
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+
+			String line;
+			// Utils.printCalendar(d.getDate());
+			while ((line = reader.readLine()) != null) {
+				final String str = line.trim();
+				if (str.length() > 1) {
+
+					final String fld[] = str.split("[\\s+,]");
+					if (fld.length > 1) {
+						try {
+							final Date d = sdfFile.parse(fld[0]);
+							final DateTime dt = new DateTime(d);
+							final double v = Double.parseDouble(fld[1]);
+							final OneValueData ovd = new OneValueData(dt, v);
+							retList.add(ovd);
+						} catch (final Exception e) {
+						}
+					}
+				}
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+			retList.clear();
 		}
-
-		return ret;
+		return retList;
 	}
 
 	/**
-	 * net.ajaskey.market.tools.quandl.getNaaimData
 	 *
-	 * @param naaimURL
-	 * @return
-	 */
-	private static List<NaaimData> getNaaimData(String url) {
-
-		final List<NaaimData> ret = new ArrayList<>();
-		final List<CommonQuandlData> ddList = Qcommon.getData(url, 9);
-		for (final CommonQuandlData cqd : ddList) {
-			final NaaimData na = new NaaimData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5],
-			    cqd.dd[6], cqd.dd[7], cqd.dd[8]);
-			ret.add(na);
-			//System.out.println(na);
-		}
-
-		return ret;
-	}
-
-	/**
-	 * 
 	 * net.ajaskey.market.tools.quandl.getLastDataPoint
 	 *
 	 * @param name
 	 * @return
 	 */
-	private static double getLastDataPoint(String name) {
+	private static double getLastDataPoint(final String name) {
 
-		for (LastDataPoint ldp : lastDataPoint) {
+		for (final LastDataPoint ldp : lastDataPoint) {
 			if (name.contains(ldp.name)) {
 				return ldp.value;
 			}
@@ -119,7 +103,40 @@ public class ProcessQuandl {
 		return -9999999999.999;
 	}
 
-	private static List<OneValueData> getOneDataPoint(String url) {
+	//	private static List<LeadingIndicatorData> getLeadingIndicatorData(String url) {
+	//
+	//		final List<LeadingIndicatorData> ret = new ArrayList<>();
+	//		final List<CommonQuandlData> ddList = Qcommon.getData(url, 2);
+	//		for (final CommonQuandlData cqd : ddList) {
+	//			final LeadingIndicatorData li = new LeadingIndicatorData(cqd.date, cqd.dd[0], cqd.dd[1]);
+	//			ret.add(li);
+	//		}
+	//
+	//		return ret;
+	//
+	//	}
+
+	/**
+	 * net.ajaskey.market.tools.quandl.getNaaimData
+	 *
+	 * @param naaimURL
+	 * @return
+	 */
+	private static List<NaaimData> getNaaimData(final String url) {
+
+		final List<NaaimData> ret = new ArrayList<>();
+		final List<CommonQuandlData> ddList = Qcommon.getData(url, 9);
+		for (final CommonQuandlData cqd : ddList) {
+			final NaaimData na = new NaaimData(cqd.date, cqd.dd[0], cqd.dd[1], cqd.dd[2], cqd.dd[3], cqd.dd[4], cqd.dd[5], cqd.dd[6], cqd.dd[7],
+			    cqd.dd[8]);
+			ret.add(na);
+			//System.out.println(na);
+		}
+
+		return ret;
+	}
+
+	private static List<OneValueData> getOneDataPoint(final String url) {
 
 		final List<OneValueData> ret = new ArrayList<>();
 		final List<CommonQuandlData> ddList = Qcommon.getData(url, 1);
@@ -128,9 +145,9 @@ public class ProcessQuandl {
 			ret.add(dp);
 		}
 
-		double dv = getLastDataPoint(url);
+		final double dv = ProcessQuandl.getLastDataPoint(url);
 		if (dv > -9999999999.999) {
-			final OneValueData dp = new OneValueData(Calendar.getInstance(), dv);
+			final OneValueData dp = new OneValueData(new DateTime(), dv);
 			ret.add(0, dp);
 		}
 
@@ -143,14 +160,14 @@ public class ProcessQuandl {
 	 * @param epcURL
 	 * @return
 	 */
-	private static List<OhlcvData> getPutCallData(String url, int callIdx, int putIdx, int totIdx, int ratioIdx) {
+	private static List<OhlcvData> getPutCallData(final String url, final int callIdx, final int putIdx, final int totIdx,
+	    final int ratioIdx) {
 
 		final List<OhlcvData> ret = new ArrayList<>();
 
 		final List<CommonQuandlData> ddList = Qcommon.getData(url, 4);
 		for (final CommonQuandlData cqd : ddList) {
-			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[callIdx], cqd.dd[putIdx], cqd.dd[totIdx], cqd.dd[ratioIdx],
-			    0);
+			final OhlcvData pc = new OhlcvData(cqd.date, cqd.dd[callIdx], cqd.dd[putIdx], cqd.dd[totIdx], cqd.dd[ratioIdx], 0);
 			ret.add(pc);
 		}
 
@@ -162,34 +179,28 @@ public class ProcessQuandl {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final List<OneValueData> spxFred = ProcessQuandl.getFromFile(FredCommon.fredPath + "sp500.csv");
-		OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
+		final OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		double shillerpe = 30.99;
+		final double shillerpe = 30.99;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 54.94));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 851.62));
 		lastDataPoint.add(new LastDataPoint("SP500_SALES", 1343.01));
-		double spxearn = 133.95;
-		double spxyield = spxearn / lastSpxPrice.value * 100.0;
+		final double spxearn = 133.95;
+		final double spxyield = (spxearn / lastSpxPrice.value) * 100.0;
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS_YIELD_MONTH", spxyield));
 		lastDataPoint.add(new LastDataPoint("SP500_EARNINGS", spxearn));
 
-		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key="
-		    + QuandlApi.key;
-		final String sp500EarnYldURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key"
-		    + QuandlApi.key;
-		final String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key="
-		    + QuandlApi.key;
-		final String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key="
-		    + QuandlApi.key;
-		final String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key="
-		    + QuandlApi.key;
-		final String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key="
-		    + QuandlApi.key;
+		final String sp500URL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_REAL_PRICE_MONTH.xml?api_key=" + QuandlApi.key;
+		final String sp500EarnYldURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_EARNINGS_YIELD_MONTH.xml?api_key" + QuandlApi.key;
+		final String sp500DivURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.xml?api_key=" + QuandlApi.key;
+		final String bookValueURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_BVPS_YEAR.xml?api_key=" + QuandlApi.key;
+		final String shillerPeURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SHILLER_PE_RATIO_MONTH.xml?api_key=" + QuandlApi.key;
+		final String sp500SalesURL = "https://www.quandl.com/api/v3/datasets/MULTPL/SP500_SALES_QUARTER.xml?api_key=" + QuandlApi.key;
 
 		final String epcURL = "https://www.quandl.com/api/v3/datasets/CBOE/EQUITY_PC.xml?api_key=" + QuandlApi.key;
 		final String ipcURL = "https://www.quandl.com/api/v3/datasets/CBOE/INDEX_PC.xml?api_key=" + QuandlApi.key;
@@ -202,11 +213,11 @@ public class ProcessQuandl {
 		price.add(0, lastSpxPrice);
 
 		final List<OneValueData> earnYld = ProcessQuandl.getOneDataPoint(sp500EarnYldURL);
-		List<OneValueData> scaledEarnings = scaleEarnings(earnYld, price);
+		final List<OneValueData> scaledEarnings = ProcessQuandl.scaleEarnings(earnYld, price);
 		ProcessQuandl.writeOneList(scaledEarnings, "SP500_Earnings");
 
 		Collections.reverse(scaledEarnings);
-		List<OneValueData> sp500pe = scalePE(price, scaledEarnings);
+		final List<OneValueData> sp500pe = ProcessQuandl.scalePE(price, scaledEarnings);
 		ProcessQuandl.writeOneList(sp500pe, "SP500_PE");
 
 		ProcessQuandl.writeOneList(earnYld, "SP500_EarningsYield");
@@ -214,7 +225,7 @@ public class ProcessQuandl {
 		final List<OneValueData> div = ProcessQuandl.getOneDataPoint(sp500DivURL);
 		ProcessQuandl.writeOneList(div, "SP500_Dividend");
 
-		List<OneValueData> sdiv = scaleYield(div, price);
+		final List<OneValueData> sdiv = ProcessQuandl.scaleYield(div, price);
 		ProcessQuandl.writeOneList(sdiv, "SP500_DividendYield");
 
 		final List<NaaimData> naaim = ProcessQuandl.getNaaimData(naaimURL);
@@ -255,90 +266,50 @@ public class ProcessQuandl {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.quandl.getFromFile
-	 *
-	 * @param sp500EarningsURL
-	 * @return
-	 * @throws ParseException
-	 */
-	private static List<OneValueData> getFromFile(String filename) {
-
-		List<OneValueData> retList = new ArrayList<>();
-
-		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-
-			String line;
-			// Utils.printCalendar(d.getDate());
-			while ((line = reader.readLine()) != null) {
-				final String str = line.trim();
-				if (str.length() > 1) {
-
-					final String fld[] = str.split("[\\s+,]");
-					if (fld.length > 1) {
-						try {
-							Date d = sdfFile.parse(fld[0]);
-							Calendar c = Calendar.getInstance();
-							c.setTime(d);
-							double v = Double.parseDouble(fld[1]);
-							OneValueData ovd = new OneValueData(c, v);
-							retList.add(ovd);
-						} catch (Exception e) {
-						}
-					}
-				}
-			}
-		} catch (final Exception e) {
-			e.printStackTrace();
-			retList.clear();
-		}
-		return retList;
-	}
-
-	/**
 	 * net.ajaskey.market.tools.quandl.scaleEarnings
 	 *
 	 * @param earn
 	 * @param d
 	 * @return
 	 */
-	private static List<OneValueData> scaleEarnings(List<OneValueData> earn, List<OneValueData> price) {
+	private static List<OneValueData> scaleEarnings(final List<OneValueData> earn, final List<OneValueData> price) {
 
-		List<OneValueData> ret = new ArrayList<>();
+		final List<OneValueData> ret = new ArrayList<>();
 		int knt = 0;
-		int tot = price.size() - 1;
+		final int tot = price.size() - 1;
 		System.out.println(tot);
-		for (OneValueData data : earn) {
+		for (final OneValueData data : earn) {
 			if (knt > tot) {
 				break;
 			}
-			OneValueData nd = new OneValueData(data.date, data.value * price.get(knt++).value / 100.0);
+			final OneValueData nd = new OneValueData(data.date, (data.value * price.get(knt++).value) / 100.0);
 			ret.add(nd);
 		}
-		double dv = getLastDataPoint("SP500_EARNINGS");
+		final double dv = ProcessQuandl.getLastDataPoint("SP500_EARNINGS");
 		ret.get(0).value = dv;
 		return ret;
 	}
 
-	private static List<OneValueData> scalePE(List<OneValueData> price, List<OneValueData> earn) {
+	private static List<OneValueData> scalePE(final List<OneValueData> price, final List<OneValueData> earn) {
 
-		List<OneValueData> ret = new ArrayList<>();
+		final List<OneValueData> ret = new ArrayList<>();
 		int knt = 0;
-		for (OneValueData data : earn) {
-			double pe = Math.min(price.get(knt++).value / data.value, 35.0);
-			OneValueData nd = new OneValueData(data.date, pe);
+		for (final OneValueData data : earn) {
+			final double pe = Math.min(price.get(knt++).value / data.value, 35.0);
+			final OneValueData nd = new OneValueData(data.date, pe);
 			ret.add(nd);
 		}
 		return ret;
 	}
 
-	private static List<OneValueData> scaleYield(List<OneValueData> div, List<OneValueData> price) {
+	private static List<OneValueData> scaleYield(final List<OneValueData> div, final List<OneValueData> price) {
 
-		List<OneValueData> ret = new ArrayList<>();
+		final List<OneValueData> ret = new ArrayList<>();
 		int knt = price.size() - 1;
-		for (OneValueData data : div) {
+		for (final OneValueData data : div) {
 			if (knt >= 0) {
 				//System.out.println(data + "\t" + price.get(knt));
-				OneValueData nd = new OneValueData(data.date, data.value / price.get(knt--).value * 100.0);
+				final OneValueData nd = new OneValueData(data.date, (data.value / price.get(knt--).value) * 100.0);
 				//System.out.println(nd);
 				ret.add(nd);
 			}
@@ -347,35 +318,12 @@ public class ProcessQuandl {
 	}
 
 	/**
-	 * net.ajaskey.market.tools.quandl.writeMtsList
-	 *
-	 * @param mts
-	 * @param string
-	 */
-	@SuppressWarnings("unused")
-	private static void writeMtsList(List<MtsData> list, String fname) {
-
-		Collections.reverse(list);
-		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
-			for (final MtsData item : list) {
-
-				pw.printf("%s,%d%n", Qcommon.sdf.format(item.date.getTime()), (int) item.receipts);
-			}
-			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
-
-		} catch (final FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	/**
 	 * net.ajaskey.market.tools.quandl.writeNaaimList
 	 *
 	 * @param naaim
 	 * @param string
 	 */
-	private static void writeNaaimList(List<NaaimData> list, String fname) {
+	private static void writeNaaimList(final List<NaaimData> list, final String fname) {
 
 		Collections.reverse(list);
 		try (PrintWriter pwMean = new PrintWriter(Qcommon.outpath + "\\" + fname + "_Mean.csv");
@@ -389,15 +337,15 @@ public class ProcessQuandl {
 		    PrintWriter pwsp500 = new PrintWriter(Qcommon.outpath + "\\" + fname + "_SP500.csv")) {
 			for (final NaaimData naaim : list) {
 
-				pwMean.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mean);
-				pwBear.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mostBearish);
-				pwq1.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.q1);
-				pwMed.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.median);
-				pwq3.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.q3);
-				pwBull.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.mostBullish);
-				pwStddev.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.stdDev);
-				pwsp500.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.sp500);
-				pwbbdiff.printf("%s,%.2f%n", Qcommon.sdf.format(naaim.date.getTime()), naaim.bbDiff);
+				pwMean.printf("%s,%.2f%n", naaim.date, naaim.mean);
+				pwBear.printf("%s,%.2f%n", naaim.date, naaim.mostBearish);
+				pwq1.printf("%s,%.2f%n", naaim.date, naaim.q1);
+				pwMed.printf("%s,%.2f%n", naaim.date, naaim.median);
+				pwq3.printf("%s,%.2f%n", naaim.date, naaim.q3);
+				pwBull.printf("%s,%.2f%n", naaim.date, naaim.mostBullish);
+				pwStddev.printf("%s,%.2f%n", naaim.date, naaim.stdDev);
+				pwsp500.printf("%s,%.2f%n", naaim.date, naaim.sp500);
+				pwbbdiff.printf("%s,%.2f%n", naaim.date, naaim.bbDiff);
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
@@ -428,7 +376,7 @@ public class ProcessQuandl {
 	 * @param balDry
 	 * @param string
 	 */
-	private static void writeOneList(List<OneValueData> list, String fname) {
+	private static void writeOneList(final List<OneValueData> list, final String fname) {
 
 		if ((!fname.equalsIgnoreCase("Shiller_SP500_Earnings") && (!fname.equalsIgnoreCase("SP500_DividendYield")))) {
 			Collections.reverse(list);
@@ -437,7 +385,7 @@ public class ProcessQuandl {
 		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
 			for (final OneValueData one : list) {
 
-				pw.printf("%s,%.2f%n", Qcommon.sdf.format(one.date.getTime()), one.value);
+				pw.printf("%s,%.2f%n", one.date, one.value);
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
@@ -452,7 +400,7 @@ public class ProcessQuandl {
 	 * @param epc
 	 * @param string
 	 */
-	private static void writePcList(List<OhlcvData> list, String fname) {
+	private static void writePcList(final List<OhlcvData> list, final String fname) {
 
 		Collections.reverse(list);
 		try (PrintWriter pwCall = new PrintWriter(Qcommon.outpath + "\\" + fname + "-CallVol.csv");
@@ -463,13 +411,13 @@ public class ProcessQuandl {
 
 			for (final OhlcvData price : list) {
 
-				pwCall.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.open);
-				pwPut.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.high);
-				pwTot.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), (int) price.low);
-				pwRatio.printf("%s,%.2f%n", Qcommon.sdf.format(price.date.getTime()), price.close);
+				pwCall.printf("%s,%d%n", price.date, (int) price.open);
+				pwPut.printf("%s,%d%n", price.date, (int) price.high);
+				pwTot.printf("%s,%d%n", price.date, (int) price.low);
+				pwRatio.printf("%s,%.2f%n", price.date, price.close);
 
 				final int diff = (int) (price.open - price.high);
-				pwDiff.printf("%s,%d%n", Qcommon.sdf.format(price.date.getTime()), diff);
+				pwDiff.printf("%s,%d%n", price.date, diff);
 
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));

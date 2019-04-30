@@ -40,7 +40,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double avgRng(double[] high, double[] low, int days) {
+	static public double avgRng(final double[] high, final double[] low, final int days) {
 
 		double retVal = 0.0;
 		if ((high != null) && (low != null)) {
@@ -62,7 +62,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double avgRngPercent(double[] high, double[] low, int days) {
+	static public double avgRngPercent(final double[] high, final double[] low, final int days) {
 
 		final double ma = UtilMethods.rngAvg(high, low, days);
 		double retVal = 0.0;
@@ -81,7 +81,7 @@ public class UtilMethods {
 	 *          historic data point
 	 * @return percentage change
 	 */
-	static public double calcPercentChange(double p1, double p2) {
+	static public double calcPercentChange(final double p1, final double p2) {
 
 		double ret = 0.0;
 		try {
@@ -103,7 +103,7 @@ public class UtilMethods {
 	 *          historic data point
 	 * @return change
 	 */
-	static public double calcPriceChange(double p1, double p2) {
+	static public double calcPriceChange(final double p1, final double p2) {
 
 		return p1 - p2;
 	}
@@ -117,7 +117,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double[] getDataSlice(double[] val, int start, int days) {
+	static public double[] getDataSlice(final double[] val, final int start, final int days) {
 
 		double[] ret = null;
 		if (val != null) {
@@ -140,7 +140,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double max(double[] val, int days) {
+	static public double max(final double[] val, final int days) {
 
 		return UtilMethods.max(val, days, 0);
 	}
@@ -154,7 +154,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double max(double[] val, int days, int start) {
+	static public double max(final double[] val, final int days, final int start) {
 
 		double retVal = 0;
 		try {
@@ -173,7 +173,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public float max(float[] val, int days) {
+	static public float max(final float[] val, final int days) {
 
 		return UtilMethods.max(val, days, 0);
 	}
@@ -187,7 +187,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public float max(float[] val, int days, int start) {
+	static public float max(final float[] val, final int days, final int start) {
 
 		float retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -205,7 +205,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public int max(int[] val, int days) {
+	static public int max(final int[] val, final int days) {
 
 		return UtilMethods.max(val, days, 0);
 	}
@@ -219,7 +219,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public int max(int[] val, int days, int start) {
+	static public int max(final int[] val, final int days, final int start) {
 
 		int retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -237,7 +237,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public long max(long[] val, int days) {
+	static public long max(final long[] val, final int days) {
 
 		return UtilMethods.max(val, days, 0);
 	}
@@ -251,7 +251,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public long max(long[] val, int days, int start) {
+	static public long max(final long[] val, final int days, final int start) {
 
 		long retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -269,7 +269,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double min(double[] val, int days) {
+	static public double min(final double[] val, final int days) {
 
 		return UtilMethods.min(val, days, 0);
 	}
@@ -283,7 +283,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double min(double[] val, int days, int start) {
+	static public double min(final double[] val, final int days, final int start) {
 
 		double retVal = 0;
 		try {
@@ -302,7 +302,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public float min(float[] val, int days) {
+	static public float min(final float[] val, final int days) {
 
 		return UtilMethods.min(val, days, 0);
 	}
@@ -316,7 +316,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public float min(float[] val, int days, int start) {
+	static public float min(final float[] val, final int days, final int start) {
 
 		float retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -334,7 +334,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public int min(int[] val, int days) {
+	static public int min(final int[] val, final int days) {
 
 		return UtilMethods.min(val, days, 0);
 	}
@@ -348,7 +348,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public int min(int[] val, int days, int start) {
+	static public int min(final int[] val, final int days, final int start) {
 
 		int retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -366,7 +366,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public long min(long[] val, int days) {
+	static public long min(final long[] val, final int days) {
 
 		return UtilMethods.min(val, days, 0);
 	}
@@ -380,7 +380,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public long min(long[] val, int days, int start) {
+	static public long min(final long[] val, final int days, final int start) {
 
 		long retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -399,7 +399,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double rngAvg(double[] high, double[] low, int days) {
+	static public double rngAvg(final double[] high, final double[] low, final int days) {
 
 		double ma = 0.0;
 		final double[] da = new double[high.length];
@@ -422,7 +422,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double sma(double[] val, int days) {
+	static public double sma(final double[] val, final int days) {
 
 		return UtilMethods.sma(val, days, 0);
 	}
@@ -436,7 +436,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double sma(double[] val, int days, int start) {
+	static public double sma(final double[] val, final int days, final int start) {
 
 		double retVal = 0;
 		try {
@@ -455,7 +455,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public float sma(float[] val, int days) {
+	static public float sma(final float[] val, final int days) {
 
 		return UtilMethods.sma(val, days, 0);
 	}
@@ -469,7 +469,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public float sma(float[] val, int days, int start) {
+	static public float sma(final float[] val, final int days, final int start) {
 
 		float retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -487,7 +487,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public int sma(int[] val, int days) {
+	static public int sma(final int[] val, final int days) {
 
 		return UtilMethods.sma(val, days, 0);
 	}
@@ -501,7 +501,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public int sma(int[] val, int days, int start) {
+	static public int sma(final int[] val, final int days, final int start) {
 
 		int retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -519,7 +519,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public long sma(long[] val, int days) {
+	static public long sma(final long[] val, final int days) {
 
 		return UtilMethods.sma(val, days, 0);
 	}
@@ -533,7 +533,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public long sma(long[] val, int days, int start) {
+	static public long sma(final long[] val, final int days, final int start) {
 
 		long retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -551,7 +551,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double sum(double[] val, int days) {
+	static public double sum(final double[] val, final int days) {
 
 		return UtilMethods.sum(val, days, 0);
 	}
@@ -565,7 +565,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double sum(double[] val, int days, int start) {
+	static public double sum(final double[] val, final int days, final int start) {
 
 		double retVal = 0;
 		try {
@@ -584,7 +584,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public float sum(float[] val, int days) {
+	static public float sum(final float[] val, final int days) {
 
 		return UtilMethods.sum(val, days, 0);
 	}
@@ -597,7 +597,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public float sum(float[] val, int days, int start) {
+	static public float sum(final float[] val, final int days, final int start) {
 
 		float retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -615,7 +615,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public int sum(int[] val, int days) {
+	static public int sum(final int[] val, final int days) {
 
 		return UtilMethods.sum(val, days, 0);
 	}
@@ -628,7 +628,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public int sum(int[] val, int days, int start) {
+	static public int sum(final int[] val, final int days, final int start) {
 
 		int retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -646,7 +646,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public long sum(long[] val, int days) {
+	static public long sum(final long[] val, final int days) {
 
 		return UtilMethods.sum(val, days, 0);
 	}
@@ -659,7 +659,7 @@ public class UtilMethods {
 	 * @param days
 	 * @return
 	 */
-	static public long sum(long[] val, int days, int start) {
+	static public long sum(final long[] val, final int days, final int start) {
 
 		long retVal = 0;
 		final double[] da = UtilMethods.toDouble(val, days, start);
@@ -678,7 +678,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double[] toDouble(float[] val, int days, int start) {
+	static public double[] toDouble(final float[] val, final int days, final int start) {
 
 		double[] da = null;
 		if (val != null) {
@@ -702,7 +702,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double[] toDouble(int[] val, int days, int start) {
+	static public double[] toDouble(final int[] val, final int days, final int start) {
 
 		double[] da = null;
 		if (val != null) {
@@ -726,7 +726,7 @@ public class UtilMethods {
 	 * @param start
 	 * @return
 	 */
-	static public double[] toDouble(long[] val, int days, int start) {
+	static public double[] toDouble(final long[] val, final int days, final int start) {
 
 		double[] da = null;
 		if (val != null) {
@@ -748,6 +748,7 @@ public class UtilMethods {
 	 *
 	 */
 	private UtilMethods() {
+
 	}
 
 }

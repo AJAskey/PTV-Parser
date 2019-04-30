@@ -51,6 +51,7 @@ public class ShortInterestData {
 	 *
 	 */
 	public ShortInterestData() {
+
 		this.ticker = "";
 		this.knt = 0;
 		this.date = Calendar.getInstance();
@@ -64,7 +65,8 @@ public class ShortInterestData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public ShortInterestData(Calendar cal, double s, double v, double d) {
+	public ShortInterestData(final Calendar cal, final double s, final double v, final double d) {
+
 		this.date = Utils.buildCalendar(cal);
 		this.si = s;
 		this.avgVol = v;
@@ -79,11 +81,13 @@ public class ShortInterestData {
 	 *
 	 * @param trim
 	 */
-	public ShortInterestData(String line) {
+	public ShortInterestData(final String line) {
+
 		this.knt = 1;
 		if (line == null) {
 			this.date = null;
-		} else {
+		}
+		else {
 			try {
 				final String fld[] = line.trim().split("[\\s+,]");
 				this.ticker = fld[0].trim();
@@ -124,7 +128,8 @@ public class ShortInterestData {
 				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
-				} else {
+				}
+				else {
 					result.append(field.get(this));
 				}
 

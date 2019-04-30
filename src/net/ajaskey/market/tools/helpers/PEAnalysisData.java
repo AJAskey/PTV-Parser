@@ -42,6 +42,7 @@ public class PEAnalysisData {
 	 *
 	 */
 	public PEAnalysisData() {
+
 		this.date = Calendar.getInstance();
 		this.price = 0;
 	}
@@ -53,7 +54,8 @@ public class PEAnalysisData {
 	 * @param trim2
 	 * @throws ParseException
 	 */
-	public PEAnalysisData(String sDate, String sPrice) throws ParseException {
+	public PEAnalysisData(final String sDate, final String sPrice) throws ParseException {
+
 		try {
 			this.date = Calendar.getInstance();
 			this.date.setTime(sdf.parse(sDate));

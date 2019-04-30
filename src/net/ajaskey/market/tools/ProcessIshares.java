@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.ajaskey.market.tools.helpers.WebGet;
-import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 public class ProcessIshares {
 
@@ -93,7 +92,7 @@ public class ProcessIshares {
 	 * @param s
 	 * @return
 	 */
-	private static boolean isNumber(String s) {
+	private static boolean isNumber(final String s) {
 
 		try {
 			Long.parseLong(s);
@@ -110,7 +109,7 @@ public class ProcessIshares {
 	 * @param s
 	 * @return
 	 */
-	public static boolean isValid(String s) {
+	public static boolean isValid(final String s) {
 
 		if (ProcessIshares.isNumber(s)) {
 			return false;
@@ -140,7 +139,7 @@ public class ProcessIshares {
 	 * @param args
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(final String[] args) throws FileNotFoundException {
 
 		ProcessIshares.processIshare("ITB");
 		ProcessIshares.processIshare("SOXX");
@@ -185,59 +184,83 @@ public class ProcessIshares {
 	 * @param iShare
 	 * @throws FileNotFoundException
 	 */
-	private static void processIshare(String iShare) throws FileNotFoundException {
+	private static void processIshare(final String iShare) throws FileNotFoundException {
 
 		String url = null;
 
 		if (iShare.contains("ITB")) {
 			url = ITB;
-		} else if (iShare.contains("SOXX")) {
+		}
+		else if (iShare.contains("SOXX")) {
 			url = SOXX;
-		} else if (iShare.contains("IYC")) {
+		}
+		else if (iShare.contains("IYC")) {
 			url = IYC;
-		} else if (iShare.contains("IYK")) {
+		}
+		else if (iShare.contains("IYK")) {
 			url = IYK;
-		} else if (iShare.contains("IYG")) {
+		}
+		else if (iShare.contains("IYG")) {
 			url = IYG;
-		} else if (iShare.contains("IAT")) {
+		}
+		else if (iShare.contains("IAT")) {
 			url = IAT;
-		} else if (iShare.contains("IAK")) {
+		}
+		else if (iShare.contains("IAK")) {
 			url = IAK;
-		} else if (iShare.contains("IAI")) {
+		}
+		else if (iShare.contains("IAI")) {
 			url = IAI;
-		} else if (iShare.contains("IYH")) {
+		}
+		else if (iShare.contains("IYH")) {
 			url = IYH;
-		} else if (iShare.contains("IBB")) {
+		}
+		else if (iShare.contains("IBB")) {
 			url = IBB;
-		} else if (iShare.contains("IHI")) {
+		}
+		else if (iShare.contains("IHI")) {
 			url = IHI;
-		} else if (iShare.contains("IHF")) {
+		}
+		else if (iShare.contains("IHF")) {
 			url = IHF;
-		} else if (iShare.contains("IHE")) {
+		}
+		else if (iShare.contains("IHE")) {
 			url = IHE;
-		} else if (iShare.contains("IYJ")) {
+		}
+		else if (iShare.contains("IYJ")) {
 			url = IYJ;
-		} else if (iShare.contains("ITA")) {
+		}
+		else if (iShare.contains("ITA")) {
 			url = ITA;
-		} else if (iShare.contains("IYT")) {
+		}
+		else if (iShare.contains("IYT")) {
 			url = IYT;
-		} else if (iShare.contains("IEO")) {
+		}
+		else if (iShare.contains("IEO")) {
 			url = IEO;
-		} else if (iShare.contains("IEZ")) {
+		}
+		else if (iShare.contains("IEZ")) {
 			url = IEZ;
-		} else if (iShare.contains("IGE")) {
+		}
+		else if (iShare.contains("IGE")) {
 			url = IGE;
-		} else if (iShare.contains("WOOD")) {
+		}
+		else if (iShare.contains("WOOD")) {
 			url = WOOD;
-		} else if (iShare.contains("RING")) {
+		}
+		else if (iShare.contains("RING")) {
 			url = RING;
-		} else if (iShare.contains("PICK")) {
+		}
+		else if (iShare.contains("PICK")) {
 			url = PICK;
-		} else if (iShare.contains("IVV")) {
+		}
+		else if (iShare.contains("IVV")) {
 			url = IVV;
-		} else if (iShare.contains("IJH")) {
+		}
+		else if (iShare.contains("IJH")) {
 			url = IJH;
-		} else if (iShare.contains("IJR")) {
+		}
+		else if (iShare.contains("IJR")) {
 			url = IJR;
 		}
 
@@ -255,16 +278,18 @@ public class ProcessIshares {
 			if (resp != null) {
 				int knt = 0;
 				for (final String s : resp) {
-					if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0)
-					    && (ProcessIshares.isValid(s))) {
+					if ((s.compareToIgnoreCase("USD") != 0) && (s.compareToIgnoreCase("BLKFDS") != 0) && (ProcessIshares.isValid(s))) {
 						// System.out.println(s);
 						pw.println(s);
 						knt++;
-						if (knt < 26) pwList.println(s);
+						if (knt < 26) {
+							pwList.println(s);
+						}
 					}
 				}
 				System.out.println("Processed " + iShare + " : " + resp.size());
-			} else {
+			}
+			else {
 				System.out.println("Error processing " + iShare);
 			}
 		}

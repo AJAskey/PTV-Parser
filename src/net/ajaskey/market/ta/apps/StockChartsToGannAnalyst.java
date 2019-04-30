@@ -50,7 +50,7 @@ public class StockChartsToGannAnalyst {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		TickerData td = null;
 
@@ -81,12 +81,13 @@ public class StockChartsToGannAnalyst {
 				cal.setTime(df.parse(fld[1]));
 
 				if (td == null) {
-					td = new TickerData("SPX", cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]),
-					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
+					td = new TickerData("SPX", cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]), Double.parseDouble(fld[4]),
+					    Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
 					// System.out.println(line);
-				} else {
-					final DailyData dd = new DailyData(cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]),
-					    Double.parseDouble(fld[4]), Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
+				}
+				else {
+					final DailyData dd = new DailyData(cal, Double.parseDouble(fld[2]), Double.parseDouble(fld[3]), Double.parseDouble(fld[4]),
+					    Double.parseDouble(fld[5]), Double.parseDouble(fld[6]), 0);
 					// System.out.println(line);
 					td.addData(dd);
 				}
@@ -105,7 +106,8 @@ public class StockChartsToGannAnalyst {
 					    (long) td.getVolume(i));
 				}
 			}
-		} else {
+		}
+		else {
 			System.out.println("Data not valid.");
 		}
 

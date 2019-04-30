@@ -47,6 +47,7 @@ public class DtsQuarterly {
 	 *
 	 */
 	public DtsQuarterly() {
+
 		this.complete = false;
 	}
 
@@ -54,7 +55,8 @@ public class DtsQuarterly {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DtsQuarterly(int year) {
+	public DtsQuarterly(final int year) {
+
 		this.set(year);
 	}
 
@@ -67,7 +69,7 @@ public class DtsQuarterly {
 	 * @param d3
 	 * @return
 	 */
-	private DtsData combineQuarterly(DtsData d1, DtsData d2, DtsData d3) {
+	private DtsData combineQuarterly(final DtsData d1, final DtsData d2, final DtsData d3) {
 
 		final DtsData dc = new DtsData(d3.getDate());
 		dc.getCorp().monthly = d1.getCorp().monthly + d2.getCorp().monthly + d3.getCorp().monthly;
@@ -78,13 +80,13 @@ public class DtsQuarterly {
 		return dc;
 	}
 
-	public double getChg(long y1, long y2) {
+	public double getChg(final long y1, final long y2) {
 
 		final double chg = (double) (y2 - y1) / (double) y1;
 		return chg;
 	}
 
-	private String qToString(String str, DtsData d1, DtsData d2) {
+	private String qToString(final String str, final DtsData d1, final DtsData d2) {
 
 		String ret = "";
 		double chg = 0;
@@ -115,7 +117,7 @@ public class DtsQuarterly {
 	 * @param year
 	 * @return
 	 */
-	public DtsQuarterly set(int year) {
+	public DtsQuarterly set(final int year) {
 
 		final DtsQuarterly dq = new DtsQuarterly();
 
@@ -157,7 +159,7 @@ public class DtsQuarterly {
 		return dq;
 	}
 
-	public String toCombinedString(DtsQuarterly y2) {
+	public String toCombinedString(final DtsQuarterly y2) {
 
 		String ret = "";
 		if (y2 != null) {

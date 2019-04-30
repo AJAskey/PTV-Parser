@@ -45,7 +45,7 @@ public class GenerateRegression {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, ParseException {
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTicker("SPX");
@@ -73,8 +73,8 @@ public class GenerateRegression {
 		final double err = Math.sqrt(regMeth.getMeanSquareError());
 		final double err2 = err * 2.0;
 		final double err3 = err * 3.0;
-		System.out.printf("%.2f  %.2f  %.2f %.2f %.2f %.2f %.2f %.2f%n", err, (y - err3), (y - err2), (y - err), y,
-		    (y + err), (y + err2), (y + err3));
+		System.out.printf("%.2f  %.2f  %.2f %.2f %.2f %.2f %.2f %.2f%n", err, (y - err3), (y - err2), (y - err), y, (y + err), (y + err2),
+		    (y + err3));
 
 		final RegressionOutput out = regMeth.getOutput(cal);
 

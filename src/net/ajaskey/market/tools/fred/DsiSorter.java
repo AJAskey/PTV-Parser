@@ -36,7 +36,7 @@ public class DsiSorter implements Comparator<DataSeriesInfo> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(DataSeriesInfo d1, DataSeriesInfo d2) {
+	public int compare(final DataSeriesInfo d1, final DataSeriesInfo d2) {
 
 		if ((d1 == null) || (d2 == null)) {
 			return 0;
@@ -44,13 +44,14 @@ public class DsiSorter implements Comparator<DataSeriesInfo> {
 
 		try {
 			int ret = 0;
-			if (d1.getLastUpdate().before(d2.getLastUpdate())) {
+			if (d1.getLastUpdate().isLessThan(d2.getLastUpdate())) {
 				ret = 1;
-			} else if (d1.getLastUpdate().after(d2.getLastUpdate())) {
+			}
+			else if (d1.getLastUpdate().isGreaterThan(d2.getLastUpdate())) {
 				ret = -1;
 			}
 			return ret;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return 0;
 		}
 	}

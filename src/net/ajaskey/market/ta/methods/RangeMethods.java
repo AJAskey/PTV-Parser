@@ -38,16 +38,13 @@ public class RangeMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double avgTrueRange(double[] high, double[] low, double[] close, int days) {
+	static public double avgTrueRange(final double[] high, final double[] low, final double[] close, final int days) {
 
 		double atrVal = 0.0;
 
-		if (Methods.checkParams(close, days * 2, 0,
-		    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--close")) {
-			if (Methods.checkParams(high, days * 2, 0,
-			    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--high")) {
-				if (Methods.checkParams(low, days * 2, 0,
-				    "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--low")) {
+		if (Methods.checkParams(close, days * 2, 0, "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--close")) {
+			if (Methods.checkParams(high, days * 2, 0, "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--high")) {
+				if (Methods.checkParams(low, days * 2, 0, "RangeMethods.atr(double[] high, double[] low, double[] close, int days)--low")) {
 
 					double trSum = 0.0;
 					final int len = Math.min(close.length, 250) - 1;
@@ -81,7 +78,7 @@ public class RangeMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double avgTrueRangePercent(double[] high, double[] low, double[] close, int days) {
+	static public double avgTrueRangePercent(final double[] high, final double[] low, final double[] close, final int days) {
 
 		double atrVal = 0.0;
 		double atrPercent = 0.0;
@@ -102,7 +99,7 @@ public class RangeMethods {
 	 * @param pClose
 	 * @return
 	 */
-	static public double trueRange(double high, double low, double pClose) {
+	static public double trueRange(final double high, final double low, final double pClose) {
 
 		double tr = 0.0;
 		final double h = Math.max(high, pClose);
@@ -119,6 +116,7 @@ public class RangeMethods {
 	 *
 	 */
 	private RangeMethods() {
+
 	}
 
 }

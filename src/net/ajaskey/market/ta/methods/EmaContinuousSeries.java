@@ -39,7 +39,8 @@ public class EmaContinuousSeries {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public EmaContinuousSeries(int emaWin) {
+	public EmaContinuousSeries(final int emaWin) {
+
 		this.knt = 0;
 		this.sma = 0;
 		this.ema = 0;
@@ -55,7 +56,7 @@ public class EmaContinuousSeries {
 	 * @param val
 	 * @return
 	 */
-	public double addValue(double val) {
+	public double addValue(final double val) {
 
 		this.knt++;
 
@@ -63,7 +64,8 @@ public class EmaContinuousSeries {
 			this.smaTot += val;
 			this.sma = this.smaTot / this.knt;
 			this.ema = this.sma;
-		} else {
+		}
+		else {
 			final double pEma = this.ema;
 			this.ema = ((val - pEma) * this.emaMultipler) + pEma;
 		}

@@ -76,6 +76,7 @@ public class DerivedData {
 	 *
 	 */
 	public DerivedData() {
+
 		this.sma23 = this.INITVAL;
 		this.sma65 = this.INITVAL;
 		this.sma130 = this.INITVAL;
@@ -511,7 +512,7 @@ public class DerivedData {
 	 *
 	 * @param td
 	 */
-	public void set(TickerData td) {
+	public void set(final TickerData td) {
 
 		try {
 			if (td != null) {

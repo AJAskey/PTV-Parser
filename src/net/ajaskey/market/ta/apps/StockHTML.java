@@ -47,6 +47,7 @@ public class StockHTML {
 	 * @throws IOException
 	 */
 	public StockHTML() throws IOException {
+
 		final StringBuilder sb = new StringBuilder();
 		try (BufferedReader br = new BufferedReader(new FileReader("stock-individual.htm"))) {
 			String line = br.readLine();
@@ -65,7 +66,7 @@ public class StockHTML {
 	 * @param td
 	 * @throws FileNotFoundException
 	 */
-	public void build(TickerData td) throws FileNotFoundException {
+	public void build(final TickerData td) throws FileNotFoundException {
 
 		this.htmlStr = this.htmlStr.replace("#Ticker#", td.getTicker().trim());
 		this.htmlStr = this.htmlStr.replace("#CurrentPrice#", Double.toString(td.getCurrentPrice()));
@@ -207,7 +208,7 @@ public class StockHTML {
 	 * @param htmlStr
 	 *          the htmlStr to set
 	 */
-	private void setHtmlStr(String htmlStr) {
+	private void setHtmlStr(final String htmlStr) {
 
 		this.htmlStr = htmlStr;
 	}

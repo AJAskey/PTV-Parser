@@ -42,7 +42,7 @@ public class OpenInsiders {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		final Calendar cal = Calendar.getInstance();
 
@@ -67,7 +67,8 @@ public class OpenInsiders {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public OpenInsiders(String t, int d, int md, int p, String outfile) {
+	public OpenInsiders(final String t, final int d, final int md, final int p, final String outfile) {
+
 		try {
 			this.tickers = this.getTickers(t);
 		} catch (final IOException e) {
@@ -79,12 +80,11 @@ public class OpenInsiders {
 		this.get(outfile);
 	}
 
-	private void get(String outfile) {
+	private void get(final String outfile) {
 
-		final String url = "http://openinsider.com/screener?s=" + this.tickers + "&o=&pl=&ph=&ll=&lh=&fd=0&fdr=&td="
-		    + this.days + "&tdr=&fdlyl=&fdlyh=&daysago=&xp=1&xs=1&excludeDerivRelated=1&vl=" + this.minDollar
-		    + "&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&isofficer=1"
-		    + "&iscob=1&isceo=1&ispres=1&iscoo=1&iscfo=1&isgc=1&isvp=1&grp=0"
+		final String url = "http://openinsider.com/screener?s=" + this.tickers + "&o=&pl=&ph=&ll=&lh=&fd=0&fdr=&td=" + this.days
+		    + "&tdr=&fdlyl=&fdlyh=&daysago=&xp=1&xs=1&excludeDerivRelated=1&vl=" + this.minDollar
+		    + "&vh=&ocl=&och=&sic1=-1&sicl=100&sich=9999&isofficer=1" + "&iscob=1&isceo=1&ispres=1&iscoo=1&iscfo=1&isgc=1&isvp=1&grp=0"
 		    + "&nfl=&nfh=&nil=&nih=&nol=&noh=&v2l=&v2h=&oc2l=&oc2h=&sortcol=1&cnt=5000&page=" + this.page;
 
 		try (PrintWriter pw = new PrintWriter(outfile)) {
@@ -99,7 +99,7 @@ public class OpenInsiders {
 		}
 	}
 
-	public void getNextPage(String outfile) {
+	public void getNextPage(final String outfile) {
 
 		this.page++;
 		this.get(outfile);
@@ -110,7 +110,7 @@ public class OpenInsiders {
 		return this.resp;
 	}
 
-	private String getTickers(String listName) throws FileNotFoundException, IOException {
+	private String getTickers(final String listName) throws FileNotFoundException, IOException {
 
 		final TickerNames tn = new TickerNames(listName, "500");
 		return tn.get();

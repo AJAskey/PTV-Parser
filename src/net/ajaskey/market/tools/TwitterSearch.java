@@ -36,7 +36,7 @@ public class TwitterSearch {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final List<String> symbols = new ArrayList<>();
 
@@ -79,7 +79,8 @@ public class TwitterSearch {
 		for (final String s : symbols) {
 			if (knt > 0) {
 				str += "%20OR%20" + s;
-			} else {
+			}
+			else {
 				str += s;
 			}
 			knt++;

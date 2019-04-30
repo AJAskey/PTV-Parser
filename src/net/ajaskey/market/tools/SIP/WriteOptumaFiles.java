@@ -63,7 +63,7 @@ public class WriteOptumaFiles {
 
 	public static List<LongTermOHLCV> indexPrices = null;
 
-	public static void processData(List<CompanyData> spxList) throws IOException, ParseException {
+	public static void processData(final List<CompanyData> spxList) throws IOException, ParseException {
 
 		final String index = "500";
 
@@ -179,8 +179,7 @@ public class WriteOptumaFiles {
 		WriteOptumaFiles.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
 		WriteOptumaFiles.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
 
-		WriteOptumaFiles.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4",
-		    dates, dsPrices);
+		WriteOptumaFiles.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates, dsPrices);
 
 	}
 
@@ -192,7 +191,8 @@ public class WriteOptumaFiles {
 	 * @param dates
 	 * @param b
 	 */
-	private static void write(net.ajaskey.market.tools.SIP.DataSet totSales, String string, DateSet dates, boolean b) {
+	private static void write(final net.ajaskey.market.tools.SIP.DataSet totSales, final String string, final DateSet dates,
+	    final boolean b) {
 
 		// TODO Auto-generated method stub
 
@@ -209,9 +209,9 @@ public class WriteOptumaFiles {
 	 * @param dates
 	 * @param dsPrices
 	 */
-	private static void writeEps(net.ajaskey.market.tools.SIP.DataSet totIncome,
-	    net.ajaskey.market.tools.SIP.DataSet totShr, String string, String string2, String string3, DateSet dates,
-	    net.ajaskey.market.tools.SIP.DataSet dsPrices) {
+	private static void writeEps(final net.ajaskey.market.tools.SIP.DataSet totIncome, final net.ajaskey.market.tools.SIP.DataSet totShr,
+	    final String string, final String string2, final String string3, final DateSet dates,
+	    final net.ajaskey.market.tools.SIP.DataSet dsPrices) {
 
 		// TODO Auto-generated method stub
 
@@ -225,8 +225,8 @@ public class WriteOptumaFiles {
 	 * @param string
 	 * @param d
 	 */
-	private static void writePriceToDate(DateSet dates, net.ajaskey.market.tools.SIP.DataSet totSales, String string,
-	    double d) {
+	private static void writePriceToDate(final DateSet dates, final net.ajaskey.market.tools.SIP.DataSet totSales, final String string,
+	    final double d) {
 
 		// TODO Auto-generated method stub
 

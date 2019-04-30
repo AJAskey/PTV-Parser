@@ -8,10 +8,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -46,14 +45,14 @@ public class ParseTreastData {
 	 * @param args
 	 * @throws IOException5
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
-		final List<DateValue> pastList = ParseTreastData.readFile(
-		    FredCommon.fredPath + "[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv", 1);
+		final List<DateValue> pastList = ParseTreastData
+		    .readFile(FredCommon.fredPath + "[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv", 1);
 		//final List<DateValue> dvList = readFile("data\\treast-data.csv");
 		final List<DateValue> dvList = ParseTreastData.readFile("data\\SomaNonMbs-041019.csv", 6);
-		
-		for (DateValue dv : dvList) {
+
+		for (final DateValue dv : dvList) {
 			System.out.println(dv);
 		}
 
@@ -69,14 +68,14 @@ public class ParseTreastData {
 	 * @param dvList
 	 * @throws FileNotFoundException
 	 */
-	public static void process(List<DateValue> pastList, List<DateValue> dvList) throws FileNotFoundException {
+	public static void process(final List<DateValue> pastList, final List<DateValue> dvList) throws FileNotFoundException {
 
 		final List<DateValue> cumList = new ArrayList<>();
 
 		for (final DateValue dv : dvList) {
 			boolean found = false;
 			for (final DateValue cdv : cumList) {
-				if (Utils.sameDate(dv.date, cdv.date)) {
+				if (dv.date.isEqual(cdv.date)) {
 					cdv.value += dv.value;
 					found = true;
 					break;
@@ -96,40 +95,38 @@ public class ParseTreastData {
 			double last = 0;
 			double last50 = 0;
 			double last90 = 0;
-			Calendar lastDate = null;
-			final Calendar end2018 = Calendar.getInstance();
-			end2018.set(2020, Calendar.JANUARY, 1);
+			DateTime lastDate = null;
+			final DateTime end2018 = new DateTime(2020, DateTime.JANUARY, 1);
 			for (final DateValue dv : pastList) {
-				pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
-				pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
-				pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
-				pw2019.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), dv.value);
+				pw.printf("%s,%.1f%n", dv.date, dv.value);
+				pw50.printf("%s,%.1f%n", dv.date, dv.value);
+				pw90.printf("%s,%.1f%n", dv.date, dv.value);
+				pw2019.printf("%s,%.1f%n", dv.date, dv.value);
 				last = dv.value;
 				last50 = dv.value;
 				last90 = dv.value;
 				lastDate = dv.date;
 			}
-			Calendar calLast = Utils.buildCalendar(2000, 1, 1);
+			final DateTime calLast = new DateTime(2000, DateTime.JANUARY, 1);
 			for (final DateValue dv : cumList) {
-				System.out.println("Last Date : " + Utils.getString(lastDate));
-				//System.out.println("End 2018  : " + Utils.getString(end2018));
+				System.out.println("Last Date : " + lastDate);
 				System.out.println(dv);
-				if (dv.date.after(lastDate)) {
+				if (dv.date.isGreaterThan(lastDate)) {
 					final double tot = last - dv.value;
 					final double tot50 = last50 - (dv.value / 2.0);
 					final double tot90 = last90 - (dv.value * 0.1);
 					last = tot;
 					last50 = tot50;
 					last90 = tot90;
-					if ((tot > 0.0) && (dv.date.after(calLast))) {
-						calLast.setTime(dv.date.getTime());
-						pw.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
-						pw50.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot50);
-						pw90.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot90);
-						if (dv.date.before(end2018)) {
+					if ((tot > 0.0) && (dv.date.isGreaterThan(calLast))) {
+						calLast.set(dv.date.getCal().getTime());
+						pw.printf("%s,%.1f%n", dv.date, tot);
+						pw50.printf("%s,%.1f%n", dv.date, tot50);
+						pw90.printf("%s,%.1f%n", dv.date, tot90);
+						if (dv.date.isLessThan(end2018)) {
 							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
-							System.out.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
-							pw2019.printf("%s,%.1f%n", DateValue.sdf.format(dv.date.getTime()), tot);
+							System.out.printf("%s,%.1f%n", dv.date, tot);
+							pw2019.printf("%s,%.1f%n", dv.date, tot);
 						}
 					}
 				}
@@ -146,11 +143,11 @@ public class ParseTreastData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static List<DateValue> readFile(String fname, int fldptr) throws FileNotFoundException, IOException {
+	public static List<DateValue> readFile(final String fname, final int fldptr) throws FileNotFoundException, IOException {
 
 		final List<DateValue> dvList = new ArrayList<>();
 
-		File f = new File(fname);
+		final File f = new File(fname);
 		if (f.exists()) {
 			try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 

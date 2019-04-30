@@ -30,7 +30,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -47,9 +47,25 @@ public class SmartDumbMoney {
 	private static List<String>				fullfilenames	= new ArrayList<>();
 	private static List<SmartDumbDay>	sdDays				= new ArrayList<>();
 
-	public static void main(String[] args) throws ParseException, IOException {
+	/**
+	 * net.ajaskey.market.ta.apps.findSmartDumbDay
+	 *
+	 * @param date
+	 * @return
+	 */
+	private static SmartDumbDay findSmartDumbDay(final Calendar date) {
 
-		Calendar startDate = Utils.buildCalendar(2016, Calendar.DECEMBER, 24);
+		for (final SmartDumbDay sdd : sdDays) {
+			if (Utils.sameDate(date, sdd.day)) {
+				return sdd;
+			}
+		}
+		return null;
+	}
+
+	public static void main(final String[] args) throws ParseException, IOException {
+
+		final Calendar startDate = Utils.buildCalendar(2016, Calendar.DECEMBER, 24);
 
 		fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 		fullfilenames.add("symbols\\NYSE_SymbolList.txt");
@@ -70,21 +86,21 @@ public class SmartDumbMoney {
 			return;
 		}
 
-		Calendar today = Calendar.getInstance();
-		int todayMonth = today.get(Calendar.MONTH);
-		int todayYear = today.get(Calendar.YEAR);
+		final Calendar today = Calendar.getInstance();
+		final int todayMonth = today.get(Calendar.MONTH);
+		final int todayYear = today.get(Calendar.YEAR);
 
 		int currentMonth = startDate.get(Calendar.MONTH);
 		int currentYear = startDate.get(Calendar.YEAR);
 
-		List<Calendar> tradingDays = SmartDumbDay.set(startDate);
+		final List<Calendar> tradingDays = SmartDumbDay.set(startDate);
 		for (int i = 0; i < tradingDays.size(); i++) {
 
 			if ((currentMonth == todayMonth) && (currentYear == todayYear)) {
 				break;
 			}
 
-			Calendar c = tradingDays.get(i);
+			final Calendar c = tradingDays.get(i);
 			if (c.get(Calendar.MONTH) != currentMonth) {
 				if ((i + 22) > tradingDays.size()) {
 					break;
@@ -95,11 +111,11 @@ public class SmartDumbMoney {
 				sdDays.add(new SmartDumbDay(SmartDumbDay.DUMB, c));
 				sdDays.add(new SmartDumbDay(SmartDumbDay.DUMB, tradingDays.get(i + 1)));
 				sdDays.add(new SmartDumbDay(SmartDumbDay.DUMB, tradingDays.get(i + 2)));
-				
+
 				currentMonth = c.get(Calendar.MONTH);
 				currentYear = c.get(Calendar.YEAR);
-				
-				for (int j = i + 9; j < i + 15; j++) {
+
+				for (int j = i + 9; j < (i + 15); j++) {
 					if (tradingDays.get(j).get(Calendar.DAY_OF_MONTH) > 14) {
 						sdDays.add(new SmartDumbDay(SmartDumbDay.DUMB, tradingDays.get(j - 2)));
 						sdDays.add(new SmartDumbDay(SmartDumbDay.DUMB, tradingDays.get(j - 1)));
@@ -109,7 +125,7 @@ public class SmartDumbMoney {
 						break;
 					}
 				}
-				for (int j = i + 5; j < i + 9; j++) {
+				for (int j = i + 5; j < (i + 9); j++) {
 					if (tradingDays.get(j).get(Calendar.DAY_OF_MONTH) > 6) {
 						sdDays.add(new SmartDumbDay(SmartDumbDay.SMART, tradingDays.get(j - 2)));
 						sdDays.add(new SmartDumbDay(SmartDumbDay.SMART, tradingDays.get(j - 1)));
@@ -119,7 +135,7 @@ public class SmartDumbMoney {
 						break;
 					}
 				}
-				for (int j = i + 15; j < i + 19; j++) {
+				for (int j = i + 15; j < (i + 19); j++) {
 					if (tradingDays.get(j).get(Calendar.DAY_OF_MONTH) > 20) {
 						sdDays.add(new SmartDumbDay(SmartDumbDay.SMART, tradingDays.get(j - 2)));
 						sdDays.add(new SmartDumbDay(SmartDumbDay.SMART, tradingDays.get(j - 1)));
@@ -132,12 +148,12 @@ public class SmartDumbMoney {
 			}
 		}
 
-		for (TickerData td : tdAll) {
+		for (final TickerData td : tdAll) {
 			//if (td.getTicker().equalsIgnoreCase("MSFT")) {
 			td.generateDerived(false);
 			System.out.println(td.getTicker());
-			for (DailyData dd : td.getData()) {
-				SmartDumbDay sdd = findSmartDumbDay(dd.getDate());
+			for (final DailyData dd : td.getData()) {
+				final SmartDumbDay sdd = SmartDumbMoney.findSmartDumbDay(dd.getDate());
 				if (sdd != null) {
 					sdd.mktcap += dd.getDailyChg() * dd.getVolume();
 					//System.out.println(dd);
@@ -151,32 +167,17 @@ public class SmartDumbMoney {
 		double cumm = 0.0;
 		final String outpath = OptumaCommon.optumaPath + "\\EOD-Data\\SmartMoney.csv";
 		try (PrintWriter pw = new PrintWriter(outpath)) {
-			for (SmartDumbDay sdd : sdDays) {
+			for (final SmartDumbDay sdd : sdDays) {
 				final String date = DataValues.sdf.format(sdd.day.getTime());
 				if (sdd.mode == SmartDumbDay.DUMB) {
 					cumm -= sdd.mktcap;
-				} else if (sdd.mode == SmartDumbDay.SMART) {
+				}
+				else if (sdd.mode == SmartDumbDay.SMART) {
 					cumm += sdd.mktcap;
 				}
 				System.out.printf("%s\t%s\t%15.2f\n", sdd, date, cumm);
 				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,0\n", date, cumm, cumm, cumm, cumm);
 			}
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.ta.apps.findSmartDumbDay
-	 *
-	 * @param date
-	 * @return
-	 */
-	private static SmartDumbDay findSmartDumbDay(Calendar date) {
-
-		for (SmartDumbDay sdd : sdDays) {
-			if (Utils.sameDate(date, sdd.day)) {
-				return sdd;
-			}
-		}
-		return null;
 	}
 }

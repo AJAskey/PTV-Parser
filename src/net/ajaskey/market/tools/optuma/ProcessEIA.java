@@ -6,7 +6,6 @@ import java.io.PrintWriter;
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +19,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.ConvertOHLCV;
 import net.ajaskey.market.tools.helpers.OhlcvData;
@@ -57,7 +57,7 @@ public class ProcessEIA {
 	private static DocumentBuilderFactory	dbFactory	= null;
 	private static DocumentBuilder				dBuilder	= null;
 
-	private static List<OhlcvData> getData(String url) {
+	private static List<OhlcvData> getData(final String url) {
 
 		final List<OhlcvData> ret = new ArrayList<>();
 
@@ -79,7 +79,8 @@ public class ProcessEIA {
 				final Node nodeResp = nResp.item(knt);
 				if (nodeResp.getNodeType() == Node.ELEMENT_NODE) {
 					final NodeList nrList = nodeResp.getChildNodes();
-					Calendar cal = null;
+					//Calendar cal = null;
+					DateTime dt = null;
 					for (int cnt = 0; cnt < nrList.getLength(); cnt++) {
 						final Node nr = nrList.item(cnt);
 						if (nr.getNodeType() == Node.ELEMENT_NODE) {
@@ -87,15 +88,17 @@ public class ProcessEIA {
 							if (s.contains("date")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
 								final Date date = sdf.parse(nr.getTextContent().trim());
-								cal = Calendar.getInstance();
-								cal.setTime(date);
+								//cal = Calendar.getInstance();
+								//cal.setTime(date);
+								dt = new DateTime(date);
 
-							} else if (s.contains("value")) {
+							}
+							else if (s.contains("value")) {
 								//System.out.println(nr.getNodeName() + " " + nr.getTextContent());
-								if (cal != null) {
+								if (dt != null) {
 									final double c = Double.parseDouble(nr.getTextContent().trim());
-									final OhlcvData d = new OhlcvData(Utils.buildCalendar(cal), c, c, c, c, 0);
-									cal = null;
+									final OhlcvData d = new OhlcvData(dt, c, c, c, c, 0);
+									dt = null;
 									ret.add(d);
 									//System.out.println(d.toShortString());
 								}
@@ -119,7 +122,7 @@ public class ProcessEIA {
 	 * @param args
 	 * @throws ParserConfigurationException
 	 */
-	public static void main(String[] args) throws ParserConfigurationException {
+	public static void main(final String[] args) throws ParserConfigurationException {
 
 		final String apiKey = "5083132038aeb07288f19e6313b85532";
 
@@ -137,15 +140,15 @@ public class ProcessEIA {
 
 	}
 
-	private static void writeList(List<OhlcvData> list, String fname) {
+	private static void writeList(final List<OhlcvData> list, final String fname) {
 
 		Collections.reverse(list);
 		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
 			for (final OhlcvData price : list) {
 
-				pw.printf("%s,%.2f%n", sdfOptuma.format(price.date.getTime()), price.close);
+				pw.printf("%s,%.2f%n", price.date, price.close);
 			}
-			System.out.println(Utils.getString(list.get(list.size() - 1).date));
+			System.out.println(list.get(list.size() - 1).date);
 
 		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block

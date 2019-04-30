@@ -97,8 +97,7 @@ public interface TaMethodsIF {
 	 * @param days
 	 * @return
 	 */
-	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
-	    int days);
+	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close, int days);
 
 	/**
 	 * net.ajaskey.market.ta.methods.calcMFI

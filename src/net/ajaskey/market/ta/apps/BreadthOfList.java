@@ -58,7 +58,7 @@ public class BreadthOfList {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		System.out.println("Processing...");
 
@@ -139,8 +139,7 @@ public class BreadthOfList {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	private static void processGroup(String name, String indexName)
-	    throws FileNotFoundException, IOException, ParseException {
+	private static void processGroup(final String name, final String indexName) throws FileNotFoundException, IOException, ParseException {
 
 		final List<TickerData> tdAll = BreadthOfList.readList(name);
 		final List<BreadthData> bd = BreadthOfList.processList(tdAll, 0);
@@ -160,7 +159,7 @@ public class BreadthOfList {
 	 * @param offset
 	 * @return
 	 */
-	private static List<BreadthData> processList(List<TickerData> tdList, int offset) {
+	private static List<BreadthData> processList(final List<TickerData> tdList, final int offset) {
 
 		final List<BreadthData> retList = new ArrayList<>();
 		for (final TickerData td : tdList) {
@@ -192,7 +191,7 @@ public class BreadthOfList {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	private static List<TickerData> readList(String listName) throws FileNotFoundException, IOException, ParseException {
+	private static List<TickerData> readList(final String listName) throws FileNotFoundException, IOException, ParseException {
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList("lists\\" + listName + "-components.csv"));
@@ -212,7 +211,7 @@ public class BreadthOfList {
 	 * @param indexName
 	 * @throws FileNotFoundException
 	 */
-	private static void writeData(List<BreadthData> bdList, List<BreadthData> bd1week, String name, String indexName)
+	private static void writeData(final List<BreadthData> bdList, final List<BreadthData> bd1week, final String name, final String indexName)
 	    throws FileNotFoundException {
 
 		final int knt = bdList.size();
@@ -265,19 +264,17 @@ public class BreadthOfList {
 		final double per130dma1w = ((((double) over130dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
 		final double per260dma1w = ((((double) over260dma1w / (double) knt) * 100.0) - 50.0) / 5.0;
 
-		final double avg = (Math.round(per23dma) + Math.round(per65dma) + Math.round(per130dma) + Math.round(per260dma))
-		    / 4.0;
-		final double avg1w = (Math.round(per23dma1w) + Math.round(per65dma1w) + Math.round(per130dma1w)
-		    + Math.round(per260dma1w)) / 4.0;
+		final double avg = (Math.round(per23dma) + Math.round(per65dma) + Math.round(per130dma) + Math.round(per260dma)) / 4.0;
+		final double avg1w = (Math.round(per23dma1w) + Math.round(per65dma1w) + Math.round(per130dma1w) + Math.round(per260dma1w)) / 4.0;
 
-		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
-		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
-		pw.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB
-		    + Math.round(per130dma) + TAB + Math.round(per260dma) + TAB + avg + TAB + avg1w);
+		System.out.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB + Math.round(per130dma) + TAB
+		    + Math.round(per260dma) + TAB + avg + TAB + avg1w);
+		pw.println(name + TAB + indexName + TAB + Math.round(per23dma) + TAB + Math.round(per65dma) + TAB + Math.round(per130dma) + TAB
+		    + Math.round(per260dma) + TAB + avg + TAB + avg1w);
 
 	}
 
-	private static void writePercentData(List<BreadthData> bdList, String name) throws FileNotFoundException {
+	private static void writePercentData(final List<BreadthData> bdList, final String name) throws FileNotFoundException {
 
 		final int knt = bdList.size();
 		long over23dma = 0;
@@ -306,8 +303,7 @@ public class BreadthOfList {
 		final double per130dma = ((double) over130dma / (double) knt) * 100.0;
 		final double per260dma = ((double) over260dma / (double) knt) * 100.0;
 
-		pwPercent.printf("%-6s\t%d\t%d\t%d\t%d%n", name, (long) per23dma, (long) per65dma, (long) per130dma,
-		    (long) per260dma);
+		pwPercent.printf("%-6s\t%d\t%d\t%d\t%d%n", name, (long) per23dma, (long) per65dma, (long) per130dma, (long) per260dma);
 
 	}
 

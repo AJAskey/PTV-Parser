@@ -83,7 +83,7 @@ public class ZombieData {
 	 * net.ajaskey.market.tools.SIP.calc
 	 *
 	 */
-	public void calc(CompanyData cd) {
+	public void calc(final CompanyData cd) {
 
 		if (cd.ticker.equalsIgnoreCase("QTNT")) {
 			//System.out.println(this);
@@ -115,12 +115,11 @@ public class ZombieData {
 	 * @param cd
 	 * @return
 	 */
-	public double calcZCash(CompanyData cd) {
+	public double calcZCash(final CompanyData cd) {
 
 		final double ret = cd.bsd.cash.getMostRecent() + (cd.bsd.acctReceiveable.getMostRecent() * arKnob)
-		    + (cd.bsd.stInvestments.getMostRecent() * stInvestmentsKnob)
-		    + (cd.bsd.otherAssets.getMostRecent() * stAssetsKnob) + (cd.bsd.inventory.getMostRecent() * inventoryKnob)
-		    + (cd.bsd.ltInvestments.getMostRecent() * ltInvestmentsKnob)
+		    + (cd.bsd.stInvestments.getMostRecent() * stInvestmentsKnob) + (cd.bsd.otherAssets.getMostRecent() * stAssetsKnob)
+		    + (cd.bsd.inventory.getMostRecent() * inventoryKnob) + (cd.bsd.ltInvestments.getMostRecent() * ltInvestmentsKnob)
 		    + (cd.bsd.otherLtAssets.getMostRecent() * ltAssetsKnob) + (cd.bsd.goodwill.getMostRecent() * gwKnob);
 		return ret;
 	}
@@ -131,10 +130,9 @@ public class ZombieData {
 	 * @param cd
 	 * @return
 	 */
-	public double calcZDebt(CompanyData cd) {
+	public double calcZDebt(final CompanyData cd) {
 
-		final double ret = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent()
-		    + cd.bsd.otherCurrLiab.getMostRecent();
+		final double ret = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent() + cd.bsd.otherCurrLiab.getMostRecent();
 		return ret;
 	}
 
@@ -144,14 +142,14 @@ public class ZombieData {
 	 * @param cd
 	 * @return
 	 */
-	public double calcZIncome(CompanyData cd) {
+	public double calcZIncome(final CompanyData cd) {
 
 		if (cd.ticker.equalsIgnoreCase("NI")) {
 			System.out.println(this);
 		}
 
-		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4
-		    + cd.id.unusualIncome.q1 + cd.id.unusualIncome.q2 + cd.id.unusualIncome.q3 + cd.id.unusualIncome.q4;
+		double ret = cd.id.pretaxIncome.q1 + cd.id.pretaxIncome.q2 + cd.id.pretaxIncome.q3 + cd.id.pretaxIncome.q4 + cd.id.unusualIncome.q1
+		    + cd.id.unusualIncome.q2 + cd.id.unusualIncome.q3 + cd.id.unusualIncome.q4;
 
 		if (cd.id.pretaxIncome.q1 == 0.0) {
 			ret += cd.id.pretaxIncome.q5 + cd.id.unusualIncome.q5;
@@ -168,7 +166,7 @@ public class ZombieData {
 	 * @param cd
 	 * @return
 	 */
-	public void calcZScore(CompanyData cd) {
+	public void calcZScore(final CompanyData cd) {
 
 		if (cd.ticker.equalsIgnoreCase("CAKE")) {
 			System.out.println(this);
@@ -213,7 +211,8 @@ public class ZombieData {
 					this.zState = ZombieStates.NNET_NINC_DIVCUT;
 					this.zIsZombie = false;
 				}
-			} else {
+			}
+			else {
 				//this.zAdjScr = 0.0;
 			}
 		}
@@ -274,14 +273,16 @@ public class ZombieData {
 				this.zIsZombie = false;
 				this.zAdjScr = this.zScore;
 
-			} else {
+			}
+			else {
 
 				this.zAdjScr = (this.zCash + (this.zAdjInc * 0.25)) / this.zKeepItRunning;
 
 				if (this.zAdjScr > 8.0) {
 					this.zState = ZombieStates.NNET_PINC;
 					this.zIsZombie = true;
-				} else {
+				}
+				else {
 					this.zState = ZombieStates.NNET_PINC_DIVCUT;
 					this.zIsZombie = false;
 				}
@@ -297,7 +298,7 @@ public class ZombieData {
 	 * @param sector
 	 * @return
 	 */
-	public String report(String ticker, String sector) {
+	public String report(final String ticker, final String sector) {
 
 		String ret = "";
 
@@ -365,8 +366,7 @@ public class ZombieData {
 
 		switch (this.zState) {
 			case NNET_PINC_DIVCUT:
-				ret += TAB + String.format(
-				    "Can pay off debt in %.2f quarters by reducing the dividend with existing cash and quarterly income.",
+				ret += TAB + String.format("Can pay off debt in %.2f quarters by reducing the dividend with existing cash and quarterly income.",
 				    this.zAdjScr);
 				break;
 			case NNET_NINC:
@@ -379,15 +379,15 @@ public class ZombieData {
 				if (!this.zIsZombie) {
 					final String s = String.format("\tCan pay of debt in %.2f quarters.", Math.abs(this.zAdjScr));
 					ret += s;
-				} else {
+				}
+				else {
 					final String s = String.format("\tWill take %.2f quarters to pay off current debt with quarterly income.",
 					    Math.abs(this.zAdjScr));
 					ret += s;
 				}
 				break;
 			case PNET_NINC:
-				final String s = String.format("\tOnly enough cash to continue operations for %.2f quarters.",
-				    Math.abs(this.zAdjScr));
+				final String s = String.format("\tOnly enough cash to continue operations for %.2f quarters.", Math.abs(this.zAdjScr));
 				ret += s;
 				break;
 			case PNET_NINC_DIVCUT:
@@ -401,8 +401,7 @@ public class ZombieData {
 			case UNKNOWN:
 				break;
 			case NNET_PINC_ENUFINCOME:
-				ret += TAB + String.format(
-				    "Will payoff existing ST debt in %.2f quarters using existing cash and quarterly income.", this.zScore);
+				ret += TAB + String.format("Will payoff existing ST debt in %.2f quarters using existing cash and quarterly income.", this.zScore);
 				break;
 			default:
 				break;

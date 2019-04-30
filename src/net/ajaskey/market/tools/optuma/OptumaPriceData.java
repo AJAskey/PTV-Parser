@@ -5,14 +5,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.optuma.PriceData;
 
 /**
@@ -29,7 +27,7 @@ import net.ajaskey.market.optuma.PriceData;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -44,36 +42,34 @@ public class OptumaPriceData {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
-	public static List<PriceData> getPriceData(String code) throws FileNotFoundException, IOException {
+	public static List<PriceData> getPriceData(final String code) throws FileNotFoundException, IOException {
 
-		List<PriceData> pd = new ArrayList<>();
+		final List<PriceData> pd = new ArrayList<>();
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(code))) {
 
 			String line;
 			while ((line = reader.readLine()) != null) {
-				String str = line.trim();
+				final String str = line.trim();
 				if (str.length() > 0) {
-					String fld[] = str.split(",");
+					final String fld[] = str.split(",");
 					if (fld.length >= 7) {
-						Date d;
 						try {
-							d = sdf.parse(fld[1].trim());
-							Calendar c = Calendar.getInstance();
-							c.setTime(d);
-							PriceData p = new PriceData(c, Double.parseDouble(fld[2].trim()), Double.parseDouble(fld[3].trim()),
+							final Date d = sdf.parse(fld[1].trim());
+							final DateTime dt = new DateTime(d);
+							final PriceData p = new PriceData(dt, Double.parseDouble(fld[2].trim()), Double.parseDouble(fld[3].trim()),
 							    Double.parseDouble(fld[4].trim()), Double.parseDouble(fld[5].trim()), Long.parseLong(fld[6].trim()));
 							pd.add(p);
-						} catch (Exception e) {
+						} catch (final Exception e) {
 						}
 					}
 				}
 			}
 		}
 
-//		if (pd.size() > 0) {
-//			Collections.reverse(pd);
-//		}
+		//		if (pd.size() > 0) {
+		//			Collections.reverse(pd);
+		//		}
 		return pd;
 
 	}

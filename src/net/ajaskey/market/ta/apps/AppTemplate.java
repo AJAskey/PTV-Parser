@@ -48,7 +48,7 @@ public class AppTemplate {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		/**
 		 * For www.eoddata.com data files:

@@ -62,8 +62,8 @@ public class ProcessInterday {
 	 * @return A List of InterdayData objects that meet all the criteria passed
 	 *         in.
 	 */
-	private static List<InterdayData> filterList(List<InterdayData> idList, double priceLimit, long volumeLimit,
-	    int tickLimit, double rangeLimit) {
+	private static List<InterdayData> filterList(final List<InterdayData> idList, final double priceLimit, final long volumeLimit,
+	    final int tickLimit, final double rangeLimit) {
 
 		final List<InterdayData> filterList = new ArrayList<>();
 
@@ -74,14 +74,14 @@ public class ProcessInterday {
 			 * data.
 			 */
 			TickerData td = null;
-			if ((id.getDayHigh() > priceLimit) && (Math.abs(id.getPriceRange()) > rangeLimit)
-			    && (id.getUpdates() > tickLimit)) {
+			if ((id.getDayHigh() > priceLimit) && (Math.abs(id.getPriceRange()) > rangeLimit) && (id.getUpdates() > tickLimit)) {
 
 				if (id.getTd() == null) {
 					td = TickerData.getFromList(id.getTicker(), tdList);
 					td.generateDerived(false);
 					id.setTd(td);
-				} else {
+				}
+				else {
 					td = id.getTd();
 				}
 
@@ -107,7 +107,7 @@ public class ProcessInterday {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		final String idDataPath = Utils.getDataPath();
 
@@ -148,29 +148,27 @@ public class ProcessInterday {
 	 * @param sd
 	 * @throws FileNotFoundException
 	 */
-	private static void printList(List<InterdayData> list, InterdaySumData sd, String outfile)
+	private static void printList(final List<InterdayData> list, final InterdaySumData sd, final String outfile)
 	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(outfile)) {
-			pw.printf(
-			    "Ticker\tTicks\tUp\tDown\tDiff\tfUp\tfDown\tForce\tVol\tFV\tOpen\tHigh\tLow\tClose\tRng\tpRng\tcRatio%n");
+			pw.printf("Ticker\tTicks\tUp\tDown\tDiff\tfUp\tfDown\tForce\tVol\tFV\tOpen\tHigh\tLow\tClose\tRng\tpRng\tcRatio%n");
 
 			for (final InterdayData id : list) {
 
 				// System.out.println(id.getTicker() + " " + id.getUpdates());
 
-				pw.printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.4f\t%.2f%n",
-				    id.getTicker(), id.getUpdates(), id.getSumUp(), id.getSumDown(), id.getUpDownDiff(),
-				    (long) id.getSumForceUp(), (long) id.getSumForceDown(), id.getForceDiff(), id.getSumVol(),
-				    id.getForceVolume(), id.getDayOpen(), id.getDayHigh(), id.getDayLow(), id.getDayClose(), id.getPriceRange(),
+				pw.printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.4f\t%.2f%n", id.getTicker(), id.getUpdates(),
+				    id.getSumUp(), id.getSumDown(), id.getUpDownDiff(), (long) id.getSumForceUp(), (long) id.getSumForceDown(), id.getForceDiff(),
+				    id.getSumVol(), id.getForceVolume(), id.getDayOpen(), id.getDayHigh(), id.getDayLow(), id.getDayClose(), id.getPriceRange(),
 				    id.getRangePercent(), sd.priceInRng);
 			}
 
 			final String strDiff = NumberFormat.getIntegerInstance().format(sd.totUp - sd.totDown);
 			final String strFdiff = NumberFormat.getIntegerInstance().format(sd.totForceUp - sd.totForceDown);
 
-			System.out.printf("%5d  %10s %18s  %d  %d  %d  %d %n", list.size(), strDiff, strFdiff, sd.upperRange,
-			    sd.lowerRange, sd.upOnVolume, sd.downOnVolume);
+			System.out.printf("%5d  %10s %18s  %d  %d  %d  %d %n", list.size(), strDiff, strFdiff, sd.upperRange, sd.lowerRange, sd.upOnVolume,
+			    sd.downOnVolume);
 
 		}
 	}
@@ -182,7 +180,7 @@ public class ProcessInterday {
 	 * @param list
 	 * @return
 	 */
-	private static InterdaySumData setSumData(List<InterdayData> list) {
+	private static InterdaySumData setSumData(final List<InterdayData> list) {
 
 		final InterdaySumData sd = new InterdaySumData();
 
@@ -204,7 +202,8 @@ public class ProcessInterday {
 						if (sd.priceInRng > 0.75) {
 							sd.upOnVolume++;
 						}
-					} else if (id.getDayOpen() > id.getDayClose()) {
+					}
+					else if (id.getDayOpen() > id.getDayClose()) {
 						if (sd.priceInRng < 0.25) {
 							sd.downOnVolume++;
 						}
@@ -218,7 +217,8 @@ public class ProcessInterday {
 			if ((id.getRangePercent() > 0.009) || (id.getPriceRange() > 0.79)) {
 				if (sd.priceInRng > 0.85) {
 					sd.upperRange++;
-				} else if (sd.priceInRng < 0.15) {
+				}
+				else if (sd.priceInRng < 0.15) {
 					sd.lowerRange++;
 				}
 			}

@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.tools.optuma;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -52,7 +51,7 @@ public class WriteStockData {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		fullfilenames.add("symbols\\INDEX_SymbolList.txt");
 		fullfilenames.add("symbols\\AMEX_SymbolList.txt");
@@ -70,7 +69,7 @@ public class WriteStockData {
 		WriteStockData.processLastPrice("data/spx-stocks.txt");
 	}
 
-	private static void processLastPrice(String listName) throws ParseException, IOException {
+	private static void processLastPrice(final String listName) throws ParseException, IOException {
 
 		ParseData.clearValidTickers();
 		ParseData.setValidTickers(ParseData.getTickerList(listName));
@@ -87,30 +86,8 @@ public class WriteStockData {
 				final int i = 0; // td.getDaysOfData() - 1;
 				System.out.println(td.getTicker());
 				//if (td.getTicker().contains("SPX")) {
-					pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
+				pw.printf("%s\t%.2f%n", td.getTicker(), td.getClose(i));
 				//}
-			}
-		}
-		System.out.println("Done.");
-	}
-
-	private static void processList(String listName) throws FileNotFoundException, IOException, ParseException {
-
-		ParseData.clearValidTickers();
-		ParseData.setValidTickers(ParseData.getTickerList(listName));
-
-		final List<TickerData> tdAll = ParseData.parseFiles(filenames);
-
-		for (final TickerData td : tdAll) {
-			td.generateDerived(false);
-			try (PrintWriter pw = new PrintWriter(
-			    "C:\\Users\\ajask_000\\Documents\\Market Analyst 8\\CSV Data\\StockData\\" + td.getTicker() + ".csv")) {
-				System.out.println(td.getTicker());
-				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
-					final String d = sdf.format(td.getDate(i).getTime());
-					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-					    (int) td.getVolume(i));
-				}
 			}
 		}
 		System.out.println("Done.");

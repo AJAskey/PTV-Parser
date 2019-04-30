@@ -18,7 +18,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -31,21 +31,22 @@ import java.util.List;
  */
 public class PackageData {
 
+	String packageName;
+
+	String				fullpath;
+	List<String>	classNames;
+
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param pkg
 	 */
-	public PackageData(String pkg) {
+	public PackageData(final String pkg) {
 
 		this.packageName = pkg;
 		this.fullpath = "";
 		this.classNames = new ArrayList<>();
 	}
-
-	String				packageName;
-	String				fullpath;
-	List<String>	classNames;
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -55,7 +56,7 @@ public class PackageData {
 
 		String ret = this.packageName;
 		ret += "\n\t" + this.fullpath;
-		for (String s : this.classNames) {
+		for (final String s : this.classNames) {
 			ret += "\n\t" + s;
 		}
 		return ret;

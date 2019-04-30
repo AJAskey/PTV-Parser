@@ -3,8 +3,9 @@ package net.ajaskey.market.tools.fred;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -35,7 +36,7 @@ public class DataValues {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-	private Calendar	date;
+	private DateTime	date;
 	private double		value;
 
 	/**
@@ -44,8 +45,9 @@ public class DataValues {
 	 * @param cal
 	 * @param val
 	 */
-	public DataValues(Calendar cal, double val) {
-		this.date = cal;
+	public DataValues(final DateTime dt, final double val) {
+
+		this.date = dt;
 		this.value = val;
 	}
 
@@ -53,7 +55,8 @@ public class DataValues {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataValues(String date, String val) {
+	public DataValues(final String date, final String val) {
+
 		this.setDate(date);
 		this.setValue(val);
 	}
@@ -61,7 +64,7 @@ public class DataValues {
 	/**
 	 * @return the date
 	 */
-	public Calendar getDate() {
+	public DateTime getDate() {
 
 		return this.date;
 	}
@@ -78,14 +81,12 @@ public class DataValues {
 	 * @param sdf.
 	 *          the date to set
 	 */
-	public void setDate(String dateStr) {
+	public void setDate(final String dateStr) {
 
-		this.date = Calendar.getInstance();
 		try {
 			final Date d = sdf.parse(dateStr);
-			this.date.setTime(d);
+			this.date.set(d);
 		} catch (final ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -94,7 +95,7 @@ public class DataValues {
 	 * @param value
 	 *          the value to set
 	 */
-	public void setValue(String val) {
+	public void setValue(final String val) {
 
 		try {
 			this.value = Double.parseDouble(val);
@@ -105,6 +106,7 @@ public class DataValues {
 
 	@Override
 	public String toString() {
-		return (String.format("%s\t%f", sdf.format(this.date.getTime()), this.value));
+
+		return (String.format("%s\t%f", this.date, this.value));
 	}
 }

@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.NumberFormat;
@@ -67,30 +66,31 @@ public class Utils {
 	private static boolean initialized = false;
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.buildCalendar
 	 *
 	 * @param inCal
 	 * @return
 	 */
-	public static Calendar buildCalendar(Calendar inCal) {
+	public static Calendar buildCalendar(final Calendar inCal) {
 
 		final Calendar cal = Calendar.getInstance();
-		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE),
-		    inCal.get(Calendar.HOUR_OF_DAY), inCal.get(Calendar.MINUTE), inCal.get(Calendar.SECOND));
+		cal.set(inCal.get(Calendar.YEAR), inCal.get(Calendar.MONTH), inCal.get(Calendar.DATE), inCal.get(Calendar.HOUR_OF_DAY),
+		    inCal.get(Calendar.MINUTE), inCal.get(Calendar.SECOND));
 		cal.set(Calendar.MILLISECOND, 0);
 		return cal;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.buildCalendar
 	 *
 	 * @param date
 	 * @return
 	 */
-	public static Calendar buildCalendar(Date date) {
-		Calendar cal = Calendar.getInstance();
+	public static Calendar buildCalendar(final Date date) {
+
+		final Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
 		return cal;
 	}
@@ -104,7 +104,7 @@ public class Utils {
 	 * @param day
 	 * @return
 	 */
-	public static Calendar buildCalendar(int year, int month, int day) {
+	public static Calendar buildCalendar(final int year, final int month, final int day) {
 
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day);
@@ -116,7 +116,7 @@ public class Utils {
 	 *
 	 * @param cal
 	 */
-	public static String calendarToLongString(Calendar cal) {
+	public static String calendarToLongString(final Calendar cal) {
 
 		String ret = cal.toString() + "\n";
 		ret += "  Year         : " + cal.get(Calendar.YEAR) + "\n";
@@ -128,7 +128,7 @@ public class Utils {
 
 	}
 
-	private static String findName(Map<String, Integer> map, Integer key) {
+	private static String findName(final Map<String, Integer> map, final Integer key) {
 
 		for (final Map.Entry<String, Integer> entry : map.entrySet()) {
 			if (entry.getValue() == key) {
@@ -145,7 +145,7 @@ public class Utils {
 	 * @param i
 	 * @return
 	 */
-	public static String formatInt(int i) {
+	public static String formatInt(final int i) {
 
 		return (Utils.formatInt((long) i));
 	}
@@ -157,7 +157,7 @@ public class Utils {
 	 * @param i
 	 * @return
 	 */
-	public static String formatInt(long i) {
+	public static String formatInt(final long i) {
 
 		String ret = "";
 		Utils.init();
@@ -181,6 +181,23 @@ public class Utils {
 		return baseDate;
 	}
 
+	/**
+	 * net.ajaskey.market.misc.getCurrentDateStr
+	 *
+	 * @return
+	 */
+	public static String getCurrentDateStr() {
+
+		final Calendar cal = Calendar.getInstance();
+		return Utils.getStringFull(cal);
+	}
+
+	public static String getCurrentTime() {
+
+		final Calendar cal = Calendar.getInstance();
+		return sdfTime.format(cal.getTime());
+	}
+
 	public static String getDataPath() {
 
 		final String path = System.getProperty("dataPath", "C:\\Data\\EODData\\DataClient");
@@ -194,13 +211,39 @@ public class Utils {
 	 * @param cal
 	 * @return
 	 */
-	public static String getDayName(Calendar cal) {
+	public static String getDayName(final Calendar cal) {
 
 		try {
 			Utils.init();
 			return Utils.findName(mapDays, cal.get(Calendar.DAY_OF_WEEK));
 		} catch (final Exception e) {
 			return "unknown-day";
+		}
+	}
+
+	public static List<File> getDirTree(final File top, final List<String> ext) {
+
+		final List<File> retFiles = new ArrayList<>();
+		Utils.updateDirTree(retFiles, top, ext);
+		return retFiles;
+
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getFileExt
+	 *
+	 * @param f
+	 * @return
+	 */
+	public static String getFileExt(final File f) {
+
+		final String fname = f.getName().trim();
+		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0)) {
+			return fname.substring(fname.lastIndexOf(".") + 1).trim();
+		}
+		else {
+			return "";
 		}
 	}
 
@@ -212,7 +255,7 @@ public class Utils {
 	 * @return
 	 * @throws IOException
 	 */
-	public static String getFromUrl(String url) {
+	public static String getFromUrl(final String url) {
 
 		final StringBuilder sb = new StringBuilder();
 
@@ -230,13 +273,13 @@ public class Utils {
 					}
 				}
 			}
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			return "";
 		}
 		return sb.toString();
 	}
 
-	public static String getMonthName(Calendar cal) {
+	public static String getMonthName(final Calendar cal) {
 
 		try {
 			Utils.init();
@@ -246,7 +289,7 @@ public class Utils {
 		}
 	}
 
-	public static String getMonthName(int month) {
+	public static String getMonthName(final int month) {
 
 		try {
 			Utils.init();
@@ -263,9 +306,20 @@ public class Utils {
 	 * @param cal
 	 * @return
 	 */
-	static public String getString(Calendar cal) {
+	static public String getString(final Calendar cal) {
 
 		return sdf.format(cal.getTime());
+	}
+
+	/**
+	 * net.ajaskey.market.misc.getStringFull
+	 *
+	 * @param day
+	 * @return
+	 */
+	public static String getStringFull(final Calendar cal) {
+
+		return sdfFull.format(cal.getTime());
 	}
 
 	/**
@@ -276,7 +330,7 @@ public class Utils {
 	 * @param lessRecent
 	 * @return
 	 */
-	static public long getTimeSpan(Calendar recent, Calendar lessRecent) {
+	static public long getTimeSpan(final Calendar recent, final Calendar lessRecent) {
 
 		Utils.init();
 		return TimeUnit.MILLISECONDS.toDays(Math.abs(lessRecent.getTimeInMillis() - recent.getTimeInMillis()));
@@ -298,6 +352,19 @@ public class Utils {
 		}
 	}
 
+	public static boolean isInExtList(final File f, final List<String> ext) {
+
+		final String fext = "." + Utils.getFileExt(f).trim().toLowerCase();
+		if (fext.length() > 1) {
+			for (final String s : ext) {
+				if (s.toLowerCase().contains(fext)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.ta.makeCopy
@@ -305,12 +372,13 @@ public class Utils {
 	 * @param cal
 	 * @return
 	 */
-	public static Calendar makeCopy(Calendar cal) {
+	public static Calendar makeCopy(final Calendar cal) {
 
 		Calendar newCal = null;
 		if (cal == null) {
 			newCal = Calendar.getInstance();
-		} else {
+		}
+		else {
 			newCal = (Calendar) cal.clone();
 		}
 		return newCal;
@@ -322,7 +390,7 @@ public class Utils {
 	 *
 	 * @param dir
 	 */
-	static public void makeDir(String dir) {
+	static public void makeDir(final String dir) {
 
 		final File theDir = new File(dir);
 		if (!theDir.exists()) {
@@ -339,7 +407,7 @@ public class Utils {
 		System.out.println();
 	}
 
-	public static void print(String str) {
+	public static void print(final String str) {
 
 		System.out.println(str);
 	}
@@ -350,17 +418,25 @@ public class Utils {
 	 *
 	 * @param cal
 	 */
-	public static void printCalendar(Calendar cal) {
+	public static void printCalendar(final Calendar cal) {
 
 		if (cal != null) {
 			System.out.println(sdf2.format(cal.getTime()) + TAB + cal.get(Calendar.DAY_OF_YEAR));
 		}
 	}
-	
-	public static String getCurrentTime() {
-		 Calendar cal = Calendar.getInstance();
-		 return sdfTime.format(cal.getTime());
+
+	public static String removeFileExt(final File f) {
+
+		final String fname = f.getName();
+		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0)) {
+			return fname.substring(0, fname.lastIndexOf("."));
+		}
+		else {
+			return "";
+		}
 	}
+
+	//////////////////////////////////////////////////////////////////////
 
 	/**
 	 *
@@ -370,7 +446,7 @@ public class Utils {
 	 * @param cal2
 	 * @return
 	 */
-	public static boolean sameDate(Calendar cal1, Calendar cal2) {
+	public static boolean sameDate(final Calendar cal1, final Calendar cal2) {
 
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
@@ -393,7 +469,7 @@ public class Utils {
 	 * @param cal2
 	 * @return
 	 */
-	public static boolean sameMonth(Calendar cal1, Calendar cal2) {
+	public static boolean sameMonth(final Calendar cal1, final Calendar cal2) {
 
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
@@ -414,7 +490,7 @@ public class Utils {
 	 * @param cal2
 	 * @return
 	 */
-	public static boolean sameYear(Calendar cal1, Calendar cal2) {
+	public static boolean sameYear(final Calendar cal1, final Calendar cal2) {
 
 		if ((cal1 == null) || (cal2 == null)) {
 			return false;
@@ -426,21 +502,39 @@ public class Utils {
 	}
 
 	/**
+	 * net.ajaskey.market.misc.sleep
+	 *
+	 * @param i
+	 */
+	public static void sleep(final int milliseconds) {
+
+		if (milliseconds < 1) {
+			return;
+		}
+
+		try {
+			Thread.sleep(milliseconds);
+		} catch (final InterruptedException e) {
+		}
+
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.misc.stringDate
 	 *
 	 * @param cal
 	 * @return
 	 */
-	public static String stringDate(Calendar cal) {
+	public static String stringDate(final Calendar cal) {
 
 		if (cal != null) {
 			return sdf.format(cal.getTime());
 		}
 		return "";
 	}
-	
-	public static String stringDate(Date dat) {
+
+	public static String stringDate(final Date dat) {
 
 		if (dat != null) {
 			return sdf.format(dat);
@@ -455,7 +549,7 @@ public class Utils {
 	 * @param cal
 	 * @return
 	 */
-	public static String stringDate2(Calendar cal) {
+	public static String stringDate2(final Calendar cal) {
 
 		if (cal != null) {
 			return sdf2.format(cal.getTime());
@@ -463,107 +557,20 @@ public class Utils {
 		return "";
 	}
 
-	//////////////////////////////////////////////////////////////////////
-
-	/**
-	 * 
-	 * net.ajaskey.market.misc.getFileExt
-	 *
-	 * @param f
-	 * @return
-	 */
-	public static String getFileExt(File f) {
-
-		String fname = f.getName().trim();
-		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0))
-		  return fname.substring(fname.lastIndexOf(".") + 1).trim();
-		else
-			return "";
-	}
-
-	public static String removeFileExt(File f) {
-
-		String fname = f.getName();
-		if ((fname.lastIndexOf(".") != -1) && (fname.lastIndexOf(".") != 0))
-		  return fname.substring(0, fname.lastIndexOf("."));
-		else
-			return "";
-	}
-
-	public static boolean isInExtList(File f, List<String> ext) {
-
-		String fext = "." + getFileExt(f).trim().toLowerCase();
-		if (fext.length() > 1) {
-			for (String s : ext) {
-				if (s.toLowerCase().contains(fext)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
-	public static List<File> getDirTree(File top, List<String> ext) {
-
-		List<File> retFiles = new ArrayList<>();
-		updateDirTree(retFiles, top, ext);
-		return retFiles;
-
-	}
-
-	private static void updateDirTree(List<File> list, File top, List<String> ext) {
+	private static void updateDirTree(final List<File> list, final File top, final List<String> ext) {
 
 		if ((top.exists()) && top.isDirectory()) {
 			for (final File aFile : top.listFiles()) {
 				if (aFile.isDirectory()) {
-					updateDirTree(list, aFile, ext);
-				} else {
-					if (isInExtList(aFile, ext)) {
+					Utils.updateDirTree(list, aFile, ext);
+				}
+				else {
+					if (Utils.isInExtList(aFile, ext)) {
 						list.add(aFile);
 					}
 				}
 			}
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.misc.getStringFull
-	 *
-	 * @param day
-	 * @return
-	 */
-	public static String getStringFull(Calendar cal) {
-
-		return sdfFull.format(cal.getTime());
-	}
-
-	/** 
-	 * net.ajaskey.market.misc.getCurrentDateStr
-	 *
-	 * @return
-	 */
-	public static String getCurrentDateStr() {
-
-		Calendar cal = Calendar.getInstance();
-		return getStringFull(cal);
-	}
-
-	/** 
-	 * net.ajaskey.market.misc.sleep
-	 *
-	 * @param i
-	 */
-	public static void sleep(int milliseconds) {
-		
-		if (milliseconds < 1) {
-			return;
-		}
-
-		try {
-			Thread.sleep(milliseconds);
-		} catch (InterruptedException e) {
-		}
-		
 	}
 
 }

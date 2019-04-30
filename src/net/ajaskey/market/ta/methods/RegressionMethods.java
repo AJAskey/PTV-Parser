@@ -59,7 +59,8 @@ public class RegressionMethods extends SimpleRegression {
 		 * This method serves as a constructor for the class.
 		 *
 		 */
-		public DataPoint(Calendar cal, double price) {
+		public DataPoint(final Calendar cal, final double price) {
+
 			this.daDate = cal;
 			this.daDays = Utils.getTimeSpan(cal, RegressionMethods.this.baseCal);
 			this.daPrice = price;
@@ -75,12 +76,13 @@ public class RegressionMethods extends SimpleRegression {
 	public class SortPoints implements Comparator<DataPoint> {
 
 		@Override
-		public int compare(DataPoint d1, DataPoint d2) {
+		public int compare(final DataPoint d1, final DataPoint d2) {
 
 			int retval = 0;
 			if (d1.daDays > d2.daDays) {
 				retval = 1;
-			} else if (d1.daDays > d2.daDays) {
+			}
+			else if (d1.daDays > d2.daDays) {
 				retval = -1;
 			}
 			return retval;
@@ -104,6 +106,7 @@ public class RegressionMethods extends SimpleRegression {
 	 *
 	 */
 	public RegressionMethods() {
+
 		this.baseCal = Calendar.getInstance();
 		this.baseCal.set(1900, Calendar.JANUARY, 1, 12, 0, 1);
 		this.dataCount = 0;
@@ -119,7 +122,7 @@ public class RegressionMethods extends SimpleRegression {
 	 * @param dates
 	 * @param days
 	 */
-	public void addData(double[] price, Calendar[] dates, long days) {
+	public void addData(final double[] price, final Calendar[] dates, final long days) {
 
 		final long knt = Math.min(days, price.length);
 		for (int i = 0; i < knt; i++) {
@@ -150,7 +153,7 @@ public class RegressionMethods extends SimpleRegression {
 	 * @param cal
 	 * @return
 	 */
-	public double findX(Calendar cal) {
+	public double findX(final Calendar cal) {
 
 		double ret = 0;
 		try {
@@ -168,7 +171,7 @@ public class RegressionMethods extends SimpleRegression {
 	 * @param cal
 	 * @return
 	 */
-	public RegressionOutput getOutput(Calendar cal) {
+	public RegressionOutput getOutput(final Calendar cal) {
 
 		try {
 			if (this.dataCount > 0) {

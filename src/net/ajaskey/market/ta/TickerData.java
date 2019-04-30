@@ -4,7 +4,6 @@ package net.ajaskey.market.ta;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -62,7 +61,7 @@ public class TickerData {
 	 * @throws FileNotFoundException
 	 *           A file in the list was not found.
 	 */
-	static public List<TickerData> build(List<String> directoryNames) throws ParseException, FileNotFoundException {
+	static public List<TickerData> build(final List<String> directoryNames) throws ParseException, FileNotFoundException {
 
 		if ((directoryNames == null) || (directoryNames.size() < 1)) {
 			System.out.println("Invalid list of fileNames sent to net.ajaskey.market.ta.build()");
@@ -85,7 +84,7 @@ public class TickerData {
 	 *
 	 * @param tdList
 	 */
-	public static void clearTickerData(List<TickerData> tdList) {
+	public static void clearTickerData(final List<TickerData> tdList) {
 
 		if (tdList != null) {
 			for (final TickerData td : tdList) {
@@ -101,7 +100,7 @@ public class TickerData {
 	 *
 	 * @param td
 	 */
-	public static void clearTickerData(TickerData td) {
+	public static void clearTickerData(final TickerData td) {
 
 		if (td != null) {
 			td.data.clear();
@@ -118,12 +117,13 @@ public class TickerData {
 		}
 	}
 
-	static public DailyData getDailyDate(TickerData td, Calendar cal) {
+	static public DailyData getDailyDate(final TickerData td, final Calendar cal) {
 
 		for (final DailyData dd : td.getData()) {
 			if (Utils.sameDate(cal, dd.getDate())) {
 				return dd;
-			} else if (dd.getDate().after(cal)) {
+			}
+			else if (dd.getDate().after(cal)) {
 				return dd;
 			}
 		}
@@ -139,11 +139,10 @@ public class TickerData {
 	 * @param cal
 	 * @return
 	 */
-	static public DailyData getDataOfDate(TickerData td, Calendar cal) {
+	static public DailyData getDataOfDate(final TickerData td, final Calendar cal) {
 
 		try {
-			return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
-			    cal.get(Calendar.DAY_OF_MONTH));
+			return TickerData.getDataOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
 		} catch (final Exception e) {
 		}
 		return null;
@@ -159,7 +158,7 @@ public class TickerData {
 	 * @param day
 	 * @return
 	 */
-	static public DailyData getDataOfDate(TickerData td, int year, int month, int day) {
+	static public DailyData getDataOfDate(final TickerData td, final int year, final int month, final int day) {
 
 		DailyData dd = null;
 		final int idx = TickerData.getIndexOfDate(td, year, month, day);
@@ -180,7 +179,7 @@ public class TickerData {
 	 * @param tdList
 	 * @return
 	 */
-	public static TickerData getFromList(String ticker, List<TickerData> tdList) {
+	public static TickerData getFromList(final String ticker, final List<TickerData> tdList) {
 
 		try {
 			for (final TickerData td : tdList) {
@@ -201,7 +200,7 @@ public class TickerData {
 	 * @param cal
 	 * @return
 	 */
-	static public int getIndexOfDate(TickerData td, Calendar cal) {
+	static public int getIndexOfDate(final TickerData td, final Calendar cal) {
 
 		try {
 			return TickerData.getIndexOfDate(td, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
@@ -220,13 +219,14 @@ public class TickerData {
 	 * @param day
 	 * @return
 	 */
-	static public int getIndexOfDate(TickerData td, int year, int month, int day) {
+	static public int getIndexOfDate(final TickerData td, final int year, final int month, final int day) {
 
 		final Calendar calBase = Calendar.getInstance();
 
 		if ((year < 1900) || (year > calBase.get(Calendar.YEAR))) {
 			return -1;
-		} else if ((month < Calendar.JANUARY) || (month > Calendar.DECEMBER)) {
+		}
+		else if ((month < Calendar.JANUARY) || (month > Calendar.DECEMBER)) {
 			return -1;
 		}
 		calBase.set(year, month, 1, 0, 0, 1);
@@ -248,11 +248,14 @@ public class TickerData {
 			// (int) shortSpan, idx);
 			if (span == 0) {
 				return knt;
-			} else if (span > lastSpan) {
+			}
+			else if (span > lastSpan) {
 				return knt - 1;
-			} else if (span < shortSpan) {
+			}
+			else if (span < shortSpan) {
 				shortSpan = span;
-			} else if (span > shortSpan) {
+			}
+			else if (span > shortSpan) {
 				return -1;
 			}
 			lastSpan = span;
@@ -271,13 +274,14 @@ public class TickerData {
 	 * @param recent
 	 * @return
 	 */
-	static public List<DailyData> getSlice(TickerData td, Calendar start, int days) {
+	static public List<DailyData> getSlice(final TickerData td, final Calendar start, int days) {
 
 		try {
 			if ((td != null) && (start != null) && (days >= 0)) {
 				if (days > td.getDaysOfData()) {
 					days = td.getDaysOfData();
-				} else if (days == 0) {
+				}
+				else if (days == 0) {
 					days = td.getDaysOfData();
 				}
 				final int idx = TickerData.getIndexOfDate(td, start);
@@ -298,7 +302,7 @@ public class TickerData {
 	 * @param ticker
 	 * @return
 	 */
-	public static TickerData getTickerData(List<TickerData> list, String ticker) {
+	public static TickerData getTickerData(final List<TickerData> list, final String ticker) {
 
 		try {
 			for (final TickerData td : list) {
@@ -320,15 +324,13 @@ public class TickerData {
 	 * @param stop
 	 * @return
 	 */
-	public static int getTradingDays(TickerData td, Calendar start, Calendar stop) {
+	public static int getTradingDays(final TickerData td, final Calendar start, final Calendar stop) {
 
 		int ret = 0;
 		try {
-			final int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH),
-			    start.get(Calendar.DAY_OF_MONTH));
+			final int idx1 = TickerData.getIndexOfDate(td, start.get(Calendar.YEAR), start.get(Calendar.MONTH), start.get(Calendar.DAY_OF_MONTH));
 			if (idx1 >= 0) {
-				final int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH),
-				    stop.get(Calendar.DAY_OF_MONTH));
+				final int idx2 = TickerData.getIndexOfDate(td, stop.get(Calendar.YEAR), stop.get(Calendar.MONTH), stop.get(Calendar.DAY_OF_MONTH));
 				if (idx2 < idx1) {
 					ret = ((idx1 - idx2) + 1);
 				}
@@ -339,7 +341,7 @@ public class TickerData {
 		return ret;
 	}
 
-	public static void mergeData(TickerData td, TickerData tdNew) {
+	public static void mergeData(final TickerData td, final TickerData tdNew) {
 
 		td.getData().addAll(tdNew.getData());
 	}
@@ -351,11 +353,12 @@ public class TickerData {
 	 * @param td
 	 * @param sortReverse
 	 */
-	public static void sortDailyData(TickerData td, boolean sortReverse) {
+	public static void sortDailyData(final TickerData td, final boolean sortReverse) {
 
 		if (sortReverse) {
 			Collections.sort(td.data, new SortDailyDataReverse());
-		} else {
+		}
+		else {
 			Collections.sort(td.data, new SortDailyData());
 		}
 
@@ -370,7 +373,6 @@ public class TickerData {
 	 * Derived values
 	 */
 	private Integer								daysOfData;
-	private DerivedData						derived;
 	private Double								sma23;
 	private Double								smaPerc23;
 	private TrendType							sma23Trend;
@@ -445,6 +447,7 @@ public class TickerData {
 	 *
 	 */
 	public TickerData() {
+
 	}
 
 	/**
@@ -466,7 +469,9 @@ public class TickerData {
 	 * @param v
 	 *          Volume traded.
 	 */
-	public TickerData(String t, Calendar d, double o, double h, double l, double c, double v, double oi) {
+	public TickerData(final String t, final Calendar d, final double o, final double h, final double l, final double c, final double v,
+	    final double oi) {
+
 		final DailyData dd = new DailyData(d, o, h, l, c, v, oi);
 		this.setTicker(t);
 		this.tickerName = TickerFullName.getName(t);
@@ -474,8 +479,6 @@ public class TickerData {
 		this.fundies = Fundamentals.getWithTicker(this.ticker);
 		this.data.add(dd);
 		this.daysOfData = 0;
-
-		this.derived = null;
 
 		this.sma23 = 0.0;
 		this.sma65 = 0.0;
@@ -521,7 +524,7 @@ public class TickerData {
 	 *
 	 * @param dd
 	 */
-	public void addData(DailyData dd) {
+	public void addData(final DailyData dd) {
 
 		this.data.add(dd);
 	}
@@ -535,7 +538,7 @@ public class TickerData {
 	 * @param days
 	 * @return
 	 */
-	private double calcPriceChange(int days) {
+	private double calcPriceChange(final int days) {
 
 		double ret = 0.0;
 		if (this.daysOfData > days) {
@@ -546,7 +549,7 @@ public class TickerData {
 		return ret;
 	}
 
-	public String DailyDataString(int day) {
+	public String DailyDataString(final int day) {
 
 		return this.data.get(day).toString();
 	}
@@ -557,7 +560,7 @@ public class TickerData {
 	 *
 	 * @param start
 	 */
-	public void fillDataArrays(int start, boolean sortReversed) {
+	public void fillDataArrays(final int start, final boolean sortReversed) {
 
 		TickerData.sortDailyData(this, sortReversed);
 
@@ -596,7 +599,7 @@ public class TickerData {
 	 * net.ajaskey.market.ta.generateDerived
 	 *
 	 */
-	public void generateDerived(boolean isReverse) {
+	public void generateDerived(final boolean isReverse) {
 
 		this.generateDerived(0, isReverse);
 	}
@@ -607,7 +610,7 @@ public class TickerData {
 	 *
 	 * @param start
 	 */
-	public void generateDerived(int start, boolean isReverse) {
+	public void generateDerived(final int start, final boolean isReverse) {
 
 		/**
 		 * Must sort prices by date before many of the following calculations
@@ -681,8 +684,7 @@ public class TickerData {
 		if (this.daysOfData > 46) {
 			this.atr23 = this.taMethods.calcATR(this.getHighData(), this.getLowData(), this.getCloseData(), 23);
 			if (this.sma23 > 0.0) {
-				this.atrPercent23 = RangeMethods.avgTrueRangePercent(this.getHighData(), this.getLowData(), this.getCloseData(),
-				    23);
+				this.atrPercent23 = RangeMethods.avgTrueRangePercent(this.getHighData(), this.getLowData(), this.getCloseData(), 23);
 			}
 		}
 
@@ -807,7 +809,7 @@ public class TickerData {
 		return this.chg65;
 	}
 
-	public double getClose(int day) {
+	public double getClose(final int day) {
 
 		if ((this.closeData == null) || (this.closeData.length < day)) {
 			return 0.0;
@@ -831,20 +833,19 @@ public class TickerData {
 		return this.currentPrice;
 	}
 
-	public String getDailyDataString(int day) {
+	public String getDailyDataString(final int day) {
 
 		try {
 			if ((this.dateData == null) || (this.openData == null) || (this.highData == null) || (this.lowData == null)
 			    || (this.closeData == null) || (this.volumeData == null) || (this.oiData == null)) {
 				return "";
 			}
-			if ((this.dateData.length < day) || (this.openData.length < day) || (this.highData.length < day)
-			    || (this.lowData.length < day) || (this.closeData.length < day) || (this.volumeData.length < day)
-			    || (this.oiData.length < day)) {
+			if ((this.dateData.length < day) || (this.openData.length < day) || (this.highData.length < day) || (this.lowData.length < day)
+			    || (this.closeData.length < day) || (this.volumeData.length < day) || (this.oiData.length < day)) {
 				return "";
 			}
-			final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day],
-			    this.closeData[day], this.volumeData[day], this.oiData[day]);
+			final DailyData dd = new DailyData(this.dateData[day], this.openData[day], this.highData[day], this.lowData[day], this.closeData[day],
+			    this.volumeData[day], this.oiData[day]);
 			return dd.toString();
 		} catch (final Exception e) {
 			return "";
@@ -873,7 +874,7 @@ public class TickerData {
 		return this.data.size();
 	}
 
-	public Calendar getDate(int day) {
+	public Calendar getDate(final int day) {
 
 		try {
 			if ((this.dateData == null) || (this.dateData.length < day)) {
@@ -926,7 +927,7 @@ public class TickerData {
 		return this.fundies;
 	}
 
-	public double getHigh(int day) {
+	public double getHigh(final int day) {
 
 		try {
 			if ((this.highData == null) || (this.highData.length < day)) {
@@ -954,7 +955,7 @@ public class TickerData {
 		return this.highData;
 	}
 
-	public double getLow(int day) {
+	public double getLow(final int day) {
 
 		try {
 			if ((this.lowData == null) || (this.lowData.length < day)) {
@@ -1046,7 +1047,7 @@ public class TickerData {
 		return this.mfi65;
 	}
 
-	public double getOi(int day) {
+	public double getOi(final int day) {
 
 		try {
 			if ((this.oiData == null) || (this.oiData.length < day)) {
@@ -1066,7 +1067,7 @@ public class TickerData {
 		return this.oiData;
 	}
 
-	public double getOpen(int day) {
+	public double getOpen(final int day) {
 
 		try {
 			if ((this.openData == null) || (this.openData.length < day)) {
@@ -1286,7 +1287,7 @@ public class TickerData {
 		return this.typicalPriceData;
 	}
 
-	public double getVolume(int day) {
+	public double getVolume(final int day) {
 
 		try {
 			if ((this.volumeData == null) || (this.volumeData.length < day)) {
@@ -1349,12 +1350,25 @@ public class TickerData {
 					this.data.get(i).setVolume(avg10);
 					// System.out.printf("%d %d %d%n", (int) avg5m, (int) avg10, (int)
 					// avg5p);
-				} else {
+				}
+				else {
 					this.data.get(i).setVolume(0);
 				}
 			}
 		}
 
+	}
+
+	/**
+	 * net.ajaskey.market.ta.printOptuma
+	 *
+	 * @param pw
+	 */
+	public void printOptuma(final PrintWriter pw) {
+
+		for (final DailyData dd : this.data) {
+			pw.println(dd.toOputma());
+		}
 	}
 
 	/**
@@ -1421,11 +1435,12 @@ public class TickerData {
 	 * @param ticker
 	 *          the ticker to set
 	 */
-	public void setTicker(String tickerIn) {
+	public void setTicker(final String tickerIn) {
 
 		if (tickerIn != null) {
 			this.ticker = tickerIn.trim().toUpperCase();
-		} else {
+		}
+		else {
 			this.ticker = "UNKNOWN";
 		}
 	}
@@ -1434,7 +1449,7 @@ public class TickerData {
 	 * @param tickerExchange
 	 *          the tickerExchange to set
 	 */
-	public void setTickerExchange(String tickerExchange) {
+	public void setTickerExchange(final String tickerExchange) {
 
 		this.tickerExchange = tickerExchange;
 	}
@@ -1449,18 +1464,5 @@ public class TickerData {
 
 		return str;
 
-	}
-	
-
-	/**
-	 * net.ajaskey.market.ta.printOptuma
-	 *
-	 * @param pw
-	 */
-	public void printOptuma(PrintWriter pw) {
-
-		for (final DailyData dd : this.data) {
-			pw.println(dd.toOputma());
-		}
 	}
 }

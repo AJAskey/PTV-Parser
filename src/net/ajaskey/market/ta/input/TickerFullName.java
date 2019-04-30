@@ -50,7 +50,7 @@ public class TickerFullName {
 	 *
 	 * @param fnames
 	 */
-	static public void build(List<String> fnames) {
+	static public void build(final List<String> fnames) {
 
 		for (final String f : fnames) {
 			TickerFullName.build(f);
@@ -65,7 +65,7 @@ public class TickerFullName {
 	 *
 	 * @param fname
 	 */
-	static public void build(String fname) {
+	static public void build(final String fname) {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(fname))) {
 
@@ -97,7 +97,7 @@ public class TickerFullName {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	static public void debug(String fname) throws FileNotFoundException {
+	static public void debug(final String fname) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(new File(fname))) {
 			for (final TickerFullName tfn : tickerNames) {
@@ -121,7 +121,7 @@ public class TickerFullName {
 	 *          symbol to check
 	 * @return ticker name or null
 	 */
-	static public String getName(String ticker) {
+	static public String getName(final String ticker) {
 
 		for (final TickerFullName t : tickerNames) {
 			// System.out.println(ticker + "\t" + t.ticker);
@@ -139,7 +139,7 @@ public class TickerFullName {
 	 * @param ticker
 	 * @return
 	 */
-	static public boolean isValid(String ticker) {
+	static public boolean isValid(final String ticker) {
 
 		boolean status = false;
 		for (final TickerFullName tkr : tickerNames) {

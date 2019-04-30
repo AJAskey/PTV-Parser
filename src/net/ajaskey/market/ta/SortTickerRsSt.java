@@ -33,12 +33,13 @@ import java.util.Comparator;
 public class SortTickerRsSt implements Comparator<TickerData> {
 
 	@Override
-	public int compare(TickerData t1, TickerData t2) {
+	public int compare(final TickerData t1, final TickerData t2) {
 
 		int ret = 0;
 		if (t1.getRsStRaw() < t2.getRsStRaw()) {
 			ret = 1;
-		} else if (t1.getRsStRaw() > t2.getRsStRaw()) {
+		}
+		else if (t1.getRsStRaw() > t2.getRsStRaw()) {
 			ret = -1;
 		}
 		return ret;

@@ -12,14 +12,13 @@ import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.tools.helpers.OhlcvData;
 import net.ajaskey.market.tools.helpers.OhlcvData.FormType;
 import net.ajaskey.market.tools.helpers.ProcessExcel;
@@ -55,7 +54,6 @@ public class ConvertOHLCV {
 
 	final static private Charset					charset		= Charset.forName("UTF-8");
 	final private static SimpleDateFormat	sdf				= new SimpleDateFormat("MM-dd-yyyy");
-	final private static SimpleDateFormat	sdfOut		= new SimpleDateFormat("yyyy-MM-dd");
 	static private List<OhlcvData>				data			= new ArrayList<>();;
 	final public static String						shortPath	= OptumaCommon.optumaPath + "/Quandl";
 	final public static String						fullPath	= OptumaCommon.optumaPath + "/Dohlcv";
@@ -91,7 +89,7 @@ public class ConvertOHLCV {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		final JFileChooser chooser = new JFileChooser("C:\\Users\\ajask_000\\Downloads");
 		final FileNameExtensionFilter filter = new FileNameExtensionFilter("Data File", "html", "xls", "xlsx");
@@ -105,7 +103,8 @@ public class ConvertOHLCV {
 			if (ext.contains("xls")) {
 				ConvertOHLCV.parseXlsFile(chooser.getSelectedFile().getAbsolutePath());
 
-			} else if (ext.contains("html")) {
+			}
+			else if (ext.contains("html")) {
 				ConvertOHLCV.parseHtmlFile(chooser.getSelectedFile().toPath());
 			}
 		}
@@ -122,7 +121,7 @@ public class ConvertOHLCV {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static String parseHtmlFile(Path path) throws IOException, ParseException {
+	public static String parseHtmlFile(final Path path) throws IOException, ParseException {
 
 		String retStr = "";
 
@@ -154,13 +153,12 @@ public class ConvertOHLCV {
 
 				final double tmp = c * 10000.0;
 				if ((long) tmp != 0) {
-					final Calendar cal = Calendar.getInstance();
-					cal.setTime(sdf.parse(fld[1].trim()));
+					final DateTime dt = new DateTime(sdf.parse(fld[1].trim()));
 					final double o = Double.parseDouble(fld[2].trim());
 					final double h = Double.parseDouble(fld[3].trim());
 					final double l = Double.parseDouble(fld[4].trim());
 					final long v = Long.parseLong(fld[6].trim());
-					final OhlcvData d = new OhlcvData(cal, o, h, l, c, v);
+					final OhlcvData d = new OhlcvData(dt, o, h, l, c, v);
 
 					retStr += d.toShortString() + "\n";
 
@@ -177,7 +175,8 @@ public class ConvertOHLCV {
 		Collections.sort(data, new SortOhlcv());
 		if (form == OhlcvData.FormType.SHORT) {
 			ConvertOHLCV.writeShortForm(path.toFile().getName());
-		} else {
+		}
+		else {
 			ConvertOHLCV.writeFullForm(path.toFile().getName());
 		}
 
@@ -190,13 +189,13 @@ public class ConvertOHLCV {
 	 * @param absolutePath
 	 * @throws IOException
 	 */
-	public static void parseXlsFile(String fullFileName) throws IOException {
+	public static void parseXlsFile(final String fullFileName) throws IOException {
 
 		final File f = new File(fullFileName);
 		final String fName = f.getName();
 		final List<ProcessExcel> peList = ProcessExcel.parseFred(fullFileName);
 		for (final ProcessExcel pe : peList) {
-			System.out.println(Utils.stringDate(pe.date) + "\t" + pe.value);
+			System.out.println(pe.date + "\t" + pe.value);
 			final OhlcvData d = new OhlcvData(pe.date, 0.0, 0.0, 0.0, pe.value, 0);
 			data.add(d);
 		}
@@ -210,15 +209,14 @@ public class ConvertOHLCV {
 	 * @param name
 	 * @throws FileNotFoundException
 	 */
-	private static void writeFullForm(String name) throws FileNotFoundException {
+	private static void writeFullForm(final String name) throws FileNotFoundException {
 
 		final int idx = name.indexOf(".");
 		final String fname = name.substring(0, idx) + ".csv";
 
 		try (PrintWriter pw = new PrintWriter(fullPath + "/" + fname)) {
 			for (final OhlcvData d : data) {
-				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sdfOut.format(d.date.getTime()), d.open, d.high, d.low, d.close,
-				    d.volume);
+				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", d.date, d.open, d.high, d.low, d.close, d.volume);
 			}
 		}
 
@@ -230,7 +228,7 @@ public class ConvertOHLCV {
 	 * @param name
 	 * @throws FileNotFoundException
 	 */
-	private static void writeShortForm(String name) throws FileNotFoundException {
+	private static void writeShortForm(final String name) throws FileNotFoundException {
 
 		final int idx = name.indexOf(".");
 		final String fname = name.substring(0, idx) + ".csv";
@@ -239,7 +237,7 @@ public class ConvertOHLCV {
 			for (final OhlcvData d : data) {
 				// System.out.printf("%s,%.2f%n", sdf.format(d.date.getTime()),
 				// d.close);
-				pw.printf("%s,%.2f%n", sdfOut.format(d.date.getTime()), d.close);
+				pw.printf("%s,%.2f%n", d.date, d.close);
 			}
 		}
 	}

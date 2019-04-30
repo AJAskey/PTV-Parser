@@ -52,7 +52,8 @@ public class CreateSpxPriceList {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public CreateSpxPriceList(Calendar sDate, Calendar eDate, int inc) {
+	public CreateSpxPriceList(final Calendar sDate, final Calendar eDate, final int inc) {
+
 		this.currentDate = Utils.makeCopy(sDate);
 		this.increment = inc;
 
@@ -97,7 +98,8 @@ public class CreateSpxPriceList {
 			final String day = Utils.getDayName(this.currentDate);
 			if (day.contains("SAT")) {
 				this.currentDate.add(Calendar.DATE, 2);
-			} else if (day.contains("SUN")) {
+			}
+			else if (day.contains("SUN")) {
 				this.currentDate.add(Calendar.DATE, 1);
 			}
 		}

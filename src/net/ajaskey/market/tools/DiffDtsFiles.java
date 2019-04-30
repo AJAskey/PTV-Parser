@@ -46,7 +46,7 @@ public class DiffDtsFiles {
 	 * @param file1
 	 * @param file2
 	 */
-	private static void diffFiles(File file1, File file2) {
+	private static void diffFiles(final File file1, final File file2) {
 
 		int lineknt = 0;
 		final String fname = file1.getName();
@@ -86,7 +86,7 @@ public class DiffDtsFiles {
 	 * @param args
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(final String[] args) throws FileNotFoundException {
 
 		pw = new PrintWriter("dts-diffs.txt");
 
@@ -118,7 +118,7 @@ public class DiffDtsFiles {
 	 * @return
 	 * @throws IOException
 	 */
-	private static String readFile(BufferedReader reader) throws IOException {
+	private static String readFile(final BufferedReader reader) throws IOException {
 
 		final String line = reader.readLine();
 		return line;

@@ -63,7 +63,7 @@ public class CompanyData {
 	 * @param ticker
 	 * @return
 	 */
-	static CompanyData getCompany(String ticker) {
+	static CompanyData getCompany(final String ticker) {
 
 		for (final CompanyData cd : companyList) {
 			if (cd.ticker.equalsIgnoreCase(ticker)) {
@@ -79,7 +79,7 @@ public class CompanyData {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		Debug.init("CompanyData.log");
 
@@ -210,7 +210,7 @@ public class CompanyData {
 			}
 		}
 		System.out.println(spxList.size());
-	//	WriteOptumaFiles.processData(spxList);
+		//	WriteOptumaFiles.processData(spxList);
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class CompanyData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	static void readBsdData(String fname) throws FileNotFoundException, IOException {
+	static void readBsdData(final String fname) throws FileNotFoundException, IOException {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
@@ -247,7 +247,7 @@ public class CompanyData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	static void readCashData(String fname) throws FileNotFoundException, IOException {
+	static void readCashData(final String fname) throws FileNotFoundException, IOException {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
@@ -277,7 +277,7 @@ public class CompanyData {
 	 * @param string
 	 * @throws IOException
 	 */
-	static void readIdData(String fname) throws IOException {
+	static void readIdData(final String fname) throws IOException {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
@@ -308,7 +308,7 @@ public class CompanyData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void readMiscData(String fname) throws FileNotFoundException, IOException {
+	public static void readMiscData(final String fname) throws FileNotFoundException, IOException {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
@@ -332,9 +332,11 @@ public class CompanyData {
 						if (s.length() > 0) {
 							if (s.contains("500")) {
 								cd.spIndex = "SP500";
-							} else if (s.contains("400")) {
+							}
+							else if (s.contains("400")) {
 								cd.spIndex = "SP400";
-							} else if (s.contains("600")) {
+							}
+							else if (s.contains("600")) {
 								cd.spIndex = "SP600";
 							}
 						}
@@ -398,7 +400,8 @@ public class CompanyData {
 							final double bbest = Math.abs(sc) * cd.avgPrice;
 							if (sc < 0.0) {
 								totalBuyBacks += bbest;
-							} else {
+							}
+							else {
 								totalNewShares += bbest;
 							}
 						}
@@ -416,7 +419,7 @@ public class CompanyData {
 	 *
 	 * @param fld
 	 */
-	private static CompanyData setCompanyInfo(String[] fld) {
+	private static CompanyData setCompanyInfo(final String[] fld) {
 
 		final CompanyData cd = new CompanyData();
 		cd.name = fld[0].trim();
@@ -435,14 +438,15 @@ public class CompanyData {
 	 * @param string
 	 * @return
 	 */
-	private static String setSecInd(String secind) {
+	private static String setSecInd(final String secind) {
 
 		String ret = "";
 		final String str = secind.trim();
 		final int pos = secind.indexOf(" - ");
 		if (pos > 0) {
 			ret = str.substring(pos + 3, str.length()).trim();
-		} else {
+		}
+		else {
 			ret = str;
 		}
 		return ret;
@@ -580,7 +584,7 @@ public class CompanyData {
 	 *
 	 * @param string
 	 */
-	public CompanyData(String code) {
+	public CompanyData(final String code) {
 
 		this.ticker = code;
 		this.shares = new QuarterlyData("shares");

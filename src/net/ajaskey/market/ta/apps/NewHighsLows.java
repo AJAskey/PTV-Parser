@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ import net.ajaskey.market.ta.input.TickerFullName;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -43,7 +42,7 @@ public class NewHighsLows {
 	private static List<String>	filenames			= new ArrayList<>();
 	private static List<String>	fullfilenames	= new ArrayList<>();
 
-	public static boolean checkHigh(TickerData td, int len) {
+	public static boolean checkHigh(final TickerData td, final int len) {
 
 		double today = td.getHigh(0);
 		for (int i = 1; i < 5; i++) {
@@ -58,7 +57,7 @@ public class NewHighsLows {
 		return true;
 	}
 
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		fullfilenames.add("symbols\\NASDAQ_SymbolList.txt");
 		fullfilenames.add("symbols\\NYSE_SymbolList.txt");
@@ -81,13 +80,12 @@ public class NewHighsLows {
 
 		int knt = 0;
 		Calendar cal = Calendar.getInstance();
-		for (TickerData td : tdAll) {
+		for (final TickerData td : tdAll) {
 			td.fillDataArrays(0, false);
-			int len = td.getDataCount();
+			final int len = td.getDataCount();
 			if (len >= 750) {
-				boolean high = checkHigh(td, 749);
-				System.out.printf("%s\t%d\t%s\t%B\t%.2f\n", td.getTicker(), len, Utils.getString(td.getDate(len - 1)), high,
-				    td.getHigh(0));
+				final boolean high = NewHighsLows.checkHigh(td, 749);
+				System.out.printf("%s\t%d\t%s\t%B\t%.2f\n", td.getTicker(), len, Utils.getString(td.getDate(len - 1)), high, td.getHigh(0));
 				if (td.getDate(len - 1).before(cal)) {
 					cal = td.getDate(len - 1);
 					System.out.println(Utils.getString(cal));

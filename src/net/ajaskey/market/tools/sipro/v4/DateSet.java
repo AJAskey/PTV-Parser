@@ -46,6 +46,7 @@ public class DateSet {
 		 *
 		 */
 		public QData() {
+
 			this.date = Calendar.getInstance();
 			this.value = 0.0;
 		}
@@ -63,7 +64,7 @@ public class DateSet {
 		 * This method serves as a constructor for the class.
 		 *
 		 */
-		public Quarters(Calendar base, List<LongTermOHLCV> prices) {
+		public Quarters(final Calendar base, final List<LongTermOHLCV> prices) {
 
 			this.q4.date = Utils.buildCalendar(base);
 			if (prices != null) {
@@ -108,6 +109,21 @@ public class DateSet {
 		}
 	}
 
+	/**
+	 * net.ajaskey.market.tools.sipro.main
+	 *
+	 * @param args
+	 * @throws ParseException
+	 * @throws IOException
+	 */
+	public static void main(final String[] args) throws IOException, ParseException {
+
+		final List<LongTermOHLCV> prices = LongTermOHLCV.getData("SP500");
+		final DateSet ds = new DateSet(prices);
+		System.out.println(ds);
+
+	}
+
 	public Quarters	y7;
 	public Quarters	y6;
 	public Quarters	y5;
@@ -117,7 +133,8 @@ public class DateSet {
 	public Quarters	y1;
 	public Quarters	y0;
 	public QData		ttm	= new QData();
-	public double		latestPrice;
+
+	public double latestPrice;
 
 	/**
 	 *
@@ -125,7 +142,7 @@ public class DateSet {
 	 *
 	 * @param prices
 	 */
-	public DateSet(List<LongTermOHLCV> prices) {
+	public DateSet(final List<LongTermOHLCV> prices) {
 
 		this.latestPrice = LongTermOHLCV.getLatestPrice(prices);
 
@@ -154,21 +171,6 @@ public class DateSet {
 
 		tmp.add(Calendar.MONTH, -3);
 		this.y7 = new Quarters(tmp, prices);
-	}
-
-	/**
-	 * net.ajaskey.market.tools.sipro.main
-	 *
-	 * @param args
-	 * @throws ParseException
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException, ParseException {
-
-		final List<LongTermOHLCV> prices = LongTermOHLCV.getData("SP500");
-		final DateSet ds = new DateSet(prices);
-		System.out.println(ds);
-
 	}
 
 	@Override

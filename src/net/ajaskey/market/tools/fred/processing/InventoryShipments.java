@@ -25,7 +25,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -38,7 +38,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  */
 public class InventoryShipments {
 
-	private static String findFullName(String title, List<File> files) {
+	private static String findFullName(final String title, final List<File> files) {
 
 		for (final File file : files) {
 
@@ -61,14 +61,14 @@ public class InventoryShipments {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.processing.main
 	 *
 	 * @param args
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		final File folder = new File(FredCommon.fredPath);
 
@@ -99,10 +99,9 @@ public class InventoryShipments {
 						final String tmp2 = s2.replace("VS.csv", "");
 						if (tmp2.equals(tmp1)) {
 
-							final String fullname = findFullName(tmp1, files);
+							final String fullname = InventoryShipments.findFullName(tmp1, files);
 							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname,
-							    IngestOptumaFile.DIVIDE);
+							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE);
 
 						}
 					}

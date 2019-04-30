@@ -30,7 +30,7 @@ public class BalanceSheetData {
 
 	final private static String TAB = "\t";
 
-	public static BalanceSheetData setBalanceSheetInfo(String[] fld) {
+	public static BalanceSheetData setBalanceSheetInfo(final String[] fld) {
 
 		final BalanceSheetData bsd = new BalanceSheetData();
 

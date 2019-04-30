@@ -51,11 +51,12 @@ public class DateSet {
 		 * This method serves as a constructor for the class.
 		 *
 		 */
-		public Quarter(Calendar base, List<LongTermOHLCV> prices) {
-			q4price = 0;
-			q3price = 0;
-			q2price = 0;
-			q1price = 0;
+		public Quarter(final Calendar base, final List<LongTermOHLCV> prices) {
+
+			this.q4price = 0;
+			this.q3price = 0;
+			this.q2price = 0;
+			this.q1price = 0;
 
 			this.q4 = Utils.buildCalendar(base);
 			if (prices != null) {
@@ -106,9 +107,9 @@ public class DateSet {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
-		List<LongTermOHLCV> prices = LongTermOHLCV.getData("SP500");
+		final List<LongTermOHLCV> prices = LongTermOHLCV.getData("SP500");
 		final DateSet ds = new DateSet(prices);
 		System.out.println(ds);
 
@@ -127,11 +128,12 @@ public class DateSet {
 	public double		latestPrice;
 
 	/**
-	 * 
+	 *
 	 * This method serves as a constructor for the class.
 	 *
 	 */
 	public DateSet() {
+
 		this.ttm = Calendar.getInstance();
 		for (int i = 0; i < 7; i++) {
 			this.ttm.add(Calendar.DATE, -1);
@@ -177,14 +179,15 @@ public class DateSet {
 		this.y7 = new Quarter(tmp, null);
 
 	}
-/**
- * 
- * This method serves as a constructor for the class.
- *
- * @param prices
- */
-	public DateSet(List<LongTermOHLCV> prices) {
-		
+
+	/**
+	 *
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param prices
+	 */
+	public DateSet(final List<LongTermOHLCV> prices) {
+
 		this.latestPrice = LongTermOHLCV.getLatestPrice(prices);
 
 		this.ttm = Calendar.getInstance();
@@ -196,11 +199,11 @@ public class DateSet {
 		}
 
 		final Calendar tmp = Calendar.getInstance();
-	
+
 		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
 		tmp.set(Calendar.DATE, 31);
-		this.y0 = new Quarter(tmp, prices);	
-		
+		this.y0 = new Quarter(tmp, prices);
+
 		tmp.add(Calendar.YEAR, -1);
 		tmp.set(Calendar.MONTH, Calendar.DECEMBER);
 		tmp.set(Calendar.DATE, 31);
@@ -249,7 +252,7 @@ public class DateSet {
 		ret += "\nY2\n" + this.y2;
 		ret += "\nY1\n" + this.y1;
 		ret += "\nY0\n" + this.y0;
-		ret += "\nTTM  : " + Utils.stringDate(this.ttm)+ "\t"+ this.latestPrice;
+		ret += "\nTTM  : " + Utils.stringDate(this.ttm) + "\t" + this.latestPrice;
 		return ret;
 	}
 

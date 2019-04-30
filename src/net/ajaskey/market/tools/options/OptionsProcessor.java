@@ -7,8 +7,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import net.ajaskey.market.misc.Utils;
-
 /**
  *
  * @author aja
@@ -30,7 +28,7 @@ public class OptionsProcessor {
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.options.CalcTimeSeries
 	 *
 	 * @param openDi
@@ -40,13 +38,13 @@ public class OptionsProcessor {
 	 * @param filename
 	 * @throws FileNotFoundException
 	 */
-	public static void CalcTimeSeries(DataItem openDi, int days, double priceRange, double ivRange, String filename)
-	    throws FileNotFoundException {
+	public static void CalcTimeSeries(final DataItem openDi, final int days, final double priceRange, final double ivRange,
+	    final String filename) throws FileNotFoundException {
 
-		double chgPerDay = priceRange / (double) days;
-		double ivPerDay = ivRange / (double) days;
+		final double chgPerDay = priceRange / days;
+		final double ivPerDay = ivRange / days;
 
-		Calendar sellit = Calendar.getInstance();
+		final Calendar sellit = Calendar.getInstance();
 		double iv = openDi.iv;
 		double cp = openDi.stockPrice;
 
@@ -63,14 +61,17 @@ public class OptionsProcessor {
 					di = openDi.getCallPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
 					cp += chgPerDay;
 
-				} else if (openDi.dataType == DataItem.APUT) {
+				}
+				else if (openDi.dataType == DataItem.APUT) {
 
 					di = openDi.getPutPrice(cp, OptionsProcessor.sdf.format(sellit.getTime()), iv);
 					cp -= chgPerDay;
 				}
 				iv += ivPerDay;
 
-				if (di != null) pw.println(di);
+				if (di != null) {
+					pw.println(di);
+				}
 
 			}
 		}
@@ -82,7 +83,7 @@ public class OptionsProcessor {
 	 * @param num
 	 * @return
 	 */
-	private static double cumulativeDistribution(double num) {
+	private static double cumulativeDistribution(final double num) {
 
 		final double t = 1.0 / (1.0 + (P * Math.abs(num)));
 		final double t1 = B1 * Math.pow(t, 1.0);
@@ -117,7 +118,7 @@ public class OptionsProcessor {
 	 *          Implied Volitility
 	 * @return d1 from Black-Scholes equation
 	 */
-	private static double d1(double cprice, double sprice, double rate, double years, double iv) {
+	private static double d1(final double cprice, final double sprice, final double rate, final double years, final double iv) {
 
 		final double p1 = Math.log(cprice / sprice) + ((rate + (Math.pow(iv, 2) / 2)) * years);
 		final double p2 = iv * Math.sqrt(years);
@@ -152,7 +153,7 @@ public class OptionsProcessor {
 	 *          Implied Volitility
 	 * @return d2 from Black-Scholes equation
 	 */
-	private static double d2(double cprice, double sprice, double rate, double years, double iv) {
+	private static double d2(final double cprice, final double sprice, final double rate, final double years, final double iv) {
 
 		return OptionsProcessor.d1(cprice, sprice, rate, years, iv) - (iv * Math.sqrt(years));
 	}
@@ -171,7 +172,7 @@ public class OptionsProcessor {
 	 *          Implied Volatility
 	 * @return Calculated Call Price
 	 */
-	public static double getCallPrice(double cprice, double sprice, double rate, double years, double iv) {
+	public static double getCallPrice(final double cprice, final double sprice, final double rate, final double years, final double iv) {
 
 		double price = 0.0;
 
@@ -203,7 +204,7 @@ public class OptionsProcessor {
 		return price;
 	}
 
-	public static long getDeltaDays(Calendar c2) {
+	public static long getDeltaDays(final Calendar c2) {
 
 		final Calendar c1 = Calendar.getInstance();
 		return (c2.getTime().getTime() - c1.getTime().getTime()) / 86400000;
@@ -215,12 +216,12 @@ public class OptionsProcessor {
 	 * @param c2
 	 * @return
 	 */
-	public static long getDeltaDays(Calendar c1, Calendar c2) {
+	public static long getDeltaDays(final Calendar c1, final Calendar c2) {
 
 		return (c2.getTime().getTime() - c1.getTime().getTime()) / 86400000;
 	}
 
-	public static double getDeltaYears(Calendar c2) {
+	public static double getDeltaYears(final Calendar c2) {
 
 		final Calendar c1 = Calendar.getInstance();
 		return OptionsProcessor.getDeltaDays(c1, c2) / 365.0;
@@ -232,7 +233,7 @@ public class OptionsProcessor {
 	 * @param c2
 	 * @return
 	 */
-	public static double getDeltaYears(Calendar c1, Calendar c2) {
+	public static double getDeltaYears(final Calendar c1, final Calendar c2) {
 
 		return OptionsProcessor.getDeltaDays(c1, c2) / 365.0;
 	}
@@ -251,7 +252,7 @@ public class OptionsProcessor {
 	 *          Implied Volatility
 	 * @return Calculated Put Price
 	 */
-	public static double getPutPrice(double cprice, double sprice, double rate, double years, double iv) {
+	public static double getPutPrice(final double cprice, final double sprice, final double rate, final double years, final double iv) {
 
 		double price = 0.0;
 
@@ -292,7 +293,7 @@ public class OptionsProcessor {
 	 * @param args
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws ParseException {
+	public static void main(final String[] args) throws ParseException {
 
 		final Calendar c = Calendar.getInstance();
 		c.setTime(sdf.parse("20191231"));
@@ -321,7 +322,7 @@ public class OptionsProcessor {
 	 *
 	 * @param di
 	 */
-	public static void setGreeks(DataItem di) {
+	public static void setGreeks(final DataItem di) {
 
 		try {
 			final double d1 = OptionsProcessor.d1(di.stockPrice, di.strike, di.rate, di.yrs, di.iv);
@@ -343,7 +344,8 @@ public class OptionsProcessor {
 
 				di.rho = di.strike * di.yrs * Math.exp(-di.rate * di.yrs) * cd2;
 
-			} else if (di.dataType == DataItem.APUT) {
+			}
+			else if (di.dataType == DataItem.APUT) {
 
 				final double pcd2 = OptionsProcessor.cumulativeDistribution(-d2);
 
@@ -358,9 +360,9 @@ public class OptionsProcessor {
 
 			di.gamma = sd1 / (di.strike * di.iv * Math.sqrt(di.yrs));
 
-			di.vega = di.strike * sd1 * Math.sqrt(di.yrs) / 100.0;
+			di.vega = (di.strike * sd1 * Math.sqrt(di.yrs)) / 100.0;
 
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -370,7 +372,7 @@ public class OptionsProcessor {
 	 * @param num
 	 * @return
 	 */
-	private static double standardNormalDistribution(double num) {
+	private static double standardNormalDistribution(final double num) {
 
 		final double p1 = Math.exp(-0.5 * Math.pow(num, 2.0));
 		return p1 / p2;

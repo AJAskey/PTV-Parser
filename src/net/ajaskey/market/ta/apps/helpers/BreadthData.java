@@ -47,6 +47,7 @@ public class BreadthData {
 	 *
 	 */
 	public BreadthData() {
+
 		this.setPrice(0.0);
 		this.dma23 = 0;
 		this.dma65 = 0;
@@ -179,7 +180,7 @@ public class BreadthData {
 	 * @param ema130
 	 *          the ema130 to set
 	 */
-	public void setDma130(double dma130) {
+	public void setDma130(final double dma130) {
 
 		this.dma130 = dma130;
 	}
@@ -188,7 +189,7 @@ public class BreadthData {
 	 * @param ema23
 	 *          the ema23 to set
 	 */
-	public void setDma23(double dma23) {
+	public void setDma23(final double dma23) {
 
 		this.dma23 = dma23;
 	}
@@ -197,7 +198,7 @@ public class BreadthData {
 	 * @param dma200
 	 *          the dma200 to set
 	 */
-	public void setDma260(double dma260) {
+	public void setDma260(final double dma260) {
 
 		this.dma260 = dma260;
 	}
@@ -206,7 +207,7 @@ public class BreadthData {
 	 * @param ema65
 	 *          the ema65 to set
 	 */
-	public void setDma65(double dma65) {
+	public void setDma65(final double dma65) {
 
 		this.dma65 = dma65;
 	}
@@ -215,7 +216,7 @@ public class BreadthData {
 	 * @param price
 	 *          the price to set
 	 */
-	public void setPrice(double price) {
+	public void setPrice(final double price) {
 
 		this.price = price;
 	}

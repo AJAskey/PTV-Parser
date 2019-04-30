@@ -61,7 +61,7 @@ public class SipData2 {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		SipData2.read("data/SP500-SIP2.csv", "SPX");
 		//SipData.read("data/NDX-SIP.csv", "NDX");
@@ -75,7 +75,7 @@ public class SipData2 {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void read(String filename, String src) throws FileNotFoundException, IOException {
+	public static void read(final String filename, final String src) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 
@@ -161,7 +161,7 @@ public class SipData2 {
 		}
 	}
 
-	private static void write(PrintWriter pw, DateSet.Quarter q, double val) {
+	private static void write(final PrintWriter pw, final DateSet.Quarter q, final double val) {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val);
@@ -169,7 +169,7 @@ public class SipData2 {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
 
-	private static void writeData(DataSet ds, String fname) {
+	private static void writeData(final DataSet ds, final String fname) {
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 

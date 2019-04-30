@@ -52,8 +52,7 @@ public class WeekendReset {
 	 * @throws ParserConfigurationException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args)
-	    throws ParserConfigurationException, SAXException, IOException, ParseException {
+	public static void main(final String[] args) throws ParserConfigurationException, SAXException, IOException, ParseException {
 
 		MoveNewEOD.moveFile("C:\\Data\\EODData\\DataClient\\ASCII\\");
 
@@ -74,13 +73,13 @@ public class WeekendReset {
 		}
 
 		WriteIndexEOD.main(args);
-		
+
 		Internals.main(args);
-		
+
 		if (WeekendReset.AllWeek) {
 			BreadthOfList.main(args);
 		}
-		
+
 		System.out.println("Weekend Reset Complete.");
 
 	}

@@ -14,8 +14,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
-import net.ajaskey.market.tools.fred.FredCommon;
-
 /**
  * This class...
  *
@@ -30,7 +28,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -44,118 +42,20 @@ import net.ajaskey.market.tools.fred.FredCommon;
 public class GenerateTests {
 
 	/**
-	 * net.ajaskey.randoop.main
-	 *
-	 * @param args
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-
-		//System.out.println(randoop);
-
-		final File folder = new File("src/");
-		final Set<String> uniqPackages = new HashSet<>();
-
-		String[] ext = new String[] { "java" };
-		List<File> files = (List<File>) FileUtils.listFiles(folder, ext, true);
-		for (File file : files) {
-
-			try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
-
-				String line;
-				while ((line = reader.readLine()) != null) {
-					final String str = line.trim();
-					if (isPackageDeclation(str)) {
-						String addStr = str.replace("package ", "").replace(";", "");
-						uniqPackages.add(addStr);
-						break;
-					}
-				}
-			}
-
-		}
-
-		List<PackageData> packageList = new ArrayList<>();
-
-		for (String pkg : uniqPackages) {
-			PackageData pd = new PackageData(pkg);
-			packageList.add(pd);
-			System.out.println(pkg);
-		}
-
-		for (PackageData pd : packageList) {
-
-			String fname = "src/" + pd.packageName.replace(".", "/");
-			File dir = new File(fname);
-
-			//Only need to set the path once per package
-			if (pd.fullpath.length() == 0) {
-				pd.fullpath = dir.getAbsolutePath();
-			}
-
-			List<File> javaFiles = (List<File>) FileUtils.listFiles(dir, ext, false);
-
-			for (File f : javaFiles) {
-
-				try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
-
-					String line;
-					while ((line = reader.readLine()) != null) {
-						final String str = line.trim();
-						if (isClass(str)) {
-							String tmp = str.substring(13).trim();
-							int idxSpace = getIndex(tmp, " ");
-							int idxParen = getIndex(tmp, "(");
-							int idxBracket = getIndex(tmp, "{");
-							int last = Math.min(idxBracket, Math.min(idxSpace, idxParen));
-							String classname = tmp.substring(0, last);
-							pd.classNames.add(classname);
-							break;
-						}
-					}
-				}
-			}
-		}
-
-		String randoop1 = "java -cp c:/dev/randoop/randoop-all-4.1.1.jar;c:/dev/PTV-Investing/bin randoop.main.Main gentests --junit-output-dir=c:/dev/PTV-Investing/Test";
-		String randoop4 = String.format("--log=C:/Dev/PTV-Investing/src/net/ajaskey/randoop/randoop.log --time-limit=60 --flaky-test-behavior=DISCARD");
-
-		for (PackageData pd : packageList) {
-			String fname = pd.fullpath + "/classlist.txt";
-			try (PrintWriter pw = new PrintWriter(fname)) {
-				for (String s : pd.classNames) {
-					pw.println(pd.packageName + "." + s);
-				}
-			}
-
-			String randoop2 = String.format("--classlist=%s", fname);
-			String randoop3 = String.format("--junit-package-name=%s", pd.packageName);
-
-			try (PrintWriter pw = new PrintWriter(pd.fullpath + "/gentests.bat")) {
-
-				pw.printf("cd c:\\temp\\randoopout%n%s %s %s %s%n", randoop1, randoop2, randoop3, randoop4);
-
-			}
-			System.out.println(pd);
-		}
-
-	}
-
-	/**
 	 * net.ajaskey.randoop.getIndex
 	 *
 	 * @param tmp
 	 * @param string
 	 * @return
 	 */
-	private static int getIndex(String tmp, String lookfor) {
+	private static int getIndex(final String tmp, final String lookfor) {
 
 		int ret = 0;
-		int idx = tmp.indexOf(lookfor);
+		final int idx = tmp.indexOf(lookfor);
 		if (idx < 0) {
 			ret = 1024;
-		} else {
+		}
+		else {
 			ret = idx;
 		}
 		return ret;
@@ -167,7 +67,7 @@ public class GenerateTests {
 	 * @param str
 	 * @return
 	 */
-	private static boolean isClass(String str) {
+	private static boolean isClass(final String str) {
 
 		boolean ret = false;
 
@@ -183,7 +83,7 @@ public class GenerateTests {
 	 * @param str
 	 * @return
 	 */
-	private static boolean isPackageDeclation(String str) {
+	private static boolean isPackageDeclation(final String str) {
 
 		boolean ret = false;
 
@@ -191,5 +91,105 @@ public class GenerateTests {
 			ret = true;
 		}
 		return ret;
+	}
+
+	/**
+	 * net.ajaskey.randoop.main
+	 *
+	 * @param args
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
+
+		//System.out.println(randoop);
+
+		final File folder = new File("src/");
+		final Set<String> uniqPackages = new HashSet<>();
+
+		final String[] ext = new String[] { "java" };
+		final List<File> files = (List<File>) FileUtils.listFiles(folder, ext, true);
+		for (final File file : files) {
+
+			try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
+
+				String line;
+				while ((line = reader.readLine()) != null) {
+					final String str = line.trim();
+					if (GenerateTests.isPackageDeclation(str)) {
+						final String addStr = str.replace("package ", "").replace(";", "");
+						uniqPackages.add(addStr);
+						break;
+					}
+				}
+			}
+
+		}
+
+		final List<PackageData> packageList = new ArrayList<>();
+
+		for (final String pkg : uniqPackages) {
+			final PackageData pd = new PackageData(pkg);
+			packageList.add(pd);
+			System.out.println(pkg);
+		}
+
+		for (final PackageData pd : packageList) {
+
+			final String fname = "src/" + pd.packageName.replace(".", "/");
+			final File dir = new File(fname);
+
+			//Only need to set the path once per package
+			if (pd.fullpath.length() == 0) {
+				pd.fullpath = dir.getAbsolutePath();
+			}
+
+			final List<File> javaFiles = (List<File>) FileUtils.listFiles(dir, ext, false);
+
+			for (final File f : javaFiles) {
+
+				try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+
+					String line;
+					while ((line = reader.readLine()) != null) {
+						final String str = line.trim();
+						if (GenerateTests.isClass(str)) {
+							final String tmp = str.substring(13).trim();
+							final int idxSpace = GenerateTests.getIndex(tmp, " ");
+							final int idxParen = GenerateTests.getIndex(tmp, "(");
+							final int idxBracket = GenerateTests.getIndex(tmp, "{");
+							final int last = Math.min(idxBracket, Math.min(idxSpace, idxParen));
+							final String classname = tmp.substring(0, last);
+							pd.classNames.add(classname);
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		final String randoop1 = "java -cp c:/dev/randoop/randoop-all-4.1.1.jar;c:/dev/PTV-Investing/bin randoop.main.Main gentests --junit-output-dir=c:/dev/PTV-Investing/Test";
+		final String randoop4 = String
+		    .format("--log=C:/Dev/PTV-Investing/src/net/ajaskey/randoop/randoop.log --time-limit=60 --flaky-test-behavior=DISCARD");
+
+		for (final PackageData pd : packageList) {
+			final String fname = pd.fullpath + "/classlist.txt";
+			try (PrintWriter pw = new PrintWriter(fname)) {
+				for (final String s : pd.classNames) {
+					pw.println(pd.packageName + "." + s);
+				}
+			}
+
+			final String randoop2 = String.format("--classlist=%s", fname);
+			final String randoop3 = String.format("--junit-package-name=%s", pd.packageName);
+
+			try (PrintWriter pw = new PrintWriter(pd.fullpath + "/gentests.bat")) {
+
+				pw.printf("cd c:\\temp\\randoopout%n%s %s %s %s%n", randoop1, randoop2, randoop3, randoop4);
+
+			}
+			System.out.println(pd);
+		}
+
 	}
 }

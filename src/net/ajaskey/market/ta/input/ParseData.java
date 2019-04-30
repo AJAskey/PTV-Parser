@@ -88,7 +88,7 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static List<String> getTickerList(String filename) throws FileNotFoundException, IOException {
+	public static List<String> getTickerList(final String filename) throws FileNotFoundException, IOException {
 
 		final List<String> list = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
@@ -117,40 +117,16 @@ public class ParseData {
 	}
 
 	/**
-	 * net.ajaskey.market.ta.input.isCurrent
-	 *
-	 * @param f
-	 * @return
-	 */
-	@SuppressWarnings("unused")
-	private static boolean isCurrent(File f) {
-
-		boolean current = false;
-		if (f.exists()) {
-			final long modtime = f.lastModified();
-			final Calendar calFile = Calendar.getInstance();
-			calFile.setTimeInMillis(modtime);
-			final int fileDoy = calFile.get(Calendar.DAY_OF_YEAR);
-
-			final Calendar cal = Calendar.getInstance();
-			final int doy = cal.get(Calendar.DAY_OF_YEAR);
-
-			current = (fileDoy != doy);
-		}
-		return current;
-	}
-
-	/**
 	 *
 	 * @param ticker
 	 * @return
 	 */
-	static public boolean isTickerValid(String ticker) {
+	static public boolean isTickerValid(final String ticker) {
 
 		return TickerFullName.isValid(ticker.trim());
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		try {
 			final List<String> l = ParseData.getTickerList("data/SP500-SIP3.CSV");
@@ -170,7 +146,7 @@ public class ParseData {
 	 * @param mainList
 	 * @param newList
 	 */
-	private static void mergeLists(List<TickerData> mainList, List<TickerData> newList) {
+	private static void mergeLists(final List<TickerData> mainList, final List<TickerData> newList) {
 
 		for (final TickerData tdNew : newList) {
 			boolean found = false;
@@ -195,7 +171,7 @@ public class ParseData {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	static public List<TickerData> parseFile(File file) throws ParseException, FileNotFoundException {
+	static public List<TickerData> parseFile(final File file) throws ParseException, FileNotFoundException {
 
 		if ((validTickers == null) || (validTickers.size() == 0)) {
 			return null;
@@ -249,9 +225,10 @@ public class ParseData {
 									final DailyData dd = new DailyData(cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
 									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]), oi);
 									tdCheck.addData(dd);
-								} else {
-									td = new TickerData(fld[0], cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]),
-									    ParseData.toDouble(fld[4]), ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]), oi);
+								}
+								else {
+									td = new TickerData(fld[0], cal, ParseData.toDouble(fld[2]), ParseData.toDouble(fld[3]), ParseData.toDouble(fld[4]),
+									    ParseData.toDouble(fld[5]), ParseData.toDouble(fld[6]), oi);
 
 									final String exch = file.getParent();
 									final int idx = exch.lastIndexOf("\\");
@@ -261,7 +238,8 @@ public class ParseData {
 									// System.out.println("Added : " + fld[0]);
 								}
 
-							} else {
+							}
+							else {
 								throw new ParseException("bad data", 1);
 							}
 						}
@@ -287,13 +265,13 @@ public class ParseData {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	static public List<TickerData> parseFiles(List<String> fileNames) throws ParseException, FileNotFoundException {
+	static public List<TickerData> parseFiles(final List<String> fileNames) throws ParseException, FileNotFoundException {
 
 		return ParseData.parseFiles(fileNames, 36500);
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.ta.input.parseFiles
 	 *
 	 * @param directoryName
@@ -302,14 +280,14 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static List<TickerData> parseFiles(List<String> directoryName, Calendar firstDay)
+	public static List<TickerData> parseFiles(final List<String> directoryName, final Calendar firstDay)
 	    throws FileNotFoundException, ParseException {
 
-		Calendar today = Calendar.getInstance();
+		final Calendar today = Calendar.getInstance();
 
-		long end = today.getTimeInMillis();
-		long start = firstDay.getTimeInMillis();
-		long days = TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
+		final long end = today.getTimeInMillis();
+		final long start = firstDay.getTimeInMillis();
+		final long days = TimeUnit.MILLISECONDS.toDays(Math.abs(end - start));
 
 		return ParseData.parseFiles(directoryName, (int) days);
 	}
@@ -324,7 +302,7 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static List<TickerData> parseFiles(List<String> directoryNames, int calendarDays)
+	public static List<TickerData> parseFiles(final List<String> directoryNames, final int calendarDays)
 	    throws FileNotFoundException, ParseException {
 
 		final List<TickerData> tdList = new ArrayList<>();
@@ -392,8 +370,7 @@ public class ParseData {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	static public List<InterdayData> parseInterdayFile(File file)
-	    throws IOException, FileNotFoundException, ParseException {
+	static public List<InterdayData> parseInterdayFile(final File file) throws IOException, FileNotFoundException, ParseException {
 
 		String tkr = "";
 		double open = 0;
@@ -457,7 +434,7 @@ public class ParseData {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	static public TickerData parseOneFile(String fname) throws ParseException, FileNotFoundException {
+	static public TickerData parseOneFile(final String fname) throws ParseException, FileNotFoundException {
 
 		return ParseData.parseOneFile(fname, GET_ALL_DATA);
 	}
@@ -472,7 +449,7 @@ public class ParseData {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	static public TickerData parseOneFile(String fname, int days) throws ParseException, FileNotFoundException {
+	static public TickerData parseOneFile(final String fname, final int days) throws ParseException, FileNotFoundException {
 
 		final TickerData tickerData = new TickerData();
 		try {
@@ -539,7 +516,7 @@ public class ParseData {
 	 * @param dirStr
 	 * @return
 	 */
-	public static List<TickerData> parsePTVData(String dirStr) {
+	public static List<TickerData> parsePTVData(final String dirStr) {
 
 		return ParseData.parsePTVData(dirStr, GET_ALL_DATA);
 	}
@@ -552,7 +529,7 @@ public class ParseData {
 	 * @param days
 	 * @return
 	 */
-	public static List<TickerData> parsePTVData(String dirStr, int days) {
+	public static List<TickerData> parsePTVData(final String dirStr, final int days) {
 
 		final List<TickerData> tdList = new ArrayList<>();
 		final File dir = new File(dirStr);
@@ -583,7 +560,7 @@ public class ParseData {
 	 * @param mIN_PRICE
 	 *          the mIN_PRICE to set
 	 */
-	public static void setMIN_PRICE(double mIN_PRICE) {
+	public static void setMIN_PRICE(final double mIN_PRICE) {
 
 		MIN_PRICE = mIN_PRICE;
 	}
@@ -592,7 +569,7 @@ public class ParseData {
 	 * @param mIN_VOLUME
 	 *          the mIN_VOLUME to set
 	 */
-	public static void setMIN_VOLUME(int mIN_VOLUME) {
+	public static void setMIN_VOLUME(final int mIN_VOLUME) {
 
 		MIN_VOLUME = mIN_VOLUME;
 	}
@@ -601,7 +578,7 @@ public class ParseData {
 	 *
 	 * @param ticker
 	 */
-	public static void setValidTicker(String ticker) {
+	public static void setValidTicker(final String ticker) {
 
 		if (ticker != null) {
 			validTickers.add(ticker.trim().toUpperCase());
@@ -612,7 +589,7 @@ public class ParseData {
 	 *
 	 * @param tickers
 	 */
-	public static void setValidTickers(List<String> tickers) {
+	public static void setValidTickers(final List<String> tickers) {
 
 		for (final String t : tickers) {
 			ParseData.setValidTicker(t);
@@ -626,14 +603,15 @@ public class ParseData {
 	 * @param str
 	 * @return
 	 */
-	private static Double toDouble(String str) {
+	private static Double toDouble(final String str) {
 
 		String dStr;
 		try {
 			final int idx = str.indexOf(".");
 			if (idx > 0) {
 				dStr = str;
-			} else {
+			}
+			else {
 				dStr = str + ".0";
 			}
 		} catch (final Exception e) {

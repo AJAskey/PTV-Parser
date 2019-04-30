@@ -45,7 +45,7 @@ public class InvShip {
 	 * @param files
 	 * @return
 	 */
-	private static String findFullName(String title, List<File> files) {
+	private static String findFullName(final String title, final List<File> files) {
 
 		for (final File file : files) {
 			final String name = file.getName();
@@ -69,7 +69,7 @@ public class InvShip {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		final File folder = new File(FredCommon.fredPath);
 
@@ -93,8 +93,7 @@ public class InvShip {
 						if (tmp2.equals(tmp1)) {
 							final String fullname = InvShip.findFullName(tmp1, files);
 							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname,
-							    IngestOptumaFile.DIVIDE);
+							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE);
 						}
 					}
 				}

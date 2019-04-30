@@ -35,7 +35,7 @@ public class ZombieScore {
 	 * @param cd
 	 * @return
 	 */
-	public static ZombieScore calculate(CompanyData cd) {
+	public static ZombieScore calculate(final CompanyData cd) {
 
 		final ZombieScore zc = new ZombieScore();
 
@@ -67,7 +67,8 @@ public class ZombieScore {
 				d = (cd.bsd.equity.getMostRecent() / cd.marketCap) * 100.0;
 				if (d < 0.0) {
 					eqPercent = Math.abs(Math.max(d, -30.0));
-				} else {
+				}
+				else {
 					if (cd.bsd.equity.dd.qoqGrowth > 0.0) {
 						eqPercent = -1.0 * Math.min(d, 10.0);
 					}
@@ -79,7 +80,8 @@ public class ZombieScore {
 					if (cd.ltDebtEquity > 2.0) {
 						ltdtoe = Math.min((cd.ltDebtEquity * 2.5), 35.0);
 					}
-				} else if (cd.bsd.ltDebt.getMostRecent() > 0.0) {
+				}
+				else if (cd.bsd.ltDebt.getMostRecent() > 0.0) {
 					ltdtoe = 5;
 				}
 				zc.ltDebt = ltdtoe;

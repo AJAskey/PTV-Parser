@@ -34,12 +34,13 @@ public class SortScore implements Comparator<CompanyData> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(CompanyData cd1, CompanyData cd2) {
+	public int compare(final CompanyData cd1, final CompanyData cd2) {
 
 		int ret = 0;
 		if (cd1.zscore.score < cd2.zscore.score) {
 			ret = 1;
-		} else if (cd1.zscore.score > cd2.zscore.score) {
+		}
+		else if (cd1.zscore.score > cd2.zscore.score) {
 			ret = -1;
 		}
 

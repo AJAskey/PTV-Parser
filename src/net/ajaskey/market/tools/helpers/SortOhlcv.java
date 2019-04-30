@@ -31,12 +31,13 @@ import java.util.Comparator;
 public class SortOhlcv implements Comparator<OhlcvData> {
 
 	@Override
-	public int compare(OhlcvData d1, OhlcvData d2) {
+	public int compare(final OhlcvData d1, final OhlcvData d2) {
 
 		int ret = 0;
-		if (d1.date.before(d2.date)) {
+		if (d1.date.isLessThan(d2.date)) {
 			ret = -1;
-		} else if (d1.date.after(d2.date)) {
+		}
+		else if (d1.date.isGreaterThan(d2.date)) {
 			ret = 1;
 		}
 		return ret;

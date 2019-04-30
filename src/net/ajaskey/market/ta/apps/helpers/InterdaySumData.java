@@ -43,6 +43,7 @@ public class InterdaySumData {
 	 *
 	 */
 	public InterdaySumData() {
+
 		this.totUp = 0;
 		this.totDown = 0;
 		this.totForceUp = 0;

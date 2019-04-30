@@ -52,7 +52,7 @@ public class GannSwings {
 	 * @param stop
 	 * @param i
 	 */
-	private static Calendar getCalendarDate(Calendar cal, int i) {
+	private static Calendar getCalendarDate(final Calendar cal, final int i) {
 
 		final Calendar c = (Calendar) cal.clone();
 		c.add(Calendar.DAY_OF_YEAR, i);
@@ -67,7 +67,7 @@ public class GannSwings {
 	 * @param knt
 	 * @return
 	 */
-	static private Calendar getTradingDate(Calendar cal, int knt) {
+	static private Calendar getTradingDate(final Calendar cal, final int knt) {
 
 		final int tradingDays = (int) Math.round((knt * 7.0) / 5.0);
 		return GannSwings.getCalendarDate(cal, tradingDays);
@@ -80,7 +80,7 @@ public class GannSwings {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, ParseException {
 
 		final TickerData td = ParseData.parseOneFile("out\\QQQ.txt");
 		td.generateDerived(false);
@@ -121,7 +121,7 @@ public class GannSwings {
 
 	}
 
-	static private void setBounds(TickerData td, Calendar start, Calendar stop) {
+	static private void setBounds(final TickerData td, final Calendar start, final Calendar stop) {
 
 		final SimpleDateFormat sdf = new SimpleDateFormat("E dd-MMM-yyyy");
 

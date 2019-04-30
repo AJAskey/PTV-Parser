@@ -77,7 +77,7 @@ public class SipData3 {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		SipData3.readClosingPrices("data/closing_price.txt");
 
@@ -87,20 +87,23 @@ public class SipData3 {
 		if (group.equals("SPX")) {
 			SipData3.readDataFile_1("data/SP500-SIP3.txt");
 			SipData3.readDataFile_2("data/SP500-SIP3b.txt");
-		} else if (group.contains("SPXxEnergy")) {
+		}
+		else if (group.contains("SPXxEnergy")) {
 			SipData3.readDataFile_1("data/SP500-SIP3-EXENERGY.txt");
 			SipData3.readDataFile_2("data/SP500-SIP3b-EXENERGY.txt");
-		} else if (group.contains("SML")) {
+		}
+		else if (group.contains("SML")) {
 			SipData3.readDataFile_1("data/SP600-SIP3.txt");
 			SipData3.readDataFile_2("data/SP600-SIP3b.txt");
-		} else {
+		}
+		else {
 			return;
 		}
 
 		SipData3.processData(group);
 	}
 
-	public static void processData(String src) throws FileNotFoundException, IOException {
+	public static void processData(final String src) throws FileNotFoundException, IOException {
 
 		final DataSet3 totSales = DataSet3.sum(sales);
 		final DataSet3 totEbit = DataSet3.sum(ebit);
@@ -172,7 +175,8 @@ public class SipData3 {
 			SipData3.write(totBvDollar, "SPX Book Value v3");
 			SipData3.write(totBVminusGW, "SPX Book Value less Goodwill v3");
 			SipData3.write(totMktCap, "SPX Market Cap v3");
-		} else if (src.equalsIgnoreCase("SPXxEnergy")) {
+		}
+		else if (src.equalsIgnoreCase("SPXxEnergy")) {
 			SipData3.write(totSales, "SPXxEnergy Sales v3");
 			SipData3.write(totEbit, "SPXxEnergy EBIT v3");
 			SipData3.write(totTax, "SPXxEnergy Taxes v3");
@@ -196,7 +200,8 @@ public class SipData3 {
 			SipData3.write(totBvDollar, "SPXxEnergy Book Value v3");
 			SipData3.write(totBVminusGW, "SPXxEnergy Book Value less Goodwill v3");
 			SipData3.write(totMktCap, "SPXxEnergy Market Cap v3");
-		} else if (src.equalsIgnoreCase("SML")) {
+		}
+		else if (src.equalsIgnoreCase("SML")) {
 			SipData3.write(totSales, "SP600 Sales");
 			SipData3.write(totTax, "SP600 Taxes");
 			SipData3.write(totIncome, "SP600 Income for EPS");
@@ -222,7 +227,7 @@ public class SipData3 {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	private static void readClosingPrices(String filename) throws FileNotFoundException, IOException {
+	private static void readClosingPrices(final String filename) throws FileNotFoundException, IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
@@ -250,7 +255,7 @@ public class SipData3 {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void readDataFile_1(String filename) throws FileNotFoundException, IOException {
+	public static void readDataFile_1(final String filename) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 
@@ -302,7 +307,7 @@ public class SipData3 {
 		companyKnt = knt;
 	}
 
-	public static void readDataFile_2(String filename) throws FileNotFoundException, IOException {
+	public static void readDataFile_2(final String filename) throws FileNotFoundException, IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(filename)))) {
 			String line = "";
@@ -339,16 +344,17 @@ public class SipData3 {
 	//		return dsRet;
 	//	}
 
-	public static void write(DataSet3 ds, String fname) throws FileNotFoundException {
+	public static void write(final DataSet3 ds, final String fname) throws FileNotFoundException {
 
 		if (ds.mode == DataSet3.dMode.SEQUENTIAL) {
 			SipData3.writeDataSequential(ds, fname);
-		} else {
+		}
+		else {
 			SipData3.writeDataAccumulate(ds, fname);
 		}
 	}
 
-	private static void write(PrintWriter pw, DateSet.Quarter q, double val) {
+	private static void write(final PrintWriter pw, final DateSet.Quarter q, final double val) {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val);
@@ -356,7 +362,7 @@ public class SipData3 {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
 
-	private static void write(PrintWriter pw, DateSet.Quarter q, Double val[]) {
+	private static void write(final PrintWriter pw, final DateSet.Quarter q, final Double val[]) {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val[0]);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val[1]);
@@ -364,7 +370,7 @@ public class SipData3 {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val[3]);
 	}
 
-	private static void writeDataAccumulate(DataSet3 ds, String fname) {
+	private static void writeDataAccumulate(final DataSet3 ds, final String fname) {
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 
@@ -390,7 +396,7 @@ public class SipData3 {
 		}
 	}
 
-	private static void writeDataSequential(DataSet3 ds, String fname) throws FileNotFoundException {
+	private static void writeDataSequential(final DataSet3 ds, final String fname) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 

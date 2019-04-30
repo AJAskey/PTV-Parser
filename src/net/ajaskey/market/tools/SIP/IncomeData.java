@@ -30,7 +30,7 @@ public class IncomeData {
 
 	final private static String TAB = "\t";
 
-	public static IncomeData setBalanceSheetInfo(String[] fld) {
+	public static IncomeData setBalanceSheetInfo(final String[] fld) {
 
 		final IncomeData id = new IncomeData();
 
@@ -68,7 +68,7 @@ public class IncomeData {
 	 * @param fld
 	 * @return
 	 */
-	public static IncomeData setIncomeData(String[] fld) {
+	public static IncomeData setIncomeData(final String[] fld) {
 
 		final IncomeData id = new IncomeData();
 

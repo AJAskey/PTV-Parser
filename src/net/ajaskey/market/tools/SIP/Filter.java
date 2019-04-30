@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class Filter {
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 	}
 
@@ -43,13 +43,13 @@ public class Filter {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public Filter(List<CompanyData> cdList) {
+	public Filter(final List<CompanyData> cdList) {
 
 		this.cList = cdList;
 		this.epsQoQ = new FilterData(0.0);
 	}
 
-	public void addBound(double val) {
+	public void addBound(final double val) {
 
 	}
 

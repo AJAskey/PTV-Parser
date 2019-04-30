@@ -39,7 +39,7 @@ public class SortTickerFullNames implements Comparator<TickerFullName> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(TickerFullName tfn1, TickerFullName tfn2) {
+	public int compare(final TickerFullName tfn1, final TickerFullName tfn2) {
 
 		return tfn1.getTicker().compareTo(tfn2.getTicker());
 	}

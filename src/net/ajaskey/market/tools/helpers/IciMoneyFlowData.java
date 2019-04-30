@@ -51,11 +51,12 @@ public class IciMoneyFlowData {
 	 *
 	 */
 	public IciMoneyFlowData() {
+
 		this.valid = false;
 		this.total = 0;
 	}
 
-	public void build(String line) {
+	public void build(final String line) {
 
 		new IciMoneyFlowData();
 		try {

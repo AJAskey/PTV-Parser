@@ -32,7 +32,8 @@ public class Gann {
 		UNKNOWN, UP, DOWN, INSIDE, OUTSIDE
 	}
 
-	public static SwingState determineState(double high[], double low[], double close[], int day, int interval) {
+	public static SwingState determineState(final double high[], final double low[], final double close[], final int day,
+	    final int interval) {
 
 		final SwingState state = Gann.SwingState.UNKNOWN;
 

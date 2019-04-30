@@ -43,11 +43,12 @@ public class SpxEarnings {
 	 *
 	 * @return
 	 */
-	private static double getEarnings(SpxEarningsData d) {
+	private static double getEarnings(final SpxEarningsData d) {
 
 		if (Math.abs(d.eps) > 0.0) {
 			return (d.eps + d.div);
-		} else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
+		}
+		else if ((Math.abs(d.netIncAfterTax) > 0.0) && (Math.abs(d.shares) > 0.0)) {
 			return ((d.netIncAfterTax / d.shares) + d.div);
 		}
 
@@ -60,7 +61,7 @@ public class SpxEarnings {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		final String dateStr = "29Jul2016";
 		final List<SpxEarningsData> data = SpxEarningsData.readData("SP500-Earnings-" + dateStr + ".txt");

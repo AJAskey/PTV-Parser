@@ -51,12 +51,40 @@ public class UpdateFred {
 
 	private static List<DataSeriesInfo> prop_names = null;
 
-	private static String getLastLine(String fname) throws FileNotFoundException, IOException {
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.dumpRates
+	 *
+	 * @param seriesName
+	 * @param dv
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	private static void dumpRates() throws FileNotFoundException, IOException {
+
+		final List<String> rateFiles = new ArrayList<>();
+
+		rateFiles.add("[DGS3MO] - 3M Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS6MO] - 6M Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS2] - 2Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS3] - 3Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS5] - 5Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS7] - 7Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS10] - 10Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS20] - 20Y Treasury Constant Maturity Rate");
+		rateFiles.add("[DGS30] - 30Y Treasury Constant Maturity Rate");
+
+		for (final String fil : rateFiles) {
+			final String line = UpdateFred.getLastLine(fil + ".csv");
+			System.out.println(fil + "," + line);
+		}
+	}
+
+	private static String getLastLine(final String fname) throws FileNotFoundException, IOException {
 
 		String ret = "";
 
-		try (BufferedReader reader = new BufferedReader(
-		    new FileReader(OptumaCommon.optumaPath + "FRED-Download\\" + fname))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(OptumaCommon.optumaPath + "FRED-Download\\" + fname))) {
 			String line = "";
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
@@ -70,41 +98,12 @@ public class UpdateFred {
 	}
 
 	/**
-	 * 
-	 * net.ajaskey.market.tools.fred.dumpRates
-	 *
-	 * @param seriesName
-	 * @param dv
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	private static void dumpRates() throws FileNotFoundException, IOException {
-
-		List<String> rateFiles = new ArrayList<>();
-
-		rateFiles.add("[DGS3MO] - 3M Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS6MO] - 6M Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS2] - 2Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS3] - 3Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS5] - 5Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS7] - 7Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS10] - 10Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS20] - 20Y Treasury Constant Maturity Rate");
-		rateFiles.add("[DGS30] - 30Y Treasury Constant Maturity Rate");
-
-		for (String fil : rateFiles) {
-			String line = getLastLine(fil + ".csv");
-			System.out.println(fil + "," + line);
-		}
-	}
-
-	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		Debug.init("update-fred.dbg");
 
@@ -153,24 +152,26 @@ public class UpdateFred {
 
 							dsList.add(dsi);
 
-							boolean propagate = FredCommon.doPropagate(prop_names, series);
+							final boolean propagate = FredCommon.doPropagate(prop_names, series);
 
 							if ((!series.equalsIgnoreCase("SP500")) && (!propagate) && (lastModTime.after(dsi.getLastUpdate()))) {
-								Debug.log("Local file created After                               "
-								    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
+								Debug.log("Local file created After                               " + dsi.getLastUpdate().toString() + Utils.TAB
+								    + dsi.getTitle() + Utils.NL);
 								if (knt < 100) {
 									System.out.print(".");
 									knt++;
-								} else {
+								}
+								else {
 									System.out.println(".");
 									knt = 0;
 								}
-							} else {
+							}
+							else {
 								try {
 									try {
-										Debug.log("Local file created Before                              "
-										    + sdf.format(dsi.getLastUpdate().getTime()) + Utils.TAB + dsi.getTitle() + Utils.NL);
-									} catch (Exception ee) {
+										Debug.log("Local file created Before                              " + dsi.getLastUpdate().toString() + Utils.TAB
+										    + dsi.getTitle() + Utils.NL);
+									} catch (final Exception ee) {
 										ee.printStackTrace();
 									}
 									final DataSeries ds = new DataSeries(series);
@@ -181,12 +182,11 @@ public class UpdateFred {
 									System.out.println(series);
 									knt = 0;
 
-									String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
+									final String filename = FredCommon.toFullFileName(series, dsi.getTitle()); // "[" + series + "] - " + dsi.getTitle();
 									//FredCommon.writeToOptuma(ds.getValues(ir.change, ir.noZeros, ir.estimateData), series);
-									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(),
-									    dsi.getFrequency(), propagate);
+									FredCommon.writeToOptuma(ds.getValues(0.0, true, false), filename, series, dsi.getUnits(), dsi.getFrequency(), propagate);
 
-								} catch (Exception e) {
+								} catch (final Exception e) {
 									e.printStackTrace();
 								}
 							}
@@ -198,21 +198,21 @@ public class UpdateFred {
 				}
 			}
 
-			List<String> always = new ArrayList<>();
+			final List<String> always = new ArrayList<>();
 			always.add("SP500");
 
-			for (String series : always) {
+			for (final String series : always) {
 				try {
 
 					System.out.println("\n" + series);
 					final DataSeriesInfo dsi = new DataSeriesInfo(series);
 					if ((dsi != null) && (dsi.getTitle() != null)) {
 						final DataSeries ds = new DataSeries(series);
-						String filename = FredCommon.toFullFileName(series, dsi.getTitle());
-						List<DataValues> ldv = ds.getValues(0.0, true, false);
+						final String filename = FredCommon.toFullFileName(series, dsi.getTitle());
+						final List<DataValues> ldv = ds.getValues(0.0, true, false);
 						FredCommon.writeToOptuma(ldv, filename, series, dsi.getUnits(), dsi.getFrequency(), false);
 					}
-				} catch (Exception e) {
+				} catch (final Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -224,17 +224,16 @@ public class UpdateFred {
 
 		try {
 			Collections.sort(dsList, new DsiSorter());
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 
 		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "last-update.txt")) {
 			for (final DataSeriesInfo ds : dsList) {
 				try {
-					pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(),
-					    sdf.format(ds.getLastUpdate().getTime()), FredCommon.sdf.format(ds.getLastObservation().getTime()),
-					    ds.getTitle());
-				} catch (Exception e) {
+					pw.printf("%-28s %-25s %6s   %20s %12s    %s%n", ds.getName(), ds.getFrequency(), ds.getUnits(), ds.getLastUpdate().toString(),
+					    ds.getLastObservation().toString(), ds.getTitle());
+				} catch (final Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -243,7 +242,7 @@ public class UpdateFred {
 		Collections.sort(dsList, new DsiAbcSorter());
 		FredCommon.writeSeriesInfo(dsList, FredCommon.fredPath + "/fred-series-info.txt");
 
-		dumpRates();
+		UpdateFred.dumpRates();
 
 		System.out.println("Done.");
 

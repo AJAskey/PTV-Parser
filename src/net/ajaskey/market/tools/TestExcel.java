@@ -48,7 +48,7 @@ public class TestExcel {
 	 * @param day
 	 * @return
 	 */
-	private static Calendar convertDate(int day) {
+	private static Calendar convertDate(final int day) {
 
 		final Calendar base = Calendar.getInstance();
 		base.set(1900, Calendar.JANUARY, 1);
@@ -56,7 +56,7 @@ public class TestExcel {
 		return base;
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		final String excelFilePath = "input/fred.xlsx";
 		final FileInputStream inputStream = new FileInputStream(new File(excelFilePath));

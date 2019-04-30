@@ -1,9 +1,7 @@
 
 package net.ajaskey.market.misc;
 
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
@@ -43,8 +41,6 @@ public class Debug {
 
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
 
-	private static PrintWriter pwDbg;
-
 	private static final Logger LOGGER = Logger.getLogger(FredDataDownloader.class.getName());
 
 	public static final Level	INFO		= Level.INFO;
@@ -54,12 +50,12 @@ public class Debug {
 	private static boolean isInit = false;
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.init
 	 *
 	 * @param logfileName
 	 */
-	public static void init(String logfileName) {
+	public static void init(final String logfileName) {
 
 		if (isInit) {
 			return;
@@ -82,24 +78,24 @@ public class Debug {
 
 			isInit = true;
 
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void log(String s) {
-
-		LOGGER.info(s);
-	}
-
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.log
 	 *
 	 * @param s
 	 */
-	public static void log(Level l, String s) {
+	public static void log(final Level l, final String s) {
 
 		LOGGER.log(l, s);
+	}
+
+	public static void log(final String s) {
+
+		LOGGER.info(s);
 	}
 }

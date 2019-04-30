@@ -95,6 +95,7 @@ public class IndustryData {
 	 *
 	 */
 	public IndustryData() {
+
 		this.rawRs = 0;
 		this.rawRsSt = 0;
 		this.chg260 = 0;
@@ -166,7 +167,7 @@ public class IndustryData {
 	/**
 	 * @return the rank
 	 */
-	public int getRank(int pos) {
+	public int getRank(final int pos) {
 
 		return this.rank.get(pos);
 	}
@@ -215,7 +216,7 @@ public class IndustryData {
 	/**
 	 * @return the slope
 	 */
-	public double getSlope(int pos) {
+	public double getSlope(final int pos) {
 
 		return this.slope.get(pos);
 	}
@@ -232,7 +233,7 @@ public class IndustryData {
 	 * @param avgVol
 	 *          the avgVol to set
 	 */
-	public void setAvgVol(double avgVol) {
+	public void setAvgVol(final double avgVol) {
 
 		this.avgVol = avgVol;
 	}
@@ -241,7 +242,7 @@ public class IndustryData {
 	 * @param chg260
 	 *          the chg260 to set
 	 */
-	public void setChg260(double chg260) {
+	public void setChg260(final double chg260) {
 
 		this.chg260 = chg260;
 	}
@@ -250,7 +251,7 @@ public class IndustryData {
 	 * @param exch
 	 *          the exch to set
 	 */
-	public void setExch(String exch) {
+	public void setExch(final String exch) {
 
 		this.exch = exch;
 	}
@@ -259,7 +260,7 @@ public class IndustryData {
 	 * @param marketCap
 	 *          the marketCap to set
 	 */
-	public void setMarketCap(String marketCap) {
+	public void setMarketCap(final String marketCap) {
 
 		this.marketCap = marketCap;
 	}
@@ -268,7 +269,7 @@ public class IndustryData {
 	 * @param industry
 	 *          the industry to set
 	 */
-	public void setName(String name) {
+	public void setName(final String name) {
 
 		this.industry = name;
 	}
@@ -277,7 +278,7 @@ public class IndustryData {
 	 * @param priceInRange260
 	 *          the priceInRange260 to set
 	 */
-	public void setPriceInRange260(double priceInRange260) {
+	public void setPriceInRange260(final double priceInRange260) {
 
 		this.priceInRange260 = priceInRange260;
 	}
@@ -286,7 +287,7 @@ public class IndustryData {
 	 * @param rank
 	 *          the rank to set
 	 */
-	public void setRank(int rank) {
+	public void setRank(final int rank) {
 
 		this.rank.add(rank);
 	}
@@ -295,7 +296,7 @@ public class IndustryData {
 	 * @param rawRs
 	 *          the rawRs to set
 	 */
-	public void setRawRs(double rawRs) {
+	public void setRawRs(final double rawRs) {
 
 		this.rawRs = rawRs;
 	}
@@ -304,7 +305,7 @@ public class IndustryData {
 	 * @param rawRsSt
 	 *          the rawRsSt to set
 	 */
-	public void setRawRsSt(double rawRsSt) {
+	public void setRawRsSt(final double rawRsSt) {
 
 		this.rawRsSt = rawRsSt;
 	}
@@ -313,7 +314,7 @@ public class IndustryData {
 	 * @param sector
 	 *          the sector to set
 	 */
-	public void setSector(String sector) {
+	public void setSector(final String sector) {
 
 		this.sector = sector;
 	}
@@ -322,7 +323,7 @@ public class IndustryData {
 	 * @param shares
 	 *          the shares to set
 	 */
-	public void setShares(long shares) {
+	public void setShares(final long shares) {
 
 		this.outShares = shares;
 	}
@@ -331,7 +332,7 @@ public class IndustryData {
 	 * @param slope
 	 *          the slope to set
 	 */
-	public void setSlope(double slope) {
+	public void setSlope(final double slope) {
 
 		this.slope.add(slope);
 	}
@@ -340,7 +341,7 @@ public class IndustryData {
 	 * @param ticker
 	 *          the ticker to set
 	 */
-	public void setTicker(String ticker) {
+	public void setTicker(final String ticker) {
 
 		this.ticker = ticker;
 	}

@@ -60,7 +60,7 @@ public class GenStockList {
 	 * @param ticker
 	 * @return
 	 */
-	private static boolean checkName(String tickerName, String ticker) {
+	private static boolean checkName(final String tickerName, final String ticker) {
 
 		boolean ret = false;
 
@@ -79,7 +79,8 @@ public class GenStockList {
 			for (final String s : ignoreNames) {
 				if (tickerName == null) {
 					ret = false;
-				} else if (tickerName.toUpperCase().contains(s)) {
+				}
+				else if (tickerName.toUpperCase().contains(s)) {
 					ret = false;
 					// System.out.println("Ignoring : " + tickerName);
 					break;
@@ -101,7 +102,7 @@ public class GenStockList {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	private static void findStocks(String outName, int minVol, double minPrice) throws ParseException, IOException {
+	private static void findStocks(final String outName, final int minVol, final double minPrice) throws ParseException, IOException {
 
 		new GenStockList();
 
@@ -140,11 +141,14 @@ public class GenStockList {
 			for (final TickerData td : tdStocks) {
 				if (GenStockList.isSP500(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP500");
-				} else if (GenStockList.isNDX(td.getTicker())) {
+				}
+				else if (GenStockList.isNDX(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "NDX");
-				} else if (GenStockList.isSP600(td.getTicker())) {
+				}
+				else if (GenStockList.isSP600(td.getTicker())) {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "SP600");
-				} else {
+				}
+				else {
 					pw.printf(fmt, td.getTicker(), td.getTickerName(), td.getTickerExchange(), "none");
 					pwStocks.println(td.getTicker());
 				}
@@ -152,7 +156,7 @@ public class GenStockList {
 		}
 	}
 
-	private static boolean isNDX(String ticker) throws FileNotFoundException, IOException {
+	private static boolean isNDX(final String ticker) throws FileNotFoundException, IOException {
 
 		if (ndxList == null) {
 			ndxList = ParseData.getTickerList("lists\\ndx-components.csv");
@@ -174,7 +178,7 @@ public class GenStockList {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	private static boolean isSP500(String ticker) throws FileNotFoundException, IOException {
+	private static boolean isSP500(final String ticker) throws FileNotFoundException, IOException {
 
 		if (sp500List == null) {
 			sp500List = ParseData.getTickerList("lists\\ivv-components.csv");
@@ -196,7 +200,7 @@ public class GenStockList {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	private static boolean isSP600(String ticker) throws FileNotFoundException, IOException {
+	private static boolean isSP600(final String ticker) throws FileNotFoundException, IOException {
 
 		if (sp600List == null) {
 			sp600List = ParseData.getTickerList("lists\\ijr-components.csv");
@@ -216,7 +220,7 @@ public class GenStockList {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		System.out.println("GenStockList Processing...");
 

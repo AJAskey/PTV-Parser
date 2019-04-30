@@ -43,7 +43,7 @@ public class DataSet4 {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet4 add(DataSet4 set1, DataSet4 set2) {
+	public static DataSet4 add(final DataSet4 set1, final DataSet4 set2) {
 
 		final DataSet4 ds = new DataSet4();
 		ds.ticker = "MERGED_TICKERS";
@@ -66,12 +66,13 @@ public class DataSet4 {
 		return ds;
 	}
 
-	public static DataSet4 div(DataSet4 num, DataSet4 div) {
+	public static DataSet4 div(final DataSet4 num, final DataSet4 div) {
 
 		final DataSet4 ds = new DataSet4(num.name);
 		if (div.ticker.equals("SCALED")) {
 			ds.ticker = num.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = num.index;
@@ -93,7 +94,7 @@ public class DataSet4 {
 		return ds;
 	}
 
-	private static double divide(double num, double div) {
+	private static double divide(final double num, final double div) {
 
 		double ret = 0;
 		try {
@@ -104,12 +105,13 @@ public class DataSet4 {
 		return ret;
 	}
 
-	public static DataSet4 mult(DataSet4 set1, DataSet4 set2) {
+	public static DataSet4 mult(final DataSet4 set1, final DataSet4 set2) {
 
 		final DataSet4 ds = new DataSet4(set1.name);
 		if (set2.ticker.equals("SCALED")) {
 			ds.ticker = set1.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.index = set1.index;
@@ -138,13 +140,13 @@ public class DataSet4 {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet4 scale(DataSet4 val, double scaler) {
+	public static DataSet4 scale(final DataSet4 val, final double scaler) {
 
 		final DataSet4 ds = DataSet4.scaleSet(scaler);
 		return DataSet4.mult(val, ds);
 	}
 
-	public static DataSet4 scaleSet(double scaler) {
+	public static DataSet4 scaleSet(final double scaler) {
 
 		final DataSet4 ret = new DataSet4("SCALE");
 		ret.ticker = "SCALED";
@@ -166,7 +168,7 @@ public class DataSet4 {
 		return ret;
 	}
 
-	public static DataSet4 sub(DataSet4 set1, DataSet4 set2) {
+	public static DataSet4 sub(final DataSet4 set1, final DataSet4 set2) {
 
 		final DataSet4 ds = new DataSet4("SUBTRACT");
 		ds.ticker = "MERGED_TICKERS";
@@ -197,7 +199,7 @@ public class DataSet4 {
 	 * @param index
 	 * @return
 	 */
-	public static DataSet4 sum(List<DataSet4> data, String index) {
+	public static DataSet4 sum(final List<DataSet4> data, final String index) {
 
 		if (data.size() > 0) {
 			final DataSet4 ret = new DataSet4(data.get(0).name);
@@ -224,7 +226,8 @@ public class DataSet4 {
 				}
 			}
 			return ret;
-		} else {
+		}
+		else {
 			return null;
 		}
 
@@ -257,13 +260,41 @@ public class DataSet4 {
 
 	/**
 	 * This constructor should not be called to ensure proper initialization.
-	 * 
+	 *
 	 * @param prefix
 	 * @param dates
 	 *
 	 */
 	private DataSet4() {
+
 		this.init("");
+	}
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param totEps
+	 */
+	public DataSet4(final DataSet4 ds) {
+
+		this.y7 = ds.y7;
+		this.y6 = ds.y6;
+		this.y5 = ds.y5;
+		this.y4 = ds.y4;
+		this.y3 = ds.y3;
+		this.y2 = ds.y2;
+		this.q8 = ds.q8;
+		this.q7 = ds.q7;
+		this.q6 = ds.q6;
+		this.q5 = ds.q5;
+		this.q4 = ds.q4;
+		this.q3 = ds.q3;
+		this.q2 = ds.q2;
+		this.q1 = ds.q1;
+		this.index = ds.index;
+		this.mode = ds.mode;
+		this.name = ds.name;
+		this.ticker = ds.ticker;
 	}
 
 	/**
@@ -271,7 +302,8 @@ public class DataSet4 {
 	 *
 	 * @param dates
 	 */
-	public DataSet4(DateSet dates, String idx) {
+	public DataSet4(final DateSet dates, final String idx) {
+
 		this.y7 = dates.y7.q4price;
 		this.y6 = dates.y6.q4price;
 		this.y5 = dates.y5.q4price;
@@ -297,11 +329,13 @@ public class DataSet4 {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet4(String n) {
+	public DataSet4(final String n) {
+
 		this.init(n);
 	}
 
-	public DataSet4(String index, String name, String code, String[] s, int ptr, dMode mode) {
+	public DataSet4(final String index, final String name, final String code, final String[] s, final int ptr, final dMode mode) {
+
 		this.init(name);
 		this.index = index.trim();
 		this.ticker = code.trim();
@@ -326,38 +360,13 @@ public class DataSet4 {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q5;
 			}
-		} else if (mode == dMode.SEQUENTIAL) {
+		}
+		else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q2;
 			}
 		}
 		//this.name = name.trim();
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 * @param totEps
-	 */
-	public DataSet4(DataSet4 ds) {
-		this.y7 = ds.y7;
-		this.y6 = ds.y6;
-		this.y5 = ds.y5;
-		this.y4 = ds.y4;
-		this.y3 = ds.y3;
-		this.y2 = ds.y2;
-		this.q8 = ds.q8;
-		this.q7 = ds.q7;
-		this.q6 = ds.q6;
-		this.q5 = ds.q5;
-		this.q4 = ds.q4;
-		this.q3 = ds.q3;
-		this.q2 = ds.q2;
-		this.q1 = ds.q1;
-		this.index = ds.index;
-		this.mode = ds.mode;
-		this.name = ds.name;
-		this.ticker = ds.ticker;
 	}
 
 	/**
@@ -370,7 +379,7 @@ public class DataSet4 {
 	 * @param ptr
 	 * @param mode2
 	 */
-	public void DataSet41(String name, String code, String sector, String[] s, int ptr, dMode mode) {
+	public void DataSet41(final String name, final String code, final String sector, final String[] s, final int ptr, final dMode mode) {
 
 		this.init(name);
 		this.ticker = code.trim();
@@ -395,7 +404,8 @@ public class DataSet4 {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q5;
 			}
-		} else if (mode == dMode.SEQUENTIAL) {
+		}
+		else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q2;
 			}
@@ -410,7 +420,7 @@ public class DataSet4 {
 	 * @param s
 	 * @return
 	 */
-	private double getDouble(String s) {
+	private double getDouble(final String s) {
 
 		double d = 0.0;
 		try {
@@ -425,7 +435,7 @@ public class DataSet4 {
 		return d;
 	}
 
-	private void init(String n) {
+	private void init(final String n) {
 
 		this.ticker = "";
 		this.y7 = 0;

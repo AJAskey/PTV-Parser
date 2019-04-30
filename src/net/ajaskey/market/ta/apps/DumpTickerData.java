@@ -57,7 +57,7 @@ public class DumpTickerData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+	public static void main(final String[] args) throws ParseException, FileNotFoundException, IOException {
 
 		System.out.println("DumpTickerData Processing...");
 
@@ -69,7 +69,8 @@ public class DumpTickerData {
 			ParseData.setValidTickers(ParseData.getTickerList("lists\\stock-list.txt"));
 			ParseData.setValidTickers(ParseData.getTickerList("lists\\breadth.txt"));
 
-		} else {
+		}
+		else {
 			for (final String s : args) {
 				ParseData.setValidTicker(s);
 			}
@@ -98,7 +99,7 @@ public class DumpTickerData {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	private static void processList(String list) throws FileNotFoundException, ParseException {
+	private static void processList(final String list) throws FileNotFoundException, ParseException {
 
 		final String dataPath = Utils.getDataPath();
 
@@ -125,34 +126,12 @@ public class DumpTickerData {
 
 	/**
 	 *
-	 * net.ajaskey.market.ta.apps.writeMAData
-	 *
-	 * @param td
-	 * @throws FileNotFoundException
-	 */
-	private static void writeMAData(TickerData td) throws FileNotFoundException {
-
-		try (PrintWriter pw = new PrintWriter("ma-data\\" + td.getTicker() + ".txt")) {
-			td.rSort();
-			// pw.println(td.getTicker() + "\n" + "Date,Open,High,Low,Close,Volume");
-			System.out.println("Processing " + td.getTicker());
-			for (int i = 0; i < td.getDaysOfData(); i++) {
-				final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-				final String sDate = sdf.format(td.getDate(i).getTime()) + ",16:00:00";
-				pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d%n", sDate, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-				    (int) td.getVolume(i));
-			}
-		}
-	}
-
-	/**
-	 *
 	 * net.ajaskey.market.ta.apps.writePTVData
 	 *
 	 * @param td
 	 * @throws FileNotFoundException
 	 */
-	private static void writePTVData(TickerData td) throws FileNotFoundException {
+	private static void writePTVData(final TickerData td) throws FileNotFoundException {
 
 		boolean writeFile = true;
 		final File file = new File("ptv-data\\" + td.getTicker() + ".txt");

@@ -110,13 +110,17 @@ public class ProcessMarketInternals {
 			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVQ.IDX")) {
 				adv = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DECQ.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DECQ.IDX")) {
 				decl = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("AVVQ.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("AVVQ.IDX")) {
 				advVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DVCQ.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DVCQ.IDX")) {
 				declVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("COMP.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("COMP.IDX")) {
 				close = td.getCloseData();
 			}
 		}
@@ -167,13 +171,17 @@ public class ProcessMarketInternals {
 			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVN.IDX")) {
 				adv = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DECN.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DECN.IDX")) {
 				decl = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("AVVN.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("AVVN.IDX")) {
 				advVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DVCN.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DVCN.IDX")) {
 				declVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("NYA.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("NYA.IDX")) {
 				close = td.getCloseData();
 			}
 		}
@@ -224,13 +232,17 @@ public class ProcessMarketInternals {
 			td.generateDerived(false);
 			if (td.getTicker().equalsIgnoreCase("ADVD.IDX")) {
 				adv = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DECD.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DECD.IDX")) {
 				decl = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("AVVD.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("AVVD.IDX")) {
 				advVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("DVCD.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("DVCD.IDX")) {
 				declVol = td.getCloseData();
-			} else if (td.getTicker().equalsIgnoreCase("SML.IDX")) {
+			}
+			else if (td.getTicker().equalsIgnoreCase("SML.IDX")) {
 				close = td.getCloseData();
 			}
 		}
@@ -262,7 +274,7 @@ public class ProcessMarketInternals {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+	public static void main(final String[] args) throws ParseException, FileNotFoundException, IOException {
 
 		new ProcessMarketInternals();
 

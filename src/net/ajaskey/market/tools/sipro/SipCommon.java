@@ -40,13 +40,14 @@ public class SipCommon {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SipCommon(String ch, int inc, int ver) {
+	public SipCommon(final String ch, final int inc, final int ver) {
+
 		this.reset();
 		this.INC = inc;
 		this.splitChar = ch;
 	}
 
-	public DataSet3 getData(String name, String line, DataSet3.dMode mode, double scaler) {
+	public DataSet3 getData(final String name, final String line, final DataSet3.dMode mode, final double scaler) {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 
@@ -57,7 +58,7 @@ public class SipCommon {
 		return dsRet;
 	}
 
-	public DataSet4 getData4(String name, String line, DataSet4.dMode mode, double scaler) {
+	public DataSet4 getData4(final String name, final String line, final DataSet4.dMode mode, final double scaler) {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 

@@ -39,6 +39,7 @@ public class DtsDataTally {
 	 *
 	 */
 	public DtsDataTally() {
+
 		this.daily = 0;
 		this.monthly = 0;
 		this.yearly = 0;
@@ -47,8 +48,8 @@ public class DtsDataTally {
 	@Override
 	public String toString() {
 
-		final String str = String.format("Daily:%7s    MTD:%9s    YTD:%10s", Utils.formatInt(this.daily),
-		    Utils.formatInt(this.monthly), Utils.formatInt(this.yearly));
+		final String str = String.format("Daily:%7s    MTD:%9s    YTD:%10s", Utils.formatInt(this.daily), Utils.formatInt(this.monthly),
+		    Utils.formatInt(this.yearly));
 		return str;
 	}
 }

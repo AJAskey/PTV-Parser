@@ -17,7 +17,6 @@ import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.misc.Zip;
 import net.ajaskey.market.ta.input.LongTermOHLCV;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
-import net.ajaskey.market.tools.sipro.v5.DateSet;
 
 /**
  * This class...
@@ -86,7 +85,7 @@ public class SipData5 {
 	 * net.ajaskey.market.tools.sipro.v4.archiveData
 	 *
 	 */
-	private static void archiveData(Calendar latest) {
+	private static void archiveData(final Calendar latest) {
 
 		final List<String> dir = new ArrayList<>();
 		dir.add(path);
@@ -108,7 +107,7 @@ public class SipData5 {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		SipData5.readDataFile_1("data/SP-STOCKS.txt");
 		final Calendar latest = SipData5.readDataFile_2("data/SP-STOCKS-B.txt");
@@ -127,17 +126,156 @@ public class SipData5 {
 	}
 
 	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.processData
+	 *
+	 * @param index
+	 *
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public static void processData(final String index) throws FileNotFoundException, IOException, ParseException {
+
+		final DataSet5 totSales = DataSet5.sum(SipData5.sales, index);
+		final DataSet5 totEbit = DataSet5.sum(SipData5.ebit, index);
+		final DataSet5 totTax = DataSet5.sum(SipData5.taxes, index);
+		final DataSet5 totIncome = DataSet5.sum(SipData5.incomeEps, index);
+		final DataSet5 totCops = DataSet5.sum(SipData5.cashOps, index);
+		final DataSet5 totCfin = DataSet5.sum(SipData5.cashFin, index);
+		final DataSet5 totCinv = DataSet5.sum(SipData5.cashInv, index);
+		final DataSet5 totShr = DataSet5.sum(SipData5.shares, index);
+		final DataSet5 totCash = DataSet5.sum(SipData5.cash, index);
+		final DataSet5 totAssets = DataSet5.sum(SipData5.assets, index);
+		final DataSet5 totLiab = DataSet5.sum(SipData5.liabilities, index);
+		final DataSet5 totAccRx = DataSet5.sum(SipData5.accRx, index);
+		final DataSet5 totAccTx = DataSet5.sum(SipData5.accTx, index);
+		final DataSet5 totGoodwill = DataSet5.sum(SipData5.goodwill, index);
+		final DataSet5 totLtDebt = DataSet5.sum(SipData5.ltDebt, index);
+		final DataSet5 totCapEx = DataSet5.sum(SipData5.capEx, index);
+		final DataSet5 totEquity = DataSet5.sum(SipData5.equity, index);
+		final DataSet5 totInterest = DataSet5.sum(SipData5.interest, index);
+		final DataSet5 totResDev = DataSet5.sum(SipData5.resDev, index);
+		final DataSet5 totInventory = DataSet5.sum(SipData5.inventoryValue, index);
+		final DataSet5 totEnterprise = DataSet5.sum(SipData5.enterpriseValue, index);
+		final DataSet5 totFcf = DataSet5.sum(SipData5.fcf, index);
+
+		String prefix = "";
+
+		if (index.equalsIgnoreCase("500")) {
+			SipData5.indexPrices = LongTermOHLCV.getData("SP500");
+			prefix = "SPX";
+		}
+		else if (index.equalsIgnoreCase("MidCap 400")) {
+			SipData5.indexPrices = LongTermOHLCV.getData("SP400");
+			prefix = "SP400";
+		}
+		else if (index.equalsIgnoreCase("SmallCap 600")) {
+			SipData5.indexPrices = LongTermOHLCV.getData("SP600");
+			prefix = "SP600";
+		}
+		else {
+			return;
+		}
+
+		final DateSet dates = new DateSet(SipData5.indexPrices);
+		final DataSet5 dsPrices = new DataSet5(dates, prefix);
+
+		final List<DataSet5> divDollar = new ArrayList<>();
+		for (int i = 0; i < SipData5.companyKnt; i++) {
+			final DataSet5 ds = DataSet5.mult(SipData5.dividend.get(i), SipData5.shares.get(i));
+			divDollar.add(ds);
+		}
+		final DataSet5 totDivDollar = DataSet5.sum(divDollar, index);
+
+		final List<DataSet5> bvDollar = new ArrayList<>();
+		for (int i = 0; i < SipData5.companyKnt; i++) {
+			final DataSet5 ds = DataSet5.mult(SipData5.bookValue.get(i), SipData5.shares.get(i));
+			bvDollar.add(ds);
+		}
+		final DataSet5 totBvDollar = DataSet5.sum(bvDollar, index);
+
+		final DataSet5 totBVminusGW = DataSet5.sub(totBvDollar, totGoodwill);
+
+		final List<DataSet5> mcap = new ArrayList<>();
+		for (int i = 0; i < SipData5.companyKnt; i++) {
+			final DataSet5 ds = DataSet5.mult(SipData5.prices.get(i), SipData5.shares.get(i));
+			mcap.add(ds);
+		}
+		final DataSet5 totMktCap = DataSet5.sum(mcap, index);
+		totMktCap.mode = DataSet5.dMode.SEQUENTIAL;
+
+		SipData5.write(totSales, prefix + " Sales v4", dates, false);
+		SipData5.write(totEbit, prefix + " EBIT v4", dates, false);
+		SipData5.write(totTax, prefix + " Taxes v4", dates, false);
+		SipData5.write(totIncome, prefix + " Income for EPS v4", dates, false);
+		SipData5.write(totCops, prefix + " Cash from Operations v4", dates, false);
+		SipData5.write(totCfin, prefix + " Cash from Financing v4", dates, false);
+		SipData5.write(totCinv, prefix + " Cash from Investing v4", dates, false);
+		SipData5.write(totDivDollar, prefix + " Dividends v4", dates, false);
+		SipData5.write(totShr, prefix + " Shares v4", dates, false);
+		SipData5.write(totCash, prefix + " Cash v4", dates, false);
+		SipData5.write(totAssets, prefix + " Assets v4", dates, false);
+		SipData5.write(totLiab, prefix + " Liabilities v4", dates, false);
+		SipData5.write(totAccRx, prefix + " Accounts Receivable v4", dates, false);
+		SipData5.write(totAccTx, prefix + " Accounts Payable v4", dates, false);
+		SipData5.write(totGoodwill, prefix + " Goodwill v4", dates, false);
+		SipData5.write(totLtDebt, prefix + " LT Debt v4", dates, false);
+		SipData5.write(totCapEx, prefix + " CapEx v4", dates, false);
+		SipData5.write(totEquity, prefix + " Common Equity v4", dates, false);
+		SipData5.write(totInterest, prefix + " Interest Paid v4", dates, false);
+		SipData5.write(totResDev, prefix + " Research and Development v4", dates, false);
+		SipData5.write(totBvDollar, prefix + " Book Value v4", dates, false);
+		SipData5.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
+		SipData5.write(totMktCap, prefix + " Market Cap v4", dates, false);
+		SipData5.write(totInventory, prefix + " Inventory v4", dates, false);
+		SipData5.write(totEnterprise, prefix + " Enterprise v4", dates, false);
+		SipData5.write(totFcf, prefix + " FCFps v4", dates, false);
+
+		//-----------------------------------------
+
+		final DataSet5 totMktCapShr = DataSet5.ratio(totMktCap, totShr);
+		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares v4", dates, false);
+
+		final DataSet5 totMargin = DataSet5.scale(DataSet5.ratio(totIncome, totSales), 100.0);
+		SipData5.write(totMargin, prefix + " Margin v4", dates, false);
+
+		final DataSet5 totROE = DataSet5.scale(DataSet5.ratio(totIncome, totEquity), 100.0);
+		SipData5.write(totROE, prefix + " ROE v4", dates, false);
+
+		final DataSet5 totTaxMargin = DataSet5.scale(DataSet5.ratio(totTax, totSales), 100.0);
+		SipData5.write(totTaxMargin, prefix + " Tax Margin v4", dates, false);
+
+		final DataSet5 totBVtoCap = DataSet5.scale(DataSet5.ratio(totBvDollar, totMktCap), 100.0);
+		SipData5.write(totBVtoCap, prefix + " BV over Market Cap v4", dates, false);
+
+		final DataSet5 totBVmGWtoCap = DataSet5.scale(DataSet5.ratio(totBVminusGW, totMktCap), 100.0);
+		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap v4", dates, false);
+
+		final DataSet5 totGWtoAsset = DataSet5.scale(DataSet5.ratio(totGoodwill, totAssets), 100.0);
+		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets v4", dates, false);
+
+		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales v4", 100000000000.0);
+		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
+		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
+		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
+
+		SipData5.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates, dsPrices);
+
+	}
+
+	/**
 	 * net.ajaskey.market.tools.sipro.v5.processSector
 	 *
 	 * @param string
 	 * @param string2
 	 * @throws FileNotFoundException
 	 */
-	private static void processSector(String index, String sector) throws FileNotFoundException {
+	private static void processSector(final String index, final String sector) throws FileNotFoundException {
 
 		final DataSet5 totSales = DataSet5.sum(SipData5.sales, index, sector);
 		final DataSet5 totTax = DataSet5.sum(SipData5.taxes, index, sector);
-		final DataSet5 totIncome = DataSet5.sum(SipData5.incomeEps, index, sector);
+		DataSet5.sum(SipData5.incomeEps, index, sector);
 		final DataSet5 totCops = DataSet5.sum(SipData5.cashOps, index, sector);
 		final DataSet5 totShr = DataSet5.sum(SipData5.shares, index, sector);
 		final DataSet5 totCash = DataSet5.sum(SipData5.cash, index, sector);
@@ -155,15 +293,18 @@ public class SipData5 {
 		final DataSet5 totEnterprise = DataSet5.sum(SipData5.enterpriseValue, index, sector);
 		final DataSet5 totFcf = DataSet5.sum(SipData5.fcf, index, sector);
 
-		String sec = sector.replaceAll("[^A-Za-z]", "");
+		final String sec = sector.replaceAll("[^A-Za-z]", "");
 		String prefix = "";
 		if (index.equalsIgnoreCase("500")) {
 			prefix = "SPX_" + sec;
-		} else if (index.equalsIgnoreCase("MidCap 400")) {
+		}
+		else if (index.equalsIgnoreCase("MidCap 400")) {
 			prefix = "SP400_" + sec;
-		} else if (index.equalsIgnoreCase("SmallCap 600")) {
+		}
+		else if (index.equalsIgnoreCase("SmallCap 600")) {
 			prefix = "SP600_" + sec;
-		} else {
+		}
+		else {
 			return;
 		}
 
@@ -251,178 +392,13 @@ public class SipData5 {
 	}
 
 	/**
-	 *
-	 * net.ajaskey.market.tools.sipro.processData
-	 *
-	 * @param index
-	 *
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 * @throws ParseException
-	 */
-	public static void processData(String index) throws FileNotFoundException, IOException, ParseException {
-
-		final DataSet5 totSales = DataSet5.sum(SipData5.sales, index);
-		final DataSet5 totEbit = DataSet5.sum(SipData5.ebit, index);
-		final DataSet5 totTax = DataSet5.sum(SipData5.taxes, index);
-		final DataSet5 totIncome = DataSet5.sum(SipData5.incomeEps, index);
-		final DataSet5 totCops = DataSet5.sum(SipData5.cashOps, index);
-		final DataSet5 totCfin = DataSet5.sum(SipData5.cashFin, index);
-		final DataSet5 totCinv = DataSet5.sum(SipData5.cashInv, index);
-		final DataSet5 totShr = DataSet5.sum(SipData5.shares, index);
-		final DataSet5 totCash = DataSet5.sum(SipData5.cash, index);
-		final DataSet5 totAssets = DataSet5.sum(SipData5.assets, index);
-		final DataSet5 totLiab = DataSet5.sum(SipData5.liabilities, index);
-		final DataSet5 totAccRx = DataSet5.sum(SipData5.accRx, index);
-		final DataSet5 totAccTx = DataSet5.sum(SipData5.accTx, index);
-		final DataSet5 totGoodwill = DataSet5.sum(SipData5.goodwill, index);
-		final DataSet5 totLtDebt = DataSet5.sum(SipData5.ltDebt, index);
-		final DataSet5 totCapEx = DataSet5.sum(SipData5.capEx, index);
-		final DataSet5 totEquity = DataSet5.sum(SipData5.equity, index);
-		final DataSet5 totInterest = DataSet5.sum(SipData5.interest, index);
-		final DataSet5 totResDev = DataSet5.sum(SipData5.resDev, index);
-		final DataSet5 totInventory = DataSet5.sum(SipData5.inventoryValue, index);
-		final DataSet5 totEnterprise = DataSet5.sum(SipData5.enterpriseValue, index);
-		final DataSet5 totFcf = DataSet5.sum(SipData5.fcf, index);
-
-		String prefix = "";
-
-		if (index.equalsIgnoreCase("500")) {
-			SipData5.indexPrices = LongTermOHLCV.getData("SP500");
-			prefix = "SPX";
-		} else if (index.equalsIgnoreCase("MidCap 400")) {
-			SipData5.indexPrices = LongTermOHLCV.getData("SP400");
-			prefix = "SP400";
-		} else if (index.equalsIgnoreCase("SmallCap 600")) {
-			SipData5.indexPrices = LongTermOHLCV.getData("SP600");
-			prefix = "SP600";
-		} else {
-			return;
-		}
-
-		final DateSet dates = new DateSet(SipData5.indexPrices);
-		final DataSet5 dsPrices = new DataSet5(dates, prefix);
-
-		final List<DataSet5> divDollar = new ArrayList<>();
-		for (int i = 0; i < SipData5.companyKnt; i++) {
-			final DataSet5 ds = DataSet5.mult(SipData5.dividend.get(i), SipData5.shares.get(i));
-			divDollar.add(ds);
-		}
-		final DataSet5 totDivDollar = DataSet5.sum(divDollar, index);
-
-		final List<DataSet5> bvDollar = new ArrayList<>();
-		for (int i = 0; i < SipData5.companyKnt; i++) {
-			final DataSet5 ds = DataSet5.mult(SipData5.bookValue.get(i), SipData5.shares.get(i));
-			bvDollar.add(ds);
-		}
-		final DataSet5 totBvDollar = DataSet5.sum(bvDollar, index);
-
-		final DataSet5 totBVminusGW = DataSet5.sub(totBvDollar, totGoodwill);
-
-		final List<DataSet5> mcap = new ArrayList<>();
-		for (int i = 0; i < SipData5.companyKnt; i++) {
-			final DataSet5 ds = DataSet5.mult(SipData5.prices.get(i), SipData5.shares.get(i));
-			mcap.add(ds);
-		}
-		final DataSet5 totMktCap = DataSet5.sum(mcap, index);
-		totMktCap.mode = DataSet5.dMode.SEQUENTIAL;
-
-		SipData5.write(totSales, prefix + " Sales v4", dates, false);
-		SipData5.write(totEbit, prefix + " EBIT v4", dates, false);
-		SipData5.write(totTax, prefix + " Taxes v4", dates, false);
-		SipData5.write(totIncome, prefix + " Income for EPS v4", dates, false);
-		SipData5.write(totCops, prefix + " Cash from Operations v4", dates, false);
-		SipData5.write(totCfin, prefix + " Cash from Financing v4", dates, false);
-		SipData5.write(totCinv, prefix + " Cash from Investing v4", dates, false);
-		SipData5.write(totDivDollar, prefix + " Dividends v4", dates, false);
-		SipData5.write(totShr, prefix + " Shares v4", dates, false);
-		SipData5.write(totCash, prefix + " Cash v4", dates, false);
-		SipData5.write(totAssets, prefix + " Assets v4", dates, false);
-		SipData5.write(totLiab, prefix + " Liabilities v4", dates, false);
-		SipData5.write(totAccRx, prefix + " Accounts Receivable v4", dates, false);
-		SipData5.write(totAccTx, prefix + " Accounts Payable v4", dates, false);
-		SipData5.write(totGoodwill, prefix + " Goodwill v4", dates, false);
-		SipData5.write(totLtDebt, prefix + " LT Debt v4", dates, false);
-		SipData5.write(totCapEx, prefix + " CapEx v4", dates, false);
-		SipData5.write(totEquity, prefix + " Common Equity v4", dates, false);
-		SipData5.write(totInterest, prefix + " Interest Paid v4", dates, false);
-		SipData5.write(totResDev, prefix + " Research and Development v4", dates, false);
-		SipData5.write(totBvDollar, prefix + " Book Value v4", dates, false);
-		SipData5.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
-		SipData5.write(totMktCap, prefix + " Market Cap v4", dates, false);
-		SipData5.write(totInventory, prefix + " Inventory v4", dates, false);
-		SipData5.write(totEnterprise, prefix + " Enterprise v4", dates, false);
-		SipData5.write(totFcf, prefix + " FCFps v4", dates, false);
-
-		//-----------------------------------------
-
-		final DataSet5 totMktCapShr = DataSet5.ratio(totMktCap, totShr);
-		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares v4", dates, false);
-
-		final DataSet5 totMargin = DataSet5.scale(DataSet5.ratio(totIncome, totSales), 100.0);
-		SipData5.write(totMargin, prefix + " Margin v4", dates, false);
-
-		final DataSet5 totROE = DataSet5.scale(DataSet5.ratio(totIncome, totEquity), 100.0);
-		SipData5.write(totROE, prefix + " ROE v4", dates, false);
-
-		final DataSet5 totTaxMargin = DataSet5.scale(DataSet5.ratio(totTax, totSales), 100.0);
-		SipData5.write(totTaxMargin, prefix + " Tax Margin v4", dates, false);
-
-		final DataSet5 totBVtoCap = DataSet5.scale(DataSet5.ratio(totBvDollar, totMktCap), 100.0);
-		SipData5.write(totBVtoCap, prefix + " BV over Market Cap v4", dates, false);
-
-		final DataSet5 totBVmGWtoCap = DataSet5.scale(DataSet5.ratio(totBVminusGW, totMktCap), 100.0);
-		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap v4", dates, false);
-
-		final DataSet5 totGWtoAsset = DataSet5.scale(DataSet5.ratio(totGoodwill, totAssets), 100.0);
-		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets v4", dates, false);
-
-		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales v4", 100000000000.0);
-		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
-		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
-		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
-
-		SipData5.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates,
-		    dsPrices);
-
-	}
-
-	/**
-	 * 
-	 * net.ajaskey.market.tools.sipro.v5.writeEps
-	 *
-	 * @param totIncome
-	 * @param totShr
-	 * @param epsStr
-	 * @param epsannualStr
-	 * @param peStr
-	 * @param dates
-	 * @param dsPrices
-	 * @throws FileNotFoundException
-	 */
-	private static void writeEps(DataSet5 totIncome, DataSet5 totShr, String epsStr, String epsannualStr, String peStr,
-	    DateSet dates, DataSet5 dsPrices) throws FileNotFoundException {
-
-		final DataSet5 totEps = DataSet5.scale(DataSet5.div(totIncome, totShr), 40.0);
-		SipData5.write(totEps, epsStr, dates, false);
-
-		//		totEps.mode = DataSet5.dMode.SEQUENTIAL;
-		//		SipData5.write(totEps, epsannualStr, dates, false);
-
-		//		final DataSet5 totPE = DataSet5.scale(DataSet5.div(dsPrices, totEps), 1.0);
-		//		totPE.mode = DataSet5.dMode.SEQUENTIAL;
-		//		SipData5.write(totPE, peStr, dates, false);
-
-	}
-
-	/**
 	 * net.ajaskey.market.tools.sipro.main
 	 *
 	 * @param args
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void readDataFile_1(String filename) throws FileNotFoundException, IOException {
+	public static void readDataFile_1(final String filename) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 
@@ -478,7 +454,7 @@ public class SipData5 {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static Calendar readDataFile_2(String filename) throws FileNotFoundException, IOException {
+	public static Calendar readDataFile_2(final String filename) throws FileNotFoundException, IOException {
 
 		final Calendar latestDate = Calendar.getInstance();
 		latestDate.add(Calendar.YEAR, -5);
@@ -520,7 +496,7 @@ public class SipData5 {
 		return latestDate;
 	}
 
-	private static double[] sumQuarters(DataSet5 ds) {
+	private static double[] sumQuarters(final DataSet5 ds) {
 
 		final double ret[] = new double[8];
 
@@ -533,7 +509,8 @@ public class SipData5 {
 			ret[2] = ds.q3;
 			ret[1] = ds.q2;
 			ret[0] = ds.q1;
-		} else {
+		}
+		else {
 			ret[7] = ds.q8 * 4.0;
 			ret[6] = (ds.q8 * 3.0) + ds.q7;
 			ret[5] = (ds.q8 * 2.0) + ds.q7 + ds.q6;
@@ -555,11 +532,13 @@ public class SipData5 {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	public static void write(DataSet5 ds, String fname, DateSet dates, boolean printAnnual) throws FileNotFoundException {
+	public static void write(final DataSet5 ds, final String fname, final DateSet dates, final boolean printAnnual)
+	    throws FileNotFoundException {
 
 		if (ds.mode == DataSet5.dMode.SEQUENTIAL) {
 			SipData5.writeDataSequential(ds, fname, dates, printAnnual);
-		} else {
+		}
+		else {
 			SipData5.writeDataAccumulate(ds, fname, dates);
 		}
 	}
@@ -572,7 +551,7 @@ public class SipData5 {
 	 * @param q
 	 * @param val
 	 */
-	private static void write(PrintWriter pw, DateSet.Quarters q, double val, double divisor) {
+	private static void write(final PrintWriter pw, final DateSet.Quarters q, final double val, final double divisor) {
 
 		final double qval = val / divisor;
 		pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(q.q1.date.getTime()), qval);
@@ -589,8 +568,8 @@ public class SipData5 {
 	 * @param q
 	 * @param val
 	 */
-	private static void writeAvgQtr(PrintWriter pw, DateSet.Quarters y1, DateSet.Quarters y0, double q8, double q7,
-	    double q6, double q5, double q4, double q3, double q2, double q1) {
+	private static void writeAvgQtr(final PrintWriter pw, final DateSet.Quarters y1, final DateSet.Quarters y0, final double q8,
+	    final double q7, final double q6, final double q5, final double q4, final double q3, final double q2, final double q1) {
 
 		pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(y1.q1.date.getTime()), q8);
 
@@ -623,7 +602,7 @@ public class SipData5 {
 	 * @param ds
 	 * @param fname
 	 */
-	private static void writeDataAccumulate(DataSet5 ds, String fname, DateSet dates) {
+	private static void writeDataAccumulate(final DataSet5 ds, final String fname, final DateSet dates) {
 
 		try (PrintWriter pw = new PrintWriter(SipData5.path + fname + ".csv")) {
 
@@ -655,7 +634,7 @@ public class SipData5 {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	private static void writeDataSequential(DataSet5 ds, String fname, DateSet dates, boolean printAnnual)
+	private static void writeDataSequential(final DataSet5 ds, final String fname, final DateSet dates, final boolean printAnnual)
 	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(SipData5.path + fname + ".csv")) {
@@ -672,7 +651,8 @@ public class SipData5 {
 				pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y2.q4.date.getTime()), ds.y2);
 				pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q4.date.getTime()), ds.y1);
 				pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q4.date.getTime()), ds.y0);
-			} else {
+			}
+			else {
 
 				SipData5.write(pw, dates.y7, ds.y7, 1.0);
 				SipData5.write(pw, dates.y6, ds.y6, 1.0);
@@ -686,6 +666,34 @@ public class SipData5 {
 	}
 
 	/**
+	 *
+	 * net.ajaskey.market.tools.sipro.v5.writeEps
+	 *
+	 * @param totIncome
+	 * @param totShr
+	 * @param epsStr
+	 * @param epsannualStr
+	 * @param peStr
+	 * @param dates
+	 * @param dsPrices
+	 * @throws FileNotFoundException
+	 */
+	private static void writeEps(final DataSet5 totIncome, final DataSet5 totShr, final String epsStr, final String epsannualStr,
+	    final String peStr, final DateSet dates, final DataSet5 dsPrices) throws FileNotFoundException {
+
+		final DataSet5 totEps = DataSet5.scale(DataSet5.div(totIncome, totShr), 40.0);
+		SipData5.write(totEps, epsStr, dates, false);
+
+		//		totEps.mode = DataSet5.dMode.SEQUENTIAL;
+		//		SipData5.write(totEps, epsannualStr, dates, false);
+
+		//		final DataSet5 totPE = DataSet5.scale(DataSet5.div(dsPrices, totEps), 1.0);
+		//		totPE.mode = DataSet5.dMode.SEQUENTIAL;
+		//		SipData5.write(totPE, peStr, dates, false);
+
+	}
+
+	/**
 	 * net.ajaskey.market.tools.sipro.v4.writePriceToDate
 	 *
 	 * @param dates
@@ -693,7 +701,7 @@ public class SipData5 {
 	 * @param totSales
 	 * @throws FileNotFoundException
 	 */
-	private static void writePriceToDate(DateSet dates, DataSet5 ds, String fname, double scaler)
+	private static void writePriceToDate(final DateSet dates, final DataSet5 ds, final String fname, final double scaler)
 	    throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter(SipData5.path + fname + ".csv")) {
@@ -707,22 +715,14 @@ public class SipData5 {
 
 			final double q[] = SipData5.sumQuarters(ds);
 
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q1.date.getTime()),
-			    (dates.y1.q1.value / q[7]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q2.date.getTime()),
-			    (dates.y1.q2.value / q[6]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q3.date.getTime()),
-			    (dates.y1.q3.value / q[5]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q4.date.getTime()),
-			    (dates.y1.q4.value / q[4]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q1.date.getTime()),
-			    (dates.y0.q1.value / q[3]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q2.date.getTime()),
-			    (dates.y0.q2.value / q[2]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q3.date.getTime()),
-			    (dates.y0.q3.value / q[1]) * scaler);
-			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q4.date.getTime()),
-			    (dates.y0.q4.value / q[0]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q1.date.getTime()), (dates.y1.q1.value / q[7]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q2.date.getTime()), (dates.y1.q2.value / q[6]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q3.date.getTime()), (dates.y1.q3.value / q[5]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y1.q4.date.getTime()), (dates.y1.q4.value / q[4]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q1.date.getTime()), (dates.y0.q1.value / q[3]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q2.date.getTime()), (dates.y0.q2.value / q[2]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q3.date.getTime()), (dates.y0.q3.value / q[1]) * scaler);
+			pw.printf("%s,%.2f%n", SipData5.sdfOptuma.format(dates.y0.q4.date.getTime()), (dates.y0.q4.value / q[0]) * scaler);
 		}
 	}
 

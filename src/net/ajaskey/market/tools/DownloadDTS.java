@@ -68,7 +68,7 @@ public class DownloadDTS {
 	 * @param c
 	 * @return
 	 */
-	private static String getDateName(Calendar c) {
+	private static String getDateName(final Calendar c) {
 
 		if (c != null) {
 			return DtsData.sdf.format(c.getTime()) + "00";
@@ -81,7 +81,7 @@ public class DownloadDTS {
 	 *
 	 * @return
 	 */
-	private static String getRecentDate(Calendar cal) {
+	private static String getRecentDate(final Calendar cal) {
 
 		String sdate;
 		cal.add(Calendar.MONTH, -1);
@@ -96,7 +96,7 @@ public class DownloadDTS {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws ParseException {
+	public static void main(final String[] args) throws ParseException {
 
 		String sDate = null;
 		try {
@@ -108,14 +108,17 @@ public class DownloadDTS {
 				if (args[0].toLowerCase().contains("help")) {
 					DownloadDTS.printHelp();
 					return;
-				} else if (args[0].toLowerCase().contains("recent")) {
+				}
+				else if (args[0].toLowerCase().contains("recent")) {
 					sDate = DownloadDTS.getRecentDate(cal);
-				} else {
+				}
+				else {
 					System.out.println(args[0]);
 					sDate = args[0];
 				}
 
-			} else {
+			}
+			else {
 				System.out.println("Enter RECENT or start date in format yyyy-MMM-dd : ");
 				try (final Scanner scan = new Scanner(System.in)) {
 					sDate = scan.next();
@@ -226,11 +229,14 @@ public class DownloadDTS {
 								}
 								knt++;
 								d.setRptKnt(knt);
-							} else if (line.contains("Individual Income Taxes")) {
+							}
+							else if (line.contains("Individual Income Taxes")) {
 								d.setInd(line);
-							} else if (line.contains("Corporation Income Taxes")) {
+							}
+							else if (line.contains("Corporation Income Taxes")) {
 								d.setCorp(line);
-							} else if (line.contains("Federal Unemployment Taxes")) {
+							}
+							else if (line.contains("Federal Unemployment Taxes")) {
 								d.setUnEmp(line);
 							}
 
@@ -297,13 +303,15 @@ public class DownloadDTS {
 			final String day = Utils.getDayName(cal);
 			if (day.contains("SAT")) {
 				cal.add(Calendar.DATE, 2);
-			} else if (day.contains("SUN")) {
+			}
+			else if (day.contains("SUN")) {
 				cal.add(Calendar.DATE, 1);
 			}
 		}
 	}
 
 	public DownloadDTS() {
+
 	}
 
 }

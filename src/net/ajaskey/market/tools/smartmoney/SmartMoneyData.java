@@ -19,7 +19,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -42,23 +42,24 @@ public class SmartMoneyData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SmartMoneyData(Calendar hour, String line) {
+	public SmartMoneyData(final Calendar hour, final String line) {
 
 		this.day = Utils.buildCalendar(hour);
-		String fld[] = line.split(",");
+		final String fld[] = line.split(",");
 		this.high = Double.parseDouble(fld[1]);
 		this.low = Double.parseDouble(fld[2]);
 		this.close = Double.parseDouble(fld[3]);
 		this.volume = Long.parseLong(fld[4]);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-	
-		String s = String.format("%s : %15.2f %15.2f %15.2f %10d",Utils.getStringFull(this.day), this.high, this.low, this.close, this.volume);
+
+		final String s = String.format("%s : %15.2f %15.2f %15.2f %10d", Utils.getStringFull(this.day), this.high, this.low, this.close,
+		    this.volume);
 		return s;
 	}
 }

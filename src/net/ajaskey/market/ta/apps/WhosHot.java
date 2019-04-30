@@ -54,17 +54,6 @@ public class WhosHot {
 
 	private static boolean init = false;
 
-	@SuppressWarnings("unused")
-	private static IndustryData find(String name, IndustryData[] ind) {
-
-		for (final IndustryData id : ind) {
-			if (id.getName().equalsIgnoreCase(name)) {
-				return id;
-			}
-		}
-		return null;
-	}
-
 	/**
 	 *
 	 * net.ajaskey.market.ta.apps.main
@@ -74,7 +63,7 @@ public class WhosHot {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+	public static void main(final String[] args) throws ParseException, FileNotFoundException, IOException {
 
 		System.out.println("Processing...");
 
@@ -97,7 +86,7 @@ public class WhosHot {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	private static void processList(String list, String outName, int offset, int minVol)
+	private static void processList(final String list, final String outName, final int offset, final int minVol)
 	    throws ParseException, IOException {
 
 		new WhosHot(list);
@@ -141,8 +130,7 @@ public class WhosHot {
 			knt++;
 		}
 
-		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%s\t%%9.1f\t%%12sM\t%%8sM\t%%10.1f\t%%10s%%n",
-		    maxTickerLen, maxNameLen);
+		final String fmt = String.format("%%-%ds\t%%-%ds\t%%-10s\t%%s\t%%9.1f\t%%12sM\t%%8sM\t%%10.1f\t%%10s%%n", maxTickerLen, maxNameLen);
 
 		final PrintWriter pwSD = new PrintWriter("out\\SupplyDemand-" + outName + ".txt");
 		pwSD.println("Symbol\tName\tExchange\tRank\tAvgVol (M)\tFloat (M)\tRatio\tMktCap\tCompany Description");
@@ -155,22 +143,20 @@ public class WhosHot {
 					if (id.getfShares() > 0) {
 						volRatio = id.getfShares() / id.getAvgVol();
 						shares = id.getfShares();
-					} else if (id.getShares() > 0) {
+					}
+					else if (id.getShares() > 0) {
 						volRatio = id.getShares() / id.getAvgVol();
 						shares = id.getShares();
 					}
 					final String vol = vFmt.format(id.getAvgVol() / 1000000.0);
 					final String shr = vFmt.format(id.getShares() / 1000000.0);
-					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getChg260(), vol, shr, volRatio,
-					    id.getMarketCap());
+					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getChg260(), vol, shr, volRatio, id.getMarketCap());
 
-					if ((volRatio > 0.0) && (shares > 0.0) && (shares < 100000000.0) && (id.getPriceInRange260() > 0.50)
-					    && (volRatio < 35.0)) {
+					if ((volRatio > 0.0) && (shares > 0.0) && (shares < 100000000.0) && (id.getPriceInRange260() > 0.50) && (volRatio < 35.0)) {
 						final String bSum = YahooData.getBusinessSummary(id.getTicker());
 						// final String bSum = "";
-						pwSD.println(id.getTicker() + Utils.TAB + id.getName() + Utils.TAB + id.getExch() + Utils.TAB
-						    + id.getRanks() + Utils.TAB + vol + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB
-						    + id.getMarketCap() + Utils.TAB + bSum);
+						pwSD.println(id.getTicker() + Utils.TAB + id.getName() + Utils.TAB + id.getExch() + Utils.TAB + id.getRanks() + Utils.TAB + vol
+						    + Utils.TAB + shr + Utils.TAB + volRatio + Utils.TAB + id.getMarketCap() + Utils.TAB + bSum);
 					}
 				}
 			}
@@ -198,8 +184,7 @@ public class WhosHot {
 					}
 					final String vol = vFmt.format(id.getAvgVol() / 1000000.0);
 					final String shr = vFmt.format(id.getShares() / 1000000.0);
-					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getRawRsSt(), vol, shr, volRatio,
-					    id.getMarketCap());
+					pw.printf(fmt, id.getTicker(), id.getName(), id.getExch(), id.getRanks(), id.getRawRsSt(), vol, shr, volRatio, id.getMarketCap());
 
 					// System.out.printf("%-30s %s%n",id.getName(), id.getRanks());
 				}
@@ -215,7 +200,7 @@ public class WhosHot {
 	 * @throws IOException
 	 *
 	 */
-	private WhosHot(String list) throws ParseException, IOException {
+	private WhosHot(final String list) throws ParseException, IOException {
 
 		if (!init) {
 

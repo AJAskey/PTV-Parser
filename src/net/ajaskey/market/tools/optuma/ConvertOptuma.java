@@ -5,16 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
 
-import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.ta.input.YahooData;
 import net.ajaskey.market.tools.ConvertOHLCV;
-import net.ajaskey.market.tools.helpers.OhlcvData;
 
 /**
  * This class...
@@ -46,79 +38,35 @@ public class ConvertOptuma {
 	private static SimpleDateFormat	sdf				= new SimpleDateFormat("dd-MMM-yyyy");
 	private static SimpleDateFormat	sdfOptuma	= new SimpleDateFormat("yyyy-MM-dd");
 
-	/**
-	 * net.ajaskey.market.tools.optuma.BoundGaapToSpx
-	 *
-	 * @param epsList
-	 * @throws ParseException
-	 *
-	 */
-	@SuppressWarnings("unused")
-	private static List<OhlcvData> BoundGaapToSpx(List<OhlcvData> epsList) throws ParseException {
-
-		final List<String> data = YahooData.getHistoric("^GSPC");
-		final List<OhlcvData> spx = new ArrayList<>();
-		for (final String s : data) {
-			//System.out.println(s);
-			final String fld[] = s.split(",");
-			try {
-				final Date date = sdfOptuma.parse(fld[0]);
-				final Calendar cal = Calendar.getInstance();
-				cal.setTime(date);
-				final double c = Double.parseDouble(fld[4]);
-				final OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
-				d.open = 0.0;
-				spx.add(d);
-				//System.out.println("gaap  "+d.toShortString());
-			} catch (final Exception e) {
-			}
-		}
-
-		for (final OhlcvData price : spx) {
-			for (final OhlcvData eps : epsList) {
-				if (Utils.sameDate(price.date, eps.date)) {
-					price.open = eps.close;
-					break;
-				} else if (eps.date.before(price.date)) {
-					price.open = eps.close;
-					break;
-				}
-			}
-		}
-
-		return spx;
-
-	}
-
-	private static List<OhlcvData> getGaapEps() {
-
-		final List<OhlcvData> data = new ArrayList<>();
-		try {
-			final String gaapEps = ConvertOHLCV
-			    .parseHtmlFile(new File("C:/Users/ajask_000/Downloads/gaap_spx.html").toPath());
-			try (Scanner scanner = new Scanner(gaapEps)) {
-				while (scanner.hasNextLine()) {
-					final String line = scanner.nextLine();
-					//System.out.println(line);
-					final String fld[] = line.split("\\s+");
-					final Date date = sdf.parse(fld[0]);
-					final Calendar cal = Calendar.getInstance();
-					cal.setTime(date);
-					final double c = Double.parseDouble(fld[1]);
-					final OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
-					data.add(d);
-				}
-			} catch (final Exception e1) {
-			}
-		} catch (final IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (final ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return data;
-	}
+	//	private static List<OhlcvData> getGaapEps() {
+	//
+	//		final List<OhlcvData> data = new ArrayList<>();
+	//		try {
+	//			final String gaapEps = ConvertOHLCV
+	//			    .parseHtmlFile(new File("C:/Users/ajask_000/Downloads/gaap_spx.html").toPath());
+	//			try (Scanner scanner = new Scanner(gaapEps)) {
+	//				while (scanner.hasNextLine()) {
+	//					final String line = scanner.nextLine();
+	//					//System.out.println(line);
+	//					final String fld[] = line.split("\\s+");
+	//					final Date date = sdf.parse(fld[0]);
+	//					final Calendar cal = Calendar.getInstance();
+	//					cal.setTime(date);
+	//					final double c = Double.parseDouble(fld[1]);
+	//					final OhlcvData d = new OhlcvData(cal, c, c, c, c, 0);
+	//					data.add(d);
+	//				}
+	//			} catch (final Exception e1) {
+	//			}
+	//		} catch (final IOException e) {
+	//			// TODO Auto-generated catch block
+	//			e.printStackTrace();
+	//		} catch (final ParseException e) {
+	//			// TODO Auto-generated catch block
+	//			e.printStackTrace();
+	//		}
+	//		return data;
+	//	}
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -127,7 +75,7 @@ public class ConvertOptuma {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		//		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpc.html").toPath());
 		//		ConvertOHLCV.parseHtmlFile(new File("C:/Users/ajask_000/Downloads/cpci.html").toPath());

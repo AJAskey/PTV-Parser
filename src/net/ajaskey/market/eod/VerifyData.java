@@ -53,7 +53,7 @@ public class VerifyData {
 	 *
 	 * @param eod
 	 */
-	private static void add(EodData eod) {
+	private static void add(final EodData eod) {
 
 		boolean found = false;
 		if (eod.valid) {
@@ -83,7 +83,7 @@ public class VerifyData {
 	 *
 	 * @return
 	 */
-	private static boolean fileInUse(String code) {
+	private static boolean fileInUse(final String code) {
 
 		for (final String s : codeInUse) {
 			if (code.equalsIgnoreCase(s)) {
@@ -99,7 +99,7 @@ public class VerifyData {
 	 * @param td
 	 * @return
 	 */
-	private static DescriptiveStatistics getStats(EodDataList eList) {
+	private static DescriptiveStatistics getStats(final EodDataList eList) {
 
 		final DescriptiveStatistics stats = new DescriptiveStatistics();
 		for (final EodData e : eList.list) {
@@ -118,7 +118,7 @@ public class VerifyData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		final String optumaEodDir = OptumaCommon.optumaPath + "\\EOD-Data\\";
 		VerifyData.setEodInUse(optumaEodDir);
@@ -137,7 +137,9 @@ public class VerifyData {
 			//System.out.println(f.getName() + "\t" + dataList.size());
 
 			for (final EodData eod : dataList) {
-				if (fileInUse(eod.code)) VerifyData.add(eod);
+				if (VerifyData.fileInUse(eod.code)) {
+					VerifyData.add(eod);
+				}
 			}
 		}
 
@@ -166,8 +168,7 @@ public class VerifyData {
 					fileUsed = "*";
 				}
 
-				pw.println(
-				    "\n" + fileUsed + td.code + "\t" + downFromMean + "\t" + mean + "\t" + upFromMean + "\t(" + median + ")");
+				pw.println("\n" + fileUsed + td.code + "\t" + downFromMean + "\t" + mean + "\t" + upFromMean + "\t(" + median + ")");
 				for (final EodData eod : td.list) {
 					if ((eod.open > upFromMean) || (eod.open < downFromMean)) {
 						pw.println("\t" + eod + " ... OPEN out of bounds!   Set to " + mean);
@@ -190,7 +191,7 @@ public class VerifyData {
 		}
 	}
 
-	public static List<EodData> parseOneFile(File f) throws FileNotFoundException, IOException {
+	public static List<EodData> parseOneFile(final File f) throws FileNotFoundException, IOException {
 
 		final List<EodData> ret = new ArrayList<>();
 
@@ -214,7 +215,7 @@ public class VerifyData {
 	 *
 	 * @param optumaEodDir
 	 */
-	private static void setEodInUse(String dir) {
+	private static void setEodInUse(final String dir) {
 
 		final File file = new File(dir);
 		final File list[] = file.listFiles();
@@ -258,7 +259,7 @@ public class VerifyData {
 	 *
 	 * @param td
 	 */
-	private static void writeDbg(EodDataList td, String desc, String fileUsed) {
+	private static void writeDbg(final EodDataList td, final String desc, final String fileUsed) {
 
 		final String sdir = "out\\debug\\";
 		final String fname = sdir + td.code + "_" + desc + "_dbg.csv";

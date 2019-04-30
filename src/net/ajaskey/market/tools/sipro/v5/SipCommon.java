@@ -47,28 +47,18 @@ public class SipCommon {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SipCommon(String ch, int inc, int ver) {
+	public SipCommon(final String ch, final int inc, final int ver) {
+
 		this.reset();
 		this.INC = inc;
 		this.splitChar = ch;
 	}
 
-	public DataSet5 getData5(String name, String line, DataSet5.dMode mode, double scaler) {
+	public DataSet5 getData5(final String name, final String line, final DataSet5.dMode mode, final double scaler) {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 
 		final DataSet5 ds = new DataSet5(fld[1], name, fld[0], fld[2], fld, this.ptr, mode);
-		final DataSet5 dsRet = DataSet5.scale(ds, scaler);
-		//System.out.println(dsRet);
-		this.ptr += this.INC;
-		return dsRet;
-	}
-	
-	public DataSet5 getUsData5(String name, String line, DataSet5.dMode mode, double scaler) {
-
-		final String fld[] = line.replace("\"", "").split(this.splitChar);
-
-		final DataSet5 ds = new DataSet5("US", name, fld[0], fld[2], fld, this.ptr, mode);
 		final DataSet5 dsRet = DataSet5.scale(ds, scaler);
 		//System.out.println(dsRet);
 		this.ptr += this.INC;
@@ -81,7 +71,7 @@ public class SipCommon {
 	 * @return
 	 * @throws ParseException
 	 */
-	public Calendar getDate(String line) throws ParseException {
+	public Calendar getDate(final String line) throws ParseException {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 		final int len = fld.length - 1;
@@ -90,6 +80,17 @@ public class SipCommon {
 		final Calendar ret = Calendar.getInstance();
 		ret.setTime(d);
 		return ret;
+	}
+
+	public DataSet5 getUsData5(final String name, final String line, final DataSet5.dMode mode, final double scaler) {
+
+		final String fld[] = line.replace("\"", "").split(this.splitChar);
+
+		final DataSet5 ds = new DataSet5("US", name, fld[0], fld[2], fld, this.ptr, mode);
+		final DataSet5 dsRet = DataSet5.scale(ds, scaler);
+		//System.out.println(dsRet);
+		this.ptr += this.INC;
+		return dsRet;
 	}
 
 	public void reset() {

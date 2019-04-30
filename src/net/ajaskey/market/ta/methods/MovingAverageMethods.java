@@ -38,7 +38,7 @@ public class MovingAverageMethods {
 	 * @param days
 	 * @return
 	 */
-	static public double ema(double[] val, int days) {
+	static public double ema(final double[] val, final int days) {
 
 		double retVal = 0.0;
 		if (Methods.checkParams(val, days * 2, 0, "MovingAverageMethods.ema(double[] val, int days)")) {
@@ -60,6 +60,7 @@ public class MovingAverageMethods {
 	 *
 	 */
 	private MovingAverageMethods() {
+
 	}
 
 }

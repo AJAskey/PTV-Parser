@@ -4,6 +4,7 @@ package net.ajaskey.market.tools.quandl;
 import java.lang.reflect.Field;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 
 /**
@@ -33,15 +34,16 @@ import net.ajaskey.market.misc.Utils;
  */
 public class CommonQuandlData {
 
-	public Calendar	date;
+	public DateTime	date;
 	public Double[]	dd;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public CommonQuandlData(Calendar cal, Double[] dl) {
-		this.date = Utils.buildCalendar(cal);
+	public CommonQuandlData(final Calendar cal, final Double[] dl) {
+
+		this.date = new DateTime(cal);
 		this.dd = dl;
 	}
 
@@ -68,7 +70,8 @@ public class CommonQuandlData {
 				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
-				} else {
+				}
+				else {
 					result.append(field.get(this));
 				}
 

@@ -43,7 +43,7 @@ public class DataSet3 {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet3 add(DataSet3 set1, DataSet3 set2) {
+	public static DataSet3 add(final DataSet3 set1, final DataSet3 set2) {
 
 		final DataSet3 ds = new DataSet3();
 		ds.ticker = "MERGED_TICKERS";
@@ -66,12 +66,13 @@ public class DataSet3 {
 		return ds;
 	}
 
-	public static DataSet3 mult(DataSet3 set1, DataSet3 set2) {
+	public static DataSet3 mult(final DataSet3 set1, final DataSet3 set2) {
 
 		final DataSet3 ds = new DataSet3(set1.name);
 		if (set2.ticker.equals("SCALED")) {
 			ds.ticker = set1.ticker;
-		} else {
+		}
+		else {
 			ds.ticker = "MERGED_TICKERS";
 		}
 		ds.y7 = set1.y7 * set2.y7;
@@ -100,13 +101,13 @@ public class DataSet3 {
 	 * @param d
 	 * @return
 	 */
-	public static DataSet3 scale(DataSet3 shr, double scaler) {
+	public static DataSet3 scale(final DataSet3 shr, final double scaler) {
 
 		final DataSet3 ds = DataSet3.scaleSet(scaler);
 		return DataSet3.mult(shr, ds);
 	}
 
-	public static DataSet3 scaleSet(double scaler) {
+	public static DataSet3 scaleSet(final double scaler) {
 
 		final DataSet3 ret = new DataSet3("SCALE");
 		ret.ticker = "SCALED";
@@ -127,7 +128,7 @@ public class DataSet3 {
 		return ret;
 	}
 
-	public static DataSet3 sub(DataSet3 set1, DataSet3 set2) {
+	public static DataSet3 sub(final DataSet3 set1, final DataSet3 set2) {
 
 		final DataSet3 ds = new DataSet3("SUBTRACT");
 		ds.ticker = "MERGED_TICKERS";
@@ -158,7 +159,7 @@ public class DataSet3 {
 	 * @param data
 	 * @return
 	 */
-	public static DataSet3 sum(List<DataSet3> data) {
+	public static DataSet3 sum(final List<DataSet3> data) {
 
 		if (data.size() > 0) {
 			final DataSet3 ret = new DataSet3(data.get(0).name);
@@ -184,7 +185,8 @@ public class DataSet3 {
 				}
 			}
 			return ret;
-		} else {
+		}
+		else {
 			return null;
 		}
 
@@ -220,6 +222,7 @@ public class DataSet3 {
 	 *
 	 */
 	private DataSet3() {
+
 		this.init("");
 	}
 
@@ -227,11 +230,13 @@ public class DataSet3 {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet3(String n) {
+	public DataSet3(final String n) {
+
 		this.init(n);
 	}
 
-	public DataSet3(String name, String code, String sector, String[] s, int ptr, dMode mode) {
+	public DataSet3(final String name, final String code, final String sector, final String[] s, final int ptr, final dMode mode) {
+
 		this.init(name);
 		this.ticker = code.trim();
 		this.sector = sector.trim();
@@ -256,7 +261,8 @@ public class DataSet3 {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q5;
 			}
-		} else if (mode == dMode.SEQUENTIAL) {
+		}
+		else if (mode == dMode.SEQUENTIAL) {
 			if (this.q1 == 0.0) {
 				this.q1 = this.q2;
 			}
@@ -271,7 +277,7 @@ public class DataSet3 {
 	 * @param s
 	 * @return
 	 */
-	private double getDouble(String s) {
+	private double getDouble(final String s) {
 
 		double d = 0.0;
 		try {
@@ -286,7 +292,7 @@ public class DataSet3 {
 		return d;
 	}
 
-	private void init(String n) {
+	private void init(final String n) {
 
 		this.ticker = "";
 		this.y7 = 0;

@@ -26,7 +26,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -39,28 +39,49 @@ import net.ajaskey.market.misc.Utils;
  */
 public class InputData {
 
-	private List<File> files;
+	/**
+	 * net.ajaskey.market.optuma.main
+	 *
+	 * @param args
+	 */
+	public static void main(final String[] args) {
+
+		final List<String> dNames = new ArrayList<>();
+		final List<String> ext = new ArrayList<>();
+		dNames.add("C:\\temp\\redline-master");
+		ext.add(".txt");
+		ext.add(".xml");
+		ext.add(".sh");
+		final InputData id = new InputData(dNames, ext);
+
+		for (final File f : id.files) {
+			System.out.println(f.getAbsolutePath() + "   " + Utils.removeFileExt(f));
+		}
+
+	}
+
+	private final List<File> files;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public InputData(List<String> paths, List<String> exts) {
+	public InputData(final List<String> paths, final List<String> exts) {
 
-		files = new ArrayList<>();
+		this.files = new ArrayList<>();
 
-		for (String s : paths) {
-			List<File> fil = Utils.getDirTree(new File(s), exts);
-			for (File f : fil) {
-				files.add(f);
+		for (final String s : paths) {
+			final List<File> fil = Utils.getDirTree(new File(s), exts);
+			for (final File f : fil) {
+				this.files.add(f);
 			}
 		}
 	}
 
-	private File getDataFile(String tkr) {
+	private File getDataFile(final String tkr) {
 
-		for (File f : files) {
-			String name = Utils.removeFileExt(f);
+		for (final File f : this.files) {
+			final String name = Utils.removeFileExt(f);
 			if (name.trim().equalsIgnoreCase(tkr.trim())) {
 				return f;
 			}
@@ -68,12 +89,12 @@ public class InputData {
 		return null;
 	}
 
-	public TickerData read(String tkr) throws FileNotFoundException, IOException {
+	public TickerData read(final String tkr) throws FileNotFoundException, IOException {
 
-		List<String> data = new ArrayList<>();
+		final List<String> data = new ArrayList<>();
 		TickerData td = null;
 
-		File f = getDataFile("");
+		final File f = this.getDataFile("");
 		if (f != null) {
 			try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 
@@ -91,27 +112,6 @@ public class InputData {
 		}
 
 		return td;
-
-	}
-
-	/**
-	 * net.ajaskey.market.optuma.main
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		List<String> dNames = new ArrayList<>();
-		List<String> ext = new ArrayList<>();
-		dNames.add("C:\\temp\\redline-master");
-		ext.add(".txt");
-		ext.add(".xml");
-		ext.add(".sh");
-		InputData id = new InputData(dNames, ext);
-
-		for (File f : id.files) {
-			System.out.println(f.getAbsolutePath() + "   " + Utils.removeFileExt(f));
-		}
 
 	}
 

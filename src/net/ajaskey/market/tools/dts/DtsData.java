@@ -47,7 +47,7 @@ public class DtsData {
 	 * @param idx
 	 * @return
 	 */
-	public static String cleanString(String str, int idx) {
+	public static String cleanString(final String str, final int idx) {
 
 		final String s = str.substring(idx).replaceAll("\\$", "").replaceAll(",", "").replaceAll("[1-9]/", "  ").trim();
 		return s;
@@ -60,7 +60,7 @@ public class DtsData {
 	 * @param cal
 	 * @return
 	 */
-	public static DtsData findData(Calendar cal) {
+	public static DtsData findData(final Calendar cal) {
 
 		if (cal != null) {
 			// Utils.printCalendar(cal);
@@ -68,7 +68,8 @@ public class DtsData {
 				// Utils.printCalendar(d.getDate());
 				if (Utils.sameDate(d.getDate(), cal)) {
 					return d;
-				} else if (d.getDate().after(cal)) {
+				}
+				else if (d.getDate().after(cal)) {
 					return d;
 				}
 			}
@@ -83,7 +84,7 @@ public class DtsData {
 	 * @param cal
 	 * @return
 	 */
-	public static DtsData findData(int rptOfYear, int year) {
+	public static DtsData findData(final int rptOfYear, final int year) {
 
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
@@ -106,7 +107,7 @@ public class DtsData {
 	 * @param year
 	 * @return
 	 */
-	public static DtsData findData(int rptOfMonth, int month, int year) {
+	public static DtsData findData(final int rptOfMonth, final int month, final int year) {
 
 		int knt = 0;
 		for (final DtsData d : DtsData.dtsList) {
@@ -130,7 +131,7 @@ public class DtsData {
 	 * @param year
 	 * @return
 	 */
-	public static DtsData findLastOfMonthData(int month, int year) {
+	public static DtsData findLastOfMonthData(final int month, final int year) {
 
 		boolean monthFound = false;
 		DtsData lastDayData = null;
@@ -139,7 +140,8 @@ public class DtsData {
 				if (d.getDate().get(Calendar.MONTH) == month) {
 					lastDayData = d;
 					monthFound = true;
-				} else if (monthFound) {
+				}
+				else if (monthFound) {
 					return lastDayData;
 				}
 			}
@@ -155,7 +157,7 @@ public class DtsData {
 	 * @param year
 	 * @return
 	 */
-	public static DtsData findLastReportOfMonth(int month, int year) {
+	public static DtsData findLastReportOfMonth(final int month, final int year) {
 
 		boolean found = false;
 		DtsData previous = null;
@@ -164,10 +166,12 @@ public class DtsData {
 				if (d.getDate().get(Calendar.MONTH) == month) {
 					found = true;
 					previous = d;
-				} else if (found) {
+				}
+				else if (found) {
 					return previous;
 				}
-			} else if (found) {
+			}
+			else if (found) {
 				return previous;
 			}
 		}
@@ -182,7 +186,7 @@ public class DtsData {
 	 * @param newer
 	 * @return
 	 */
-	public static double findMonthlyChangeTotal(DtsData older, DtsData newer) {
+	public static double findMonthlyChangeTotal(final DtsData older, final DtsData newer) {
 
 		final double newTot = newer.getWith().monthly + newer.getInd().monthly + newer.getCorp().monthly;
 		final double oldTot = older.getWith().monthly + older.getInd().monthly + older.getCorp().monthly;
@@ -198,7 +202,7 @@ public class DtsData {
 	 * @param newer
 	 * @return
 	 */
-	public static double findYearlyChangeTotal(DtsData older, DtsData newer) {
+	public static double findYearlyChangeTotal(final DtsData older, final DtsData newer) {
 
 		final double newTot = newer.getWith().yearly + newer.getInd().yearly + newer.getCorp().yearly;
 		final double oldTot = older.getWith().yearly + older.getInd().yearly + older.getCorp().yearly;
@@ -213,7 +217,7 @@ public class DtsData {
 	 * @param date
 	 * @return
 	 */
-	public static String formatDate(Calendar date) {
+	public static String formatDate(final Calendar date) {
 
 		String str = Utils.stringDate2(date) + "\t" + date.get(Calendar.DAY_OF_YEAR);
 		str += "\t" + DtsData.getNumReportsInYear(date);
@@ -231,7 +235,7 @@ public class DtsData {
 	 * @param year
 	 * @return
 	 */
-	public static int getNumReportsInMonth(Calendar cal) {
+	public static int getNumReportsInMonth(final Calendar cal) {
 
 		int ret = 0;
 		for (final DtsData d : dtsList) {
@@ -240,7 +244,8 @@ public class DtsData {
 					if (d.getDate().get(Calendar.DATE) <= cal.get(Calendar.DATE)) {
 						ret++;
 					}
-				} else if (ret > 0) {
+				}
+				else if (ret > 0) {
 					break;
 				}
 			}
@@ -256,15 +261,14 @@ public class DtsData {
 	 * @param cal
 	 * @return
 	 */
-	public static int getNumReportsInYear(Calendar cal) {
+	public static int getNumReportsInYear(final Calendar cal) {
 
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
 				if (d.getDate().get(Calendar.MONTH) <= cal.get(Calendar.MONTH)) {
 					ret++;
-					if ((d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH))
-					    && (d.getDate().get(Calendar.DATE) >= cal.get(Calendar.DATE))) {
+					if ((d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH)) && (d.getDate().get(Calendar.DATE) >= cal.get(Calendar.DATE))) {
 
 						return ret;
 					}
@@ -275,14 +279,15 @@ public class DtsData {
 		return 0;
 	}
 
-	public static int getTotalReportsInMonth(Calendar cal) {
+	public static int getTotalReportsInMonth(final Calendar cal) {
 
 		int ret = 0;
 		for (final DtsData d : dtsList) {
 			if (d.getDate().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
 				if (d.getDate().get(Calendar.MONTH) == cal.get(Calendar.MONTH)) {
 					ret++;
-				} else if (ret > 0) {
+				}
+				else if (ret > 0) {
 					break;
 				}
 			}
@@ -309,7 +314,8 @@ public class DtsData {
 	 *
 	 * @param theDate
 	 */
-	public DtsData(Calendar theDate) {
+	public DtsData(final Calendar theDate) {
+
 		this.with = new DtsDataTally();
 		this.ind = new DtsDataTally();
 		this.corp = new DtsDataTally();
@@ -322,7 +328,8 @@ public class DtsData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DtsData(String theDate) {
+	public DtsData(final String theDate) {
+
 		this.with = new DtsDataTally();
 		this.ind = new DtsDataTally();
 		this.corp = new DtsDataTally();
@@ -411,7 +418,7 @@ public class DtsData {
 	 *
 	 * @param str
 	 */
-	public void setCorp(String str) {
+	public void setCorp(final String str) {
 
 		if (str == null) {
 			System.out.println("Error : setCorp(String str) String is NULL!");
@@ -438,7 +445,7 @@ public class DtsData {
 	 *
 	 * @param str
 	 */
-	public void setDate(String str) {
+	public void setDate(final String str) {
 
 		if (str == null) {
 			System.out.println("Error : setDate(String str) String is NULL!");
@@ -466,7 +473,7 @@ public class DtsData {
 	 *
 	 * @param str
 	 */
-	public void setInd(String str) {
+	public void setInd(final String str) {
 
 		if (str == null) {
 			System.out.println("Error : setInd(String str) String is NULL!");
@@ -492,12 +499,12 @@ public class DtsData {
 	 * net.ajaskey.market.tools.helpers.incRptKnt
 	 *
 	 */
-	public void setRptKnt(int knt) {
+	public void setRptKnt(final int knt) {
 
 		this.rptKnt = knt;
 	}
 
-	public void setUnEmp(String str) {
+	public void setUnEmp(final String str) {
 
 		if (str == null) {
 			System.out.println("Error : setUnEmp(String str) String is NULL!");
@@ -524,7 +531,7 @@ public class DtsData {
 	 *
 	 * @param str
 	 */
-	public void setWith(String str) {
+	public void setWith(final String str) {
 
 		if (str == null) {
 			System.out.println("Error : setWith(String str) String is NULL!");
@@ -554,8 +561,8 @@ public class DtsData {
 		final long mtot = this.getWith().monthly + this.getInd().monthly + this.getCorp().monthly;
 		final long ytot = this.getWith().yearly + this.getInd().yearly + this.getCorp().yearly;
 		str += String.format(
-		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%sDaily:%7s    MTD:%9s    YTD:%10s",
-		    this.with, this.ind, this.corp, " ", Utils.formatInt(dtot), Utils.formatInt(mtot), Utils.formatInt(ytot));
+		    "%n\tWithheld   ==> %s%n\tIndividual ==> %s%n\tCorporate  ==> %s%n\tTotal      ==>%sDaily:%7s    MTD:%9s    YTD:%10s", this.with,
+		    this.ind, this.corp, " ", Utils.formatInt(dtot), Utils.formatInt(mtot), Utils.formatInt(ytot));
 		return str;
 	}
 

@@ -45,6 +45,7 @@ public class ShortInterestList {
 	 *
 	 */
 	public ShortInterestList() {
+
 		this.dateKnt = 0;
 	}
 
@@ -52,7 +53,8 @@ public class ShortInterestList {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public ShortInterestList(String name) {
+	public ShortInterestList(final String name) {
+
 		this.name = name;
 		this.latest = Calendar.getInstance();
 		this.latest.add(Calendar.YEAR, -10);
@@ -83,7 +85,8 @@ public class ShortInterestList {
 				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
-				} else {
+				}
+				else {
 					result.append(field.get(this));
 				}
 

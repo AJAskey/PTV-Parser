@@ -50,6 +50,7 @@ public class IciCombinedFlowData {
 	 *
 	 */
 	public IciCombinedFlowData() {
+
 		this.valid = false;
 		this.equityDomestic = 0;
 		this.equityWorld = 0;
@@ -58,7 +59,7 @@ public class IciCombinedFlowData {
 		this.commodity = 0;
 	}
 
-	public void build(String line) {
+	public void build(final String line) {
 
 		new IciCombinedFlowData();
 		try {

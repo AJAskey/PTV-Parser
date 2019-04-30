@@ -36,12 +36,13 @@ public class DtsSorter implements Comparator<DtsData> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(DtsData d1, DtsData d2) {
+	public int compare(final DtsData d1, final DtsData d2) {
 
 		int ret = 0;
 		if (d1.getDate().before(d2.getDate())) {
 			ret = -1;
-		} else if (d1.getDate().after(d2.getDate())) {
+		}
+		else if (d1.getDate().after(d2.getDate())) {
 			ret = 1;
 		}
 		return ret;

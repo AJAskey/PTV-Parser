@@ -53,7 +53,7 @@ public class OptionData {
 	 * @throws ParseException
 	 *
 	 */
-	public OptionData(String str) throws ParseException {
+	public OptionData(final String str) throws ParseException {
 
 		if (str == null) {
 			return;
@@ -64,7 +64,8 @@ public class OptionData {
 			this.setOpex(fld[1]);
 			if (fld[3].contains("Put")) {
 				this.type = OptionType.PUT;
-			} else {
+			}
+			else {
 				this.type = OptionType.CALL;
 			}
 			this.level = Integer.parseInt(fld[2]);
@@ -138,7 +139,7 @@ public class OptionData {
 	 * @param interest
 	 * @throws ParseException
 	 */
-	public void setData(Calendar cal, double pr, long vol, long interest) throws ParseException {
+	public void setData(final Calendar cal, final double pr, final long vol, final long interest) throws ParseException {
 
 		if (this.date == null) {
 			this.date = Calendar.getInstance();
@@ -155,7 +156,7 @@ public class OptionData {
 		}
 	}
 
-	public void setOi(long interest) {
+	public void setOi(final long interest) {
 
 		this.oi = interest;
 	}
@@ -165,7 +166,7 @@ public class OptionData {
 	 *          the opex to set
 	 * @throws ParseException
 	 */
-	public void setOpex(String sDate) throws ParseException {
+	public void setOpex(final String sDate) throws ParseException {
 
 		this.opex = Calendar.getInstance();
 		this.opex.setTime(df.parse(sDate));
@@ -177,12 +178,12 @@ public class OptionData {
 	 * @param price
 	 *          the price to set
 	 */
-	public void setPrice(double price) {
+	public void setPrice(final double price) {
 
 		this.price = price;
 	}
 
-	public void setVolume(long vol) {
+	public void setVolume(final long vol) {
 
 		this.volume = vol;
 	}

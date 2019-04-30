@@ -43,7 +43,7 @@ public class GetPTVData {
 	 * @throws ParseException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, ParseException {
 
 		System.out.println("Processing...");
 

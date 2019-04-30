@@ -46,6 +46,7 @@ public class DateSet {
 		 *
 		 */
 		public QData() {
+
 			this.date = Calendar.getInstance();
 			this.value = 0.0;
 		}
@@ -63,7 +64,7 @@ public class DateSet {
 		 * This method serves as a constructor for the class.
 		 *
 		 */
-		public Quarters(Calendar base, List<LongTermOHLCV> prices) {
+		public Quarters(final Calendar base, final List<LongTermOHLCV> prices) {
 
 			this.q4.date = Utils.buildCalendar(base);
 			if (prices != null) {
@@ -115,7 +116,7 @@ public class DateSet {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		final List<LongTermOHLCV> prices = LongTermOHLCV.getData("SP500");
 		final DateSet ds = new DateSet(prices);
@@ -141,7 +142,7 @@ public class DateSet {
 	 *
 	 * @param prices
 	 */
-	public DateSet(List<LongTermOHLCV> prices) {
+	public DateSet(final List<LongTermOHLCV> prices) {
 
 		this.latestPrice = LongTermOHLCV.getLatestPrice(prices);
 

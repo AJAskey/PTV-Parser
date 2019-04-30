@@ -23,7 +23,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -38,6 +38,14 @@ public class EodData {
 
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
 
+	public static void main(final String[] args) {
+
+		final EodData eod = new EodData("ADR.IDX,04-Jan-2012,683.876,683.873,678.26,682.75,1234567890");
+		if (eod.valid) {
+			System.out.println(eod);
+		}
+	}
+
 	public String		code;
 	public Calendar	date;
 	public double		open;
@@ -46,27 +54,29 @@ public class EodData {
 	public double		close;
 	public long			vol;
 	public String		dayOfWeek;
-	public boolean	valid;
+
+	public boolean valid;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public EodData(String data) {
+	public EodData(final String data) {
 
-		String fld[] = data.trim().split("[\\s+,]");
+		final String fld[] = data.trim().split("[\\s+,]");
 		this.valid = true;
 		if (fld.length > 6) {
 			this.code = fld[0].trim();
-			if ((code == null) || (code.length() < 1)) {
+			if ((this.code == null) || (this.code.length() < 1)) {
 				this.valid = false;
-			} else {
+			}
+			else {
 
-				date = Calendar.getInstance();
+				this.date = Calendar.getInstance();
 				try {
-					Date d = sdf.parse(fld[1].trim());
+					final Date d = sdf.parse(fld[1].trim());
 					this.date.setTime(d);
-					Locale locale = Locale.getDefault();
+					final Locale locale = Locale.getDefault();
 
 					this.dayOfWeek = this.date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, locale);
 
@@ -76,29 +86,22 @@ public class EodData {
 					this.close = Double.parseDouble(fld[5].trim());
 					this.vol = Long.parseLong(fld[6].trim());
 
-				} catch (ParseException e) {
+				} catch (final ParseException e) {
 					this.valid = false;
 					//e.printStackTrace();
 				}
 			}
-		} else {
-			this.valid = false;
 		}
-	}
-
-	public static void main(String[] args) {
-
-		EodData eod = new EodData("ADR.IDX,04-Jan-2012,683.876,683.873,678.26,682.75,1234567890");
-		if (eod.valid) {
-			System.out.println(eod);
+		else {
+			this.valid = false;
 		}
 	}
 
 	@Override
 	public String toString() {
 
-		String s = String.format("%s, %s, %s, %.2f, %.2f, %.2f, %.2f, %d", this.code, Utils.getString(this.date),
-		    this.dayOfWeek, this.open, this.high, this.low, this.close, this.vol);
+		final String s = String.format("%s, %s, %s, %.2f, %.2f, %.2f, %.2f, %d", this.code, Utils.getString(this.date), this.dayOfWeek,
+		    this.open, this.high, this.low, this.close, this.vol);
 		return s;
 	}
 

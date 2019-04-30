@@ -42,7 +42,7 @@ import net.ajaskey.market.tools.helpers.WebGet;
  *
  */
 public class ProcessDTS {
- 
+
 	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
 	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
@@ -61,7 +61,7 @@ public class ProcessDTS {
 	 * @param c
 	 * @return
 	 */
-	private static String getDateName(Calendar c) {
+	private static String getDateName(final Calendar c) {
 
 		if (c != null) {
 			return DtsData.sdf.format(c.getTime()) + "00";
@@ -85,7 +85,7 @@ public class ProcessDTS {
 	 * @param args
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		Utils.makeDir("out");
 		Utils.makeDir("out/optuma");
@@ -161,11 +161,14 @@ public class ProcessDTS {
 								}
 								knt++;
 								d.setRptKnt(knt);
-							} else if (line.contains("Individual Income Taxes")) {
+							}
+							else if (line.contains("Individual Income Taxes")) {
 								d.setInd(line);
-							} else if (line.contains("Corporation Income Taxes")) {
+							}
+							else if (line.contains("Corporation Income Taxes")) {
 								d.setCorp(line);
-							} else if (line.contains("Federal Unemployment Taxes")) {
+							}
+							else if (line.contains("Federal Unemployment Taxes")) {
 								d.setUnEmp(line);
 							}
 
@@ -235,7 +238,8 @@ public class ProcessDTS {
 			final String day = Utils.getDayName(cal);
 			if (day.contains("SAT")) {
 				cal.add(Calendar.DATE, 2);
-			} else if (day.contains("SUN")) {
+			}
+			else if (day.contains("SUN")) {
 				cal.add(Calendar.DATE, 1);
 			}
 		}

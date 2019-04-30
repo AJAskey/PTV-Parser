@@ -1,9 +1,7 @@
 
 package net.ajaskey.market.ta.apps;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -58,35 +56,35 @@ public class ProcessSymbolList {
 	 * @throws IOException
 	 *
 	 */
-	private static void buildOexList() throws IOException {
-
-		System.out.println("in OexList");
-
-		final String iFile = "symbols\\OPRA_SymbolList.txt";
-		final File file = new File(iFile);
-		if (file.exists()) {
-
-			final PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
-
-			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
-
-				String line = br.readLine();
-
-				while (line != null) {
-
-					if (line.contains("OEX.X")) {
-						final String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
-						    .replaceAll("Call_", "Call") + "\tOPRA";
-						oFile.println(str);
-					}
-					line = br.readLine();
-				}
-			}
-			oFile.close();
-
-		}
-
-	}
+	//	private static void buildOexList() throws IOException {
+	//
+	//		System.out.println("in OexList");
+	//
+	//		final String iFile = "symbols\\OPRA_SymbolList.txt";
+	//		final File file = new File(iFile);
+	//		if (file.exists()) {
+	//
+	//			final PrintWriter oFile = new PrintWriter("symbols\\OPRA-OEX_SymbolList.txt");
+	//
+	//			try (BufferedReader br = new BufferedReader(new FileReader(iFile))) {
+	//
+	//				String line = br.readLine();
+	//
+	//				while (line != null) {
+	//
+	//					if (line.contains("OEX.X")) {
+	//						final String str = line.trim().replaceAll("\tOPRA", "").replaceAll(" ", "_").replaceAll("__", "")
+	//						    .replaceAll("Call_", "Call") + "\tOPRA";
+	//						oFile.println(str);
+	//					}
+	//					line = br.readLine();
+	//				}
+	//			}
+	//			oFile.close();
+	//
+	//		}
+	//
+	//	}
 
 	/**
 	 *
@@ -94,14 +92,15 @@ public class ProcessSymbolList {
 	 *
 	 * @param dir
 	 */
-	private static void findLists(File dir) {
+	private static void findLists(final File dir) {
 
 		final File[] files = dir.listFiles();
 
 		for (final File f : files) {
 			if (f.isDirectory()) {
 				ProcessSymbolList.findLists(f);
-			} else if (f.isFile()) {
+			}
+			else if (f.isFile()) {
 				if (f.getName().equalsIgnoreCase("SymbolList.xml")) {
 					list.add(f);
 				}
@@ -117,7 +116,7 @@ public class ProcessSymbolList {
 	 * @throws IOException
 	 * @throws SAXException
 	 */
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+	public static void main(final String[] args) throws ParserConfigurationException, SAXException, IOException {
 
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder builder = factory.newDocumentBuilder();
@@ -179,30 +178,38 @@ public class ProcessSymbolList {
 									pw.printf(fmt, codePlus, name, dirName);
 									if (name.contains("Home Price Index")) {
 										pwCS.printf(fmt, codePlus, name, dirName);
-									} else if (name.contains(" GSCI ")) {
+									}
+									else if (name.contains(" GSCI ")) {
 										pwGSCI.printf(fmt, codePlus, name, dirName);
-									} else if (name.contains("EQUAL WEIGHTED")) {
+									}
+									else if (name.contains("EQUAL WEIGHTED")) {
 										pwSector.printf(fmt, codePlus, name, dirName);
-									} else if (name.contains("DJ US")) {
+									}
+									else if (name.contains("DJ US")) {
 										pwDJUS.printf(fmt, codePlus, name, dirName);
 									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", codePlus, name, dirName);
-								} else if (dirName.compareToIgnoreCase("OPRA") == 0) {
+								}
+								else if (dirName.compareToIgnoreCase("OPRA") == 0) {
 									if (code.contains("OEX.XO")) {
 										pwOPRA.println(code);
 									}
 									pw.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);
-								} else {
+								}
+								else {
 									final String fmt = "%-10s\t%-50s\t%-10s%n";
 									pw.printf(fmt, code, name, dirName);
 									if (name.toUpperCase().contains("ISHARES")) {
 										pwIshares.printf(fmt, code, name, dirName);
-									} else if (name.toUpperCase().contains(" ETF ")) {
+									}
+									else if (name.toUpperCase().contains(" ETF ")) {
 										pwETF.printf(fmt, code, name, dirName);
-									} else if (name.toUpperCase().contains(" POWERSHARES")) {
+									}
+									else if (name.toUpperCase().contains(" POWERSHARES")) {
 										pwPshares.printf(fmt, code, name, dirName);
-									} else if (name.toUpperCase().contains(" PROSHARES")) {
+									}
+									else if (name.toUpperCase().contains(" PROSHARES")) {
 										pwProshares.printf(fmt, code, name, dirName);
 									}
 									pwAll.printf("%-12s\t%-50s\t%-10s%n", code, name, dirName);

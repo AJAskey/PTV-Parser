@@ -42,7 +42,7 @@ public class Zip {
 	static final int BUFFER = 2048;
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.misc.create
 	 *
 	 * @param dirs
@@ -50,7 +50,7 @@ public class Zip {
 	 * @param outdir
 	 * @param outfile
 	 */
-	public static void create(List<String> dirs, List<String> files, String outdir, String outfile) {
+	public static void create(final List<String> dirs, final List<String> files, final String outdir, final String outfile) {
 
 		try {
 
@@ -111,7 +111,7 @@ public class Zip {
 	 *
 	 * @param argv
 	 */
-	public static void main(String argv[]) {
+	public static void main(final String argv[]) {
 
 		final List<String> dir = new ArrayList<>();
 		dir.add("output\\SIP");

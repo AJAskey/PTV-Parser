@@ -3,9 +3,10 @@ package net.ajaskey.market.optuma;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -21,7 +22,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -34,22 +35,22 @@ import java.util.List;
  */
 public class TickerData {
 
-	public String ticker;
-
-	public int days;
-
-	public Calendar[]	date;
-	public double[]		open;
-	public double[]		high;
-	public double[]		low;
-	public double[]		close;
-	public double[]		volume;
-	public double[]		oi;
-
 	private final static String DELIMITER = ",";
+
 	private final static int FIELDS = 7;
 
-	private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+	private final static SimpleDateFormat	sdf	= new SimpleDateFormat("yyyyMMdd");
+	public String													ticker;
+	public int														days;
+	public DateTime[]											date;
+	public double[]												open;
+	public double[]												high;
+	public double[]												low;
+
+	public double[]	close;
+	public double[]	volume;
+
+	public double[] oi;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -57,60 +58,67 @@ public class TickerData {
 	 * @param tkr
 	 * @param data
 	 */
-	public TickerData(String tkr, List<String> data) {
-		ticker = tkr;
-		days = data.size();
-		date = new Calendar[days];
-		open = new double[days];
-		high = new double[days];
-		low = new double[days];
-		close = new double[days];
-		volume = new double[days];
-		oi = new double[days];
-		int knt = 0;
-		for (String s : data) {
-			try {
-				if (checkLine(s)) {
-					String fld[] = s.split(DELIMITER);
-					final Date d = sdf.parse(fld[1].trim());
-					date[knt] = Calendar.getInstance();
-					date[knt].setTime(d);
+	public TickerData(final String tkr, final List<String> data) {
 
-					open[knt] = Double.parseDouble(fld[2].trim());
-					high[knt] = Double.parseDouble(fld[3].trim());
-					low[knt] = Double.parseDouble(fld[4].trim());
-					close[knt] = Double.parseDouble(fld[5].trim());
-					volume[knt] = Double.parseDouble(fld[6].trim());
-					oi[knt] = Double.parseDouble(fld[7].trim());
+		this.ticker = tkr;
+		this.days = data.size();
+		this.date = new DateTime[this.days];
+		this.open = new double[this.days];
+		this.high = new double[this.days];
+		this.low = new double[this.days];
+		this.close = new double[this.days];
+		this.volume = new double[this.days];
+		this.oi = new double[this.days];
+		int knt = 0;
+		for (final String s : data) {
+			try {
+				if (this.checkLine(s)) {
+					final String fld[] = s.split(DELIMITER);
+					final Date d = sdf.parse(fld[1].trim());
+					this.date[knt] = new DateTime(d);
+
+					this.open[knt] = Double.parseDouble(fld[2].trim());
+					this.high[knt] = Double.parseDouble(fld[3].trim());
+					this.low[knt] = Double.parseDouble(fld[4].trim());
+					this.close[knt] = Double.parseDouble(fld[5].trim());
+					this.volume[knt] = Double.parseDouble(fld[6].trim());
+					this.oi[knt] = Double.parseDouble(fld[7].trim());
 
 					knt++;
 				}
-			} catch (Exception e) {
+			} catch (final Exception e) {
 				System.out.println("Failed : " + s);
 			}
 		}
 	}
 
-	private boolean checkLine(String line) {
+	/**
+	 *
+	 * net.ajaskey.market.optuma.checkLine
+	 *
+	 * @param line
+	 * @return
+	 */
+	private boolean checkLine(final String line) {
 
 		boolean ret = true;
 
 		if (line == null) {
 			ret = false;
-		} else {
-			String fld[] = line.trim().split(DELIMITER);
+		}
+		else {
+			final String fld[] = line.trim().split(DELIMITER);
 			if (fld.length != FIELDS) {
 				ret = false;
-			} else {
+			}
+			else {
 				Date d;
 				try {
 					d = sdf.parse(fld[1].trim());
-					Calendar cal = Calendar.getInstance();
-					cal.setTime(d);
+					new DateTime(d);
+					Double.parseDouble(fld[2].trim());
 
-					@SuppressWarnings("unused")
-					double dd = Double.parseDouble(fld[2].trim());
-				} catch (ParseException e) {
+				} catch (final ParseException e) {
 					ret = false;
 				}
 			}

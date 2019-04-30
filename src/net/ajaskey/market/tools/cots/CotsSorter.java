@@ -36,12 +36,13 @@ public class CotsSorter implements Comparator<CotsData> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(CotsData cd1, CotsData cd2) {
+	public int compare(final CotsData cd1, final CotsData cd2) {
 
 		int ret = 0;
-		if (cd2.date.before(cd1.date)) {
+		if (cd2.date.isLessThan(cd1.date)) {
 			ret = 1;
-		} else if (cd2.date.after(cd1.date)) {
+		}
+		else if (cd2.date.isGreaterThan(cd1.date)) {
 			ret = -1;
 		}
 		return ret;

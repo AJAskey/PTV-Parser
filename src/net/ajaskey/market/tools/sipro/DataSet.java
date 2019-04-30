@@ -39,7 +39,7 @@ public class DataSet {
 	 * @param set2
 	 * @return
 	 */
-	public static DataSet add(DataSet set1, DataSet set2) {
+	public static DataSet add(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet();
 		ds.ticker = "MERGED_TICKERS";
@@ -54,7 +54,7 @@ public class DataSet {
 		return ds;
 	}
 
-	public static DataSet mult(DataSet set1, DataSet set2) {
+	public static DataSet mult(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet();
 		ds.ticker = "MERGED_TICKERS";
@@ -69,7 +69,7 @@ public class DataSet {
 		return ds;
 	}
 
-	public static DataSet sub(DataSet set1, DataSet set2) {
+	public static DataSet sub(final DataSet set1, final DataSet set2) {
 
 		final DataSet ds = new DataSet();
 		ds.ticker = "MERGED_TICKERS";
@@ -91,7 +91,7 @@ public class DataSet {
 	 * @param data
 	 * @return
 	 */
-	public static DataSet sum(List<DataSet> data) {
+	public static DataSet sum(final List<DataSet> data) {
 
 		final DataSet ret = new DataSet();
 		if (data.size() > 0) {
@@ -127,6 +127,7 @@ public class DataSet {
 	 *
 	 */
 	private DataSet() {
+
 		this.ticker = "";
 		this.y7 = 0;
 		this.y6 = 0;
@@ -139,7 +140,8 @@ public class DataSet {
 		this.name = "";
 	}
 
-	public DataSet(double scaler) {
+	public DataSet(final double scaler) {
+
 		this.ticker = "";
 		this.y7 = scaler;
 		this.y6 = scaler;
@@ -155,7 +157,8 @@ public class DataSet {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public DataSet(String n) {
+	public DataSet(final String n) {
+
 		this.ticker = "";
 		this.y7 = 0;
 		this.y6 = 0;
@@ -168,7 +171,8 @@ public class DataSet {
 		this.name = n;
 	}
 
-	public DataSet(String name, String code, String[] s, int ptr) {
+	public DataSet(final String name, final String code, final String[] s, final int ptr) {
+
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
@@ -184,7 +188,8 @@ public class DataSet {
 		this.name = name.trim();
 	}
 
-	public DataSet(String name, String code, String[] s, int ptr, String mode) {
+	public DataSet(final String name, final String code, final String[] s, final int ptr, final String mode) {
+
 		this.ticker = code.trim();
 		this.y7 = this.getDouble(s[ptr + 1].trim());
 		this.y6 = this.getDouble(s[ptr + 2].trim());
@@ -216,7 +221,7 @@ public class DataSet {
 	 * @param s
 	 * @return
 	 */
-	private double getDouble(String s) {
+	private double getDouble(final String s) {
 
 		double d = 0.0;
 		try {

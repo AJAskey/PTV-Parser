@@ -58,7 +58,7 @@ public class SeriesData {
 	 * @param cal
 	 * @param d
 	 */
-	public SeriesData(Calendar cal, double d) {
+	public SeriesData(final Calendar cal, final double d) {
 
 		this.date = Utils.buildCalendar(cal);
 		this.value = d;
@@ -85,17 +85,19 @@ public class SeriesData {
 		Percentiles prev = null;
 		for (final Percentiles p : this.perc) {
 			if (this.value == p.value) {
-				ret = (double) p.percentile;
+				ret = p.percentile;
 				break;
-			} else if (this.value < p.value) {
+			}
+			else if (this.value < p.value) {
 				if (prev == null) {
-					ret = (double) this.perc.get(0).percentile;
+					ret = this.perc.get(0).percentile;
 					break;
-				} else {
-					double rng1 = this.value - prev.value;
-					double rng = p.value - prev.value;
-					double amt = rng1 / rng;
-					ret = (double) prev.percentile + amt;
+				}
+				else {
+					final double rng1 = this.value - prev.value;
+					final double rng = p.value - prev.value;
+					final double amt = rng1 / rng;
+					ret = prev.percentile + amt;
 					break;
 				}
 			}
@@ -111,7 +113,7 @@ public class SeriesData {
 	 * @param direction
 	 *
 	 */
-	public void setStats(DescriptiveStatistics ds, BigO.Direction direction) {
+	public void setStats(final DescriptiveStatistics ds, final BigO.Direction direction) {
 
 		this.mean = ds.getMean();
 		this.median = ds.getPercentile(50.0);
@@ -120,12 +122,12 @@ public class SeriesData {
 		this.max = ds.getMax();
 
 		if (this.stddev > 0.0) {
-			double d = this.value - this.mean;
+			final double d = this.value - this.mean;
 			this.delta = d / this.stddev;
 		}
 
 		for (int i = 1; i < 101; i++) {
-			final double p = ds.getPercentile((double) i);
+			final double p = ds.getPercentile(i);
 			int pct = i;
 			if (direction == BigO.Direction.REVERSE) {
 				pct = i - 101;
@@ -152,8 +154,9 @@ public class SeriesData {
 			ret += String.format("  StdDev : %.1f%n", this.stddev);
 			ret += String.format("  Min    : %.1f%n", this.min);
 			ret += String.format("  Max    : %.1f%n", this.max);
-			for (final Percentiles p : this.perc)
+			for (final Percentiles p : this.perc) {
 				ret += String.format("  %s%n", p);
+			}
 			ret += String.format("  Score  : %.2f%n", this.score);
 
 		}

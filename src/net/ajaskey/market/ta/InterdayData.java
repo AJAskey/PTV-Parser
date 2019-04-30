@@ -51,6 +51,7 @@ public class InterdayData {
 	 *
 	 */
 	public InterdayData() {
+
 		this.ticker = "none";
 		this.sumUp = 0;
 		this.sumDown = 0;
@@ -80,7 +81,7 @@ public class InterdayData {
 	 * @param close
 	 * @param volume
 	 */
-	public void addData(double open, double high, double low, double close, double volume) {
+	public void addData(final double open, final double high, final double low, final double close, final double volume) {
 
 		this.updates++;
 
@@ -95,7 +96,8 @@ public class InterdayData {
 		if (chg > 0.0) {
 			this.sumUp++;
 			this.sumForceUp += (chg * volume);
-		} else if (chg < 0.0) {
+		}
+		else if (chg < 0.0) {
 			this.sumDown++;
 			this.sumForceDown += Math.abs(chg * volume);
 		}
@@ -257,7 +259,7 @@ public class InterdayData {
 	 * @param sumForceDown
 	 *          the sumForceDown to set
 	 */
-	public void setSumForceDown(double sumForceDown) {
+	public void setSumForceDown(final double sumForceDown) {
 
 		this.sumForceDown = sumForceDown;
 	}
@@ -266,7 +268,7 @@ public class InterdayData {
 	 * @param sumForceUp
 	 *          the sumForceUp to set
 	 */
-	public void setSumForceUp(double sumForceUp) {
+	public void setSumForceUp(final double sumForceUp) {
 
 		this.sumForceUp = sumForceUp;
 	}
@@ -275,7 +277,7 @@ public class InterdayData {
 	 * @param td
 	 *          the td to set
 	 */
-	public void setTd(TickerData td) {
+	public void setTd(final TickerData td) {
 
 		this.td = td;
 	}
@@ -284,7 +286,7 @@ public class InterdayData {
 	 * @param ticker
 	 *          the ticker to set
 	 */
-	public void setTicker(String ticker) {
+	public void setTicker(final String ticker) {
 
 		this.ticker = ticker;
 	}

@@ -38,7 +38,7 @@ public class InputRecord {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public InputRecord(String input) {
+	public InputRecord(final String input) {
 
 		try {
 			final String fld[] = input.split("\\s+");
@@ -50,14 +50,17 @@ public class InputRecord {
 
 			if (fld.length == 2) {
 				this.change = Double.parseDouble(fld[1].trim());
-			} else if (fld.length == 3) {
+			}
+			else if (fld.length == 3) {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
-			} else if (fld.length == 4) {
+			}
+			else if (fld.length == 4) {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
 				this.estimateData = Boolean.parseBoolean(fld[3].trim());
-			} else if (fld.length > 4) {
+			}
+			else if (fld.length > 4) {
 				this.change = Double.parseDouble(fld[1].trim());
 				this.noZeros = Boolean.parseBoolean(fld[2].trim());
 				this.estimateData = Boolean.parseBoolean(fld[3].trim());
@@ -72,8 +75,7 @@ public class InputRecord {
 	@Override
 	public String toString() {
 
-		return String.format("%-25s %9.1f  %5s  %5s  %s", this.series, this.change, this.noZeros, this.estimateData,
-		    this.type);
+		return String.format("%-25s %9.1f  %5s  %5s  %s", this.series, this.change, this.noZeros, this.estimateData, this.type);
 	}
 
 }

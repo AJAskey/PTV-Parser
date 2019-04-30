@@ -6,10 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -26,7 +23,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,23 +37,44 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
 public class ParseValueManufacturing {
 
 	/**
+	 * net.ajaskey.market.tools.fred.getFilePair
+	 *
+	 * @param files
+	 *
+	 * @return
+	 */
+	private static String getFilePair(final String code, final File[] files) {
+
+		for (final File file : files) {
+			if (file.isFile()) {
+				if (file.getName().toUpperCase().contains("VALUE TOTAL INVENTORIES")) {
+					if (file.getName().substring(1, 4).equalsIgnoreCase(code)) {
+						return file.getName();
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
-		File folder = new File(OptumaCommon.optumaPath + "/Fred-Download/");
-		File[] listOfFiles = folder.listFiles();
+		final File folder = new File(OptumaCommon.optumaPath + "/Fred-Download/");
+		final File[] listOfFiles = folder.listFiles();
 
-		for (File shipFile : listOfFiles) {
+		for (final File shipFile : listOfFiles) {
 			if (shipFile.isFile()) {
 				if (shipFile.getName().toUpperCase().contains("VALUE SHIPMENTS")) {
-					String invFile = getFilePair(shipFile.getName().substring(1, 4), listOfFiles);
+					final String invFile = ParseValueManufacturing.getFilePair(shipFile.getName().substring(1, 4), listOfFiles);
 					if (invFile != null) {
 						//System.out.printf("%s%n%s%n%n", shipFile.getName(), invFile);
-						writeItoS(shipFile.getName(), invFile);
+						ParseValueManufacturing.writeItoS(shipFile.getName(), invFile);
 					}
 				}
 			}
@@ -73,25 +91,24 @@ public class ParseValueManufacturing {
 	 * @param invFile
 	 * @throws IOException
 	 */
-	private static void writeItoS(String shipFile, String invFile) throws IOException {
+	private static void writeItoS(final String shipFile, final String invFile) throws IOException {
 
 		ValueMfgData.setShipments(shipFile);
 
 		System.out.println(invFile);
 		String line = "";
-		try (BufferedReader reader = new BufferedReader(
-		    new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + invFile))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(OptumaCommon.optumaPath + "/Fred-Download/" + invFile))) {
 			while ((line = reader.readLine()) != null) {
 				ValueMfgData.setInventory(line.trim());
 			}
 		}
 
-		int idx = shipFile.indexOf("Value Shipments for ");
-		String outname = "Inventory to Shipments for " + shipFile.substring(idx + 20);
+		final int idx = shipFile.indexOf("Value Shipments for ");
+		final String outname = "Inventory to Shipments for " + shipFile.substring(idx + 20);
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "/Fred-Download/" + outname)) {
 			pw.println("Date,ItoS");
-			for (ValueMfgData vmd : ValueMfgData.shipments) {
+			for (final ValueMfgData vmd : ValueMfgData.shipments) {
 				if (vmd.valid) {
 					pw.printf("%s,%.2f%n", ValueMfgData.sdf.format(vmd.date.getTime()), vmd.itos);
 				}
@@ -100,27 +117,6 @@ public class ParseValueManufacturing {
 
 		//ValueMfgData.dump();
 		ValueMfgData.shipments.clear();
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.getFilePair
-	 * 
-	 * @param files
-	 *
-	 * @return
-	 */
-	private static String getFilePair(String code, File[] files) {
-
-		for (File file : files) {
-			if (file.isFile()) {
-				if (file.getName().toUpperCase().contains("VALUE TOTAL INVENTORIES")) {
-					if (file.getName().substring(1, 4).equalsIgnoreCase(code)) {
-						return file.getName();
-					}
-				}
-			}
-		}
-		return null;
 	}
 
 }

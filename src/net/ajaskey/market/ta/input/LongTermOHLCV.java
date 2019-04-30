@@ -54,7 +54,7 @@ public class LongTermOHLCV {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static List<LongTermOHLCV> getData(String index) throws IOException, ParseException {
+	public static List<LongTermOHLCV> getData(final String index) throws IOException, ParseException {
 
 		final List<LongTermOHLCV> ret = new ArrayList<>();
 
@@ -92,14 +92,16 @@ public class LongTermOHLCV {
 	 * @param index
 	 * @return
 	 */
-	public static String getFilename(String index) {
+	public static String getFilename(final String index) {
 
 		String fname = "";
 		if (index.equalsIgnoreCase("SP500")) {
 			fname = "data/GSPC.CSV";
-		} else if (index.equalsIgnoreCase("SP400")) {
+		}
+		else if (index.equalsIgnoreCase("SP400")) {
 			fname = "data/MID.CSV";
-		} else if (index.equalsIgnoreCase("SP600")) {
+		}
+		else if (index.equalsIgnoreCase("SP600")) {
 			fname = "data/SML.CSV";
 		}
 		return fname;
@@ -112,7 +114,7 @@ public class LongTermOHLCV {
 	 * @param list
 	 * @return
 	 */
-	public static double getLatestPrice(List<LongTermOHLCV> list) {
+	public static double getLatestPrice(final List<LongTermOHLCV> list) {
 
 		try {
 			return list.get(list.size() - 1).close;
@@ -128,7 +130,7 @@ public class LongTermOHLCV {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		LongTermOHLCV.update("SP400");
 		LongTermOHLCV.update("SP500");
@@ -144,12 +146,13 @@ public class LongTermOHLCV {
 	 * @param list
 	 * @return
 	 */
-	public static LongTermOHLCV queryDate(Calendar c, List<LongTermOHLCV> list) {
+	public static LongTermOHLCV queryDate(final Calendar c, final List<LongTermOHLCV> list) {
 
 		for (final LongTermOHLCV d : list) {
 			if (Utils.sameDate(d.date, c)) {
 				return d;
-			} else if (d.date.after(c)) {
+			}
+			else if (d.date.after(c)) {
 				return d;
 			}
 		}
@@ -167,16 +170,19 @@ public class LongTermOHLCV {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static List<LongTermOHLCV> update(String index) throws IOException, ParseException {
+	public static List<LongTermOHLCV> update(final String index) throws IOException, ParseException {
 
 		String tdIndex = "";
 		if (index.contains("500")) {
 			tdIndex = "SPX.IDX";
-		} else if (index.contains("400")) {
+		}
+		else if (index.contains("400")) {
 			tdIndex = "MID.IDX";
-		} else if (index.contains("600")) {
+		}
+		else if (index.contains("600")) {
 			tdIndex = "SML.IDX";
-		} else {
+		}
+		else {
 			return null;
 		}
 
@@ -249,6 +255,7 @@ public class LongTermOHLCV {
 	 *
 	 */
 	public LongTermOHLCV() {
+
 		this.date = Calendar.getInstance();
 		this.open = 0;
 		this.high = 0;
@@ -257,7 +264,8 @@ public class LongTermOHLCV {
 		this.volume = 0;
 	}
 
-	public LongTermOHLCV(DailyData dd) {
+	public LongTermOHLCV(final DailyData dd) {
+
 		this.date = dd.getDate();
 		this.open = dd.getOpen();
 		this.high = dd.getHigh();
@@ -272,8 +280,8 @@ public class LongTermOHLCV {
 	@Override
 	public String toString() {
 
-		final String ret = String.format("%s,%6.2f,%6.2f,%6.2f,%6.2f,%6.2f,%10d", sdf.format(this.date.getTime()),
-		    this.open, this.high, this.low, this.close, this.close, this.volume);
+		final String ret = String.format("%s,%6.2f,%6.2f,%6.2f,%6.2f,%6.2f,%10d", sdf.format(this.date.getTime()), this.open, this.high,
+		    this.low, this.close, this.close, this.volume);
 		return ret;
 	}
 

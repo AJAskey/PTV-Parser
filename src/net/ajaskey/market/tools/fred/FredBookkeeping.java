@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -15,6 +14,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 
@@ -32,7 +32,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -58,29 +58,29 @@ public class FredBookkeeping {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		Debug.init("fred-bookkeeping.dbg");
 		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
 
 		final File folder = new File(FredCommon.fredPath);
 		//		File existingFiles[] = folder.listFiles();
-		//		
+		//
 		//		for(File f : existingFiles) {
 		//			System.out.println(f.getName());
 		//		}
 
 		final Set<String> uniqCodes = new HashSet<>();
 
-		String[] ext = new String[] { "csv" };
-		List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
-		for (File file : files) {
-			String name = file.getName();
+		final String[] ext = new String[] { "csv" };
+		final List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
+		for (final File file : files) {
+			final String name = file.getName();
 			//Ignore derived TREAST files
 			if (!name.contains("TREAST-")) {
-				String f1 = name.replace(".csv", "");
-				String f2 = f1.replace("[", "").trim();
-				int idx = f2.indexOf("]");
+				final String f1 = name.replace(".csv", "");
+				final String f2 = f1.replace("[", "").trim();
+				final int idx = f2.indexOf("]");
 				String f3 = f2;
 				if (idx > 0) {
 					f3 = f2.substring(0, idx).trim();
@@ -94,15 +94,15 @@ public class FredBookkeeping {
 		final List<String> codes = new ArrayList<>(uniqCodes);
 		Collections.sort(codes);
 
-		process(codes);
+		FredBookkeeping.process(codes);
 
 		FredDataDownloader.tryAgainFile.close();
 
 		Utils.sleep(2500);
 		Debug.log("Processing retry attempts...");
 
-		List<String> retry = FredCommon.readSeriesList(tryAgainFilename);
-		process(retry);
+		final List<String> retry = FredCommon.readSeriesList(tryAgainFilename);
+		FredBookkeeping.process(retry);
 
 		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
 
@@ -116,31 +116,29 @@ public class FredBookkeeping {
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.process
 	 *
 	 * @param codes
 	 * @throws FileNotFoundException
 	 */
-	private static void process(List<String> codes) throws FileNotFoundException {
+	private static void process(final List<String> codes) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter("CodesToUpdate.txt")) {
 
 			int knt = 0;
-			for (String code : codes) {
-				File f = new File(FredCommon.fredPath + "/" + code + ".csv");
-				Calendar cLastUpdate = Calendar.getInstance();
-				cLastUpdate.setTimeInMillis(f.lastModified());
-				cLastUpdate.add(Calendar.DATE, -1);
-				String lastUpdate = sdf.format(cLastUpdate.getTime());
+			for (final String code : codes) {
+				final File f = new File(FredCommon.fredPath + "/" + code + ".csv");
+				final DateTime cLastUpdate = new DateTime(f.lastModified());
+				cLastUpdate.add(DateTime.DATE, -1);
+				final String lastUpdate = cLastUpdate.toString();
 
-				DataSeriesInfo dsi = FredCommon.queryFredDsi(code, lastUpdate);
+				final DataSeriesInfo dsi = FredCommon.queryFredDsi(code, lastUpdate);
 				if (dsi != null) {
-					System.out.printf("%-20s --> %-20s\t\t%15s%n", code, lastUpdate,
-					    Utils.sdf2.format(dsi.getLastObservation().getTime()));
+					System.out.printf("%-20s --> %-20s\t\t%15s%n", code, lastUpdate, dsi.getLastObservation().toString());
 					dsiList.add(dsi);
 
-					if (cLastUpdate.before(dsi.getLastObservation())) {
+					if (cLastUpdate.isLessThan(dsi.getLastObservation())) {
 						pw.printf("%s\t%s%n", dsi.getName(), dsi.getTitle());
 					}
 				}

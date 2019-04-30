@@ -4,6 +4,7 @@ package net.ajaskey.market.tools.quandl;
 import java.lang.reflect.Field;
 import java.util.Calendar;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 
 /**
@@ -33,7 +34,7 @@ import net.ajaskey.market.misc.Utils;
  */
 public class LeadingIndicatorData {
 
-	public Calendar	date;
+	public DateTime	date;
 	public double		index;
 	public double		growth;
 
@@ -41,8 +42,9 @@ public class LeadingIndicatorData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public LeadingIndicatorData(Calendar cal, double i, double g) {
-		this.date = Utils.buildCalendar(cal);
+	public LeadingIndicatorData(final DateTime dt, final double i, final double g) {
+
+		this.date = dt;
 		this.index = i;
 		this.growth = g;
 	}
@@ -70,7 +72,8 @@ public class LeadingIndicatorData {
 				final String ft = field.getType().toString();
 				if (ft.equals("class java.util.Calendar")) {
 					result.append(Utils.stringDate((Calendar) field.get(this)));
-				} else {
+				}
+				else {
 					result.append(field.get(this));
 				}
 

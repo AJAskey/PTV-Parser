@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -80,19 +79,31 @@ public class SpxLongTermPrices {
 	//		}
 	//	}
 
-	public static String getClose(Calendar cal) {
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getClose
+	 *
+	 * @param dt
+	 * @return
+	 */
+	public static String getClose(final DateTime dt) {
 
-		final SpxLongTermPrices s = SpxLongTermPrices.getData(cal);
-		final String ret = String.format("%s,%s", Utils.stringDate(s.date), s.close);
+		final SpxLongTermPrices s = SpxLongTermPrices.getData(dt);
+		final String ret = String.format("%s,%s", s.date, s.close);
 		return ret;
 	}
 
-	public static SpxLongTermPrices getData(Calendar cal) {
+	/**
+	 *
+	 * net.ajaskey.market.ta.input.getData
+	 *
+	 * @param dt
+	 * @return
+	 */
+	public static SpxLongTermPrices getData(final DateTime dt) {
 
 		for (final SpxLongTermPrices s : spxList) {
-			if (Utils.sameDate(cal, s.date)) {
-				return s;
-			} else if (cal.before(s.date)) {
+			if (dt.isLessThanOrEqual(s.date)) {
 				return s;
 			}
 		}
@@ -106,20 +117,16 @@ public class SpxLongTermPrices {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		new SpxLongTermPrices();
 	}
 
-	public double	open;
-	public double	high;
-
-	public double low;
-
-	public double close;
-
-	public long volume;
-
-	public Calendar date;
+	public double		open;
+	public double		high;
+	public double		low;
+	public double		close;
+	public long			volume;
+	public DateTime	date;
 
 }

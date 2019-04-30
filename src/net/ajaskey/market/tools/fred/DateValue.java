@@ -2,10 +2,9 @@
 package net.ajaskey.market.tools.fred;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -21,7 +20,7 @@ import net.ajaskey.market.misc.Utils;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -34,51 +33,53 @@ import net.ajaskey.market.misc.Utils;
  */
 public class DateValue {
 
-	public Calendar	date;
-	public double		value;
-	public boolean	valid;
-
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DateValue(String str, int fptr) {
-		this.valid = false;
-		try {
-			if (str.trim().length() > 10) {
-				String fld[] = str.trim().split(",");
-				if (fld.length > 1) {
-					Date dat = sdf.parse(fld[0].trim());
-					this.date = Calendar.getInstance();
-					this.date.setTime(dat);
-					String field = fld[fptr].replaceAll("\"", "").replaceAll(",", "").trim();
-					this.value = Double.parseDouble(field);
-					this.valid = true;
-				}
-			}
-		} catch (Exception e) {
-			this.date = null;
-			this.value = 0.0;
-			this.valid = false;
-		}
-	}
+	public DateTime	date;
+	public double		value;
+	public boolean	valid;
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param dv
 	 */
-	public DateValue(DateValue dv) {
+	public DateValue(final DateValue dv) {
+
 		this.date = dv.date;
 		this.value = dv.value;
 		this.valid = true;
 	}
 
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DateValue(final String str, final int fptr) {
+
+		this.valid = false;
+		try {
+			if (str.trim().length() > 10) {
+				final String fld[] = str.trim().split(",");
+				if (fld.length > 1) {
+					final Date dat = sdf.parse(fld[0].trim());
+					this.date = new DateTime(dat);
+					final String field = fld[fptr].replaceAll("\"", "").replaceAll(",", "").trim();
+					this.value = Double.parseDouble(field);
+					this.valid = true;
+				}
+			}
+		} catch (final Exception e) {
+			this.date = null;
+			this.value = 0.0;
+			this.valid = false;
+		}
+	}
+
 	@Override
 	public String toString() {
-		String ret = String.format("%s\t%.2f", Utils.getString(this.date), this.value);
+
+		final String ret = String.format("%s\t%.2f", this.date, this.value);
 		return ret;
 	}
 }

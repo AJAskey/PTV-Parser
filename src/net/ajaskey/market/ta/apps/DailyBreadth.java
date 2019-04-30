@@ -47,7 +47,7 @@ public class DailyBreadth {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		final List<String> filenames = new ArrayList<>();
 		final String dataPath = Utils.getDataPath();

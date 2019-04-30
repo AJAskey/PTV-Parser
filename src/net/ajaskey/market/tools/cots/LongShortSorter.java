@@ -36,12 +36,13 @@ public class LongShortSorter implements Comparator<LongShort> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(LongShort ls1, LongShort ls2) {
+	public int compare(final LongShort ls1, final LongShort ls2) {
 
 		int ret = 0;
-		if (ls1.date.before(ls2.date)) {
+		if (ls1.date.isLessThan(ls2.date)) {
 			ret = 1;
-		} else if (ls1.date.after(ls2.date)) {
+		}
+		else if (ls1.date.isGreaterThan(ls2.date)) {
 			ret = -1;
 		}
 		return ret;

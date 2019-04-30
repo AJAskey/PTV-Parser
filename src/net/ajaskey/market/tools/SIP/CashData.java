@@ -40,7 +40,7 @@ public class CashData {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		QuarterlyData.init();
 
@@ -69,7 +69,7 @@ public class CashData {
 	 * @param fld
 	 * @return
 	 */
-	public static CashData setCashDataInfo(String[] fld) {
+	public static CashData setCashDataInfo(final String[] fld) {
 
 		final CashData cashData = new CashData();
 

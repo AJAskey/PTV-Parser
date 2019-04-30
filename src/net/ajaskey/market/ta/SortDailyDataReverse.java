@@ -33,7 +33,7 @@ import java.util.Comparator;
 public class SortDailyDataReverse implements Comparator<DailyData> {
 
 	@Override
-	public int compare(DailyData d1, DailyData d2) {
+	public int compare(final DailyData d1, final DailyData d2) {
 
 		return (d1.getDate().compareTo(d2.getDate()));
 	}

@@ -47,7 +47,8 @@ public class GannData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public GannData(double sPrice, Calendar sDate, double ePrice, Calendar eDate) {
+	public GannData(final double sPrice, final Calendar sDate, final double ePrice, final Calendar eDate) {
+
 		this.startDate = sDate;
 		this.endDate = eDate;
 		this.startPrice = sPrice;

@@ -1,10 +1,8 @@
 
 package net.ajaskey.market.tools.optuma;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,18 +46,43 @@ public class WriteIndexEOD {
 
 	private static List<TickerData> tdList = new ArrayList<>();
 
-	private static void getNewData() {
+	/**
+	 * net.ajaskey.market.tools.optuma.fixBadData
+	 *
+	 * @param td
+	 */
+	private static void fixBadData(final TickerData td) {
 
-		final File allFiles = new File("C:\\Users\\ajask\\Downloads");
-		final File[] listOfFiles = allFiles.listFiles();
-
-		for (final File file : listOfFiles) {
-			if (file.isFile()) {
-				Path path = file.toPath();
-				System.out.println(path);
+		if (td.getTicker().equalsIgnoreCase("CPR.IDX")) {
+			System.out.println("Fixing " + td.getTicker());
+			DailyData prev = null;
+			for (final DailyData dd : td.getData()) {
+				if (prev != null) {
+					if ((dd.getOpen() > 10.0) || (dd.getHigh() > 10.0) || (dd.getLow() > 10.0) || (dd.getClose() > 10.0)) {
+						dd.resetOpen(prev.getOpen());
+						dd.resetHigh(prev.getHigh());
+						dd.resetLow(prev.getLow());
+						dd.resetClose(prev.getClose());
+					}
+				}
+				prev = dd;
 			}
 		}
+
 	}
+
+	//	private static void getNewData() {
+	//
+	//		final File allFiles = new File("C:\\Users\\ajask\\Downloads");
+	//		final File[] listOfFiles = allFiles.listFiles();
+	//
+	//		for (final File file : listOfFiles) {
+	//			if (file.isFile()) {
+	//				final Path path = file.toPath();
+	//				System.out.println(path);
+	//			}
+	//		}
+	//	}
 
 	/**
 	 * net.ajaskey.market.tools.optuma.main
@@ -68,7 +91,7 @@ public class WriteIndexEOD {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		//WriteIndexEOD.getNewData();
 
@@ -130,50 +153,24 @@ public class WriteIndexEOD {
 
 		for (final TickerData td : tdList) {
 			System.out.println(td.getTicker() + "\t" + td.getTickerName());
-			String tn = td.getTicker();
+			final String tn = td.getTicker();
 			if (tn != null) {
 				String nm = TickerFullName.getName(tn);
 				if (nm == null) {
 					nm = "Unknown";
 				}
-				fixBadData(td);
-				String tname = tn.replace(".IDX", "");
-				String nm2 = nm.replace("/", "_");
-				String fname = "[" + tname + "] - " + nm2;
+				WriteIndexEOD.fixBadData(td);
+				final String tname = tn.replace(".IDX", "");
+				final String nm2 = nm.replace("/", "_");
+				final String fname = "[" + tname + "] - " + nm2;
 				//System.out.println(fname);
-				try (PrintWriter pw = new PrintWriter(outdir + fname + ".csv");
-				    PrintWriter pw2 = new PrintWriter(outdir + tn + ".csv")) {
+				try (PrintWriter pw = new PrintWriter(outdir + fname + ".csv"); PrintWriter pw2 = new PrintWriter(outdir + tn + ".csv")) {
 					td.generateDerived(true);
 					td.printOptuma(pw);
 					td.printOptuma(pw2);
 				}
 			}
 		}
-	}
-
-	/**
-	 * net.ajaskey.market.tools.optuma.fixBadData
-	 *
-	 * @param td
-	 */
-	private static void fixBadData(TickerData td) {
-
-		if (td.getTicker().equalsIgnoreCase("CPR.IDX")) {
-			System.out.println("Fixing " + td.getTicker());
-			DailyData prev = null;
-			for (final DailyData dd : td.getData()) {
-				if (prev != null) {
-					if ((dd.getOpen() > 10.0) || (dd.getHigh() > 10.0) || (dd.getLow() > 10.0) || (dd.getClose() > 10.0)) {
-						dd.resetOpen(prev.getOpen());
-						dd.resetHigh(prev.getHigh());
-						dd.resetLow(prev.getLow());
-						dd.resetClose(prev.getClose());
-					}
-				}
-				prev = dd;
-			}
-		}
-
 	}
 
 }

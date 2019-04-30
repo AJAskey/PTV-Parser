@@ -34,7 +34,7 @@ public class SmaContinuousSeries {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final SmaContinuousSeries sma = new SmaContinuousSeries(9);
 		for (int i = 1; i < 31; i++) {
@@ -54,7 +54,8 @@ public class SmaContinuousSeries {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SmaContinuousSeries(int smaWin) {
+	public SmaContinuousSeries(final int smaWin) {
+
 		this.knt = 0;
 		this.ptr = -1;
 		this.sma = 0;
@@ -73,7 +74,7 @@ public class SmaContinuousSeries {
 	 * @param val
 	 * @return
 	 */
-	public double addValue(double val) {
+	public double addValue(final double val) {
 
 		this.knt++;
 		this.incPtr();
@@ -81,7 +82,8 @@ public class SmaContinuousSeries {
 		if (this.knt < this.smaWindow) {
 			this.smaTot += val;
 			this.sma = this.smaTot / this.knt;
-		} else {
+		}
+		else {
 			this.smaTot -= this.values[this.ptr];
 			this.smaTot += val;
 			this.sma = this.smaTot / this.smaWindow;

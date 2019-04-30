@@ -33,6 +33,12 @@ import java.util.Date;
  */
 public class SipCommon {
 
+	public final static double	THOUSAND	= 1e3;
+	public final static double	MILLION		= 1e6;
+	public final static double	BILLION		= 1e9;
+
+	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
 	private int						ptr;
 	private final int			INC;
 	private final String	splitChar;
@@ -41,17 +47,14 @@ public class SipCommon {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public SipCommon(String ch, int inc, int ver) {
+	public SipCommon(final String ch, final int inc, final int ver) {
+
 		this.reset();
 		this.INC = inc;
 		this.splitChar = ch;
 	}
 
-	public final static double	THOUSAND	= 1e3;
-	public final static double	MILLION		= 1e6;
-	public final static double	BILLION		= 1e9;
-
-	public DataSet4 getData4(String name, String line, DataSet4.dMode mode, double scaler) {
+	public DataSet4 getData4(final String name, final String line, final DataSet4.dMode mode, final double scaler) {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
 
@@ -62,28 +65,26 @@ public class SipCommon {
 		return dsRet;
 	}
 
-	public void reset() {
-
-		this.ptr = 1;
-	}
-
-	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-
 	/**
 	 * net.ajaskey.market.tools.sipro.v4.getDate
 	 *
 	 * @return
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
-	public Calendar getDate(String line) throws ParseException {
+	public Calendar getDate(final String line) throws ParseException {
 
 		final String fld[] = line.replace("\"", "").split(this.splitChar);
-		int len = fld.length - 1;
-		String sdate = fld[len].trim();
-		Date d = sdf.parse(sdate);
-		Calendar ret = Calendar.getInstance();
+		final int len = fld.length - 1;
+		final String sdate = fld[len].trim();
+		final Date d = sdf.parse(sdate);
+		final Calendar ret = Calendar.getInstance();
 		ret.setTime(d);
 		return ret;
+	}
+
+	public void reset() {
+
+		this.ptr = 1;
 	}
 
 }

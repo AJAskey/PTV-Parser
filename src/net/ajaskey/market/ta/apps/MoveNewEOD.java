@@ -20,7 +20,7 @@ import java.nio.file.StandardCopyOption;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -33,9 +33,9 @@ import java.nio.file.StandardCopyOption;
  */
 public class MoveNewEOD {
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
-		String dest = "C:\\Data\\EODData\\DataClient\\ASCII\\";
+		final String dest = "C:\\Data\\EODData\\DataClient\\ASCII\\";
 
 		MoveNewEOD.moveFile(dest);
 	}
@@ -45,20 +45,23 @@ public class MoveNewEOD {
 	 *
 	 * @param args
 	 */
-	public static void moveFile(String path) {
+	public static void moveFile(final String path) {
 
-		File downloads = new File("C:\\Users\\Andy\\Downloads");
+		final File downloads = new File("C:\\Users\\Andy\\Downloads");
 		final File flist[] = downloads.listFiles();
 
-		for (File f : flist) {
+		for (final File f : flist) {
 			File to = null;
 			if (f.getName().toUpperCase().contains("NYSE_2019")) {
 				to = new File(path + "NYSE\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("NASDAQ_2019")) {
+			}
+			else if (f.getName().toUpperCase().contains("NASDAQ_2019")) {
 				to = new File(path + "NASDAQ\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("AMEX_2019")) {
+			}
+			else if (f.getName().toUpperCase().contains("AMEX_2019")) {
 				to = new File(path + "AMEX\\" + f.getName());
-			} else if (f.getName().toUpperCase().contains("INDEX_2019")) {
+			}
+			else if (f.getName().toUpperCase().contains("INDEX_2019")) {
 				to = new File(path + "INDEX\\" + f.getName());
 			}
 
@@ -67,7 +70,7 @@ public class MoveNewEOD {
 					Files.move(f.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
 					System.out.println(f.getAbsolutePath());
 				}
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				e.printStackTrace();
 			}
 		}

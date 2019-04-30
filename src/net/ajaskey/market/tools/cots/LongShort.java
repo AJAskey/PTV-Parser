@@ -1,8 +1,7 @@
 
 package net.ajaskey.market.tools.cots;
 
-import java.util.Calendar;
-
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 
 /**
@@ -47,7 +46,7 @@ public class LongShort {
 	public long				spreadPos;
 	public double			pc;
 	public long				delta;
-	public Calendar		date	= null;
+	public DateTime		date	= null;
 	public boolean		valid;
 
 	/**
@@ -55,6 +54,7 @@ public class LongShort {
 	 *
 	 */
 	public LongShort() {
+
 		this.longPos = 0;
 		this.shortPos = 0;
 		this.spreadPos = 0;
@@ -62,10 +62,9 @@ public class LongShort {
 		this.valid = false;
 	}
 
-	public LongShort(long longs, long shorts, long spreads, Calendar d, MarketType mt, SourceType st) {
+	public LongShort(final long longs, final long shorts, final long spreads, final DateTime d, final MarketType mt, final SourceType st) {
 
-		this.date = Utils.makeCopy(d);
-		// Utils.printCalendar(date);
+		this.date = new DateTime(d.getCal());
 		this.type = mt;
 		this.source = st;
 
@@ -81,28 +80,30 @@ public class LongShort {
 	 * @param d
 	 *
 	 */
-	public LongShort(String l, String s, String sp, Calendar d, MarketType mt, SourceType st) {
+	public LongShort(final String l, final String s, final String sp, final DateTime d, final MarketType mt, final SourceType st) {
 
 		try {
 
-			this.date = Utils.makeCopy(d);
-			// Utils.printCalendar(date);
+			this.date = new DateTime(d.getCal());
 			this.type = mt;
 			this.source = st;
 
 			if (l.trim().length() > 0) {
 				this.longPos = Long.parseLong(l.trim());
-			} else {
+			}
+			else {
 				this.longPos = 0;
 			}
 			if (s.trim().length() > 0) {
 				this.shortPos = Long.parseLong(s.trim());
-			} else {
+			}
+			else {
 				this.shortPos = 0;
 			}
 			if (sp.trim().length() > 0) {
 				this.spreadPos = Long.parseLong(sp.trim());
-			} else {
+			}
+			else {
 				this.spreadPos = 0;
 			}
 			this.update();
@@ -123,12 +124,13 @@ public class LongShort {
 		long tot = 0;
 		if (this.type == MarketType.OI) {
 			tot = this.longPos;
-		} else {
+		}
+		else {
 			tot = this.longPos + this.shortPos + this.spreadPos;
 		}
-		final String ret = String.format("%10s    %-9s : %15s %12s %12s %12s %12s %10.2f %9d", Utils.getString(this.date),
-		    this.source, this.type, Utils.formatInt(this.longPos), Utils.formatInt(this.shortPos),
-		    Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc, this.delta);
+		final String ret = String.format("%10s    %-9s : %15s %12s %12s %12s %12s %10.2f %9d", this.date, this.source, this.type,
+		    Utils.formatInt(this.longPos), Utils.formatInt(this.shortPos), Utils.formatInt(this.spreadPos), Utils.formatInt(tot), this.pc,
+		    this.delta);
 		return ret;
 	}
 
@@ -136,7 +138,8 @@ public class LongShort {
 
 		if (this.longPos > 0) {
 			this.pc = (double) this.shortPos / (double) this.longPos;
-		} else {
+		}
+		else {
 			this.pc = 0.0;
 		}
 		this.delta = this.longPos - this.shortPos;

@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,10 +15,10 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.ta.input.SpxLongTermPrices;
 import net.ajaskey.market.tools.cots.LongShort.SourceType;
-import net.ajaskey.market.tools.helpers.WebGet;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
 
 /**
@@ -75,30 +74,30 @@ public class ProcessCOTS {
 	private static List<String> validNames = new ArrayList<>();
 
 	private static SpxLongTermPrices spxData;
-
-	/**
-	 *
-	 * net.ajaskey.market.tools.getLatestCots
-	 *
-	 */
-	private static void getLatestCots() {
-
-		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
-		List<String> resp = new ArrayList<>();
-
-		resp = WebGet.getSPDR(url);
-
-		if (resp != null) {
-
-			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
-				for (final String s : resp) {
-					pw.println(s);
-				}
-			} catch (final FileNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+	//
+	//	/**
+	//	 *
+	//	 * net.ajaskey.market.tools.getLatestCots
+	//	 *
+	//	 */
+	//	private static void getLatestCots() {
+	//
+	//		final String url = "http://www.cftc.gov/dea/options/financial_lof.htm";
+	//		List<String> resp = new ArrayList<>();
+	//
+	//		resp = WebGet.getSPDR(url);
+	//
+	//		if (resp != null) {
+	//
+	//			try (PrintWriter pw = new PrintWriter(folderPath + "/" + "newDaily.txt")) {
+	//				for (final String s : resp) {
+	//					pw.println(s);
+	//				}
+	//			} catch (final FileNotFoundException e) {
+	//				e.printStackTrace();
+	//			}
+	//		}
+	//	}
 
 	/**
 	 * net.ajaskey.market.tools.main
@@ -107,7 +106,7 @@ public class ProcessCOTS {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(final String[] args) throws ParseException, IOException {
 
 		System.out.println("Processing...");
 
@@ -143,7 +142,8 @@ public class ProcessCOTS {
 			if (cd == null) {
 				cd = new CotsData(ls);
 				CotsData.cotsList.add(cd);
-			} else {
+			}
+			else {
 				cd.setData(ls);
 				cd.update();
 			}
@@ -158,23 +158,29 @@ public class ProcessCOTS {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	private static void process(String str) throws FileNotFoundException, ParseException {
+	private static void process(final String str) throws FileNotFoundException, ParseException {
 
 		String prefix = "none";
 
 		if (str.contains("All")) {
 			prefix = ProcessCOTS.setAllIndex();
-		} else if (str.contains("SPX")) {
+		}
+		else if (str.contains("SPX")) {
 			prefix = ProcessCOTS.setSPX();
-		} else if (str.contains("NDX")) {
+		}
+		else if (str.contains("NDX")) {
 			prefix = ProcessCOTS.setNDX();
-		} else if (str.contains("DJIA")) {
+		}
+		else if (str.contains("DJIA")) {
 			prefix = ProcessCOTS.setDJIA();
-		} else if (str.contains("RUT")) {
+		}
+		else if (str.contains("RUT")) {
 			prefix = ProcessCOTS.setRUT();
-		} else if (str.contains("VIX")) {
+		}
+		else if (str.contains("VIX")) {
 			prefix = ProcessCOTS.setVIX();
-		} else if (str.contains("TREASURY")) {
+		}
+		else if (str.contains("TREASURY")) {
 			prefix = ProcessCOTS.setTreasury();
 		}
 
@@ -243,11 +249,11 @@ public class ProcessCOTS {
 	 * 81:Contract_Units 82:CFTC_SubGroup_Code 83:FutOnly_or_Combined
 	 *
 	 */
-	private static void readAndProcess(Calendar cal) {
+	private static void readAndProcess(final DateTime dt) {
 
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
-		final Calendar rptDate = Calendar.getInstance();
+		final DateTime rptDate = new DateTime();
 
 		CotsData.clear();
 
@@ -268,14 +274,16 @@ public class ProcessCOTS {
 						if (ProcessCOTS.validName(name)) {
 							final String day = fld[1].trim();
 							try {
-								rptDate.setTime(sdf.parse(day));
+								final Calendar c = Calendar.getInstance();
+								c.setTime(sdf.parse(day));
+								rptDate.set(c);
 							} catch (final ParseException e) {
-								rptDate.set(1950, Calendar.DECEMBER, 25);
+								rptDate.set(1950, DateTime.DECEMBER, 25);
 								e.printStackTrace();
 							}
 
 							// Filter on date if provided.
-							if ((cal == null) || (Utils.sameDate(cal, rptDate))) {
+							if ((dt == null) || (dt.isEqual(rptDate))) {
 
 								final LongShort.SourceType st = ProcessCOTS.setSourceType(name);
 
@@ -316,7 +324,7 @@ public class ProcessCOTS {
 
 		final File allFiles = new File(folderPath);
 		final File[] listOfFiles = allFiles.listFiles();
-		final Calendar rptDate = Calendar.getInstance();
+		final DateTime rptDate = new DateTime();
 
 		for (final File file : listOfFiles) {
 
@@ -346,9 +354,11 @@ public class ProcessCOTS {
 									if (tLine.contains("Traders in Financial Futures - Options and Futures Combined Positions as of")) {
 										final int idx = tLine.indexOf("as of") + 6;
 										final String str = tLine.substring(idx);
-										rptDate.setTime(sdf2.parse(str.trim()));
+										final Calendar c = Calendar.getInstance();
+										c.setTime(sdf2.parse(str.trim()));
+										rptDate.set(c);
 										// Utils.printCalendar(rptDate);
-										dStr = sdf.format(rptDate.getTime());
+										dStr = rptDate.toString();
 										// System.out.println(dStr);
 									}
 								}
@@ -371,7 +381,8 @@ public class ProcessCOTS {
 										final String str = tLine.substring(idx);
 										oiStr = str.replaceAll(",", "");
 										// System.out.println(oiStr);
-									} else if (tLine.contains(",")) {
+									}
+									else if (tLine.contains(",")) {
 										final String str = tLine.replaceAll(",", "");
 										final String fld[] = str.split("\\s+");
 
@@ -395,7 +406,7 @@ public class ProcessCOTS {
 
 	}
 
-	public static void runAllCombo(String prefix) throws ParseException {
+	public static void runAllCombo(final String prefix) throws ParseException {
 
 		validNames.clear();
 		validNames.add(DJIA_C_Name);
@@ -420,7 +431,7 @@ public class ProcessCOTS {
 		}
 	}
 
-	public static void runSpxCombo(String prefix) throws ParseException {
+	public static void runSpxCombo(final String prefix) throws ParseException {
 
 		validNames.clear();
 
@@ -461,16 +472,6 @@ public class ProcessCOTS {
 		return "Index_";
 	}
 
-	private static String setCommodity() {
-
-		validNames.clear();
-
-		validNames.add(Commodity_Name);
-		validNames.add(Commodity_Name2);
-
-		return "CMDTY_";
-	}
-
 	private static String setDJIA() {
 
 		validNames.clear();
@@ -507,36 +508,49 @@ public class ProcessCOTS {
 	 * @param line
 	 * @return
 	 */
-	private static SourceType setSourceType(String line) {
+	private static SourceType setSourceType(final String line) {
 
 		LongShort.SourceType st = null;
 		if (line.contains(DJIA_C_Name)) {
 			st = LongShort.SourceType.DJIA_C;
-		} else if (line.contains(DJIA_Name)) {
+		}
+		else if (line.contains(DJIA_Name)) {
 			st = LongShort.SourceType.DJIA;
-		} else if (line.contains(NDX_C_Name)) {
+		}
+		else if (line.contains(NDX_C_Name)) {
 			st = LongShort.SourceType.NDX_C;
-		} else if (line.contains(NDX_Name)) {
+		}
+		else if (line.contains(NDX_Name)) {
 			st = LongShort.SourceType.NDX;
-		} else if (line.contains(EMINI500_Name)) {
+		}
+		else if (line.contains(EMINI500_Name)) {
 			st = LongShort.SourceType.EMINI500;
-		} else if (line.contains(SPX_C_Name)) {
+		}
+		else if (line.contains(SPX_C_Name)) {
 			st = LongShort.SourceType.SPX_C;
-		} else if (line.contains(SPX_Name)) {
+		}
+		else if (line.contains(SPX_Name)) {
 			st = LongShort.SourceType.SPX;
-		} else if (line.contains(RUT_Name)) {
+		}
+		else if (line.contains(RUT_Name)) {
 			st = LongShort.SourceType.RUT;
-		} else if (line.contains(EMINI400_Name)) {
+		}
+		else if (line.contains(EMINI400_Name)) {
 			st = LongShort.SourceType.EMINI400;
-		} else if (line.contains(VIX_Name)) {
+		}
+		else if (line.contains(VIX_Name)) {
 			st = LongShort.SourceType.VIX;
-		} else if (line.contains(EM_Name)) {
+		}
+		else if (line.contains(EM_Name)) {
 			st = LongShort.SourceType.EM;
-		} else if (line.contains(USD_Name)) {
+		}
+		else if (line.contains(USD_Name)) {
 			st = LongShort.SourceType.USD;
-		} else if ((line.contains(Commodity_Name)) || (line.contains(Commodity_Name2))) {
+		}
+		else if ((line.contains(Commodity_Name)) || (line.contains(Commodity_Name2))) {
 			st = LongShort.SourceType.CMDTY;
-		} else if (line.contains(Treasury10_Name)) {
+		}
+		else if (line.contains(Treasury10_Name)) {
 			st = LongShort.SourceType.T10;
 		}
 		return st;
@@ -577,7 +591,7 @@ public class ProcessCOTS {
 	 * @param name
 	 * @return
 	 */
-	private static boolean validName(String name) {
+	private static boolean validName(final String name) {
 
 		// System.out.println(name);
 		for (final String s : validNames) {

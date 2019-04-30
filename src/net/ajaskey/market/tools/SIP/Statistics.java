@@ -13,7 +13,7 @@ public class Statistics {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final Statistics stats = new Statistics("atest");
 		for (double i = -200.0; i < 100.0; i += 1.5) {
@@ -42,7 +42,7 @@ public class Statistics {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public Statistics(String n) {
+	public Statistics(final String n) {
 
 		this.ds = new DescriptiveStatistics();
 		this.name = n;
@@ -54,7 +54,7 @@ public class Statistics {
 	 *
 	 * @param d
 	 */
-	public void addValue(double d) {
+	public void addValue(final double d) {
 
 		if (d != 0.0) {
 			this.ds.addValue(d);
@@ -67,7 +67,7 @@ public class Statistics {
 	 *
 	 * @param qd
 	 */
-	public void addValues(QuarterlyData qd) {
+	public void addValues(final QuarterlyData qd) {
 
 		if (qd.q1 != 0.0) {
 			this.ds.addValue(qd.q1);
@@ -156,7 +156,7 @@ public class Statistics {
 	 * @param i
 	 * @return
 	 */
-	private double getPercentile(int percentile) {
+	private double getPercentile(final int percentile) {
 
 		return this.ds.getPercentile(percentile);
 	}
@@ -194,8 +194,7 @@ public class Statistics {
 		ret += TAB + "Mean   : " + QuarterlyData.fmt(this.getMean()) + NL;
 		ret += TAB + "StdDev : " + QuarterlyData.fmt(this.getStdDev()) + NL;
 		ret += TAB + "Min    : " + QuarterlyData.fmt(this.getMin()) + NL;
-		ret += TAB + "  -2 StdDev : " + QuarterlyData.fmt(this.getPercentile(5)) + " (knt=" + (int) (this.getN() * 0.05)
-		    + ")" + NL;
+		ret += TAB + "  -2 StdDev : " + QuarterlyData.fmt(this.getPercentile(5)) + " (knt=" + (int) (this.getN() * 0.05) + ")" + NL;
 		ret += TAB + "  Median    : " + QuarterlyData.fmt(this.getMedian()) + NL;
 		ret += TAB + "  +2 StdDev : " + QuarterlyData.fmt(this.getPercentile(95)) + NL;
 		ret += TAB + "Max    : " + QuarterlyData.fmt(this.getMax()) + NL;

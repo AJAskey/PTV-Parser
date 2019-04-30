@@ -1,19 +1,11 @@
 
 package net.ajaskey.market.tools.options;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 import net.ajaskey.market.misc.Utils;
-import net.ajaskey.market.tools.SIP.CompanyData;
-import net.ajaskey.market.tools.SIP.IncomeData;
 
 public class DataItem {
 
@@ -26,6 +18,60 @@ public class DataItem {
 
 	final static String NL = "\n";
 
+	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+	/**
+	 *
+	 * @param fld
+	 * @return
+	 */
+	public static DataItem setCall(final String fld[]) {
+
+		final DataItem di = new DataItem(Calendar.getInstance(), 0.0, fld, ACALL);
+		return di;
+	}
+
+	/**
+	 *
+	 * @param fld
+	 * @return
+	 */
+	public static DataItem setPut(final String fld[]) {
+
+		final DataItem di = new DataItem(null, 0.0, fld, APUT);
+		return di;
+	}
+
+	String	id;
+	double	last;
+	double	net;
+	double	bid;
+	double	ask;
+
+	int			volume;
+	double	iv;
+
+	double	oi;
+	double	delta;
+	double	gamma;
+	double	theta;
+	double	rho;
+
+	double	vega;
+	double	strike;
+
+	double	stockPrice;
+	double	rate;
+
+	double yrs;
+
+	int				dataType;
+	Calendar	expiry;
+
+	Calendar sellDate;
+
+	double price;
+
 	/**
 	 *
 	 * @param last2
@@ -33,7 +79,7 @@ public class DataItem {
 	 * @param fld
 	 * @param putcalltype
 	 */
-	DataItem(Calendar xpiry, double uprice, String fld[], int putcalltype) {
+	DataItem(final Calendar xpiry, final double uprice, final String fld[], final int putcalltype) {
 
 		int ptr = 0;
 		if (putcalltype == APUT) {
@@ -59,62 +105,12 @@ public class DataItem {
 		this.dataType = putcalltype;
 		if (putcalltype == APUT) {
 			this.price = OptionsProcessor.getPutPrice(this.bid, this.strike, this.yrs, this.rate, this.iv);
-		} else if (putcalltype == ACALL) {
+		}
+		else if (putcalltype == ACALL) {
 			this.price = OptionsProcessor.getCallPrice(this.bid, this.strike, this.yrs, this.rate, this.iv);
 		}
 
 	}
-
-	/**
-	 *
-	 * @param fld
-	 * @return
-	 */
-	public static DataItem setCall(String fld[]) {
-
-		final DataItem di = new DataItem(Calendar.getInstance(), 0.0, fld, ACALL);
-		return di;
-	}
-
-	/**
-	 *
-	 * @param fld
-	 * @return
-	 */
-	public static DataItem setPut(String fld[]) {
-
-		final DataItem di = new DataItem(null, 0.0, fld, APUT);
-		return di;
-	}
-
-	String	id;
-	double	last;
-	double	net;
-	double	bid;
-	double	ask;
-	int			volume;
-
-	double	iv;
-	double	oi;
-
-	double	delta;
-	double	gamma;
-	double	theta;
-	double	rho;
-	double	vega;
-
-	double	strike;
-	double	stockPrice;
-
-	double	rate;
-	double	yrs;
-
-	int dataType;
-
-	Calendar	expiry;
-	Calendar	sellDate;
-
-	double price;
 
 	/**
 	 *
@@ -125,8 +121,8 @@ public class DataItem {
 	 * @param rate
 	 * @param iv
 	 */
-	public DataItem(int pctype, double currentPrice, double strike, Calendar expiration, double rate, double iv,
-	    Calendar selldate) {
+	public DataItem(final int pctype, final double currentPrice, final double strike, final Calendar expiration, final double rate,
+	    final double iv, final Calendar selldate) {
 
 		this.dataType = pctype;
 		this.strike = strike;
@@ -157,7 +153,8 @@ public class DataItem {
 
 		if (pctype == ACALL) {
 			this.price = OptionsProcessor.getCallPrice(this.stockPrice, this.strike, this.rate, this.yrs, this.iv);
-		} else if (pctype == APUT) {
+		}
+		else if (pctype == APUT) {
 			this.price = OptionsProcessor.getPutPrice(this.stockPrice, this.strike, this.rate, this.yrs, this.iv);
 		}
 	}
@@ -169,7 +166,7 @@ public class DataItem {
 	 * @return
 	 * @throws ParseException
 	 */
-	public DataItem getCallPrice(double currentPrice, String date, double ivnew) {
+	public DataItem getCallPrice(final double currentPrice, final String date, final double ivnew) {
 
 		DataItem retDi = null;
 
@@ -186,7 +183,7 @@ public class DataItem {
 			retDi = new DataItem(this.dataType, currentPrice, this.strike, this.expiry, this.rate, ivput, c);
 
 		} catch (final Exception e) {
-			price = -1.0;
+			this.price = -1.0;
 		}
 		return retDi;
 	}
@@ -199,7 +196,7 @@ public class DataItem {
 	 * @return
 	 * @throws ParseException
 	 */
-	public DataItem getPutPrice(double currentPrice, String date, double ivnew) {
+	public DataItem getPutPrice(final double currentPrice, final String date, final double ivnew) {
 
 		DataItem retDi = null;
 
@@ -216,49 +213,9 @@ public class DataItem {
 			retDi = new DataItem(this.dataType, currentPrice, this.strike, this.expiry, this.rate, ivput, c);
 
 		} catch (final Exception e) {
-			price = -1.0;
+			this.price = -1.0;
 		}
 		return retDi;
-	}
-
-	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-
-	/**
-	 * net.ajaskey.market.tools.options.readOptionData
-	 *
-	 * @param string
-	 * @return
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	private static List<DataItem> readOptionData(String filename, int optionType)
-	    throws FileNotFoundException, IOException {
-
-		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-
-			String header1 = reader.readLine();
-			String header2 = reader.readLine();
-			System.out.println(header1);
-			System.out.println(header2);
-			String line = "";
-			while ((line = reader.readLine()) != null) {
-				final String str = line.trim();
-				if (str.length() > 1) {
-
-					String fld[] = str.split(",");
-
-					try {
-						Date d = sdf.parse(fld[0].trim());
-						Calendar c = Calendar.getInstance();
-						c.setTime(d);
-						//System.out.println(sdf.format(c.getTime()));
-					} catch (Exception e) {
-					}
-
-				}
-			}
-		}
-		return null;
 	}
 
 	@Override
@@ -267,13 +224,15 @@ public class DataItem {
 		String ret = "";
 		if (this.dataType == ACALL) {
 			ret = "CALL ->" + NL;
-		} else if (this.dataType == APUT) {
+		}
+		else if (this.dataType == APUT) {
 			ret = "PUT ->" + NL;
-		} else {
+		}
+		else {
 			ret = "Unknown ->" + NL;
 		}
 
-		double days = 365.0 * this.yrs;
+		final double days = 365.0 * this.yrs;
 
 		ret += String.format("\tExpiry : %s%n", Utils.sdf2.format(this.expiry.getTime()));
 		ret += String.format("\tiv     : %9.4f%n", this.iv);

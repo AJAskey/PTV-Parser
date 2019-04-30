@@ -24,7 +24,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -38,7 +38,7 @@ import net.ajaskey.market.tools.optuma.OptumaCommon;
 public class GetRateData {
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.dumpRates
 	 *
 	 * @throws FileNotFoundException
@@ -46,7 +46,7 @@ public class GetRateData {
 	 */
 	private static void dumpRates() throws FileNotFoundException, IOException {
 
-		List<String> rateFiles = new ArrayList<>();
+		final List<String> rateFiles = new ArrayList<>();
 
 		rateFiles.add("[DGS3MO] - 3M Treasury Constant Maturity Rate");
 		rateFiles.add("[DGS6MO] - 6M Treasury Constant Maturity Rate");
@@ -58,14 +58,14 @@ public class GetRateData {
 		rateFiles.add("[DGS20] - 20Y Treasury Constant Maturity Rate");
 		rateFiles.add("[DGS30] - 30Y Treasury Constant Maturity Rate");
 
-		for (String fil : rateFiles) {
-			String line = getLastLine(fil + ".csv");
+		for (final String fil : rateFiles) {
+			final String line = GetRateData.getLastLine(fil + ".csv");
 			System.out.println(fil + "," + line);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.fred.getLastLine
 	 *
 	 * @param fname
@@ -73,12 +73,11 @@ public class GetRateData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	private static String getLastLine(String fname) throws FileNotFoundException, IOException {
+	private static String getLastLine(final String fname) throws FileNotFoundException, IOException {
 
 		String ret = "";
 
-		try (BufferedReader reader = new BufferedReader(
-		    new FileReader(OptumaCommon.optumaPath + "FRED-Download\\" + fname))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(OptumaCommon.optumaPath + "FRED-Download\\" + fname))) {
 			String line = "";
 			while ((line = reader.readLine()) != null) {
 				final String str = line.trim();
@@ -98,9 +97,9 @@ public class GetRateData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
-		dumpRates();
+		GetRateData.dumpRates();
 
 	}
 

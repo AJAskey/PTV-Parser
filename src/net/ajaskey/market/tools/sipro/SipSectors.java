@@ -54,7 +54,7 @@ public class SipSectors {
 	public static List<SipSectorData>	energy					= new ArrayList<>();
 	public static List<SipSectorData>	capitalGoods		= new ArrayList<>();
 
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		final String dataFile = "SP500-SECTORS.TXT";
 
@@ -97,8 +97,7 @@ public class SipSectors {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	private static List<SipSectorData> readBigFile(String fname, String sector)
-	    throws FileNotFoundException, IOException {
+	private static List<SipSectorData> readBigFile(final String fname, final String sector) throws FileNotFoundException, IOException {
 
 		final SipCommon sc = new SipCommon("\t", 14, 3);
 
@@ -141,7 +140,7 @@ public class SipSectors {
 	 * @param sector
 	 * @return
 	 */
-	private static String setOutfilename(DataSet3 ds) {
+	private static String setOutfilename(final DataSet3 ds) {
 
 		/*
 		public static final String	basicMaterialsStr			= "01  - Basic Materials";
@@ -159,25 +158,35 @@ public class SipSectors {
 		String retStr = "";
 		if (ds.sector.equalsIgnoreCase(SipSectorData.basicMaterialsStr)) {
 			retStr = "BasicMaterials";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.capitalGoodsStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.capitalGoodsStr)) {
 			retStr = "CapitalGoods";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.consumerCyclicalStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.consumerCyclicalStr)) {
 			retStr = "ConsumerCyclical";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.consumerNonCyclicalStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.consumerNonCyclicalStr)) {
 			retStr = "ConsumerNonCyclical";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.energyStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.energyStr)) {
 			retStr = "Energy";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.financialStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.financialStr)) {
 			retStr = "Financials";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.healthcareStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.healthcareStr)) {
 			retStr = "Healthcare";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.servicesStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.servicesStr)) {
 			retStr = "Services";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.technologyStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.technologyStr)) {
 			retStr = "Technology";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.transportationStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.transportationStr)) {
 			retStr = "Transportation";
-		} else if (ds.sector.equalsIgnoreCase(SipSectorData.utilitiesStr)) {
+		}
+		else if (ds.sector.equalsIgnoreCase(SipSectorData.utilitiesStr)) {
 			retStr = "Utilities";
 		}
 		return "SIP_SP500_" + retStr + "-" + ds.name;
@@ -190,7 +199,7 @@ public class SipSectors {
 	 * @param technology2
 	 * @throws FileNotFoundException
 	 */
-	private static void write(String technologystr, List<SipSectorData> sector) throws FileNotFoundException {
+	private static void write(final String technologystr, final List<SipSectorData> sector) throws FileNotFoundException {
 
 		final List<DataSet3> shares = new ArrayList<>();
 		final List<DataSet3> sales = new ArrayList<>();

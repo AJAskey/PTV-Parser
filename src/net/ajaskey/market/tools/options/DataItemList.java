@@ -27,7 +27,7 @@ import java.util.List;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -40,24 +40,15 @@ import java.util.List;
  */
 public class DataItemList {
 
-	String					code;
-	double					last;
-	int							volume;
-	List<DataItem>	diList;
-
 	private final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataItemList() {
+	public static void main(final String[] args) throws ParseException, IOException {
 
-		diList = new ArrayList<>();
+		DataItemList.readOptionData("data/spy-options.dat");
 	}
 
 	/**
-	 * 
+	 *
 	 * net.ajaskey.market.tools.options.readOptionData
 	 *
 	 * @param filename
@@ -66,19 +57,19 @@ public class DataItemList {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static DataItemList readOptionData(String filename) throws FileNotFoundException, IOException {
+	public static DataItemList readOptionData(final String filename) throws FileNotFoundException, IOException {
 
-		DataItemList diData = new DataItemList();
+		final DataItemList diData = new DataItemList();
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
-			String header1 = reader.readLine();
-			String hdr[] = header1.trim().split(",");
+			final String header1 = reader.readLine();
+			final String hdr[] = header1.trim().split(",");
 			diData.code = hdr[0].trim();
 			diData.last = Double.parseDouble(hdr[1].trim());
 
-			String header2 = reader.readLine();
-			String header3 = reader.readLine();
+			final String header2 = reader.readLine();
+			final String header3 = reader.readLine();
 			System.out.println(header1);
 			System.out.println(header2);
 			System.out.println(header3);
@@ -87,22 +78,22 @@ public class DataItemList {
 				final String str = line.trim();
 				if (str.length() > 1) {
 
-					String fld[] = str.split(",");
+					final String fld[] = str.split(",");
 
 					try {
-						Date d = sdf.parse(fld[0].trim());
-						Calendar c = Calendar.getInstance();
+						final Date d = sdf.parse(fld[0].trim());
+						final Calendar c = Calendar.getInstance();
 						c.setTime(d);
 
-						DataItem dicall = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 1, 12), DataItem.ACALL);
+						final DataItem dicall = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 1, 12), DataItem.ACALL);
 						diData.diList.add(dicall);
 						System.out.println(dicall);
-						DataItem diput = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 11, 22), DataItem.APUT);
+						final DataItem diput = new DataItem(c, diData.last, Arrays.copyOfRange(fld, 11, 22), DataItem.APUT);
 						diData.diList.add(diput);
 						System.out.println(diput);
 
 						//System.out.println(sdf.format(c.getTime()));
-					} catch (Exception e) {
+					} catch (final Exception e) {
 					}
 
 				}
@@ -111,9 +102,21 @@ public class DataItemList {
 		return null;
 	}
 
-	public static void main(String[] args) throws ParseException, IOException {
+	String code;
 
-		DataItemList diList = readOptionData("data/spy-options.dat");
+	double last;
+
+	int volume;
+
+	List<DataItem> diList;
+
+	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 */
+	public DataItemList() {
+
+		this.diList = new ArrayList<>();
 	}
 
 }

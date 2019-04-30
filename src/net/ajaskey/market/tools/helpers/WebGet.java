@@ -1,7 +1,6 @@
 
 package net.ajaskey.market.tools.helpers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +13,12 @@ public class WebGet {
 	 * @param url
 	 * @return
 	 */
-	public static List<String> getIshares(String url) {
+	public static List<String> getIshares(final String url) {
 
 		String response;
 		try {
 			response = Utils.getFromUrl(url);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			response = null;
 		}
 		boolean found = false;
@@ -52,7 +51,7 @@ public class WebGet {
 	 * @param url
 	 * @return
 	 */
-	public static List<String> getSPDR(String url) {
+	public static List<String> getSPDR(final String url) {
 
 		String response = null;
 		try {

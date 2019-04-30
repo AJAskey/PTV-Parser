@@ -146,7 +146,7 @@ public class ValidateData {
 		init = true;
 	}
 
-	public static boolean isHoliday(Calendar cal) {
+	public static boolean isHoliday(final Calendar cal) {
 
 		if (!init) {
 			ValidateData.init();
@@ -169,7 +169,7 @@ public class ValidateData {
 
 	}
 
-	public static boolean validate(TickerData td) {
+	public static boolean validate(final TickerData td) {
 
 		if ((td == null) || (td.getDate(0) == null)) {
 			return false;
@@ -194,14 +194,16 @@ public class ValidateData {
 				if (hol) {
 					// System.out.println("Ignored holiday : " +
 					// td.getDailyDataString(i));
-				} else {
+				}
+				else {
 					if (dow == Calendar.FRIDAY) {
 						if ((doy + 3) != lastDoY) {
 							// hol = ValidateData.isHoliday(td.getDate(i));
 							System.out.println(td.getTicker() + " - Day of data skipped : " + td.getDailyDataString(i));
 							// return false;
 						}
-					} else {
+					}
+					else {
 						if ((doy < 365) && ((doy + 1) != lastDoY)) {
 							System.out.println(td.getTicker() + " - Day of data skipped : " + td.getDailyDataString(i));
 							// return false;

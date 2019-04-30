@@ -51,7 +51,7 @@ public class Gannalyst {
 	 * @throws FileNotFoundException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		final List<String> filenames = new ArrayList<>();
 		final List<String> fullfilenames = new ArrayList<>();
@@ -80,8 +80,7 @@ public class Gannalyst {
 			try (PrintWriter pw = new PrintWriter("\\Dev\\TA\\gann\\" + td.getTicker() + ".csv")) {
 				for (int i = td.getDaysOfData() - 2; i >= 0; i--) {
 					final String d = sdf.format(td.getDate(i).getTime());
-					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i),
-					    (int) td.getVolume(i));
+					pw.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d, td.getOpen(i), td.getHigh(i), td.getLow(i), td.getClose(i), (int) td.getVolume(i));
 					// System.out.printf("%s,%.2f,%.2f,%.2f,%.2f,%d,0%n", d,
 					// td.getOpen(i), td.getHigh(i), td.getLow(i),
 					// td.getClose(i), (int) td.getVolume(i));

@@ -77,7 +77,7 @@ public class SipData {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		SipData.read("data/SP500-SIP.csv", "SPX");
 		//SipData.read("data/NDX-SIP.csv", "NDX");
@@ -91,7 +91,7 @@ public class SipData {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void read(String filename, String src) throws FileNotFoundException, IOException {
+	public static void read(final String filename, final String src) throws FileNotFoundException, IOException {
 
 		int knt = 0;
 
@@ -323,7 +323,8 @@ public class SipData {
 			SipData.writeData(totCE, "SPX Capital Expenditures");
 			SipData.writeData(totEbit, "SPX EBIT");
 			SipData.writeData(totAvgPr, "SPX Price");
-		} else {
+		}
+		else {
 			SipData.writeData(totSales, "NDX Sales");
 			SipData.writeData(totGI, "NDX Gross Income");
 			SipData.writeData(net, "NDX GrossIncome Minus Unusual Income");
@@ -339,7 +340,7 @@ public class SipData {
 		}
 	}
 
-	private static void write(PrintWriter pw, DateSet.Quarter q, double val) {
+	private static void write(final PrintWriter pw, final DateSet.Quarter q, final double val) {
 
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q1.getTime()), val);
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q2.getTime()), val);
@@ -347,7 +348,7 @@ public class SipData {
 		pw.printf("%s,%.2f%n", sdfOptuma.format(q.q4.getTime()), val);
 	}
 
-	private static void writeData(DataSet ds, String fname) {
+	private static void writeData(final DataSet ds, final String fname) {
 
 		try (PrintWriter pw = new PrintWriter(OptumaCommon.optumaPath + "\\SIP\\" + fname + ".csv")) {
 

@@ -9,7 +9,7 @@ public class OptionsData {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final Calendar ed = Calendar.getInstance();
 		ed.set(2019, Calendar.DECEMBER, 15);
@@ -45,7 +45,7 @@ public class OptionsData {
 	 * @param iv
 	 * @param exp
 	 */
-	public OptionsData(double cprice, double sprice, double intrate, double iv, Calendar exp) {
+	public OptionsData(final double cprice, final double sprice, final double intrate, final double iv, final Calendar exp) {
 
 		this.currentPriceOfUnderlying = cprice;
 		this.strikePrice = sprice;
@@ -74,12 +74,12 @@ public class OptionsData {
 		return this.delta;
 	}
 
-	private long getDeltaDays(Calendar c1, Calendar c2) {
+	private long getDeltaDays(final Calendar c1, final Calendar c2) {
 
 		return (c2.getTime().getTime() - c1.getTime().getTime()) / 86400000;
 	}
 
-	private double getDeltaYears(Calendar c1, Calendar c2) {
+	private double getDeltaYears(final Calendar c1, final Calendar c2) {
 
 		return this.getDeltaDays(c1, c2) / 365.0;
 	}

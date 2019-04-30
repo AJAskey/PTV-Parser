@@ -3,7 +3,6 @@ package net.ajaskey.market.tools.fred;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -21,7 +20,7 @@ import java.io.InputStreamReader;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -39,12 +38,11 @@ public class ProcessFredSource {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
-		String charset = "UTF-8";
+		final String charset = "UTF-8";
 		String line;
-		try (BufferedReader in = new BufferedReader(
-		    new InputStreamReader(new FileInputStream("data/cpi.html"), charset))) {
+		try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("data/cpi.html"), charset))) {
 
 			int knt = 0;
 			while ((line = in.readLine()) != null) {
@@ -56,17 +54,17 @@ public class ProcessFredSource {
 					if (str.length() > 1) {
 						if (!str.contains("DISCONTINUED")) {
 							if (knt > 0) {
-								int idx1 = str.toLowerCase().indexOf("\"/series/");
+								final int idx1 = str.toLowerCase().indexOf("\"/series/");
 								if (idx1 >= 0) {
-									int idx2 = str.toLowerCase().indexOf("series-title");
+									final int idx2 = str.toLowerCase().indexOf("series-title");
 									if (idx2 > 5) {
-										String code1 = str.substring(idx1 + 1, idx2);
-										int idx3 = code1.indexOf('"');
-										String code = code1.substring(0, idx3).replaceAll("/series/", "");
+										final String code1 = str.substring(idx1 + 1, idx2);
+										final int idx3 = code1.indexOf('"');
+										final String code = code1.substring(0, idx3).replaceAll("/series/", "");
 
-										String title1 = str.substring(idx2);
-										int idx4 = title1.indexOf('>') + 1;
-										String title = title1.substring(idx4).replaceAll("</a>", "").replaceAll("&#039;", " -");
+										final String title1 = str.substring(idx2);
+										final int idx4 = title1.indexOf('>') + 1;
+										final String title = title1.substring(idx4).replaceAll("</a>", "").replaceAll("&#039;", " -");
 
 										System.out.println(code + "\t" + FredCommon.cleanTitle(title));
 
@@ -75,7 +73,7 @@ public class ProcessFredSource {
 							}
 						}
 					}
-				} catch (Exception e) {
+				} catch (final Exception e) {
 				}
 
 			}

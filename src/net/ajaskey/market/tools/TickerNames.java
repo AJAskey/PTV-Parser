@@ -44,7 +44,7 @@ public class TickerNames {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
 		//TickerNames tn = new TickerNames("lists/ivv-components.csv");
 		final TickerNames tn = new TickerNames("data/SP-Stocks.txt", "500");
@@ -60,7 +60,7 @@ public class TickerNames {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public TickerNames(String list, String spidx) {
+	public TickerNames(final String list, final String spidx) {
 
 		this.listName = list;
 		this.index = spidx;
@@ -93,7 +93,8 @@ public class TickerNames {
 						if (knt == 0) {
 							ret += s.trim();
 							knt++;
-						} else {
+						}
+						else {
 							ret += "+" + s.trim();
 							knt++;
 						}

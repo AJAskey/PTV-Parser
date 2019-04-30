@@ -1,10 +1,8 @@
 
 package net.ajaskey.market.tools.fred.processing;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- * 
+ *
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -42,10 +40,10 @@ public class FredAvsB {
 	 *
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
-		List<String> fileOnes = new ArrayList<>();
-		List<String> fileTwos = new ArrayList<>();
+		final List<String> fileOnes = new ArrayList<>();
+		final List<String> fileTwos = new ArrayList<>();
 
 		fileOnes.add("GDP");
 		fileTwos.add("MVGFD027MNFRBDAL");
@@ -55,20 +53,20 @@ public class FredAvsB {
 
 		fileOnes.add("GDP");
 		fileTwos.add("CNP16OV");
-		
+
 		for (int i = 0; i < fileOnes.size(); i++) {
 
 			try {
 
-				String fullname = String.format("%s vs %s.csv", fileOnes.get(i), fileTwos.get(i));
+				final String fullname = String.format("%s vs %s.csv", fileOnes.get(i), fileTwos.get(i));
 
-				IngestOptumaFile.process(FredCommon.fredPath + fileOnes.get(i) + ".csv",
-				    FredCommon.fredPath + fileTwos.get(i) + ".csv", fullname, IngestOptumaFile.DIVIDE);
+				IngestOptumaFile.process(FredCommon.fredPath + fileOnes.get(i) + ".csv", FredCommon.fredPath + fileTwos.get(i) + ".csv", fullname,
+				    IngestOptumaFile.DIVIDE);
 
-			} catch (FileNotFoundException e) {
+			} catch (final FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

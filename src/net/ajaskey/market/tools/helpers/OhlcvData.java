@@ -1,9 +1,7 @@
 
 package net.ajaskey.market.tools.helpers;
 
-import java.util.Calendar;
-
-import net.ajaskey.market.misc.Utils;
+import net.ajaskey.market.misc.DateTime;
 
 /**
  * This class...
@@ -36,9 +34,7 @@ public class OhlcvData {
 		SHORT, FULL
 	}
 
-	private static final String TAB = "\t";
-
-	public Calendar date;
+	public DateTime date;
 
 	public double			open;
 	public double			high;
@@ -52,11 +48,24 @@ public class OhlcvData {
 	 *
 	 */
 	public OhlcvData() {
+
 		// TODO Auto-generated constructor stub
 	};
 
-	public OhlcvData(Calendar cal, double o, double h, double l, double c, long vol) {
-		this.date = cal;
+	/**
+	 *
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param dt
+	 * @param o
+	 * @param h
+	 * @param l
+	 * @param c
+	 * @param vol
+	 */
+	public OhlcvData(final DateTime dt, final double o, final double h, final double l, final double c, final long vol) {
+
+		this.date = dt;
 		this.open = o;
 		this.high = h;
 		this.low = l;
@@ -64,7 +73,8 @@ public class OhlcvData {
 		this.volume = vol;
 		if ((o == h) && (h == l) && (l == c)) {
 			this.form = FormType.SHORT;
-		} else {
+		}
+		else {
 			this.form = FormType.FULL;
 		}
 	}
@@ -81,22 +91,22 @@ public class OhlcvData {
 	 * @param form
 	 *          the form to set
 	 */
-	public void setForm(FormType form) {
+	public void setForm(final FormType form) {
 
 		this.form = form;
 	}
 
 	public String toShortString() {
 
-		final String ret = String.format("%s\t%10.2f", Utils.stringDate(this.date), this.close);
+		final String ret = String.format("%s\t%10.2f", this.date, this.close);
 		return ret;
 	}
 
 	@Override
 	public String toString() {
 
-		final String ret = String.format("%s\t%10.2f\t%10.2f\t%10.2f\t%10.2f\t%10d\t%s", Utils.stringDate(this.date),
-		    this.open, this.high, this.low, this.close, this.volume, this.form);
+		final String ret = String.format("%s\t%10.2f\t%10.2f\t%10.2f\t%10.2f\t%10d\t%s", this.date, this.open, this.high, this.low, this.close,
+		    this.volume, this.form);
 		return ret;
 	}
 

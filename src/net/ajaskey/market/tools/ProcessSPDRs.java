@@ -16,7 +16,7 @@ public class ProcessSPDRs {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		ProcessSPDRs.processSpdr("xlb");
 		ProcessSPDRs.processSpdr("xle");
@@ -37,7 +37,7 @@ public class ProcessSPDRs {
 	 * @param spdr
 	 * @throws FileNotFoundException
 	 */
-	private static void processSpdr(String spdr) throws FileNotFoundException {
+	private static void processSpdr(final String spdr) throws FileNotFoundException {
 
 		System.out.println("Processing " + spdr);
 
@@ -47,8 +47,7 @@ public class ProcessSPDRs {
 
 			List<String> resp = new ArrayList<>();
 
-			resp = WebGet
-			    .getSPDR("http://www.sectorspdr.com/sectorspdr/IDCO.Client.Spdrs.Holdings/Export/ExportCsv?symbol=" + spdr);
+			resp = WebGet.getSPDR("http://www.sectorspdr.com/sectorspdr/IDCO.Client.Spdrs.Holdings/Export/ExportCsv?symbol=" + spdr);
 
 			if (resp.size() > 2) {
 
@@ -57,14 +56,16 @@ public class ProcessSPDRs {
 
 					if (knt > 1) {
 						final String str[] = s.split(",");
-						String ss = str[0].replaceAll("\"", "");
+						final String ss = str[0].replaceAll("\"", "");
 						pwComp.println(ss);
-						if (knt < 26) pwList.println(ss);
+						if (knt < 26) {
+							pwList.println(ss);
+						}
 					}
 					knt++;
 				}
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 			System.out.println("Continuing...");
 		}

@@ -33,7 +33,7 @@ import net.ajaskey.market.ta.TrendType;
 public class TaMethods implements TaMethodsIF {
 
 	@Override
-	public int calcAdvDecl(double[] close, int days) {
+	public int calcAdvDecl(final double[] close, final int days) {
 
 		int retVal = 0;
 		// System.out.println("\n\n\n" + td.getTicker());
@@ -41,7 +41,8 @@ public class TaMethods implements TaMethodsIF {
 			for (int i = 0; i < days; i++) {
 				if (close[i] > close[i + 1]) {
 					retVal++;
-				} else if (close[i] < close[i + 1]) {
+				}
+				else if (close[i] < close[i + 1]) {
 					retVal--;
 				}
 				// System.out.printf("%.2f %.2f %d %n", close[i], close[i + 1], retVal);
@@ -51,7 +52,7 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcAdx(double[] high, double[] low, double[] close, int days) {
+	public double calcAdx(final double[] high, final double[] low, final double[] close, final int days) {
 
 		final double retVal = 0.0;
 		final int len = close.length;
@@ -62,14 +63,14 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcATR(double[] high, double[] low, double[] close, int days) {
+	public double calcATR(final double[] high, final double[] low, final double[] close, final int days) {
 
 		final double retVal = RangeMethods.avgTrueRange(high, low, close, days);
 		return retVal;
 	}
 
 	@Override
-	public double calcDiMinus(double[] high, double[] low, double[] close, int days) {
+	public double calcDiMinus(final double[] high, final double[] low, final double[] close, final int days) {
 
 		final double retVal = 0.0;
 		final int daysPlus = days * 2;
@@ -80,7 +81,7 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcDiPlus(double[] high, double[] low, double[] close, int days) {
+	public double calcDiPlus(final double[] high, final double[] low, final double[] close, final int days) {
 
 		final double retVal = 0.0;
 		final int daysPlus = days * 2;
@@ -100,8 +101,8 @@ public class TaMethods implements TaMethodsIF {
 	 * @return
 	 */
 	@Override
-	public double calcIndexMoneyFlow(double[] adv, double[] decl, double[] advVol, double[] declVol, double[] close,
-	    int days) {
+	public double calcIndexMoneyFlow(final double[] adv, final double[] decl, final double[] advVol, final double[] declVol,
+	    final double[] close, final int days) {
 
 		double retVal = 0.0;
 		for (int i = 0; i < days; i++) {
@@ -121,7 +122,7 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcMFI(double[] typicalPrice, double[] volume, int days) {
+	public double calcMFI(final double[] typicalPrice, final double[] volume, final int days) {
 
 		return MoneyFlowMethods.mfi(typicalPrice, volume, days);
 	}
@@ -136,7 +137,7 @@ public class TaMethods implements TaMethodsIF {
 	 * @return percentage change
 	 */
 	@Override
-	public double calcPercentChange(double p1, double p2) {
+	public double calcPercentChange(final double p1, final double p2) {
 
 		double ret = 0.0;
 		if (p2 != 0.0) {
@@ -146,12 +147,12 @@ public class TaMethods implements TaMethodsIF {
 	}
 
 	@Override
-	public double calcRsi(double[] close, int days) {
+	public double calcRsi(final double[] close, final int days) {
 
 		return RsiMethods.calcRSI(close, days);
 	}
 
-	public double calcSma(double[] data, int days) {
+	public double calcSma(final double[] data, final int days) {
 
 		double retVal = 0;
 		retVal = UtilMethods.sma(data, days);
@@ -166,7 +167,7 @@ public class TaMethods implements TaMethodsIF {
 	 * @return
 	 */
 	@Override
-	public TrendType calcSmaTrend(double[] data, int days, int span) {
+	public TrendType calcSmaTrend(final double[] data, final int days, final int span) {
 
 		TrendType trend = TrendType.FLAT;
 		final double val1 = UtilMethods.sma(data, days);
@@ -174,7 +175,8 @@ public class TaMethods implements TaMethodsIF {
 
 		if (val1 > val2) {
 			trend = TrendType.UP;
-		} else if (val1 < val2) {
+		}
+		else if (val1 < val2) {
 			trend = TrendType.DOWN;
 		}
 		return trend;

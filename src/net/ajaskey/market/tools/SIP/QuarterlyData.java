@@ -54,7 +54,7 @@ public class QuarterlyData {
 	 * @param d
 	 * @return
 	 */
-	public static String fmt(double d) {
+	public static String fmt(final double d) {
 
 		return QuarterlyData.fmt(d, 15);
 	}
@@ -67,7 +67,7 @@ public class QuarterlyData {
 	 * @param len
 	 * @return
 	 */
-	public static String fmt(double d, int len) {
+	public static String fmt(final double d, final int len) {
 
 		final String sfmt = String.format("%%%ds", len);
 		return String.format(sfmt, df.format(d));
@@ -81,7 +81,7 @@ public class QuarterlyData {
 	 * @param len
 	 * @return
 	 */
-	public static String ifmt(int i, int len) {
+	public static String ifmt(final int i, final int len) {
 
 		final String s = dfmt.format(i);
 		final String sfmt = String.format("%%%ds", len);
@@ -212,7 +212,7 @@ public class QuarterlyData {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(final String[] args) throws IOException {
 
 		QuarterlyData.init();
 
@@ -245,13 +245,14 @@ public class QuarterlyData {
 	 * @param string
 	 * @return
 	 */
-	public static double parseDouble(String fld) {
+	public static double parseDouble(final String fld) {
 
 		try {
 			double d = Double.parseDouble(fld);
 			if ((d > 0.0) && (d < 0.0001)) {
 				d = 0.0;
-			} else if (d < -999999.0) {
+			}
+			else if (d < -999999.0) {
 				d = 0.0;
 			}
 			return d;
@@ -280,7 +281,7 @@ public class QuarterlyData {
 	 *
 	 * @param string
 	 */
-	public QuarterlyData(String t) {
+	public QuarterlyData(final String t) {
 
 		this.type = t;
 		this.pos = colPos.get(t);
@@ -288,20 +289,18 @@ public class QuarterlyData {
 		this.dd = new DerivedData();
 	}
 
-	public String fmtGrowth1Q(String desc) {
+	public String fmtGrowth1Q(final String desc) {
 
-		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc,
-		    QuarterlyData.fmt(this.getMostRecent(), 13), QuarterlyData.fmt(this.dd.seqGrowth, 7),
-		    QuarterlyData.fmt(this.dd.qoqGrowth, 7));
+		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, QuarterlyData.fmt(this.getMostRecent(), 13),
+		    QuarterlyData.fmt(this.dd.seqGrowth, 7), QuarterlyData.fmt(this.dd.qoqGrowth, 7));
 
 		return ret;
 	}
 
-	public String fmtGrowth4Q(String desc) {
+	public String fmtGrowth4Q(final String desc) {
 
-		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc,
-		    QuarterlyData.fmt(this.getTtm(), 13), QuarterlyData.fmt(this.dd.seqGrowth, 7),
-		    QuarterlyData.fmt(this.dd.qoqGrowth, 7));
+		final String ret = String.format("\t%-18s: %s M (Seq= %s%% : QoQ= %s%%)", desc, QuarterlyData.fmt(this.getTtm(), 13),
+		    QuarterlyData.fmt(this.dd.seqGrowth, 7), QuarterlyData.fmt(this.dd.qoqGrowth, 7));
 
 		return ret;
 	}
@@ -312,11 +311,10 @@ public class QuarterlyData {
 	 * @param string
 	 * @return
 	 */
-	public String fmtGrowthQY(String desc) {
+	public String fmtGrowthQY(final String desc) {
 
-		final String ret = String.format("\t%-18s: %s M (QoQ= %s%% : YoY= %s%%)", desc,
-		    QuarterlyData.fmt(this.getTtm(), 13), QuarterlyData.fmt(this.dd.qoqGrowth, 7),
-		    QuarterlyData.fmt(this.dd.yoyGrowth, 7));
+		final String ret = String.format("\t%-18s: %s M (QoQ= %s%% : YoY= %s%%)", desc, QuarterlyData.fmt(this.getTtm(), 13),
+		    QuarterlyData.fmt(this.dd.qoqGrowth, 7), QuarterlyData.fmt(this.dd.yoyGrowth, 7));
 
 		return ret;
 	}
@@ -390,7 +388,7 @@ public class QuarterlyData {
 	 *
 	 * @param fld
 	 */
-	public void parse(String fld[]) {
+	public void parse(final String fld[]) {
 
 		try {
 			int pos = colPos.get(this.type);
@@ -415,7 +413,7 @@ public class QuarterlyData {
 	 *
 	 * @param cash
 	 */
-	public void sum(QuarterlyData qd) {
+	public void sum(final QuarterlyData qd) {
 
 		this.q1 += qd.q1;
 		this.q2 += qd.q2;

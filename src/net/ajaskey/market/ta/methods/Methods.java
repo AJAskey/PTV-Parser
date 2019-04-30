@@ -68,16 +68,18 @@ public class Methods {
 	 * @param method
 	 * @return
 	 */
-	static public boolean checkParams(double[] val, int days, int start, String method) {
+	static public boolean checkParams(final double[] val, final int days, final int start, final String method) {
 
 		boolean status = true;
 		if (val == null) {
 			System.out.printf("Warning - array is null in \"%s\"%n", method);
 			status = false;
-		} else if ((days < 1) || (days > val.length)) {
+		}
+		else if ((days < 1) || (days > val.length)) {
 			System.out.printf("Warning - Invalid days \"%d\" with total days \"%d\"in \"%s\"%n", days, val.length, method);
 			status = false;
-		} else if ((start < 0) || (start > val.length)) {
+		}
+		else if ((start < 0) || (start > val.length)) {
 			System.out.printf("Warning - Invalid start \"%d\" with total days \"%d\" in \"%s\"%n", start, val.length, method);
 			status = false;
 		}
@@ -94,19 +96,19 @@ public class Methods {
 	 * @param method
 	 * @return
 	 */
-	static public boolean checkParams(TickerData td, int days, int start, String method) {
+	static public boolean checkParams(final TickerData td, final int days, final int start, final String method) {
 
 		boolean status = true;
 		if ((td == null) || (td.getCloseData() == null)) {
 			System.out.printf("Warning - array is null in \"%s\"%n", method);
 			status = false;
-		} else if ((days < 1) || (days > td.getDaysOfData())) {
-			System.out.printf("Warning - Invalid days \"%d\" with total days \"%d\" in \"%s\"%n", days, td.getDaysOfData(),
-			    method);
+		}
+		else if ((days < 1) || (days > td.getDaysOfData())) {
+			System.out.printf("Warning - Invalid days \"%d\" with total days \"%d\" in \"%s\"%n", days, td.getDaysOfData(), method);
 			status = false;
-		} else if ((start < 0) || (start > td.getDaysOfData())) {
-			System.out.printf("Warning - Invalid start \"%d\" with total days \"%d\" in \"%s\"%n", start, td.getDaysOfData(),
-			    method);
+		}
+		else if ((start < 0) || (start > td.getDaysOfData())) {
+			System.out.printf("Warning - Invalid start \"%d\" with total days \"%d\" in \"%s\"%n", start, td.getDaysOfData(), method);
 			status = false;
 		}
 		return status;
@@ -118,6 +120,7 @@ public class Methods {
 	 *
 	 */
 	private Methods() {
+
 	}
 
 }

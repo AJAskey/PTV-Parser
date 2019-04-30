@@ -53,7 +53,8 @@ public class RegressionOutput {
 	 * @param containsConstant
 	 * @param copyData
 	 */
-	public RegressionOutput(RegressionMethods reg, long days) {
+	public RegressionOutput(final RegressionMethods reg, final long days) {
+
 		this.results = reg.regress();
 
 		this.count = this.results.getN();
@@ -68,8 +69,8 @@ public class RegressionOutput {
 	public String toString() {
 
 		String str = null;
-		str = String.format("Values:%d Predicted:%.2f MeanErr:%.2f Slope:%.2f RSquared:%.2f%n", this.count,
-		    this.predictedPrice, this.meanErr, this.slope, this.r2);
+		str = String.format("Values:%d Predicted:%.2f MeanErr:%.2f Slope:%.2f RSquared:%.2f%n", this.count, this.predictedPrice, this.meanErr,
+		    this.slope, this.r2);
 
 		return str;
 	}

@@ -35,13 +35,13 @@ public class FilterData {
 	 * This method serves as a constructor for the class.
 	 *
 	 */
-	public FilterData(double val) {
+	public FilterData(final double val) {
 
 		this.bound = val;
 		this.inPlay = false;
 	}
 
-	public boolean check(double val) {
+	public boolean check(final double val) {
 
 		boolean ret = false;
 		if (this.inPlay) {

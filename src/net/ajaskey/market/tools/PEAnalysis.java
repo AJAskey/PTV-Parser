@@ -53,7 +53,7 @@ public class PEAnalysis {
 	 * @param date
 	 * @return
 	 */
-	private static PEAnalysisData getSPX(Calendar date) {
+	private static PEAnalysisData getSPX(final Calendar date) {
 
 		for (final PEAnalysisData pe : Spx) {
 			if (Utils.sameDate(date, pe.date)) {
@@ -63,7 +63,7 @@ public class PEAnalysis {
 		return null;
 	}
 
-	private static PEAnalysisData getVIX(Calendar date) {
+	private static PEAnalysisData getVIX(final Calendar date) {
 
 		for (final PEAnalysisData pe : Vix) {
 			if (Utils.sameDate(date, pe.date)) {
@@ -80,7 +80,7 @@ public class PEAnalysis {
 	 * @throws IOException
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(final String[] args) throws IOException, ParseException {
 
 		// final String folderPath = "d:/temp/dts";
 		final Charset charset = Charset.forName("UTF-8");
@@ -149,8 +149,7 @@ public class PEAnalysis {
 				if ((spx != null) && (vix != null)) {
 					final double gpe = spx.price / pe.price;
 					final double gpeVix = gpe / vix.price;
-					pw.printf("%s,%7.2f,%8.2f,%6.2f,%6.2f,%5.2f%n", Utils.getString(pe.date), pe.price, spx.price, vix.price, gpe,
-					    gpeVix);
+					pw.printf("%s,%7.2f,%8.2f,%6.2f,%6.2f,%5.2f%n", Utils.getString(pe.date), pe.price, spx.price, vix.price, gpe, gpeVix);
 				}
 			}
 		}

@@ -47,8 +47,6 @@ public class DtsReports {
 		DAY, MONTH, YEAR
 	}
 
-	final static private String COMMA = ",";
-
 	final static private String COMMA2 = ",,";
 
 	final static private String DtsPath = OptumaCommon.optumaPath + "DTS/";
@@ -62,7 +60,7 @@ public class DtsReports {
 	 * @param year
 	 * @return
 	 */
-	public static String dtsToDate(int day, int month, int year) {
+	public static String dtsToDate(final int day, final int month, final int year) {
 
 		final Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, 0, 0);
@@ -82,7 +80,7 @@ public class DtsReports {
 	 * @param yearPast
 	 * @param month
 	 */
-	public static void dumpCompareCorporateMonths(int yearRecent, int yearPast, int month) {
+	public static void dumpCompareCorporateMonths(final int yearRecent, final int yearPast, final int month) {
 
 		int lastDay = 0;
 		final String monStr = Utils.getMonthName(month);
@@ -115,7 +113,7 @@ public class DtsReports {
 	 * @param yearPast
 	 * @param month
 	 */
-	public static void dumpCompareIndividualMonths(int yearRecent, int yearPast, int month) {
+	public static void dumpCompareIndividualMonths(final int yearRecent, final int yearPast, final int month) {
 
 		int lastDay = 0;
 		final String monStr = Utils.getMonthName(month);
@@ -148,7 +146,7 @@ public class DtsReports {
 	 * @param yearPast
 	 * @param month
 	 */
-	public static void dumpCompareMonths(int yearRecent, int yearPast, int month) {
+	public static void dumpCompareMonths(final int yearRecent, final int yearPast, final int month) {
 
 		DtsReports.dumpCompareWithheldMonths(yearRecent, yearPast, month);
 		DtsReports.dumpCompareIndividualMonths(yearRecent, yearPast, month);
@@ -182,7 +180,7 @@ public class DtsReports {
 		}
 	}
 
-	public static void dumpCompareWithheldMonths(int yearRecent, int yearPast, int month) {
+	public static void dumpCompareWithheldMonths(final int yearRecent, final int yearPast, final int month) {
 
 		int lastDay = 0;
 		final String monStr = Utils.getMonthName(month);
@@ -215,7 +213,7 @@ public class DtsReports {
 	 * @param cal
 	 * @throws FileNotFoundException
 	 */
-	public static void dumpRaw(String fname, Calendar cal) throws FileNotFoundException {
+	public static void dumpRaw(final String fname, final Calendar cal) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter("out\\" + fname + "_raw.txt")) {
 			for (final DtsData d : DtsData.dtsList) {
@@ -226,7 +224,7 @@ public class DtsReports {
 		}
 	}
 
-	public static String genCsvData(DtsData d) {
+	public static String genCsvData(final DtsData d) {
 
 		String ret = Utils.stringDate(d.getDate());
 		ret += COMMA2 + d.getWith().monthly + COMMA2 + d.getWith().yearly;
@@ -246,7 +244,7 @@ public class DtsReports {
 	 * @param dRecent
 	 * @return
 	 */
-	public static String genDiffReport(DtsData dOlder, DtsData dRecent) {
+	public static String genDiffReport(final DtsData dOlder, final DtsData dRecent) {
 
 		if ((dOlder == null) || (dRecent == null)) {
 			return "Invalid data!";
@@ -267,26 +265,19 @@ public class DtsReports {
 		final double oldTot = dOlder.getWith().yearly + dOlder.getInd().yearly + dOlder.getCorp().yearly;
 		final double chgTot = ((newTot - oldTot) / oldTot) * 100.0;
 
-		final double chgDayWith = ((double) (dRecent.getWith().daily - dOlder.getWith().daily)
-		    / (double) dOlder.getWith().daily) * 100.0;
-		final double chgMonthWith = ((double) (dRecent.getWith().monthly - dOlder.getWith().monthly)
-		    / (double) dOlder.getWith().monthly) * 100.0;
-		final double chgYearWith = ((double) (dRecent.getWith().yearly - dOlder.getWith().yearly)
-		    / (double) dOlder.getWith().yearly) * 100.0;
+		final double chgDayWith = ((double) (dRecent.getWith().daily - dOlder.getWith().daily) / (double) dOlder.getWith().daily) * 100.0;
+		final double chgMonthWith = ((double) (dRecent.getWith().monthly - dOlder.getWith().monthly) / (double) dOlder.getWith().monthly)
+		    * 100.0;
+		final double chgYearWith = ((double) (dRecent.getWith().yearly - dOlder.getWith().yearly) / (double) dOlder.getWith().yearly) * 100.0;
 
-		final double chgDayInd = ((double) (dRecent.getInd().daily - dOlder.getInd().daily)
-		    / (double) dOlder.getInd().daily) * 100.0;
-		final double chgMonthInd = ((double) (dRecent.getInd().monthly - dOlder.getInd().monthly)
-		    / (double) dOlder.getInd().monthly) * 100.0;
-		final double chgYearInd = ((double) (dRecent.getInd().yearly - dOlder.getInd().yearly)
-		    / (double) dOlder.getInd().yearly) * 100.0;
+		final double chgDayInd = ((double) (dRecent.getInd().daily - dOlder.getInd().daily) / (double) dOlder.getInd().daily) * 100.0;
+		final double chgMonthInd = ((double) (dRecent.getInd().monthly - dOlder.getInd().monthly) / (double) dOlder.getInd().monthly) * 100.0;
+		final double chgYearInd = ((double) (dRecent.getInd().yearly - dOlder.getInd().yearly) / (double) dOlder.getInd().yearly) * 100.0;
 
-		final double chgDayCorp = ((double) (dRecent.getCorp().daily - dOlder.getCorp().daily)
-		    / (double) dOlder.getCorp().daily) * 100.0;
-		final double chgMonthCorp = ((double) (dRecent.getCorp().monthly - dOlder.getCorp().monthly)
-		    / (double) dOlder.getCorp().monthly) * 100.0;
-		final double chgYearCorp = ((double) (dRecent.getCorp().yearly - dOlder.getCorp().yearly)
-		    / (double) dOlder.getCorp().yearly) * 100.0;
+		final double chgDayCorp = ((double) (dRecent.getCorp().daily - dOlder.getCorp().daily) / (double) dOlder.getCorp().daily) * 100.0;
+		final double chgMonthCorp = ((double) (dRecent.getCorp().monthly - dOlder.getCorp().monthly) / (double) dOlder.getCorp().monthly)
+		    * 100.0;
+		final double chgYearCorp = ((double) (dRecent.getCorp().yearly - dOlder.getCorp().yearly) / (double) dOlder.getCorp().yearly) * 100.0;
 
 		String s = String.format("\tChange     ==>%18sMTD:%9.2f%%   YTD:%10.2f%%%n", " ", chgMon, chgTot);
 
@@ -305,7 +296,7 @@ public class DtsReports {
 	 *
 	 * @return
 	 */
-	public static String genLastReport(REPORT_RANGE rr) {
+	public static String genLastReport(final REPORT_RANGE rr) {
 
 		String ret = "Most recent DTS report : " + rr + " ==>" + Utils.NL;
 
@@ -346,7 +337,7 @@ public class DtsReports {
 	 * @param dRecent
 	 * @return
 	 */
-	public static String genTallyDiffReport(DtsDataTally dOlder, DtsDataTally dRecent) {
+	public static String genTallyDiffReport(final DtsDataTally dOlder, final DtsDataTally dRecent) {
 
 		if ((dOlder == null) || (dRecent == null)) {
 			return "Invalid data!";
@@ -371,7 +362,7 @@ public class DtsReports {
 	 * @param j
 	 * @return
 	 */
-	private static double getChg(int dVal, int pVal) {
+	private static double getChg(final int dVal, final int pVal) {
 
 		double chg = 0.0;
 		if (pVal > 0.0) {
@@ -380,7 +371,7 @@ public class DtsReports {
 		return chg;
 	}
 
-	private static int getIndex(List<Calendar> date, int idx) {
+	private static int getIndex(final List<Calendar> date, final int idx) {
 
 		final Calendar cal = Utils.buildCalendar(date.get(idx).get(Calendar.YEAR), date.get(idx).get(Calendar.MONTH),
 		    date.get(idx).get(Calendar.DATE));
@@ -391,14 +382,15 @@ public class DtsReports {
 			index++;
 			if (Utils.sameDate(cal, c)) {
 				break;
-			} else if (c.after(cal)) {
+			}
+			else if (c.after(cal)) {
 				break;
 			}
 		}
 		return index;
 	}
 
-	private static long getTotal(long[] vals) {
+	private static long getTotal(final long[] vals) {
 
 		long tot = 0;
 		for (final long i : vals) {
@@ -413,7 +405,7 @@ public class DtsReports {
 	 * @param string
 	 * @throws FileNotFoundException
 	 */
-	private static void printDailyCompare(String fname) throws FileNotFoundException {
+	private static void printDailyCompare(final String fname) throws FileNotFoundException {
 
 		if (fname.length() < 1) {
 			return;
@@ -426,10 +418,9 @@ public class DtsReports {
 
 		try (PrintWriter pw = new PrintWriter(fname)) {
 
-			pw.println(Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Date" + Utils.TAB + Utils.TAB
-			    + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Withheld" + Utils.TAB + Utils.TAB + Utils.TAB
-			    + Utils.TAB + "Individual" + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Corporate" + Utils.TAB
-			    + Utils.TAB + Utils.TAB + Utils.TAB + "Total");
+			pw.println(Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Date" + Utils.TAB + Utils.TAB + Utils.TAB
+			    + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Withheld" + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Individual"
+			    + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Corporate" + Utils.TAB + Utils.TAB + Utils.TAB + Utils.TAB + "Total");
 
 			final Calendar cal = Calendar.getInstance();
 			final int yr = cal.get(Calendar.YEAR) - 2;
@@ -471,9 +462,9 @@ public class DtsReports {
 						d2 = d2.replaceAll(" ", "\t");
 
 						final String str = String.format(
-						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%7.4f\t%7.4f\t%10d\t%10d\t%7.4f\t%7.4f%n",
-						    d1, d2, p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly,
-						    indChg, indEma, p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma, totP, totD, totChg, totEma);
+						    "%s\t%s\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%5.2f\t%5.2f\t%10d\t%10d\t%7.4f\t%7.4f\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2,
+						    p.getWith().yearly, d.getWith().yearly, withChg, withEma, p.getInd().yearly, d.getInd().yearly, indChg, indEma,
+						    p.getCorp().yearly, d.getCorp().yearly, corpChg, corpEma, totP, totD, totChg, totEma);
 
 						pw.printf("%s", str);
 
@@ -484,7 +475,8 @@ public class DtsReports {
 				final String day = Utils.getDayName(cal);
 				if (day.contains("SAT")) {
 					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
+				}
+				else if (day.contains("SUN")) {
 					cal.add(Calendar.DATE, 1);
 				}
 			}
@@ -500,7 +492,7 @@ public class DtsReports {
 	 * @param type
 	 * @throws FileNotFoundException
 	 */
-	private static void printFiscalYear(String fname, DTS_TYPE type) throws FileNotFoundException {
+	private static void printFiscalYear(final String fname, final DTS_TYPE type) throws FileNotFoundException {
 
 		if (fname.length() < 1) {
 			return;
@@ -559,8 +551,7 @@ public class DtsReports {
 						final String d1 = p.getDatePlus();
 						final String d2 = d.getDatePlus();
 
-						final String str = String.format("%s\t%s\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2, pVal, dVal, chg,
-						    ema.getEma());
+						final String str = String.format("%s\t%s\t%10d\t%10d\t%7.4f\t%7.4f%n", d1, d2, pVal, dVal, chg, ema.getEma());
 
 						pw.printf("%s", str);
 
@@ -571,7 +562,8 @@ public class DtsReports {
 				final String day = Utils.getDayName(cal);
 				if (day.contains("SAT")) {
 					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
+				}
+				else if (day.contains("SUN")) {
 					cal.add(Calendar.DATE, 1);
 				}
 			}
@@ -585,22 +577,9 @@ public class DtsReports {
 	 * @param q2014
 	 * @param q2015
 	 */
-	private static void printQuarterly(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2) {
+	private static void printQuarterly(final PrintWriter pw, final DtsQuarterly y1, final DtsQuarterly y2) {
 
 		pw.println(y1.toCombinedString(y2));
-	}
-
-	/**
-	 * net.ajaskey.market.tools.helpers.printQuarterlyEst
-	 *
-	 * @param pw
-	 * @param q2015
-	 * @param q2016
-	 * @param i
-	 */
-	private static void printQuarterlyEst(PrintWriter pw, DtsQuarterly y1, DtsQuarterly y2, int qtr) {
-		// TODO Auto-generated method stub
-
 	}
 
 	/**
@@ -609,7 +588,7 @@ public class DtsReports {
 	 *
 	 * @param startDate
 	 */
-	public static void writeEomCsv(Calendar startDate) {
+	public static void writeEomCsv(final Calendar startDate) {
 
 		new SimpleDateFormat("yyyy-MM-dd");
 
@@ -641,7 +620,7 @@ public class DtsReports {
 	 * @param fname
 	 * @throws FileNotFoundException
 	 */
-	public static void writeFiscalYear(String fname) throws FileNotFoundException {
+	public static void writeFiscalYear(final String fname) throws FileNotFoundException {
 
 		if (fname.length() < 1) {
 			return;
@@ -719,7 +698,7 @@ public class DtsReports {
 		}
 	}
 
-	public static void writeQuarterly(String fname) throws FileNotFoundException {
+	public static void writeQuarterly(final String fname) throws FileNotFoundException {
 
 		try (PrintWriter pw = new PrintWriter("out\\" + fname + ".txt")) {
 
@@ -744,7 +723,7 @@ public class DtsReports {
 	 * @param type
 	 * @throws FileNotFoundException
 	 */
-	public static void writeSumDaily(DTS_TYPE type) throws FileNotFoundException {
+	public static void writeSumDaily(final DTS_TYPE type) throws FileNotFoundException {
 
 		final int range = 250;
 		final long sum[] = new long[range];
@@ -756,11 +735,14 @@ public class DtsReports {
 
 		if (type == DTS_TYPE.CORPORATE) {
 			fname += "dts-sum-corporate.csv";
-		} else if (type == DTS_TYPE.INDIVIDUAL) {
+		}
+		else if (type == DTS_TYPE.INDIVIDUAL) {
 			fname += "dts-sum-individual.csv";
-		} else if (type == DTS_TYPE.WITHHELD) {
+		}
+		else if (type == DTS_TYPE.WITHHELD) {
 			fname += "dts-sum-withheld.csv";
-		} else {
+		}
+		else {
 			fname += "dts-sum-combined.csv";
 		}
 
@@ -773,11 +755,14 @@ public class DtsReports {
 			for (final DtsData dts : DtsData.dtsList) {
 				if (type == DTS_TYPE.CORPORATE) {
 					sum[ptr] = dts.getCorp().daily;
-				} else if (type == DTS_TYPE.INDIVIDUAL) {
+				}
+				else if (type == DTS_TYPE.INDIVIDUAL) {
 					sum[ptr] = dts.getInd().daily;
-				} else if (type == DTS_TYPE.WITHHELD) {
+				}
+				else if (type == DTS_TYPE.WITHHELD) {
 					sum[ptr] = dts.getWith().daily;
-				} else {
+				}
+				else {
 					sum[ptr] = dts.getCorp().daily + dts.getInd().daily + dts.getWith().daily;
 				}
 				ptr++;
@@ -796,7 +781,7 @@ public class DtsReports {
 
 	}
 
-	public static void writeUnemploymentTaxes(String fname) throws FileNotFoundException {
+	public static void writeUnemploymentTaxes(final String fname) throws FileNotFoundException {
 
 		if (fname.length() < 1) {
 			return;
@@ -831,7 +816,8 @@ public class DtsReports {
 						double chg = 0;
 						if (chgT > 0.0) {
 							chg = Math.min(chgT, 0.25);
-						} else if (chgT < 0.0) {
+						}
+						else if (chgT < 0.0) {
 							chg = Math.max(chgT, -0.25);
 						}
 
@@ -853,7 +839,8 @@ public class DtsReports {
 				final String day = Utils.getDayName(cal);
 				if (day.contains("SAT")) {
 					cal.add(Calendar.DATE, 2);
-				} else if (day.contains("SUN")) {
+				}
+				else if (day.contains("SUN")) {
 					cal.add(Calendar.DATE, 1);
 				}
 			}
@@ -866,7 +853,7 @@ public class DtsReports {
 	 *
 	 * @param type
 	 */
-	public static void writeYY(DTS_TYPE type) {
+	public static void writeYY(final DTS_TYPE type) {
 
 		final List<Integer> ytd = new ArrayList<>();
 		final List<Calendar> date = new ArrayList<>();
@@ -874,22 +861,28 @@ public class DtsReports {
 
 		if (type == DTS_TYPE.CORPORATE) {
 			fname += "dts-yy-corporate.csv";
-		} else if (type == DTS_TYPE.INDIVIDUAL) {
+		}
+		else if (type == DTS_TYPE.INDIVIDUAL) {
 			fname += "dts-yy-individual.csv";
-		} else if (type == DTS_TYPE.WITHHELD) {
+		}
+		else if (type == DTS_TYPE.WITHHELD) {
 			fname += "dts-yy-withheld.csv";
-		} else {
+		}
+		else {
 			fname += "dts-yy-combined.csv";
 		}
 
 		for (final DtsData dts : DtsData.dtsList) {
 			if (type == DTS_TYPE.CORPORATE) {
 				ytd.add(dts.getCorp().yearly);
-			} else if (type == DTS_TYPE.INDIVIDUAL) {
+			}
+			else if (type == DTS_TYPE.INDIVIDUAL) {
 				ytd.add(dts.getInd().yearly);
-			} else if (type == DTS_TYPE.WITHHELD) {
+			}
+			else if (type == DTS_TYPE.WITHHELD) {
 				ytd.add(dts.getWith().yearly);
-			} else {
+			}
+			else {
 				ytd.add(dts.getCorp().yearly + dts.getInd().yearly + dts.getWith().yearly);
 			}
 			date.add(dts.getDate());
@@ -917,7 +910,8 @@ public class DtsReports {
 					// chg /= 10.0;
 					// }
 					// }
-				} else {
+				}
+				else {
 					chg = ((double) (ytd.get(idx) - ytd.get(i)) / (double) ytd.get(i)) * 100.0;
 				}
 

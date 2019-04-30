@@ -42,7 +42,7 @@ public class Fundamentals {
 	private static int								maxIndustryLen	= 0;
 	private static String							fmt;
 
-	public static void build(String dataFile) throws FileNotFoundException, IOException {
+	public static void build(final String dataFile) throws FileNotFoundException, IOException {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
 			String line = br.readLine();
@@ -79,7 +79,7 @@ public class Fundamentals {
 	/**
 	 * @return the industry
 	 */
-	public static List<Fundamentals> getWithIndusty(String ind) {
+	public static List<Fundamentals> getWithIndusty(final String ind) {
 
 		final List<Fundamentals> fun = new ArrayList<>();
 		for (final Fundamentals f : fundieList) {
@@ -93,7 +93,7 @@ public class Fundamentals {
 	/**
 	 * @return the sector
 	 */
-	public static List<Fundamentals> getWithSector(String sec) {
+	public static List<Fundamentals> getWithSector(final String sec) {
 
 		final List<Fundamentals> sect = new ArrayList<>();
 		for (final Fundamentals f : fundieList) {
@@ -107,7 +107,7 @@ public class Fundamentals {
 	/**
 	 * @return the ticker
 	 */
-	public static Fundamentals getWithTicker(String tkr) {
+	public static Fundamentals getWithTicker(final String tkr) {
 
 		for (final Fundamentals f : fundieList) {
 			if (f.ticker.equalsIgnoreCase(tkr)) {
@@ -117,7 +117,7 @@ public class Fundamentals {
 		return null;
 	}
 
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(final String[] args) throws FileNotFoundException, IOException, ParseException {
 
 		Fundamentals.build("lists\\stock-fundie-list.txt");
 		// Fundamentals.build(dataPath + "\\ASCII\\Nasdaq_fundies.txt");
