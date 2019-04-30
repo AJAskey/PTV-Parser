@@ -731,7 +731,7 @@ public class FredCommon {
 
 		final DateTime dt = new DateTime();
 		try (PrintWriter pw = new PrintWriter(f)) {
-			pw.printf("%s\t%s%n", infoHeader, dt);
+			pw.printf("%s\t%s%n", infoHeader, dt.toFullString());
 			for (final DataSeriesInfo ds : dsList) {
 				//System.out.println(ds);
 				try {
