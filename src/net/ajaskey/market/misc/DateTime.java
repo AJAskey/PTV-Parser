@@ -67,7 +67,6 @@ public class DateTime {
 	}
 
 	private Calendar cal = null;
-
 	private SimpleDateFormat sdf = null;
 
 	/**
@@ -87,9 +86,8 @@ public class DateTime {
 	 */
 	public DateTime(final Calendar c) {
 
-		final Calendar cc = Calendar.getInstance();
-		cc.setTime(c.getTime());
-		this.cal = cc;
+		this.cal = Calendar.getInstance();
+		this.cal.setTime(c.getTime());
 	}
 
 	/**
@@ -102,6 +100,18 @@ public class DateTime {
 
 		this.cal = Calendar.getInstance();
 		this.cal.setTime(d);
+	}
+
+	/**
+	 *
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param dt
+	 */
+	public DateTime(final DateTime dt) {
+
+		this.cal = Calendar.getInstance();
+		this.cal.setTime(dt.getCal().getTime());
 	}
 
 	/**

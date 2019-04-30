@@ -43,7 +43,7 @@ public class PriceData {
 	 */
 	public PriceData(final DateTime dt, final double o, final double h, final double l, final double c, final long v) {
 
-		this.date = new DateTime(dt.getCal());
+		this.date = new DateTime(dt);
 		this.open = o;
 		this.high = h;
 		this.low = l;

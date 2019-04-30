@@ -39,7 +39,7 @@ public class OptumaFileData {
 	 */
 	public OptumaFileData(final DateTime dt, final double v) {
 
-		this.date = new DateTime(dt.getCal());
+		this.date = new DateTime(dt);
 		this.val = v;
 	}
 

@@ -400,8 +400,8 @@ public class DataSeriesInfo {
 
 		try {
 			final int idx = attribute.lastIndexOf("-");
-			final String dt = attribute.substring(0, idx);
-			final Date d = sdf.parse(dt);
+			final String dstr = attribute.substring(0, idx);
+			final Date d = sdf.parse(dstr);
 			this.lastUpdate = new DateTime(d);
 
 			final String os = attribute.substring(idx + 1);
