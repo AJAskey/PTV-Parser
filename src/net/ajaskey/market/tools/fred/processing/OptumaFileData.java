@@ -49,7 +49,7 @@ public class OptumaFileData {
 	@Override
 	public String toString() {
 
-		final String ret = String.format("%s, %.2f", this.date, this.val);
+		final String ret = String.format("%s, %.2f", this.date.format("yyyy-MM-dd"), this.val);
 		return ret;
 	}
 

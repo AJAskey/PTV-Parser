@@ -54,7 +54,8 @@ public class SpxVsAll {
 
 		//System.out.printf("%s\t%s%n", Utils.sdf.format(date.getTime()), Utils.sdf.format(spxPrices.get(0).date.getTime()));
 
-		if (date.isLessThan(spxPrices.get(0).date)) {
+		boolean b = date.isLessThan(spxPrices.get(0).date);
+		if (b) {
 			return 0.0;
 		}
 
@@ -172,6 +173,8 @@ public class SpxVsAll {
 
 			double price1 = SpxVsAll.getSpxClose(ofd.get(i - 1).date);
 			double price2 = SpxVsAll.getSpxClose(ofd.get(i).date);
+
+			//System.out.println(ofd.get(i).date);
 
 			if ((Math.abs(price1) > 0.0) && (Math.abs(price2) > 0.0)) {
 

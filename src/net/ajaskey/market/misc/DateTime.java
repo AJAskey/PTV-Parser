@@ -4,18 +4,24 @@ package net.ajaskey.market.misc;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
- * This class...
+ * This class encapsulates and improves the implementation of the
+ * java.utils.Calendar class.
  *
- * @author aja <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
- *         reserved. </p> <p> Permission is hereby granted, free of charge, to
- *         any person obtaining a copy of this software and associated
- *         documentation files (the "Software"), to deal in the Software without
- *         restriction, including without limitation the rights to use, copy,
- *         modify, merge, publish, distribute, sublicense, and/or sell copies of
- *         the Software, and to permit persons to whom the Software is furnished
- *         to do so, subject to the following conditions:
+ * @author Andy Askey
+ *
+ *         <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved.</p>
+ * 
+ *         <p> Permission is hereby granted, free of charge, to any person
+ *         obtaining a copy of this software and associated documentation files
+ *         (the "Software"), to deal in the Software without restriction,
+ *         including without limitation the rights to use, copy, modify, merge,
+ *         publish, distribute, sublicense, and/or sell copies of the Software,
+ *         and to permit persons to whom the Software is furnished to do so,
+ *         subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
@@ -49,6 +55,14 @@ public class DateTime {
 	public static final int	NOVEMBER	= Calendar.NOVEMBER;
 	public static final int	DECEMBER	= Calendar.DECEMBER;
 
+	public static final int	SUNDAY		= Calendar.SUNDAY;
+	public static final int	MONDAY		= Calendar.MONDAY;
+	public static final int	TUESDAY		= Calendar.TUESDAY;
+	public static final int	WEDNESDAY	= Calendar.WEDNESDAY;
+	public static final int	THURSDAY	= Calendar.THURSDAY;
+	public static final int	FRIDAY		= Calendar.FRIDAY;
+	public static final int	SATURDAY	= Calendar.SATURDAY;
+
 	/**
 	 *
 	 * net.ajaskey.market.misc.main
@@ -58,16 +72,45 @@ public class DateTime {
 	public static void main(final String[] args) {
 
 		final DateTime dt = new DateTime();
+		DateTime dt2 = new DateTime();
+		dt2.add(DATE, 1);
 		System.out.println(dt);
+		System.out.println(dt2);
+		boolean b = dt.isLessThan(dt2);
+		System.out.println("dt < dt2 : " + b);
+		b = dt2.isLessThan(dt);
+		System.out.println("dt2 < dt : " + b);
+
+		b = dt.isGreaterThan(dt2);
+		System.out.println("dt > dt2 : " + b);
+		b = dt2.isGreaterThan(dt);
+		System.out.println("dt2 > dt : " + b);
+
+		System.out.println(dt.getSdf().toPattern());
+		System.out.println(dt.getMonth());
+		System.out.println(dt.getDay());
+		System.out.println(dt.getYear());
+		System.out.println(dt.getDayOfYear());
+		System.out.println(dt.getDayOfWeek());
+		System.out.println(dt.getDayOfMonth());
 		final String s = dt.format("yyyy-MM-dd");
 		System.out.println(s);
 		dt.setSdf(Utils.sdfFull);
 		System.out.println(dt);
+		System.out.println(dt.getSdf().toPattern());
+		System.out.println(dt.isWeekday());
+		dt.set(2019, MAY, 5);
+		System.out.println(dt);
+		System.out.println(dt.isWeekday());
+		dt.add(DATE, 3);
+		System.out.println(dt);
+		dt.add(MONTH, -13);
+		System.out.println(dt);
 
 	}
 
-	private Calendar cal = null;
-	private SimpleDateFormat sdf = null;
+	private Calendar					cal	= null;
+	private SimpleDateFormat	sdf	= null;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -83,11 +126,16 @@ public class DateTime {
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param c
+	 *          Instantiated Calendar variable
 	 */
 	public DateTime(final Calendar c) {
 
 		this.cal = Calendar.getInstance();
-		this.cal.setTime(c.getTime());
+		try {
+			this.cal.setTime(c.getTime());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -95,11 +143,16 @@ public class DateTime {
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param d
+	 *          Instantiated Date variable
 	 */
 	public DateTime(final Date d) {
 
 		this.cal = Calendar.getInstance();
-		this.cal.setTime(d);
+		try {
+			this.cal.setTime(d);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -107,11 +160,16 @@ public class DateTime {
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param dt
+	 *          Instantiated DateTime variable
 	 */
 	public DateTime(final DateTime dt) {
 
 		this.cal = Calendar.getInstance();
-		this.cal.setTime(dt.getCal().getTime());
+		try {
+			this.cal.setTime(dt.getCal().getTime());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -125,7 +183,11 @@ public class DateTime {
 	public DateTime(final int year, final int month, final int day) {
 
 		this.cal = Calendar.getInstance();
-		this.cal.set(year, month, day);
+		try {
+			this.cal.set(year, month, day);
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -133,11 +195,16 @@ public class DateTime {
 	 * This method serves as a constructor for the class.
 	 *
 	 * @param ms
+	 *          Milliseconds
 	 */
 	public DateTime(final long ms) {
 
 		this.cal = Calendar.getInstance();
-		this.cal.setTimeInMillis(ms);
+		try {
+			this.cal.setTimeInMillis(ms);
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -145,11 +212,19 @@ public class DateTime {
 	 * net.ajaskey.market.misc.add
 	 *
 	 * @param unit
+	 *          DATE|MONTH|YEAR
 	 * @param knt
+	 *          Any integer
 	 */
 	public void add(final int unit, final int knt) {
 
-		this.cal.add(unit, knt);
+		try {
+			if ((unit == DATE) || (unit == MONTH) || (unit == YEAR)) {
+				this.cal.add(unit, knt);
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -157,12 +232,18 @@ public class DateTime {
 	 * net.ajaskey.market.misc.copy
 	 *
 	 * @param dt
+	 *          Instantiated DateTime variable
 	 * @return
 	 */
 	public DateTime copy(final DateTime dt) {
 
-		final DateTime d = new DateTime(dt.cal.getTime());
-		return d;
+		try {
+			final DateTime d = new DateTime(dt.cal.getTime());
+			return d;
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -177,6 +258,7 @@ public class DateTime {
 		try {
 			ret = this.sdf.format(this.cal.getTime());
 		} catch (final Exception e) {
+			e.printStackTrace();
 			ret = "BAD-DATE-FORMAT";
 		}
 		return ret;
@@ -196,6 +278,7 @@ public class DateTime {
 			final SimpleDateFormat sdf = new SimpleDateFormat(fmt);
 			ret = sdf.format(this.cal.getTime());
 		} catch (final Exception e) {
+			e.printStackTrace();
 			ret = "BAD-DATE-FORMAT";
 		}
 		return ret;
@@ -211,6 +294,81 @@ public class DateTime {
 
 	/**
 	 *
+	 * net.ajaskey.market.misc.getDay
+	 *
+	 * @return
+	 */
+	public String getDay() {
+
+		String ret = "UNKNOWN";
+		if (this.cal != null) {
+			ret = this.cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getDayOfMonth
+	 *
+	 * @return
+	 */
+	public int getDayOfMonth() {
+
+		int ret = -1;
+		if (this.cal != null) {
+			ret = this.cal.get(Calendar.DAY_OF_MONTH);
+		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getDayOfWeek
+	 *
+	 * @return
+	 */
+	public int getDayOfWeek() {
+
+		int ret = -1;
+		if (this.cal != null) {
+			ret = this.cal.get(Calendar.DAY_OF_WEEK);
+		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getDayOfYear
+	 *
+	 * @return
+	 */
+	public int getDayOfYear() {
+
+		int ret = -1;
+		if (this.cal != null) {
+			ret = this.cal.get(Calendar.DAY_OF_YEAR);
+		}
+		return ret;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getMonth
+	 *
+	 * @return
+	 */
+	public String getMonth() {
+
+		String ret = "UNKNOWN";
+		if (this.cal != null) {
+			ret = this.cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+		}
+		return ret;
+	}
+
+	/**
+	 *
 	 * net.ajaskey.market.misc.getSdf
 	 *
 	 * @return
@@ -218,6 +376,21 @@ public class DateTime {
 	public SimpleDateFormat getSdf() {
 
 		return this.sdf;
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.getYear
+	 *
+	 * @return
+	 */
+	public int getYear() {
+
+		int ret = -1;
+		if (this.cal != null) {
+			ret = this.cal.get(Calendar.YEAR);
+		}
+		return ret;
 	}
 
 	/**
@@ -232,6 +405,7 @@ public class DateTime {
 		try {
 			return Utils.sameDate(dt.cal, this.cal);
 		} catch (final Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -246,8 +420,9 @@ public class DateTime {
 	public boolean isGreaterThan(final DateTime dt) {
 
 		try {
-			return (dt.cal.after(this.cal));
+			return (dt.cal.before(this.cal));
 		} catch (final Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -264,6 +439,7 @@ public class DateTime {
 		try {
 			return (this.isGreaterThan(dt) || this.isEqual(dt));
 		} catch (final Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -277,11 +453,14 @@ public class DateTime {
 	 */
 	public boolean isLessThan(final DateTime dt) {
 
+		boolean ret = false;
 		try {
-			return (dt.cal.before(this.cal));
+			ret = (dt.cal.after(this.cal));
 		} catch (final Exception e) {
+			e.printStackTrace();
 			return false;
 		}
+		return ret;
 	}
 
 	/**
@@ -296,8 +475,21 @@ public class DateTime {
 		try {
 			return (this.isLessThan(dt) || this.isEqual(dt));
 		} catch (final Exception e) {
+			e.printStackTrace();
 			return false;
 		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.isWeekday
+	 *
+	 * @return
+	 */
+	public boolean isWeekday() {
+
+		final int d = this.cal.get(Calendar.DAY_OF_WEEK);
+		return ((d > SUNDAY) && (d < SATURDAY));
 	}
 
 	/**
@@ -314,6 +506,7 @@ public class DateTime {
 			final Date d = this.sdf.parse(src);
 			ret = new DateTime(d);
 		} catch (final Exception e) {
+			e.printStackTrace();
 			ret = null;
 		}
 		return ret;
@@ -335,6 +528,7 @@ public class DateTime {
 			final Date d = sdf.parse(src);
 			ret = new DateTime(d);
 		} catch (final Exception e) {
+			e.printStackTrace();
 			ret = null;
 		}
 		return ret;
@@ -348,12 +542,28 @@ public class DateTime {
 	 */
 	public void set(final Calendar c) {
 
-		this.cal.setTime(c.getTime());
+		if (c != null) {
+			if (this.cal == null) {
+				this.cal = Calendar.getInstance();
+			}
+			this.cal.setTime(c.getTime());
+		}
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.set
+	 *
+	 * @param d
+	 */
 	public void set(final Date d) {
 
-		this.cal.setTime(d);
+		if (d != null) {
+			if (this.cal == null) {
+				this.cal = Calendar.getInstance();
+			}
+			this.cal.setTime(d);
+		}
 	}
 
 	/**
@@ -366,9 +576,19 @@ public class DateTime {
 	 */
 	public void set(final int year, final int month, final int day) {
 
+		if (this.cal == null) {
+			this.cal = Calendar.getInstance();
+		}
 		this.cal.set(year, month, day);
+
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.setSdf
+	 *
+	 * @param simpledateformat
+	 */
 	public void setSdf(final SimpleDateFormat simpledateformat) {
 
 		this.sdf = simpledateformat;

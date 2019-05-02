@@ -769,11 +769,12 @@ public class FredCommon {
 		final String ffn = fullFileName.replace(">", "greater");
 		final File file = new File(ffn);
 		final File fileshort = new File(FredCommon.fredPath + seriesName + ".csv");
+		
 		try (PrintWriter pw = new PrintWriter(file); PrintWriter pwShort = new PrintWriter(fileshort)) {
 			pw.println("Date," + seriesName);
 			pwShort.println("Date," + seriesName);
 			for (final DataValues dv : data) {
-				final String date = dv.getDate().toString();
+				final String date = dv.getDate().format("yyyy-MM-dd");
 				final double d = dv.getValue() * scaler;
 				pw.printf("%s,%.2f%n", date, d);
 				pwShort.printf("%s,%.2f%n", date, d);

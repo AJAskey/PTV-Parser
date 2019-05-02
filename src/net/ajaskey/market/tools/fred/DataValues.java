@@ -47,7 +47,7 @@ public class DataValues {
 	 */
 	public DataValues(final DateTime dt, final double val) {
 
-		this.date = dt;
+		this.date = new DateTime(dt);
 		this.value = val;
 	}
 
@@ -56,6 +56,8 @@ public class DataValues {
 	 *
 	 */
 	public DataValues(final String date, final String val) {
+		
+		this.date = new DateTime();
 
 		this.setDate(date);
 		this.setValue(val);

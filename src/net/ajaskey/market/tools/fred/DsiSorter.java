@@ -45,10 +45,10 @@ public class DsiSorter implements Comparator<DataSeriesInfo> {
 		try {
 			int ret = 0;
 			if (d1.getLastUpdate().isGreaterThan(d2.getLastUpdate())) {
-				ret = 1;
+				ret = -1;
 			}
 			else if (d1.getLastUpdate().isLessThan(d2.getLastUpdate())) {
-				ret = -1;
+				ret = 1;
 			}
 			return ret;
 		} catch (final Exception e) {

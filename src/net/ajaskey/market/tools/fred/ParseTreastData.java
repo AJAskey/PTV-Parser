@@ -13,16 +13,20 @@ import java.util.List;
 import net.ajaskey.market.misc.DateTime;
 
 /**
- * This class...
+ * This class parses TREAST data from FRED.
  *
- * @author ajask <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
- *         reserved. </p> <p> Permission is hereby granted, free of charge, to
- *         any person obtaining a copy of this software and associated
- *         documentation files (the "Software"), to deal in the Software without
- *         restriction, including without limitation the rights to use, copy,
- *         modify, merge, publish, distribute, sublicense, and/or sell copies of
- *         the Software, and to permit persons to whom the Software is furnished
- *         to do so, subject to the following conditions:
+ * @author Andy Askey
+ *
+ *         <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ *         reserved.</p>
+ * 
+ *         <p> Permission is hereby granted, free of charge, to any person
+ *         obtaining a copy of this software and associated documentation files
+ *         (the "Software"), to deal in the Software without restriction,
+ *         including without limitation the rights to use, copy, modify, merge,
+ *         publish, distribute, sublicense, and/or sell copies of the Software,
+ *         and to permit persons to whom the Software is furnished to do so,
+ *         subject to the following conditions:
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
@@ -96,12 +100,13 @@ public class ParseTreastData {
 			double last50 = 0;
 			double last90 = 0;
 			DateTime lastDate = null;
-			final DateTime end2018 = new DateTime(2020, DateTime.JANUARY, 1);
+			final DateTime end2019 = new DateTime(2020, DateTime.JANUARY, 1);
 			for (final DateValue dv : pastList) {
-				pw.printf("%s,%.1f%n", dv.date, dv.value);
-				pw50.printf("%s,%.1f%n", dv.date, dv.value);
-				pw90.printf("%s,%.1f%n", dv.date, dv.value);
-				pw2019.printf("%s,%.1f%n", dv.date, dv.value);
+				final String d = dv.date.format("yyyy-MM-dd");
+				pw.printf("%s,%.1f%n", d, dv.value);
+				pw50.printf("%s,%.1f%n", d, dv.value);
+				pw90.printf("%s,%.1f%n", d, dv.value);
+				pw2019.printf("%s,%.1f%n", d, dv.value);
 				last = dv.value;
 				last50 = dv.value;
 				last90 = dv.value;
@@ -123,8 +128,8 @@ public class ParseTreastData {
 						pw.printf("%s,%.1f%n", dv.date, tot);
 						pw50.printf("%s,%.1f%n", dv.date, tot50);
 						pw90.printf("%s,%.1f%n", dv.date, tot90);
-						if (dv.date.isLessThan(end2018)) {
-							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2018));
+						if (dv.date.isLessThan(end2019)) {
+							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2019));
 							System.out.printf("%s,%.1f%n", dv.date, tot);
 							pw2019.printf("%s,%.1f%n", dv.date, tot);
 						}
