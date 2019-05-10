@@ -185,7 +185,7 @@ public class ProcessQuandl {
 		final OneValueData lastSpxPrice = spxFred.get(spxFred.size() - 1);
 		System.out.println("SPX latest price : " + lastSpxPrice);
 
-		final double shillerpe = 30.99;
+		final double shillerpe = 30.38;
 		lastDataPoint.add(new LastDataPoint("SHILLER_PE_RATIO", shillerpe));
 		lastDataPoint.add(new LastDataPoint("SP500_DIV_MONTH", 54.94));
 		lastDataPoint.add(new LastDataPoint("SP500_BVPS_YEAR", 851.62));
@@ -335,17 +335,18 @@ public class ProcessQuandl {
 		    PrintWriter pwStddev = new PrintWriter(Qcommon.outpath + "\\" + fname + "_StdDev.csv");
 		    PrintWriter pwbbdiff = new PrintWriter(Qcommon.outpath + "\\" + fname + "_BullBear.csv");
 		    PrintWriter pwsp500 = new PrintWriter(Qcommon.outpath + "\\" + fname + "_SP500.csv")) {
+			
 			for (final NaaimData naaim : list) {
 
-				pwMean.printf("%s,%.2f%n", naaim.date, naaim.mean);
-				pwBear.printf("%s,%.2f%n", naaim.date, naaim.mostBearish);
-				pwq1.printf("%s,%.2f%n", naaim.date, naaim.q1);
-				pwMed.printf("%s,%.2f%n", naaim.date, naaim.median);
-				pwq3.printf("%s,%.2f%n", naaim.date, naaim.q3);
-				pwBull.printf("%s,%.2f%n", naaim.date, naaim.mostBullish);
-				pwStddev.printf("%s,%.2f%n", naaim.date, naaim.stdDev);
-				pwsp500.printf("%s,%.2f%n", naaim.date, naaim.sp500);
-				pwbbdiff.printf("%s,%.2f%n", naaim.date, naaim.bbDiff);
+				pwMean.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.mean);
+				pwBear.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.mostBearish);
+				pwq1.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.q1);
+				pwMed.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.median);
+				pwq3.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.q3);
+				pwBull.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.mostBullish);
+				pwStddev.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.stdDev);
+				pwsp500.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.sp500);
+				pwbbdiff.printf("%s,%.2f%n", naaim.date.format("yyyy-MM-dd"), naaim.bbDiff);
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
@@ -385,7 +386,7 @@ public class ProcessQuandl {
 		try (PrintWriter pw = new PrintWriter(Qcommon.outpath + "\\" + fname + ".csv")) {
 			for (final OneValueData one : list) {
 
-				pw.printf("%s,%.2f%n", one.date, one.value);
+				pw.printf("%s,%.2f%n", one.date.format("yyyy-MM-dd"), one.value);
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));
 
@@ -411,13 +412,13 @@ public class ProcessQuandl {
 
 			for (final OhlcvData price : list) {
 
-				pwCall.printf("%s,%d%n", price.date, (int) price.open);
-				pwPut.printf("%s,%d%n", price.date, (int) price.high);
-				pwTot.printf("%s,%d%n", price.date, (int) price.low);
-				pwRatio.printf("%s,%.2f%n", price.date, price.close);
+				pwCall.printf("%s,%d%n", price.date.format("yyyy-MM-dd"), (int) price.open);
+				pwPut.printf("%s,%d%n", price.date.format("yyyy-MM-dd"), (int) price.high);
+				pwTot.printf("%s,%d%n", price.date.format("yyyy-MM-dd"), (int) price.low);
+				pwRatio.printf("%s,%.2f%n", price.date.format("yyyy-MM-dd"), price.close);
 
 				final int diff = (int) (price.open - price.high);
-				pwDiff.printf("%s,%d%n", price.date, diff);
+				pwDiff.printf("%s,%d%n", price.date.format("yyyy-MM-dd"), diff);
 
 			}
 			//System.out.println(Utils.getString(list.get(list.size() - 1).date));

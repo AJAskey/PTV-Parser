@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.ajaskey.market.misc.DateTime;
@@ -19,7 +20,7 @@ import net.ajaskey.market.misc.DateTime;
  *
  *         <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved.</p>
- * 
+ *
  *         <p> Permission is hereby granted, free of charge, to any person
  *         obtaining a copy of this software and associated documentation files
  *         (the "Software"), to deal in the Software without restriction,
@@ -51,16 +52,10 @@ public class ParseTreastData {
 	 */
 	public static void main(final String[] args) throws IOException {
 
-		final List<DateValue> pastList = ParseTreastData
-		    .readFile(FredCommon.fredPath + "[TREAST] - US Treasury Securities Held By the Federal Reserve All Maturities.csv", 1);
-		//final List<DateValue> dvList = readFile("data\\treast-data.csv");
-		final List<DateValue> dvList = ParseTreastData.readFile("data\\SomaNonMbs-041019.csv", 6);
+		final List<DateValue> pastDvList = ParseTreastData.readFile(FredCommon.fredPath + "TREAST.csv", 1);
+		final List<DateValue> FutureDvList = ParseTreastData.readFile("TREAST\\SomaNonMbs-050119.csv", 6);
 
-		for (final DateValue dv : dvList) {
-			System.out.println(dv);
-		}
-
-		ParseTreastData.process(pastList, dvList);
+		ParseTreastData.process(pastDvList, FutureDvList);
 
 	}
 
@@ -68,15 +63,16 @@ public class ParseTreastData {
 	 *
 	 * net.ajaskey.market.tools.fred.process
 	 *
-	 * @param pastList
-	 * @param dvList
+	 * @param pastDvList
+	 * @param futureDvList
 	 * @throws FileNotFoundException
 	 */
-	public static void process(final List<DateValue> pastList, final List<DateValue> dvList) throws FileNotFoundException {
+	public static void process(final List<DateValue> pastDvList, final List<DateValue> futureDvList) throws FileNotFoundException {
 
 		final List<DateValue> cumList = new ArrayList<>();
 
-		for (final DateValue dv : dvList) {
+		// Process TREAST data
+		for (final DateValue dv : futureDvList) {
 			boolean found = false;
 			for (final DateValue cdv : cumList) {
 				if (dv.date.isEqual(cdv.date)) {
@@ -91,49 +87,40 @@ public class ParseTreastData {
 			}
 		}
 
-		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL.csv");
-		    PrintWriter pw2019 = new PrintWriter(FredCommon.fredPath + "/TREAST-2019.csv");
-		    PrintWriter pw50 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-50.csv");
-		    PrintWriter pw90 = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL-90.csv")) {
+		Collections.sort(cumList, new DateValueSorter());
+		for (final DateValue dv : cumList) {
+			System.out.println(dv);
+		}
 
-			double last = 0;
-			double last50 = 0;
-			double last90 = 0;
-			DateTime lastDate = null;
+		double lastValue = 0.0;
+		DateTime lastDate = new DateTime();
+
+		// Write TREAST data
+		try (PrintWriter pw = new PrintWriter(FredCommon.fredPath + "/TREAST-ALL.csv");
+		    PrintWriter pw2019 = new PrintWriter(FredCommon.fredPath + "/TREAST-2019.csv");) {
+
 			final DateTime end2019 = new DateTime(2020, DateTime.JANUARY, 1);
-			for (final DateValue dv : pastList) {
+			for (final DateValue dv : pastDvList) {
 				final String d = dv.date.format("yyyy-MM-dd");
 				pw.printf("%s,%.1f%n", d, dv.value);
-				pw50.printf("%s,%.1f%n", d, dv.value);
-				pw90.printf("%s,%.1f%n", d, dv.value);
+
 				pw2019.printf("%s,%.1f%n", d, dv.value);
-				last = dv.value;
-				last50 = dv.value;
-				last90 = dv.value;
-				lastDate = dv.date;
+				lastDate.set(dv.date);
+				lastValue = dv.value;
 			}
-			final DateTime calLast = new DateTime(2000, DateTime.JANUARY, 1);
+
 			for (final DateValue dv : cumList) {
-				System.out.println("Last Date : " + lastDate);
-				System.out.println(dv);
 				if (dv.date.isGreaterThan(lastDate)) {
-					final double tot = last - dv.value;
-					final double tot50 = last50 - (dv.value / 2.0);
-					final double tot90 = last90 - (dv.value * 0.1);
-					last = tot;
-					last50 = tot50;
-					last90 = tot90;
-					if ((tot > 0.0) && (dv.date.isGreaterThan(calLast))) {
-						calLast.set(dv.date.getCal().getTime());
-						pw.printf("%s,%.1f%n", dv.date, tot);
-						pw50.printf("%s,%.1f%n", dv.date, tot50);
-						pw90.printf("%s,%.1f%n", dv.date, tot90);
-						if (dv.date.isLessThan(end2019)) {
-							//System.out.println(Utils.getString(dv.date) + "\t"+  Utils.getString(end2019));
-							System.out.printf("%s,%.1f%n", dv.date, tot);
-							pw2019.printf("%s,%.1f%n", dv.date, tot);
-						}
+
+					final String d = dv.date.format("yyyy-MM-dd");
+					lastValue -= dv.value;
+
+					pw.printf("%s,%.1f%n", d, lastValue);
+
+					if (dv.date.isLessThanOrEqual(end2019)) {
+						pw2019.printf("%s,%.1f%n", d, lastValue);
 					}
+
 				}
 			}
 		}

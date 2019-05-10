@@ -129,7 +129,7 @@ public class DataSeriesInfo {
 
 		Debug.init("out/dsi.dbg");
 
-		final DataSeriesInfo dsi = new DataSeriesInfo("CEU0500000001");
+		final DataSeriesInfo dsi = new DataSeriesInfo("CEU0500000001", new DateTime());
 
 		try (PrintWriter pw = new PrintWriter("out/fred-series.txt")) {
 			pw.println("Series\tTitle\tFrequency\tUnits\tSeasonality\tLastUpdate");
@@ -156,7 +156,6 @@ public class DataSeriesInfo {
 						final DataSeriesInfo dsi = new DataSeriesInfo();
 						dsi.name = fld[0].trim().toUpperCase();
 						dsi.title = fld[1].trim();
-						dsi.refChart = fld[2].trim();
 						dsi.units = fld[4].trim();
 						dsi.type = DataSeries.ResponseType.valueOf(fld[5].trim());
 						dList.add(dsi);
@@ -182,9 +181,9 @@ public class DataSeriesInfo {
 
 	private DateTime	lastUpdate;
 	private DateTime	lastObservation;
+	private DateTime	fileDt;
 
-	private int			timeOffset;
-	private String	refChart;
+	private int timeOffset;
 
 	private String response;
 
@@ -202,8 +201,8 @@ public class DataSeriesInfo {
 		this.seasonalAdjustment = "";
 		this.lastObservation = null;
 		this.lastUpdate = null;
+		this.fileDt = null;
 		this.timeOffset = 0;
-		this.refChart = "";
 		this.type = DataSeries.ResponseType.LIN;
 	}
 
@@ -214,12 +213,12 @@ public class DataSeriesInfo {
 		if (len > 1) {
 			this.name = fld[0].trim();
 			this.title = fld[1].trim();
-			this.refChart = fld[2].trim();
 			this.frequency = fld[3].trim();
 			this.units = fld[4].trim();
 			this.setType(fld[5].trim());
 			this.lastObservation = null;
 			this.lastUpdate = null;
+			this.fileDt = null;
 			this.seasonalAdjustment = "";
 			this.timeOffset = 0;
 		}
@@ -231,17 +230,19 @@ public class DataSeriesInfo {
 			this.seasonalAdjustment = "";
 			this.lastObservation = null;
 			this.lastUpdate = null;
+			this.fileDt = null;
 			this.timeOffset = 0;
-			this.refChart = "";
 			this.type = DataSeries.ResponseType.LIN;
 		}
 	}
 
 	/**
 	 * This method serves as a constructor for the class.
+	 * 
+	 * @param lastUpdate
 	 *
 	 */
-	public DataSeriesInfo(final String seriesName) {
+	public DataSeriesInfo(final String seriesName, DateTime fileDt) {
 
 		this.setName(seriesName);
 
@@ -266,8 +267,6 @@ public class DataSeriesInfo {
 
 			doc.getDocumentElement().normalize();
 
-			this.refChart = "";
-
 			final NodeList nResp = doc.getElementsByTagName("series");
 			for (int knt = 0; knt < nResp.getLength(); knt++) {
 				final Node nodeResp = nResp.item(knt);
@@ -281,6 +280,7 @@ public class DataSeriesInfo {
 					this.setSeasonalAdjustment(eElement.getAttribute("seasonal_adjustment_short"));
 					this.setLastUpdate(eElement.getAttribute("last_updated"));
 					this.setLastObservation(eElement.getAttribute("observation_end"));
+					this.setFileDt(fileDt);
 					//Debug.pwDbg.print(this);
 				}
 			}
@@ -320,11 +320,6 @@ public class DataSeriesInfo {
 	public String getName() {
 
 		return this.name;
-	}
-
-	public String getRefChart() {
-
-		return this.refChart;
 	}
 
 	/**
@@ -412,6 +407,11 @@ public class DataSeriesInfo {
 
 	}
 
+	private void setLastUpdate(final DateTime dt) {
+
+		this.lastUpdate.set(dt);
+	}
+
 	/**
 	 * @param name
 	 *          the name to set
@@ -419,11 +419,6 @@ public class DataSeriesInfo {
 	private void setName(final String name) {
 
 		this.name = name;
-	}
-
-	public void setRefChart(final String chart) {
-
-		this.refChart = chart;
 	}
 
 	/**
@@ -490,8 +485,27 @@ public class DataSeriesInfo {
 		if (this.lastObservation != null) {
 			ret += "  Last Observation : " + this.lastObservation + Utils.NL;
 		}
-		//ret += "  Reference Chart  : " + this.refChart;
+		if (this.fileDt != null) {
+			ret += "  File Date        : " + this.fileDt;
+		}
 		return ret;
+	}
+
+	/**
+	 * @return the fileDt
+	 */
+	public DateTime getFileDt() {
+
+		return fileDt;
+	}
+
+	/**
+	 * @param fileDt
+	 *          the fileDt to set
+	 */
+	public void setFileDt(DateTime fileDt) {
+
+		this.fileDt = fileDt;
 	}
 
 }

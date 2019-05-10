@@ -41,7 +41,7 @@ public class Reports {
 
 	private static final String NL = "\n";
 
-	private static final double	intToSalesHWM	= 10.0;
+	private static final double	intToSalesHWM	= 15.0;
 	private static final double	cratioLWM			= 0.75;
 	private static final double	lteHWM				= 5.0;
 

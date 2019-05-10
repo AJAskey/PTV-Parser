@@ -97,6 +97,7 @@ public class IngestOptumaFile {
 		final IngestOptumaFile iof = new IngestOptumaFile(f1name, f2name);
 		final List<OptumaFileData> resultsList = iof.processFiles(operation);
 
+		
 		final String fname = String.format("%s%s", FredCommon.fredPath, title);
 		try (PrintWriter pw = new PrintWriter(fname)) {
 			for (final OptumaFileData ofd : resultsList) {

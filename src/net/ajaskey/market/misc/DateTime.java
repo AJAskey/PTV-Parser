@@ -14,7 +14,7 @@ import java.util.Locale;
  *
  *         <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved.</p>
- * 
+ *
  *         <p> Permission is hereby granted, free of charge, to any person
  *         obtaining a copy of this software and associated documentation files
  *         (the "Software"), to deal in the Software without restriction,
@@ -72,7 +72,7 @@ public class DateTime {
 	public static void main(final String[] args) {
 
 		final DateTime dt = new DateTime();
-		DateTime dt2 = new DateTime();
+		final DateTime dt2 = new DateTime();
 		dt2.add(DATE, 1);
 		System.out.println(dt);
 		System.out.println(dt2);
@@ -133,7 +133,7 @@ public class DateTime {
 		this.cal = Calendar.getInstance();
 		try {
 			this.cal.setTime(c.getTime());
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -150,7 +150,7 @@ public class DateTime {
 		this.cal = Calendar.getInstance();
 		try {
 			this.cal.setTime(d);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -167,7 +167,7 @@ public class DateTime {
 		this.cal = Calendar.getInstance();
 		try {
 			this.cal.setTime(dt.getCal().getTime());
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -563,6 +563,22 @@ public class DateTime {
 				this.cal = Calendar.getInstance();
 			}
 			this.cal.setTime(d);
+		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.set
+	 *
+	 * @param dt
+	 */
+	public void set(final DateTime dt) {
+
+		if ((dt != null) && (dt.cal != null)) {
+			if (this.cal == null) {
+				this.cal = Calendar.getInstance();
+			}
+			this.cal.setTime(dt.cal.getTime());
 		}
 	}
 

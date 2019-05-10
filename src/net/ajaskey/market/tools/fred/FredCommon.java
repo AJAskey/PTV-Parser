@@ -56,7 +56,7 @@ public class FredCommon {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
 
-	final static String infoHeader = "Name\tTitle\tMethod\tFrequency\tUnits\tType\tLast Download\tLast Observation";
+	final static String infoHeader = "Name\tTitle\tMethod\tFrequency\tUnits\tType\tLast Download\tLast Data Update";
 
 	final public static double BILLION = 1E9;
 
@@ -73,7 +73,7 @@ public class FredCommon {
 		for (DataSeriesInfo dsi : allSeries) {
 			try {
 				if (dsi.getTitle().length() == 0) {
-					dsi = new DataSeriesInfo(dsi.getName());
+					dsi = new DataSeriesInfo(dsi.getName(), new DateTime());
 				}
 				final String s = FredCommon.toSeriesInfo(dsi);
 				data.add(s);
@@ -390,7 +390,7 @@ public class FredCommon {
 
 			final DateTime dt = new DateTime(f.lastModified());
 
-			final DataSeriesInfo dsi = FredCommon.queryFredDsi(code, dt.toString());
+			final DataSeriesInfo dsi = FredCommon.queryFredDsi(code, dt);
 			if (dsi != null) {
 				ret.add(dsi);
 			}
@@ -405,17 +405,17 @@ public class FredCommon {
 	 * @param code
 	 * @return
 	 */
-	public static DataSeriesInfo queryFredDsi(final String code, final String lastUpdate) {
+	public static DataSeriesInfo queryFredDsi(final String code, final DateTime lastUpdate) {
 
 		for (int i = 0; i <= FredDataDownloader.maxRetries; i++) {
 			Utils.sleep((1000 * (5 * i)) + 250);
-			final DataSeriesInfo dsi = new DataSeriesInfo(code);
+			final DataSeriesInfo dsi = new DataSeriesInfo(code, lastUpdate);
 			if (dsi != null) {
 				if ((dsi.getResponse() != null) && (dsi.getResponse().length() > 0)) {
 					if (dsi.getTitle() != null) {
 						FredDataDownloader.retryCount = 0;
-						//Debug.pwDbg.printf("Received data for %s%n", code);
-						Debug.log(String.format("Received data for %s%n%s%nLast Update : %s%n", code, dsi.getResponse(), lastUpdate));
+						final boolean needsUpdate = dsi.getLastObservation().isGreaterThan(lastUpdate);
+						Debug.log(String.format("%nReceived data for %s%n%s%n", dsi.getResponse(), needsUpdate));
 						return dsi;
 					}
 				}
@@ -554,7 +554,7 @@ public class FredCommon {
 							final String fld[] = str.split("\t");
 							DataSeriesInfo dsi = null;
 							if (fld.length < 5) {
-								dsi = new DataSeriesInfo(fld[0]);
+								dsi = new DataSeriesInfo(fld[0], new DateTime());
 							}
 							else {
 								dsi = new DataSeriesInfo(fld);
@@ -571,6 +571,13 @@ public class FredCommon {
 		return retList;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.readTextNames
+	 *
+	 * @param fname
+	 * @return
+	 */
 	public static List<String> readTextNames(final String fname) {
 
 		final List<String> retList = new ArrayList<>();
@@ -645,6 +652,14 @@ public class FredCommon {
 		return ret;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.toFullFileName
+	 *
+	 * @param series
+	 * @param title
+	 * @return
+	 */
 	public static String toFullFileName(final String series, final String title) {
 
 		final String titl = FredCommon.cleanTitle(title);
@@ -656,6 +671,13 @@ public class FredCommon {
 		return ret + ".csv";
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.toSentenceCase
+	 *
+	 * @param title
+	 * @return
+	 */
 	public static String toSentenceCase(final String title) {
 
 		final StringBuilder sb = new StringBuilder();
@@ -677,6 +699,13 @@ public class FredCommon {
 		return ret;
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.tools.fred.toSeriesInfo
+	 *
+	 * @param dsi
+	 * @return
+	 */
 	public static String toSeriesInfo(final DataSeriesInfo dsi) {
 
 		String ret = "";
@@ -689,7 +718,7 @@ public class FredCommon {
 			if (dsi.getLastUpdate() != null) {
 				lastUpdate = dsi.getLastUpdate().toString();
 			}
-			ret = String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", dsi.getName(), dsi.getTitle(), dsi.getRefChart(), dsi.getFrequency(),
+			ret = String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s%n", dsi.getName(), dsi.getTitle(), "", dsi.getFrequency(),
 			    dsi.getUnits(), dsi.getType(), lastUpdate, lastObs);
 		}
 		return ret;
@@ -769,7 +798,7 @@ public class FredCommon {
 		final String ffn = fullFileName.replace(">", "greater");
 		final File file = new File(ffn);
 		final File fileshort = new File(FredCommon.fredPath + seriesName + ".csv");
-		
+
 		try (PrintWriter pw = new PrintWriter(file); PrintWriter pwShort = new PrintWriter(fileshort)) {
 			pw.println("Date," + seriesName);
 			pwShort.println("Date," + seriesName);

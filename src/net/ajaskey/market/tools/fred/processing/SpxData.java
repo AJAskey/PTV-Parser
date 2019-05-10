@@ -1,16 +1,17 @@
 
-package net.ajaskey.market.tools.fred;
+package net.ajaskey.market.tools.fred.processing;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.IOException;
+import java.util.List;
 
 import net.ajaskey.market.misc.DateTime;
+import net.ajaskey.market.optuma.PriceData;
+import net.ajaskey.market.tools.optuma.OptumaPriceData;
 
 /**
  * This class...
  *
- * @author ajask_000 <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author aja <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -32,83 +33,58 @@ import net.ajaskey.market.misc.DateTime;
  *         SOFTWARE. </p>
  *
  */
-public class DataValues {
+public class SpxData {
 
-	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	private static List<PriceData> spxPrices = null;
 
-	private final DateTime	date;
-	private double					value;
+	/**
+	 * net.ajaskey.market.tools.fred.processing.getSpxClose
+	 *
+	 * @param date
+	 * @return
+	 */
+	public static double getSpxClose(final DateTime date) {
+
+		//System.out.printf("%s\t%s%n", Utils.sdf.format(date.getTime()), Utils.sdf.format(spxPrices.get(0).date.getTime()));
+
+		if (date.isLessThan(spxPrices.get(0).date)) {
+			return 0.0;
+		}
+
+		for (final PriceData pd : spxPrices) {
+
+			//System.out.printf("%s\t%s%n", Utils.sdf.format(date.getTime()), Utils.sdf.format(pd.date.getTime()));
+
+			if (pd.date.isGreaterThanOrEqual(date)) {
+				return pd.close;
+			}
+
+		}
+		return 0;
+	}
 
 	/**
 	 * This method serves as a constructor for the class.
 	 *
-	 * @param cal
-	 * @param val
 	 */
-	public DataValues(final DateTime dt, final double val) {
-
-		this.date = new DateTime(dt);
-		this.value = val;
-	}
-
-	/**
-	 * This method serves as a constructor for the class.
-	 *
-	 */
-	public DataValues(final String date, final String val) {
-
-		this.date = new DateTime();
-
-		this.setDate(date);
-		this.setValue(val);
-	}
-
-	/**
-	 * @return the date
-	 */
-	public DateTime getDate() {
-
-		return this.date;
-	}
-
-	/**
-	 * @return the value
-	 */
-	public double getValue() {
-
-		return this.value;
-	}
-
-	/**
-	 * @param sdf.
-	 *          the date to set
-	 */
-	public void setDate(final String dateStr) {
+	public SpxData() {
 
 		try {
-			final Date d = sdf.parse(dateStr);
-			this.date.set(d);
-		} catch (final ParseException e) {
+			spxPrices = OptumaPriceData.getPriceData("C:\\Users\\Andy\\Documents\\PriceData\\World Indices\\S\\SPX.csv");
+		} catch (final IOException e) {
+			spxPrices.clear();
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * @param value
-	 *          the value to set
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
-	public void setValue(final String val) {
-
-		try {
-			this.value = Double.parseDouble(val);
-		} catch (final Exception e) {
-			this.value = 0.0;
-		}
-	}
-
 	@Override
 	public String toString() {
 
-		return (String.format("%s\t%f", this.date, this.value));
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
+
 }

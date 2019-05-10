@@ -48,7 +48,7 @@ public class FredBookkeeping {
 	private static final String	fsiFilename				= "fred-series-info.txt";
 	private static final String	tryAgainFilename	= "fred-try-again.txt";
 
-	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
+	//private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
 
 	private static List<DataSeriesInfo> dsiList = new ArrayList<>();
 
@@ -64,11 +64,7 @@ public class FredBookkeeping {
 		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
 
 		final File folder = new File(FredCommon.fredPath);
-		//		File existingFiles[] = folder.listFiles();
-		//
-		//		for(File f : existingFiles) {
-		//			System.out.println(f.getName());
-		//		}
+		//final File folder = new File("Fred-Download");
 
 		final Set<String> uniqCodes = new HashSet<>();
 
@@ -94,7 +90,7 @@ public class FredBookkeeping {
 		final List<String> codes = new ArrayList<>(uniqCodes);
 		Collections.sort(codes);
 
-		FredBookkeeping.process(codes);
+		FredBookkeeping.process(codes, "CodesToUpdate.txt");
 
 		FredDataDownloader.tryAgainFile.close();
 
@@ -102,7 +98,7 @@ public class FredBookkeeping {
 		Debug.log("Processing retry attempts...");
 
 		final List<String> retry = FredCommon.readSeriesList(tryAgainFilename);
-		FredBookkeeping.process(retry);
+		FredBookkeeping.process(retry, "RetryCodesToAdd.txt");
 
 		FredDataDownloader.tryAgainFile = new PrintWriter(tryAgainFilename);
 
@@ -122,31 +118,37 @@ public class FredBookkeeping {
 	 * @param codes
 	 * @throws FileNotFoundException
 	 */
-	private static void process(final List<String> codes) throws FileNotFoundException {
+	private static void process(final List<String> codes, String updateFileName) throws FileNotFoundException {
 
-		try (PrintWriter pw = new PrintWriter("CodesToUpdate.txt")) {
+		try (PrintWriter pwUpdate = new PrintWriter(updateFileName)) {
 
-			int knt = 0;
+			//int knt = 0;
 			for (final String code : codes) {
 				final File f = new File(FredCommon.fredPath + "/" + code + ".csv");
-				final DateTime cLastUpdate = new DateTime(f.lastModified());
-				cLastUpdate.add(DateTime.DATE, -1);
-				final String lastUpdate = cLastUpdate.toString();
+				final DateTime fileLastUpdate = new DateTime(f.lastModified());
 
-				final DataSeriesInfo dsi = FredCommon.queryFredDsi(code, lastUpdate);
+				//Debug.log(String.format("Processing existing file %s last updated on %s", code, fileLastUpdate));
+
+				final DataSeriesInfo dsi = FredCommon.queryFredDsi(code, fileLastUpdate);
 				if (dsi != null) {
-					System.out.printf("%-20s --> %-20s\t\t%15s%n", code, lastUpdate, dsi.getLastObservation().toString());
+					
+					//System.out.printf("%-20s --> %-20s\t\t%15s%n", code, dsi.getFileDt().toFullString(), dsi.getLastUpdate().toFullString());
 					dsiList.add(dsi);
 
-					if (cLastUpdate.isLessThan(dsi.getLastObservation())) {
-						pw.printf("%s\t%s%n", dsi.getName(), dsi.getTitle());
+					Debug.log(dsi.toString());
+
+					boolean needsUpdate = dsi.getLastUpdate().isGreaterThan(dsi.getFileDt());
+					if (needsUpdate) {
+						pwUpdate.printf("%s\t%s%n", dsi.getName(), dsi.getTitle());
+						System.out.printf("%s\t%s%n", dsi.getName(), dsi.getTitle());
 					}
 				}
 				// Set to lower number for testing
-				if (++knt > 20050) {
-					break;
-				}
+				//				if (++knt > 20050) {
+				//					break;
+				//				}
 			}
 		}
 	}
+	
 }

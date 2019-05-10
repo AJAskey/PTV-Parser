@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Debug;
 import net.ajaskey.market.misc.Utils;
 import net.ajaskey.market.tools.optuma.OptumaCommon;
@@ -143,12 +144,11 @@ public class UpdateFred {
 
 						Debug.log(String.format("%-29s %-25s%s%n", name, series, sdf.format(lastModTime.getTime())));
 
-						final DataSeriesInfo dsi = new DataSeriesInfo(series);
+						final DataSeriesInfo dsi = new DataSeriesInfo(series, new DateTime());
 
 						if ((dsi != null) && (dsi.getTitle() != null)) {
 
 							dsi.setType(ldsi.getType().toString());
-							dsi.setRefChart(ldsi.getRefChart());
 
 							dsList.add(dsi);
 
@@ -205,7 +205,7 @@ public class UpdateFred {
 				try {
 
 					System.out.println("\n" + series);
-					final DataSeriesInfo dsi = new DataSeriesInfo(series);
+					final DataSeriesInfo dsi = new DataSeriesInfo(series, new DateTime());
 					if ((dsi != null) && (dsi.getTitle() != null)) {
 						final DataSeries ds = new DataSeries(series);
 						final String filename = FredCommon.toFullFileName(series, dsi.getTitle());

@@ -9,14 +9,13 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.text.WordUtils;
 
+import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Debug;
-import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -50,7 +49,8 @@ public class CompanyData {
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
-	public static List<CompanyData> companyList = new ArrayList<>();
+	public static List<CompanyData>	companyList	= new ArrayList<>();
+	public static List<CompanyData>	buybackList	= new ArrayList<>();
 
 	private static double	totalMarketCap	= 0.0;
 	private static double	totalBuyBacks		= 0.0;
@@ -185,10 +185,11 @@ public class CompanyData {
 		}
 
 		final List<CompanyData> filteredList = new ArrayList<>();
-		final Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
+		//		final Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
+		final DateTime endDt = new DateTime(2017, DateTime.NOVEMBER, 30);
 		for (final CompanyData cd : companyList) {
-			final Calendar cal = Utils.buildCalendar(cd.eoq);
-			if (cal.after(endCal)) {
+			final DateTime dt = new DateTime(cd.eoq);
+			if (dt.isGreaterThanOrEqual(endDt)) {
 				filteredList.add(cd);
 			}
 		}
@@ -202,6 +203,15 @@ public class CompanyData {
 
 		System.out.printf("Total Buyback Estimate   :  $%sB%n", QuarterlyData.fmt(totalBuyBacks / 1000.0, 2));
 		System.out.printf("Total New Share Estimate :  $%sB%n", QuarterlyData.fmt(totalNewShares / 1000.0, 2));
+
+		try (PrintWriter pw = new PrintWriter("out/buybacks.txt")) {
+			pw.println("Ticker\tShares(M)\tEst Cost(M)");
+			for (final CompanyData cd : buybackList) {
+				final double sc = DerivedData.calcShareChange(cd);
+				final double bbest = Math.abs(sc) * cd.avgPrice;
+				pw.printf("%s\t%.2f\t%.2f%n", cd.ticker, sc, bbest);
+			}
+		}
 
 		final List<CompanyData> spxList = new ArrayList<>();
 		for (final CompanyData cd : companyList) {
@@ -400,6 +410,7 @@ public class CompanyData {
 							final double bbest = Math.abs(sc) * cd.avgPrice;
 							if (sc < 0.0) {
 								totalBuyBacks += bbest;
+								buybackList.add(cd);
 							}
 							else {
 								totalNewShares += bbest;

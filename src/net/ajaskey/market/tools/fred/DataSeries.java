@@ -134,7 +134,7 @@ public class DataSeries {
 		this.setRespKnt("0");
 		this.dtOne = null;
 
-		this.info = new DataSeriesInfo(name);
+		this.info = new DataSeriesInfo(name, new DateTime());
 		try {
 			this.dBuilder = this.dbFactory.newDocumentBuilder();
 		} catch (final ParserConfigurationException e) {

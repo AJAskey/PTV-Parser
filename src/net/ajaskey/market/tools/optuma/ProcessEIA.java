@@ -146,7 +146,7 @@ public class ProcessEIA {
 		try (PrintWriter pw = new PrintWriter(ConvertOHLCV.shortPath + "\\" + fname + ".csv")) {
 			for (final OhlcvData price : list) {
 
-				pw.printf("%s,%.2f%n", price.date, price.close);
+				pw.printf("%s,%.2f%n", price.date.format("yyyy-MM-dd"), price.close);
 			}
 			System.out.println(list.get(list.size() - 1).date);
 
