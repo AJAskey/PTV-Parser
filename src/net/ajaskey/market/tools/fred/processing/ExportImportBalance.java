@@ -25,7 +25,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -36,68 +36,68 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *         SOFTWARE. </p>
  *
  */
-public class HiresSeps {
+public class ExportImportBalance {
 
 	/**
-	 * net.ajaskey.market.tools.fred.findFullName
-	 *
-	 * @param tmp1
-	 * @param files
-	 * @return
-	 */
-	private static String findFullName(final String title, final List<File> files) {
-
-		for (final File file : files) {
-			final String name = file.getName();
-			if (name.startsWith("[JTU")) {
-				if (name.contains("HIL]")) {
-					if (name.contains(title)) {
-						final String ret = file.getName().replace("HIL]", "DIFF]").replace("Hires", "HiresMinusSeparations");
-						return ret;
-					}
-				}
-			}
-		}
-
-		return null;
-	}
-
-	/**
-	 * net.ajaskey.market.tools.fred.main
+	 * net.ajaskey.market.tools.fred.processing.main
 	 *
 	 * @param args
-	 * @throws IOException
-	 * @throws FileNotFoundException
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void main(final String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		final File folder = new File(FredCommon.fredPath);
 
-		final List<String> jtuList = new ArrayList<>();
+		final List<File> izList = new ArrayList<>();
 
 		final String[] ext = new String[] { "csv" };
+
 		final List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
+
 		for (final File file : files) {
-			final String name = file.getName();
-			if (name.startsWith("JTU")) {
-				jtuList.add(name);
+
+			final String name = file.getName().trim();
+			if (name.startsWith("[IZ")) {
+				izList.add(file);
+			}
+
+		}
+
+		for (File fiz : izList) {
+		//	System.out.println(fiz.getAbsolutePath());
+			String iy = fiz.getName().replace("IZ", "IY").replace("Import", "Export");
+			File fiy = new File(folder.getAbsolutePath() + "\\" + iy);
+			if (fiy.exists()) {
+			//	System.out.println("  " + fiy.getAbsolutePath());
+				final String tmp = iy.replace("Export Price Index", "Export minus Import Trade Balance");
+				int idx = tmp.indexOf('-');
+				String fullname = tmp;
+				if (idx > 0) {
+					fullname = tmp.substring(idx + 1).trim();
+				}
+				System.out.println("    " + fullname);
+				process(fiy, fiz, fullname);
+			} else {
+				//System.out.println(fiy.getName());
 			}
 		}
 
-		for (final String s1 : jtuList) {
-			if (s1.contains("HIL.csv")) {
-				final String tmp1 = s1.replace("HIL.csv", "").trim();
-				for (final String s2 : jtuList) {
-					if (s2.contains("TSL.csv")) {
-						final String tmp2 = s2.replace("TSL.csv", "");
-						if (tmp2.equals(tmp1)) {
-							final String fullname = HiresSeps.findFullName(tmp1, files);
-							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.SUBTRACT,1.0);
-						}
-					}
-				}
-			}
-		}
 	}
+
+	/**
+	 * net.ajaskey.market.tools.fred.processing.process
+	 *
+	 * @param fiz
+	 * @param fiy
+	 * @param fullname 
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
+	 */
+	private static void process(File fiz, File fiy, String fullname) throws FileNotFoundException, IOException {
+
+		 IngestOptumaFile.process(fiz.getAbsolutePath(),fiy.getAbsolutePath(), fullname, IngestOptumaFile.SUBTRACT, 1.0);
+
+	}
+
 }

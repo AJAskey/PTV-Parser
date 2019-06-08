@@ -66,6 +66,14 @@ public class FredCommon {
 
 	public static List<DataSeriesInfo> legacyDsi = null;
 
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.addSeries
+	 *
+	 * @param allSeries
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public static void addSeries(final List<DataSeriesInfo> allSeries) throws FileNotFoundException, IOException {
 
 		final List<String> data = new ArrayList<>();
@@ -92,6 +100,36 @@ public class FredCommon {
 			}
 		}
 
+	}
+	
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.findFullName
+	 *
+	 * @param title
+	 * @param files
+	 * @return
+	 */
+	public static String findFullName(final String title, final List<File> files, String startswithStr, String containsStr, String rep1, String rep2) {
+
+		for (final File file : files) {
+
+			final String name = file.getName();
+
+			if (name.startsWith(startswithStr)) {
+
+				if (name.contains(containsStr)) {
+
+					if (name.contains(title)) {
+
+						final String ret = file.getName().replace(rep1, rep2);
+						return ret;
+					}
+				}
+			}
+		}
+
+		return null;
 	}
 
 	/**
@@ -526,6 +564,9 @@ public class FredCommon {
 				uniqCodes.add(code);
 			}
 		}
+		
+		// Always download
+		uniqCodes.add("SP500");
 
 		final List<String> ret = new ArrayList<>(uniqCodes);
 		return ret;

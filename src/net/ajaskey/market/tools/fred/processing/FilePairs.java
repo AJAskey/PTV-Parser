@@ -1,10 +1,7 @@
 
 package net.ajaskey.market.tools.fred.processing;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import net.ajaskey.market.tools.fred.FredCommon;
+import java.io.File;
 
 /**
  * This class...
@@ -20,7 +17,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -31,20 +28,27 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *         SOFTWARE. </p>
  *
  */
-public class WagesPerCapita {
+public class FilePairs {
+
+	public File	file1;
+	public File	file2;
+	public File	outfile;
+
+	public final String	file1Name;
+	public final String	file2Name;
 
 	/**
-	 * net.ajaskey.market.tools.fred.processing.main
+	 * This method serves as a constructor for the class.
 	 *
-	 * @param args
-	 * @throws IOException
-	 * @throws FileNotFoundException
 	 */
-	public static void main(final String[] args) throws FileNotFoundException, IOException {
+	public FilePairs(String f1name, String f2name, String outname) {
 
-		IngestOptumaFile.process(FredCommon.fredPath + "A576RC1.csv", FredCommon.fredPath + "CNP16OV.csv", "US Workers Wages per Capita.csv",
-		    IngestOptumaFile.DIVIDE, 1.0);
+		file1 = new File(f1name);
+		file2 = new File(f2name);
+		outfile = new File(outname);
 
+		file1Name = f1name;
+		file2Name = f2name;
 	}
 
 }

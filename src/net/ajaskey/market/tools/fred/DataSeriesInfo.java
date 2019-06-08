@@ -217,8 +217,10 @@ public class DataSeriesInfo {
 			this.units = fld[4].trim();
 			this.setType(fld[5].trim());
 			this.lastObservation = null;
-			this.lastUpdate = null;
-			this.fileDt = null;
+
+			this.fileDt = new DateTime(fld[6].trim(), "dd-MMM-yyyy");
+			this.lastUpdate = new DateTime(fld[7].trim(), "dd-MMM-yyyy");
+
 			this.seasonalAdjustment = "";
 			this.timeOffset = 0;
 		}
@@ -465,7 +467,7 @@ public class DataSeriesInfo {
 	public String toCsvString() {
 
 		final String ret = this.name + Utils.TAB + this.title + Utils.TAB + this.frequency + Utils.TAB + this.units + Utils.TAB
-		    + this.seasonalAdjustment + Utils.TAB + this.lastUpdate;
+		    + this.seasonalAdjustment + Utils.TAB + this.fileDt + Utils.TAB + this.lastUpdate;
 		return ret;
 	}
 

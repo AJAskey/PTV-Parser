@@ -617,6 +617,19 @@ public class Reports {
 			}
 		}
 
+		Collections.sort(zombieList, new SortScore());
+
+		final List<CompanyData> finalZombieList = new ArrayList<>();
+		int knt = 0;
+		for (final CompanyData cd : zombieList) {
+			if (knt++ < 50) {
+				finalZombieList.add(cd);
+			}
+			else {
+				break;
+			}
+		}
+
 		try (PrintWriter pw = new PrintWriter("out/Zombies.txt")) {
 
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
@@ -624,7 +637,7 @@ public class Reports {
 
 			pw.printf("%nList of tickers with Cash from Operations less than Working Capital deficit.%n");
 			String str = "";
-			for (final CompanyData cd : zombieList) {
+			for (final CompanyData cd : finalZombieList) {
 				System.out.println(cd.ticker);
 				if ((cd.cashData.cashFromOps.getTtm() < cd.workingCapital) && (cd.workingCapital < 0.0)) {
 					str = this.addStr(cd.ticker, str);
@@ -634,7 +647,7 @@ public class Reports {
 
 			pw.printf("%nList of tickers with Current Ratio < %.2f and paying more than %.1f%% of Sales to Interest.%n", 1.0, intToSalesHWM);
 			str = "";
-			for (final CompanyData cd : zombieList) {
+			for (final CompanyData cd : finalZombieList) {
 				System.out.println(cd.ticker);
 				if ((cd.currentRatio < 1.0) && (cd.interestRate > intToSalesHWM)) {
 					str = this.addStr(cd.ticker, str);
@@ -644,7 +657,7 @@ public class Reports {
 
 			pw.printf("%nList of tickers with FCF + Working Capital less than 0.%n*Paid a dividend -- may need to cut dividend.%n");
 			str = "";
-			for (final CompanyData cd : zombieList) {
+			for (final CompanyData cd : finalZombieList) {
 				String div = "";
 				if ((cd.freeCashFlow + cd.workingCapital) < 0.0) {
 					if (cd.id.dividend.getTtm() > 0.0) {
@@ -657,7 +670,7 @@ public class Reports {
 
 			pw.printf("%nList of tickers with negative Cash from Ops and Cash Flow with no Shareholder Equity.%n");
 			str = "";
-			for (final CompanyData cd : zombieList) {
+			for (final CompanyData cd : finalZombieList) {
 				if ((cd.cashData.cashFromOps.getTtm() < 0.0) && (cd.bsd.equity.getMostRecent() < 0.0) && (cd.cashFlow < 0.0)) {
 					str = this.addStr(cd.ticker, str);
 				}
@@ -666,7 +679,7 @@ public class Reports {
 
 			pw.printf("%nList of tickers with big buybacks and an available cash flow deficit.%n");
 			str = "";
-			for (final CompanyData cd : zombieList) {
+			for (final CompanyData cd : finalZombieList) {
 
 				final double sc = DerivedData.calcShareChange(cd);
 				if (sc < -0.25) {
@@ -682,11 +695,9 @@ public class Reports {
 			pw.println("QoQ : this quarter versus same quarter a year ago.");
 			pw.println("YoY : last 12m versus 12m a year ago.\n\n--------------------------");
 
-			Collections.sort(zombieList, new SortScore());
-
-			int knt = 1;
+			knt = 1;
 			try (PrintWriter pwCode = new PrintWriter("out/zombie-list.txt")) {
-				for (final CompanyData cd : zombieList) {
+				for (final CompanyData cd : finalZombieList) {
 
 					final String state = this.getState(cd);
 					pw.printf("%nRank : %d%n", knt++);

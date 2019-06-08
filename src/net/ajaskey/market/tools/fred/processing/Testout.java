@@ -9,7 +9,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
 /**
  * This class...
  *
- * @author Andy <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
+ * @author aja <p> PTV-Parser Copyright (c) 2015, Andy Askey. All rights
  *         reserved. </p> <p> Permission is hereby granted, free of charge, to
  *         any person obtaining a copy of this software and associated
  *         documentation files (the "Software"), to deal in the Software without
@@ -31,7 +31,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *         SOFTWARE. </p>
  *
  */
-public class WagesPerCapita {
+public class Testout {
 
 	/**
 	 * net.ajaskey.market.tools.fred.processing.main
@@ -42,8 +42,7 @@ public class WagesPerCapita {
 	 */
 	public static void main(final String[] args) throws FileNotFoundException, IOException {
 
-		IngestOptumaFile.process(FredCommon.fredPath + "A576RC1.csv", FredCommon.fredPath + "CNP16OV.csv", "US Workers Wages per Capita.csv",
-		    IngestOptumaFile.DIVIDE, 1.0);
+		IngestOptumaFile.process(FredCommon.fredPath + "GDP.csv", FredCommon.fredPath + "sp500.csv", "testout.csc", IngestOptumaFile.DIVIDE, 1.0);
 
 	}
 

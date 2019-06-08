@@ -58,10 +58,10 @@ public class FredAvsB {
 
 			try {
 
-				final String fullname = String.format("%s vs %s.csv", fileOnes.get(i), fileTwos.get(i));
+				final String fullname = String.format("%s over %s.csv", fileOnes.get(i), fileTwos.get(i));
 
 				IngestOptumaFile.process(FredCommon.fredPath + fileOnes.get(i) + ".csv", FredCommon.fredPath + fileTwos.get(i) + ".csv", fullname,
-				    IngestOptumaFile.DIVIDE);
+				    IngestOptumaFile.DIVIDE, 1.0);
 
 			} catch (final FileNotFoundException e) {
 				// TODO Auto-generated catch block

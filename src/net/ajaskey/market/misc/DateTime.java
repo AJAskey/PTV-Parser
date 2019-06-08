@@ -208,6 +208,24 @@ public class DateTime {
 	}
 
 	/**
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param trim
+	 * @param string
+	 */
+	public DateTime(String value, String fmt) {
+
+		this.cal = Calendar.getInstance();
+		try {
+			this.sdf = new SimpleDateFormat(fmt);
+			Date d = this.sdf.parse(value);
+			this.cal.setTime(d);
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
 	 *
 	 * net.ajaskey.market.misc.add
 	 *
@@ -522,7 +540,7 @@ public class DateTime {
 	 */
 	public DateTime parse(final String src, final String fmt) {
 
-		DateTime ret = null;
+		DateTime ret = new DateTime();
 		try {
 			final SimpleDateFormat sdf = new SimpleDateFormat(fmt);
 			final Date d = sdf.parse(src);

@@ -100,6 +100,7 @@ public class CompanyData {
 		CompanyData.readMiscData("data/US-STOCKS-MISC.TXT");
 
 		for (final CompanyData cd : companyList) {
+			//System.out.println(cd);
 			cd.partOfTotalCap = cd.marketCap / totalMarketCap;
 			final double te = (cd.id.epsDilCont.getMostRecent() * Math.min(0.01, cd.partOfTotalCap)) * 100.0;
 			totalEps += te;

@@ -1,15 +1,20 @@
 
-package net.ajaskey.market.tools.fred.processing;
+package net.ajaskey.market.tools.fred;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
-import net.ajaskey.market.tools.fred.FredCommon;
+import net.ajaskey.market.misc.DateTime;
+import net.ajaskey.market.misc.Debug;
 
 /**
  * This class...
@@ -25,7 +30,7 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *
  *         The above copyright notice and this permission notice shall be
  *         included in all copies or substantial portions of the Software. </p>
- *
+ * 
  *         <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -36,30 +41,32 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *         SOFTWARE. </p>
  *
  */
-public class HiresSeps {
+public class UpdateInfoSeriesFile {
 
-	/**
-	 * net.ajaskey.market.tools.fred.findFullName
-	 *
-	 * @param tmp1
-	 * @param files
-	 * @return
-	 */
-	private static String findFullName(final String title, final List<File> files) {
+	public static boolean validName(String name) {
 
-		for (final File file : files) {
-			final String name = file.getName();
-			if (name.startsWith("[JTU")) {
-				if (name.contains("HIL]")) {
-					if (name.contains(title)) {
-						final String ret = file.getName().replace("HIL]", "DIFF]").replace("Hires", "HiresMinusSeparations");
-						return ret;
-					}
-				}
-			}
+		boolean ret = true;
+
+		if (name.contains("TREAST-")) {
+			ret = false;
+		}
+		else if (name.contains("Export minus Import")) {
+			ret = false;
+		}
+		else if (name.contains("US Workers Wages per Capita")) {
+			ret = false;
+		}
+		else if (name.contains("SPX Growth vs")) {
+			ret = false;
+		}
+		else if (name.contains("GDP vs ")) {
+			ret = false;
+		}
+		else if (name.contains("DIFF") && name.contains("JTU")) {
+			ret = false;
 		}
 
-		return null;
+		return ret;
 	}
 
 	/**
@@ -69,35 +76,57 @@ public class HiresSeps {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(final String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+
+		Debug.init("fred-updatefile.dbg");
 
 		final File folder = new File(FredCommon.fredPath);
+		List<DataSeriesInfo> oldList = FredCommon.readSeriesInfo("fred-series-info.txt");
 
-		final List<String> jtuList = new ArrayList<>();
+		for (DataSeriesInfo dsi : oldList) {
+			System.out.println(dsi.toCsvString());
+		}
+
+		final Set<String> uniqCodes = new HashSet<>();
 
 		final String[] ext = new String[] { "csv" };
 		final List<File> files = (List<File>) FileUtils.listFiles(folder, ext, false);
 		for (final File file : files) {
 			final String name = file.getName();
-			if (name.startsWith("JTU")) {
-				jtuList.add(name);
+			//Ignore derived TREAST files
+			if (validName(name)) {
+				final String f1 = name.replace(".csv", "");
+				final String f2 = f1.replace("[", "").trim();
+				final int idx = f2.indexOf("]");
+				String f3 = f2;
+				if (idx > 0) {
+					f3 = f2.substring(0, idx).trim();
+				}
+				uniqCodes.add(f3);
 			}
 		}
 
-		for (final String s1 : jtuList) {
-			if (s1.contains("HIL.csv")) {
-				final String tmp1 = s1.replace("HIL.csv", "").trim();
-				for (final String s2 : jtuList) {
-					if (s2.contains("TSL.csv")) {
-						final String tmp2 = s2.replace("TSL.csv", "");
-						if (tmp2.equals(tmp1)) {
-							final String fullname = HiresSeps.findFullName(tmp1, files);
-							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.SUBTRACT,1.0);
-						}
-					}
+		final List<String> codes = new ArrayList<>(uniqCodes);
+		Collections.sort(codes);
+
+		for (String s : codes) {
+			//System.out.println(s);
+			boolean found = false;
+			for (DataSeriesInfo ol : oldList) {
+				if (ol.getName().equalsIgnoreCase(s)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				System.out.println("New found : " + s);
+				DataSeriesInfo dsi = new DataSeriesInfo(s, new DateTime());
+				if (dsi != null) {
+					oldList.add(dsi);
 				}
 			}
 		}
+
 	}
+
 }

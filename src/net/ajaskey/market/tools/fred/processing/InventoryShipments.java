@@ -38,27 +38,15 @@ import net.ajaskey.market.tools.fred.FredCommon;
  */
 public class InventoryShipments {
 
-	private static String findFullName(final String title, final List<File> files) {
+	/**
+	 * 
+	 * net.ajaskey.market.tools.fred.processing.findFullName
+	 *
+	 * @param title
+	 * @param files
+	 * @return
+	 */
 
-		for (final File file : files) {
-
-			final String name = file.getName();
-
-			if (name.startsWith("[U")) {
-
-				if (name.contains("TI]")) {
-
-					if (name.contains(title)) {
-
-						final String ret = file.getName().replace("Total Inventories", "Inventory to Shipments");
-						return ret;
-					}
-				}
-			}
-		}
-
-		return null;
-	}
 
 	/**
 	 *
@@ -99,9 +87,9 @@ public class InventoryShipments {
 						final String tmp2 = s2.replace("VS.csv", "");
 						if (tmp2.equals(tmp1)) {
 
-							final String fullname = InventoryShipments.findFullName(tmp1, files);
+							final String fullname = FredCommon.findFullName(tmp1, files,"[U","TI]", "Total Inventories", "Inventory to Shipments");
 							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE);
+							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE, 1.0);
 
 						}
 					}

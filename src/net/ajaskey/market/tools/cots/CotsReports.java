@@ -201,7 +201,7 @@ public class CotsReports {
 			pwOther.println(header);
 
 			for (final CotsData cd : CotsData.cotsList) {
-				final String theDate = cd.date.toString();
+				final String theDate = cd.date.format("yyyy-MM-dd");
 				pwDealer.printf("%s,%d,%d,%d%n", theDate, cd.dealer.longPos, cd.dealer.shortPos, cd.dealer.delta);
 				pwPM.printf("%s,%d,%d,%d%n", theDate, cd.pm.longPos, cd.pm.shortPos, cd.pm.delta);
 				pwLevered.printf("%s,%d,%d,%d%n", theDate, cd.levered.longPos, cd.levered.shortPos, cd.levered.delta);

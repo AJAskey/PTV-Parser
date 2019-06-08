@@ -67,7 +67,7 @@ public class IngestOptumaFile {
 		final File f2 = new File("C:\\Data\\MA\\CSV Data\\Fred-Download\\TTLCON.csv");
 
 		final IngestOptumaFile iof = new IngestOptumaFile(f2, f1);
-		final List<OptumaFileData> mergedData = iof.processFiles(DIVIDE);
+		final List<OptumaFileData> mergedData = iof.processFiles(DIVIDE, 1.0);
 
 		final String fname = "C:\\Data\\MA\\CSV Data\\Fred-Download\\GDP vs TTLCON.csv";
 
@@ -90,14 +90,13 @@ public class IngestOptumaFile {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void process(final String f1name, final String f2name, final String title, final int operation)
+	public static void process(final String f1name, final String f2name, final String title, final int operation, double scaler)
 	    throws FileNotFoundException, IOException {
 
 		System.out.printf("%s\t%s%n", f1name, f2name);
 		final IngestOptumaFile iof = new IngestOptumaFile(f1name, f2name);
-		final List<OptumaFileData> resultsList = iof.processFiles(operation);
+		final List<OptumaFileData> resultsList = iof.processFiles(operation, scaler);
 
-		
 		final String fname = String.format("%s%s", FredCommon.fredPath, title);
 		try (PrintWriter pw = new PrintWriter(fname)) {
 			for (final OptumaFileData ofd : resultsList) {
@@ -152,10 +151,18 @@ public class IngestOptumaFile {
 
 	List<OptumaFileData> diffList = new ArrayList<>();
 
-	File file1 = null;
+	File	file1	= null;
+	File	file2	= null;
 
-	File file2 = null;
-
+	/**
+	 * 
+	 * This method serves as a constructor for the class.
+	 *
+	 * @param f1
+	 * @param f2
+	 * @param string
+	 * @param subtract2
+	 */
 	private IngestOptumaFile(final File f1, final File f2) {
 
 		this.file1 = f1;
@@ -241,11 +248,12 @@ public class IngestOptumaFile {
 	 * net.ajaskey.market.tools.fred.processing.processFiles
 	 *
 	 * @param operation
+	 * @param scaler
 	 * @return
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	private List<OptumaFileData> processFiles(final int operation) throws FileNotFoundException, IOException {
+	private List<OptumaFileData> processFiles(final int operation, double scaler) throws FileNotFoundException, IOException {
 
 		final List<OptumaFileData> resultList = new ArrayList<>();
 
@@ -302,7 +310,7 @@ public class IngestOptumaFile {
 				} catch (final Exception e) {
 					result = 0.0;
 				}
-				final OptumaFileData ofd = new OptumaFileData(this.f1List.get(i).date, result);
+				final OptumaFileData ofd = new OptumaFileData(this.f1List.get(i).date, (result * scaler));
 				resultList.add(ofd);
 			}
 		}

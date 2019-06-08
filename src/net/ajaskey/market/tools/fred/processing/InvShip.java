@@ -93,7 +93,7 @@ public class InvShip {
 						if (tmp2.equals(tmp1)) {
 							final String fullname = InvShip.findFullName(tmp1, files);
 							System.out.println(fullname);
-							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE);
+							IngestOptumaFile.process(FredCommon.fredPath + s1, FredCommon.fredPath + s2, fullname, IngestOptumaFile.DIVIDE, 1.0);
 						}
 					}
 				}

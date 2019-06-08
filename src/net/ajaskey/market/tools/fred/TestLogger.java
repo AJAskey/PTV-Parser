@@ -1,10 +1,7 @@
 
-package net.ajaskey.market.tools.fred.processing;
+package net.ajaskey.market.tools.fred;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import net.ajaskey.market.tools.fred.FredCommon;
+import net.ajaskey.market.misc.Debug;
 
 /**
  * This class...
@@ -31,19 +28,18 @@ import net.ajaskey.market.tools.fred.FredCommon;
  *         SOFTWARE. </p>
  *
  */
-public class WagesPerCapita {
+public class TestLogger {
 
 	/**
-	 * net.ajaskey.market.tools.fred.processing.main
+	 * net.ajaskey.market.tools.fred.main
 	 *
 	 * @param args
-	 * @throws IOException
-	 * @throws FileNotFoundException
 	 */
-	public static void main(final String[] args) throws FileNotFoundException, IOException {
+	public static void main(final String[] args) {
 
-		IngestOptumaFile.process(FredCommon.fredPath + "A576RC1.csv", FredCommon.fredPath + "CNP16OV.csv", "US Workers Wages per Capita.csv",
-		    IngestOptumaFile.DIVIDE, 1.0);
+		Debug.init("testlogfile.log");
+
+		Debug.log("This is a test");
 
 	}
 
