@@ -198,6 +198,7 @@ public class CompanyData {
 		final Reports reports = new Reports(filteredList);
 		reports.WriteBestFinancial();
 		reports.WriteZombies();
+		reports.WriteDividendCutters();
 
 		final Reports tdReport = new Reports(companyList);
 		tdReport.WriteCompanyReports();

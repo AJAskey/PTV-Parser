@@ -192,6 +192,7 @@ public class Reports {
 	 * net.ajaskey.market.tools.SIP.print1QtrData
 	 *
 	 * @param pw
+	 * @param expanded
 	 * @param q1
 	 * @param heading
 	 */
@@ -310,6 +311,34 @@ public class Reports {
 	//
 	//	}
 
+	private void printWorkingCapital(final PrintWriter pw, final CompanyData cd, boolean expanded) {
+
+		if (cd.bsd.currentAssets.getMostRecent() > 0.0) {
+			pw.println(NL + cd.bsd.currentAssets.fmtGrowth1Q("Current Assets"));
+			//		final double ca = cd.bsd.cash.getMostRecent() + cd.bsd.acctReceiveable.getMostRecent() + cd.bsd.stInvestments.getMostRecent()
+			//+ cd.bsd.inventory.getMostRecent() + cd.bsd.otherAssets.getMostRecent();
+			if (expanded) {
+				pw.println(cd.bsd.cash.fmtGrowth1Q("  Cash"));
+				pw.println(cd.bsd.acctReceiveable.fmtGrowth1Q("  Acct Rx"));
+				pw.println(cd.bsd.stInvestments.fmtGrowth1Q("  ST Invest"));
+				pw.println(cd.bsd.inventory.fmtGrowth1Q("  Inventory"));
+				pw.println(cd.bsd.otherAssets.fmtGrowth1Q("  Other"));
+			} //	final double cl = cd.bsd.acctPayable.getMostRecent() + cd.bsd.stDebt.getMostRecent() + cd.bsd.otherCurrLiab.getMostRecent();
+			pw.println(cd.bsd.currLiab.fmtGrowth1Q("Current Liabs"));
+			if (expanded) {
+				pw.println(cd.bsd.acctPayable.fmtGrowth1Q("  Acct Pay"));
+				pw.println(cd.bsd.stDebt.fmtGrowth1Q("  ST Debt"));
+				pw.println(cd.bsd.otherCurrLiab.fmtGrowth1Q("  Other"));
+			}
+		}
+		else {
+			pw.printf("%n\tCurrent Assets    : %s M%n", QuarterlyData.fmt(cd.sumCurrAssets, 13));
+			pw.printf("\tCurrent Liabs     : %s M%n", QuarterlyData.fmt(cd.sumCurrLiab, 13));
+		}
+		pw.printf("\tWorking Capital   : %s M (Ratio=%.2f)%n", QuarterlyData.fmt((cd.workingCapital), 13), cd.currentRatio);
+		pw.printf("\tWC + FCF          : %s M%n", QuarterlyData.fmt((cd.workingCapital + cd.freeCashFlow), 13));
+	}
+
 	/**
 	 *
 	 * net.ajaskey.market.tools.SIP.printHeaderData
@@ -381,17 +410,9 @@ public class Reports {
 		pw.printf("\t  Cash Flow 12m   : %s M %s%n", QuarterlyData.fmt(cd.netCashFlow + cd.cashData.cashFromInv.getTtm(), 13),
 		    "[Cash from Ops + Cash from Financing + Cash from Investing]");
 
-		pw.println("\n" + cd.bsd.cash.fmtGrowth1Q("Cash Available"));
+		//pw.println("\n" + cd.bsd.cash.fmtGrowth1Q("Cash Available"));
 
-		if (cd.bsd.currentAssets.getMostRecent() > 0.0) {
-			pw.println(NL + cd.bsd.currentAssets.fmtGrowth1Q("Current Assets"));
-			pw.println(cd.bsd.currLiab.fmtGrowth1Q("Current Liabs"));
-		}
-		else {
-			pw.printf("%n\tCurrent Assets    : %s M%n", QuarterlyData.fmt(cd.sumCurrAssets, 13));
-			pw.printf("\tCurrent Liabs     : %s M%n", QuarterlyData.fmt(cd.sumCurrLiab, 13));
-		}
-		pw.printf("\tWorking Capital   : %s M (Ratio=%.2f)%n", QuarterlyData.fmt((cd.workingCapital), 13), cd.currentRatio);
+		printWorkingCapital(pw, cd, true);
 
 		pw.println("\n" + cd.bsd.equity.fmtGrowth1Q("Shareholder Equity"));
 		pw.println(cd.bsd.ltDebt.fmtGrowth1Q("LT Debt"));
@@ -592,6 +613,43 @@ public class Reports {
 		pw.printf("\tAvg Daily Vol     : %s%n", QuarterlyData.ifmt(cd.adv, 13));
 		pw.printf("\tTurnover Float    : %s days%n", QuarterlyData.fmt(cd.turnover, 13));
 
+	}
+
+	public void WriteDividendCutters() throws FileNotFoundException {
+
+		Utils.makeDir("out/CompanyReports");
+
+		final List<CompanyData> noDivList = new ArrayList<>();
+		for (final CompanyData cd : this.companyList) {
+			if (!cd.sector.equalsIgnoreCase("Financials")) {
+//				if (cd.ticker.equalsIgnoreCase("yum")) {
+//					System.out.println(cd);
+//				}
+				if (cd.id.dividend.getTtm() > 0.0) {
+					double wcfcf = cd.workingCapital + cd.freeCashFlow;
+					double div = cd.id.dividend.getTtm() * cd.shares.getTtmAvg();
+					if (wcfcf < div) {
+						cd.zscore = ZombieScore.calculate(cd);
+						noDivList.add(cd);
+					}
+				}
+			}
+		}
+
+		Collections.sort(noDivList, new SortScore());
+
+		try (PrintWriter pw = new PrintWriter("out/DividendCutters.txt")) {
+
+			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
+			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K." + NL);
+
+			for (CompanyData cd : noDivList) {
+				this.printHeaderData(pw, cd);
+				pw.printf("\tZombie Score        : %11.2f%n", cd.zscore.score);
+				pw.println();
+			}
+
+		}
 	}
 
 	/**
