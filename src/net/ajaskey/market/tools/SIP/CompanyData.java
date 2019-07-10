@@ -361,8 +361,8 @@ public class CompanyData {
 						cd.floatShares = QuarterlyData.parseDouble(fld[10].trim());
 						//cd.capEx = QuarterlyData.parseDouble(fld[11].trim());
 						cd.cashFlow = QuarterlyData.parseDouble(fld[12].trim());
-						//cd.cashFromOps = QuarterlyData.parseDouble(fld[13].trim());
-						//cd.cashFromFin = QuarterlyData.parseDouble(fld[14].trim());
+						cd.q0EstGrowth = QuarterlyData.parseDouble(fld[13].trim());
+						cd.y1EstGrowth = QuarterlyData.parseDouble(fld[14].trim());
 						//cd.cashFromInv = QuarterlyData.parseDouble(fld[15].trim());
 						cd.opInc3yrGrowth = QuarterlyData.parseDouble(fld[16].trim());
 						cd.city = fld[17].trim();
@@ -421,6 +421,7 @@ public class CompanyData {
 
 						totalMarketCap += cd.marketCap;
 					}
+					//System.out.println(cd.printMisc(cd.ticker + NL));
 				}
 			}
 		}
@@ -483,11 +484,10 @@ public class CompanyData {
 	public double	floatShares;
 	public double	opInc3yrGrowth;
 	//public double					capEx;
-	public double cashFlow;
-	//	public double					cashFromOps;
-	//	public double					cashFromFin;
-	//	public double					cashFromInv;
-	public QuarterlyData shares;
+	public double					cashFlow;
+	public double					q0EstGrowth;
+	public double					y1EstGrowth;
+	public QuarterlyData	shares;
 
 	// aggregate data
 	public BalanceSheetData	bsd;
@@ -554,8 +554,8 @@ public class CompanyData {
 		this.opInc3yrGrowth = 0.0;
 		this.cashFlow = 0.0;
 		//		this.capEx = 0.0;
-		//		this.cashFromOps = 0.0;
-		//		this.cashFromFin = 0.0;
+		this.q0EstGrowth = 0.0;
+		this.y1EstGrowth = 0.0;
 		//		this.cashFromInv = 0.0;
 		this.shares = new QuarterlyData("shares");
 
@@ -603,13 +603,8 @@ public class CompanyData {
 		this.shares = new QuarterlyData("shares");
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
+	public String printMisc(String ret) {
 
-		String ret = this.ticker + NL;
 		ret += TAB + this.name + NL;
 		ret += TAB + this.exchange + NL;
 		ret += TAB + this.sector + NL;
@@ -640,9 +635,21 @@ public class CompanyData {
 		ret += TAB + "LT Debt to Equity : " + QuarterlyData.fmt(this.ltDebtEquity) + NL;
 		ret += TAB + "ST Debt to OpInc  : " + QuarterlyData.fmt(this.stDebtOpIncome) + NL;
 		ret += TAB + "Debt to Cash      : " + QuarterlyData.fmt(this.debtCash) + NL;
+		ret += TAB + "Q0 Est Growth     : " + QuarterlyData.fmt(this.q0EstGrowth, 15) + NL;
+		ret += TAB + "Y1 Est Growth     : " + QuarterlyData.fmt(this.y1EstGrowth, 15) + NL;
+		return ret;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+
+		String ret = this.ticker + NL;
+		ret += printMisc(ret);
 		ret += this.bsd;
 		ret += this.id;
-		//ret += this.zd;
 
 		return ret;
 	}

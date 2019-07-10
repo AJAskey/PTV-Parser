@@ -205,62 +205,62 @@ public class SipData5 {
 		final DataSet5 totMktCap = DataSet5.sum(mcap, index);
 		totMktCap.mode = DataSet5.dMode.SEQUENTIAL;
 
-		SipData5.write(totSales, prefix + " Sales v4", dates, false);
-		SipData5.write(totEbit, prefix + " EBIT v4", dates, false);
-		SipData5.write(totTax, prefix + " Taxes v4", dates, false);
-		SipData5.write(totIncome, prefix + " Income for EPS v4", dates, false);
-		SipData5.write(totCops, prefix + " Cash from Operations v4", dates, false);
-		SipData5.write(totCfin, prefix + " Cash from Financing v4", dates, false);
-		SipData5.write(totCinv, prefix + " Cash from Investing v4", dates, false);
-		SipData5.write(totDivDollar, prefix + " Dividends v4", dates, false);
-		SipData5.write(totShr, prefix + " Shares v4", dates, false);
-		SipData5.write(totCash, prefix + " Cash v4", dates, false);
-		SipData5.write(totAssets, prefix + " Assets v4", dates, false);
-		SipData5.write(totLiab, prefix + " Liabilities v4", dates, false);
-		SipData5.write(totAccRx, prefix + " Accounts Receivable v4", dates, false);
-		SipData5.write(totAccTx, prefix + " Accounts Payable v4", dates, false);
-		SipData5.write(totGoodwill, prefix + " Goodwill v4", dates, false);
-		SipData5.write(totLtDebt, prefix + " LT Debt v4", dates, false);
-		SipData5.write(totCapEx, prefix + " CapEx v4", dates, false);
-		SipData5.write(totEquity, prefix + " Common Equity v4", dates, false);
-		SipData5.write(totInterest, prefix + " Interest Paid v4", dates, false);
-		SipData5.write(totResDev, prefix + " Research and Development v4", dates, false);
-		SipData5.write(totBvDollar, prefix + " Book Value v4", dates, false);
-		SipData5.write(totBVminusGW, prefix + " Book Value less Goodwill v4", dates, false);
-		SipData5.write(totMktCap, prefix + " Market Cap v4", dates, false);
-		SipData5.write(totInventory, prefix + " Inventory v4", dates, false);
-		SipData5.write(totEnterprise, prefix + " Enterprise v4", dates, false);
-		SipData5.write(totFcf, prefix + " FCFps v4", dates, false);
+		SipData5.write(totSales, prefix + " Sales", dates, false);
+		SipData5.write(totEbit, prefix + " EBIT", dates, false);
+		SipData5.write(totTax, prefix + " Taxes", dates, false);
+		SipData5.write(totIncome, prefix + " Income for EPS", dates, false);
+		SipData5.write(totCops, prefix + " Cash from Operations", dates, false);
+		SipData5.write(totCfin, prefix + " Cash from Financing", dates, false);
+		SipData5.write(totCinv, prefix + " Cash from Investing", dates, false);
+		SipData5.write(totDivDollar, prefix + " Dividends", dates, false);
+		SipData5.write(totShr, prefix + " Shares", dates, false);
+		SipData5.write(totCash, prefix + " Cash", dates, false);
+		SipData5.write(totAssets, prefix + " Assets", dates, false);
+		SipData5.write(totLiab, prefix + " Liabilities", dates, false);
+		SipData5.write(totAccRx, prefix + " Accounts Receivable", dates, false);
+		SipData5.write(totAccTx, prefix + " Accounts Payable", dates, false);
+		SipData5.write(totGoodwill, prefix + " Goodwill", dates, false);
+		SipData5.write(totLtDebt, prefix + " LT Debt", dates, false);
+		SipData5.write(totCapEx, prefix + " CapEx", dates, false);
+		SipData5.write(totEquity, prefix + " Common Equity", dates, false);
+		SipData5.write(totInterest, prefix + " Interest Paid", dates, false);
+		SipData5.write(totResDev, prefix + " Research and Development", dates, false);
+		SipData5.write(totBvDollar, prefix + " Book Value", dates, false);
+		SipData5.write(totBVminusGW, prefix + " Book Value less Goodwill", dates, false);
+		SipData5.write(totMktCap, prefix + " Market Cap", dates, false);
+		SipData5.write(totInventory, prefix + " Inventory", dates, false);
+		SipData5.write(totEnterprise, prefix + " Enterprise", dates, false);
+		SipData5.write(totFcf, prefix + " FCFps", dates, false);
 
 		//-----------------------------------------
 
 		final DataSet5 totMktCapShr = DataSet5.ratio(totMktCap, totShr);
-		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares v4", dates, false);
+		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares", dates, false);
 
 		final DataSet5 totMargin = DataSet5.scale(DataSet5.ratio(totIncome, totSales), 100.0);
-		SipData5.write(totMargin, prefix + " Margin v4", dates, false);
+		SipData5.write(totMargin, prefix + " Margin", dates, false);
 
 		final DataSet5 totROE = DataSet5.scale(DataSet5.ratio(totIncome, totEquity), 100.0);
-		SipData5.write(totROE, prefix + " ROE v4", dates, false);
+		SipData5.write(totROE, prefix + " ROE", dates, false);
 
 		final DataSet5 totTaxMargin = DataSet5.scale(DataSet5.ratio(totTax, totSales), 100.0);
-		SipData5.write(totTaxMargin, prefix + " Tax Margin v4", dates, false);
+		SipData5.write(totTaxMargin, prefix + " Tax Margin", dates, false);
 
 		final DataSet5 totBVtoCap = DataSet5.scale(DataSet5.ratio(totBvDollar, totMktCap), 100.0);
-		SipData5.write(totBVtoCap, prefix + " BV over Market Cap v4", dates, false);
+		SipData5.write(totBVtoCap, prefix + " BV over Market Cap", dates, false);
 
 		final DataSet5 totBVmGWtoCap = DataSet5.scale(DataSet5.ratio(totBVminusGW, totMktCap), 100.0);
-		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap v4", dates, false);
+		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap", dates, false);
 
 		final DataSet5 totGWtoAsset = DataSet5.scale(DataSet5.ratio(totGoodwill, totAssets), 100.0);
-		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets v4", dates, false);
+		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets", dates, false);
 
-		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales v4", 100000000000.0);
-		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
-		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
-		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
+		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales", 100000000000.0);
+		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income", 10000000000.0);
+		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash", 10000000000.0);
+		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV", 100000000000.0);
 
-		SipData5.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates, dsPrices);
+		SipData5.writeEps(totIncome, totShr, prefix + " EPS", prefix + " EPS Annual", prefix + " PE", dates, dsPrices);
 
 	}
 
@@ -361,32 +361,32 @@ public class SipData5 {
 		//-----------------------------------------
 
 		//		final DataSet5 totMktCapShr = DataSet5.ratio(totMktCap, totShr);
-		//		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares v4", dates, false);
+		//		SipData5.write(totMktCapShr, prefix + " Market Cap to Shares", dates, false);
 		//
 		//		final DataSet5 totMargin = DataSet5.scale(DataSet5.ratio(totIncome, totSales), 100.0);
-		//		SipData5.write(totMargin, prefix + " Margin v4", dates, false);
+		//		SipData5.write(totMargin, prefix + " Margin", dates, false);
 		//
 		//		final DataSet5 totROE = DataSet5.scale(DataSet5.ratio(totIncome, totEquity), 100.0);
-		//		SipData5.write(totROE, prefix + " ROE v4", dates, false);
+		//		SipData5.write(totROE, prefix + " ROE", dates, false);
 		//
 		//		final DataSet5 totTaxMargin = DataSet5.scale(DataSet5.ratio(totTax, totSales), 100.0);
-		//		SipData5.write(totTaxMargin, prefix + " Tax Margin v4", dates, false);
+		//		SipData5.write(totTaxMargin, prefix + " Tax Margin", dates, false);
 		//
 		//		final DataSet5 totBVtoCap = DataSet5.scale(DataSet5.ratio(totBvDollar, totMktCap), 100.0);
-		//		SipData5.write(totBVtoCap, prefix + " BV over Market Cap v4", dates, false);
+		//		SipData5.write(totBVtoCap, prefix + " BV over Market Cap", dates, false);
 		//
 		//		final DataSet5 totBVmGWtoCap = DataSet5.scale(DataSet5.ratio(totBVminusGW, totMktCap), 100.0);
-		//		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap v4", dates, false);
+		//		SipData5.write(totBVmGWtoCap, prefix + " BV Minus Goodwill over Market Cap", dates, false);
 		//
 		//		final DataSet5 totGWtoAsset = DataSet5.scale(DataSet5.ratio(totGoodwill, totAssets), 100.0);
-		//		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets v4", dates, false);
+		//		SipData5.write(totGWtoAsset, prefix + " Goodwill over Assets", dates, false);
 		//
-		//		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales v4", 100000000000.0);
-		//		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income v4", 10000000000.0);
-		//		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash v4", 10000000000.0);
-		//		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV v4", 100000000000.0);
+		//		SipData5.writePriceToDate(dates, totSales, prefix + " Price to Sales", 100000000000.0);
+		//		SipData5.writePriceToDate(dates, totIncome, prefix + " Price to Income", 10000000000.0);
+		//		SipData5.writePriceToDate(dates, totCash, prefix + " Price to Cash", 10000000000.0);
+		//		SipData5.writePriceToDate(dates, totBvDollar, prefix + " Price to BV", 100000000000.0);
 		//
-		//		SipData5.writeEps(totIncome, totShr, prefix + " EPS v4", prefix + " EPS Annual v4", prefix + " PE v4", dates,
+		//		SipData5.writeEps(totIncome, totShr, prefix + " EPS", prefix + " EPS Annual", prefix + " PE", dates,
 		//		    dsPrices);
 
 	}

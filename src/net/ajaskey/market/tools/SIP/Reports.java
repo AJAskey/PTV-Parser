@@ -41,9 +41,10 @@ public class Reports {
 
 	private static final String NL = "\n";
 
-	private static final double	intToSalesHWM	= 15.0;
-	private static final double	cratioLWM			= 0.75;
-	private static final double	lteHWM				= 5.0;
+	private static final double	intToSalesHWM		= 15.0;
+	private static final double	cratioLWM				= 0.75;
+	private static final double	lteHWM					= 5.0;
+	private static final double	supplyDemandLWM	= 150.0;
 
 	/**
 	 *
@@ -414,11 +415,15 @@ public class Reports {
 
 		printWorkingCapital(pw, cd, true);
 
-		pw.println("\n" + cd.bsd.equity.fmtGrowth1Q("Shareholder Equity"));
+		pw.println("\n" + cd.bsd.equity.fmtGrowth1Q("Sharehldr Equity"));
+		pw.println(cd.bsd.assetsMinusGW.fmtGrowth1Q("Tangible Assets"));
 		pw.println(cd.bsd.ltDebt.fmtGrowth1Q("LT Debt"));
 
 		if (cd.bsd.equity.getMostRecent() > 0.0) {
 			pw.printf("\tLT Debt to Equity : %s%n", QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent(), 13));
+		}
+		else {
+			pw.printf("\tLT Debt Tan Asset : %s%n", QuarterlyData.fmt(cd.bsd.ltDebt.getMostRecent() / cd.bsd.assetsMinusGW.getMostRecent(), 13));
 		}
 
 		pw.printf("%n\tLast Price          : %s : (52wkHi= %.2f %%offHigh=%d%%)%n", QuarterlyData.fmt(cd.lastPrice, 11), cd.high52wk,
@@ -528,7 +533,7 @@ public class Reports {
 					continue;
 				}
 
-				if (!Reports.checkMaxValue(cd.ticker, " SupplyDemand", cd.turnover, 90.0)) {
+				if (!Reports.checkMaxValue(cd.ticker, " SupplyDemand", cd.turnover, supplyDemandLWM)) {
 					continue;
 				}
 
@@ -543,6 +548,8 @@ public class Reports {
 				pw.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
 				pw.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
 				pw.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
+				pw.printf("\tQ0 Est Growth     : %13.2f%%%n", cd.q0EstGrowth);
+				pw.printf("\tY1 Est Growth     : %13.2f%%%n", cd.y1EstGrowth);
 				pw.println();
 
 				bestList.add(cd);
@@ -587,8 +594,9 @@ public class Reports {
 				pwAll.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
 				pwAll.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
 				pwAll.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
+				pwAll.printf("\tQ0 Est Growth     : %13.2f%%%n", cd.q0EstGrowth);
+				pwAll.printf("\tY1 Est Growth     : %13.2f%%%n", cd.y1EstGrowth);
 				pwAll.println();
-
 			} catch (final FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -622,9 +630,9 @@ public class Reports {
 		final List<CompanyData> noDivList = new ArrayList<>();
 		for (final CompanyData cd : this.companyList) {
 			if (!cd.sector.equalsIgnoreCase("Financials")) {
-//				if (cd.ticker.equalsIgnoreCase("yum")) {
-//					System.out.println(cd);
-//				}
+				//				if (cd.ticker.equalsIgnoreCase("yum")) {
+				//					System.out.println(cd);
+				//				}
 				if (cd.id.dividend.getTtm() > 0.0) {
 					double wcfcf = cd.workingCapital + cd.freeCashFlow;
 					double div = cd.id.dividend.getTtm() * cd.shares.getTtmAvg();
@@ -638,17 +646,32 @@ public class Reports {
 
 		Collections.sort(noDivList, new SortScore());
 
+		List<String> divcutList = new ArrayList<>();
+
 		try (PrintWriter pw = new PrintWriter("out/DividendCutters.txt")) {
 
 			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
-			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K." + NL);
+			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K.");
+			pw.println("These companies will probably need to cut their dividend because of lack of money to pay it." + NL);
 
+			int knt = 0;
 			for (CompanyData cd : noDivList) {
 				this.printHeaderData(pw, cd);
+				pw.printf("\tQ0 Est Growth       : %11.2f%%%n", cd.q0EstGrowth);
+				pw.printf("\tY1 Est Growth       : %11.2f%%%n", cd.y1EstGrowth);
 				pw.printf("\tZombie Score        : %11.2f%n", cd.zscore.score);
 				pw.println();
+				if (knt < 10) {
+					divcutList.add(cd.ticker);
+					knt++;
+				}
 			}
-
+		}
+		try (PrintWriter pw = new PrintWriter("out/divcutlist.txt")) {
+			for (String s : divcutList) {
+				pw.printf(" $%s", s);
+			}
+			pw.println("");
 		}
 	}
 
@@ -664,6 +687,11 @@ public class Reports {
 
 		final List<CompanyData> zombieList = new ArrayList<>();
 		for (final CompanyData cd : this.companyList) {
+
+			//			if (cd.ticker.equalsIgnoreCase("ADSK")) {
+			//				System.out.println(cd);
+			//			}
+
 			if (!cd.sector.equalsIgnoreCase("Financials")) {
 				final String state = this.getState(cd);
 				if (!state.contains("Good shape - no red flags")) {

@@ -56,8 +56,32 @@ public class BalanceSheetData {
 		bsd.equity.parse(fld);
 		bsd.liabEquity.parse(fld);
 		bsd.bvps.parse(fld);
+		
+		//Derived
+		calcAssetsMinusGW(bsd);
 
 		return bsd;
+
+	}
+
+	/** 
+	 * net.ajaskey.market.tools.SIP.calcAssetsMinusGW
+	 *
+	 * @param bsd
+	 * @return
+	 */
+	private static void calcAssetsMinusGW(BalanceSheetData bsd) {
+		
+		bsd.assetsMinusGW.q1 = bsd.totalAssets.q1 - bsd.goodwill.q1;
+		bsd.assetsMinusGW.q2 = bsd.totalAssets.q2 - bsd.goodwill.q2;
+		bsd.assetsMinusGW.q3 = bsd.totalAssets.q3 - bsd.goodwill.q3;
+		bsd.assetsMinusGW.q4 = bsd.totalAssets.q4 - bsd.goodwill.q4;
+		bsd.assetsMinusGW.q5 = bsd.totalAssets.q5 - bsd.goodwill.q5;
+		bsd.assetsMinusGW.q6 = bsd.totalAssets.q6 - bsd.goodwill.q6;
+		bsd.assetsMinusGW.q7 = bsd.totalAssets.q7 - bsd.goodwill.q7;
+		bsd.assetsMinusGW.q8 = bsd.totalAssets.q8 - bsd.goodwill.q8;
+		
+		bsd.assetsMinusGW.dd.calculate(bsd.assetsMinusGW);
 
 	}
 
@@ -83,6 +107,9 @@ public class BalanceSheetData {
 	public QuarterlyData	equity;
 	public QuarterlyData	liabEquity;
 	public QuarterlyData	bvps;
+	
+	//Derived
+	public QuarterlyData  assetsMinusGW;
 
 	/**
 	 * This method serves as a constructor for the class.
@@ -112,6 +139,8 @@ public class BalanceSheetData {
 		this.equity = new QuarterlyData("equity");
 		this.liabEquity = new QuarterlyData("liabEquity");
 		this.bvps = new QuarterlyData("bvps");
+		
+		this.assetsMinusGW = new QuarterlyData("assetsMinusGW");
 	}
 
 	/* (non-Javadoc)

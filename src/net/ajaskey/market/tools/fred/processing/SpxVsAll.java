@@ -107,6 +107,7 @@ public class SpxVsAll {
 		codeList.add("[AMBNS]");
 		codeList.add("[CAPUTLB5640CS]");
 		codeList.add("[FRGSHPUSM649NCIS]");
+		codeList.add("[BOGZ1FU385050005Q]");
 		codeList.add("[SP500]");
 
 		final List<File> fileList = new ArrayList<>();

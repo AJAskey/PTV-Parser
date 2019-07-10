@@ -204,6 +204,7 @@ public class QuarterlyData {
 		colPos.put("shares", 20);
 
 		colPos.put("totalInterest", 0);
+		colPos.put("assetsMinusGW", 0);
 	}
 
 	/**

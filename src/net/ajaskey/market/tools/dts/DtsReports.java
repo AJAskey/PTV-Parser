@@ -707,11 +707,15 @@ public class DtsReports {
 			final DtsQuarterly q2015 = new DtsQuarterly(2015);
 			final DtsQuarterly q2016 = new DtsQuarterly(2016);
 			final DtsQuarterly q2017 = new DtsQuarterly(2017);
+			final DtsQuarterly q2018 = new DtsQuarterly(2018);
+			final DtsQuarterly q2019 = new DtsQuarterly(2019);
 
 			DtsReports.printQuarterly(pw, q2013, q2014);
 			DtsReports.printQuarterly(pw, q2014, q2015);
 			DtsReports.printQuarterly(pw, q2015, q2016);
 			DtsReports.printQuarterly(pw, q2016, q2017);
+			DtsReports.printQuarterly(pw, q2017, q2018);
+			DtsReports.printQuarterly(pw, q2018, q2019);
 
 		}
 	}
