@@ -1,0 +1,3459 @@
+Created : Thu 11-Jul-2019 07:54:33	This file is subject to change without notice.
+Pre-filtered for US companies over $5 and average trading volume of at least 100K.
+
+List of tickers with Cash from Operations less than Working Capital deficit.
+ CATS OSTK
+
+List of tickers with Current Ratio < 1.00 and paying more than 15.0% of Sales to Interest.
+ CATS
+
+List of tickers with FCF + Working Capital less than 0.
+*Paid a dividend -- may need to cut dividend.
+ NVAX OMER MDCO LXRX PTLA MDR JACK* MLNT CLVS PZZA* SPWR REV TGTX AAL* ATNX TDW* QCOM*
+ CATS OSTK IRWD MAT* NTRA GLIBA* YUM* CVNA
+
+List of tickers with negative Cash from Ops and Cash Flow with no Shareholder Equity.
+ NVAX MDCO SPWR IRWD REPH
+
+List of tickers with big buybacks and an available cash flow deficit.
+ JACK QCOM YUM
+
+Seq : this quarter versus last quarter.
+QoQ : this quarter versus same quarter a year ago.
+YoY : last 12m versus 12m a year ago.
+
+--------------------------
+
+Rank : 1
+ CLXT
+	Calyxt Inc : ROSEVILLE, MN
+	Non-Cyclicals, Fishing & Farming
+	Employees     :           50
+	OpInc per Emp : $ -1,946,000
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        348.42 M
+	Shares            :         32.68 M (Seq=    0.21% : QoQ=   17.33%)
+
+	Sales 12m         :          1.50 M (Seq=  100.00% : QoQ=  -69.23%)
+	Ops Income 12m    :        -97.30 M (Seq=  -11.39% : QoQ= -439.66%)
+	Net Income 12m    :        -96.90 M (Seq=  -10.75% : QoQ= -423.73%)
+	Interest Paid 12m :          2.70 M (Seq=    7.69% : QoQ=  366.67%)
+
+	Cash <- Ops 12m   :        -23.10 M (Seq=  -38.81% : QoQ=  -40.91%)
+	  CapEx 12m       :          2.10 M (Seq=  -70.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -25.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         60.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         37.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -2.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         34.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         87.00 M (Seq=   -8.90% : QoQ=   64.77%)
+	  Cash            :         84.20 M (Seq=  -10.23% : QoQ=   66.07%)
+	  Acct Rx         :          0.30 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.40 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          2.20 M (Seq=   29.41% : QoQ=    4.76%)
+	Current Liabs     :          4.70 M (Seq=  -32.86% : QoQ=   56.67%)
+	  Acct Pay        :          0.70 M (Seq=  -12.50% : QoQ=   75.00%)
+	  ST Debt         :          0.30 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          3.70 M (Seq=  -37.29% : QoQ=   48.00%)
+	Working Capital   :         82.30 M (Ratio=18.51)
+	WC + FCF          :         57.10 M
+
+	Sharehldr Equity  :         87.70 M (Seq=   -6.10% : QoQ=   62.71%)
+	Tangible Assets   :        110.70 M (Seq=   -6.82% : QoQ=   53.96%)
+	LT Debt           :         18.20 M (Seq=    0.00% : QoQ=   22.97%)
+	LT Debt to Equity :          0.21
+
+	Last Price          :       10.93 : (52wkHi= 19.30 %offHigh=43%)
+	PE                  :      275.00
+	Op Margin           :   -6,486.67%
+	Net Margin          :   -6,460.00%
+	ROE                 :     -110.49%
+	Interest % of sales :      180.00%
+	Q0 Est Growth       :     -244.59%
+	Y1 Est Growth       :      -53.14%
+
+	CLXT State -->
+	  Interest payments to sales is high at 180.00%.
+
+	Zombie Score : 140.00
+		Negative Sales        :   35.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :  -10.00
+		OpsInc Growth 3Yr     :   35.00 : (-69.10%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 2
+ NVAX
+	Novavax, Inc. : GAITHERSBURG, MD
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          379
+	OpInc per Emp : $ -2,072,031
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :         99.42 M
+	Shares            :         20.44 M (Seq=    6.66% : QoQ=   21.32%)
+
+	Sales 12m         :        109.50 M (Seq=  -16.62% : QoQ=  -21.21%)
+	Ops Income 12m    :       -785.30 M (Seq=    1.90% : QoQ=   -8.52%)
+	Net Income 12m    :       -830.10 M (Seq=    1.68% : QoQ=  -15.74%)
+	Interest Paid 12m :         54.30 M (Seq=    0.00% : QoQ= 6,700.00%)
+
+	Cash <- Ops 12m   :       -169.40 M (Seq=  -11.70% : QoQ=   23.45%)
+	  CapEx 12m       :          2.00 M (Seq=   60.00% : QoQ=  300.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -171.40 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        115.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -54.30 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         26.70 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -27.60 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        123.40 M (Seq=    3.44% : QoQ=  -31.82%)
+	  Cash            :         97.70 M (Seq=   39.17% : QoQ=  -13.84%)
+	  Acct Rx         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :          2.50 M (Seq=  -88.64% : QoQ=  -91.78%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         23.20 M (Seq=  -14.39% : QoQ=  -37.80%)
+	Current Liabs     :         31.50 M (Seq=  -30.77% : QoQ=  -29.84%)
+	  Acct Pay        :          6.20 M (Seq=  -33.33% : QoQ=    6.90%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         25.30 M (Seq=  -30.11% : QoQ=  -35.29%)
+	Working Capital   :         91.90 M (Ratio=3.92)
+	WC + FCF          :        -79.50 M
+
+	Sharehldr Equity  :       -150.60 M (Seq=   10.30% : QoQ=  -51.51%)
+	Tangible Assets   :        163.90 M (Seq=    9.63% : QoQ=  -23.84%)
+	LT Debt           :        319.50 M (Seq=    0.09% : QoQ=    0.44%)
+	LT Debt Tan Asset :          1.95
+
+	Last Price          :        5.13 : (52wkHi= 51.60 %offHigh=90%)
+	PE                  :      275.00
+	Op Margin           :     -717.17%
+	Net Margin          :     -758.08%
+	ROE                 :        0.00%
+	Interest % of sales :       49.59%
+	Q0 Est Growth       :      124.43%
+	Y1 Est Growth       :      117.38%
+
+	NVAX State -->
+	  Free Cash Flow plus Working Capital is negative (-79.50)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 49.59%.
+	  Shareholders have no equity.
+
+	Zombie Score : 129.61
+		Negative Sales        :   21.21
+		Margins               :   35.00
+		Available Cash to MC  :   35.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   30.00
+		OpsInc Growth 3Yr     :    3.40 : (-3.40%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+
+Rank : 3
+ RETA
+	Reata Pharmaceuticals Inc : IRVING, TX
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          123
+	OpInc per Emp : $ -1,969,918
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      2,560.34 M
+	Shares            :         29.83 M (Seq=    0.30% : QoQ=   14.05%)
+
+	Sales 12m         :        180.60 M (Seq=  -45.90% : QoQ=  -42.35%)
+	Ops Income 12m    :       -242.30 M (Seq=  -41.98% : QoQ= -36,766.67%)
+	Net Income 12m    :       -248.20 M (Seq=  -41.37% : QoQ= -7,486.67%)
+	Interest Paid 12m :         15.80 M (Seq=   30.65% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -88.50 M (Seq=   23.47% : QoQ=  -19.58%)
+	  CapEx 12m       :          1.70 M (Seq=  300.00% : QoQ=  500.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -90.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        297.40 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        208.90 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -1.70 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        207.20 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        317.50 M (Seq=   -7.25% : QoQ=  135.71%)
+	  Cash            :        313.10 M (Seq=   -7.31% : QoQ=  195.66%)
+	  Acct Rx         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          4.40 M (Seq=   -2.22% : QoQ=   76.00%)
+	Current Liabs     :         61.20 M (Seq=    9.48% : QoQ=   19.07%)
+	  Acct Pay        :          3.50 M (Seq=  -22.22% : QoQ=  250.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Other           :         57.70 M (Seq=   12.26% : QoQ=   20.96%)
+	Working Capital   :        256.30 M (Ratio=5.19)
+	WC + FCF          :        166.10 M
+
+	Sharehldr Equity  :         -4.60 M (Seq= -130.26% : QoQ=   96.78%)
+	Tangible Assets   :        331.30 M (Seq=   -4.03% : QoQ=  142.18%)
+	LT Debt           :         79.60 M (Seq=    0.51% : QoQ=  368.24%)
+	LT Debt Tan Asset :          0.24
+
+	Last Price          :       89.48 : (52wkHi= 104.53 %offHigh=14%)
+	PE                  :      275.00
+	Op Margin           :     -134.16%
+	Net Margin          :     -137.43%
+	ROE                 :        0.00%
+	Interest % of sales :        8.75%
+	Q0 Est Growth       :     -300.00%
+	Y1 Est Growth       :     -183.01%
+
+	RETA State -->
+	  Shareholders have no equity.
+
+	Zombie Score : 121.09
+		Negative Sales        :   35.00
+		Margins               :   27.16
+		Available Cash to MC  :    0.00
+		Interest Paid         :    8.75
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    0.18
+		OpsInc Growth 3Yr     :   35.00 : (-515.50%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 4
+ OMER
+	Omeros Corporation : SEATTLE, WA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          236
+	OpInc per Emp : $ -1,464,830
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        741.73 M
+	Shares            :         49.01 M (Seq=   -0.01% : QoQ=    1.51%)
+
+	Sales 12m         :        186.40 M (Seq=   67.56% : QoQ=  271.11%)
+	Ops Income 12m    :       -345.70 M (Seq=    6.79% : QoQ=  -60.74%)
+	Net Income 12m    :       -368.00 M (Seq=    4.57% : QoQ=  -61.12%)
+	Interest Paid 12m :         54.10 M (Seq=   16.56% : QoQ=  427.78%)
+
+	Cash <- Ops 12m   :       -105.40 M (Seq=   47.77% : QoQ=  -14.16%)
+	  CapEx 12m       :          0.60 M (Seq=  100.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -106.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         80.40 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -25.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         27.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          2.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         76.90 M (Seq=  -14.46% : QoQ=   -2.29%)
+	  Cash            :          4.10 M (Seq=  -30.51% : QoQ=  241.67%)
+	  Acct Rx         :         24.70 M (Seq=    8.33% : QoQ= 12,250.00%)
+	  ST Invest       :         43.20 M (Seq=  -20.88% : QoQ=  -39.66%)
+	  Inventory       :          0.70 M (Seq=  600.00% : QoQ=  250.00%)
+	  Other           :          4.20 M (Seq=  -35.38% : QoQ=  -22.22%)
+	Current Liabs     :         44.50 M (Seq=   18.98% : QoQ=   80.89%)
+	  Acct Pay        :          7.10 M (Seq=   12.70% : QoQ=  -30.39%)
+	  ST Debt         :          1.10 M (Seq=   22.22% : QoQ=  120.00%)
+	  Other           :         36.20 M (Seq=   19.87% : QoQ=  160.43%)
+	Working Capital   :         32.40 M (Ratio=1.73)
+	WC + FCF          :        -73.60 M
+
+	Sharehldr Equity  :       -121.00 M (Seq=  -20.76% : QoQ= -314.38%)
+	Tangible Assets   :        101.20 M (Seq=    5.53% : QoQ=   13.71%)
+	LT Debt           :        153.10 M (Seq=    1.66% : QoQ=   80.12%)
+	LT Debt Tan Asset :          1.51
+
+	Last Price          :       15.21 : (52wkHi= 27.00 %offHigh=43%)
+	PE                  :      275.00
+	Op Margin           :     -185.46%
+	Net Margin          :     -197.42%
+	ROE                 :        0.00%
+	Interest % of sales :       29.02%
+	Q0 Est Growth       :      101.29%
+	Y1 Est Growth       :      124.07%
+
+	OMER State -->
+	  Free Cash Flow plus Working Capital is negative (-73.60)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 29.02%.
+	  Shareholders have no equity.
+
+	Zombie Score : 115.18
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    9.84
+		Interest Paid         :   29.02
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   16.31
+		OpsInc Growth 3Yr     :   20.00 : (-20.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 5
+ FLXN
+	Flexion Therapeutics Inc : BURLINGTON, MA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          272
+	OpInc per Emp : $ -1,903,676
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        421.20 M
+	Shares            :         37.99 M (Seq=    0.33% : QoQ=    0.99%)
+
+	Sales 12m         :         53.80 M (Seq=   37.33% : QoQ=    0.00%)
+	Ops Income 12m    :       -517.80 M (Seq=    0.06% : QoQ= -245.12%)
+	Net Income 12m    :       -548.70 M (Seq=    0.06% : QoQ= -266.31%)
+	Interest Paid 12m :         44.40 M (Seq=    0.00% : QoQ= 2,516.67%)
+
+	Cash <- Ops 12m   :       -153.40 M (Seq=   11.01% : QoQ=   15.56%)
+	  CapEx 12m       :          1.60 M (Seq=  450.00% : QoQ=  266.67%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -155.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         -6.80 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -160.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        100.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -60.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        248.00 M (Seq=  -12.98% : QoQ=  -34.84%)
+	  Cash            :         87.90 M (Seq=    0.80% : QoQ=  -40.33%)
+	  Acct Rx         :         15.60 M (Seq=   13.04% : QoQ=  403.23%)
+	  ST Invest       :        129.90 M (Seq=  -24.30% : QoQ=  -42.09%)
+	  Inventory       :         10.30 M (Seq=   35.53% : QoQ=  312.00%)
+	  Other           :          4.10 M (Seq=  -14.58% : QoQ=   20.59%)
+	Current Liabs     :         39.20 M (Seq=    7.10% : QoQ=   60.66%)
+	  Acct Pay        :         11.00 M (Seq=  -10.57% : QoQ=  223.53%)
+	  ST Debt         :         11.30 M (Seq=   13.00% : QoQ=   13.00%)
+	  Other           :         16.90 M (Seq=   18.18% : QoQ=   52.25%)
+	Working Capital   :        208.80 M (Ratio=6.33)
+	WC + FCF          :         53.80 M
+
+	Sharehldr Equity  :         72.60 M (Seq=  -34.06% : QoQ=  -67.39%)
+	Tangible Assets   :        264.60 M (Seq=  -10.55% : QoQ=  -33.37%)
+	LT Debt           :        146.90 M (Seq=   -1.08% : QoQ=   -1.80%)
+	LT Debt to Equity :          2.02
+
+	Last Price          :       11.13 : (52wkHi= 27.84 %offHigh=60%)
+	PE                  :      275.00
+	Op Margin           :     -962.45%
+	Net Margin          :   -1,019.89%
+	ROE                 :     -755.79%
+	Interest % of sales :       82.53%
+	Q0 Est Growth       :       16.02%
+	Y1 Est Growth       :       34.31%
+
+	FLXN State -->
+	  Interest payments to sales is high at 82.53%.
+
+	Zombie Score : 115.07
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    5.06
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-51.20%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    5.01
+
+Rank : 6
+ MDCO
+	The Medicines Company : PARSIPPANY, NJ
+	Healthcare, Pharmaceuticals, SP600
+	Employees     :           62
+	OpInc per Emp : $-15,738,709
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      2,788.00 M
+	Shares            :         74.46 M (Seq=    1.18% : QoQ=    0.90%)
+
+	Sales 12m         :        488.60 M (Seq=  -86.38% : QoQ=  -99.08%)
+	Ops Income 12m    :       -975.80 M (Seq=   71.22% : QoQ= -1,833.33%)
+	Net Income 12m    :     -1,162.90 M (Seq=  -72.24% : QoQ=   39.85%)
+	Interest Paid 12m :        195.90 M (Seq=    8.10% : QoQ=   43.94%)
+
+	Cash <- Ops 12m   :       -202.20 M (Seq=  -27.69% : QoQ=   54.44%)
+	  CapEx 12m       :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -202.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        174.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -28.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         13.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -15.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        258.10 M (Seq=  -12.45% : QoQ=   -8.83%)
+	  Cash            :        199.70 M (Seq=  -16.20% : QoQ=   -7.55%)
+	  Acct Rx         :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  ST Invest       :          2.40 M (Seq=   -7.69% : QoQ=  -90.20%)
+	  Inventory       :          1.10 M (Seq=   22.22% : QoQ=  -77.08%)
+	  Other           :         54.90 M (Seq=    3.58% : QoQ=   82.39%)
+	Current Liabs     :         63.10 M (Seq=    8.05% : QoQ=  -42.90%)
+	  Acct Pay        :         11.80 M (Seq= 1,585.71% : QoQ=  100.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         51.40 M (Seq=  -10.92% : QoQ=  -50.81%)
+	Working Capital   :        195.00 M (Ratio=4.09)
+	WC + FCF          :         -7.20 M
+
+	Sharehldr Equity  :        -75.40 M (Seq= -238.12% : QoQ= -211.37%)
+	Tangible Assets   :        635.30 M (Seq=   -0.90% : QoQ=   -3.83%)
+	LT Debt           :        808.70 M (Seq=    2.01% : QoQ=   23.30%)
+	LT Debt Tan Asset :          1.27
+
+	Last Price          :       37.81 : (52wkHi= 41.57 %offHigh=9%)
+	PE                  :      275.00
+	Op Margin           :     -199.71%
+	Net Margin          :     -238.01%
+	ROE                 :        0.00%
+	Interest % of sales :       40.09%
+	Q0 Est Growth       :      110.61%
+	Y1 Est Growth       :       15.30%
+
+	MDCO State -->
+	  Free Cash Flow plus Working Capital is negative (-7.20)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 40.09%.
+	  Shareholders have no equity.
+
+	Zombie Score : 114.96
+		Negative Sales        :   35.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.26
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    2.70
+		OpsInc Growth 3Yr     :    2.00 : (-2.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 7
+ INSM
+	Insmed Incorporated : BRIDGEWATER, NJ
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          373
+	OpInc per Emp : $ -2,643,163
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,776.03 M
+	Shares            :         77.54 M (Seq=    0.57% : QoQ=    1.20%)
+
+	Sales 12m         :         41.50 M (Seq=  223.47% : QoQ=    0.00%)
+	Ops Income 12m    :       -985.90 M (Seq=   -1.49% : QoQ= -167.32%)
+	Net Income 12m    :     -1,023.10 M (Seq=   -1.73% : QoQ= -179.10%)
+	Interest Paid 12m :         61.50 M (Seq=    4.31% : QoQ=  817.24%)
+
+	Cash <- Ops 12m   :       -264.30 M (Seq=   -6.19% : QoQ=   -9.50%)
+	  CapEx 12m       :         11.70 M (Seq=   33.33% : QoQ=  -25.93%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -276.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         10.90 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -253.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -13.50 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -266.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        454.60 M (Seq=  -12.39% : QoQ=  -34.72%)
+	  Cash            :        420.20 M (Seq=  -15.13% : QoQ=  -38.80%)
+	  Acct Rx         :          9.30 M (Seq=   69.09% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         12.70 M (Seq=   81.43% : QoQ=    0.00%)
+	  Other           :         12.40 M (Seq=    9.73% : QoQ=   26.53%)
+	Current Liabs     :         94.30 M (Seq=   18.32% : QoQ=  170.98%)
+	  Acct Pay        :         30.20 M (Seq=   70.62% : QoQ=  128.79%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         64.00 M (Seq=    3.23% : QoQ=  196.30%)
+	Working Capital   :        360.30 M (Ratio=4.82)
+	WC + FCF          :         84.30 M
+
+	Sharehldr Equity  :        144.10 M (Seq=  -30.82% : QoQ=  -66.87%)
+	Tangible Assets   :        538.50 M (Seq=   -1.36% : QoQ=  -24.69%)
+	LT Debt           :        321.30 M (Seq=    1.48% : QoQ=    6.14%)
+	LT Debt to Equity :          2.23
+
+	Last Price          :       23.03 : (52wkHi= 33.13 %offHigh=30%)
+	PE                  :      275.00
+	Op Margin           :   -2,375.66%
+	Net Margin          :   -2,465.30%
+	ROE                 :     -709.99%
+	Interest % of sales :      148.19%
+	Q0 Est Growth       :        8.39%
+	Y1 Est Growth       :       44.68%
+
+	INSM State -->
+	  Interest payments to sales is high at 148.19%.
+
+	Zombie Score : 110.57
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    5.57
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-38.10%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 8
+ IMMU
+	Immunomedics, Inc. : MORRIS PLAINS, NJ
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          346
+	OpInc per Emp : $   -844,508
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      3,938.95 M
+	Shares            :        191.05 M (Seq=  -66.32% : QoQ=   15.05%)
+
+	Sales 12m         :          5.70 M (Seq=    0.00% : QoQ=  -87.50%)
+	Ops Income 12m    :       -292.20 M (Seq=  100.00% : QoQ=  100.00%)
+	Net Income 12m    :       -946.70 M (Seq= -129.55% : QoQ= -513.56%)
+	Interest Paid 12m :         88.20 M (Seq=   97.00% : QoQ=  616.36%)
+
+	Cash <- Ops 12m   :       -223.40 M (Seq=   32.47% : QoQ=  -69.88%)
+	  CapEx 12m       :         18.30 M (Seq=  -73.75% : QoQ=  -27.59%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -241.70 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        326.60 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        103.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         28.70 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        131.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        448.90 M (Seq=  -11.02% : QoQ=   21.59%)
+	  Cash            :        437.90 M (Seq=  -11.16% : QoQ=   42.78%)
+	  Acct Rx         :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  ST Invest       :          4.70 M (Seq=   -4.08% : QoQ=  -90.96%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          6.20 M (Seq=   -7.46% : QoQ=  -39.22%)
+	Current Liabs     :         56.90 M (Seq=   79.50% : QoQ=  -39.21%)
+	  Acct Pay        :         53.90 M (Seq=   70.03% : QoQ=  132.33%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          3.00 M (Seq=    0.00% : QoQ=  -95.74%)
+	Working Capital   :        392.00 M (Ratio=7.89)
+	WC + FCF          :        150.30 M
+
+	Sharehldr Equity  :        182.80 M (Seq=  -31.48% : QoQ=  151.79%)
+	Tangible Assets   :        484.60 M (Seq=   -8.22% : QoQ=   27.56%)
+	LT Debt           :          7.10 M (Seq=    0.00% : QoQ=  -96.48%)
+	LT Debt to Equity :          0.04
+
+	Last Price          :       14.02 : (52wkHi= 27.33 %offHigh=48%)
+	PE                  :      275.00
+	Op Margin           :   -5,126.32%
+	Net Margin          :  -16,608.77%
+	ROE                 :     -517.89%
+	Interest % of sales :    1,547.37%
+	Q0 Est Growth       :     -180.84%
+	Y1 Est Growth       :     -300.00%
+
+	IMMU State -->
+	  Interest payments to sales is high at 1547.37%.
+
+	Zombie Score : 110.36
+		Negative Sales        :   35.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :   -4.64
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 9
+ AXDX
+	Accelerate Diagnostics Inc : TUCSON, AZ
+	Healthcare, Advanced Medical Equipment & Technology
+	Employees     :          287
+	OpInc per Emp : $ -1,008,362
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,065.56 M
+	Shares            :         54.34 M (Seq=    0.25% : QoQ=   -2.34%)
+	Share Change 12m  :         -1.30 M (Buyback Est= $22.79M)
+
+	Sales 12m         :         16.70 M (Seq=   15.79% : QoQ= 6,500.00%)
+	Ops Income 12m    :       -289.40 M (Seq=    2.61% : QoQ=  -72.09%)
+	Net Income 12m    :       -307.90 M (Seq=   -1.02% : QoQ=  -96.04%)
+	Interest Paid 12m :         23.50 M (Seq=   32.67% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -71.10 M (Seq=  -36.36% : QoQ=  -21.12%)
+	  CapEx 12m       :          1.00 M (Seq=  100.00% : QoQ=  -77.78%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -72.10 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         27.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -43.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -7.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -51.30 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        164.00 M (Seq=   -7.66% : QoQ=  -20.81%)
+	  Cash            :         75.30 M (Seq=   13.57% : QoQ=  -40.62%)
+	  Acct Rx         :          2.00 M (Seq=    5.26% : QoQ=   81.82%)
+	  ST Invest       :         75.60 M (Seq=  -24.55% : QoQ=   13.17%)
+	  Inventory       :          8.60 M (Seq=   11.69% : QoQ=  -14.85%)
+	  Other           :          2.60 M (Seq=   62.50% : QoQ=   13.04%)
+	Current Liabs     :          6.50 M (Seq=  -16.67% : QoQ=  -13.33%)
+	  Acct Pay        :          2.50 M (Seq=   92.31% : QoQ=  -10.71%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          4.00 M (Seq=  -37.50% : QoQ=  -14.89%)
+	Working Capital   :        157.50 M (Ratio=25.23)
+	WC + FCF          :         85.40 M
+
+	Sharehldr Equity  :         43.00 M (Seq=  -25.09% : QoQ=  -59.62%)
+	Tangible Assets   :        172.10 M (Seq=   -7.07% : QoQ=  -19.20%)
+	LT Debt           :        122.50 M (Seq=    2.00% : QoQ=   23.49%)
+	LT Debt to Equity :          2.85
+
+	Last Price          :       19.67 : (52wkHi= 24.75 %offHigh=20%)
+	PE                  :      275.00
+	Op Margin           :   -1,732.93%
+	Net Margin          :   -1,843.71%
+	ROE                 :     -716.05%
+	Interest % of sales :      140.72%
+	Q0 Est Growth       :       -9.63%
+	Y1 Est Growth       :       14.25%
+
+	AXDX State -->
+	  Interest payments to sales is high at 140.72%.
+
+	Zombie Score : 108.78
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    7.12
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   20.80 : (-20.80%)
+		Share Decline         :    5.85
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 10
+ FOLD
+	Amicus Therapeutics, Inc. : CRANBURY, NJ
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          508
+	OpInc per Emp : $ -2,669,488
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      2,410.24 M
+	Shares            :        213.52 M (Seq=   12.77% : QoQ=   21.33%)
+
+	Sales 12m         :        241.70 M (Seq=   19.08% : QoQ=    0.00%)
+	Ops Income 12m    :     -1,356.10 M (Seq=  -18.64% : QoQ= -196.88%)
+	Net Income 12m    :     -1,252.40 M (Seq=  -20.17% : QoQ= -217.49%)
+	Interest Paid 12m :         69.40 M (Seq=    8.93% : QoQ= 1,425.00%)
+
+	Cash <- Ops 12m   :       -329.00 M (Seq=  -29.32% : QoQ=  -58.59%)
+	  CapEx 12m       :          8.40 M (Seq=   70.59% : QoQ=  262.50%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -337.40 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        171.60 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -157.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        141.50 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -15.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        483.00 M (Seq=  -12.36% : QoQ=  -18.41%)
+	  Cash            :         96.30 M (Seq=   20.83% : QoQ=  -15.75%)
+	  Acct Rx         :         23.00 M (Seq=    4.55% : QoQ=  112.96%)
+	  ST Invest       :        342.00 M (Seq=  -19.42% : QoQ=  -23.69%)
+	  Inventory       :          8.20 M (Seq=   -2.38% : QoQ=    1.23%)
+	  Other           :         13.60 M (Seq=  -18.07% : QoQ=   28.30%)
+	Current Liabs     :         65.90 M (Seq=  -23.46% : QoQ=  -53.16%)
+	  Acct Pay        :         60.60 M (Seq=  -24.81% : QoQ=   38.67%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          5.30 M (Seq=   -3.64% : QoQ=  -94.54%)
+	Working Capital   :        417.10 M (Ratio=7.33)
+	WC + FCF          :         79.70 M
+
+	Sharehldr Equity  :        451.70 M (Seq=   31.73% : QoQ=  -13.40%)
+	Tangible Assets   :        543.90 M (Seq=   -4.44% : QoQ=  -16.22%)
+	LT Debt           :        168.80 M (Seq=  -47.53% : QoQ=    1.20%)
+	LT Debt to Equity :          0.37
+
+	Last Price          :       12.35 : (52wkHi= 16.82 %offHigh=26%)
+	PE                  :      275.00
+	Op Margin           :     -561.07%
+	Net Margin          :     -518.16%
+	ROE                 :     -277.26%
+	Interest % of sales :       28.71%
+	Q0 Est Growth       :      -44.37%
+	Y1 Est Growth       :       74.72%
+
+	FOLD State -->
+	  Interest payments to sales is high at 28.71%.
+
+	Zombie Score : 103.71
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   28.71
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-35.80%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 11
+ FATE
+	Fate Therapeutics Inc : SAN DIEGO, CA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          104
+	OpInc per Emp : $ -2,065,384
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,214.24 M
+	Shares            :         64.92 M (Seq=    0.36% : QoQ=   23.04%)
+
+	Sales 12m         :         19.50 M (Seq=   34.04% : QoQ=  162.50%)
+	Ops Income 12m    :       -214.80 M (Seq=   -9.54% : QoQ= -164.39%)
+	Net Income 12m    :       -215.30 M (Seq=   -8.41% : QoQ= -140.67%)
+	Interest Paid 12m :          6.30 M (Seq=    0.00% : QoQ=  -22.73%)
+
+	Cash <- Ops 12m   :        -43.60 M (Seq=  -59.09% : QoQ=  -38.89%)
+	  CapEx 12m       :          3.80 M (Seq=   54.55% : QoQ=  750.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -47.40 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        141.80 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         98.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         52.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        150.40 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        186.40 M (Seq=   -9.16% : QoQ=  105.74%)
+	  Cash            :        183.00 M (Seq=   -3.94% : QoQ=  456.23%)
+	  Acct Rx         :          0.50 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :         10.50 M (Seq=  -62.37% : QoQ=  -12.50%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          2.90 M (Seq=  -21.62% : QoQ=   93.33%)
+	Current Liabs     :         29.10 M (Seq=    6.59% : QoQ=  130.95%)
+	  Acct Pay        :          5.40 M (Seq=   28.57% : QoQ=  145.45%)
+	  ST Debt         :          3.90 M (Seq=   62.50% : QoQ=  387.50%)
+	  Other           :         19.80 M (Seq=   -3.88% : QoQ=  104.12%)
+	Working Capital   :        157.30 M (Ratio=6.41)
+	WC + FCF          :        109.90 M
+
+	Sharehldr Equity  :        145.80 M (Seq=   -9.16% : QoQ=  124.31%)
+	Tangible Assets   :        220.90 M (Seq=    3.71% : QoQ=  136.51%)
+	LT Debt           :         11.00 M (Seq=  -11.29% : QoQ=  -21.99%)
+	LT Debt to Equity :          0.08
+
+	Last Price          :       20.50 : (52wkHi= 22.35 %offHigh=8%)
+	PE                  :      275.00
+	Op Margin           :   -1,101.54%
+	Net Margin          :   -1,104.10%
+	ROE                 :     -147.67%
+	Interest % of sales :       32.31%
+	Q0 Est Growth       :      -60.45%
+	Y1 Est Growth       :      -31.39%
+
+	FATE State -->
+	  Interest payments to sales is high at 32.31%.
+
+	Zombie Score : 101.51
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   32.31
+		LT Debt to Equity     :    0.00
+		Equity to MC          :  -10.00
+		OpsInc Growth 3Yr     :   34.20 : (-34.20%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 12
+ CDZI
+	Cadiz Inc : LOS ANGELES, CA
+	Utilities, Utilities - Water & Related
+	Employees     :            9
+	OpInc per Emp : $ -5,633,333
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        314.32 M
+	Shares            :         25.33 M (Seq=    3.10% : QoQ=    9.76%)
+
+	Sales 12m         :          1.60 M (Seq=    0.00% : QoQ=   33.33%)
+	Ops Income 12m    :        -50.70 M (Seq=   -6.25% : QoQ=   15.00%)
+	Net Income 12m    :       -114.10 M (Seq=   -4.94% : QoQ=  -15.00%)
+	Interest Paid 12m :         63.90 M (Seq=    1.19% : QoQ=   68.32%)
+
+	Cash <- Ops 12m   :        -12.20 M (Seq=  -14.29% : QoQ=   -2.56%)
+	  CapEx 12m       :          1.40 M (Seq=  -60.00% : QoQ=  -60.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -13.60 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         23.40 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         11.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -3.40 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          7.80 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         16.90 M (Seq=   30.00% : QoQ=   81.72%)
+	  Cash            :         16.20 M (Seq=   28.57% : QoQ=   88.37%)
+	  Acct Rx         :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          0.70 M (Seq=   75.00% : QoQ=    0.00%)
+	Current Liabs     :          3.10 M (Seq=  -24.39% : QoQ=  -18.42%)
+	  Acct Pay        :          1.00 M (Seq=  400.00% : QoQ=  -16.67%)
+	  ST Debt         :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          2.00 M (Seq=  -48.72% : QoQ=  -20.00%)
+	Working Capital   :         13.80 M (Ratio=5.45)
+	WC + FCF          :          0.20 M
+
+	Sharehldr Equity  :        -81.40 M (Seq=    5.57% : QoQ=    1.81%)
+	Tangible Assets   :         70.10 M (Seq=    7.02% : QoQ=   18.61%)
+	LT Debt           :        151.40 M (Seq=    0.46% : QoQ=    7.91%)
+	LT Debt Tan Asset :          2.16
+
+	Last Price          :       12.80 : (52wkHi= 13.55 %offHigh=5%)
+	PE                  :      275.00
+	Op Margin           :   -3,168.75%
+	Net Margin          :   -7,131.25%
+	ROE                 :        0.00%
+	Interest % of sales :    3,993.75%
+	Q0 Est Growth       :        0.00%
+	Y1 Est Growth       :        0.00%
+
+	CDZI State -->
+	  Interest payments to sales is high at 3993.75%.
+	  Shareholders have no equity.
+
+	Zombie Score : 100.90
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   25.90
+		OpsInc Growth 3Yr     :    0.00 : (7.10%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 13
+ LXRX
+	Lexicon Pharmaceuticals, Inc. : THE WOODLANDS, TX
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          202
+	OpInc per Emp : $ -2,197,029
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        671.57 M
+	Shares            :        106.05 M (Seq=    0.13% : QoQ=    0.37%)
+
+	Sales 12m         :        281.40 M (Seq=  -25.32% : QoQ=  -63.69%)
+	Ops Income 12m    :       -443.80 M (Seq=   19.94% : QoQ= -5,613.33%)
+	Net Income 12m    :       -475.20 M (Seq=   16.76% : QoQ= -2,034.04%)
+	Interest Paid 12m :         55.20 M (Seq=    0.00% : QoQ=  210.45%)
+
+	Cash <- Ops 12m   :       -127.40 M (Seq=    5.54% : QoQ=   45.30%)
+	  CapEx 12m       :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -127.50 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         -2.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -129.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        154.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         25.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        146.80 M (Seq=  -15.29% : QoQ=  -46.27%)
+	  Cash            :         45.80 M (Seq=  -43.03% : QoQ=  124.51%)
+	  Acct Rx         :          4.40 M (Seq=  -25.42% : QoQ=   -2.22%)
+	  ST Invest       :         87.40 M (Seq=    9.66% : QoQ=  -63.87%)
+	  Inventory       :          4.60 M (Seq=   -2.13% : QoQ=  119.05%)
+	  Other           :          4.70 M (Seq=   74.07% : QoQ=    9.30%)
+	Current Liabs     :         28.20 M (Seq=  -23.37% : QoQ=  -71.91%)
+	  Acct Pay        :         13.90 M (Seq=  -21.91% : QoQ=  -79.13%)
+	  ST Debt         :          1.10 M (Seq=    0.00% : QoQ=  -91.85%)
+	  Other           :         13.20 M (Seq=  -26.26% : QoQ=  -34.98%)
+	Working Capital   :        118.60 M (Ratio=5.21)
+	WC + FCF          :         -8.90 M
+
+	Sharehldr Equity  :        -45.70 M (Seq=  -73.11% : QoQ= -274.43%)
+	Tangible Assets   :        164.30 M (Seq=  -13.25% : QoQ=  -43.50%)
+	LT Debt           :         24.60 M (Seq=  -89.91% : QoQ=  -89.39%)
+	LT Debt Tan Asset :          0.15
+
+	Last Price          :        6.34 : (52wkHi= 13.31 %offHigh=52%)
+	PE                  :      275.00
+	Op Margin           :     -157.71%
+	Net Margin          :     -168.87%
+	ROE                 :        0.00%
+	Interest % of sales :       19.62%
+	Q0 Est Growth       :      241.67%
+	Y1 Est Growth       :      232.05%
+
+	LXRX State -->
+	  Free Cash Flow plus Working Capital is negative (-8.90)
+	  Interest payments to sales is high at 19.62%.
+	  Shareholders have no equity.
+
+	Zombie Score : 100.39
+		Negative Sales        :   35.00
+		Margins               :   32.66
+		Available Cash to MC  :    1.31
+		Interest Paid         :   19.62
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    6.80
+		OpsInc Growth 3Yr     :   35.00 : (-316.70%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+
+Rank : 14
+ TMDX
+	TransMedics Group Inc : ANDOVER, MA
+	Healthcare, Advanced Medical Equipment & Technology
+	Employees     :           92
+	OpInc per Emp : $   -924,999
+	10Q Date      :  30-Mar-2019
+
+	Market Cap        :        129.11 M
+	Shares            :         20.20 M (Seq=    0.00% : QoQ=    0.00%)
+
+	Sales 12m         :         42.10 M (Seq=   16.92% : QoQ=    0.00%)
+	Ops Income 12m    :        -85.10 M (Seq=   -6.44% : QoQ=    0.00%)
+	Net Income 12m    :        -94.40 M (Seq=   -7.98% : QoQ=    0.00%)
+	Interest Paid 12m :          8.40 M (Seq=   33.33% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -13.40 M (Seq=  -19.67% : QoQ=  -15.87%)
+	  CapEx 12m       :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -13.50 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         -3.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -16.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :          4.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -11.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         30.10 M (Seq=  -13.51% : QoQ=    0.00%)
+	  Cash            :         12.20 M (Seq=  -39.60% : QoQ=    0.00%)
+	  Acct Rx         :          5.10 M (Seq=   50.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         11.30 M (Seq=   21.51% : QoQ=    0.00%)
+	  Other           :          1.40 M (Seq=  -22.22% : QoQ=    0.00%)
+	Current Liabs     :         16.20 M (Seq=   28.57% : QoQ=    0.00%)
+	  Acct Pay        :          5.50 M (Seq=   17.02% : QoQ=    0.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         10.70 M (Seq=   37.18% : QoQ=    0.00%)
+	Working Capital   :         13.90 M (Ratio=1.86)
+	WC + FCF          :          0.40 M
+
+	Sharehldr Equity  :       -199.00 M (Seq=   -3.54% : QoQ=    0.00%)
+	Tangible Assets   :         38.80 M (Seq=   -8.06% : QoQ=    0.00%)
+	LT Debt           :         33.80 M (Seq=    0.30% : QoQ=    0.00%)
+	LT Debt Tan Asset :          0.87
+
+	Last Price          :       25.56 : (52wkHi= 31.54 %offHigh=18%)
+	PE                  :      275.00
+	Op Margin           :     -202.14%
+	Net Margin          :     -224.23%
+	ROE                 :        0.00%
+	Interest % of sales :       19.95%
+	Q0 Est Growth       :     -199.59%
+	Y1 Est Growth       :     -132.37%
+
+	TMDX State -->
+	  Interest payments to sales is high at 19.95%.
+	  Shareholders have no equity.
+
+	Zombie Score : 99.95
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   19.95
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   30.00
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 15
+ RVNC
+	Revance Therapeutics Inc : NEWARK, CA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          170
+	OpInc per Emp : $ -2,491,176
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        464.37 M
+	Shares            :         41.60 M (Seq=   14.48% : QoQ=   15.71%)
+
+	Sales 12m         :          8.10 M (Seq=    2.70% : QoQ= 1,166.67%)
+	Ops Income 12m    :       -423.50 M (Seq=  -18.44% : QoQ= -173.70%)
+	Net Income 12m    :       -426.00 M (Seq=  -18.24% : QoQ= -126.71%)
+	Interest Paid 12m :          2.80 M (Seq= -100.00% : QoQ= -100.00%)
+
+	Cash <- Ops 12m   :       -115.60 M (Seq=   63.34% : QoQ=   -2.70%)
+	  CapEx 12m       :          8.00 M (Seq=  -31.25% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -123.60 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        108.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         -6.90 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -210.40 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -217.30 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        277.10 M (Seq=   33.29% : QoQ=    1.35%)
+	  Cash            :         65.30 M (Seq=  -10.91% : QoQ=   -5.64%)
+	  Acct Rx         :         27.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :        205.70 M (Seq=  100.49% : QoQ=    3.06%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          6.10 M (Seq=   19.61% : QoQ=   32.61%)
+	Current Liabs     :         34.10 M (Seq=    6.56% : QoQ=   48.26%)
+	  Acct Pay        :          4.50 M (Seq=  -46.43% : QoQ=  -16.67%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Other           :         29.60 M (Seq=   25.96% : QoQ=   77.25%)
+	Working Capital   :        243.00 M (Ratio=8.13)
+	WC + FCF          :        119.40 M
+
+	Sharehldr Equity  :        221.10 M (Seq=   51.85% : QoQ=   -6.55%)
+	Tangible Assets   :        324.50 M (Seq=   43.39% : QoQ=   13.94%)
+	LT Debt           :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	LT Debt to Equity :          0.00
+
+	Last Price          :       12.35 : (52wkHi= 30.60 %offHigh=59%)
+	PE                  :      275.00
+	Op Margin           :   -5,228.40%
+	Net Margin          :   -5,259.26%
+	ROE                 :     -192.67%
+	Interest % of sales :       34.57%
+	Q0 Est Growth       :       19.08%
+	Y1 Est Growth       :       14.31%
+
+	RVNC State -->
+	  Interest payments to sales is high at 34.57%.
+
+	Zombie Score : 99.79
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   34.57
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   25.40 : (-25.40%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    4.82
+
+Rank : 16
+ CYTK
+	Cytokinetics, Inc. : SOUTH SAN FRANCISCO, CA
+	Healthcare, Biotechnology & Medical Research, SP600
+	Employees     :          130
+	OpInc per Emp : $ -2,083,846
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        614.89 M
+	Shares            :         54.82 M (Seq=    0.23% : QoQ=    1.40%)
+
+	Sales 12m         :        186.00 M (Seq=   10.16% : QoQ=   20.91%)
+	Ops Income 12m    :       -270.90 M (Seq=    1.80% : QoQ= -133.42%)
+	Net Income 12m    :       -323.00 M (Seq=    0.85% : QoQ= -181.07%)
+	Interest Paid 12m :         13.60 M (Seq=    7.89% : QoQ= 1,266.67%)
+
+	Cash <- Ops 12m   :        -98.20 M (Seq= -118.70% : QoQ=    9.73%)
+	  CapEx 12m       :          1.00 M (Seq=   50.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -99.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         18.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -80.10 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :          4.60 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -75.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        186.40 M (Seq=  -10.26% : QoQ=  -31.55%)
+	  Cash            :         39.40 M (Seq=   -6.86% : QoQ=  -65.74%)
+	  Acct Rx         :          6.60 M (Seq=   -2.94% : QoQ=  -64.52%)
+	  ST Invest       :        137.20 M (Seq=  -12.33% : QoQ=    0.59%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          3.10 M (Seq=   40.91% : QoQ=   34.78%)
+	Current Liabs     :         26.30 M (Seq=   18.47% : QoQ=  -31.69%)
+	  Acct Pay        :          2.50 M (Seq=  -34.21% : QoQ=    4.17%)
+	  ST Debt         :          6.20 M (Seq=  138.46% : QoQ=    0.00%)
+	  Other           :         17.50 M (Seq=   10.76% : QoQ=  -51.52%)
+	Working Capital   :        160.10 M (Ratio=7.09)
+	WC + FCF          :         60.90 M
+
+	Sharehldr Equity  :          3.40 M (Seq=  -86.87% : QoQ=  -96.59%)
+	Tangible Assets   :        198.60 M (Seq=   -5.97% : QoQ=  -29.05%)
+	LT Debt           :         36.40 M (Seq=   -8.54% : QoQ=   13.75%)
+	LT Debt to Equity :         10.71
+
+	Last Price          :       11.26 : (52wkHi= 11.58 %offHigh=2%)
+	PE                  :      275.00
+	Op Margin           :     -145.65%
+	Net Margin          :     -173.66%
+	ROE                 :   -9,500.00%
+	Interest % of sales :        7.31%
+	Q0 Est Growth       :       34.29%
+	Y1 Est Growth       :       11.21%
+
+	CYTK State -->
+	  LT debt to equity of 10.71 is high.
+
+	Zombie Score : 99.51
+		Negative Sales        :    0.00
+		Margins               :   31.93
+		Available Cash to MC  :    0.00
+		Interest Paid         :    7.31
+		LT Debt to Equity     :   26.76
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   33.50 : (-33.50%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 17
+ PTLA
+	Portola Pharmaceuticals Inc : SOUTH SAN FRANCISCO, CA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          324
+	OpInc per Emp : $ -3,769,135
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,776.35 M
+	Shares            :         67.07 M (Seq=    0.85% : QoQ=    2.38%)
+
+	Sales 12m         :        153.80 M (Seq=   38.90% : QoQ=  360.33%)
+	Ops Income 12m    :     -1,221.20 M (Seq=    3.39% : QoQ=  -46.83%)
+	Net Income 12m    :     -1,249.50 M (Seq=    1.71% : QoQ=  -51.96%)
+	Interest Paid 12m :         52.90 M (Seq=   20.86% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :       -301.30 M (Seq=   -0.32% : QoQ=   28.05%)
+	  CapEx 12m       :          2.40 M (Seq=  -70.00% : QoQ=  -40.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -303.70 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        174.50 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -126.80 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        186.60 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         59.80 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        354.90 M (Seq=    0.45% : QoQ=  -18.64%)
+	  Cash            :        226.80 M (Seq=   63.17% : QoQ=   34.68%)
+	  Acct Rx         :         18.10 M (Seq=   15.29% : QoQ=  182.81%)
+	  ST Invest       :         96.00 M (Seq=  -46.07% : QoQ=  -60.03%)
+	  Inventory       :          2.70 M (Seq=  -65.82% : QoQ=  -15.62%)
+	  Other           :         11.20 M (Seq=  -12.50% : QoQ=  -38.12%)
+	Current Liabs     :         73.80 M (Seq=    6.96% : QoQ=   28.35%)
+	  Acct Pay        :          9.70 M (Seq=  -26.52% : QoQ=  -53.37%)
+	  ST Debt         :         15.10 M (Seq=   27.97% : QoQ=    0.00%)
+	  Other           :         49.00 M (Seq=   11.36% : QoQ=   33.51%)
+	Working Capital   :        281.10 M (Ratio=4.81)
+	WC + FCF          :        -22.60 M
+
+	Sharehldr Equity  :         48.40 M (Seq=  -45.25% : QoQ=  -84.29%)
+	Tangible Assets   :        393.30 M (Seq=    3.75% : QoQ=  -19.57%)
+	LT Debt           :        260.60 M (Seq=   28.00% : QoQ=  142.64%)
+	LT Debt to Equity :          5.38
+
+	Last Price          :       26.75 : (52wkHi= 42.17 %offHigh=36%)
+	PE                  :      275.00
+	Op Margin           :     -794.02%
+	Net Margin          :     -812.42%
+	ROE                 :   -2,581.61%
+	Interest % of sales :       34.40%
+	Q0 Est Growth       :       59.07%
+	Y1 Est Growth       :       79.34%
+
+	PTLA State -->
+	  Free Cash Flow plus Working Capital is negative (-22.60)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 34.40%.
+	  LT debt to equity of 5.38 is high.
+
+	Zombie Score : 98.99
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    1.14
+		Interest Paid         :   34.40
+		LT Debt to Equity     :   13.46
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   15.00 : (-15.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 18
+ MDR
+	McDermott International Inc : HOUSTON, TX
+	Energy, Oil & Gas - Related Services And Equipment, SP400
+	Employees     :       31,900
+	OpInc per Emp : $   -129,090
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,799.84 M
+	Shares            :        181.00 M (Seq=    0.56% : QoQ=   37.12%)
+
+	Sales 12m         :     20,634.00 M (Seq=   23.91% : QoQ=  170.59%)
+	Ops Income 12m    :     -4,118.00 M (Seq=   -2.26% : QoQ= -2,147.03%)
+	Net Income 12m    :     -5,274.00 M (Seq=   -3.90% : QoQ= -15,433.33%)
+	Interest Paid 12m :        845.00 M (Seq=   31.27% : QoQ=  578.64%)
+
+	Cash <- Ops 12m   :       -352.10 M (Seq=   14.39% : QoQ= -757.68%)
+	  CapEx 12m       :         85.60 M (Seq=  -25.00% : QoQ=   -2.17%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -437.70 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :      3,484.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :      3,132.60 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :     -2,761.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        371.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      3,239.00 M (Seq=    6.79% : QoQ=  128.65%)
+	  Cash            :        413.00 M (Seq=  -20.58% : QoQ=    0.07%)
+	  Acct Rx         :      2,132.00 M (Seq=   17.73% : QoQ=  439.61%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :        106.00 M (Seq=    4.95% : QoQ=    0.00%)
+	  Other           :        588.00 M (Seq=   -2.16% : QoQ=   -3.42%)
+	Current Liabs     :      4,618.00 M (Seq=    9.51% : QoQ=  623.48%)
+	  Acct Pay        :        949.00 M (Seq=   59.50% : QoQ=  397.90%)
+	  ST Debt         :        208.00 M (Seq=  447.37% : QoQ=  755.97%)
+	  Other           :      3,461.00 M (Seq=   -3.43% : QoQ=  717.43%)
+	Working Capital   :     -1,379.00 M (Ratio=0.70)
+	WC + FCF          :     -1,816.70 M
+
+	Sharehldr Equity  :        679.00 M (Seq=  -15.12% : QoQ=  -62.53%)
+	Tangible Assets   :      6,369.00 M (Seq=   10.25% : QoQ=   98.99%)
+	LT Debt           :      3,393.00 M (Seq=   -1.91% : QoQ=  561.40%)
+	LT Debt to Equity :          5.00
+
+	Last Price          :       10.51 : (52wkHi= 20.63 %offHigh=49%)
+	PE                  :      275.00
+	Op Margin           :      -19.96%
+	Net Margin          :      -25.56%
+	ROE                 :     -776.73%
+	Interest % of sales :        4.10%
+	Q0 Est Growth       :     -104.15%
+	Y1 Est Growth       :      300.00%
+
+	MDR State -->
+	  Free Cash Flow plus Working Capital is negative (-1816.70)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+
+	Zombie Score : 96.14
+		Negative Sales        :    0.00
+		Margins               :    4.55
+		Available Cash to MC  :   35.00
+		Interest Paid         :    4.10
+		LT Debt to Equity     :   12.49
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-180.30%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 19
+ JACK
+	Jack in the Box Inc. : SAN DIEGO, CA
+	Consumer Cyclicals, Restaurants & Bars, SP400
+	Employees     :        5,200
+	OpInc per Emp : $    177,134
+	10Q Date      :  14-Apr-2019
+
+	Market Cap        :      2,128.80 M
+	Shares            :         25.94 M (Seq=    0.14% : QoQ=  -10.66%)
+	Share Change 12m  :         -3.10 M (Buyback Est= $260.43M)
+
+	Sales 12m         :      4,438.30 M (Seq=    0.26% : QoQ=  -43.39%)
+	Ops Income 12m    :        921.10 M (Seq=   -6.09% : QoQ=   10.29%)
+	Net Income 12m    :        501.60 M (Seq=   -0.49% : QoQ=   11.03%)
+	Interest Paid 12m :        170.40 M (Seq=   16.77% : QoQ=  182.81%)
+
+	Cash <- Ops 12m   :        134.90 M (Seq=  -38.30% : QoQ=  166.29%)
+	  CapEx 12m       :         18.20 M (Seq=  -37.50% : QoQ=   70.73%)
+	  Dividends 12m   :        160.38 M (Yield=7.53%)
+	    FCF 12m       :        -43.68 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :       -173.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -38.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         38.60 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          0.40 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        105.30 M (Seq=    9.12% : QoQ=  -27.43%)
+	  Cash            :          1.60 M (Seq=  -62.79% : QoQ=   33.33%)
+	  Acct Rx         :         70.80 M (Seq=   13.46% : QoQ=  -30.86%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          1.90 M (Seq=   -9.52% : QoQ=  -26.92%)
+	  Other           :         31.00 M (Seq=   11.91% : QoQ=  -20.51%)
+	Current Liabs     :        182.10 M (Seq=   -2.98% : QoQ=    8.72%)
+	  Acct Pay        :         25.10 M (Seq=  -43.85% : QoQ=    2.45%)
+	  ST Debt         :         42.60 M (Seq=    0.24% : QoQ=   -0.70%)
+	  Other           :        114.40 M (Seq=   13.94% : QoQ=   14.17%)
+	Working Capital   :        -76.80 M (Ratio=0.58)
+	WC + FCF          :       -120.48 M
+
+	Sharehldr Equity  :       -592.50 M (Seq=    2.44% : QoQ=  -37.50%)
+	Tangible Assets   :        784.90 M (Seq=    0.42% : QoQ=   -5.08%)
+	LT Debt           :      1,014.90 M (Seq=    0.12% : QoQ=   12.72%)
+	LT Debt Tan Asset :          1.29
+
+	Last Price          :       79.64 : (52wkHi= 93.98 %offHigh=15%)
+	PE                  :        4.64
+	Op Margin           :       20.75%
+	Net Margin          :       11.30%
+	ROE                 :        0.00%
+	Interest % of sales :        3.84%
+	EPS Yield           :       21.57% ($17.18)
+	Q0 Est Growth       :       45.34%
+	Y1 Est Growth       :      -33.17%
+
+	JACK State -->
+	  Free Cash Flow plus Working Capital is negative (-120.48) with dividend paid 160.38.
+	  Shareholders have no equity.
+
+	Zombie Score : 91.67
+		Negative Sales        :   35.00
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :    3.84
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   27.83
+		OpsInc Growth 3Yr     :    0.00 : (5.50%)
+		Share Decline         :   15.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 20
+ MLNT
+	Melinta Therapeutics Inc : MORRISTOWN, NJ
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          290
+	OpInc per Emp : $ -1,678,620
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :         53.53 M
+	Shares            :         11.33 M (Seq=    0.93% : QoQ=   83.21%)
+
+	Sales 12m         :        244.00 M (Seq=   -0.73% : QoQ=  250.55%)
+	Ops Income 12m    :       -486.80 M (Seq=   13.68% : QoQ=  -51.18%)
+	Net Income 12m    :       -507.70 M (Seq=    1.84% : QoQ=  -69.37%)
+	Interest Paid 12m :         92.70 M (Seq=   -5.79% : QoQ= 1,750.00%)
+
+	Cash <- Ops 12m   :       -157.40 M (Seq= -4,562.50% : QoQ=   27.43%)
+	  CapEx 12m       :          1.60 M (Seq=  -60.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -159.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        187.30 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         29.90 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -4.30 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         25.60 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        181.80 M (Seq=   21.61% : QoQ=   21.28%)
+	  Cash            :        116.90 M (Seq=   42.91% : QoQ=   27.76%)
+	  Acct Rx         :         14.90 M (Seq=  -33.78% : QoQ=  -34.93%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         44.50 M (Seq=    7.75% : QoQ=   57.80%)
+	  Other           :          5.50 M (Seq=   44.74% : QoQ=  -24.66%)
+	Current Liabs     :        130.00 M (Seq=   -2.69% : QoQ=   28.59%)
+	  Acct Pay        :          8.30 M (Seq=  -50.60% : QoQ=  -33.60%)
+	  ST Debt         :          5.60 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :        121.60 M (Seq=    9.35% : QoQ=   37.25%)
+	Working Capital   :         51.80 M (Ratio=1.40)
+	WC + FCF          :       -107.20 M
+
+	Sharehldr Equity  :        176.50 M (Seq=   -7.15% : QoQ=  -11.66%)
+	Tangible Assets   :        245.30 M (Seq=   15.49% : QoQ=   40.33%)
+	LT Debt           :        153.70 M (Seq=   39.10% : QoQ=   44.86%)
+	LT Debt to Equity :          0.87
+
+	Last Price          :        5.12 : (52wkHi= 32.75 %offHigh=84%)
+	PE                  :      275.00
+	Op Margin           :     -199.51%
+	Net Margin          :     -208.07%
+	ROE                 :     -287.65%
+	Interest % of sales :       37.99%
+	Q0 Est Growth       :      125.29%
+	Y1 Est Growth       :      124.96%
+
+	MLNT State -->
+	  Free Cash Flow plus Working Capital is negative (-107.20)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 37.99%.
+
+	Zombie Score : 90.50
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :   35.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   20.50 : (-20.50%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+
+Rank : 21
+ CLVS
+	Clovis Oncology Inc : BOULDER, CO
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          468
+	OpInc per Emp : $ -3,093,589
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        727.86 M
+	Shares            :         52.89 M (Seq=    0.30% : QoQ=    4.52%)
+
+	Sales 12m         :        261.00 M (Seq=   15.30% : QoQ=    0.00%)
+	Ops Income 12m    :     -1,447.80 M (Seq=   -2.32% : QoQ=    1.73%)
+	Net Income 12m    :     -1,440.20 M (Seq=   -2.36% : QoQ=   -6.74%)
+	Interest Paid 12m :         46.20 M (Seq=    6.82% : QoQ=   67.86%)
+
+	Cash <- Ops 12m   :       -363.80 M (Seq=  -19.11% : QoQ=    2.09%)
+	  CapEx 12m       :         10.30 M (Seq=  -20.00% : QoQ=  500.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -374.10 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        389.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         25.30 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -275.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -249.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        467.10 M (Seq=  -18.38% : QoQ=  -16.54%)
+	  Cash            :        123.30 M (Seq=  -44.43% : QoQ=  -67.04%)
+	  Acct Rx         :         24.20 M (Seq=   59.21% : QoQ=   64.63%)
+	  ST Invest       :        283.50 M (Seq=   -4.96% : QoQ=  216.05%)
+	  Inventory       :         25.00 M (Seq=   -7.75% : QoQ=  -63.87%)
+	  Other           :         11.10 M (Seq=   12.12% : QoQ=   -7.50%)
+	Current Liabs     :        106.40 M (Seq=  -15.35% : QoQ=   24.59%)
+	  Acct Pay        :         43.30 M (Seq=   51.93% : QoQ=  223.13%)
+	  ST Debt         :          1.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         63.10 M (Seq=  -34.41% : QoQ=  -12.48%)
+	Working Capital   :        360.70 M (Ratio=4.39)
+	WC + FCF          :        -13.40 M
+
+	Sharehldr Equity  :         74.90 M (Seq=  -48.87% : QoQ=  -75.54%)
+	Tangible Assets   :        655.70 M (Seq=  -12.41% : QoQ=   10.61%)
+	LT Debt           :        576.00 M (Seq=    0.09% : QoQ=  103.75%)
+	LT Debt to Equity :          7.69
+
+	Last Price          :       13.83 : (52wkHi= 49.90 %offHigh=72%)
+	PE                  :      275.00
+	Op Margin           :     -554.71%
+	Net Margin          :     -551.80%
+	ROE                 :   -1,922.83%
+	Interest % of sales :       17.70%
+	Q0 Est Growth       :      -34.98%
+	Y1 Est Growth       :       10.70%
+
+	CLVS State -->
+	  Free Cash Flow plus Working Capital is negative (-13.40)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 17.70%.
+	  LT debt to equity of 7.69 is high.
+
+	Zombie Score : 88.49
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.43
+		Interest Paid         :   17.70
+		LT Debt to Equity     :   19.23
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :    0.00 : (1.30%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :   11.14
+		Earnings weakness     :    5.00
+
+Rank : 22
+ PZZA
+	Papa John's Int'l, Inc. : LOUISVILLE, KY
+	Consumer Cyclicals, Restaurants & Bars, SP400
+	Employees     :       18,000
+	OpInc per Emp : $     19,744
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,457.21 M
+	Shares            :         31.55 M (Seq=   -0.55% : QoQ=   -5.18%)
+	Share Change 12m  :         -1.73 M (Buyback Est= $85.06M)
+
+	Sales 12m         :      6,614.70 M (Seq=   -1.84% : QoQ=   -5.68%)
+	Ops Income 12m    :        355.40 M (Seq=  -71.71% : QoQ=  -93.06%)
+	Net Income 12m    :        189.10 M (Seq= -1,275.00% : QoQ= -124.93%)
+	Interest Paid 12m :         70.60 M (Seq=    5.14% : QoQ=  366.67%)
+
+	Cash <- Ops 12m   :         45.60 M (Seq=  153.08% : QoQ=  -66.34%)
+	  CapEx 12m       :         41.30 M (Seq=  -23.68% : QoQ=   -6.45%)
+	  Dividends 12m   :        107.78 M (Yield=7.40%)
+	    FCF 12m       :       -103.48 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        -32.40 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         13.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -42.70 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -29.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        199.40 M (Seq=    1.58% : QoQ=   11.21%)
+	  Cash            :         29.30 M (Seq=  -12.01% : QoQ=   -8.15%)
+	  Acct Rx         :         92.20 M (Seq=   -7.62% : QoQ=   36.39%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         26.10 M (Seq=   -4.04% : QoQ=   -7.77%)
+	  Other           :         51.80 M (Seq=   43.49% : QoQ=    0.78%)
+	Current Liabs     :        218.60 M (Seq=   17.84% : QoQ=   39.68%)
+	  Acct Pay        :         35.20 M (Seq=   29.89% : QoQ=   13.18%)
+	  ST Debt         :         30.00 M (Seq=   50.00% : QoQ=   50.00%)
+	  Other           :        153.40 M (Seq=   10.84% : QoQ=   45.54%)
+	Working Capital   :        -19.20 M (Ratio=0.91)
+	WC + FCF          :       -122.68 M
+
+	Sharehldr Equity  :       -328.70 M (Seq=   -2.98% : QoQ=  -23.80%)
+	Tangible Assets   :        655.90 M (Seq=   28.26% : QoQ=   33.02%)
+	LT Debt           :        351.80 M (Seq=  -42.00% : QoQ=  -38.90%)
+	LT Debt Tan Asset :          0.54
+
+	Last Price          :       45.97 : (52wkHi= 60.56 %offHigh=24%)
+	PE                  :        9.53
+	Op Margin           :        5.37%
+	Net Margin          :        2.86%
+	ROE                 :        0.00%
+	Interest % of sales :        1.07%
+	EPS Yield           :       10.49% ($4.82)
+	Q0 Est Growth       :     -130.46%
+	Y1 Est Growth       :      300.00%
+
+	PZZA State -->
+	  Free Cash Flow plus Working Capital is negative (-122.68) with dividend paid 107.78.
+	  Shareholders have no equity.
+
+	Zombie Score : 87.26
+		Negative Sales        :    5.68
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :    1.07
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   22.56
+		OpsInc Growth 3Yr     :   35.00 : (-37.40%)
+		Share Decline         :   12.96
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 23
+ INSW
+	International Seaways Inc : NEW YORK, NY
+	Energy, Oil & Gas - Transportation Services
+	Employees     :        1,642
+	OpInc per Emp : $   -101,583
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        557.15 M
+	Shares            :         29.18 M (Seq=    0.09% : QoQ=    0.26%)
+
+	Sales 12m         :      1,279.10 M (Seq=   18.45% : QoQ=  -35.63%)
+	Ops Income 12m    :       -166.80 M (Seq=   82.26% : QoQ= -105.80%)
+	Net Income 12m    :       -261.90 M (Seq=   45.22% : QoQ= -128.12%)
+	Interest Paid 12m :        207.10 M (Seq=    9.80% : QoQ=   53.72%)
+
+	Cash <- Ops 12m   :         16.00 M (Seq=  267.83% : QoQ=  633.33%)
+	  CapEx 12m       :          1.10 M (Seq=  -87.50% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :         14.90 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        -37.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -21.70 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         67.60 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         45.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        192.50 M (Seq=   14.86% : QoQ=   59.75%)
+	  Cash            :         79.50 M (Seq=   36.36% : QoQ=   48.60%)
+	  Acct Rx         :         99.70 M (Seq=   -0.20% : QoQ=   87.05%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          4.10 M (Seq=   32.26% : QoQ=    2.50%)
+	  Other           :          9.20 M (Seq=   43.75% : QoQ=   -6.12%)
+	Current Liabs     :        100.50 M (Seq=   33.47% : QoQ=  121.37%)
+	  Acct Pay        :         33.20 M (Seq=   44.35% : QoQ=   34.41%)
+	  ST Debt         :         57.70 M (Seq=   11.82% : QoQ=  180.10%)
+	  Other           :          9.50 M (Seq= 1,257.14% : QoQ=    0.00%)
+	Working Capital   :         92.00 M (Ratio=1.92)
+	WC + FCF          :        106.90 M
+
+	Sharehldr Equity  :      1,018.00 M (Seq=    0.80% : QoQ=   -4.29%)
+	Tangible Assets   :      1,891.10 M (Seq=    2.30% : QoQ=   17.28%)
+	LT Debt           :        748.00 M (Seq=   -1.46% : QoQ=   49.42%)
+	LT Debt to Equity :          0.73
+
+	Last Price          :       19.11 : (52wkHi= 24.15 %offHigh=20%)
+	PE                  :      275.00
+	Op Margin           :      -13.04%
+	Net Margin          :      -20.48%
+	ROE                 :      -25.73%
+	Interest % of sales :       16.19%
+	Q0 Est Growth       :      136.15%
+	Y1 Est Growth       :      300.00%
+
+	INSW State -->
+	  Interest payments to sales is high at 16.19%.
+
+	Zombie Score : 87.04
+		Negative Sales        :   35.00
+		Margins               :    3.35
+		Available Cash to MC  :    0.00
+		Interest Paid         :   16.19
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   32.50 : (-32.50%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 24
+ SPWR
+	SunPower Corporation : SAN JOSE, CA
+	Energy, Renewable Energy Equipment & Services
+	Employees     :        6,600
+	OpInc per Emp : $   -466,424
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,712.78 M
+	Shares            :        141.72 M (Seq=    0.42% : QoQ=    1.08%)
+
+	Sales 12m         :      7,755.10 M (Seq=   -2.53% : QoQ=    6.72%)
+	Ops Income 12m    :     -3,078.40 M (Seq=    1.93% : QoQ= -303.59%)
+	Net Income 12m    :     -2,973.60 M (Seq=    3.24% : QoQ= -319.68%)
+	Interest Paid 12m :        359.30 M (Seq=   -7.69% : QoQ=  127.63%)
+
+	Cash <- Ops 12m   :       -459.10 M (Seq= -466.54% : QoQ=   36.13%)
+	  CapEx 12m       :         42.50 M (Seq=   -9.72% : QoQ=  -26.97%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -501.60 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         69.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -389.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        262.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -127.40 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      1,490.10 M (Seq=   38.77% : QoQ=   23.66%)
+	  Cash            :        185.60 M (Seq=  -40.01% : QoQ=  -28.81%)
+	  Acct Rx         :        262.90 M (Seq=  -10.03% : QoQ=  -15.41%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :        334.40 M (Seq=    8.54% : QoQ=   -5.70%)
+	  Other           :        707.30 M (Seq=  331.02% : QoQ=  153.60%)
+	Current Liabs     :      1,299.80 M (Seq=   84.37% : QoQ=   34.74%)
+	  Acct Pay        :        347.20 M (Seq=    6.63% : QoQ=    3.89%)
+	  ST Debt         :         41.80 M (Seq=    4.24% : QoQ=  -88.37%)
+	  Other           :        910.80 M (Seq=  168.36% : QoQ=  235.96%)
+	Working Capital   :        190.30 M (Ratio=1.15)
+	WC + FCF          :       -311.30 M
+
+	Sharehldr Equity  :       -286.40 M (Seq=  -37.23% : QoQ= -160.02%)
+	Tangible Assets   :      2,296.80 M (Seq=   -1.85% : QoQ=  -38.90%)
+	LT Debt           :        890.40 M (Seq=  -38.27% : QoQ=  -48.80%)
+	LT Debt Tan Asset :          0.39
+
+	Last Price          :       12.13 : (52wkHi= 12.79 %offHigh=5%)
+	PE                  :      275.00
+	Op Margin           :      -39.70%
+	Net Margin          :      -38.34%
+	ROE                 :        0.00%
+	Interest % of sales :        4.63%
+	Q0 Est Growth       :      265.54%
+	Y1 Est Growth       :      282.71%
+
+	SPWR State -->
+	  Free Cash Flow plus Working Capital is negative (-311.30)
+	  Shareholders have no equity.
+
+	Zombie Score : 84.85
+		Negative Sales        :    0.00
+		Margins               :    7.80
+		Available Cash to MC  :   15.69
+		Interest Paid         :    4.63
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   16.72
+		OpsInc Growth 3Yr     :   35.00 : (-60.30%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 25
+ REV
+	Revlon Inc : NEW YORK, NY
+	Non-Cyclicals, Personal Products
+	Employees     :        7,300
+	OpInc per Emp : $     -2,178
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,075.11 M
+	Shares            :         52.91 M (Seq=    0.11% : QoQ=    0.45%)
+
+	Sales 12m         :     10,149.20 M (Seq=   -0.29% : QoQ=   33.57%)
+	Ops Income 12m    :        -15.90 M (Seq=   45.07% : QoQ= -121.69%)
+	Net Income 12m    :       -778.30 M (Seq=    5.17% : QoQ= -597.33%)
+	Interest Paid 12m :        649.20 M (Seq=    5.04% : QoQ=  122.36%)
+
+	Cash <- Ops 12m   :       -101.90 M (Seq= -122.56% : QoQ=   70.81%)
+	  CapEx 12m       :         49.30 M (Seq=  -62.82% : QoQ=  -57.66%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -151.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        172.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         70.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -49.30 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         20.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      1,141.20 M (Seq=   -4.41% : QoQ=    2.41%)
+	  Cash            :         68.30 M (Seq=  -21.76% : QoQ=   22.62%)
+	  Acct Rx         :        378.50 M (Seq=  -12.24% : QoQ=   -0.68%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :        546.70 M (Seq=    4.49% : QoQ=    6.05%)
+	  Other           :        147.70 M (Seq=   -2.83% : QoQ=   -8.83%)
+	Current Liabs     :      1,131.90 M (Seq=    1.03% : QoQ=   12.18%)
+	  Acct Pay        :        355.70 M (Seq=    7.11% : QoQ=    2.98%)
+	  ST Debt         :        399.00 M (Seq=   11.64% : QoQ=   50.51%)
+	  Other           :        377.20 M (Seq=  -12.46% : QoQ=   -5.35%)
+	Working Capital   :          9.30 M (Ratio=1.01)
+	WC + FCF          :       -141.90 M
+
+	Sharehldr Equity  :     -1,132.20 M (Seq=   -7.13% : QoQ=  -32.31%)
+	Tangible Assets   :      1,852.20 M (Seq=    2.28% : QoQ=    4.96%)
+	LT Debt           :      2,724.40 M (Seq=   -0.12% : QoQ=    2.75%)
+	LT Debt Tan Asset :          1.47
+
+	Last Price          :       20.34 : (52wkHi= 29.62 %offHigh=31%)
+	PE                  :      275.00
+	Op Margin           :       -0.16%
+	Net Margin          :       -7.67%
+	ROE                 :        0.00%
+	Interest % of sales :        6.40%
+	Q0 Est Growth       :      177.66%
+	Y1 Est Growth       :      155.14%
+
+	REV State -->
+	  Free Cash Flow plus Working Capital is negative (-141.90)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Shareholders have no equity.
+
+	Zombie Score : 84.59
+		Negative Sales        :    0.00
+		Margins               :    0.78
+		Available Cash to MC  :    8.61
+		Interest Paid         :    6.40
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   30.00
+		OpsInc Growth 3Yr     :   33.80 : (-33.80%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 26
+ CZR
+	Caesars Entertainment Corp : LAS VEGAS, NV
+	Consumer Cyclicals, Casinos & Gaming, SP400
+	Employees     :       66,000
+	OpInc per Emp : $    -87,681
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      8,137.41 M
+	Shares            :        670.00 M (Seq=    0.30% : QoQ=   -3.87%)
+	Share Change 12m  :        -27.00 M (Buyback Est= $243.81M)
+
+	Sales 12m         :     25,670.00 M (Seq=    1.70% : QoQ=  117.21%)
+	Ops Income 12m    :     -5,787.00 M (Seq=   -9.35% : QoQ=  -89.58%)
+	Net Income 12m    :     -2,993.00 M (Seq=  -60.40% : QoQ=  -98.00%)
+	Interest Paid 12m :      4,083.00 M (Seq=    1.41% : QoQ=   -0.15%)
+
+	Cash <- Ops 12m   :      1,019.00 M (Seq=  171.28% : QoQ= 1,059.09%)
+	  CapEx 12m       :        698.00 M (Seq=   -2.24% : QoQ=  156.47%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        321.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        175.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :      1,194.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :     -2,270.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :     -1,076.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      2,191.00 M (Seq=   -3.27% : QoQ=  -34.07%)
+	  Cash            :      1,395.00 M (Seq=   -6.44% : QoQ=  -43.86%)
+	  Acct Rx         :        449.00 M (Seq=   -1.75% : QoQ=    2.28%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         39.00 M (Seq=   -4.88% : QoQ=   -7.14%)
+	  Other           :        308.00 M (Seq=   11.59% : QoQ=  -13.73%)
+	Current Liabs     :      1,963.00 M (Seq=   -1.85% : QoQ=   15.67%)
+	  Acct Pay        :        411.00 M (Seq=    3.01% : QoQ=   71.97%)
+	  ST Debt         :         85.00 M (Seq=  -53.80% : QoQ=   14.86%)
+	  Other           :      1,467.00 M (Seq=    3.53% : QoQ=    6.00%)
+	Working Capital   :        228.00 M (Ratio=1.12)
+	WC + FCF          :        549.00 M
+
+	Sharehldr Equity  :      3,039.00 M (Seq=   -6.49% : QoQ=   -5.33%)
+	Tangible Assets   :     19,031.00 M (Seq=    1.48% : QoQ=   -3.58%)
+	LT Debt           :     18,779.00 M (Seq=   -0.42% : QoQ=    3.04%)
+	LT Debt to Equity :          6.18
+
+	Last Price          :       11.98 : (52wkHi= 12.23 %offHigh=2%)
+	PE                  :      275.00
+	Op Margin           :      -22.54%
+	Net Margin          :      -11.66%
+	ROE                 :      -98.49%
+	Interest % of sales :       15.91%
+	Q0 Est Growth       :      116.33%
+	Y1 Est Growth       :     -300.00%
+
+	CZR State -->
+	  Interest payments to sales is high at 15.91%.
+	  LT debt to equity of 6.18 is high.
+
+	Zombie Score : 84.46
+		Negative Sales        :    0.00
+		Margins               :    3.42
+		Available Cash to MC  :    0.00
+		Interest Paid         :   15.91
+		LT Debt to Equity     :   15.45
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-51.40%)
+		Share Decline         :    9.68
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 27
+ TGTX
+	TG Therapeutics Inc : NEW YORK, NY
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          102
+	OpInc per Emp : $ -4,267,647
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        636.35 M
+	Shares            :         81.17 M (Seq=    3.18% : QoQ=   14.92%)
+
+	Sales 12m         :          0.80 M (Seq=    0.00% : QoQ=    0.00%)
+	Ops Income 12m    :       -435.30 M (Seq=  -46.93% : QoQ= -213.11%)
+	Net Income 12m    :       -537.40 M (Seq=    3.69% : QoQ= -165.66%)
+	Interest Paid 12m :          1.00 M (Seq=    0.00% : QoQ= -100.00%)
+
+	Cash <- Ops 12m   :       -134.30 M (Seq=    0.89% : QoQ=  -19.29%)
+	  CapEx 12m       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -134.30 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        118.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -16.20 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -1.70 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -17.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        105.10 M (Seq=   33.04% : QoQ=  -10.17%)
+	  Cash            :         64.30 M (Seq=   53.10% : QoQ=  -22.44%)
+	  Acct Rx         :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :         28.10 M (Seq=    4.85% : QoQ=    7.25%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         12.60 M (Seq=   24.75% : QoQ=   61.54%)
+	Current Liabs     :         60.90 M (Seq=   56.56% : QoQ=   82.88%)
+	  Acct Pay        :         40.20 M (Seq=   10.44% : QoQ=   23.69%)
+	  ST Debt         :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         20.70 M (Seq=  762.50% : QoQ= 3,350.00%)
+	Working Capital   :         44.20 M (Ratio=1.73)
+	WC + FCF          :        -90.10 M
+
+	Sharehldr Equity  :         19.30 M (Seq=  -19.58% : QoQ=  -77.35%)
+	Tangible Assets   :        116.70 M (Seq=   40.94% : QoQ=   -2.91%)
+	LT Debt           :         28.30 M (Seq=    0.00% : QoQ=    0.00%)
+	LT Debt to Equity :          1.47
+
+	Last Price          :        8.15 : (52wkHi= 13.71 %offHigh=40%)
+	PE                  :      275.00
+	Op Margin           :  -54,412.50%
+	Net Margin          :  -67,175.00%
+	ROE                 :   -2,784.46%
+	Interest % of sales :      125.00%
+	Q0 Est Growth       :       92.35%
+	Y1 Est Growth       :       94.21%
+
+	TGTX State -->
+	  Free Cash Flow plus Working Capital is negative (-90.10)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Interest payments to sales is high at 125.00%.
+
+	Zombie Score : 84.16
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :   14.16
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-40.30%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+
+Rank : 28
+ AAL
+	American Airlines Group Inc : FORT WORTH, TX
+	Industrials, Airlines, SP500
+	Employees     :      128,900
+	OpInc per Emp : $    112,854
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :     15,124.38 M
+	Shares            :        451.95 M (Seq=   -1.88% : QoQ=   -4.31%)
+	Share Change 12m  :        -20.35 M (Buyback Est= $721.47M)
+
+	Sales 12m         :    172,029.00 M (Seq=    0.41% : QoQ=    9.11%)
+	Ops Income 12m    :     14,547.00 M (Seq=   -2.11% : QoQ=  -58.09%)
+	Net Income 12m    :      6,688.00 M (Seq=   -0.14% : QoQ=  -81.47%)
+	Interest Paid 12m :      6,207.00 M (Seq=    0.66% : QoQ=   20.80%)
+
+	Cash <- Ops 12m   :      3,385.00 M (Seq=  126.47% : QoQ=   -8.23%)
+	  CapEx 12m       :      4,271.00 M (Seq=   29.34% : QoQ=   67.52%)
+	  Dividends 12m   :        734.64 M (Yield=4.86%)
+	    FCF 12m       :     -1,620.64 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :     -1,940.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :      1,445.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :     -1,497.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -52.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      8,654.00 M (Seq=    0.20% : QoQ=  -10.53%)
+	  Cash            :        337.00 M (Seq=   22.55% : QoQ=   13.47%)
+	  Acct Rx         :      1,876.00 M (Seq=    9.96% : QoQ=    3.70%)
+	  ST Invest       :      4,012.00 M (Seq=  -10.55% : QoQ=  -19.66%)
+	  Inventory       :      1,666.00 M (Seq=    9.46% : QoQ=   14.50%)
+	  Other           :        763.00 M (Seq=   17.57% : QoQ=  -31.75%)
+	Current Liabs     :     19,849.00 M (Seq=    9.69% : QoQ=   16.70%)
+	  Acct Pay        :      2,139.00 M (Seq=   20.64% : QoQ=    9.52%)
+	  ST Debt         :      3,370.00 M (Seq=    2.31% : QoQ=   20.66%)
+	  Other           :     14,340.00 M (Seq=   10.06% : QoQ=   16.95%)
+	Working Capital   :    -11,195.00 M (Ratio=0.44)
+	WC + FCF          :    -12,815.64 M
+
+	Sharehldr Equity  :       -636.00 M (Seq= -276.33% : QoQ=   37.52%)
+	Tangible Assets   :     54,581.00 M (Seq=    0.42% : QoQ=   16.14%)
+	LT Debt           :     20,660.00 M (Seq=   -2.45% : QoQ=   -5.86%)
+	LT Debt Tan Asset :          0.38
+
+	Last Price          :       32.94 : (52wkHi= 43.89 %offHigh=24%)
+	PE                  :        2.19
+	Op Margin           :        8.46%
+	Net Margin          :        3.89%
+	ROE                 :        0.00%
+	Interest % of sales :        3.61%
+	EPS Yield           :       45.58% ($15.01)
+	Q0 Est Growth       :      300.00%
+	Y1 Est Growth       :      207.79%
+
+	AAL State -->
+	  Free Cash Flow plus Working Capital is negative (-12815.64) with dividend paid 734.64.
+	  Current Ratio less than 0.75 and Cash Flow less than 0.
+	  Shareholders have no equity.
+
+	Zombie Score : 83.18
+		Negative Sales        :    0.00
+		Margins               :    0.00
+		Available Cash to MC  :   35.00
+		Interest Paid         :    3.61
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    4.21
+		OpsInc Growth 3Yr     :   24.60 : (-24.60%)
+		Share Decline         :   10.77
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 29
+ ATNX
+	Athenex Inc : BUFFALO, NY
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          575
+	OpInc per Emp : $   -827,304
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,384.22 M
+	Shares            :         67.01 M (Seq=    0.10% : QoQ=    8.69%)
+
+	Sales 12m         :        224.30 M (Seq=  -14.03% : QoQ=  451.08%)
+	Ops Income 12m    :       -475.70 M (Seq=  -20.82% : QoQ= -202.17%)
+	Net Income 12m    :       -481.70 M (Seq=  -23.85% : QoQ= -187.35%)
+	Interest Paid 12m :          9.60 M (Seq=  -69.49% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :       -129.70 M (Seq=    3.23% : QoQ= -159.84%)
+	  CapEx 12m       :          3.10 M (Seq=   12.50% : QoQ=  -25.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -132.80 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        101.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -28.60 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         60.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         31.40 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        150.70 M (Seq=  -11.77% : QoQ=    7.57%)
+	  Cash            :         71.00 M (Seq=   42.57% : QoQ=   81.12%)
+	  Acct Rx         :         20.60 M (Seq=   58.46% : QoQ=  164.10%)
+	  ST Invest       :          0.30 M (Seq=  -99.48% : QoQ=  -99.55%)
+	  Inventory       :         25.20 M (Seq=  -12.50% : QoQ=   35.48%)
+	  Other           :         33.60 M (Seq=   54.84% : QoQ=  366.67%)
+	Current Liabs     :         67.70 M (Seq=   30.95% : QoQ=   84.97%)
+	  Acct Pay        :         20.40 M (Seq=   56.92% : QoQ=   25.93%)
+	  ST Debt         :          1.70 M (Seq=   70.00% : QoQ=   41.67%)
+	  Other           :         45.60 M (Seq=   20.95% : QoQ=  137.50%)
+	Working Capital   :         83.00 M (Ratio=2.23)
+	WC + FCF          :        -49.80 M
+
+	Sharehldr Equity  :        107.20 M (Seq=  -23.10% : QoQ=  -31.02%)
+	Tangible Assets   :        172.30 M (Seq=   -5.74% : QoQ=   13.88%)
+	LT Debt           :         46.00 M (Seq=    0.44% : QoQ= 11,400.00%)
+	LT Debt to Equity :          0.43
+
+	Last Price          :       21.00 : (52wkHi= 21.11 %offHigh=0%)
+	PE                  :      275.00
+	Op Margin           :     -212.08%
+	Net Margin          :     -214.76%
+	ROE                 :     -449.35%
+	Interest % of sales :        4.28%
+	Q0 Est Growth       :     -300.00%
+	Y1 Est Growth       :        3.80%
+
+	ATNX State -->
+	  Free Cash Flow plus Working Capital is negative (-49.80)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+
+	Zombie Score : 82.65
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    3.37
+		Interest Paid         :    4.28
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-35.70%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 30
+ SILK
+	Silk Road Medical Inc : SUNNYVALE, CA
+	Healthcare, Medical Equipment, Supplies & Distribution
+	Employees     :          176
+	OpInc per Emp : $   -226,136
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        318.24 M
+	Shares            :         30.20 M (Seq=    0.00% : QoQ=    0.00%)
+
+	Sales 12m         :         48.90 M (Seq=  141.96% : QoQ=    0.00%)
+	Ops Income 12m    :        -39.80 M (Seq=  -16.30% : QoQ=    0.00%)
+	Net Income 12m    :        -57.00 M (Seq=  -93.81% : QoQ=    0.00%)
+	Interest Paid 12m :          8.30 M (Seq=   12.82% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :         -8.60 M (Seq=    0.00% : QoQ=    0.00%)
+	  CapEx 12m       :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :         -8.70 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         -0.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         -9.30 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -0.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         -9.40 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         29.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Cash            :         15.50 M (Seq=    0.00% : QoQ=    0.00%)
+	  Acct Rx         :          4.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          8.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          1.40 M (Seq=    0.00% : QoQ=    0.00%)
+	Current Liabs     :         10.80 M (Seq=    0.00% : QoQ=    0.00%)
+	  Acct Pay        :          3.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          7.70 M (Seq=    0.00% : QoQ=    0.00%)
+	Working Capital   :         18.30 M (Ratio=2.69)
+	WC + FCF          :          9.60 M
+
+	Sharehldr Equity  :       -158.10 M (Seq=    0.00% : QoQ=    0.00%)
+	Tangible Assets   :         38.70 M (Seq=    0.00% : QoQ=    0.00%)
+	LT Debt           :         44.60 M (Seq=    0.00% : QoQ=    0.00%)
+	LT Debt Tan Asset :          1.15
+
+	Last Price          :       42.15 : (52wkHi= 51.50 %offHigh=18%)
+	PE                  :      275.00
+	Op Margin           :      -81.39%
+	Net Margin          :     -116.56%
+	ROE                 :        0.00%
+	Interest % of sales :       16.97%
+	Q0 Est Growth       :     -157.54%
+	Y1 Est Growth       :      -97.59%
+
+	SILK State -->
+	  Interest payments to sales is high at 16.97%.
+	  Shareholders have no equity.
+
+	Zombie Score : 81.77
+		Negative Sales        :    0.00
+		Margins               :   19.80
+		Available Cash to MC  :    0.00
+		Interest Paid         :   16.97
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   30.00
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 31
+ TDW
+	Tidewater Inc. : HOUSTON, TX
+	Energy, Oil & Gas - Related Services And Equipment
+	Employees     :        5,500
+	OpInc per Emp : $   -450,127
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        674.63 M
+	Shares            :         37.18 M (Seq=   19.39% : QoQ=   58.72%)
+
+	Sales 12m         :      1,775.40 M (Seq=    7.55% : QoQ=  -55.35%)
+	Ops Income 12m    :     -2,475.70 M (Seq=    2.16% : QoQ=  -62.73%)
+	Net Income 12m    :     -2,671.90 M (Seq=   10.15% : QoQ=    3.81%)
+	Interest Paid 12m :        160.20 M (Seq=    0.66% : QoQ=  -43.12%)
+
+	Cash <- Ops 12m   :          6.70 M (Seq=   82.51% : QoQ=   46.67%)
+	  CapEx 12m       :         22.80 M (Seq=  -74.80% : QoQ=   82.35%)
+	  Dividends 12m   :        695.32 M (Yield=103.07%)
+	    FCF 12m       :       -711.42 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :       -121.40 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -114.70 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         67.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -47.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        674.10 M (Seq=   -1.35% : QoQ=  -17.40%)
+	  Cash            :        391.10 M (Seq=    5.19% : QoQ=  -11.62%)
+	  Acct Rx         :        231.90 M (Seq=   -5.04% : QoQ=  -28.36%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Inventory       :         29.30 M (Seq=   -0.68% : QoQ=    1.38%)
+	  Other           :         21.80 M (Seq=  -42.33% : QoQ=   78.69%)
+	Current Liabs     :        156.10 M (Seq=   -1.45% : QoQ=  -20.84%)
+	  Acct Pay        :         29.70 M (Seq=   -6.90% : QoQ=  -35.15%)
+	  ST Debt         :         10.00 M (Seq=   16.28% : QoQ=   92.31%)
+	  Other           :        116.40 M (Seq=   -1.19% : QoQ=  -20.38%)
+	Working Capital   :        518.00 M (Ratio=4.32)
+	WC + FCF          :       -193.42 M
+
+	Sharehldr Equity  :      1,126.20 M (Seq=   -1.54% : QoQ=   14.56%)
+	Tangible Assets   :      1,809.30 M (Seq=   -1.01% : QoQ=    7.31%)
+	LT Debt           :        427.40 M (Seq=   -0.70% : QoQ=   -3.46%)
+	LT Debt to Equity :          0.38
+
+	Last Price          :       22.86 : (52wkHi= 36.09 %offHigh=36%)
+	PE                  :      275.00
+	Op Margin           :     -139.44%
+	Net Margin          :     -150.50%
+	ROE                 :     -237.25%
+	Interest % of sales :        9.02%
+	Q0 Est Growth       :      210.29%
+	Y1 Est Growth       :      259.35%
+
+	TDW State -->
+	  Free Cash Flow plus Working Capital is negative (-193.42) with dividend paid 695.32.
+
+	Zombie Score : 81.52
+		Negative Sales        :   35.00
+		Margins               :   28.99
+		Available Cash to MC  :    0.00
+		Interest Paid         :    9.02
+		LT Debt to Equity     :    0.00
+		Equity to MC          :  -10.00
+		OpsInc Growth 3Yr     :   18.50 : (-18.50%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 32
+ DERM
+	Dermira Inc : MENLO PARK, CA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          333
+	OpInc per Emp : $ -2,476,576
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        383.68 M
+	Shares            :         43.59 M (Seq=    3.29% : QoQ=    4.20%)
+
+	Sales 12m         :        113.90 M (Seq=    5.20% : QoQ=  509.59%)
+	Ops Income 12m    :       -824.70 M (Seq=   -2.71% : QoQ= -175.44%)
+	Net Income 12m    :       -841.00 M (Seq=   -2.53% : QoQ= -189.67%)
+	Interest Paid 12m :         38.70 M (Seq=   -3.85% : QoQ= 14,900.00%)
+
+	Cash <- Ops 12m   :       -226.90 M (Seq=   12.39% : QoQ=  -25.18%)
+	  CapEx 12m       :          0.50 M (Seq=    0.00% : QoQ= -100.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -227.40 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        175.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -51.90 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -35.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -86.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        443.00 M (Seq=   32.08% : QoQ=  -11.77%)
+	  Cash            :        201.70 M (Seq=   92.10% : QoQ=  -30.11%)
+	  Acct Rx         :          8.50 M (Seq=   49.12% : QoQ= 8,400.00%)
+	  ST Invest       :        186.10 M (Seq=  -10.57% : QoQ=  -10.18%)
+	  Inventory       :         13.40 M (Seq=   59.52% : QoQ=    0.00%)
+	  Other           :         33.40 M (Seq=  302.41% : QoQ=  438.71%)
+	Current Liabs     :         62.10 M (Seq=   60.88% : QoQ=  -36.05%)
+	  Acct Pay        :          6.10 M (Seq=  -61.64% : QoQ=  -42.45%)
+	  ST Debt         :          4.20 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         51.80 M (Seq=  129.20% : QoQ=  -40.12%)
+	Working Capital   :        380.90 M (Ratio=7.13)
+	WC + FCF          :        153.50 M
+
+	Sharehldr Equity  :         74.60 M (Seq=  928.89% : QoQ=  -41.67%)
+	Tangible Assets   :        459.90 M (Seq=   34.24% : QoQ=   -8.95%)
+	LT Debt           :        314.40 M (Seq=    0.19% : QoQ=   12.37%)
+	LT Debt to Equity :          4.21
+
+	Last Price          :        9.04 : (52wkHi= 15.48 %offHigh=41%)
+	PE                  :      275.00
+	Op Margin           :     -724.06%
+	Net Margin          :     -738.37%
+	ROE                 :   -1,127.35%
+	Interest % of sales :       33.98%
+	Q0 Est Growth       :       96.75%
+	Y1 Est Growth       :        6.09%
+
+	DERM State -->
+	  Interest payments to sales is high at 33.98%.
+
+	Zombie Score : 79.51
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   33.98
+		LT Debt to Equity     :   10.54
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-38.90%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+
+Rank : 33
+ EVOP
+	EVO Payments Inc : ATLANTA, GA
+	Industrials, Business Support Services
+	Employees     :        2,200
+	OpInc per Emp : $     39,363
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        676.22 M
+	Shares            :         26.37 M (Seq=  -13.90% : QoQ=   52.47%)
+
+	Sales 12m         :      2,036.80 M (Seq=   -2.97% : QoQ=   54.15%)
+	Ops Income 12m    :         86.60 M (Seq=  -42.86% : QoQ= -184.68%)
+	Net Income 12m    :        -27.20 M (Seq=  -36.05% : QoQ= -160.98%)
+	Interest Paid 12m :        219.50 M (Seq=   -6.19% : QoQ=  168.42%)
+
+	Cash <- Ops 12m   :         83.50 M (Seq= -188.14% : QoQ= -11,860.00%)
+	  CapEx 12m       :         46.70 M (Seq=  -33.67% : QoQ=  -24.42%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :         36.80 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         59.60 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        143.10 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -123.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         19.20 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        945.30 M (Seq=   36.74% : QoQ=   18.85%)
+	  Cash            :        221.10 M (Seq=  -36.95% : QoQ=    0.45%)
+	  Acct Rx         :         71.10 M (Seq=   -0.70% : QoQ=  -10.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          9.50 M (Seq=    6.74% : QoQ=    2.15%)
+	  Other           :        643.70 M (Seq=  147.48% : QoQ=   32.18%)
+	Current Liabs     :        901.80 M (Seq=   40.16% : QoQ=   15.48%)
+	  Acct Pay        :         51.20 M (Seq=    4.70% : QoQ=    7.56%)
+	  ST Debt         :         58.10 M (Seq=   18.57% : QoQ=  -44.72%)
+	  Other           :        792.60 M (Seq=   45.32% : QoQ=   26.17%)
+	Working Capital   :         43.50 M (Ratio=1.05)
+	WC + FCF          :         80.30 M
+
+	Sharehldr Equity  :       -193.30 M (Seq= -297.74% : QoQ=   -2.17%)
+	Tangible Assets   :      1,141.10 M (Seq=   28.04% : QoQ=   22.82%)
+	LT Debt           :        677.70 M (Seq=    0.12% : QoQ=  -15.89%)
+	LT Debt Tan Asset :          0.59
+
+	Last Price          :       29.26 : (52wkHi= 31.83 %offHigh=8%)
+	PE                  :      275.00
+	Op Margin           :        4.25%
+	Net Margin          :       -1.34%
+	ROE                 :        0.00%
+	Interest % of sales :       10.78%
+	Q0 Est Growth       :      300.00%
+	Y1 Est Growth       :      300.00%
+
+	EVOP State -->
+	  Shareholders have no equity.
+
+	Zombie Score : 79.36
+		Negative Sales        :    0.00
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   10.78
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   28.59
+		OpsInc Growth 3Yr     :   35.00 : (-37.40%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 34
+ QCOM
+	QUALCOMM, Inc. : SAN DIEGO, CA
+	Technology, Semiconductors, SP500
+	Employees     :       35,400
+	OpInc per Emp : $    316,271
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :     98,880.21 M
+	Shares            :      1,213.00 M (Seq=    0.00% : QoQ=  -18.15%)
+	Share Change 12m  :       -269.00 M (Buyback Est= $18,754.68M)
+
+	Sales 12m         :     89,804.00 M (Seq=   -6.62% : QoQ=  -16.04%)
+	Ops Income 12m    :     11,196.00 M (Seq=  176.88% : QoQ=  -68.33%)
+	Net Income 12m    :      5,764.00 M (Seq=  150.51% : QoQ=  -53.39%)
+	Interest Paid 12m :      2,296.00 M (Seq=   -4.04% : QoQ=  608.65%)
+
+	Cash <- Ops 12m   :      2,767.00 M (Seq=  147.43% : QoQ=   58.72%)
+	  CapEx 12m       :        695.00 M (Seq=   11.84% : QoQ=   -8.11%)
+	  Dividends 12m   :     12,140.62 M (Yield=12.28%)
+	    FCF 12m       :    -10,068.62 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :    -33,144.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :    -30,377.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :      2,639.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :    -27,738.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :     16,324.00 M (Seq=    0.18% : QoQ=  -64.16%)
+	  Cash            :     10,135.00 M (Seq=    0.69% : QoQ=  -73.29%)
+	  Acct Rx         :      3,638.00 M (Seq=    6.19% : QoQ=    2.91%)
+	  ST Invest       :        195.00 M (Seq=  -21.69% : QoQ=  -88.00%)
+	  Inventory       :      1,725.00 M (Seq=    1.59% : QoQ=   -4.01%)
+	  Other           :        631.00 M (Seq=  -26.20% : QoQ=   -1.56%)
+	Current Liabs     :     10,517.00 M (Seq=   -0.37% : QoQ=  -16.93%)
+	  Acct Pay        :      1,667.00 M (Seq=   17.23% : QoQ=   14.65%)
+	  ST Debt         :        998.00 M (Seq=    0.00% : QoQ=  -73.27%)
+	  Other           :      7,852.00 M (Seq=   -3.49% : QoQ=    5.07%)
+	Working Capital   :      5,807.00 M (Ratio=1.55)
+	WC + FCF          :     -4,261.62 M
+
+	Sharehldr Equity  :      3,866.00 M (Seq=    6.88% : QoQ=  -83.77%)
+	Tangible Assets   :     25,214.00 M (Seq=    0.04% : QoQ=  -53.32%)
+	LT Debt           :     15,405.00 M (Seq=    0.11% : QoQ=  -20.43%)
+	LT Debt to Equity :          3.98
+
+	Last Price          :       74.36 : (52wkHi= 90.34 %offHigh=17%)
+	PE                  :       17.50
+	Op Margin           :       12.47%
+	Net Margin          :        6.42%
+	ROE                 :      149.09%
+	Interest % of sales :        2.56%
+	EPS Yield           :        5.72% ($4.25)
+	Q0 Est Growth       :      300.00%
+	Y1 Est Growth       :      300.00%
+
+	QCOM State -->
+	  Free Cash Flow plus Working Capital is negative (-4261.62) with dividend paid 12140.62.
+
+	Zombie Score : 78.55
+		Negative Sales        :   16.04
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :    2.56
+		LT Debt to Equity     :    9.96
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-51.50%)
+		Share Decline         :   15.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 35
+ CATS
+	Catasys, Inc. : LOS ANGELES, CA
+	Healthcare, Healthcare Facilities & Services
+	Employees     :          209
+	OpInc per Emp : $   -223,444
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        302.01 M
+	Shares            :         16.20 M (Seq=    0.65% : QoQ=    1.89%)
+
+	Sales 12m         :         50.10 M (Seq=   32.24% : QoQ=  644.44%)
+	Ops Income 12m    :        -46.70 M (Seq=   12.50% : QoQ=  -29.35%)
+	Net Income 12m    :        -58.60 M (Seq=    9.15% : QoQ=  -79.17%)
+	Interest Paid 12m :         10.30 M (Seq=   50.00% : QoQ=  -65.38%)
+
+	Cash <- Ops 12m   :         -9.50 M (Seq= -193.33% : QoQ=  -29.41%)
+	  CapEx 12m       :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :         -9.50 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :          9.90 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :          0.40 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :          0.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          0.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :          5.80 M (Seq=    5.45% : QoQ=  100.00%)
+	  Cash            :          1.30 M (Seq=  -59.38% : QoQ=   -7.14%)
+	  Acct Rx         :          3.60 M (Seq=  157.14% : QoQ=  200.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          0.90 M (Seq=    0.00% : QoQ=  125.00%)
+	Current Liabs     :          8.50 M (Seq=   10.39% : QoQ=   80.85%)
+	  Acct Pay        :          0.80 M (Seq=   60.00% : QoQ=   14.29%)
+	  ST Debt         :          1.20 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          6.50 M (Seq=   -9.72% : QoQ=   66.67%)
+	Working Capital   :         -2.70 M (Ratio=0.68)
+	WC + FCF          :        -12.20 M
+
+	Sharehldr Equity  :        -10.70 M (Seq=  -18.89% : QoQ= -1,088.89%)
+	Tangible Assets   :          7.20 M (Seq=   14.29% : QoQ=   89.47%)
+	LT Debt           :          8.90 M (Seq=   18.67% : QoQ=    0.00%)
+	LT Debt Tan Asset :          1.24
+
+	Last Price          :       18.84 : (52wkHi= 20.83 %offHigh=9%)
+	PE                  :      275.00
+	Op Margin           :      -93.21%
+	Net Margin          :     -116.97%
+	ROE                 :        0.00%
+	Interest % of sales :       20.56%
+	Q0 Est Growth       :      -43.02%
+	Y1 Est Growth       :      -22.22%
+
+	CATS State -->
+	  Cash from Operations less than Working Capital deficit
+	  Free Cash Flow plus Working Capital is negative (-12.20)
+	  Interest payments to sales is high at 20.56%.
+	  Shareholders have no equity.
+
+	Zombie Score : 78.26
+		Negative Sales        :    0.00
+		Margins               :   21.02
+		Available Cash to MC  :    4.04
+		Interest Paid         :   20.56
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    3.54
+		OpsInc Growth 3Yr     :   14.10 : (-14.10%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 36
+ OSTK
+	Overstock.com Inc : MIDVALE, UT
+	Technology, Online Services
+	Employees     :        2,060
+	OpInc per Emp : $   -131,504
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        572.63 M
+	Shares            :         32.37 M (Seq=    0.73% : QoQ=   13.32%)
+
+	Sales 12m         :      7,110.40 M (Seq=   -4.26% : QoQ=    5.20%)
+	Ops Income 12m    :       -270.90 M (Seq= -318.25% : QoQ= -2,156.07%)
+	Net Income 12m    :       -297.10 M (Seq=  -91.32% : QoQ= -2,402.25%)
+	Interest Paid 12m :          5.40 M (Seq=  -48.28% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :       -190.30 M (Seq= -176.34% : QoQ= -403.92%)
+	  CapEx 12m       :         32.70 M (Seq=  -48.75% : QoQ=    2.50%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -223.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        218.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         27.70 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -109.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -81.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        185.00 M (Seq=  -14.07% : QoQ=  -41.68%)
+	  Cash            :        119.60 M (Seq=  -15.48% : QoQ=  -53.93%)
+	  Acct Rx         :         30.80 M (Seq=  -14.21% : QoQ=   41.28%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :         13.60 M (Seq=   -3.55% : QoQ=    8.80%)
+	  Other           :         20.90 M (Seq=  -11.81% : QoQ=  -10.68%)
+	Current Liabs     :        202.00 M (Seq=  -16.36% : QoQ=   -9.70%)
+	  Acct Pay        :         84.80 M (Seq=  -28.38% : QoQ=  -19.92%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :        117.20 M (Seq=   -4.72% : QoQ=   -0.51%)
+	Working Capital   :        -17.00 M (Ratio=0.92)
+	WC + FCF          :       -240.00 M
+
+	Sharehldr Equity  :        134.80 M (Seq=    2.35% : QoQ=  -25.07%)
+	Tangible Assets   :        410.20 M (Seq=   -3.46% : QoQ=  -14.47%)
+	LT Debt           :          3.10 M (Seq=    0.00% : QoQ=  -92.25%)
+	LT Debt to Equity :          0.02
+
+	Last Price          :       18.39 : (52wkHi= 48.00 %offHigh=61%)
+	PE                  :      275.00
+	Op Margin           :       -3.81%
+	Net Margin          :       -4.18%
+	ROE                 :     -220.40%
+	Interest % of sales :        0.08%
+	Q0 Est Growth       :      141.56%
+	Y1 Est Growth       :      154.72%
+
+	OSTK State -->
+	  Cash from Operations less than Working Capital deficit
+	  Free Cash Flow plus Working Capital is negative (-240.00)
+
+	Zombie Score : 76.72
+		Negative Sales        :    0.00
+		Margins               :    0.80
+		Available Cash to MC  :   35.00
+		Interest Paid         :    0.08
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-340.90%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    5.84
+
+Rank : 37
+ IRWD
+	Ironwood Pharmaceuticals, Inc. : CAMBRIDGE, MA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          515
+	OpInc per Emp : $ -1,218,640
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,623.69 M
+	Shares            :        154.96 M (Seq=    0.55% : QoQ=    2.61%)
+
+	Sales 12m         :      1,265.10 M (Seq=   -0.12% : QoQ=  131.42%)
+	Ops Income 12m    :       -627.60 M (Seq=   -7.74% : QoQ= -152.11%)
+	Net Income 12m    :       -779.50 M (Seq=   -5.70% : QoQ= -109.18%)
+	Interest Paid 12m :        151.30 M (Seq=    0.80% : QoQ=   22.19%)
+
+	Cash <- Ops 12m   :        -82.40 M (Seq= -555.91% : QoQ=  -37.22%)
+	  CapEx 12m       :         10.30 M (Seq=   -3.03% : QoQ=  113.33%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -92.70 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         15.90 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -66.50 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         41.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -25.30 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        201.80 M (Seq=  -24.25% : QoQ=  -26.80%)
+	  Cash            :        119.00 M (Seq=  -31.29% : QoQ=  -17.82%)
+	  Acct Rx         :         72.60 M (Seq=  -10.37% : QoQ=    2.69%)
+	  ST Invest       :          0.00 M (Seq= -100.00% : QoQ= -100.00%)
+	  Inventory       :          0.60 M (Seq=    0.00% : QoQ=  -64.71%)
+	  Other           :          9.60 M (Seq=  -21.95% : QoQ=    7.87%)
+	Current Liabs     :        118.60 M (Seq=   -0.75% : QoQ=   90.37%)
+	  Acct Pay        :         11.20 M (Seq=  -38.12% : QoQ=   -3.45%)
+	  ST Debt         :         46.00 M (Seq=   -3.36% : QoQ=  200.65%)
+	  Other           :         61.40 M (Seq=   14.13% : QoQ=   73.45%)
+	Working Capital   :         83.20 M (Ratio=1.70)
+	WC + FCF          :         -9.50 M
+
+	Sharehldr Equity  :       -237.20 M (Seq=  -20.77% : QoQ= -1,210.50%)
+	Tangible Assets   :        362.70 M (Seq=    9.48% : QoQ=  -12.37%)
+	LT Debt           :        360.10 M (Seq=   -1.69% : QoQ=   -7.29%)
+	LT Debt Tan Asset :          0.99
+
+	Last Price          :       10.57 : (52wkHi= 17.75 %offHigh=40%)
+	PE                  :      275.00
+	Op Margin           :      -49.61%
+	Net Margin          :      -61.62%
+	ROE                 :        0.00%
+	Interest % of sales :       11.96%
+	Q0 Est Growth       :      271.68%
+	Y1 Est Growth       :      292.86%
+
+	IRWD State -->
+	  Free Cash Flow plus Working Capital is negative (-9.50)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  Shareholders have no equity.
+
+	Zombie Score : 75.49
+		Negative Sales        :    0.00
+		Margins               :   11.12
+		Available Cash to MC  :    0.00
+		Interest Paid         :   11.96
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   14.61
+		OpsInc Growth 3Yr     :   32.80 : (-32.80%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 38
+ OPTN
+	OptiNose Inc : YARDLEY, PA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :           99
+	OpInc per Emp : $ -2,239,393
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        300.50 M
+	Shares            :         41.26 M (Seq=   -0.06% : QoQ=    9.00%)
+
+	Sales 12m         :         65.30 M (Seq=   50.70% : QoQ= 10,600.00%)
+	Ops Income 12m    :       -221.70 M (Seq=    1.90% : QoQ= -249.82%)
+	Net Income 12m    :       -272.10 M (Seq=    1.59% : QoQ= -159.90%)
+	Interest Paid 12m :         23.00 M (Seq=    2.17% : QoQ= 1,075.00%)
+
+	Cash <- Ops 12m   :        -98.50 M (Seq=  -47.03% : QoQ=  -29.13%)
+	  CapEx 12m       :          1.50 M (Seq=    0.00% : QoQ=  -50.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -100.00 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         61.50 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        -37.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -1.50 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -38.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        186.80 M (Seq=  -12.26% : QoQ=  -13.96%)
+	  Cash            :        171.30 M (Seq=  -14.78% : QoQ=  -18.35%)
+	  Acct Rx         :          5.90 M (Seq=  126.92% : QoQ=  156.52%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          5.70 M (Seq=  -19.72% : QoQ=   58.33%)
+	  Other           :          3.80 M (Seq=   72.73% : QoQ=  171.43%)
+	Current Liabs     :         26.90 M (Seq=    4.67% : QoQ=   19.56%)
+	  Acct Pay        :          7.70 M (Seq=    8.45% : QoQ=   -3.75%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         19.20 M (Seq=    3.23% : QoQ=   32.41%)
+	Working Capital   :        159.90 M (Ratio=6.94)
+	WC + FCF          :         59.90 M
+
+	Sharehldr Equity  :         92.40 M (Seq=  -22.09% : QoQ=  -26.72%)
+	Tangible Assets   :        193.00 M (Seq=  -11.06% : QoQ=  -12.51%)
+	LT Debt           :         72.70 M (Seq=    0.28% : QoQ=    0.97%)
+	LT Debt to Equity :          0.79
+
+	Last Price          :        7.40 : (52wkHi= 29.60 %offHigh=75%)
+	PE                  :      275.00
+	Op Margin           :     -339.51%
+	Net Margin          :     -416.69%
+	ROE                 :     -294.48%
+	Interest % of sales :       35.22%
+	Q0 Est Growth       :       27.48%
+	Y1 Est Growth       :      -25.84%
+
+	OPTN State -->
+	  Interest payments to sales is high at 35.22%.
+
+	Zombie Score : 75.00
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-52.80%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 39
+ PHAS
+	PhaseBio Pharmaceuticals Inc : MALVERN, PA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :           24
+	OpInc per Emp : $   -816,666
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        271.33 M
+	Shares            :         24.50 M (Seq=    0.00% : QoQ=    0.00%)
+
+	Sales 12m         :          2.00 M (Seq=   85.71% : QoQ=    0.00%)
+	Ops Income 12m    :        -19.60 M (Seq=    0.00% : QoQ=    0.00%)
+	Net Income 12m    :        -43.20 M (Seq= -133.33% : QoQ=    0.00%)
+	Interest Paid 12m :          6.60 M (Seq=   44.44% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -25.70 M (Seq=  -27.94% : QoQ= -234.62%)
+	  CapEx 12m       :          0.20 M (Seq=    0.00% : QoQ=    0.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -25.90 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         64.50 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         38.80 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -0.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         38.60 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         54.10 M (Seq=  -13.58% : QoQ=    0.00%)
+	  Cash            :         51.90 M (Seq=  -14.92% : QoQ=    0.00%)
+	  Acct Rx         :          0.70 M (Seq=  250.00% : QoQ=    0.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          1.50 M (Seq=    7.14% : QoQ=    0.00%)
+	Current Liabs     :          3.80 M (Seq=  -17.39% : QoQ=    0.00%)
+	  Acct Pay        :          2.10 M (Seq=   16.67% : QoQ=    0.00%)
+	  ST Debt         :          0.40 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          1.30 M (Seq=  -53.57% : QoQ=    0.00%)
+	Working Capital   :         50.30 M (Ratio=14.24)
+	WC + FCF          :         24.40 M
+
+	Sharehldr Equity  :         44.10 M (Seq=  -13.36% : QoQ=    0.00%)
+	Tangible Assets   :         56.40 M (Seq=  -10.48% : QoQ=    0.00%)
+	LT Debt           :          6.80 M (Seq=   -9.33% : QoQ=    0.00%)
+	LT Debt to Equity :          0.15
+
+	Last Price          :       11.66 : (52wkHi= 16.65 %offHigh=29%)
+	PE                  :        4.57
+	Op Margin           :     -980.00%
+	Net Margin          :   -2,160.00%
+	ROE                 :      -97.96%
+	Interest % of sales :      330.00%
+	EPS Yield           :       21.89% ($2.55)
+	Q0 Est Growth       :      283.79%
+	Y1 Est Growth       :     -105.76%
+
+	PHAS State -->
+	  Interest payments to sales is high at 330.00%.
+
+	Zombie Score : 75.00
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :    5.00
+
+Rank : 40
+ RDUS
+	Radius Health Inc : WALTHAM, MA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          398
+	OpInc per Emp : $ -1,601,758
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,082.91 M
+	Shares            :         45.67 M (Seq=    0.26% : QoQ=    1.63%)
+
+	Sales 12m         :        235.80 M (Seq=   15.42% : QoQ=    0.00%)
+	Ops Income 12m    :       -637.50 M (Seq=    9.65% : QoQ=    0.00%)
+	Net Income 12m    :       -860.80 M (Seq=    8.50% : QoQ=  -99.51%)
+	Interest Paid 12m :         54.70 M (Seq=    1.74% : QoQ= 1,131.58%)
+
+	Cash <- Ops 12m   :       -169.00 M (Seq=   14.18% : QoQ=   50.85%)
+	  CapEx 12m       :          0.20 M (Seq=    0.00% : QoQ=  116.67%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -169.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :          5.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -163.90 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        179.90 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         16.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        246.20 M (Seq=  -10.47% : QoQ=   -4.50%)
+	  Cash            :         71.50 M (Seq=   20.57% : QoQ=   27.45%)
+	  Acct Rx         :         20.80 M (Seq=   23.81% : QoQ=  160.00%)
+	  ST Invest       :        132.70 M (Seq=  -25.07% : QoQ=  -26.07%)
+	  Inventory       :          5.60 M (Seq=   -9.68% : QoQ=    3.70%)
+	  Other           :         15.60 M (Seq=    0.00% : QoQ=   79.31%)
+	Current Liabs     :         47.70 M (Seq=    2.80% : QoQ=   21.07%)
+	  Acct Pay        :          9.90 M (Seq=  135.71% : QoQ=  120.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         37.80 M (Seq=  -10.43% : QoQ=    8.62%)
+	Working Capital   :        198.50 M (Ratio=5.16)
+	WC + FCF          :         29.30 M
+
+	Sharehldr Equity  :         28.00 M (Seq=  -53.80% : QoQ=  -85.66%)
+	Tangible Assets   :        257.70 M (Seq=   -7.83% : QoQ=  -34.92%)
+	LT Debt           :        183.60 M (Seq=    2.11% : QoQ=    8.45%)
+	LT Debt to Equity :          6.56
+
+	Last Price          :       23.78 : (52wkHi= 30.54 %offHigh=22%)
+	PE                  :      275.00
+	Op Margin           :     -270.36%
+	Net Margin          :     -365.06%
+	ROE                 :   -3,074.29%
+	Interest % of sales :       23.20%
+	Q0 Est Growth       :      108.61%
+	Y1 Est Growth       :       78.87%
+
+	RDUS State -->
+	  Interest payments to sales is high at 23.20%.
+	  LT debt to equity of 6.56 is high.
+
+	Zombie Score : 74.59
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   23.20
+		LT Debt to Equity     :   16.39
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 41
+ REPH
+	Recro Pharma Inc : MALVERN, PA
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          255
+	OpInc per Emp : $   -625,882
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        212.41 M
+	Shares            :         21.92 M (Seq=    1.98% : QoQ=   14.04%)
+
+	Sales 12m         :        301.30 M (Seq=    7.24% : QoQ=   59.42%)
+	Ops Income 12m    :       -159.60 M (Seq=   26.85% : QoQ= -464.29%)
+	Net Income 12m    :       -229.20 M (Seq=   13.17% : QoQ= -2,406.67%)
+	Interest Paid 12m :         36.80 M (Seq=   18.18% : QoQ=   85.71%)
+
+	Cash <- Ops 12m   :        -40.80 M (Seq=  -54.32% : QoQ=   15.54%)
+	  CapEx 12m       :         11.80 M (Seq=  -53.23% : QoQ=   70.59%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -52.60 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         59.50 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         18.70 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -19.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         -0.30 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         94.60 M (Seq=   33.05% : QoQ=   19.29%)
+	  Cash            :         46.00 M (Seq=   19.48% : QoQ=   -0.65%)
+	  Acct Rx         :         21.30 M (Seq=   17.68% : QoQ=   39.22%)
+	  ST Invest       :         12.00 M (Seq=    0.00% : QoQ=  140.00%)
+	  Inventory       :         10.20 M (Seq=   -4.67% : QoQ=    2.00%)
+	  Other           :          5.10 M (Seq=   30.77% : QoQ=   88.89%)
+	Current Liabs     :         26.50 M (Seq=   -8.62% : QoQ=  -40.72%)
+	  Acct Pay        :         10.50 M (Seq=  133.33% : QoQ=  144.19%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         16.00 M (Seq=  -34.69% : QoQ=  -60.30%)
+	Working Capital   :         68.10 M (Ratio=3.57)
+	WC + FCF          :         15.50 M
+
+	Sharehldr Equity  :        -19.00 M (Seq=    2.56% : QoQ= -177.24%)
+	Tangible Assets   :        142.90 M (Seq=   22.35% : QoQ=    3.70%)
+	LT Debt           :        105.90 M (Seq=   64.95% : QoQ=   96.11%)
+	LT Debt Tan Asset :          0.74
+
+	Last Price          :       10.05 : (52wkHi= 10.69 %offHigh=5%)
+	PE                  :      275.00
+	Op Margin           :      -52.97%
+	Net Margin          :      -76.07%
+	ROE                 :        0.00%
+	Interest % of sales :       12.21%
+	Q0 Est Growth       :      105.56%
+	Y1 Est Growth       :      250.72%
+
+	REPH State -->
+	  Shareholders have no equity.
+
+	Zombie Score : 74.06
+		Negative Sales        :    0.00
+		Margins               :   12.90
+		Available Cash to MC  :    0.00
+		Interest Paid         :   12.21
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    8.94
+		OpsInc Growth 3Yr     :   35.00 : (-97.90%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 42
+ MAT
+	Mattel Inc : EL SEGUNDO, CA
+	Consumer Cyclicals, Toys & Children's Products, SP400
+	Employees     :       27,000
+	OpInc per Emp : $     -5,592
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      4,006.20 M
+	Shares            :        345.85 M (Seq=    0.04% : QoQ=    0.41%)
+
+	Sales 12m         :     19,341.30 M (Seq=   -0.43% : QoQ=  -21.23%)
+	Ops Income 12m    :       -151.00 M (Seq=   61.56% : QoQ= -116.81%)
+	Net Income 12m    :     -1,671.70 M (Seq=   24.01% : QoQ= -210.19%)
+	Interest Paid 12m :        570.00 M (Seq=    3.24% : QoQ=  120.16%)
+
+	Cash <- Ops 12m   :         53.60 M (Seq= -127.38% : QoQ=   29.56%)
+	  CapEx 12m       :         64.40 M (Seq=  -50.69% : QoQ=  -49.05%)
+	  Dividends 12m   :      1,364.18 M (Yield=34.05%)
+	    FCF 12m       :     -1,374.98 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        -38.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         15.60 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -149.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -133.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      1,895.10 M (Seq=  -19.44% : QoQ=  -14.70%)
+	  Cash            :        380.10 M (Seq=  -36.06% : QoQ=  -27.83%)
+	  Acct Rx         :        624.50 M (Seq=  -35.63% : QoQ=   -7.63%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :        615.80 M (Seq=   13.43% : QoQ=   -9.13%)
+	  Other           :        274.70 M (Seq=   12.12% : QoQ=  -19.47%)
+	Current Liabs     :      1,006.30 M (Seq=  -19.66% : QoQ=    1.93%)
+	  Acct Pay        :        324.90 M (Seq=  -39.61% : QoQ=  -18.45%)
+	  ST Debt         :          4.20 M (Seq=  -98.47% : QoQ=  -98.32%)
+	  Other           :        681.30 M (Seq=   -4.11% : QoQ=   15.71%)
+	Working Capital   :        888.80 M (Ratio=1.88)
+	WC + FCF          :       -486.18 M
+
+	Sharehldr Equity  :        518.50 M (Seq=  -22.55% : QoQ=  -47.23%)
+	Tangible Assets   :      3,113.10 M (Seq=   -4.78% : QoQ=   -4.85%)
+	LT Debt           :      2,853.50 M (Seq=    0.06% : QoQ=   -0.64%)
+	LT Debt to Equity :          5.50
+
+	Last Price          :       11.60 : (52wkHi= 17.47 %offHigh=33%)
+	PE                  :      275.00
+	Op Margin           :       -0.78%
+	Net Margin          :       -8.64%
+	ROE                 :     -322.41%
+	Interest % of sales :        2.95%
+	Q0 Est Growth       :      168.58%
+	Y1 Est Growth       :      217.54%
+
+	MAT State -->
+	  Free Cash Flow plus Working Capital is negative (-486.18) with dividend paid 1364.18.
+	  LT debt to equity of 5.50 is high.
+
+	Zombie Score : 73.48
+		Negative Sales        :   21.23
+		Margins               :    0.94
+		Available Cash to MC  :    0.00
+		Interest Paid         :    2.95
+		LT Debt to Equity     :   13.76
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   34.60 : (-34.60%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 43
+ WYND
+	Wyndham Destinations Inc : ORLANDO, FL
+	Consumer Cyclicals, Hotels, Motels & Cruise Lines, SP400
+	Employees     :       24,500
+	OpInc per Emp : $     88,530
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      4,404.07 M
+	Shares            :         94.40 M (Seq=   -2.18% : QoQ=   -5.69%)
+	Share Change 12m  :         -5.70 M (Buyback Est= $231.13M)
+
+	Sales 12m         :     15,371.00 M (Seq=    0.28% : QoQ=  -19.19%)
+	Ops Income 12m    :      2,169.00 M (Seq=    7.07% : QoQ=  -40.11%)
+	Net Income 12m    :      2,855.00 M (Seq=    6.85% : QoQ=   17.32%)
+	Interest Paid 12m :        623.00 M (Seq=   -2.94% : QoQ=   35.25%)
+
+	Cash <- Ops 12m   :        461.00 M (Seq=   74.71% : QoQ=   14.29%)
+	  CapEx 12m       :         91.00 M (Seq=  -44.44% : QoQ=  -28.57%)
+	  Dividends 12m   :        769.27 M (Yield=17.47%)
+	    FCF 12m       :       -399.27 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        143.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        604.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -737.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -133.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      4,948.00 M (Seq=   -5.07% : QoQ=   34.38%)
+	  Cash            :        217.00 M (Seq=   -0.46% : QoQ=  -25.43%)
+	  Acct Rx         :      3,157.00 M (Seq=   -0.03% : QoQ=  339.69%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :      1,213.00 M (Seq=   -0.90% : QoQ=  259.94%)
+	  Other           :        361.00 M (Seq=  -41.01% : QoQ=  -84.55%)
+	Current Liabs     :      1,502.00 M (Seq=   -5.42% : QoQ=  -51.53%)
+	  Acct Pay        :         79.00 M (Seq=   19.70% : QoQ=  -67.76%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Other           :      1,423.00 M (Seq=   -6.50% : QoQ=  -44.52%)
+	Working Capital   :      3,446.00 M (Ratio=3.29)
+	WC + FCF          :      3,046.72 M
+
+	Sharehldr Equity  :       -589.00 M (Seq=   -2.61% : QoQ= -191.32%)
+	Tangible Assets   :      6,339.00 M (Seq=    3.46% : QoQ=  -27.00%)
+	LT Debt           :      5,291.00 M (Seq=    1.01% : QoQ=  -11.40%)
+	LT Debt Tan Asset :          0.83
+
+	Last Price          :       45.17 : (52wkHi= 47.55 %offHigh=5%)
+	PE                  :        4.00
+	Op Margin           :       14.11%
+	Net Margin          :       18.57%
+	ROE                 :        0.00%
+	Interest % of sales :        4.05%
+	EPS Yield           :       25.02% ($11.30)
+	Q0 Est Growth       :      300.00%
+	Y1 Est Growth       :      300.00%
+
+	WYND State -->
+	  Shareholders have no equity.
+
+	Zombie Score : 73.45
+		Negative Sales        :   19.19
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :    4.05
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   13.37
+		OpsInc Growth 3Yr     :   17.60 : (-17.60%)
+		Share Decline         :   14.24
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 44
+ XERS
+	Xeris Pharmaceuticals Inc : CHICAGO, IL
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          113
+	OpInc per Emp : $ -1,523,893
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        270.17 M
+	Shares            :         23.56 M (Seq=   12.37% : QoQ=   19.38%)
+
+	Sales 12m         :          7.70 M (Seq=    0.00% : QoQ=    0.00%)
+	Ops Income 12m    :       -172.20 M (Seq=  -23.27% : QoQ=    0.00%)
+	Net Income 12m    :       -173.40 M (Seq=  -22.30% : QoQ=    0.00%)
+	Interest Paid 12m :          5.90 M (Seq=   36.00% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -69.60 M (Seq=  -15.85% : QoQ= -171.79%)
+	  CapEx 12m       :          1.50 M (Seq=  -33.33% : QoQ=  -33.33%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -71.10 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        160.10 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         90.50 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -86.60 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          3.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        153.40 M (Seq=   30.11% : QoQ=  156.52%)
+	  Cash            :         62.00 M (Seq=   35.67% : QoQ=    6.71%)
+	  Acct Rx         :          3.60 M (Seq=   24.14% : QoQ= 1,100.00%)
+	  ST Invest       :         85.70 M (Seq=   28.10% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          2.10 M (Seq=  -12.50% : QoQ=   50.00%)
+	Current Liabs     :         13.40 M (Seq=   31.37% : QoQ=   45.65%)
+	  Acct Pay        :          1.40 M (Seq=   55.56% : QoQ=   75.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         12.00 M (Seq=   29.03% : QoQ=   44.58%)
+	Working Capital   :        140.00 M (Ratio=11.45)
+	WC + FCF          :         68.90 M
+
+	Sharehldr Equity  :        107.10 M (Seq=   42.04% : QoQ=  254.32%)
+	Tangible Assets   :        161.00 M (Seq=   34.17% : QoQ=  161.36%)
+	LT Debt           :         32.10 M (Seq=    0.63% : QoQ=   77.35%)
+	LT Debt to Equity :          0.30
+
+	Last Price          :       12.57 : (52wkHi= 27.98 %offHigh=55%)
+	PE                  :      275.00
+	Op Margin           :   -2,236.36%
+	Net Margin          :   -2,251.95%
+	ROE                 :     -161.90%
+	Interest % of sales :       76.62%
+	Q0 Est Growth       :     -164.18%
+	Y1 Est Growth       :      -82.72%
+
+	XERS State -->
+	  Interest payments to sales is high at 76.62%.
+
+	Zombie Score : 72.54
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :  -10.00
+		OpsInc Growth 3Yr     :    0.00 : (0.00%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    2.54
+		Earnings weakness     :   10.00
+
+Rank : 45
+ NTRA
+	Natera Inc : SAN CARLOS, CA
+	Healthcare, Medical Equipment, Supplies & Distribution
+	Employees     :          975
+	OpInc per Emp : $   -478,769
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      1,587.32 M
+	Shares            :         62.83 M (Seq=    1.33% : QoQ=   16.07%)
+
+	Sales 12m         :        941.90 M (Seq=    1.71% : QoQ=   37.66%)
+	Ops Income 12m    :       -466.80 M (Seq=   -1.05% : QoQ=  -93.65%)
+	Net Income 12m    :       -495.50 M (Seq=   -0.94% : QoQ=  -84.07%)
+	Interest Paid 12m :         26.00 M (Seq=    2.86% : QoQ=  208.57%)
+
+	Cash <- Ops 12m   :       -103.40 M (Seq= -148.44% : QoQ= -3,280.00%)
+	  CapEx 12m       :          4.00 M (Seq=  -52.38% : QoQ=   11.11%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -107.40 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        115.70 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         12.30 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -17.30 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         -5.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        208.10 M (Seq=  -13.47% : QoQ=   10.99%)
+	  Cash            :         34.30 M (Seq=  -26.08% : QoQ=    1.78%)
+	  Acct Rx         :         60.30 M (Seq=   -3.05% : QoQ=   19.88%)
+	  ST Invest       :         93.80 M (Seq=  -12.74% : QoQ=   17.25%)
+	  Inventory       :         13.70 M (Seq=    0.74% : QoQ=   15.13%)
+	  Other           :          6.00 M (Seq=  -44.44% : QoQ=  -48.28%)
+	Current Liabs     :        112.70 M (Seq=   -1.14% : QoQ=    7.95%)
+	  Acct Pay        :          8.90 M (Seq=  -39.04% : QoQ=    3.49%)
+	  ST Debt         :         50.20 M (Seq=    0.00% : QoQ=    0.20%)
+	  Other           :         53.60 M (Seq=    8.94% : QoQ=   17.29%)
+	Working Capital   :         95.40 M (Ratio=1.85)
+	WC + FCF          :        -12.00 M
+
+	Sharehldr Equity  :          5.00 M (Seq=  -84.47% : QoQ=  228.21%)
+	Tangible Assets   :        261.40 M (Seq=   -2.54% : QoQ=   19.52%)
+	LT Debt           :         73.40 M (Seq=    0.00% : QoQ=    0.41%)
+	LT Debt to Equity :         14.68
+
+	Last Price          :       26.46 : (52wkHi= 29.62 %offHigh=10%)
+	PE                  :      275.00
+	Op Margin           :      -49.56%
+	Net Margin          :      -52.61%
+	ROE                 :   -9,910.00%
+	Interest % of sales :        2.76%
+	Q0 Est Growth       :       14.83%
+	Y1 Est Growth       :        7.18%
+
+	NTRA State -->
+	  Free Cash Flow plus Working Capital is negative (-12.00)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  LT debt to equity of 14.68 is high.
+
+	Zombie Score : 72.37
+		Negative Sales        :    0.00
+		Margins               :   10.22
+		Available Cash to MC  :    0.50
+		Interest Paid         :    2.76
+		LT Debt to Equity     :   35.00
+		Equity to MC          :   -0.31
+		OpsInc Growth 3Yr     :   24.20 : (-24.20%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 46
+ GLIBA
+	GCI Liberty Inc : ENGLEWOOD, CO
+	Telecommunications Services, Telecommunication Services - Integrated
+	Employees     :        2,270
+	OpInc per Emp : $   -190,044
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      6,812.01 M
+	Shares            :        104.84 M (Seq=   -3.48% : QoQ=   -2.69%)
+	Share Change 12m  :         -2.89 M (Buyback Est= $148.06M)
+
+	Sales 12m         :      3,489.10 M (Seq=   21.15% : QoQ=   -8.40%)
+	Ops Income 12m    :       -431.40 M (Seq=   -5.78% : QoQ= -552.81%)
+	Net Income 12m    :       -925.30 M (Seq=   97.24% : QoQ=    7.31%)
+	Interest Paid 12m :        445.20 M (Seq=   24.64% : QoQ=   74.12%)
+
+	Cash <- Ops 12m   :        125.60 M (Seq=  -52.37% : QoQ=  197.69%)
+	  CapEx 12m       :        168.00 M (Seq=  -10.89% : QoQ=  516.92%)
+	  Dividends 12m   :         93.81 M (Yield=1.38%)
+	    FCF 12m       :       -136.21 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        107.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        232.60 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -213.10 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         19.50 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        669.40 M (Seq=  -10.83% : QoQ=   -5.06%)
+	  Cash            :        422.40 M (Seq=  -14.02% : QoQ=    4.89%)
+	  Acct Rx         :        212.60 M (Seq=   -3.10% : QoQ=  -19.56%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Other           :         34.30 M (Seq=  -14.46% : QoQ=   -9.97%)
+	Current Liabs     :      1,173.00 M (Seq=    8.53% : QoQ=  181.29%)
+	  Acct Pay        :         80.70 M (Seq=  -19.54% : QoQ=  178.28%)
+	  ST Debt         :        913.10 M (Seq=    1.37% : QoQ=    0.00%)
+	  Other           :        179.20 M (Seq=  124.84% : QoQ=  -53.81%)
+	Working Capital   :       -503.60 M (Ratio=0.57)
+	WC + FCF          :       -639.81 M
+
+	Sharehldr Equity  :      4,939.50 M (Seq=   14.95% : QoQ=   -3.32%)
+	Tangible Assets   :      8,042.30 M (Seq=   17.00% : QoQ=    6.84%)
+	LT Debt           :      2,337.60 M (Seq=    2.32% : QoQ=  -15.96%)
+	LT Debt to Equity :          0.47
+
+	Last Price          :       63.54 : (52wkHi= 63.65 %offHigh=0%)
+	PE                  :      275.00
+	Op Margin           :      -12.36%
+	Net Margin          :      -26.52%
+	ROE                 :      -18.73%
+	Interest % of sales :       12.76%
+	Q0 Est Growth       :      250.76%
+	Y1 Est Growth       :      300.00%
+
+	GLIBA State -->
+	  Free Cash Flow plus Working Capital is negative (-639.81) with dividend paid 93.81.
+
+	Zombie Score : 72.31
+		Negative Sales        :    8.40
+		Margins               :    3.89
+		Available Cash to MC  :    5.55
+		Interest Paid         :   12.76
+		LT Debt to Equity     :    0.00
+		Equity to MC          :    0.00
+		OpsInc Growth 3Yr     :   35.00 : (-84.50%)
+		Share Decline         :    6.71
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 47
+ YUM
+	Yum! Brands, Inc. : LOUISVILLE, KY
+	Consumer Cyclicals, Restaurants & Bars, SP500
+	Employees     :       34,000
+	OpInc per Emp : $    262,205
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :     35,041.93 M
+	Shares            :        308.00 M (Seq=   -1.60% : QoQ=   -7.23%)
+	Share Change 12m  :        -24.00 M (Buyback Est= $2,268.00M)
+
+	Sales 12m         :     23,493.00 M (Seq=   -2.06% : QoQ=  -13.20%)
+	Ops Income 12m    :      8,915.00 M (Seq=   -5.23% : QoQ=   51.74%)
+	Net Income 12m    :      5,896.00 M (Seq=  -11.09% : QoQ=    7.28%)
+	Interest Paid 12m :      1,453.00 M (Seq=    4.86% : QoQ=  228.48%)
+
+	Cash <- Ops 12m   :      1,287.00 M (Seq=  -21.05% : QoQ=   58.73%)
+	  CapEx 12m       :        236.00 M (Seq=  -49.43% : QoQ=    4.76%)
+	  Dividends 12m   :      1,903.97 M (Yield=5.43%)
+	    FCF 12m       :       -852.97 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :     -1,922.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :       -635.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        115.00 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :       -520.00 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :      1,186.00 M (Seq=   -1.74% : QoQ=  -37.22%)
+	  Cash            :        278.00 M (Seq=   -4.79% : QoQ=  -71.69%)
+	  Acct Rx         :        543.00 M (Seq=   -9.05% : QoQ=    8.38%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ= -100.00%)
+	  Other           :        365.00 M (Seq=   14.78% : QoQ=  -10.10%)
+	Current Liabs     :      1,327.00 M (Seq=    2.00% : QoQ=   19.66%)
+	  Acct Pay        :        840.00 M (Seq=   -7.79% : QoQ=   -9.09%)
+	  ST Debt         :        338.00 M (Seq=    5.30% : QoQ=  454.10%)
+	  Other           :        149.00 M (Seq=  115.94% : QoQ=   20.16%)
+	Working Capital   :       -141.00 M (Ratio=0.89)
+	WC + FCF          :       -993.97 M
+
+	Sharehldr Equity  :     -7,904.00 M (Seq=    0.28% : QoQ=  -17.03%)
+	Tangible Assets   :      3,972.00 M (Seq=   18.11% : QoQ=   -5.81%)
+	LT Debt           :      9,736.00 M (Seq=   -0.15% : QoQ=    3.37%)
+	LT Debt Tan Asset :          2.45
+
+	Last Price          :      110.98 : (52wkHi= 111.32 %offHigh=0%)
+	PE                  :        6.91
+	Op Margin           :       37.95%
+	Net Margin          :       25.10%
+	ROE                 :        0.00%
+	Interest % of sales :        6.18%
+	EPS Yield           :       14.46% ($16.05)
+	Q0 Est Growth       :     -102.80%
+	Y1 Est Growth       :      -49.87%
+
+	YUM State -->
+	  Free Cash Flow plus Working Capital is negative (-993.97) with dividend paid 1903.97.
+	  Shareholders have no equity.
+
+	Zombie Score : 71.94
+		Negative Sales        :   13.20
+		Margins               :    0.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :    6.18
+		LT Debt to Equity     :    5.00
+		Equity to MC          :   22.56
+		OpsInc Growth 3Yr     :    0.00 : (17.00%)
+		Share Decline         :   15.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 48
+ AKTS
+	Akoustis Technologies Inc : HUNTERSVILLE, NC
+	Technology, Semiconductors
+	Employees     :           69
+	OpInc per Emp : $   -923,188
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :        160.56 M
+	Shares            :         29.96 M (Seq=    7.56% : QoQ=   34.44%)
+
+	Sales 12m         :          2.80 M (Seq=   -8.33% : QoQ=    0.00%)
+	Ops Income 12m    :        -63.70 M (Seq=  -24.22% : QoQ= -610.26%)
+	Net Income 12m    :        -67.10 M (Seq=  -39.17% : QoQ= -716.22%)
+	Interest Paid 12m :          2.60 M (Seq=  666.67% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :        -16.50 M (Seq=  -28.95% : QoQ=  -11.36%)
+	  CapEx 12m       :          6.10 M (Seq=  285.71% : QoQ=  237.50%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :        -22.60 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :         50.80 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         34.30 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :         -6.20 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :         28.10 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :         35.80 M (Seq=  -17.51% : QoQ=  390.41%)
+	  Cash            :         34.60 M (Seq=  -17.81% : QoQ=  432.31%)
+	  Acct Rx         :          0.20 M (Seq=  -33.33% : QoQ=  -60.00%)
+	  ST Invest       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Inventory       :          0.10 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          0.90 M (Seq=    0.00% : QoQ=  200.00%)
+	Current Liabs     :          2.80 M (Seq=    7.69% : QoQ=   40.00%)
+	  Acct Pay        :          0.30 M (Seq=  -62.50% : QoQ=  200.00%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :          2.50 M (Seq=   47.06% : QoQ=   31.58%)
+	Working Capital   :         33.00 M (Ratio=12.79)
+	WC + FCF          :         10.40 M
+
+	Sharehldr Equity  :         29.70 M (Seq=  -18.85% : QoQ=   77.84%)
+	Tangible Assets   :         51.80 M (Seq=   -9.60% : QoQ=  161.62%)
+	LT Debt           :         19.10 M (Seq=   12.35% : QoQ=    0.00%)
+	LT Debt to Equity :          0.64
+
+	Last Price          :        6.28 : (52wkHi= 9.37 %offHigh=32%)
+	PE                  :      275.00
+	Op Margin           :   -2,275.00%
+	Net Margin          :   -2,396.43%
+	ROE                 :     -225.93%
+	Interest % of sales :       92.86%
+	Q0 Est Growth       :      -66.67%
+	Y1 Est Growth       :      -27.14%
+
+	AKTS State -->
+	  Interest payments to sales is high at 92.86%.
+
+	Zombie Score : 70.00
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   35.00
+		LT Debt to Equity     :    0.00
+		Equity to MC          :  -10.00
+		OpsInc Growth 3Yr     :   35.00 : (-79.20%)
+		Share Decline         :    0.00
+		Price                 :  -35.00
+		Price % of 52wk High  :    0.00
+		Earnings weakness     :   10.00
+
+Rank : 49
+ ICPT
+	Intercept Pharmaceuticals Inc : NEW YORK, NY
+	Healthcare, Biotechnology & Medical Research
+	Employees     :          330
+	OpInc per Emp : $ -3,992,424
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      2,191.93 M
+	Shares            :         29.76 M (Seq=    0.25% : QoQ=   17.59%)
+
+	Sales 12m         :        531.90 M (Seq=    9.07% : QoQ= 6,903.57%)
+	Ops Income 12m    :     -1,317.50 M (Seq=   -2.94% : QoQ=  -28.23%)
+	Net Income 12m    :     -1,400.30 M (Seq=   -2.81% : QoQ=  -40.42%)
+	Interest Paid 12m :        104.90 M (Seq=    1.31% : QoQ=    0.00%)
+
+	Cash <- Ops 12m   :       -235.30 M (Seq=  -57.95% : QoQ=    6.19%)
+	  CapEx 12m       :          0.80 M (Seq=  600.00% : QoQ=  600.00%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -236.10 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        263.30 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :         28.00 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :        -20.40 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :          7.60 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        402.80 M (Seq=  -16.50% : QoQ=   10.72%)
+	  Cash            :         54.70 M (Seq=   26.62% : QoQ=   11.86%)
+	  Acct Rx         :         29.40 M (Seq=   14.40% : QoQ=   73.96%)
+	  ST Invest       :        298.80 M (Seq=  -23.95% : QoQ=    7.79%)
+	  Inventory       :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         19.80 M (Seq=   -3.88% : QoQ=   -4.81%)
+	Current Liabs     :        108.30 M (Seq=   -5.17% : QoQ=   36.40%)
+	  Acct Pay        :         18.60 M (Seq=   57.63% : QoQ=   37.78%)
+	  ST Debt         :          0.00 M (Seq=    0.00% : QoQ=    0.00%)
+	  Other           :         89.80 M (Seq=  -12.30% : QoQ=   36.27%)
+	Working Capital   :        294.50 M (Ratio=3.72)
+	WC + FCF          :         58.40 M
+
+	Sharehldr Equity  :        -55.00 M (Seq= -387.96% : QoQ=   -5.16%)
+	Tangible Assets   :        438.30 M (Seq=  -13.92% : QoQ=   11.30%)
+	LT Debt           :        375.40 M (Seq=    1.10% : QoQ=    4.45%)
+	LT Debt Tan Asset :          0.86
+
+	Last Price          :       74.14 : (52wkHi= 133.74 %offHigh=44%)
+	PE                  :      275.00
+	Op Margin           :     -247.70%
+	Net Margin          :     -263.26%
+	ROE                 :        0.00%
+	Interest % of sales :       19.72%
+	Q0 Est Growth       :       60.30%
+	Y1 Est Growth       :        6.32%
+
+	ICPT State -->
+	  Interest payments to sales is high at 19.72%.
+	  Shareholders have no equity.
+
+	Zombie Score : 69.83
+		Negative Sales        :    0.00
+		Margins               :   35.00
+		Available Cash to MC  :    0.00
+		Interest Paid         :   19.72
+		LT Debt to Equity     :    5.00
+		Equity to MC          :    2.51
+		OpsInc Growth 3Yr     :    7.60 : (-7.60%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
+
+Rank : 50
+ CVNA
+	Carvana Co : TEMPE, AZ
+	Consumer Cyclicals, Retailers - Auto Vehicles, Parts & Service
+	Employees     :        3,879
+	OpInc per Emp : $   -204,485
+	10Q Date      :  31-Mar-2019
+
+	Market Cap        :      2,421.50 M
+	Shares            :         41.35 M (Seq=    4.98% : QoQ=  125.40%)
+
+	Sales 12m         :      5,529.80 M (Seq=   20.19% : QoQ= 1,702.38%)
+	Ops Income 12m    :       -793.20 M (Seq=  -11.79% : QoQ= -672.48%)
+	Net Income 12m    :       -228.00 M (Seq=  -27.93% : QoQ= -2,052.50%)
+	Interest Paid 12m :         73.40 M (Seq=   48.40% : QoQ= 2,550.00%)
+
+	Cash <- Ops 12m   :       -497.40 M (Seq=  -42.52% : QoQ=  -63.24%)
+	  CapEx 12m       :        158.80 M (Seq=   18.68% : QoQ=   54.29%)
+	  Dividends 12m   :          0.00 M
+	    FCF 12m       :       -656.20 M [Cash from Operations - CapEx - Dividends]
+	Cash <- Fin 12m   :        630.00 M [Movement of cash between a firm and its owners/creditors : borrowing, debt repayment, dividend paid, equity financing.]
+	  Net Cash 12m    :        132.60 M [Cash from Ops + Cash from Financing]
+	Cash <- Inv 12m   :       -165.50 M [Purchases and sales of long-term assets such as plant and machinery - assumed infrequent.]
+	  Cash Flow 12m   :        -32.90 M [Cash from Ops + Cash from Financing + Cash from Investing]
+
+	Current Assets    :        876.80 M (Seq=   32.27% : QoQ=   61.98%)
+	  Cash            :         85.30 M (Seq=    8.11% : QoQ=  -29.79%)
+	  Acct Rx         :         38.20 M (Seq=   15.41% : QoQ=   81.90%)
+	  ST Invest       :        151.20 M (Seq=   43.73% : QoQ=  141.92%)
+	  Inventory       :        525.70 M (Seq=   27.54% : QoQ=   75.35%)
+	  Other           :         76.40 M (Seq=  128.74% : QoQ=  108.74%)
+	Current Liabs     :        630.00 M (Seq=   91.20% : QoQ=   50.07%)
+	  Acct Pay        :         61.30 M (Seq=   51.73% : QoQ=  285.53%)
+	  ST Debt         :        450.10 M (Seq=  116.29% : QoQ=   26.90%)
+	  Other           :        118.60 M (Seq=   46.42% : QoQ=  141.06%)
+	Working Capital   :        246.80 M (Ratio=1.39)
+	WC + FCF          :       -409.40 M
+
+	Sharehldr Equity  :         54.80 M (Seq=  -25.34% : QoQ=  151.38%)
+	Tangible Assets   :      1,320.60 M (Seq=   35.75% : QoQ=   83.24%)
+	LT Debt           :        479.00 M (Seq=   12.63% : QoQ=  617.07%)
+	LT Debt to Equity :          8.74
+
+	Last Price          :       67.65 : (52wkHi= 76.85 %offHigh=11%)
+	PE                  :      275.00
+	Op Margin           :      -14.34%
+	Net Margin          :       -4.12%
+	ROE                 :     -416.06%
+	Interest % of sales :        1.33%
+	Q0 Est Growth       :       64.29%
+	Y1 Est Growth       :       52.21%
+
+	CVNA State -->
+	  Free Cash Flow plus Working Capital is negative (-409.40)
+	  Running company with Financing. Cash from Financing greater than FCF plus Working Capital.
+	  LT debt to equity of 8.74 is high.
+
+	Zombie Score : 68.11
+		Negative Sales        :    0.00
+		Margins               :    1.85
+		Available Cash to MC  :   10.35
+		Interest Paid         :    1.33
+		LT Debt to Equity     :   21.85
+		Equity to MC          :   -2.26
+		OpsInc Growth 3Yr     :   35.00 : (-90.40%)
+		Share Decline         :    0.00
+		Price                 :    0.00
+		Price % of 52wk High  :    0.00
