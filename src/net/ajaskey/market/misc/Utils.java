@@ -3,6 +3,8 @@ package net.ajaskey.market.misc;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -16,6 +18,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  *
@@ -534,6 +538,13 @@ public class Utils {
 		return "";
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.stringDate
+	 *
+	 * @param dat
+	 * @return
+	 */
 	public static String stringDate(final Date dat) {
 
 		if (dat != null) {
@@ -557,6 +568,14 @@ public class Utils {
 		return "";
 	}
 
+	/**
+	 *
+	 * net.ajaskey.market.misc.updateDirTree
+	 *
+	 * @param list
+	 * @param top
+	 * @param ext
+	 */
 	private static void updateDirTree(final List<File> list, final File top, final List<String> ext) {
 
 		if ((top.exists()) && top.isDirectory()) {
@@ -571,6 +590,32 @@ public class Utils {
 				}
 			}
 		}
+	}
+
+	/**
+	 *
+	 * net.ajaskey.market.misc.writeToZipFile
+	 *
+	 * @param path
+	 * @param zipStream
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void writeToZipFile(final String path, final ZipOutputStream zipStream) throws FileNotFoundException, IOException {
+
+		final File file = new File(path);
+try(		final FileInputStream fis = new FileInputStream(file)) {
+		final ZipEntry zipEntry = new ZipEntry(path);
+		zipStream.putNextEntry(zipEntry);
+
+		final byte[] bytes = new byte[1024];
+		int length;
+		while ((length = fis.read(bytes)) >= 0) {
+			zipStream.write(bytes, 0, length);
+		}
+
+		zipStream.closeEntry();}
+//		fis.close();
 	}
 
 }
