@@ -604,18 +604,18 @@ public class Utils {
 	public static void writeToZipFile(final String path, final ZipOutputStream zipStream) throws FileNotFoundException, IOException {
 
 		final File file = new File(path);
-try(		final FileInputStream fis = new FileInputStream(file)) {
-		final ZipEntry zipEntry = new ZipEntry(path);
-		zipStream.putNextEntry(zipEntry);
+		try (final FileInputStream fis = new FileInputStream(file)) {
+			final ZipEntry zipEntry = new ZipEntry(path);
+			zipStream.putNextEntry(zipEntry);
 
-		final byte[] bytes = new byte[1024];
-		int length;
-		while ((length = fis.read(bytes)) >= 0) {
-			zipStream.write(bytes, 0, length);
+			final byte[] bytes = new byte[1024];
+			int length;
+			while ((length = fis.read(bytes)) >= 0) {
+				zipStream.write(bytes, 0, length);
+			}
+
+			zipStream.closeEntry();
 		}
-
-		zipStream.closeEntry();}
-//		fis.close();
 	}
 
 }

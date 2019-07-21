@@ -2,20 +2,29 @@
 package net.ajaskey.market.tools.SIP;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.text.WordUtils;
 
 import net.ajaskey.market.misc.DateTime;
 import net.ajaskey.market.misc.Debug;
+import net.ajaskey.market.misc.Utils;
 
 /**
  * This class...
@@ -46,6 +55,8 @@ public class CompanyData {
 
 	final private static String	NL	= "\n";
 	final private static String	TAB	= "\t";
+
+	public static List<String> sectorList;
 
 	public final static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -80,6 +91,29 @@ public class CompanyData {
 	 * @throws IOException
 	 */
 	public static void main(final String[] args) throws IOException {
+
+		List<String> backupNames = new ArrayList<>();
+		backupNames.add("CompanyData.log");
+		backupNames.add("out/Zombies.txt");
+		backupNames.add("out/DividendCutters.txt");
+		backupNames.add("out/BestCompanies.txt");
+		backupNames.add("out/CompanyReports.txt");
+		backupNames.add("data/US-STOCKS-MISC.txt");
+		backupNames.add("data/US-STOCKS-CASH.txt");
+		backupNames.add("data/US-STOCKS-INCOMESTMTQTR.txt");
+		backupNames.add("data/US-STOCKS-BALANCESHEETQTR.txt");
+
+		DateTime datetime = new DateTime();
+		String fname = String.format("companyfinancials/companydata_%s.7z", datetime.format("ddMMMyyyyHHmmss"));
+		FileOutputStream fos = new FileOutputStream(fname);
+		ZipOutputStream zipFile = new ZipOutputStream(fos);
+		for (String s : backupNames) {
+			Utils.writeToZipFile(s, zipFile);
+			File f = new File(s);
+			File to = new File("companyfinancials/" + f.getName());
+			Files.copy(f.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		}
+		fos.close();
 
 		Debug.init("CompanyData.log");
 
@@ -291,6 +325,8 @@ public class CompanyData {
 	 */
 	static void readIdData(final String fname) throws IOException {
 
+		Set<String> sectors = new HashSet<String>();
+
 		try (BufferedReader reader = new BufferedReader(new FileReader(fname))) {
 
 			String line = "";
@@ -298,17 +334,19 @@ public class CompanyData {
 				final String str = line.trim().replaceAll("\"", "").replaceAll("[MN] - ", "");
 				if (str.length() > 1) {
 
-					//System.out.println(str);
 					final String fld[] = str.split(TAB);
 					final String ticker = fld[1].trim();
 					final CompanyData cd = CompanyData.getCompany(ticker);
 					if (cd != null) {
+						sectors.add(cd.sector);
 						cd.id = IncomeData.setIncomeData(fld);
-						//System.out.println(cd.id);
 					}
 				}
 			}
 		}
+
+		sectorList = new ArrayList<>(sectors);
+		Collections.sort(sectorList);
 
 	}
 

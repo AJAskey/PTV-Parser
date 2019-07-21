@@ -127,6 +127,15 @@ public class ZombieScore {
 					scr += zc.price52High;
 				}
 			}
+
+			if (cd.q0EstGrowth < 0.0) {
+				zc.earnings += 7.5;
+			}
+			if (cd.y1EstGrowth < 0.0) {
+				zc.earnings += 7.5;
+			}
+			scr += zc.earnings;
+
 			zc.score = scr;
 
 		}
@@ -144,6 +153,7 @@ public class ZombieScore {
 	public double	growth;
 	public double	price;
 	public double	price52High;
+	public double	earnings;
 	public double	score;
 
 	private double growth3y;
@@ -165,6 +175,7 @@ public class ZombieScore {
 		this.growth = 0.0;
 		this.price = 0.0;
 		this.price52High = 0.0;
+		this.earnings = 0.0;
 		this.score = 0.0;
 		this.growth3y = 0.0;
 	}
@@ -186,6 +197,10 @@ public class ZombieScore {
 		ret += String.format("%n\t\tShare Decline         : %7.2f", this.shares);
 		ret += String.format("%n\t\tPrice                 : %7.2f", this.price);
 		ret += String.format("%n\t\tPrice %% of 52wk High  : %7.2f", this.price52High);
+		if (this.earnings > 0.0) {
+			ret += String.format("%n\t\tEarnings weakness     : %7.2f", this.earnings);
+		}
+
 		return ret;
 	}
 

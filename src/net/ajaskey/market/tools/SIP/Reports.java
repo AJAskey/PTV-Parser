@@ -165,8 +165,11 @@ public class Reports {
 		}
 
 		if (cd.bsd.equity.getMostRecent() <= 0.0) {
-			ret += String.format("\t  Shareholders have no equity.%n");
-			goodState = false;
+			double tmp = cd.bsd.assetsMinusGW.getMostRecent() + cd.bsd.equity.getMostRecent();
+			if (tmp < 0.0) {
+				ret += String.format("\t  Shareholders have no equity.%n");
+				goodState = false;
+			}
 		}
 		else {
 			final double dte = cd.bsd.ltDebt.getMostRecent() / cd.bsd.equity.getMostRecent();
@@ -436,6 +439,8 @@ public class Reports {
 		if (cd.id.epsDilCont.getTtm() > 0.0) {
 			pw.printf("\tEPS Yield           : %s%% ($%.2f)%n", QuarterlyData.fmt(cd.epsYld, 11), cd.id.epsDilCont.getTtm(), 2);
 		}
+		pw.printf("\tQ0 Est Growth       : %11.2f%%%n", cd.q0EstGrowth);
+		pw.printf("\tY1 Est Growth       : %11.2f%%%n", cd.y1EstGrowth);
 
 	}
 
@@ -541,6 +546,13 @@ public class Reports {
 					continue;
 				}
 
+				boolean earnEst = (cd.q0EstGrowth < 0.0) && (cd.y1EstGrowth < 0.0);
+				if (earnEst) {
+					final String s = cd.ticker + " Negative earings estimates";
+					Debug.log(String.format("  %-15s%n", s));
+					continue;
+				}
+
 				this.printHeaderData(pw, cd);
 				this.WriteShareData(pw, cd);
 				pw.println();
@@ -548,8 +560,6 @@ public class Reports {
 				pw.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
 				pw.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
 				pw.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
-				pw.printf("\tQ0 Est Growth     : %13.2f%%%n", cd.q0EstGrowth);
-				pw.printf("\tY1 Est Growth     : %13.2f%%%n", cd.y1EstGrowth);
 				pw.println();
 
 				bestList.add(cd);
@@ -594,8 +604,6 @@ public class Reports {
 				pwAll.println(cd.id.sales.fmtGrowthQY("Sales 12m"));
 				pwAll.println(cd.id.incomeEps.fmtGrowthQY("Income EPS 12m"));
 				pwAll.printf("\tOpInc Growth 3Y   : %13.2f%%%n", cd.opInc3yrGrowth);
-				pwAll.printf("\tQ0 Est Growth     : %13.2f%%%n", cd.q0EstGrowth);
-				pwAll.printf("\tY1 Est Growth     : %13.2f%%%n", cd.y1EstGrowth);
 				pwAll.println();
 			} catch (final FileNotFoundException e) {
 				e.printStackTrace();
@@ -657,8 +665,6 @@ public class Reports {
 			int knt = 0;
 			for (CompanyData cd : noDivList) {
 				this.printHeaderData(pw, cd);
-				pw.printf("\tQ0 Est Growth       : %11.2f%%%n", cd.q0EstGrowth);
-				pw.printf("\tY1 Est Growth       : %11.2f%%%n", cd.y1EstGrowth);
 				pw.printf("\tZombie Score        : %11.2f%n", cd.zscore.score);
 				pw.println();
 				if (knt < 10) {
@@ -708,11 +714,33 @@ public class Reports {
 		final List<CompanyData> finalZombieList = new ArrayList<>();
 		int knt = 0;
 		for (final CompanyData cd : zombieList) {
-			if (knt++ < 50) {
+			if (knt++ < 150) {
 				finalZombieList.add(cd);
 			}
 			else {
 				break;
+			}
+		}
+
+		try (PrintWriter pw = new PrintWriter("out/Zombie-Sectors.txt")) {
+
+			pw.printf("Created : %s\t%s%n", Utils.getCurrentDateStr(), "This file is subject to change without notice.");
+			pw.println("Pre-filtered for US companies over $5 and average trading volume of at least 100K.");
+
+			for (String sec : CompanyData.sectorList) {
+				if (sec.equalsIgnoreCase("financials")) continue;
+				knt = 0;
+				pw.printf("%n%n===============================%nSector : %s%n===============================%n", sec);
+				for (final CompanyData cd : finalZombieList) {
+					knt++;
+					if (sec.equalsIgnoreCase(cd.sector)) {
+						final String state = this.getState(cd);
+						pw.printf("%nRank : %d%n", knt++);
+						this.printHeaderData(pw, cd);
+						pw.printf("%s", state);
+						pw.printf("%s%n", cd.zscore);
+					}
+				}
 			}
 		}
 

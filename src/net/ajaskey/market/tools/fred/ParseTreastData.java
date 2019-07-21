@@ -53,7 +53,7 @@ public class ParseTreastData {
 	public static void main(final String[] args) throws IOException {
 
 		final List<DateValue> pastDvList = ParseTreastData.readFile(FredCommon.fredPath + "TREAST.csv", 1);
-		final List<DateValue> FutureDvList = ParseTreastData.readFile("TREAST\\SomaNonMbs-070319.csv", 6);
+		final List<DateValue> FutureDvList = ParseTreastData.readFile("TREAST\\SomaNonMbs-071719.csv", 6);
 		
 		System.out.println(FutureDvList.size());
 

@@ -43,8 +43,8 @@ import net.ajaskey.market.tools.helpers.WebGet;
  */
 public class ProcessDTS {
 
-	final static private String	url		= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
-	final static private String	urlA	= "https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
+	final static private String	url		= "https://fsapps.fiscal.treasury.gov/dts/files/";	//"https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=w&fname=";
+	final static private String	urlA	= "https://fsapps.fiscal.treasury.gov/dts/files/";	//"https://www.fms.treas.gov/fmsweb/viewDTSFiles?dir=a&fname=";
 
 	final static private String folderPath = "c:/data/dts";
 	// final static private String folderPath = "d:/temp/dts-lt";
@@ -52,7 +52,7 @@ public class ProcessDTS {
 
 	final static public int	webDownloadYear		= 2019;
 	final static public int	webDownloadMonth	= Calendar.JUNE;
-	final static public int	webDownloadDay		= 10;
+	final static public int	webDownloadDay		= 30;
 
 	/**
 	 *
