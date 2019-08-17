@@ -9,30 +9,45 @@ import net.ajaskey.common.Utils;
 
 public class WeeklyData {
 
-   private List<PriceData> wdList = new ArrayList<>();
+   /**
+    *
+    * @param args
+    */
+   public static void main(String[] args) {
 
+      final DailyData ddata = new DailyData("C:\\Users\\Andy\\Documents\\PriceData\\AMEX\\J\\JAX.CSV");
+      final WeeklyData wdata = new WeeklyData(ddata);
+
+      for (final PriceData pd : wdata.wdList) {
+         System.out.println(pd);
+      }
+   }
+
+   private final List<PriceData> wdList     = new ArrayList<>();
+   private double                price52wma = 0.0;
+
+   /**
+    *
+    * @param ddata
+    */
    public WeeklyData(DailyData ddata) {
 
-      int yesterday = 0;
-      int today = 0;
+      int yesterday = -1;
+      int today = -1;
 
       double high = -1.0;
       double low = 9999999999.9;
       double open = -1.0;
       long vol = 0;
 
-      double lastHigh = 0.0;
-      double lastLow = 0.0;
-      double lastOpen = 0.0;
-      double lastClose = 0.0;
-      long lastVol = 0;
-      DateTime lastDate = null;
+      for (final PriceData pd : ddata.getPdList()) {
 
-      for (PriceData pd : ddata.getPdList()) {
          today = pd.getDatetime().getDayOfWeek();
-         String s = Utils.sdfFull.format(pd.getDatetime().getCal().getTime());
+
+         final String s = Utils.sdfFull.format(pd.getDatetime().getTime());
          System.out.printf("%s %d%n", s, today);
 
+         // Days are sequential... reset on first trading day of week
          if (today > yesterday) {
 
             high = Math.max(high, pd.getHigh());
@@ -41,19 +56,13 @@ public class WeeklyData {
 
             if (open < 0.0) {
                open = pd.getOpen();
-               lastOpen = open;
             }
-
-            lastDate = pd.getDatetime();
-            lastHigh = high;
-            lastLow = low;
-            lastClose = pd.getClose();
-            lastVol = vol;
 
             if (today == DateTime.FRIDAY) {
 
-               PriceData newPd = new PriceData(pd.getCode(), pd.getDatetime(), open, high, low, pd.getClose(), vol);
-               wdList.add(newPd);
+               final PriceData newPd = new PriceData(pd.getCode(), pd.getDatetime(), open, high, low, pd.getClose(),
+                     vol);
+               this.wdList.add(newPd);
 
                System.out.println(newPd);
 
@@ -64,29 +73,37 @@ public class WeeklyData {
             }
 
          }
-         else {
-            PriceData newPd = new PriceData(pd.getCode(), lastDate, lastOpen, lastHigh, lastLow, lastClose,
-                  lastVol);
-            // wdList.add(newPd);
 
-            System.out.println(newPd);
-
-            high = -1.0;
-            low = 9999999999.9;
-            open = -1.0;
-            vol = 0;
-         }
          yesterday = today;
       }
+
+      this.setPrice52wma();
    }
 
-   public static void main(String[] args) {
+   /**
+    *
+    * @return
+    */
+   public double getPrice52wma() {
 
-      final DailyData ddata = new DailyData("C:\\Users\\Andy\\Documents\\PriceData\\AMEX\\J\\JAX.CSV");
-      WeeklyData wdata = new WeeklyData(ddata);
+      return this.price52wma;
+   }
 
-      for (PriceData pd : wdata.wdList) {
-         System.out.println(pd);
+   /**
+    *
+    */
+   private void setPrice52wma() {
+
+      this.price52wma = 0.0;
+
+      double price = 0.0;
+      if (this.wdList.size() > 52) {
+         final int start = this.wdList.size() - 1;
+         final int stop = start - 52;
+         for (int i = start; i > stop; i--) {
+            price += this.wdList.get(i).getClose();
+         }
+         this.price52wma = price / 52.0;
       }
    }
 

@@ -10,11 +10,11 @@ public class DailyData {
    public static void main(String[] args) {
 
       final DailyData ddata = new DailyData("C:\\Users\\Andy\\Documents\\PriceData\\NASDAQ\\J\\JACK.CSV");
-      WeeklyData wdata = new WeeklyData(ddata);
+      // WeeklyData wd = new WeeklyData(ddata);
 
-      for (final PriceData pd : ddata.pdList) {
-         System.out.println(pd);
-      }
+      // for (final PriceData pd : ddata.pdList) {
+      System.out.println(ddata);
+      // }
       System.out.printf("Close  20dma : %.2f%n", ddata.price20dma);
       System.out.printf("Close  50dma : %.2f%n", ddata.price50dma);
       System.out.printf("Volume 50dma : %.2f%n", ddata.vol50dma);
@@ -23,55 +23,69 @@ public class DailyData {
 
    private List<PriceData> pdList = new ArrayList<>();
 
-   public List<PriceData> getPdList() {
-
-      return pdList;
-   }
-
-   private DerivedData dd = null;
+   // private DerivedData dd = null;
 
    private double price20dma;
    private double price50dma;
    private double vol50dma;
 
+   private boolean swingUp;
+   //
    private boolean valid;
+
+   private static final String NL = "\n";
 
    public DailyData(String fname) {
 
-      try {
-         pdList = PriceData.ReadPriceData(fname);
+      this.setSwingUp(false);
 
-         final int start = pdList.size() - 1;
+      try {
+         this.pdList = PriceData.ReadPriceData(fname);
+
+         for (int i = this.pdList.size() - 1; i > 0; i--) {
+            int today = i;
+            int yesterday = today - 1;
+            double hhtod = this.pdList.get(today).getHigh();
+            double hhyes = this.pdList.get(yesterday).getHigh();
+            if (hhtod > hhyes) {
+               setHigherhigh(true);
+            }
+            if (this.pdList.get(today).getLow() < this.pdList.get(yesterday).getLow()) {
+               setLowerlow(true);
+            }
+         }
+         final int start = this.pdList.size() - 1;
          int stop = start - 50;
 
          if (stop > 0) {
 
             double d = 0;
             for (int i = start; i > stop; i--) {
-               d += pdList.get(i).getClose();
+               d += this.pdList.get(i).getClose();
             }
-            price50dma = d / 50.0;
+            this.price50dma = d / 50.0;
 
             d = 0;
             for (int i = start; i > stop; i--) {
-               d += pdList.get(i).getVolume();
+               d += this.pdList.get(i).getVolume();
             }
-            vol50dma = d / 50.0;
+            this.vol50dma = d / 50.0;
 
             stop = start - 20;
             d = 0;
             for (int i = start; i > stop; i--) {
-               d += pdList.get(i).getClose();
+               d += this.pdList.get(i).getClose();
             }
-            price20dma = d / 20.0;
-            setValid(true);
-            dd = new DerivedData(this);
+            this.price20dma = d / 20.0;
+            this.setValid(true);
+            // this.dd = new DerivedData(this);
+
          }
          else {
-            price50dma = 0.0;
-            price20dma = 0.0;
-            vol50dma = 0.0;
-            setValid(false);
+            this.price50dma = 0.0;
+            this.price20dma = 0.0;
+            this.vol50dma = 0.0;
+            this.setValid(false);
          }
 
       } catch (final IOException e) {
@@ -80,14 +94,62 @@ public class DailyData {
       }
    }
 
+   public List<PriceData> getPdList() {
+
+      return this.pdList;
+   }
+
+   public boolean isHigherhigh() {
+
+      return this.higherhigh;
+   }
+
+   public boolean isLowerlow() {
+
+      return this.lowerlow;
+   }
+
+   public boolean isSwingUp() {
+
+      return this.swingUp;
+   }
+
    public boolean isValid() {
 
-      return valid;
+      return this.valid;
+   }
+
+   public void setHigherhigh(boolean higherhigh) {
+
+      this.higherhigh = higherhigh;
+   }
+
+   public void setLowerlow(boolean lowerlow) {
+
+      this.lowerlow = lowerlow;
+   }
+
+   private void setSwingUp(boolean swingState) {
+
+      this.swingUp = swingState;
    }
 
    private void setValid(boolean valid) {
 
       this.valid = valid;
+   }
+
+   @Override
+   public String toString() {
+
+      String ret = "";
+
+      for (PriceData pd : this.pdList) {
+         ret += pd.toString() + NL;
+         ret += "\tisHH  : " + this.isHigherhigh() + NL;
+         ret += "\tisLL  : " + this.isLowerlow() + NL;
+      }
+      return ret;
    }
 
 }

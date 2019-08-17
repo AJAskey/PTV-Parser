@@ -43,21 +43,21 @@ import java.util.Locale;
  */
 public class DateTime {
 
-   public static final int APRIL  = Calendar.APRIL;
-   public static final int AUGUST = Calendar.AUGUST;
-   public static final int DATE   = Calendar.DATE;
-   public static final int DECEMBER = Calendar.DECEMBER;
-   public static final int FEBRUARY = Calendar.FEBRUARY;
-   public static final int FRIDAY   = Calendar.FRIDAY;
-   public static final int JANUARY  = Calendar.JANUARY;
-   public static final int JULY     = Calendar.JULY;
-   public static final int JUNE     = Calendar.JUNE;
-   public static final int MARCH    = Calendar.MARCH;
-   public static final int MAY      = Calendar.MAY;
-   public static final int MONDAY   = Calendar.MONDAY;
-   public static final int MONTH    = Calendar.MONTH;
-   public static final int NOVEMBER = Calendar.NOVEMBER;
-   public static final int OCTOBER  = Calendar.OCTOBER;
+   public static final int APRIL     = Calendar.APRIL;
+   public static final int AUGUST    = Calendar.AUGUST;
+   public static final int DATE      = Calendar.DATE;
+   public static final int DECEMBER  = Calendar.DECEMBER;
+   public static final int FEBRUARY  = Calendar.FEBRUARY;
+   public static final int FRIDAY    = Calendar.FRIDAY;
+   public static final int JANUARY   = Calendar.JANUARY;
+   public static final int JULY      = Calendar.JULY;
+   public static final int JUNE      = Calendar.JUNE;
+   public static final int MARCH     = Calendar.MARCH;
+   public static final int MAY       = Calendar.MAY;
+   public static final int MONDAY    = Calendar.MONDAY;
+   public static final int MONTH     = Calendar.MONTH;
+   public static final int NOVEMBER  = Calendar.NOVEMBER;
+   public static final int OCTOBER   = Calendar.OCTOBER;
    public static final int SATURDAY  = Calendar.SATURDAY;
    public static final int SEPTEMBER = Calendar.SEPTEMBER;
    public static final int SUNDAY    = Calendar.SUNDAY;
@@ -121,7 +121,7 @@ public class DateTime {
     */
    public DateTime() {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
    }
 
    /**
@@ -133,9 +133,9 @@ public class DateTime {
     */
    public DateTime(final Calendar c) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         cal.setTime(c.getTime());
+         this.cal.setTime(c.getTime());
       } catch (final Exception e) {
          e.printStackTrace();
       }
@@ -150,9 +150,9 @@ public class DateTime {
     */
    public DateTime(final Date d) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         cal.setTime(d);
+         this.cal.setTime(d);
       } catch (final Exception e) {
          e.printStackTrace();
       }
@@ -167,9 +167,9 @@ public class DateTime {
     */
    public DateTime(final DateTime dt) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         cal.setTime(dt.getCal().getTime());
+         this.cal.setTime(dt.getCal().getTime());
       } catch (final Exception e) {
          e.printStackTrace();
       }
@@ -185,9 +185,9 @@ public class DateTime {
     */
    public DateTime(final int year, final int month, final int day) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         cal.set(year, month, day);
+         this.cal.set(year, month, day);
       } catch (final Exception e) {
          e.printStackTrace();
       }
@@ -202,9 +202,9 @@ public class DateTime {
     */
    public DateTime(final long ms) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         cal.setTimeInMillis(ms);
+         this.cal.setTimeInMillis(ms);
       } catch (final Exception e) {
          e.printStackTrace();
       }
@@ -218,27 +218,15 @@ public class DateTime {
     */
    public DateTime(String value, String fmt) {
 
-      cal = Calendar.getInstance();
+      this.cal = Calendar.getInstance();
       try {
-         sdf = new SimpleDateFormat(fmt);
-         final Date d = sdf.parse(value);
-         cal.setTime(d);
+         this.sdf = new SimpleDateFormat(fmt);
+         final Date d = this.sdf.parse(value);
+         this.cal.setTime(d);
       } catch (final Exception e) {
          e.printStackTrace();
          this.cal = null;
       }
-   }
-
-   /**
-    * 
-    * @return
-    */
-   public boolean isValid() {
-
-      if (this.cal == null) {
-         return false;
-      }
-      return true;
    }
 
    /**
@@ -254,7 +242,7 @@ public class DateTime {
 
       try {
          if (unit == DateTime.DATE || unit == DateTime.MONTH || unit == DateTime.YEAR) {
-            cal.add(unit, knt);
+            this.cal.add(unit, knt);
          }
       } catch (final Exception e) {
          e.printStackTrace();
@@ -290,7 +278,7 @@ public class DateTime {
 
       String ret = "";
       try {
-         ret = sdf.format(cal.getTime());
+         ret = this.sdf.format(this.cal.getTime());
       } catch (final Exception e) {
          e.printStackTrace();
          ret = "BAD-DATE-FORMAT";
@@ -310,7 +298,7 @@ public class DateTime {
       String ret = "";
       try {
          final SimpleDateFormat sdf = new SimpleDateFormat(fmt);
-         ret = sdf.format(cal.getTime());
+         ret = sdf.format(this.cal.getTime());
       } catch (final Exception e) {
          e.printStackTrace();
          ret = "BAD-DATE-FORMAT";
@@ -319,11 +307,20 @@ public class DateTime {
    }
 
    /**
+    * 
+    * @return
+    */
+   public Date getTime() {
+
+      return this.cal.getTime();
+   }
+
+   /**
     * @return the cal
     */
    public Calendar getCal() {
 
-      return cal;
+      return this.cal;
    }
 
    /**
@@ -335,8 +332,8 @@ public class DateTime {
    public String getDay() {
 
       String ret = "UNKNOWN";
-      if (cal != null) {
-         ret = cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+      if (this.cal != null) {
+         ret = this.cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
       }
       return ret;
    }
@@ -350,8 +347,8 @@ public class DateTime {
    public int getDayOfMonth() {
 
       int ret = -1;
-      if (cal != null) {
-         ret = cal.get(Calendar.DAY_OF_MONTH);
+      if (this.cal != null) {
+         ret = this.cal.get(Calendar.DAY_OF_MONTH);
       }
       return ret;
    }
@@ -365,8 +362,8 @@ public class DateTime {
    public int getDayOfWeek() {
 
       int ret = -1;
-      if (cal != null) {
-         ret = cal.get(Calendar.DAY_OF_WEEK);
+      if (this.cal != null) {
+         ret = this.cal.get(Calendar.DAY_OF_WEEK);
       }
       return ret;
    }
@@ -380,8 +377,8 @@ public class DateTime {
    public int getDayOfYear() {
 
       int ret = -1;
-      if (cal != null) {
-         ret = cal.get(Calendar.DAY_OF_YEAR);
+      if (this.cal != null) {
+         ret = this.cal.get(Calendar.DAY_OF_YEAR);
       }
       return ret;
    }
@@ -395,8 +392,8 @@ public class DateTime {
    public String getMonth() {
 
       String ret = "UNKNOWN";
-      if (cal != null) {
-         ret = cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+      if (this.cal != null) {
+         ret = this.cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
       }
       return ret;
    }
@@ -409,7 +406,7 @@ public class DateTime {
     */
    public SimpleDateFormat getSdf() {
 
-      return sdf;
+      return this.sdf;
    }
 
    /**
@@ -421,8 +418,8 @@ public class DateTime {
    public int getYear() {
 
       int ret = -1;
-      if (cal != null) {
-         ret = cal.get(Calendar.YEAR);
+      if (this.cal != null) {
+         ret = this.cal.get(Calendar.YEAR);
       }
       return ret;
    }
@@ -437,7 +434,7 @@ public class DateTime {
    public boolean isEqual(final DateTime dt) {
 
       try {
-         return Utils.sameDate(dt.cal, cal);
+         return Utils.sameDate(dt.cal, this.cal);
       } catch (final Exception e) {
          e.printStackTrace();
          return false;
@@ -454,7 +451,7 @@ public class DateTime {
    public boolean isGreaterThan(final DateTime dt) {
 
       try {
-         return dt.cal.before(cal);
+         return dt.cal.before(this.cal);
       } catch (final Exception e) {
          e.printStackTrace();
          return false;
@@ -471,7 +468,7 @@ public class DateTime {
    public boolean isGreaterThanOrEqual(final DateTime dt) {
 
       try {
-         return isGreaterThan(dt) || isEqual(dt);
+         return this.isGreaterThan(dt) || this.isEqual(dt);
       } catch (final Exception e) {
          e.printStackTrace();
          return false;
@@ -489,7 +486,7 @@ public class DateTime {
 
       boolean ret = false;
       try {
-         ret = dt.cal.after(cal);
+         ret = dt.cal.after(this.cal);
       } catch (final Exception e) {
          e.printStackTrace();
          return false;
@@ -507,11 +504,23 @@ public class DateTime {
    public boolean isLessThanOrEqual(final DateTime dt) {
 
       try {
-         return isLessThan(dt) || isEqual(dt);
+         return this.isLessThan(dt) || this.isEqual(dt);
       } catch (final Exception e) {
          e.printStackTrace();
          return false;
       }
+   }
+
+   /**
+    *
+    * @return
+    */
+   public boolean isValid() {
+
+      if (this.cal == null) {
+         return false;
+      }
+      return true;
    }
 
    /**
@@ -522,7 +531,7 @@ public class DateTime {
     */
    public boolean isWeekday() {
 
-      final int d = cal.get(Calendar.DAY_OF_WEEK);
+      final int d = this.cal.get(Calendar.DAY_OF_WEEK);
       return d > DateTime.SUNDAY && d < DateTime.SATURDAY;
    }
 
@@ -537,7 +546,7 @@ public class DateTime {
 
       DateTime ret = null;
       try {
-         final Date d = sdf.parse(src);
+         final Date d = this.sdf.parse(src);
          ret = new DateTime(d);
       } catch (final Exception e) {
          e.printStackTrace();
@@ -577,10 +586,10 @@ public class DateTime {
    public void set(final Calendar c) {
 
       if (c != null) {
-         if (cal == null) {
-            cal = Calendar.getInstance();
+         if (this.cal == null) {
+            this.cal = Calendar.getInstance();
          }
-         cal.setTime(c.getTime());
+         this.cal.setTime(c.getTime());
       }
    }
 
@@ -593,10 +602,10 @@ public class DateTime {
    public void set(final Date d) {
 
       if (d != null) {
-         if (cal == null) {
-            cal = Calendar.getInstance();
+         if (this.cal == null) {
+            this.cal = Calendar.getInstance();
          }
-         cal.setTime(d);
+         this.cal.setTime(d);
       }
    }
 
@@ -609,10 +618,10 @@ public class DateTime {
    public void set(final DateTime dt) {
 
       if (dt != null && dt.cal != null) {
-         if (cal == null) {
-            cal = Calendar.getInstance();
+         if (this.cal == null) {
+            this.cal = Calendar.getInstance();
          }
-         cal.setTime(dt.cal.getTime());
+         this.cal.setTime(dt.cal.getTime());
       }
    }
 
@@ -626,10 +635,10 @@ public class DateTime {
     */
    public void set(final int year, final int month, final int day) {
 
-      if (cal == null) {
-         cal = Calendar.getInstance();
+      if (this.cal == null) {
+         this.cal = Calendar.getInstance();
       }
-      cal.set(year, month, day);
+      this.cal.set(year, month, day);
 
    }
 
@@ -641,7 +650,7 @@ public class DateTime {
     */
    public void setSdf(final SimpleDateFormat simpledateformat) {
 
-      sdf = simpledateformat;
+      this.sdf = simpledateformat;
    }
 
    /**
@@ -652,7 +661,7 @@ public class DateTime {
     */
    public String toFullString() {
 
-      return Utils.sdfFull.format(cal.getTime());
+      return Utils.sdfFull.format(this.cal.getTime());
    }
 
    /*
@@ -663,10 +672,10 @@ public class DateTime {
    @Override
    public String toString() {
 
-      if (sdf == null) {
-         setSdf(Utils.sdf);
+      if (this.sdf == null) {
+         this.setSdf(Utils.sdf);
       }
-      return sdf.format(cal.getTime());
+      return this.sdf.format(this.cal.getTime());
    }
 
 }

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.ajaskey.common.DateTime;
-import net.ajaskey.common.Utils;
 
 public class PriceData {
 
@@ -41,8 +40,8 @@ public class PriceData {
                int ptr = 0;
                pd.code = fld[ptr++].trim().toUpperCase();
                pd.datetime = new DateTime(fld[ptr++].trim(), "yyyyMMdd");
-               System.out.printf("%s\t%s\t%s%n", fld[ptr - 1].trim(), pd.datetime,
-                     Utils.sdf2.format(pd.getDatetime().getCal().getTime()));
+               // System.out.printf("%s\t%s\t%s%n", fld[ptr - 1].trim(), pd.datetime,
+               // Utils.sdf2.format(pd.getDatetime().getCal().getTime()));
 
                if (pd.datetime.isValid()) {
 
@@ -85,24 +84,24 @@ public class PriceData {
     */
    public PriceData() {
 
-      code = "";
-      datetime = null;
-      open = 0.0;
-      high = 0.0;
-      low = 0.0;
-      close = 0.0;
-      volume = 0;
+      this.code = "";
+      this.datetime = null;
+      this.open = 0.0;
+      this.high = 0.0;
+      this.low = 0.0;
+      this.close = 0.0;
+      this.volume = 0;
    }
 
    public PriceData(String cd, DateTime dt, double o, double h, double l, double c, long vol) {
 
-      code = cd;
-      datetime = new DateTime(dt);
-      open = o;
-      high = h;
-      low = l;
-      close = c;
-      volume = vol;
+      this.code = cd;
+      this.datetime = new DateTime(dt);
+      this.open = o;
+      this.high = h;
+      this.low = l;
+      this.close = c;
+      this.volume = vol;
    }
 
    /**
@@ -110,12 +109,12 @@ public class PriceData {
     */
    public double getClose() {
 
-      return close;
+      return this.close;
    }
 
    public String getCode() {
 
-      return code;
+      return this.code;
    }
 
    /**
@@ -123,7 +122,7 @@ public class PriceData {
     */
    public DateTime getDatetime() {
 
-      return datetime;
+      return this.datetime;
    }
 
    /**
@@ -131,7 +130,7 @@ public class PriceData {
     */
    public double getHigh() {
 
-      return high;
+      return this.high;
    }
 
    /**
@@ -139,7 +138,7 @@ public class PriceData {
     */
    public double getLow() {
 
-      return low;
+      return this.low;
    }
 
    /**
@@ -147,7 +146,7 @@ public class PriceData {
     */
    public double getOpen() {
 
-      return open;
+      return this.open;
    }
 
    /**
@@ -155,7 +154,7 @@ public class PriceData {
     */
    public long getVolume() {
 
-      return volume;
+      return this.volume;
    }
 
    /**
@@ -218,12 +217,12 @@ public class PriceData {
    @Override
    public String toString() {
 
-      String ret = code + PriceData.TAB + datetime.format("yyyy-MMM-dd EE") + PriceData.NL;
-      ret += String.format("%sOpen  : %.2f%s", PriceData.TAB, open, PriceData.NL);
-      ret += String.format("%sHigh  : %.2f%s", PriceData.TAB, high, PriceData.NL);
-      ret += String.format("%sLow   : %.2f%s", PriceData.TAB, low, PriceData.NL);
-      ret += String.format("%sClose : %.2f%s", PriceData.TAB, close, PriceData.NL);
-      ret += String.format("%sVol   : %d", PriceData.TAB, volume);
+      String ret = this.code + PriceData.TAB + this.datetime.format("yyyy-MMM-dd EE") + PriceData.NL;
+      ret += String.format("%sOpen  : %.2f%s", PriceData.TAB, this.open, PriceData.NL);
+      ret += String.format("%sHigh  : %.2f%s", PriceData.TAB, this.high, PriceData.NL);
+      ret += String.format("%sLow   : %.2f%s", PriceData.TAB, this.low, PriceData.NL);
+      ret += String.format("%sClose : %.2f%s", PriceData.TAB, this.close, PriceData.NL);
+      ret += String.format("%sVol   : %d", PriceData.TAB, this.volume);
       return ret;
    }
 }
