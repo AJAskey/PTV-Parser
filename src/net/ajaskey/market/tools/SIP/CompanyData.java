@@ -221,7 +221,7 @@ public class CompanyData {
 
 		final List<CompanyData> filteredList = new ArrayList<>();
 		//		final Calendar endCal = Utils.buildCalendar(2017, Calendar.NOVEMBER, 30);
-		final DateTime endDt = new DateTime(2017, DateTime.NOVEMBER, 30);
+		final DateTime endDt = new DateTime(2018, DateTime.JULY, 31);
 		for (final CompanyData cd : companyList) {
 			final DateTime dt = new DateTime(cd.eoq);
 			if (dt.isGreaterThanOrEqual(endDt)) {

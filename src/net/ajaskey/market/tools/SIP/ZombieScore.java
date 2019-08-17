@@ -42,58 +42,56 @@ public class ZombieScore {
 		double d = 0.0;
 		double scr = 0;
 
-		if (cd.id.sales.getMostRecent() > 0.0) {
+		if ((cd.marketCap > 0.0) && (cd.id.sales.getMostRecent() > 0.0)) {
 
-			if (cd.ticker.equalsIgnoreCase("SPWR")) {
-				//System.out.println(cd);
-			}
-
-			if (cd.opMargin < 0) {
+			if ((cd.opMargin < 0) && (cd.netMargin < 0.0)) {
 				d = Math.abs(cd.opMargin + cd.netMargin) / 10.0;
 				final double margin = Math.min(d, 35.0);
 				scr += margin;
 				zc.margin = margin;
 			}
 
-			final double interest = Math.min(cd.interestRate, 35.0);
-			scr += interest;
-			zc.interest = interest;
+			zc.interest = Math.min(cd.interestRate, 35.0);
+			scr += zc.interest;
 
-			if (cd.marketCap > 0.0) {
+			double ltdtoe = 0.0;
+			double eqPercent = 0.0;
 
-				double ltdtoe = 0.0;
-				double eqPercent = 0.0;
-
-				d = (cd.bsd.equity.getMostRecent() / cd.marketCap) * 100.0;
-				if (d < 0.0) {
-					eqPercent = Math.abs(Math.max(d, -30.0));
-				}
-				else {
-					if (cd.bsd.equity.dd.qoqGrowth > 0.0) {
-						eqPercent = -1.0 * Math.min(d, 10.0);
-					}
-				}
-				scr += eqPercent;
-				zc.equitytoMC = eqPercent;
-
-				if (cd.bsd.equity.getMostRecent() > 0.0) {
-					if (cd.ltDebtEquity > 2.0) {
-						ltdtoe = Math.min((cd.ltDebtEquity * 2.5), 35.0);
-					}
-				}
-				else if (cd.bsd.ltDebt.getMostRecent() > 0.0) {
-					ltdtoe = 5;
-				}
-				zc.ltDebt = ltdtoe;
-				scr += ltdtoe;
+			d = (cd.bsd.equity.getMostRecent() / cd.marketCap) * 100.0;
+			if (d < 0.0) {
+				eqPercent = Math.abs(Math.max(d, -30.0));
 			}
+			else {
+				if (cd.bsd.equity.dd.qoqGrowth > 0.0) {
+					eqPercent = -1.0 * Math.min(d, 10.0);
+				}
+			}
+			scr += eqPercent;
+			zc.equitytoMC = eqPercent;
+
+			if (cd.bsd.equity.getMostRecent() > 0.0) {
+				if (cd.ltDebtEquity > 2.0) {
+					ltdtoe = Math.min((cd.ltDebtEquity * 2.5), 35.0);
+				}
+			}
+			else if (cd.bsd.ltDebt.getMostRecent() > 0.0) {
+				ltdtoe = 5;
+			}
+			zc.ltDebt = ltdtoe;
+			scr += ltdtoe;
 
 			d = cd.cashData.cashFromOps.getTtm() + cd.workingCapital;
-			if ((d < 0.0) && (cd.marketCap > 0.0)) {
+			if (d < 0.0) {
 				zc.availCash = Math.min(Math.abs((d / cd.marketCap) * 100.0), 35.0);
 				scr += zc.availCash;
 			}
-
+			
+			d = cd.freeCashFlow + cd.workingCapital;
+			if (d < 0.0) {
+				zc.wcfcf = Math.min(Math.abs((d / cd.marketCap) * 100.0), 35.0);
+				scr += zc.wcfcf;
+			}
+			
 			if (cd.id.sales.dd.qoqGrowth < 0.0) {
 				d = cd.id.sales.dd.qoqGrowth;
 				zc.sales = Math.min(Math.abs(d), 35.0);
@@ -114,14 +112,12 @@ public class ZombieScore {
 
 			//Less weight to low cost stocks
 			if (cd.lastPrice < 10.0) {
-				zc.price = -35.0;
+				zc.price = -50.0;
 				scr += zc.price;
 			}
 
 			if (cd.lastPrice > 10.0) {
-
 				if (cd.pricePercOff52High > 50.0) {
-
 					d = (cd.pricePercOff52High - 50.0) / 2.0;
 					zc.price52High = d;
 					scr += zc.price52High;
@@ -149,6 +145,7 @@ public class ZombieScore {
 	public double	ltDebt;
 	public double	sales;
 	public double	availCash;
+	public double wcfcf;
 	public double	shares;
 	public double	growth;
 	public double	price;
@@ -170,6 +167,7 @@ public class ZombieScore {
 		this.equitytoMC = 0.0;
 		this.ltDebt = 0.0;
 		this.availCash = 0.0;
+		this.wcfcf = 0.0;
 		this.sales = 0.0;
 		this.shares = 0.0;
 		this.growth = 0.0;
@@ -190,6 +188,7 @@ public class ZombieScore {
 		ret += String.format("%n\t\tNegative Sales        : %7.2f", this.sales);
 		ret += String.format("%n\t\tMargins               : %7.2f", this.margin);
 		ret += String.format("%n\t\tAvailable Cash to MC  : %7.2f", this.availCash);
+		ret += String.format("%n\t\tWC plus FCF to MC     : %7.2f", this.wcfcf);
 		ret += String.format("%n\t\tInterest Paid         : %7.2f", this.interest);
 		ret += String.format("%n\t\tLT Debt to Equity     : %7.2f", this.ltDebt);
 		ret += String.format("%n\t\tEquity to MC          : %7.2f", this.equitytoMC);

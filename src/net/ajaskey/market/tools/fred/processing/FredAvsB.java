@@ -54,11 +54,61 @@ public class FredAvsB {
 		fileOnes.add("GDP");
 		fileTwos.add("CNP16OV");
 
+		fileOnes.add("BOGMBASE");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("DPSACBM027NBOG");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("MVGFD027MNFRBDAL");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("TOTALNS");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("INDPRO");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("TTLCON");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("PAYNSA");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("A576RC1");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("DSPI");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("A068RC1");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("PCE");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("W055RC1");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("PMSAVE");
+		fileTwos.add("CNP16OV");
+
+		fileOnes.add("TOTBUSSMNSA");
+		fileTwos.add("CNP16OV");
+
+
+		
 		for (int i = 0; i < fileOnes.size(); i++) {
 
 			try {
 
-				final String fullname = String.format("%s over %s.csv", fileOnes.get(i), fileTwos.get(i));
+				String f2 = String.format("over %s", fileTwos.get(i));
+				if (fileTwos.get(i).equalsIgnoreCase("CNP16OV")) {
+					f2 = "per Capita";
+				}
+
+				final String fullname = String.format("%s %s.csv", fileOnes.get(i), f2);
+				System.out.println(fullname);
 
 				IngestOptumaFile.process(FredCommon.fredPath + fileOnes.get(i) + ".csv", FredCommon.fredPath + fileTwos.get(i) + ".csv", fullname,
 				    IngestOptumaFile.DIVIDE, 1.0);

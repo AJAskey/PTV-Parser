@@ -64,6 +64,15 @@ public class MoveNewEOD {
 			else if (f.getName().toUpperCase().contains("INDEX_2019")) {
 				to = new File(path + "INDEX\\" + f.getName());
 			}
+			else if (f.getName().toUpperCase().contains("COMEX_2019")) {
+				to = new File(path + "COMEX\\" + f.getName());
+			}
+			else if (f.getName().toUpperCase().contains("CME_2019")) {
+				to = new File(path + "CME\\" + f.getName());
+			}
+			else if (f.getName().toUpperCase().contains("NYMEX_2019")) {
+				to = new File(path + "NYMEX\\" + f.getName());
+			}
 
 			try {
 				if (to != null) {

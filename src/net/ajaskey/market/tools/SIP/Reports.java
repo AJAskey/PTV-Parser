@@ -730,7 +730,7 @@ public class Reports {
 			for (String sec : CompanyData.sectorList) {
 				if (sec.equalsIgnoreCase("financials")) continue;
 				knt = 0;
-				pw.printf("%n%n===============================%nSector : %s%n===============================%n", sec);
+				pw.printf("%n%n====================================%nSector : %s%n====================================%n", sec);
 				for (final CompanyData cd : finalZombieList) {
 					knt++;
 					if (sec.equalsIgnoreCase(cd.sector)) {
